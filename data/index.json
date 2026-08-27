@@ -58,7 +58,7 @@
       "backlinki": [
         "zmora"
       ],
-      "obraz": null
+      "obraz": "assets/wizualizacje/wendigo.jpg"
     },
     {
       "slug": "zmora",
@@ -85,7 +85,7 @@
         "wendigo"
       ],
       "backlinki": [],
-      "obraz": null
+      "obraz": "assets/wizualizacje/zmora.jpg"
     }
   ]
 }

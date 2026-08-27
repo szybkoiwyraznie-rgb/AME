@@ -1,7 +1,11 @@
 {
   "slug": "zmora",
   "nazwa": "Zmora",
-  "nazwy_alternatywne": ["Mora", "Mara", "Zmora nocna"],
+  "nazwy_alternatywne": [
+    "Mora",
+    "Mara",
+    "Zmora nocna"
+  ],
   "karta": {
     "nazwa": "Nightmare",
     "wydanie": "Limited Edition Alpha (LEA) #118",
@@ -70,13 +74,20 @@
   ],
   "wizualizacja": {
     "prompt": "Style: A wide-angle full-body cinematic photograph. The central objects/persons of the photo are visible from head to toe, standing centrally in the frame. No parts of the body are cropped.\n\nA gaunt, grey-skinned zmora demon crouched on the chest of a sleeping peasant in a nineteenth-century wooden cottage chamber in eastern Poland at night: a small, hollow-eyed humanoid with tangled black hair and thin clawed fingers pressed against the sleeper's sternum, its lips hovering at the sleeping man's breath; a stub of tallow candle gutters on a stool, wool blankets, dried herbs and a holy icon on whitewashed walls, freezing air and faint blue moonlight leaking through a small window, the sleeper's face twisted in helpless terror.\n\nCaptured with a 35mm anamorphic lens at f/1.8. Shallow depth of field with a heavy, creamy bokeh background. Environmental portraiture. Dramatic cinematic lighting, sharp focus on the character, hyper-realistic textures of clothing and skin. Shot on 70mm film stock, ultra-wide 21:9 aspect ratio. --ar 21:9",
-    "obraz": null
+    "obraz": "assets/wizualizacje/zmora.jpg"
   },
   "trofea": {
     "pierwotne": "Kosmyk włosów zmory zerwany w chwili przemiany (przed świtem)",
     "wtorne": "Nóż naznaczony śladem jej dłoni"
   },
-  "tagi": ["byt-nocny", "koszmar", "sen", "słowiański", "polska", "wieś"],
+  "tagi": [
+    "byt-nocny",
+    "koszmar",
+    "sen",
+    "słowiański",
+    "polska",
+    "wieś"
+  ],
   "powiazania": [
     {
       "slug": "wendigo",
