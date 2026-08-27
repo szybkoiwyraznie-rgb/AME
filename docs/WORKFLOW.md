@@ -54,6 +54,13 @@ python3 -m http.server 8000 --bind 0.0.0.0   # potem: http://localhost:8000
 Otwarcie `index.html` bezpośrednio z dysku (`file://`) wyświetli baner
 z instrukcją — `fetch()` nie działa pod `file://` (ADR 0001).
 
+## CI (jednorazowa konfiguracja właściciela)
+
+Token sesji agentskiej (GitHub App) nie ma uprawnień do tworzenia plików
+workflow, więc CI nie może być dodane automatycznie. Właściciel raz kopiuje
+`docs/setup/ci-workflow.yml` → `.github/workflows/ci.yml` na `main`
+(testy + build + kontrola aktualności indeksu na każdym PR i pushu do main).
+
 ## GitHub Pages (jednorazowa konfiguracja właściciela)
 
 Settings → Pages → Source: *Deploy from a branch* → branch: `main`,

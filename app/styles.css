@@ -380,7 +380,7 @@ body { display: flex; flex-direction: column; }
   color: var(--tekst-dim);
   background: var(--tlo-2);
 }
-.Separator { opacity: 0.4; }
+.separator { opacity: 0.4; }
 
 /* ---- Mobile ---- */
 @media (max-width: 760px) {

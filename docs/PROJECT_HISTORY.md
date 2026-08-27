@@ -25,8 +25,16 @@ wyciągnąć najważniejsze rygory pracy i opublikować jako obowiązujący AGEN
   „NatGeo/YAML” z v1.0);
 - 0006 — warstwa wiki: tagi, powiązania slugami, backlinki z indeksu.
 
-**Wykonanie:** patrz commity gałęzi sesji (dokumenty → narzędzia+testy →
-dane przykładowe → aplikacja → wizualizacje → CI + handoff).
+**Wykonanie:** 6 commitów inkrementalnych (dokumenty/zasady → narzędzia+testy →
+dane przykładowe → aplikacja → wizualizacje → CI+handoff), każdy z zielonym
+`npm test`+`npm run build` przed commitem. Finalnie: 32 testy, 2 wpisy,
+10 tagów, mapa działa offline.
+
+**Pułapki napotkane w sesji (zapisane też w testach/dokumentach):**
+node 22 nie przyjmuje katalogu w `node --test` (autofind bez argumentu);
+`pkill -f` może zabić własną powłokę, gdy wzorzec pasuje do wiersza polecenia;
+pierwsza wersja fixture TopoJSON myliła delty łuków z pozycją absolutną
+(pierwszy delta = punkt absolutny) — test mini-topologii to trwale pilnuje.
 
 **Otwarte po sesji:**
 - włączenie GitHub Pages przez właściciela (branch `main`, folder `/`);

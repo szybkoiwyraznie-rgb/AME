@@ -17,7 +17,9 @@
 - [x] Dwa wpisy przykładowe: `wendigo` (Tarmogoyf), `zmora` (Nightmare)
       — pełne kartoteki wg protokołu, wzajemnie powiązane.
 - [x] Wizualizacje 21:9 dla obu wpisów (`assets/wizualizacje/`).
-- [x] CI (GitHub Actions: `npm test` + build) i instrukcja włączenia Pages.
+- [x] CI (GitHub Actions: `npm test` + build) — przepis w `docs/setup/ci-workflow.yml`
+      do wklejenia przez właściciela (token agenta bez uprawnień `workflows`);
+      instrukcja włączenia Pages.
 
 ## F1 — Proces treściowy (CIĄGŁA; praca kolejni agentów)
 
