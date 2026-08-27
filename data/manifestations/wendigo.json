@@ -1,0 +1,82 @@
+{
+  "slug": "wendigo",
+  "nazwa": "Wendigo",
+  "nazwy_alternatywne": ["Witiko", "Chenoo"],
+  "karta": {
+    "nazwa": "Tarmogoyf",
+    "wydanie": "Future Sight (FUT), ramka Future Shifted",
+    "rok": 2007
+  },
+  "lokalizacja": {
+    "miejscowosc": "Kenora, Ontario",
+    "kraj": "Kanada",
+    "lat": 49.76,
+    "lon": -94.48
+  },
+  "pochodzenie_i_kultura": "Wierzenia ludów algonkińskich (Odżibwejowie/Ojibwe, Kri)",
+  "rezonans": {
+    "klucz_przywolania": "Skalowanie siły Tarmogoyfa liczbą „pożeranych” typów kart we wszystkich cmentarzach idealnie oddaje naturę Wendigo — ducha nienasyconego głodu, który rośnie z każdym kolejnym aktem kanibalizmu, także cudzym. Ilustracja przedstawiająca kłębowisko mięśni i pancerza w lesie koresponduje z opisami przemiany człowieka w bestię pod wpływem skrajnego głodu i mrozu.",
+    "tabela": [
+      {
+        "element": "Nazwa",
+        "translacja": "„Goyf” to potoczne skrócenie Lhurgoyfa — nazwy gatunkowej bestii żerującej na tym, co już martwe. Wendigo analogicznie nie jest imieniem jednostki, lecz nazwą „gatunku”, w który człowiek się przemienia."
+      },
+      {
+        "element": "Mechanika",
+        "translacja": "Siła równa liczbie typów kart we wszystkich cmentarzach → byt rośnie w siłę od każdego aktu śmierci i zjedzenia (także popełnionego przez innych); Nomadyczny charakter cechy (działa w każdej strefie) → Wendigo nie znika po „zakończeniu” — głód trwa."
+      },
+      {
+        "element": "Ilustracja",
+        "translacja": "Chudy, umięśniony stwór wśród martwych pni lasu → wychudzona, sineoskóra sylwetka w lesie borealnym; brak typowego „potwora z jamy” wskazuje na byt leśny północy."
+      },
+      {
+        "element": "Flavor text",
+        "translacja": "Karta nie ma flavor textu (ramka Future Shifted) — „dokumentem terenowym” jest tu sama linia typu (Creature — Lhurgoyf) i zasada: pusty cmentarz = bezsilny byt. Wendigo bez ofiar nie znika, lecz głoduje i szuka."
+      },
+      {
+        "element": "Lore/Tło",
+        "translacja": "W MtG Lhurgoyfy to rozbuchane bestie żerne; w naszym świecie odpowiednikiem „bestii głodu” polarnych lasów jest Wendigo/Witiko — istota z peryferyjnych, zimnych terenów, na granicy cywilizacji."
+      }
+    ]
+  },
+  "natura": {
+    "wyglad_i_aura": "Wendigo manifestuje się jako przerażająco wysoka, wychudzona postać o sinej skórze, która ściśle opina kości. Z jego ust wydobywa się zapach gnijącego mięsa, a wokół niego temperatura drastycznie spada. Jego oczy są głęboko zapadnięte, a usta pozbawione warg (które sam zjadł w przypływie głodu).",
+    "charakter_i_motywacje": "Jest ucieleśnieniem chciwości i zatracenia. Wendigo nie zna sytości. Każda kolejna ofiara tylko powiększa jego głód i rozmiar. Jest samotnikiem, który nienawidzi wszystkiego, co żywe.",
+    "zdolnosci": "Posiada nadludzką siłę i szybkość. Potrafi naśladować głosy bliskich osób, by zwabić ofiary w głąb lasu. Kontroluje lokalne zjawiska pogodowe, sprowadzając nagłe zamiecie.",
+    "slabosci_i_metody_pokonania": "Jedynym sposobem na zabicie Wendigo jest spalenie jego lodowego serca. Srebro może go zranić, ale nie zabije. Szamani zalecają użycie łoju niedźwiedziego jako bariery ochronnej.",
+    "preferencje": "Uwielbia ludzkie serca i szpik. Nienawidzi ciepła, ognia i dźwięku bębnów rytualnych."
+  },
+  "dokumentacja": [
+    {
+      "typ": "literatura naukowa",
+      "pozycja": "Basil Johnston, The Manitous: The Spiritual World of the Ojibway (1995)"
+    },
+    {
+      "typ": "literatura piękna",
+      "pozycja": "Algernon Blackwood, The Wendigo (1910)"
+    },
+    {
+      "typ": "kino/kultura",
+      "pozycja": "Antlers (2021, reż. Scott Cooper) — wizualne przedstawienie fizjologii głodu"
+    },
+    {
+      "typ": "prace badawcze",
+      "pozycja": "Dr Morton Teicher, Windigo Psychology — antropologiczne studium przypadków kanibalizmu"
+    }
+  ],
+  "wizualizacja": {
+    "prompt": "Style: A wide-angle full-body cinematic photograph. The central objects/persons of the photo are visible from head to toe, standing centrally in the frame. No parts of the body are cropped.\n\nA towering, emaciated Wendigo standing between frozen pine trunks in a boreal forest near Kenora, Ontario, on a deep-winter night: pale grey-blue skin stretched tight over its skeleton, ribcage clearly visible, sunken eyes with a faint cold glow, lipless jagged teeth, elongated skeletal limbs with black claws dug into frozen bark, patches of frost-covered fur on its shoulders; its breath hangs as a cloud of freezing mist, snow falls around it and the air itself seems to be turning to ice.\n\nCaptured with a 35mm anamorphic lens at f/1.8. Shallow depth of field with a heavy, creamy bokeh background. Environmental portraiture. Dramatic cinematic lighting, sharp focus on the character, hyper-realistic textures of clothing and skin. Shot on 70mm film stock, ultra-wide 21:9 aspect ratio. --ar 21:9",
+    "obraz": null
+  },
+  "trofea": {
+    "pierwotne": "Lodowe serce Wendigo (wymaga natychmiastowego spalenia)",
+    "wtorne": "Fragment żebra naznaczony śladami własnych zębów"
+  },
+  "tagi": ["byt-nocny", "głód", "las", "ameryka-północna", "kanada"],
+  "powiazania": [],
+  "meta": {
+    "utworzono": "2026-08-27",
+    "autor": "sesja arena 2026-08-27 (na podstawie przykładu z protokołu MFM v1.0)",
+    "modyfikacje": []
+  }
+}

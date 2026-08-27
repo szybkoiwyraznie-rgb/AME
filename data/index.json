@@ -1,0 +1,91 @@
+{
+  "wersja": 1,
+  "liczba": 2,
+  "tagi": {
+    "ameryka-północna": [
+      "wendigo"
+    ],
+    "byt-nocny": [
+      "wendigo",
+      "zmora"
+    ],
+    "głód": [
+      "wendigo"
+    ],
+    "kanada": [
+      "wendigo"
+    ],
+    "koszmar": [
+      "zmora"
+    ],
+    "las": [
+      "wendigo"
+    ],
+    "polska": [
+      "zmora"
+    ],
+    "sen": [
+      "zmora"
+    ],
+    "słowiański": [
+      "zmora"
+    ],
+    "wieś": [
+      "zmora"
+    ]
+  },
+  "manifestacje": [
+    {
+      "slug": "wendigo",
+      "nazwa": "Wendigo",
+      "nazwy_alternatywne": [
+        "Witiko",
+        "Chenoo"
+      ],
+      "karta": "Tarmogoyf",
+      "miejscowosc": "Kenora, Ontario",
+      "kraj": "Kanada",
+      "lat": 49.76,
+      "lon": -94.48,
+      "tagi": [
+        "ameryka-północna",
+        "byt-nocny",
+        "głód",
+        "kanada",
+        "las"
+      ],
+      "powiazania": [],
+      "backlinki": [
+        "zmora"
+      ],
+      "obraz": null
+    },
+    {
+      "slug": "zmora",
+      "nazwa": "Zmora",
+      "nazwy_alternatywne": [
+        "Mora",
+        "Mara",
+        "Zmora nocna"
+      ],
+      "karta": "Nightmare",
+      "miejscowosc": "Lubelszczyzna (pole etnograficzne Słownika stereotypów i symboli ludowych)",
+      "kraj": "Polska",
+      "lat": 51.25,
+      "lon": 22.57,
+      "tagi": [
+        "byt-nocny",
+        "koszmar",
+        "polska",
+        "sen",
+        "słowiański",
+        "wieś"
+      ],
+      "powiazania": [
+        "wendigo"
+      ],
+      "backlinki": [],
+      "obraz": null
+    }
+  ]
+}
