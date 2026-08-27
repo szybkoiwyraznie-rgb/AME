@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>AME — Archiwum Manifestacji Eterycznych</title>
+  <meta name="description" content="Interaktywna mapa świata manifestacji eterycznych — bytów zidentyfikowanych kartami Magic: The Gathering.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='13' r='7' fill='%23c9a86a'/%3E%3Cpath d='M16 18 L11 28 L16 24 L21 28 Z' fill='%23c9a86a'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="app/styles.css">
+  <script type="module" src="app/app.js"></script>
+</head>
+<body>
+  <div id="baner" class="baner" hidden></div>
+
+  <header class="gora">
+    <div class="tytul">
+      <h1>AME</h1>
+      <p>Archiwum Manifestacji Eterycznych</p>
+    </div>
+    <input id="szukaj" type="search" placeholder="Szukaj: nazwa, karta, tag, kraj…" autocomplete="off" aria-label="Szukaj manifestacji">
+    <div class="akcje">
+      <button id="przycisk-luki" class="przycisk" aria-pressed="false" title="Pokaż powiązania na mapie">∞ powiązania</button>
+      <button id="przycisk-lista" class="przycisk" title="Lista wszystkich manifestacji">☰ kartoteka</button>
+    </div>
+  </header>
+
+  <nav id="tagi" class="tagi" aria-label="Tagi manifestacji"></nav>
+
+  <main class="tresc">
+    <div id="mapa" class="mapa">
+      <p id="blad-startowy" class="blad-startowy" hidden></p>
+      <div class="sterowanie">
+        <button id="zoom-in" class="przycisk-kolo" aria-label="Przybliż">＋</button>
+        <button id="zoom-out" class="przycisk-kolo" aria-label="Oddal">−</button>
+        <button id="zoom-reset" class="przycisk-kolo" aria-label="Reset widoku">⟲</button>
+      </div>
+      <p class="podpowiedz">przeciągnij · kółko = zoom · dwuklik = przybliż · pinch na telefonie</p>
+    </div>
+    <aside id="panel" class="panel" aria-label="Kartoteka manifestacji"></aside>
+  </main>
+
+  <div id="lista" class="lista" hidden></div>
+
+  <footer class="dol">
+    <span id="status"></span>
+    <span class="Separator">·</span>
+    <span>protokół MFM v1.1</span>
+  </footer>
+</body>
+</html>
