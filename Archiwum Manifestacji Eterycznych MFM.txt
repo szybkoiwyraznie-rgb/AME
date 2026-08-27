@@ -1,0 +1,183 @@
+﻿# PROTOKÓŁ MFM v.1.0: ARCHIWUM MANIFESTACJI ETYRYCZNYCH
+
+
+## 1. Filozofia Systemu
+System służy do transponowania kart Magic: The Gathering na rzeczywiste byty pochodzące z mitologii, folkloru, legend miejskich oraz wierzeń religijnych (historycznych i współczesnych). Każda karta jest traktowana jako wizualno-pojęciowy „odcisk”, który pozwala zidentyfikować konkretną emanację w naszym świecie. System kładzie nacisk na autentyzm źródłowy, precyzję geograficzną i głęboką charakterystykę psychologiczno-magiczną.
+
+
+## 2. Struktura Wpisu (Protokół Operacyjny)
+
+
+### [NAZWA BYTU / MANIFESTACJI]
+**Inspiracja kartą:** [NAZWA KARTY MTG]
+
+
+#### I. REZONANS I TOŻSAMOŚĆ
+*   **Klucz Przywołania:** Analiza, jak nazwa, ilustracja, mechanika i flavor text karty korelują z danym bytem (np. mechanika *Haste* jako nadludzka szybkość demona, kolor zielony jako powiązanie z pierwotnym lasem).
+*   **Pochodzenie i Kultura:** (np. Mitologia Inuitów, Folklor słowiański, Współczesne legendy miejskie Japonii).
+*   **Lokalizacja Geograficzna:** Precyzyjne miejsce na kuli ziemskiej, gdzie wierzenie powstało lub gdzie odnotowano aktywność bytu (z podaniem regionu i opcjonalnie współrzędnych).
+
+
+#### II. CHARAKTERYSTYKA I NATURA (Opis Fabularny)
+*   **Wygląd i Aura:** Szczegółowy opis fizycznej manifestacji, zapachu, temperatury otoczenia towarzyszącej pojawieniu się bytu.
+*   **Charakter i Motywacje:** Czy jest to byt drapieżny, opiekuńczy, czy amoralny? Czego pragnie? Dlaczego wchodzi w interakcję z ludźmi?
+*   **Zdolności (Fizyczne i Magiczne):** Opis mocy bez użycia terminologii growej. Jak byt manipuluje rzeczywistością, umysłem lub materią?
+*   **Słabości i Metody Pokonania:** Rytuały, przedmioty, substancje lub zachowania, które mogą odeprzeć lub zniszczyć manifestację.
+*   **Preferencje (Lubiane/Nielubiane):** Specyficzne ofiary, dźwięki, pory dnia lub symbole, które przyciągają lub odpychają byt.
+
+
+#### III. DOKUMENTACJA (The Source Stack)
+*   Pełna lista źródeł: Literatura naukowa (antropologia, religioznawstwo), klasyczne teksty mitologiczne, filmy, reportaże, dokumenty historyczne.
+
+
+#### IV. WIZUALIZACJA (YAML)
+*   Techniczny prompt dla AI graficznego. **WAŻNE:** W tym systemie rezygnujemy z formy figurki/diormay. Celem jest **hiperrealistyczne zdjęcie (National Geographic style)** lub kadr filmowy przedstawiający byt w jego naturalnym środowisku.
+
+
+---
+
+
+## 3. Przykład Zastosowania (Karta: *Tarmogoyf*)
+
+
+### **WENDIGO (Witiko / Chenoo)**
+**Inspiracja kartą:** *Tarmogoyf*
+
+
+#### I. REZONANS I TOŻSAMOŚĆ
+*   **Klucz Przywołania:** Skalowanie siły *Tarmogoyfa* na podstawie „zjedzonych” kart idealnie oddaje naturę Wendigo – ducha nienasyconego głodu, który rośnie z każdym kolejnym aktem kanibalizmu. Ilustracja przedstawiająca kłębowisko mięśni i pancerza w lesie koresponduje z opisami przemiany człowieka w bestię pod wpływem skrajnego głodu i mrozu.
+*   **Pochodzenie i Kultura:** Wierzenia ludów algonkińskich (Odżibwejowie, Kri).
+*   **Lokalizacja Geograficzna:** Kenora, Ontario, Kanada (Lasy borealnej Ameryki Północnej). Współrzędne: 49.76N, 94.48W.
+
+
+#### II. CHARAKTERYSTYKA I NATURA
+*   **Wygląd i Aura:** Wendigo manifestuje się jako przerażająco wysoka, wychudzona postać o sinej skórze, która ściśle opina kości. Z jego ust wydobywa się zapach gnijącego mięsa, a wokół niego temperatura drastycznie spada. Jego oczy są głęboko zapadnięte, a usta pozbawione warg (które sam zjadł w przypływie głodu).
+*   **Charakter i Motywacje:** Jest ucieleśnieniem chciwości i zatracenia. Wendigo nie zna sytości. Każda kolejna ofiara tylko powiększa jego głód i rozmiar. Jest samotnikiem, który nienawidzi wszystkiego, co żywe.
+*   **Zdolności:** Posiada nadludzką siłę i szybkość (nawiązanie do statystyk karty). Potrafi naśladować głosy bliskich osób, by zwabić ofiary w głąb lasu. Kontroluje lokalne zjawiska pogodowe, sprowadzając nagłe zamiecie.
+*   **Słabości i Metody Pokonania:** Jedynym sposobem na zabicie Wendigo jest spalenie jego lodowego serca. Srebro może go zranić, ale nie zabije. Szamani zalecają użycie łoju niedźwiedziego jako bariery ochronnej.
+*   **Preferencje:** Uwielbia ludzkie serca i szpik. Nienawidzi ciepła, ognia i dźwięku bębnów rytualnych.
+
+
+#### III. DOKUMENTACJA
+*   **Literatura naukowa:** Basil Johnston, *The Manitous: The Spiritual World of the Ojibway* (1995).
+*   **Literatura piękna:** Algernon Blackwood, *The Wendigo* (1910).
+*   **Kino/Kultura:** *Antlers* (2021, reż. Scott Cooper) – za wizualne przedstawienie fizjologii głodu.
+*   **Prace badawcze:** Dr. Morton Teicher, *Windigo Psychosis* (antropologiczne studium przypadków kanibalizmu).
+
+
+#### IV. WIZUALIZACJA (YAML)
+```yaml
+visual:
+  style: "Hyper-realistic documentary photography, National Geographic style"
+  setting: "Dense boreal forest, Ontario, Canada, deep winter at night"
+  subject: "A Wendigo lurking behind ancient, frozen pine trees. It is a towering, emaciated humanoid with pale, translucent skin, sunken glowing eyes, and elongated, skeletal limbs. No lips, showing jagged teeth."
+  composition: "Shot with a 35mm lens, grainy texture, low light, moonlight catching the frost on the creature's skin. The creature is partially obscured by fog and snow."
+  details: "Visible ribcage, frost-covered fur patches, elongated claws digging into the frozen bark of a tree."
+  lighting: "Cinematic moonlight, cold blue and silver tones, deep pitch-black shadows."
+  quality: "8k resolution, photorealistic, unsettling atmosphere, sharp focus on the creature's eye."
+```
+
+
+# AKTUALIZACJA PROTOKOŁU
+
+
+## Schemat Pracy
+
+
+```
+KARTA (pełny opis)
+       ↓
+ANALIZA TRANSLACJI
+  • Nazwa → etymologia, skojarzenia
+  • Mechanika → jak przekłada się na zdolności bytu
+  • Ilustracja → wizualna identyfikacja manifestacji
+  • Flavor text → wskazówki fabularne, cytat jako trop
+  • Lore MTG → kontekst, który może naprowadzić na kulturę źródłową
+       ↓
+IDENTYFIKACJA BYTU
+  (folklor, mitologia, legendy miejskie)
+       ↓
+PEŁNY WPIS MFM
+```
+
+
+---
+
+
+## Sekcja "Klucz Przywołania" - Rozbudowa
+
+
+W ramach **I. REZONANS I TOŻSAMOŚĆ** sekcja *Klucz Przywołania* będzie zawierać:
+
+
+| Element Karty | Translacja na Byt |
+|---------------|-------------------|
+| **Nazwa** | Jak nazwa karty naprowadza na tożsamość manifestacji |
+| **Mechanika** | Które zdolności karty odpowiadają mocom bytu |
+| **Ilustracja** | Co na obrazie wskazuje na konkretny folklor/region |
+| **Flavor Text** | Interpretacja cytatu jako "dokumentu terenowego" |
+| **Lore/Tło** | Kontekst ze świata MTG przełożony na nasz świat |
+
+
+# KOREKTA PROTOKOŁU — AKTUALIZACJA
+
+
+Rozumiem teraz w pełni. Dwa kluczowe błędy:
+
+
+---
+
+
+## Błąd 1: Zjawisko zamiast celu
+**Było:** Procesja jako siła kosmiczna do przetrwania
+**Ma być:** Konkretny byt do upolowania
+
+
+## Błąd 2: Rozmycie kulturowe
+**Było:** Dziki Gon + Santa Compaña + Sluagh + Perchten... (synkretyczna papka)
+**Ma być:** Jeden byt, jedna kultura, jedno miejsce, jedna nazwa, spójna charakterystyka
+
+
+---
+
+
+## Zaktualizowane Założenia
+
+
+Każda materializacja to:
+
+
+| Wymóg | Opis |
+|-------|------|
+| **Jednostka** | Pojedynczy byt lub jeden konkretny gatunek |
+| **Grywalność** | Można go namierzyć, skonfrontować, pokonać |
+| **Precyzja kulturowa** | Jedna tradycja źródłowa, jeden region |
+| **Spójność** | Jednoznaczny wygląd, zachowanie, słabości |
+
+
+## Pełna Struktura Wpisu (Finalna)
+
+
+1. **I. REZONANS I TOŻSAMOŚĆ**
+   - Klucz Przywołania (pełna translacja karty)
+   - Pochodzenie i Kultura
+   - Lokalizacja Geograficzna
+
+
+2. **II. CHARAKTERYSTYKA I NATURA**
+   - Wygląd i Aura
+   - Charakter i Motywacje
+   - Zdolności
+   - Słabości i Metody Pokonania
+   - Preferencje
+
+
+3. **III. DOKUMENTACJA (The Source Stack)**
+
+
+4. **IV. WIZUALIZACJA (YAML)**
+
+
+5. **V. TROFEA I DOWODY ELIMINACJI**
+   - Trofeum Pierwotne
+   - Trofeum Wtórne (opcjonalne)
