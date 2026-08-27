@@ -1,0 +1,171 @@
+# AGENTS.md — zasady pracy w repozytorium AME
+
+> **To jest plik startowy każdej sesji.** Runner (Arena i każdy inny) wczytuje
+> ten plik jako pierwszy, niezależnie od treści wiadomości startowej właściciela.
+> Nie odpowiadaj właścicielowi i nie otwieraj ankiety o zadanie, zanim nie
+> wykonasz bloku §0.
+
+Projekt: **AME — Archiwum Manifestacji Eterycznych**. Aplikacja mapowa
+(vanilla HTML+JS, bez kroku budowania) plus kartoteka wpisów o bytach
+zidentyfikowanych kartami Magic: The Gathering. Treść reguluje
+`docs/PROTOKOL.md`, architekturę — ADR-y.
+
+## 0. Kolejność lektury startowej (obowiązkowa, przed jakąkolwiek pracą)
+
+**Każdy plik lektury obowiązkowej czytasz W CAŁOŚCI — od pierwszej do ostatniej
+linii.** „Przejrzałem”, „streściłem”, „doczytałem najnowsze” NIE jest
+przeczytaniem. Jeśli narzędzie zwróci plik pofragmentowany (truncated,
+hasMore, stronicowanie) — dobierasz kolejne fragmenty do końca. Kontrola dla
+siebie: znasz `wc -l` pliku i wiesz, że dotarłeś do ostatniej linii.
+
+1. **Ten plik** (`AGENTS.md`).
+2. **`docs/PROTOKOL.md`** — obowiązujący format wpisów MFM i szablon promptu
+   wizualizacji 21:9. To zasada treściowa, nie sugestia.
+3. **Wszystkie ADR-y** w `docs/decisions/` — najpierw README rejestru, potem
+   **każdy** `NNNN-*.md` w całości.
+4. **`docs/LESSONS.md`** — cały rejestr lekcji do ostatniej.
+5. **`docs/setup/ENVIRONMENT.md`** — stałe ograniczenia sandboxa / gita / sieci.
+6. **Najnowszy `docs/setup/HANDOFF_*.md`** — skrót JEDNEJ sesji: stan na koniec
+   i rzeczy otwarte. Nie jest źródłem zasad.
+
+Budżet lektury startowej: pozycje 1–5 mają się mieścić w **40 tys. tokenów**.
+Gdy próg zostanie przekroczony, skrócenie/rozdzielenie dokumentów staje się
+obowiązkowym zadaniem sesji, a nie opcją.
+
+Czego NIE czytasz na start: `docs/PROJECT_HISTORY.md` (dziennik sesji) i
+`docs/plans/*` — to archiwum przebiegu prac; sięgasz tam punktowo i grepem,
+gdy potrzebny jest kontekst konkretnej decyzji.
+
+## 1. Źródło prawdy
+
+Repozytorium, testy i dokumentacja są źródłem prawdy. Historia czatu, opis
+zadania i komentarze mogą być niepełne. Jeżeli są sprzeczne:
+
+1. nie ukrywaj sprzeczności;
+2. sprawdź najnowsze ADR-y i najnowszy handoff;
+3. poproś właściciela o decyzję, jeśli zmiana jest nieodwracalna lub wpływa
+   na zakres;
+4. zapisz rozstrzygnięcie w repozytorium.
+
+## 2. Tryb sesji — cztery reguły nadrzędne (ADR 0004)
+
+Obowiązują KAŻDĄ sesję bez wyjątku i są nadrzędne wobec handoffów, startowego
+promptu i planów w `docs/plans/`. Żaden inny dokument nie może ich wyłączyć.
+
+1. **Pull Request na starcie.** PR gałęzi sesji istnieje na GitHubie PRZED
+   jakimkolwiek kodowaniem. Może na początku zawierać tylko porządkowe commity,
+   ale gałąź musi być na GitHubie.
+2. **Audyt poprzedniego PR przed kodowaniem.** Zanim rozpocznie się nowa praca,
+   sesja przegląda zmiany poprzedniego scalonego PR (plik po pliku, `git diff`)
+   pod kątem logiki, zgodności z ADR i protokołem oraz zieloności testów.
+   Wynik audytu trafia do opisu PR i `docs/PROJECT_HISTORY.md`. Audyt to
+   sprawdzenie stanu projektu, nie zaraportowanie listy plików.
+3. **Inkrementalne commity.** Każdy samodzielnie zielony krok (`npm test` +
+   `npm run build`) to OSOBNY commit, od razu wypchnięty. Zakazany jest jeden
+   wielki commit z całą sesją.
+4. **Tylko przyrostowo, nigdy force push.** Praca ląduje jako NOWE commity na
+   końcu gałęzi. Przed pushem: `git log --oneline -3` + `git status`, potem
+   `git fetch origin <gałąź>` i porównanie `HEAD..FETCH_HEAD`. Odrzucony push
+   (`non-fast-forward`) znaczy, że tego sprawdzenia nie było — nie sięgaj po
+   `--force`. Procedura odzyskiwania po resecie workspace:
+   `docs/setup/ENVIRONMENT.md` §2.
+
+Ponadto:
+
+- **1 sesja = 1 gałąź = 1 PR.** Pracuj wyłącznie na gałęzi sesji, nie pushuj do
+  `main`, nie wykonuj merge — scalenie (preferowane *Squash and merge*) jest
+  jawną decyzją właściciela i kończy sesję kodowania.
+- Pytanie do właściciela wolno zadać wyłącznie gdy praca jest **zablokowana**
+  decyzją, której agent nie może podjąć sam (zmiana architektury, sprzeczność
+  ADR, nowa granica nienegocjowalna). Nie pytaj „co robimy?” — domyślna praca
+  sesji jest opisana w `docs/ROADMAP.md` i ADR 0004.
+- **Praca istnieje dopiero po `git push`.** Nowa sesja widzi wyłącznie `main`
+  i tekst pierwszego promptu. Commituj i pushuj po każdym zielonym kroku.
+- **Obowiązkowy blok na koniec sesji:** wypisz w czacie instrukcję przekazania
+  projektu dla następnego agenta, a jej trwałą wersję zapisz w
+  `docs/setup/HANDOFF_<data>.md` i `docs/PROJECT_HISTORY.md`.
+
+## 3. Zasady treści — protokół MFM (szczegóły: `docs/PROTOKOL.md`, ADR 0005)
+
+- **Jeden byt, jedna kultura, jedno miejsce, jedna nazwa.** Zakaz mieszanek
+  synkretycznych („Dziki Gon + Santa Compaña + Perchten” w jednym wpisie).
+  Byt musi być jednostką: da się go namierzyć, skonfrontować, pokonać.
+- **Karta MtG jest kluczem, nie tematem.** Wpis opisuje byt z naszego świata;
+  karta (nazwa, mechanika, ilustracja, flavor, lore) służy do identyfikacji i
+  uzasadnienia wyboru w sekcji „Klucz Przywołania”.
+- **Źródła są prawdziwe i weryfikowalne.** Zakaz wymyślania tytułów, autorów,
+  lat. Jeśli źródła nie da się potwierdzić — nie wpisuj go.
+- **Współrzędne są prawdziwe** (miejsce powstania wierzenia lub aktywności
+  bytu), zapis dziesiętny, W szerokość geograficzna jako dodatnia.
+- **Prompt wizualizacji trzyma się RAMY 21:9** z `docs/PROTOKOL.md` §IV.
+  Otwarcie i zamknięcie ramy są stałe i walidowane narzędziem
+  (`tools/rebuild-index.mjs` odrzuci wpis ze zniekształconą ramą).
+- **Język wpisów: polski** (nazwy własne, cytaty i terminy źródłowe mogą
+  pozostać oryginalne).
+- **Tagi:** małe litery, myślniki, bez spacji (`byt-nocny`, `ameryka-polnocna`).
+- **Powiązania** wskazują slugi istniejących wpisów; backlinki liczy automatycznie
+  indeks. Nie twórz powiązań „na siłę” — opis powiązania ma uzasadniać związek.
+- **Slug** = `^[a-z0-9-]+$`, zgodny z nazwą pliku (`data/manifestations/<slug>.json`).
+- Każdy nowy lub zmieniony wpis MUSI przejść `npm test` (schemat + spójność +
+  rama promptu) oraz `npm run build` (przebudowa `data/index.json`), a zbudowany
+  indeks jest częścią commita.
+
+## 4. Granice nienegocjowalne
+
+- **Aplikacja pozostaje vanilla HTML+JS+CSS bez frameworków i bez kroku
+  budowania** (ADR 0001). Zmiana tego paradigmatu = wyraźna decyzja właściciela
+  + nowy ADR.
+- **`data/index.json` jest generowany** przez `tools/rebuild-index.mjs`.
+  Ręczna edycja indeksu jest zakazana; edytuje się pliki wpisów i uruchamia build.
+- Nie commituj sekretów. Pojedyncze pliki binarne > 2 MB wymagają zgody
+  właściciela; wygenerowane wizualizacje zapisuj jako JPEG ≤ 2 MB w
+  `assets/wizualizacje/`. Licencje assetów zewnętrznych dokumentuj w
+  `docs/ASSETS.md`.
+- Nie przepisuj działającej aplikacji przed jej uruchomieniem i udokumentowanym
+  audytem. Patchuj chirurgicznie (minimalne fragi, nie całe pliki).
+- **Błędy naprawiaj u root cause, nie maskuj.** Zakaz dodawania `return`,
+  `try-catch` czy warunków-specjalnych ukrywających objaw.
+- Nowe pomysły agentów są mile widziane — zapisuj je w `docs/BACKLOG.md`
+  (rozpoznanie do wykorzystania, nie kolejka zadań). Zadania przydziela
+  właściciel w czacie; backlog nie upoważnia do wzięcia się za temat.
+
+## 5. Gdzie zapisać regułę, żeby nie przepadła
+
+Reguły trwałe nie mogą mieszkać w handoffie — handoff opisuje jedną sesję.
+
+| Rodzaj treści | Miejsce | Trwałość |
+|---|---|---|
+| Wiążąca decyzja o granicach, danych, mapie, deploymencie | ADR (`docs/decisions/`) | trwała, formalna |
+| Format wpisu, szablon promptu, rygory treści | `docs/PROTOKOL.md` | trwała |
+| Powtarzalna pułapka, wniosek diagnostyczny, heurystyka | `docs/LESSONS.md` | trwała, nieformalna |
+| Zasada obowiązująca każdego agenta / kolejność lektur | ten plik | trwała |
+| Stałe ograniczenie środowiska (sandbox, git, sieć) | `docs/setup/ENVIRONMENT.md` | trwała |
+| Stan i kolejka jednej sesji | `docs/setup/HANDOFF_*.md` | jednorazowa |
+| Roadmapa jednego zadania | `docs/plans/PLAN_*.md` | jednorazowa |
+| Pomysł „może kiedyś” | `docs/BACKLOG.md` | trwała, niezobowiązująca |
+
+Jeśli w trakcie sesji trafisz na pułapkę, która zmarnowała czas i może się
+powtórzyć — dopisz lekcję do `docs/LESSONS.md` (format: `## LN (data) — tytuł`,
+objaw → przyczyna → reguła).
+
+## 6. Nowa decyzja architektoniczna?
+
+Nowy ADR jest potrzebny, gdy zmiana: ustala lub zmienia granice komponentów;
+wybiera istotną technologię lub sposób persistence/deployment; zmienia model
+danych lub format wpisów; wprowadza trwały kompromis wpływający na wiele
+funkcji. Użyj szablonu z `docs/decisions/README.md`. Nie edytuj historii
+zaakceptowanego ADR tak, aby zmienić znaczenie decyzji — utwórz nowy, który go
+zastępuje.
+
+## 7. Oczekiwania wobec zmian
+
+- Pracuj ciągle: nie zatrzymuj się po podetapie i nie proś o wdrożenie tylko
+  dlatego, że skończyła się checklista. Koduj do decyzji projektowej właściciela
+  albo do braku niezbędnych danych wejściowych.
+- Najpierw test odtwarzający błąd/zachowanie, potem implementacja, gdy ma to
+  sens. Testy logiki (projekcja, walidacja, dekodowanie) nie wymagają DOM ani
+  sieci.
+- Sortowanie danych deterministyczne (indeks buduje się identycznie za każdym
+  razem — bez znaczników czasu losowych w treści danych).
+- Przy zmianie kodu sprawdź, czy zaktualizować: `docs/ROADMAP.md`,
+  `docs/ARCHITECTURE.md`, `docs/WORKFLOW.md`, ADR, `README.md`.
