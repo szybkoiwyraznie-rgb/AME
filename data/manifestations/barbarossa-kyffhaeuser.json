@@ -23,7 +23,7 @@
     "obraz": "assets/wizualizacje/barbarossa-kyffhaeuser.jpg"
   },
   "natura": {
-    "wyglad_i_aura": "Nie duch, nie ciało: uśpiony władca na ławie przy okrągłym kamiennym stole, głowa oparta na dłoni, powieki półotwarte — kiwa głową i mruga, a jego ruda, paląca broda wyrosła przez kamień (w innych wersjach: owinęła się wokół stołu) i musi owinąć się trzy razy, tymczasem są dwa okrążenia. Raz na sto lat wstaje i pyta wysłanego przed górę: „czy kruki jeszcze krążą nad górą?”. Jeśli tak — kładzie się spać dalej. Wokół niego w ciemności stoją w rzędach rycerze, dwór i konie, wszyscy w tym samym stanie niedokończenia. Tam, gdzie wdziera się dzień, słychać kruk: to on, nie siarka, jest aurą tego bytu — znakiem, że warunek nie został spełniony.",
+    "wyglad_i_aura": "Nie duch, nie ciało: uśpiony władca na ławie przy okrągłym kamiennym stole, głowa oparta na dłoni, powieki półotwarte — kiwa głową i mruga, a jego ruda, paląca broda wyrosła przez kamień (w innych wersjach: owinęła się wokół stołu) i musi owinąć się trzy razy, tymczasem są dwa okrążenia. Raz na sto lat wstaje i pyta wysłanego przed górę: „czy kruki jeszcze krążą nad górą?”. Jeśli tak — kładzie się spać dalej. Wokół niego w ciemności stoją w rzędach rycerze, dwór i konie, wszyscy w tym samym stanie niedokończenia. Tam, gdzie wdziera się dzień, słychać kruk: to on, nie siarka, jest aurą tego bytu — znakiem, że warunek nie został spełniony. U Rückerta cesarz wstaje jeszcze mniejszym kosztem: mruga półotwartym okiem do chłopca i ze snu wysyła go przed zamek — sprawdź, czy kruki jeszcze krążą wokół góry; jego broda jest tam „z żaru ognia”, a urok ma wymiar dokładnie stu lat.",
     "charakter_i_motywacje": "Cierpliwość jako jedyna namiętność. Cesarz nie chce zemsty ani chwały, tylko warunku: jego tarcza ma wisieć na suchym drzewie, które wtedy zielenieje i „nadejdzie lepszy czas”. Boi się nie wroga, lecz przedwczesnego przebudzenia — podanie wie, że wywołany przed czasem zastęp przyniesie pożar i jazdę nad pola. W spisanym przez Grimmów przekazie z 1669 r. (chłop z Reblingen wiózł zboże do Nordhausen, karzełek kazał mu wysypać je i napełnić wory złotem) widać jego hojność i jego dystans: patrzy na władcę zupełnie nieruchomego i dostaje kruszec, ale nie dostaje daty. Dlatego wokół niego kłębi się mit o „lepszych czasach”, których nigdy nie było na żądanie: 1848, 1871, 1914 — za każdym razem wołano go inaczej i za każdym razem odpowiadał milczący kamień.",
     "zdolnosci": "namierzanie przez znak, nie przez wyzwanie: kto chce go spotkać, wchodzi w rozpadlinę i pozwala prowadzić się „małemu człowieczkowi”; wymiana darów z podwójnym dnem: wysypane zboże wraca złotem, ale dopiero na powietrzu widać, czym ten dar jest; władza nad warunkiem: kruk nad górą to następne sto lat snu, sucha gałąź, która zielenieje przy jego tarczy, to znak otwarcia epoki; mnożenie zastępu w miarę czekania (im dłużej śpi, tym liczniejsze jego rycerstwo); oraz jedna zdolność najbardziej realna: przyciąganie obietnic politycznych, które nie dojrzały.",
     "slabosci_i_metody_pokonania": "Pokonać go nie sposób — on jest już pokonany przez czas i to jest jego tarcza. Metody konfrontacji w źródłach są trzy: (a) nie budzić przed warunkiem, bo kto budzi, temu zastęp zapada się pod ziemię i nie wraca (polska wersja z Mątew: dotknięcie dzwonu psuje sprawę na wieczność); (b) odpytać kruka, nie cesarza; (c) nie żądać, tylko przyjść z tym, co już zrobione — w 1848 r. wniesiono gotowy sztandar i pieśń, a cesarz nie wstał, bo warunek był zewnętrzny (pomnik z lat 1890–1896 jest próbą udania, że spełniono go inaczej, przez następcę „Białobrodego”). W praktyce terenowej: nie kopać w gruzach, nie wynosić „okazów” (górnicy w 1865 r. weszli w komory przypadkiem i od razu nazwali je jego imieniem) i nigdy nie liczyć, ile razy broda owinęła stół — przy trzecim razie nikt nie zdąży zejść z grzbietu.",
@@ -34,6 +34,11 @@
       "typ": "zbiór podań (krytyczny opis z przekładem)",
       "pozycja": "Jacob i Wilhelm Grimm, „Deutsche Sagen” (1816/1818), poz. 23 „Friedrich Rotbart auf dem Kyffhäuser” — przekład i streszczenie w zbiorze „Sleeping Hero Legends”: władca żyje do Sądu Ostatecznego, tarcza na suchym drzewie, okrągły kamienny stół, broda trzykrotnie wokół stołu (raz na sto lat pytanie o kruki), epizod chłopa z Reblingen z 1669 r., który wymienił zboże na złoto i zobaczył cesarza nieruchomego; to samo opracowanie podaje polski wariant z Mątew",
       "url": "https://sites.pitt.edu/~dash/sleep.html"
+    },
+    {
+      "typ": "źródło literackie (pełny tekst wiersza)",
+      "pozycja": "Friedrich Rückert, „Der alte Barbarossa” — tekst powstał 1815 r., pierwszy druk: „Kranz der Zeit”, Stuttgart i Tybinga 1817, s. 270; pełny tekst z komentarzem w Volksliederarchiv: tron z kości słoniowej, marmurowy stół, broda „z żaru ognia” (von Feuersglut) przerastająca stół, półotwarte oko mrugające do chłopca i rozkaz ze snu („Geh hin vors Schloß, o Zwerg…”, sprawdź, czy kruki jeszcze krążą wokół góry), refren „verzaubert hundert Jahr”; melodia Josefa Gersbacha (1824), rozpowszechniona przez Friedricha Silchera — to pieśń wprowadziła legendę w niemieckie domy",
+      "url": "https://www.volksliederarchiv.de/der-alte-barbarossa/"
     },
     {
       "typ": "leksykon online",
@@ -99,11 +104,20 @@
     {
       "slug": "selkie-sule-skerry",
       "opis": "Ten sam mechanizm: moc bytu trzyma wspólnota, która zna znak. Selkiemu wystarczy skóra schowana albo zwrócona, cesarzowi — odpowiedź na pytanie o kruki. W obu przekazach ludziom nie zostaje broń, tylko liczenie: ile jeszcze lat, ile jeszcze okrążeń stołu, ile do pierwszego strzału."
+    },
+    {
+      "slug": "egungun",
+      "opis": "Obaj nie odeszli ostatecznie: przodek joruba wraca cyklicznie, przywołany bębnem i przyodziany w płótna maskarady, błogosławi i rozsądza ród; cesarz pod Kyffhausen wraca raz, z całym zastępem, na znak z góry. W obu wypadkach to wspólnota utrzymuje obecność zmarłego rytuałem — jedni co festiwal wynoszą płótna i pieśń rodową, drudzy przez stulecia nazywają górę, pytają o kruki i trzymają tarczę gotową na suchą gałąź. Śmierć jest tu stanem odwracalnym, nie granicą."
     }
   ],
   "meta": {
     "utworzono": "2026-08-28",
     "autor": "sesja arena 2026-08-28",
-    "modyfikacje": []
+    "modyfikacje": [
+      {
+        "data": "2026-08-28 15:20",
+        "opis": "dopisano pełny tekst wiersza Rückerta z komentarzem Volksliederarchiv (powstanie 1815, pierwszy druk 1817, melodia Gersbacha 1824) i scenerię snu — mrugnięcie do chłopca wysłanego po kruki; dołączono powiązanie z Egungun — przodek, który wraca rytuałem"
+      }
+    ]
   }
 }

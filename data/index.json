@@ -262,6 +262,7 @@
       ],
       "powiazania": [
         "balor",
+        "egungun",
         "selkie-sule-skerry"
       ],
       "backlinki": [
@@ -324,6 +325,7 @@
       ],
       "powiazania": [],
       "backlinki": [
+        "barbarossa-kyffhaeuser",
         "lincoln-imp",
         "selkie-sule-skerry"
       ],
@@ -450,6 +452,14 @@
     }
   ],
   "aktualizacje": [
+    {
+      "data": "2026-08-28 15:20",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "barbarossa-kyffhaeuser",
+      "tytul": "Barbarossa w Kyffhäuserze",
+      "opis": "dopisano pełny tekst wiersza Rückerta z komentarzem Volksliederarchiv (powstanie 1815, pierwszy druk 1817, melodia Gersbacha 1824) i scenerię snu — mrugnięcie do chłopca wysłanego po kruki; dołączono powiązanie z Egungun — przodek, który wraca rytuałem"
+    },
     {
       "data": "2026-08-28 15:12",
       "typ": "manifestacja",
