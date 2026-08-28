@@ -158,6 +158,29 @@ frakcję, negocjują koalicje, inwestują zasób). „Liga modeli" nad archiwum.
   deterministyczny" od „decyzji modelu", logować seed + wersję modelu.
 - *Do przemyślenia:* to duży kierunek; prawdopodobnie łańcuch ADR-ów, nie jeden.
 
+### (11) Fabuła jako niezależne timeline'y — rozszczepienie, zamieranie, krzyżowanie
+
+Pomysł właściciela (M11): opowieść / kronika / fabuła nie jako jedna oś, lecz
+**wiele niezależnych timeline'ów**, każdy rozwijany osobno, przy czym w ramach
+jednej sesji można pchnąć więcej niż jedną ścieżkę. Ścieżki mogą się
+**rozszczepiać** (jeden wątek dzieli się na dwa warianty), **zamierać** (dead-end
+— wątek się kończy bez kontynuacji) i **krzyżować** (dwa niezależne wątki
+spotykają się i wpływają na siebie).
+
+- *Dlaczego pasuje:* to naturalne rozszerzenie modelu „Kronika jako dane w repo,
+  popychane sesjami" (`docs/plans/POMYSL_splot-i-kronika-koncepcja.md`). Zamiast
+  jednej liniowej epoki — **graf wątków**: każdy plik Kroniki wskazuje swój wątek
+  i rodzica (jak commity w gicie). Rozszczepienie = dwa dzieci jednego węzła;
+  dead-end = liść bez dzieci; krzyżowanie = węzeł z dwoma rodzicami (merge).
+- *Zgodność:* determinizm zachowany (stan wątku liczony z jego przodków, jak feed
+  z meta — ADR 0002). Model danych: `data/kronika/<watek>/<nr>-<slug>.json` z
+  polami `watek`, `rodzice: [...]`, `status: rozwija|dead-end|krzyzuje`.
+- *Do przemyślenia:* wizualizacja grafu wątków (oś czasu z rozgałęzieniami);
+  reguły, kiedy wątki wolno krzyżować (np. wspólny byt/teren); jak obserwator
+  (§3) nawiguje po wielu równoległych opowieściach bez chaosu.
+- *Powiązania:* rozwija pomysły 4 i 6; niezależne od architektury AI (działa i na
+  symulacji, i na 3a).
+
 ---
 
 ## Wątki przekrojowe (do rozstrzygnięcia zanim ruszymy którykolwiek)
