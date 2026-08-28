@@ -1,7 +1,7 @@
 {
   "wersja": 3,
   "liczba": 8,
-  "liczbaSkitow": 5,
+  "liczbaSkitow": 6,
   "kanon": {
     "kategorie": [
       {
@@ -405,7 +405,9 @@
         "egungun"
       ],
       "obraz": "assets/wizualizacje/empusa-korynt.jpg",
-      "skity": []
+      "skity": [
+        "dwa-zepsute-wesela"
+      ]
     },
     {
       "slug": "kentaur-pelion",
@@ -431,7 +433,9 @@
       ],
       "backlinki": [],
       "obraz": "assets/wizualizacje/kentaur-pelion.jpg",
-      "skity": []
+      "skity": [
+        "dwa-zepsute-wesela"
+      ]
     },
     {
       "slug": "lincoln-imp",
@@ -505,6 +509,21 @@
     }
   ],
   "skity": [
+    {
+      "slug": "dwa-zepsute-wesela",
+      "tytul": "DWA ZEPSUTE WESELA",
+      "temat": "dwa style psucia wesela: iluzja bez śladu kontra prawdziwa burda przy winie",
+      "uczestnicy": [
+        "empusa-korynt",
+        "kentaur-pelion"
+      ],
+      "imiona": [
+        "Empusa",
+        "Kentaur z Pelionu"
+      ],
+      "slow": 240,
+      "data": "2026-08-28 16:45"
+    },
     {
       "slug": "godzina-otwarcia",
       "tytul": "GODZINA OTWARCIA",
@@ -584,6 +603,14 @@
     }
   ],
   "aktualizacje": [
+    {
+      "data": "2026-08-28 16:45",
+      "typ": "skit",
+      "akcja": "nowy",
+      "slug": "dwa-zepsute-wesela",
+      "tytul": "DWA ZEPSUTE WESELA",
+      "opis": "SKIT — skład: Empusa, Kentaur z Pelionu"
+    },
     {
       "data": "2026-08-28 16:20",
       "typ": "manifestacja",
