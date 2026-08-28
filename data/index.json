@@ -1,0 +1,89 @@
+{
+  "wersja": 1,
+  "liczba": 2,
+  "tagi": {
+    "afryka-zachodnia": [
+      "egungun"
+    ],
+    "anglia": [
+      "lincoln-imp"
+    ],
+    "demon": [
+      "lincoln-imp"
+    ],
+    "folklor-chrzescijanski": [
+      "lincoln-imp"
+    ],
+    "imp": [
+      "lincoln-imp"
+    ],
+    "joruba": [
+      "egungun"
+    ],
+    "katedra": [
+      "lincoln-imp"
+    ],
+    "kult-przodkow": [
+      "egungun"
+    ],
+    "maskarada": [
+      "egungun"
+    ],
+    "nigeria": [
+      "egungun"
+    ]
+  },
+  "manifestacje": [
+    {
+      "slug": "egungun",
+      "nazwa": "Egungun",
+      "nazwy_alternatywne": [
+        "Egúngún",
+        "Ara Ọ̀run („mieszkańcy nieba”)",
+        "Eegun"
+      ],
+      "karta": "Krumar Initiate",
+      "miejscowosc": "Oyo (miasto królewstwa Òyó)",
+      "kraj": "Nigeria",
+      "lat": 7.84,
+      "lon": 3.94,
+      "tagi": [
+        "afryka-zachodnia",
+        "joruba",
+        "kult-przodkow",
+        "maskarada",
+        "nigeria"
+      ],
+      "powiazania": [],
+      "backlinki": [
+        "lincoln-imp"
+      ],
+      "obraz": "assets/wizualizacje/egungun.jpg"
+    },
+    {
+      "slug": "lincoln-imp",
+      "nazwa": "Imp z Lincoln",
+      "nazwy_alternatywne": [
+        "Lincoln Imp",
+        "Diabełek z Lincoln"
+      ],
+      "karta": "Forge Devil",
+      "miejscowosc": "Lincoln — katedra Lincoln, Angel Choir",
+      "kraj": "Anglia (Wielka Brytania)",
+      "lat": 53.23,
+      "lon": -0.54,
+      "tagi": [
+        "anglia",
+        "demon",
+        "folklor-chrzescijanski",
+        "imp",
+        "katedra"
+      ],
+      "powiazania": [
+        "egungun"
+      ],
+      "backlinki": [],
+      "obraz": "assets/wizualizacje/lincoln-imp.jpg"
+    }
+  ]
+}

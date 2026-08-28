@@ -1,0 +1,92 @@
+{
+  "slug": "lincoln-imp",
+  "nazwa": "Imp z Lincoln",
+  "nazwy_alternatywne": [
+    "Lincoln Imp",
+    "Diabełek z Lincoln"
+  ],
+  "karta": {
+    "nazwa": "Forge Devil",
+    "wydanie": "Dark Ascension (DKA) #91",
+    "rok": 2012
+  },
+  "lokalizacja": {
+    "miejscowosc": "Lincoln — katedra Lincoln, Angel Choir",
+    "kraj": "Anglia (Wielka Brytania)",
+    "lat": 53.23,
+    "lon": -0.54
+  },
+  "pochodzenie_i_kultura": "Angielski folklor kościelny: groteska w katedrze Lincoln i legenda o impach, notowana od XIV w. (współczesna budowie Angel Choir)",
+  "rezonans": {
+    "klucz_przywolania": "Flavor Forge Devil opisuje diabły wdzierające się na dolne poziomy katedry Thraben, pękające filary nośne i podpalające archiwa — to niemal dosłowne streszczenie legendy o impach z Lincoln: dwa impy wysłane przez Szatana demolowały katedrę, tłukąc sprzęty i podkładając nogę biskupowi, a jeden wdrapał się na filar i rzucał kamieniami w anioła, przez co został przez anioła obrócony w kamień. Jego skamienienie do dziś siedzi na kolumnie w Angel Choir — trofeum na miejscu, symbol miasta Lincoln. Mechanika karty (obowiązkowe obrażenia dla celu I dla gracza) oddaje naturę sabotażysty, którego zło nieodłącznie obraca się też przeciwko temu, kto je wysłał.",
+    "tabela": [
+      {
+        "element": "Nazwa",
+        "translacja": "„Forge Devil” — diabeł kuźni: drobny, ognisty sabotuer. W angielskiej legendzie odpowiednikiem „małego diabła-sługusa” jest imp; „forge” wskazuje żywioł ognia, którym posługuje się także lincolnska wersja (podpalanie archiwów, spalone księgi liturgiczne)."
+      },
+      {
+        "element": "Mechanika",
+        "translacja": "„When this creature enters, it deals 1 damage to target creature and 1 damage to you” — zdolność OBOWIĄZKOWA (ruling Scryfall 2014-07-18: przy braku innych celów imp rani też samego siebie): sabotażysta nie słucha przywołującego, jego wandalizm zawsze kosztuje także nadawcę. P/T 1/1 → fizycznie lichy byt: da się namierzyć i pokonać; jego bronią jest ukrytność i szkody, nie siła."
+      },
+      {
+        "element": "Ilustracja",
+        "translacja": "Artysta: Austin Hsu; typ Creature — Devil przedstawia diabła jako małego, fizycznego sprawcę zniszczeń (nie abstrakcyjną siłę) — dokładnie kanon angielskiej groteski kościelnej i legend o impach, które „da się złapać” albo ukamienować. (Kompozycji obrazu nie opisujemy — nie zgadujemy.)"
+      },
+      {
+        "element": "Flavor text",
+        "translacja": "„Devils infiltrated the lower levels of Thraben Cathedral, making cracks in load-bearing pillars and setting fire to precious archives.” — jako dokument terenowy: infiltracja świątyni, pęknięcia filarów nośnych, ogień w składnicach wiedzy. W Lincoln: impy tłukły stoły i krzesła, wywracały biskupa, niszczyły Angel Choir, a skamieniały imp siedzi NA FILARZE NOŚNYM — dokładnie tam, gdzie wg flavoru diabły zostawiają pęknięcia."
+      },
+      {
+        "element": "Lore/Tło",
+        "translacja": "W MtG Innistrad to kościelne miasto Thraben i jego katedra oblegane przez demony; w naszym świecie — katedra Lincoln z najslawniejszą groteską Anglii: impem, który przybył czynić zło i został zatrzymany przez anioła. Warianty legendy tłoczą się wokół tego samego motywu: dwóch impów (drugi uciekł — wiatr krążący wokół katedry albo „imp z Grimsby” w St James'), Chesterfield i jego krzywa iglica, anioł z hymnalu."
+      }
+    ]
+  },
+  "natura": {
+    "wyglad_i_aura": "Mały, włochaty demonik o krowich uszach, rozdwojonych kopytkach i szeroko rozwartym uzębionym pysku; w rzeźbie siedzi skulony na szczycie filary, jedną nogę założył na kolano, a dłonie trzymają podniesioną stopę. Obecności towarzyszy cień pełzający po nawach, zapach siarki i dymu, gasnące świece; gdzie się przejdzie — pęknięcia w kamieniu, pogryzione i osmalone księgi, powywracane sprzęty liturgiczne.",
+    "charakter_i_motywacje": "Sługus-sabotażysta: nie buduje, tylko psuje. Wysłany przez Szatana „czynić zło na ziemi” wybiera świątynie — demoluje wyposażenie, podkłada nogę biskupowi, rozkręca ogień w bibliotekach. Motywacją jest wandalystyczna radość i służba ojcu kłamstwa; wobec autorytetu jest bezczelny — na rozkaz anioła odpowiada gradem kamieni z filary. Nie jest strategicznym złem: jest złem drobnym, uporczywym i świetnie widocznym w skutkach.",
+    "zdolnosci": "wdzieranie się do świątyń nieprozony (w jednej z wersji — wiał go wiatr zachodni przez wielkie drzwi katedry); mikroszkodzenia konstrukcji nośnych (pęknięcia filarów); podpalenia archiwów i ksiąg; tropy sabotażu wśród sprzętów liturgicznych; w wersji z towarzyszem — ucieczka drugiego ima i jego wędrówka (Grimsby, krążący wokół katedry wiatr).",
+    "slabosci_i_metody_pokonania": "Pieczęć anioła — kanoniczna metoda: boski poseł (w jednej wersji wyszedł z hymnalu) rozkazuje stop, a nieposłuszny imp zostaje obrócony w kamień; to trofeum wisi do dziś na filarze w Angel Choir i samodzielnie się nie regeneruje. Praktyki pomocnicze: poświęcenie i pilnowanie przestrzeni sakralnej (imię pada na impy, które opuszczają świątynię, gdy duchowieństwo odzyskuje czujność); współcześnie jedyna „magia”, na jaką pozwala katedra, to moneta wrzucona do skarbonki — rozświetla figurę ima na filarze.",
+    "preferencje": "Lubi: dolne poziomy i przybudówki świątyń, ciemne nawy, łamane sprzęty, ogień w składnicach ksiąg, wywracanie procesji i diplomatyczne wyzwiska pod adresem duchowieństwa. Nielubi: anielskiej obecności i rozkazów, chóru, który nie da się przestraszyć, oraz dobrze oświetlonych naw — a przede wszystkim konfrontacji, w której stoi twarzą w twarz z autorytetem niebiańskim (wtedy rzuca kamieniami)."
+  },
+  "dokumentacja": [
+    {
+      "typ": "reportaż",
+      "pozycja": "BBC Lincolnshire, „The Lincoln Imp” — zbiór wariantów legendy: impy wysłane przez Szatana, krzywa iglica Chesterfield, demolowanie Angel Choir, anioł i skamienienie, imp z Grimsby"
+    },
+    {
+      "typ": "reportaż",
+      "pozycja": "BBC News, „The day the devil's lesser known imp was petrified in Grimsby” (16.11.2025) — drugi imp i jego skamienienie w Grimsby Minster (St James')"
+    },
+    {
+      "typ": "materiały katedry",
+      "pozycja": "Lincoln Cathedral — The Lincoln Imp: groteska na filarze w Angel Choir jako symbol miasta Lincoln (wizerunek używany m.in. przez Lincoln City FC)"
+    }
+  ],
+  "wizualizacja": {
+    "prompt": "Style: A wide-angle full-body cinematic photograph. The central objects/persons of the photo are visible from head to toe, standing centrally in the frame. No parts of the body are cropped.\n\nA small hairy medieval imp demon with cow ears, cloven hooves, sharp teeth in a wide insolent grin and a barbed tail, crouching on top of a load-bearing stone pillar high inside Lincoln Cathedral's Angel Choir at night, clawed fingers prising a fresh crack in the carved stone, a scorched psalter smouldering on the ledge beside it, cold moonlight falling through stained glass across gothic arches, candle stubs guttering far below on the floor.\n\nCaptured with a 35mm anamorphic lens at f/1.8. Shallow depth of field with a heavy, creamy bokeh background. Environmental portraiture. Dramatic cinematic lighting, sharp focus on the character, hyper-realistic textures of clothing and skin. Shot on 70mm film stock, ultra-wide 21:9 aspect ratio. --ar 21:9",
+    "obraz": "assets/wizualizacje/lincoln-imp.jpg"
+  },
+  "trofea": {
+    "pierwotne": "Skalizowany imp na filarze w Angel Choir — trofeum na miejscu, nierozdzielne z katedrą",
+    "wtorne": "Oświecona monetą fotografia groteski (współczesna relikwia pątnicza)"
+  },
+  "tagi": [
+    "imp",
+    "demon",
+    "anglia",
+    "katedra",
+    "folklor-chrzescijanski"
+  ],
+  "powiazania": [
+    {
+      "slug": "egungun",
+      "opis": "Lustrzane relacje świata duchów do sacrum: egúngún przychodzi do społeczności NA WEZWANIE żywych (inicjacja, oríkì, festiwal) i zostaje w rodzie uhonorowany; imp z Lincoln wdarł się do świątyni BEZ wezwania i został zatrzymany pieczęcią anioła. Oba byty pokazują tę samą regułę z odwrotnych stron: dostęp manifestacji do przestrzeni sakralnej regulują rytualne zasady — czci albo posłuszeństwa."
+    }
+  ],
+  "meta": {
+    "utworzono": "2026-08-28",
+    "autor": "sesja arena 2026-08-28",
+    "modyfikacje": []
+  }
+}
