@@ -1,0 +1,126 @@
+{
+  "slug": "indra",
+  "nazwa": "Indra — władca gromu",
+  "nazwy_alternatywne": [
+    "Indra",
+    "Devendra",
+    "Vritrahan",
+    "Shatakratu (Władca Tysiąca Oczu)",
+    "Król Dewów"
+  ],
+  "karta": {
+    "nazwa": "Thunderstaff",
+    "wydanie": "Darksteel (DST) #153",
+    "rok": 2004
+  },
+  "lokalizacja": {
+    "miejscowosc": "Naimisharanya (Neemsar, Misrikh) — brzeg rzeki Gomati, okolice Dadhichi Kund; miejsce, gdzie mędrzec Dadhichi oddał kości na wadżrę Indry",
+    "kraj": "Indie (Uttar Pradesh, powiat Sitapur)",
+    "lat": 27.35,
+    "lon": 80.48
+  },
+  "pochodzenie_i_kultura": "Wedyjska i puraniczna tradycja Indii (hinduizm): Indra to bóg gromu, deszczu, burzy i rzek — najczęściej wzywane bóstwo Rigwedy, król nieba (Swarga) i władca dewów. Jego znakiem jest wadżra, piorun wykuty z kręgosłupa mędrca Dadhichiego. Jedna kultura, jeden bóg, jeden wątek: nie mieszamy go z buddyjskim Śakrą (choć ten sam rdzeń), trzymamy się wedyjsko-puranicznego Indry.",
+  "wizualizacja": {
+    "prompt": "Style: A wide-angle full-body cinematic photograph. The central objects/persons of the photo are visible from head to toe, standing centrally in the frame. No parts of the body are cropped.\n\nA majestic storm god with luminous bronze-brown skin, long dark hair, ornate gold crown and jewelry, muscular body marked by a thousand small eyes, four arms; in his right hand he grips a golden two-pronged thunderbolt staff crackling with blue lightning, in another hand a curved bow, standing heroically atop a rocky mountain summit under a black thunderstorm, a great white elephant partly visible behind him, monsoon rain lashing the valleys below, rivers beginning to flow across cracked dry earth, water glistening on the stone under his hooves.\n\nCaptured with a 35mm anamorphic lens at f/1.8. Shallow depth of field with a heavy, creamy bokeh background. Environmental portraiture. Dramatic cinematic lighting, sharp focus on the character, hyper-realistic textures of clothing and skin. Shot on 70mm film stock, ultra-wide 21:9 aspect ratio. --ar 21:9",
+    "obraz": "assets/wizualizacje/indra.jpg"
+  },
+  "natura": {
+    "wyglad_i_aura": "Potężny wojownik z jaśniejącą, spiżowo-brązową skórą, czarnymi długimi włosami i złotą koroną; ciało pokryte tysiącem oczu — pamiątką po klątwie Gautamy, która zamieniła się w znak wszechwidzącego władcy. Jedną ręką dzierży wadżrę, drugą łuk z tęczy. Obecność poznaje się po ozonie i zapachu deszczu na gorącym kamieniu, po nagłym grzmocie, kiedy nadciąga burza, i po tym, że rzeki nagle zaczynają płynąć pełne.",
+    "charakter_i_motywacje": "Dumny, żądny uciech władca nieba: pije somę, ucztuje, wysyła apsary do ascetów, którzy urosną w siłę, i nie cofa się przed podszywaniem się pod cudzego męża (Ahalya). A zarazem jest obrońcą porządku — to on rozcina chmury, uwalnia wody i zabija Vṛtrę. Motywacją jest tron: chce rządzić Swargą, być czczonym, nie stracić pierwszeństwa przed ludźmi o większej mocy. Kiedy jego nadużycia go osłabiają, staje się podatny — i wtedy musi prosić o pomoc wyższych bogów albo uciekać przed Brahmahatją, uosobionym grzechem braminobójstwa.",
+    "zdolnosci": "Włada piorunem — wadżrą z kości mędrca; wywołuje burze, deszcz i błyskawice; uwalnia rzeki z górskich więzień. Potrafi zmieniać kształt (maja), jeździ na białym słoniu Airavata, dowodzi Marutami (duchami burzy) i wysyła niebiańskie nimfy, by rozpraszały potężnych ascetów. Jego moc nie wyczerpuje się do końca: gdy spojrzy na swój lud, potrafi go poderwać do natarcia, a swoją obecnością odwraca jedno uderzenie z każdego napastnika.",
+    "slabosci_i_metody_pokonania": "Pycha i żądza. Ne może pokonać kogoś chronionego silniejszym błogosławieństwem, chyba że zdobędzie broń nie z metalu ani drewna — wadżrę z kości. Mędrcy przeklinający go są groźniejsi niż demony: po romansie z Ahalyą Gautama pozbawił go męskości albo pokrył tysiącem znaków wstydu; grzech zabicia Vritry (braminobójstwo) wciąż go ściga, więc przed Brahmahatją musi uciekać i oczyścić się. Skuteczna konfrontacja to odebrać mu tron i wadżrę, złamać jego dumę ascetyczną siłą albo wstrzymać deszcz, od którego zależy jego kult.",
+    "preferencje": "Lubi: somę, uczty, złoto, piękne apsary, deszcz, modlitwy wojowników i ofiary; nie lubi: ascetów gromadzących tapas (bo stają się zagrożeniem dla jego tronu), wspomnienia zabójstwa Vritry, wyższych bogów, którzy go upokarzają, i obietnic deszczu, których nie może spełnić."
+  },
+  "dokumentacja": [
+    {
+      "typ": "leksykon online",
+      "pozycja": "Encyclopedia.com (religie Wschodu), „Indra” — przegląd postaci: król Swargi i dewów, bóg pioruna i deszczu; w Rigwedzie najczęściej wzywany; wadżra wykuta przez Tvasztara; Vritrahan; brahmanicide i spadek mocy po zabiciu Vritry; romans z Ahalyą i klątwa Gautamy; porażki z demonami, gdy osłabną go nadużycia",
+      "url": "https://www.encyclopedia.com/philosophy-and-religion/eastern-religions/hinduism/indra"
+    },
+    {
+      "typ": "encyklopedia online",
+      "pozycja": "Vyasa Online, „Indra” — charakterystyka wedyjskiego boga gromu: król Swargi, pan pioruna, deszczu, burz i rzek; najważniejszy bóg Rigwedy; zabija Vṛtrę i przywraca deszcz; w literaturze późniejszej hedonista i cudzołożnik, który boi się medytujących ascetów; w Brahmavaivarta Puranie przykład upadku z dumy",
+      "url": "https://www.vyasaonline.com/encyclopedia/indra/"
+    },
+    {
+      "typ": "artykuł prasowy",
+      "pozycja": "The Hindu, „Retribution for no sin” — Brahmahatja, uosobiony grzech braminobójstwa, powstaje z ciała Vritry i ściga Indrę; Indra musi ukrywać się i oczyścić, co pokazuje, że bóg gromu jest istotą z własną winą i słabością",
+      "url": "https://www.thehindu.com/society/history-and-culture/retribution-for-no-sin/article19728179.ece"
+    },
+    {
+      "typ": "opracowanie mitologiczne",
+      "pozycja": "Amar Chitra Katha, „Indra’s Vajra” — wadżra z kręgosłupa Dadhichiego, wykuta przez Viśvakarmana, użyta przeciw Vṛtrze (ukradł wodę, odporny na kamień, metal i drewno); bezpośredni związek wadżry z żywym panem pioruna",
+      "url": "https://www.amarchitrakatha.com/mythologies/indras-vajra/"
+    },
+    {
+      "typ": "opracowanie popularnonaukowe",
+      "pozycja": "Art Eater, „A Buddhist’s Guide to Asura’s Wrath — The Mighty Vajra” — tło Vṛtry (błogosławieństwo odporności na metal i drewno), ofiara Dadhichiego i stworzenie pierwszego wadży przez Tvasztara; historia rzeczy, która dała Indrze zwycięstwo",
+      "url": "https://art-eater.com/articles/a-buddhist-s-guide-to-asura-s-wrath-part-3-the-mighty-vajra"
+    },
+    {
+      "typ": "artykuł turystyczno-mitologiczny",
+      "pozycja": "Wanderlog, „Naimisharanya Tirth, Lucknow” — Dadhichi Kund w Naimisharanya powiązany z legendą o Dadhichim, święty staw Chakratirth, lokalizacja na lewym brzegu Gomati (współrzędne miejsca: 27.35276, 80.48002)",
+      "url": "https://wanderlog.com/place/details/146501/naimisharanya-chakra-tirth"
+    },
+    {
+      "typ": "portal mitologiczny",
+      "pozycja": "Vedadhara, „Naimisharanya’s Spiritual Odyssey” — Naimisharanya w powiecie Sitapur (Uttar Pradesh) jako miejsce, w którym Dadhichi oddał kości, by wykuto z nich wadżrę i Indra pokonał Vritrasurę",
+      "url": "https://www.vedadhara.com/naimisharanya%E2%80%99s-spiritual-odyssey"
+    }
+  ],
+  "trofea": {
+    "pierwotne": "Wadżra wyrwana z dłoni Indry w chwili, gdy jego duma została złamana i tron opanował ktoś pokorniejszy — złoty piorun z kości, który już nie grzmi, bo nie ma pana",
+    "wtorne": "Płaskorzeźba (lub współczesna rzeźba) Indry na Airavata z wadżrą w ręku — świadectwo kultu boga, który wciąż jest czczony, ale już nie jako jedyny władca"
+  },
+  "rezonans": {
+    "klucz_przywolania": "Thunderstaff pokazuje sam przedmiot — laskę, która odbija ciosy i napędza atakujących. Ale w naszej tradycji ten sam przedmiot nie istnieje bez żywego pana: wadżra jest wadżrą tylko w dłoni Indry. To on jest materializacją: żywym bogiem, który haruje z mocą niebios, chroni swój lud (odbija jedno uderzenie, dopóki nie zostanie zmuszony do działania) i potrafi poderwać go do ataku (wzmacnia nacierających). Jego jaźń jest wyraźna: duma, żądza, somać, grzech po Vritrze, klątwa Gautamy — wszystko to sprawia, że można go namierzyć, sprowokować i pokonać, a nie tylko schować go do skrzyni jak relikt.",
+    "tabela": [
+      {
+        "element": "Nazwa",
+        "translacja": "„Thunderstaff” to laska gromu — ale w naszym bycie ta laska nie jest osobną rzeczą. Jest atrybutem Indry, a jego imię oznacza „posiadającego siłę” / „potężnego”. Karta nazywa przedmiot, my materializujemy jego pana: żywego boga, który trzyma grom i jest jego źródłem."
+      },
+      {
+        "element": "Mechanika",
+        "translacja": "„As long as this artifact is untapped, if a creature would deal combat damage to you, prevent 1 of that damage” — to bierna osłona Indry: jego obecność odwraca jedno uderzenie z każdego napastnika, dopóki sam nie zdecyduje się ruszyć. „{2}, {T}: Attacking creatures get +1/+0 until end of turn” — gdy bóg burzy obraca wadżrę, jego wojownicy czują przypływ piorunowej siły i idą do natarcia. „Untap” = bóg nigdy nie jest do końca wyczerpany; jego moc odnawia się jak deszcz."
+      },
+      {
+        "element": "Ilustracja",
+        "translacja": "Artysta: Kaja Foglio; karta jest Artifact, czyli pozbawiona twarzy — pokazuje wyłącznie narzędzie. W naszym świecie to spójne z mitologią: Indra bywa przedstawiany bezpośrednio (cztery ramiona, tysiąc oczu, Airavata), ale jego istotę najłatwiej poznać po wadżrze. Sam przedmiot to tylko klucz; byt to władca, który go dzierży."
+      },
+      {
+        "element": "Flavor text",
+        "translacja": "„Jort the Thunder-Mad spent his life perfecting a way to harness the power of the heavens.” W mitologii indyjskiej to Indra jest tym, kto „ujeździł” moc niebios: rozciął chmury i uwolnił wody, powstrzymywane przez Vṛtrę. Nie jest to spokojny rzemieślnik — to furiat, który pije somę i nie znosi, gdy ktoś zagraża jego tronowi, a jednak to dzięki niemu deszcz wraca na ziemię."
+      },
+      {
+        "element": "Lore/Tło",
+        "translacja": "Mirrodin to świat artefaktów, a „Thunderstaff” to niezniszczalny grom. W hinduizmie wadżra jest zarazem diamentem (niezniszczalność) i piorunem (moc), ale jest skuteczna tylko dlatego, że ktoś się jej boi i ktoś ją niesie. Indra to istota, która traci moc, gdy grzeszy, gdy przeklina go asceta albo gdy ktoś odbierze mu wadżrę — dlatego jest bytem, a nie skarbem."
+      }
+    ]
+  },
+  "tagi": [
+    "indie",
+    "heros-burzy",
+    "burza",
+    "warunek"
+  ],
+  "powiazania": [
+    {
+      "slug": "barbarossa-kyffhaeuser",
+      "opis": "Obaj to władcy, których potęga jest warunkowa i czeka na znak: Barbarossa wróci z gór dopiero, gdy spełni się obietnica (kruki i powrót cesarza), a Indra nie może pokonać Vṛtry, dopóki nie zdobędzie wadżry z kości, która łamie boon demona. W obu przypadkach nie wystarczy siła — trzeba dopełnić warunek, żeby moc w ogóle zadziałała."
+    },
+    {
+      "slug": "kentaur-pelion",
+      "opis": "Kontrast między boską mocą a mądrym umiarem: Indra bywa pyszny, hedonistyczny i przegrywa, gdy nadużywa siły, a Chejron z Pelionu uczy herosów panować nad własną mocą zamiast ją rozpalać. Obaj są nauczycielami przez przykład — jeden pokazuje, co się dzieje, gdy nie ma się dwóch natury pod kontrolą."
+    }
+  ],
+  "meta": {
+    "utworzono": "2026-08-28 22:05",
+    "autor": "sesja arena 2026-08-28",
+    "modyfikacje": [
+      {
+        "data": "2026-08-28 22:05",
+        "opis": "Zmiana materializacji z przedmiotu (wadżry/broni) na żywego boga gromu: Indra — istota z własną jaźnią, dumą, grzechem braminobójstwa i klątwą Gautamy; wadżra pozostaje jego atrybutem, nie osobnym bytem."
+      }
+    ]
+  }
+}

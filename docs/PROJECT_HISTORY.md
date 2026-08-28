@@ -869,14 +869,16 @@ z API i strony karty.
 
 ### C1 — dwa nowe wpisy
 
-- **`wadzra-indry`** (Thunderstaff → grom Indry): wadżra z wedyjskiej/puranicznej
-  tradycji Indii — broń pana gromu wykuta z kręgosłupa mędrca Dadhichiego,
-  która przełamuje odporność Vṛtry i wraca wodę światu. Lokalizacja:
-  Naimisharanya (Dadhichi Kund, brzeg Gomati, Uttar Pradesh). 5 źródeł,
-  w tym `wisdomlib.org`, `art-eater.com`, `amarchitrakatha.com`,
-  `wanderlog.com`, `vedadhara.com`; nowy tag `indie` (kultura) i `bron-burzy`
-  (typ). Powiązania z Barbarossą (broń jako pieczęć warunku) i Chejronem
-  (kontrast broni porządku i dzikiej natury).
+- **`indra`** (Thunderstaff → żywy bóg gromu Indra): istota z własną jaźnią —
+  król Swargi, władca pioruna i deszczu z wedyjsko-puranicznej tradycji Indii.
+  Jego wadżra, wykuta z kręgosłupa mędrca Dadhichiego, przełamuje odporność
+  Vṛtry i wraca wodę światu, ale przedmiot jest tylko atrybutem; byt to sam
+  Indra, z dumą, żądzą, grzechem braminobójstwa i klątwą Gautamy. Lokalizacja:
+  Naimisharanya (Dadhichi Kund, brzeg Gomati, Uttar Pradesh). 6 źródeł
+  (`encyclopedia.com`, `vyasaonline.com`, `thehindu.com`, `amarchitrakatha.com`,
+  `art-eater.com`, `wanderlog.com`); tagi `indie`, `heros-burzy`, `burza`,
+  `warunek`. Powiązania z Barbarossą (warunkowa potęga władcy) i Chejronem
+  (kontrola nad mocą a dzika natura).
 - **`nessos`** (Savage Surge → Nessos): kentaur-przewoźnik z rzeki Euenos,
   który próbował porwać Deianirę i zginął od strzały Heraklesa; flavor
   „A centaur has two backs!” tłumaczy się anatomią i zdradą z zaskoczenia.
@@ -886,14 +888,14 @@ z API i strony karty.
 
 ### C3 — SKIT „DWA GRZBIETY” (trio, blind-draft)
 
-- Nessos × Chejron × Wadżra — skład 3-osobowy, unikalny, 280 słów. Motyw:
+- Nessos × Chejron × Indra — skład 3-osobowy, unikalny, 280 słów. Motyw:
   dwa grzbiety / dwie natury; każdy byt mówi o tym, jak panować nad
   dziką połową. Zgodnie z lore: Nessos traci przez żądzę, Chejron oddaje
-  nieśmiertelność, wadżra trzyma porządek.
+  nieśmiertelność, Indra trzyma porządek, ale nie bez grzechu.
 
 ### Wizualizacje
 
-- `assets/wizualizacje/wadzra-indry.jpg` i `nessos.jpg` (21:9, ≤ 2 MB).
+- `assets/wizualizacje/indra.jpg` i `nessos.jpg` (21:9, ≤ 2 MB).
   Prompt Nessosa przeredagowany po odrzuceniu przez moderację (usunięta
   scena z kobietą; łucznik na przeciwległym brzegu) — treść wpisu
   zaktualizowana do wygenerowanej, bezpiecznej sceny.
@@ -901,6 +903,6 @@ z API i strony karty.
 ### Stan
 
 - `npm test` 149/149, `npm run build` zielony; indeks: **10 wpisów, 13
-  SKITów**, 35 pozycji feedu, 28 tagów (w kanonie nowe: `indie`, `bron-burzy`).
+  SKITów**, 35 pozycji feedu, 28 tagów (nowy w kanonie: `indie`).
 - Test `dane.test.js` zaktualizowany (8 kultur zamiast 7) — realna zmiana
   po dodaniu kultury indyjskiej.

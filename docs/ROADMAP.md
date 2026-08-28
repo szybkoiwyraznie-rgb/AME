@@ -281,11 +281,11 @@ je wyłącznie na wyraźne zlecenie właściciela w sesji.
 
 ## M15 (2026-08-28) — materializacje: Thunderstaff (DST) i Savage Surge (THS) — C1+C3
 
-- [x] **C1** `wadzra-indry` — grom Indry (wadżra z kości Dadhichiego); 5 źródeł,
-      nowe tagi `indie` i `bron-burzy`, lokalizacja Naimisharanya.
+- [x] **C1** `indra` — Indra (żywy bóg gromu, wadżra z kości Dadhichiego jako atrybut); 5 źródeł,
+      nowy tag `indie` (typ: heros-burzy), lokalizacja Naimisharanya.
 - [x] **C1** `nessos` — kentaur-przewoźnik z rzeki Euenos; 5 źródeł, powiązania
       z Chejronem i Empusą, lokalizacja Évinos.
-- [x] **C3** SKIT „DWA GRZBIETY” — Nessos × Chejron × Wadżra (trio, unikalny).
+- [x] **C3** SKIT „DWA GRZBIETY” — Nessos × Chejron × Indra (trio, unikalny).
 - [x] Wizualizacje 21:9 dla obu wpisów + aktualizacja testu (8 kultur).
 - [x] Indeks: 10 wpisów, 13 SKITów, 35 feed, 28 tagów; `npm test` 149/149.
 

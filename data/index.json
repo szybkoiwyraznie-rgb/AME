@@ -20,7 +20,7 @@
         "min": 1,
         "max": 1,
         "opis": "Czym byt jest — podstawowy filtr kartoteki",
-        "ile": 9
+        "ile": 8
       },
       {
         "id": "motyw",
@@ -124,14 +124,8 @@
       "kategoria": "typ",
       "opis": "Półboski obrońca mierzący się z demonem pogody",
       "wpisy": [
-        "drangue-shala"
-      ]
-    },
-    "bron-burzy": {
-      "kategoria": "typ",
-      "opis": "Byt-przedmiot niosący moc gromu: broń lub berło związane z bóstwem burzy",
-      "wpisy": [
-        "wadzra-indry"
+        "drangue-shala",
+        "indra"
       ]
     },
     "zle-oko": {
@@ -148,9 +142,9 @@
       "wpisy": [
         "balor",
         "barbarossa-kyffhaeuser",
+        "indra",
         "lincoln-imp",
-        "selkie-sule-skerry",
-        "wadzra-indry"
+        "selkie-sule-skerry"
       ]
     },
     "pamiec": {
@@ -175,7 +169,7 @@
       "opis": "Pogoda jako pole bitwy i jako kalendarz",
       "wpisy": [
         "drangue-shala",
-        "wadzra-indry"
+        "indra"
       ]
     },
     "oplaty": {
@@ -228,7 +222,7 @@
       "kategoria": "kultura",
       "opis": "Religia i mitologia indyjska: wedyjska i puraniczna (hinduizm)",
       "wpisy": [
-        "wadzra-indry"
+        "indra"
       ]
     },
     "fantom": {
@@ -326,7 +320,7 @@
         "balor",
         "drangue-shala",
         "egungun",
-        "wadzra-indry"
+        "indra"
       ],
       "obraz": "assets/wizualizacje/barbarossa-kyffhaeuser.jpg",
       "skity": [
@@ -453,6 +447,37 @@
       ]
     },
     {
+      "slug": "indra",
+      "nazwa": "Indra — władca gromu",
+      "nazwy_alternatywne": [
+        "Indra",
+        "Devendra",
+        "Vritrahan",
+        "Shatakratu (Władca Tysiąca Oczu)",
+        "Król Dewów"
+      ],
+      "karta": "Thunderstaff",
+      "miejscowosc": "Naimisharanya (Neemsar, Misrikh) — brzeg rzeki Gomati, okolice Dadhichi Kund; miejsce, gdzie mędrzec Dadhichi oddał kości na wadżrę Indry",
+      "kraj": "Indie (Uttar Pradesh, powiat Sitapur)",
+      "lat": 27.35,
+      "lon": 80.48,
+      "tagi": [
+        "burza",
+        "heros-burzy",
+        "indie",
+        "warunek"
+      ],
+      "powiazania": [
+        "barbarossa-kyffhaeuser",
+        "kentaur-pelion"
+      ],
+      "backlinki": [],
+      "obraz": "assets/wizualizacje/indra.jpg",
+      "skity": [
+        "dwa-grzbiety"
+      ]
+    },
+    {
       "slug": "kentaur-pelion",
       "nazwa": "Kentaur z Pelionu",
       "nazwy_alternatywne": [
@@ -476,9 +501,9 @@
         "selkie-sule-skerry"
       ],
       "backlinki": [
+        "indra",
         "nessos",
-        "selkie-sule-skerry",
-        "wadzra-indry"
+        "selkie-sule-skerry"
       ],
       "obraz": "assets/wizualizacje/kentaur-pelion.jpg",
       "skity": [
@@ -595,36 +620,6 @@
         "kalendarz-powrotow",
         "znak-i-liczba"
       ]
-    },
-    {
-      "slug": "wadzra-indry",
-      "nazwa": "Wadżra — grom Indry",
-      "nazwy_alternatywne": [
-        "Vajra",
-        "Wadżrajudha",
-        "Grom Indry",
-        "Thunderbolt of Indra"
-      ],
-      "karta": "Thunderstaff",
-      "miejscowosc": "Naimisharanya (Neemsar, Misrikh) — brzeg rzeki Gomati, okolice Dadhichi Kund",
-      "kraj": "Indie (Uttar Pradesh, powiat Sitapur)",
-      "lat": 27.35,
-      "lon": 80.48,
-      "tagi": [
-        "bron-burzy",
-        "burza",
-        "indie",
-        "warunek"
-      ],
-      "powiazania": [
-        "barbarossa-kyffhaeuser",
-        "kentaur-pelion"
-      ],
-      "backlinki": [],
-      "obraz": "assets/wizualizacje/wadzra-indry.jpg",
-      "skity": [
-        "dwa-grzbiety"
-      ]
     }
   ],
   "skity": [
@@ -633,16 +628,16 @@
       "tytul": "DWA GRZBIETY",
       "temat": "dwie natury i porządek",
       "uczestnicy": [
+        "indra",
         "kentaur-pelion",
-        "nessos",
-        "wadzra-indry"
+        "nessos"
       ],
       "imiona": [
         "Nessos",
         "Chejron",
-        "Wadżra"
+        "Indra"
       ],
-      "slow": 193,
+      "slow": 203,
       "data": "2026-08-28 21:45"
     },
     {
@@ -885,6 +880,14 @@
     },
     {
       "data": "2026-08-28 22:05",
+      "typ": "skit",
+      "akcja": "zmiana",
+      "slug": "dwa-grzbiety",
+      "tytul": "DWA GRZBIETY",
+      "opis": "Zmiana uczestnika trzeciego z Wadżry na żywego boga Indrę po korekcie materializacji — głos przedmiotu zastąpiony głosem władcy gromu, pozostaje temat dwóch natur."
+    },
+    {
+      "data": "2026-08-28 22:05",
       "typ": "manifestacja",
       "akcja": "zmiana",
       "slug": "balor",
@@ -892,12 +895,28 @@
       "opis": "Dopisano oś proroctwa: druidzi, którzy zatruli oko Balora, przepowiedzieli mu śmierć z ręki wnuka, więc uwięził córkę Ethniu w wieży Tor Mór na Tory Island; z utopionych trojaczków ocalał Lugh, a klęskę upamiętnia jezioro Loch na Súl w Sligo. Dodano źródło oraz obustronne powiązania z Barbarossą (warunek, który sam się spełnia) i drangue (rozstrzygający rzut kamieniem, niebo jako pole bitwy)."
     },
     {
+      "data": "2026-08-28 22:05",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "indra",
+      "tytul": "Indra — władca gromu",
+      "opis": "Zmiana materializacji z przedmiotu (wadżry/broni) na żywego boga gromu: Indra — istota z własną jaźnią, dumą, grzechem braminobójstwa i klątwą Gautamy; wadżra pozostaje jego atrybutem, nie osobnym bytem."
+    },
+    {
+      "data": "2026-08-28 22:05",
+      "typ": "manifestacja",
+      "akcja": "nowa",
+      "slug": "indra",
+      "tytul": "Indra — władca gromu",
+      "opis": "wpis w kartotece — materializacja karty „Thunderstaff”"
+    },
+    {
       "data": "2026-08-28 21:45",
       "typ": "skit",
       "akcja": "nowy",
       "slug": "dwa-grzbiety",
       "tytul": "DWA GRZBIETY",
-      "opis": "SKIT — skład: Nessos, Chejron, Wadżra"
+      "opis": "SKIT — skład: Nessos, Chejron, Indra"
     },
     {
       "data": "2026-08-28 21:40",
@@ -906,14 +925,6 @@
       "slug": "nessos",
       "tytul": "Nessos",
       "opis": "wpis w kartotece — materializacja karty „Savage Surge”"
-    },
-    {
-      "data": "2026-08-28 21:40",
-      "typ": "manifestacja",
-      "akcja": "nowa",
-      "slug": "wadzra-indry",
-      "tytul": "Wadżra — grom Indry",
-      "opis": "wpis w kartotece — materializacja karty „Thunderstaff”"
     },
     {
       "data": "2026-08-28 21:30",
