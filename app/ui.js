@@ -139,7 +139,7 @@ export function htmlWpisu(w, indeks) {
   const backlinki = (rekord.backlinki ?? [])
     .map((s) => `<button class="chip link wzmianka" data-slug="${esc(s)}">${esc(nazwaSluga(s, indeks))}</button>`)
     .join(' ');
-  const VI = ''; // sekcja „SKITy” — wypelniana, gdy wpis ma skity (patrz htmlWpisu nizej)
+  const VI = htmlSkitowWpisu(rekord.skity, indeks);
   const wiki =
     powiazania || backlinki
       ? sekcja(
@@ -206,4 +206,102 @@ export function htmlTagow(indeks, aktywnyTag) {
     )
     .join('');
   return html || '';
+}
+
+/* ---- SKITy i feed „Co nowego" (ADR 0013/0014) ---------------------------- */
+
+/** Nagłówek SKITa w formie z protokołu: `### **SKIT: tytuł**`. */
+export function naglowekSkitu(tytul) {
+  return `<h3 class="skit-tytul"><strong>SKIT: ${esc(String(tytul ?? '').toUpperCase())}</strong></h3>`;
+}
+
+/**
+ * Proza-dialogowa treść SKITa → akapity. Replika: „**Imię:** [didaskalia] słowa”.
+ * Tekst najpierw jest escapowany, markup dokładamy po esc() — żadna treść
+ * wpisu nie trafia do HTML jako HTML.
+ */
+export function htmlDialogu(tekst) {
+  const akapity = String(tekst ?? '').split(/\n{2,}/).map((a) => a.trim()).filter(Boolean);
+  return akapity
+    .map((a) => {
+      const m = a.match(/^\*\*([^*\n]{1,40}):\*\*\s*([\s\S]*)$/);
+      if (!m) return `<p class="proza">${esc(a)}</p>`;
+      let reszta = m[2].trim();
+      const dy = reszta.match(/^\[([^\]\n]{1,400})\]\s*/);
+      const didaskalia = dy ? dy[1].trim() : '';
+      if (dy) reszta = reszta.slice(dy[0].length);
+      const slowa = esc(reszta).replace(/\[([^\]\n]{1,400})\]/g, '<em class="didaskalia w-tekscie">[$1]</em>');
+      return `<p class="wypowiedz"><strong class="mowca">${esc(m[1].trim())}</strong>${
+        didaskalia ? `<em class="didaskalia">${esc(didaskalia)}</em>` : ''
+      }<span class="slowa">${slowa}</span></p>`;
+    })
+    .join('');
+}
+
+/** Widok jednego SKITa (z pełnego pliku) wraz z listą uczestników. */
+export function htmlSkitu(s, indeks) {
+  const uczestnicy = (s.uczestnicy ?? [])
+    .map((u) => `<button class="chip link" data-slug="${esc(u.slug)}">${esc(u.imie)}</button>`)
+    .join(' ');
+  const temat = s.temat ? `<p class="skit-temat">${esc(s.temat)}</p>` : '';
+  const meta = `<footer class="meta-wpisu">utworzono ${esc(s.meta?.utworzono ?? '?')}${s.meta?.autor ? ` · ${esc(s.meta.autor)}` : ''}${
+    (s.meta?.modyfikacje ?? []).length ? ` · zmiany: ${s.meta.modyfikacje.map((m) => `${esc(m.data)} (${esc(m.opis)})`).join('; ')}` : ''
+  }</footer>`;
+  return `<article class="skit" data-skit="${esc(s.slug)}">
+    ${naglowekSkitu(s.tytul)}
+    <p class="skit-uczestnicy"><span>Uczestnicy:</span> ${uczestnicy}</p>
+    ${temat}
+    <div class="skit-tekst">${htmlDialogu(s.tekst)}</div>
+    ${meta}
+  </article>`;
+}
+
+/** Baza Skitów: lista wszystkich skitów, najnowsze na górze. */
+export function htmlBazySkitow(indeks) {
+  const skity = [...(indeks.skity ?? [])].sort((a, b) => String(b.data).localeCompare(String(a.data)) || a.slug.localeCompare(b.slug, 'pl'));
+  if (skity.length === 0) return '<p class="pusto">Baza skitów jest pusta — pierwszy dopisze następna sesja (PROTOKÓŁ §8).</p>';
+  return `<ul class="skit-lista">${skity
+    .map(
+      (s) => `<li><button class="wiersz" data-skit="${esc(s.slug)}">
+        <span class="nazwa">SKIT: ${esc(s.tytul)}</span>
+        <span class="opis">${esc((s.imiona ?? []).join(' × '))} · ${s.slow ?? 0} słów${s.data ? ` · ${esc(s.data)}` : ''}</span>
+        ${s.temat ? `<span class="temat">${esc(s.temat)}</span>` : ''}
+      </button></li>`
+    )
+    .join('')}</ul>`;
+}
+
+/** Sekcja VI wpisu: skity, w których materializacja zabiera głos. */
+export function htmlSkitowWpisu(slugi, indeks) {
+  if (!slugi?.length) return '';
+  const pola = slugi
+    .map((slug) => indeks.skity?.find((x) => x.slug === slug))
+    .filter(Boolean)
+    .map(
+      (s) => `<li><button class="chip link" data-skit="${esc(s.slug)}">SKIT: ${esc(s.tytul)}</button>
+        <span class="opis">skład: ${esc((s.imiona ?? []).join(', '))} · ${s.slow ?? 0} słów</span></li>`
+    )
+    .join('');
+  if (!pola) return '';
+  return sekcja('VI', 'SKITy', `<ul class="powiazania skity-wpisu">${pola}</ul>
+    <p class="wzmiankowane">rozmowy materializacji z tej bazy; pisze je kolejna sesja (PROTOKÓŁ §8).</p>`);
+}
+
+/** Feed „Co nowego": najnowsze na górze, każda pozacja linkuje do treści. */
+export function htmlNowosci(indeks) {
+  const wpisy = indeks.aktualizacje ?? [];
+  if (!wpisy.length) return '<p class="pusto">Brak zmian w archiwum.</p>';
+  const TYTUL = { manifestacja: 'kartoteka', skit: 'skit' };
+  const AKCJA = { nowa: 'dodano', nowy: 'dodano', zmiana: 'zmieniono' };
+  return `<ul class="nowosci-lista">${wpisy
+    .map((a) => {
+      const docel = a.typ === 'skit' ? `skit:${a.slug}` : a.slug;
+      return `<li>
+        <time datetime="${esc(a.data)}">${esc(a.data)}</time>
+        <span class="badge-typ">${esc(TYTUL[a.typ] ?? a.typ)} · ${esc(AKCJA[a.akcja] ?? a.akcja)}</span>
+        <button class="tytul" data-link="${esc(docel)}">${esc(a.tytul)}</button>
+        <p class="opis">${esc(a.opis)}</p>
+      </li>`;
+    })
+    .join('')}</ul>`;
 }

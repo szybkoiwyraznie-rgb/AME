@@ -415,6 +415,114 @@ html[data-motyw='jasny'] .baner code { background: #ffffff77; }
   color: var(--tekst-dim);
 }
 
+/* ---- Warstwa pomocnicza: Baza Skitów, widok SKITa, „Co nowego" (ADR 0013/0014) ---- */
+.warstwa {
+  position: fixed;
+  inset: 0;
+  z-index: 70;
+  display: none;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  background: var(--tlo-2);
+  scrollbar-width: thin;
+}
+.warstwa.otwarta { display: block; animation: warstwa-wnika 0.2s ease-out; }
+.warstwa-tresc { max-width: 900px; margin: 0 auto; padding: 26px 28px 90px; }
+.warstwa-tresc > header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 18px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--linia);
+}
+.warstwa-tresc header h2 {
+  font-family: var(--serif);
+  font-size: 21px;
+  letter-spacing: 0.06em;
+  margin: 0;
+  color: var(--akcent);
+}
+.akcje-warstwy { display: flex; align-items: center; gap: 8px; flex: none; }
+.akcje-warstwy .zamknij { position: static; float: none; margin: 0; }
+.naprowadzenie { color: var(--tekst-dim); font-size: 13.5px; margin: 0 0 18px; }
+
+.skit-lista, .nowosci-lista { list-style: none; margin: 0; padding: 0; }
+.skit-lista li { border-bottom: 1px solid var(--linia); }
+.skit-lista .wiersz { padding: 12px 6px; }
+.skit-lista .nazwa { font-size: 18px; letter-spacing: 0.06em; }
+.skit-lista .temat { display: block; font-size: 13px; color: var(--tekst-dim); font-style: italic; margin-top: 3px; }
+
+.skit { padding-top: 4px; }
+.skit-tytul {
+  font-family: var(--serif);
+  font-size: 26px;
+  letter-spacing: 0.1em;
+  margin: 0 0 12px;
+  color: var(--tekst);
+}
+.skit-uczestnicy { margin: 0 0 6px; font-size: 13px; color: var(--tekst-dim); display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.skit-uczestnicy span { text-transform: uppercase; letter-spacing: 0.14em; font-size: 11px; }
+.skit-temat { margin: 2px 0 18px; font-size: 14px; font-style: italic; color: var(--tekst-dim); }
+.skit-tekst { font-size: 16.5px; }
+.wypowiedz {
+  margin: 0 0 15px;
+  padding: 2px 0 2px 14px;
+  border-left: 2px solid var(--akcent);
+  line-height: 1.62;
+}
+.wypowiedz .mowca {
+  display: block;
+  font-family: var(--serif);
+  font-size: 14px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--akcent);
+  margin-bottom: 2px;
+}
+.wypowiedz .didaskalia {
+  display: block;
+  color: var(--tekst-dim);
+  font-size: 14px;
+  margin: 0 0 4px;
+}
+.wypowiedz .didaskalia.w-tekscie { color: var(--tekst-dim); }
+.proza { margin: 0 0 14px; line-height: 1.62; color: var(--tekst-dim); font-style: italic; }
+
+.skity-wpisu { list-style: none; padding: 0; margin: 0; }
+.skity-wpisu li { margin-bottom: 10px; }
+.skity-wpisu .opis { display: block; font-size: 12.5px; color: var(--tekst-dim); margin-top: 3px; }
+
+.nowosci-lista { display: flex; flex-direction: column; gap: 10px; }
+.nowosci-lista li {
+  border: 1px solid var(--linia);
+  border-radius: 8px;
+  padding: 10px 14px;
+  background: var(--tlo);
+}
+.nowosci-lista time { font-size: 12px; color: var(--tekst-dim); letter-spacing: 0.08em; }
+.nowosci-lista .badge-typ {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--akcent-2);
+  margin-left: 8px;
+}
+.nowosci-lista .tytul {
+  display: block;
+  background: none;
+  border: 0;
+  padding: 2px 0 0;
+  text-align: left;
+  font-family: var(--serif);
+  font-size: 18px;
+  color: var(--tekst);
+  cursor: pointer;
+}
+.nowosci-lista .tytul:hover { color: var(--akcent); }
+.nowosci-lista .opis { margin: 2px 0 0; font-size: 13px; color: var(--tekst-dim); line-height: 1.5; }
+
 /* ---- Lista (kartoteka) ---- */
 .lista {
   position: fixed;

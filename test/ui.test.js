@@ -2,7 +2,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
-import { htmlWpisu, htmlWarstwyWpisu, linkDoZrodla, htmlListy, htmlTagow, esc, nastepnyMotyw, motywPoczatkowy, etykietaMotywu, MOTYWY, KLUCZ_MOTYWU } from '../app/ui.js';
+import { htmlWpisu, htmlWarstwyWpisu, linkDoZrodla, htmlListy, htmlTagow, htmlDialogu, htmlSkitu, htmlBazySkitow, htmlNowosci, esc, nastepnyMotyw, motywPoczatkowy, etykietaMotywu, MOTYWY, KLUCZ_MOTYWU } from '../app/ui.js';
 
 async function dane(plik = 'egungun') {
   const wpis = JSON.parse(await readFile(`data/manifestations/${plik}.json`, 'utf8'));
@@ -176,4 +176,95 @@ test('kontrakt identyfikatorów: każdy selektor app.js istnieje w index.html lu
   assert.ok(selektory.length >= 8, `rozpoznano tylko ${selektory.length} selektorów — sprawdź wyrażenie`);
   const braki = selektory.filter((id) => !html.includes(`id="${id}"`) && !warstwa.includes(`id="${id}"`));
   assert.deepEqual(braki, [], `app.js woła elementy, których nie ma w markupie: ${braki.join(', ')}`);
+});
+
+/* ---- SKITy w UI: dialog, widok, baza, sekcja VI, feed (ADR 0013/0014) ---- */
+
+test('htmlDialogu: repliki, didaskalia i safety po escapowaniu', () => {
+  const html = htmlDialogu(
+    '**Egungun:** [Płótna opadają] Zdanie. [pauza] Drugi szept.\n\n**Imp z Lincoln:** Samo słowo, bez didaskaliów.\n\nZwykły akapit narracji.'
+  );
+  assert.equal((html.match(/class="wypowiedz"/g) ?? []).length, 2, 'dwie repliki');
+  assert.match(html, /<strong class="mowca">Egungun<\/strong>/);
+  assert.match(html, /<em class="didaskalia">Płótna opadają<\/em>/);
+  assert.match(html, /<em class="didaskalia w-tekscie">\[pauza\]<\/em>/, 'didaskalia w środku wypowiedzi');
+  assert.match(html, /<strong class="mowca">Imp z Lincoln<\/strong>/);
+  assert.match(html, /<p class="proza">Zwykły akapit narracji.<\/p>/);
+  const zly = htmlDialogu('**<img src=x onerror=alert(1)>:** <b>bold</b>');
+  assert.ok(!zly.includes('<b>bold</b>') && !zly.includes('<img'), 'treść wpisu nigdy jako HTML');
+  assert.ok(zly.includes('&lt;img src=x onerror=alert(1)&gt;'), 'niebezpieczny tekst zostaje treścią');
+});
+
+test('htmlDialogu: pusty tekst nie produkuje paragrafów', () => {
+  assert.equal(htmlDialogu(''), '');
+  assert.equal(htmlDialogu(undefined), '');
+});
+
+test('htmlSkitu: nagłówek „SKIT: …”, uczestnicy linkują do kart, meta widoczna', async () => {
+  const { indeks } = await dane();
+  const skit = JSON.parse(await readFile('data/skity/plotno-i-kamien.json', 'utf8'));
+  const html = htmlSkitu(skit, indeks);
+  assert.match(html, /<h3 class="skit-tytul"><strong>SKIT: PŁÓTNO I KAMIEŃ<\/strong><\/h3>/);
+  assert.ok(html.includes('data-slug="egungun"') && html.includes('data-slug="lincoln-imp"'), 'każdy uczestnik linkuje do swojej karty');
+  assert.ok(html.includes('data-skit="plotno-i-kamien"'));
+  assert.ok(html.includes(skit.tekst.split('\n')[0].slice(14, 40)), 'fragments tekstu widoczne');
+  assert.ok(html.includes('Uczestnicy:'));
+  assert.ok(html.includes(skit.meta.utworzono), 'meta ze stopki');
+  const xss = htmlSkitu({ ...skit, tytul: '<i>x</i>', tekst: '**A:** <script>alert(1)</script>\n\n**B:** ok' }, indeks);
+  assert.ok(!xss.includes('<script>') && !xss.includes('<i>x</i>'), 'escaping w tytule i tekście');
+});
+
+test('htmlBazySkitow: wiersze z data-skit, najnowsze na górze, stan pusty', async () => {
+  const { indeks } = await dane();
+  const lista = htmlBazySkitow(indeks);
+  assert.ok(lista.includes('data-skit="plotno-i-kamien"'), 'skit z bazy widoczny');
+  assert.ok(lista.includes('SKIT: PŁÓTNO I KAMIEŃ'));
+  assert.ok(lista.includes('Egungun × Imp z Lincoln'), 'skład w opisie wiersza');
+  const pusty = { ...indeks, skity: [] };
+  assert.match(htmlBazySkitow(pusty), /Baza skitów jest pusta/);
+  const dwa = {
+    ...indeks,
+    skity: [
+      { slug: 'stary', tytul: 'STARY', imiona: ['A'], slow: 70, data: '2026-01-01' },
+      { slug: 'nowy', tytul: 'NOWY', imiona: ['B'], slow: 80, data: '2026-08-28' },
+    ],
+  };
+  const kolejnosc = htmlBazySkitow(dwa);
+  assert.ok(kolejnosc.indexOf('NOWY') < kolejnosc.indexOf('STARY'), 'najnowsze na górze');
+});
+
+test('sekcja VI wpisu wylicza skity z indeksu (nie z pliku wpisu)', async () => {
+  const { wpis, indeks } = await dane();
+  const html = htmlWpisu(wpis, indeks);
+  assert.match(html, /<span class="numer">VI<\/span> SKITy/);
+  assert.ok(html.includes('data-skit="plotno-i-kamien"'), 'link do skitu pod kartą');
+  const bez = { ...wpis, dokumentacja: wpis.dokumentacja };
+  const indeksBez = { ...indeks, manifestacje: indeks.manifestacje.map((m) => ({ ...m, skity: [] })) };
+  assert.ok(!htmlWpisu(bez, indeksBez).includes('SKITy'), 'brak skitów = brak sekcji VI');
+});
+
+test('htmlNowosci: feed z linkami do treści i bezwzględnym escapowaniem', async () => {
+  const { indeks } = await dane();
+  const feed = htmlNowosci({
+    ...indeks,
+    aktualizacje: [
+      { data: '2026-08-28', typ: 'skit', akcja: 'nowy', slug: 'plotno-i-kamien', tytul: 'PŁÓTNO', opis: 'skład: A, B' },
+      { data: '2026-08-28', typ: 'manifestacja', akcja: 'zmiana', slug: 'egungun', tytul: 'Egungun', opis: 'nowe źródła' },
+    ],
+  });
+  assert.match(feed, /<time datetime="2026-08-28">2026-08-28<\/time>/);
+  assert.ok(feed.includes('data-link="skit:plotno-i-kamien"'), 'skit ma link z prefiksem');
+  assert.ok(feed.includes('data-link="egungun"'), 'wpis ma link będący slugiem');
+  assert.ok(feed.includes('skit · dodano') && feed.includes('kartoteka · zmieniono'));
+  const zly = htmlNowosci({ ...indeks, aktualizacje: [{ data: 'x', typ: 'skit', akcja: 'nowy', slug: 'a', tytul: '<b>T</b>', opis: '<i>opis</i>' }] });
+  assert.ok(!zly.includes('<b>T</b>') && !zly.includes('<i>opis</i>'), 'feed escapowany');
+  assert.match(htmlNowosci({ ...indeks, aktualizacje: [] }), /Brak zmian w archiwum/);
+});
+
+test('indeks repo: feed i sekcja VI spójne z danymi (bez ręki)', async () => {
+  const { indeks } = await dane();
+  assert.equal(indeks.wersja, 2);
+  assert.ok(indeks.aktualizacje.length >= 5, `feed ma ${indeks.aktualizacje.length} pozycji`);
+  const html = htmlNowosci(indeks);
+  for (const a of indeks.aktualizacje) assert.ok(html.includes(`data-link="${a.typ === 'skit' ? `skit:${a.slug}` : a.slug}"`), `feed UI: brak linku do ${a.slug}`);
 });

@@ -17,6 +17,11 @@ export function zaladujWpis(slug) {
   return pobierz(new URL(`data/manifestations/${encodeURIComponent(slug)}.json`, BAZA));
 }
 
+/** Pełny SKIT z Bazy Skitów (skrót i tak jest w indeksie — treść dociągamy). */
+export function zaladujSkit(slug) {
+  return pobierz(new URL(`data/skity/${encodeURIComponent(slug)}.json`, BAZA));
+}
+
 /** Normalizacja bez diakrytyków do wyszukiwania (NFD + usunięcie znaków tonicznych). */
 export function normalizuj(s) {
   return String(s ?? '')

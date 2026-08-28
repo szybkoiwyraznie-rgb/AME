@@ -126,3 +126,14 @@ test('indeks: sekcja VI (skity przy wpisie) i feed „Co nowego” wyliczone pop
     'feed musi być deterministyczny'
   );
 });
+
+test('renderer: struktura dialogu w prawdziwym skicie zgadza się z liczbą replik', async () => {
+  const { readFile } = await import('node:fs/promises');
+  const { htmlDialogu } = await import('../app/ui.js');
+  const skit = JSON.parse(await readFile('data/skity/plotno-i-kamien.json', 'utf8'));
+  const repliki = skit.tekst.split(/\n{2,}/).filter((a) => /^\*\*[^*\n]+:\*\*/.test(a.trim()));
+  const html = htmlDialogu(skit.tekst);
+  assert.equal((html.match(/class="wypowiedz"/g) ?? []).length, repliki.length, 'każda replika ma swój akapit');
+  assert.ok(!(html.match(/class="proza"/g) ?? []).length, 'w dialogu nie ma luźnej narracji');
+  for (const u of skit.uczestnicy) assert.ok(html.includes(`>${u.imie}</strong>`), `brak głosu: ${u.imie}`);
+});

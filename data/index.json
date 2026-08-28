@@ -138,6 +138,14 @@
     },
     {
       "data": "2026-08-28",
+      "typ": "skit",
+      "akcja": "nowy",
+      "slug": "plotno-i-kamien",
+      "tytul": "PŁÓTNO I KAMIEŃ",
+      "opis": "SKIT — skład: Egungun, Imp z Lincoln"
+    },
+    {
+      "data": "2026-08-28",
       "typ": "manifestacja",
       "akcja": "zmiana",
       "slug": "egungun",
@@ -151,14 +159,6 @@
       "slug": "lincoln-imp",
       "tytul": "Imp z Lincoln",
       "opis": "sesja M3 (B1/B3/C1): sekcje wpisów w kolejności prezentacji, wszystkie pozycje dokumentacji z adresami zweryfikowanymi w sieci, uzupełnienia źródłowe"
-    },
-    {
-      "data": "2026-08-28",
-      "typ": "skit",
-      "akcja": "nowy",
-      "slug": "plotno-i-kamien",
-      "tytul": "PŁÓTNO I KAMIEŃ",
-      "opis": "SKIT — skład: Egungun, Imp z Lincoln"
     }
   ]
 }

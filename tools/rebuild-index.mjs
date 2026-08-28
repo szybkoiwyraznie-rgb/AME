@@ -343,11 +343,14 @@ export function zbudujIndeks(wpisy, skiti = []) {
       dodaj({ data: mod.data, typ: 'skit', akcja: 'zmiana', slug: s.slug, tytul: s.tytul, opis: mod.opis });
     }
   }
+  // Najnowsze na górze; przy tej samej dacie: najpierw przyrosty (nowe wpisy i
+  // skity), potem zmiany, a na końcu porządek alfabetyczny — totalny i powtarzalny.
+  const RANGA_AKCJI = { nowa: 0, nowy: 0, zmiana: 1 };
   aktualizacje.sort(
     (a, b) =>
       String(b.data).localeCompare(String(a.data)) ||
+      (RANGA_AKCJI[a.akcja] ?? 9) - (RANGA_AKCJI[b.akcja] ?? 9) ||
       a.typ.localeCompare(b.typ, 'pl') ||
-      String(a.akcja).localeCompare(String(b.akcja), 'pl') ||
       a.slug.localeCompare(b.slug, 'pl')
   );
 

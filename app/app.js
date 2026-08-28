@@ -2,8 +2,21 @@
  * app/app.js — bootstrap AME: ładuje indeks, mapę świata, spina UI.
  */
 import { stworzMape } from './map.js';
-import { zaladujIndeks, zaladujWpis, dopasowania } from './data.js';
-import { htmlWpisu, htmlWarstwyWpisu, htmlListy, htmlTagow, esc, nastepnyMotyw, motywPoczatkowy, etykietaMotywu, KLUCZ_MOTYWU } from './ui.js';
+import { zaladujIndeks, zaladujWpis, zaladujSkit, dopasowania } from './data.js';
+import {
+  htmlWpisu,
+  htmlWarstwyWpisu,
+  htmlListy,
+  htmlTagow,
+  htmlBazySkitow,
+  htmlSkitu,
+  htmlNowosci,
+  esc,
+  nastepnyMotyw,
+  motywPoczatkowy,
+  etykietaMotywu,
+  KLUCZ_MOTYWU,
+} from './ui.js';
 import { SZEROKOSC, WYSOKOSC } from './geo.js';
 
 const $ = (sel) => document.querySelector(sel);
@@ -15,6 +28,7 @@ const stan = {
   aktywnyTag: null,
   luki: false,
   motyw: 'ciemny',
+  warstwa: null, // { tryb: 'skity' | 'skit' | 'nowosci', slug? }
 };
 
 let mapa;
@@ -67,7 +81,11 @@ function odswiezFiltr() {
 
 function odswiezLicznik(zbior = null) {
   const n = zbior === null ? stan.indeks.liczba : zbior.size;
-  $('#status').textContent = `${n} ${n === 1 ? 'manifestacja' : 'manifestacji'} · ${Object.keys(stan.indeks.tagi).length} tagów`;
+  const skitow = stan.indeks.skity?.length ?? 0;
+  $('#status').textContent =
+    `${n} ${n === 1 ? 'manifestacja' : 'manifestacji'} · ${Object.keys(stan.indeks.tagi).length} tagów · ${skitow} ${
+      skitow === 1 ? 'skit' : 'skitów'
+    }`;
 }
 
 let punktPowrotu = null; // element, który otworzył kartotekę (fokus po zamknięciu)
@@ -77,6 +95,7 @@ async function otworzWpis(slug, { przewin = true } = {}) {
   const rekord = stan.indeks.manifestacje.find((m) => m.slug === slug);
   if (!rekord) return;
   if (!stan.wpis) punktPowrotu = document.activeElement;
+  if (stan.warstwa) zamknijWarstwe();
   panel.classList.add('otwarty');
   panel.setAttribute('aria-busy', 'true');
   panel.innerHTML = '<p class="ladowanie">Wczytywanie kartoteki…</p>';
@@ -108,6 +127,90 @@ function zamknijWpis(czyscHash = true) {
   punktPowrotu = null;
 }
 
+/* ---- Warstwa pomocnicza: Baza Skitów, widok SKITa, „Co nowego” ---- */
+
+function szkicWarstwy(tytul, trescHtml, { wroc = null } = {}) {
+  return `<div class="warstwa-tresc">
+    <header>
+      <h2>${esc(tytul)}</h2>
+      <div class="akcje-warstwy">
+        ${wroc ? `<button class="chip" type="button" data-wroc="${esc(wroc)}">← ${esc(wroc === 'skity' ? 'Baza skitów' : 'wróć')}</button>` : ''}
+        <button class="zamknij" id="zamknij-warstwe" type="button" aria-label="Zamknij">✕</button>
+      </div>
+    </header>
+    ${trescHtml}
+  </div>`;
+}
+
+function zamknijWarstwe() {
+  stan.warstwa = null;
+  const warstwa = $('#warstwa');
+  warstwa.classList.remove('otwarta');
+  warstwa.innerHTML = '';
+  for (const id of ['#przycisk-skity', '#przycisk-nowosci']) warstwaTrybPrzycisku(id, false);
+  if (stan.wpis) history.replaceState(null, '', `#${stan.wpis.slug}`);
+  else if (location.hash) history.replaceState(null, '', location.pathname + location.search);
+}
+
+function warstwaTrybPrzycisku(sel, aktywny) {
+  const btn = $(sel);
+  if (!btn) return;
+  btn.classList.toggle('aktywny', aktywny);
+  btn.setAttribute('aria-pressed', String(aktywny));
+}
+
+function otworzBazeSkitow() {
+  if (stan.warstwa?.tryb === 'skity') return zamknijWarstwe();
+  stan.warstwa = { tryb: 'skity' };
+  const warstwa = $('#warstwa');
+  warstwa.classList.add('otwarta');
+  warstwa.innerHTML = szkicWarstwy('Baza Skitów — rozmowy materializacji', htmlBazySkitow(stan.indeks));
+  warstwa.scrollTop = 0;
+  warstwaTrybPrzycisku('#przycisk-skity', true);
+  warstwaTrybPrzycisku('#przycisk-nowosci', false);
+  if (location.hash !== '#skity') history.replaceState(null, '', '#skity');
+}
+
+function otworzNowosci() {
+  if (stan.warstwa?.tryb === 'nowosci') return zamknijWarstwe();
+  stan.warstwa = { tryb: 'nowosci' };
+  const warstwa = $('#warstwa');
+  warstwa.classList.add('otwarta');
+  warstwa.innerHTML = szkicWarstwy(
+    'Co nowego',
+    `<p class="naprowadzenie">Każda zmiana w treści archiwum trafia tu automatycznie — z ` +
+      `meta wpisów i skitów, najnowsze na górze.</p>${htmlNowosci(stan.indeks)}`
+  );
+  warstwa.scrollTop = 0;
+  warstwaTrybPrzycisku('#przycisk-nowosci', true);
+  warstwaTrybPrzycisku('#przycisk-skity', false);
+  if (location.hash !== '#nowosci') history.replaceState(null, '', '#nowosci');
+}
+
+async function otworzSkit(slug, { zBazy = true } = {}) {
+  stan.warstwa = { tryb: 'skit', slug };
+  const warstwa = $('#warstwa');
+  warstwa.classList.add('otwarta');
+  warstwa.innerHTML = szkicWarstwy('SKIT', '<p class="ladowanie">Wczytywanie tekstu…</p>', zBazy ? { wroc: 'skity' } : {});
+  warstwaTrybPrzycisku('#przycisk-skity', true);
+  warstwaTrybPrzycisku('#przycisk-nowosci', false);
+  try {
+    const skit = await zaladujSkit(slug);
+    warstwa.innerHTML = szkicWarstwy('Baza Skitów', htmlSkitu(skit, stan.indeks), zBazy ? { wroc: 'skity' } : {});
+    warstwa.scrollTop = 0;
+    if (location.hash !== `#skit:${slug}`) history.replaceState(null, '', `#skit:${slug}`);
+  } catch (err) {
+    warstwa.innerHTML = szkicWarstwy('Baza Skitów', `<p class="blad">Nie udało się wczytać skitu: ${esc(err.message)}</p>`, { wroc: 'skity' });
+  }
+}
+
+/** Wpis lub skit wskazany przez feed / sekcję VI. */
+async function przejdijDo(link) {
+  const tekst = String(link ?? '');
+  if (tekst.startsWith('skit:')) return otworzSkit(tekst.slice(5));
+  if (tekst) return otworzWpis(tekst);
+}
+
 function przelaczListe() {
   const lista = $('#lista');
   const otwarta = lista.classList.toggle('otwarta');
@@ -136,9 +239,10 @@ function podepnijZdarzenia() {
 
   $('#panel').addEventListener('click', (e) => {
     if (e.target.closest('#zamknij-wpis')) return zamknijWpis();
-    const link = e.target.closest('[data-slug]');
-    if (link) {
-      otworzWpis(link.dataset.slug);
+    const cel = e.target.closest('[data-slug], [data-skit]');
+    if (cel) {
+      if (cel.hasAttribute('data-skit')) otworzSkit(cel.dataset.skit);
+      else otworzWpis(cel.dataset.slug);
       return;
     }
     const tag = e.target.closest('[data-tag]');
@@ -174,6 +278,22 @@ function podepnijZdarzenia() {
   });
 
   $('#przycisk-lista').addEventListener('click', przelaczListe);
+  $('#przycisk-skity').addEventListener('click', otworzBazeSkitow);
+  $('#przycisk-nowosci').addEventListener('click', otworzNowosci);
+
+  $('#warstwa').addEventListener('click', (e) => {
+    if (e.target.closest('#zamknij-warstwe')) return zamknijWarstwe();
+    // Jeden closest() z listą atrybutów: wygoda dla użytkownika = trafienie w
+    // najbliższy element, nie w jego kontekst (chip uczestnika siedzi w <article data-skit>).
+    const cel = e.target.closest('[data-wroc], [data-link], [data-slug], [data-skit]');
+    if (!cel) return;
+    if (cel.hasAttribute('data-wroc')) {
+      return cel.dataset.wroc === 'skity' ? otworzBazeSkitow() : zamknijWarstwe();
+    }
+    if (cel.hasAttribute('data-link')) return przejdijDo(cel.dataset.link);
+    if (cel.hasAttribute('data-slug')) return otworzWpis(cel.dataset.slug, { przewin: true });
+    return otworzSkit(cel.dataset.skit);
+  });
 
   $('#przycisk-motyw').addEventListener('click', () => {
     const nowy = nastepnyMotyw(stan.motyw);
@@ -194,13 +314,22 @@ function podepnijZdarzenia() {
   $('#zoom-reset').addEventListener('click', () => mapa.reset());
 
   window.addEventListener('hashchange', () => {
-    const slug = decodeURIComponent(location.hash.replace(/^#/, ''));
-    if (slug && slug !== stan.wpis?.slug && stan.indeks.manifestacje.some((m) => m.slug === slug)) otworzWpis(slug, { przewin: false });
-    else if (!slug && stan.wpis) zamknijWpis(false);
+    const fragment = decodeURIComponent(location.hash.replace(/^#/, ''));
+    if (fragment.startsWith('skit:')) {
+      const slug = fragment.slice(5);
+      if (stan.indeks.skity?.some((s) => s.slug === slug)) otworzSkit(slug, { zBazy: true });
+      return;
+    }
+    if (fragment === 'skity') return stan.warstwa?.tryb !== 'skity' ? otworzBazeSkitow() : undefined;
+    if (fragment === 'nowosci') return stan.warstwa?.tryb !== 'nowosci' ? otworzNowosci() : undefined;
+    if (fragment && fragment !== stan.wpis?.slug && stan.indeks.manifestacje.some((m) => m.slug === fragment)) {
+      otworzWpis(fragment, { przewin: false });
+    } else if (!fragment && stan.wpis) zamknijWpis(false);
   });
 
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
+      if (stan.warstwa) return zamknijWarstwe();
       if ($('#lista').classList.contains('otwarta')) przelaczListe();
       else if (stan.wpis) zamknijWpis();
     }
@@ -245,8 +374,13 @@ async function start() {
   odswiezLicznik();
   podepnijZdarzenia();
 
-  const slug = decodeURIComponent(location.hash.replace(/^#/, ''));
-  if (slug && stan.indeks.manifestacje.some((m) => m.slug === slug)) otworzWpis(slug, { przewin: true });
+  const fragment = decodeURIComponent(location.hash.replace(/^#/, ''));
+  if (fragment.startsWith('skit:')) {
+    const slug = fragment.slice(5);
+    if (stan.indeks.skity?.some((s) => s.slug === slug)) otworzSkit(slug);
+  } else if (fragment === 'skity') otworzBazeSkitow();
+  else if (fragment === 'nowosci') otworzNowosci();
+  else if (fragment && stan.indeks.manifestacje.some((m) => m.slug === fragment)) otworzWpis(fragment, { przewin: true });
 }
 
 start();
