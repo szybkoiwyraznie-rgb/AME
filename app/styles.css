@@ -456,8 +456,13 @@ html[data-motyw='jasny'] .baner code { background: #ffffff77; }
   color: var(--tekst-dim);
 }
 
-/* ---- Warstwa pomocnicza: Baza Skitów, widok SKITa, „Co nowego" (ADR 0013/0014) ---- */
-.warstwa {
+/* ---- Warstwa pomocnicza: Baza Skitów, widok SKITa, „Co nowego" (ADR 0013/0014)
+ * Selektor jest doprecyzowany do elementu (`div`): `.warstwa` to nakładka
+ * pełnoekranowa strony, domyślnie niewidoczna. Bez doprecyzowania każda
+ * inna grupa o tej klasie (np. świat wewnątrz SVG mapy) dziedziczyłaby
+ * `display: none` — patrz F1 w audycie PR #2 i `test/mapa-css.test.js`.
+ */
+div.warstwa {
   position: fixed;
   inset: 0;
   z-index: 70;
@@ -467,7 +472,7 @@ html[data-motyw='jasny'] .baner code { background: #ffffff77; }
   background: var(--tlo-2);
   scrollbar-width: thin;
 }
-.warstwa.otwarta { display: block; animation: warstwa-wnika 0.2s ease-out; }
+div.warstwa.otwarta { display: block; animation: warstwa-wnika 0.2s ease-out; }
 .warstwa-tresc { max-width: 900px; margin: 0 auto; padding: 26px 28px 90px; }
 .warstwa-tresc > header {
   display: flex;

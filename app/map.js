@@ -62,11 +62,15 @@ export function stworzMape(kontener, { przyZmianieZaznaczenia } = {}) {
   // Ocean — bardzo duży prostokąt, by przy przesuwaniu nigdy nie pokazało się tło.
   el('rect', { x: -SZER * 4, y: -WYS * 4, width: SZER * 9, height: WYS * 9, class: 'ocean' }, svg);
 
-  const warstwa = el('g', { class: 'warstwa' }, svg);
-  el('path', { d: siatka(30), class: 'siatka' }, warstwa);
-  const grupaKrajow = el('g', { class: 'kraje' }, warstwa);
-  const warstwaLukow = el('g', { class: 'luki', display: 'none' }, warstwa);
-  const grupaPinezek = el('g', { class: 'pinezki' }, warstwa);
+  // Uwaga na nazwę: `swiat`, nie `warstwa`. Klasa `warstwa` należy do
+  // pełnoekranowej nakładki UI (ADR 0010) i jest domyślnie gaszona
+  // (`display: none`) — jako nazwa grupy świata wyłączałaby całą mapę.
+  // Kontrakt pilnuje `test/mapa-css.test.js` (F1 z audytu PR #2).
+  const grupaSwiata = el('g', { class: 'swiat' }, svg);
+  el('path', { d: siatka(30), class: 'siatka' }, grupaSwiata);
+  const grupaKrajow = el('g', { class: 'kraje' }, grupaSwiata);
+  const warstwaLukow = el('g', { class: 'luki', display: 'none' }, grupaSwiata);
+  const grupaPinezek = el('g', { class: 'pinezki' }, grupaSwiata);
 
   const rozmiar = { szerokosc: 0, wysokosc: 0 };
   const widok = { x: 0, y: 0, k: 1 };
@@ -120,8 +124,8 @@ export function stworzMape(kontener, { przyZmianieZaznaczenia } = {}) {
   function zastosuj(animuj = false) {
     const d = dopusc();
     skala = d.s;
-    warstwa.style.transition = animuj ? 'transform .5s cubic-bezier(.22,.61,.36,1)' : 'none';
-    warstwa.style.transform = `translate(${d.x}px, ${d.y}px) scale(${d.s})`;
+    grupaSwiata.style.transition = animuj ? 'transform .5s cubic-bezier(.22,.61,.36,1)' : 'none';
+    grupaSwiata.style.transform = `translate(${d.x}px, ${d.y}px) scale(${d.s})`;
     const s = 1 / d.s;
     for (const p of pinezki.values()) p.el.setAttribute('transform', `translate(${p.wx} ${p.wy}) scale(${s})`);
     svg.classList.toggle('przyblizona', d.k >= 2); // etykiety pinezek (już przy dwukrotnym zbliżeniu świata)

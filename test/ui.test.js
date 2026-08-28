@@ -399,3 +399,19 @@ test('kopiowanie linku jest w każdym z trzech widoków warstwy i w karcie', asy
   assert.match(app, /\{ kopia: 'nowosci' \}/, 'feed „Co nowego”');
   assert.equal((app.match(/data-kopia/g) ?? []).length >= 1, true, 'obsługa [data-kopia] w handlerach');
 });
+
+test('wersja protokołu jest jedna: stopka aplikacji = PROTOKÓŁ = README (F2)', async () => {
+  const [protokol, html, readme] = await Promise.all([
+    readFile('docs/PROTOKOL.md', 'utf8'),
+    readFile('index.html', 'utf8'),
+    readFile('README.md', 'utf8'),
+  ]);
+  const wersja = protokol.match(/Status:[^\n]*?obowiązujący\*\* \(v(\d+\.\d+)/)?.[1];
+  assert.ok(wersja, 'PROTOKÓŁ musi głosić status obowiązujący z numerem wersji');
+  assert.match(html, new RegExp(`protokół MFM v${wersja.replace('.', '\\.')}`), `stopka aplikacji: v${wersja}`);
+  assert.match(readme, new RegExp(`protokół MFM v${wersja.replace('.', '\\.')}`), `README: v${wersja}`);
+  const stare = [...html.matchAll(/protokół MFM v(\d+\.\d+)/g), ...readme.matchAll(/protokół MFM v(\d+\.\d+)/g)]
+    .map((m) => m[1])
+    .filter((v) => v !== wersja);
+  assert.deepEqual(stare, [], `aplikacja i README nie mogą cytować starszej wersji (v${wersja} obowiązuje)`);
+});
