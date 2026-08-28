@@ -1,6 +1,6 @@
 {
   "wersja": 2,
-  "liczba": 2,
+  "liczba": 4,
   "liczbaSkitow": 1,
   "tagi": {
     "afryka-zachodnia": [
@@ -8,6 +8,9 @@
     ],
     "anglia": [
       "lincoln-imp"
+    ],
+    "ballada": [
+      "selkie-sule-skerry"
     ],
     "demon": [
       "lincoln-imp"
@@ -17,6 +20,9 @@
     ],
     "folklor-chrzescijanski": [
       "lincoln-imp"
+    ],
+    "fomorowie": [
+      "balor"
     ],
     "groteska": [
       "lincoln-imp"
@@ -36,11 +42,66 @@
     "maskarada": [
       "egungun"
     ],
+    "mitologia-irlandzka": [
+      "balor"
+    ],
     "nigeria": [
       "egungun"
+    ],
+    "olbrzym": [
+      "balor"
+    ],
+    "orkney": [
+      "selkie-sule-skerry"
+    ],
+    "przemiana": [
+      "selkie-sule-skerry"
+    ],
+    "selkie": [
+      "selkie-sule-skerry"
+    ],
+    "skora-foki": [
+      "selkie-sule-skerry"
+    ],
+    "wyspa-tory": [
+      "balor"
+    ],
+    "zle-oko": [
+      "balor"
     ]
   },
   "manifestacje": [
+    {
+      "slug": "balor",
+      "nazwa": "Balor z Tory Island",
+      "nazwy_alternatywne": [
+        "Balor of the Evil Eye (Balór na Súile Nimhe)",
+        "Balor Béimnech (Uderzający)",
+        "Balar mac Doit meic Néit",
+        "Balor Birugderc (Przeszywający Okiem)"
+      ],
+      "karta": "Weftblade Enhancer",
+      "miejscowosc": "Tory Island (Oileán Thoraigh) — Dún Bhalair i turnia Tor Mór",
+      "kraj": "Irlandia (hrabstwo Donegal)",
+      "lat": 55.26,
+      "lon": -8.22,
+      "tagi": [
+        "fomorowie",
+        "mitologia-irlandzka",
+        "olbrzym",
+        "wyspa-tory",
+        "zle-oko"
+      ],
+      "powiazania": [
+        "lincoln-imp",
+        "selkie-sule-skerry"
+      ],
+      "backlinki": [
+        "selkie-sule-skerry"
+      ],
+      "obraz": null,
+      "skity": []
+    },
     {
       "slug": "egungun",
       "nazwa": "Egungun",
@@ -65,7 +126,8 @@
       ],
       "powiazania": [],
       "backlinki": [
-        "lincoln-imp"
+        "lincoln-imp",
+        "selkie-sule-skerry"
       ],
       "obraz": "assets/wizualizacje/egungun.jpg",
       "skity": [
@@ -95,11 +157,43 @@
       "powiazania": [
         "egungun"
       ],
-      "backlinki": [],
+      "backlinki": [
+        "balor"
+      ],
       "obraz": "assets/wizualizacje/lincoln-imp.jpg",
       "skity": [
         "plotno-i-kamien"
       ]
+    },
+    {
+      "slug": "selkie-sule-skerry",
+      "nazwa": "Wielki Selkie z Sule Skerry",
+      "nazwy_alternatywne": [
+        "The Great Silkie of Sule Skerry",
+        "The Grey Selchie of Sule Skerry",
+        "szary selkie znad Sule Skerry"
+      ],
+      "karta": "Kulrath Mystic",
+      "miejscowosc": "Sule Skerry (Sùlasker) — skały na zachód od Hoy, Orkney",
+      "kraj": "Szkocja (Wielka Brytania)",
+      "lat": 59.08,
+      "lon": -4.41,
+      "tagi": [
+        "ballada",
+        "orkney",
+        "przemiana",
+        "selkie",
+        "skora-foki"
+      ],
+      "powiazania": [
+        "balor",
+        "egungun"
+      ],
+      "backlinki": [
+        "balor"
+      ],
+      "obraz": null,
+      "skity": []
     }
   ],
   "skity": [
@@ -148,6 +242,14 @@
       "data": "2026-08-28",
       "typ": "manifestacja",
       "akcja": "nowa",
+      "slug": "balor",
+      "tytul": "Balor z Tory Island",
+      "opis": "wpis w kartotece — materializacja karty „Weftblade Enhancer”"
+    },
+    {
+      "data": "2026-08-28",
+      "typ": "manifestacja",
+      "akcja": "nowa",
       "slug": "egungun",
       "tytul": "Egungun",
       "opis": "wpis w kartotece — materializacja karty „Krumar Initiate”"
@@ -159,6 +261,14 @@
       "slug": "lincoln-imp",
       "tytul": "Imp z Lincoln",
       "opis": "wpis w kartotece — materializacja karty „Forge Devil”"
+    },
+    {
+      "data": "2026-08-28",
+      "typ": "manifestacja",
+      "akcja": "nowa",
+      "slug": "selkie-sule-skerry",
+      "tytul": "Wielki Selkie z Sule Skerry",
+      "opis": "wpis w kartotece — materializacja karty „Kulrath Mystic”"
     }
   ]
 }

@@ -1,0 +1,105 @@
+{
+  "slug": "selkie-sule-skerry",
+  "nazwa": "Wielki Selkie z Sule Skerry",
+  "nazwy_alternatywne": [
+    "The Great Silkie of Sule Skerry",
+    "The Grey Selchie of Sule Skerry",
+    "szary selkie znad Sule Skerry"
+  ],
+  "karta": {
+    "nazwa": "Kulrath Mystic",
+    "wydanie": "Lorwyn Eclipsed (ECL) #56",
+    "rok": 2026
+  },
+  "lokalizacja": {
+    "miejscowosc": "Sule Skerry (Sùlasker) — skały na zachód od Hoy, Orkney",
+    "kraj": "Szkocja (Wielka Brytania)",
+    "lat": 59.08,
+    "lon": -4.41
+  },
+  "pochodzenie_i_kultura": "Folklor i ballada Orkney oraz Shetlandu (tradycja nordycko-gielska): „The Great Silkie of Sule Skerry”, Child 113 / Roud 197. Najstarszy zapis zebrał ok. 1852 r. kpt. Francis William Thomas od „venerable lady of Snarra Voe” na Shetlandzie; wersja orkadzka, „The Grey Selchie of Sule Skerry” (14 zwrotek), ukazała się w „The Orcadian” 11 stycznia 1934 r., a melodię zapisał w 1938 r. fiński folklorysta Otto Andersson od Johna Sinclaira z Flotty.",
+  "wizualizacja": {
+    "prompt": "Style: A wide-angle full-body cinematic photograph. The central objects/persons of the photo are visible from head to toe, standing centrally in the frame. No parts of the body are cropped.\n\nA grey seal-man climbing onto the wet stones of a remote Orkney skerry at the hour when the summer sun heats every rock, his blubbery seal skin half shed and dripping at his heels, a heavy human body with coarse silver fur and webbed hands, a small gold chain lying across the chest of a sleeping boy wrapped in sailcloth on the shingle, two sea chests at a woman's feet, one brimming with gold and one with silver, a rowing boat with a standing gunner far out under a low white sky, puffin burrows and torn kelp, cold clear northern light, breath still visible in the air despite the sun.\n\nCaptured with a 35mm anamorphic lens at f/1.8. Shallow depth of field with a heavy, creamy bokeh background. Environmental portraiture. Dramatic cinematic lighting, sharp focus on the character, hyper-realistic textures of clothing and skin. Shot on 70mm film stock, ultra-wide 21:9 aspect ratio. --ar 21:9",
+    "obraz": null
+  },
+  "natura": {
+    "wyglad_i_aura": "W balladzie nie ma potwora, jest ciężki, nieatrakcyjny przybysz: „a grumlie guest I’m sure was he”, „although I be not comelie”. Wchodzi z wody na wpół przebrany: tłuszcz i woda ściekają z ludzkich bioder, futro zostaje za nim na kamieniach jak zrzucona kurtka — kpt. Thomas pisał w 1852 r. o fokach zrzucających „wodoodporne kurtki”, żeby przyjąć kształt ludzki. Pachnie solą, rybim łojem i mokrą wełną. Na lądzie porusza się z trudem i nigdy nie odwraca oczu od wody; na szyi dziecka kładzie złoty łańcuch — jedyny znak, jaki po sobie zostawia na brzegu.",
+    "charakter_i_motywacje": "Nie porywa i nie błaga: przychodzi po swoje i płaci. Oznajmia matce, że weźmie syna, kładzie jej na kolanach mieszek złota („tak thee up thy nourris-fee” — zapłata dla karmicielki) i podaje warunki jak notariusz: rok i dzień (w innych wersjach siedem lat) chowu, letni dzień „gdy słońce grzeje każdy kamień”, naukę pływania w pianie — a potem przepowiada własną śmierć: że kobieta pojmie strzelca, a pierwsza jego strzała zabije i syna, i selkiego. U niego gniew nie wybucha; on po prostu wykonuje ustalony porządek, nawet gdy ten porządek go zabija.",
+    "zdolnosci": "przemiana przez zdjęcie skóry (w wodzie foka, na lądzie człowiek); wchodzenie do izby przez noc, bez otwierania drzwi — „then ane arose at her bed-fit”; wiążące znaki i liczby: złoty łańcuch na szyi dziecka, mieszciec złota i mieszciec srebrnej monety, odliczony czas karmienia; przepowiednia wypowiedziana tak dokładnie, że się spełnia — w wersji orkadzkiej strzelec przynosi z powrotem złoty łańcuch i dopiero on mówi matce, kogo zabiła. W przekazach nowszych (nagranie Tobar an Dualchais, Alex Linklater) ta sama istota przyjmuje ludzki kształt na tyle wiarygodnie, że wyjeżdża na studia do Edynburga.",
+    "slabosci_i_metody_pokonania": "Skóra: kto ją chowa, ten trzyma selkiego przy sobie; kto ją zwróci albo ukradnie — ten go uwalnia albo gubi (motyw powszechny w opowieściach o selkich, nie w samej balladzie). Konfrontacja bezpośrednia jest opisana co do godziny i narzędzia: letni poranek, słońce na nagrzanych skałach, brzeg skerry, strzelec i pierwsza oddana przez niego strzała. Cena trafia w świadka: „she sobbed and sighed and bitter cried, her tender heart did brak in three”. Metoda odwrócenia w tradycji jest bierna: nie brać jego pieniądza, nie wymawiać jego skały na głos, nie pytać o imię dziecka z łańcuchem.",
+    "preferencje": "Lubi: lato i pełne słońce na kamieniach, pianę przy brzegu, kruszec w koferzach, porządek słowa danego i odebranego, dzieci uczone pływania. Nielubi: majańskiego poranku („he’ll gae oot on a May mornin”), strzelb, czuwania na brzegu i ludzi, którzy chcą zobaczyć skórę."
+  },
+  "dokumentacja": [
+    {
+      "typ": "leksykon online",
+      "pozycja": "Wikipedia, „The Great Silkie of Sule Skerry” — numeracja Child 113 i Roud 197; wersja shetlandska zbierana przez kpt. F. W. L. Thomasa ok. 1852 r., orkadzka wersja 14-zwrotkowa drukowana w „The Orcadian” 11.01.1934, melodia znana dziś autorstwa Jima Watersa (1954), ilustracja Vernona Hilla w zbiorze R. Chope’a „Ballads Weird and Wonderful” (1912)",
+      "url": "https://en.wikipedia.org/wiki/The_Great_Silkie_of_Sule_Skerry"
+    },
+    {
+      "typ": "prace badawcze",
+      "pozycja": "Mainly Norfolk, karta utworu „The Great Selkie / Silkie of Sule Skerry” — cytat z Thomasa (1852) o foczych „wodoodpornych kurtkach”, przejęcie tekstu i melodii od Johna Sinclaira z Flotty przez Ottona Anderssona (1938), Sule Skerry jako skała 25 mil na zachód od Hoy Head",
+      "url": "https://mainlynorfolk.info/steeleye.span/songs/greatsilkieofsuleskerry.html"
+    },
+    {
+      "typ": "leksykon online",
+      "pozycja": "Wikishire, „Sule Skerry” — 59°5′3″N 4°24′29″W (grid ref HX621244), 40 akrów, najwyższy punkt 39 stóp, gnejs lewisz; latarnia z 1895 r., do automatyzacji w 1982 r. najdalej wysunięta zamieszkana latarnia Wielkiej Brytanii; obszar specjalnej ochrony maskonurów i głupców",
+      "url": "https://wikishire.co.uk/wiki/Sule_Skerry"
+    },
+    {
+      "typ": "materiały archiwalne",
+      "pozycja": "Tobar an Dualchais (School of Scottish Studies), ścieżka 65881 — Alex Linklater deklamuje zwrotkę ballady i opowiada o selkim, który zrzucił skórę i został absolwentem Uniwersytetu w Edynburgu; dowód ciągłości tradycji w XX w.",
+      "url": "https://www.tobarandualchais.co.uk/track/65881?l=en"
+    }
+  ],
+  "trofea": {
+    "pierwotne": "złoty łańcuch znad skerry — znak, po którym matka poznała syna, a potem poznała to, kogo zabił strzelec",
+    "wtorne": "drugi mieszciec: srebrna moneta karmicielna (nouris-fee), którą na Orkadach kładzie się na progu, spłacając dług zaciągnięty u morza"
+  },
+  "rezonans": {
+    "klucz_przywolania": "„Kulrath Mystic” to 2/4 w niebieskim, który nigdy nie atakuje pierwszy: rośnie o +2/+0 i zyskuje czujność dopiero wtedy, gdy ktoś obok wypowie wielkie słowo (czar o wartości 4 lub więcej), a efekt gaśnie wraz z końcem tury. To dokładny rytm ballady o selkim: istota nie ma własnego impetu, dopóki nie wypowiedziano warunku, terminu i ceny; gdy zostanie wypowiedziany, jej siła jest widoczna przez jeden dzień i zawsze łączy się z czuwaniem. Flavor karty — różnica między namiętnością a złością to tylko to, kto panuje — w orkadzkiej tradycji jest zdaniem opisowym, nie metaforą: władza nad selkim leży w jego skórze i w wymówionym na głos terminie. Dlatego ta karta otwiera byt, a nie temat: materializacją jest sam Wielki Selkie, który przychodzi po syna.",
+    "tabela": [
+      {
+        "element": "Nazwa",
+        "translacja": "„Mystic” nie znaczy tu „wieszcz”, tylko tyle, kto zna i wyznacza warunki — i tak właśnie działa selkie z ballady: wchodzi do izby, mówi, gdzie mieszka („my dwelling is in Sule Skerry”), podaje termin, płaci, przepowiada strzelca. „Kulrath” brzmi jak nazwa miejsca — i to jest zgodne z tradycją, bo selkie przedstawia się przez swoją skałę, nie przez imię."
+      },
+      {
+        "element": "Mechanika",
+        "translacja": "„Whenever you cast a spell with mana value 4 or greater, this creature gets +2/+0 and gains vigilance until end of turn” → moc bytu zapala się na jedną turę od wielkiego aktu mowy (kontrakt, naznaczenie złotem, wypowiedzenie przyszłości) i gaśnie nazajutrz. +2/+0, nie +2/+2: uderza mocniej, ale nie staje się trwalszy — selkie w każdej wersji ballady płaci za to samo co jego syn. Vigilance = czuwanie na brzegu, którego nie wolno mu opuścić nawet w chwili ataku."
+      },
+      {
+        "element": "Ilustracja",
+        "translacja": "Artysta: Jason A. Engle. Kompozycji obrazu nie opisujemy — nie zgadujemy (docs/WORKFLOW.md §3). Rejestr karty jest jednoznaczny bez patrzenia na nią: typ „Elemental Wizard” to żywioł z umową, nie bestia, a tytuły wydania w innych językach („Mística de Kulrath”, „Kulrath-Mystikerin”) mówią o kobiecie-obcokrajowczyni, co pasuje do selkiego obcego na lądzie i u siebie w wodzie."
+      },
+      {
+        "element": "Flavor text",
+        "translacja": "„The difference between passion and anger is nothing more than who is in control.” — jako dokument terenowy: w folklorze foczych ludzi kontrola jest przedmiotem. Skóra schowana = selkie zostanie mężem; skóra zwrócona albo skradziona = selkie odejdzie w tę samą stronę, w którą poszedł selkie z ballady — po syna. Nic tu nie wybucha; wygrywa ten, kto trzyma warunek."
+      },
+      {
+        "element": "Lore/Tło",
+        "translacja": "Lorwyn Eclipsed (2026) jest powrotem na plan, na którym noc i dzień walczą o władzę, a istoty zmieniają naturę zależnie od tego, która z nich nadeszła. U nas ten sam podział jest fizyczny i brzegowy: „I am a man upon the land, I am a silkie in the sea, and when I’m far frae every strand, my dwelling is in Sule Skerry” — jeden byt, dwie przynależności, krawędź wody jako granica jurysdykcji."
+      }
+    ]
+  },
+  "tagi": [
+    "selkie",
+    "orkney",
+    "ballada",
+    "przemiana",
+    "skora-foki"
+  ],
+  "powiazania": [
+    {
+      "slug": "egungun",
+      "opis": "Władza nad manifestacją mieści się w rzeczy okrywającej ciało. Płótna maskarady egúngún są własnością rodu i tabu: odsłonięcie naczynia łamie porządek między ayé a ọ̀run, więc to ród decyduje, kto i kiedy patrzy. Skóra selkiego działa odwrotnie — kto ją chowa, ten trzyma istotę przy sobie, kto ją zwraca, ten ją traci. Oba przekazy mówią to samo z dwóch stron: rytuał to kontrola nad dostępem do powierzchni ciała bytu."
+    },
+    {
+      "slug": "balor",
+      "opis": "Oba byty są związane wypowiedzianym warunkiem i oba mają swój koniec wpisany w kalendarz: Balor ginie w momencie, w którym otwiera oko zgodnie z przepisem na siebie, selkie w dniu, w którym słońce grzeje każdy kamień — sam go zresztą wskazał. Różnica: Balor próbuje przechytrzyć cudze proroctwo i dlatego jest tyranem, selkie swoje przepowiada sam i dlatego jest tylko wierzycielem."
+    }
+  ],
+  "meta": {
+    "utworzono": "2026-08-28",
+    "autor": "sesja arena 2026-08-28",
+    "modyfikacje": []
+  }
+}

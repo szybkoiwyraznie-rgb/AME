@@ -41,6 +41,9 @@ const TYPY_DOK = {
   'językoznawstwo': 'Językoznawstwo',
   'reportaż': 'Reportaż',
   'materiały katedry': 'Materiały katedry',
+  'materiały archiwalne': 'Materiały archiwalne',
+  'teksty źródłowe': 'Teksty źródłowe',
+  'przewodnik kulturalny': 'Przewodnik kulturalny',
   'leksykon online': 'Leksykon online',
 };
 
