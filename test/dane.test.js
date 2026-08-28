@@ -2,16 +2,17 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
-import { wczytajIKwaliduj, zbudujIndeks, PLIK_INDEKSU, KATALOG_WPISOW } from '../tools/rebuild-index.mjs';
+import { wczytajIKwaliduj, wczytajSkiti, zbudujIndeks, PLIK_INDEKSU, KATALOG_WPISOW, KATALOG_SKITOW } from '../tools/rebuild-index.mjs';
 
 test('wszystkie wpisy w data/manifestations przechodzą walidację protokołu', async () => {
   const wpisy = await wczytajIKwaliduj();
   assert.ok(wpisy.length >= 1, 'kartoteka nie powinna być pusta');
 });
 
-test('data/index.json jest spójny z wpisami (deterministyczny build)', async () => {
+test('data/index.json jest spójny z wpisami i bazą skitów (deterministyczny build)', async () => {
   const wpisy = await wczytajIKwaliduj();
-  const oczekiwany = JSON.stringify(zbudujIndeks(wpisy), null, 2) + '\n';
+  const skiti = await wczytajSkiti(KATALOG_SKITOW, new Set(wpisy.map((w) => w.slug)));
+  const oczekiwany = JSON.stringify(zbudujIndeks(wpisy, skiti), null, 2) + '\n';
   const istniejacy = await readFile(PLIK_INDEKSU, 'utf8');
   assert.equal(istniejacy, oczekiwany, 'data/index.json jest nieaktualny — uruchom npm run build');
 });

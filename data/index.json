@@ -1,6 +1,7 @@
 {
-  "wersja": 1,
+  "wersja": 2,
   "liczba": 2,
+  "liczbaSkitow": 1,
   "tagi": {
     "afryka-zachodnia": [
       "egungun"
@@ -66,7 +67,10 @@
       "backlinki": [
         "lincoln-imp"
       ],
-      "obraz": "assets/wizualizacje/egungun.jpg"
+      "obraz": "assets/wizualizacje/egungun.jpg",
+      "skity": [
+        "plotno-i-kamien"
+      ]
     },
     {
       "slug": "lincoln-imp",
@@ -92,7 +96,69 @@
         "egungun"
       ],
       "backlinki": [],
-      "obraz": "assets/wizualizacje/lincoln-imp.jpg"
+      "obraz": "assets/wizualizacje/lincoln-imp.jpg",
+      "skity": [
+        "plotno-i-kamien"
+      ]
+    }
+  ],
+  "skity": [
+    {
+      "slug": "plotno-i-kamien",
+      "tytul": "PŁÓTNO I KAMIEŃ",
+      "temat": "kto w ogóle wchodzi do świątyni: zaproszony przodek i nieproszony sabotażysta",
+      "uczestnicy": [
+        "egungun",
+        "lincoln-imp"
+      ],
+      "imiona": [
+        "Egungun",
+        "Imp z Lincoln"
+      ],
+      "slow": 241,
+      "data": "2026-08-28"
+    }
+  ],
+  "aktualizacje": [
+    {
+      "data": "2026-08-28",
+      "typ": "manifestacja",
+      "akcja": "nowa",
+      "slug": "egungun",
+      "tytul": "Egungun",
+      "opis": "wpis w kartotece — materializacja karty „Krumar Initiate”"
+    },
+    {
+      "data": "2026-08-28",
+      "typ": "manifestacja",
+      "akcja": "nowa",
+      "slug": "lincoln-imp",
+      "tytul": "Imp z Lincoln",
+      "opis": "wpis w kartotece — materializacja karty „Forge Devil”"
+    },
+    {
+      "data": "2026-08-28",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "egungun",
+      "tytul": "Egungun",
+      "opis": "sesja M3 (B1/B3/C1): sekcje wpisów w kolejności prezentacji, wszystkie pozycje dokumentacji z adresami zweryfikowanymi w sieci, uzupełnienia źródłowe"
+    },
+    {
+      "data": "2026-08-28",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "lincoln-imp",
+      "tytul": "Imp z Lincoln",
+      "opis": "sesja M3 (B1/B3/C1): sekcje wpisów w kolejności prezentacji, wszystkie pozycje dokumentacji z adresami zweryfikowanymi w sieci, uzupełnienia źródłowe"
+    },
+    {
+      "data": "2026-08-28",
+      "typ": "skit",
+      "akcja": "nowy",
+      "slug": "plotno-i-kamien",
+      "tytul": "PŁÓTNO I KAMIEŃ",
+      "opis": "SKIT — skład: Egungun, Imp z Lincoln"
     }
   ]
 }
