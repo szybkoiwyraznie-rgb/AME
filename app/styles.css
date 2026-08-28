@@ -1,24 +1,69 @@
-/* AME — styl „ciemne archiwum” (ADR 0001: bez webfontów, bez zależności) */
+/* AME — styl „archiwum” z motywem jasnym i ciemnym (ADR 0001: bez webfontów,
+   bez zależności; ADR 0010: tokeny palety i html[data-motyw]) */
 
-:root {
+/* Paleta „archiwum” (A2). Wszystkie barwy — także mapy — idą przez tokeny,
+ * więc przełącznik html[data-motyw] zmienia CSS na żywo, bez ładowania
+ * drugiego arkusza i bez reguł zależnych od kolejności. */
+:root,
+html[data-motyw='ciemny'] {
+  color-scheme: dark;
   --tlo: #0d1015;
   --tlo-2: #141922;
   --tlo-3: #1b2230;
   --tekst: #d8d2c4;
   --tekst-dim: #8b877c;
+  --tekst-mono: #b9b39f;
   --akcent: #c9a86a; /* stary bursztyn / pieczęć */
   --akcent-2: #b4543c; /* smołowa czerwień */
+  --akcent-tekst: #14100a;
   --linia: #2a3140;
+  /* mapa */
+  --ocean: #0b0e13;
+  --lad: #232c3c;
+  --lad-hover: #2d3849;
+  --kraj-obrys: #39445a;
+  --siatka: #1d2532;
   --pinezka-obrys: #0d1015;
   --pinezka-srodek: #f2e6cf;
   --badge-tlo: #141922f2;
+  --zalona: #0d1015e6;
+  --kolo-tlo: #141922ee;
+  --baner-tlo: #3a2f1b;
+  --baner-tekst: #e8dcc0;
   --serif: Georgia, 'Times New Roman', serif;
   --sans: system-ui, -apple-system, 'Segoe UI', sans-serif;
+}
+
+html[data-motyw='jasny'] {
+  color-scheme: light;
+  --tlo: #f3eee1;
+  --tlo-2: #fbf8f0;
+  --tlo-3: #e8dfca;
+  --tekst: #211c14;
+  --tekst-dim: #6c6252;
+  --tekst-mono: #4a4433;
+  --akcent: #7d5a15;
+  --akcent-2: #96331c;
+  --akcent-tekst: #fdf9ee;
+  --linia: #d6cab0;
+  --ocean: #dde6e6;
+  --lad: #f7f1e0;
+  --lad-hover: #efe3c8;
+  --kraj-obrys: #ab9b78;
+  --siatka: #c9bd9e;
+  --pinezka-obrys: #fdf9ee;
+  --pinezka-srodek: #fdf9ee;
+  --badge-tlo: #fffdf6f2;
+  --zalona: #f3eee1e6;
+  --kolo-tlo: #fbf8f0ee;
+  --baner-tlo: #f6e2b8;
+  --baner-tekst: #4a3510;
 }
 
 * { box-sizing: border-box; }
 
 html, body {
+  transition: background-color 0.22s ease, color 0.22s ease;
   margin: 0;
   height: 100%;
   background: var(--tlo);
@@ -34,14 +79,15 @@ body { display: flex; flex-direction: column; }
 .baner {
   display: none;
   padding: 10px 16px;
-  background: #3a2f1b;
+  background: var(--baner-tlo);
   border-bottom: 1px solid var(--akcent);
-  color: #e8dcc0;
+  color: var(--baner-tekst);
   font-size: 13px;
   line-height: 1.5;
 }
 .baner.widoczny { display: block; }
 .baner code { background: #00000055; padding: 1px 5px; border-radius: 3px; }
+html[data-motyw='jasny'] .baner code { background: #ffffff77; }
 
 /* ---- Górny pasek ---- */
 .gora {
@@ -89,7 +135,8 @@ body { display: flex; flex-direction: column; }
   white-space: nowrap;
 }
 .przycisk:hover { border-color: var(--akcent); }
-.przycisk.aktywny { background: var(--akcent); color: #14100a; border-color: var(--akcent); font-weight: 600; }
+.przycisk.aktywny { background: var(--akcent); color: var(--akcent-tekst); border-color: var(--akcent); font-weight: 600; }
+.przycisk-motyw { min-width: 104px; text-align: center; }
 
 /* ---- Tagi ---- */
 .tagi {
@@ -111,7 +158,7 @@ body { display: flex; flex-direction: column; }
   cursor: pointer;
 }
 .chip:hover { border-color: var(--akcent); }
-.chip.aktywny { background: var(--akcent); color: #14100a; }
+.chip.aktywny { background: var(--akcent); color: var(--akcent-tekst); }
 .chip .licznik { opacity: 0.6; font-size: 10px; }
 .chip.kopiuj { margin-top: 8px; }
 .chip.link { border-color: var(--akcent); color: var(--akcent); }
@@ -124,16 +171,16 @@ body { display: flex; flex-direction: column; }
 .mapa-svg { width: 100%; height: 100%; display: block; cursor: grab; touch-action: none; }
 .mapa-svg.zlapano { cursor: grabbing; }
 
-.ocean { fill: #0b0e13; }
-.siatka { fill: none; stroke: #1d2532; stroke-width: 0.8; vector-effect: non-scaling-stroke; }
+.ocean { fill: var(--ocean); }
+.siatka { fill: none; stroke: var(--siatka); stroke-width: 0.8; vector-effect: non-scaling-stroke; }
 .kraj {
-  fill: #232c3c;
-  stroke: #39445a;
+  fill: var(--lad);
+  stroke: var(--kraj-obrys);
   stroke-width: 0.5;
   fill-rule: evenodd;
   vector-effect: non-scaling-stroke;
 }
-.kraj:hover { fill: #2d3849; }
+.kraj:hover { fill: var(--lad-hover); }
 
 .luk {
   fill: none;
@@ -200,7 +247,7 @@ body { display: flex; flex-direction: column; }
   height: 38px;
   border-radius: 50%;
   border: 1px solid var(--linia);
-  background: #141922ee;
+  background: var(--kolo-tlo);
   color: var(--tekst);
   font-size: 17px;
   cursor: pointer;
@@ -328,7 +375,7 @@ body { display: flex; flex-direction: column; }
   padding: 10px;
   font-size: 11.5px;
   line-height: 1.5;
-  color: #b9b39f;
+  color: var(--tekst-mono);
 }
 
 .powiazania { list-style: none; padding: 0; margin: 0; }
@@ -348,7 +395,7 @@ body { display: flex; flex-direction: column; }
 .lista {
   position: fixed;
   inset: 0;
-  background: #0d1015e6;
+  background: var(--zalona);
   backdrop-filter: blur(3px);
   z-index: 40;
   display: none;

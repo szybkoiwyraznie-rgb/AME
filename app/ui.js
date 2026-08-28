@@ -7,6 +7,32 @@ export function esc(s) {
   return String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
 }
 
+/* ---- Motyw (A2): logyka niezależna od DOM, żeby dało się przetestować ---- */
+
+export const MOTYWY = ['ciemny', 'jasny'];
+export const KLUCZ_MOTYWU = 'ame:motyw';
+
+/** Kolejny motyw w przełączniku: ciemny → jasny → ciemny. */
+export function nastepnyMotyw(biezacy) {
+  return biezacy === 'jasny' ? 'ciemny' : 'jasny';
+}
+
+/**
+ * Motyw startowy: zapisany wybór użytkownika wygrywa, potem preferencja
+ * systemu, a domyślnie — ciemne archiwum (tożsamość projektu).
+ */
+export function motywPoczatkowy({ zapisany = null, woliJasny = false } = {}) {
+  if (MOTYWY.includes(zapisany)) return zapisany;
+  return woliJasny ? 'jasny' : 'ciemny';
+}
+
+/** Etykieta + opis przycisku motywu (bez dwuznaczności dla czytnika ekranu). */
+export function etykietaMotywu(motyw) {
+  return motyw === 'jasny'
+    ? { ikona: '☀', tekst: 'jasny', aria: 'Tryb jasny — kliknij, aby przejść do ciemnego' }
+    : { ikona: '☾', tekst: 'ciemny', aria: 'Tryb ciemny — kliknij, aby przejść do jasnego' };
+}
+
 const TYPY_DOK = {
   'literatura naukowa': 'Literatura naukowa',
   'literatura piękna': 'Literatura piękna',

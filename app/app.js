@@ -3,7 +3,7 @@
  */
 import { stworzMape } from './map.js';
 import { zaladujIndeks, zaladujWpis, dopasowania } from './data.js';
-import { htmlWpisu, htmlListy, htmlTagow, esc } from './ui.js';
+import { htmlWpisu, htmlListy, htmlTagow, esc, nastepnyMotyw, motywPoczatkowy, etykietaMotywu, KLUCZ_MOTYWU } from './ui.js';
 import { SZEROKOSC, WYSOKOSC } from './geo.js';
 
 const $ = (sel) => document.querySelector(sel);
@@ -14,9 +14,40 @@ const stan = {
   filtr: null, // Set<slug> | null
   aktywnyTag: null,
   luki: false,
+  motyw: 'ciemny',
 };
 
 let mapa;
+
+/* ---- Motyw jasny/ciemny (A2): żywa zmiana CSS, wybór zapamiętany ---- */
+
+function czytajMotyw() {
+  try {
+    return localStorage.getItem(KLUCZ_MOTYWU);
+  } catch {
+    return null; // tryb prywatny / file:// — decyzja tylko na tę sesję
+  }
+}
+
+function zapiszMotyw(motyw) {
+  try {
+    localStorage.setItem(KLUCZ_MOTYWU, motyw);
+  } catch {
+    /* pamiec niedostępna — ignorujemy, UI i tak przełącza */
+  }
+}
+
+function zastosujMotyw(motyw) {
+  stan.motyw = motyw;
+  document.documentElement.dataset.motyw = motyw;
+  const przycisk = $('#przycisk-motyw');
+  if (!przycisk) return;
+  const etykieta = etykietaMotywu(motyw);
+  przycisk.textContent = `${etykieta.ikona} ${etykieta.tekst}`;
+  przycisk.title = etykieta.aria;
+  przycisk.setAttribute('aria-label', etykieta.aria);
+  przycisk.setAttribute('aria-pressed', String(motyw === 'jasny'));
+}
 
 function pasujace() {
   let zbior = stan.filtr;
@@ -135,6 +166,12 @@ function podepnijZdarzenia() {
 
   $('#przycisk-lista').addEventListener('click', przelaczListe);
 
+  $('#przycisk-motyw').addEventListener('click', () => {
+    const nowy = nastepnyMotyw(stan.motyw);
+    zapiszMotyw(nowy);
+    zastosujMotyw(nowy);
+  });
+
   $('#przycisk-luki').addEventListener('click', (e) => {
     stan.luki = !stan.luki;
     mapa.przelaczLuki(stan.luki);
@@ -162,6 +199,12 @@ function podepnijZdarzenia() {
 }
 
 async function start() {
+  zastosujMotyw(
+    motywPoczatkowy({
+      zapisany: czytajMotyw(),
+      woliJasny: typeof matchMedia === 'function' && matchMedia('(prefers-color-scheme: light)').matches,
+    })
+  );
   if (location.protocol === 'file:') {
     $('#baner').innerHTML = `Otwarto plik przez <code>file://</code> — przeglądarka blokuje wczytywanie danych.
       Uruchom lokalny serwer: <code>python3 -m http.server 8000</code> i otwórz <code>http://localhost:8000</code>.
