@@ -415,7 +415,8 @@
         "selkie-sule-skerry"
       ],
       "backlinki": [
-        "egungun"
+        "egungun",
+        "selkie-sule-skerry"
       ],
       "obraz": "assets/wizualizacje/empusa-korynt.jpg",
       "skity": [
@@ -446,7 +447,9 @@
         "drangue-shala",
         "selkie-sule-skerry"
       ],
-      "backlinki": [],
+      "backlinki": [
+        "selkie-sule-skerry"
+      ],
       "obraz": "assets/wizualizacje/kentaur-pelion.jpg",
       "skity": [
         "dwa-zepsute-wesela",
@@ -513,7 +516,9 @@
       ],
       "powiazania": [
         "balor",
-        "egungun"
+        "egungun",
+        "empusa-korynt",
+        "kentaur-pelion"
       ],
       "backlinki": [
         "balor",
@@ -695,6 +700,14 @@
     }
   ],
   "aktualizacje": [
+    {
+      "data": "2026-08-28 23:15",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "selkie-sule-skerry",
+      "tytul": "Wielki Selkie z Sule Skerry",
+      "opis": "Uporządkowano Dokumentację (usunięto powtórzone źródło) i dopisano, że ballada bywa częścią epickiego cyklu „Lady Odivere”, a jej pentatoniczną melodię spisał Otto Andersson od Johna Sinclaira z Flotty. Domknięto sieć powiązań: selkie odsyła teraz także do empusy (przemiana przez okrycie, z odwrotnym rachunkiem) i do kentaura (dwa ciała noszone naprzemiennie albo naraz)."
+    },
     {
       "data": "2026-08-28 22:25",
       "typ": "skit",
