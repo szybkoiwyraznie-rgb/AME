@@ -58,7 +58,7 @@
       "backlinki": [
         "lincoln-imp"
       ],
-      "obraz": null
+      "obraz": "assets/wizualizacje/egungun.jpg"
     },
     {
       "slug": "lincoln-imp",
@@ -83,7 +83,7 @@
         "egungun"
       ],
       "backlinki": [],
-      "obraz": null
+      "obraz": "assets/wizualizacje/lincoln-imp.jpg"
     }
   ]
 }

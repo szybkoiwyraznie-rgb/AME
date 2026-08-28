@@ -1,7 +1,11 @@
 {
   "slug": "egungun",
   "nazwa": "Egungun",
-  "nazwy_alternatywne": ["Egúngún", "Ara Ọ̀run („mieszkańcy nieba”)", "Eegun"],
+  "nazwy_alternatywne": [
+    "Egúngún",
+    "Ara Ọ̀run („mieszkańcy nieba”)",
+    "Eegun"
+  ],
   "karta": {
     "nazwa": "Krumar Initiate",
     "wydanie": "Tarkir: Dragonstorm (TDM) #84",
@@ -62,13 +66,19 @@
   ],
   "wizualizacja": {
     "prompt": "Style: A wide-angle full-body cinematic photograph. The central objects/persons of the photo are visible from head to toe, standing centrally in the frame. No parts of the body are cropped.\n\nA Yoruba egungun ancestral masquerader standing in a palace courtyard in Oyo, Nigeria at dusk, fully covered from head to toe in towering layers of vermilion, indigo and gold brocade cloth hung with cowrie shells and beads, a net veil completely hiding the face, arms spread wide with long cloth streamers swirling in the dance, raised dust glowing in torchlight, batá drummers as soft silhouettes in the background, the crowd kneeling at the edge of the light.\n\nCaptured with a 35mm anamorphic lens at f/1.8. Shallow depth of field with a heavy, creamy bokeh background. Environmental portraiture. Dramatic cinematic lighting, sharp focus on the character, hyper-realistic textures of clothing and skin. Shot on 70mm film stock, ultra-wide 21:9 aspect ratio. --ar 21:9",
-    "obraz": null
+    "obraz": "assets/wizualizacje/egungun.jpg"
   },
   "trofea": {
     "pierwotne": "Kosmyk płótna z wiru egúngún (relikwia — przechowywana w sanktuarium rodu, nie w prywatnej kolekcji)",
     "wtorne": "Kauria zhaftowana na płótnach maskarady"
   },
-  "tagi": ["kult-przodkow", "maskarada", "joruba", "nigeria", "afryka-zachodnia"],
+  "tagi": [
+    "kult-przodkow",
+    "maskarada",
+    "joruba",
+    "nigeria",
+    "afryka-zachodnia"
+  ],
   "powiazania": [],
   "meta": {
     "utworzono": "2026-08-28",

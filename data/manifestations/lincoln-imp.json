@@ -1,7 +1,10 @@
 {
   "slug": "lincoln-imp",
   "nazwa": "Imp z Lincoln",
-  "nazwy_alternatywne": ["Lincoln Imp", "Diabełek z Lincoln"],
+  "nazwy_alternatywne": [
+    "Lincoln Imp",
+    "Diabełek z Lincoln"
+  ],
   "karta": {
     "nazwa": "Forge Devil",
     "wydanie": "Dark Ascension (DKA) #91",
@@ -62,13 +65,19 @@
   ],
   "wizualizacja": {
     "prompt": "Style: A wide-angle full-body cinematic photograph. The central objects/persons of the photo are visible from head to toe, standing centrally in the frame. No parts of the body are cropped.\n\nA small hairy medieval imp demon with cow ears, cloven hooves, sharp teeth in a wide insolent grin and a barbed tail, crouching on top of a load-bearing stone pillar high inside Lincoln Cathedral's Angel Choir at night, clawed fingers prising a fresh crack in the carved stone, a scorched psalter smouldering on the ledge beside it, cold moonlight falling through stained glass across gothic arches, candle stubs guttering far below on the floor.\n\nCaptured with a 35mm anamorphic lens at f/1.8. Shallow depth of field with a heavy, creamy bokeh background. Environmental portraiture. Dramatic cinematic lighting, sharp focus on the character, hyper-realistic textures of clothing and skin. Shot on 70mm film stock, ultra-wide 21:9 aspect ratio. --ar 21:9",
-    "obraz": null
+    "obraz": "assets/wizualizacje/lincoln-imp.jpg"
   },
   "trofea": {
     "pierwotne": "Skalizowany imp na filarze w Angel Choir — trofeum na miejscu, nierozdzielne z katedrą",
     "wtorne": "Oświecona monetą fotografia groteski (współczesna relikwia pątnicza)"
   },
-  "tagi": ["imp", "demon", "anglia", "katedra", "folklor-chrzescijanski"],
+  "tagi": [
+    "imp",
+    "demon",
+    "anglia",
+    "katedra",
+    "folklor-chrzescijanski"
+  ],
   "powiazania": [
     {
       "slug": "egungun",
