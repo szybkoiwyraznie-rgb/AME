@@ -41,6 +41,17 @@ const TYPY_DOK = {
   językoznawstwo: 'Językoznawstwo',
 };
 
+/** Adres źródła jako link (B3) — tylko http/https, bezpieczny tekst kotwicy. */
+export function linkDoZrodla(url) {
+  const adres = String(url ?? '').trim();
+  if (!/^https?:\/\//i.test(adres)) return '';
+  let tekst = adres
+    .replace(/^https?:\/\//i, '')
+    .replace(/\/$/, '');
+  if (tekst.length > 58) tekst = `${tekst.slice(0, 42)}…${tekst.slice(-14)}`;
+  return ` <a class="zrodlo" href="${esc(adres)}" target="_blank" rel="noopener noreferrer external" title="Otwórz źródło w sieci">${esc(tekst)}</a>`;
+}
+
 function sekcja(numer, tytul, zawartoscHtml) {
   return `<section class="sekcja"><h3><span class="numer">${numer}</span> ${tytul}</h3>${zawartoscHtml}</section>`;
 }
@@ -89,7 +100,7 @@ export function htmlWpisu(w, indeks) {
     'III',
     'Dokumentacja (The Source Stack)',
     `<ul class="dokumentacja">${(w.dokumentacja ?? [])
-      .map((d) => `<li><span class="typ">${esc(TYPY_DOK[d.typ] ?? d.typ)}</span> — ${esc(d.pozycja)}</li>`)
+      .map((d) => `<li><span class="typ">${esc(TYPY_DOK[d.typ] ?? d.typ)}</span> — ${esc(d.pozycja)}${linkDoZrodla(d.url)}</li>`)
       .join('')}</ul>`
   );
 
@@ -142,7 +153,22 @@ export function htmlWpisu(w, indeks) {
       : ''
   }</footer>`;
 
-  return `<div class="wpis">${naglowek}${I}${II}${III}${IV}${V}${wiki}${meta}</div>`;
+  // Kolejność sekcji wg PROTOKÓŁ §4.1 (standard od 2026-08-28): obraz najpierw,
+  // potem natura, źródła, trofea, na końcu klucz przywołania. Numery rzymskie
+  // zostają przypisane do sekcji — identyfikują treść, nie pozycję.
+  return `<div class="wpis">${naglowek}${IV}${II}${III}${V}${I}${wiki}${meta}</div>`;
+}
+
+/**
+ * Pełnoekranowa warstwa z wpisem (B2): nakładka na całe okno, dialog z
+ * porządną dostępnością i przyciskiem zamknięcia. Treść wklejana jako
+ * `htmlWpisu()` — warstwa tylko dodaje rusztowanie.
+ */
+export function htmlWarstwyWpisu(trescHtml, { slug = '', nazwa = '' } = {}) {
+  return `<div class="warstwa-wpisu" role="dialog" aria-modal="true" aria-label="Kartoteka: ${esc(nazwa || slug)}">
+  <button class="zamknij" id="zamknij-wpis" type="button" aria-label="Zamknij kartotekę">✕</button>
+  ${trescHtml}
+</div>`;
 }
 
 export function nazwaSluga(slug, indeks) {

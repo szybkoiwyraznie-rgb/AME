@@ -269,45 +269,57 @@ html[data-motyw='jasny'] .baner code { background: #ffffff77; }
 .blad-startowy { display: none; position: absolute; inset: 0; margin: 0; padding: 40px; text-align: center; color: var(--akcent-2); z-index: 30; }
 .blad-startowy.widoczny { display: block; }
 
-/* ---- Panel wpisu ---- */
+/* ---- Kartoteka: pełnoekranowa warstwa przykrywająca (B2) ----
+ * Otwiera się na całą szerokość i wysokość okna, więc wizualizacja gra u góry
+ * wpisu na pełnym metrażu, a mapa pod spodem nic nie traci (widok liczony jest
+ * od kontenera mapy, nie od panelu — A1). */
 .panel {
-  width: 0;
-  overflow: hidden;
-  background: var(--tlo-2);
-  border-left: 1px solid var(--linia);
-  transition: width 0.35s ease;
-  position: relative;
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  display: none;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  background: var(--tlo);
+  scrollbar-width: thin;
 }
-.panel.otwarty { width: min(480px, 42vw); }
-.panel:not(.otwarty) { display: none; }
-
-.panel { overflow-y: auto; scrollbar-width: thin; }
+.panel.otwarty { display: block; animation: warstwa-wnika 0.2s ease-out; }
+@keyframes warstwa-wnika {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .panel.otwarty { animation: none; }
+}
+.warstwa-wpisu { min-height: 100%; outline: none; }
 .zamknij {
-  position: sticky;
-  top: 10px;
-  float: right;
-  margin: 10px;
-  width: 34px;
-  height: 34px;
+  position: fixed;
+  top: 14px;
+  right: 16px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   border: 1px solid var(--linia);
-  background: var(--tlo-3);
+  background: var(--kolo-tlo);
   color: var(--tekst);
+  font-size: 17px;
   cursor: pointer;
   z-index: 5;
+  backdrop-filter: blur(4px);
 }
+.zamknij:hover, .zamknij:focus-visible { border-color: var(--akcent); color: var(--akcent); }
 .ladowanie, .blad { padding: 24px; color: var(--tekst-dim); }
 .blad { color: var(--akcent-2); }
 
-.wpis { padding: 18px 22px 40px; }
+.wpis { max-width: 1180px; margin: 0 auto; padding: 34px 34px 90px; font-size: 16px; }
 .naglowek-wpisu h2 {
   font-family: var(--serif);
-  font-size: 30px;
+  font-size: 46px;
   margin: 2px 0 4px;
   color: var(--akcent);
   letter-spacing: 0.02em;
 }
-.naglowek-wpisu .karta-inspiracja { margin: 0; font-size: 12px; text-transform: uppercase; letter-spacing: 0.14em; color: var(--tekst-dim); }
+.naglowek-wpisu .karta-inspiracja { margin: 0; font-size: 13px; text-transform: uppercase; letter-spacing: 0.14em; color: var(--tekst-dim); }
 .naglowek-wpisu .karta-inspiracja strong { color: var(--tekst); }
 .alt { margin: 0 0 6px; font-style: italic; color: var(--tekst-dim); font-size: 13px; }
 .lokalizacja { margin: 4px 0; font-size: 14px; }
@@ -315,13 +327,13 @@ html[data-motyw='jasny'] .baner code { background: #ffffff77; }
 .chipy { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0 4px; }
 
 .sekcja {
-  margin-top: 22px;
+  margin-top: 30px;
   padding-top: 14px;
   border-top: 1px solid var(--linia);
 }
 .sekcja h3 {
   font-family: var(--serif);
-  font-size: 15px;
+  font-size: 17px;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--tekst-dim);
@@ -329,7 +341,7 @@ html[data-motyw='jasny'] .baner code { background: #ffffff77; }
 }
 .sekcja .numer { color: var(--akcent); }
 
-.tabela-translacji { width: 100%; border-collapse: collapse; font-size: 13px; margin-top: 10px; }
+.tabela-translacji { width: 100%; border-collapse: collapse; font-size: 14.5px; margin-top: 12px; }
 .tabela-translacji th, .tabela-translacji td { text-align: left; vertical-align: top; padding: 6px 8px; border: 1px solid var(--linia); }
 .tabela-translacji th { font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--tekst-dim); background: var(--tlo-3); }
 .tabela-translacji td:first-child { white-space: nowrap; color: var(--akcent); font-family: var(--serif); }
@@ -341,15 +353,26 @@ html[data-motyw='jasny'] .baner code { background: #ffffff77; }
   color: var(--akcent);
   margin-top: 12px;
 }
-.natura dd, .trofea dd { margin: 4px 0 0; line-height: 1.55; }
+.natura dd, .trofea dd { margin: 4px 0 0; line-height: 1.65; }
 
-.dokumentacja { padding-left: 18px; margin: 0; line-height: 1.5; font-size: 13px; }
-.dokumentacja li { margin-bottom: 8px; }
+.dokumentacja { padding-left: 18px; margin: 0; line-height: 1.55; font-size: 15px; }
+.dokumentacja li { margin-bottom: 12px; }
 .dokumentacja .typ { color: var(--tekst-dim); font-style: italic; }
+.dokumentacja .zrodlo {
+  display: block;
+  margin-top: 2px;
+  font-size: 13px;
+  color: var(--akcent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  overflow-wrap: anywhere;
+}
+.dokumentacja .zrodlo:hover { color: var(--akcent-2); }
 
 .wpis img {
   width: 100%;
   aspect-ratio: 21 / 9;
+  object-position: center 30%;
   object-fit: cover;
   border-radius: 6px;
   border: 1px solid var(--linia);
@@ -365,16 +388,16 @@ html[data-motyw='jasny'] .baner code { background: #ffffff77; }
 }
 .brak-wizualizacji .maly { font-size: 11px; opacity: 0.7; }
 
-.prompt { margin-top: 10px; font-size: 12px; }
+.prompt { margin-top: 12px; font-size: 13.5px; }
 .prompt summary { cursor: pointer; color: var(--tekst-dim); }
 .prompt pre {
   white-space: pre-wrap;
-  background: var(--tlo);
+  background: var(--tlo-2);
   border: 1px solid var(--linia);
   border-radius: 6px;
   padding: 10px;
-  font-size: 11.5px;
-  line-height: 1.5;
+  font-size: 13px;
+  line-height: 1.55;
   color: var(--tekst-mono);
 }
 
@@ -452,12 +475,8 @@ html[data-motyw='jasny'] .baner code { background: #ffffff77; }
   .gora { flex-wrap: wrap; }
   #szukaj { order: 3; flex-basis: 100%; max-width: none; }
   .tytul p { display: none; }
-  .tresc { flex-direction: column; }
-  .panel, .panel.otwarty {
-    width: 100%;
-    max-height: 62vh;
-    border-left: 0;
-    border-top: 1px solid var(--linia);
-  }
+  .wpis { padding: 22px 16px 72px; }
+  .naglowek-wpisu h2 { font-size: 32px; }
+  .wpis img { aspect-ratio: auto; }
   .podpowiedz { display: none; }
 }

@@ -3,7 +3,7 @@
  */
 import { stworzMape } from './map.js';
 import { zaladujIndeks, zaladujWpis, dopasowania } from './data.js';
-import { htmlWpisu, htmlListy, htmlTagow, esc, nastepnyMotyw, motywPoczatkowy, etykietaMotywu, KLUCZ_MOTYWU } from './ui.js';
+import { htmlWpisu, htmlWarstwyWpisu, htmlListy, htmlTagow, esc, nastepnyMotyw, motywPoczatkowy, etykietaMotywu, KLUCZ_MOTYWU } from './ui.js';
 import { SZEROKOSC, WYSOKOSC } from './geo.js';
 
 const $ = (sel) => document.querySelector(sel);
@@ -70,23 +70,29 @@ function odswiezLicznik(zbior = null) {
   $('#status').textContent = `${n} ${n === 1 ? 'manifestacja' : 'manifestacji'} · ${Object.keys(stan.indeks.tagi).length} tagów`;
 }
 
+let punktPowrotu = null; // element, który otworzył kartotekę (fokus po zamknięciu)
+
 async function otworzWpis(slug, { przewin = true } = {}) {
   const panel = $('#panel');
   const rekord = stan.indeks.manifestacje.find((m) => m.slug === slug);
   if (!rekord) return;
+  if (!stan.wpis) punktPowrotu = document.activeElement;
   panel.classList.add('otwarty');
   panel.setAttribute('aria-busy', 'true');
   panel.innerHTML = '<p class="ladowanie">Wczytywanie kartoteki…</p>';
   try {
     const wpis = await zaladujWpis(slug);
     stan.wpis = wpis;
-    panel.innerHTML = `<button class="zamknij" id="zamknij-wpis" aria-label="Zamknij">✕</button>${htmlWpisu(wpis, stan.indeks)}`;
+    panel.innerHTML = htmlWarstwyWpisu(htmlWpisu(wpis, stan.indeks), { slug: wpis.slug, nazwa: wpis.nazwa });
     panel.scrollTop = 0;
+    panel.querySelector('.warstwa-wpisu')?.focus?.();
     mapa.zaznacz(slug);
+    // Kartoteka to pełnoekranowa warstwa (B2), więc mapę środkujemy „na zapas” —
+    // po zamknięciu pinezka zostanie pod środkiem okna.
     if (przewin) mapa.wysrodkuj(rekord.lat, rekord.lon, Math.max(mapa.widok.k, 3.2));
     if (location.hash !== `#${slug}`) history.replaceState(null, '', `#${slug}`);
   } catch (err) {
-    panel.innerHTML = `<button class="zamknij" id="zamknij-wpis" aria-label="Zamknij">✕</button><p class="blad">Nie udało się wczytać wpisu: ${esc(err.message)}</p>`;
+    panel.innerHTML = htmlWarstwyWpisu(`<p class="blad">Nie udało się wczytać wpisu: ${esc(err.message)}</p>`, { slug });
   } finally {
     panel.setAttribute('aria-busy', 'false');
   }
@@ -95,8 +101,11 @@ async function otworzWpis(slug, { przewin = true } = {}) {
 function zamknijWpis(czyscHash = true) {
   stan.wpis = null;
   $('#panel').classList.remove('otwarty');
+  $('#panel').innerHTML = '';
   mapa.zaznacz(null);
   if (czyscHash && location.hash) history.replaceState(null, '', location.pathname + location.search);
+  if (punktPowrotu?.focus) punktPowrotu.focus();
+  punktPowrotu = null;
 }
 
 function przelaczListe() {
