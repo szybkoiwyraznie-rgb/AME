@@ -58,14 +58,15 @@ pushuj od razu; przed długimi operacjami upewnij się, że praca jest wypchnię
   (np. `/home/user/msg.txt`), nigdy w katalogu repo.
 - Pracuj wyłącznie na gałęzi sesji; nigdy nie pushuj do `main`; nigdy
   `--force` (ADR 0004).
-- **CI: fakt, nie zadanie.** `.github/workflows/ci.yml` na `main` istnieje (właściciel
-  wkleił go jednorazowo 2026-08-27), ale zawiera blok `<!-- … -->` przeniesiony z
-  przepisu F0, więc GitHub go nie parsuje: runy kończą się `failure` w 0 s bez jobs
-  (na `main` i na PR-ach). Stan **znany i zaakceptowany** — nie otwieraj tego wątku i
-  nie proś o poprawkę: agent nie ma prawa pisać do `.github/workflows/` (push i
-  `gh api` → 403 `workflows`), a jednorazowa czynność właściciela jest wykonana.
-  Bramą sesji są `npm test` + `npm run build` + `npm run check`; źródłowa treść
-  workflow czeka w `docs/setup/ci-workflow.yml` bez żadnej prośby (L9, L12).
+- **CI: działa od PR #3 (2026-08-28), ale i tak nie jest nasza sprawa.**
+  `.github/workflows/ci.yml` na `main` był martwy (komentarz HTML z przepisu F0 →
+  YAML się nie parsował, runy `failure` w 0 s bez jobs — L9); właściciel naprawił go
+  jednorazowo w PR #3 i od tej pory brama biega na PR-ach i na `main`. Reguła
+  pozostaje: agent nie pisze do `.github/workflows/` (push i `gh api` → 403
+  `workflows`) i nie prosi o zmiany; lustro receptury leży w
+  `docs/setup/ci-workflow.yml`, a jego zgodność z plikiem w drzewie pilnuje test
+  w `test/dane.test.js`. Stan bramy sprawdzamy (`gh run list`) po to, żeby go
+  **opisać**, nie żeby komuś coś zlecać (L12).
 - **`git checkout <plik>` cofa niezacommitowane zmiany w tym pliku** —
   zacommituj pracę przed takimi operacjami.
 
@@ -101,8 +102,8 @@ pushuj od razu; przed długimi operacjami upewnij się, że praca jest wypchnię
 1. `git log --oneline -3` i `git status` — gdzie jestem, czy czysto.
 2. Lektura obowiązkowa wg `AGENTS.md` §0 (całe pliki).
 3. `npm test` i `npm run build` — potwierdź zieloność przed zmianami (to jest
-   TWOJA brama); `gh run list` tylko po to, by znać stan CI — nie po to, by
-   o cokolwiek prosić (L12).
+   TWOJA brama); `gh run list` — czy CI na `main` biega (powinno, od PR #3), i to
+   tylko po to, by znać stan, nie by o cokolwiek prosić (L12).
 4. Otwórz PR gałęzi sesji (ADR 0004), zanim zaczniesz kodować.
 5. Audyt poprzedniego scalonego PR przed nową pracą.
 6. Nie pytaj „co robimy?” — brak zlecenia po audycie = **Pętla Jakości**

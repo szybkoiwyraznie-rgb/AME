@@ -198,15 +198,19 @@ python3 -m http.server 8000 --bind 0.0.0.0    # http://localhost:8000
 - **GitHub Pages: aktywne** — `https://szybkoiwyraznie-rgb.github.io/AME/` (deploy z
   `main`, workflow `pages-build-deployment`; jego check-runs `build`/`deploy`/
   `report-build-status` są zielone i nie zależą od pliku CI).
-- **Brama CI: plik istnieje, nie parsuje się — stan znany i zamknięty.**
-  `.github/workflows/ci.yml` na `main` (wklejony jednorazowo przez właściciela
-  2026-08-27) zaczyna się od bloku `<!-- … -->` przeniesionego z przepisu
-  F0, więc GitHub nie parsuje YAML-a i runy kończą się `failure` w 0 s bez jobs.
-  Agent nie może tego naprawić (403 `workflows` przy pushu i przy `gh api`), a
-  jednorazowa czynność właściciela została już wykonana — **nie otwieramy tego
-  wątku ponownie ani w PR-ach, ani w handoffach, ani w liście „otwarte”**.
-- **Czym jest brama w tym projekcie:** `npm test` + `npm run build` + `npm run check`
-  w każdej sesji (AGENTS §2), plus testy w diffie PR. Czerwony `✗ .github/workflows/ci.yml`
-  przy commicie jest stanem znanym i nie blokuje scalenia (PR pozostaje `MERGEABLE`).
-- Źródłowa treść workflow: `docs/setup/ci-workflow.yml` — do skopiowania wyłącznie,
-  jeśli właściciel sam zechce to zrobić. Żadna sesja nie ma prawa tego wymagać.
+- **Brama CI: AKTYWNA.** `.github/workflows/ci.yml` na `main` został naprawiony przez
+  właściciela w PR #3 (2026-08-28) — wcześniej plik zaczynał się od bloku `<!-- … -->`
+  przeniesionego z przepisu F0 i GitHub nie parsował YAML-a (runy `failure` w 0 s bez
+  jobs; patrz L9 i wpis M3 w `docs/PROJECT_HISTORY.md`). Od PR #3 CI biega na każdym
+  PR i na pushu do `main`: `npm test` → `npm run build` → `npm run check` +
+  `git diff --exit-code data/index.json`.
+- **Lustro w repo:** `docs/setup/ci-workflow.yml` trzyma tę samą treść; test
+  `receptura CI jest zgodna z plikiem workflow` pilnuje, żeby nie rozjechało się
+  z `.github/workflows/ci.yml` w drzewie.
+- **Nienaruszalna reguła (L12):** agent nie zmienia plików w `.github/workflows/`
+  (push i `gh api` → 403 `workflows`) i nie prosi właściciela o ich zmianę. Jeśli
+  CI zacznie znów milczeć, sesja **opisuje** fakt w audycie/`PROJECT_HISTORY`
+  i nie buduje na tym kolejki zadań dla właściciela.
+- **Bramą sesji i tak są testy lokalne:** `npm test` + `npm run build` + `npm run
+  check` przed każdym commitem (AGENTS §2) — CI jest siecią bezpieczeństwa, nie
+  zastępcą sumienności.

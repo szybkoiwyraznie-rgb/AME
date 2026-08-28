@@ -189,3 +189,30 @@ plików wpisów.
 **Uwaga proceduralna:** limit 250 słów protokołu w SKITach zadziałał na żywo:
 pierwsze wersje „ZNAK I LICZBA” miały 280 i 251 słów i budów nie przepuścił.
 To dowód, że rygor §8.2 jest egzekwowalny, a nie deklaratywny.
+
+## M4 (2026-08-28) — nowa sesja: audyt PR #3, domknięcie lustra CI, Pętla Jakości
+
+**Kontekst:** właściciel zmienił rygor długości SKITa na 300 słów (→ protokół v1.4,
+ADR 0015) i polecił przejść pętlę tak, jak robi to nowa sesja po
+poleceniu startowym.
+
+**Audyt poprzedniego scalonego PR (#3 — naprawa `ci.yml`, 1 plik, 21+/13−):**
+- plik na `main` jest teraz poprawnym YAML-em i **zawartościowo równy** ciału
+  lustra `docs/setup/ci-workflow.yml` (różni się tylko nagłówkiem lustra);
+  bramę widać w runach: `npm test` → `npm run build` → `npm run check` +
+  `git diff --exit-code data/index.json`, `permissions: contents: read`,
+  `concurrency` z `cancel-in-progress`, `workflow_dispatch`;
+- **znalezisko:** dokumenty sesji M3 („CI na `main` się nie parsuje — stan znany
+  i zamknięty”) po PR #3 rozmijały się z rzeczywistością. Nadpisane na stan
+  faktyczny w `docs/WORKFLOW.md` i `docs/setup/ENVIRONMENT.md`;
+- **naprawa trwała:** nowy test `receptura CI jest zgodna z plikiem workflow`
+  wyje, gdy lustro i `.github/workflows/ci.yml` w drzewie przestaną się zgadzać
+  (reguła L12: rozjazd opisujemy i aktualizujemy lustro, nie prosimy właściciela
+  o zmianę pliku, którego i tak nie możemy zapisać).
+- PR #2 (M3) wciąż otwarty — sesja nie scala (ADR 0004: scalenie to decyzja
+  właściciela); praca M4 narasta na tej samej gałęzi.
+
+**Zmiana rygoru (przed pętlą, na zlecenie):** `SKIT_MAX_SLOW` 250 → 300,
+PROTOKÓŁ v1.4 (§4.5, §8.2), AGENTS §3, README, WORKFLOW, ARCHITECTURE, ROADMAP,
+handoff M3; test kontraktowy `limit długości jest jeden: kod = protokół =
+instrukcja` pilnuje, że liczby nie rozjadą się między kodem a dokumentacją.

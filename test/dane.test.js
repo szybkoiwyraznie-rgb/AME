@@ -56,3 +56,19 @@ test('przepis CI jest wklejalny: YAML bez znaczników HTML i z wymaganymi klucza
     assert.ok(t.includes(krok), `brak kroku: ${krok}`);
   }
 });
+
+test('receptura CI jest zgodna z plikiem workflow (lustro nie może rozmijać się z bramą)', async () => {
+  const [receptura, workflow] = await Promise.all([
+    readFile('docs/setup/ci-workflow.yml', 'utf8'),
+    readFile('.github/workflows/ci.yml', 'utf8').catch(() => null),
+  ]);
+  const cialo = receptura.slice(receptura.indexOf('name: CI')).trim();
+  assert.ok(cialo_poprawny(cialo), 'receptura musi zaczynać się od `name: CI` i nie mieć znaczników HTML');
+  if (workflow === null) return; // drzewo bez .github/workflows (np. klon bez tej ścieżki) — sprawdzamy samo lustro
+  const zyciu = workflow.slice(workflow.indexOf('name: CI')).trim();
+  assert.equal(cialo, zyciu, 'CI na main i lustro w repo mówią coś innego — zaktualizuj docs/setup/ci-workflow.yml (L12: bez proszenia właściciela)');
+});
+
+function cialo_poprawny(cialo) {
+  return cialo.startsWith('name: CI') && !/<!--/.test(cialo) && /jobs:\s*\n\s{2}test:/.test(cialo);
+}

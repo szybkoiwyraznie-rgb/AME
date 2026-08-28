@@ -1,8 +1,14 @@
-# AME — brama CI. Docelowe miejsce: .github/workflows/ci.yml na gałęzi `main`.
-# Ten plik jest KOPIONY W CAŁOŚCI (bez tego komentarza — jego możesz zostawić,
-# `#` to poprawny komentarz YAML). Ostatnia zmiana po stronie właściciela: dalej
-# pilnują go sesje agentskie w zwykłych PR-ach, a agent nie ma prawa pisać do
-# .github/workflows/ (403 `workflows`) — więc nie będzie o nic prosił.
+# LUSTRO bramy CI AME — kopia pliku .github/workflows/ci.yml z gałęzi `main`.
+#
+# Plik na `main` działa od PR #3 (2026-08-28, decyzja właściciela). To lustro służy
+# dwu rzeczom: (a) sesja może sprawdzić, co właściwie egzekwuje CI, bez czytania
+# YAML-a na GitHubie; (b) test `receptura CI jest zgodna z plikiem workflow`
+# (test/dane.test.js) wyje, jeśli main i to lustro się rozjadą.
+#
+# Agent NIE zmienia `.github/workflows/*` (brak uprawnień `workflows`: push i API
+# → 403) i NIE prosi właściciela o zmianę. Rozjazd: opisać w opisie PR i w
+# docs/PROJECT_HISTORY.md, lustro zaktualizować do stanu z main.
+
 name: CI
 
 on:
