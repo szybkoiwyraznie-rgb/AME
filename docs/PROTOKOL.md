@@ -229,7 +229,11 @@ tradycje rozmawiają ze sobą.
   sekcja **VI SKITy** w karcie materializacji; deep-link `#skit:<slug>`.
 
 Pola: `slug`, `tytul`, `temat?`, `uczestnicy: [{imie, slug}]`, `tekst`,
-`meta: {utworzono, autor?, modyfikacje[]}`.
+`meta: {utworzono, autor?, modyfikacje[]}`. `temat` jest **katalogowe**: służy do
+dobierania niepowtarzalnych tematów i do szukania, ale **nie jest renderowane**
+ani w widoku skitu, ani w liście bazy — widz dostaje nagłówek, uczestników i
+dialog, bez zdań-wstępów. Stopka karty (wpisu i skitu) pokazuje wyłącznie daty:
+`utworzono` i `zmieniono` (najpóźniejsza z `modyfikacje`).
 
 ### 8.2 Forma
 
@@ -281,8 +285,18 @@ Sekcja **Co nowego** (przycisk **✚ nowości**, deep-link `#nowosci`) jest
 * `meta.utworzono` → pozycja „dodano";
 * każdy wpis w `meta.modyfikacje: [{data, opis}]` → pozycja „zmieniono".
 
-Sortowanie: najnowsze na górze; w obrębie tej samej daty przyrosty przed
-zmianami, potem alfabetycznie (indeks musi pozostać deterministyczny — ADR 0002).
+Sortowanie: **najnowsze na górze**. Data ma dokładność dzienną, więc o kolejności
+w obrębie dnia decyduje **chronologia zdarzeń w pliku**: każda pozycja dostaje
+`sekwencja` (0 = `utworzono`, k+1 = k-ty wpis `modyfikacje`, dopisywany na końcu
+tablicy), a sort liczy `data malejąco → sekwencja malejąco → typ (skity przed
+wpisami) → slug`. Utworzenie karty z poprzedniej sesji nie może przysłonić
+zmian z dziś. Klucz `sekwencja` służy tylko sortowaniu i nie trafia do indeksu
+(pozostaje deterministyczny — ADR 0002).
+
+`opis` modyfikacji czyta człowiek w dzienniku archiwum: to **zdanie o treści**
+(co doszło, co się poprawiło w karcie), a nie notatka robocza sesji — bez
+oznaczeń wewnętrznych (`M3`, `B1`, `C1`, `PROTOKÓŁ §`) i bez nazw plików. Zmiany
+techniczne (kod, narzędzia, zasady) idą do `docs/PROJECT_HISTORY.md` i opisu PR.
 Konsekwencja dla agentów: **każda zmiana w treści musi zostać opisana w
 `meta.modyfikacje` z poprawną datą** — inaczej zmiana nie trafi do dziennika i
 łamie §6. Nowy plik (wpis lub skit) dostaje `meta.utworzono` w formacie

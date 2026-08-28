@@ -44,6 +44,19 @@ const TYPY_DOK = {
   'leksykon online': 'Leksykon online',
 };
 
+/**
+ * Stopka wpisu i skitu: wyłącznie data utworzenia oraz data ostatniej
+ * modyfikacji. Autor i opisy zmian zostają w pliku JSON oraz w feedzie
+ * „Co nowego” — karta nie zasypuje czytelnika notatkami roboczymi
+ * (zlecenie właściciela 2026-08-28).
+ */
+export function htmlStopki(meta) {
+  const daty = (meta?.modyfikacje ?? []).map((m) => m?.data).filter(Boolean).sort((a, b) => String(a).localeCompare(String(b)));
+  const ostatnia = daty[daty.length - 1];
+  const pokaz = ostatnia ? ` · zmieniono ${esc(ostatnia)}` : '';
+  return `<footer class="meta-wpisu">utworzono ${esc(meta?.utworzono ?? '?')}${pokaz}</footer>`;
+}
+
 /** Adres źródła jako link (B3) — tylko http/https, bezpieczny tekst kotwicy. */
 export function linkDoZrodla(url) {
   const adres = String(url ?? '').trim();
@@ -151,11 +164,7 @@ export function htmlWpisu(w, indeks) {
         )
       : '';
 
-  const meta = `<footer class="meta-wpisu">utworzono ${esc(w.meta.utworzono)}${w.meta.autor ? ` · ${esc(w.meta.autor)}` : ''}${
-    (w.meta.modyfikacje ?? []).length
-      ? ` · zmiany: ${w.meta.modyfikacje.map((m) => `${esc(m.data)} (${esc(m.opis)})`).join('; ')}`
-      : ''
-  }</footer>`;
+  const meta = htmlStopki(w.meta);
 
   // Sekcje I–V w kolejności numeracji (PROTOKÓŁ §4.1, v1.3): numer = pozycja.
   return `<div class="wpis">${naglowek}${I}${II}${III}${IV}${V}${VI}${wiki}${meta}</div>`;
@@ -243,14 +252,10 @@ export function htmlSkitu(s, indeks) {
   const uczestnicy = (s.uczestnicy ?? [])
     .map((u) => `<button class="chip link" data-slug="${esc(u.slug)}">${esc(u.imie)}</button>`)
     .join(' ');
-  const temat = s.temat ? `<p class="skit-temat">${esc(s.temat)}</p>` : '';
-  const meta = `<footer class="meta-wpisu">utworzono ${esc(s.meta?.utworzono ?? '?')}${s.meta?.autor ? ` · ${esc(s.meta.autor)}` : ''}${
-    (s.meta?.modyfikacje ?? []).length ? ` · zmiany: ${s.meta.modyfikacje.map((m) => `${esc(m.data)} (${esc(m.opis)})`).join('; ')}` : ''
-  }</footer>`;
+  const meta = htmlStopki(s.meta);
   return `<article class="skit" data-skit="${esc(s.slug)}">
     ${naglowekSkitu(s.tytul)}
     <p class="skit-uczestnicy"><span>Uczestnicy:</span> ${uczestnicy}</p>
-    ${temat}
     <div class="skit-tekst">${htmlDialogu(s.tekst)}</div>
     ${meta}
   </article>`;
@@ -264,8 +269,7 @@ export function htmlBazySkitow(indeks) {
     .map(
       (s) => `<li><button class="wiersz" data-skit="${esc(s.slug)}">
         <span class="nazwa">SKIT: ${esc(s.tytul)}</span>
-        <span class="opis">${esc((s.imiona ?? []).join(' × '))} · ${s.slow ?? 0} słów${s.data ? ` · ${esc(s.data)}` : ''}</span>
-        ${s.temat ? `<span class="temat">${esc(s.temat)}</span>` : ''}
+        <span class="opis">skład: ${esc((s.imiona ?? []).join(' × '))} · ${s.slow ?? 0} słów${s.data ? ` · ${esc(s.data)}` : ''}</span>
       </button></li>`
     )
     .join('')}</ul>`;
@@ -283,8 +287,7 @@ export function htmlSkitowWpisu(slugi, indeks) {
     )
     .join('');
   if (!pola) return '';
-  return sekcja('VI', 'SKITy', `<ul class="powiazania skity-wpisu">${pola}</ul>
-    <p class="wzmiankowane">rozmowy materializacji z tej bazy; pisze je kolejna sesja (PROTOKÓŁ §8).</p>`);
+  return sekcja('VI', 'SKITy', `<ul class="powiazania skity-wpisu">${pola}</ul>`);
 }
 
 /** Feed „Co nowego": najnowsze na górze, każda pozacja linkuje do treści. */

@@ -139,6 +139,12 @@ Research www → dopisz/poszerz sekcje (II, III), nowe tagi/powiązania,
 każdą zmianę opisz w `meta.modyfikacje: [{data, opis}]` → build → testy →
 commit `manifestacja: pogłębiono <slug> (research: <temat>)`.
 
+`opis` modyfikacji czyta właściciel w feedzie „Co nowego", więc: jedno zdanie o
+tym, co zmieniło się **w treści** — bez oznaczeń wewnętrznych sesji (`M3`, `B1`,
+`C1`) i bez nazw plików. Zmiany techniczne (kod, narzędzia, zasady) idą do
+`docs/PROJECT_HISTORY.md` i opisu PR, nie do dziennika archiwum. Nie próbuj
+mieścić opisu w stopce karty: wyświetla ona wyłącznie daty.
+
 ## Procedura: dopisanie SKITa (C3, PROTOKÓŁ §8)
 
 1. **Skład.** Wypisz dotychczasowe zestawy uczestników (patrz

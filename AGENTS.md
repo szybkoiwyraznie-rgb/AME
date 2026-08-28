@@ -132,6 +132,9 @@ Ponadto:
 - **Każda zmiana treści** trafia do `meta.modyfikacje: [{data, opis}]` (albo
   `meta.utworzono`, gdy plik jest nowy) — na tym oparty jest dziennik „Co
   nowego" (PROTOKÓŁ §9); bez tego zmiana jest niewidoczna dla właściciela.
+  `opis` = zdanie o treści dla czytelnika archiwum, **nie** notatka robocza
+  sesji (bez `M3`, `B1`, `C1`, `PROTOKÓŁ §`). Stopka karty pokazuje tylko daty
+  (`utworzono`, `zmieniono`) — autorzy i opisy zmian zostają w JSON-ie i feedzie.
 - Każdy nowy lub zmieniony wpis MUSI przejść `npm test` (schemat + spójność +
   rama promptu) oraz `npm run build` (przebudowa `data/index.json`), a zbudowany
   indeks jest częścią commita.

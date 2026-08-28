@@ -82,9 +82,15 @@ meta: { utworzono, autor?, modyfikacje: [] }
 ```
 
 Plik `data/index.json` (wersja 2) dokłada do tego: `skity[]` (skróty: slug,
-tytul, imiona, slow, data), `manifestacje[].skity` (sekcja VI) i
-`aktualizacje[]` (feed „Co nowego", sort: data malejąco → przyrosty przed
-zmianami → typ → slug).
+tytul, imiona, slow, data), `manifestacje[].skity` (sekcja VI) i `aktualizacje[]`
+(feed „Co nowego»). Sort feedu liczy chronologię zdarzeń: data malejąco →
+`sekwencja` w obrębie pliku malejąco (utworzenie = 0, kolejne
+`meta.modyfikacje` = 1..n) → typ (skity przed wpisami) → slug; klucz
+`sekwencja` służy tylko sortowaniu i nie trafia do pliku indeksu.
+
+Stopka karty (`ui.js: htmlStopki`) wyświetla wyłącznie daty: `utworzono` oraz
+`zmieniono` (najpóźniejsza z `meta.modyfikacje`). Autorzy i opisy zmian zostają
+w plikach JSON i w feedzie — karty nie są miejscem na notatki robocze sesji.
 
 ## Mapa (ADR 0003 + ADR 0009)
 

@@ -452,7 +452,6 @@ html[data-motyw='jasny'] .baner code { background: #ffffff77; }
 .skit-lista li { border-bottom: 1px solid var(--linia); }
 .skit-lista .wiersz { padding: 12px 6px; }
 .skit-lista .nazwa { font-size: 18px; letter-spacing: 0.06em; }
-.skit-lista .temat { display: block; font-size: 13px; color: var(--tekst-dim); font-style: italic; margin-top: 3px; }
 
 .skit { padding-top: 4px; }
 .skit-tytul {
@@ -464,7 +463,6 @@ html[data-motyw='jasny'] .baner code { background: #ffffff77; }
 }
 .skit-uczestnicy { margin: 0 0 6px; font-size: 13px; color: var(--tekst-dim); display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
 .skit-uczestnicy span { text-transform: uppercase; letter-spacing: 0.14em; font-size: 11px; }
-.skit-temat { margin: 2px 0 18px; font-size: 14px; font-style: italic; color: var(--tekst-dim); }
 .skit-tekst { font-size: 16.5px; }
 .wypowiedz {
   margin: 0 0 15px;

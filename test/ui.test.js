@@ -268,3 +268,43 @@ test('indeks repo: feed i sekcja VI spójne z danymi (bez ręki)', async () => {
   const html = htmlNowosci(indeks);
   for (const a of indeks.aktualizacje) assert.ok(html.includes(`data-link="${a.typ === 'skit' ? `skit:${a.slug}` : a.slug}"`), `feed UI: brak linku do ${a.slug}`);
 });
+
+/* ---- Stopka karty: tylko daty, bez notatek roboczych (zlecenie 2026-08-28) ---- */
+
+test('htmlStopki: data utworzenia i data ostatniej modyfikacji, nic więcej', async () => {
+  const { htmlStopki } = await import('../app/ui.js');
+  assert.equal(
+    htmlStopki({ utworzono: '2026-01-01', autor: 'sesja X', modyfikacje: [{ data: '2026-03-03', opis: 'długie wyjaśnienia' }] }),
+    '<footer class="meta-wpisu">utworzono 2026-01-01 · zmieniono 2026-03-03</footer>'
+  );
+  assert.equal(
+    htmlStopki({ utworzono: '2026-01-01', modyfikacje: [{ data: '2026-05-05', opis: 'p' }, { data: '2026-03-03', opis: 'p' }] }),
+    '<footer class="meta-wpisu">utworzono 2026-01-01 · zmieniono 2026-05-05</footer>',
+    'najpóźniejsza z dat, nie ostatnia w tablicy'
+  );
+  assert.equal(htmlStopki({ utworzono: '2026-01-01', modyfikacje: [] }), '<footer class="meta-wpisu">utworzono 2026-01-01</footer>');
+  assert.equal(htmlStopki({}), '<footer class="meta-wpisu">utworzono ?</footer>');
+});
+
+test('karta bytu: brak notatek roboczych w stopce i w sekcji VI', async () => {
+  const { wpis, indeks } = await dane();
+  const html = htmlWpisu(wpis, indeks);
+  assert.ok(!/sesja arena|sesja M\d|PROTOKÓŁ §\d|C1|C3/.test(html), 'stopka i sekcje nie cytują wewnętrznych oznaczeń sesji');
+  assert.ok(!html.includes('pisze je kolejna sesja'), 'sekcja VI bez zdania roboczego');
+  assert.match(html, /<footer class="meta-wpisu">utworzono \d{4}-\d{2}-\d{2}( · zmieniono \d{4}-\d{2}-\d{2})?<\/footer>/);
+  const { indeks: i2 } = await dane('lincoln-imp');
+  const wpis2 = JSON.parse(await readFile('data/manifestations/lincoln-imp.json', 'utf8'));
+  assert.match(htmlWpisu(wpis2, i2), /meta-wpisu/);
+});
+
+test('skit: bez zdania „temat” w widoku i na liście bazy', async () => {
+  const { indeks } = await dane();
+  const skit = JSON.parse(await readFile('data/skity/plotno-i-kamien.json', 'utf8'));
+  assert.ok(skit.temat, 'pole temat zostaje w danych (katalogowe)');
+  const widok = htmlSkitu(skit, indeks);
+  assert.ok(!widok.includes(skit.temat), 'temat nie jest renderowany jako złamane zdanie na wstępie');
+  assert.ok(!htmlBazySkitow(indeks).includes(skit.temat), 'temat nie jest opisem wiersza w bazie');
+  assert.match(widok, /<footer class="meta-wpisu">utworzono \d{4}-\d{2}-\d{2}/);
+  assert.ok(!widok.includes('sesja arena'), 'również w skicie bez autora i opisów');
+  assert.ok(htmlBazySkitow(indeks).includes('skład: Egungun × Imp z Lincoln'), 'wiersz mówi, kto rozmawia');
+});
