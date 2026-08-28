@@ -1,13 +1,19 @@
 {
   "wersja": 2,
-  "liczba": 4,
+  "liczba": 6,
   "liczbaSkitow": 3,
   "tagi": {
     "afryka-zachodnia": [
       "egungun"
     ],
+    "albania": [
+      "drangue-shala"
+    ],
     "anglia": [
       "lincoln-imp"
+    ],
+    "balkany": [
+      "drangue-shala"
     ],
     "ballada": [
       "selkie-sule-skerry"
@@ -24,14 +30,23 @@
     "fomorowie": [
       "balor"
     ],
+    "gora-kyffhaeuser": [
+      "barbarossa-kyffhaeuser"
+    ],
     "groteska": [
       "lincoln-imp"
+    ],
+    "heros-burzy": [
+      "drangue-shala"
     ],
     "imp": [
       "lincoln-imp"
     ],
     "joruba": [
       "egungun"
+    ],
+    "kamien-piorunowy": [
+      "drangue-shala"
     ],
     "katedra": [
       "lincoln-imp"
@@ -45,6 +60,12 @@
     "mitologia-irlandzka": [
       "balor"
     ],
+    "motyw-a571": [
+      "barbarossa-kyffhaeuser"
+    ],
+    "niemcy": [
+      "barbarossa-kyffhaeuser"
+    ],
     "nigeria": [
       "egungun"
     ],
@@ -57,11 +78,20 @@
     "przemiana": [
       "selkie-sule-skerry"
     ],
+    "rytual-ognia": [
+      "drangue-shala"
+    ],
     "selkie": [
       "selkie-sule-skerry"
     ],
     "skora-foki": [
       "selkie-sule-skerry"
+    ],
+    "sniacy-zastep": [
+      "barbarossa-kyffhaeuser"
+    ],
+    "warunek-znak": [
+      "barbarossa-kyffhaeuser"
     ],
     "wyspa-tory": [
       "balor"
@@ -97,6 +127,7 @@
         "selkie-sule-skerry"
       ],
       "backlinki": [
+        "barbarossa-kyffhaeuser",
         "selkie-sule-skerry"
       ],
       "obraz": "assets/wizualizacje/balor.jpg",
@@ -104,6 +135,65 @@
         "hold-oraz-swiatlo",
         "znak-i-liczba"
       ]
+    },
+    {
+      "slug": "barbarossa-kyffhaeuser",
+      "nazwa": "Barbarossa w Kyffhäuserze",
+      "nazwy_alternatywne": [
+        "Friedrich Rotbart auf dem Kyffhäuser",
+        "Cesarz pod Kyffhausen",
+        "Der alte Barbarossa (Rückert, 1817)"
+      ],
+      "karta": "Alaborn Trooper",
+      "miejscowosc": "grzbiet Kyffhäuser (góra Kyffhausen) z ruinami zamku i pomnikiem; pod ziemią jaskinia Barbarossahöhle koło Rottleben",
+      "kraj": "Niemcy (Turyngia / Saksonia-Anhalt, Kyffhäuserkreis)",
+      "lat": 51.41,
+      "lon": 11.11,
+      "tagi": [
+        "gora-kyffhaeuser",
+        "motyw-a571",
+        "niemcy",
+        "sniacy-zastep",
+        "warunek-znak"
+      ],
+      "powiazania": [
+        "balor",
+        "selkie-sule-skerry"
+      ],
+      "backlinki": [
+        "drangue-shala"
+      ],
+      "obraz": "assets/wizualizacje/barbarossa-kyffhaeuser.jpg",
+      "skity": []
+    },
+    {
+      "slug": "drangue-shala",
+      "nazwa": "Drangue z doliny Shali",
+      "nazwy_alternatywne": [
+        "drangùe / drangòni (formy określone w albańszczyźnie)",
+        "dragùa — w najstarszych tekstach albańskich tak nazywano smoka/hydrę, zamiennie z kulshedrą",
+        "Shën Ilias i Shën Delli — imiona świętego, pod którymi znany jest w niektórych stronach",
+        "heros burzy z kręgu Zojza"
+      ],
+      "karta": "Thunderstaff",
+      "miejscowosc": "dolina Shali (Theth), Malësia e Madhe, Alpy Albańskie",
+      "kraj": "Albania",
+      "lat": 42.4,
+      "lon": 19.77,
+      "tagi": [
+        "albania",
+        "balkany",
+        "heros-burzy",
+        "kamien-piorunowy",
+        "rytual-ognia"
+      ],
+      "powiazania": [
+        "barbarossa-kyffhaeuser",
+        "lincoln-imp"
+      ],
+      "backlinki": [],
+      "obraz": "assets/wizualizacje/drangue-shala.jpg",
+      "skity": []
     },
     {
       "slug": "egungun",
@@ -162,7 +252,8 @@
         "egungun"
       ],
       "backlinki": [
-        "balor"
+        "balor",
+        "drangue-shala"
       ],
       "obraz": "assets/wizualizacje/lincoln-imp.jpg",
       "skity": [
@@ -195,7 +286,8 @@
         "egungun"
       ],
       "backlinki": [
-        "balor"
+        "balor",
+        "barbarossa-kyffhaeuser"
       ],
       "obraz": "assets/wizualizacje/selkie-sule-skerry.jpg",
       "skity": [
@@ -308,6 +400,22 @@
       "slug": "balor",
       "tytul": "Balor z Tory Island",
       "opis": "wpis w kartotece — materializacja karty „Weftblade Enhancer”"
+    },
+    {
+      "data": "2026-08-28",
+      "typ": "manifestacja",
+      "akcja": "nowa",
+      "slug": "barbarossa-kyffhaeuser",
+      "tytul": "Barbarossa w Kyffhäuserze",
+      "opis": "wpis w kartotece — materializacja karty „Alaborn Trooper”"
+    },
+    {
+      "data": "2026-08-28",
+      "typ": "manifestacja",
+      "akcja": "nowa",
+      "slug": "drangue-shala",
+      "tytul": "Drangue z doliny Shali",
+      "opis": "wpis w kartotece — materializacja karty „Thunderstaff”"
     },
     {
       "data": "2026-08-28",

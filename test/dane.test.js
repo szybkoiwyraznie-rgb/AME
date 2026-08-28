@@ -1,7 +1,7 @@
 /** Testy prawdziwych danych repozytorium: walidacja wpisów + spójność indeksu. */
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { readFile } from 'node:fs/promises';
+import { readFile, readdir } from 'node:fs/promises';
 import { wczytajIKwaliduj, wczytajSkiti, zbudujIndeks, PLIK_INDEKSU, KATALOG_WPISOW, KATALOG_SKITOW } from '../tools/rebuild-index.mjs';
 
 test('wszystkie wpisy w data/manifestations przechodzą walidację protokołu', async () => {
@@ -72,3 +72,34 @@ test('receptura CI jest zgodna z plikiem workflow (lustro nie może rozmijać si
 function cialo_poprawny(cialo) {
   return cialo.startsWith('name: CI') && !/<!--/.test(cialo) && /jobs:\s*\n\s{2}test:/.test(cialo);
 }
+
+const OBCE_PISMA = /[\u3040-\u30ff\u3400-\u4dbf\u4e00-\u9fff\uff00-\uffef\u0400-\u04ff]/;
+
+test('polska proza wpisów i skitów nie zawiera pisma japońskich/chińskich ani cyrylicy', async () => {
+  const wpisy = await wczytajIKwaliduj();
+  const pola = ['pochodzenie_i_kultura'];
+  const bledy = [];
+  const sprawdź = (gdzie, tekst) => {
+    if (typeof tekst === 'string' && OBCE_PISMA.test(tekst)) {
+      const znak = tekst.match(OBCE_PISMA)[0];
+      bledy.push(`${gdzie}: znak U+${znak.codePointAt(0).toString(16).toUpperCase()} w „${tekst.slice(Math.max(0, tekst.indexOf(znak) - 40), tekst.indexOf(znak) + 20)}”`);
+    }
+  };
+  for (const w of wpisy) {
+    for (const pole of pola) sprawdź(`${w.slug}.${pole}`, w[pole]);
+    for (const [pole, wartosc] of Object.entries(w.natura ?? {})) sprawdź(`${w.slug}.natura.${pole}`, wartosc);
+    for (const [pole, wartosc] of Object.entries(w.trofea ?? {})) sprawdź(`${w.slug}.trofea.${pole}`, wartosc);
+    sprawdź(`${w.slug}.rezonans.klucz_przywolania`, w.rezonans?.klucz_przywolania);
+    (w.rezonans?.tabela ?? []).forEach((r, i) => sprawdź(`${w.slug}.rezonans.tabela[${i}]`, r?.translacja));
+    (w.dokumentacja ?? []).forEach((r, i) => sprawdź(`${w.slug}.dokumentacja[${i}]`, r?.pozycja));
+    (w.powiazania ?? []).forEach((r, i) => sprawdź(`${w.slug}.powiazania[${i}]`, r?.opis));
+  }
+  const { walidujSkit } = await import('../tools/rebuild-index.mjs');
+  void walidujSkit;
+  for (const plik of (await readdir('data/skity')).sort()) {
+    const s = JSON.parse(await readFile(`data/skity/${plik}`, 'utf8'));
+    sprawdź(`skity/${plik}.tekst`, s.tekst);
+    sprawdź(`skity/${plik}.temat`, s.temat);
+  }
+  assert.deepEqual(bledy, [], 'obce pismo w polskim tekście — zwykle literówka z edytora (L13)');
+});

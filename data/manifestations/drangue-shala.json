@@ -1,0 +1,111 @@
+{
+  "slug": "drangue-shala",
+  "nazwa": "Drangue z doliny Shali",
+  "nazwy_alternatywne": [
+    "drangùe / drangòni (formy określone w albańszczyźnie)",
+    "dragùa — w najstarszych tekstach albańskich tak nazywano smoka/hydrę, zamiennie z kulshedrą",
+    "Shën Ilias i Shën Delli — imiona świętego, pod którymi znany jest w niektórych stronach",
+    "heros burzy z kręgu Zojza"
+  ],
+  "karta": {
+    "nazwa": "Thunderstaff",
+    "wydanie": "Darksteel (DST) #153",
+    "rok": 2004
+  },
+  "lokalizacja": {
+    "miejscowosc": "dolina Shali (Theth), Malësia e Madhe, Alpy Albańskie",
+    "kraj": "Albania",
+    "lat": 42.4,
+    "lon": 19.77
+  },
+  "pochodzenie_i_kultura": "Mitologia albańska (krąg gegijski, północ): drangue jako półczłowieczy, skrzydlaty bohater pogody i burzy, archetyp światła i dobra, uzupełniająca i przeciwna siła wobec kulshedry — demona ciemności, suszy i nawałnicy. Kult najwyższego boga nieba i gromów, Zojza, przetrwał na północy Albanii (m.in. w regionach Zadrima i Shala) do początku XX w. — świadczą o nim złożone jeszcze w przekazie z regionu Shali opowieści oraz forma „Pasha Zojzin!” (na Zojza!). Dolina Shali, z Theth jako główną wioską (pierwsza wzmianka w dokumencie ze Szkodry z 1485 r. o siedmiu chat; dostęp przez przełęcz Tërthorë, ok. 1685 m), jest katolicką wyspą, która dla zachowania wiary schowała się w górach i dlatego przetrzymała w zwyczaju starsze gesty: w wynoszeniu ognia przed dom i w strzelaniu do chmury.",
+  "wizualizacja": {
+    "prompt": "Style: A wide-angle full-body cinematic photograph. The central objects/persons of the photo are visible from head to toe, standing centrally in the frame. No parts of the body are cropped.\n\nA broad-shouldered highland man standing centrally on a limestone ridge above the Shala valley in the teeth of a summer tempest, two dark feathered wings spreading from under his arms through a soaked woolen jacket, a crude iron sword lit along its edge like a struck spark in one hand and a black meteoric stone in the other, grey caul still clinging to the crown of his head, hail and rain blowing sideways past him, below in the village women carry an iron hearth-pan of burning embers out of the houses in a chain of light and men beat copper pots and fire shots into the cloud, torn pasture and slate roofs, a huge many-headed shadow coiling behind the ridge, harsh cold light with a single bright break of sun on his chest.\n\nCaptured with a 35mm anamorphic lens at f/1.8. Shallow depth of field with a heavy, creamy bokeh background. Environmental portraiture. Dramatic cinematic lighting, sharp focus on the character, hyper-realistic textures of clothing and skin. Shot on 70mm film stock, ultra-wide 21:9 aspect ratio. --ar 21:9",
+    "obraz": "assets/wizualizacje/drangue-shala.jpg"
+  },
+  "natura": {
+    "wyglad_i_aura": "Wygląd ma pozornie zwyczajny: mężczyzna z gór, szeroki w barach, o skórze i dłoniach cięższych, niż powinny być. Dopiero pod pachami, pod mokrą wełnianą kurtką, widać dwa (w innych przekazach cztery) skrzydła, a na czole — ślad zawoju, w którym się urodził, bo dzieci przeznaczone na drangue rodzą się „w czepku”. W południowo-wschodnich stronach (Pogradec, Korça) wyobrażano go sobie nie jako człowieka, ale pięknego, silnego skrzydlatego konia. Aura idzie przed nim inną drogą: zapach ozonu i przypalonej wełny, grad w rozmiarze orzecha, w izbie — ciężar kamieni ułożonych tak, żeby być pod ręką. Jeśli kiedykolwiek czyjeś ciało drangue rozłożono na części, znaleziono w nim złote serce z klejnotem w środku; nikt tego nie zrobił, bo jest nie do tykania.",
+    "charakter_i_motywacje": "Nie szuka chwały i nie żąda ofiar — on ma robotę do wykonania w konkretnych godzinach: gdy chmura wstaje, a kulshedra ciągnie ją nad pola, doliny i sady, drangue wychodzi jej naprzeciw. Walki tych dwojga są całą albańską meteorologią: stąd burze, grad i nagłe wezbrania. Jest przez to nieczuły na prośby o cuda „dla siebie”: nie uleczy, nie pomści, nie da miłości — ale jeśli wspólnota zrobi, co do niej należy (wyniesie ogień, uderzy w metal, strzeli w niebo), bije za nich mocniej. Ta wymiana usług bez patosu jest jego motywacją: chroni świat ludzi, bo jest z nich, a bije demona, bo jest od niego starszy. W walkę tej pary wpisywany jest zresztą sam porządek świata: badacze czytają ją jako indoeuropejski Chaoskampf — starcie ładu z chaosem — a nie jako awanturę o plony.",
+    "zdolnosci": "broń nieziemska: miecze z pioruna, gromy, meteoryty, wyrywane drzewa i stosy kamieni rzucane w chmurę; odporność bezwzględna — „nie do zranienia, nie do tykania, nie do pokonania”, dopóki skrzydła są na miejscu (ucięte przez matkę, która chciała mu zrobić zwykłe życie, kończą chłopca); widzenie pogody — wie, że chmura idzie, wcześniej niż dzwon; i zdolność, którą dostaje od ludzi: wzmocnienie. Tam, gdzie wyniesiono ogień i uderzono w metal, jego ciosy ważą więcej do końca nawałnicy. Ziemskim odpowiednikiem tej drugiej jest kamień piorunowy (kokrra e rrufesë, guri i rejës) — według wierzeń tworzy się w chwili uderzenia i spada z nieba; przechowywany w domu ściąga pomyślność na ludzi, trzodę i uprawy, a kule nie trafiają jego właścicieli.",
+    "slabosci_i_metody_pokonania": "Da się go obrazić, nie da się zabić — i w tym jest metoda. Źródła wskazują trzy punkty wrażliwe: (a) skrzydła — ucięte kończą drangue, dlatego matki pilnują, by nikt ich nie dotknął w pierwszych dniach życia; (b) to, co odróżnia go od człowieka: zawój i okrycie — w bałkańskich podaniach o herosach tego typu kradzież okrycia kończy ich moc; (c) warunkowość — nie wyniesie wspólnota żaru i nie zacznie bić w miednice, bije sam przeciw chmurze bez wsparcia i przegrywa. Praktyka konfrontacji jest prosta i negatywna: nie stawać mu na drodze w burzy, nie podnosić kamienia piorunowego „na próbę” i nie obiecywać mu tego, czego się nie doniesie — bierze dosłownie i płaci za to własnym.",
+    "preferencje": "Lubi: letnie popołudnia, gdy chmura wstaje nad Grunasiem, zapach tlenu po deszczu, dźwięk bitego miedzią i kościelnego dzwonu, ogień niesiony w żelaznej wazie przez kobiety, mleko zostawione na progu, grad zbity na czas. Nie znosi: ciszy, kiedy powinien wyjść, kościoła, który milczy w burzę, suszy zamiast nawałnicy, a także — jak wszyscy herosi uwięzieni w zwyczaju — ludzi, którzy wolą mu złożyć ofiarę, niż wyjść z garnkiem żaru przed dom."
+  },
+  "dokumentacja": [
+    {
+      "typ": "leksykon online",
+      "pozycja": "Wikipedia, „Drangue” — półczłowieczy skrzydlaty bohater burzy w albańskiej mitologii, archetyp światła i dobra przeciw kulshedrze; dzieci urodzone w czepku, ze skrzydłami pod pachami (dwa lub cztery); moc w skrzydłach i ramionach; broń: miecze z pioruna, gromy, meteoryty, drzewa i kamienie; burze jako ich bitwy; „nie do zranienia, nie do tykania, nie do pokonania”; złote serce z klejnotem przy rozbrataniu; wariant Pogradec/Korça (skrzydlaty koń); utożsamienia z Shën Delli i Shën Ilias jako boga pogody; odbicie indoeuropejskiego boga nieba (Zojz); baśń „The Boy who was Brother to the Drague”",
+      "url": "https://en.wikipedia.org/wiki/Drangue"
+    },
+    {
+      "typ": "leksykon online",
+      "pozycja": "Wikipedia, „Zojz (deity)” — bóg nieba i gromów; „Zjarri i Qiellit” (ogień nieba) jako jego broń; wierzenia w kamienie piorunowe (kokrra e rrufesë / guri i rejës), które mają powstawać w czasie uderzenia i spadać z nieba, przechowywane w domu jako obiekt kultowy: dają pomyślność ludziom, trzodzie i uprawom, a kule nie trafiają ich właścicieli; ryty odwracające nawałnicę; ślady kultu w regionach Zadrima i Shala, opowieść o najwyższym bogu pokonującym gromem boga morskiej zawieruchy Talasa",
+      "url": "https://en.wikipedia.org/wiki/Zojz_(deity)"
+    },
+    {
+      "typ": "leksykon online",
+      "pozycja": "Wikipedia, „Enji (deity)” — bóg ognia w archaicznej warstwie wierzeń Albańczyków (por. „e enjte”, czwartek); rytuały ogniowe ochronne (zjarri i gjallë / i egër) żelazne przedmioty i ogień wynoszone na zewnątrz w czasie burzy z gradem i piorunami, aby odwrócić szkodę — praktyka tłumaczona jako błaganie do boga pogody albo jako „dodanie siły boskiemu herosowi drangue w jego zmaganiu z kulshedrą”",
+      "url": "https://en.wikipedia.org/wiki/En_(deity)"
+    },
+    {
+      "typ": "leksykon online",
+      "pozycja": "Wikipedia, „Kulshedra” — demon wody, burzy, ognia i świata podziemnego, wielogłowy wąż; susze, powodzie, trzęsienia ziemi jako jego sprawka; walka z drangue; w północnych przekazach: strzelanie w niebo, hałas metalami i dzwonami, aby przepłoszyć demona; ofiary składane, by nie szkodził",
+      "url": "https://en.wikipedia.org/wiki/Kulshedra"
+    },
+    {
+      "typ": "opis miejsca (wariant lokalny)",
+      "pozycja": "Theth / dolina Shali jako miejsce, w którym ten krąg wierzeń przetrwał w zwyczaju: wioska założona — według przekazu — przez Ded Nikę w XVII w. jako ucieczka przed przymusową islamizacją, pierwsza wzmianka w dokumencie ze Szkodry z 1485 r. (siedem chat), dostęp przez przełęcz Tërthorë (ok. 1685 m), ok. 750 m n.p.m., Park Narodowy Theth od 1966 r.; prawa zwyczajowe (Kanun) opisywane m.in. przez Edith Durham",
+      "url": "https://thethi-guide.com/about-theth/"
+    }
+  ],
+  "trofea": {
+    "pierwotne": "kamień piorunowy (kokrra e rrufesë) wydobyty z grzędy po nawałnicy — trzymany w izbie, dopóki go nie odda się górze",
+    "wtorne": "spalona na kamieniu strzępa wełny z kurtki, pod którą schowane były skrzydła — znak, że heros stał tuż obok i nie dał się tknąć"
+  },
+  "rezonans": {
+    "klucz_przywolania": "Karta „Thunderstaff” jest artefaktem za {3} i robi dwie rzeczy: dopóki nie jest tapnięta, zmniejsza o 1 obrażenia od każdej atakującej jej istoty, a za {2} i tapnięcie daje atakującym +1/+0 do końca tury. To gotowy przepis na dolinę Shali w burzę: w domu leży kamień piorunowy i dopóki go nie ruszono, uderzenia „przelatują obok”; jeśli rodzina wyniesie ogień i zacznie bić w metal, tego wieczoru wszyscy uderzają mocniej — i tak tylko do końca nawałnicy. Dlatego transpozycja nie prowadzi do boga, tylko do jego obsługiwanej siły: drangue działa, bo ktoś wykonał gest.",
+    "tabela": [
+      {
+        "element": "Nazwa",
+        "translacja": "Thunderstaff = „kij/laska grzmotu”. W albańskim kręgu odpowiada mu przedmiot, nie broń do trzymania w ręku: kokrra e rrufesë / guri i rejës — „ziarno pioruna”, kamień z nieba, którego nie dzierży bohater, lecz przechowuje rodzina. Przekłady nazwy karty trzymają się zresztą tego samego napięcia przedmiotu i siły: es „Bastóntrueno”, fr „Bâton de tonnerre”, de „Donnerstab”, it „Bastone delle Tempeste”."
+      },
+      {
+        "element": "Mechanika",
+        "translacja": "„As long as this artifact is untapped, if a creature would deal combat damage to you, prevent 1 of that damage” → kamień leży na swoim miejscu w chałpie i każdy cios wymierzony w domowników trafia obok (reguła z 2004 r. mówi wprost: po jednym obrażeniu od każdego stworzenia i przy każdym trafieniu — przy trzech atakujących z podwójnym uderzeniem da to sześć zapobieżonych obrażeń, czyli ochrona liczona od uderzenia, nie od bitwy). „{2}, {T}: Attacking creatures get +1/+0 until end of turn” → wyniesienie żaru, bicia w miednicę i strzału w chmurę kosztuje, ale do końca burzy uderzenia jej sojuszników ważą więcej. W obu wypadkach to nie jego moc, tylko ich obsługa — i dlatego karta jest artefaktem, a nie istotą."
+      },
+      {
+        "element": "Ilustracja",
+        "translacja": "Artysta: Kaja Foglio (druk DST #153; nowsze przedruki mają innego autora, np. CMA #237 — Cliff Childs). Kompozycji obrazu nie opisujemy — nie zgadujemy (docs/WORKFLOW.md §3). Istotne jest co innego: ten druk nie ma flavor textu, więc karta jest „czystym” mechanizmem, dokładnie tak jak w albańskim zwyczaju — nie ma mitu, jest gest i kamień."
+      },
+      {
+        "element": "Flavor text",
+        "translacja": "Na druku, który otworzył kartotekę (Darksteel), flavor nie występuje. W nowszych drukach karty dodano zdanie: „Jort the Thunder-Mad spent his life perfecting a way to harness the power of the heavens.” — człowiek, który poświęcił życie oswojeniu mocy niebios; dalej idzie ono w linii, w której idzie dolina Shali: siła nie jest darem, tylko rzeczą, którą się opanowało i za którą się płaci. Reszty biografii Jorta nie potwierdzam i nie wymyślam."
+      },
+      {
+        "element": "Lore/Tło",
+        "translacja": "Darksteel (2004) jest setem, w którym artefakty są osią świata, a „harness the power of the heavens” brzmi jak program tej mechaniki: nie modlitwa, tylko inżynieria. Albański odpowiednik jest jeszcze starszy i jeszcze bardziej dosłowny: piorun jest Zjarri i Qiellit, ogniem nieba, a jedyną „inżynierią”, którą nań ma wspólnota, jest łańcuch żaru wyniesiony z chaty, miednica i kula wystrzelona w chmurę. Karta bez zdolności bojowych (nie atakuje, tylko zmienia reguły bitwy) to ten sam model: liczy się usługa, nie bohaterstwo."
+      }
+    ]
+  },
+  "tagi": [
+    "albania",
+    "balkany",
+    "heros-burzy",
+    "kamien-piorunowy",
+    "rytual-ognia"
+  ],
+  "powiazania": [
+    {
+      "slug": "barbarossa-kyffhaeuser",
+      "opis": "Oba byty są warunkowe i oba czekają na znak w przyrodzie, nie w umowie: Cesarz wstaje, gdy kruki znikną znad góry, a drangue bije mocniej, gdy w dolinie wyniosą ogień i zabrzmi miedź. Różnica jest w stawce: u jednego opóźnienie znosi epokę, u drugiego — grad zbija plony."
+    },
+    {
+      "slug": "lincoln-imp",
+      "opis": "Ten sam zabieg wspólnoty: święty przedmiot wbudowany w budynek i zamieniony w znak tożsamości. Groteska ima wmurowana w filar chóru stała się herbem miasta, a kamień piorunowy w izbie — własnością rodziny, przed którą kule mijają domowników. W obu przypadkach ochrona jest funkcją tego, że rzecz została na swoim miejscu, a nie tego, że ktokolwiek w coś wierzy."
+    }
+  ],
+  "meta": {
+    "utworzono": "2026-08-28",
+    "autor": "sesja arena 2026-08-28",
+    "modyfikacje": []
+  }
+}
