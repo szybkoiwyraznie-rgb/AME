@@ -37,14 +37,17 @@ blokują `fetch()` dla plików lokalnych.
 | `AGENTS.md` | **zasady pracy agentów — lektura startowa każdej sesji** |
 | `docs/PROTOKOL.md` | protokół MFM: format wpisów, rama promptu 21:9 |
 | `docs/decisions/` | rejestr decyzji architektonicznych (ADR) |
-| `docs/ROADMAP.md` | fazy prac i status |
+| `docs/ROADMAP.md` | fazy prac i status (+ Pętla Jakości) |
+| `docs/WORKFLOW.md` | **procedura: dodanie manifestacji z karty, krok po kroku** |
 | `data/manifestations/` | wpisy manifestacji (źródło prawdy treści) |
 | `data/index.json` | indeks GENEROWANY (`npm run build`) |
 | `app/`, `index.html` | aplikacja |
 | `assets/` | mapa, wizualizacje (licencje: `docs/ASSETS.md`) |
 | `tools/`, `test/` | walidacja danych + testy (`npm test`) |
 
-## GitHub Pages
+## GitHub Pages (aktywne)
 
-Settings → Pages → *Deploy from a branch* → `main`, folder `/ (root)` →
-`https://<owner>.github.io/AME/`. CI na każdym PR uruchamia `npm test`.
+Aplikacja jest publikowana z gałęzi `main`:
+<https://szybkoiwyraznie-rgb.github.io/AME/>.
+CI (`.github/workflows/ci.yml`) na każdym PR uruchamia `npm test` + build
+i pilnuje aktualności `data/index.json`.
