@@ -11,7 +11,13 @@
     "demon": [
       "lincoln-imp"
     ],
+    "festiwal-rodowy": [
+      "egungun"
+    ],
     "folklor-chrzescijanski": [
+      "lincoln-imp"
+    ],
+    "groteska": [
       "lincoln-imp"
     ],
     "imp": [
@@ -40,6 +46,7 @@
       "nazwy_alternatywne": [
         "Egúngún",
         "Ara Ọ̀run („mieszkańcy nieba”)",
+        "Ará Òrun Kìn-ìn Kin-in („naprawdę mieszkaniec nieba”)",
         "Eegun"
       ],
       "karta": "Krumar Initiate",
@@ -49,6 +56,7 @@
       "lon": 3.94,
       "tagi": [
         "afryka-zachodnia",
+        "festiwal-rodowy",
         "joruba",
         "kult-przodkow",
         "maskarada",
@@ -76,6 +84,7 @@
         "anglia",
         "demon",
         "folklor-chrzescijanski",
+        "groteska",
         "imp",
         "katedra"
       ],

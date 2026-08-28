@@ -6,7 +6,7 @@
  *   node tools/rebuild-index.mjs --check   # waliduj i porównaj z istniejącym indeksem
  *                                          # (kod 1 przy rozbieżności/błędzie)
  *
- * Zasady: docs/PROTOKOL.md, docs/ARCHITECTURE.md, ADR 0002/0005/0006.
+ * Zasady: docs/PROTOKOL.md, docs/ARCHITECTURE.md, ADR 0002/0005/0006/0008.
  * Indeks jest deterministyczny (sortowanie po slugu) — bez znaczników czasu.
  */
 import { readdir, readFile, writeFile } from 'node:fs/promises';
@@ -27,6 +27,8 @@ export const RAMA_ZAMKNIECIA =
 const ZAKAZANE_W_PROMPCIE = ['figurine', 'diorama', 'miniature', 'render', 'painting', 'illustration'];
 
 const RE_SLUG = /^[a-z0-9-]+$/;
+/** Adres źródła w sieci WWW — tylko pełny http(s), nic więcej (B3, ADR 0008). */
+const RE_URL = /^https?:\/\/\S+$/i;
 const RE_TAG = /^[a-ząćęłńóśźż0-9-]+$/;
 const RE_DATA = /^\d{4}-\d{2}-\d{2}$/;
 
@@ -94,6 +96,12 @@ export function walidujWpis(w) {
         blad('dokumentacja: każdy wpis wymaga {typ, pozycja}');
         break;
       }
+      if (d?.url !== undefined && d?.url !== null && !RE_URL.test(String(d.url).trim())) {
+        blad(`dokumentacja: url musi być pełnym adresem http(s) (dostano: ${JSON.stringify(d.url)})`);
+      }
+    }
+    if (!w.dokumentacja.some((d) => RE_URL.test(String(d?.url ?? '').trim()))) {
+      blad('dokumentacja: co najmniej jedno źródło musi mieć url prowadzący do niego w sieci (protokół III, ADR 0008)');
     }
   }
 

@@ -26,3 +26,16 @@ test('materializacje zleconych kart istnieją we właściwych strefach mapy', as
   const i = wpisy.find((w) => w.slug === 'lincoln-imp');
   assert.ok(i && i.lokalizacja.lat > 50 && i.lokalizacja.lat < 60 && i.lokalizacja.lon < 0 && i.lokalizacja.lon > -2, 'Lincoln ~53.2N -0.5E');
 });
+
+test('każde źródło w kartotece ma adres https i nie powtarza się (B3 + ADR 0008)', async () => {
+  const wpisy = await wczytajIKwaliduj();
+  const adresy = new Set();
+  for (const w of wpisy) {
+    for (const d of w.dokumentacja) {
+      assert.ok(String(d.url).startsWith('https://'), `${w.slug}: źródło bez https: ${JSON.stringify(d.url)}`);
+      assert.ok(!adresy.has(d.url), `duplikat adresu w kartotece: ${d.url}`);
+      adresy.add(d.url);
+    }
+    assert.ok(w.dokumentacja.length >= 3, `${w.slug}: kartoteka powinna mieć co najmniej 3 źródła`);
+  }
+});

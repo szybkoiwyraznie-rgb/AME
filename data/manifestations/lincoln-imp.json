@@ -16,7 +16,44 @@
     "lat": 53.23,
     "lon": -0.54
   },
-  "pochodzenie_i_kultura": "Angielski folklor kościelny: groteska w katedrze Lincoln i legenda o impach, notowana od XIV w. (współczesna budowie Angel Choir)",
+  "pochodzenie_i_kultura": "Angielski folklor kościelny wokół groteski w katedrze Lincoln: rzeźba ima siedzi w Angel Choir, którego budowę zamykano w latach 1250–1280, i to na ten czas się ją datuje. Sama legenda w zapisach jest młodsza: balada „The Ballad of the Wind, the Devil and Lincoln Minster” (1897, autor pseudonimem Arnold Frost, zecera G. T. Hemsley) i drukowana wersja broszury katedralnej z 1904 r. opierają się na motywie starszym o wieki — przysłowiu „looking as the devil over Lincoln” poświadczonym od 1562 r.",
+  "wizualizacja": {
+    "prompt": "Style: A wide-angle full-body cinematic photograph. The central objects/persons of the photo are visible from head to toe, standing centrally in the frame. No parts of the body are cropped.\n\nA small hairy medieval imp demon with cow ears, cloven hooves, sharp teeth in a wide insolent grin and a barbed tail, crouching on top of a load-bearing stone pillar high inside Lincoln Cathedral's Angel Choir at night, clawed fingers prising a fresh crack in the carved stone, a scorched psalter smouldering on the ledge beside it, cold moonlight falling through stained glass across gothic arches, candle stubs guttering far below on the floor.\n\nCaptured with a 35mm anamorphic lens at f/1.8. Shallow depth of field with a heavy, creamy bokeh background. Environmental portraiture. Dramatic cinematic lighting, sharp focus on the character, hyper-realistic textures of clothing and skin. Shot on 70mm film stock, ultra-wide 21:9 aspect ratio. --ar 21:9",
+    "obraz": "assets/wizualizacje/lincoln-imp.jpg"
+  },
+  "natura": {
+    "wyglad_i_aura": "Mały, włochaty demonik o krowich uszach, rozdwojonych kopytkach i szeroko rozwartym uzębionym pysku; w rzeźbie siedzi skulony na szczycie filary, jedną nogę założył na kolano, a dłonie trzymają podniesioną stopę. Obecności towarzyszy cień pełzający po nawach, zapach siarki i dymu, gasnące świece; gdzie się przejdzie — pęknięcia w kamieniu, pogryzione i osmalone księgi, powywracane sprzęty liturgiczne.",
+    "charakter_i_motywacje": "Sługus-sabotażysta: nie buduje, tylko psuje. Wysłany przez Szatana „czynić zło na ziemi” wybiera świątynie — demoluje wyposażenie, podkłada nogę biskupowi, rozkręca ogień w bibliotekach. Motywacją jest wandalystyczna radość i służba ojcu kłamstwa; wobec autorytetu jest bezczelny — na rozkaz anioła odpowiada gradem kamieni z filary. Nie jest strategicznym złem: jest złem drobnym, uporczywym i świetnie widocznym w skutkach. W najstarszej spisanej wersji (1897) to nie imp wybiera świątynię: Szatan, wściekły na biskupa Remigiusza za budowę katedry, czatuje na niego u południowo-zachodniego narożnika, a Maria zsyła wiatr, który wpycha diabła do środka — i od tamtej pory nie waży się wyjść, bo wiatr czeka przed drzwiami. Motyw uwięzienia przez wiatr tłumaczy przeciągi krążące wokół katedry i wyjaśnia, dlaczego byt tego rodzaju w ogóle daje się namierzyć: stoi w jednym miejscu i kpi z oczekującej burzy.",
+    "zdolnosci": "wdzieranie się do świątyń nieprozony (w jednej z wersji — wiał go wiatr zachodni przez wielkie drzwi katedry); mikroszkodzenia konstrukcji nośnych (pęknięcia filarów); podpalenia archiwów i ksiąg; tropy sabotażu wśród sprzętów liturgicznych; w wersji z towarzyszem — ucieczka drugiego ima i jego wędrówka (Grimsby, krążący wokół katedry wiatr).",
+    "slabosci_i_metody_pokonania": "Pieczęć anioła — kanoniczna metoda: boski poseł (w jednej wersji wyszedł z hymnalu) rozkazuje stop, a nieposłuszny imp zostaje obrócony w kamień; to trofeum wisi do dziś na filarze w Angel Choir i samodzielnie się nie regeneruje. Praktyki pomocnicze: poświęcenie i pilnowanie przestrzeni sakralnej (imię pada na impy, które opuszczają świątynię, gdy duchowieństwo odzyskuje czujność); współcześnie jedyna „magia”, na jaką pozwala katedra, to moneta wrzucona do skarbonki — rozświetla figurę ima na filarze. W wersji z 1897 r. skuteczną metodą jest samo oczekiwanie: wiatr zesłany na diabła nie odchodzi, więc konfrontacja nie jest potrzebna — trzeba tylko nie wpuścić powietrza z powrotem.",
+    "preferencje": "Lubi: dolne poziomy i przybudówki świątyń, ciemne nawy, łamane sprzęty, ogień w składnicach ksiąg, wywracanie procesji i diplomatyczne wyzwiska pod adresem duchowieństwa. Nielubi: anielskiej obecności i rozkazów, chóru, który nie da się przestraszyć, oraz dobrze oświetlonych naw — a przede wszystkim konfrontacji, w której stoi twarzą w twarz z autorytetem niebiańskim (wtedy rzuca kamieniami)."
+  },
+  "dokumentacja": [
+    {
+      "typ": "reportaż",
+      "pozycja": "BBC Lincolnshire, „The Lincoln Imp” (archiwum BBC, strona z 28.10.2014) — cztery warianty legendy: dwa impy wysłane przez Szatana, krzywa iglica w Chesterfield, demolowanie Angel Choir, anioł i skamienienie, ucieczka drugiego ima z czarownicą, która zamieniła go w czarnego kota",
+      "url": "https://www.bbc.co.uk/lincolnshire/unexplained/lincoln_imp.shtml"
+    },
+    {
+      "typ": "reportaż",
+      "pozycja": "David McKenna, Josh Gorrono-Chapman, „The day the devil's lesser known imp was petrified”, BBC News, 16.11.2025 — relacja historyczki i przewodniczki Emmy Lingard o drugim impie: ucieczka do Grimsby Minster (St James'), taniec w zgliszczach wieży, klaps, uwięzienie i skamienienie pod wieżą",
+      "url": "https://www.bbc.co.uk/news/articles/c1m3y4kpl04o"
+    },
+    {
+      "typ": "materiały katedry",
+      "pozycja": "Lincoln Cathedral, „The Legend of the Lincoln Imp” — broszura katedralna przedrukowująca najstarszy znany drukowany wers legendy (1904); opis figury: ok. 12 cali wysokości, siedzi skrzyżowawszy nogi wysoko między dwoma łukami po północnej stronie chóru",
+      "url": "https://lincolncathedral.com/product/the-legend-of-the-lincoln-imp/"
+    },
+    {
+      "typ": "leksykon online",
+      "pozycja": "Wikipedia, „Lincoln Imp” — datowanie rzeźby na budowę Angel Choir (1250–1280), geneza przydomka (balada Arnolda Frosta z 1897 r.), wcześniejsze motywy: „Devil on the Witch's back, looking over Lincoln” (John Carter, 1780) i przysłowie z 1562 r.",
+      "url": "https://en.wikipedia.org/wiki/Lincoln_Imp"
+    }
+  ],
+  "trofea": {
+    "pierwotne": "Skalizowany imp na filarze w Angel Choir — trofeum na miejscu, nierozdzielne z katedrą",
+    "wtorne": "Oświecona monetą fotografia groteski (współczesna relikwia pątnicza)"
+  },
   "rezonans": {
     "klucz_przywolania": "Flavor Forge Devil opisuje diabły wdzierające się na dolne poziomy katedry Thraben, pękające filary nośne i podpalające archiwa — to niemal dosłowne streszczenie legendy o impach z Lincoln: dwa impy wysłane przez Szatana demolowały katedrę, tłukąc sprzęty i podkładając nogę biskupowi, a jeden wdrapał się na filar i rzucał kamieniami w anioła, przez co został przez anioła obrócony w kamień. Jego skamienienie do dziś siedzi na kolumnie w Angel Choir — trofeum na miejscu, symbol miasta Lincoln. Mechanika karty (obowiązkowe obrażenia dla celu I dla gracza) oddaje naturę sabotażysty, którego zło nieodłącznie obraca się też przeciwko temu, kto je wysłał.",
     "tabela": [
@@ -42,41 +79,13 @@
       }
     ]
   },
-  "natura": {
-    "wyglad_i_aura": "Mały, włochaty demonik o krowich uszach, rozdwojonych kopytkach i szeroko rozwartym uzębionym pysku; w rzeźbie siedzi skulony na szczycie filary, jedną nogę założył na kolano, a dłonie trzymają podniesioną stopę. Obecności towarzyszy cień pełzający po nawach, zapach siarki i dymu, gasnące świece; gdzie się przejdzie — pęknięcia w kamieniu, pogryzione i osmalone księgi, powywracane sprzęty liturgiczne.",
-    "charakter_i_motywacje": "Sługus-sabotażysta: nie buduje, tylko psuje. Wysłany przez Szatana „czynić zło na ziemi” wybiera świątynie — demoluje wyposażenie, podkłada nogę biskupowi, rozkręca ogień w bibliotekach. Motywacją jest wandalystyczna radość i służba ojcu kłamstwa; wobec autorytetu jest bezczelny — na rozkaz anioła odpowiada gradem kamieni z filary. Nie jest strategicznym złem: jest złem drobnym, uporczywym i świetnie widocznym w skutkach.",
-    "zdolnosci": "wdzieranie się do świątyń nieprozony (w jednej z wersji — wiał go wiatr zachodni przez wielkie drzwi katedry); mikroszkodzenia konstrukcji nośnych (pęknięcia filarów); podpalenia archiwów i ksiąg; tropy sabotażu wśród sprzętów liturgicznych; w wersji z towarzyszem — ucieczka drugiego ima i jego wędrówka (Grimsby, krążący wokół katedry wiatr).",
-    "slabosci_i_metody_pokonania": "Pieczęć anioła — kanoniczna metoda: boski poseł (w jednej wersji wyszedł z hymnalu) rozkazuje stop, a nieposłuszny imp zostaje obrócony w kamień; to trofeum wisi do dziś na filarze w Angel Choir i samodzielnie się nie regeneruje. Praktyki pomocnicze: poświęcenie i pilnowanie przestrzeni sakralnej (imię pada na impy, które opuszczają świątynię, gdy duchowieństwo odzyskuje czujność); współcześnie jedyna „magia”, na jaką pozwala katedra, to moneta wrzucona do skarbonki — rozświetla figurę ima na filarze.",
-    "preferencje": "Lubi: dolne poziomy i przybudówki świątyń, ciemne nawy, łamane sprzęty, ogień w składnicach ksiąg, wywracanie procesji i diplomatyczne wyzwiska pod adresem duchowieństwa. Nielubi: anielskiej obecności i rozkazów, chóru, który nie da się przestraszyć, oraz dobrze oświetlonych naw — a przede wszystkim konfrontacji, w której stoi twarzą w twarz z autorytetem niebiańskim (wtedy rzuca kamieniami)."
-  },
-  "dokumentacja": [
-    {
-      "typ": "reportaż",
-      "pozycja": "BBC Lincolnshire, „The Lincoln Imp” — zbiór wariantów legendy: impy wysłane przez Szatana, krzywa iglica Chesterfield, demolowanie Angel Choir, anioł i skamienienie, imp z Grimsby"
-    },
-    {
-      "typ": "reportaż",
-      "pozycja": "BBC News, „The day the devil's lesser known imp was petrified in Grimsby” (16.11.2025) — drugi imp i jego skamienienie w Grimsby Minster (St James')"
-    },
-    {
-      "typ": "materiały katedry",
-      "pozycja": "Lincoln Cathedral — The Lincoln Imp: groteska na filarze w Angel Choir jako symbol miasta Lincoln (wizerunek używany m.in. przez Lincoln City FC)"
-    }
-  ],
-  "wizualizacja": {
-    "prompt": "Style: A wide-angle full-body cinematic photograph. The central objects/persons of the photo are visible from head to toe, standing centrally in the frame. No parts of the body are cropped.\n\nA small hairy medieval imp demon with cow ears, cloven hooves, sharp teeth in a wide insolent grin and a barbed tail, crouching on top of a load-bearing stone pillar high inside Lincoln Cathedral's Angel Choir at night, clawed fingers prising a fresh crack in the carved stone, a scorched psalter smouldering on the ledge beside it, cold moonlight falling through stained glass across gothic arches, candle stubs guttering far below on the floor.\n\nCaptured with a 35mm anamorphic lens at f/1.8. Shallow depth of field with a heavy, creamy bokeh background. Environmental portraiture. Dramatic cinematic lighting, sharp focus on the character, hyper-realistic textures of clothing and skin. Shot on 70mm film stock, ultra-wide 21:9 aspect ratio. --ar 21:9",
-    "obraz": "assets/wizualizacje/lincoln-imp.jpg"
-  },
-  "trofea": {
-    "pierwotne": "Skalizowany imp na filarze w Angel Choir — trofeum na miejscu, nierozdzielne z katedrą",
-    "wtorne": "Oświecona monetą fotografia groteski (współczesna relikwia pątnicza)"
-  },
   "tagi": [
     "imp",
     "demon",
     "anglia",
     "katedra",
-    "folklor-chrzescijanski"
+    "folklor-chrzescijanski",
+    "groteska"
   ],
   "powiazania": [
     {
@@ -87,6 +96,11 @@
   "meta": {
     "utworzono": "2026-08-28",
     "autor": "sesja arena 2026-08-28",
-    "modyfikacje": []
+    "modyfikacje": [
+      {
+        "data": "2026-08-28",
+        "opis": "sesja M3 (B1/B3/C1): sekcje wpisów w kolejności prezentacji, wszystkie pozycje dokumentacji z adresami zweryfikowanymi w sieci, uzupełnienia źródłowe"
+      }
+    ]
   }
 }

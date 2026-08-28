@@ -38,7 +38,10 @@ const TYPY_DOK = {
   'literatura piękna': 'Literatura piękna',
   'kino/kultura': 'Kino i kultura',
   'prace badawcze': 'Prace badawcze',
-  językoznawstwo: 'Językoznawstwo',
+  'językoznawstwo': 'Językoznawstwo',
+  'reportaż': 'Reportaż',
+  'materiały katedry': 'Materiały katedry',
+  'leksykon online': 'Leksykon online',
 };
 
 /** Adres źródła jako link (B3) — tylko http/https, bezpieczny tekst kotwicy. */
