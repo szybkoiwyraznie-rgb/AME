@@ -40,3 +40,19 @@ test('każde źródło w kartotece ma adres https i nie powtarza się (B3 + ADR 
     assert.ok(w.dokumentacja.length >= 3, `${w.slug}: kartoteka powinna mieć co najmniej 3 źródła`);
   }
 });
+
+test('przepis CI jest wklejalny: YAML bez znaczników HTML i z wymaganymi kluczami (L9)', async () => {
+  const t = await readFile('docs/setup/ci-workflow.yml', 'utf8');
+  assert.ok(!/<!--|--!?>/.test(t), 'znaczniki HTML łamią parser YAML — to była przyczyna martwego CI (L9)');
+  assert.ok(!t.includes('\t'), 'tabulacje są zakazane w YAML');
+  const klucze = t.split('\n').filter((l) => /^[A-Za-z_][\w-]*:/.test(l)).map((l) => l.split(':')[0]);
+  for (const wymagany of ['name', 'on', 'jobs']) {
+    assert.ok(klucze.includes(wymagany), `brak klucza głównego ${wymagany}:`);
+  }
+  const wcięcia = t.split('\n').filter((l) => /^ +\S/.test(l)).map((l) => l.match(/^ */)[0].length);
+  assert.ok(wcięcia.every((n) => n % 2 === 0), 'wcięcia muszą być wielokrotnością dwóch spacji');
+  assert.ok(/^jobs:\n {2}test:$/m.test(t), 'oczekiwano jobs.test (wcięcie 2 spacje)');
+  for (const krok of ['npm test', 'npm run build', 'npm run check', 'git diff --exit-code data/index.json']) {
+    assert.ok(t.includes(krok), `brak kroku: ${krok}`);
+  }
+});

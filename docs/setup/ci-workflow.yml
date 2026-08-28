@@ -1,34 +1,42 @@
-# Źródłowa treść bramy CI AME (docelowe miejsce: .github/workflows/ci.yml na `main`).
-#
-# To NIE jest prośba ani zadanie właściciela. Plik na `main` istnieje od 2026-08-27 i
-# nie parsuje się (blok HTML z przepisu F0); agent nie ma uprawnień `workflows`, więc
-# nie naprawia tego ani o to nie prosi — bramą sesji są `npm test`, `npm run build`
-# i `npm run check` (AGENTS §2/§4, ENVIRONMENT §3, lekcje L9 i L12).
-# Treść poniżej czeka wyłącznie na ewentualną, samodzielną decyzję właściciela.
-
+# AME — brama CI. Docelowe miejsce: .github/workflows/ci.yml na gałęzi `main`.
+# Ten plik jest KOPIONY W CAŁOŚCI (bez tego komentarza — jego możesz zostawić,
+# `#` to poprawny komentarz YAML). Ostatnia zmiana po stronie właściciela: dalej
+# pilnują go sesje agentskie w zwykłych PR-ach, a agent nie ma prawa pisać do
+# .github/workflows/ (403 `workflows`) — więc nie będzie o nic prosił.
 name: CI
 
 on:
   pull_request:
   push:
     branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
       - uses: actions/setup-node@v4
         with:
-          node-version: 22
-      - name: Testy + walidacja danych
+          node-version: '22'
+
+      # Zero zależności runtime i deweloperskich (ADR 0001) — brak `npm ci`.
+      - name: Testy + walidacja danych (schemat, rama 21:9, skity, feed)
         run: npm test
-      - name: Budowa indeksu
+
+      - name: Przebudowa indeksu (tools/rebuild-index.mjs)
         run: npm run build
-      - name: Indeks aktualny (bez niezacommitowanych zmian)
+
+      - name: Indeks aktualny wobec wpisów (ADR 0002)
         run: |
           npm run check
-          git diff --exit-code data/index.json || {
-            echo "data/index.json niezgodny z wpisami — uruchom npm run build i wcommituj";
-            exit 1;
-          }
+          git diff --exit-code data/index.json
+          echo "data/index.json zgodny z data/manifestations/ i data/skity/"
