@@ -261,3 +261,66 @@ sześć wpisów przetagowane, porzucone tagi-jedynki (`nigeria`, `katedra`,
 szuka wyszukiwarka (`lokalizacja`, `nazwy_alternatywne`, `pochodzenie_i_kultura`).
 Uzasadnienie i koszt: ADR 0016. Testy: 107/107 (własne asercje na kanon, limity
 kategorii, kształt indeksu i rendering pasm).
+
+## M5 (2026-08-28) — audyt PR #2/#3 + naprawa mapy (zlecenie właściciela)
+
+**Zlecenie:** „napraw mapę, która po ostatnim PR przestała w ogóle się rysować”.
+Ostatni scalony PR to #3 (jednorazowa naprawa `ci.yml` przez właściciela), więc
+kod audytu to PR #2 (M3: A1–A5 mapa, B1–B3 wpis) — w squashu PR #2 powstało
+całe drzewo, dlatego audyt prowadzono plik po pliku na stanie `main` (361e9be).
+
+### Audyt PR #3 (`ci.yml`, jedna zmiana)
+
+- Usunięty został blok `<!-- … -->` z receptury F0 — YAML wreszcie się parsuje
+  (L9): `gh run list` pokazuje zielone runy na `main` (`33167855655`) i na PR-ach,
+  a Pages (`pages build and deployment`) wdraża aplikację.
+- Dodane: `workflow_dispatch`, `permissions: contents: read`, `concurrency`
+  (anulowanie nieaktualnych runów), podział kroków z komentarzem „zero
+  zależności — brak `npm ci`” (zgodne z ADR 0001).
+- Krok „Indeks aktualny” poprawiony: `npm run check` + `git diff --exit-code
+  data/index.json` w bloku `run: |` zamiast `|| (echo …; exit 1)`. Zweryfikowane
+  lokalnie: `npm run build` nie zmienia drzewa (indeks deterministyczny, ADR 0002).
+- Lustro `docs/setup/ci-workflow.yml` (M4) jest zgodne z plikiem na `main`, test
+  kontraktowy w `test/dane.test.js` zielony. Brama działa — fakt odnotowany,
+  bez próśb do właściciela (L12).
+
+### Audyt PR #2 (kod aplikacji i danych)
+
+**Bez uwag merytorycznych:**
+
+- `app/geo.js` — projekcja walcowa, dekoder TopoJSON (`dekodujLuki`,
+  `punktyLuku`, `poskladajPierscien`), cięcie na antypołudniku
+  (`potnijPierscien`/`potnijPierscienie`, ADR 0009) oraz czyste
+  `dopasujWidok`. Niezmienniki liczone na prawdziwym `countries-50m.json`
+  (brak cięciwy dłuższej niż pół świata, brak punktów poza prostokątem).
+- `app/app.js` — delegacja klików jednym `closest()` z listą atrybutów
+  ułożonych według pierwszeństwa (L10: `[data-wroc], [data-link], [data-slug],
+  [data-skit]`), obsługa deep-linków, motyw z wyprzedzającym strażnikiem
+  w `<head>` (ADR 0010).
+- `app/ui.js` — sekcje I–VI z numeracją = kolejnością (ADR 0012), stopka
+  z samymi datami, escapowanie treści przed dołożeniem markupu.
+- Dane — 6 wpisów, 3 SKITy, 22 tagi w kanonie: `npm run check` spójny,
+  `npm run build` zostawia drzewo czyste (determinizm).
+
+**Usterki znalezione w audycie:**
+
+- **F1 (krytyczna, blokuje zgłoszenie właściciela).** Kolizja nazwy klasy:
+  `app/map.js:65` nadaje grupie świata `class: 'warstwa'`, a
+  `app/styles.css:460` — `.warstwa { … display: none }` — to pełnoekranowa
+  nakładka UI z ADR 0010 (Baza Skitów / „Co nowego”), domyślnie ukryta.
+  Skutek: cała zawartość mapy nie jest malowana. Zmierzona w headless
+  Chromium (kontener 1440×724): `path.kraj` = 241, `getBBox()` grupy =
+  `0,0,3600,1800`, `getBoundingClientRect()` = `0,0,0,0`,
+  `getComputedStyle().display` = `none`, `elementFromPoint(środek)` =
+  `rect.ocean` (ocean jest dzieckiem `<svg>`, nie grupy, więc tło widać).
+  Dlaczego wyszło dopiero u właściciela: atrapa DOM w `test/pinezka.test.js`
+  nie liczy kaskady CSS, a niezmienniki `test/geo.test.js` patrzą na geometrię,
+  nie na render — brakowało testu spinającego klasy renderu z arkuszem.
+- **F2 (widoczna dla czytelnika).** Stopka aplikacji (`index.html:59`) głosi
+  „protokół MFM v1.3”, choć protokół jest w **v1.4** od ADR 0015; `README.md:54`
+  nadal mówi o v1.2. Wersjonowanie protokołu rozjechało się w trzech miejscach.
+- **F3 (higiena testów).** `test/pinezka.test.js:143` szuka grupy świata po
+  klasie, więc testy są sprzęgnięte z nazwą, która okazała się kolizyjna —
+  nazwa powinna być jednoznaczna, a test ma pilnować kontraktu, nie literówki.
+
+**Stan po audycie:** `npm test` 108/108, `npm run check` spójny, CI zielone.
