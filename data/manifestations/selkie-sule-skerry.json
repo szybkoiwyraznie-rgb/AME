@@ -17,17 +17,17 @@
     "lat": 59.08,
     "lon": -4.41
   },
-  "pochodzenie_i_kultura": "Folklor i ballada Orkney oraz Shetlandu (tradycja nordycko-gielska): „The Great Silkie of Sule Skerry”, Child 113 / Roud 197. Najstarszy zapis zebrał ok. 1852 r. kpt. Francis William Thomas od „venerable lady of Snarra Voe” na Shetlandzie; wersja orkadzka, „The Grey Selchie of Sule Skerry” (14 zwrotek), ukazała się w „The Orcadian” 11 stycznia 1934 r., a melodię zapisał w 1938 r. fiński folklorysta Otto Andersson od Johna Sinclaira z Flotty.",
+  "pochodzenie_i_kultura": "Folklor i ballada Orkney oraz Shetlandu (tradycja nordycko-gielska): „The Great Silkie of Sule Skerry”, Child 113 / Roud 197. Najstarszy zapis zebrał ok. 1852 r. kpt. Francis William Thomas od „venerable lady of Snarra Voe” na Shetlandzie; wersja orkadzka, „The Grey Selchie of Sule Skerry” (14 zwrotek), ukazała się w „The Orcadian” 11 stycznia 1934 r., a melodię zapisał w 1938 r. fiński folklorysta Otto Andersson od Johna Sinclaira z Flotty. Sam nurt „żony-selkie” miał — według Waltera Trailla Dennisona, który zbierał balladę w XIX w. głównie od pani Hiddleston z Orphir — wersję niemal na każdej wyspie Orkadów, a wariant z Unst opublikował Samuel Hibbert w 1822 r. Wyraz selkie jest szkockim słowem na fokę; David MacRitchie snuł nawet hipotezę, że „ludzi foki” wymyślono z niezrozumianych spotkań z Fin-men. Uważano też, że źle wróży zabić fokę i zdjąć z niej skórę — stąd w archipelagach ostrożność wobec myśliwych.",
   "wizualizacja": {
     "prompt": "Style: A wide-angle full-body cinematic photograph. The central objects/persons of the photo are visible from head to toe, standing centrally in the frame. No parts of the body are cropped.\n\nA grey seal-man climbing onto the wet stones of a remote Orkney skerry at the hour when the summer sun heats every rock, his blubbery seal skin half shed and dripping at his heels, a heavy human body with coarse silver fur and webbed hands, a small gold chain lying across the chest of a sleeping boy wrapped in sailcloth on the shingle, two sea chests at a woman's feet, one brimming with gold and one with silver, a rowing boat with a standing gunner far out under a low white sky, puffin burrows and torn kelp, cold clear northern light, breath still visible in the air despite the sun.\n\nCaptured with a 35mm anamorphic lens at f/1.8. Shallow depth of field with a heavy, creamy bokeh background. Environmental portraiture. Dramatic cinematic lighting, sharp focus on the character, hyper-realistic textures of clothing and skin. Shot on 70mm film stock, ultra-wide 21:9 aspect ratio. --ar 21:9",
     "obraz": "assets/wizualizacje/selkie-sule-skerry.jpg"
   },
   "natura": {
-    "wyglad_i_aura": "W balladzie nie ma potwora, jest ciężki, nieatrakcyjny przybysz: „a grumlie guest I’m sure was he”, „although I be not comelie”. Wchodzi z wody na wpół przebrany: tłuszcz i woda ściekają z ludzkich bioder, futro zostaje za nim na kamieniach jak zrzucona kurtka — kpt. Thomas pisał w 1852 r. o fokach zrzucających „wodoodporne kurtki”, żeby przyjąć kształt ludzki. Pachnie solą, rybim łojem i mokrą wełną. Na lądzie porusza się z trudem i nigdy nie odwraca oczu od wody; na szyi dziecka kładzie złoty łańcuch — jedyny znak, jaki po sobie zostawia na brzegu.",
+    "wyglad_i_aura": "W balladzie nie ma potwora, jest ciężki, nieatrakcyjny przybysz: „a grumlie guest I’m sure was he”, „although I be not comelie”. Wchodzi z wody na wpół przebrany: tłuszcz i woda ściekają z ludzkich bioder, futro zostaje za nim na kamieniach jak zrzucona kurtka — kpt. Thomas pisał w 1852 r. o fokach zrzucających „wodoodporne kurtki”, żeby przyjąć kształt ludzki. Pachnie solą, rybim łojem i mokrą wełną. Na lądzie porusza się z trudem i nigdy nie odwraca oczu od wody. Ernest Marwick odnotowuje, że domieszka morza nie da się ukryć: w opowieściach o potomstwie z takich związków dzieci mają foczą twarz, a rodzina selkich dziedziców nosi skórę zielonkawą, bielającą i popękaną, z której sączy się rybi zapach. To nie kostium, tylko ta sama materia w drugim stanie — stąd wilgoć, ciężar i to, że na brzegu wygląda jak człowiek, który za dużo dźwignął.",
     "charakter_i_motywacje": "Nie porywa i nie błaga: przychodzi po swoje i płaci. Oznajmia matce, że weźmie syna, kładzie jej na kolanach mieszek złota („tak thee up thy nourris-fee” — zapłata dla karmicielki) i podaje warunki jak notariusz: rok i dzień (w innych wersjach siedem lat) chowu, letni dzień „gdy słońce grzeje każdy kamień”, naukę pływania w pianie — a potem przepowiada własną śmierć: że kobieta pojmie strzelca, a pierwsza jego strzała zabije i syna, i selkiego. U niego gniew nie wybucha; on po prostu wykonuje ustalony porządek, nawet gdy ten porządek go zabija.",
-    "zdolnosci": "przemiana przez zdjęcie skóry (w wodzie foka, na lądzie człowiek); wchodzenie do izby przez noc, bez otwierania drzwi — „then ane arose at her bed-fit”; wiążące znaki i liczby: złoty łańcuch na szyi dziecka, mieszciec złota i mieszciec srebrnej monety, odliczony czas karmienia; przepowiednia wypowiedziana tak dokładnie, że się spełnia — w wersji orkadzkiej strzelec przynosi z powrotem złoty łańcuch i dopiero on mówi matce, kogo zabiła. W przekazach nowszych (nagranie Tobar an Dualchais, Alex Linklater) ta sama istota przyjmuje ludzki kształt na tyle wiarygodnie, że wyjeżdża na studia do Edynburga.",
-    "slabosci_i_metody_pokonania": "Skóra: kto ją chowa, ten trzyma selkiego przy sobie; kto ją zwróci albo ukradnie — ten go uwalnia albo gubi (motyw powszechny w opowieściach o selkich, nie w samej balladzie). Konfrontacja bezpośrednia jest opisana co do godziny i narzędzia: letni poranek, słońce na nagrzanych skałach, brzeg skerry, strzelec i pierwsza oddana przez niego strzała. Cena trafia w świadka: „she sobbed and sighed and bitter cried, her tender heart did brak in three”. Metoda odwrócenia w tradycji jest bierna: nie brać jego pieniądza, nie wymawiać jego skały na głos, nie pytać o imię dziecka z łańcuchem.",
-    "preferencje": "Lubi: lato i pełne słońce na kamieniach, pianę przy brzegu, kruszec w koferzach, porządek słowa danego i odebranego, dzieci uczone pływania. Nielubi: majańskiego poranku („he’ll gae oot on a May mornin”), strzelb, czuwania na brzegu i ludzi, którzy chcą zobaczyć skórę."
+    "zdolnosci": "przemiana przez zdjęcie skóry (w wodzie foka, na lądzie człowiek); wchodzenie do izby przez noc, bez otwierania drzwi — „then ane arose at her bed-fit”; wiążące znaki i liczby: złoty łańcuch na szyi dziecka, mieszciec złota i mieszciec srebrnej monety, odliczony czas karmienia; przepowiednia wypowiedziana tak dokładnie, że się spełnia — w wersji orkadzkiej strzelec przynosi z powrotem złoty łańcuch i dopiero on mówi matce, kogo zabiła. W przekazach nowszych (nagranie Tobar an Dualchais, Alex Linklater) ta sama istota przyjmuje ludzki kształt na tyle wiarygodnie, że wyjeżdża na studia do Edynburga. Każda skóra jest jedna i nie do zastąpienia, więc nie da się oszukać bytu nowym futrem; w Shetlandzie wierzono, że selkies wabią ludzi do wody w przesilenie letnie i że nikt, kto poszedł, nie wraca na suchy ląd; ludzie strapieni chodzą na brzeg i „ronią siedem łez” — po czym selkie przychodzi, zrzuca skórę i szuka miłości poza małżeństwem (Motyw przywołania przez łzy jest tym, co czyni ten byt namierzalnym).",
+    "slabosci_i_metody_pokonania": "Skóra jest całym jego statusem prawnym: kto ją chowa, ten trzyma selkiego przy sobie, kto ją zwróci albo ukradnie — ten go uwalnia albo gubi. W wersji z Deerness mąż zamyka skórę w skrzyni morskiej (sea-kist) i chowa klucz, a żona sama mówi, że „lepiej trzymać jej selkie dni z dala od pamięci”; kiedy mimo to skórę znajdzie — najczęściej z pomocą dziecka, które widziało, gdzie ją schowano — odchodzi natychmiast, zostawiając rozrzucone ubrania. Bezpośrednia konfrontacja jest w balladzie opisana co do godziny i narzędzia: letni dzień, słońce na nagrzanych skałach, brzeg skerry, strzelec i pierwsza oddana przez niego strzała; cena trafia w świadka: „her tender heart did brak in three”. Metoda przywołania najbliższa tradycji: siedem łez na brzegu i milczenie; metoda obrony: nie brać futra, nie płacić jego złotem i nie pytać o imię dziecka z łańcuchem.",
+    "preferencje": "Lubi: lato i pełne słońce na kamieniach, pianę przy brzegu, kruszec w koferzach, porządek słowa danego i odebranego, dzieci uczone pływania, noc, kiedy nikt nie patrzy. Nielubi: majańskiego poranku „he’ll gae oot on a May mornin”, strzelb, czuwania na brzegu i ludzi, którzy chcą zobaczyć skórę. W Shetlandzie uważano, że to selkies wabią ludzi do wody w przesilenie letnie — i że ten, kto poszedł, nie wraca: dlatego jego gościnność jest zawsze ceną za czyjąś ciekawość."
   },
   "dokumentacja": [
     {
@@ -36,8 +36,13 @@
       "url": "https://en.wikipedia.org/wiki/The_Great_Silkie_of_Sule_Skerry"
     },
     {
+      "typ": "leksykon online",
+      "pozycja": "Wikipedia, „Selkie” — motyw skradzionej skóry i przymusowego małżeństwa; wersje orkadzkie notowane przez W. Traill Dennisona (z Deerness: mąż zamyka skórę w sea-kist i chowa klucz; z North Ronaldsay: skórę odnajduje najmłodsza córka), wariant z Unst (S. Hibbert, 1822), unikalność i niepodmienialność skóry, notatki Ernesta Marwicka o foczej twarzy dzieci i o zielonkawej, popękanej skórze potomków selkich; hipoteza Davida MacRitchiego o niezrozumianych spotkaniach z Fin-men",
+      "url": "https://en.wikipedia.org/wiki/Selkie"
+    },
+    {
       "typ": "prace badawcze",
-      "pozycja": "Mainly Norfolk, karta utworu „The Great Selkie / Silkie of Sule Skerry” — cytat z Thomasa (1852) o foczych „wodoodpornych kurtkach”, przejęcie tekstu i melodii od Johna Sinclaira z Flotty przez Ottona Anderssona (1938), Sule Skerry jako skała 25 mil na zachód od Hoy Head",
+      "pozycja": "Mainly Norfolk, karta utworu „The Great Selkie / Silkie of Sule Skerry” — cytat z Thomasa (1852) o foczych „wodoodpornych kurtkach”, przejęcie tekstu i melodii od Johna Sinclaira z Flotty przez Ottona Anderssona (1938), wskazanie, że epicka wersja orkadzka była zbierana przez Waltera Trailla Dennisona głównie od pani Hiddleston z Orphir, oraz że Sule Skerry leży 25 mil na zachód od Hoy Head",
       "url": "https://mainlynorfolk.info/steeleye.span/songs/greatsilkieofsuleskerry.html"
     },
     {
@@ -47,8 +52,13 @@
     },
     {
       "typ": "materiały archiwalne",
-      "pozycja": "Tobar an Dualchais (School of Scottish Studies), ścieżka 65881 — Alex Linklater deklamuje zwrotkę ballady i opowiada o selkim, który zrzucił skórę i został absolwentem Uniwersytetu w Edynburgu; dowód ciągłości tradycji w XX w.",
+      "pozycja": "Folklore Scotland, „Selkies” (L. Paraschaki) — siedem łez na brzegu jako sposób sprowadzenia selkiego, rozbieżności źródeł co do częstotliwości przemiany (raz w roku / co siedem nocy / co siedem wiosennych przypływów), przekonanie, że zabicie foki i zdjęcie skóry przynosi nieszczęście, oraz motyw skóry jako jedynego nośnika powrotu do morza",
       "url": "https://www.tobarandualchais.co.uk/track/65881?l=en"
+    },
+    {
+      "typ": "opracowanie folklorystyczne",
+      "pozycja": "Folklore Scotland, „Selkies” (L. Paraschaki) — siedem łez na brzegu jako sposób sprowadzenia selkiego, rozbieżności źródeł co do częstotliwości przemiany (raz w roku / co siedem nocy / co siedem wiosennych przypływów), przekonanie, że zabicie foky i zdjęcie skóry przynosi nieszczęście, oraz motyw skóry jako jedynego nośnika powrotu do morza",
+      "url": "https://folklorescotland.com/selkies/"
     }
   ],
   "trofea": {
@@ -100,6 +110,11 @@
   "meta": {
     "utworzono": "2026-08-28",
     "autor": "sesja arena 2026-08-28",
-    "modyfikacje": []
+    "modyfikacje": [
+      {
+        "data": "2026-08-28",
+        "opis": "Wpis pogłębiony o tradycję orkadzką i szetlandzką (Dennison i jego zbieranie u pani Hiddleston z Orphir, Hibbert 1822, Marwick) oraz o praktykę przywoływania: siedem łez na brzegu, skóra chowana w sea-kist, wabienie ludzi do wody w przesilenie letnie. Dodane źródła z adresami: Wikipedia „Selkie” i Folklore Scotland."
+      }
+    ]
   }
 }

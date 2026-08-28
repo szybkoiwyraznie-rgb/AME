@@ -251,6 +251,14 @@
     },
     {
       "data": "2026-08-28",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "selkie-sule-skerry",
+      "tytul": "Wielki Selkie z Sule Skerry",
+      "opis": "Wpis pogłębiony o tradycję orkadzką i szetlandzką (Dennison i jego zbieranie u pani Hiddleston z Orphir, Hibbert 1822, Marwick) oraz o praktykę przywoływania: siedem łez na brzegu, skóra chowana w sea-kist, wabienie ludzi do wody w przesilenie letnie. Dodane źródła z adresami: Wikipedia „Selkie” i Folklore Scotland."
+    },
+    {
+      "data": "2026-08-28",
       "typ": "skit",
       "akcja": "nowy",
       "slug": "plotno-i-kamien",
