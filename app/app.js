@@ -1,8 +1,8 @@
 /**
  * app/app.js — bootstrap AME: ładuje indeks, mapę świata, spina UI.
  */
-import { stworzMape, PROGI_WARSTW } from './map.js';
-import { zaladujIndeks, zaladujWpis, zaladujSkit, dopasowania, wylosujSlug } from './data.js';
+import { stworzMape, PROGI_WARSTW } from './map.js?v=mercator-1';
+import { zaladujIndeks, zaladujWpis, zaladujSkit, dopasowania, wylosujSlug } from './data.js?v=mercator-1';
 import {
   htmlWpisu,
   htmlWarstwyWpisu,
@@ -20,8 +20,8 @@ import {
   motywPoczatkowy,
   etykietaMotywu,
   KLUCZ_MOTYWU,
-} from './ui.js';
-import { SZEROKOSC, WYSOKOSC } from './geo.js';
+} from './ui.js?v=mercator-1';
+import { SZEROKOSC, WYSOKOSC } from './geo.js?v=mercator-1';
 
 const $ = (sel) => document.querySelector(sel);
 

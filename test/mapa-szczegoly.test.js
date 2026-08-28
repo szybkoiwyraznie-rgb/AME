@@ -6,7 +6,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
-import { sciezkaGeoMultiPoligon, SZEROKOSC, WYSOKOSC } from '../app/geo.js';
+import { sciezkaGeoMultiPoligon, SZEROKOSC, WYSOKOSC, projektuj } from '../app/geo.js';
 import { stworzMape, PROGI_WARSTW } from '../app/map.js';
 
 function stworzElement(nazwa) {
@@ -138,6 +138,37 @@ test('mapa: miasta dzielone na rangi i kompensowane do rozmiaru ekranowego', () 
   assert.equal(grupaMiast.getAttribute('display'), 'none');
   mapa.przelaczWidocznoscWarstwy('miasta', true);
   assert.equal(grupaMiast.getAttribute('display'), 'inherit');
+});
+
+test('mapa: klik w miasto pokazuje etykietę, klik w puste miejsce chowa ją', () => {
+  const { kontener } = zasciel();
+  const mapa = stworzMape(kontener, {});
+  mapa.svg.getScreenCTM = () => ({ inverse: () => ({ a: 1, b: 0, c: 0, d: 1, e: 0, f: 0 }) });
+  globalThis.DOMPoint = class {
+    constructor(x, y) { this.x = x; this.y = y; }
+    matrixTransform(m) { return { x: m.a * this.x + m.c * this.y + m.e, y: m.b * this.x + m.d * this.y + m.f }; }
+  };
+
+  mapa.ustawMiasta([
+    { n: 'Warszawa', lat: 52.23, lon: 21.01, p: 1_700_000 },
+    { n: 'Gdańsk', lat: 54.35, lon: 18.65, p: 470_000 },
+  ]);
+  mapa.zoomDoPunktu({ x: 800, y: 320 }, 4);
+  const [wx, wy] = projektuj(52.23, 21.01);
+  const px = mapa.widok.x + wx * mapa.skala;
+  const py = mapa.widok.y + wy * mapa.skala;
+
+  mapa.svg.sluchacze.click[0]({ target: { closest: () => null }, clientX: px, clientY: py });
+  const etykieta = znajdzElement(mapa.svg, 'etykieta-miasta');
+  const tekst = etykieta?.dzieci.find((d) => d.nazwa === 'text');
+  assert.ok(etykieta?.czyMaKlase('widoczna'), 'klik w miasto pokazuje tabliczkę');
+  assert.equal(tekst?.textContent, 'Warszawa · 1.7 mln');
+
+  mapa.svg.sluchacze.click[0]({ target: { closest: () => null }, clientX: 10, clientY: 10 });
+  assert.ok(!etykieta.czyMaKlase('widoczna'), 'klik poza miastem chowa tabliczkę');
+
+  delete globalThis.DOMPoint;
+  delete mapa.svg.getScreenCTM;
 });
 
 test('mapa: przycisk przelaczWidocznoscWarstwy nie psuje warstw wodnych', () => {
