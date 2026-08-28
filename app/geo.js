@@ -210,6 +210,19 @@ export function sciezka(pierscienie) {
   return d;
 }
 
+/** GeoJSON Polygon (tablica pierścieni [lon, lat]) → ścieżka SVG z cięciem
+ * na antypołudniku (ADR 0009 — ta sama obróbka co kraje). */
+export function sciezkaGeoPoligon(pierscienie) {
+  return sciezka(potnijPierscienie(pierscienie));
+}
+
+/** GeoJSON MultiPolygon → połączone ścieżki SVG. */
+export function sciezkaGeoMultiPoligon(coords) {
+  let d = '';
+  for (const poly of coords ?? []) d += sciezkaGeoPoligon(poly);
+  return d;
+}
+
 /** Geometrie obiektu "countries" → [{ id, nazwa, d }] do wyrenderowania. */
 export function dekodujKraje(topologia) {
   const luki = dekodujLuki(topologia);

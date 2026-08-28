@@ -10,7 +10,7 @@
  * pinch (2 wskaźniki), dwuklik, przyciski. Pinezki i ich etykiety kompensują
  * skalę widoku, więc mają stały rozmiar w pikselach CSS (ADR 0009).
  */
-import { projektuj, dekodujKraje, siatka, dopasujWidok, ogranicz, K_MIN, K_MAX, SZEROKOSC as SZER, WYSOKOSC as WYS } from './geo.js';
+import { projektuj, dekodujKraje, siatka, dopasujWidok, ogranicz, K_MIN, K_MAX, SZEROKOSC as SZER, WYSOKOSC as WYS, sciezkaGeoMultiPoligon } from './geo.js';
 
 const NS = 'http://www.w3.org/2000/svg';
 
@@ -25,6 +25,17 @@ const ETYKIETA = {
 
 /** Odległość dolnej krawędzi badge’a od środka pinezki (px CSS). */
 const ODSTEP_BADGE = 30;
+
+/** Warstwy szczegółowości (ADR 0020): progi zoomu dla danych tematycznych. */
+export const PROGI_WARSTW = {
+  woda: 4,
+  miastaWielkie: 4,
+  miastaSrednie: 7,
+  miastaDrobne: 10,
+  poi: 8,
+};
+/** Czy warstwa jest włączona użytkownikowi (domyślnie wszystkie dostępne). */
+const WIDOCZNE_WARSTWY = { rzeki: true, jeziora: true, miasta: true, poi: false };
 
 function el(nazwa, atrybuty = {}, rodzic = null) {
   const e = document.createElementNS(NS, nazwa);
@@ -53,7 +64,7 @@ export function wymiaryEtykiety(nazwa, tekst = null) {
   };
 }
 
-export function stworzMape(kontener, { przyZmianieZaznaczenia } = {}) {
+export function stworzMape(kontener, { przyZmianieZaznaczenia, przyZmianieWidoku } = {}) {
   const svg = el('svg', { viewBox: `0 0 ${SZER} ${WYS}`, preserveAspectRatio: 'xMidYMid meet', class: 'mapa-svg' });
   svg.setAttribute('role', 'application');
   svg.setAttribute('aria-label', 'Mapa świata z manifestacjami eterycznymi');
@@ -69,6 +80,20 @@ export function stworzMape(kontener, { przyZmianieZaznaczenia } = {}) {
   const grupaSwiata = el('g', { class: 'swiat' }, svg);
   el('path', { d: siatka(30), class: 'siatka' }, grupaSwiata);
   const grupaKrajow = el('g', { class: 'kraje' }, grupaSwiata);
+  // Warstwy szczegółowości (ADR 0020): woda rysowana nad lądem, miasta i POI
+  // w osobnych grupach punktowych — wszystkie w układzie świata.
+  const grupaWarstw = el('g', { class: 'warstwy-szczegolow' }, grupaSwiata);
+  const grupaRzek = el('g', { class: 'rzeki', display: 'none' }, grupaWarstw);
+  const grupaJezior = el('g', { class: 'jeziora', display: 'none' }, grupaWarstw);
+  const grupaMiast = el('g', { class: 'miasta', display: 'none' }, grupaWarstw);
+  const grupaPOI = el('g', { class: 'poi', display: 'none' }, grupaWarstw);
+  // Miasta dzielimy na rangi, żeby przy zmianie zoomu sterować liczbą punktów
+  // bez przebudowywania drzewa (ADR 0020 — LOD treści, nie tylko geometrii).
+  const grupyMiast = {
+    wielkie: el('g', { class: 'miasta-wielkie' }, grupaMiast),
+    srednie: el('g', { class: 'miasta-srednie' }, grupaMiast),
+    drobne: el('g', { class: 'miasta-drobne' }, grupaMiast),
+  };
   const warstwaLukow = el('g', { class: 'luki', display: 'none' }, grupaSwiata);
   const grupaPinezek = el('g', { class: 'pinezki' }, grupaSwiata);
   // A3 (M6): badge'y w osobnej grupie PO grupie pinezek — SVG maluje elementy
@@ -85,6 +110,8 @@ export function stworzMape(kontener, { przyZmianieZaznaczenia } = {}) {
   let paryPolaczen = []; // [{a, b}]
   let lukiStale = false; // warstwa ∞ włączona przyciskiem (przelaczLuki)
   let podgladSlug = null; // C2: pinezka pod wskaźnikiem/fokusem — podgląd jej powiązań
+  let miastaDane = []; // [{nazwa, wx, wy, p, c}]
+  let ostatnieSkala = null; // do pomijania przebudowy transformów punktów przy samym panu
 
   /** Punkt zdarzenia klienta → współrzędne viewBoxu (= piksele kontenera). */
   function naSvg(zdarzenie) {
@@ -141,6 +168,8 @@ export function stworzMape(kontener, { przyZmianieZaznaczenia } = {}) {
     }
     // A1 (M6): bez stałego pokazywania etykiet od progu zoomu — dawny toggle
     // klasy `przyblizona` usunięty; etykieta żyje na najechanie/fokus/wybranie.
+    odswiezWidocznoscWarstw();
+    przyZmianieWidoku?.(widok.k, { skala: skala });
   }
 
   /** Zoom w punkt p (współrzędne viewBoxu) o czynnik f. */
@@ -365,6 +394,88 @@ export function stworzMape(kontener, { przyZmianieZaznaczenia } = {}) {
     }
   }
 
+  /* ---- Warstwy szczegółowości (ADR 0020): woda, miasta, POI ------ */
+
+  /** Rysuje jedną warstwę wodną (rzeki albo jeziora) z GeoJSON MultiPolygon. */
+  function ustawWode(grupa, geo) {
+    grupa.innerHTML = '';
+    for (const g of geo?.geometries ?? []) {
+      if (g.type === 'MultiPolygon' || g.type === 'Polygon') {
+        const coords = g.type === 'MultiPolygon' ? g.coordinates : [g.coordinates];
+        el('path', { d: sciezkaGeoMultiPoligon(coords), class: 'szczegol' }, grupa);
+      }
+    }
+    odswiezWidocznoscWarstw();
+  }
+
+  function ustawRzeki(geo) {
+    ustawWode(grupaRzek, geo);
+  }
+
+  function ustawJeziora(geo) {
+    ustawWode(grupaJezior, geo);
+  }
+
+  const formatujPopulacje = (p) => (p >= 1_000_000 ? `${(p / 1_000_000).toFixed(1)} mln` : `${(p / 1_000).toFixed(0)} tys.`);
+
+  /** Miasta: punkty o stałym rozmiarze ekranowym, podzielone na rangi LOD. */
+  function ustawMiasta(lista) {
+    grupyMiast.wielkie.innerHTML = '';
+    grupyMiast.srednie.innerHTML = '';
+    grupyMiast.drobne.innerHTML = '';
+    miastaDane = [];
+    for (const m of Array.isArray(lista) ? lista : []) {
+      const p = Number(m?.p) || 0;
+      const tier = p >= 1_000_000 ? 'wielkie' : p >= 500_000 ? 'srednie' : 'drobne';
+      const [wx, wy] = projektuj(Number(m.lat), Number(m.lon));
+      const g = el('g', { class: 'miasto' }, grupyMiast[tier]);
+      const r = tier === 'wielkie' ? 4.5 : tier === 'srednie' ? 3.5 : 2.5;
+      const kropka = el('circle', { class: 'kropka', r: String(r) }, g);
+      const t = el('title', {}, kropka);
+      t.textContent = `${m.n ?? m.nazwa ?? ''}${p ? ` · ${formatujPopulacje(p)}` : ''}`;
+      miastaDane.push({ g, wx, wy, tier });
+    }
+    ostatnieSkala = null; // wymuś ustawienie transformów punktów
+    odswiezWidocznoscWarstw();
+  }
+
+  /** Widoczność warstw od zoomu + odbicia punktów miast (tylko gdy skala się zmieni). */
+  function odswiezMiasta() {
+    const k = widok.k;
+    const progi = {
+      wielkie: PROGI_WARSTW.miastaWielkie,
+      srednie: PROGI_WARSTW.miastaSrednie,
+      drobne: PROGI_WARSTW.miastaDrobne,
+    };
+    const pokazuj = WIDOCZNE_WARSTWY.miasta && k >= PROGI_WARSTW.miastaWielkie;
+    for (const [tier, gr] of Object.entries(grupyMiast)) {
+      gr.setAttribute('display', pokazuj && k >= progi[tier] ? 'inherit' : 'none');
+    }
+    if (!pokazuj || Math.abs(skala - ostatnieSkala) <= 1e-9) return;
+    const komp = 1 / skala;
+    for (const m of miastaDane) {
+      if (grupyMiast[m.tier].getAttribute('display') === 'none') continue;
+      m.g.setAttribute('transform', `translate(${m.wx} ${m.wy}) scale(${komp})`);
+    }
+    ostatnieSkala = skala;
+  }
+
+  /** Widoczność wszystkich warstw szczegółów — wywoływane z `zastosuj`. */
+  function odswiezWidocznoscWarstw() {
+    const k = widok.k;
+    grupaRzek.setAttribute('display', WIDOCZNE_WARSTWY.rzeki && k >= PROGI_WARSTW.woda ? 'inherit' : 'none');
+    grupaJezior.setAttribute('display', WIDOCZNE_WARSTWY.jeziora && k >= PROGI_WARSTW.woda ? 'inherit' : 'none');
+    grupaMiast.setAttribute('display', WIDOCZNE_WARSTWY.miasta && k >= PROGI_WARSTW.miastaWielkie ? 'inherit' : 'none');
+    grupaPOI.setAttribute('display', WIDOCZNE_WARSTWY.poi && k >= PROGI_WARSTW.poi ? 'inherit' : 'none');
+    odswiezMiasta();
+  }
+
+  /** Włącza/wyłącza warstwę bez przebudowywania danych (switch w UI). */
+  function przelaczWidocznoscWarstwy(klucz, widoczny) {
+    if (klucz in WIDOCZNE_WARSTWY) WIDOCZNE_WARSTWY[klucz] = !!widoczny;
+    odswiezWidocznoscWarstw();
+  }
+
   /* ---- Kraje (asynchronicznie, po załadowaniu TopoJSON) ---- */
 
   function ustawMapeSwiata(topologia) {
@@ -396,6 +507,10 @@ export function stworzMape(kontener, { przyZmianieZaznaczenia } = {}) {
     ustawMapeSwiata,
     ustawPinezki,
     ustawPolaczenia,
+    ustawRzeki,
+    ustawJeziora,
+    ustawMiasta,
+    przelaczWidocznoscWarstwy,
     zaznacz,
     podswietl,
     przelaczLuki,

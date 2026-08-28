@@ -1,7 +1,7 @@
 /**
  * app/app.js — bootstrap AME: ładuje indeks, mapę świata, spina UI.
  */
-import { stworzMape } from './map.js';
+import { stworzMape, PROGI_WARSTW } from './map.js';
 import { zaladujIndeks, zaladujWpis, zaladujSkit, dopasowania, wylosujSlug } from './data.js';
 import {
   htmlWpisu,
@@ -33,6 +33,9 @@ const stan = {
   motyw: 'ciemny',
   warstwa: null, // { tryb: 'skity' | 'skit' | 'nowosci', slug? }
   ostatniLos: null, // ostatnio wylosowany slug — reroll go pomija (nawet po zamknięciu karty)
+  warstwy: { rzeki: true, jeziora: true, miasta: true, poi: false }, // włączone przełącznikami
+  zaladowane: { rzeki: false, jeziora: false, miasta: false, poi: false },
+  panelWarstw: false,
 };
 
 let mapa;
@@ -254,6 +257,58 @@ function losujManifestacje() {
   otworzWpis(slug, { przewin: true });
 }
 
+/** Ładuje i rysuje rzeki (kiedy użytkownik wejdzie w wymagany zoom). */
+async function zaladujRzeki() {
+  if (stan.zaladowane.rzeki) return;
+  stan.zaladowane.rzeki = true;
+  try {
+    const data = await fetch(new URL('assets/map/rivers-2km5.json', document.baseURI)).then((r) => (r.ok ? r.json() : Promise.reject(new Error(`HTTP ${r.status}`))));
+    mapa.ustawRzeki(data);
+  } catch {
+    /* warstwa opcjonalna — mapa zostaje na państwach i pinezkach */
+  }
+}
+
+/** Ładuje i rysuje jeziora (ten sam próg zoomu co rzeki). */
+async function zaladujJeziora() {
+  if (stan.zaladowane.jeziora) return;
+  stan.zaladowane.jeziora = true;
+  try {
+    const data = await fetch(new URL('assets/map/lakes-2km5.json', document.baseURI)).then((r) => (r.ok ? r.json() : Promise.reject(new Error(`HTTP ${r.status}`))));
+    mapa.ustawJeziora(data);
+  } catch {
+    /* opcjonalna */
+  }
+}
+
+/** Ładuje i rysuje miasta (punkty o populacji ≥100 tys. lub stolice). */
+async function zaladujMiasta() {
+  if (stan.zaladowane.miasta) return;
+  stan.zaladowane.miasta = true;
+  try {
+    const data = await fetch(new URL('assets/map/miasta.json', document.baseURI)).then((r) => (r.ok ? r.json() : Promise.reject(new Error(`HTTP ${r.status}`))));
+    mapa.ustawMiasta(data);
+  } catch {
+    /* opcjonalna */
+  }
+}
+
+/** LOD (ADR 0020): przy zoobie powyżej progu dojadą warstwy danych tematycznych. */
+function odswiezWarstwyDane(k) {
+  if (k < PROGI_WARSTW.woda || !mapa) return;
+  if (stan.warstwy.rzeki && !stan.zaladowane.rzeki) zaladujRzeki();
+  if (stan.warstwy.jeziora && !stan.zaladowane.jeziora) zaladujJeziora();
+  if (stan.warstwy.miasta && !stan.zaladowane.miasta) zaladujMiasta();
+}
+
+/** Przełącznik panelu „warstwy” na mapie. */
+function przelaczPanelWarstw() {
+  const panel = $('#warstwy-panel');
+  stan.panelWarstw = !stan.panelWarstw;
+  panel.hidden = !stan.panelWarstw;
+  $('#przycisk-warstwy').setAttribute('aria-pressed', String(stan.panelWarstw));
+}
+
 function przelaczListe() {
   const lista = $('#lista');
   const otwarta = lista.classList.toggle('otwarta');
@@ -326,6 +381,16 @@ function podepnijZdarzenia() {
   $('#przycisk-lista').addEventListener('click', przelaczListe);
   $('#przycisk-skity').addEventListener('click', otworzBazeSkitow);
   $('#przycisk-nowosci').addEventListener('click', otworzNowosci);
+  $('#przycisk-warstwy').addEventListener('click', przelaczPanelWarstw);
+  for (const klucz of ['rzeki', 'jeziora', 'miasta', 'poi']) {
+    const el = document.querySelector(`#warstwa-${klucz}`);
+    if (!el) continue;
+    el.addEventListener('change', (e) => {
+      stan.warstwy[klucz] = e.target.checked;
+      mapa.przelaczWidocznoscWarstwy(klucz, e.target.checked);
+      if (e.target.checked) odswiezWarstwyDane(mapa.widok.k); // dojedź warstwę po włączeniu
+    });
+  }
 
   $('#warstwa').addEventListener('click', (e) => {
     if (e.target.closest('#zamknij-warstwe')) return zamknijWarstwe();
@@ -405,7 +470,10 @@ async function start() {
     $('#blad-startowy').classList.add('widoczny');
     return;
   }
-  mapa = stworzMape($('#mapa'), { przyZmianieZaznaczenia: (slug) => otworzWpis(slug, { przewin: false }) });
+  mapa = stworzMape($('#mapa'), {
+    przyZmianieZaznaczenia: (slug) => otworzWpis(slug, { przewin: false }),
+    przyZmianieWidoku: (k) => odswiezWarstwyDane(k),
+  });
   try {
     const topo = await fetch(new URL('assets/map/countries-50m.json', document.baseURI)).then((r) => {
       if (!r.ok) throw new Error(`HTTP ${r.status}`);
