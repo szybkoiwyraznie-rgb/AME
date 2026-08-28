@@ -6,6 +6,15 @@
 
 ## Aplikacja / UX
 
+- **„Arena Rezonansu” (idle battler)** — grywalizacja na zlecenie właściciela
+  (M8, C2). Staty bytu WYPROWADZANE z rekordu indeksu (backlinki, powiązania,
+  skity, epitety, motywy) — determinizm ADR 0002, losowość tylko ze
+  wstrzykniętego RNG. Projekt: `docs/plans/POMYSL_arena-rezonansu-idle-battler.md`.
+  Zręby: `app/arena.js` (`statyManifestacji`, runda) + `test/arena.test.js`.
+  **Do decyzji właściciela: zakres widoku (osobny `#arena` vs profil bojowy w
+  kartotece) i ton (Rezonans/spór tradycji, nie „krew i HP”).** Wpięcie do UI
+  dopiero po akceptacji.
+
 - **Deep-linki** `#/slug`: adresowalne wpisy + stan mapy w URL (kandydat do
   F2). Podstawa: `location.hash`, brak zależności.
 - **Klastrowanie pinezek**: przy > 50 wpisach mapa zrobi się ciasna; prosty
