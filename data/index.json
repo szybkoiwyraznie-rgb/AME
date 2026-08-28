@@ -1,7 +1,7 @@
 {
   "wersja": 2,
   "liczba": 4,
-  "liczbaSkitow": 2,
+  "liczbaSkitow": 3,
   "tagi": {
     "afryka-zachodnia": [
       "egungun"
@@ -101,6 +101,7 @@
       ],
       "obraz": "assets/wizualizacje/balor.jpg",
       "skity": [
+        "hold-oraz-swiatlo",
         "znak-i-liczba"
       ]
     },
@@ -133,6 +134,7 @@
       ],
       "obraz": "assets/wizualizacje/egungun.jpg",
       "skity": [
+        "hold-oraz-swiatlo",
         "plotno-i-kamien"
       ]
     },
@@ -164,6 +166,7 @@
       ],
       "obraz": "assets/wizualizacje/lincoln-imp.jpg",
       "skity": [
+        "hold-oraz-swiatlo",
         "plotno-i-kamien"
       ]
     },
@@ -201,6 +204,23 @@
     }
   ],
   "skity": [
+    {
+      "slug": "hold-oraz-swiatlo",
+      "tytul": "HOŁD ORAZ ŚWIATŁO",
+      "temat": "trzy modele opłaty za święte miejsce: podatek, zaproszenie i grosz turysty",
+      "uczestnicy": [
+        "balor",
+        "egungun",
+        "lincoln-imp"
+      ],
+      "imiona": [
+        "Balor",
+        "Egungun",
+        "Imp z Lincoln"
+      ],
+      "slow": 276,
+      "data": "2026-08-28"
+    },
     {
       "slug": "plotno-i-kamien",
       "tytul": "PŁÓTNO I KAMIEŃ",
@@ -256,6 +276,14 @@
       "slug": "selkie-sule-skerry",
       "tytul": "Wielki Selkie z Sule Skerry",
       "opis": "Wpis pogłębiony o tradycję orkadzką i szetlandzką (Dennison i jego zbieranie u pani Hiddleston z Orphir, Hibbert 1822, Marwick) oraz o praktykę przywoływania: siedem łez na brzegu, skóra chowana w sea-kist, wabienie ludzi do wody w przesilenie letnie. Dodane źródła z adresami: Wikipedia „Selkie” i Folklore Scotland."
+    },
+    {
+      "data": "2026-08-28",
+      "typ": "skit",
+      "akcja": "nowy",
+      "slug": "hold-oraz-swiatlo",
+      "tytul": "HOŁD ORAZ ŚWIATŁO",
+      "opis": "SKIT — skład: Balor, Egungun, Imp z Lincoln"
     },
     {
       "data": "2026-08-28",
