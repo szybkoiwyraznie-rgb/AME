@@ -222,6 +222,19 @@ je wyłącznie na wyraźne zlecenie właściciela w sesji.
       (Filar/Drapieżnik/Splotca/Pieśniarz/Samotnik). **Wybór kierunku i wpięcie
       do UI — do decyzji właściciela.**
 
+## M10 (2026-08-28) — pogłębienie koncepcji (SPLOT/KRONIKA) + treść — ✅ w PR #6
+
+- [x] **Namysł (zlecenie właściciela):** `docs/plans/POMYSL_splot-i-kronika-koncepcja.md`
+      — unifikacja A (SPLOT — świat, który się zmienia) + B (KRONIKA — wcielone
+      spotkania przez **subagentów-postacie** z własnym dossier). Dwie
+      architektury AI (rekomendacja 3b: rozgrywka jako dane w repo popychane
+      przez kolejnych agentów Areny, bez kluczy w runtime), model danych Kroniki,
+      ilustracje pregenerowane, przykład dossier (Balor). Bez kodu gry.
+- [x] **C1** `kentaur-pelion`: metopy Partenonu jako świadectwo materialne
+      kentauromachii, +2 źródła (Muzeum Akropolu, Wikipedia).
+- [x] **C3** SKIT „NIEPROSZENI GOŚCIE” (trio Imp × Kentaur × Empusa) — metoda
+      embodimentu (prototyp KRONIKI), rejestr lekki.
+
 ## F2 — Jakość i ergonomia mapy
 
 - [x] Deep-linki (`#<slug>` — stan mapy i otwartego wpisu; działa od M1, tu

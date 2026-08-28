@@ -693,3 +693,44 @@ pętlę z głębszym namysłem w C2. Praca dołożona do PR #6.
 
 - Stan: `npm test` **144/144**, build/check zielone; indeks: 8 wpisów, **8
   SKITów**, 24 pozycje feedu, 26 tagów. Protokół v1.7.
+
+## M10 (2026-08-28) — pogłębienie koncepcji grywalizacji (SPLOT/KRONIKA) + treść
+
+Właściciel odpowiedział na 3 pytania z M9: A i B oba warte rozważenia (A nie
+może być płaski; B ożywa dzięki subagentom wcielonym w pojedyncze byty), dwie
+architektury AI (runtime z kluczami w sesji albo pregenerowane popychane przez
+agentów Areny), a na razie „myślimy, nie kodujemy gry; w międzyczasie treść".
+
+### Namysł (główny rezultat sesji)
+
+- `docs/plans/POMYSL_splot-i-kronika-koncepcja.md`: A i B jako dwie warstwy
+  jednej gry — SPLOT (świat, który się zmienia: statystyki, powiązania, tereny;
+  auto-gra z opcjonalną ręką gracza-reżysera) + KRONIKA (wcielone spotkania,
+  gdzie każdy byt gra osobny subagent z ograniczonym „dossier": percepcja,
+  wiedza, granice, słabość, zakazy stylu). Metodyka pętli spotkania,
+  Kronikarz-rozjemca, model danych `data/kronika/*.json` (deterministyczny,
+  liczony jak feed z meta), ilustracje pregenerowane w sesji agenta (bez kluczy
+  w runtime), przykład dossier (Balor). Rekomendacja architektury: model 3b
+  (rozgrywka jako dane popychane przez kolejnych agentów Areny) — zgodny z DNA
+  projektu i ADR 0001–0003; runtime (3a) jako późniejsza opcja za osobnym ADR.
+- Wniosek metodyczny: **każdy nowy SKIT piszemy metodą embodimentu** i jest on
+  darmowym prototypem KRONIKI. Cross-link w `LUZNE_POMYSLY_NA_PRZYSZLOSC.md`.
+
+### C1 — pogłębienie `kentaur-pelion` (research www, ADR 0008)
+
+- Świadectwo materialne kentauromachii: 32 metopy południowej ściany Partenonu
+  (walka przedmiotami z hali — głazy, hydrie, gałęzie; metopa 30: Lapita
+  sięgający po kamień; na zachowanych płytach zwycięża często kentaur, bo walka
+  w toku). +2 źródła (Muzeum Akropolu, Wikipedia „Metopes of the Parthenon”).
+
+### C3 — SKIT „NIEPROSZENI GOŚCIE” (trio, metoda embodimentu)
+
+- Imp z Lincoln × Kentaur z Pelionu × Empusa — skład 3-osobowy, unikalny, 229
+  słów, rejestr lekki/komiczny (v1.6, po serii kontemplacyjnych). Napisany jako
+  prototyp KRONIKI: każdy głos rozumuje tylko z własnej wiedzy. Motyw: trzej
+  psujący uroczystości i „odźwierny” każdego z nich (anioł, cała hala, jedno
+  trzeźwe słowo).
+
+- Stan: `npm test` **144/144**, build/check zielone; indeks: 8 wpisów, **9
+  SKITów**, 26 pozycji feedu, 26 tagów. Protokół v1.7. Podpowiedź składów: 5
+  duetów vs 4 składy ≥3 (ADR 0019).
