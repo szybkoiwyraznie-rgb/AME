@@ -1,7 +1,7 @@
 {
   "wersja": 3,
   "liczba": 8,
-  "liczbaSkitow": 8,
+  "liczbaSkitow": 9,
   "kanon": {
     "kategorie": [
       {
@@ -413,7 +413,8 @@
       "obraz": "assets/wizualizacje/empusa-korynt.jpg",
       "skity": [
         "dwa-zepsute-wesela",
-        "dwie-skory"
+        "dwie-skory",
+        "nieproszeni-goscie"
       ]
     },
     {
@@ -442,7 +443,8 @@
       "obraz": "assets/wizualizacje/kentaur-pelion.jpg",
       "skity": [
         "dwa-zepsute-wesela",
-        "dwie-skory"
+        "dwie-skory",
+        "nieproszeni-goscie"
       ]
     },
     {
@@ -478,6 +480,7 @@
       "skity": [
         "hold-oraz-swiatlo",
         "kurz-i-piora",
+        "nieproszeni-goscie",
         "plotno-i-kamien"
       ]
     },
@@ -620,6 +623,23 @@
       "data": "2026-08-28 15:35"
     },
     {
+      "slug": "nieproszeni-goscie",
+      "tytul": "NIEPROSZENI GOŚCIE",
+      "temat": "trzej psuja uroczystości porównują, jak wchodzą i co ich zatrzymuje (odźwierny każdego z nich)",
+      "uczestnicy": [
+        "empusa-korynt",
+        "kentaur-pelion",
+        "lincoln-imp"
+      ],
+      "imiona": [
+        "Imp z Lincoln",
+        "Kentaur z Pelionu",
+        "Empusa"
+      ],
+      "slow": 229,
+      "data": "2026-08-28 21:30"
+    },
+    {
       "slug": "plotno-i-kamien",
       "tytul": "PŁÓTNO I KAMIEŃ",
       "temat": "kto w ogóle wchodzi do świątyni: zaproszony przodek i nieproszony sabotażysta",
@@ -651,6 +671,14 @@
     }
   ],
   "aktualizacje": [
+    {
+      "data": "2026-08-28 21:30",
+      "typ": "skit",
+      "akcja": "nowy",
+      "slug": "nieproszeni-goscie",
+      "tytul": "NIEPROSZENI GOŚCIE",
+      "opis": "SKIT — skład: Imp z Lincoln, Kentaur z Pelionu, Empusa"
+    },
     {
       "data": "2026-08-28 21:10",
       "typ": "manifestacja",
