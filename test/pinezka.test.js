@@ -250,3 +250,51 @@ test('etykiety (A1, M6): zaznaczona pinezka trzyma badge; przygaszona gaśnie ra
   mapa.podswietl(null);
   assert.equal(etykieta.czyMaKlase('przygaszona'), false, 'bez filtra badge pełny');
 });
+
+test('podgląd powiązań (C2): najechanie zwęża łuki do połączeń pinezki i podświetla sąsiadów', () => {
+  const { kontener } = zaiscz();
+  const mapa = stworzMape(kontener, {});
+  mapa.ustawPinezki([
+    { slug: 'a', nazwa: 'A', lat: 0, lon: 0 },
+    { slug: 'b', nazwa: 'B', lat: 1, lon: 1 },
+    { slug: 'c', nazwa: 'C', lat: 2, lon: 2 },
+  ]);
+  mapa.ustawPolaczenia([
+    { slug: 'a', powiazania: ['b'] },
+    { slug: 'c', powiazania: ['a'] },
+    { slug: 'b', powiazania: ['c'] },
+  ]);
+  const luki = znajdz(mapa.svg, 'luki');
+  const grupaPinezek = mapa.svg.dzieci.find((d) => d.czyMaKlase('swiat')).dzieci.find((d) => d.czyMaKlase('pinezki'));
+  const pinSluga = (slug) => grupaPinezek.dzieci.find((d) => d.getAttribute('data-slug') === slug);
+  assert.equal(luki.getAttribute('display'), 'none', 'warstwa łuków domyślnie ukryta');
+
+  pinSluga('a').sluchacze.pointerenter[0]();
+  assert.equal(luki.getAttribute('display'), 'inherit', 'podgląd odsłania warstwę łuków');
+  assert.equal(luki.dzieci.length, 2, 'rysowane są tylko łuki dotykające a (a-b, c-a; b-c pominięty)');
+  assert.ok(luki.dzieci.every((p) => p.czyMaKlase('aktywny')), 'łuki podglądu są aktywne');
+  assert.ok(pinSluga('b').czyMaKlase('powiazana') && pinSluga('c').czyMaKlase('powiazana'), 'sąsiedzi podświetleni');
+  assert.ok(!pinSluga('a').czyMaKlase('powiazana'), 'wskazana pinezka nie podświetla siebie');
+
+  pinSluga('a').sluchacze.pointerleave[0]();
+  assert.equal(luki.getAttribute('display'), 'none', 'po opuszczeniu warstwa gaśnie (stan stały wyłączony)');
+  assert.ok(!pinSluga('b').czyMaKlase('powiazana'), 'podświetlenie sąsiadów znika');
+  assert.equal(luki.dzieci.length, 3, 'po opuszczeniu znowu wszystkie pary powiązań');
+
+  // stan stały (∞): podgląd zwęża, opuszczenie przywraca pełną warstwę
+  mapa.przelaczLuki(true);
+  assert.equal(luki.getAttribute('display'), 'inherit');
+  pinSluga('a').sluchacze.pointerenter[0]();
+  assert.equal(luki.dzieci.length, 2, 'podgląd zwęża łuki także przy warstwie stałej (z trzech do dwóch)');
+  pinSluga('a').sluchacze.pointerleave[0]();
+  assert.equal(luki.getAttribute('display'), 'inherit', 'po opuszczeniu wraca stan stały');
+  assert.equal(luki.dzieci.length, 3);
+  mapa.przelaczLuki(false);
+
+  // fokus klawiatury działa jak najechanie (dostępność)
+  pinSluga('a').sluchacze.focus[0]();
+  assert.equal(luki.getAttribute('display'), 'inherit', 'fokus odsłania podgląd powiązań');
+  assert.ok(pinSluga('c').czyMaKlase('powiazana'));
+  pinSluga('a').sluchacze.blur[0]();
+  assert.equal(luki.getAttribute('display'), 'none');
+});

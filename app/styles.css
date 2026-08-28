@@ -233,6 +233,8 @@ html[data-motyw='jasny'] .baner code { background: #ffffff77; }
 .pinezka:focus { outline: none; }
 .pinezka.wybrana .glowa { fill: var(--akcent); stroke: var(--akcent-2); }
 .pinezka.wybrana .ostrze { fill: var(--akcent); }
+/* C2: sąsiedzi wskazanej pinezki — delikatny sygnał połączenia (bez zmiany wypełnienia). */
+.pinezka.powiazana .glowa { stroke: var(--akcent); }
 .pinezka.przygaszona { opacity: 0.14; pointer-events: none; }
 
 /* Etykieta (A4): czytelny badge 19 px z pleckami; jednostka = px CSS.

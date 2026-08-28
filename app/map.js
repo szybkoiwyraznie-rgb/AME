@@ -83,6 +83,8 @@ export function stworzMape(kontener, { przyZmianieZaznaczenia } = {}) {
   const pinezki = new Map(); // slug -> {el, wx, wy}
   let zaznaczony = null;
   let paryPolaczen = []; // [{a, b}]
+  let lukiStale = false; // warstwa ∞ włączona przyciskiem (przelaczLuki)
+  let podgladSlug = null; // C2: pinezka pod wskaźnikiem/fokusem — podgląd jej powiązań
 
   /** Punkt zdarzenia klienta → współrzędne viewBoxu (= piksele kontenera). */
   function naSvg(zdarzenie) {
@@ -262,10 +264,23 @@ export function stworzMape(kontener, { przyZmianieZaznaczenia } = {}) {
       dopasujBadge(tlo, tekst, r.nazwa);
       // A1 (M6): etykieta pokazuje się po najechaniu wskaźnikiem i po fokusu
       // klawiatury (pinezka jest fokusowalna, tabindex=0).
-      g.addEventListener('pointerenter', () => etykieta.classList.add('widoczna'));
-      g.addEventListener('pointerleave', () => etykieta.classList.remove('widoczna'));
-      g.addEventListener('focus', () => etykieta.classList.add('widoczna'));
-      g.addEventListener('blur', () => etykieta.classList.remove('widoczna'));
+      // C2: najechanie/fokus pokazuje badge (A1) i podgląd powiązań pinezki
+      g.addEventListener('pointerenter', () => {
+        etykieta.classList.add('widoczna');
+        podgladaj(r.slug);
+      });
+      g.addEventListener('pointerleave', () => {
+        etykieta.classList.remove('widoczna');
+        podgladaj(null);
+      });
+      g.addEventListener('focus', () => {
+        etykieta.classList.add('widoczna');
+        podgladaj(r.slug);
+      });
+      g.addEventListener('blur', () => {
+        etykieta.classList.remove('widoczna');
+        podgladaj(null);
+      });
       g.addEventListener('click', (ev) => {
         ev.stopPropagation();
         przyZmianieZaznaczenia?.(r.slug);
@@ -290,6 +305,7 @@ export function stworzMape(kontener, { przyZmianieZaznaczenia } = {}) {
   function rysujLuki() {
     warstwaLukow.innerHTML = '';
     for (const { a, b } of paryPolaczen) {
+      if (podgladSlug && a !== podgladSlug && b !== podgladSlug) continue; // C2: tylko łuki dotykające wskazanej
       const pa = pinezki.get(a);
       const pb = pinezki.get(b);
       if (!pa || !pb) continue;
@@ -301,13 +317,34 @@ export function stworzMape(kontener, { przyZmianieZaznaczenia } = {}) {
       // punkt kontrolny uniesiony prostopadle nad środek (0.18 długości)
       const cx = mx - (dy / len) * len * 0.18;
       const cy = my + (dx / len) * len * 0.18;
-      const aktywny = zaznaczony === a || zaznaczony === b;
+      const aktywny = podgladSlug != null || zaznaczony === a || zaznaczony === b;
       el('path', { d: `M${pa.wx} ${pa.wy} Q${cx} ${cy} ${pb.wx} ${pb.wy}`, class: `luk${aktywny ? ' aktywny' : ''}` }, warstwaLukow);
     }
+    // C2: sąsiedzi wskazanej pinezki dostają delikatne podświetlenie
+    for (const [s, p] of pinezki) {
+      const sasiad =
+        podgladSlug != null &&
+        s !== podgladSlug &&
+        paryPolaczen.some(({ a, b }) => (a === podgladSlug && b === s) || (b === podgladSlug && a === s));
+      p.el.classList.toggle('powiazana', sasiad);
+    }
+    odswiezLukiWidocznosc();
+  }
+
+  function odswiezLukiWidocznosc() {
+    warstwaLukow.setAttribute('display', lukiStale || podgladSlug ? 'inherit' : 'none');
   }
 
   function przelaczLuki(pokaz) {
-    warstwaLukow.setAttribute('display', pokaz ? 'inherit' : 'none');
+    lukiStale = !!pokaz;
+    odswiezLukiWidocznosc();
+  }
+
+  /** C2: podgląd powiązań pinezki (najechanie wskaźnikiem albo fokus klawiatury). */
+  function podgladaj(slug) {
+    const zmiana = podgladSlug !== slug;
+    podgladSlug = slug;
+    if (zmiana) rysujLuki();
   }
 
   function zaznacz(slug) {
