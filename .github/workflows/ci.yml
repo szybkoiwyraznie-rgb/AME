@@ -1,29 +1,37 @@
-<!-- 
-  PRZEPIS CI (do jednorazowego wklejenia przez właściciela).
-  Token agenta (GitHub App) nie ma uprawnień `workflows` i nie może
-  utworzyć pliku w .github/workflows/ — dlatego przepis leży tutaj.
-  Włączenie: skopiuj zawartość (bez komentarza HTML) do
-  .github/workflows/ci.yml na gałęzi main. Od tej chwili CI pilnuje
-  każdego PR (AGENTS.md §2, ADR 0004).
--->
 name: CI
 
 on:
   pull_request:
   push:
     branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
       - uses: actions/setup-node@v4
         with:
-          node-version: 22
-      - name: Testy + walidacja danych
+          node-version: '22'
+
+      # Zero zależności runtime i deweloperskich (ADR 0001) — brak `npm ci`.
+      - name: Testy + walidacja danych (schemat, rama 21:9, skity, feed)
         run: npm test
-      - name: Budowa indeksu
+
+      - name: Przebudowa indeksu (tools/rebuild-index.mjs)
         run: npm run build
-      - name: Indeks aktualny (bez niezacommitowanych zmian)
-        run: npm run check && git diff --exit-code data/index.json || (echo "data/index.json niezgodny z wpisami — uruchom npm run build i wcommituj"; exit 1)
+
+      - name: Indeks aktualny wobec wpisów (ADR 0002)
+        run: |
+          npm run check
+          git diff --exit-code data/index.json
+          echo "data/index.json zgodny z data/manifestations/ i data/skity/"
