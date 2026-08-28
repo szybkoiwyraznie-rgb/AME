@@ -642,3 +642,54 @@ dołożona jako kolejne commity PR #6 (sesja przypięta do gałęzi
 
 - Stan: `npm test` **139/139**, build/check zielone; indeks deterministyczny:
   8 wpisów, **7 SKITów**, 22 pozycje feedu, 26 tagów. Protokół **v1.7** (ADR 0019).
+
+## M9 (2026-08-28) — luźne pomysły na przyszłość + Pętla Jakości (C1 → C3 → C2)
+
+Właściciel: pomysł statystyk-z-gęstości dobry, ale sama „walka" (Arena
+Rezonansu) za prosta — nie wypychać jako feature; zapisać 10 kierunków i zrobić
+pętlę z głębszym namysłem w C2. Praca dołożona do PR #6.
+
+- **Odzyskanie workspace (L1/L5):** sandbox zresetował HEAD na `main`; praca
+  M7+M8 była wypchnięta, więc `git fetch origin arena/01a048ac-ame` +
+  `reset --hard FETCH_HEAD` przywróciło stan (139/139).
+
+### Zlecenie — magazyn pomysłów
+
+- `docs/LUZNE_POMYSLY_NA_PRZYSZLOSC.md`: 10 kierunków właściciela z oceną
+  ograniczeń (ADR 0001–0003) i ryzyk; kluczowa zasada — klucze API (pomysły
+  9–10) wyłącznie w pamięci sesji przeglądarki, nigdy w repo/na Arenie. Arena
+  Rezonansu (walka 1:1) oznaczona jako WSTRZYMANA; rdzeń `arena.js` zostaje jako
+  fundament.
+
+### C1 — pogłębienie `empusa-korynt` (research www, ADR 0008)
+
+- Literackie drugie życie sceny korynckiej: Filostrat „Żywot Apolloniosa" IV.25
+  → Robert Burton „Anatomy of Melancholy" (1621, „Menippus Lycius… no substance,
+  but mere illusions") → John Keats „Lamia" (1820) → Goethe „Oblubienica z
+  Koryntu". +3 źródła z adresami (Livius, Project Gutenberg, Poetry Foundation).
+
+### C3 — SKIT „DWIE SKÓRY" (kwartet)
+
+- Drangue × Kentaur z Pelionu × Selkie z Sule Skerry × Empusa — pierwszy
+  4-osobowy skład w bazie (demonstracja ADR 0019), unikalny, 249 słów, ton
+  ciepły. Motyw: podwójna natura i „szew", który ją rozpruwa (wiatr, wino,
+  schowane futro, jedno słowo). Fakty z kartotek uczestników.
+
+### C2 — analiza kierunków grywalizacji + fundament (bez UI)
+
+- `docs/plans/POMYSL_kierunki-grywalizacji-analiza.md`: ocena 10 pomysłów wg
+  wartość/koszt/gotowość; trzy spójne wiązki — A „Kustosz Archiwum" (idle-
+  management: staty→zdolności + ekonomia + koalicje), B „Wyprawy/Sploty" (treść
+  z kombinacji, blisko SKIT-ów), C „Teleturniej AI" (najdroższy, klucze API,
+  łamie ADR 0003). Rekomendacja: najpierw kartoteka do ~15–20 wpisów, potem
+  kierunek A; C odłożony.
+- Fundament bez żalu w `app/arena.js` (czyste, deterministyczne, zero UI):
+  `percentyl`, `profileKartoteki` (staty czytane WZGLĘDNIE w obrębie kartoteki —
+  rozwiązuje „stary wpis zawsze wygrywa"), `archetypBytu`
+  (Filar/Drapieżnik/Splotca/Pieśniarz/Samotnik z kształtu profilu). +6 testów.
+  Podgląd na realnej kartotece: Balor=Drapieżnik, Egungun/Selkie=Filar,
+  empusa/kentaur=Samotnik (najnowsze, najmniej powiązań — dokładnie to, co
+  normalizacja ma ujawniać).
+
+- Stan: `npm test` **144/144**, build/check zielone; indeks: 8 wpisów, **8
+  SKITów**, 24 pozycje feedu, 26 tagów. Protokół v1.7.

@@ -205,6 +205,23 @@ je wyłącznie na wyraźne zlecenie właściciela w sesji.
       (staty z rekordu, deterministycznie) + testy. **Do akceptacji właściciela:
       zakres widoku i wpięcie do UI.**
 
+## M9 (2026-08-28) — luźne pomysły + Pętla Jakości (C1 → C3 → C2) — ✅ w PR #6
+
+- [x] **Zlecenie właściciela:** `docs/LUZNE_POMYSLY_NA_PRZYSZLOSC.md` — 10
+      kierunków (modele/zdolności, ekonomia, generator obrazów, kombinacje/fabuła,
+      panowanie nad regionami, koalicje, mapa granularna, mapa+obrazy, quizy z
+      modelami AI, modele AI zarządzające) + wątki przekrojowe i ryzyka
+      (klucze API tylko w pamięci sesji). Arena Rezonansu (walka 1:1) wstrzymana.
+- [x] **C1** `empusa-korynt`: recepcja literacka sceny korynckiej (Filostrat
+      IV.25 → Burton 1621 → Keats „Lamia” 1820 → Goethe), +3 źródła z adresami.
+- [x] **C3** SKIT „DWIE SKÓRY” — kwartet Drangue × Kentaur × Selkie × Empusa
+      (pierwszy 4-osobowy skład; motyw podwójnej natury i „szwu”).
+- [x] **C2** analiza 10 kierunków grywalizacji
+      (`docs/plans/POMYSL_kierunki-grywalizacji-analiza.md`) + fundament bez żalu:
+      `app/arena.js` — normalizacja percentylowa staty i archetypy
+      (Filar/Drapieżnik/Splotca/Pieśniarz/Samotnik). **Wybór kierunku i wpięcie
+      do UI — do decyzji właściciela.**
+
 ## F2 — Jakość i ergonomia mapy
 
 - [x] Deep-linki (`#<slug>` — stan mapy i otwartego wpisu; działa od M1, tu
