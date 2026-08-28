@@ -187,6 +187,24 @@ je wyłącznie na wyraźne zlecenie właściciela w sesji.
       `wylosujSlug` + 5 testów; zweryfikowane headless (8/8 osiągalnych, 0
       powtórzeń pod rząd, filtr respektowany). **Do akceptacji przed live (ADR 0007).**
 
+## M8 (2026-08-28) — zlecenia A/B/C + Pętla Jakości — ✅ w PR #6 (C2 do akceptacji)
+
+- [x] **A — SKITy 3–4 osobowe preferowane** (ADR 0019, PROTOKÓŁ v1.7 §8.2):
+      stała `SKIT_ZALECANE_UCZESTNIKOW=3`, `podpowiedzSkladySkitow` + niełamiąca
+      podpowiedź w buildzie. Minimum 2 zostaje (duety legalne).
+- [x] **B — opis powiązania jako zdanie** (ADR 0019, §6.2): walidator odrzuca
+      opis <12 słów i goły link (`POWIAZANIE_MIN_SLOW`). Istniejące (43–78 słów)
+      przechodzą.
+- [x] **C1** `lincoln-imp`: research www (dwaj impowie, anioł z hymnału, ucieczka
+      do Grimsby, wiatr krążący za bliźniakiem) + 2 źródła + obustronne
+      powiązania (balor, drangue).
+- [x] **C3** SKIT „KALENDARZ POWROTÓW” — trio Barbarossa × Egungun × Selkie
+      (demonstracja A; skład 3-osobowy, 252 słowa).
+- [x] **C2** „Arena Rezonansu” (idle battler, zlecenie C): projekt
+      (`docs/plans/POMYSL_arena-rezonansu-idle-battler.md`) + zręby `app/arena.js`
+      (staty z rekordu, deterministycznie) + testy. **Do akceptacji właściciela:
+      zakres widoku i wpięcie do UI.**
+
 ## F2 — Jakość i ergonomia mapy
 
 - [x] Deep-linki (`#<slug>` — stan mapy i otwartego wpisu; działa od M1, tu

@@ -585,3 +585,60 @@ Sesja bez nowego zlecenia na starcie: po audycie → Pętla Jakości (ADR 0007).
 
 - Stan: `npm test` **125/125**, build/check zielone; indeks: 8 wpisów, **6
   SKITów**, 20 pozycji feedu, 26 tagów. Protokół v1.6 bez zmian.
+
+## M8 (2026-08-28) — zlecenia właściciela A/B/C + Pętla Jakości (C1 → C3 → C2)
+
+Właściciel zaakceptował featurę „🎲 wylosuj" z M7 i zlecił trzy kwestie; praca
+dołożona jako kolejne commity PR #6 (sesja przypięta do gałęzi
+`arena/01a048ac-ame`).
+
+### A — SKITy 3–4-osobowe jako preferowane (ADR 0019, PROTOKÓŁ v1.7 §8.2)
+
+- Powód: baza wypełniła się duetami, a największy potencjał niosą rozmowy 3–4
+  bytów z różnych kultur. Minimum pozostaje 2 (istniejące duety legalne),
+  maksimum 4; nowa stała `SKIT_ZALECANE_UCZESTNIKOW = 3`.
+- Czysta `podpowiedzSkladySkitow(skiti)` liczy duety vs składy ≥3 i zwraca
+  niełamiącą zachętę; `npm run build` wypisuje ją, gdy duetów więcej (sygnał
+  dla C3, nie błąd walidacji).
+
+### B — opis powiązania jako zdanie uzasadniające (ADR 0019, §6.2)
+
+- `walidujPowiazania` odrzuca opis krótszy niż `POWIAZANIE_MIN_SLOW = 12` słów
+  oraz opis będący samym `http(s)`-linkiem. Istniejące opisy (43–78 słów)
+  przechodzą bez migracji; próg pilnuje przyszłości.
+- Protokół v1.7, AGENTS/WORKFLOW, index.html/README zsynchronizowane; +4 testy
+  kontraktowe (kod = protokół = instrukcja), naprawione fixture'y z krótkimi
+  opisami (`rebuild-index.test.js`, `fixtures/katalog-ok/zorza.json`).
+
+### C1 — pogłębienie `lincoln-imp` (research www, ADR 0008)
+
+- Wersja XIII–XIV-wieczna o dwóch impach-bliźniakach: anioł wychodzący z
+  hymnału skamienił śmiałka w Angel Choir („stop me if you can"), a jego
+  towarzysz uciekł do Grimsby (trzyma się za obolały tyłek pod wieżą) — stąd
+  powiedzenie, że wiatr krążący wokół katedry to imp szukający brata. +2 źródła
+  (Liquisearch, zteve t. evans). Obustronne powiązania: → balor (złe spojrzenie),
+  → drangue-shala (święty przedmiot jako herb i tarcza wspólnoty).
+
+### C3 — SKIT „KALENDARZ POWROTÓW" (trio, demonstracja A)
+
+- Barbarossa × Egungun × Selkie z Sule Skerry — skład 3-osobowy, unikalny, 252
+  słowa, rejestr ciepły (v1.6). Wspólny motyw: umówiony powrót — cesarz czeka na
+  kruki i suchą gałąź, egungun wraca co sierpień na bęben i oríkì, selkie sam
+  podał dzień (rok i dzień chowu, letni dzień „gdy słońce grzeje każdy kamień")
+  i własną śmierć od pierwszej strzały. Fakty z kartotek uczestników.
+
+### C2 — „Arena Rezonansu": idle battler (zlecenie C; projekt + zręby)
+
+- Grywalizacja wyprowadzona z tezy AME: byt jest tym silniejszy, im głębiej
+  osadzony w sieci archiwum. Staty (ŻYWOTNOŚĆ/MOC/SPRYT/REZONANS) liczone z
+  rekordu indeksu (backlinki, powiązania, skity, epitety, motywy) — determinizm
+  ADR 0002, losowość wyłącznie ze wstrzykniętego RNG (jak wylosujSlug).
+- Dokument projektowy `docs/plans/POMYSL_arena-rezonansu-idle-battler.md`
+  (mechanika, ryzyka, etapy). Czysty moduł `app/arena.js`: `statyManifestacji`,
+  `motywyZTagow`, `mnoznikKontry` (warunek tłumi złe oko, opłata furię),
+  `obrazeniaRundy`, `kolejnosc`. `test/arena.test.js` (10 testów, w tym kontrakt:
+  każdy motyw kanonu ma wagę). **ZERO wpięcia do UI — fundament do decyzji
+  właściciela o zakresie i tonie.**
+
+- Stan: `npm test` **139/139**, build/check zielone; indeks deterministyczny:
+  8 wpisów, **7 SKITów**, 22 pozycje feedu, 26 tagów. Protokół **v1.7** (ADR 0019).
