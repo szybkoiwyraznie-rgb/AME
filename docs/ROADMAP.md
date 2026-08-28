@@ -144,6 +144,17 @@ je wyłącznie na wyraźne zlecenie właściciela w sesji.
       odlot przywraca stan; zweryfikowane w headless Chromium (zwężenie 11→5
       łuków). **Do akceptacji właściciela przed live** (ADR 0007).
 
+## M6c (2026-08-28) — zlecenie: ton SKITów (humor i codzienność) — ✅ w PR #5
+
+- [x] **PROTOKÓŁ v1.6 (ADR 0018):** §8 wprost sugeruje rejestr luźny — humor,
+      codzienność, rozmowa „przy ognisku” o prostych sprawach; elegia to jeden
+      z rejestrów, nie jedyny (po serii poważnych następna lekka). Sugestia
+      autorska — rygory twarde (in-character, faktografia, unikalność składu)
+      bez zmian, walidator nie mierzy „śmieszności”.
+- [x] **SKIT demonstracyjny** „Kurz i pióra” (Drangue × Imp — skład unikalny,
+      241 słów): ptaki pod dachem, kurz, pranie skrzydeł i „przeciąg wysokiej
+      jakości” po oknach wybitych przez ima.
+
 ## F2 — Jakość i ergonomia mapy
 
 - [x] Deep-linki (`#<slug>` — stan mapy i otwartego wpisu; działa od M1, tu

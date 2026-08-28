@@ -459,3 +459,26 @@ v1.5), dokumenty sesji. Decyzja o scaleniu należy do właściciela.
   kontraktowy w `pinezka.test.js` (120/120); live w Chromium: 11 → 5 łuków
   dla balora, sąsiedzi: barbarossa, drangue, lincoln-imp, selkie; zero błędów
   JS. Prezentacja właścicielowi w czacie — live po scaleniu PR #5.
+
+### Zlecenie w sesji M6: ton SKITów — humor i codzienność (PROTOKÓŁ v1.6, ADR 0018)
+
+Właściciel (2026-08-28): skity są „strasznie poważne i srogie” — wytyczne mają
+sugerować też rejestr humorystyczny, „na luzie, przy ognisku, o prostych,
+codziennych sprawach”, nie tylko „sążniste elegie”.
+
+- **ADR 0018 + PROTOKÓŁ v1.6:** §8 (wstęp i §8.3 pkt 3) dopowiada rejestr
+  tonu — humor, codzienność (jedzenie, sen, pogoda, kurz, pranie, zwierzęta,
+  sąsiedzi) jako pełnoprawny rejestr; po serii poważnych rozmów następna
+  powinna być lekka. Sugestia autorska, nie walidator — rygory twarde
+  (in-character, faktografia z lore, unikalność składu, 2–4 uczestników,
+  300 słów) bez zmian. Istniejące SKIT-y bez migracji. README i stopka
+  aplikacji → v1.6 (kontrakt L14). Przy okazji usunięta stara literówka
+  §8 („łączi” → „łączy”).
+- **SKIT demonstracyjny nowego rejestru — „Kurz i pióra”** (Drangue × Imp
+  z Lincoln, skład unikalny, 241 słów): jaskółka pod skrzydłem, gołębie
+  katedry, kurz „jak złoto”, pranie skrzydeł w „przeciągu wysokiej jakości”.
+  Fakty z kanonu kartotek (okna wybite przez ima, wiązówka, kamień
+  piorunowy, matki pilnujące skrzydeł); czwartek jako dzień widowni —
+  kiwnik do „e enjte” (czwartek, dzień ognia) z dokumentacji drangue.
+- Stan: `npm test` 120/120, build/check zielone, indeks: 6 wpisów, 5 SKITów,
+  16 pozycji feedu.
