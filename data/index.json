@@ -1,7 +1,7 @@
 {
   "wersja": 3,
   "liczba": 6,
-  "liczbaSkitow": 4,
+  "liczbaSkitow": 5,
   "kanon": {
     "kategorie": [
       {
@@ -301,7 +301,8 @@
       "backlinki": [],
       "obraz": "assets/wizualizacje/drangue-shala.jpg",
       "skity": [
-        "godzina-otwarcia"
+        "godzina-otwarcia",
+        "kurz-i-piora"
       ]
     },
     {
@@ -368,6 +369,7 @@
       "obraz": "assets/wizualizacje/lincoln-imp.jpg",
       "skity": [
         "hold-oraz-swiatlo",
+        "kurz-i-piora",
         "plotno-i-kamien"
       ]
     },
@@ -439,6 +441,21 @@
       "data": "2026-08-28"
     },
     {
+      "slug": "kurz-i-piora",
+      "tytul": "KURZ I PIÓRA",
+      "temat": "ptaki, kurz i pranie skrzydeł: codzienne troski na wysokości",
+      "uczestnicy": [
+        "drangue-shala",
+        "lincoln-imp"
+      ],
+      "imiona": [
+        "Drangue z doliny Shali",
+        "Imp z Lincoln"
+      ],
+      "slow": 241,
+      "data": "2026-08-28 15:35"
+    },
+    {
       "slug": "plotno-i-kamien",
       "tytul": "PŁÓTNO I KAMIEŃ",
       "temat": "kto w ogóle wchodzi do świątyni: zaproszony przodek i nieproszony sabotażysta",
@@ -477,6 +494,14 @@
       "slug": "godzina-otwarcia",
       "tytul": "GODZINA OTWARCIA",
       "opis": "SKIT — skład: Balor, Drangue z doliny Shali"
+    },
+    {
+      "data": "2026-08-28 15:35",
+      "typ": "skit",
+      "akcja": "nowy",
+      "slug": "kurz-i-piora",
+      "tytul": "KURZ I PIÓRA",
+      "opis": "SKIT — skład: Drangue z doliny Shali, Imp z Lincoln"
     },
     {
       "data": "2026-08-28 15:20",
