@@ -249,6 +249,18 @@ je wyłącznie na wyraźne zlecenie właściciela w sesji.
       obustronne powiązania z barbarossa i drangue (sieć balora domknięta).
 - [x] **C3** SKIT „TRZY ZEGARY” (trio Barbarossa × Balor × Drangue) — blind-draft.
 
+## M12 (2026-08-28) — przenośność platformy budowy (Meta.ai) + treść — ✅ w PR #6
+
+- [x] **Analiza (zlecenie właściciela):** `docs/plans/POMYSL_platforma-budowy-przenosnosc.md`
+      — rozróżnienie build-time (kto buduje: wymienny, granica = git PR) vs
+      run-time (artefakt zostaje vanilla static, ADR 0001–0003). Meta.ai/„agent
+      swarm" rozwiązuje INNY problem niż subagenci w grze: daje prawdziwą izolację
+      przy GENEROWANIU Kroniki, bez kluczy w artefakcie. Rekomendacja: dodatkowa
+      platforma, nie zamiennik reguł; pilot = jedna epoka Kroniki.
+- [x] **C1** `selkie-sule-skerry`: „Lady Odivere", melodia Sinclaira/Anderssona,
+      dedup źródła; domknięcie sieci (→ empusa, → kentaur).
+- [x] **C3** SKIT „TRZY STOŁY” (trio Egungun × Barbarossa × Kentaur) — blind-draft.
+
 ## F2 — Jakość i ergonomia mapy
 
 - [x] Deep-linki (`#<slug>` — stan mapy i otwartego wpisu; działa od M1, tu

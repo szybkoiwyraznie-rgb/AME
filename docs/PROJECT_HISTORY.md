@@ -780,3 +780,41 @@ niezależne timeline'y.
 - Stan: `npm test` **144/144**, build/check zielone; indeks: 8 wpisów, **10
   SKITów**, 28 pozycji feedu, 26 tagów. Protokół v1.7. Składy wieloosobowe:
   5 vs 5 duetów (ADR 0019 — równowaga osiągnięta).
+
+## M12 (2026-08-28) — przenośność platformy budowy (Meta.ai) + treść
+
+Właściciel: a może przenieść rozwój na Meta.ai (czat z wieloagentowością /
+„agent swarm"), kończąc sesje patchem/PR wgrywanym ręcznie? Odpowiedź na
+poziomie architektury (nie zweryfikowano samodzielnie zdolności Meta.ai).
+
+### Analiza (główny rezultat)
+
+- `docs/plans/POMYSL_platforma-budowy-przenosnosc.md`: kluczowe rozróżnienie
+  build-time vs run-time. Build-time (kto buduje) jest z założenia WYMIENNY —
+  granicą przekazania jest git (ADR 0004), a `AGENTS.md` wprost mówi „Runner
+  (Arena i każdy inny)". Meta.ai/swarm nie zastępuje „subagentów w grze" —
+  daje coś lepszego na etapie BUDOWY: prawdziwą izolację przy GENEROWANIU
+  treści KRONIKI (model 3b wzmocniony), bez kluczy w artefakcie. Run-time
+  (artefakt u odbiorcy) zostaje vanilla static (ADR 0001–0003); pełna izolacja
+  na żywo to nadal osobna decyzja (3a, klucze). Warunki przenośności (checklista),
+  ryzyka (utrata connectora GitHub, nieznany sandbox, weryfikacja zdolności),
+  rekomendacja: dodatkowa platforma + pilot (jedna epoka Kroniki, 3 odizolowane
+  byty). Uczciwie odnotowano brak samodzielnej weryfikacji funkcji Meta.ai.
+
+### C1 — pogłębienie `selkie-sule-skerry` (research www, ADR 0008)
+
+- Ballada bywa częścią epickiego cyklu „Lady Odivere"; pentatoniczną melodię
+  spisał Otto Andersson od Johna Sinclaira z Flotty (spopularyzowana melodia
+  Jima Watersa, 1954). Usunięto powtórzone źródło; +1 źródło. Selkie (hub z 5
+  backlinkami) oddaje teraz 4 powiązania: dołożono → empusa (przemiana przez
+  okrycie, odwrotny rachunek) i → kentaur (dwa ciała naprzemiennie/naraz).
+
+### C3 — SKIT „TRZY STOŁY" (trio, blind-draft)
+
+- Egungun × Barbarossa × Kentaur z Pelionu — skład 3-osobowy, unikalny, 232
+  słowa; blind-draft. Motyw: gościnność ponad granicą śmierci i czasu (wzywanie
+  zmarłego przodka, zapłata gościowi za spokój, gość, który wziął sam).
+
+- Stan: `npm test` **144/144**, build/check zielone; indeks: 8 wpisów, **11
+  SKITów**, 30 pozycji feedu, 26 tagów. Protokół v1.7. Składy wieloosobowe:
+  **6 vs 5 duetów** (ADR 0019).
