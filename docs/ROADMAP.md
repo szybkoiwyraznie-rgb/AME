@@ -127,6 +127,23 @@ je wyłącznie na wyraźne zlecenie właściciela w sesji.
       v1.5): `meta` przyjmuje `RRRR-MM-DD GG:MM`, sort dat po znakach
       (deterministyczny), feed renderuje `datetime` z godziną.
 
+## M6b (2026-08-28) — Pętla Jakości sesji M6: C1 → C3 → C2 — ✅ w PR #5 (C2 do akceptacji)
+
+- [x] **C1** `drangue-shala`: relacja terenowa Edith Durham (obserwacje 1908,
+      druk 1910, JRAI XL; odbitka na Internet Archive) + powiązanie z Balorem —
+      zwycięstwo rzutem kamienia z ręki bohatera.
+- [x] **C1** `barbarossa-kyffhaeuser`: pełny tekst wiersza Rückerta
+      (Volksliederarchiv; powstanie 1815, pierwszy druk „Kranz der Zeit" 1817,
+      melodia Gersbacha 1824) + powiązanie z Egungun — przodek, który wraca
+      rytuałem.
+- [x] **C3** SKIT „Godzina otwarcia" (Balor × Drangue — skład unikalny,
+      239 słów); test porządku feedu uaktualniony do semantyki godzin
+      (ADR 0017).
+- [x] **C2** podgląd powiązań na najechanie/fokus: hover na pinezkę zwęża
+      warstwę łuków do jej połączeń i podświetla sąsiadów (`.powiazana`),
+      odlot przywraca stan; zweryfikowane w headless Chromium (zwężenie 11→5
+      łuków). **Do akceptacji właściciela przed live** (ADR 0007).
+
 ## F2 — Jakość i ergonomia mapy
 
 - [x] Deep-linki (`#<slug>` — stan mapy i otwartego wpisu; działa od M1, tu

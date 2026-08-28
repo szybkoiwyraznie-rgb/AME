@@ -426,3 +426,36 @@ chwyta selkie; klik otwiera kartotekę; przyciski zoomu celują w środek okna).
 zielone, indeks deterministyczny (drzewo czyste po buildzie). PR #5 (gałąź
 `arena/01a04853-ame`): plan, audyt PR #4, mapa A1–A3, godzina B (ADR 0017,
 v1.5), dokumenty sesji. Decyzja o scaleniu należy do właściciela.
+
+### Pętla Jakości sesji M6 (po zleceniach — C1 → C3 → C2, ADR 0007)
+
+- **C1a — `drangue-shala`:** research w źródłach (ADR 0008) dał najstarszą
+  relację terenową z samego regionu: Edith Durham, „High Albania and its
+  Customs in 1908” (JRAI XL, 1910, s. 453–472; istnienie odbitki potwierdzone
+  na archive.org, treść cytowana za skanem artykułu) — walki Drangue z
+  Kulshedrą zanotowane dwukrotnie w środku burz 1908, wiara w dwie
+  przeciwstawne siły światła i ciemności (słońce/księżyc), rzeźbione słońce na
+  tronie gospodarza w Shali i Shoshi. Nowe powiązanie z Balorem: zwycięstwo
+  rzutem kamienia z ręki bohatera (Lugh: `cloch as a tábaill` w otwarte oko;
+  drangue: kamienie piorunowe w chmurę) — `meta.modyfikacje` z godziną 15:12.
+- **C1b — `barbarossa-kyffhaeuser`:** pełny tekst wiersza Rückerta „Der alte
+  Barbarossa” (Volksliederarchiv: powstanie 1815, pierwszy druk „Kranz der
+  Zeit” 1817 s. 270, melodia Gersbacha 1824/Silcher) — scena snu (mrugnięcie
+  do chłopca, wysłanie „Zwerga” po kruki, broda „von Feuersglut”) dopowiedziana
+  w wyglądzie; nowe powiązanie z Egungun — przodek, który wraca rytuałem
+  (maskarada cykliczna ↔ powrót jednorazowy z zastępem). `meta.modyfikacje`
+  z godziną 15:20.
+- **C3 — SKIT „Godzina otwarcia”** (`data/skity/godzina-otwarcia.json`,
+  239 słów): Balor × Drangue z doliny Shali — skład wolny i unikalny; temat
+  „słabość jako godzina otwarcia” nie powtarza żadnego z trzech poprzednich.
+  Przy okazji: test porządku feedu („zmiany dnia najwyżej”) asercjonował
+  świat sprzed ADR 0017 — przepisany na nowe invariants (godzina nad zapisem
+  dziennym; wśród dziennych sekwencja L11). 119/119 → push.
+- **C2 — podgląd powiązań na najechanie/fokus** (featur, do akceptacji):
+  hover/fokus na pinezkę zwęża warstwę łuków do par, które ją dotykają
+  (wszystkie z klasą `aktywny`), podświetla sąsiadów klasą `.powiazana`
+  (obrys głowy kolorem akcentu), pokazuje badge; odlot/blur przywraca stan
+  (też przy włączonej warstwie ∞ — zwęża, potem przywraca pełną). Test
+  kontraktowy w `pinezka.test.js` (120/120); live w Chromium: 11 → 5 łuków
+  dla balora, sąsiedzi: barbarossa, drangue, lincoln-imp, selkie; zero błędów
+  JS. Prezentacja właścicielowi w czacie — live po scaleniu PR #5.
