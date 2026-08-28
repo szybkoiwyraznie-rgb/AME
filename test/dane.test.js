@@ -98,7 +98,7 @@ test('indeks v3: tagi z kategorią i opisem, pasma w kolejności kanonu', async 
     assert.ok(meta.opis.length > 12, `${tag}: brak opisu w indeksie`);
   }
   const ile = Object.fromEntries(indeks.kanon.kategorie.map((k) => [k.id, k.ile]));
-  assert.equal(ile.kultura, 7, 'siedem kultur źródłowych w kartotece');
+  assert.equal(ile.kultura, 8, 'osiem kultur źródłowych w kartotece');
 });
 
 test('przepis CI jest wklejalny: YAML bez znaczników HTML i z wymaganymi kluczami (L9)', async () => {

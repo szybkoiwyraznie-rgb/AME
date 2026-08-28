@@ -279,6 +279,16 @@ je wyłącznie na wyraźne zlecenie właściciela w sesji.
       +1 źródło, powiązanie z empusą (drugi backlink kentaura).
 - [x] **C3** SKIT „KOMU WOLNO PATRZEĆ” (trio Balor × Empusa × Imp) — blind-draft.
 
+## M15 (2026-08-28) — materializacje: Thunderstaff (DST) i Savage Surge (THS) — C1+C3
+
+- [x] **C1** `wadzra-indry` — grom Indry (wadżra z kości Dadhichiego); 5 źródeł,
+      nowe tagi `indie` i `bron-burzy`, lokalizacja Naimisharanya.
+- [x] **C1** `nessos` — kentaur-przewoźnik z rzeki Euenos; 5 źródeł, powiązania
+      z Chejronem i Empusą, lokalizacja Évinos.
+- [x] **C3** SKIT „DWA GRZBIETY” — Nessos × Chejron × Wadżra (trio, unikalny).
+- [x] Wizualizacje 21:9 dla obu wpisów + aktualizacja testu (8 kultur).
+- [x] Indeks: 10 wpisów, 13 SKITów, 35 feed, 28 tagów; `npm test` 149/149.
+
 ## M14 (2026-08-28) — mapa granularna: warstwy tematyczne (ADR 0020) — ✅ w PR #7
 
 - [x] **Zlecenie właściciela:** mapa o większej granularności bez etykiet

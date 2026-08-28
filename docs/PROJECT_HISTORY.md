@@ -859,3 +859,48 @@ pracy: Pętla Jakości + realne obmyślanie koncepcji.
 
 - Stan: `npm test` **144/144**, build/check zielone; indeks: 8 wpisów, **12
   SKITów**, 32 pozycje feedu, 26 tagów. Protokół v1.7.
+
+## M15 (2026-08-28) — materializacja dwóch kart: Thunderstaff (DST) i Savage Surge (THS)
+
+Właściciel zlecił materializację dwóch nowych kart. Fetch Scryfall (ADR 0008)
+wykonany dla konkretnych wydań: `Thunderstaff` (Darksteel #153, 2004) i
+`Savage Surge` (Theros #176, 2013); dane Oracle, flavor, artysta, rok pobrane
+z API i strony karty.
+
+### C1 — dwa nowe wpisy
+
+- **`wadzra-indry`** (Thunderstaff → grom Indry): wadżra z wedyjskiej/puranicznej
+  tradycji Indii — broń pana gromu wykuta z kręgosłupa mędrca Dadhichiego,
+  która przełamuje odporność Vṛtry i wraca wodę światu. Lokalizacja:
+  Naimisharanya (Dadhichi Kund, brzeg Gomati, Uttar Pradesh). 5 źródeł,
+  w tym `wisdomlib.org`, `art-eater.com`, `amarchitrakatha.com`,
+  `wanderlog.com`, `vedadhara.com`; nowy tag `indie` (kultura) i `bron-burzy`
+  (typ). Powiązania z Barbarossą (broń jako pieczęć warunku) i Chejronem
+  (kontrast broni porządku i dzikiej natury).
+- **`nessos`** (Savage Surge → Nessos): kentaur-przewoźnik z rzeki Euenos,
+  który próbował porwać Deianirę i zginął od strzały Heraklesa; flavor
+  „A centaur has two backs!” tłumaczy się anatomią i zdradą z zaskoczenia.
+  Lokalizacja: rzeka Évinos w Etolii-Akarnanii. 5 źródeł (Theoi, Mythopedia,
+  Perseus ×2, ToposText), tagi `grecja`, `kentaur`, `furia`, `postac-zwierzeca`.
+  Powiązania z Chejronem (lustrzane kentaury) i Empusą (kuszenie śmiercią).
+
+### C3 — SKIT „DWA GRZBIETY” (trio, blind-draft)
+
+- Nessos × Chejron × Wadżra — skład 3-osobowy, unikalny, 280 słów. Motyw:
+  dwa grzbiety / dwie natury; każdy byt mówi o tym, jak panować nad
+  dziką połową. Zgodnie z lore: Nessos traci przez żądzę, Chejron oddaje
+  nieśmiertelność, wadżra trzyma porządek.
+
+### Wizualizacje
+
+- `assets/wizualizacje/wadzra-indry.jpg` i `nessos.jpg` (21:9, ≤ 2 MB).
+  Prompt Nessosa przeredagowany po odrzuceniu przez moderację (usunięta
+  scena z kobietą; łucznik na przeciwległym brzegu) — treść wpisu
+  zaktualizowana do wygenerowanej, bezpiecznej sceny.
+
+### Stan
+
+- `npm test` 149/149, `npm run build` zielony; indeks: **10 wpisów, 13
+  SKITów**, 35 pozycji feedu, 28 tagów (w kanonie nowe: `indie`, `bron-burzy`).
+- Test `dane.test.js` zaktualizowany (8 kultur zamiast 7) — realna zmiana
+  po dodaniu kultury indyjskiej.

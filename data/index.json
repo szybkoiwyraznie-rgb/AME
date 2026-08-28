@@ -1,7 +1,7 @@
 {
   "wersja": 3,
-  "liczba": 8,
-  "liczbaSkitow": 12,
+  "liczba": 10,
+  "liczbaSkitow": 13,
   "kanon": {
     "kategorie": [
       {
@@ -11,7 +11,7 @@
         "min": 1,
         "max": 1,
         "opis": "Jedna tradycja, z której byt pochodzi (PROTOKÓŁ §2: zakaz mieszanek synkretycznych)",
-        "ile": 7
+        "ile": 8
       },
       {
         "id": "typ",
@@ -20,7 +20,7 @@
         "min": 1,
         "max": 1,
         "opis": "Czym byt jest — podstawowy filtr kartoteki",
-        "ile": 8
+        "ile": 9
       },
       {
         "id": "motyw",
@@ -127,6 +127,13 @@
         "drangue-shala"
       ]
     },
+    "bron-burzy": {
+      "kategoria": "typ",
+      "opis": "Byt-przedmiot niosący moc gromu: broń lub berło związane z bóstwem burzy",
+      "wpisy": [
+        "wadzra-indry"
+      ]
+    },
     "zle-oko": {
       "kategoria": "motyw",
       "opis": "Wzrok jako broń i jako rana bytu",
@@ -142,7 +149,8 @@
         "balor",
         "barbarossa-kyffhaeuser",
         "lincoln-imp",
-        "selkie-sule-skerry"
+        "selkie-sule-skerry",
+        "wadzra-indry"
       ]
     },
     "pamiec": {
@@ -166,7 +174,8 @@
       "kategoria": "motyw",
       "opis": "Pogoda jako pole bitwy i jako kalendarz",
       "wpisy": [
-        "drangue-shala"
+        "drangue-shala",
+        "wadzra-indry"
       ]
     },
     "oplaty": {
@@ -195,6 +204,7 @@
       "opis": "Ciało zwierzęce jako drugi stan tej samej istoty",
       "wpisy": [
         "empusa-korynt",
+        "nessos",
         "selkie-sule-skerry"
       ]
     },
@@ -210,7 +220,15 @@
       "opis": "Mitologia i podanie greckie: fantomy orszaku Hekaty, rasy tesyjskie, świat Therosu",
       "wpisy": [
         "empusa-korynt",
-        "kentaur-pelion"
+        "kentaur-pelion",
+        "nessos"
+      ]
+    },
+    "indie": {
+      "kategoria": "kultura",
+      "opis": "Religia i mitologia indyjska: wedyjska i puraniczna (hinduizm)",
+      "wpisy": [
+        "wadzra-indry"
       ]
     },
     "fantom": {
@@ -224,14 +242,16 @@
       "kategoria": "typ",
       "opis": "Gatunek o dwóch połowach: człowiek z przodu, koń z tyłu, obie gotowe do ruchu",
       "wpisy": [
-        "kentaur-pelion"
+        "kentaur-pelion",
+        "nessos"
       ]
     },
     "furia": {
       "kategoria": "motyw",
       "opis": "Krótki napad podwójnej siły przed wyczerpaniem: liczy się w uderzeniach, nie w godzinach",
       "wpisy": [
-        "kentaur-pelion"
+        "kentaur-pelion",
+        "nessos"
       ]
     }
   },
@@ -305,7 +325,8 @@
       "backlinki": [
         "balor",
         "drangue-shala",
-        "egungun"
+        "egungun",
+        "wadzra-indry"
       ],
       "obraz": "assets/wizualizacje/barbarossa-kyffhaeuser.jpg",
       "skity": [
@@ -420,6 +441,7 @@
       "backlinki": [
         "egungun",
         "kentaur-pelion",
+        "nessos",
         "selkie-sule-skerry"
       ],
       "obraz": "assets/wizualizacje/empusa-korynt.jpg",
@@ -454,10 +476,13 @@
         "selkie-sule-skerry"
       ],
       "backlinki": [
-        "selkie-sule-skerry"
+        "nessos",
+        "selkie-sule-skerry",
+        "wadzra-indry"
       ],
       "obraz": "assets/wizualizacje/kentaur-pelion.jpg",
       "skity": [
+        "dwa-grzbiety",
         "dwa-zepsute-wesela",
         "dwie-skory",
         "nieproszeni-goscie",
@@ -503,6 +528,35 @@
       ]
     },
     {
+      "slug": "nessos",
+      "nazwa": "Nessos",
+      "nazwy_alternatywne": [
+        "Nessus",
+        "Nessos z Evenosu",
+        "kentaur-przewoźnik z rzeki Euenos"
+      ],
+      "karta": "Savage Surge",
+      "miejscowosc": "rzeka Evenos (starożytnie Euenos, Lykormas; dziś Évinos) — okolice brodu i ujścia do Zatoki Patraskiej",
+      "kraj": "Grecja (Etolia-Akarnania, Grecja Zachodnia)",
+      "lat": 38.38,
+      "lon": 21.55,
+      "tagi": [
+        "furia",
+        "grecja",
+        "kentaur",
+        "postac-zwierzeca"
+      ],
+      "powiazania": [
+        "empusa-korynt",
+        "kentaur-pelion"
+      ],
+      "backlinki": [],
+      "obraz": "assets/wizualizacje/nessos.jpg",
+      "skity": [
+        "dwa-grzbiety"
+      ]
+    },
+    {
       "slug": "selkie-sule-skerry",
       "nazwa": "Wielki Selkie z Sule Skerry",
       "nazwy_alternatywne": [
@@ -541,9 +595,56 @@
         "kalendarz-powrotow",
         "znak-i-liczba"
       ]
+    },
+    {
+      "slug": "wadzra-indry",
+      "nazwa": "Wadżra — grom Indry",
+      "nazwy_alternatywne": [
+        "Vajra",
+        "Wadżrajudha",
+        "Grom Indry",
+        "Thunderbolt of Indra"
+      ],
+      "karta": "Thunderstaff",
+      "miejscowosc": "Naimisharanya (Neemsar, Misrikh) — brzeg rzeki Gomati, okolice Dadhichi Kund",
+      "kraj": "Indie (Uttar Pradesh, powiat Sitapur)",
+      "lat": 27.35,
+      "lon": 80.48,
+      "tagi": [
+        "bron-burzy",
+        "burza",
+        "indie",
+        "warunek"
+      ],
+      "powiazania": [
+        "barbarossa-kyffhaeuser",
+        "kentaur-pelion"
+      ],
+      "backlinki": [],
+      "obraz": "assets/wizualizacje/wadzra-indry.jpg",
+      "skity": [
+        "dwa-grzbiety"
+      ]
     }
   ],
   "skity": [
+    {
+      "slug": "dwa-grzbiety",
+      "tytul": "DWA GRZBIETY",
+      "temat": "dwie natury i porządek",
+      "uczestnicy": [
+        "kentaur-pelion",
+        "nessos",
+        "wadzra-indry"
+      ],
+      "imiona": [
+        "Nessos",
+        "Chejron",
+        "Wadżra"
+      ],
+      "slow": 193,
+      "data": "2026-08-28 21:45"
+    },
     {
       "slug": "dwa-zepsute-wesela",
       "tytul": "DWA ZEPSUTE WESELA",
@@ -789,6 +890,30 @@
       "slug": "balor",
       "tytul": "Balor z Tory Island",
       "opis": "Dopisano oś proroctwa: druidzi, którzy zatruli oko Balora, przepowiedzieli mu śmierć z ręki wnuka, więc uwięził córkę Ethniu w wieży Tor Mór na Tory Island; z utopionych trojaczków ocalał Lugh, a klęskę upamiętnia jezioro Loch na Súl w Sligo. Dodano źródło oraz obustronne powiązania z Barbarossą (warunek, który sam się spełnia) i drangue (rozstrzygający rzut kamieniem, niebo jako pole bitwy)."
+    },
+    {
+      "data": "2026-08-28 21:45",
+      "typ": "skit",
+      "akcja": "nowy",
+      "slug": "dwa-grzbiety",
+      "tytul": "DWA GRZBIETY",
+      "opis": "SKIT — skład: Nessos, Chejron, Wadżra"
+    },
+    {
+      "data": "2026-08-28 21:40",
+      "typ": "manifestacja",
+      "akcja": "nowa",
+      "slug": "nessos",
+      "tytul": "Nessos",
+      "opis": "wpis w kartotece — materializacja karty „Savage Surge”"
+    },
+    {
+      "data": "2026-08-28 21:40",
+      "typ": "manifestacja",
+      "akcja": "nowa",
+      "slug": "wadzra-indry",
+      "tytul": "Wadżra — grom Indry",
+      "opis": "wpis w kartotece — materializacja karty „Thunderstaff”"
     },
     {
       "data": "2026-08-28 21:30",
