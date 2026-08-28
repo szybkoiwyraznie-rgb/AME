@@ -140,8 +140,11 @@ musi mieć uzasadnienie w polu `opis`, a backlinki wylicza indeks.
 
 ## 7. Przykład zastosowania (karta: *Tarmogoyf*)
 
-Pełny, zaktualizowany do v1.1 przykład znajduje się w repozytorium jako
-rzeczywisty wpis: [`data/manifestations/wendigo.json`](../data/manifestations/wendigo.json).
-Drugim przykładem, pokazującym powiązania między wpisami, jest
-[`data/manifestations/zmora.json`](../data/manifestations/zmora.json)
-(inspiracja: *Nightmare*).
+Przykłady rzeczywistych wpisów w repozytorium (oba zweryfikowane wg ADR 0008:
+fetch Scryfall + źródła www):
+- [`data/manifestations/egungun.json`](../data/manifestations/egungun.json) —
+  inspiracja: *Krumar Initiate* (TDM 84); pokazuje translację mechaniki
+  „endure/Pay X life” na kult przodków;
+- [`data/manifestations/lincoln-imp.json`](../data/manifestations/lincoln-imp.json) —
+  inspiracja: *Forge Devil* (DKA 91); pokazuje tłumaczenie flavoru karty na
+  realną legendę (imp z katedry Lincoln) oraz powiązanie z innym wpisem.

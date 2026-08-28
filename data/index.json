@@ -2,90 +2,88 @@
   "wersja": 1,
   "liczba": 2,
   "tagi": {
-    "ameryka-północna": [
-      "wendigo"
+    "afryka-zachodnia": [
+      "egungun"
     ],
-    "byt-nocny": [
-      "wendigo",
-      "zmora"
+    "anglia": [
+      "lincoln-imp"
     ],
-    "głód": [
-      "wendigo"
+    "demon": [
+      "lincoln-imp"
     ],
-    "kanada": [
-      "wendigo"
+    "folklor-chrzescijanski": [
+      "lincoln-imp"
     ],
-    "koszmar": [
-      "zmora"
+    "imp": [
+      "lincoln-imp"
     ],
-    "las": [
-      "wendigo"
+    "joruba": [
+      "egungun"
     ],
-    "polska": [
-      "zmora"
+    "katedra": [
+      "lincoln-imp"
     ],
-    "sen": [
-      "zmora"
+    "kult-przodkow": [
+      "egungun"
     ],
-    "słowiański": [
-      "zmora"
+    "maskarada": [
+      "egungun"
     ],
-    "wieś": [
-      "zmora"
+    "nigeria": [
+      "egungun"
     ]
   },
   "manifestacje": [
     {
-      "slug": "wendigo",
-      "nazwa": "Wendigo",
+      "slug": "egungun",
+      "nazwa": "Egungun",
       "nazwy_alternatywne": [
-        "Witiko",
-        "Chenoo"
+        "Egúngún",
+        "Ara Ọ̀run („mieszkańcy nieba”)",
+        "Eegun"
       ],
-      "karta": "Tarmogoyf",
-      "miejscowosc": "Kenora, Ontario",
-      "kraj": "Kanada",
-      "lat": 49.76,
-      "lon": -94.48,
+      "karta": "Krumar Initiate",
+      "miejscowosc": "Oyo (miasto królewstwa Òyó)",
+      "kraj": "Nigeria",
+      "lat": 7.84,
+      "lon": 3.94,
       "tagi": [
-        "ameryka-północna",
-        "byt-nocny",
-        "głód",
-        "kanada",
-        "las"
+        "afryka-zachodnia",
+        "joruba",
+        "kult-przodkow",
+        "maskarada",
+        "nigeria"
       ],
       "powiazania": [],
       "backlinki": [
-        "zmora"
+        "lincoln-imp"
       ],
-      "obraz": "assets/wizualizacje/wendigo.jpg"
+      "obraz": null
     },
     {
-      "slug": "zmora",
-      "nazwa": "Zmora",
+      "slug": "lincoln-imp",
+      "nazwa": "Imp z Lincoln",
       "nazwy_alternatywne": [
-        "Mora",
-        "Mara",
-        "Zmora nocna"
+        "Lincoln Imp",
+        "Diabełek z Lincoln"
       ],
-      "karta": "Nightmare",
-      "miejscowosc": "Lubelszczyzna (pole etnograficzne Słownika stereotypów i symboli ludowych)",
-      "kraj": "Polska",
-      "lat": 51.25,
-      "lon": 22.57,
+      "karta": "Forge Devil",
+      "miejscowosc": "Lincoln — katedra Lincoln, Angel Choir",
+      "kraj": "Anglia (Wielka Brytania)",
+      "lat": 53.23,
+      "lon": -0.54,
       "tagi": [
-        "byt-nocny",
-        "koszmar",
-        "polska",
-        "sen",
-        "słowiański",
-        "wieś"
+        "anglia",
+        "demon",
+        "folklor-chrzescijanski",
+        "imp",
+        "katedra"
       ],
       "powiazania": [
-        "wendigo"
+        "egungun"
       ],
       "backlinki": [],
-      "obraz": "assets/wizualizacje/zmora.jpg"
+      "obraz": null
     }
   ]
 }

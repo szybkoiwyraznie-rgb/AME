@@ -16,10 +16,13 @@ test('data/index.json jest spójny z wpisami (deterministyczny build)', async ()
   assert.equal(istniejacy, oczekiwany, 'data/index.json jest nieaktualny — uruchom npm run build');
 });
 
-test('współrzędne wpisów lądują w oczekiwanych strefach mapy', async () => {
+test('materializacje zleconych kart istnieją we właściwych strefach mapy', async () => {
   const wpisy = await wczytajIKwaliduj(KATALOG_WPISOW);
-  const w = wpisy.find((x) => x.slug === 'wendigo');
-  assert.ok(w, 'wpis wzorcowy wendigo istnieje');
-  assert.ok(w.lokalizacja.lat > 40 && w.lokalizacja.lat < 60, 'Kenora ~49-50°N');
-  assert.ok(w.lokalizacja.lon > -100 && w.lokalizacja.lon < -85, 'Kenora ~-94°E');
+  const karty = new Set(wpisy.map((w) => w.karta.nazwa));
+  assert.ok(karty.has('Krumar Initiate'), 'Krumar Initiate (TDM) zamaterializowana');
+  assert.ok(karty.has('Forge Devil'), 'Forge Devil (DKA) zamaterializowana');
+  const e = wpisy.find((w) => w.slug === 'egungun');
+  assert.ok(e && e.lokalizacja.lat > 0 && e.lokalizacja.lat < 15 && e.lokalizacja.lon > 0 && e.lokalizacja.lon < 15, 'Oyo, Nigeria ~7.8N 3.9E');
+  const i = wpisy.find((w) => w.slug === 'lincoln-imp');
+  assert.ok(i && i.lokalizacja.lat > 50 && i.lokalizacja.lat < 60 && i.lokalizacja.lon < 0 && i.lokalizacja.lon > -2, 'Lincoln ~53.2N -0.5E');
 });
