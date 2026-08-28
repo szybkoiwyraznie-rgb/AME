@@ -1,6 +1,6 @@
 # 0011 — Protokół MFM v1.2: kolejność prezentacji sekcji i adres źródła w dokumentacji
 
-- Status: Zaakceptowana
+- Status: Zaakceptowana (pkt 1 — „numery jako tożsamość sekcji” — zastąpiony przez ADR 0012; reszta obowiązuje)
 - Data: 2026-08-28
 - Kontekst: Właściciel (testy 2026-08-28) zgłosił dwie zmiany treści wpisu:
   (B1) sekcje mają iść w kolejności IV → II → III → V → I, „jako standard —

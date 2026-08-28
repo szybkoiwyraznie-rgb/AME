@@ -5,9 +5,12 @@
 > aplikacja + kartoteka. Protokół opisuje, jak powstaje i co zawiera pojedynczy
 > wpis („kartotka manifestacji”).
 >
-> Status: **obowiązujący** (v1.2 od 2026-08-28; v1.1 — 2026-08-27). Zmiany
-> protokołu wymagają ADR. W v1.2 (ADR 0011): obowiązująca **kolejność
-> prezentacji** sekcji (§4.1) oraz **adres www jako część źródła** (§4.4).
+> Status: **obowiązujący** (v1.3 od 2026-08-28; v1.2 i v1.1 — 2026-08-27/28).
+> Zmiany protokołu wymagają ADR.
+> v1.1 (ADR 0005): rama promptu 21:9. v1.2 (ADR 0011): obowiązująca kolejność
+> prezentacji sekcji oraz adres www jako część źródła. **v1.3 (ADR 0012):
+> numeracja sekcji idzie za kolejnością (I = Wizualizacja … V = Rezonans) i
+> dochodzi sekcja VI „SKITy”** (Baza Skitów, ADR 0013).
 
 ## 1. Filozofia systemu
 
@@ -59,20 +62,21 @@ PEŁNY WPIS MFM (data/manifestations/<slug>.json)
 
 ## 4. Struktura wpisu
 
-### 4.1 Kolejność prezentacji (standard od 2026-08-28)
-
-Aplikacja, przykłady w `data/manifestations/` i ten dokument podają sekcje
-w tej samej, obowiązującej kolejności:
+### 4.1 Numeracja = kolejność prezentacji (od v1.3)
 
 ```
-IV Wizualizacja  →  II Charakterystyka i natura  →  III Dokumentacja
-                  →  V Trofea  →  I Rezonans i tożsamość
+I   Wizualizacja            II  Charakterystyka i natura   III Dokumentacja
+IV  Trofea i dowody         V   Rezonans i tożsamość       VI SKITy
 ```
 
-Numery rzymskie są **tożsamością sekcji**, nie pozycją: „IV” zawsze znaczy
-„Wizualizacja”, więc zmiana układu nie wymaga zmian w danych ani w walidatorze.
-Po pięciu sekcjach następują elementy bez numeru: powiązania (warstwa wiki)
-i meta — ich kolejność się nie zmienia.
+Sekcje układamy i numerujemy w tej kolejności — **numer rzymski to pozycja w
+wpisie**, a nie tylko etykieta treści. Obowiązuje wszędzie: w kartotece
+(`app/ui.js`), w plikach wpisów (`data/manifestations/`), w tym dokumencie i w
+instrukcji `docs/WORKFLOW.md`. Po sekcji VI następują elementy bez numeru:
+powiązania (warstwa wiki) i meta.
+
+> Przeliczenie historyczne (dla wpisów, ADR-ów i notatek sprzed v1.3):
+> IV→I, II→II, III→III, V→IV, I→V (stara numeracja była przypisana do treści).
 
 ### 4.2 Nagłówek wpisu
 
@@ -83,11 +87,11 @@ i meta — ich kolejność się nie zmienia.
 
 ### 4.3 Treść sekcji
 
-#### IV. WIZUALIZACJA (prompt dla grafiki AI)
+#### I. WIZUALIZACJA (prompt dla grafiki AI)
 Techniczny prompt zapisany w polu `wizualizacja.prompt`. Rezygnujemy z
 formy figurki/dioramy: celem jest **hiperrealistyczny, filmowy portret
 środowiskowy bytu w jego naturalnym otoczeniu** — patrz §5. W kartotece sekcja
-jest pierwsza i zajmuje pełną szerokość wpisu (ADR 0010).
+jest **sekcją I** i zajmuje pełną szerokość wpisu (ADR 0010).
 
 #### II. CHARAKTERYSTYKA I NATURA (opis fabularny)
 * **Wygląd i Aura:** opis fizycznej manifestacji, zapachu, temperatury
@@ -114,11 +118,11 @@ Każda pozycja ma postać `{ typ, pozycja, url? }` (pole `dokumentacja`), przy c
   mieści się to w polu `pozycja` po myślniku — bez nowych pól;
 * aplikacja renderuje `url` jako klikalny adres pod pozycją (tylko `http(s)`).
 
-#### V. TROFEA I DOWODY ELIMINACJI
+#### IV. TROFEA I DOWODY ELIMINACJI
 * Trofeum Pierwotne
 * Trofeum Wtórne (opcjonalne)
 
-#### I. REZONANS I TOŻSAMOŚĆ
+#### V. REZONANS I TOŻSAMOŚĆ
 * **Klucz Przywołania:** analiza, jak nazwa, ilustracja, mechanika i flavor
   karty korelują z danym bytem — w formie tabeli translacji:
 
@@ -136,15 +140,27 @@ Każda pozycja ma postać `{ typ, pozycja, url? }` (pole `dokumentacja`), przy c
   lub gdzie odnotowano aktywność bytu — z podaniem regionu i współrzędnych
   dziesiętnych.
 
-### 4.4 Słowniczek pól a sekcje
+### 4.4 Słowniczek: sekcja ↔ pole w JSON
 
-| Sekcja | Pole w JSON |
+| Sekcja | Pole w `data/manifestations/<slug>.json` |
 |---|---|
-| IV Wizualizacja | `wizualizacja` |
+| I Wizualizacja | `wizualizacja` |
 | II Charakterystyka i natura | `natura` |
-| III Dokumentacja | `dokumentacja` (z `url`) |
-| V Trofea | `trofea` |
-| I Rezonans i tożsamość | `rezonans` (+ `karta`, `lokalizacja`, `pochodzenie_i_kultura`) |
+| III Dokumentacja | `dokumentacja` (pozycje z `url`) |
+| IV Trofea | `trofea` |
+| V Rezonans i tożsamość | `rezonans` (+ `karta`, `lokalizacja`, `pochodzenie_i_kultura`) |
+| VI SKITy | **brak pola** — wyliczane z bazy skitów (ADR 0013); autor skitu wskazuje uczestników, wpis ich nie duplikuje |
+
+### 4.5 Sekcja VI — SKITy
+
+SKIT to fragment prozy (dialog materializacji) z **Bazy Skitów**
+(`data/skity/`, ADR 0013). Sekcja VI wpisu nie jest pisana w pliku wpisu:
+indeks podpowiada wszystkie skity, w których dana manifestacja występuje, a
+aplikacja linkuje je pod kartoteką. Zasady pisania skitów (dramatis personae,
+limit 250 słów, unikalność zestawu uczestników, zakaz terminologii growej)
+reguluje §8.
+
+## 5. Rama promptu wizualizacji (v1.1 — obowiązuje od 2026-08-27)
 
 ## 5. Rama promptu wizualizacji (v1.1 — obowiązuje od 2026-08-27)
 
@@ -179,7 +195,7 @@ nieodtworzona”) razem z gotowym do skopiowania promptem.
 Wpis przechowujemy jako `data/manifestations/<slug>.json` zgodny ze schematem
 walidowanym przez `tools/rebuild-index.mjs` (szczegóły pól:
 `docs/ARCHITECTURE.md`). Sekcje tekstu (I–V) noszą nazwy jak wyżej, a **klucze
-JSON układamy w kolejności prezentacji z §4.1** (czytelność pliku = czytelność
+JSON układamy w kolejności numeracji z §4.1** (czytelność pliku = czytelność
 kartoteki; walidacja patrzy na pola, nie na porządek).
 Tagi i powiązania (`tagi`, `powiazania`) tworzą warstwę wiki — powiązanie
 musi mieć uzasadnienie w polu `opis`, a backlinki wylicza indeks.

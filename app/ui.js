@@ -59,7 +59,7 @@ function sekcja(numer, tytul, zawartoscHtml) {
   return `<section class="sekcja"><h3><span class="numer">${numer}</span> ${tytul}</h3>${zawartoscHtml}</section>`;
 }
 
-/** Pełny panel wpisu (sekcje I–V wg protokołu MFM). */
+/** Pełny wpis kartoteki (sekcje I–VI wg protokołu MFM v1.3). */
 export function htmlWpisu(w, indeks) {
   const rekord = indeks.manifestacje.find((m) => m.slug === w.slug) ?? {};
   const alt = (w.nazwy_alternatywne ?? []).length ? `<p class="alt">znany też jako: ${esc(w.nazwy_alternatywne.join(', '))}</p>` : '';
@@ -81,8 +81,8 @@ export function htmlWpisu(w, indeks) {
         .join('')}</tbody>
     </table>`;
 
-  const I = sekcja(
-    'I',
+  const V = sekcja(
+    'V',
     'Rezonans i tożsamość',
     `<p>${esc(w.rezonans.klucz_przywolania)}</p>${tabela}`
   );
@@ -110,8 +110,8 @@ export function htmlWpisu(w, indeks) {
   const obrazHtml = w.wizualizacja?.obraz
     ? `<img src="${esc(w.wizualizacja.obraz)}" alt="Wizualizacja: ${esc(w.nazwa)}" loading="lazy">`
     : `<div class="brak-wizualizacji"><p>Wizualizacja nieodtworzona.</p><p class="maly">Obraz powstanie z promptu poniżej (21:9).</p></div>`;
-  const IV = sekcja(
-    'IV',
+  const I = sekcja(
+    'I',
     'Wizualizacja',
     `${obrazHtml}
      <details class="prompt">
@@ -121,8 +121,8 @@ export function htmlWpisu(w, indeks) {
      </details>`
   );
 
-  const V = sekcja(
-    'V',
+  const IV = sekcja(
+    'IV',
     'Trofea i dowody eliminacji',
     `<dl class="trofea">
       <dt>Trofeum pierwotne</dt><dd>${esc(w.trofea.pierwotne)}</dd>
@@ -139,6 +139,7 @@ export function htmlWpisu(w, indeks) {
   const backlinki = (rekord.backlinki ?? [])
     .map((s) => `<button class="chip link wzmianka" data-slug="${esc(s)}">${esc(nazwaSluga(s, indeks))}</button>`)
     .join(' ');
+  const VI = ''; // sekcja „SKITy” — wypelniana, gdy wpis ma skity (patrz htmlWpisu nizej)
   const wiki =
     powiazania || backlinki
       ? sekcja(
@@ -156,10 +157,8 @@ export function htmlWpisu(w, indeks) {
       : ''
   }</footer>`;
 
-  // Kolejność sekcji wg PROTOKÓŁ §4.1 (standard od 2026-08-28): obraz najpierw,
-  // potem natura, źródła, trofea, na końcu klucz przywołania. Numery rzymskie
-  // zostają przypisane do sekcji — identyfikują treść, nie pozycję.
-  return `<div class="wpis">${naglowek}${IV}${II}${III}${V}${I}${wiki}${meta}</div>`;
+  // Sekcje I–V w kolejności numeracji (PROTOKÓŁ §4.1, v1.3): numer = pozycja.
+  return `<div class="wpis">${naglowek}${I}${II}${III}${IV}${V}${VI}${wiki}${meta}</div>`;
 }
 
 /**

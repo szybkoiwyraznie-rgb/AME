@@ -58,8 +58,9 @@ je wyłącznie na wyraźne zlecenie właściciela w sesji.
 - [x] **A3** cięcie geometrii na antypołudniku: koniec „rozlanej Rosji” i
       pozornego grubego równoleżnika (Fidżi) — ADR 0009, lekcja L7.
 - [x] **A4/A5** pinezka większa + pole trafienia, badge nazwy 19 px z pleckami.
-- [x] **B1** kolejność sekcji IV → II → III → V → I jako standard: UI, przykłady,
-      manual (PROTOKÓŁ §4.1, ADR 0011).
+- [x] **B1** kolejność sekcji jako standard: UI, przykłady, manual (ADR 0011);
+      uściślenie właściciela (2026-08-28): numeracja idzie za kolejnością —
+      I Wizualizacja … V Rezonans, od v1.3 protokołu (ADR 0012).
 - [x] **B2** kartoteka jako pełnoekranowa warstwa, wizualizacja na całą
       szerokość opisu (ADR 0010).
 - [x] **B3** `dokumentacja[].url` w schemacie i walidatorze, linki w UI,

@@ -109,11 +109,12 @@ Ponadto:
   lat. Jeśli źródła nie da się potwierdzić — nie wpisuj go. Każde źródło
   podpisujemy adresem (`dokumentacja[].url`, pełny `http(s)`) — co najmniej
   jedno na wpis musi prowadzić do źródła, jego opisu albo wzmianki w sieci.
-- **Kolejność sekcji wpisu (standard): IV → II → III → V → I** (PROTOKÓŁ §4.1).
-  Numery rzymskie zostają przypisane do sekcji; dotyczą UI, przykładów i manuala.
+- **Numeracja sekcji wpisu = ich kolejność** (PROTOKÓŁ §4.1, od v1.3):
+  I Wizualizacja, II Charakterystyka i natura, III Dokumentacja, IV Trofea,
+  V Rezonans i tożsamość, VI SKITy. Dotyczy UI, przykładów i manuala.
 - **Współrzędne są prawdziwe** (miejsce powstania wierzenia lub aktywności
   bytu), zapis dziesiętny, W szerokość geograficzna jako dodatnia.
-- **Prompt wizualizacji trzyma się RAMY 21:9** z `docs/PROTOKOL.md` §IV.
+- **Prompt wizualizacji trzyma się RAMY 21:9** z `docs/PROTOKOL.md` §5 (sekcja I).
   Otwarcie i zamknięcie ramy są stałe i walidowane narzędziem
   (`tools/rebuild-index.mjs` odrzuci wpis ze zniekształconą ramą).
 - **Język wpisów: polski** (nazwy własne, cytaty i terminy źródłowe mogą

@@ -25,7 +25,8 @@ Każdy dokument opisuje kontekst, wybór i jego konsekwencje.
 | [0008](0008-obowiazkowa-weryfikacja-scryfall-www.md) | Obowiązkowa weryfikacja zewnętrzna: Scryfall dla kart, źródła www dla wpisów | Zaakceptowana |
 | [0009](0009-adaptacyjny-widok-mapy-i-ciecie-na-szwie.md) | Adaptacyjny widok mapy w pikselach kontenera i cięcie geometrii na antypołudniku | Zaakceptowana |
 | [0010](0010-motyw-jasny-ciemny-i-pelnoekranowa-warstwa-kartoteki.md) | Motyw jasny/ciemny przez tokeny CSS i kartoteka jako pełnoekranowa warstwa | Zaakceptowana |
-| [0011](0011-protokol-v1-2-kolejnosc-sekcji-i-adresy-zrodel.md) | Protokół MFM v1.2: kolejność prezentacji sekcji i adres źródła w dokumentacji | Zaakceptowana |
+| [0011](0011-protokol-v1-2-kolejnosc-sekcji-i-adresy-zrodel.md) | Protokół MFM v1.2: kolejność prezentacji sekcji i adres źródła w dokumentacji | Zaakceptowana (pkt o numerach zastąpiony przez 0012) |
+| [0012](0012-numeracja-sekcji-zgodna-z-kolejnoscia.md) | Numeracja sekcji wpisu zgodna z ich kolejnością (protokół MFM v1.3) | Zaakceptowana |
 
 ## Szablon ADR
 

@@ -101,5 +101,7 @@ meta: { utworzono, autor?, modyfikacje: [{data, opis}] }
 - Zakaz dependency runtime; nowe assety zewnętrzne → `docs/ASSETS.md`.
 - Kolory wyłącznie przez tokeni CSS z `:root` / `html[data-motyw='jasny']`
   (barvy mapy też) — inaczej drugi motyw będzie nieczytelny (ADR 0010).
-- Sekcje wpisu identyfikujemy numerem rzymskim (I–V), nie pozycją; numer IV
-  zawsze znaczy „Wizualizacja” (PROTOKÓŁ §4.1).
+- Numeracja sekcji wpisu **jest** ich kolejnością (PROTOKÓŁ §4.1, v1.3):
+  I Wizualizacja → II Charakterystyka i natura → III Dokumentacja → IV Trofea →
+  V Rezonans i tożsamość → VI SKITy. Przed v1.3 numer był przypisany do treści
+  (Wizualizacja = IV); przy starych zapisach stosuj mapę z PROTOKÓŁ §4.5.

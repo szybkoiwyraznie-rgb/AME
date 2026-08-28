@@ -110,23 +110,24 @@ test('index.html: przełącznik w prawym górnym rogu + strażnik przed błyskie
 
 const naNumerze = (html, numer) => html.search(new RegExp(`<span class="numer">${numer}</span>`));
 
-test('htmlWpisu: standardowa kolejność sekcji IV → II → III → V → I (B1)', async () => {
+test('htmlWpisu: numeracja sekcji = kolejność, I Wizualizacja … V Rezonans (B1 + v1.3)', async () => {
   const { wpis, indeks } = await dane();
   const html = htmlWpisu(wpis, indeks);
-  const pozycje = ['IV', 'II', 'III', 'V', 'I'].map((n) => naNumerze(html, n));
+  const pozycje = ['I', 'II', 'III', 'IV', 'V'].map((n) => naNumerze(html, n));
   assert.ok(pozycje.every((p) => p > 0), 'każda sekcja ma numer w nagłówku');
-  assert.deepEqual([...pozycje].sort((a, b) => a - b), pozycje, `sekcyjne numery w złej kolejności: ${pozycje}`);
-  assert.ok(html.indexOf('<section') < html.indexOf('Wizualizacja'), 'pierwszą sekcją jest Wizualizacja');
-  // numer = tożsamość sekcji, nie pozycja
-  assert.match(html, /<span class="numer">IV<\/span> Wizualizacja/);
-  assert.match(html, /<span class="numer">I<\/span> Rezonans i tożsamość/);
+  assert.deepEqual([...pozycje].sort((a, b) => a - b), pozycje, `numery muszą iść w kolejności rosnącej: ${pozycje}`);
+  // mapa numerów na treść wg PROTOKÓŁ §4.1 (v1.3)
+  assert.match(html, /<span class="numer">I<\/span> Wizualizacja/);
+  assert.match(html, /<span class="numer">II<\/span> Charakterystyka i natura/);
   assert.match(html, /<span class="numer">III<\/span> Dokumentacja \(The Source Stack\)/);
+  assert.match(html, /<span class="numer">IV<\/span> Trofea i dowody eliminacji/);
+  assert.match(html, /<span class="numer">V<\/span> Rezonans i tożsamość/);
 });
 
 test('htmlWpisu: powiązania i meta zostają na końcu (B1: reszta bez zmian)', async () => {
   const { wpis, indeks } = await dane('lincoln-imp');
   const html = htmlWpisu(wpis, indeks);
-  assert.ok(naNumerze(html, 'I') < html.indexOf('Powiązania'), 'sekcje przed wiki');
+  assert.ok(naNumerze(html, 'V') < html.indexOf('Powiązania'), 'sekcje przed wiki');
   assert.ok(html.indexOf('Powiązania') < html.indexOf('meta-wpisu'), 'potem powiązania, na końcu meta');
 });
 
