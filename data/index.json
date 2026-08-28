@@ -1,7 +1,7 @@
 {
   "wersja": 3,
   "liczba": 8,
-  "liczbaSkitow": 7,
+  "liczbaSkitow": 8,
   "kanon": {
     "kategorie": [
       {
@@ -339,6 +339,7 @@
       ],
       "obraz": "assets/wizualizacje/drangue-shala.jpg",
       "skity": [
+        "dwie-skory",
         "godzina-otwarcia",
         "kurz-i-piora"
       ]
@@ -411,7 +412,8 @@
       ],
       "obraz": "assets/wizualizacje/empusa-korynt.jpg",
       "skity": [
-        "dwa-zepsute-wesela"
+        "dwa-zepsute-wesela",
+        "dwie-skory"
       ]
     },
     {
@@ -439,7 +441,8 @@
       "backlinki": [],
       "obraz": "assets/wizualizacje/kentaur-pelion.jpg",
       "skity": [
-        "dwa-zepsute-wesela"
+        "dwa-zepsute-wesela",
+        "dwie-skory"
       ]
     },
     {
@@ -511,6 +514,7 @@
       ],
       "obraz": "assets/wizualizacje/selkie-sule-skerry.jpg",
       "skity": [
+        "dwie-skory",
         "kalendarz-powrotow",
         "znak-i-liczba"
       ]
@@ -531,6 +535,25 @@
       ],
       "slow": 240,
       "data": "2026-08-28 16:45"
+    },
+    {
+      "slug": "dwie-skory",
+      "tytul": "DWIE SKÓRY",
+      "temat": "cztery byty o podwójnej naturze porównują, gdzie mają swój szew i co go rozpruwa",
+      "uczestnicy": [
+        "drangue-shala",
+        "empusa-korynt",
+        "kentaur-pelion",
+        "selkie-sule-skerry"
+      ],
+      "imiona": [
+        "Drangue",
+        "Kentaur z Pelionu",
+        "Selkie z Sule Skerry",
+        "Empusa"
+      ],
+      "slow": 249,
+      "data": "2026-08-28 20:00"
     },
     {
       "slug": "godzina-otwarcia",
@@ -628,6 +651,14 @@
     }
   ],
   "aktualizacje": [
+    {
+      "data": "2026-08-28 20:00",
+      "typ": "skit",
+      "akcja": "nowy",
+      "slug": "dwie-skory",
+      "tytul": "DWIE SKÓRY",
+      "opis": "SKIT — skład: Drangue, Kentaur z Pelionu, Selkie z Sule Skerry, Empusa"
+    },
     {
       "data": "2026-08-28 19:40",
       "typ": "manifestacja",
