@@ -140,11 +140,11 @@ test('badge nazwy (A4): 19 px, plecki nad pinezką, tekst wyśrodkowany', () => 
 test('widok (A1): skala bazowa = contain, pinezki kompensują skalę, resize nie ucieka', () => {
   const { kontener } = zaiscz({ width: 1600, height: 640 });
   const mapa = stworzMape(kontener, {});
-  const warstwa = mapa.svg.dzieci.find((d) => d.czyMaKlase('warstwa'));
+  const grupaSwiata = mapa.svg.dzieci.find((d) => d.czyMaKlase('swiat'));
   const oczekiwana = Math.min(1600 / SZEROKOSC, 640 / WYSOKOSC);
   assert.ok(Math.abs(mapa.skala - oczekiwana) < 1e-9, `skala ${mapa.skala}`);
-  assert.match(warstwa.style.transform, /^translate\(/, 'transform grupy świata');
-  assert.ok(warstwa.style.transform.includes(`scale(${oczekiwana})`), `transform = ${warstwa.style.transform}`);
+  assert.match(grupaSwiata.style.transform, /^translate\(/, 'transform grupy świata');
+  assert.ok(grupaSwiata.style.transform.includes(`scale(${oczekiwana})`), `transform = ${grupaSwiata.style.transform}`);
 
   mapa.ustawPinezki([{ slug: 'x', nazwa: 'X', lat: 0, lon: 0 }]);
   const pinezka = znajdz(mapa.svg, 'pinezka');
