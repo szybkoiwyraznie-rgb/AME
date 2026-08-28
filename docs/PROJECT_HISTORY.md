@@ -119,3 +119,33 @@ pliku; testy `npm test` 34/34 zielone, `npm run check` spójny):
 **Wnioski dla zasad:** audyt poprzedniego PR musi obejmować **uruchomienie
 bram** (CI/status workflow), nie tylko diff — stąd L7/L8 i zmiana w przepisach
 `docs/setup/ENVIRONMENT.md` (pkt checklisty).
+
+**Wykonanie M3 (commity `fa45ad7..ff64331`, PR #2):**
+
+- mapa: `potnijPierscien` (A3), `dopasujWidok` + ResizeObserver i viewBox w px
+  kontenera (A1), pinezka ø26 px z polem trafienia ø52 px i badgiem 19 px
+  liczonym z pomiaru tekstu (A4/A5), `vector-effect` na siatce;
+- UI: motyw jasny/ciemny przez tokeni CSS + przełącznik i strażnik w `<head>`
+  (A2), kartoteka jako pełnoekranowy `dialog` (B2), sekcje w numeracji =
+  kolejność (B1 + uściślenie: v1.3, ADR 0012), linki źródłowe w sekcji III (B3);
+- dane: `dokumentacja[].url` w schemacie i walidatorze, adresy wszystkich
+  źródeł w obu wpisach zweryfikowane w sieci (ADR 0011), pogłębienie
+  lincoln-imp (datowanie Angel Choir 1250–1280, bałda 1897, przysłowie 1562,
+  motyw wiatru) i egungun (autor i czasopismo Akande 2019, ará òrun kìn-ìn
+  kin-in);
+- nowe podsystemy: **Baza Skitów** (dane + walidator + sekcja VI + widok,
+  ADR 0013) i **„Co nowego”** (feed z `meta`, ADR 0014); pierwszy SKIT
+  „PŁÓTNO I KAMIEŃ” (Egungun × Imp z Lincoln, 241 słów, unikalny skład);
+- narzędzia: indeks v2 (`skity`, `manifestacje[].skity`, `aktualizacje`),
+  `REZERWOWANE_SLUGI`, testy 88;
+- zasady: PROTOKÓŁ v1.3 (§4.1/§4.4/§4.5, §8 SKITy, §9 dziennik), AGENTS
+  (C3 w pętli, rygory skitów, obowiązek `meta.modyfikacje`), WORKFLOW
+  (procedura skitu, checklista podglądu), ARCHITECTURE, README, ROADMAP,
+  BACKLOG, LESSONS L7–L10, ENVIRONMENT (kontrola bramy CI), ADR 0009–0014.
+
+**Zdarzenia operacyjne:** push naprawczego `.github/workflows/ci.yml` odrzucony
+przez GitHub (token bez uprawnień `workflows`) — commit wycofany, receptura i
+opis łatki w `docs/setup/ci-workflow.yml`, decyzja po stronie właściciela.
+
+**Otwarte po sesji M3:** scalenie PR #2; łatka `ci.yml` na `main`; kolejny SKIT
+wymaga nowych materializacji (przy dwóch kartach istnieje jeden dozwolony skład).
