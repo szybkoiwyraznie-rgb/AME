@@ -906,3 +906,78 @@ z API i strony karty.
   SKITów**, 35 pozycji feedu, 28 tagów (nowy w kanonie: `indie`).
 - Test `dane.test.js` zaktualizowany (8 kultur zamiast 7) — realna zmiana
   po dodaniu kultury indyjskiej.
+
+## Pętla Jakości (po M15) — C1 → C3 → C2 — commit `f8265c0` (PR #7)
+
+Po M15 właściciel poprosił o pętlę jakości. Trzy fazy: domknięcie sieci (C1),
+nowy SKIT (C3), mała featura (C2). Wszystkie wypchnięte na
+`arena/01a04a01-ame`; PR #7 zaktualizowany o wyniki.
+
+### C1 — domknięcie sieci powiązań
+
+- Sprawdzono kartotekę: `indra` i `nessos` miały najmniej backlinków; wybrano
+  najsłabsze pary.
+- `indra ↔ drangue-shala` — dwaj herosi burzy uwalniający wodę (Indra zabija
+  Vṛtrę, drangue walczy z kulshedrą; wspólny indoeuropejski wzorzec
+  „smok wstrzymuje wodę → heros ją odpycha”).
+- `nessos ↔ selkie-sule-skerry` — byty na granicy wody, zdradzające przez
+  zaufanie (przewoźnik-zdrajca i foka-selkie, której skóra oddaje władzę).
+- Po tym żaden wpis nie ma 0 backlinków; build/tests zielone (149/149).
+
+### C3 — SKIT „Znak burzy”
+
+- Nowy plik `data/skity/znak-burzy.json`: **Indra × Drangue × Barbarossa**,
+  unikalne trio, 221 słów. Motyw: „kto ma prawo wrócić, gdy nadejdzie grzmot”.
+- Pisany metodą embodimentu (każdy głos z własnego dossier) — kolejny
+  prototyp KRONIKI.
+- Poprawka do ADR 0017: timestamp `2026-08-28 22:30` (wszystkie godziny w
+  repo muszą pochodzić z najnowszego dnia feedu). Build: 10 wpisów, **14
+  SKITów**, 38 pozycji feedu, 27 tagów.
+
+### C2 — deep-link do filtra tagów `#tag:<tag>`
+
+- Adres `#tag:<tag>` otwiera mapę z aktywnym filtrem tagu; nieznany slug jest
+  odrzucany względem kanonu.
+- Klik w chip na pasku tagów aktualizuje URL przez `history.replaceState`
+  (a dezaktywacja czyści hash), bez dodawania historii.
+- Nowy helper `tagZFragmantu` w `app/ui.js` + test w `test/ui.test.js`.
+- `npm test` **150/150**; commit `f8265c0`.
+
+## Pętla Jakości (po M15) — twórczy rozwój idei KRONIKI
+
+Właściciel zaproponował kolejną pętlę jakości: **zamiast wymyślać nowe
+featury — twórczy wkład w ideę KRONIKI** z poprzednich PR-ów. Wykonana
+praca: pierwszy **prototyp epoki** jako konkretna próbka modelu
+„SKIT + skutek”.
+
+### Prototyp pierwszej epoki
+
+- `docs/plans/PROTOTYP_kroniki-epoka-1.md` — epoka **„Znak burzy”**
+  zbudowana na istniejącym SKICIE (Indra × Drangue × Barbarossa), bez
+  duplikowania dialogu.
+- Role uczestników wyliczone z `profileKartoteki`: Indra = Drapieżnik,
+  Drangue = Pieśniarz, Barbarossa = Filar.
+- Szkic rekordu `data/kronika/epoka-1-znak-burzy.json` (koncepcyjny, nie
+  dane produkcyjne): `skit`, `iskra`, `uczestnicy`, `przebieg`, `skutek`,
+  `meta`.
+- `skutek.relacje` proponuje pierwsze zmiany stanu: Indra↔Drangue
+  (indeks/zobowiązanie), Indra↔Barbarossa (schłodzenie), Drangue↔Barbarossa
+  (uznanie). Tereny bez zmian; zasób „znak” nierozstrzygnięty.
+- Narratorski zapis „Kronikarz zapisuje” + **następna iskra** wynikająca z
+  długu po epoce 1 (kulshedra schodzi z rzeki — spłata siłą czy rytuałem?).
+
+### Wkład do mapy pytań metagry
+
+- `docs/plans/KONCEPCJA_metagra_pytania-otwarte.md` §6: wstępne odpowiedzi
+  na **P3** (wydarzenie = SKIT + skutek), **P7** (minimalny format epoki) i
+  **P9** (epoka jako opcjonalna warstwa narratorska, odrzucalna bez psucia
+  kart).
+- Świadomie **bez kodu i bez walidatora** — zgodnie z M13 metagra jest w
+  opracowaniu; dopiero po decyzji właściciela można pisać ADR i plan MVP.
+
+### Stan po tej pętli
+
+- `npm test` 150/150, `npm run build` zielony, `npm run check` OK.
+- Dokumentacja ROADMAP/PROJECT_HISTORY uzupełniona o faktyczny zapis obu
+  pętli (na jawne zlecenie właściciela — patrz też uwaga w ROADMAP: zapis
+  tego, co przyniósł commit, to nie „polerowanie”).

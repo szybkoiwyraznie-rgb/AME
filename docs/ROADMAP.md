@@ -1,7 +1,8 @@
 # ROADMAP — Archiwum Manifestacji Eterycznych
 
 > Plan faz; status aktualizowany na końcu każdej sesji (ostatnio: 2026-08-28,
-> sesja M3). Szczegóły bieżącego zadania żyją w `docs/plans/PLAN_*.md`.
+> M15 + dwie Pętle Jakości). Szczegóły bieżącego zadania żyją w
+> `docs/plans/PLAN_*.md`.
 > Nowe pomysły → `docs/BACKLOG.md`.
 
 ## F0 — Fundament (SESJA 2026-08-27) — ✅ UKOŃCZONA
@@ -37,7 +38,38 @@ sesji**:
   właścicielowi w PR **do akceptacji przed uruchomieniem live**.
 
 **Polerowanie dokumentacji NIE jest częścią Pętli Jakości** — wykonuje się
-je wyłącznie na wyraźne zlecenie właściciela w sesji.
+je wyłącznie na wyraźne zlecenie właściciela w sesji. Od tego odróżniamy
+**faktyczny zapis tego, co przyniósł commit/sesja** (ROADMAP, PROJECT_HISTORY):
+to część dziennika pracy, nie kosmetyka tekstu — robimy go przy każdej
+zmianie, niezależnie od „polerowania”.
+
+## Pętla Jakości (po M15) — C1 → C3 → C2 — ✅ w PR #7 (C2 do akceptacji)
+
+- [x] **C1 — domknięcie sieci:** `indra ↔ drangue-shala` (dwaj herosi burzy
+      uwalniający wodę) oraz `nessos ↔ selkie-sule-skerry` (oby dwaj na granicy
+      wody, zdrada przez zaufanie). Żaden wpis nie zostaje bez backlinku.
+- [x] **C3 — nowy SKIT:** `data/skity/znak-burzy.json`, „Znak burzy” —
+      trio Indra × Drangue × Barbarossa (unikalny skład, 221 słów), temat
+      „kto ma prawo wrócić, gdy nadejdzie grzmot”.
+- [x] **C2 — deep-link do filtra tagów:** `#tag:<tag>` otwiera mapę z aktywnym
+      filtrem, chip aktualizuje URL przez `history.replaceState`, tag
+      walidowany względem kanonu; helper `tagZFragmantu` + testy.
+- [x] Weryfikacja: `npm test` **150/150**, build 10 wpisów / 14 SKITów /
+      38 feed / 27 tagów, commit `f8265c0`.
+
+## Pętla Jakości (po M15) — twórczy rozwój idei KRONIKI
+
+- [x] **Zamiast nowej featurki:** pierwsza **konkretna próbka** modelu
+      `SKIT + skutek` — `docs/plans/PROTOTYP_kroniki-epoka-1.md`.
+- [x] Epoka 1 „Znak burzy” zbudowana na istniejącym SKICIE (Indra × Drangue ×
+      Barbarossa), role z `profileKartoteki` (Drapieżnik/Pieśniarz/Filar).
+- [x] Rekord `data/kronika/epoka-1-*.json` jako szkic: `skit`, `iskra`,
+      `uczestnicy`, `przebieg`, `skutek`, `meta`; narratorski „Kronikarz
+      zapisuje” + następna iskra z długu po epoce 1.
+- [x] Wkład do `KONCEPCJA_metagra_pytania-otwarte.md` §6: wstępne odpowiedzi
+      na **P3** (wydarzenie = SKIT + skutek), **P7** (minimalny format epoki),
+      **P9** (epoka jako opcjonalna warstwa narratorska) — do decyzji właściciela.
+- [x] Stan: prototyp koncepcyjny, bez kodu i bez walidatora (zgodnie z M13).
 
 ## F1 — Proces treściowy NA ZLECENIE (karty od właściciela — priorytet nad pętlą)
 

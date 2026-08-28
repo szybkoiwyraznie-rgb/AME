@@ -103,3 +103,26 @@ Nie są to decyzje właściciela — to propozycja do dyskusji, żeby ruszyć §
   co już umiemy — zero nowej maszynerii.
 
 To stanowisko celowo jest MAŁE: chroni przed „za dużą grą na 12 wpisach".
+
+## 6. Drugi wkład (Pętla Jakości po M15): prototyp pierwszej epoki KRONIKI
+
+[Nie jest to decyzja właściciela — to pierwsza **konkretna próbka** modelu
+danych z §1/§2, żeby przestać rozważać P3/P7/P9 w powietrzu.]
+
+- **Dokument:** `docs/plans/PROTOTYP_kroniki-epoka-1.md`.
+- **Próba:** pierwsza „epoka” zbudowana na istniejącym SKICIE **„Znak burzy”**
+  (Indra × Drangue × Barbarossa). Nie duplikujemy dialogu — epoka odwołuje się
+  do SKIT-u i dodaje `iskra` + `skutek`.
+- **Co odpowiada (wstępnie):**
+  - **P3:** wydarzenie = SKIT + krótki `skutek` dla świata. Potwierdzone na
+    konkretnym materiale; dialog zostaje jednokrotnie.
+  - **P7:** minimalny rekord `data/kronika/epoka-N-*.json` — `skit`, `iskra`,
+    `uczestnicy` (rola z `profileKartoteki`), `przebieg` (odwołanie + ślad),
+    `skutek`, `meta`. Bez nowej maszynerii.
+  - **P9:** epoka jest proponowana jako **opcjonalna, narratorska warstwa** —
+    nie modyfikuje kart archiwum, więc da się ją odrzucić bez psucia wpisów.
+- **Co dalej otwarte (z prototypu):** słownik `skutek.relacje` (wolny tekst vs
+  kontrolowane wartości), strzeżenie spójności kolejnych epok, oraz P1/P2 —
+  czy następna epoka rusza z „długu” opisanego w skutku, czy z osobnego seeda.
+- **Stan:** prototyp koncepcyjny, nie dane produkcyjne; brak kodu, brak
+  walidatora, brak wpięcia do UI (zgodnie z M13).
