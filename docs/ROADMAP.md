@@ -261,6 +261,18 @@ je wyłącznie na wyraźne zlecenie właściciela w sesji.
       dedup źródła; domknięcie sieci (→ empusa, → kentaur).
 - [x] **C3** SKIT „TRZY STOŁY” (trio Egungun × Barbarossa × Kentaur) — blind-draft.
 
+## M13 (2026-08-28) — zawężenie: metagra w opracowaniu; reguła przenośności — ✅ w PR #6
+
+- [x] **Stop pilotowi Meta.ai jako przedwczesnemu** (brak zaakceptowanej
+      koncepcji metagry → nie ma czego testować). Brief pilota wycofany.
+- [x] **Trwałe reguły** (`POMYSL_platforma-budowy-przenosnosc.md` §9): (1) projekt
+      może prowadzić runner inny niż Arena (granica = git PR, brama w repo);
+      (2) „głos pojedynczego bytu" wykonują odizolowani subagenci (swarm,
+      priorytet) ALBO symulowani przez jednego agenta (blind-draft) — koncepcja
+      uniwersalna, niezależna od platformy.
+- [x] **Status metagry: NIEZAAKCEPTOWANA / W OPRACOWANIU.** Bez pilotów i kodu gry
+      do czasu spójnej, zaakceptowanej koncepcji. Praca = tropy + Pętla Jakości.
+
 ## F2 — Jakość i ergonomia mapy
 
 - [x] Deep-linki (`#<slug>` — stan mapy i otwartego wpisu; działa od M1, tu

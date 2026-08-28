@@ -43,6 +43,14 @@ sesyjny (agent Areny), którego wynikiem są **dane** dogrywane do repo.
 
 ## 1a. Realia zdolności agenta Areny — SZCZERA odpowiedź na wątpliwość (M11)
 
+> **Reguła platformowo-neutralna (M13, rozstrzygnięcie właściciela):** procedurę
+> „głosu pojedynczego bytu" wykonują — zależnie od runnera — **odizolowani
+> subagenci** (prawdziwy swarm, PRIORYTET) albo **symulowani subagenci** przez
+> jednego agenta sesji (blind-draft). Koncepcja ma być uniwersalna: ta sama
+> treść daje się wyprodukować oboma sposobami, tylko z inną siłą izolacji.
+> Szczegóły i status: `docs/plans/POMYSL_platforma-budowy-przenosnosc.md` §9.
+> Poniższy tekst (M11) opisuje przypadek runnera-pojedynczego-procesu (Arena).
+
 Właściciel słusznie pyta: czy agent Areny może powoływać subagentów? **Uczciwa
 odpowiedź: nie w sposób, w jaki brzmiało to w koncepcji z M10.** Muszę to
 sprostować, żeby projekt nie stał na fałszywym założeniu.

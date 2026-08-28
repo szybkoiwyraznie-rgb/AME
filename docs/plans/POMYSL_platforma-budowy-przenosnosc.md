@@ -124,3 +124,31 @@ ADR 0003 i bez kluczy u odbiorcy.
    dowolny runner mógł usiąść do AME bez connectora?
 3. Czy pilotem ma być **jedna epoka KRONIKI** (3 odizolowane byty) — najlepszy
    test tego, czy swarm daje to, czego pojedynczy agent nie daje?
+
+## 9. ROZSTRZYGNIĘCIE właściciela (M13) — stanowisko na dziś
+
+Właściciel zatrzymał wątek pilota jako **przedwczesny**: nie ma jeszcze
+zaakceptowanej koncepcji metagry (Kroniki), więc nie ma czego testować. Pilot na
+Meta.ai został wycofany. Z całego wątku zostają **dwie trwałe reguły**:
+
+1. **Projekt może prowadzić runner inny niż Arena.** Build-time jest wymienny;
+   granicą przekazania jest git (PR). Każdy runner respektuje `AGENTS.md`,
+   protokół, walidatory i zieloną bramę (`npm test`/`build`/`check`). Wybór
+   platformy na daną sesję należy do właściciela (Arena domyślnie; Meta.ai gdy
+   właściciel uzna, że warto — np. dla izolacji).
+
+2. **Zasada wykonania „głosu pojedynczego bytu".** Jeśli procedura generowania
+   treści (w Kronice lub czymkolwiek innym) będzie wymagać decyzji/narracji
+   pojedynczego bytu / manifestacji / gracza, to — zależnie od architektury
+   aktualnego runnera — wykonają to:
+   - **odizolowani subagenci** (prawdziwy agent swarm, np. Meta.ai) — PRIORYTET,
+     albo
+   - **symulowani subagenci** przez głównego agenta sesji (blind-draft, gdy
+     runner jest pojedynczym procesem, np. Arena).
+   Dzięki temu koncepcja pozostaje **uniwersalna** i niezależna od platformy:
+   ta sama treść daje się wyprodukować oboma sposobami, tylko z inną siłą izolacji.
+
+**Status metagry:** KONCEPCJA NIEZAAKCEPTOWANA / W OPRACOWANIU. Mamy tropy i
+pomysły (SPLOT/KRONIKA, timeline'y, staty z gęstości, archetypy) — trzeba nad
+nimi pracować, nie testować. Żadnych pilotów ani kodu gry do czasu, aż
+właściciel zaakceptuje spójną koncepcję.
