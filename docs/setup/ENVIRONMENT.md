@@ -89,6 +89,41 @@ pushuj od razu; przed długimi operacjami upewnij się, że praca jest wypchnię
   do „na żywo” użyj serwera statycznego na `0.0.0.0`
   (`python3 -m http.server 8000 --bind 0.0.0.0`).
 
+### 4.1 Przeglądarka do weryfikacji wizualnej (headless Chromium z npm)
+
+Swobodny egress jest zablokowany, więc `npx puppeteer browsers install chrome`
+kończy się błędem (Chrome pobiera się z hostów Google, nie z rejestru npm).
+Binarkę da się jednak zdobyć **z paczki npm** — `@sparticuz/chromium` niesie
+w tarballi skompresowany Chromium i potrzebne biblioteki (zestaw pod Amazon
+Linux 2023). Sprawdzone 2026-08-28 (Chromium 149, node 22):
+
+```bash
+mkdir -p /home/user/.narzedzia && cd /home/user/.narzedzia   # poza repozytorium!
+npm i puppeteer @sparticuz/chromium pngjs
+node -e "const fs=require('fs'),z=require('zlib');\
+  fs.writeFileSync('chromium', z.brotliDecompressSync(\
+    fs.readFileSync('node_modules/@sparticuz/chromium/bin/chromium.br')));\
+  fs.chmodSync('chromium',0o755);\
+  fs.writeFileSync('al2023.tar', z.brotliDecompressSync(\
+    fs.readFileSync('node_modules/@sparticuz/chromium/bin/al2023.tar.br')));"
+mkdir -p libs && tar -xf al2023.tar -C libs          # biblioteki idą do libs/lib
+LD_LIBRARY_PATH=$PWD/libs/lib ./chromium --version   # → Chromium 149…
+```
+
+Potem `puppeteer.launch({ executablePath: process.env.CHROME_PATH, args:
+['--no-sandbox', '--disable-setuid-sandbox', '--disable-gpu',
+'--disable-dev-shm-usage'] })` i weryfikacja na żywo: `getBoundingClientRect`,
+`getComputedStyle().display`, `elementFromPoint`, zrzut ekranu. Uwagi:
+
+- **Nie instaluj tego w repozytorium** — `/home/user/.narzedzia` jest poza
+  drzewem, więc `package.json` projektu zostaje bez zależności (ADR 0001).
+- Katalogi `node_modules` i `.cache` nie wchodzą do snapshotu workspace'u; po
+  resecie sandboxa przepis trzeba powtórzyć (kilkanaście sekund).
+- Zrzutów PNG agent nie „widzi” — analizuj piksele programowo (`pngjs`:
+  histogram kolorów, udział barwy lądu i oceanu) zamiast wpatrywać się w obraz.
+- W headless domyślny jest **jasny** motyw (`prefers-color-scheme`), a nie
+  ciemny — przy pomiarach kolorów mapy przełącz motyw albo uwzględnij to.
+
 ## 5. Czas wykonania (orientacyjnie)
 
 | Operacja | Czas | Uwagi |
