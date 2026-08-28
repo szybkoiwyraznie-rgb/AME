@@ -10,8 +10,9 @@ namierzyć realną emanację w naszym świecie; wynikiem jest wpis w kartotece
 
 - **Mapa świata bez zewnętrznych serwerów** — wektorowa (Natural Earth),
   własny pan/zoom: przeciąganie, kółko myszy, pinch na telefonie, dwuklik.
-  Uczciwe proporcje: 1° długości = 1° szerokości przy każdym rozmiarze okna,
-  geometria krajów cięta na antypołudniku (ADR 0009).
+  Uczciwe proporcje w Web Mercator (jak Google Maps — Polska nie jest
+  „spłaszczona”), geometria krajów cięta na antypołudniku (ADR 0003/0009),
+  klik w miasto pokazuje jego nazwę.
 - **Motyw jasny i ciemny** — przełącznik w górnym pasku zmienia CSS na żywo;
   wybór zapamiętywany, start od preferencji systemu (ADR 0010).
 - **Pinezki manifestacji** — kliknięcie otwiera kartotekę bytu jako

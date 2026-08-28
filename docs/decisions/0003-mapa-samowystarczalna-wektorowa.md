@@ -11,9 +11,12 @@
   - Bazą mapy jest plik `assets/map/countries-50m.json` — TopoJSON z pakietu
     npm `world-atlas` (dane Natural Earth, domena publiczna; licencja pakietu
     ISC w `assets/map/LICENSE.world-atlas`), zvendoryzowany do repozytorium.
-  - Dekodowanie TopoJSON → geometria + projekcja **walcowa równoodległa**
-    (equirectangular: `x = (lon+180)/360·W`, `y = (90−lat)/180·H`) odbywa się
-    własnym kodem w `app/geo.js` — bez bibliotek.
+  - Dekodowanie TopoJSON → geometria + projekcja **walcowa Web Mercator**
+    (kula, nie elipsoida: `x = (lon+180)/360·W`,
+    `y = H/2·(1 − atanh(sin φ)/π)`, szerokości przycięte do ±85,05112878°)
+    odbywa się własnym kodem w `app/geo.js` — bez bibliotek. Cel: lokalne
+    proporcje (np. Polska) wyglądają jak w Google Maps; świat jest kwadratowy
+    3600×3600 j.u.
   - Render: SVG. Pan (przeciąganie), zoom do kursora (kółko myszy), pinch
     (dotyk), dwuklik, przyciski +/−/reset. Pinezki żyją w tym samym układzie
     współrzędnych świata, a ich rozmiar jest kompensowany odwrotnie do
@@ -27,6 +30,7 @@
   - Skrajne zoomy nie pokażą szczegółów ulic — świadomy kompromis na rzecz
     samowystarczalności; dokładniejsza siatka (10m) lub warstwa kafelków
     może przyjść później jako opcja (patrz `docs/BACKLOG.md`).
-  - Linia zmiany daty i bieguny są trywialne w projekcji walcowej — brak
-    special-case'ów, ale Antarktyka wygląda rozciągnięta (akceptowalne).
+  - Linia zmiany daty i cięcie na szwie pozostają trywialne w projekcji
+    walcowej; szerokości >85,051° są przycięte na krawędzi świata, więc
+    Antarktyka to dolny pas mapy (standard Web Mercator, tak samo Google).
 - Powiązania: 0001

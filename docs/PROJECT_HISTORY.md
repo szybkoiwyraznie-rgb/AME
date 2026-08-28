@@ -981,3 +981,45 @@ praca: pierwszy **prototyp epoki** jako konkretna próbka modelu
 - Dokumentacja ROADMAP/PROJECT_HISTORY uzupełniona o faktyczny zapis obu
   pętli (na jawne zlecenie właściciela — patrz też uwaga w ROADMAP: zapis
   tego, co przyniósł commit, to nie „polerowanie”).
+
+## Poprawka mapy: Web Mercator + klikalne nazwy miast (uwagi właściciela)
+
+Właściciel porównał wygląd Polski w AME z mapą Google: mapa była wyraźnie
+„spłaszczona” (szersza niż wyższa), co jest realnym defektem projekcji. Zgłosił
+też prośbę o pokazywanie nazw miast po kliknięciu.
+
+### A — proporcje: równoodległa → Web Mercator
+
+- **Przyczyna:** `geo.js` używała projekcji walcowej równoodległej
+  (equirectangular) z założeniem „1° długości = 1° szerokości na ekranie”.
+  Na szerokości ~52°N (Polska) 1° długości to na kuli tylko ~cos(52°) ≈ 0,61
+  stopnia szerokości, więc mapa wyglądała ~1,7× za szeroko.
+- **Rozwiązanie:** przejście na **Web Mercator** (sfera): świat kwadratowy
+  3600×3600, `y = H/2·(1 − atanh(sin φ)/π)`, szerokości przycięte do
+  ±85,05112878° (standard, jak Google Maps). Lokalne kształty na średnich
+  szerokościach są teraz zgodne z rzeczywistością.
+- **Zakres zmian:** `app/geo.js` (`projektuj`, `odwroc`, `GRANICA_MERCATORA`,
+  wymiary świata), testy `geo.test.js`, `mapa-dane.test.js` (nowy test
+  „Polska ≈ 1,06:1” oraz wzmocnienie pionu ~sec(52°)), `pinezka.test.js`
+  (Warszawa liczona przez `projektuj`).
+- Zachowane: cięcie na antypołudniku (ADR 0009), `contain` bez rozciągu,
+  brak nowych zależności.
+- ADR 0003/0009, ARCHITECTURE i README zaktualizowane do Mercatora.
+
+### B — klikalne etykiety miast
+
+- Klik w kropkę miasta (lub blisko, w promieniu 16 px ekranu) pokazuje
+  pływającą tabliczkę `.etykieta-miasta` z nazwą i populacją (np.
+  „Warszawa · 1.7 mln”).
+- Etykieta ma stały rozmiar ekranowy (kompensacja skali jak badge pinezki),
+  podąża za miastem przy pan/zoom i chowa się przy przeciągnięciu, kliknięciu
+  w pinezkę lub kliknięciu poza miastem.
+- Drag/pinch odróżniony od kliknięcia (`czyPrzesunieto`), więc przesuwanie
+  mapy nie wywołuje etykiet.
+- Podpowiedź w `index.html` rozszerzona o „kliknij miasto = nazwa”; test
+  warstw miast sprawdza obecność `<title>` z nazwą i ukrytą etykietę.
+
+### Stan
+
+- `npm test` **150/150**, `npm run check` OK, `npm run build` zielony.
+- Commity: `43483ad` (Mercator) + commit z etykietami miast (poniższy wpis).

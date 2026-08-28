@@ -10,7 +10,7 @@ Aplikacja to statyczna strona (ADR 0001): `index.html` + moduły ES w `app/`
 index.html                  — powłoka UI (topbar, mapa, panel, lista)
 app/
   app.js                    — bootstrap: ładuje indeks, spina moduły
-  geo.js                    — dekodowanie TopoJSON, projekcja równoodległa,
+  geo.js                    — dekodowanie TopoJSON, projekcja Web Mercator,
                               geometria mapy (czyste funkcje, testowalne w Node)
   map.js                    — render SVG mapy + pinezki + pan/zoom + łuki,
                               widok liczony z kontenera (ResizeObserver)
@@ -112,11 +112,13 @@ dzieje się w przeglądarce na życzenie — determinizm indeksu (ADR 0002) niet
 
 ## Mapa (ADR 0003 + ADR 0009)
 
-- Projekcja walcowa równoodległa; świat w prostokącie W×H = 3600×1800 j.u.,
-  1° długości = 1° szerokości = 10 j.u. (10 j.u. na stopień w obu osiach).
+- Projekcja walcowa **Web Mercator** (kula): świat w kwadracie W×H = 3600×3600
+  j.u.; x = (lon+180)/360·3600, y = H/2·(1 − atanh(sin φ)/π), szerokości
+  przycięte do ±85,05112878°. 1° długości = 10 j.u., a skala lokalna w pionie
+  rośnie jak 1/cos(φ) — dzięki temu Polska ma proporcje zbliżone do map Google.
 - **Widok w pikselach kontenera**: `viewBox` = rozmiar kontenera, a grupa świata
   nosi transformację `translate(x, y) scale(s)`, gdzie `s = skalaBazowa · k`,
-  `skalaBazowa = min(szer/3600, wys/1800)` (contain — cały świat w oknie, bez
+  `skalaBazowa = min(szer/3600, wys/3600)` (contain — cały świat w oknie, bez
   przycinania i rozciągu). Całą logikę liczy czysta `dopasujWidok()` w `geo.js`
   (docina przesunięcia do brzegów świata, wyśrodkowuje, gdy świat jest
   mniejszy od okna); `ResizeObserver` + `window.resize` zachowują punkt pod

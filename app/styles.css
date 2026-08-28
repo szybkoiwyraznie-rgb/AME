@@ -304,6 +304,26 @@ html[data-motyw='jasny'] .baner code { background: #ffffff77; }
 }
 .etykiety .etykieta.przygaszona { opacity: 0.14; }
 
+/* Etykieta miasta (klik): osobna pływająca tabliczka, ten sam wygląd co badge. */
+.mapa-svg .etykieta-miasta {
+  display: none;
+  pointer-events: none;
+}
+.mapa-svg .etykieta-miasta.widoczna { display: block; }
+.mapa-svg .etykieta-miasta text {
+  font-family: var(--serif);
+  font-size: 19px;
+  line-height: 1.2;
+  fill: var(--tekst);
+  text-anchor: middle;
+  dominant-baseline: central;
+}
+.mapa-svg .etykieta-miasta .tlo-etykiety {
+  fill: var(--badge-tlo);
+  stroke: var(--akcent);
+  stroke-width: 1.2;
+}
+
 .podpowiedz {
   position: absolute;
   left: 14px;

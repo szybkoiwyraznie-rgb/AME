@@ -71,6 +71,18 @@ zmianie, niezależnie od „polerowania”.
       **P9** (epoka jako opcjonalna warstwa narratorska) — do decyzji właściciela.
 - [x] Stan: prototyp koncepcyjny, bez kodu i bez walidatora (zgodnie z M13).
 
+## Poprawka mapy: Web Mercator + klikalne nazwy miast (uwagi właściciela)
+
+- [x] **A — proporcje mapy:** projekcja równoodległa rozciągała Polskę
+      ~1,7× w poziomie (1° dł. = 1° szer. na ekranie to błąd dla średnich
+      szerokości). Zamiana na **Web Mercator** (±85,051°): świat kwadratowy
+      3600×3600, lokalne kształty jak w Google Maps; test „Polska ≈ 1,06:1”.
+- [x] **B — etykiety miast:** klik w kropkę miasta (promień 16 px) pokazuje
+      pływającą tabliczkę z nazwą i populacją; drag/pinch nie wywołuje etykiety,
+      klik w pinezkę ją chowa. Podpowiedź w UI zaktualizowana.
+- [x] Weryfikacja: `npm test` **150/150**, `npm run build` zielony, ADR 0003/0009
+      i ARCHITECTURE/README zaktualizowane.
+
 ## F1 — Proces treściowy NA ZLECENIE (karty od właściciela — priorytet nad pętlą)
 
 - [ ] Właściciel dostarcza kartę (nazwa+set albo grafika) → sesja tworzy

@@ -25,6 +25,10 @@ const ETYKIETA = {
 
 /** Odległość dolnej krawędzi badge’a od środka pinezki (px CSS). */
 const ODSTEP_BADGE = 30;
+/** Odległość dolnej krawędzi etykiety miasta od środka kropki (px CSS). */
+const ODSTEP_MIASTA = 22;
+/** Maksymalna odległość kliknięcia od kropki miasta, która pokazuje etykietę (px CSS). */
+const PROMIEN_KLIK_MIASTA = 16;
 
 /** Warstwy szczegółowości (ADR 0020): progi zoomu dla danych tematycznych. */
 export const PROGI_WARSTW = {
@@ -101,6 +105,9 @@ export function stworzMape(kontener, { przyZmianieZaznaczenia, przyZmianieWidoku
   // Widzialność (A1) sterują klasy na samej etykiecie (widoczna/wybrana),
   // sprzęgane ze stanem pinezki zdarzeniami pointer/focus — nie zagnieżdżaniem.
   const grupaEtykiet = el('g', { class: 'etykiety' }, grupaSwiata);
+  // C2: pływająca etykieta miasta (klik) — poza grupaPinezek, w stałym
+  // rozmiarze ekranowym dzięki odwrotnej skali (jak badge pinezki).
+  const etykietaMiasta = el('g', { class: 'etykieta-miasta' }, grupaSwiata);
 
   const rozmiar = { szerokosc: 0, wysokosc: 0 };
   const widok = { x: 0, y: 0, k: 1 };
@@ -110,8 +117,10 @@ export function stworzMape(kontener, { przyZmianieZaznaczenia, przyZmianieWidoku
   let paryPolaczen = []; // [{a, b}]
   let lukiStale = false; // warstwa ∞ włączona przyciskiem (przelaczLuki)
   let podgladSlug = null; // C2: pinezka pod wskaźnikiem/fokusem — podgląd jej powiązań
-  let miastaDane = []; // [{nazwa, wx, wy, p, c}]
+  let miastaDane = []; // [{g, wx, wy, nazwa, populacja, tier}]
   let ostatnieSkala = null; // do pomijania przebudowy transformów punktów przy samym panu
+  let aktywneMiasto = null; // miasto pokazane po kliknięciu
+  let czyPrzesunieto = false; // pan/pinch nie może być mylony z kliknięciem w miasto
 
   /** Punkt zdarzenia klienta → współrzędne viewBoxu (= piksele kontenera). */
   function naSvg(zdarzenie) {
@@ -169,6 +178,7 @@ export function stworzMape(kontener, { przyZmianieZaznaczenia, przyZmianieWidoku
     // A1 (M6): bez stałego pokazywania etykiet od progu zoomu — dawny toggle
     // klasy `przyblizona` usunięty; etykieta żyje na najechanie/fokus/wybranie.
     odswiezWidocznoscWarstw();
+    przelozEtykieteMiasta();
     przyZmianieWidoku?.(widok.k, { skala: skala });
   }
 
@@ -208,6 +218,7 @@ export function stworzMape(kontener, { przyZmianieZaznaczenia, przyZmianieWidoku
 
   svg.addEventListener('pointerdown', (e) => {
     if (e.target.closest('.pinezka')) return; // kliknięcia pinezki nie przesuwają mapy
+    czyPrzesunieto = false;
     svg.setPointerCapture(e.pointerId);
     wskazniki.set(e.pointerId, { x: e.clientX, y: e.clientY });
     if (wskazniki.size === 2) {
@@ -221,6 +232,10 @@ export function stworzMape(kontener, { przyZmianieZaznaczenia, przyZmianieWidoku
     if (!wskazniki.has(e.pointerId)) return;
     const poprzedni = wskazniki.get(e.pointerId);
     wskazniki.set(e.pointerId, { x: e.clientX, y: e.clientY });
+    if (Math.hypot(e.clientX - poprzedni.x, e.clientY - poprzedni.y) > 4) {
+      czyPrzesunieto = true;
+      ukryjEtykieteMiasta();
+    }
 
     if (wskazniki.size === 1) {
       const teraz = naSvg(e);
@@ -261,6 +276,14 @@ export function stworzMape(kontener, { przyZmianieZaznaczenia, przyZmianieWidoku
   svg.addEventListener('dblclick', (e) => {
     if (e.target.closest('.pinezka')) return;
     zoomDoPunktu(naSvg(e), 1.8, true);
+  });
+
+  svg.addEventListener('click', (e) => {
+    if (e.target.closest('.pinezka')) return; // pinezka obsługuje się sama
+    if (czyPrzesunieto) return; // drag/pinch nie jest kliknięciem
+    const m = miastoPodKlikiem(naSvg(e));
+    if (m) pokazEtykieteMiasta(m);
+    else ukryjEtykieteMiasta();
   });
 
   /* ---- Pinezki i łuki powiązań ---- */
@@ -312,11 +335,13 @@ export function stworzMape(kontener, { przyZmianieZaznaczenia, przyZmianieWidoku
       });
       g.addEventListener('click', (ev) => {
         ev.stopPropagation();
+        ukryjEtykieteMiasta();
         przyZmianieZaznaczenia?.(r.slug);
       });
       g.addEventListener('keydown', (ev) => {
         if (ev.key === 'Enter' || ev.key === ' ') {
           ev.preventDefault();
+          ukryjEtykieteMiasta();
           przyZmianieZaznaczenia?.(r.slug);
         }
       });
@@ -418,6 +443,53 @@ export function stworzMape(kontener, { przyZmianieZaznaczenia, przyZmianieWidoku
 
   const formatujPopulacje = (p) => (p >= 1_000_000 ? `${(p / 1_000_000).toFixed(1)} mln` : `${(p / 1_000).toFixed(0)} tys.`);
 
+  /** Ustawia transform etykiety miasta (stały rozmiar ekranowy, jak badge). */
+  function przelozEtykieteMiasta() {
+    if (!aktywneMiasto) return;
+    const komp = 1 / skala;
+    etykietaMiasta.setAttribute('transform', `translate(${aktywneMiasto.wx} ${aktywneMiasto.wy}) scale(${komp})`);
+  }
+
+  function ukryjEtykieteMiasta() {
+    aktywneMiasto = null;
+    etykietaMiasta.classList.remove('widoczna');
+    etykietaMiasta.innerHTML = '';
+  }
+
+  function pokazEtykieteMiasta(m) {
+    if (!m) return ukryjEtykieteMiasta();
+    aktywneMiasto = m;
+    etykietaMiasta.innerHTML = '';
+    const tlo = el('rect', { class: 'tlo-etykiety', rx: 8 }, etykietaMiasta);
+    const tekst = el('text', {}, etykietaMiasta);
+    tekst.textContent = `${m.nazwa ?? ''}${m.populacja ? ` · ${formatujPopulacje(m.populacja)}` : ''}`;
+    const { szer, wys } = wymiaryEtykiety(tekst.textContent, tekst);
+    tlo.setAttribute('x', (-szer / 2).toFixed(1));
+    tlo.setAttribute('y', (-ODSTEP_MIASTA - wys).toFixed(1));
+    tlo.setAttribute('width', String(szer));
+    tlo.setAttribute('height', String(wys));
+    tekst.setAttribute('y', (-ODSTEP_MIASTA - wys / 2).toFixed(1));
+    przelozEtykieteMiasta();
+    etykietaMiasta.classList.add('widoczna');
+  }
+
+  /** Najbliższe widoczne miasto w promieniu kliknięcia (px ekranu). */
+  function miastoPodKlikiem(p) {
+    let najlepsze = null;
+    let najlepszyDystans = PROMIEN_KLIK_MIASTA ** 2;
+    for (const m of miastaDane) {
+      if (grupyMiast[m.tier].getAttribute('display') === 'none') continue;
+      const sx = widok.x + m.wx * skala;
+      const sy = widok.y + m.wy * skala;
+      const d2 = (sx - p.x) ** 2 + (sy - p.y) ** 2;
+      if (d2 <= najlepszyDystans) {
+        najlepszyDystans = d2;
+        najlepsze = m;
+      }
+    }
+    return najlepsze;
+  }
+
   /** Miasta: punkty o stałym rozmiarze ekranowym, podzielone na rangi LOD. */
   function ustawMiasta(lista) {
     grupyMiast.wielkie.innerHTML = '';
@@ -432,9 +504,11 @@ export function stworzMape(kontener, { przyZmianieZaznaczenia, przyZmianieWidoku
       const r = tier === 'wielkie' ? 4.5 : tier === 'srednie' ? 3.5 : 2.5;
       const kropka = el('circle', { class: 'kropka', r: String(r) }, g);
       const t = el('title', {}, kropka);
-      t.textContent = `${m.n ?? m.nazwa ?? ''}${p ? ` · ${formatujPopulacje(p)}` : ''}`;
-      miastaDane.push({ g, wx, wy, tier });
+      const nazwa = m.n ?? m.nazwa ?? '';
+      t.textContent = `${nazwa}${p ? ` · ${formatujPopulacje(p)}` : ''}`;
+      miastaDane.push({ g, wx, wy, nazwa, populacja: p, tier });
     }
+    if (aktywneMiasto && !miastaDane.some((m) => m.wx === aktywneMiasto.wx && m.wy === aktywneMiasto.wy)) ukryjEtykieteMiasta();
     ostatnieSkala = null; // wymuś ustawienie transformów punktów
     odswiezWidocznoscWarstw();
   }

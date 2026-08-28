@@ -124,6 +124,15 @@ test('mapa: miasta dzielone na rangi i kompensowane do rozmiaru ekranowego', () 
   assert.ok(liczba, `transform=${transform}`);
   assert.ok(Math.abs(Number(liczba) - 1 / mapa.skala) < 1e-6, `kompensacja ${liczba}, oczekiwana ${1 / mapa.skala}`);
 
+  // B (klik w miasto): grupa etykiety istnieje, jest ukryta, a kropka niesie nazwę.
+  const etykietaMiasta = znajdzElement(mapa.svg, 'etykieta-miasta');
+  assert.ok(etykietaMiasta, 'pływająca etykieta miasta w drzewie SVG');
+  assert.ok(!etykietaMiasta.czyMaKlase('widoczna'), 'etykieta ukryta przed kliknięciem');
+  const kropka = m.dzieci.find((d) => d.czyMaKlase('kropka'));
+  const tytul = kropka?.dzieci.find((d) => d.nazwa === 'title');
+  assert.ok(tytul, 'kropka ma <title> z nazwą');
+  assert.equal(tytul.textContent, 'Wielkie · 2.0 mln');
+
   // wyłączenie warstwy chowa całość mimo wysokiego zoomu
   mapa.przelaczWidocznoscWarstwy('miasta', false);
   assert.equal(grupaMiast.getAttribute('display'), 'none');
