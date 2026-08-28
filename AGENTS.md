@@ -121,7 +121,10 @@ Ponadto:
   (`tools/rebuild-index.mjs` odrzuci wpis ze zniekształconą ramą).
 - **Język wpisów: polski** (nazwy własne, cytaty i terminy źródłowe mogą
   pozostać oryginalne).
-- **Tagi:** małe litery, myślniki, bez spacji (`byt-nocny`, `ameryka-polnocna`).
+- **Tagi tylko z kanonu** (`data/kanon-tagow.json`): małe litery, myślniki, bez
+  spacji; kategorie i limity — `kultura` 1, `typ` 1, `motyw` 1–2, `postac` 0–1
+  (PROTOKÓŁ §6.1, ADR 0016). Nowy tag = dopisanie go do kanonu w tym samym
+  commicie. Kraj nie jest tagiem (jest w `lokalizacja.kraj`).
 - **Powiązania** wskazują slugi istniejących wpisów; backlinki liczy automatycznie
   indeks. Nie twórz powiązań „na siłę” — opis powiązania ma uzasadniać związek.
 - **Slug** = `^[a-z0-9-]+$`, zgodny z nazwą pliku (`data/manifestations/<slug>.json`).

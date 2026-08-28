@@ -6,8 +6,8 @@
  *   node tools/rebuild-index.mjs --check   # waliduj i porównaj z istniejącym indeksem
  *                                          # (kod 1 przy rozbieżności/błędzie)
  *
- * Zasady: docs/PROTOKOL.md (w tym §8 — SKITy), docs/ARCHITECTURE.md,
- * ADR 0002/0005/0006/0008/0013.
+ * Zasady: docs/PROTOKOL.md (w tym §6 — kanon tagów, §8 — SKITy),
+ * docs/ARCHITECTURE.md, ADR 0002/0005/0006/0008/0013/0016.
  * Indeks jest deterministyczny (sortowanie po slugu) — bez znaczników czasu.
  */
 import { readdir, readFile, writeFile } from 'node:fs/promises';
@@ -18,6 +18,8 @@ const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 export const KATALOG_WPISOW = join(ROOT, 'data', 'manifestations');
 export const KATALOG_SKITOW = join(ROOT, 'data', 'skity');
 export const PLIK_INDEKSU = join(ROOT, 'data', 'index.json');
+/** Kanon tagów: zamknięty słownik (kategorie + dozwolone tagi), dane źródłowe. */
+export const PLIK_KANONU = join(ROOT, 'data', 'kanon-tagow.json');
 
 /** Rama promptu wizualizacji 21:9 — DOKŁADNIE jak w docs/PROTOKOL.md §5 (ADR 0005). */
 export const RAMA_OTWARCIA =
@@ -158,6 +160,73 @@ export function walidujWpis(w) {
   return e;
 }
 
+/** Waliduje sam plik kanonu; zwraca listę błędów (pusta = OK). */
+export function walidujKanon(k) {
+  const e = [];
+  if (!k || typeof k !== 'object') return ['kanon: brak pliku data/kanon-tagow.json'];
+  const kategorie = k.kategorie ?? [];
+  if (!Array.isArray(kategorie) || kategorie.length === 0) e.push('kanon.kategorie: wymagana niepusta tablica');
+  const idy = new Set();
+  for (const kat of kategorie) {
+    if (!jestStr(kat?.id) || !RE_TAG.test(kat.id)) { e.push('kanon.kategorie: każda kategoria wymaga {id: /^[a-z0-9-]+$/}'); continue; }
+    if (idy.has(kat.id)) e.push(`kanon.kategorie: duplikat kategorii „${kat.id}”`);
+    idy.add(kat.id);
+    if (!jestStr(kat.nazwa)) e.push(`kanon.kategorie.${kat.id}: brak nazwy`);
+    if (!jestStr(kat.opis)) e.push(`kanon.kategorie.${kat.id}: brak opisu (pokazujemy go w legendzie paska)`);
+    if (!jestStr(kat.skrot)) e.push(`kanon.kategorie.${kat.id}: brak skrótu (używamy go w chipach w karcie)`);
+    if (!Number.isInteger(kat.min) || !Number.isInteger(kat.max) || kat.min < 0 || kat.min > kat.max) {
+      e.push(`kanon.kategorie.${kat.id}: wymagane liczby {min,max} w porządku min ≤ max`);
+    }
+  }
+  const tagi = k.tagi ?? [];
+  if (!Array.isArray(tagi) || tagi.length === 0) e.push('kanon.tagi: wymagana niepusta tablica');
+  const slugi = new Set();
+  for (const tag of tagi) {
+    if (!jestStr(tag?.tag) || !RE_TAG.test(tag.tag)) { e.push('kanon.tagi: każdy wpis wymaga {tag: /^[a-z0-9-]+$/}'); continue; }
+    if (slugi.has(tag.tag)) e.push(`kanon.tagi: duplikat tagu „${tag.tag}”`);
+    slugi.add(tag.tag);
+    if (!idy.has(tag.kategoria)) e.push(`kanon.tagi.${tag.tag}: kategoria „${tag.kategoria}” nie istnieje`);
+    if (!jestStr(tag.opis)) e.push(`kanon.tagi.${tag.tag}: brak opisu (bez niego tag jest nieczytelny)`);
+  }
+  for (const id of idy) {
+    if (!tagi.some((x) => x?.kategoria === id)) e.push(`kanon.kategorie.${id}: nie ma ani jednego tagu`);
+  }
+  return e;
+}
+
+/** Sprawdzanie tagów jednego wpisu względem kanonu; zwraca listę błędów. */
+export function walidujTagi(w, k) {
+  if (!k) return [];
+  const e = [];
+  const dozwolone = new Map((k.tagi ?? []).map((x) => [x.tag, x.kategoria]));
+  const tagi = w.tagi ?? [];
+  for (const tag of tagi) {
+    if (!dozwolone.has(tag)) {
+      e.push(`tagi: „${tag}” nie istnieje w kanonie — dopisz go do data/kanon-tagow.json (z kategorią i opisem) albo użyj istniejącego`);
+    }
+  }
+  for (const kat of k.kategorie ?? []) {
+    const ile = tagi.filter((tag) => dozwolone.get(tag) === kat.id).length;
+    if (ile < kat.min) e.push(`tagi: kategoria „${kat.id}” wymaga ${kat.min === kat.max ? `dokładnie ${kat.min}` : `co najmniej ${kat.min}`} ${kat.min === 1 ? "tagu" : "tagów"}, ma ${ile}`);
+    if (ile > kat.max) e.push(`tagi: kategoria „${kat.id}” dopuszcza ${kat.max}, jest ${ile}`);
+  }
+  return e;
+}
+
+/** Wczytuje i waliduje kanon tagów. */
+export async function wczytajKanon(sciezka = PLIK_KANONU) {
+  let k;
+  try {
+    k = JSON.parse(await readFile(sciezka, 'utf8'));
+  } catch (err) {
+    if (err?.code === 'ENOENT') throw new Error(`Brak kanonu tagów: ${sciezka} (jest wymagany — ADR 0016)`);
+    throw new Error(`Kanon tagów: niepoprawny JSON (${err.message})`);
+  }
+  const bledy = walidujKanon(k);
+  if (bledy.length) throw new Error(['Walidacja kanonu tagów NIEPRZESZŁA:', ...bledy.map((b) => `  - ${b}`)].join('\n'));
+  return k;
+}
+
 /** Liczba słów w tekście SKITa (limit protokołu: 300 — ADR 0015). */
 export function liczbaSlow(tekst) {
   return String(tekst ?? '').trim().split(/\s+/).filter(Boolean).length;
@@ -285,7 +354,7 @@ function rekordSkitu(s) {
  * słownik tagów, backlinki i feed `aktualizacje` (sekcja „Co nowego”,
  * najnowsze na górze) wyliczony z `meta` wpisów i skitów.
  */
-export function zbudujIndeks(wpisy, skiti = []) {
+export function zbudujIndeks(wpisy, skiti = [], kanon = null) {
   const posortowane = [...wpisy].sort((a, b) => a.slug.localeCompare(b.slug, 'pl'));
   const rekordy = posortowane.map((w) => ({
     slug: w.slug,
@@ -310,11 +379,32 @@ export function zbudujIndeks(wpisy, skiti = []) {
   }
   for (const r of rekordy) r.backlinki.sort((a, b) => a.localeCompare(b, 'pl'));
 
-  const tagi = {};
-  for (const r of rekordy) for (const t of r.tagi) (tagi[t] ??= []).push(r.slug);
-  for (const t of Object.keys(tagi)) tagi[t].sort((a, b) => a.localeCompare(b, 'pl'));
+  // Słownik tagów: kolejność i kategorie bierze kanon (bez kanonu — alfabetycznie,
+  // jak w katalogach testowych), a puste tagi nie trafiają do indeksu.
+  const zbiorTagow = {};
+  for (const r of rekordy) for (const t of r.tagi) (zbiorTagow[t] ??= []).push(r.slug);
+  for (const t of Object.keys(zbiorTagow)) zbiorTagow[t].sort((a, b) => a.localeCompare(b, 'pl'));
+  const porzadek = kanon ? (kanon.tagi ?? []).map((x) => x.tag).filter((t) => zbiorTagow[t]) : Object.keys(zbiorTagow).sort((a, b) => a.localeCompare(b, 'pl'));
+  const meta = new Map((kanon?.tagi ?? []).map((x) => [x.tag, x]));
   const posortowaneTagi = {};
-  for (const t of Object.keys(tagi).sort((a, b) => a.localeCompare(b, 'pl'))) posortowaneTagi[t] = tagi[t];
+  for (const t of porzadek) {
+    const opis = meta.get(t);
+    posortowaneTagi[t] = {
+      kategoria: opis?.kategoria ?? 'bez-kanonu',
+      opis: opis?.opis ?? '',
+      wpisy: zbiorTagow[t],
+    };
+  }
+  for (const t of Object.keys(zbiorTagow)) if (!porzadek.includes(t)) posortowaneTagi[t] = { kategoria: 'bez-kanonu', opis: '', wpisy: zbiorTagow[t] };
+  const kategorie = (kanon?.kategorie ?? []).map((kat) => ({
+    id: kat.id,
+    nazwa: kat.nazwa,
+    skrot: kat.skrot,
+    min: kat.min,
+    max: kat.max,
+    opis: kat.opis,
+    ile: Object.values(posortowaneTagi).filter((x) => x.kategoria === kat.id).length,
+  }));
 
   // Sekcja VI wpisów: skity z daną materializacją w składzie (bez duplikatów).
   const rekordySkitow = [...skiti].sort((a, b) => a.slug.localeCompare(b.slug, 'pl')).map(rekordSkitu);
@@ -369,9 +459,10 @@ export function zbudujIndeks(wpisy, skiti = []) {
   for (const a of aktualizacje) delete a.sekwencja; // klucz tylko do sortowania — bez szumu w indeksie
 
   return {
-    wersja: 2,
+    wersja: 3,
     liczba: rekordy.length,
     liczbaSkitow: rekordySkitow.length,
+    kanon: { kategorie },
     tagi: posortowaneTagi,
     manifestacje: rekordy,
     skity: rekordySkitow,
@@ -380,7 +471,7 @@ export function zbudujIndeks(wpisy, skiti = []) {
 }
 
 /** Wczytuje i waliduje cały katalog wpisów; rzuca przy błędach (z pełnym raportem). */
-export async function wczytajIKwaliduj(katalog = KATALOG_WPISOW) {
+export async function wczytajIKwaliduj(katalog = KATALOG_WPISOW, kanon = null) {
   const pliki = (await readdir(katalog)).filter((f) => f.endsWith('.json')).sort();
   if (pliki.length === 0) throw new Error(`Brak plików .json w ${katalog}`);
   const wpisy = [];
@@ -397,6 +488,7 @@ export async function wczytajIKwaliduj(katalog = KATALOG_WPISOW) {
     const oczekiwanySlug = basename(f, '.json');
     if (w.slug !== oczekiwanySlug) bledy.push(`${f}: slug "${w.slug}" ≠ nazwa pliku "${oczekiwanySlug}"`);
     for (const blad of walidujWpis(w)) bledy.push(`${f}: ${blad}`);
+    for (const blad of walidujTagi(w, kanon)) bledy.push(`${f}: ${blad}`);
     wpisy.push(w);
   }
   const slugi = new Set(wpisy.map((w) => w.slug));
@@ -449,9 +541,10 @@ export async function wczytajSkiti(katalog = KATALOG_SKITOW, slugi = new Set()) 
 
 async function main() {
   const trybCheck = process.argv.includes('--check');
-  const wpisy = await wczytajIKwaliduj();
+  const kanon = await wczytajKanon();
+  const wpisy = await wczytajIKwaliduj(KATALOG_WPISOW, kanon);
   const skiti = await wczytajSkiti(KATALOG_SKITOW, new Set(wpisy.map((w) => w.slug)));
-  const indeks = zbudujIndeks(wpisy, skiti);
+  const indeks = zbudujIndeks(wpisy, skiti, kanon);
   const tresc = JSON.stringify(indeks, null, 2) + '\n';
   if (trybCheck) {
     let istniejacy = '';
@@ -465,11 +558,11 @@ async function main() {
       console.error('--check: data/index.json nie zgadza się z wpisami. Uruchom npm run build i wcommituj indeks.');
       process.exit(1);
     }
-    console.log(`OK: ${indeks.liczba} wpisów, ${indeks.liczbaSkitow} SKITów, indeks spójny (${Object.keys(indeks.tagi).length} tagów).`);
+    console.log(`OK: ${indeks.liczba} wpisów, ${indeks.liczbaSkitow} SKITów, indeks spójny (${Object.keys(indeks.tagi).length} tagów z kanonu, ${kanon.tagi.length} zdefiniowanych).`);
   } else {
     await writeFile(PLIK_INDEKSU, tresc, 'utf8');
     console.log(
-      `Zbudowano ${PLIK_INDEKSU}: ${indeks.liczba} wpisów, ${indeks.liczbaSkitow} SKITów, ${indeks.aktualizacje.length} wpisów w feedzie, ${Object.keys(indeks.tagi).length} tagów.`
+      `Zbudowano ${PLIK_INDEKSU}: ${indeks.liczba} wpisów, ${indeks.liczbaSkitow} SKITów, ${indeks.aktualizacje.length} wpisów w feedzie, ${Object.keys(indeks.tagi).length} tagów użytych z ${kanon.tagi.length} w kanonie.`
     );
   }
 }

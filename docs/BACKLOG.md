@@ -29,8 +29,9 @@
 
 ## Treść / protokół
 
-- **Kanon tagów**: krótka lista „tagów systemowych” (kontynent, typ bytu, pora
-  aktywności) vs tagi swobodne — gdy słownik urósł, zaproponować właścicielowi.
+- ~~**Kanon tagów**~~ — zrealizowane w M4 (ADR 0016): kategorie z limitami w
+  `data/kanon-tagow.json`, walidator i prezentacja pasmami. Kandydaci dalej
+  otwarci: kategoria „pora aktywności” (noc/dzień/sezons) i „język źródła”.
 - **Wzór „Trophy Room”**: galeria trofeów pierwotnych/wtórnych z wpisów
   (sekcja V) jako osobny widok.
 - **Zasady citowania w aplikacji**: sekcja III jako przypisy z linkami

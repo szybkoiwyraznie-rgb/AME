@@ -19,8 +19,9 @@ namierzyć realną emanację w naszym świecie; wynikiem jest wpis w kartotece
   źródła, trofea, na końcu klucz przywołania (PROTOKÓŁ §4.1).
 - **Źródła z adresami** — sekcja Dokumentacja linkuje do źródeł lub ich opisów
   w sieci; walidator wymaga co najmniej jednego adresu na wpis (ADR 0011).
-- **Warstwa wiki** — tagi, powiązania między bytami (łuki na mapie) i
-  backlinki liczone automatycznie. Deep-link: `/#<slug>`, a w kartotece i w
+- **Warstwa wiki** — tagi z kanonu (pasek ułożony pasmami: kultura źródłowa,
+  typ bytu, motyw, postać — z licznikami i opisami w podpowiedziach), powiązania
+  między bytami (łuki na mapie) i backlinki liczone automatycznie. Deep-link: `/#<slug>`, a w kartotece i w
   widoku skitu przycisk „⧉ kopiuj link" do wysłania adresu dalej.
 - **Baza Skitów** — krótkie dialogi materializacji (proza w stylu przerywników
   z gier fabularnych): przycisk „✎ skity", pod każdym bytem sekcja VI z jego
@@ -59,6 +60,7 @@ blokują `fetch()` dla plików lokalnych.
 | `data/index.json` | indeks GENEROWANY (`npm run build`) |
 | `app/`, `index.html` | aplikacja |
 | `assets/` | mapa, wizualizacje (licencje: `docs/ASSETS.md`) |
+| `data/kanon-tagow.json` | słownik tagów (kategorie, limity, opisy) |
 | `tools/`, `test/` | walidacja danych + testy (`npm test`) |
 
 ## GitHub Pages (aktywne)

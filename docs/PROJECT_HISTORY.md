@@ -248,3 +248,16 @@ wzorce unikalne albo sprawdza kolejność wystąpień.
 **Stan na koniec M4:** `npm test` 99/99, `npm run check` — spójny; 4 wpisy,
 3 SKITy, 10 pozycji feedu, 22 tagi; PR #2 (z pracą M3+M4) otwarty, `MERGEABLE`,
 CI na nim zielone.
+
+**C2 (kanon tagów, 2026-08-28):** słownikiem stał się plik danych
+`data/kanon-tagow.json` (4 kategorie z limitami: kultura 1, typ 1, motyw 1–2,
+postać 0–1; 22 tagi z opisami). Walidator: `walidujKanon` + `walidujTagi`,
+wywoływane z `wczytajIKwaliduj`; indeks v3 (`tagi{tag: {kategoria, opis, wpisy}}`,
+`kanon.kategorie[]`). Prezentacja: pasek w pasmach z podpisami kategorii,
+licznikami i opisami w `title`, chipy w karcie ze skrótem kategorii
+(`typ | olbrzym`), status pokazuje kategorię aktywnego filtra. Migracja: wszystkie
+sześć wpisów przetagowane, porzucone tagi-jedynki (`nigeria`, `katedra`,
+`festiwal-rodowy`, `ballada`, `motyw-a571`) przeniesione do pól, po których i tak
+szuka wyszukiwarka (`lokalizacja`, `nazwy_alternatywne`, `pochodzenie_i_kultura`).
+Uzasadnienie i koszt: ADR 0016. Testy: 107/107 (własne asercje na kanon, limity
+kategorii, kształt indeksu i rendering pasm).

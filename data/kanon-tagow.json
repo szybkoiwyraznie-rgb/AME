@@ -1,0 +1,150 @@
+{
+  "wersja": 1,
+  "zasady": "Kanon jest słownikiem zamkniętym: wpis może używać wyłącznie tagów stąd. Nowy tag dopisuje się tutaj (bez ADR) wraz z kategorią i opisem — po to, by pasek tagów i karty pozostały czytelne, a słownik nie rósł w jednozdaniowe etykiety. Kraj/państwo NIE jest tagiem: wynika z pola lokalizacja.kraj i po nim działa wyszukiwarka.",
+  "kategorie": [
+    {
+      "id": "kultura",
+      "nazwa": "Kultura źródłowa",
+      "min": 1,
+      "max": 1,
+      "opis": "Jedna tradycja, z której byt pochodzi (PROTOKÓŁ §2: zakaz mieszanek synkretycznych)",
+      "skrot": "kultura"
+    },
+    {
+      "id": "typ",
+      "nazwa": "Typ bytu",
+      "min": 1,
+      "max": 1,
+      "opis": "Czym byt jest — podstawowy filtr kartoteki",
+      "skrot": "typ"
+    },
+    {
+      "id": "motyw",
+      "nazwa": "Motyw przewodni",
+      "min": 1,
+      "max": 2,
+      "opis": "Co wiąże byty i spoiwa sieci: powiązania w kartotekach i tematy SKITów",
+      "skrot": "motyw"
+    },
+    {
+      "id": "postac",
+      "nazwa": "Postać",
+      "min": 0,
+      "max": 1,
+      "opis": "W jakiej formie byt występuje (noszony strój, kamień, ciało zwierzęce…)",
+      "skrot": "postać"
+    }
+  ],
+  "tagi": [
+    {
+      "tag": "joruba",
+      "kategoria": "kultura",
+      "opis": "Religia i kultura Jorubów (Nigeria, Benin, Togo)"
+    },
+    {
+      "tag": "anglia",
+      "kategoria": "kultura",
+      "opis": "Folklor angielski, w tym kościelny i nizinny"
+    },
+    {
+      "tag": "szkocja-polnocna",
+      "kategoria": "kultura",
+      "opis": "Folklor wyspiarski Orkadów i Shetlandu (szkocko-nordycki)"
+    },
+    {
+      "tag": "irlandia",
+      "kategoria": "kultura",
+      "opis": "Mitologia irlandzka: Cykl Mitologiczny i podania ludowe"
+    },
+    {
+      "tag": "niemcy",
+      "kategoria": "kultura",
+      "opis": "Podanie i legenda niemiecka (krąg gór i cesarza w górach)"
+    },
+    {
+      "tag": "albania",
+      "kategoria": "kultura",
+      "opis": "Mitologia Albańczyków (krąg gegijski i toskijski)"
+    },
+    {
+      "tag": "duch-przodkow",
+      "kategoria": "typ",
+      "opis": "Przodek przywoływany przez wspólnotę i wracający w rytuale"
+    },
+    {
+      "tag": "istota-kamienna",
+      "kategoria": "typ",
+      "opis": "Byt uwięziony w rzeźbie lub kamieniu, trwały i nieruchomy"
+    },
+    {
+      "tag": "olbrzym",
+      "kategoria": "typ",
+      "opis": "Byt o skali oblężniczej, z bronią wymagającą obsługi"
+    },
+    {
+      "tag": "selkie",
+      "kategoria": "typ",
+      "opis": "Istota zmieniająca formę przez skórę, pomiędzy wodą a lądem"
+    },
+    {
+      "tag": "sniacy-zastep",
+      "kategoria": "typ",
+      "opis": "Zbiorowy bohater uśpiony w krajobrazie, budzony przez znak"
+    },
+    {
+      "tag": "heros-burzy",
+      "kategoria": "typ",
+      "opis": "Półboski obrońca mierzący się z demonem pogody"
+    },
+    {
+      "tag": "zle-oko",
+      "kategoria": "motyw",
+      "opis": "Wzrok jako broń i jako rana bytu"
+    },
+    {
+      "tag": "warunek",
+      "kategoria": "motyw",
+      "opis": "Moc i los bytu zamknięte w wypowiedzianym warunku lub znaku"
+    },
+    {
+      "tag": "pamiec",
+      "kategoria": "motyw",
+      "opis": "Istnienie zależne od tego, że wspólnota wymawia imię"
+    },
+    {
+      "tag": "przemiana",
+      "kategoria": "motyw",
+      "opis": "Dwa stany tego samego ciała: okrycie, skóra, płótno"
+    },
+    {
+      "tag": "burza",
+      "kategoria": "motyw",
+      "opis": "Pogoda jako pole bitwy i jako kalendarz"
+    },
+    {
+      "tag": "oplaty",
+      "kategoria": "motyw",
+      "opis": "Cena za obecność bytu: hołd, ofiara, datek, karmicielne"
+    },
+    {
+      "tag": "maskarada",
+      "kategoria": "postac",
+      "opis": "Noszona forma rytualna: płótna, maska, strój-roda"
+    },
+    {
+      "tag": "kamienna-figura",
+      "kategoria": "postac",
+      "opis": "Rzeźba lub figura w budynku, która jest tym samym bytem"
+    },
+    {
+      "tag": "postac-zwierzeca",
+      "kategoria": "postac",
+      "opis": "Ciało zwierzęce jako drugi stan tej samej istoty"
+    },
+    {
+      "tag": "skrzydlata-postac",
+      "kategoria": "postac",
+      "opis": "Człowiecze ciało ze skrzydłami lub innymi znakami pochodzenia"
+    }
+  ]
+}

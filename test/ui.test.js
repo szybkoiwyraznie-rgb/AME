@@ -62,9 +62,14 @@ test('htmlListy i htmlTagow: rekordy z indeksu, licznik tagów', async () => {
   assert.ok(lista.includes('Egungun'));
   assert.ok(lista.includes('Imp z Lincoln'));
   assert.ok(lista.includes('insp. Krumar Initiate'));
-  const tagi = htmlTagow(indeks, 'imp');
-  assert.ok(tagi.includes('data-tag="imp"'));
-  assert.ok(tagi.includes('class="chip tag aktywny"'));
+  const tagi = htmlTagow(indeks, 'selkie');
+  assert.ok(tagi.includes('data-tag="selkie"'), 'tag z kanonu w pasku');
+  assert.ok(tagi.includes('data-kategoria="typ"'), 'pasma noszą kategorie');
+  assert.ok(tagi.includes('class="chip tag aktywny"'), 'aktywny tag wyróżniony');
+  assert.ok(tagi.includes('Typ bytu'), 'podpis kategorii czytany z kanonu');
+  assert.ok(!tagi.includes('data-tag="imp"'), 'tagi spoza kanonu nie wracają do słownika');
+  const poKolei = tagi.indexOf('Kultura źródłowa');
+  assert.ok(poKolei > -1 && poKolei < tagi.indexOf('Typ bytu'), 'pasma w kolejności kanonu');
   assert.ok(htmlListy(indeks, new Set(['egungun'])).includes('Egungun'));
   assert.ok(!htmlListy(indeks, new Set(['egungun'])).includes('Imp z Lincoln</span>'));
 });
@@ -263,7 +268,7 @@ test('htmlNowosci: feed z linkami do treści i bezwzględnym escapowaniem', asyn
 
 test('indeks repo: feed i sekcja VI spójne z danymi (bez ręki)', async () => {
   const { indeks } = await dane();
-  assert.equal(indeks.wersja, 2);
+  assert.equal(indeks.wersja, 3);
   assert.ok(indeks.aktualizacje.length >= 5, `feed ma ${indeks.aktualizacje.length} pozycji`);
   const html = htmlNowosci(indeks);
   for (const a of indeks.aktualizacje) assert.ok(html.includes(`data-link="${a.typ === 'skit' ? `skit:${a.slug}` : a.slug}"`), `feed UI: brak linku do ${a.slug}`);
@@ -341,4 +346,47 @@ test('kopiowanie linku jest podpięte w obu warstwach (handlerzy widzą data-kop
   assert.ok(/data-kopia/.test(panel), 'kartoteka: brak obsługi [data-kopia] — przycisk byłby martwy');
   assert.ok(/kopiujLink\(/.test(panel), 'kartoteka: wywołanie kopiujLink');
   assert.ok(/data-kopia/.test(warstwa) && /kopiujLink\(/.test(warstwa), 'warstwa skitów/feedu: to samo');
+});
+
+/* ---- Prezentacja kanonu tagów (ADR 0016) ---- */
+
+test('pasek tagów: każde pasmo ma podpis kategorii z opisem w title', async () => {
+  const { indeks } = await dane();
+  const html = htmlTagow(indeks, null);
+  const pasma = [...html.matchAll(/data-kategoria="([a-z]+)"/g)].map((m) => m[1]);
+  assert.deepEqual([...new Set(pasma)], ['kultura', 'typ', 'motyw', 'postac'], 'kategorie w kolejności kanonu');
+  assert.match(html, /<span class="tagi-nazwa" title="[^"]{12,}">Kultura źródłowa<\/span>/, 'podpis kategorii z legendą');
+  assert.match(html, /<button class="chip tag" data-tag="joruba" data-kategoria="kultura" title="[^"]{12,}">/, 'chip z opisem tagu');
+  assert.match(html, /<span class="licznik">\d+<\/span>/, 'licznik wpisów przy tagu');
+  assert.equal(htmlTagow({ ...indeks, tagi: {} }, null), '', 'pusty słownik = pusty pasek');
+});
+
+test('chipy w karcie: podpis kategorii przed nazwą tagu', async () => {
+  const { wpis, indeks } = await dane();
+  const html = htmlWpisu(wpis, indeks);
+  assert.match(html, /<span class="kategoria-tagu">kultura<\/span>joruba<\/button>/, 'w chipie skrót kategorii');
+  assert.match(html, /<span class="kategoria-tagu">typ<\/span>duch-przodkow<\/button>/);
+  assert.match(html, /title="Kultura źródłowa — [^"]{12,}"/, 'pełna nazwa i opis tagu w tooltipie');
+  const chipy = [...html.matchAll(/data-tag="([a-z0-9-]+)"/g)].map((m) => m[1]);
+  assert.deepEqual(chipy, wpis.tagi, 'chipy w kolejności kanonu, bez zgadywanki');
+});
+
+test('skrotKategorii: skrót z kanonu, brak kanonu — id', async () => {
+  const { skrotKategorii } = await import('../app/ui.js');
+  const { indeks } = await dane();
+  assert.equal(skrotKategorii(indeks, 'postac'), 'postać');
+  assert.equal(skrotKategorii({ kanon: { kategorie: [{ id: 'x', nazwa: 'Iks' }] } }, 'x'), 'Iks', 'bez skrótu wraca nazwa');
+  assert.equal(skrotKategorii(indeks, ''), '');
+});
+
+test('nazwaKategorii i tagiPosortowane: pomocniki kanonu bez DOM', async () => {
+  const { nazwaKategorii, tagiPosortowane } = await import('../app/ui.js');
+  const { indeks } = await dane();
+  assert.equal(nazwaKategorii(indeks, 'motyw'), 'Motyw przewodni');
+  assert.equal(nazwaKategorii(indeks, 'nie-ma-takiej'), 'nie-ma-takiej', 'znany identyfikator wraca bez zmian');
+  assert.equal(nazwaKategorii(indeks, ''), '');
+  const wTypie = tagiPosortowane(indeks, 'typ');
+  assert.deepEqual(wTypie.map((t) => t.tag), [...wTypie.map((t) => t.tag)].sort((a, b) => a.localeCompare(b, 'pl')));
+  assert.ok(wTypie.every((t) => t.kategoria === 'typ' && t.wpisy.length > 0));
+  assert.equal(tagiPosortowane({}, 'typ').length, 0);
 });

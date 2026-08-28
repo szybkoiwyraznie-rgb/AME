@@ -3,7 +3,8 @@
   "nazwa": "Imp z Lincoln",
   "nazwy_alternatywne": [
     "Lincoln Imp",
-    "Diabełek z Lincoln"
+    "Diabełek z Lincoln",
+    "groteska z Angel Choir"
   ],
   "karta": {
     "nazwa": "Forge Devil",
@@ -80,12 +81,11 @@
     ]
   },
   "tagi": [
-    "imp",
-    "demon",
     "anglia",
-    "katedra",
-    "folklor-chrzescijanski",
-    "groteska"
+    "istota-kamienna",
+    "zle-oko",
+    "warunek",
+    "kamienna-figura"
   ],
   "powiazania": [
     {

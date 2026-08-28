@@ -5,7 +5,8 @@
     "Balor of the Evil Eye (Balór na Súile Nimhe)",
     "Balor Béimnech (Uderzający)",
     "Balar mac Doit meic Néit",
-    "Balor Birugderc (Przeszywający Okiem)"
+    "Balor Birugderc (Przeszywający Okiem)",
+    "Balor mac Néit (Fomor)"
   ],
   "karta": {
     "nazwa": "Weftblade Enhancer",
@@ -92,11 +93,10 @@
     ]
   },
   "tagi": [
-    "fomorowie",
-    "mitologia-irlandzka",
-    "zle-oko",
+    "irlandia",
     "olbrzym",
-    "wyspa-tory"
+    "zle-oko",
+    "warunek"
   ],
   "powiazania": [
     {

@@ -8,6 +8,7 @@ import {
   htmlWarstwyWpisu,
   htmlListy,
   htmlTagow,
+  nazwaKategorii,
   htmlBazySkitow,
   htmlSkitu,
   htmlNowosci,
@@ -68,7 +69,7 @@ function zastosujMotyw(motyw) {
 function pasujace() {
   let zbior = stan.filtr;
   if (stan.aktywnyTag) {
-    const zTagu = new Set(stan.indeks.tagi[stan.aktywnyTag] ?? []);
+    const zTagu = new Set(stan.indeks.tagi[stan.aktywnyTag]?.wpisy ?? []);
     zbior = zbior ? new Set([...zbior].filter((s) => zTagu.has(s))) : zTagu;
   }
   return zbior;
@@ -84,10 +85,11 @@ function odswiezFiltr() {
 function odswiezLicznik(zbior = null) {
   const n = zbior === null ? stan.indeks.liczba : zbior.size;
   const skitow = stan.indeks.skity?.length ?? 0;
+  const kategoria = stan.aktywnyTag ? ` · filtr: ${nazwaKategorii(stan.indeks, stan.indeks.tagi[stan.aktywnyTag]?.kategoria)}` : '';
   $('#status').textContent =
     `${n} ${n === 1 ? 'manifestacja' : 'manifestacji'} · ${Object.keys(stan.indeks.tagi).length} tagów · ${skitow} ${
       skitow === 1 ? 'skit' : 'skitów'
-    }`;
+    }${kategoria}`;
 }
 
 let punktPowrotu = null; // element, który otworzył kartotekę (fokus po zamknięciu)

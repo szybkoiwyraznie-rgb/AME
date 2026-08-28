@@ -1,7 +1,60 @@
 /**
- * app/ui.js — panel wpisu, lista manifestacji, tagi, pasek wyszukiwania.
- * Cała treść wpisów jest wstawiana jako tekst (esc), nigdy jako HTML.
+ * app/ui.js — kartoteka bytu (warstwa), Baza Skitów, feed „Co nowego", tagi
+ * wg kanonu (pasmo po pasmie), pasek wyszukiwania i logika motywu. Cała treść wpisów jest
+ * wstawiana jako tekst (esc), nigdy jako HTML.
  */
+
+/** Nazwa kategorii tagu (z kanonu); bez kanonu — surowe id. */
+export function nazwaKategorii(indeks, id) {
+  if (!id) return '';
+  const kat = (indeks?.kanon?.kategorie ?? []).find((k) => k.id === id);
+  return kat?.nazwa ?? id;
+}
+
+/** Krótka etykieta kategorii do chipa (pełna nazwa zostaje w legendzie i `title`). */
+export function skrotKategorii(indeks, id) {
+  if (!id) return '';
+  const kat = (indeks?.kanon?.kategorie ?? []).find((k) => k.id === id);
+  return kat?.skrot ?? kat?.nazwa ?? id;
+}
+
+/** Tagi w kolejności kanonu: kategorie po kolei, w kategorii alfabetycznie (pl). */
+export function tagiPosortowane(indeks, kategoria = null) {
+  return Object.entries(indeks?.tagi ?? {})
+    .filter(([tag, meta]) => (kategoria ? meta?.kategoria === kategoria : true) && (meta?.wpisy?.length ?? 0) > 0)
+    .map(([tag, meta]) => ({ tag, ...meta }))
+    .sort((a, b) => a.tag.localeCompare(b.tag, 'pl'));
+}
+
+/**
+ * Pasek tagów w pasmach po kategoriach kanonu: każda linia ma własny podpis
+ * (z opisem kategorii w `title`), więc czytelnik widzi, czym dany filtr jest,
+ * zamiast przeglądać alfabetyczną zupę etykiet.
+ */
+export function htmlTagow(indeks, aktywnyTag) {
+  const kategorie = indeks?.kanon?.kategorie?.length
+    ? indeks.kanon.kategorie
+    : [{ id: null, nazwa: 'Tagi', opis: '' }];
+  const pasma = kategorie
+    .map((kat) => {
+      const tagi = tagiPosortowane(indeks, kat.id);
+      if (!tagi.length) return '';
+      const chipy = tagi
+        .map(
+          (t) =>
+            `<button class="chip tag${t.tag === aktywnyTag ? ' aktywny' : ''}" data-tag="${esc(t.tag)}" data-kategoria="${esc(kat.id ?? '')}"${
+              t.opis ? ` title="${esc(t.opis)}"` : ''
+            }>${esc(t.tag)} <span class="licznik">${t.wpisy.length}</span></button>`
+        )
+        .join('');
+      return `<div class="tagi-grupa" data-kategoria="${esc(kat.id ?? '')}">
+        <span class="tagi-nazwa"${kat.opis ? ` title="${esc(kat.opis)}"` : ''}>${esc(kat.nazwa ?? kat.id ?? '')}</span>
+        <div class="tagi-pas">${chipy}</div>
+      </div>`;
+    })
+    .join('');
+  return pasma;
+}
 
 export function esc(s) {
   return String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
@@ -90,7 +143,28 @@ function sekcja(numer, tytul, zawartoscHtml) {
   return `<section class="sekcja"><h3><span class="numer">${numer}</span> ${tytul}</h3>${zawartoscHtml}</section>`;
 }
 
-/** Pełny wpis kartoteki (sekcje I–VI wg protokołu MFM v1.3). */
+/** Chipy tagów wpisu: kolejność i podpisy kategorii wyznacza kanon (ADR 0016). */
+function chipyTagow(w, indeks) {
+  const used = new Set(w.tagi ?? []);
+  const kategorie = indeks?.kanon?.kategorie?.length
+    ? indeks.kanon.kategorie
+    : [{ id: null, nazwa: 'Tagi' }];
+  const wKolejnosci = kategorie.flatMap((kat) => tagiPosortowane(indeks, kat.id).map((t) => t.tag)).filter((tag) => used.has(tag));
+  const poza = [...used].filter((tag) => !wKolejnosci.includes(tag)).sort((a, b) => a.localeCompare(b, 'pl'));
+  return [...wKolejnosci, ...poza]
+    .map((tag) => {
+      const meta = (indeks?.tagi && indeks.tagi[tag]) || {};
+      const skrot = skrotKategorii(indeks, meta.kategoria);
+      const pelna = nazwaKategorii(indeks, meta.kategoria);
+      const legenda = [pelna && pelna !== skrot ? pelna : '', meta.opis].filter(Boolean).join(' — ');
+      const tytul = legenda ? ` title="${esc(legenda)}"` : '';
+      const etykieta = skrot ? `<span class="kategoria-tagu">${esc(skrot)}</span>` : '';
+      return `<button class="chip tag" data-tag="${esc(tag)}"${tytul}>${etykieta}${esc(tag)}</button>`;
+    })
+    .join('');
+}
+
+/** Pełny wpis kartoteki (sekcje I–VI wg protokołu MFM v1.4). */
 export function htmlWpisu(w, indeks) {
   const rekord = indeks.manifestacje.find((m) => m.slug === w.slug) ?? {};
   const alt = (w.nazwy_alternatywne ?? []).length ? `<p class="alt">znany też jako: ${esc(w.nazwy_alternatywne.join(', '))}</p>` : '';
@@ -101,7 +175,7 @@ export function htmlWpisu(w, indeks) {
       ${alt}
       <p class="lokalizacja">📍 ${esc(w.lokalizacja.miejscowosc)}, ${esc(w.lokalizacja.kraj)} · ${w.lokalizacja.lat.toFixed(2)}°, ${w.lokalizacja.lon.toFixed(2)}°</p>
       <p class="pochodzenie">${esc(w.pochodzenie_i_kultura)}</p>
-      <div class="chipy">${(w.tagi ?? []).map((t) => `<button class="chip tag" data-tag="${esc(t)}">${esc(t)}</button>`).join('')}</div>
+      <div class="chipy">${chipyTagow(w, indeks)}</div>
     </header>`;
 
   const tabela = `
@@ -224,18 +298,6 @@ export function htmlListy(indeks, widoczne /* Set|null */) {
       </li>`
     )
     .join('')}</ul>`;
-}
-
-/** Pasek tagów (najpopularniejsze + reszta). */
-export function htmlTagow(indeks, aktywnyTag) {
-  const tagi = Object.entries(indeks.tagi).sort((a, b) => b[1].length - a[1].length || a[0].localeCompare(b[0], 'pl'));
-  const html = tagi
-    .map(
-      ([t, slugi]) =>
-        `<button class="chip tag${t === aktywnyTag ? ' aktywny' : ''}" data-tag="${esc(t)}">${esc(t)} <span class="licznik">${slugi.length}</span></button>`
-    )
-    .join('');
-  return html || '';
 }
 
 /* ---- SKITy i feed „Co nowego" (ADR 0013/0014) ---------------------------- */

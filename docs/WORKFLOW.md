@@ -72,8 +72,11 @@ lub aktywności (dokładność ~0,01° wystarcza).
   angielsku (pełne brzmienie ramek: PROTOKÓŁ §5 — walidator sprawdza
   dosłowność); zakaz słów *figurine/diorama/miniature/render/painting/
   illustration*.
-- Tagi: małe litery + myślniki; powiązania: `{slug, opis}` tylko do
-  istniejących wpisów, `opis` uzasadnia związek merytorycznie (ADR 0006).
+- Tagi: wyłącznie z kanonu (`data/kanon-tagow.json`) — `kultura` (1), `typ` (1),
+  `motyw` (1–2), `postac` (0–1); nowy tag dopisuje się do kanonu w tym samym
+  commicie, z opisem będącym zdaniem (PROTOKÓŁ §6.1, ADR 0016). Kraj nie jest tagiem.
+- Powiązania: `{slug, opis}` tylko do istniejących wpisów, `opis` uzasadnia
+  związek merytorycznie (ADR 0006).
 - Dokumentacja: `{ typ, pozycja, url }`, `url` = pełny `http(s)`; co najmniej
   jedno źródło w wpisie musi mieć adres (ADR 0011).
 - Kolejność kluczy w pliku = numeracja sekcji: `wizualizacja` (I), `natura` (II),
@@ -128,7 +131,8 @@ Sprawdź:
   I → II → III → IV → V (→ VI SKITy), obraz na całą szerokość opisu;
 - Dokumentacja: adresy klikalne i prowadzące donikąd tylko tam, gdzie ich nie
   potwierdzono (a potwierdzać trzeba — ADR 0008);
-- tag klikalny, powiązanie/backlink, łuki powiązań;
+- tag klikalny (pasek w pasmach kategorii, licznik, opis w `title`),
+  powiązanie/backlink, łuki powiązań; filtr po tagu pokazuje kategorię w statusie;
 - przełącznik motywu: jasny i ciemny bez utraty czytelności mapy i tekstu;
 - sekcja VI: skity bytu linkują do Bazy Skitów, `#skit:<slug>` otwiera tekst;
   „✚ nowości" pokazuje zmiany z dzisiejszego commita na górze;

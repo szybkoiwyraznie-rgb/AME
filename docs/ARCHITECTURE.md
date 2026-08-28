@@ -26,7 +26,8 @@ assets/
 data/
   manifestations/<slug>.json — pełne wpisy MFM (źródło prawdy treści)
   skity/<slug>.json          — Baza Skitów: dialogi materializacji (ADR 0013)
-  index.json                — GENEROWANY przez tools/rebuild-index.mjs (v2)
+  kanon-tagow.json           — słownik tagów: kategorie, limity, opisy (ADR 0016)
+  index.json                — GENEROWANY przez tools/rebuild-index.mjs (v3)
 tools/
   rebuild-index.mjs         — walidacja wpisów + budowa indeksu (--check
                               używany w testach; zapis używany w buildzie)
@@ -67,7 +68,7 @@ natura: { wyglad_i_aura, charakter_i_motywacje, zdolnosci,
 dokumentacja: [{ typ, pozycja, url? }]               # prawdziwe źródła; ≥1 url http(s) na wpis
 wizualizacja: { prompt, obraz? }                     # rama 21:9 walidowana
 trofea: { pierwotne, wtorne? }
-tagi: []                                             # ^[a-ząćęłńóśźż0-9-]+$
+tagi: []                                             # ^[a-ząćęłńóśźż0-9-]+$, tylko z kanonu (ADR 0016)
 powiazania: [{ slug, opis }]                         # istniejące wpisy, bez self
 meta: { utworzono, autor?, modyfikacje: [{data, opis}] }
 ```
@@ -81,7 +82,8 @@ tekst                                                # „**Imię:** [didaskalia
 meta: { utworzono, autor?, modyfikacje: [] }
 ```
 
-Plik `data/index.json` (wersja 2) dokłada do tego: `skity[]` (skróty: slug,
+Plik `data/index.json` (wersja 3) dokłada do tego: `kanon.kategorie[]`,
+`tagi{tag:{kategoria,opis,wpisy}}`, `skity[]` (skróty: slug,
 tytul, imiona, slow, data), `manifestacje[].skity` (sekcja VI) i `aktualizacje[]`
 (feed „Co nowego»). Sort feedu liczy chronologię zdarzeń: data malejąco →
 `sekwencja` w obrębie pliku malejąco (utworzenie = 0, kolejne
@@ -116,6 +118,20 @@ w plikach JSON i w feedzie — karty nie są miejscem na notatki robocze sesji.
   środek segmentu (0.18 długości) — czytelne przy wielu liniach.
 - Kartoteka bytu jest warstwą przykrywającą okno (ADR 0010), więc otwarcie wpisu
   nie zmienia rozmiaru kontenera mapy.
+
+## Tagi: kanon i prezentacja (ADR 0016)
+
+- Słownik: `data/kanon-tagow.json` = `{ wersja, zasady, kategorie[], tagi[] }`.
+  Kategorie noszą `id, nazwa, skrot, min, max, opis`; tagi — `tag, kategoria, opis`.
+- Pilnują tego: `walidujKanon` (sam plik) i `walidujTagi` (każdy wpis),
+  wywoływane z `wczytajIKwaliduj`; bez kanonu build staje
+  (`wczytajKanon` rzuca przy braku pliku).
+- `zbudujIndeks(wpisy, skiti, kanon)` układa `tagi` w kolejności kanonu i
+  dokleja `kanon.kategorie` do indeksu — UI nie zna słownika z innej strony.
+- Prezentacja: `htmlTagow` (pasma: `.tagi-grupa[data-kategoria]` + `.tagi-nazwa`
+  + chipy z `.licznik`), `chipyTagow` w karcie (skrót kategorii + `title` z pełną
+  nazwą i opisem), `nazwaKategorii` / `skrotKategorii` / `tagiPosortowane` —
+  funkcje czyste, badane w Node.
 
 ## Konwencje kodu
 

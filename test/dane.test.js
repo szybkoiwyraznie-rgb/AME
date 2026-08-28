@@ -2,7 +2,17 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile, readdir } from 'node:fs/promises';
-import { wczytajIKwaliduj, wczytajSkiti, zbudujIndeks, PLIK_INDEKSU, KATALOG_WPISOW, KATALOG_SKITOW } from '../tools/rebuild-index.mjs';
+import {
+  wczytajIKwaliduj,
+  wczytajSkiti,
+  wczytajKanon,
+  zbudujIndeks,
+  walidujTagi,
+  walidujKanon,
+  PLIK_INDEKSU,
+  KATALOG_WPISOW,
+  KATALOG_SKITOW,
+} from '../tools/rebuild-index.mjs';
 
 test('wszystkie wpisy w data/manifestations przechodzą walidację protokołu', async () => {
   const wpisy = await wczytajIKwaliduj();
@@ -12,7 +22,8 @@ test('wszystkie wpisy w data/manifestations przechodzą walidację protokołu', 
 test('data/index.json jest spójny z wpisami i bazą skitów (deterministyczny build)', async () => {
   const wpisy = await wczytajIKwaliduj();
   const skiti = await wczytajSkiti(KATALOG_SKITOW, new Set(wpisy.map((w) => w.slug)));
-  const oczekiwany = JSON.stringify(zbudujIndeks(wpisy, skiti), null, 2) + '\n';
+  const kanon = await wczytajKanon();
+  const oczekiwany = JSON.stringify(zbudujIndeks(wpisy, skiti, kanon), null, 2) + '\n';
   const istniejacy = await readFile(PLIK_INDEKSU, 'utf8');
   assert.equal(istniejacy, oczekiwany, 'data/index.json jest nieaktualny — uruchom npm run build');
 });
@@ -39,6 +50,55 @@ test('każde źródło w kartotece ma adres https i nie powtarza się (B3 + ADR 
     }
     assert.ok(w.dokumentacja.length >= 3, `${w.slug}: kartoteka powinna mieć co najmniej 3 źródła`);
   }
+});
+
+
+test('kanon tagów: słownik jest ważny i obejmuje wszystkie wpisy', async () => {
+  const kanon = await wczytajKanon();
+  assert.deepEqual(walidujKanon(kanon), [], 'kanon musi być poprawny sam w sobie');
+  const wpisy = await wczytajIKwaliduj(KATALOG_WPISOW, kanon);
+  for (const w of wpisy) assert.deepEqual(walidujTagi(w, kanon), [], w.slug);
+  assert.deepEqual(kanon.kategorie.map((k) => k.id), ['kultura', 'typ', 'motyw', 'postac']);
+  assert.ok(kanon.tagi.length >= 16, `kanon ma tylko ${kanon.tagi.length} tagów`);
+  const kategorie = new Set(kanon.kategorie.map((k) => k.id));
+  for (const t of kanon.tagi) {
+    assert.ok(kategorie.has(t.kategoria), `${t.tag}: kategoria spoza listy`);
+    assert.ok(t.opis.length > 12, `${t.tag}: opis ma tłumaczyć tag, nie go powtarzać`);
+  }
+  for (const kat of kanon.kategorie) {
+    assert.ok(typeof kat.skrot === 'string' && kat.skrot.length > 1 && kat.skrot.length <= 9, `${kat.id}: skrót ma być krótki`);
+  }
+});
+
+test('kanon: tag spoza słownika i brak kategorii = błąd; nadmiar w kategorii = błąd', async () => {
+  const kanon = await wczytajKanon();
+  const obcy = { tagi: ['joruba', 'duch-przodkow', 'pamiec', 'kultura-ludowa'] };
+  assert.ok(walidujTagi(obcy, kanon).some((e) => e.includes('nie istnieje w kanonie')));
+  const brak = { tagi: ['joruba', 'pamiec', 'maskarada'] };
+  assert.ok(walidujTagi(brak, kanon).some((e) => e.includes('„typ”')), 'brak typu bytu musi być błędem');
+  const nadmiar = { tagi: ['joruba', 'duch-przodkow', 'pamiec', 'przemiana', 'burza', 'maskarada'] };
+  assert.ok(walidujTagi(nadmiar, kanon).some((e) => e.includes('„motyw”') && e.includes('dopuszcza')));
+  const pusty = { tagi: [] };
+  assert.ok(walidujTagi(pusty, kanon).length >= 3, 'puste tagi to co najmniej trzy braki');
+});
+
+test('indeks v3: tagi z kategorią i opisem, pasma w kolejności kanonu', async () => {
+  const kanon = await wczytajKanon();
+  const wpisy = await wczytajIKwaliduj(KATALOG_WPISOW, kanon);
+  const indeks = zbudujIndeks(wpisy, [], kanon);
+  assert.equal(indeks.wersja, 3);
+  assert.deepEqual(indeks.kanon.kategorie.map((k) => k.id), ['kultura', 'typ', 'motyw', 'postac']);
+  assert.deepEqual(indeks.kanon.kategorie.map((k) => k.skrot), ['kultura', 'typ', 'motyw', 'postać']);
+  assert.ok(indeks.kanon.kategorie.every((k) => k.opis.length > 12), 'opisy kategorii też trafiają do indeksu');
+  const pierwszy = Object.keys(indeks.tagi)[0];
+  assert.equal(indeks.tagi[pierwszy].kategoria, 'kultura', 'pierwsze pasmo: kultura źródłowa');
+  assert.ok(indeks.tagi[pierwszy].wpisy.length >= 1);
+  for (const [tag, meta] of Object.entries(indeks.tagi)) {
+    assert.ok(kanon.kategorie.some((k) => k.id === meta.kategoria), `${tag}: kategoria spoza kanonu`);
+    assert.ok(meta.opis.length > 12, `${tag}: brak opisu w indeksie`);
+  }
+  const ile = Object.fromEntries(indeks.kanon.kategorie.map((k) => [k.id, k.ile]));
+  assert.equal(ile.kultura, 6, 'sześć kultur źródłowych w kartotece');
 });
 
 test('przepis CI jest wklejalny: YAML bez znaczników HTML i z wymaganymi kluczami (L9)', async () => {

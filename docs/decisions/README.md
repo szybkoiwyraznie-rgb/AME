@@ -30,6 +30,7 @@ Każdy dokument opisuje kontekst, wybór i jego konsekwencje.
 | [0013](0013-baza-skitow-i-sekcja-vi.md) | Baza Skitów: nowy typ danych, sekcja VI wpisu i krok C3 pętli | Zaakceptowana |
 | [0014](0014-co-nowego-feed-z-meta.md) | „Co nowego”: dziennik zmian wyliczany z pola meta | Zaakceptowana |
 | [0015](0015-limit-dlugosci-skitow-300-slow.md) | Limit długości SKITa: 300 słów (protokół MFM v1.4) | Zaakceptowana |
+| [0016](0016-kanon-tagow-i-prezentacja-pasmami.md) | Kanon tagów jako dane źródłowe i prezentacja pasmami kategorii | Zaakceptowana |
 
 ## Szablon ADR
 

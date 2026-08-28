@@ -1,104 +1,208 @@
 {
-  "wersja": 2,
+  "wersja": 3,
   "liczba": 6,
   "liczbaSkitow": 3,
-  "tagi": {
-    "afryka-zachodnia": [
-      "egungun"
-    ],
-    "albania": [
-      "drangue-shala"
-    ],
-    "anglia": [
-      "lincoln-imp"
-    ],
-    "balkany": [
-      "drangue-shala"
-    ],
-    "ballada": [
-      "selkie-sule-skerry"
-    ],
-    "demon": [
-      "lincoln-imp"
-    ],
-    "festiwal-rodowy": [
-      "egungun"
-    ],
-    "folklor-chrzescijanski": [
-      "lincoln-imp"
-    ],
-    "fomorowie": [
-      "balor"
-    ],
-    "gora-kyffhaeuser": [
-      "barbarossa-kyffhaeuser"
-    ],
-    "groteska": [
-      "lincoln-imp"
-    ],
-    "heros-burzy": [
-      "drangue-shala"
-    ],
-    "imp": [
-      "lincoln-imp"
-    ],
-    "joruba": [
-      "egungun"
-    ],
-    "kamien-piorunowy": [
-      "drangue-shala"
-    ],
-    "katedra": [
-      "lincoln-imp"
-    ],
-    "kult-przodkow": [
-      "egungun"
-    ],
-    "maskarada": [
-      "egungun"
-    ],
-    "mitologia-irlandzka": [
-      "balor"
-    ],
-    "motyw-a571": [
-      "barbarossa-kyffhaeuser"
-    ],
-    "niemcy": [
-      "barbarossa-kyffhaeuser"
-    ],
-    "nigeria": [
-      "egungun"
-    ],
-    "olbrzym": [
-      "balor"
-    ],
-    "orkney": [
-      "selkie-sule-skerry"
-    ],
-    "przemiana": [
-      "selkie-sule-skerry"
-    ],
-    "rytual-ognia": [
-      "drangue-shala"
-    ],
-    "selkie": [
-      "selkie-sule-skerry"
-    ],
-    "skora-foki": [
-      "selkie-sule-skerry"
-    ],
-    "sniacy-zastep": [
-      "barbarossa-kyffhaeuser"
-    ],
-    "warunek-znak": [
-      "barbarossa-kyffhaeuser"
-    ],
-    "wyspa-tory": [
-      "balor"
-    ],
-    "zle-oko": [
-      "balor"
+  "kanon": {
+    "kategorie": [
+      {
+        "id": "kultura",
+        "nazwa": "Kultura źródłowa",
+        "skrot": "kultura",
+        "min": 1,
+        "max": 1,
+        "opis": "Jedna tradycja, z której byt pochodzi (PROTOKÓŁ §2: zakaz mieszanek synkretycznych)",
+        "ile": 6
+      },
+      {
+        "id": "typ",
+        "nazwa": "Typ bytu",
+        "skrot": "typ",
+        "min": 1,
+        "max": 1,
+        "opis": "Czym byt jest — podstawowy filtr kartoteki",
+        "ile": 6
+      },
+      {
+        "id": "motyw",
+        "nazwa": "Motyw przewodni",
+        "skrot": "motyw",
+        "min": 1,
+        "max": 2,
+        "opis": "Co wiąże byty i spoiwa sieci: powiązania w kartotekach i tematy SKITów",
+        "ile": 6
+      },
+      {
+        "id": "postac",
+        "nazwa": "Postać",
+        "skrot": "postać",
+        "min": 0,
+        "max": 1,
+        "opis": "W jakiej formie byt występuje (noszony strój, kamień, ciało zwierzęce…)",
+        "ile": 4
+      }
     ]
+  },
+  "tagi": {
+    "joruba": {
+      "kategoria": "kultura",
+      "opis": "Religia i kultura Jorubów (Nigeria, Benin, Togo)",
+      "wpisy": [
+        "egungun"
+      ]
+    },
+    "anglia": {
+      "kategoria": "kultura",
+      "opis": "Folklor angielski, w tym kościelny i nizinny",
+      "wpisy": [
+        "lincoln-imp"
+      ]
+    },
+    "szkocja-polnocna": {
+      "kategoria": "kultura",
+      "opis": "Folklor wyspiarski Orkadów i Shetlandu (szkocko-nordycki)",
+      "wpisy": [
+        "selkie-sule-skerry"
+      ]
+    },
+    "irlandia": {
+      "kategoria": "kultura",
+      "opis": "Mitologia irlandzka: Cykl Mitologiczny i podania ludowe",
+      "wpisy": [
+        "balor"
+      ]
+    },
+    "niemcy": {
+      "kategoria": "kultura",
+      "opis": "Podanie i legenda niemiecka (krąg gór i cesarza w górach)",
+      "wpisy": [
+        "barbarossa-kyffhaeuser"
+      ]
+    },
+    "albania": {
+      "kategoria": "kultura",
+      "opis": "Mitologia Albańczyków (krąg gegijski i toskijski)",
+      "wpisy": [
+        "drangue-shala"
+      ]
+    },
+    "duch-przodkow": {
+      "kategoria": "typ",
+      "opis": "Przodek przywoływany przez wspólnotę i wracający w rytuale",
+      "wpisy": [
+        "egungun"
+      ]
+    },
+    "istota-kamienna": {
+      "kategoria": "typ",
+      "opis": "Byt uwięziony w rzeźbie lub kamieniu, trwały i nieruchomy",
+      "wpisy": [
+        "lincoln-imp"
+      ]
+    },
+    "olbrzym": {
+      "kategoria": "typ",
+      "opis": "Byt o skali oblężniczej, z bronią wymagającą obsługi",
+      "wpisy": [
+        "balor"
+      ]
+    },
+    "selkie": {
+      "kategoria": "typ",
+      "opis": "Istota zmieniająca formę przez skórę, pomiędzy wodą a lądem",
+      "wpisy": [
+        "selkie-sule-skerry"
+      ]
+    },
+    "sniacy-zastep": {
+      "kategoria": "typ",
+      "opis": "Zbiorowy bohater uśpiony w krajobrazie, budzony przez znak",
+      "wpisy": [
+        "barbarossa-kyffhaeuser"
+      ]
+    },
+    "heros-burzy": {
+      "kategoria": "typ",
+      "opis": "Półboski obrońca mierzący się z demonem pogody",
+      "wpisy": [
+        "drangue-shala"
+      ]
+    },
+    "zle-oko": {
+      "kategoria": "motyw",
+      "opis": "Wzrok jako broń i jako rana bytu",
+      "wpisy": [
+        "balor",
+        "lincoln-imp"
+      ]
+    },
+    "warunek": {
+      "kategoria": "motyw",
+      "opis": "Moc i los bytu zamknięte w wypowiedzianym warunku lub znaku",
+      "wpisy": [
+        "balor",
+        "barbarossa-kyffhaeuser",
+        "lincoln-imp",
+        "selkie-sule-skerry"
+      ]
+    },
+    "pamiec": {
+      "kategoria": "motyw",
+      "opis": "Istnienie zależne od tego, że wspólnota wymawia imię",
+      "wpisy": [
+        "barbarossa-kyffhaeuser",
+        "egungun"
+      ]
+    },
+    "przemiana": {
+      "kategoria": "motyw",
+      "opis": "Dwa stany tego samego ciała: okrycie, skóra, płótno",
+      "wpisy": [
+        "egungun",
+        "selkie-sule-skerry"
+      ]
+    },
+    "burza": {
+      "kategoria": "motyw",
+      "opis": "Pogoda jako pole bitwy i jako kalendarz",
+      "wpisy": [
+        "drangue-shala"
+      ]
+    },
+    "oplaty": {
+      "kategoria": "motyw",
+      "opis": "Cena za obecność bytu: hołd, ofiara, datek, karmicielne",
+      "wpisy": [
+        "drangue-shala"
+      ]
+    },
+    "maskarada": {
+      "kategoria": "postac",
+      "opis": "Noszona forma rytualna: płótna, maska, strój-roda",
+      "wpisy": [
+        "egungun"
+      ]
+    },
+    "kamienna-figura": {
+      "kategoria": "postac",
+      "opis": "Rzeźba lub figura w budynku, która jest tym samym bytem",
+      "wpisy": [
+        "lincoln-imp"
+      ]
+    },
+    "postac-zwierzeca": {
+      "kategoria": "postac",
+      "opis": "Ciało zwierzęce jako drugi stan tej samej istoty",
+      "wpisy": [
+        "selkie-sule-skerry"
+      ]
+    },
+    "skrzydlata-postac": {
+      "kategoria": "postac",
+      "opis": "Człowiecze ciało ze skrzydłami lub innymi znakami pochodzenia",
+      "wpisy": [
+        "drangue-shala"
+      ]
+    }
   },
   "manifestacje": [
     {
@@ -108,7 +212,8 @@
         "Balor of the Evil Eye (Balór na Súile Nimhe)",
         "Balor Béimnech (Uderzający)",
         "Balar mac Doit meic Néit",
-        "Balor Birugderc (Przeszywający Okiem)"
+        "Balor Birugderc (Przeszywający Okiem)",
+        "Balor mac Néit (Fomor)"
       ],
       "karta": "Weftblade Enhancer",
       "miejscowosc": "Tory Island (Oileán Thoraigh) — Dún Bhalair i turnia Tor Mór",
@@ -116,10 +221,9 @@
       "lat": 55.26,
       "lon": -8.22,
       "tagi": [
-        "fomorowie",
-        "mitologia-irlandzka",
+        "irlandia",
         "olbrzym",
-        "wyspa-tory",
+        "warunek",
         "zle-oko"
       ],
       "powiazania": [
@@ -150,11 +254,10 @@
       "lat": 51.41,
       "lon": 11.11,
       "tagi": [
-        "gora-kyffhaeuser",
-        "motyw-a571",
         "niemcy",
+        "pamiec",
         "sniacy-zastep",
-        "warunek-znak"
+        "warunek"
       ],
       "powiazania": [
         "balor",
@@ -182,10 +285,10 @@
       "lon": 19.77,
       "tagi": [
         "albania",
-        "balkany",
+        "burza",
         "heros-burzy",
-        "kamien-piorunowy",
-        "rytual-ognia"
+        "oplaty",
+        "skrzydlata-postac"
       ],
       "powiazania": [
         "barbarossa-kyffhaeuser",
@@ -202,7 +305,8 @@
         "Egúngún",
         "Ara Ọ̀run („mieszkańcy nieba”)",
         "Ará Òrun Kìn-ìn Kin-in („naprawdę mieszkaniec nieba”)",
-        "Eegun"
+        "Eegun",
+        "festiwal egúngún w Oyo (Edun Egungun)"
       ],
       "karta": "Krumar Initiate",
       "miejscowosc": "Oyo (miasto królewstwa Òyó)",
@@ -210,12 +314,11 @@
       "lat": 7.84,
       "lon": 3.94,
       "tagi": [
-        "afryka-zachodnia",
-        "festiwal-rodowy",
+        "duch-przodkow",
         "joruba",
-        "kult-przodkow",
         "maskarada",
-        "nigeria"
+        "pamiec",
+        "przemiana"
       ],
       "powiazania": [],
       "backlinki": [
@@ -233,7 +336,8 @@
       "nazwa": "Imp z Lincoln",
       "nazwy_alternatywne": [
         "Lincoln Imp",
-        "Diabełek z Lincoln"
+        "Diabełek z Lincoln",
+        "groteska z Angel Choir"
       ],
       "karta": "Forge Devil",
       "miejscowosc": "Lincoln — katedra Lincoln, Angel Choir",
@@ -242,11 +346,10 @@
       "lon": -0.54,
       "tagi": [
         "anglia",
-        "demon",
-        "folklor-chrzescijanski",
-        "groteska",
-        "imp",
-        "katedra"
+        "istota-kamienna",
+        "kamienna-figura",
+        "warunek",
+        "zle-oko"
       ],
       "powiazania": [
         "egungun"
@@ -275,11 +378,11 @@
       "lat": 59.08,
       "lon": -4.41,
       "tagi": [
-        "ballada",
-        "orkney",
+        "postac-zwierzeca",
         "przemiana",
         "selkie",
-        "skora-foki"
+        "szkocja-polnocna",
+        "warunek"
       ],
       "powiazania": [
         "balor",

@@ -104,7 +104,7 @@ test('indeks: sekcja VI (skity przy wpisie) i feed „Co nowego” wyliczone pop
   const wpisy = await wczytajIKwaliduj();
   const skiti = await wczytajSkiti(KATALOG_SKITOW, new Set(wpisy.map((w) => w.slug)));
   const indeks = zbudujIndeks(wpisy, skiti);
-  assert.equal(indeks.wersja, 2);
+  assert.equal(indeks.wersja, 3);
   assert.equal(indeks.liczbaSkitow, skiti.length);
 
   const skit = skiti[0];

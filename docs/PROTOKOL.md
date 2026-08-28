@@ -201,6 +201,32 @@ kartoteki; walidacja patrzy na pola, nie na porządek).
 Tagi i powiązania (`tagi`, `powiazania`) tworzą warstwę wiki — powiązanie
 musi mieć uzasadnienie w polu `opis`, a backlinki wylicza indeks.
 
+### 6.1 Kanon tagów (od v1.4)
+
+Słownikiem tagów jest **`data/kanon-tagow.json`** (ADR 0016): kategorie z limitami
+i dozwolone tagi z opisami. Zasady:
+
+| Kategoria | Skrót | Ile | Co oznacza |
+|---|---|---|---|
+| `kultura` | kultura | dokładnie 1 | tradycja źródłowa bytu (patrz §2: jedna kultura na wpis) |
+| `typ` | typ | dokładnie 1 | czym byt jest (duch przodków, selkie, olbrzym…) |
+| `motyw` | motyw | 1–2 | co wiąże byty ze sobą i z SKITami (złe oko, warunek, opłaty…) |
+| `postac` | postać | 0–1 | w jakiej formie byt występuje (maskarada, kamienna figura…) |
+
+* **tag spoza kanonu = błąd walidatora** (`npm test` i `npm run build`), więc
+  słownik nie rozpełza się na jednozdaniowe etykiety w stylu `nigeria-2026`;
+* **nowy tag dopisuje się do kanonu** w tym samym commicie co wpis: `tag`,
+  `kategoria`, `opis` (zdanie, nie powtórzenie nazwy). Nie potrzeba do tego ADR,
+  ale potrzeba kategorii, która ma sens dla >1 wpisu — jeśli tag miałby opisywać
+  tylko jeden wpis, nie jest tagiem, tylko treścią wpisu (patrz `lokalizacja`,
+  `pochodzenie_i_kultura`);
+* **kraj/państwo nie jest tagiem** — jest w `lokalizacja.kraj` i po nim działa
+  wyszukiwarka;
+* w pliku wpisu `tagi` wymienia się w kolejności kategorii kanonu (jak wyżej);
+* aplikacja prezentuje tagi **pasrami po kategoriach**: podpis kategorii + chipy
+  z licznikiem wpisów i opisem w `title`; w karcie bytu chip ma skrót kategorii
+  (`typ | olbrzym`), a pełna nazwa i opis są w podpowiedzi.
+
 ## 7. Przykład zastosowania (karta: *Tarmogoyf*)
 
 Kartoteka zawiera cztery zweryfikowane wg ADR 0008 wpisy (fetch Scryfall +

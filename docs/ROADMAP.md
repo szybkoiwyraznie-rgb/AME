@@ -110,6 +110,9 @@ je wyłącznie na wyraźne zlecenie właściciela w sesji.
 - [x] C3: SKIT „HOŁD ORAZ ŚWIATŁO” (276 słów, trio balor × egungun × lincoln-imp).
 - [x] C2: „⧉ kopiuj link” w kartotece i w warstwie skitu + test kontraktowy
       handlerów (featura czeka na akceptację właściciela).
+- [x] C2 (drugie): kanon tagów — `data/kanon-tagow.json`, `walidujKanon` +
+      `walidujTagi`, indeks v3, pasek pasmami kategorii, chipy ze skrótem
+      kategorii w karcie; migracja tagów wszystkich sześciu wpisów (ADR 0016).
 
 ## F2 — Jakość i ergonomia mapy
 
@@ -119,6 +122,8 @@ je wyłącznie na wyraźne zlecenie właściciela w sesji.
       zamiast bottom sheetu (M3).
 - [ ] Klastrowanie pinezek przy niskim zoomie / deryterowanie etykiet.
 - [ ] Miniatury wizualizacji na pinezkach przy wysokim zoomie.
+- [x] Czytelny kanon tagów i ich prezentacja (ADR 0016): słownik w danych,
+      limity kategorii w walidatorze, pasek w pasmach z licznikami i opisami.
 - [ ] Strona tagu (filtr + lista wpisów), eksport PDF kartoteki (media print).
 
 ## F3 — Publikacja
