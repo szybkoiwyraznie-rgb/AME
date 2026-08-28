@@ -97,6 +97,11 @@
       "opis": "Półboski obrońca mierzący się z demonem pogody"
     },
     {
+      "tag": "bron-burzy",
+      "kategoria": "typ",
+      "opis": "Byt-przedmiot niosący moc gromu: broń lub berło związane z bóstwem burzy"
+    },
+    {
       "tag": "zle-oko",
       "kategoria": "motyw",
       "opis": "Wzrok jako broń i jako rana bytu"
@@ -150,6 +155,11 @@
       "tag": "grecja",
       "kategoria": "kultura",
       "opis": "Mitologia i podanie greckie: fantomy orszaku Hekaty, rasy tesyjskie, świat Therosu"
+    },
+    {
+      "tag": "indie",
+      "kategoria": "kultura",
+      "opis": "Religia i mitologia indyjska: wedyjska i puraniczna (hinduizm)"
     },
     {
       "tag": "fantom",
