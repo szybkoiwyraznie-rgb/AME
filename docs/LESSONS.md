@@ -103,3 +103,16 @@ działa**, a nie tylko czy diff jest sensowny: `gh workflow list` i
 `gh run list` na dowód, że jobs istnieją. Przepisy plików konfiguracyjnych
 przechowujemy w wersji gotowej do wklejenia — komentarze w składni docelowej
 (`#` w YAML), bez opakowywania w znaczniki innego języka.
+
+## L10 (2026-08-28, AME) — delegacja klików: najbliższy traf, nie kolejność atrybutów
+
+**Objaw:** klik w „uczestnika" w widoku SKITa nie otwierał karty bytu — otwierał
+ten sam skit od nowa.
+**Przyczyna:** handler warstwy sprawdzał `closest('[data-skit]')` przed
+`closest('[data-slug]')`, a chip uczestnika siedzi w `<article data-skit=…>`:
+starszy selector zgaduje kontekst i podnosi rodzica nad dziecko.
+**Reguła:** w kontenerach zagnieżdżonych (warstwa nad kartoteką, sekcje w
+`<article>`) deleguj przez JEDEN `closest('[data-a], [data-b], [data-c]')` z
+atrybutami ułożonymi wg priorytetu i decyduj po `hasAttribute()`. Testy
+jednostkowe tego nie łapią — sprawdź przepływ na żywo albo w smoke-na-atrapie
+DOM.

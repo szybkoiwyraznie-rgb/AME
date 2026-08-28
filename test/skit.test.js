@@ -20,6 +20,11 @@ test('skit wzorcowy przechodzi walidację', () => {
   assert.ok(slow >= SKIT_MIN_SLOW && slow <= SKIT_MAX_SLOW, `słów: ${slow}`);
 });
 
+test('slug skitu: konwencja i zarezerwowane nazwy widoków', () => {
+  assert.ok(walidujSkit(skitWzorzec({ slug: 'Zły Slug' }), SLUGI_WPISOW).some((e) => e.startsWith('slug')));
+  assert.ok(walidujSkit(skitWzorzec({ slug: 'skity' }), SLUGI_WPISOW).some((e) => e.includes('zarezerwowany')));
+});
+
 test('uczestnicy: 2–4 materializacje, istniejące slugi, bez duplikatów', () => {
   const samJeden = skitWzorzec({ uczestnicy: [{ imie: 'Byt Testowy', slug: 'byt-testowy' }] });
   assert.ok(walidujSkit(samJeden, SLUGI_WPISOW).some((e) => e.includes('uczestnicy')), 'samotna postać to nie rozmowa');

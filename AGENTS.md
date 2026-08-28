@@ -80,9 +80,11 @@ Ponadto:
   ADR, nowa granica nienegocjowalna). **Nie pytaj „co robimy?”** — gdy po
   audycie brak zaległości i zlecenia właściciela, sesja wchodzi w **Pętlę
   Jakości (ADR 0007)**: rekurencyjnie, do wyczerpania budżetu sesji,
-  C1 (pogłębianie wpisów — zawsze z researchem w www) i C2 (nowe featury:
-  wymyślić, zakodować z testami, zaprezentować właścicielowi do akceptacji
-  PRZED uruchomieniem live). Polerowanie dokumentacji NIE jest częścią pętli —
+  **C1** (pogłębianie wpisów — zawsze z researchem w www) → **C3** (SKIT do
+  Bazy Skitów: 2–4 materializacje o unikalnym składzie, PROTOKÓŁ §8.4) →
+  **C2** (nowe featury: wymyślić, zakodować z testami, zaprezentować
+  właścicielowi do akceptacji PRZED uruchomieniem live). W liście todo sesji
+  C3 idzie nad C2. Polerowanie dokumentacji NIE jest częścią pętli —
   wykonuje się je wyłącznie na zlecenie właściciela w sesji.
 - **Praca istnieje dopiero po `git push`.** Nowa sesja widzi wyłącznie `main`
   i tekst pierwszego promptu. Commituj i pushuj po każdym zielonym kroku.
@@ -123,6 +125,13 @@ Ponadto:
 - **Powiązania** wskazują slugi istniejących wpisów; backlinki liczy automatycznie
   indeks. Nie twórz powiązań „na siłę” — opis powiązania ma uzasadniać związek.
 - **Slug** = `^[a-z0-9-]+$`, zgodny z nazwą pliku (`data/manifestations/<slug>.json`).
+- **SKITy (C3, PROTOKÓŁ §8):** dialog materializacji w `data/skity/<slug>.json`
+  — maks. 250 słów, 2–4 uczestników z kartoteki, każdy zabiera głos, **skład
+  osobowy unikalny w całej bazie**, zero żargonu gry, fakty zgodne z lore wpisów.
+  Sekcja VI kart i feed „Co nowego" wyliczają się same (z indeksu).
+- **Każda zmiana treści** trafia do `meta.modyfikacje: [{data, opis}]` (albo
+  `meta.utworzono`, gdy plik jest nowy) — na tym oparty jest dziennik „Co
+  nowego" (PROTOKÓŁ §9); bez tego zmiana jest niewidoczna dla właściciela.
 - Każdy nowy lub zmieniony wpis MUSI przejść `npm test` (schemat + spójność +
   rama promptu) oraz `npm run build` (przebudowa `data/index.json`), a zbudowany
   indeks jest częścią commita.
@@ -132,7 +141,8 @@ Ponadto:
 - **Aplikacja pozostaje vanilla HTML+JS+CSS bez frameworków i bez kroku
   budowania** (ADR 0001). Zmiana tego paradigmatu = wyraźna decyzja właściciela
   + nowy ADR.
-- **`data/index.json` jest generowany** przez `tools/rebuild-index.mjs`.
+- **`data/index.json` jest generowany** przez `tools/rebuild-index.mjs`
+  (wpisy + Baza Skitów + sekcja VI + feed zmian; `wersja: 2`).
   Ręczna edycja indeksu jest zakazana; edytuje się pliki wpisów i uruchamia build.
 - Nie commituj sekretów. Pojedyncze pliki binarne > 2 MB wymagają zgody
   właściciela; wygenerowane wizualizacje zapisuj jako JPEG ≤ 2 MB w

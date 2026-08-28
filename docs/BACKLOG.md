@@ -43,6 +43,11 @@
 - **Lint stylu wpisów**: prosta heurystyka „zakaz terminologii growej w
   sekcji II” (lista słów: haste, trample, mana…).
 
+## Zrealizowane w M3 (2026-08-28)
+
+- Baza Skitów + sekcja VI + `#skit:<slug>` (ADR 0013) i feed „Co nowego"
+  (ADR 0014) — pomysły z tego rejestru weszły do kodu; patrz `docs/ROADMAP.md`.
+
 ## Rozpoznane w sesji M3 (2026-08-28) — po poprawkach z testów
 
 - **Reakcja na zmianę preferencji systemu** — dziś `prefers-color-scheme` liczy
@@ -51,7 +56,8 @@
 - **Miniatura wizualizacji w wierszu kartoteki i w liście** — obraz 21:9 już jest
   w indeksie (`obraz`), wystarczy `<img loading="lazy">` w `htmlListy`.
 - **Kopiuj link do wpisu** — przycisk w warstwie wpisu (`location.origin +
-  location.pathname + '#' + slug`); przydatne do wskazywania kart innych sesji.
+  location.pathname + '#' + slug`); skity mają już swoje `#skit:<slug>`, karty
+  nie mają przyciska „kopiuj link obok deep-linku".
 - **Kontrola żywości adresów źródłowych** — skrypt sesji (narzędzia agenta), NIE
   CI: egress sandboxa jest ograniczony (L3), a linki bywają przenoszone.
   Wymagałby decyzji: martwy link = ostrzeżenie czy błąd walidatora.
@@ -61,3 +67,16 @@
   oznaczać inną kursywą, żeby czytelnik wiedział, czego nie da się kliknąć.
 - **Aspekt motywu w testach** — trzymać kontrakt tokenów (lista zmiennych
   wymaganych w obu paletach) jako test danych, gdy paleta urośnie.
+
+## SKITy — rozpoznane kierunki dalszej pracy (M3)
+
+- **Indeks tematów skitów** — przy >10 skitach warto dodać pole `temat` do
+  słownika w indeksie (typu „filozofia”, „żałoba”, „jadło”), żeby C3 łatwiej
+  dobierało niepowtarzalne tematy, nie tylko składy.
+- **Widok „rozmowy” na mapie** — animowany łuk łączący uczestników skitu przy
+  jego otwarciu (dziś sekcja VI linkuje tylko do kart).
+- **Walidator spójności faktograficznej** — heurystyka ostrzegająca, gdy skit
+  przywołuje zwyczaj/nazwę własną nieobecną w kartach uczestników (twarda
+  egzekucja wymaga NLP — poza zakresem ADR 0001).
+- **Nagrania/lektor** — odczyt skitu na głos (web speech API, bez zależności)
+  jako opcja przystępności.

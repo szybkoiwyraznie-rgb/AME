@@ -45,6 +45,7 @@ je wyłącznie na wyraźne zlecenie właściciela w sesji.
       pełny wpis MFM wg `docs/PROTOKOL.md` (analiza translacji → identyfikacja
       bytu → kartoteka → build → testy → commit).
 - [ ] Rozbudowa istniejących opisów (pogłębienie sekcji II, nowe źródła w III).
+- [ ] SKITy dla nowych składów — odblokowują się wraz z przyrostem kartoteki (C3).
 - [ ] Tagowanie we wspólne grupy i porządkowanie słownika tagów.
 - [ ] Powiązywanie wpisów (uzasadnione `opis`-em), obserwacja spójności sieci.
 - [ ] Odtwarzanie wizualizacji dla wpisów bez obrazu (rama 21:9, ≤ 2 MB).
@@ -65,8 +66,20 @@ je wyłącznie na wyraźne zlecenie właściciela w sesji.
       szerokość opisu (ADR 0010).
 - [x] **B3** `dokumentacja[].url` w schemacie i walidatorze, linki w UI,
       adresy zweryfikowane w sieci (ADR 0011).
+- [x] Uściślenie B1: numeracja sekcji idzie za kolejnością (v1.3, ADR 0012).
 - [x] Audyt PR #1 + naprawa receptury CI (L9) — sam plik `.github/workflows/ci.yml`
       na `main` wciąż wymaga łatki po stronie właściciela.
+
+## M3b (2026-08-28) — zlecenia: Baza Skitów i „Co nowego" — ✅ KOŃCZONA (w PR #2)
+
+- [x] **SKITy** (ADR 0013, PROTOKÓŁ §8): format danych `data/skity/`,
+      walidator (2–4 uczestników, unikalny skład, 60–250 słów, zakaz żargonu
+      gry), indeks v2, Baza Skitów w UI (przycisk „✎ skity"), sekcja VI pod
+      kartą bytu, deep-link `#skit:<slug>`; pierwszy SKIT „PŁÓTNO I KAMIEŃ".
+- [x] **C3 w Pętli Jakości** (nad C2): dopisywanie SKITa o nowym składzie.
+- [x] **„Co nowego"** (ADR 0014): feed `aktualizacje[]` liczony z `meta`
+      (powstania i zmiany wpisów oraz skitów), najnowsze na górze, przycisk
+      „✚ nowości", linki do treści; rygor opisywania zmian w `meta.modyfikacje`.
 
 ## F2 — Jakość i ergonomia mapy
 

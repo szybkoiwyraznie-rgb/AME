@@ -130,12 +130,41 @@ Sprawdź:
   potwierdzono (a potwierdzać trzeba — ADR 0008);
 - tag klikalny, powiązanie/backlink, łuki powiązań;
 - przełącznik motywu: jasny i ciemny bez utraty czytelności mapy i tekstu;
+- sekcja VI: skity bytu linkują do Bazy Skitów, `#skit:<slug>` otwiera tekst;
+  „✚ nowości" pokazuje zmiany z dzisiejszego commita na górze;
 - `Esc` i `✕` zamykają warstwę, fokus wraca na pinezkę/listę.
 
 ### 10. Rozbudowa istniejącego wpisu (np. Pętla Jakości C1)
 Research www → dopisz/poszerz sekcje (II, III), nowe tagi/powiązania,
 każdą zmianę opisz w `meta.modyfikacje: [{data, opis}]` → build → testy →
 commit `manifestacja: pogłębiono <slug> (research: <temat>)`.
+
+## Procedura: dopisanie SKITa (C3, PROTOKÓŁ §8)
+
+1. **Skład.** Wypisz dotychczasowe zestawy uczestników (patrz
+   `data/index.json` → `skity[].uczestnicy` (ewentualnie `grep '"slug"' data/skity/*.json`)
+   i wybierz 2–4 materializacje, których zestaw **jeszcze nie istniał**
+   (walidator odrzuci powtórkę).
+2. **Materiał.** Przeczytaj sekcje II/III/V kart uczestników; zwyczaje,
+   przedmioty i miejsca, które mają wypowiedzieć, muszą się z nimi zgadzać
+   (ADR 0008). Nowy fakt w dialogu = fakt do sprawdzenia w sieci.
+3. **Pisanie.** Nagłówek to `tytul` (wersaliki w renderze), pod nim uczestnicy,
+   dalej czysty dialog: `**Imię:** [didaskalia] wypowiedź`, akapity po
+   pustej linii. Zero żargonu gry, zero narracji autorskiej. Mieść się w
+   60–250 słów.
+4. **Plik.** `data/skity/<slug>.json` (slug = `^[a-z0-9-]+$`, zgodny z nazwą
+   pliku), `meta.utworzono` = dzisiejsza data.
+5. **Build i testy.** `npm run build && npm test` — walidator sprawdza limity,
+   głos każdej postaci, istnienie uczestników i unikalność składów; indeks
+   sam dopisze sekcję VI w kartach i pozycję w feedzie.
+6. **Commit.** `skity: dodano „<TYTUŁ>” (<byt(a)>)`, indeks w tym samym commicie.
+
+### Rygor: każda zmiana treści trafia do dziennika (ADR 0014)
+
+Sekcja „Co nowego" jest wyliczana z `meta`: `utworzono` = „dodano",
+wpis w `modyfikacje` = „zmieniono". Zmiana bez opisu w `meta.modyfikacje`
+jest dla właściciela niewidoczna, więc: przy każdej edycji wpisu lub skitu
+dopisuj `{data: <dzisiejsza data>, opis: <co i po co>}`.
 
 ## Zasady commitów
 

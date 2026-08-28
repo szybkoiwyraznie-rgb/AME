@@ -1,10 +1,16 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { walidujWpis, walidujPowiazania, RAMA_OTWARCIA, RAMA_ZAMKNIECIA } from '../tools/rebuild-index.mjs';
+import { walidujWpis, walidujPowiazania, RAMA_OTWARCIA, RAMA_ZAMKNIECIA, REZERWOWANE_SLUGI } from '../tools/rebuild-index.mjs';
 import { wpisWzorzec, ustaw } from './fixtures/wpis-wzorzec.js';
 
 test('wzorzec przechodzi walidację bez błędów', () => {
   assert.deepEqual(walidujWpis(wpisWzorzec()), []);
+});
+
+test('slug: zarezerwowane nazwy widoków nie mogą być bytami (routing hash)', () => {
+  for (const slug of REZERWOWANE_SLUGI) {
+    assert.ok(walidujWpis(wpisWzorzec({ slug })).some((e) => e.includes('zarezerwowany')), slug);
+  }
 });
 
 test('slug: konwencja i zgodność wymagań', () => {

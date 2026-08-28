@@ -210,3 +210,80 @@ fetch Scryfall + źródła www):
 - [`data/manifestations/lincoln-imp.json`](../data/manifestations/lincoln-imp.json) —
   inspiracja: *Forge Devil* (DKA 91); pokazuje tłumaczenie flavoru karty na
   realną legendę (imp z katedry Lincoln) oraz powiązanie z innym wpisem.
+
+## 8. SKITy — warstwa literacka archiwum (od v1.3)
+
+**SKIT** to niezależny obiekt literacki: krótki fragment prozy dialogowej, który
+łączi manifestacje z różnych kultur w rozmowie mądrej, zabawnej i zajmującej
+(por. przerywniki dialogowe z serii *Tales of…*). SKITy budują warstwę
+filozoficzno-satyryczną archiwum: pokazują, jak byty widziane przez swoje
+tradycje rozmawiają ze sobą.
+
+### 8.1 Gdzie mieszkają
+
+* plik `data/skity/<slug>.json` — **Baza Skitów**; wpisy kartoteki NIE
+  zawierają tekstu skitu;
+* indeks (`npm run build`) wylicza: `skity[]` (skróty), `manifestacje[].skity`
+  (sekcja VI pod kartą bytu) i pozycje feedu „Co nowego";
+* aplikacja: przycisk **✎ skity** (Baza Skitów), widok pojedynczego skitu oraz
+  sekcja **VI SKITy** w karcie materializacji; deep-link `#skit:<slug>`.
+
+Pola: `slug`, `tytul`, `temat?`, `uczestnicy: [{imie, slug}]`, `tekst`,
+`meta: {utworzono, autor?, modyfikacje[]}`.
+
+### 8.2 Forma
+
+* nagłówek w pliku wpisu/aplikacji ma postać: `### **SKIT: TYTUŁ**` (tytuł
+  nadaje autor, na podstawie treści; w renderze wersalikami);
+* bezpośrednio pod nim lista uczestników (`Uczestnicy:` + nazwiska);
+* **czysty dialog materializacji** — żadnej narracji autorskiej między replikami,
+  jeśli już, to w didaskaliach w nawiasach kwadratowych;
+* każda replika w wierszu: `**Imię:** [didaskalia] wypowiedź`, akapity rozdzielone
+  pustą linią;
+* długość: **maks. 250 słów** (walidator liczy w `tekst`; poniżej ~60 słów
+  rozmowa nie ma oddechu — też odrzucamy).
+
+### 8.3 Treść — rygory
+
+1. **100% in-character i 100% z lore.** Rozmawiają byty z naszego świata, w ich
+   kulturach i czasach. Zakaz meta-języka gry: nie ma `mana`, `P/T`, `booster`,
+   `deck`, „karty MtG/Magic", „Scryfall" — karta jest kluczem do bytu, nie jego
+   słownictwem (walidator sprawdza listę żargonu).
+2. **Fakty za tło muszą być prawdziwe.** SKIT jest fabularny, ale zwyczaje,
+   przedmioty, miejsca i wierzenia, które postacie wymieniają, muszą się zgadzać
+   z sekcjami kart ich bytów (a te są zweryfikowane wg ADR 0008). Nowy fakt w
+   skicie = nowy fakt do sprawdzenia w źródłach.
+3. **Tematy dowolne, ale zawsze zgodne z charakterem bytu:** przeszłość,
+   filozofia, wzajemne relacje, obserwacje okolicy, stan fizyczny i psychiczny,
+   przemyślenia, zwyczaje wyniesione z kultury, jedzenie, wolny czas, hobby,
+   pasje, pragnienia, kompleksy, traumy, duma, poczucie humoru.
+4. **Oryginalność.** Każdy SKIT ma inny temat niż poprzednie. Zakazane jest
+   powtórzenie **składu osobowego**: dwa skity z identycznym zestawem
+   materializacji nie przejdą walidatora (`walidujUnikalnoscSkitow`). Skład o
+   jedną osobę mniejszy lub większy jest dozwolony, o ile sam jest unikalny.
+5. **Uczestnicy:** 2–4 materializacje z kartoteki, każda musi zabrać głos
+   (imię w replikach = `imie` z listy uczestników), żadnej postaci spoza składu.
+
+### 8.4 C3 w Pętli Jakości (ADR 0007)
+
+Po C1 (treść wpisów) i przed C2 (featury): **wybierz 2, 3 lub 4 materializacje
+tak, aby taki zestaw nie miał jeszcze swojego SKITa**, napisz SKIT wg §8.2–§8.3,
+dopisz plik do Bazy Skitów, uruchom `npm run build` + `npm test` i zacommituj.
+Sekcja VI kart materializacji oraz feed „Co nowego" podlinkują się same — z
+indeksu.
+
+## 9. Dziennik zmian (feed „Co nowego")
+
+Sekcja **Co nowego** (przycisk **✚ nowości**, deep-link `#nowosci`) jest
+**wyliczana, nie pisana ręcznie**: `tools/rebuild-index.mjs` zbiera z pola
+`meta` każdego wpisu i każdego skitu:
+
+* `meta.utworzono` → pozycja „dodano";
+* każdy wpis w `meta.modyfikacje: [{data, opis}]` → pozycja „zmieniono".
+
+Sortowanie: najnowsze na górze; w obrębie tej samej daty przyrosty przed
+zmianami, potem alfabetycznie (indeks musi pozostać deterministyczny — ADR 0002).
+Konsekwencja dla agentów: **każda zmiana w treści musi zostać opisana w
+`meta.modyfikacje` z poprawną datą** — inaczej zmiana nie trafi do dziennika i
+łamie §6. Nowy plik (wpis lub skit) dostaje `meta.utworzono` w formacie
+`RRRR-MM-DD`.

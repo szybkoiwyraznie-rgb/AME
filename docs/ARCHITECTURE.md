@@ -15,8 +15,9 @@ app/
   map.js                    — render SVG mapy + pinezki + pan/zoom + łuki,
                               widok liczony z kontenera (ResizeObserver)
   data.js                   — ładowanie indeksu i wpisów, filtrowanie
-  ui.js                     — warstwa wpisu (dialog), tagi, powiązania, lista,
-                              szukanie, logika motywu (funkcje czyste)
+  ui.js                     — warstwa wpisu (dialog), Baza Skitów, widok skitu,
+                              feed „Co nowego", tagi, powiązania, lista, szukanie,
+                              logika motywu (wszystko jako funkcje czyste)
   styles.css                — tokeny palety: motyw ciemny i jasny (bez webfontów)
 assets/
   map/countries-50m.json    — Natural Earth jako TopoJSON (vendoring, PD/ISC)
@@ -24,7 +25,8 @@ assets/
   wizualizacje/<slug>.jpg   — wygenerowane obrazy 21:9 (≤ 2 MB)
 data/
   manifestations/<slug>.json — pełne wpisy MFM (źródło prawdy treści)
-  index.json                — GENEROWANY przez tools/rebuild-index.mjs
+  skity/<slug>.json          — Baza Skitów: dialogi materializacji (ADR 0013)
+  index.json                — GENEROWANY przez tools/rebuild-index.mjs (v2)
 tools/
   rebuild-index.mjs         — walidacja wpisów + budowa indeksu (--check
                               używany w testach; zapis używany w buildzie)
@@ -38,11 +40,14 @@ docs/                       — protokół, ADR, plany, handoffy (patrz AGENTS.m
 2. `npm run build` → walidacja → przebudowa `data/index.json` (deterministyczna:
    sortowanie po slugu, słownik tagów, backlinki z powiązań).
 3. `npm test` → walidacja `--check` + testy jednostkowe (projekcja, dekoder
-   TopoJSON, schemat) — brama commitu.
+   TopoJSON, schemat wpisów i skitów) — brama commitu.
 4. Aplikacja: `app.js` rozstrzyga motyw (zapis w `localStorage` →
    `prefers-color-scheme` → ciemny) i ustawia `html[data-motyw]`, pobiera
    `data/index.json` → rysuje pinezki; kliknięcie dociąga
    `data/manifestations/<slug>.json` do pełnoekranowej warstwy wpisu.
+5. Baza Skitów i feed: skróty `skity[]`, `manifestacje[].skity` (sekcja VI) i
+   `aktualizacje[]` („Co nowego") są w indeksie — pełny tekst skitu dociągany
+   jest przy otwarciu (`data.js: zaladujSkit`). Nikt nie przepisuje list ręcznie.
 
 ## Schemat wpisu (skrót; pełna walidacja w tools/rebuild-index.mjs)
 
@@ -66,6 +71,20 @@ tagi: []                                             # ^[a-ząćęłńóśźż0-
 powiazania: [{ slug, opis }]                         # istniejące wpisy, bez self
 meta: { utworzono, autor?, modyfikacje: [{data, opis}] }
 ```
+
+## Schemat SKITa (Baza Skitów, ADR 0013)
+
+```
+slug, tytul, temat?
+uczestnicy: [{ imie, slug }]                         # 2–4, slugi muszą istnieć, zestaw unikalny w bazie
+tekst                                                # „**Imię:** [didaskalia] słowa”, 60–250 słów
+meta: { utworzono, autor?, modyfikacje: [] }
+```
+
+Plik `data/index.json` (wersja 2) dokłada do tego: `skity[]` (skróty: slug,
+tytul, imiona, slow, data), `manifestacje[].skity` (sekcja VI) i
+`aktualizacje[]` (feed „Co nowego", sort: data malejąco → przyrosty przed
+zmianami → typ → slug).
 
 ## Mapa (ADR 0003 + ADR 0009)
 
@@ -98,6 +117,12 @@ meta: { utworzono, autor?, modyfikacje: [{data, opis}] }
   całości testowalne w Node).
 - Teksty UI po polsku; klasy CSS `kebab-case`; identyfikatory danych
   (slug/tagi) bez spacji i wielkich liter.
+- Kliknięcia w warstwach obsługuje JEDEN `closest('[data-…], [data-…]')`
+  z listą atrybutów w kolejności priorytetu — inaczej element dziedziczny
+  (chip w `<article data-skit>`) zostaje pożarty przez kontekst (L10).
+- `#panel` (kartoteka bytu) i `#warstwa` (Baza Skitów / skit / Co nowego) to
+  dwie warstwy: ta druga jest nad pierwszą (z-index 70 vs 60) i Esc zamyka
+  ją najpierw.
 - Zakaz dependency runtime; nowe assety zewnętrzne → `docs/ASSETS.md`.
 - Kolory wyłącznie przez tokeni CSS z `:root` / `html[data-motyw='jasny']`
   (barvy mapy też) — inaczej drugi motyw będzie nieczytelny (ADR 0010).

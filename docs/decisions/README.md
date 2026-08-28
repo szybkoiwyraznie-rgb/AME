@@ -27,6 +27,8 @@ Każdy dokument opisuje kontekst, wybór i jego konsekwencje.
 | [0010](0010-motyw-jasny-ciemny-i-pelnoekranowa-warstwa-kartoteki.md) | Motyw jasny/ciemny przez tokeny CSS i kartoteka jako pełnoekranowa warstwa | Zaakceptowana |
 | [0011](0011-protokol-v1-2-kolejnosc-sekcji-i-adresy-zrodel.md) | Protokół MFM v1.2: kolejność prezentacji sekcji i adres źródła w dokumentacji | Zaakceptowana (pkt o numerach zastąpiony przez 0012) |
 | [0012](0012-numeracja-sekcji-zgodna-z-kolejnoscia.md) | Numeracja sekcji wpisu zgodna z ich kolejnością (protokół MFM v1.3) | Zaakceptowana |
+| [0013](0013-baza-skitow-i-sekcja-vi.md) | Baza Skitów: nowy typ danych, sekcja VI wpisu i krok C3 pętli | Zaakceptowana |
+| [0014](0014-co-nowego-feed-z-meta.md) | „Co nowego”: dziennik zmian wyliczany z pola meta | Zaakceptowana |
 
 ## Szablon ADR
 

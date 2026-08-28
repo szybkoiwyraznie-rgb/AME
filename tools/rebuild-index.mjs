@@ -29,6 +29,11 @@ export const RAMA_ZAMKNIECIA =
 const ZAKAZANE_W_PROMPCIE = ['figurine', 'diorama', 'miniature', 'render', 'painting', 'illustration'];
 
 const RE_SLUG = /^[a-z0-9-]+$/;
+/**
+ * Slugi zarezerwowane przez routing widoków w hashu (#skity, #nowosci,
+ * #skit:<slug>) — wpis o takim slugu byłby nieosiągalny.
+ */
+export const REZERWOWANE_SLUGI = ['skity', 'nowosci', 'panel', 'mapa', 'lista'];
 /** Limity SKITa (zlecenie właściciela 2026-08-28, PROTOKÓŁ §8, ADR 0013). */
 export const SKIT_MIN_UCZESTNIKOW = 2;
 export const SKIT_MAX_UCZESTNIKOW = 4;
@@ -53,6 +58,7 @@ export function walidujWpis(w) {
   const blad = (m) => e.push(m);
 
   if (!jestStr(w.slug) || !RE_SLUG.test(w.slug)) blad('slug: wymagane ^[a-z0-9-]+$');
+  else if (REZERWOWANE_SLUGI.includes(w.slug)) blad(`slug: „${w.slug}” jest zarezerwowany przez routing widoków (hash)`);
   if (!jestStr(w.nazwa)) blad('nazwa: brak');
 
   if (!Array.isArray(w.nazwy_alternatywne ?? [])) blad('nazwy_alternatywne: ma być tablicą');
@@ -167,6 +173,7 @@ export function walidujSkit(s, slugiManifestacji = new Set()) {
   const blad = (m) => e.push(m);
 
   if (!jestStr(s.slug) || !RE_SLUG.test(s.slug)) blad('slug: wymagane ^[a-z0-9-]+$');
+  else if (REZERWOWANE_SLUGI.includes(s.slug)) blad(`slug: „${s.slug}” jest zarezerwowany przez routing widoków (hash)`);
   if (!jestStr(s.tytul)) blad('tytul: brak (SKIT dostaje nagłówek „SKIT: <tytuł>”)');
 
   const u = s.uczestnicy;
