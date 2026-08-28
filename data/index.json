@@ -353,10 +353,12 @@
       "powiazania": [
         "balor",
         "barbarossa-kyffhaeuser",
+        "indra",
         "lincoln-imp"
       ],
       "backlinki": [
         "balor",
+        "indra",
         "kentaur-pelion",
         "lincoln-imp"
       ],
@@ -469,9 +471,12 @@
       ],
       "powiazania": [
         "barbarossa-kyffhaeuser",
+        "drangue-shala",
         "kentaur-pelion"
       ],
-      "backlinki": [],
+      "backlinki": [
+        "drangue-shala"
+      ],
       "obraz": "assets/wizualizacje/indra.jpg",
       "skity": [
         "dwa-grzbiety"
@@ -573,9 +578,12 @@
       ],
       "powiazania": [
         "empusa-korynt",
-        "kentaur-pelion"
+        "kentaur-pelion",
+        "selkie-sule-skerry"
       ],
-      "backlinki": [],
+      "backlinki": [
+        "selkie-sule-skerry"
+      ],
       "obraz": "assets/wizualizacje/nessos.jpg",
       "skity": [
         "dwa-grzbiety"
@@ -605,14 +613,16 @@
         "balor",
         "egungun",
         "empusa-korynt",
-        "kentaur-pelion"
+        "kentaur-pelion",
+        "nessos"
       ],
       "backlinki": [
         "balor",
         "barbarossa-kyffhaeuser",
         "egungun",
         "empusa-korynt",
-        "kentaur-pelion"
+        "kentaur-pelion",
+        "nessos"
       ],
       "obraz": "assets/wizualizacje/selkie-sule-skerry.jpg",
       "skity": [
