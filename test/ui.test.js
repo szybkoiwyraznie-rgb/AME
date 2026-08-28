@@ -164,3 +164,15 @@ test('htmlWpisu: Dokumentacja linkuje do źródeł, gdy mają url (B3)', async (
   assert.ok(html.includes('href="https://books.google.com/books/about/Yoruba.html?id=fZwVAQAAIAAJ"'), 'klikalny adres źródła');
   assert.ok(html.includes('class="zrodlo"'), 'klasa do stylowania');
 });
+
+test('kontrakt identyfikatorów: każdy selektor app.js istnieje w index.html lub ui.js', async () => {
+  const [app, html, warstwa] = await Promise.all([
+    readFile('app/app.js', 'utf8'),
+    readFile('index.html', 'utf8'),
+    readFile('app/ui.js', 'utf8'),
+  ]);
+  const selektory = [...new Set([...app.matchAll(/\$\('#([a-z0-9-]+)'\)/g)].map((m) => m[1]))];
+  assert.ok(selektory.length >= 8, `rozpoznano tylko ${selektory.length} selektorów — sprawdź wyrażenie`);
+  const braki = selektory.filter((id) => !html.includes(`id="${id}"`) && !warstwa.includes(`id="${id}"`));
+  assert.deepEqual(braki, [], `app.js woła elementy, których nie ma w markupie: ${braki.join(', ')}`);
+});
