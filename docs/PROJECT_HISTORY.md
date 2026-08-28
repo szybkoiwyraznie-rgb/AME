@@ -69,3 +69,53 @@ commitem po weryfikacji (L6).
 
 **Otwarte po sesji:** scalenie PR #1; dalsze karty od właściciela; Pętla
 Jakości dla kolejnych sesji.
+
+## M3 (2026-08-28) — audyt PR #1 + poprawki z testów właściciela (A1–A5, B1–B3)
+
+**Kontekst:** PR #1 scalony (merge `25b1615`). Właściciel w pierwszym prompcie
+przekazał zgłoszenie testera (mapa: proporcje, motyw, artefakt Rosji, rozmiar
+pinezki i badge’a; wpis: kolejność sekcji, pełnoekranowa warstwa, linki
+źródłowe). Sesja realizuje najpierw obowiązkowy blok dokumentacyjny (plan +
+audyt), potem zlecenie, potem Pętlę Jakości.
+
+**Audyt scalonego PR #1** (`git diff 2f9b5e7..7c48013`, 56 plików, plik po
+pliku; testy `npm test` 34/34 zielone, `npm run check` spójny):
+
+1. **KRYTYCZNE — CI nie działa.** `.github/workflows/ci.yml` na `main` zaczyna
+   się od bloku `<!-- … -->` przeniesionego z przepisu
+   `docs/setup/ci-workflow.yml`; to nie jest komentarz YAML, więc GitHub nie
+   wczytuje workflow. Runy `33148046060`, `33150562702`, `33155771652`:
+   `failure` w 0 s, zero jobs, brak logów. Brama `npm test` + aktualność
+   `data/index.json` **nie jest egzekwowana** na `main` ani na PR-ach.
+   Naprawa: usunąć blok komentarza HTML z pliku na `main` (agent nie ma prawa
+   pisać do `.github/workflows/` — decyzja/łatka właściciela; przepis w repo
+   poprawiony w tym PR).
+2. `app/geo.js` nie obsługuje antypołudnika. Zmierzono w danych
+   `assets/map/countries-50m.json`: Rosja (pierścień 17: 4894 pkt, skoki
+   359,87° i 359,93°; pierścień 28: 43 pkt, skok 359,88°), Fidżi (pierścień
+   10-pkt na −16,45°, skok 360°), Antarktyda (skok 359,6°). Prosta projekcja
+   walcowa zmienia taki skok w cięciwę przez całą mapę ⇒ pozorne pasy
+   („rozlana Rosja”) i „gruby równoleżnik” na wysokości Madagaskaru to w
+   rzeczywistości sliver Fidżi. Zgłoszenia A3 = ten sam root cause.
+3. `app/map.js`: viewBox świata jest stały (3600×1800) z
+   `preserveAspectRatio="…slice"`, a `dopusc()` spina przesunięcia do 0 przy
+   k=1 ⇒ świat jest przycinany (bieguny przy oknach szerszych niż 2:1,
+   długości przy węższych), otwarcie panelu (42 vw) zmienia kontener i powoduje
+   skok skali. Zgłoszenie A1.
+4. Jednostki renderu: `.etykieta { font-size: 15px }` żyje w jednostkach świata
+   (skala ~0,42 px/j.u.) ⇒ ~6 px na ekranie (A4); pinezka `r=11` j.u. ⇒ ~4,6 px
+   (A5); `.siatka` bez `vector-effect: non-scaling-stroke` ⇒ siatka grubieje
+   przy zbliżeniu.
+5. Testy nie pilnowały tego, co się popsuło: `mapa-dane.test.js` nie sprawdzał
+   spójności ścieżek z zakresem świata ani skoków długości, `ui.test.js` nie
+   pilnował kolejności sekcji. Domknięte w tym PR.
+6. Zastrzeżeń merytorycznych brak: zapis wpisów zgodny z PROTOKÓŁ v1.1 i
+   ADR 0002/0005/0006 (walidator ramy 21:9, slugi, powiązania, backlinki),
+   HTML UI escapowany, indeks deterministyczny, zero zależności runtime (ADR
+   0001). Drobne: `docs/setup/ci-workflow.yml` (receptura) zalega w repo po
+   włączeniu CI na `main`; ROADMAP F2 dalej pokazuje „deep-linki” jako otwarte, choć
+   `#<slug>` działa od sesji M1 (poprawione w tym PR).
+
+**Wnioski dla zasad:** audyt poprzedniego PR musi obejmować **uruchomienie
+bram** (CI/status workflow), nie tylko diff — stąd L7/L8 i zmiana w przepisach
+`docs/setup/ENVIRONMENT.md` (pkt checklisty).
