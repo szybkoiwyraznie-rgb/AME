@@ -6,7 +6,7 @@ import { wpisWzorzec } from './fixtures/wpis-wzorzec.js';
 function dwaWpisy() {
   const a = wpisWzorzec(); // slug: byt-testowy
   const b = wpisWzorzec({ slug: 'zorza', nazwa: 'Zorza', tagi: ['las', 'gory'] });
-  b.powiazania = [{ slug: 'byt-testowy', opis: 'oba byty nocne' }];
+  b.powiazania = [{ slug: 'byt-testowy', opis: 'oba byty pojawiają się nocą i oba kojarzone są z tą samą okolicą, więc wiąże je wspólny teren i pora' }];
   return [b, a]; // celowo w odwrotnej kolejności
 }
 

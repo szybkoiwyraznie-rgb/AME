@@ -75,8 +75,8 @@ lub aktywności (dokładność ~0,01° wystarcza).
 - Tagi: wyłącznie z kanonu (`data/kanon-tagow.json`) — `kultura` (1), `typ` (1),
   `motyw` (1–2), `postac` (0–1); nowy tag dopisuje się do kanonu w tym samym
   commicie, z opisem będącym zdaniem (PROTOKÓŁ §6.1, ADR 0016). Kraj nie jest tagiem.
-- Powiązania: `{slug, opis}` tylko do istniejących wpisów, `opis` uzasadnia
-  związek merytorycznie (ADR 0006).
+- Powiązania: `{slug, opis}` tylko do istniejących wpisów; `opis` uzasadnia
+  związek merytorycznie **zdaniem — min. 12 słów, nie sam link** (ADR 0006, ADR 0019).
 - Dokumentacja: `{ typ, pozycja, url }`, `url` = pełny `http(s)`; co najmniej
   jedno źródło w wpisie musi mieć adres (ADR 0011).
 - Kolejność kluczy w pliku = numeracja sekcji: `wizualizacja` (I), `natura` (II),
@@ -153,8 +153,10 @@ mieścić opisu w stopce karty: wyświetla ona wyłącznie daty.
 
 1. **Skład.** Wypisz dotychczasowe zestawy uczestników (patrz
    `data/index.json` → `skity[].uczestnicy` (ewentualnie `grep '"slug"' data/skity/*.json`)
-   i wybierz 2–4 materializacje, których zestaw **jeszcze nie istniał**
-   (walidator odrzuci powtórkę).
+   i wybierz materializacje, których zestaw **jeszcze nie istniał** (walidator
+   odrzuci powtórkę). **Domyślnie 3–4 uczestników** (preferowane, ADR 0019) —
+   duet tylko, gdy temat naprawdę go wymaga; `npm run build` przypomni o tym
+   podpowiedzią, gdy duetów w bazie jest za dużo.
 2. **Materiał.** Przeczytaj sekcje II/III/V kart uczestników; zwyczaje,
    przedmioty i miejsca, które mają wypowiedzieć, muszą się z nimi zgadzać
    (ADR 0008). Nowy fakt w dialogu = fakt do sprawdzenia w sieci.

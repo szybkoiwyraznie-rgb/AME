@@ -5,7 +5,7 @@
 > aplikacja + kartoteka. Protokół opisuje, jak powstaje i co zawiera pojedynczy
 > wpis („kartotka manifestacji”).
 >
-> Status: **obowiązujący** (v1.6 od 2026-08-28; v1.5, v1.4, v1.3 i v1.2 — 2026-08-28; v1.1 — 2026-08-27).
+> Status: **obowiązujący** (v1.7 od 2026-08-28; v1.6, v1.5, v1.4, v1.3 i v1.2 — 2026-08-28; v1.1 — 2026-08-27).
 > Zmiany protokołu wymagają ADR.
 > v1.1 (ADR 0005): rama promptu 21:9. v1.2 (ADR 0011): obowiązująca kolejność
 > prezentacji sekcji oraz adres www jako część źródła. **v1.3 (ADR 0012):
@@ -15,7 +15,9 @@
 > data w meta może nieść godzinę — `RRRR-MM-DD` albo `RRRR-MM-DD GG:MM` —
 > a feed „Co nowego” podaje datę i godzinę zdarzenia.** **v1.6 (ADR 0018):
 > ton SKITów — obok rozmów poważnych pełnoprawnym rejestrem jest luz:
-> humor, codzienność, rozmowa „przy ognisku”.**
+> humor, codzienność, rozmowa „przy ognisku”.** **v1.7 (ADR 0019): SKITy
+> 3–4-osobowe są składem preferowanym (min. 2 zostaje), a opis powiązania
+> musi być zdaniem uzasadniającym związek — nie jednym słowem ani samym linkiem.**
 
 ## 1. Filozofia systemu
 
@@ -231,6 +233,21 @@ i dozwolone tagi z opisami. Zasady:
   z licznikiem wpisów i opisem w `title`; w karcie bytu chip ma skrót kategorii
   (`typ | olbrzym`), a pełna nazwa i opis są w podpowiedzi.
 
+### 6.2 Opis powiązania (od v1.7, ADR 0019)
+
+Powiązanie (`powiazania: [{slug, opis}]`) to krawędź w sieci wiki — a jej sens
+niesie **`opis`**. Wymogi:
+
+* **`opis` to zdanie (lub kilka) tłumaczące, DLACZEGO byty są ze sobą związane** —
+  wspólny motyw, lustrzana mechanika, kontrast tradycji. Nie wolno zredukować go
+  do jednego słowa, etykiety kategorii ani do samego adresu www.
+* walidator odrzuca opis krótszy niż **`POWIAZANIE_MIN_SLOW` (12 słów)** oraz opis
+  będący samym `http(s)`-linkiem. Próg jest niski względem praktyki (istniejące
+  opisy: 43–78 słów) i pilnuje wyłącznie dolnej granicy czytelności.
+* powiązanie ma być **uzasadnione, nie „na siłę”**: jeśli nie umiesz w zdaniu
+  napisać, co łączy dwa byty, prawdopodobnie nie są powiązane. Backlinki liczy
+  indeks, więc opis warto napisać z perspektywy obu stron krawędzi.
+
 ## 7. Przykład zastosowania (karta: *Tarmogoyf*)
 
 Kartoteka zawiera cztery zweryfikowane wg ADR 0008 wpisy (fetch Scryfall +
@@ -283,6 +300,12 @@ dialog, bez zdań-wstępów. Stopka karty (wpisu i skitu) pokazuje wyłącznie d
 
 ### 8.2 Forma
 
+* **skład: 2–4 uczestników; preferowane 3–4** (od v1.7, ADR 0019). Rozmowa
+  trzech, czterech bytów z różnych kultur niesie największy potencjał AME —
+  spina kilka tradycji naraz, zamiast poprzestać na duecie. Minimum pozostaje 2
+  (istniejące duety są legalne), ale **C3 domyślnie sięga po trójkę lub czwórkę**,
+  a duet wybiera świadomie, gdy temat go wymaga. `npm run build` przypomina o tym
+  podpowiedzią, gdy duetów w bazie jest więcej niż składów ≥3;
 * nagłówek w pliku wpisu/aplikacji ma postać: `### **SKIT: TYTUŁ**` (tytuł
   nadaje autor, na podstawie treści; w renderze wersalikami);
 * bezpośrednio pod nim lista uczestników (`Uczestnicy:` + nazwiska);
@@ -320,13 +343,15 @@ dialog, bez zdań-wstępów. Stopka karty (wpisu i skitu) pokazuje wyłącznie d
    powtórzenie **składu osobowego**: dwa skity z identycznym zestawem
    materializacji nie przejdą walidatora (`walidujUnikalnoscSkitow`). Skład o
    jedną osobę mniejszy lub większy jest dozwolony, o ile sam jest unikalny.
-5. **Uczestnicy:** 2–4 materializacje z kartoteki, każda musi zabrać głos
-   (imię w replikach = `imie` z listy uczestników), żadnej postaci spoza składu.
+5. **Uczestnicy:** 2–4 materializacje z kartoteki, **preferowane 3–4** (ADR 0019;
+   §8.2), każda musi zabrać głos (imię w replikach = `imie` z listy uczestników),
+   żadnej postaci spoza składu.
 
 ### 8.4 C3 w Pętli Jakości (ADR 0007)
 
-Po C1 (treść wpisów) i przed C2 (featury): **wybierz 2, 3 lub 4 materializacje
-tak, aby taki zestaw nie miał jeszcze swojego SKITa**, napisz SKIT wg §8.2–§8.3,
+Po C1 (treść wpisów) i przed C2 (featury): **wybierz materializacje tak, aby taki
+zestaw nie miał jeszcze swojego SKITa — domyślnie 3 lub 4 (ADR 0019), duet tylko
+gdy temat go wymaga**, napisz SKIT wg §8.2–§8.3,
 dopisz plik do Bazy Skitów, uruchom `npm run build` + `npm test` i zacommituj.
 Sekcja VI kart materializacji oraz feed „Co nowego" podlinkują się same — z
 indeksu.

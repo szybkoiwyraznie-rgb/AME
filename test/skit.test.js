@@ -11,6 +11,8 @@ import {
   KATALOG_SKITOW,
   SKIT_MAX_SLOW,
   SKIT_MIN_SLOW,
+  SKIT_ZALECANE_UCZESTNIKOW,
+  podpowiedzSkladySkitow,
 } from '../tools/rebuild-index.mjs';
 import { skitWzorzec, SLUGI_WPISOW } from './fixtures/skit-wzorzec.js';
 
@@ -258,4 +260,24 @@ test('limit długości jest jeden: kod = protokół = instrukcja (ADR 0015)', as
   assert.ok(!/maks\. 250 słów/.test(prot), 'PROTOKÓŁ nie może głosić starego limitu');
   assert.match(workflow, /60–300 słów/, 'WORKFLOW');
   assert.match(agents, /maks\. 300 słów/, 'AGENTS §3');
+});
+
+test('skład preferowany 3–4: kod = protokół = instrukcja (ADR 0019)', async () => {
+  const fs = await import('node:fs/promises');
+  assert.equal(SKIT_ZALECANE_UCZESTNIKOW, 3, 'stała zalecanego składu');
+  const prot = await fs.readFile('docs/PROTOKOL.md', 'utf8');
+  const agents = await fs.readFile('AGENTS.md', 'utf8');
+  assert.match(prot, /preferowane 3–4/, 'PROTOKÓŁ §8.2 głosi preferencję 3–4');
+  assert.match(agents, /preferowane 3–4/, 'AGENTS §3 głosi preferencję 3–4');
+});
+
+test('podpowiedzSkladySkitow: liczy duety vs składy ≥3 i zachęca, gdy duetów więcej', () => {
+  const s = (n) => ({ uczestnicy: Array.from({ length: n }, (_, i) => ({ imie: `X${i}`, slug: `x${i}` })) });
+  const przewagaDuetow = podpowiedzSkladySkitow([s(2), s(2), s(2), s(3)]);
+  assert.equal(przewagaDuetow.duety, 3);
+  assert.equal(przewagaDuetow.wieloosobowe, 1);
+  assert.ok(przewagaDuetow.zacheta && /3–4/.test(przewagaDuetow.zacheta), 'zachęta do 3–4');
+  const rownowaga = podpowiedzSkladySkitow([s(2), s(3), s(4)]);
+  assert.equal(rownowaga.zacheta, null, 'gdy składów ≥3 nie mniej niż duetów — bez zachęty');
+  assert.equal(podpowiedzSkladySkitow([]).zacheta, null, 'pusta baza — bez zachęty');
 });
