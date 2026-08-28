@@ -258,6 +258,8 @@
         "zle-oko"
       ],
       "powiazania": [
+        "barbarossa-kyffhaeuser",
+        "drangue-shala",
         "lincoln-imp",
         "selkie-sule-skerry"
       ],
@@ -299,6 +301,7 @@
         "selkie-sule-skerry"
       ],
       "backlinki": [
+        "balor",
         "drangue-shala",
         "egungun"
       ],
@@ -334,6 +337,7 @@
         "lincoln-imp"
       ],
       "backlinki": [
+        "balor",
         "kentaur-pelion",
         "lincoln-imp"
       ],
@@ -671,6 +675,14 @@
     }
   ],
   "aktualizacje": [
+    {
+      "data": "2026-08-28 22:05",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "balor",
+      "tytul": "Balor z Tory Island",
+      "opis": "Dopisano oś proroctwa: druidzi, którzy zatruli oko Balora, przepowiedzieli mu śmierć z ręki wnuka, więc uwięził córkę Ethniu w wieży Tor Mór na Tory Island; z utopionych trojaczków ocalał Lugh, a klęskę upamiętnia jezioro Loch na Súl w Sligo. Dodano źródło oraz obustronne powiązania z Barbarossą (warunek, który sam się spełnia) i drangue (rozstrzygający rzut kamieniem, niebo jako pole bitwy)."
+    },
     {
       "data": "2026-08-28 21:30",
       "typ": "skit",
