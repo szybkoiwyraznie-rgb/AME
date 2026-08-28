@@ -33,6 +33,15 @@ Twarde ograniczenia (z ADR) obowiązujące każdy z tych pomysłów:
 
 ---
 
+## Rozwinięcie koncepcji (sesja M10)
+
+Kierunki B (+ A) rozwinięte w `docs/plans/POMYSL_splot-i-kronika-koncepcja.md`:
+„SPLOT" (świat, który się zmienia) + „KRONIKA" (wcielone spotkania bytów przez
+**subagentów-postacie**, każdy z własnym dossier). Rekomendacja architektury:
+model 3b — rozgrywka jako **dane w repo, popychane przez kolejnych agentów
+Areny** + pregenerowane ilustracje (bez kluczy API w runtime). Każdy nowy SKIT
+jest już darmowym prototypem KRONIKI (metoda embodimentu).
+
 ## Status: „Arena Rezonansu" (idle battler) — WSTRZYMANA
 
 Pierwotny pomysł walki 1:1 (M8, `docs/plans/POMYSL_arena-rezonansu-idle-battler.md`).
