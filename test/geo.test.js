@@ -16,14 +16,19 @@ import {
   przeciecieAntypoludnika,
   SZEROKOSC,
   WYSOKOSC,
+  GRANICA_MERCATORA,
 } from '../app/geo.js';
 
-test('projekcja: rogi świata i punkty kontrolne', () => {
-  assert.deepEqual(projektuj(90, -180), [0, 0]); // lewy górny róg
-  assert.deepEqual(projektuj(-90, 180), [SZEROKOSC, WYSOKOSC]); // prawy dolny
+test('projekcja: rogi świata i punkty kontrolne (Mercator)', () => {
+  const [gx, gy] = projektuj(GRANICA_MERCATORA, -180); // lewy górny róg
+  assert.equal(gx, 0);
+  assert.ok(Math.abs(gy) < 1e-6, `y=${gy}`);
+  const [dx, dy] = projektuj(-GRANICA_MERCATORA, 180); // prawy dolny
+  assert.equal(dx, SZEROKOSC);
+  assert.ok(Math.abs(dy - WYSOKOSC) < 1e-6, `dy=${dy}`);
   const [x, y] = projektuj(52.23, 21.01); // Warszawa
   assert.ok(Math.abs(x - 2010.1) < 0.5, `x=${x}`);
-  assert.ok(Math.abs(y - 377.7) < 0.5, `y=${y}`);
+  assert.ok(Math.abs(y - 1185.39) < 0.5, `y=${y}`);
 });
 
 test('projekcja jest odwracalna', () => {
@@ -246,26 +251,28 @@ test('dekodujKraje: kraje przekraczające szew nie rysują cięciwy przez świat
 
 /* ---- Widok mapy: dopasowanie do kontenera (A1, ADR 0009) ----------------- */
 
-test('dopasujWidok: skala jednostajna, świat mieści się w oknie bez przycinania', () => {
+test('dopasujWidok: skala jednostajna, świat kwadratowy mieści się bez przycinania', () => {
   const szeroki = dopasujWidok({ szerokosc: 1600, wysokosc: 640 }, { x: 0, y: 0, k: 1 });
-  assert.equal(szeroki.szerokosc, 1280, 'świat 1280 px szerokości przy 640 px wysokości');
+  assert.equal(szeroki.szerokosc, 640, 'świat 640 px szerokości przy 640 px wysokości');
   assert.equal(szeroki.wysokosc, 640);
-  assert.ok(Math.abs(szeroki.s - 640 / 1800) < 1e-9, 'skala liczona z wysokości (contain)');
-  assert.equal(szeroki.x, 160, 'wyśrodkowany w poziomie, bez ucinania biegunów');
+  assert.ok(Math.abs(szeroki.s - 640 / SZEROKOSC) < 1e-9, 'skala liczona z wysokości (contain)');
+  assert.equal(szeroki.x, 480, 'wyśrodkowany w poziomie, bez ucinania biegunów');
   assert.equal(szeroki.y, 0);
 
   const waski = dopasujWidok({ szerokosc: 1000, wysokosc: 900 }, { x: 0, y: 0, k: 1 });
-  assert.equal(waski.szerokosc, 1000, 'przy oknie węższym niż 2:1 świat mieści się co do szerokości');
-  assert.equal(waski.wysokosc, 500);
-  assert.equal(waski.y, 200, 'wyśrodkowany w pionie — ani jednego stopnia nie ucinamy');
+  assert.equal(waski.szerokosc, 900, 'przy oknie węższym niż kwadrat świata liczy szerokość');
+  assert.equal(waski.wysokosc, 900);
+  assert.equal(waski.x, 50, 'wyśrodkowany w poziomie');
+  assert.equal(waski.y, 0, 'wyśrodkowany w pionie — ani jednego stopnia nie ucinamy');
   assert.ok(Math.abs(waski.s - szeroki.s) > 0, 'każde okno ma własną skalę bazową');
-  assert.ok(Math.abs(waski.szerokosc / waski.wysokosc - 2) < 1e-9, 'proporcje świata 2:1 zachowane (brak rozciągu)');
+  assert.ok(Math.abs(waski.szerokosc / waski.wysokosc - 1) < 1e-9, 'proporcje świata 1:1 zachowane (brak rozciągu)');
 });
 
 test('dopasujWidok: powiększenie trzyma przesunięcie w granicach świata', () => {
   const d = dopasujWidok({ szerokosc: 1000, wysokosc: 500 }, { x: -99999, y: 500, k: 4 });
   assert.equal(d.k, 4);
-  assert.equal(d.x, 1000 - 1000 * 4, `x=${d.x}`);
+  const oczekiwaneWorld = (Math.min(1000 / SZEROKOSC, 500 / WYSOKOSC) * 4) * SZEROKOSC;
+  assert.equal(d.x, 1000 - oczekiwaneWorld, `x=${d.x}`);
   assert.equal(d.y, 0, 'y dociśnięte do góry świata');
   const minimalny = dopasujWidok({ szerokosc: 1000, wysokosc: 500 }, { x: -50, y: -50, k: 0.2 });
   assert.equal(minimalny.k, 1, 'zoom poniżej dopasowania jest niedozwolony');

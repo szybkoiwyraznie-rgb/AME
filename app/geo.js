@@ -1,23 +1,35 @@
 /**
  * app/geo.js — geometria mapy AME (czyste funkcje, testowalne w Node).
  *
- * Mapa świata w projekcji walcowej równoodległej (equirectangular):
- * układ światów = prostokąt 3600×1800 j.u.; (0,0) w lewym górnym rogu.
+ * Mapa świata w projekcji walcowej Merkatora (jak Google Maps, wyłącznie dla
+ * kuli — Web Mercator bez elipsoidy WGS84). Układ świata = kwadrat
+ * 3600×3600 j.u.; (0,0) w lewym górnym rogu. Szerokości są przycięte do
+ * ±85,05112878° (standardowe granice Web Mercator), dzięki czemu lokalne
+ * proporcje (np. Polski) zgadzają się z tym, co widać na mapach Google.
  * Dekoder TopoJSON (Natural Earth) bez zależności. ADR 0003.
  */
 
 export const SZEROKOSC = 3600;
-export const WYSOKOSC = 1800;
+export const WYSOKOSC = 3600;
+
+/** Górna/dolna szerokość standardowego Web Mercatora (85,05112878°N/S). */
+export const GRANICA_MERCATORA = 85.05112878;
 
 /** [lat, lon] (stopnie dziesiętne) → [x, y] w jednostkach świata. */
 export function projektuj(lat, lon) {
   if (!Number.isFinite(lat) || !Number.isFinite(lon)) throw new RangeError(`Nieprawidłowe współrzędne: ${lat}, ${lon}`);
-  return [((lon + 180) / 360) * SZEROKOSC, ((90 - lat) / 180) * WYSOKOSC];
+  const z = Math.max(-GRANICA_MERCATORA, Math.min(GRANICA_MERCATORA, lat));
+  const x = ((lon + 180) / 360) * SZEROKOSC;
+  // y = H/2 · (1 − atanh(sin φ)/π); at φ=0 y=H/2, φ=±85,051… → 0 lub H.
+  const y = (WYSOKOSC / 2) * (1 - Math.asinh(Math.tan((z * Math.PI) / 180)) / Math.PI);
+  return [x, y];
 }
 
 /** Odwrotnie: [x, y] → [lat, lon] (przydatne np. dla kliknięcia w mapę). */
 export function odwroc(x, y) {
-  return [90 - (y / WYSOKOSC) * 180, (x / SZEROKOSC) * 360 - 180];
+  const lon = (x / SZEROKOSC) * 360 - 180;
+  const lat = (180 / Math.PI) * Math.asin(Math.tanh(Math.PI * (1 - (2 * y) / WYSOKOSC)));
+  return [lat, lon];
 }
 
 /** Dekoduje kwantyzowane łuki TopoJSON na współrzędne absolutne [lon, lat]. */
@@ -60,7 +72,8 @@ export function poskladajPierscien(luki, indeksy) {
  * bieguny albo długości, a otwarcie panelu (który zmieniał szerokość kontenera)
  * powodowało skok skali. Teraz kontener dyktuje viewBox (w pikselach CSS), a
  * `dopasujWidok` dobiera skalę bazową tak, aby cały świat mieścił się w oknie:
- * 1° długości geograficznej = 1° szerokości na ekranie, zawsze.
+ * skala jest jednostajna w obu osiach, więc kwadratowy świat Merkatora nie
+ * jest ani rozciągany, ani ściskany (brak wcinania biegunów).
  */
 
 export const K_MIN = 1;
