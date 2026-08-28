@@ -15,6 +15,7 @@ import {
   przyciskKopiowania,
   linkWidoku,
   esc,
+  tagZFragmantu,
   nastepnyMotyw,
   motywPoczatkowy,
   etykietaMotywu,
@@ -84,6 +85,14 @@ function odswiezFiltr() {
   mapa.podswietl(zbior);
   odswiezLicznik(zbior);
   if (stan.wpis && zbior && !zbior.has(stan.wpis.slug)) zamknijWpis(false);
+}
+
+/** Ustawia aktywny tag (C2, deep-link #tag:…) i odświeża pasek + filtr. */
+function zastosujTag(tag) {
+  const istniejacy = tag && stan.indeks.tagi[tag] ? tag : null;
+  stan.aktywnyTag = istniejacy;
+  $('#tagi').innerHTML = htmlTagow(stan.indeks, stan.aktywnyTag);
+  odswiezFiltr();
 }
 
 function odswiezLicznik(zbior = null) {
@@ -330,9 +339,11 @@ function podepnijZdarzenia() {
     const btn = e.target.closest('[data-tag]');
     if (!btn) return;
     const tag = btn.dataset.tag;
-    stan.aktywnyTag = stan.aktywnyTag === tag ? null : tag;
-    $('#tagi').innerHTML = htmlTagow(stan.indeks, stan.aktywnyTag);
-    odswiezFiltr();
+    const nastepny = stan.aktywnyTag === tag ? null : tag;
+    zastosujTag(nastepny);
+    // C2: filtr tagu jest adresowalny — zapisz go w hashu.
+    if (nastepny) history.replaceState(null, '', `#tag:${nastepny}`);
+    else if (location.hash) history.replaceState(null, '', location.pathname + location.search);
   });
 
   $('#panel').addEventListener('click', (e) => {
@@ -347,9 +358,8 @@ function podepnijZdarzenia() {
     }
     const tag = e.target.closest('[data-tag]');
     if (tag) {
-      stan.aktywnyTag = tag.dataset.tag;
-      $('#tagi').innerHTML = htmlTagow(stan.indeks, stan.aktywnyTag);
-      odswiezFiltr();
+      zastosujTag(tag.dataset.tag);
+      history.replaceState(null, '', `#tag:${tag.dataset.tag}`);
       zamknijWpis(false);
       return;
     }
@@ -428,6 +438,12 @@ function podepnijZdarzenia() {
 
   window.addEventListener('hashchange', () => {
     const fragment = decodeURIComponent(location.hash.replace(/^#/, ''));
+    const tag = tagZFragmantu(fragment);
+    if (tag) {
+      // C2: deep-link do filtra tagów; nieznany tag tylko czyści filtr.
+      zastosujTag(stan.indeks.tagi[tag] ? tag : null);
+      return;
+    }
     if (fragment.startsWith('skit:')) {
       const slug = fragment.slice(5);
       if (stan.indeks.skity?.some((s) => s.slug === slug)) otworzSkit(slug, { zBazy: true });
@@ -486,11 +502,14 @@ async function start() {
   }
   mapa.ustawPinezki(stan.indeks.manifestacje);
   mapa.ustawPolaczenia(stan.indeks.manifestacje);
-  $('#tagi').innerHTML = htmlTagow(stan.indeks, null);
+  const fragment = decodeURIComponent(location.hash.replace(/^#/, ''));
+  const tagStartu = tagZFragmantu(fragment);
+  $('#tagi').innerHTML = htmlTagow(stan.indeks, tagStartu && stan.indeks.tagi[tagStartu] ? tagStartu : null);
+  stan.aktywnyTag = tagStartu && stan.indeks.tagi[tagStartu] ? tagStartu : null;
   odswiezLicznik();
   podepnijZdarzenia();
+  odswiezFiltr();
 
-  const fragment = decodeURIComponent(location.hash.replace(/^#/, ''));
   if (fragment.startsWith('skit:')) {
     const slug = fragment.slice(5);
     if (stan.indeks.skity?.some((s) => s.slug === slug)) otworzSkit(slug);

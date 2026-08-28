@@ -336,6 +336,17 @@ test('linkWidoku: baza + adres widoku, bez reszty z bieżącego adresu', async (
   assert.equal(linkWidoku('', ''), '#', 'brak bazy nie produkuje undefined');
 });
 
+test('tagZFragmantu: czyta #tag:…, odrzuca resztę', async () => {
+  const { tagZFragmantu } = await import('../app/ui.js');
+  assert.equal(tagZFragmantu('tag:woda'), 'woda');
+  assert.equal(tagZFragmantu('tag:woda%20i%20burza'), 'woda%20i%20burza', 'helper nie dekoduje — dekoduje caller');
+  assert.equal(tagZFragmantu('tag:'), null, 'pusty tag nie jest filtrem');
+  assert.equal(tagZFragmantu(''), null);
+  assert.equal(tagZFragmantu('egungun'), null);
+  assert.equal(tagZFragmantu('skit:znak-i-liczba'), null);
+  assert.equal(tagZFragmantu(null), null);
+});
+
 test('przyciskKopiowania: etykieta z celem i bez celu pusty', async () => {
   const { przyciskKopiowania, htmlWarstwyWpisu } = await import('../app/ui.js');
   assert.equal(przyciskKopiowania(''), '');
