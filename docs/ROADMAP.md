@@ -235,6 +235,20 @@ je wyłącznie na wyraźne zlecenie właściciela w sesji.
 - [x] **C3** SKIT „NIEPROSZENI GOŚCIE” (trio Imp × Kentaur × Empusa) — metoda
       embodimentu (prototyp KRONIKI), rejestr lekki.
 
+## M11 (2026-08-28) — rola obserwatora + uczciwe realia AI + treść — ✅ w PR #6
+
+- [x] **Sprostowanie o AI (§1a koncepcji):** agent Areny to jeden proces w turze,
+      nie powołuje niezależnych subagentów; „subagenci-postacie" to metafora metody.
+      Trzy uczciwe opcje: symulowany wielogłos „blind-draft" (dziś), izolacja przez
+      kolejne sesje (wolna), prawdziwa izolacja = 3a (klucze, osobny ADR).
+- [x] **Rola gracza = OBSERWATOR** (decyzja właściciela): tryb domyślny SPLOTU;
+      sprawiedliwość na systemie i bytach, nie na graczu.
+- [x] **Pomysł (11)** do `LUZNE_POMYSLY`: fabuła jako niezależne timeline'y
+      (rozszczepienie/dead-end/krzyżowanie) — Kronika jako graf wątków.
+- [x] **C1** `balor`: oś proroctwa (Ethniu/Tor Mór/Loch na Súl), +1 źródło,
+      obustronne powiązania z barbarossa i drangue (sieć balora domknięta).
+- [x] **C3** SKIT „TRZY ZEGARY” (trio Barbarossa × Balor × Drangue) — blind-draft.
+
 ## F2 — Jakość i ergonomia mapy
 
 - [x] Deep-linki (`#<slug>` — stan mapy i otwartego wpisu; działa od M1, tu

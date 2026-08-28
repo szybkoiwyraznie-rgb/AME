@@ -734,3 +734,49 @@ agentów Areny), a na razie „myślimy, nie kodujemy gry; w międzyczasie treś
 - Stan: `npm test` **144/144**, build/check zielone; indeks: 8 wpisów, **9
   SKITów**, 26 pozycji feedu, 26 tagów. Protokół v1.7. Podpowiedź składów: 5
   duetów vs 4 składy ≥3 (ADR 0019).
+
+## M11 (2026-08-28) — rola obserwatora, uczciwe realia AI, timeline'y + treść
+
+Właściciel odpowiedział na 3 pytania z M10: (1) rola OBSERWATORA ciekawsza
+(nie faworyzuje, bo robi to system + byty); (2) wątpliwość — czy agent Areny
+może powoływać subagentów?; (3) zależy od (2). Plus nowy pomysł: fabuła jako
+niezależne timeline'y.
+
+### Uczciwe sprostowanie o AI (najważniejsze)
+
+- `POMYSL_splot-i-kronika-koncepcja.md` §1a: agent Areny to JEDEN proces w
+  danej turze — nie powołuje niezależnych modeli z odseparowaną pamięcią.
+  „Subagenci-postacie" z M10 to metafora metody pisania, nie byty techniczne.
+  Trzy uczciwe opcje: (1) symulowany wielogłos „blind-draft" (dziś, bez kluczy,
+  izolacja dyscyplinarna + walidator wycieków — §2.4); (2) izolacja przez
+  kolejne sesje (wolna, bez kluczy); (3) prawdziwa izolacja = architektura 3a
+  (klucze w pamięci sesji, osobny ADR łamiący ADR 0003). „Mega możliwości" z
+  pełną izolacją są realne tylko w 3a — decyzja o kluczach należy do właściciela.
+- §3: rola gracza rozstrzygnięta na OBSERWATORA (domyślny tryb SPLOTU); ciężar
+  ciekawości na mechanice i decyzjach AI, nie na wyborach gracza.
+
+### Timeline'y (pomysł 11 właściciela)
+
+- `LUZNE_POMYSLY_NA_PRZYSZLOSC.md` (11): opowieść jako wiele niezależnych
+  timeline'ów — rozszczepianie, zamieranie (dead-end), krzyżowanie. Kronika
+  jako graf wątków (jak commity w gicie): `rodzice: [...]`, status wątku;
+  determinizm zachowany (stan wątku z jego przodków). Rozwija pomysły 4 i 6.
+
+### C1 — pogłębienie `balor` (research www, ADR 0008)
+
+- Oś proroctwa: druidzi zatruli oko i przepowiedzieli śmierć z ręki wnuka →
+  Ethniu uwięziona w Tor Mór na Tory Island, utopione trojaczki, ocalenie
+  Lugha, Loch na Súl z wypalonego oka (Sligo). +1 źródło. Sieć balora domknięta:
+  obustronne powiązania z barbarossa (warunek, który sam się spełnia) i drangue
+  (rozstrzygający rzut kamieniem; niebo jako pole bitwy).
+
+### C3 — SKIT „TRZY ZEGARY" (trio, blind-draft)
+
+- Barbarossa × Balor × Drangue — skład 3-osobowy, unikalny, 225 słów; pierwszy
+  napisany wg dyscypliny blind-draft (§2.4): każdy głos rozumuje tylko z
+  własnego dossier. Motyw: trzy zegary — znak z góry, rzut kamienia, dyżur
+  przy pogodzie.
+
+- Stan: `npm test` **144/144**, build/check zielone; indeks: 8 wpisów, **10
+  SKITów**, 28 pozycji feedu, 26 tagów. Protokół v1.7. Składy wieloosobowe:
+  5 vs 5 duetów (ADR 0019 — równowaga osiągnięta).
