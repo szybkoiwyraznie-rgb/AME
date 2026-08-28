@@ -1,7 +1,7 @@
 {
   "wersja": 3,
   "liczba": 10,
-  "liczbaSkitow": 13,
+  "liczbaSkitow": 14,
   "kanon": {
     "kategorie": [
       {
@@ -326,7 +326,8 @@
       "skity": [
         "kalendarz-powrotow",
         "trzy-stoly",
-        "trzy-zegary"
+        "trzy-zegary",
+        "znak-burzy"
       ]
     },
     {
@@ -367,7 +368,8 @@
         "dwie-skory",
         "godzina-otwarcia",
         "kurz-i-piora",
-        "trzy-zegary"
+        "trzy-zegary",
+        "znak-burzy"
       ]
     },
     {
@@ -479,7 +481,8 @@
       ],
       "obraz": "assets/wizualizacje/indra.jpg",
       "skity": [
-        "dwa-grzbiety"
+        "dwa-grzbiety",
+        "znak-burzy"
       ]
     },
     {
@@ -832,6 +835,23 @@
       "data": "2026-08-28 22:25"
     },
     {
+      "slug": "znak-burzy",
+      "tytul": "ZNAK BURZY",
+      "temat": "kto ma prawo wrócić, gdy nadejdzie grzmot",
+      "uczestnicy": [
+        "barbarossa-kyffhaeuser",
+        "drangue-shala",
+        "indra"
+      ],
+      "imiona": [
+        "Indra",
+        "Drangue",
+        "Barbarossa"
+      ],
+      "slow": 221,
+      "data": "2026-08-28 22:30"
+    },
+    {
       "slug": "znak-i-liczba",
       "tytul": "ZNAK I LICZBA",
       "temat": "kto stawia znak na dziecku: złoty łańcuch przeciw rozkazowi topienia",
@@ -879,6 +899,14 @@
       "slug": "selkie-sule-skerry",
       "tytul": "Wielki Selkie z Sule Skerry",
       "opis": "Uporządkowano Dokumentację (usunięto powtórzone źródło) i dopisano, że ballada bywa częścią epickiego cyklu „Lady Odivere”, a jej pentatoniczną melodię spisał Otto Andersson od Johna Sinclaira z Flotty. Domknięto sieć powiązań: selkie odsyła teraz także do empusy (przemiana przez okrycie, z odwrotnym rachunkiem) i do kentaura (dwa ciała noszone naprzemiennie albo naraz)."
+    },
+    {
+      "data": "2026-08-28 22:30",
+      "typ": "skit",
+      "akcja": "nowy",
+      "slug": "znak-burzy",
+      "tytul": "ZNAK BURZY",
+      "opis": "SKIT — skład: Indra, Drangue, Barbarossa"
     },
     {
       "data": "2026-08-28 22:25",
