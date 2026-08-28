@@ -1,4 +1,4 @@
-# 0009 — Adaptacyjny widok mapy w pikselach kontenera i cięcie geometrii na antypołudniku
+# 0009 — Adaptacyjny widok mapy w pikselach kontenera i cięcie geometrii na szwie (±180°)
 
 - Status: Zaakceptowana
 - Data: 2026-08-28

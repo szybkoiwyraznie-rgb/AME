@@ -58,6 +58,13 @@ pushuj od razu; przed długimi operacjami upewnij się, że praca jest wypchnię
   (np. `/home/user/msg.txt`), nigdy w katalogu repo.
 - Pracuj wyłącznie na gałęzi sesji; nigdy nie pushuj do `main`; nigdy
   `--force` (ADR 0004).
+- **CI może milczeć.** Zmierzony 2026-08-28: `ci.yml` na `main` był
+  nieprawidłowym YAML (komentarz HTML z przepisu) i wszystkie runy kończyły się
+  `failure` w 0 s bez jobs — czyli brama `npm test` + aktualność indeksu wcale
+  nie działała. Stan bramy sprawdzaj: `gh workflow list --repo …` i
+  `gh run list --repo …` (run bez logów = plik się nie parsuje). Agent nie ma
+  uprawnień `workflows` — plik na `main` poprawia właściciel (receptura:
+  `docs/setup/ci-workflow.yml`).
 - **`git checkout <plik>` cofa niezacommitowane zmiany w tym pliku** —
   zacommituj pracę przed takimi operacjami.
 
@@ -92,7 +99,8 @@ pushuj od razu; przed długimi operacjami upewnij się, że praca jest wypchnię
 
 1. `git log --oneline -3` i `git status` — gdzie jestem, czy czysto.
 2. Lektura obowiązkowa wg `AGENTS.md` §0 (całe pliki).
-3. `npm test` i `npm run build` — potwierdź zieloność przed zmianami.
+3. `npm test` i `npm run build` — potwierdź zieloność przed zmianami;
+   dodatkowo `gh run list` — czy CI na `main` faktycznie uruchamia jobs (L9).
 4. Otwórz PR gałęzi sesji (ADR 0004), zanim zaczniesz kodować.
 5. Audyt poprzedniego scalonego PR przed nową pracą.
 6. Nie pytaj „co robimy?” — brak zlecenia po audycie = **Pętla Jakości**

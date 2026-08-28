@@ -1,11 +1,15 @@
-<!-- 
-  PRZEPIS CI (do jednorazowego wklejenia przez właściciela).
-  Token agenta (GitHub App) nie ma uprawnień `workflows` i nie może
-  utworzyć pliku w .github/workflows/ — dlatego przepis leży tutaj.
-  Włączenie: skopiuj zawartość (bez komentarza HTML) do
-  .github/workflows/ci.yml na gałęzi main. Od tej chwili CI pilnuje
-  każdego PR (AGENTS.md §2, ADR 0004).
--->
+# Receptura CI — plik docelowy: .github/workflows/ci.yml na gałęzi `main`.
+#
+# Stan: AKTYWNE NA MAIN, ale ZEPSUTE (od 2026-08-27): plik na `main` zaczynał
+# się od bloku <!-- … --> przeniesionego z tej receptury, to nie jest komentarz
+# YAML, więc workflow się nie parsuje i wszystkie runy kończą się `failure`
+# w 0 s bez jobs (L9). Naprawa po stronie właściciela: nadpisać
+# .github/workflows/ci.yml poniższą zawartością (bez tego akapitu) — token
+# agenta nie ma uprawnień `workflows`.
+#
+# Uruchamia: npm test, npm run build oraz kontrolę, że zcommitowany
+# data/index.json jest zgodny z wpisami (ADR 0002).
+
 name: CI
 
 on:
@@ -26,4 +30,9 @@ jobs:
       - name: Budowa indeksu
         run: npm run build
       - name: Indeks aktualny (bez niezacommitowanych zmian)
-        run: npm run check && git diff --exit-code data/index.json || (echo "data/index.json niezgodny z wpisami — uruchom npm run build i wcommituj"; exit 1)
+        run: |
+          npm run check
+          git diff --exit-code data/index.json || {
+            echo "data/index.json niezgodny z wpisami — uruchom npm run build i wcommituj";
+            exit 1;
+          }

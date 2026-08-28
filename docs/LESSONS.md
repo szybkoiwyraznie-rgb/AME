@@ -61,3 +61,45 @@ po cichu trafia niezaktualizowane pliki.
 i czytaj jego STDERR; przed commitem zweryfikuj efekt (np. wymiary obrazu,
 pole `obraz` w JSON); komunikat commita opisuje stan PO weryfikacji, nie
 zamiar.
+
+## L7 (2026-08-28, AME) — geometria przez antypołudnik: cięciwa zamiast lądu
+
+**Objaw:** Rosja „rozlewa się” na dwa poziome pasy idące przez całą szerokość
+mapy, a na wysokości Madagaskaru widać nienaturalnie gruby równoleżnik.
+**Przyczyna:** Natural Earth zapisuje pierścienie przekraczające ±180° z
+przeskokiem ~360° między kolejnymi punktami (w `countries-50m.json`: Rosja
+pierścień 17 — skoki 359,87° i 359,93°; Fidżi — 10-punktowy pierścień na
+-16,45°, czyli owy „gruby równoleżnik”; Antarktyda — kontur rozcięty na szwie).
+Linearna projekcja walcowa łączy takie punkty odcinkiem przez cały świat.
+**Reguła:** każdą geometrię kulistą wchodzącą do projekcji płaskiej tnij na
+szwie (`potnijPierscien` w `app/geo.js`, ADR 0009), a nie maskuj w CSS
+(`clip-path`). Niezmienniki trzymaj w testach na prawdziwym pliku: brak punków
+poza prostokątem świata i brak odcinka dłuższego niż połowa szerokości mapy
+(poza leżącymi na ramach).
+
+## L8 (2026-08-28, AME) — jednostki w SVG: px w grupie skalowanej to nie px na ekranie
+
+**Objaw:** etykieta pinezki `font-size: 15px` była nieczytelna (~6 px), siatka
+grubiała przy zbliżeniu, w pinezkę nie dało się trafić kursorem.
+**Przyczyna:** rozmiary podano w jednostkach świata (viewBox 3600×1800), a
+viewBox był skalowany do okna (~0,42 px/j.u.), więc wszystko wewnątrz było
+~2,4× mniejsze niż wskazuje zapis; brak było też obszaru trafienia i
+`vector-effect: non-scaling-stroke` dla linii.
+**Reguła:** rozstrzygaj jednostki u źródła — model widoku z ADR 0009 (viewBox =
+piksele kontenera, elementy interfejsu mapy w px CSS przez kompensację skali).
+„Powiększyć fontem” nie wolno: to mnożnik korygujący błąd, a nie decyzja.
+
+## L9 (2026-08-28, AME) — przepis CI wklejony z komentarzem HTML: brama milczała
+
+**Objaw:** lokalne `npm test` zielone, a wszystkie runy Actions
+(`33148046060`, `33150562702`, `33155771652`) to `failure` w 0 s, zero jobs,
+brak logów.
+**Przyczyna:** `.github/workflows/ci.yml` na `main` zaczyna się od bloku
+`<!-- … -->` przeniesionego razem z przepisu `docs/setup/ci-workflow.yml`; to nie
+jest komentarz YAML, więc workflow się nie parsuje i NIE uruchamia żadnego kroku
+(w tym kontroli aktualności `data/index.json`).
+**Reguła:** audyt poprzedniego PR (ADR 0004 pkt 2) sprawdza, **czy brama
+działa**, a nie tylko czy diff jest sensowny: `gh workflow list` i
+`gh run list` na dowód, że jobs istnieją. Przepisy plików konfiguracyjnych
+przechowujemy w wersji gotowej do wklejenia — komentarze w składni docelowej
+(`#` w YAML), bez opakowywania w znaczniki innego języka.
