@@ -21,6 +21,9 @@ app/
   styles.css                — tokeny palety: motyw ciemny i jasny (bez webfontów)
 assets/
   map/countries-50m.json    — Natural Earth jako TopoJSON (vendoring, PD/ISC)
+  map/rivers-2km5.json      — obszary rzeczne OSM (GeoJSON MultiPolygon, geo-maps)
+  map/lakes-2km5.json       — obszary jezior OSM (GeoJSON MultiPolygon, geo-maps)
+  map/miasta.json           — miasta ≥100 tys. lub stolice (world-cities-json, CC BY 4.0)
   map/LICENSE.world-atlas   — licencja pakietu world-atlas
   wizualizacje/<slug>.jpg   — wygenerowane obrazy 21:9 (≤ 2 MB)
 data/
@@ -138,6 +141,17 @@ dzieje się w przeglądarce na życzenie — determinizm indeksu (ADR 0002) niet
   napisów (M6/A2).
 - Łuki powiązań: krzywa Q z punktu kontrolnego uniesionego prostopadle nad
   środek segmentu (0.18 długości) — czytelne przy wielu liniach.
+- **Warstwy tematyczne (ADR 0020).** `g.warstwy-szczegolow` nad kaflami
+  `.kraje` zawiera `.rzeki`, `.jeziora`, `.miasta`, `.poi`. Warstwy ładowane są
+  asynchronicznie dopiero po przekroczeniu progu zoomu (`PROGI_WARSTW`), a ich
+  widoczność zależy od `k` (LOD treści): rzeki/jeziora od `k=4`, wielkie miasta
+  od `k=4`, średnie od `k=7`, drobne od `k=10`, POI od `k=8`. Punkty miast i POI
+  kompensują skalę `scale(1/s)` jak pinezki; linie wodne używają
+  `vector-effect: non-scaling-stroke`. `app.js` spina przełącznik
+  `#przycisk-warstwy` z checkboxami (stan: `{rzeki, jeziora, miasta, poi}`); dane
+  niezmieniane przez przełącznik wracają z pamięci i nie są pobierane ponownie.
+  W tej iteracji dane istnieją dla rzek, jezior i miast; drogi, szczyty, lasy
+  i wysokość n.p.m. są poza zakresem (patrz ADR 0020 i `docs/ASSETS.md`).
 - Kartoteka bytu jest warstwą przykrywającą okno (ADR 0010), więc otwarcie wpisu
   nie zmienia rozmiaru kontenera mapy.
 

@@ -279,6 +279,25 @@ je wyłącznie na wyraźne zlecenie właściciela w sesji.
       +1 źródło, powiązanie z empusą (drugi backlink kentaura).
 - [x] **C3** SKIT „KOMU WOLNO PATRZEĆ” (trio Balor × Empusa × Imp) — blind-draft.
 
+## M14 (2026-08-28) — mapa granularna: warstwy tematyczne (ADR 0020) — ✅ w PR #7
+
+- [x] **Zlecenie właściciela:** mapa o większej granularności bez etykiet
+      państw; przedmiot: miasta, rzeki, POI typu szczyty, główne drogi,
+      opcjonalnie lasy i wysokość n.p.m.
+- [x] **Badanie źródeł:** dostępne offline to `@geo-maps/earth-rivers-*` i
+      `@geo-maps/earth-lakes-*` (obszary OSM, MIT/ODbL) oraz
+      `world-cities-json` (CC BY 4.0). Brak pakietów roads/peaks/forests/
+      relief (`E404`), brak DEM w `@freetiler/nasa-bluemarble` (sam raster).
+- [x] **Wdrożenie:** warstwy `.rzeki`, `.jeziora`, `.miasta`, `.poi` w `map.js`,
+      LOD treści (`woda: 4`, miasta `4/7/10`), asynchroniczne `fetch` w `app.js`,
+      panel `#przycisk-warstwy`, style CSS dla obu motywów, assety
+      `rivers-2km5.json`, `lakes-2km5.json`, `miasta.json`, testy przed i po.
+- [x] **Obecny zakres:** rzeki + jeziora + miasta. Drogi, szczyty, lasy
+      i wysokość n.p.m. wymagają źródła offline — opisane jako plan
+      w `docs/ASSETS.md` i ADR 0020.
+- [ ] Drogi, POI/szczyty, kompleksy leśne i kolorowa wysokość n.p.m.
+      (po znalezieniu wiarygodnego źródła danych offline).
+
 ## F2 — Jakość i ergonomia mapy
 
 - [x] Deep-linki (`#<slug>` — stan mapy i otwartego wpisu; działa od M1, tu
