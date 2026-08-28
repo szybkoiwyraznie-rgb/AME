@@ -356,3 +356,73 @@ całe drzewo, dlatego audyt prowadzono plik po pliku na stanie `main` (361e9be).
 zielone, CI na PR #4 zielone; PR #4 (gałąź `arena/01a0482e-ame`) zawiera plan,
 audyt PR #2/#3, naprawę F1–F3 i lekcje. Decyzja o scaleniu należy do
 właściciela.
+
+## M6 (2026-08-28) — audyt PR #4 + zlecenia: badge pinezek A1–A3, godzina w „Co nowego” (B)
+
+**Zlecenie (czat):** A1 — treść badge na pinezkach ma się pokazywać tylko po
+najechaniu (nie na stałe od pewnego zoomu); A2 — click-and-drag po mapie
+zaznacza napisy badge'ów „w dość losowy sposób” — do wyeliminowania; A3 —
+napisy badge chowają się pod inną pinezką, ma być odwrotnie (pinezki pod
+napisami); B — sekcja „Co nowego” ma podawać datę i godzinę aktualizacji.
+
+**Audyt PR #4 (81ece62, scalony):** diff plik po pliku (`app/map.js`,
+`app/styles.css`, `index.html`, `README.md`, `test/mapa-css.test.js` — nowy,
+`test/pinezka.test.js`, `test/ui.test.js`, dokumentacja). Root cause M5
+usunięty u źródła z obu stron kontraktu (nazwa `swiat`, selektor `div.warstwa`),
+testy 111/111, CI zielone. Bez zastrzeżeń. Obserwacja: toggle `przyblizona`
+staje się martwy po zleceniu A1 — usunięty w M6 (nowa decyzja właściciela,
+nie defekt PR #4).
+
+**A1 (badge tylko po najechaniu):** usunięta reguła
+`.mapa-svg.przyblizona .pinezka .etykieta` i toggle klasy w `map.js` — etykieta
+pokazuje się na `widoczna` (pointerenter/pointerleave + focus/blur na pinezce,
+bo pinezka jest fokusowalna) i na `wybrana` (zaznaczenie). Nowy test
+`test/pinezka.test.js` (etykiety A1: hover/fokus/wybrana/przygaszona) — razem
+5 nowych testów jednostkowych.
+
+**A2 (brak zaznaczania przy dragu):** `.mapa-svg { user-select: none;
+-webkit-user-select: none }` — tekst w SVG mapy to nie dokument do zaznaczania.
+Kontrakt w `test/mapa-css.test.js` (reguła `user-select: none` musi istnieć).
+Weryfikacja live: CDP-drag 150 px → `selection.type === 'None'`.
+
+**A3 (napisy nad pinezkami):** badge'e przeniesione z grup pinezek do osobnej
+grupy `.etykiety` wewnątrz grupy świata, w DOM **za** `.pinezki` — SVG maluje
+w kolejności dokumentu, więc żaden badge nie schowa się pod żadną pinezką.
+Sprzęgnięcie stanów klasami na etykiecie (`widoczna`/`wybrana`/`przygaszona`)
+w `map.js`; transform etykiety = transform pinezki (ten sam punkt świata).
+Kontrakty: kolejność malowania w `test/pinezka.test.js`, kotwica `etykiety`
+w `test/mapa-css.test.js`. Dowód pikselowy (headless Chromium, k≈1.6, hover na
+balorze): głowa selkie siedząca w strefie badge balora ma kolor jasnych plecków
+badge `[253,249,238]`, nie wypełnienia pinezki `#96331c` — napis maluje się
+na wierzchu.
+
+**B (data i godzina w „Co nowego”):** ADR 0017 + protokół MFM **v1.5**.
+`meta.utworzono` i `meta.modyfikacje[].data` przyjmują `RRRR-MM-DD` **albo**
+`RRRR-MM-DD GG:MM` (walidator odrzuca `24:00`, `12:60`, `T`, sekundy, podwójne
+spacje; forma dzienna legalna — kompatybilność wstecz, bez migracji). Sort
+feedu porównuje daty **po znakach** zamiast `localeCompare` (porządek totalny
+mieszanki formatów niezależny od tabel ICU — determinizm ADR 0002): dzień
+z godziną wygrywa z dniem bez godziny, wśród godzin kolejność chronologiczna,
+`sekwencja` (L11) pozostaje rozstrzygaczem remisów. Feed renderuje datę
+verbatim (`<time datetime="2026-08-28 14:32">` — poprawny HTML). Dokumenty:
+PROTOKÓŁ §9, AGENTS §3, WORKFLOW §meta, README + stopka aplikacji → v1.5
+(kontrakt L14 pilnuje zgodności), ARCHITECTURE (sort + warstwa `.etykiety`),
+ROADMAP (sekcja M6). Rygor dla przyszłych sesji: nowe `meta` podaje godzinę;
+godzina pochodzi z treści, nigdy z zegara builda.
+
+**Weryfikacja live (headless Chromium 149, 14 checków OK):** kolejność
+`siatka → kraje → luki → pinezki → etykiety`, etykiety nie w grupach pinezek,
+6/6, ukryte na starcie i po przybliżeniu, pokazane po prawdziwym hoverze
+myszką (klasa `widoczna`), schowane po odlocie, drag bez zaznaczenia i z
+przesunięciem widoku, feed z deep-linku (12 pozycji), zero błędów JS.
+Pułapki opisane w L15 (nachodzące pola trafień — kursor „nad balorem” często
+chwyta selkie; klik otwiera kartotekę; przyciski zoomu celują w środek okna).
+
+**Lekcje:** L15 (hit-test pinezek vs obliczone współrzędne). Notatka
+środowiskowa w `ENVIRONMENT` §3 (płytki klon: audyt wymaga
+`git fetch origin main --depth`).
+
+**Stan na koniec M6:** `npm test` 119/119, `npm run build`/`npm run check`
+zielone, indeks deterministyczny (drzewo czyste po buildzie). PR #5 (gałąź
+`arena/01a04853-ame`): plan, audyt PR #4, mapa A1–A3, godzina B (ADR 0017,
+v1.5), dokumenty sesji. Decyzja o scaleniu należy do właściciela.

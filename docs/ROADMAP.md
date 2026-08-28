@@ -114,6 +114,19 @@ je wyłącznie na wyraźne zlecenie właściciela w sesji.
       `walidujTagi`, indeks v3, pasek pasmami kategorii, chipy ze skrótem
       kategorii w karcie; migracja tagów wszystkich sześciu wpisów (ADR 0016).
 
+## M6 (2026-08-28) — badge pinezek A1–A3 + godzina w „Co nowego” (B) — ✅ w PR #5
+
+- [x] **A1** badge nazwy tylko po najechaniu / fokusu klawiatury i na
+      zaznaczonej pinezce — stałe pokazywanie od progu zoomu (klasa
+      `przyblizona`) zniesione.
+- [x] **A2** przeciąganie mapy nie zaznacza napisów badge'ów:
+      `user-select: none` na `.mapa-svg`.
+- [x] **A3** napisy nad pinezkami: grupa `.etykiety` w DOM za `.pinezki`
+      (kolejność malowania SVG); zweryfikowane pikselowo w headless Chromium.
+- [x] **B** „Co nowego” podaje datę i godzinę zdarzenia (ADR 0017, protokół
+      v1.5): `meta` przyjmuje `RRRR-MM-DD GG:MM`, sort dat po znakach
+      (deterministyczny), feed renderuje `datetime` z godziną.
+
 ## F2 — Jakość i ergonomia mapy
 
 - [x] Deep-linki (`#<slug>` — stan mapy i otwartego wpisu; działa od M1, tu

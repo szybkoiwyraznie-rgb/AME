@@ -86,8 +86,10 @@ meta: { utworzono, autor?, modyfikacje: [] }
 Plik `data/index.json` (wersja 3) dokłada do tego: `kanon.kategorie[]`,
 `tagi{tag:{kategoria,opis,wpisy}}`, `skity[]` (skróty: slug,
 tytul, imiona, slow, data), `manifestacje[].skity` (sekcja VI) i `aktualizacje[]`
-(feed „Co nowego»). Sort feedu liczy chronologię zdarzeń: data malejąco →
-`sekwencja` w obrębie pliku malejąco (utworzenie = 0, kolejne
+(feed „Co nowego»). Sort feedu liczy chronologię zdarzeń: data malejąco
+(porównanie po znakach — format `RRRR-MM-DD` albo `RRRR-MM-DD GG:MM`, ADR 0017:
+dzień z godziną wygrywa z dniem bez godziny, wśród godzin kolejność
+chronologiczna) → `sekwencja` w obrębie pliku malejąco (utworzenie = 0, kolejne
 `meta.modyfikacje` = 1..n) → typ (skity przed wpisami) → slug; klucz
 `sekwencja` służy tylko sortowaniu i nie trafia do pliku indeksu.
 
@@ -115,6 +117,15 @@ w plikach JSON i w feedzie — karty nie są miejscem na notatki robocze sesji.
 - Elementy interfejsu mapy (pinezki, badge nazwy, obrysy) są w **pikselach CSS**:
   grupa pinezki kompensuje skalę `scale(1/s)`, linie używają
   `vector-effect: non-scaling-stroke` (L8).
+- **Badge'e nazw mieszkają w osobnej grupie `.etykiety`** wewnątrz grupy świata,
+  w DOM **za** grupą `.pinezki` — SVG maluje elementy w kolejności dokumentu,
+  więc napisy nigdy nie chowają się pod inną pinezką (M6/A3). Widzialność
+  sterują klasy na elemencie etykiety: `widoczna` (najechanie wskaźnikiem lub
+  fokus klawiatury), `wybrana` (zaznaczona pinezka), `przygaszona` (filtr) —
+  sprzęgane z pinezką zdarzeniami w `map.js`, nie zagnieżdżaniem. Stałe
+  pokazywanie etykiet od progu zoomu (dawna klasa `przyblizona`) zniesione
+  (M6/A1), a `.mapa-svg` ma `user-select: none`, by przeciąganie nie zaznaczało
+  napisów (M6/A2).
 - Łuki powiązań: krzywa Q z punktu kontrolnego uniesionego prostopadle nad
   środek segmentu (0.18 długości) — czytelne przy wielu liniach.
 - Kartoteka bytu jest warstwą przykrywającą okno (ADR 0010), więc otwarcie wpisu

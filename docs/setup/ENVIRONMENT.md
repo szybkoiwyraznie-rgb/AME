@@ -69,6 +69,11 @@ pushuj od razu; przed długimi operacjami upewnij się, że praca jest wypchnię
   **opisać**, nie żeby komuś coś zlecać (L12).
 - **`git checkout <plik>` cofa niezacommitowane zmiany w tym pliku** —
   zacommituj pracę przed takimi operacjami.
+- **Klon sesji jest płytki (depth=1) i single-branch** (mierzone 2026-08-28,
+  sesja M6: w `git log` tylko scalony commit M5, brak refa `origin/main`).
+  Audyt poprzedniego scalonego PR (ADR 0004 pkt 2) wymaga rodzica scalonego
+  commita: `git fetch origin main --depth=50`, potem dopiero
+  `git diff <sha>^..<sha>`. Bez tego `81ece62^` = „unknown revision”.
 
 ## 4. Sieć i narzędzia
 
