@@ -241,7 +241,10 @@ test('feed w repo: godzina rozstrzyga nad zapisami dziennymi; wśród dziennych 
   // przestało być niezmiennikiem — liczy się dosłowna chronologia zapisów.
   const maleje = (a, b) => (a > b) - (a < b);
   assert.ok(feed.every((f, i) => i === 0 || maleje(feed[i - 1].data, f.data) >= 0), 'daty w feedzie maleją kodowo, pozycja po pozycji');
-  assert.equal(feed[0].akcja, 'nowa', 'najnowszym zdarzeniem w kartotece jest utworzenie wpisu (ma najpóźniejszą godzinę)');
+  // Na szczycie feedu stoi zdarzenie o najpóźniejszym znaczniku czasu (data +
+  // ewentualna godzina) — czy to utworzenie, czy zmiana, rozstrzyga dosłowna
+  // chronologia zapisów (ADR 0017), nie ranga typu akcji.
+  assert.equal(feed[0].data, feed.map((f) => f.data).sort((a, b) => maleje(b, a))[0], 'pierwsza pozycja feedu ma najpóźniejszy znacznik czasu');
 });
 
 test('limit długości jest jeden: kod = protokół = instrukcja (ADR 0015)', async () => {

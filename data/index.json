@@ -298,7 +298,8 @@
         "selkie-sule-skerry"
       ],
       "backlinki": [
-        "drangue-shala"
+        "drangue-shala",
+        "egungun"
       ],
       "obraz": "assets/wizualizacje/barbarossa-kyffhaeuser.jpg",
       "skity": []
@@ -360,7 +361,11 @@
         "pamiec",
         "przemiana"
       ],
-      "powiazania": [],
+      "powiazania": [
+        "barbarossa-kyffhaeuser",
+        "empusa-korynt",
+        "selkie-sule-skerry"
+      ],
       "backlinki": [
         "barbarossa-kyffhaeuser",
         "empusa-korynt",
@@ -396,7 +401,9 @@
         "egungun",
         "selkie-sule-skerry"
       ],
-      "backlinki": [],
+      "backlinki": [
+        "egungun"
+      ],
       "obraz": "assets/wizualizacje/empusa-korynt.jpg",
       "skity": []
     },
@@ -487,6 +494,7 @@
       "backlinki": [
         "balor",
         "barbarossa-kyffhaeuser",
+        "egungun",
         "empusa-korynt",
         "kentaur-pelion"
       ],
@@ -576,6 +584,14 @@
     }
   ],
   "aktualizacje": [
+    {
+      "data": "2026-08-28 16:20",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "egungun",
+      "tytul": "Egungun",
+      "opis": "Rozbudowa opisu: skąd bierze się „moce ukryte” w nazwie, jak narastają warstwy płócien pokolenie po pokoleniu (najstarsze przy ciele, pierwsza warstwa jak całun grzebalny), nieludzki głos zza zasłony, wir tańca jako przejście między światami oraz role Alagby, kapłanki i śpiewaczek oríkì. Dopisano trzy źródła z adresami (Bolaji Campbell „Fabric of Immortality”, Wikipedia, Muzeum Snite) i powiązania z selkie, empusą oraz Barbarossą."
+    },
     {
       "data": "2026-08-28 16:05",
       "typ": "manifestacja",

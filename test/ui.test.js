@@ -294,6 +294,13 @@ test('htmlStopki: data utworzenia i data ostatniej modyfikacji, nic więcej', as
   );
   assert.equal(htmlStopki({ utworzono: '2026-01-01', modyfikacje: [] }), '<footer class="meta-wpisu">utworzono 2026-01-01</footer>');
   assert.equal(htmlStopki({}), '<footer class="meta-wpisu">utworzono ?</footer>');
+  // ADR 0017: meta może nieść godzinę, ale stopka pokazuje sam dzień —
+  // godzina zdarzenia żyje w feedzie „Co nowego”, nie w karcie (PROTOKÓŁ §8.1).
+  assert.equal(
+    htmlStopki({ utworzono: '2026-01-01 09:30', modyfikacje: [{ data: '2026-03-03 16:20', opis: 'p' }] }),
+    '<footer class="meta-wpisu">utworzono 2026-01-01 · zmieniono 2026-03-03</footer>',
+    'stopka obcina godzinę z utworzono i z ostatniej modyfikacji'
+  );
 });
 
 test('karta bytu: brak notatek roboczych w stopce i w sekcji VI', async () => {
