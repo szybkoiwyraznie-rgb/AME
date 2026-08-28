@@ -102,7 +102,9 @@ jest komentarz YAML, więc workflow się nie parsuje i NIE uruchamia żadnego kr
 działa**, a nie tylko czy diff jest sensowny: `gh workflow list` i
 `gh run list` na dowód, że jobs istnieją. Przepisy plików konfiguracyjnych
 przechowujemy w wersji gotowej do wklejenia — komentarze w składni docelowej
-(`#` w YAML), bez opakowywania w znaczniki innego języka.
+(`#` w YAML), bez opakowywania w znaczniki innego języka. Stwierdzenie „brama nie
+działa” jest **opisem stanu**, nie poleceniem dla właściciela — dalsze kroki
+reguluje L12.
 
 ## L10 (2026-08-28, AME) — delegacja klików: najbliższy traf, nie kolejność atrybutów
 
@@ -130,3 +132,20 @@ obrzębie pliku (0 = `utworzono`, k+1 = k-ty wpis `modyfikacje`, bo ta tablica
 jest dopisywana chronologicznie) i sortuj `data desc → sekwencja desc → typ →
 slug`. Klucz sortujący usuń przed zapisem indeksu, żeby nie generował szumu w
 diffach (PROTOKÓŁ §9, ADR 0014).
+
+## L12 (2026-08-28, AME) — audyt nie może produkować próśb do właściciela o czynności jednorazowe
+
+**Objaw:** sesja zgłosiła w audycie i w liście „otwarte”, że `.github/workflows/ci.yml`
+na `main` się nie parsuje, i poprosiła właściciela o naprawę. Właściciel słusznie
+zauważył: ten plik wkleił **raz** (2026-08-27, zgodnie z procedurą F0) i nie zamierza
+do niego wracać — a awarię zawinił przepis w repo (blok `<!-- -->` zamiast komentarza
+YAML), czyli strona agentów.
+**Przyczyna:** potraktowanie faktu środowiskowego jako zadania właściciela. Do tego
+agent fizycznie nie może tego naprawić: GitHub odrzuca każdy zapis do
+`.github/workflows/**` bez uprawnienia `workflows` (push → `remote rejected`,
+`gh api …/contents/` → 403). Próba „wrzucę naprawkę do PR-a” też jest z góry skazana.
+**Reguła:** audyt opisuje stan, nie rozdziela pracy. Jeśli naprawa leży poza
+uprawnieniami agenta i poza jego zakresem — **zapisz to jako znany, zamknięty fakt**
+(w `docs/WORKFLOW.md`, `ENVIRONMENT`), ewentualnie zostaw gotową treść w repo do
+skopiowania, ale nie odnawiaj żądania w PR-ach, handoffach i listach „otwarte”.
+Bramą jakości pozostają lokalne `npm test` + `npm run build` + `npm run check`.

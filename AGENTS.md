@@ -151,6 +151,12 @@ Ponadto:
   właściciela; wygenerowane wizualizacje zapisuj jako JPEG ≤ 2 MB w
   `assets/wizualizacje/`. Licencje assetów zewnętrznych dokumentuj w
   `docs/ASSETS.md`.
+- **Nie przenoś pracy na właściciela.** Pliki w `.github/workflows/` są fizycznie
+  poza zasięgiem agenta (token GitHub App dostaje 403 `workflows` przy pushu i przy
+  API) i poza zakresem próśb: brak zielonego CI **nie jest blokerem sesji ani
+  powodem, by prosić o zmianę pliku**. Bramą jakości są `npm test` + `npm run build`
+  + `npm run check` w każdej sesji oraz testy w PR. Stan CI opisz jako znany fakt
+  (patrz `docs/WORKFLOW.md`), nie jako zadanie do wykonania przez właściciela.
 - Nie przepisuj działającej aplikacji przed jej uruchomieniem i udokumentowanym
   audytem. Patchuj chirurgicznie (minimalne fragi, nie całe pliki).
 - **Błędy naprawiaj u root cause, nie maskuj.** Zakaz dodawania `return`,

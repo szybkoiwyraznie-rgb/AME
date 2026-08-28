@@ -193,11 +193,20 @@ python3 -m http.server 8000 --bind 0.0.0.0    # http://localhost:8000
 `file://` pokaże baner z instrukcją — `fetch()` nie działa pod `file://`
 (ADR 0001); to ograniczenie przeglądarki, nie błąd aplikacji.
 
-## CI i GitHub Pages (status: AKTYWNE)
+## CI i GitHub Pages
 
-- **CI**: `.github/workflows/ci.yml` na `main` (dodane przez właściciela
-  2026-08-28; historycznie przepis w `docs/setup/ci-workflow.yml`). Na każdym
-  PR i pushu do `main`: `npm test` + `npm run build` + kontrola, że
-  `data/index.json` jest zcommitowany zgodny z wpisami.
-- **Pages**: `https://szybkoiwyraznie-rgb.github.io/AME/` — Deploy from
-  branch: `main`, folder `/ (root)`. Zmiany trafiają na live po scaleniu PR.
+- **GitHub Pages: aktywne** — `https://szybkoiwyraznie-rgb.github.io/AME/` (deploy z
+  `main`, workflow `pages-build-deployment`; jego check-runs `build`/`deploy`/
+  `report-build-status` są zielone i nie zależą od pliku CI).
+- **Brama CI: plik istnieje, nie parsuje się — stan znany i zamknięty.**
+  `.github/workflows/ci.yml` na `main` (wklejony jednorazowo przez właściciela
+  2026-08-27) zaczyna się od bloku `<!-- … -->` przeniesionego z przepisu
+  F0, więc GitHub nie parsuje YAML-a i runy kończą się `failure` w 0 s bez jobs.
+  Agent nie może tego naprawić (403 `workflows` przy pushu i przy `gh api`), a
+  jednorazowa czynność właściciela została już wykonana — **nie otwieramy tego
+  wątku ponownie ani w PR-ach, ani w handoffach, ani w liście „otwarte”**.
+- **Czym jest brama w tym projekcie:** `npm test` + `npm run build` + `npm run check`
+  w każdej sesji (AGENTS §2), plus testy w diffie PR. Czerwony `✗ .github/workflows/ci.yml`
+  przy commicie jest stanem znanym i nie blokuje scalenia (PR pozostaje `MERGEABLE`).
+- Źródłowa treść workflow: `docs/setup/ci-workflow.yml` — do skopiowania wyłącznie,
+  jeśli właściciel sam zechce to zrobić. Żadna sesja nie ma prawa tego wymagać.

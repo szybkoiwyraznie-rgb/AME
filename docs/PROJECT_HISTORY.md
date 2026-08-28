@@ -149,3 +149,14 @@ opis łatki w `docs/setup/ci-workflow.yml`, decyzja po stronie właściciela.
 
 **Otwarte po sesji M3:** scalenie PR #2; łatka `ci.yml` na `main`; kolejny SKIT
 wymaga nowych materializacji (przy dwóch kartach istnieje jeden dozwolony skład).
+
+**Korekta M3 po uwadze właściciela (CI):** w audycie i w dalszych dokumentach sesja
+opisała niedziałający `.github/workflows/ci.yml` jako „decyzję/ładkę po stronie
+właściciela” i powtarzała to w opisie PR oraz w handoffie. To było żądanie wykonania
+czynności, którą właściciel już wykonał raz (jednorazowe wklejenie 2026-08-27) —
+a defekt powstał po stronie agentów (przepis F0 zawierał blok `<!-- -->` zamiast
+komentarzy `#`). Próba samodzielnej naprawy w sesji (commit + `gh api …/contents/`)
+została odrzucona przez GitHub: 403 `workflows`. Ustalenia: **stan CI jest znany i
+zamknięty, nikt go nie odnawia**; bramą są lokalne testy i build indeksu; treść
+workflow czeka w `docs/setup/ci-workflow.yml` bez żadnej prośby; reguła opisowa
+w `AGENTS.md` §4, `ENVIRONMENT` §3, `WORKFLOW` (sekcja CI) i `LESSONS` L12.

@@ -67,8 +67,10 @@ je wyłącznie na wyraźne zlecenie właściciela w sesji.
 - [x] **B3** `dokumentacja[].url` w schemacie i walidatorze, linki w UI,
       adresy zweryfikowane w sieci (ADR 0011).
 - [x] Uściślenie B1: numeracja sekcji idzie za kolejnością (v1.3, ADR 0012).
-- [x] Audyt PR #1 + naprawa receptury CI (L9) — sam plik `.github/workflows/ci.yml`
-      na `main` wciąż wymaga łatki po stronie właściciela.
+- [x] Audyt PR #1 + naprawa **przepisu** CI w repo (`docs/setup/ci-workflow.yml`);
+      plik `.github/workflows/ci.yml` na `main` się nie parsuje (spuścizna przepisu
+      F0) — stan zapisany jako znany i zamknięty: agent nie ma uprawnień `workflows`,
+      czynność właściciela była jednorazowa i wykonana, więc wątku nie odnawiamy (L12).
 
 ## M3b (2026-08-28) — zlecenia: Baza Skitów i „Co nowego" — ✅ KOŃCZONA (w PR #2)
 

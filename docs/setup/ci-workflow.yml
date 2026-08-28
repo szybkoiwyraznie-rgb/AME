@@ -1,14 +1,10 @@
-# Receptura CI — plik docelowy: .github/workflows/ci.yml na gałęzi `main`.
+# Źródłowa treść bramy CI AME (docelowe miejsce: .github/workflows/ci.yml na `main`).
 #
-# Stan: AKTYWNE NA MAIN, ale ZEPSUTE (od 2026-08-27): plik na `main` zaczynał
-# się od bloku <!-- … --> przeniesionego z tej receptury, to nie jest komentarz
-# YAML, więc workflow się nie parsuje i wszystkie runy kończą się `failure`
-# w 0 s bez jobs (L9). Naprawa po stronie właściciela: nadpisać
-# .github/workflows/ci.yml poniższą zawartością (bez tego akapitu) — token
-# agenta nie ma uprawnień `workflows`.
-#
-# Uruchamia: npm test, npm run build oraz kontrolę, że zcommitowany
-# data/index.json jest zgodny z wpisami (ADR 0002).
+# To NIE jest prośba ani zadanie właściciela. Plik na `main` istnieje od 2026-08-27 i
+# nie parsuje się (blok HTML z przepisu F0); agent nie ma uprawnień `workflows`, więc
+# nie naprawia tego ani o to nie prosi — bramą sesji są `npm test`, `npm run build`
+# i `npm run check` (AGENTS §2/§4, ENVIRONMENT §3, lekcje L9 i L12).
+# Treść poniżej czeka wyłącznie na ewentualną, samodzielną decyzję właściciela.
 
 name: CI
 
