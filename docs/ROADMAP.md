@@ -99,6 +99,18 @@ je wyłącznie na wyraźne zlecenie właściciela w sesji.
       właściciela (PR #3) i włączony do gałęzi sesji merge’em; w repo została receptura + test
       „przepis CI jest wklejalny” pilnują formy (L9, L12).
 
+## M4 (2026-08-28) — rygor 300 słów + pierwszy pełny obieg pętli — ✅ w PR #2
+
+- [x] Limit SKITa 250 → 300 słów (ADR 0015, PROTOKÓŁ v1.4) + test kontraktowy
+      spójności liczby w kodzie i dokumentach.
+- [x] Audyt PR #3 (naprawa CI) + lustro receptury z testem rozjazdu; dokumenty
+      przestały głosić nieaktualnego „martwego CI”.
+- [x] C1: pogłębienie `selkie-sule-skerry` (Dennison, Hibbert, Marwick, sea-kist,
+      siedem łez), +2 źródła z adresami, opis w meta → feed.
+- [x] C3: SKIT „HOŁD ORAZ ŚWIATŁO” (276 słów, trio balor × egungun × lincoln-imp).
+- [x] C2: „⧉ kopiuj link” w kartotece i w warstwie skitu + test kontraktowy
+      handlerów (featura czeka na akceptację właściciela).
+
 ## F2 — Jakość i ergonomia mapy
 
 - [x] Deep-linki (`#<slug>` — stan mapy i otwartego wpisu; działa od M1, tu

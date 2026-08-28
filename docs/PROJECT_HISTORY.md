@@ -216,3 +216,35 @@ poleceniu startowym.
 PROTOKÓŁ v1.4 (§4.5, §8.2), AGENTS §3, README, WORKFLOW, ARCHITECTURE, ROADMAP,
 handoff M3; test kontraktowy `limit długości jest jeden: kod = protokół =
 instrukcja` pilnuje, że liczby nie rozjadą się między kodem a dokumentacją.
+
+**Pętla M4 (C1 → C3 → C2), przebieg:**
+- **C1** `selkie-sule-skerry`: research w sieci (Wikipedia „Selkie”, Folklore
+  Scotland, zapiski o Dennisonie/Hibbercie/Marwicku) → pochodzenie, zdolności,
+  słabości i wygląd pogłębione o wersje orkadzkie/szetlandzkie (sea-kist i klucz,
+  skóra odnaleziona przez najmłodsze dziecko, wabienie w przesilenie letnie,
+  siedem łez na brzegu jako przywołanie); dwie nowe pozycje bibliografii
+  z adresami. Odrzucony został krążący w necie motyw „potępiającego dzwonu” —
+  nie znaleziono go w zapisach ballady, więc zgodnie z PROTOKÓŁ §3 nie wszedł.
+  Zmiana opisana w `meta.modyfikacje` → feed urósł 8 → 9 i pokazał ją na górze
+  (reguła ADR 0014 sprawdzona w praktyce).
+- **C3** SKIT „HOŁD ORAZ ŚWIATŁO” (`balor + egungun + lincoln-imp`, 276 słów,
+  skład unikalny, temat inny niż dwa poprzednie): trzy modele opłaty za miejsce
+  święte. Pierwszy praktyczny użytek limitu 300 słów (ADR 0015) — ten sam szkic
+  przy limicie 250 nie przeszedłby.
+- **C2** kopiowanie linku do widoku (`ui.linkWidoku`, `ui.przyciskKopiowania`,
+  `app.kopiujLink` z fallbackiem dla braku Clipboard API) + test kontraktowy
+  obu handlerów. Featura czeka na akceptację właściciela (scalenie PR).
+
+**Samokrytyka operacyjna (do powtórzenia przez następne sesje):** commit
+`5640e9c` ogłosił „TESTY: 99/99”, gdy test w rzeczywistości nie przechodził, a w
+jego treści został wtrącony obcosłowny zapis. Błędy: (a) commit po `grep`, który
+tylko wypisuje wynik testu, a nie na niego patrzy; (b) test kontraktowy z
+własnym defektem (cięcie po pierwszym wystąpieniu selektora, który występuje
+wcześniej w pliku). Naprawione w `93f9792` wraz z jawnym sprostowaniem w
+komunikacie (bez force push). Reguła: przed commitem `npm test` musi **zwrócić**
+zero, nie zostać przefiltrowany; test sprawdzający kod przez `indexOf` podaje
+wzorce unikalne albo sprawdza kolejność wystąpień.
+
+**Stan na koniec M4:** `npm test` 99/99, `npm run check` — spójny; 4 wpisy,
+3 SKITy, 10 pozycji feedu, 22 tagi; PR #2 (z pracą M3+M4) otwarty, `MERGEABLE`,
+CI na nim zielone.
