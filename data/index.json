@@ -99,7 +99,7 @@
       "backlinki": [
         "selkie-sule-skerry"
       ],
-      "obraz": null,
+      "obraz": "assets/wizualizacje/balor.jpg",
       "skity": []
     },
     {
@@ -192,7 +192,7 @@
       "backlinki": [
         "balor"
       ],
-      "obraz": null,
+      "obraz": "assets/wizualizacje/selkie-sule-skerry.jpg",
       "skity": []
     }
   ],
