@@ -18,7 +18,7 @@
     "lat": 42.4,
     "lon": 19.77
   },
-  "pochodzenie_i_kultura": "Mitologia albańska (krąg gegijski, północ): drangue jako półczłowieczy, skrzydlaty bohater pogody i burzy, archetyp światła i dobra, uzupełniająca i przeciwna siła wobec kulshedry — demona ciemności, suszy i nawałnicy. Kult najwyższego boga nieba i gromów, Zojza, przetrwał na północy Albanii (m.in. w regionach Zadrima i Shala) do początku XX w. — świadczą o nim złożone jeszcze w przekazie z regionu Shali opowieści oraz forma „Pasha Zojzin!” (na Zojza!). Dolina Shali, z Theth jako główną wioską (pierwsza wzmianka w dokumencie ze Szkodry z 1485 r. o siedmiu chat; dostęp przez przełęcz Tërthorë, ok. 1685 m), jest katolicką wyspą, która dla zachowania wiary schowała się w górach i dlatego przetrzymała w zwyczaju starsze gesty: w wynoszeniu ognia przed dom i w strzelaniu do chmury.",
+  "pochodzenie_i_kultura": "Mitologia albańska (krąg gegijski, północ): drangue jako półczłowieczy, skrzydlaty bohater pogody i burzy, archetyp światła i dobra, uzupełniająca i przeciwna siła wobec kulshedry — demona ciemności, suszy i nawałnicy. Kult najwyższego boga nieba i gromów, Zojza, przetrwał na północy Albanii (m.in. w regionach Zadrima i Shala) do początku XX w. — świadczą o nim złożone jeszcze w przekazie z regionu Shali opowieści oraz forma „Pasha Zojzin!” (na Zojza!). Dolina Shali, z Theth jako główną wioską (pierwsza wzmianka w dokumencie ze Szkodry z 1485 r. o siedmiu chat; dostęp przez przełęcz Tërthorë, ok. 1685 m), jest katolicką wyspą, która dla zachowania wiary schowała się w górach i dlatego przetrzymała w zwyczaju starsze gesty: w wynoszeniu ognia przed dom i w strzelaniu do chmury. Najstarszą relacją terenową z tego świata pozostaje artykuł Edith Durham (obserwacje 1908, druk 1910): w środku burz zanoszono jej dwukrotnie, że Drangue biją się wówczas z Kulshedrą, a wiara w dwie przeciwstawne siły światła i ciemności — słońce i księżyc — była w górach żywa; tron gospodarza w Shali i Shoshi nosi rzeźbione słońce na oparciu z półksiężycami na poręczach, co stapia się z solarnym dziedzictwem kręgu Zojza.",
   "wizualizacja": {
     "prompt": "Style: A wide-angle full-body cinematic photograph. The central objects/persons of the photo are visible from head to toe, standing centrally in the frame. No parts of the body are cropped.\n\nA broad-shouldered highland man standing centrally on a limestone ridge above the Shala valley in the teeth of a summer tempest, two dark feathered wings spreading from under his arms through a soaked woolen jacket, a crude iron sword lit along its edge like a struck spark in one hand and a black meteoric stone in the other, grey caul still clinging to the crown of his head, hail and rain blowing sideways past him, below in the village women carry an iron hearth-pan of burning embers out of the houses in a chain of light and men beat copper pots and fire shots into the cloud, torn pasture and slate roofs, a huge many-headed shadow coiling behind the ridge, harsh cold light with a single bright break of sun on his chest.\n\nCaptured with a 35mm anamorphic lens at f/1.8. Shallow depth of field with a heavy, creamy bokeh background. Environmental portraiture. Dramatic cinematic lighting, sharp focus on the character, hyper-realistic textures of clothing and skin. Shot on 70mm film stock, ultra-wide 21:9 aspect ratio. --ar 21:9",
     "obraz": "assets/wizualizacje/drangue-shala.jpg"
@@ -31,6 +31,11 @@
     "preferencje": "Lubi: letnie popołudnia, gdy chmura wstaje nad Grunasiem, zapach tlenu po deszczu, dźwięk bitego miedzią i kościelnego dzwonu, ogień niesiony w żelaznej wazie przez kobiety, mleko zostawione na progu, grad zbity na czas. Nie znosi: ciszy, kiedy powinien wyjść, kościoła, który milczy w burzę, suszy zamiast nawałnicy, a także — jak wszyscy herosi uwięzieni w zwyczaju — ludzi, którzy wolą mu złożyć ofiarę, niż wyjść z garnkiem żaru przed dom."
   },
   "dokumentacja": [
+    {
+      "typ": "artykuł etnograficzny (relacja z terenu)",
+      "pozycja": "M. E. Durham, „High Albania and its Customs in 1908”, The Journal of the Royal Anthropological Institute of Great Britain and Ireland, vol. XL (1910), s. 453–472; odbitka na Internet Archive (30 s., „Reprinted from the Journal…”) — najstarsza relacja terenowa z samego regionu: w środku gwałtownych burz lata 1908 dwukrotnie zanotowano autorce, że Drangue (Drangoni) biją się z Kulshedrą; górale wyznawali wiarę w dwie przeciwstawne siły światła i ciemności (słońce i księżyc); Drangonem może zostać to, co męskie, kulshedrą — kobiety i jadowite gady; Kulshedra to „monster that strives to destroy humanity with torrents and tempests”, którego Drangoni biją; w Shali i Shoshi tron gospodarza ma na oparciu rzeźbione słońce, a na poręczach półksiężyce",
+      "url": "https://archive.org/details/highalbaniaitscu00durh"
+    },
     {
       "typ": "leksykon online",
       "pozycja": "Wikipedia, „Drangue” — półczłowieczy skrzydlaty bohater burzy w albańskiej mitologii, archetyp światła i dobra przeciw kulshedrze; dzieci urodzone w czepku, ze skrzydłami pod pachami (dwa lub cztery); moc w skrzydłach i ramionach; broń: miecze z pioruna, gromy, meteoryty, drzewa i kamienie; burze jako ich bitwy; „nie do zranienia, nie do tykania, nie do pokonania”; złote serce z klejnotem przy rozbrataniu; wariant Pogradec/Korça (skrzydlaty koń); utożsamienia z Shën Delli i Shën Ilias jako boga pogody; odbicie indoeuropejskiego boga nieba (Zojz); baśń „The Boy who was Brother to the Drague”",
@@ -101,11 +106,20 @@
     {
       "slug": "lincoln-imp",
       "opis": "Ten sam zabieg wspólnoty: święty przedmiot wbudowany w budynek i zamieniony w znak tożsamości. Groteska ima wmurowana w filar chóru stała się herbem miasta, a kamień piorunowy w izbie — własnością rodziny, przed którą kule mijają domowników. W obu przypadkach ochrona jest funkcją tego, że rzecz została na swoim miejscu, a nie tego, że ktokolwiek w coś wierzy."
+    },
+    {
+      "slug": "balor",
+      "opis": "Obu ich kończy — albo ratuje — ten sam gest: rzut kamienia ręką bohatera, nie bitwa wręcz. Lugh wbija kamień z procy w otwarte oko Balora, a wzrok bez właściciela obraca się przeciw Fomorom; drangue zasypuje kulshedrę gromami i kamieniami piorunowymi, zanim chmura wejdzie na pola. Oba byty należą do pogody: oko Balora suszy i wypala plony, walka drangue z kulshedrą zsyła grad i pioruny — w obu tradycjach pole bitwy jest niebem, a rozstrzyga je celny rzut."
     }
   ],
   "meta": {
     "utworzono": "2026-08-28",
     "autor": "sesja arena 2026-08-28",
-    "modyfikacje": []
+    "modyfikacje": [
+      {
+        "data": "2026-08-28 15:12",
+        "opis": "dopisano najstarszą relację terenową z Malësii — obserwacje Edith Durham z burz 1908 r. (druk 1910): walki Drangue z Kulshedrą, wiara w siły światła i ciemności, słońce rzeźbione na tronie gospodarza w Shali; dołączono powiązanie z Balorem — zwycięstwo kamieniem rzuconym ręką bohatera"
+      }
+    ]
   }
 }

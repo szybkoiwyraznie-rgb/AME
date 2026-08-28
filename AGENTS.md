@@ -135,6 +135,8 @@ Ponadto:
 - **Każda zmiana treści** trafia do `meta.modyfikacje: [{data, opis}]` (albo
   `meta.utworzono`, gdy plik jest nowy) — na tym oparty jest dziennik „Co
   nowego" (PROTOKÓŁ §9); bez tego zmiana jest niewidoczna dla właściciela.
+  Od protokołu v1.5 data podaje się z godziną (`RRRR-MM-DD GG:MM`, ADR 0017),
+  bo feed „Co nowego" pokazuje datę i godzinę zdarzenia.
   `opis` = zdanie o treści dla czytelnika archiwum, **nie** notatka robocza
   sesji (bez `M3`, `B1`, `C1`, `PROTOKÓŁ §`). Stopka karty pokazuje tylko daty
   (`utworzono`, `zmieniono`) — autorzy i opisy zmian zostają w JSON-ie i feedzie.

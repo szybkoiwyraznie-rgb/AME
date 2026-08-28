@@ -31,6 +31,8 @@ Każdy dokument opisuje kontekst, wybór i jego konsekwencje.
 | [0014](0014-co-nowego-feed-z-meta.md) | „Co nowego”: dziennik zmian wyliczany z pola meta | Zaakceptowana |
 | [0015](0015-limit-dlugosci-skitow-300-slow.md) | Limit długości SKITa: 300 słów (protokół MFM v1.4) | Zaakceptowana |
 | [0016](0016-kanon-tagow-i-prezentacja-pasmami.md) | Kanon tagów jako dane źródłowe i prezentacja pasmami kategorii | Zaakceptowana |
+| [0017](0017-data-z-godzina-w-meta-co-nowego-v1-5.md) | Data zdarzeń w meta z godziną; „Co nowego” podaje datę i godzinę (protokół MFM v1.5) | Zaakceptowana |
+| [0018](0018-ton-skitow-humor-i-codziennosc-v1-6.md) | Ton SKITów: humor, luz i codzienność jako pełnoprawny rejestr (protokół MFM v1.6) | Zaakceptowana |
 
 ## Szablon ADR
 

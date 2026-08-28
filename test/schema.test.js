@@ -77,6 +77,18 @@ test('meta: format dat i struktura modyfikacji', () => {
   );
 });
 
+test('meta (ADR 0017): data z godziną RRRR-MM-DD GG:MM jest legalna, zła godzina nie', () => {
+  const zGodzina = { utworzono: '2026-08-28 14:32', modyfikacje: [{ data: '2026-08-28 16:05', opis: 'dopisane źródło' }] };
+  assert.deepEqual(walidujWpis(wpisWzorzec({ meta: zGodzina })), [], 'data z godziną przechodzi');
+  const zle = ['2026-08-28 24:00', '2026-08-28 12:60', '2026-08-28T12:00', '2026-08-28 9:15', '2026-08-28  12:00', '2026-08-28 12:00:00'];
+  for (const data of zle) {
+    assert.ok(
+      walidujWpis(wpisWzorzec({ meta: { utworzono: '2026-08-28', modyfikacje: [{ data, opis: 'x' }] } })).some((e) => e.includes('modyfikacje')),
+      `odrzucane: ${data}`
+    );
+  }
+});
+
 test('dokumentacja: url musi być adresem www i musi się pojawić choć raz (B3)', () => {
   const bezLinkow = wpisWzorzec();
   bezLinkow.dokumentacja = [{ typ: 'książka', pozycja: 'Autor, Tytuł (2000)' }];

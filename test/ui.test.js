@@ -258,6 +258,11 @@ test('htmlNowosci: feed z linkami do treści i bezwzględnym escapowaniem', asyn
     ],
   });
   assert.match(feed, /<time datetime="2026-08-28">2026-08-28<\/time>/);
+  const zGodzina = htmlNowosci({
+    ...indeks,
+    aktualizacje: [{ data: '2026-08-28 14:32', typ: 'manifestacja', akcja: 'zmiana', slug: 'egungun', tytul: 'Egungun', opis: 'nowe źródła' }],
+  });
+  assert.match(zGodzina, /<time datetime="2026-08-28 14:32">2026-08-28 14:32<\/time>/, 'ADR 0017: data z godziną w feedzie verbatim');
   assert.ok(feed.includes('data-link="skit:plotno-i-kamien"'), 'skit ma link z prefiksem');
   assert.ok(feed.includes('data-link="egungun"'), 'wpis ma link będący slugiem');
   assert.ok(feed.includes('skit · dodano') && feed.includes('kartoteka · zmieniono'));

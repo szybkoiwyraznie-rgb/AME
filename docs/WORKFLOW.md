@@ -81,7 +81,7 @@ lub aktywności (dokładność ~0,01° wystarcza).
   jedno źródło w wpisie musi mieć adres (ADR 0011).
 - Kolejność kluczy w pliku = numeracja sekcji: `wizualizacja` (I), `natura` (II),
   `dokumentacja` (III), `trofea` (IV), `rezonans` (V) — PROTOKÓŁ §4.1/§4.4.
-- `meta.utworzono` = data w formacie **RRRR-MM-DD**; `autor` = sesja (np. „sesja arena 2026-08-28”).
+- `meta.utworzono` = data w formacie **RRRR-MM-DD** (zalecane z godziną: **RRRR-MM-DD GG:MM**, ADR 0017); `autor` = sesja (np. „sesja arena 2026-08-28”).
 
 ### 7. Build + testy + commit
 ```bash

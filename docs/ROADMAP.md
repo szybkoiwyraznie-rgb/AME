@@ -114,6 +114,62 @@ je wyłącznie na wyraźne zlecenie właściciela w sesji.
       `walidujTagi`, indeks v3, pasek pasmami kategorii, chipy ze skrótem
       kategorii w karcie; migracja tagów wszystkich sześciu wpisów (ADR 0016).
 
+## M6 (2026-08-28) — badge pinezek A1–A3 + godzina w „Co nowego” (B) — ✅ w PR #5
+
+- [x] **A1** badge nazwy tylko po najechaniu / fokusu klawiatury i na
+      zaznaczonej pinezce — stałe pokazywanie od progu zoomu (klasa
+      `przyblizona`) zniesione.
+- [x] **A2** przeciąganie mapy nie zaznacza napisów badge'ów:
+      `user-select: none` na `.mapa-svg`.
+- [x] **A3** napisy nad pinezkami: grupa `.etykiety` w DOM za `.pinezki`
+      (kolejność malowania SVG); zweryfikowane pikselowo w headless Chromium.
+- [x] **B** „Co nowego” podaje datę i godzinę zdarzenia (ADR 0017, protokół
+      v1.5): `meta` przyjmuje `RRRR-MM-DD GG:MM`, sort dat po znakach
+      (deterministyczny), feed renderuje `datetime` z godziną.
+
+## M6b (2026-08-28) — Pętla Jakości sesji M6: C1 → C3 → C2 — ✅ w PR #5 (C2 do akceptacji)
+
+- [x] **C1** `drangue-shala`: relacja terenowa Edith Durham (obserwacje 1908,
+      druk 1910, JRAI XL; odbitka na Internet Archive) + powiązanie z Balorem —
+      zwycięstwo rzutem kamienia z ręki bohatera.
+- [x] **C1** `barbarossa-kyffhaeuser`: pełny tekst wiersza Rückerta
+      (Volksliederarchiv; powstanie 1815, pierwszy druk „Kranz der Zeit" 1817,
+      melodia Gersbacha 1824) + powiązanie z Egungun — przodek, który wraca
+      rytuałem.
+- [x] **C3** SKIT „Godzina otwarcia" (Balor × Drangue — skład unikalny,
+      239 słów); test porządku feedu uaktualniony do semantyki godzin
+      (ADR 0017).
+- [x] **C2** podgląd powiązań na najechanie/fokus: hover na pinezkę zwęża
+      warstwę łuków do jej połączeń i podświetla sąsiadów (`.powiazana`),
+      odlot przywraca stan; zweryfikowane w headless Chromium (zwężenie 11→5
+      łuków). **Do akceptacji właściciela przed live** (ADR 0007).
+
+## M6c (2026-08-28) — zlecenie: ton SKITów (humor i codzienność) — ✅ w PR #5
+
+- [x] **PROTOKÓŁ v1.6 (ADR 0018):** §8 wprost sugeruje rejestr luźny — humor,
+      codzienność, rozmowa „przy ognisku” o prostych sprawach; elegia to jeden
+      z rejestrów, nie jedyny (po serii poważnych następna lekka). Sugestia
+      autorska — rygory twarde (in-character, faktografia, unikalność składu)
+      bez zmian, walidator nie mierzy „śmieszności”.
+- [x] **SKIT demonstracyjny** „Kurz i pióra” (Drangue × Imp — skład unikalny,
+      241 słów): ptaki pod dachem, kurz, pranie skrzydeł i „przeciąg wysokiej
+      jakości” po oknach wybitych przez ima.
+
+## M6d (2026-08-28) — zlecenie: dwie materializacje (F1) — ✅ w PR #5
+
+- [x] **Empusa z Koryntu** — karta *Illusory Demon* (ARB #21, 2009): fantom
+      Hekaty z jedną nogą z miedzi; czar trwa, dopóki niczego nowego nie
+      rzucono — „When you cast a spell, sacrifice this creature” jako reguła
+      koryńska. Źródła: Theoi (Suda, Filostrat VA 2.4/4.25, Eusebiusz),
+      Wikipedia, pełny tekst „Żab” (MIT). Wizualizacja 21:9.
+- [x] **Kentaur z Pelionu** — karta *Savage Surge* (THS #176, 2013): wino
+      na weselu Pejrytoosa jako +2/+2 „do końca tury”, flavor „A centaur has
+      two backs!” jako untap. Źródła: Theoi Kentauroi, Owidiusz Met. XII
+      (Kline), Wikipedia Lapiths. Wizualizacja 21:9.
+- [x] Kanon +4 tagi (`grecja`, `fantom`, `kentaur`, `furia`); kontrakty danych
+      uaktualnione: 7 kultur źródłowych, ≥3 źródła na wpis, proza bez
+      cyrylicy/CJK (transliteracje), chronologia feedu dosłowna (ADR 0017).
+
 ## F2 — Jakość i ergonomia mapy
 
 - [x] Deep-linki (`#<slug>` — stan mapy i otwartego wpisu; działa od M1, tu

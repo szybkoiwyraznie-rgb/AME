@@ -88,6 +88,45 @@ test('meta skitu: data i modyfikacje jak w wpisach', () => {
   assert.ok(walidujSkit(skitWzorzec({ meta: { utworzono: '2026-08-28', modyfikacje: [{ data: 'wczoraj', opis: 'x' }] } }), SLUGI_WPISOW).some((e) => e.includes('modyfikacje')));
 });
 
+test('meta skitu (ADR 0017): data z godziną przechodzi, nieprawidłowa godzina nie', () => {
+  assert.deepEqual(
+    walidujSkit(skitWzorzec({ meta: { utworzono: '2026-08-28 09:07', modyfikacje: [{ data: '2026-08-28 21:44', opis: 'korekta repliki' }] } }), SLUGI_WPISOW),
+    [],
+    'godzina w meta skitu jest legalna'
+  );
+  assert.ok(
+    walidujSkit(skitWzorzec({ meta: { utworzono: '2026-08-28 23:59+' } }), SLUGI_WPISOW).some((e) => e.includes('utworzono')),
+    'śmieci za godziną odrzucane'
+  );
+});
+
+test('feed (ADR 0017): godzina rozstrzyga w obrębie dnia; dzień z godziną nad dniem bez', () => {
+  const wpis = {
+    slug: 'a-byt',
+    nazwa: 'A Byt',
+    karta: { nazwa: 'Karta' },
+    meta: {
+      utworzono: '2026-03-03 08:10',
+      modyfikacje: [
+        { data: '2026-03-03 09:15', opis: 'ranek' },
+        { data: '2026-03-03 14:32', opis: 'popołudnie' },
+        { data: '2026-03-03', opis: 'bez godziny (stary zapis)' },
+      ],
+    },
+  };
+  const feed = zbudujIndeks([wpis], []).aktualizacje;
+  assert.deepEqual(
+    feed.map((f) => `${f.data}|${f.opis}`),
+    [
+      '2026-03-03 14:32|popołudnie',
+      '2026-03-03 09:15|ranek',
+      '2026-03-03 08:10|wpis w kartotece — materializacja karty „Karta”',
+      '2026-03-03|bez godziny (stary zapis)',
+    ],
+    'godziny chronologicznie; pozycje bez godziny (stare zapisy sprzed ADR 0017) pod godzinowymi tego dnia'
+  );
+});
+
 test('Baza Skitów w repo: przechodzi walidację i ma unikalne składy', async () => {
   const wpisy = await wczytajIKwaliduj();
   const slugi = new Set(wpisy.map((w) => w.slug));
@@ -119,7 +158,8 @@ test('indeks: sekcja VI (skity przy wpisie) i feed „Co nowego” wyliczone pop
 
   assert.ok(indeks.aktualizacje.length >= wpisy.length + skiti.length, 'feed obejmuje powstania wpisów i skitów');
   const daty = indeks.aktualizacje.map((a) => a.data);
-  assert.deepEqual(daty, [...daty].sort((a, b) => b.localeCompare(a)), 'najnowsze na górze');
+  const poZnakach = (a, b) => (b > a) - (b < a); // jak w sortowaniu feedu (kodowo, nie collation)
+  assert.deepEqual(daty, [...daty].sort(poZnakach), 'najnowsze na górze');
   for (const a of indeks.aktualizacje) {
     const zbior = a.typ === 'skit' ? indeks.skity : indeks.manifestacje;
     assert.ok(zbior.some((x) => x.slug === a.slug), `feed wskazuje na nieistniejący ${a.typ}: ${a.slug}`);
@@ -160,7 +200,7 @@ test('feed „Co nowego”: najnowsze ZDARZENIA na górze (data desc, sekwencja 
   };
   const feed = zbudujIndeks([wpis, drugi], [skit]).aktualizacje;
   const daty = feed.map((f) => f.data);
-  assert.deepEqual(daty, [...daty].sort((a, b) => b.localeCompare(a)), 'daty malejąco');
+  assert.deepEqual(daty, [...daty].sort((a, b) => (b > a) - (b < a)), 'daty malejąco');
   // 2026-03-03: ostatnia modyfikacja a-byt, potem utworzenia (skit przed wpisami), a 2026-01-01 na końcu
   assert.deepEqual(
     feed.map((f) => `${f.data}|${f.typ}|${f.akcja}|${f.slug}`),
@@ -177,17 +217,31 @@ test('feed „Co nowego”: najnowsze ZDARZENIA na górze (data desc, sekwencja 
   assert.ok(!('sekwencja' in feed[0]), 'klucz sortujący nie trafia do indeksu');
 });
 
-test('feed w repo: utworzenia kart nie są nad dzisiejszymi zmianami', async () => {
+test('feed w repo: godzina rozstrzyga nad zapisami dziennymi; wśród dziennych zmiany nad utworzeniami (ADR 0017)', async () => {
   const fs = await import('node:fs/promises');
   const indeks2 = JSON.parse(await fs.readFile('data/index.json', 'utf8'));
   const feed = indeks2.aktualizacje;
-  const pierwsze = feed[0];
-  assert.ok(pierwsze.data === feed[0].data, 'daty malejąco');
-  const idxSkitu = feed.findIndex((f) => f.typ === 'skit' && f.akcja === 'nowy');
-  const idxUtworzenia = feed.findIndex((f) => f.typ === 'manifestacja' && f.akcja === 'nowa');
-  assert.ok(idxSkitu !== -1 && idxUtworzenia !== -1 && idxSkitu < idxUtworzenia, 'dodany dziś SKIT jest nad utworzeniami kart');
-  const zmiany = feed.filter((f) => f.akcja === 'zmiana').map((f) => feed.indexOf(f));
-  assert.ok(zmiany.every((i) => i < idxSkitu), 'zmiany z tego samego dnia są najwyżej');
+  const dzis = feed[0].data.slice(0, 10);
+  const poz = feed.map((f, i) => ({ ...f, i }));
+  const zGodzina = poz.filter((f) => f.data.includes(' '));
+  const dzienne = poz.filter((f) => f.data === dzis);
+  assert.ok(zGodzina.length > 0, 'nowe zapisy niosą godzinę (ADR 0017)');
+  assert.ok(zGodzina.every(({ data }) => data.startsWith(dzis)), 'pozycje godzinowe pochodzą z najnowszego dnia');
+  assert.ok(
+    zGodzina.every(({ i }) => dzienne.every(({ i: j }) => j > i)),
+    'pozycje z godziną są nad dziennymi zapisami tego samego dnia (zapis dzienny = sprzed v1.5)'
+  );
+  const zmianyDzienne = dzienne.filter((f) => f.akcja === 'zmiana');
+  const utworzeniaDzienne = dzienne.filter((f) => f.akcja === 'nowa');
+  assert.ok(
+    zmianyDzienne.every(({ i }) => utworzeniaDzienne.every(({ i: j }) => j > i)),
+    'wśród dziennych zapisów dnia zmiany są nad utworzeniami (sekwencja, L11)'
+  );
+  // Po ADR 0017 utworzenia też niosą godziny, więc „skit nad utworzeniami”
+  // przestało być niezmiennikiem — liczy się dosłowna chronologia zapisów.
+  const maleje = (a, b) => (a > b) - (a < b);
+  assert.ok(feed.every((f, i) => i === 0 || maleje(feed[i - 1].data, f.data) >= 0), 'daty w feedzie maleją kodowo, pozycja po pozycji');
+  assert.equal(feed[0].akcja, 'nowa', 'najnowszym zdarzeniem w kartotece jest utworzenie wpisu (ma najpóźniejszą godzinę)');
 });
 
 test('limit długości jest jeden: kod = protokół = instrukcja (ADR 0015)', async () => {

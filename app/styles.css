@@ -191,7 +191,9 @@ html[data-motyw='jasny'] .baner code { background: #ffffff77; }
 .tresc { flex: 1; display: flex; min-height: 0; position: relative; }
 
 .mapa { flex: 1; position: relative; background: var(--tlo); min-width: 0; }
-.mapa-svg { width: 100%; height: 100%; display: block; cursor: grab; touch-action: none; }
+/* A2 (M6): mapa to narzędzie interaktywne, nie dokument — przeciąganie nie
+ * zaznacza napisów badge'ów; zaznaczanie tekstu wyłączone na całym SVG. */
+.mapa-svg { width: 100%; height: 100%; display: block; cursor: grab; touch-action: none; user-select: none; -webkit-user-select: none; }
 .mapa-svg.zlapano { cursor: grabbing; }
 
 .ocean { fill: var(--ocean); }
@@ -231,14 +233,22 @@ html[data-motyw='jasny'] .baner code { background: #ffffff77; }
 .pinezka:focus { outline: none; }
 .pinezka.wybrana .glowa { fill: var(--akcent); stroke: var(--akcent-2); }
 .pinezka.wybrana .ostrze { fill: var(--akcent); }
+/* C2: sąsiedzi wskazanej pinezki — delikatny sygnał połączenia (bez zmiany wypełnienia). */
+.pinezka.powiazana .glowa { stroke: var(--akcent); }
 .pinezka.przygaszona { opacity: 0.14; pointer-events: none; }
 
-/* Etykieta (A4): czytelny badge 19 px z pleckami; jednostka = px CSS. */
-.pinezka .etykieta {
+/* Etykieta (A4): czytelny badge 19 px z pleckami; jednostka = px CSS.
+ * A3 (M6): badge'e żyją w warstwie `.etykiety` (w DOM za `.pinezki`), więc
+ * nigdy nie chowają się pod inną pinezką. A1 (M6): pokazują się wyłącznie
+ * po najechaniu / fokusu (`widoczna`) albo zaznaczeniu (`wybrana`) — stałe
+ * pokazywanie od progu zoomu (`przyblizona`) zniesione. */
+.etykiety .etykieta {
   display: none;
   pointer-events: none;
 }
-.pinezka .etykieta text {
+.etykiety .etykieta.widoczna,
+.etykiety .etykieta.wybrana { display: block; }
+.etykiety .etykieta text {
   font-family: var(--serif);
   font-size: 19px;
   line-height: 1.2;
@@ -246,15 +256,12 @@ html[data-motyw='jasny'] .baner code { background: #ffffff77; }
   text-anchor: middle;
   dominant-baseline: central;
 }
-.pinezka .etykieta .tlo-etykiety {
+.etykiety .etykieta .tlo-etykiety {
   fill: var(--badge-tlo);
   stroke: var(--akcent);
   stroke-width: 1.2;
 }
-.mapa-svg.przyblizona .pinezka .etykieta,
-.pinezka:hover .etykieta,
-.pinezka:focus .etykieta,
-.pinezka.wybrana .etykieta { display: block; }
+.etykiety .etykieta.przygaszona { opacity: 0.14; }
 
 .sterowanie {
   position: absolute;

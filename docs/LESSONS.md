@@ -181,3 +181,20 @@ agent: stopki `index.html` i opisu repozytorium.
 `docs/PROTOKOL.md`, a nie wpisywany ręcznie — kontrakt w `test/ui.test.js`
 porównuje status ze stopką aplikacji i z README i odrzuca cytowanie starszej
 wersji (ta sama zasada co limit SKITa w `test/skit.test.js`).
+
+## L15 (2026-08-28, AME) — pola trafień pinezek nachodzą na siebie: kursor nad pinezką to nie pinezka, którą liczyłeś
+
+**Objaw:** weryfikacja headless M6: kursor poszedł na środek głowy balor (Irlandia),
+a `pointerenter` dostała selkie (Wyspy Owcze); klasy pinezki balor pozostały
+puste, badge „nie chciał się pokazać”, choć syntetyczne zdarzenia działały.
+**Przyczyna:** pole trafienia pinezki (ø52 px) jest znacznie większe od jej
+głowy (ø26 px), a pinezki Europy siedzą blisko siebie — przy k=1 tarcze balora,
+selkie i lincoln-imp nachodzą na siebie niemal w całości; o odbiorcy zdarzenia
+decyduje pinezka rysowana najwyżej (ostatnia w DOM), nie ta, z której
+współrzędnych policzono punkt.
+**Reguła:** w testach na żywo punkt hover dla konkretnej pinezki WYSZUKUJ
+hit-testem (pętla po okręgu wokół głowy + `elementFromPoint(...).closest('.pinezka')`
+=== szukany slug), a pinezkę, która dostała zdarzenie, czytaj z hit-testu, nie
+z założeń. Do tego: klik w pinezkę otwiera pełnoekranową kartotekę (ADR 0010) —
+zanim ruszysz mapę w teście, zamknij warstwę (`Escape`), a zoom rob kółkiem
+do kursora, nie przyciskami (te celują w środek okna i wypychają pinezkę z kadru).

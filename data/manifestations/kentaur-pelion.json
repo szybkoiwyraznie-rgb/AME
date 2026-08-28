@@ -1,0 +1,98 @@
+{
+  "slug": "kentaur-pelion",
+  "nazwa": "Kentaur z Pelionu",
+  "nazwy_alternatywne": [
+    "Kentauroi / Centauri — grecka i łacińska nazwa gatunku",
+    "hippocentaury — późniejsza, „końska” forma miana",
+    "„bestie z chmury” (feri nubigeni) — tak nazywa ich Owidiusz"
+  ],
+  "karta": {
+    "nazwa": "Savage Surge",
+    "wydanie": "Theros (THS) #176",
+    "rok": 2013
+  },
+  "lokalizacja": {
+    "miejscowosc": "góra Pelion (Tesalia) — jaskiniowe kraje kentaurów, karmionych na górze przez nimfy; hala weselna Pejrytoosa na równinie Lapitów u stóp",
+    "kraj": "Grecja",
+    "lat": 39.443,
+    "lon": 23.142
+  },
+  "pochodzenie_i_kultura": "Mitologia grecka: kentauroi to plemię pół-ludzi, pół-koni zamieszkujące góry i lasy tesyjskiej Magnesii. Rodzą się z chmury — nimfa Nephele po połączeniu z Iksionem (albo Kentauros, syn Iksiona, który na Pelionie zewładnął klacze magnetyckie — Pindar, Pythia 2.80), a wychowuje je na górze córki nieśmiertelnego Chejrona. Żyją w jaskiniach, polują, dozbrajają się głazami i gałęziami, porywają cudze kobiety. Ich godzina jest jedna i wszyscy ją znają: wesele Pejrytoosa z Hippodameją, na które przyszli jako krewni — po raz pierwszy spróbowali wina, „unused to wine”, i pod jego wpływem Eurytion (u Owidiusza Eurytos, „najdzikszy z dzikich”) porwał pannę młodą za włosy. Zaczęła się Kentauromachia: Tezeusz rzucił w Eurytosa wielki krater, Lapici wygromili gości, ucięli Eurytionowi uszy i nos, a kentaury wygnano z Tesalii; walka trafiła na metopy Partenonu (447–438 p.n.e.) i fronton świątyni Zeusa w Olimpii.",
+  "wizualizacja": {
+    "prompt": "Style: A wide-angle full-body cinematic photograph. The central objects/persons of the photo are visible from head to toe, standing centrally in the frame. No parts of the body are cropped.\n\nA powerfully built wild centaur surging upright in the middle of an overturned wedding hall of a Thessalian king, standing centrally between the long tables, his bearded human torso twisting back over the rearing horse body, thorn-tangled black hair, one fore-hoof coming down off the tabletop scattering cups, the other leg coiled to strike, crudely bandaged wound where an ear should be, dark wine sheeting from a shattered bronze mixing bowl on the flagstones, wedding garlands and toppled torches burning low on the stone floor, women pulling children toward the doorway, guests swinging iron roasting spits, hop and pine smoke drifting through slanting amber light, limestone walls and rough pine beams.\n\nCaptured with a 35mm anamorphic lens at f/1.8. Shallow depth of field with a heavy, creamy bokeh background. Environmental portraiture. Dramatic cinematic lighting, sharp focus on the character, hyper-realistic textures of clothing and skin. Shot on 70mm film stock, ultra-wide 21:9 aspect ratio. --ar 21:9",
+    "obraz": "assets/wizualizacje/kentaur-pelion.jpg"
+  },
+  "natura": {
+    "wyglad_i_aura": "Człowiek od głowy do lędźwi, koń od łopatek w dół — i to nie jest symbol, tylko anatomia, którą rzeźbiono w dwóch wersjach: starsza daje mu ludzkie nogi (najdawniejsze przekazy mówią o rasie górskiej), późniejsza, od Fidiasza, całą końską połowę z czterema kopytami i ogonem. Twarz ma ludzką, czasem z zadartym nosem satyra. Aury jest gęsta od góry: pot, żywica sosnowa i skóra, która nigdy nie znała prania; od dołu — kurz klepiska i mokre słoma. Po winie dochodzi trzeci zapach: rozlanej krwi wymieszanej z winem, bo w hali Pejrytoosa te dwie ciepłe ciecze przez jeden wieczór były wymienne.",
+    "charakter_i_motywacje": "Nie jest złym duchem ani bestią-planem: jest gościem, który nie umie być gościem. Wcześniej żądał od Pejrytoosa działu królestwa (Diodor 4.70), na wesele przyszedł jako krewny Hippodamei — i wybuchł z własnej krwi, bo dolna połowa, konna, nie znała roztropności, którą górna uczyła się u Chejrona. Motywacja jest prosta jak napad: pragnienie + środek + okazja w jednym pucharze. Po porażce nie ma zemsty — jest ucieczka w góry Pindos i pamięć, że to on był tu wcześniej: przed hodowlą, przed uzdą, przed gościnnością.",
+    "zdolnosci": "podwójny napęd jednego ciała: człowiek celuje, koń daje siłę i drugą prędkość — przeciwnik, który zaatakował „tył”, zostaje zniesiony przez przednią połowę; broń polna: głazy, gałęzie, a w hali wszystko, co pod ręką — brązowe czasze, pochodnie, rogi jeleni na ścianach i żelazne rożny (Owidiusz); wytrzymałość górskiego łowcy i rozpieranie drzwi klatką piersiową konia; oraz specyficzna zdolność podana przez kartę: druga akcja z połowy, którą przeciwnik wyłączył z rachuby. Wina nie są jego mocą — są kruchym warunkiem, w którym moc wychodzi spod kontroli właściciela.",
+    "slabosci_i_metody_pokonania": "Metoda jest opisana na metopach: (a) nie dać mu wina — kentaury są do niego nieprzyzwyczajone i wino działa na kentaury jak lek, z opóźnionym, morderczym skutkiem; (b) uderzyć w moment przełożenia ciężaru — Tezeusz rzucił krater w Eurytosa dokładnie wtedy, gdy ten prostował się z panną; (c) walka przedmiotami stołu, nie mieczem: hala jest bronią Lapitów; (d) po porażce wygnanie — kentaur wraca do gór, nie do hali; tabu terenowe: nie zapraszać do domu dwóch gatunków naraz. Śmierć pojedynczych (Kyllaros i Hylonome) znano, ale plemię ginęło od zgodnej pracy całej hali, nie od jednego bohatera.",
+    "preferencje": "Lubi: jaskinie z południowym wejściem, mięso z polowania zjadane stojąc, śnieżne przełęcze Pindosu, zapach własnej trzody, kobiety porywane bez ceremonii oraz wesela cudze. Nie znosi: wina (a pije je jakby za każdym razem pierwszą), uzdy — której Lapici, nie oni, są wynalazcami — pochodni rzucanych pod kopyta, imienia Chejrona przypominającego, że mógł być lekarzem, i drzwi zamykanych od wewnątrz."
+  },
+  "dokumentacja": [
+    {
+      "typ": "leksykon ikonograficzno-literacki online",
+      "pozycja": "Theoi Project, „Kentauroi Thessalioi” — plemię pół-ludzi pół-koni tesyjskiej Magnesii; zrodzeni z Nephele i Iksiona (Apollodor E1.20, Diodor 4.69.4, Owidiusz Met. 12.112), wychowane na Pelionie przez córki Chejrona; wesele Pejrytoosa jako scena zbiorowej zagłady; lista imion z Met. 12.112 (Eurytos, Amykos, Nessos…); etymologia z jeźdźctwa tesyjskiego (schol. Pindar) i wygnanie na Pindos",
+      "url": "https://www.theoi.com/Georgikos/KentauroiThessalioi.html"
+    },
+    {
+      "typ": "epos rzymski (przekład angielski online)",
+      "pozycja": "Owidiusz, „Metamorfozy” XII, 210–244 (przekł. A. S. Kline) — „Eurytus, most savage of the savage Centaurs” rozpalony winem i widokiem panny; stoły wywrócone, panna wlekła za włosy; walka bronią stołu: naczynia brązowe, podstawy pochodni, poroże na ścianach, żelazne rożny; dalej epos o Cyllarosie i Hylonome",
+      "url": "https://ovid.lib.virginia.edu/trans/Metamorph12.htm"
+    },
+    {
+      "typ": "leksykon online",
+      "pozycja": "Wikipedia, „Lapiths” (sekcja Centauromachy) — kentaury zaproszone na wesele Pejrytoosa i Hippodamei jako krewni; „unused to wine” — niezwykłe dla nich wino obnażyło dziką naturę; Eurytion „wildest of the centaurs” porwał pannę; Lapici ucięli mu uszy i nos i wyrzucili; po bitwie kentaury wygnano z Tesalii na północny zachód; Lapici uchodzą za wynalazców wędzidła",
+      "url": "https://en.wikipedia.org/wiki/Lapiths"
+    }
+  ],
+  "trofea": {
+    "pierwotne": "odłamek brzuśca wielkiego krateru, którym Tezeusz powalił Eurytosa — w tej hali wygrywa ten, kto w ręku trzyma najcięższą część uczty",
+    "wtórne": "żelazny rożen z hali weselnej — broń, którą goście dobiły bitwę, gdy skończyło się wino, a zaczęła się rzeź"
+  },
+  "rezonans": {
+    "klucz_przywolania": "„Savage Surge” to instant za {1}{G}: „Target creature gets +2/+2 until end of turn. Untap that creature.” Wino tesalskie działa dokładnie tak: +2/+2 to napad siły ponad siebie, liczony do końca uczty, a „untap” jest czystym korynckim… pardon, peliońskim żartem karty — „A centaur has two backs!”. Przeciwnik ułożył sobie bitwę na jedną stronę kentaura: tył. Kentaur wyprostował drugą. Ruling z 2013-09-15 dopowiada resztę: „Savage Surge can target an untapped creature” — napad może uderzyć także tego, który już ruszył; kentaur bił i jeszcze raz bił. {1}{G} — jedna zielona mana: gatunek, nie bohater.",
+    "tabela": [
+      {
+        "element": "Nazwa",
+        "translacja": "Savage Surge — dziki przyrost: wino, którego kentaury nie znały, działa jak przyrost mocy: dwa punkty siły i wytrzymałości „do końca tury”. Przekłady robią to samo z innego końca: niemiecki „Anschwellende Wildheit” (pęczniejąca dzikość) opisuje +2/+2 dosłownie, francuski „Déferlement sauvage” (dzika fala) i hiszpański „Oleada salvaje” trzymają nagły, ciężki napływ, który musi opaść."
+      },
+      {
+        "element": "Mechanika",
+        "translacja": "Untap tej karty jest dowcipem o anatomii: „I thought its back was turned!” — myślałem, że ma tył odwrócony — „A centaur has two backs!” — kentaur ma dwa tyły. Przeciwnik wyłączył z rachuby połowę bytu, a połowa wstaje i atakuje; ruling potwierdza, że celować można nawet w kreaturę już tapniętą, więc furia bywa drugą akcją tego samego ciała w tej samej turze. Instant: nie plan, tylko reakcja przy stole."
+      },
+      {
+        "element": "Ilustracja",
+        "translacja": "Artysta: Jasper Sandner (druk THS #176). Kompozycji obrazu nie opisujemy — nie zgadujemy (docs/WORKFLOW.md §3). Dane karty mówią: common z Theros, czyli zabieg codzienny — w świecie Theros kentaury żyją w górach Setessy i napad wina to ich pora dnia, nie wyjątek."
+      },
+      {
+        "element": "Flavor text",
+        "translacja": "Dwugłos dwóch śmiertelników: „Myślałem, że jego tył był odwrócony!” — „Kentaur ma dwa tyły!” — to komedia omyłki jak u Arystofanesa i zarazem podręcznik do mechaniki: przy kentaurze żadna połowa nie jest tyłem. Omyłka nie jest głupotą — jest kategorialna: kto liczy ciała kentaura jak ciała człowieka, ten liczy o połowę za mało."
+      },
+      {
+        "element": "Lore/Tło",
+        "translacja": "Theros (2013) jest światem zbudowanym z greckiego mitu — karta wprost gra na bestiariuszu, który budował metopy Partenonu. W lore setu kentaury Setessy są dziką połową świata, pielęgnowaną przez góry: Savage Surge jest ich zwykłym stanem podniesionej gotowości. To, co u Lapitów skończyło się wygnaniem, w grze jest zabiegiem za jedną zieloną manę — mit sprowadzony do ręki, jak w całym archiwum."
+      }
+    ]
+  },
+  "tagi": [
+    "grecja",
+    "kentaur",
+    "furia"
+  ],
+  "powiazania": [
+    {
+      "slug": "selkie-sule-skerry",
+      "opis": "Dwa ciała jednego bytu: selkie mieszka nimi naprzemiennie — to na lądzie i to w morzu — a kentaur nosi oba naraz, człowieka z przodu, konia z tyłu. Żart karty o „dwóch tyłach” jest problemem każdego, kto liczy ciała kentaura jak ciała selkiego: przy obu bytach łatwo wziąć drugą połowę za nieobecną, a wtedy to druga połowa kończy spór."
+    },
+    {
+      "slug": "drangue-shala",
+      "opis": "Dwa gatunki indoeuropejskich pograniczy człowieka i siły: drangue wygląda jak góral, aż pachnie burzą; kentaur wygląda jak koń, aż pachnie winem. Obaj dostają przewagi od tego, co wspólnota robi obok nich — od wyniesionego żaru albo rozlanego wina — i obaj przegrywają tam, gdzie ich druga natura zostaje zlekceważona."
+    }
+  ],
+  "meta": {
+    "utworzono": "2026-08-28 16:05",
+    "autor": "sesja arena 2026-08-28",
+    "modyfikacje": []
+  }
+}

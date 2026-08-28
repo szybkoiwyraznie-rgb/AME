@@ -356,3 +356,171 @@ całe drzewo, dlatego audyt prowadzono plik po pliku na stanie `main` (361e9be).
 zielone, CI na PR #4 zielone; PR #4 (gałąź `arena/01a0482e-ame`) zawiera plan,
 audyt PR #2/#3, naprawę F1–F3 i lekcje. Decyzja o scaleniu należy do
 właściciela.
+
+## M6 (2026-08-28) — audyt PR #4 + zlecenia: badge pinezek A1–A3, godzina w „Co nowego” (B)
+
+**Zlecenie (czat):** A1 — treść badge na pinezkach ma się pokazywać tylko po
+najechaniu (nie na stałe od pewnego zoomu); A2 — click-and-drag po mapie
+zaznacza napisy badge'ów „w dość losowy sposób” — do wyeliminowania; A3 —
+napisy badge chowają się pod inną pinezką, ma być odwrotnie (pinezki pod
+napisami); B — sekcja „Co nowego” ma podawać datę i godzinę aktualizacji.
+
+**Audyt PR #4 (81ece62, scalony):** diff plik po pliku (`app/map.js`,
+`app/styles.css`, `index.html`, `README.md`, `test/mapa-css.test.js` — nowy,
+`test/pinezka.test.js`, `test/ui.test.js`, dokumentacja). Root cause M5
+usunięty u źródła z obu stron kontraktu (nazwa `swiat`, selektor `div.warstwa`),
+testy 111/111, CI zielone. Bez zastrzeżeń. Obserwacja: toggle `przyblizona`
+staje się martwy po zleceniu A1 — usunięty w M6 (nowa decyzja właściciela,
+nie defekt PR #4).
+
+**A1 (badge tylko po najechaniu):** usunięta reguła
+`.mapa-svg.przyblizona .pinezka .etykieta` i toggle klasy w `map.js` — etykieta
+pokazuje się na `widoczna` (pointerenter/pointerleave + focus/blur na pinezce,
+bo pinezka jest fokusowalna) i na `wybrana` (zaznaczenie). Nowy test
+`test/pinezka.test.js` (etykiety A1: hover/fokus/wybrana/przygaszona) — razem
+5 nowych testów jednostkowych.
+
+**A2 (brak zaznaczania przy dragu):** `.mapa-svg { user-select: none;
+-webkit-user-select: none }` — tekst w SVG mapy to nie dokument do zaznaczania.
+Kontrakt w `test/mapa-css.test.js` (reguła `user-select: none` musi istnieć).
+Weryfikacja live: CDP-drag 150 px → `selection.type === 'None'`.
+
+**A3 (napisy nad pinezkami):** badge'e przeniesione z grup pinezek do osobnej
+grupy `.etykiety` wewnątrz grupy świata, w DOM **za** `.pinezki` — SVG maluje
+w kolejności dokumentu, więc żaden badge nie schowa się pod żadną pinezką.
+Sprzęgnięcie stanów klasami na etykiecie (`widoczna`/`wybrana`/`przygaszona`)
+w `map.js`; transform etykiety = transform pinezki (ten sam punkt świata).
+Kontrakty: kolejność malowania w `test/pinezka.test.js`, kotwica `etykiety`
+w `test/mapa-css.test.js`. Dowód pikselowy (headless Chromium, k≈1.6, hover na
+balorze): głowa selkie siedząca w strefie badge balora ma kolor jasnych plecków
+badge `[253,249,238]`, nie wypełnienia pinezki `#96331c` — napis maluje się
+na wierzchu.
+
+**B (data i godzina w „Co nowego”):** ADR 0017 + protokół MFM **v1.5**.
+`meta.utworzono` i `meta.modyfikacje[].data` przyjmują `RRRR-MM-DD` **albo**
+`RRRR-MM-DD GG:MM` (walidator odrzuca `24:00`, `12:60`, `T`, sekundy, podwójne
+spacje; forma dzienna legalna — kompatybilność wstecz, bez migracji). Sort
+feedu porównuje daty **po znakach** zamiast `localeCompare` (porządek totalny
+mieszanki formatów niezależny od tabel ICU — determinizm ADR 0002): dzień
+z godziną wygrywa z dniem bez godziny, wśród godzin kolejność chronologiczna,
+`sekwencja` (L11) pozostaje rozstrzygaczem remisów. Feed renderuje datę
+verbatim (`<time datetime="2026-08-28 14:32">` — poprawny HTML). Dokumenty:
+PROTOKÓŁ §9, AGENTS §3, WORKFLOW §meta, README + stopka aplikacji → v1.5
+(kontrakt L14 pilnuje zgodności), ARCHITECTURE (sort + warstwa `.etykiety`),
+ROADMAP (sekcja M6). Rygor dla przyszłych sesji: nowe `meta` podaje godzinę;
+godzina pochodzi z treści, nigdy z zegara builda.
+
+**Weryfikacja live (headless Chromium 149, 14 checków OK):** kolejność
+`siatka → kraje → luki → pinezki → etykiety`, etykiety nie w grupach pinezek,
+6/6, ukryte na starcie i po przybliżeniu, pokazane po prawdziwym hoverze
+myszką (klasa `widoczna`), schowane po odlocie, drag bez zaznaczenia i z
+przesunięciem widoku, feed z deep-linku (12 pozycji), zero błędów JS.
+Pułapki opisane w L15 (nachodzące pola trafień — kursor „nad balorem” często
+chwyta selkie; klik otwiera kartotekę; przyciski zoomu celują w środek okna).
+
+**Lekcje:** L15 (hit-test pinezek vs obliczone współrzędne). Notatka
+środowiskowa w `ENVIRONMENT` §3 (płytki klon: audyt wymaga
+`git fetch origin main --depth`).
+
+**Stan na koniec M6:** `npm test` 119/119, `npm run build`/`npm run check`
+zielone, indeks deterministyczny (drzewo czyste po buildzie). PR #5 (gałąź
+`arena/01a04853-ame`): plan, audyt PR #4, mapa A1–A3, godzina B (ADR 0017,
+v1.5), dokumenty sesji. Decyzja o scaleniu należy do właściciela.
+
+### Pętla Jakości sesji M6 (po zleceniach — C1 → C3 → C2, ADR 0007)
+
+- **C1a — `drangue-shala`:** research w źródłach (ADR 0008) dał najstarszą
+  relację terenową z samego regionu: Edith Durham, „High Albania and its
+  Customs in 1908” (JRAI XL, 1910, s. 453–472; istnienie odbitki potwierdzone
+  na archive.org, treść cytowana za skanem artykułu) — walki Drangue z
+  Kulshedrą zanotowane dwukrotnie w środku burz 1908, wiara w dwie
+  przeciwstawne siły światła i ciemności (słońce/księżyc), rzeźbione słońce na
+  tronie gospodarza w Shali i Shoshi. Nowe powiązanie z Balorem: zwycięstwo
+  rzutem kamienia z ręki bohatera (Lugh: `cloch as a tábaill` w otwarte oko;
+  drangue: kamienie piorunowe w chmurę) — `meta.modyfikacje` z godziną 15:12.
+- **C1b — `barbarossa-kyffhaeuser`:** pełny tekst wiersza Rückerta „Der alte
+  Barbarossa” (Volksliederarchiv: powstanie 1815, pierwszy druk „Kranz der
+  Zeit” 1817 s. 270, melodia Gersbacha 1824/Silcher) — scena snu (mrugnięcie
+  do chłopca, wysłanie „Zwerga” po kruki, broda „von Feuersglut”) dopowiedziana
+  w wyglądzie; nowe powiązanie z Egungun — przodek, który wraca rytuałem
+  (maskarada cykliczna ↔ powrót jednorazowy z zastępem). `meta.modyfikacje`
+  z godziną 15:20.
+- **C3 — SKIT „Godzina otwarcia”** (`data/skity/godzina-otwarcia.json`,
+  239 słów): Balor × Drangue z doliny Shali — skład wolny i unikalny; temat
+  „słabość jako godzina otwarcia” nie powtarza żadnego z trzech poprzednich.
+  Przy okazji: test porządku feedu („zmiany dnia najwyżej”) asercjonował
+  świat sprzed ADR 0017 — przepisany na nowe invariants (godzina nad zapisem
+  dziennym; wśród dziennych sekwencja L11). 119/119 → push.
+- **C2 — podgląd powiązań na najechanie/fokus** (featur, do akceptacji):
+  hover/fokus na pinezkę zwęża warstwę łuków do par, które ją dotykają
+  (wszystkie z klasą `aktywny`), podświetla sąsiadów klasą `.powiazana`
+  (obrys głowy kolorem akcentu), pokazuje badge; odlot/blur przywraca stan
+  (też przy włączonej warstwie ∞ — zwęża, potem przywraca pełną). Test
+  kontraktowy w `pinezka.test.js` (120/120); live w Chromium: 11 → 5 łuków
+  dla balora, sąsiedzi: barbarossa, drangue, lincoln-imp, selkie; zero błędów
+  JS. Prezentacja właścicielowi w czacie — live po scaleniu PR #5.
+
+### Zlecenie w sesji M6: ton SKITów — humor i codzienność (PROTOKÓŁ v1.6, ADR 0018)
+
+Właściciel (2026-08-28): skity są „strasznie poważne i srogie” — wytyczne mają
+sugerować też rejestr humorystyczny, „na luzie, przy ognisku, o prostych,
+codziennych sprawach”, nie tylko „sążniste elegie”.
+
+- **ADR 0018 + PROTOKÓŁ v1.6:** §8 (wstęp i §8.3 pkt 3) dopowiada rejestr
+  tonu — humor, codzienność (jedzenie, sen, pogoda, kurz, pranie, zwierzęta,
+  sąsiedzi) jako pełnoprawny rejestr; po serii poważnych rozmów następna
+  powinna być lekka. Sugestia autorska, nie walidator — rygory twarde
+  (in-character, faktografia z lore, unikalność składu, 2–4 uczestników,
+  300 słów) bez zmian. Istniejące SKIT-y bez migracji. README i stopka
+  aplikacji → v1.6 (kontrakt L14). Przy okazji usunięta stara literówka
+  §8 („łączi” → „łączy”).
+- **SKIT demonstracyjny nowego rejestru — „Kurz i pióra”** (Drangue × Imp
+  z Lincoln, skład unikalny, 241 słów): jaskółka pod skrzydłem, gołębie
+  katedry, kurz „jak złoto”, pranie skrzydeł w „przeciągu wysokiej jakości”.
+  Fakty z kanonu kartotek (okna wybite przez ima, wiązówka, kamień
+  piorunowy, matki pilnujące skrzydeł); czwartek jako dzień widowni —
+  kiwnik do „e enjte” (czwartek, dzień ognia) z dokumentacji drangue.
+- Stan: `npm test` 120/120, build/check zielone, indeks: 6 wpisów, 5 SKITów,
+  16 pozycji feedu.
+
+### Zlecenie w sesji M6: materializacje Illusory Demon (ARB) i Savage Surge (THS) — F1
+
+Obie karty pobrane ze Scryfall (ADR 0008; korekty względem pamięci: Illusory
+Demon jest 4/3 — nie 2/2, Savage Surge kosztuje {1}{G} — nie {G}). Research
+źródłowy: Theoi (Empousai, Kentauroi), Wikipedia (Empusa, Lapiths), Owidiusz
+Met. XII w przekł. Kline (UVA), Arystofanes „Żaby” w Internet Classics Archive
+(MIT) — wszystkie adresy otwarte przed zapisem.
+
+- **Empusa z Koryntu** (`empusa-korynt`, Korynt 37.906/22.88): fantom z
+  orszaku Hekaty (Suda: „phantasma daimonios”), scena Filostrata VA IV.25
+  (Menippos, wesele, tuczenie dla czystej krwi, zniknięcie domu i uczty).
+  Klucz karty: „When you cast a spell, sacrifice this creature” — czar empusy
+  trwa, dopóki nie rzucisz niczego własnego; ruling 2009-01-05 (zdolność na
+  stacku nad czarem, wykonuje się pierwszy) = pierwsze nowe słowo wykłada
+  empusę. 4/3 — siła pozoru, kruchość istoty. Powiązania: egungun (kto stoi
+  pod przyodzianiem — zaproszony przodek vs nieproszony pozór), selkie
+  (przemiana przez to, co noszone).
+- **Kentaur z Pelionu** (`kentaur-pelion`, Pelion 39.443/23.142): Nephele +
+  Iksion, wychowanie u córek Chejrona, wesele Pejrytoosa, Eurytion/Eurytos
+  (Owidiusz), krater Tezeusza, uszy i nos Eurytiona (Lapiths/Wikipedia),
+  wygnanie na Pindos. Klucz karty: +2/+2 i untap = „A centaur has two backs!”
+  — druga akcja z połowy, którą przeciwnik wyłączył z rachuby; ruling
+  2013-09-15 (cel także w tapniętą) = cios w moment przełożenia ciężaru.
+  Powiązania: selkie (dwa ciała), drangue (dwie natury na pograniczu).
+- **Kanon +4:** `grecja` (kultura), `fantom`, `kentaur` (typ), `furia`
+  (motyw). Wpisy: Empusa `grecja, fantom, przemiana, postac-zwierzeca`;
+  Kentaur `grecja, kentaur, furia`.
+- **Wizualizacje:** oba prompty z ram §5; wygenerowane i dotknięte do
+  dokładnie 21:9 (1568×672, 0.11/0.16 MB) przez `sharp` (kadrowanie
+  centralne 21:9 z boku i rekomprese — PIL w sandboxie zniknął po resecie,
+  L6: skrypt osobno, stderr czytany, wymiary zweryfikowane metadanymi).
+- **Kontrakty danych rozstrzygnięte przy okazji:** `dane.test.js` wymaga
+  ≥3 źródeł na wpis (Empusa dostała trzecie: MIT „Żaby”) i liczył 6 kultur →
+  7; zakaz cyrylicy/CJK w prozie → rosyjska i japońska nazwa karty w tabeli
+  rezonansu zapisana transliteracją („Prizrachny demon”, „gen’ei no akuma”);
+  `skit.test.js`: niezmiennik „najnowszy SKIT nad utworzeniami” obowiązywał
+  przy datach dziennych — po ADR 0017 utworzenia mają godziny, więc
+  zamieniony na dosłowną monotoniczność dat w feedzie + najnowsze zdarzenie
+  jako ostatni zapis kartoteki.
+- Stan: `npm test` 120/120, build/check zielone; indeks: **8 wpisów**, 5
+  SKITów, 18 pozycji feedu, 26 tagów. Dwie nowe pinezki na mapie (Grecja ×2).

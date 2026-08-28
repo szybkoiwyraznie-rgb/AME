@@ -5,13 +5,17 @@
 > aplikacja + kartoteka. Protokół opisuje, jak powstaje i co zawiera pojedynczy
 > wpis („kartotka manifestacji”).
 >
-> Status: **obowiązujący** (v1.4 od 2026-08-28; v1.3 i v1.2 — 2026-08-28; v1.1 — 2026-08-27).
+> Status: **obowiązujący** (v1.6 od 2026-08-28; v1.5, v1.4, v1.3 i v1.2 — 2026-08-28; v1.1 — 2026-08-27).
 > Zmiany protokołu wymagają ADR.
 > v1.1 (ADR 0005): rama promptu 21:9. v1.2 (ADR 0011): obowiązująca kolejność
 > prezentacji sekcji oraz adres www jako część źródła. **v1.3 (ADR 0012):
 > **v1.4 (ADR 0015): limit długości SKITa 250 → 300 słów.** W v1.3 (ADR 0012)
 > numeracja sekcji idzie za kolejnością (I = Wizualizacja … V = Rezonans) i
-> dochodzi sekcja VI „SKITy”** (Baza Skitów, ADR 0013).
+> dochodzi sekcja VI „SKITy”** (Baza Skitów, ADR 0013). **v1.5 (ADR 0017):
+> data w meta może nieść godzinę — `RRRR-MM-DD` albo `RRRR-MM-DD GG:MM` —
+> a feed „Co nowego” podaje datę i godzinę zdarzenia.** **v1.6 (ADR 0018):
+> ton SKITów — obok rozmów poważnych pełnoprawnym rejestrem jest luz:
+> humor, codzienność, rozmowa „przy ognisku”.**
 
 ## 1. Filozofia systemu
 
@@ -254,10 +258,12 @@ dziecku) i `plotno-i-kamien` (Egungun × Imp z Lincoln — kto wchodzi do
 ## 8. SKITy — warstwa literacka archiwum (od v1.3)
 
 **SKIT** to niezależny obiekt literacki: krótki fragment prozy dialogowej, który
-łączi manifestacje z różnych kultur w rozmowie mądrej, zabawnej i zajmującej
+łączy manifestacje z różnych kultur w rozmowie mądrej, zabawnej i zajmującej
 (por. przerywniki dialogowe z serii *Tales of…*). SKITy budują warstwę
 filozoficzno-satyryczną archiwum: pokazują, jak byty widziane przez swoje
-tradycje rozmawiają ze sobą.
+tradycje rozmawiają ze sobą — **nie tylko o rzeczach wielkich**: od v1.6
+pełnoprawnym rejestrem jest zwykła rozmowa przy ognisku, o codzienności,
+z humorem (ADR 0018, patrz §8.3 pkt 3).
 
 ### 8.1 Gdzie mieszkają
 
@@ -302,6 +308,14 @@ dialog, bez zdań-wstępów. Stopka karty (wpisu i skitu) pokazuje wyłącznie d
    filozofia, wzajemne relacje, obserwacje okolicy, stan fizyczny i psychiczny,
    przemyślenia, zwyczaje wyniesione z kultury, jedzenie, wolny czas, hobby,
    pasje, pragnienia, kompleksy, traumy, duma, poczucie humoru.
+   **Ton (sugestia, v1.6 — ADR 0018):** rozmowy nie muszą być poważne, by były
+   dobre. Pisz też luźne — klimatem jak przy ognisku, po robocie: o prostych,
+   codziennych sprawach (jedzenie, sen, pogoda na jutro, kurz i pranie,
+   zwierzęta pod dachem, drobne ndrogi i żale na sąsiadów), z humorem, żartem
+   i ciepłem. Elegia to jeden z rejestrów, nie jedyny: po serii sążnistych
+   rozmów następna powinna być lekka. Humor trzyma się rygorów: postać żartuje
+   tak, jak żartowałaby w swojej kulturze i czasach (pkt 1), a każdy fakt
+   z żartu musi się zgadzać z kartoteką (pkt 2).
 4. **Oryginalność.** Każdy SKIT ma inny temat niż poprzednie. Zakazane jest
    powtórzenie **składu osobowego**: dwa skity z identycznym zestawem
    materializacji nie przejdą walidatora (`walidujUnikalnoscSkitow`). Skład o
@@ -326,13 +340,17 @@ Sekcja **Co nowego** (przycisk **✚ nowości**, deep-link `#nowosci`) jest
 * `meta.utworzono` → pozycja „dodano";
 * każdy wpis w `meta.modyfikacje: [{data, opis}]` → pozycja „zmieniono".
 
-Sortowanie: **najnowsze na górze**. Data ma dokładność dzienną, więc o kolejności
-w obrębie dnia decyduje **chronologia zdarzeń w pliku**: każda pozycja dostaje
-`sekwencja` (0 = `utworzono`, k+1 = k-ty wpis `modyfikacje`, dopisywany na końcu
-tablicy), a sort liczy `data malejąco → sekwencja malejąco → typ (skity przed
-wpisami) → slug`. Utworzenie karty z poprzedniej sesji nie może przysłonić
-zmian z dziś. Klucz `sekwencja` służy tylko sortowaniu i nie trafia do indeksu
-(pozostaje deterministyczny — ADR 0002).
+Sortowanie: **najnowsze na górze**. Data może mieć dokładność dzienną
+(`RRRR-MM-DD`) albo godzinową (`RRRR-MM-DD GG:MM`, ADR 0017). Pozycje z godziną
+układają się w obrębie dnia chronologicznie (godzina rozstrzyga przed
+sekwencją); pozycje bez godziny — zapisy sprzed v1.5 — lądują pod godzinowymi
+tego samego dnia, a ich kolejność wynika z **chronologii zdarzeń w pliku**:
+każda pozycja dostaje `sekwencja` (0 = `utworzono`, k+1 = k-ty wpis
+`modyfikacje`, dopisywany na końcu tablicy). Sort liczy `data malejąco →
+sekwencja malejąco → typ (skity przed wpisami) → slug`. Utworzenie karty
+z poprzedniej sesji nie może przysłonić zmian z dziś. Klucz `sekwencja` służy
+tylko sortowaniu i nie trafia do indeksu (pozostaje deterministyczny —
+ADR 0002).
 
 `opis` modyfikacji czyta człowiek w dzienniku archiwum: to **zdanie o treści**
 (co doszło, co się poprawiło w karcie), a nie notatka robocza sesji — bez
@@ -341,4 +359,6 @@ techniczne (kod, narzędzia, zasady) idą do `docs/PROJECT_HISTORY.md` i opisu P
 Konsekwencja dla agentów: **każda zmiana w treści musi zostać opisana w
 `meta.modyfikacje` z poprawną datą** — inaczej zmiana nie trafi do dziennika i
 łamie §6. Nowy plik (wpis lub skit) dostaje `meta.utworzono` w formacie
-`RRRR-MM-DD`.
+`RRRR-MM-DD`, **zalecane z godziną** (`RRRR-MM-DD GG:MM` — moment zapisu,
+ADR 0017); forma bez godziny pozostaje legalna dla starych zapisów. Godzina
+pochodzi z treści pliku, nigdy z zegara builda (determinizm — ADR 0002).

@@ -51,7 +51,7 @@ blokują `fetch()` dla plików lokalnych.
 | Ścieżka | Zawartość |
 |---|---|
 | `AGENTS.md` | **zasady pracy agentów — lektura startowa każdej sesji** |
-| `docs/PROTOKOL.md` | protokół MFM v1.4: format i kolejność sekcji, rama promptu 21:9 |
+| `docs/PROTOKOL.md` | protokół MFM v1.6: format i kolejność sekcji, rama promptu 21:9 |
 | `docs/decisions/` | rejestr decyzji architektonicznych (ADR) |
 | `docs/ROADMAP.md` | fazy prac i status (+ Pętla Jakości) |
 | `docs/WORKFLOW.md` | **procedura: dodanie manifestacji z karty, krok po kroku** |
