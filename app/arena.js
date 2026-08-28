@@ -125,3 +125,79 @@ export function kolejnosc(a, b) {
   if (a.spryt !== b.spryt) return a.spryt > b.spryt ? [a, b] : [b, a];
   return a.slug <= b.slug ? [a, b] : [b, a];
 }
+
+/* ------------------------------------------------------------------ *
+ * NORMALIZACJA I ARCHETYPY (fundament pod kierunki A/B — sesja M9, C2)
+ *
+ * Problem: staty liczone z „gęstości" rekordu premiują wpisy stare i mocno
+ * rozbudowane — nowy byt zawsze przegrywa. Rozwiązanie: liczby czytamy jako
+ * PERCENTYL w obrębie aktualnej kartoteki (0–100), więc siła jest względna, a
+ * dopisanie wpisu nie deklasuje reszty. Archetyp wyprowadzamy z KSZTAŁTU
+ * profilu (co dany byt ma ponadprzeciętnie), nie z sumy — czytelna, wierna
+ * lore etykieta. Wszystko deterministyczne: bez RNG, bez sieci.
+ * ------------------------------------------------------------------ */
+
+const OSIE = ['zywotnosc', 'moc', 'spryt', 'rezonans'];
+
+/**
+ * Percentyl wartości `v` w posortowanej tablicy `wartosci` metodą „rank"
+ * (udział elementów < v + połowa równych), skala 0–100, zaokrąglony.
+ * Deterministyczny; dla jednoelementowej kartoteki zwraca 50 (środek).
+ */
+export function percentyl(v, wartosci) {
+  const n = wartosci.length;
+  if (n === 0) return 0;
+  if (n === 1) return 50;
+  let mniej = 0;
+  let rowne = 0;
+  for (const x of wartosci) {
+    if (x < v) mniej++;
+    else if (x === v) rowne++;
+  }
+  return Math.round(((mniej + rowne / 2) / n) * 100);
+}
+
+/**
+ * Profil kartoteki: dla każdego rekordu zwraca staty surowe + znormalizowane
+ * (percentyl każdej osi w obrębie całej kartoteki) + archetyp. Wejście: tablica
+ * rekordów indeksu. Wyjście: Map slug → {staty, percentyle, archetyp}.
+ * Deterministyczne (sortowanie po slugu jak w indeksie, ADR 0002).
+ */
+export function profileKartoteki(rekordy, kanon = null) {
+  const lista = (Array.isArray(rekordy) ? rekordy : []).map((r) => statyManifestacji(r, kanon));
+  const kolumny = Object.fromEntries(OSIE.map((o) => [o, lista.map((s) => s[o])]));
+  const wynik = new Map();
+  for (const s of lista) {
+    const percentyle = Object.fromEntries(OSIE.map((o) => [o, percentyl(s[o], kolumny[o])]));
+    wynik.set(s.slug, { staty: s, percentyle, archetyp: archetypBytu(percentyle, s) });
+  }
+  return wynik;
+}
+
+/**
+ * Archetyp z KSZTAŁTU profilu (percentyle 0–100): bierze oś, na której byt jest
+ * najsilniejszy względem kartoteki, i tłumaczy ją na etykietę wierną lore.
+ * Remisy rozstrzyga stała kolejność osi (deterministycznie). „Samotnik" =
+ * profil wyrównany i niski (nic nie wystaje ponad próg).
+ */
+export function archetypBytu(percentyle, staty = null) {
+  const ETYKIETY = {
+    zywotnosc: 'Filar', // trzyma sieć: dużo backlinków i skitów
+    moc: 'Drapieżnik', // groźne imiona i motywy ofensywne
+    spryt: 'Splotca', // dużo własnych powiązań — pierwszy nawiązuje
+    rezonans: 'Pieśniarz', // żywy w rozmowach i wielu tradycjach
+  };
+  let najlepsza = null;
+  let max = -1;
+  for (const o of OSIE) {
+    const v = percentyle[o] ?? 0;
+    if (v > max) {
+      max = v;
+      najlepsza = o;
+    }
+  }
+  // Jeśli nic nie wystaje ponad środek — profil wyrównany/niski = „Samotnik".
+  if (max <= 50) return 'Samotnik';
+  return ETYKIETY[najlepsza];
+}
+

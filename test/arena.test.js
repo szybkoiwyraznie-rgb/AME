@@ -13,6 +13,9 @@ import {
   obrazeniaRundy,
   kolejnosc,
   WAGA_MOTYWU,
+  percentyl,
+  profileKartoteki,
+  archetypBytu,
 } from '../app/arena.js';
 
 const rekord = (o = {}) => ({
@@ -103,6 +106,64 @@ test('każdy motyw z kanonu ma wagę bojową (bez cichych zer)', async () => {
   const motywy = kanon.tagi.filter((t) => t.kategoria === 'motyw').map((t) => t.tag);
   for (const m of motywy) {
     assert.ok(m in WAGA_MOTYWU, `motyw „${m}" z kanonu musi mieć wagę w WAGA_MOTYWU`);
+  }
+});
+
+/* ---- Normalizacja i archetypy (fundament kierunków A/B, M9 C2) ---- */
+
+test('percentyl: skrajne, środek, pusta i jednoelementowa kartoteka', () => {
+  const w = [10, 20, 30, 40];
+  assert.equal(percentyl(10, w), 13, 'najniższy: (0 + 0.5)/4 = 12.5 → 13');
+  assert.equal(percentyl(40, w), 88, 'najwyższy: (3 + 0.5)/4 = 87.5 → 88');
+  assert.equal(percentyl(5, []), 0, 'pusta pula → 0');
+  assert.equal(percentyl(99, [99]), 50, 'jednoelementowa → środek 50');
+});
+
+test('percentyl: identyczne wartości dają wszystkim 50', () => {
+  const w = [7, 7, 7, 7];
+  assert.equal(percentyl(7, w), 50);
+});
+
+test('profileKartoteki: percentyle względne, deterministyczne, z archetypem', () => {
+  const rekordy = [
+    rekord({ slug: 'a', backlinki: ['x', 'y', 'z', 'w'], skity: ['s1', 's2'] }), // wysoka ŻYWOTNOŚĆ
+    rekord({ slug: 'b', powiazania: ['p1', 'p2', 'p3', 'p4'] }), // wysoki SPRYT
+    rekord({ slug: 'c' }), // baza — nic nie wystaje
+  ];
+  const prof = profileKartoteki(rekordy);
+  assert.equal(prof.size, 3);
+  // a ma najwyższą ŻYWOTNOŚĆ w kartotece → percentyl 100-ish i archetyp Filar
+  assert.ok(prof.get('a').percentyle.zywotnosc >= prof.get('c').percentyle.zywotnosc);
+  assert.equal(prof.get('a').archetyp, 'Filar');
+  assert.equal(prof.get('b').archetyp, 'Splotca', 'najwięcej własnych powiązań → Splotca');
+  assert.equal(prof.get('c').archetyp, 'Samotnik', 'nic nie wystaje ponad środek → Samotnik');
+  // determinizm: drugie wywołanie identyczne
+  const prof2 = profileKartoteki(rekordy);
+  for (const slug of ['a', 'b', 'c']) {
+    assert.deepEqual(prof.get(slug).percentyle, prof2.get(slug).percentyle);
+    assert.equal(prof.get(slug).archetyp, prof2.get(slug).archetyp);
+  }
+});
+
+test('archetypBytu: kształt profilu → etykieta; wyrównany niski = Samotnik', () => {
+  assert.equal(archetypBytu({ zywotnosc: 90, moc: 20, spryt: 10, rezonans: 30 }), 'Filar');
+  assert.equal(archetypBytu({ zywotnosc: 20, moc: 88, spryt: 10, rezonans: 30 }), 'Drapieżnik');
+  assert.equal(archetypBytu({ zywotnosc: 20, moc: 20, spryt: 80, rezonans: 30 }), 'Splotca');
+  assert.equal(archetypBytu({ zywotnosc: 20, moc: 20, spryt: 10, rezonans: 75 }), 'Pieśniarz');
+  assert.equal(archetypBytu({ zywotnosc: 40, moc: 50, spryt: 30, rezonans: 20 }), 'Samotnik', 'nic > 50');
+});
+
+test('archetypy na prawdziwej kartotece: każdy byt dostaje znaną etykietę', async () => {
+  const indeks = JSON.parse(await readFile('data/index.json', 'utf8'));
+  const kanon = JSON.parse(await readFile('data/kanon-tagow.json', 'utf8'));
+  const prof = profileKartoteki(indeks.manifestacje, kanon);
+  const znane = new Set(['Filar', 'Drapieżnik', 'Splotca', 'Pieśniarz', 'Samotnik']);
+  assert.equal(prof.size, indeks.manifestacje.length);
+  for (const [slug, p] of prof) {
+    assert.ok(znane.has(p.archetyp), `${slug}: archetyp „${p.archetyp}" spoza listy`);
+    for (const o of ['zywotnosc', 'moc', 'spryt', 'rezonans']) {
+      assert.ok(p.percentyle[o] >= 0 && p.percentyle[o] <= 100, `${slug}.${o} percentyl w [0,100]`);
+    }
   }
 });
 
