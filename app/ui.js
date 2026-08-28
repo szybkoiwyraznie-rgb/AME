@@ -48,6 +48,21 @@ const TYPY_DOK = {
 };
 
 /**
+ * Adres widoku do udostępnienia: `baza + #slug` dla kartoteki,
+ * `baza + #skit:<slug>` dla skitu. Czyste, żeby dało się zbadać bez przeglądarki.
+ */
+export function linkWidoku(baza, cel) {
+  const czysta = String(baza ?? '').replace(/[#?].*$/, '');
+  return `${czysta}#${String(cel ?? '')}`;
+}
+
+/** Przycisk kopiujący adres bieżącego widoku (kartoteka albo skit/feed). */
+export function przyciskKopiowania(cel) {
+  if (!cel) return '';
+  return `<button class="chip kopiuj-link" type="button" data-kopia="${esc(cel)}" title="Kopiuj adres tego widoku">⧉ kopiuj link</button>`;
+}
+
+/**
  * Stopka wpisu i skitu: wyłącznie data utworzenia oraz data ostatniej
  * modyfikacji. Autor i opisy zmian zostają w pliku JSON oraz w feedzie
  * „Co nowego” — karta nie zasypuje czytelnika notatkami roboczymi
@@ -180,7 +195,10 @@ export function htmlWpisu(w, indeks) {
  */
 export function htmlWarstwyWpisu(trescHtml, { slug = '', nazwa = '' } = {}) {
   return `<div class="warstwa-wpisu" role="dialog" aria-modal="true" tabindex="-1" aria-label="Kartoteka: ${esc(nazwa || slug)}">
-  <button class="zamknij" id="zamknij-wpis" type="button" aria-label="Zamknij kartotekę">✕</button>
+  <div class="akcje-kartoteki">
+    ${przyciskKopiowania(slug)}
+    <button class="zamknij" id="zamknij-wpis" type="button" aria-label="Zamknij kartotekę">✕</button>
+  </div>
   ${trescHtml}
 </div>`;
 }

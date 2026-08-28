@@ -20,7 +20,8 @@ namierzyć realną emanację w naszym świecie; wynikiem jest wpis w kartotece
 - **Źródła z adresami** — sekcja Dokumentacja linkuje do źródeł lub ich opisów
   w sieci; walidator wymaga co najmniej jednego adresu na wpis (ADR 0011).
 - **Warstwa wiki** — tagi, powiązania między bytami (łuki na mapie) i
-  backlinki liczone automatycznie. Deep-link: `/#<slug>`.
+  backlinki liczone automatycznie. Deep-link: `/#<slug>`, a w kartotece i w
+  widoku skitu przycisk „⧉ kopiuj link" do wysłania adresu dalej.
 - **Baza Skitów** — krótkie dialogi materializacji (proza w stylu przerywników
   z gier fabularnych): przycisk „✎ skity", pod każdym bytem sekcja VI z jego
   rozmowami, deep-link `#skit:<slug>`. Walidator pilnuje limitu 300 słów i

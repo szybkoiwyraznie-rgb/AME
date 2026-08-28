@@ -55,9 +55,9 @@
   przełączać dopóki użytkownik nie zdecydował samodzielnie.
 - **Miniatura wizualizacji w wierszu kartoteki i w liście** — obraz 21:9 już jest
   w indeksie (`obraz`), wystarczy `<img loading="lazy">` w `htmlListy`.
-- **Kopiuj link do wpisu** — przycisk w warstwie wpisu (`location.origin +
-  location.pathname + '#' + slug`); skity mają już swoje `#skit:<slug>`, karty
-  nie mają przyciska „kopiuj link obok deep-linku".
+- ~~**Kopiuj link do wpisu**~~ — zrealizowane w M4 (C2): `ui.linkWidoku` +
+  `ui.przyciskKopiowania`, przycisk „⧉ kopiuj link" w kartotece (obok ✕) i w
+  warstwie skitu; test pilnuje, że handlerzy obu warstw obsługują `[data-kopia]`.
 - **Kontrola żywości adresów źródłowych** — skrypt sesji (narzędzia agenta), NIE
   CI: egress sandboxa jest ograniczony (L3), a linki bywają przenoszone.
   Wymagałby decyzji: martwy link = ostrzeżenie czy błąd walidatora.

@@ -128,7 +128,10 @@ w plikach JSON i w feedzie — karty nie są miejscem na notatki robocze sesji.
   (chip w `<article data-skit>`) zostaje pożarty przez kontekst (L10).
 - `#panel` (kartoteka bytu) i `#warstwa` (Baza Skitów / skit / Co nowego) to
   dwie warstwy: ta druga jest nad pierwszą (z-index 70 vs 60) i Esc zamyka
-  ją najpierw.
+  ją najpierw. Udostępnianie widoku: `ui.linkWidoku(baza, cel)` +
+  `ui.przyciskKopiowania(cel)`, a `app.js: kopiujLink` ma fallback dla braku
+  Clipboard API (`file://`, odmowa uprawnień) — przycisk mówi „zaznacz i skopiuj"
+  zamiast milczeć.
 - Zakaz dependency runtime; nowe assety zewnętrzne → `docs/ASSETS.md`.
 - Kolory wyłącznie przez tokeni CSS z `:root` / `html[data-motyw='jasny']`
   (barvy mapy też) — inaczej drugi motyw będzie nieczytelny (ADR 0010).

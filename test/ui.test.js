@@ -308,3 +308,34 @@ test('skit: bez zdania „temat” w widoku i na liście bazy', async () => {
   assert.ok(!widok.includes('sesja arena'), 'również w skicie bez autora i opisów');
   assert.ok(htmlBazySkitow(indeks).includes('skład: Egungun × Imp z Lincoln'), 'wiersz mówi, kto rozmawia');
 });
+
+/* ---- C2: udostępnianie widoku (kopiuj link) ---- */
+
+test('linkWidoku: baza + adres widoku, bez reszty z bieżącego adresu', async () => {
+  const { linkWidoku } = await import('../app/ui.js');
+  assert.equal(linkWidoku('http://x/AME/index.html', 'egungun'), 'http://x/AME/index.html#egungun');
+  assert.equal(linkWidoku('http://x/AME/index.html#nowosci', 'skit:znak-i-liczba'), 'http://x/AME/index.html#skit:znak-i-liczba');
+  assert.equal(linkWidoku('https://example.github.io/AME/', 'balor'), 'https://example.github.io/AME/#balor');
+  assert.equal(linkWidoku('', ''), '#', 'brak bazy nie produkuje undefined');
+});
+
+test('przyciskKopiowania: etykieta z celem i bez celu pusty', async () => {
+  const { przyciskKopiowania, htmlWarstwyWpisu } = await import('../app/ui.js');
+  assert.equal(przyciskKopiowania(''), '');
+  assert.equal(przyciskKopiowania(null), '');
+  const html = przyciskKopiowania('egungun');
+  assert.match(html, /^<button class="chip kopiuj-link" type="button" data-kopia="egungun"/);
+  assert.ok(html.includes('⧉ kopiuj link'));
+    assert.ok(!html.includes('\\'), 'żadnych zbędnych escape’ów w atrybutach');
+  const warstwa = htmlWarstwyWpisu('<div class="wpis"></div>', { slug: 'egungun', nazwa: 'Egungun' });
+  assert.match(warstwa, /class="akcje-kartoteki"[\s\S]*data-kopia="egungun"[\s\S]*id="zamknij-wpis"/, 'kopiuj przed zamknij, w jednym rzędzie');
+});
+
+test('kopiowanie linku jest podpięte w obu warstwach (handlerzy widzą data-kopia)', async () => {
+  const app = await readFile('app/app.js', 'utf8');
+  const panel = app.slice(app.indexOf("$('#panel').addEventListener"), app.indexOf("$('#lista').addEventListener"));
+  const warstwa = app.slice(app.indexOf("$('#warstwa').addEventListener"), app.indexOf("$('#przycisk-motyw')"));
+  assert.ok(/data-kopia/.test(panel), 'kartoteka: brak obsługi [data-kopia] — przycisk byłby martwy');
+  assert.ok(/kopiujLink\(/.test(panel), 'kartoteka: wywołanie kopiujLink');
+  assert.ok(/data-kopia/.test(warstwa) && /kopiujLink\(/.test(warstwa), 'warstwa skitów/feedu: to samo');
+});

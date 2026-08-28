@@ -11,6 +11,8 @@ import {
   htmlBazySkitow,
   htmlSkitu,
   htmlNowosci,
+  przyciskKopiowania,
+  linkWidoku,
   esc,
   nastepnyMotyw,
   motywPoczatkowy,
@@ -129,11 +131,25 @@ function zamknijWpis(czyscHash = true) {
 
 /* ---- Warstwa pomocnicza: Baza Skitów, widok SKITa, „Co nowego” ---- */
 
-function szkicWarstwy(tytul, trescHtml, { wroc = null } = {}) {
+/* Kopiowanie adresu widoku (kartoteka, skit, feed). Brak Clipboard API
+ * (file:// albo odmowa uprawnień) nie psuje UI: przycisk mówi, co zrobić. */
+function kopiujLink(cel, przycisk) {
+  const adres = linkWidoku(location.origin + location.pathname, cel);
+  const pokaz = (ok) => {
+    przycisk.textContent = ok ? 'skopiowano ✓' : 'zaznacz i skopiuj';
+    setTimeout(() => (przycisk.textContent = '⧉ kopiuj link'), 1800);
+  };
+  if (!navigator.clipboard?.writeText) return pokaz(false);
+  navigator.clipboard.writeText(adres).then(() => pokaz(true), () => pokaz(false));
+}
+
+
+function szkicWarstwy(tytul, trescHtml, { wroc = null, kopia = null } = {}) {
   return `<div class="warstwa-tresc">
     <header>
       <h2>${esc(tytul)}</h2>
       <div class="akcje-warstwy">
+        ${kopia ? `<button class="chip kopiuj-link" type="button" data-kopia="${esc(kopia)}" title="Kopiuj adres tego widoku">⧉ kopiuj link</button>` : ''}
         ${wroc ? `<button class="chip" type="button" data-wroc="${esc(wroc)}">← ${esc(wroc === 'skity' ? 'Baza skitów' : 'wróć')}</button>` : ''}
         <button class="zamknij" id="zamknij-warstwe" type="button" aria-label="Zamknij">✕</button>
       </div>
@@ -196,7 +212,10 @@ async function otworzSkit(slug, { zBazy = true } = {}) {
   warstwaTrybPrzycisku('#przycisk-nowosci', false);
   try {
     const skit = await zaladujSkit(slug);
-    warstwa.innerHTML = szkicWarstwy('Baza Skitów', htmlSkitu(skit, stan.indeks), zBazy ? { wroc: 'skity' } : {});
+    warstwa.innerHTML = szkicWarstwy('Baza Skitów', htmlSkitu(skit, stan.indeks), {
+      wroc: zBazy ? 'skity' : null,
+      kopia: `skit:${slug}`,
+    });
     warstwa.scrollTop = 0;
     if (location.hash !== `#skit:${slug}`) history.replaceState(null, '', `#skit:${slug}`);
   } catch (err) {
@@ -239,6 +258,8 @@ function podepnijZdarzenia() {
 
   $('#panel').addEventListener('click', (e) => {
     if (e.target.closest('#zamknij-wpis')) return zamknijWpis();
+    const kopia = e.target.closest('[data-kopia]');
+    if (kopia) return kopiujLink(kopia.dataset.kopia, kopia);
     const cel = e.target.closest('[data-slug], [data-skit]');
     if (cel) {
       if (cel.hasAttribute('data-skit')) otworzSkit(cel.dataset.skit);
@@ -285,6 +306,8 @@ function podepnijZdarzenia() {
     if (e.target.closest('#zamknij-warstwe')) return zamknijWarstwe();
     // Jeden closest() z listą atrybutów: wygoda dla użytkownika = trafienie w
     // najbliższy element, nie w jego kontekst (chip uczestnika siedzi w <article data-skit>).
+    const kopia = e.target.closest('[data-kopia]');
+    if (kopia) return kopiujLink(kopia.dataset.kopia, kopia);
     const cel = e.target.closest('[data-wroc], [data-link], [data-slug], [data-skit]');
     if (!cel) return;
     if (cel.hasAttribute('data-wroc')) {

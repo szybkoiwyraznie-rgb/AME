@@ -309,6 +309,24 @@ html[data-motyw='jasny'] .baner code { background: #ffffff77; }
   backdrop-filter: blur(4px);
 }
 .zamknij:hover, .zamknij:focus-visible { border-color: var(--akcent); color: var(--akcent); }
+
+/* Akcje kartoteki: ⧉ kopiuj link obok ✕ (stały układ, żeby nie przysłaniać treści) */
+.akcje-kartoteki {
+  position: fixed;
+  top: 14px;
+  right: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 6;
+}
+.akcje-kartoteki .zamknij { position: static; margin: 0; }
+.kopiuj-link {
+  background: var(--kolo-tlo);
+  backdrop-filter: blur(4px);
+  padding: 8px 12px;
+}
+.kopiuj-link:hover, .kopiuj-link:focus-visible { border-color: var(--akcent); color: var(--akcent); }
 .ladowanie, .blad { padding: 24px; color: var(--tekst-dim); }
 .blad { color: var(--akcent-2); }
 
