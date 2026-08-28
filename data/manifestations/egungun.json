@@ -4,7 +4,9 @@
   "nazwy_alternatywne": [
     "Egúngún",
     "Ara Ọ̀run („mieszkańcy nieba”)",
-    "Eegun"
+    "Ará Òrun Kìn-ìn Kin-in („naprawdę mieszkaniec nieba”)",
+    "Eegun",
+    "festiwal egúngún w Oyo (Edun Egungun)"
   ],
   "karta": {
     "nazwa": "Krumar Initiate",
@@ -18,6 +20,38 @@
     "lon": 3.94
   },
   "pochodzenie_i_kultura": "Religia Jorubów (Nigeria, Benin); rodowy kult przodków i maskarada egúngún królestwa Òyó",
+  "wizualizacja": {
+    "prompt": "Style: A wide-angle full-body cinematic photograph. The central objects/persons of the photo are visible from head to toe, standing centrally in the frame. No parts of the body are cropped.\n\nA Yoruba egungun ancestral masquerader standing in a palace courtyard in Oyo, Nigeria at dusk, fully covered from head to toe in towering layers of vermilion, indigo and gold brocade cloth hung with cowrie shells and beads, a net veil completely hiding the face, arms spread wide with long cloth streamers swirling in the dance, raised dust glowing in torchlight, batá drummers as soft silhouettes in the background, the crowd kneeling at the edge of the light.\n\nCaptured with a 35mm anamorphic lens at f/1.8. Shallow depth of field with a heavy, creamy bokeh background. Environmental portraiture. Dramatic cinematic lighting, sharp focus on the character, hyper-realistic textures of clothing and skin. Shot on 70mm film stock, ultra-wide 21:9 aspect ratio. --ar 21:9",
+    "obraz": "assets/wizualizacje/egungun.jpg"
+  },
+  "natura": {
+    "wyglad_i_aura": "Egungun manifestuje się jako maskaron całkowicie ukryty od stóp do głów pod wieżowymi warstwami tkanin — jedwabiu, aksamitu, adamaszku i bawełny haftowane kauriami, koralkami i skórami; im więcej warstw, tym potężniejszy duch, a każda warstwa należy do innego pokolenia przodków. Twarz skrywa zasłona: gdy tancerz przywdziewa płótna, „przestaje być człowiekiem” i staje się ara ọ̀run. Obecności towarzyszy wzburzony kurz, zapach drewna i olejów z pochodni oraz rytm bębnów bàtá i dundun; tłum drży z bojaźni i czci — dotknięcie wirujących płócien błogosławi, ale zatrzymanie ducha ściąga karę.",
+    "charakter_i_motywacje": "Egungun to nie kostium, lecz powracający przodek: błogosławi dzieci, rozsądza spory w rodzie, ostrzega przed upadkiem obyczajów i ściga winnych. Wchodzi w interakcje z ludźmi, bo śmierć nie zrywa przynależności do linii — ìdílé trwa po obu stronach granicy światów (ayé i ọ̀run). Jest żywym sumieniem społeczności: wymusza na żywych standardy moralne minionych pokoleń, a swoją obecnością potwierdza, że kontrakt pokoleń nie wygasł.",
+    "zdolnosci": "opętanie naczynia — ciało maskarona staje się miejscem, w którym przebywa duch przodka; błogosławieństwo płótnem (dotyk głów dzieci i wiernych); sąd i kara — egungun goni i chłoszcze przewinionych (kije ẹgbá nosi obsługa); pośrednictwo między ayé a ọ̀run — uzdrawianie sporów rodu; pełna konspiracja tożsamości — kto odsłoni twarz naczynia, łamie fundamentalne tabu.",
+    "slabosci_i_metody_pokonania": "Egungun nie jest przeciwnikiem do zabicia — jest przodkiem do uhonorowania. Skuteczne „metody konfrontacji” są rytualne: ofiary i modlitwy w sanktuarium przodków; oríkì — pochwalne pieśni genealogiczne śpiewane przez chór, które duch przyjmuje jako należną cześć; interwencja Alapini (kapłana przywołującego duchy) i starszyzny rodu; bezwzględne przestrzeganie tabu dystansu przez niewtajemniczonych. Gdy maskaron wymknie się spod kontroli, równowagę przywraca ofiara i rytualna interwencja starszyzny — siła fizyczna jest bezradna, bo nie walczy się z własnym przodkiem.",
+    "preferencje": "Lubi: rytm bàtá i dundun, oríkì przodków, ofiary w sanktuariach, śpiewające tłumy i festiwalowe pochody przez miasto (w Òyó — sierpniowy festiwal zakończony na dziedzińcu pałacu królewskiego przez Obę). Nielubi: braku czci, złamanych przysiąg i waśni w rodzie, naruszenia tabu przez niewtajemniczonych, profanacji płócien i domów masek."
+  },
+  "dokumentacja": [
+    {
+      "typ": "literatura naukowa",
+      "pozycja": "Henry John Drewal, John Pemberton III (z Rowlandem Abiodunem), „Yoruba: Nine Centuries of African Art and Thought”, Center for African Art / Harry N. Abrams, Nowy Jork 1989, 256 s. (ISBN 9780945802044) — kosmologia ọ̀run/ayé, àṣẹ, ara ọ̀run jako „departed but not deceased”",
+      "url": "https://books.google.com/books/about/Yoruba.html?id=fZwVAQAAIAAJ"
+    },
+    {
+      "typ": "prace badawcze",
+      "pozycja": "Abiodun Olasupo Akande (Uniw. w Lagosie), „Ará Òrun Kìn-ìn Kin-in: Òyó-Yòrùbá Egúngún Masquerade in Communion and Maintenance of Ontological Balance”, „Genealogy” 3(1), 7 (2019), doi:10.3390/genealogy3010007 — badania w dwóch związkach rodzinnych (ìdílé / agbo ilé) miasta Òyó, festiwal roczny w sierpniu",
+      "url": "https://www.mdpi.com/2313-5778/3/1/7"
+    },
+    {
+      "typ": "reportaż",
+      "pozycja": "„The Egungun Festival: Where the Living Meet the Ancestors”, ModernGhana — struktura siedmiodniowego festiwalu, inicjacja wybranych członków rodów, Alapini, podział ról (mężczyźni maskują, kobiety śpiewają oríkì), finał na dziedzińcu pałacu Oby",
+      "url": "https://www.modernghana.com/news/1490368/the-egungun-festival-where-the-living-meet-the.html"
+    }
+  ],
+  "trofea": {
+    "pierwotne": "Kosmyk płótna z wiru egúngún (relikwia — przechowywana w sanktuarium rodu, nie w prywatnej kolekcji)",
+    "wtorne": "Kauria zhaftowana na płótnach maskarady"
+  },
   "rezonans": {
     "klucz_przywolania": "Krumar Initiate to żyjący NOWICJUSZ kultu przodków: zapłaciwszy własną siłą życiową (Pay X life), przywołuje ducha, który materializuje się obok niego jako biały Duch (token X/X), albo sam wzrasta w mocy. To dokładna struktura egúngún: wybrany członek rodu zostaje wtajemniczony i staje się naczyniem, przez które przodek — ara ọ̀run, „mieszkaniec nieba” — powraca do świata żywych w cielesnej, zamaskowanej postaci. Flavor karty (głosy duchów rodu witające nowego „sprout of our Kin-Tree”) brzmi jak zapis inicjacyjnego objawienia w kulcie egúngún.",
     "tabela": [
@@ -43,46 +77,22 @@
       }
     ]
   },
-  "natura": {
-    "wyglad_i_aura": "Egungun manifestuje się jako maskaron całkowicie ukryty od stóp do głów pod wieżowymi warstwami tkanin — jedwabiu, aksamitu, adamaszku i bawełny haftowane kauriami, koralkami i skórami; im więcej warstw, tym potężniejszy duch, a każda warstwa należy do innego pokolenia przodków. Twarz skrywa zasłona: gdy tancerz przywdziewa płótna, „przestaje być człowiekiem” i staje się ara ọ̀run. Obecności towarzyszy wzburzony kurz, zapach drewna i olejów z pochodni oraz rytm bębnów bàtá i dundun; tłum drży z bojaźni i czci — dotknięcie wirujących płócien błogosławi, ale zatrzymanie ducha ściąga karę.",
-    "charakter_i_motywacje": "Egungun to nie kostium, lecz powracający przodek: błogosławi dzieci, rozsądza spory w rodzie, ostrzega przed upadkiem obyczajów i ściga winnych. Wchodzi w interakcje z ludźmi, bo śmierć nie zrywa przynależności do linii — ìdílé trwa po obu stronach granicy światów (ayé i ọ̀run). Jest żywym sumieniem społeczności: wymusza na żywych standardy moralne minionych pokoleń, a swoją obecnością potwierdza, że kontrakt pokoleń nie wygasł.",
-    "zdolnosci": "opętanie naczynia — ciało maskarona staje się miejscem, w którym przebywa duch przodka; błogosławieństwo płótnem (dotyk głów dzieci i wiernych); sąd i kara — egungun goni i chłoszcze przewinionych (kije ẹgbá nosi obsługa); pośrednictwo między ayé a ọ̀run — uzdrawianie sporów rodu; pełna konspiracja tożsamości — kto odsłoni twarz naczynia, łamie fundamentalne tabu.",
-    "slabosci_i_metody_pokonania": "Egungun nie jest przeciwnikiem do zabicia — jest przodkiem do uhonorowania. Skuteczne „metody konfrontacji” są rytualne: ofiary i modlitwy w sanktuarium przodków; oríkì — pochwalne pieśni genealogiczne śpiewane przez chór, które duch przyjmuje jako należną cześć; interwencja Alapini (kapłana przywołującego duchy) i starszyzny rodu; bezwzględne przestrzeganie tabu dystansu przez niewtajemniczonych. Gdy maskaron wymknie się spod kontroli, równowagę przywraca ofiara i rytualna interwencja starszyzny — siła fizyczna jest bezradna, bo nie walczy się z własnym przodkiem.",
-    "preferencje": "Lubi: rytm bàtá i dundun, oríkì przodków, ofiary w sanktuariach, śpiewające tłumy i festiwalowe pochody przez miasto (w Òyó — sierpniowy festiwal zakończony na dziedzińcu pałacu królewskiego przez Obę). Nielubi: braku czci, złamanych przysiąg i waśni w rodzie, naruszenia tabu przez niewtajemniczonych, profanacji płócien i domów masek."
-  },
-  "dokumentacja": [
-    {
-      "typ": "literatura naukowa",
-      "pozycja": "John Henry Drewal, John Pemberton III (z Rowlandem Abiodunem), Yoruba: Nine Centuries of African Art and Thought, New York 1989 — kosmologia ọ̀run/ayé, ase, ara ọ̀run („departed but not deceased”)"
-    },
-    {
-      "typ": "prace badawcze",
-      "pozycja": "„Ará Òrun Kìn-ìn Kin-in: Òyó-Yòrùbá Egúngún Masquerade in Communion and Maintenance of Ontological Balance” (badania terenowe 2018, publikacja 2019) — kult egúngún w dwóch związkach rodzinnych (ìdílé/agbo ilé) miasta Òyó; festiwal roczny w sierpniu"
-    },
-    {
-      "typ": "reportaż",
-      "pozycja": "„The Egungun Festival: Where the Living Meet the Ancestors”, ModernGhana (dostęp 2026-08-28) — struktura festiwalu, inicjacja wybranych członków rodów, Alapini, podział ról (mężczyźni maskują, kobiety śpiewają oríkì)"
-    }
-  ],
-  "wizualizacja": {
-    "prompt": "Style: A wide-angle full-body cinematic photograph. The central objects/persons of the photo are visible from head to toe, standing centrally in the frame. No parts of the body are cropped.\n\nA Yoruba egungun ancestral masquerader standing in a palace courtyard in Oyo, Nigeria at dusk, fully covered from head to toe in towering layers of vermilion, indigo and gold brocade cloth hung with cowrie shells and beads, a net veil completely hiding the face, arms spread wide with long cloth streamers swirling in the dance, raised dust glowing in torchlight, batá drummers as soft silhouettes in the background, the crowd kneeling at the edge of the light.\n\nCaptured with a 35mm anamorphic lens at f/1.8. Shallow depth of field with a heavy, creamy bokeh background. Environmental portraiture. Dramatic cinematic lighting, sharp focus on the character, hyper-realistic textures of clothing and skin. Shot on 70mm film stock, ultra-wide 21:9 aspect ratio. --ar 21:9",
-    "obraz": "assets/wizualizacje/egungun.jpg"
-  },
-  "trofea": {
-    "pierwotne": "Kosmyk płótna z wiru egúngún (relikwia — przechowywana w sanktuarium rodu, nie w prywatnej kolekcji)",
-    "wtorne": "Kauria zhaftowana na płótnach maskarady"
-  },
   "tagi": [
-    "kult-przodkow",
-    "maskarada",
     "joruba",
-    "nigeria",
-    "afryka-zachodnia"
+    "duch-przodkow",
+    "pamiec",
+    "przemiana",
+    "maskarada"
   ],
   "powiazania": [],
   "meta": {
     "utworzono": "2026-08-28",
     "autor": "sesja arena 2026-08-28",
-    "modyfikacje": []
+    "modyfikacje": [
+      {
+        "data": "2026-08-28",
+        "opis": "Źródła w Dokumentacji dostały adresy, pod którymi można je sprawdzić (Google Books, MDPI „Genealogy”, ModernGhana); dopisano nazwę ará òrun kìn-ìn kin-in z tłumaczeniem oraz porządek sekcji w pliku."
+      }
+    ]
   }
 }

@@ -51,7 +51,8 @@
   "dokumentacja": [
     {
       "typ": "literatura naukowa",
-      "pozycja": "Autor, Tytuł (2000)"
+      "pozycja": "Autor, Tytuł (2000)",
+      "url": "https://example.org/autor-tytul-2000"
     }
   ],
   "wizualizacja": {

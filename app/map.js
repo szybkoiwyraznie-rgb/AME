@@ -1,15 +1,30 @@
 /**
- * app/map.js — render mapy SVG AME + interakcje (ADR 0003).
+ * app/map.js — render mapy SVG AME + interakcje (ADR 0003, ADR 0009).
  *
- * Pan: przeciąganie (pointer events, 1 wskaźnik). Zoom: kółko myszy do
- * kursora, pinch (2 wskaźniki), dwuklik, przyciski. Pinezki kompensują
- * skalę widoku, by zachować stały rozmiar ekranowy.
+ * Widok mapy żyje w pikselach kontenera: viewBox = rozmiar kontenera, a grupa
+ * świata skalowana jest o `skalaBazowa · k` (geo.js `dopasujWidok`). Dzięki temu
+ * cały świat (2:1) mieści się w oknie bez przycinania i bez rozciągu, a zmiana
+ * rozmiaru okna nie „skacze”.
+ *
+ * Pan: przeciąganie (pointer events, 1 wskaźnik). Zoom: kółko myszy do kursora,
+ * pinch (2 wskaźniki), dwuklik, przyciski. Pinezki i ich etykiety kompensują
+ * skalę widoku, więc mają stały rozmiar w pikselach CSS (ADR 0009).
  */
-import { projektuj, dekodujKraje, siatka, SZEROKOSC as SZER, WYSOKOSC as WYS } from './geo.js';
+import { projektuj, dekodujKraje, siatka, dopasujWidok, ogranicz, K_MIN, K_MAX, SZEROKOSC as SZER, WYSOKOSC as WYS } from './geo.js';
 
 const NS = 'http://www.w3.org/2000/svg';
-const K_MIN = 1;
-const K_MAX = 32;
+
+/** Rozmiar badge’a etykiety pinezki (jednostki = piksele CSS, patrz ADR 0009). */
+const ETYKIETA = {
+  rozmiarPisma: 19,
+  paddingX: 11,
+  paddingY: 6,
+  /** Ułamkowa szerokość znaku względem stopnia pisma (Georgia/system-ui ≈ 0,52). */
+  wspolczynnikZnaku: 0.52,
+};
+
+/** Odległość dolnej krawędzi badge’a od środka pinezki (px CSS). */
+const ODSTEP_BADGE = 30;
 
 function el(nazwa, atrybuty = {}, rodzic = null) {
   const e = document.createElementNS(NS, nazwa);
@@ -18,18 +33,34 @@ function el(nazwa, atrybuty = {}, rodzic = null) {
   return e;
 }
 
-function ogranicz(v, min, max) {
-  return Math.min(max, Math.max(min, v));
+/** Szacowana szerokość tekstu, gdy nie da się zmierzyć (Node, brak layoutu). */
+export function szacujSzerokoscTekstu(tekst, rozmiarPisma = ETYKIETA.rozmiarPisma) {
+  return String(tekst ?? '').length * rozmiarPisma * ETYKIETA.wspolczynnikZnaku;
+}
+
+/** Wymiary badge’a etykiety: zmierz tekst, a jak nie ma layoutu — oszacuj. */
+export function wymiaryEtykiety(nazwa, tekst = null) {
+  let szerokosc = 0;
+  try {
+    szerokosc = typeof tekst?.getComputedTextLength === 'function' ? tekst.getComputedTextLength() : 0;
+  } catch {
+    szerokosc = 0;
+  }
+  if (!szerokosc || !Number.isFinite(szerokosc)) szerokosc = szacujSzerokoscTekstu(nazwa);
+  return {
+    szer: Math.round(szerokosc + ETYKIETA.paddingX * 2),
+    wys: Math.round(ETYKIETA.rozmiarPisma * 1.42 + ETYKIETA.paddingY * 2),
+  };
 }
 
 export function stworzMape(kontener, { przyZmianieZaznaczenia } = {}) {
-  const svg = el('svg', { viewBox: `0 0 ${SZER} ${WYS}`, preserveAspectRatio: 'xMidYMid slice', class: 'mapa-svg' });
+  const svg = el('svg', { viewBox: `0 0 ${SZER} ${WYS}`, preserveAspectRatio: 'xMidYMid meet', class: 'mapa-svg' });
   svg.setAttribute('role', 'application');
   svg.setAttribute('aria-label', 'Mapa świata z manifestacjami eterycznymi');
   kontener.appendChild(svg);
 
   // Ocean — bardzo duży prostokąt, by przy przesuwaniu nigdy nie pokazało się tło.
-  el('rect', { x: -SZER, y: -WYS, width: SZER * 3, height: WYS * 3, class: 'ocean' }, svg);
+  el('rect', { x: -SZER * 4, y: -WYS * 4, width: SZER * 9, height: WYS * 9, class: 'ocean' }, svg);
 
   const warstwa = el('g', { class: 'warstwa' }, svg);
   el('path', { d: siatka(30), class: 'siatka' }, warstwa);
@@ -37,12 +68,14 @@ export function stworzMape(kontener, { przyZmianieZaznaczenia } = {}) {
   const warstwaLukow = el('g', { class: 'luki', display: 'none' }, warstwa);
   const grupaPinezek = el('g', { class: 'pinezki' }, warstwa);
 
+  const rozmiar = { szerokosc: 0, wysokosc: 0 };
   const widok = { x: 0, y: 0, k: 1 };
+  let skala = 1; // px na jednostkę świata dla bieżącego widoku
   const pinezki = new Map(); // slug -> {el, wx, wy}
   let zaznaczony = null;
   let paryPolaczen = []; // [{a, b}]
 
-  /** Punkt zdarzenia klienta → współrzędne viewBoxu. */
+  /** Punkt zdarzenia klienta → współrzędne viewBoxu (= piksele kontenera). */
   function naSvg(zdarzenie) {
     const ctm = svg.getScreenCTM();
     if (!ctm) return { x: 0, y: 0 };
@@ -51,35 +84,66 @@ export function stworzMape(kontener, { przyZmianieZaznaczenia } = {}) {
   }
 
   function dopusc() {
-    widok.k = ogranicz(widok.k, K_MIN, K_MAX);
-    widok.x = ogranicz(widok.x, SZER * (1 - widok.k), 0);
-    widok.y = ogranicz(widok.y, WYS * (1 - widok.k), 0);
+    const d = dopasujWidok(rozmiar, widok, { min: K_MIN, max: K_MAX });
+    widok.x = d.x;
+    widok.y = d.y;
+    widok.k = d.k;
+    return d;
+  }
+
+  /** Pobierz rozmiar kontenera; zachowaj punkt świata pod środkiem okna. */
+  function wymierz() {
+    const ramka = kontener.getBoundingClientRect();
+    const szerokosc = Math.max(1, Math.round(ramka.width || 0));
+    const wysokosc = Math.max(1, Math.round(ramka.height || 0));
+    if (szerokosc === rozmiar.szerokosc && wysokosc === rozmiar.wysokosc) return false;
+
+    let srodek = null;
+    if (rozmiar.szerokosc > 0 && rozmiar.wysokosc > 0) {
+      const stare = dopasujWidok(rozmiar, widok, { min: K_MIN, max: K_MAX });
+      srodek = {
+        wx: (rozmiar.szerokosc / 2 - stare.x) / stare.s,
+        wy: (rozmiar.wysokosc / 2 - stare.y) / stare.s,
+      };
+    }
+    rozmiar.szerokosc = szerokosc;
+    rozmiar.wysokosc = wysokosc;
+    svg.setAttribute('viewBox', `0 0 ${szerokosc} ${wysokosc}`);
+    if (srodek) {
+      const d = dopasujWidok(rozmiar, widok, { min: K_MIN, max: K_MAX });
+      widok.x = szerokosc / 2 - srodek.wx * d.s;
+      widok.y = wysokosc / 2 - srodek.wy * d.s;
+    }
+    return true;
   }
 
   function zastosuj(animuj = false) {
-    dopusc();
+    const d = dopusc();
+    skala = d.s;
     warstwa.style.transition = animuj ? 'transform .5s cubic-bezier(.22,.61,.36,1)' : 'none';
-    warstwa.style.transform = `translate(${widok.x}px, ${widok.y}px) scale(${widok.k})`;
-    const s = 1 / widok.k;
+    warstwa.style.transform = `translate(${d.x}px, ${d.y}px) scale(${d.s})`;
+    const s = 1 / d.s;
     for (const p of pinezki.values()) p.el.setAttribute('transform', `translate(${p.wx} ${p.wy}) scale(${s})`);
-    svg.classList.toggle('przyblizona', widok.k >= 2.5); // etykiety pinezek
+    svg.classList.toggle('przyblizona', d.k >= 2); // etykiety pinezek (już przy dwukrotnym zbliżeniu świata)
   }
 
   /** Zoom w punkt p (współrzędne viewBoxu) o czynnik f. */
   function zoomDoPunktu(p, f, animuj = false) {
-    const noweK = ogranicz(widok.k * f, K_MIN, K_MAX);
-    const r = noweK / widok.k;
-    widok.x = p.x - (p.x - widok.x) * r;
-    widok.y = p.y - (p.y - widok.y) * r;
+    const przed = dopasujWidok(rozmiar, widok, { min: K_MIN, max: K_MAX });
+    const noweK = ogranicz(przed.k * f, K_MIN, K_MAX);
+    const r = noweK / przed.k;
     widok.k = noweK;
+    widok.x = p.x - (p.x - przed.x) * r;
+    widok.y = p.y - (p.y - przed.y) * r;
     zastosuj(animuj);
   }
 
   function wysrodkuj(lat, lon, k = null, animuj = true) {
     if (k !== null) widok.k = k;
     const [wx, wy] = projektuj(lat, lon);
-    widok.x = SZER / 2 - wx * widok.k;
-    widok.y = WYS / 2 - wy * widok.k;
+    const d = dopasujWidok(rozmiar, widok, { min: K_MIN, max: K_MAX });
+    widok.x = rozmiar.szerokosc / 2 - wx * d.s;
+    widok.y = rozmiar.wysokosc / 2 - wy * d.s;
     zastosuj(animuj);
   }
 
@@ -156,16 +220,31 @@ export function stworzMape(kontener, { przyZmianieZaznaczenia } = {}) {
 
   /* ---- Pinezki i łuki powiązań ---- */
 
+  /** Badge nazwy: szerokość z realnego pomiaru tekstu (px CSS), baseline na środku. */
+  function dopasujBadge(tlo, tekst, nazwa) {
+    const { szer, wys } = wymiaryEtykiety(nazwa, tekst);
+    tlo.setAttribute('x', (-szer / 2).toFixed(1));
+    tlo.setAttribute('y', (-ODSTEP_BADGE - wys).toFixed(1));
+    tlo.setAttribute('width', String(szer));
+    tlo.setAttribute('height', String(wys));
+    tekst.setAttribute('y', (-ODSTEP_BADGE - wys / 2).toFixed(1));
+  }
+
   function ustawPinezki(rekordy) {
     grupaPinezek.innerHTML = '';
     pinezki.clear();
     for (const r of rekordy) {
       const [wx, wy] = projektuj(r.lat, r.lon);
-      const g = el('g', { class: 'pinezka', 'data-slug': r.slug, tabindex: 0, role: 'button', 'aria-label': `Manifestacja: ${r.nazwa}`, transform: `translate(${wx} ${wy})` }, grupaPinezek);
-      el('circle', { r: 11, class: 'glowa' }, g);
-      el('path', { d: 'M0,8 L-6,22 L0,16 L6,22 Z', class: 'ostrze' }, g);
-      const label = el('text', { y: -22, class: 'etykieta' }, g);
-      label.textContent = r.nazwa;
+      const g = el('g', { class: 'pinezka', 'data-slug': r.slug, tabindex: 0, role: 'button', 'aria-label': `Manifestacja: ${r.nazwa}` }, grupaPinezek);
+      el('circle', { r: 26, class: 'trafienie' }, g); // pole trafienia (A5)
+      el('circle', { r: 13, class: 'glowa' }, g);
+      el('circle', { r: 4.4, class: 'zrenica' }, g);
+      el('path', { d: 'M0,10 L-7.5,27 L0,19.5 L7.5,27 Z', class: 'ostrze' }, g);
+      const etykieta = el('g', { class: 'etykieta' }, g);
+      const tlo = el('rect', { class: 'tlo-etykiety', rx: 8 }, etykieta);
+      const tekst = el('text', {}, etykieta);
+      tekst.textContent = r.nazwa;
+      dopasujBadge(tlo, tekst, r.nazwa);
       g.addEventListener('click', (ev) => {
         ev.stopPropagation();
         przyZmianieZaznaczenia?.(r.slug);
@@ -235,6 +314,17 @@ export function stworzMape(kontener, { przyZmianieZaznaczenia } = {}) {
     grupaKrajow.appendChild(frag);
   }
 
+  /* ---- Reagowanie na rozmiar kontenera (ADR 0009) ---- */
+
+  function odswiezRozmiar() {
+    if (wymierz()) zastosuj();
+  }
+
+  wymierz();
+  zastosuj();
+  if (typeof ResizeObserver !== 'undefined') new ResizeObserver(odswiezRozmiar).observe(kontener);
+  if (typeof window !== 'undefined') window.addEventListener('resize', odswiezRozmiar);
+
   return {
     svg,
     ustawMapeSwiata,
@@ -246,8 +336,15 @@ export function stworzMape(kontener, { przyZmianieZaznaczenia } = {}) {
     wysrodkuj,
     reset,
     zoomDoPunktu,
+    odswiezRozmiar,
     get widok() {
       return { ...widok };
+    },
+    get rozmiar() {
+      return { ...rozmiar };
+    },
+    get skala() {
+      return skala;
     },
   };
 }

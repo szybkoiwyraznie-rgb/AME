@@ -23,6 +23,14 @@ Każdy dokument opisuje kontekst, wybór i jego konsekwencje.
 | [0006](0006-warstwa-wiki-tagi-powiazania.md) | Warstwa wiki: tagi, powiązania przez slugi, backlinki liczone w indeksie | Zaakceptowana |
 | [0007](0007-domyslna-petla-jakosci-c1-c2.md) | Domyślna pętla sesji: Pętla Jakości (C1 treść ↔ C2 featury) do wyczerpania budżetu | Zaakceptowana |
 | [0008](0008-obowiazkowa-weryfikacja-scryfall-www.md) | Obowiązkowa weryfikacja zewnętrzna: Scryfall dla kart, źródła www dla wpisów | Zaakceptowana |
+| [0009](0009-adaptacyjny-widok-mapy-i-ciecie-na-szwie.md) | Adaptacyjny widok mapy w pikselach kontenera i cięcie geometrii na antypołudniku | Zaakceptowana |
+| [0010](0010-motyw-jasny-ciemny-i-pelnoekranowa-warstwa-kartoteki.md) | Motyw jasny/ciemny przez tokeny CSS i kartoteka jako pełnoekranowa warstwa | Zaakceptowana |
+| [0011](0011-protokol-v1-2-kolejnosc-sekcji-i-adresy-zrodel.md) | Protokół MFM v1.2: kolejność prezentacji sekcji i adres źródła w dokumentacji | Zaakceptowana (pkt o numerach zastąpiony przez 0012) |
+| [0012](0012-numeracja-sekcji-zgodna-z-kolejnoscia.md) | Numeracja sekcji wpisu zgodna z ich kolejnością (protokół MFM v1.3) | Zaakceptowana |
+| [0013](0013-baza-skitow-i-sekcja-vi.md) | Baza Skitów: nowy typ danych, sekcja VI wpisu i krok C3 pętli | Zaakceptowana |
+| [0014](0014-co-nowego-feed-z-meta.md) | „Co nowego”: dziennik zmian wyliczany z pola meta | Zaakceptowana |
+| [0015](0015-limit-dlugosci-skitow-300-slow.md) | Limit długości SKITa: 300 słów (protokół MFM v1.4) | Zaakceptowana |
+| [0016](0016-kanon-tagow-i-prezentacja-pasmami.md) | Kanon tagów jako dane źródłowe i prezentacja pasmami kategorii | Zaakceptowana |
 
 ## Szablon ADR
 

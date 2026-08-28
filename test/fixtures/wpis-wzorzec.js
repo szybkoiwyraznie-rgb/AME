@@ -24,7 +24,7 @@ export function wpisWzorzec(nadpisania = {}) {
       slabosci_i_metody_pokonania: 'opis',
       preferencje: 'opis',
     },
-    dokumentacja: [{ typ: 'literatura naukowa', pozycja: 'Autor, Tytuł (2000)' }],
+    dokumentacja: [{ typ: 'literatura naukowa', pozycja: 'Autor, Tytuł (2000)', url: 'https://example.org/autor-tytul-2000' }],
     wizualizacja: {
       prompt:
         'Style: A wide-angle full-body cinematic photograph. The central objects/persons of the photo are visible from head to toe, standing centrally in the frame. No parts of the body are cropped.\n\n' +

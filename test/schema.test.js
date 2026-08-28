@@ -1,10 +1,16 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { walidujWpis, walidujPowiazania, RAMA_OTWARCIA, RAMA_ZAMKNIECIA } from '../tools/rebuild-index.mjs';
+import { walidujWpis, walidujPowiazania, RAMA_OTWARCIA, RAMA_ZAMKNIECIA, REZERWOWANE_SLUGI } from '../tools/rebuild-index.mjs';
 import { wpisWzorzec, ustaw } from './fixtures/wpis-wzorzec.js';
 
 test('wzorzec przechodzi walidację bez błędów', () => {
   assert.deepEqual(walidujWpis(wpisWzorzec()), []);
+});
+
+test('slug: zarezerwowane nazwy widoków nie mogą być bytami (routing hash)', () => {
+  for (const slug of REZERWOWANE_SLUGI) {
+    assert.ok(walidujWpis(wpisWzorzec({ slug })).some((e) => e.includes('zarezerwowany')), slug);
+  }
 });
 
 test('slug: konwencja i zgodność wymagań', () => {
@@ -69,4 +75,29 @@ test('meta: format dat i struktura modyfikacji', () => {
   assert.ok(
     walidujWpis(wpisWzorzec({ meta: { utworzono: '2026-08-27', modyfikacje: [{ data: 'jutro', opis: 'x' }] } })).some((e) => e.includes('modyfikacje'))
   );
+});
+
+test('dokumentacja: url musi być adresem www i musi się pojawić choć raz (B3)', () => {
+  const bezLinkow = wpisWzorzec();
+  bezLinkow.dokumentacja = [{ typ: 'książka', pozycja: 'Autor, Tytuł (2000)' }];
+  assert.ok(bezLinkow.dokumentacja.length === 1);
+  assert.ok(
+    walidujWpis(bezLinkow).some((e) => e.includes('co najmniej jedno źródło musi mieć url')),
+    'brak jakiegokolwiek linku = wpis nieobronny (ADR 0008)'
+  );
+
+  const zlyUrl = wpisWzorzec();
+  zlyUrl.dokumentacja = [{ typ: 'książka', pozycja: 'X', url: 'ftp://example.org/x' }];
+  assert.ok(walidujWpis(zlyUrl).some((e) => e.includes('pełnym adresem http(s)')));
+
+  const dziwnyUrl = wpisWzorzec();
+  dziwnyUrl.dokumentacja = [{ typ: 'książka', pozycja: 'X', url: 'https://' }];
+  assert.ok(walidujWpis(dziwnyUrl).some((e) => e.includes('pełnym adresem http(s)')));
+
+  const czesciowo = wpisWzorzec();
+  czesciowo.dokumentacja = [
+    { typ: 'książka', pozycja: 'X' },
+    { typ: 'www', pozycja: 'Y', url: 'https://example.org/y' },
+  ];
+  assert.deepEqual(walidujWpis(czesciowo), [], 'wystarczy jedno źródło z linkiem — reszta może być papierowa');
 });

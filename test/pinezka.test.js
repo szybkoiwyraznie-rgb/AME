@@ -1,0 +1,195 @@
+/**
+ * Testy renderu mapy (A1, A4, A5) bez przeglądarki: map.js jest pisany tak, by
+ * dało się go sprawdzić na atrapie DOM — sprawdzamy rozmiar pinezki, pole
+ * trafienia, badge etykiety i skalowanie widoku.
+ */
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { szacujSzerokoscTekstu, wymiaryEtykiety, stworzMape } from '../app/map.js';
+import { SZEROKOSC, WYSOKOSC } from '../app/geo.js';
+
+function stworzElement(nazwa) {
+  const klasy = new Set();
+  const e = {
+    nazwa,
+    atrybuty: {},
+    dzieci: [],
+    style: {},
+    sluchacze: {},
+    textContent: '',
+    setAttribute(k, v) {
+      if (k === 'class') String(v).split(/\s+/).filter(Boolean).forEach((x) => klasy.add(x));
+      this.atrybuty[k] = String(v);
+    },
+    czyMaKlase(k) {
+      return klasy.has(k);
+    },
+    getAttribute(k) {
+      return this.atrybuty[k];
+    },
+    appendChild(d) {
+      this.dzieci.push(d);
+      return d;
+    },
+    addEventListener(typ, fn) {
+      (this.sluchacze[typ] ??= []).push(fn);
+    },
+    closest() {
+      return null;
+    },
+    querySelector() {
+      return null;
+    },
+    setPointerCapture() {},
+    getBoundingClientRect() {
+      return { width: 0, height: 0 };
+    },
+  };
+  Object.defineProperty(e, 'classList', {
+    value: {
+      add: (...k) => k.forEach((x) => klasy.add(x)),
+      remove: (...k) => k.forEach((x) => klasy.delete(x)),
+      contains: (k) => klasy.has(k),
+      toggle: (k, w) => {
+        const naTak = w === undefined ? !klasy.has(k) : !!w;
+        if (naTak) klasy.add(k);
+        else klasy.delete(k);
+        return naTak;
+      },
+    },
+  });
+  Object.defineProperty(e, 'innerHTML', {
+    get: () => '',
+    set: () => {
+      e.dzieci.length = 0;
+    },
+  });
+  return e;
+}
+
+function zaiscz(kontenerRozmiar = { width: 1600, height: 640 }) {
+  globalThis.document = { createElementNS: (_ns, nazwa) => stworzElement(nazwa) };
+  const kontener = {
+    appendChild: (d) => d,
+    getBoundingClientRect: () => ({ ...kontenerRozmiar }),
+  };
+  return { kontener, kontenerRozmiar };
+}
+
+const znajdz = (element, klasa) => {
+  if (element.czyMaKlase?.(klasa)) return element;
+  for (const d of element.dzieci ?? []) {
+    const wynik = znajdz(d, klasa);
+    if (wynik) return wynik;
+  }
+  return null;
+};
+
+test('szacujSzerokoscTekstu: rośnie z długością nazwy i mieści się w realiach 19 px', () => {
+  const krotka = szacujSzerokoscTekstu('Egungun');
+  const dluga = szacujSzerokoscTekstu('Dziki Gon dziki gon');
+  assert.ok(krotka > 50 && krotka < 90, `Egungun ~${krotka.toFixed(1)} px`);
+  assert.ok(dluga > krotka, 'dłuższy tekst = szerszy badge');
+  assert.equal(szacujSzerokoscTekstu(''), 0);
+});
+
+test('wymiaryEtykiety: bez layoutu — szacunek, z layoutem — pomiar; zawsze z oddechem', () => {
+  const a = wymiaryEtykiety('Egungun');
+  assert.ok(a.szer >= 80 && a.szer <= 105, `szerokość ${a.szer}`);
+  assert.equal(a.wys, 39, 'wysokość badge dla pisma 19 px z paddingiem');
+  const mierzony = wymiaryEtykiety('Egungun', { getComputedTextLength: () => 200 });
+  assert.equal(mierzony.szer, 200 + 22, 'padding po obu stronach');
+  const pusty = wymiaryEtykiety('');
+  assert.ok(pusty.szer > 0 && pusty.wys > 0, 'nawet pusta nazwa ma plecki');
+  const psujący = wymiaryEtykiety('Egungun', { getComputedTextLength: () => { throw new Error('brak layoutu'); } });
+  assert.equal(psujący.szer, a.szer, 'błąd pomiaru wraca do szacunku');
+});
+
+test('pinezka (A5): głowa ø26 px i pole trafienia ø52 px — w pikselach CSS', () => {
+  const { kontener } = zaiscz();
+  const mapa = stworzMape(kontener, {});
+  mapa.ustawPinezki([{ slug: 'egungun', nazwa: 'Egungun', lat: 7.84, lon: 3.94 }]);
+  const pinezka = znajdz(mapa.svg, 'pinezka');
+  assert.ok(pinezka, 'pinezka w drzewie SVG');
+  const glowy = pinezka.dzieci.filter((d) => d.czyMaKlase('glowa'));
+  const trafienia = pinezka.dzieci.filter((d) => d.czyMaKlase('trafienie'));
+  assert.equal(glowy.length, 1);
+  assert.equal(trafienia.length, 1, 'osobny element pola trafienia');
+  assert.equal(Number(glowy[0].getAttribute('r')), 13, 'głowa pinezki 13 px promienia');
+  assert.ok(Number(trafienia[0].getAttribute('r')) >= 2 * Number(glowy[0].getAttribute('r')), 'pole trafienia ≥ 2× głowy');
+});
+
+test('badge nazwy (A4): 19 px, plecki nad pinezką, tekst wyśrodkowany', () => {
+  const { kontener } = zaiscz();
+  const mapa = stworzMape(kontener, {});
+  mapa.ustawPinezki([{ slug: 'lincoln-imp', nazwa: 'Imp z Lincoln', lat: 53.23, lon: -0.54 }]);
+  const etykieta = znajdz(mapa.svg, 'etykieta');
+  assert.ok(etykieta, 'grupa etykiety');
+  const rect = etykieta.dzieci.find((d) => d.nazwa === 'rect');
+  const tekst = etykieta.dzieci.find((d) => d.nazwa === 'text');
+  assert.equal(tekst.textContent, 'Imp z Lincoln');
+  assert.ok(Number(tekst.getAttribute('y')) < 0, 'etykieta nad pinezką (ujemne y)');
+  assert.ok(Number(rect.getAttribute('width')) >= 90, `szerokość pleców ${rect.getAttribute('width')}`);
+  assert.ok(Number(rect.getAttribute('height')) >= 30, 'plecy mają wysokość dla pisma 19 px');
+  const y0 = Number(rect.getAttribute('y'));
+  const y1 = y0 + Number(rect.getAttribute('height'));
+  const yTekst = Number(tekst.getAttribute('y'));
+  assert.ok(y0 < yTekst && yTekst < y1, `baseline ${yTekst} musi być w pleckach [${y0}, ${y1}]`);
+});
+
+test('widok (A1): skala bazowa = contain, pinezki kompensują skalę, resize nie ucieka', () => {
+  const { kontener } = zaiscz({ width: 1600, height: 640 });
+  const mapa = stworzMape(kontener, {});
+  const warstwa = mapa.svg.dzieci.find((d) => d.czyMaKlase('warstwa'));
+  const oczekiwana = Math.min(1600 / SZEROKOSC, 640 / WYSOKOSC);
+  assert.ok(Math.abs(mapa.skala - oczekiwana) < 1e-9, `skala ${mapa.skala}`);
+  assert.match(warstwa.style.transform, /^translate\(/, 'transform grupy świata');
+  assert.ok(warstwa.style.transform.includes(`scale(${oczekiwana})`), `transform = ${warstwa.style.transform}`);
+
+  mapa.ustawPinezki([{ slug: 'x', nazwa: 'X', lat: 0, lon: 0 }]);
+  const pinezka = znajdz(mapa.svg, 'pinezka');
+  const skalPinezki = Number(pinezka.getAttribute('transform').match(/scale\(([\d.]+)\)/)[1]);
+  assert.ok(Math.abs(skalPinezki - 1 / oczekiwana) < 1e-9, 'pinezka w stałym rozmiarze ekranowym');
+
+  // zmiana kontenera (np. zamknięcie panelu) — nie może zmieniać powiększenia
+  const kBefore = mapa.widok.k;
+  kontener.getBoundingClientRect = () => ({ width: 900, height: 900 });
+  mapa.odswiezRozmiar();
+  assert.equal(mapa.widok.k, kBefore, 'zoom nie skacze przy resize');
+  assert.ok(Math.abs(mapa.skala - 900 / SZEROKOSC) < 1e-9, 'nowa skala bazowa = contain kwadratowego okna (ogranicznik: szerokość)');
+  assert.ok(Math.abs(mapa.widok.x - (900 - SZEROKOSC * mapa.skala) / 2) < 1e-6, 'świat wyśrodkowany w węższym oknie');
+  assert.ok(Math.abs(mapa.widok.y - (900 - WYSOKOSC * mapa.skala) / 2) < 1e-6, 'i w pionie — bez ucinania bieguna');
+});
+
+test('zoom i środowanie: punkt świata zostaje pod środkiem okna', () => {
+  const { kontener } = zaiscz({ width: 1200, height: 600 });
+  const mapa = stworzMape(kontener, {});
+  mapa.wysrodkuj(52.23, 21.01, 4, false); // Warszawa
+  assert.equal(mapa.widok.k, 4);
+  const s = mapa.skala;
+  const wx = ((21.01 + 180) / 360) * SZEROKOSC;
+  const wy = ((90 - 52.23) / 180) * WYSOKOSC;
+  assert.ok(Math.abs(mapa.widok.x + wx * s - 600) < 1e-6, 'Warszawa w środku okna (x)');
+  assert.ok(Math.abs(mapa.widok.y + wy * s - 300) < 1e-6, 'Warszawa w środku okna (y)');
+
+  mapa.zoomDoPunktu({ x: 600, y: 300 }, 2, false);
+  assert.equal(mapa.widok.k, 8, 'zoom do środka nie przesuwa świata');
+  assert.ok(Math.abs(mapa.widok.x + wx * mapa.skala - 600) < 1e-6, 'środek stabilny przy zoomie');
+
+  mapa.reset();
+  assert.equal(mapa.widok.k, 1);
+  assert.ok(Math.abs(mapa.widok.x - (1200 - SZEROKOSC * mapa.skala) / 2) < 1e-6, 'reset = cały świat wyśrodkowany');
+});
+
+test('obsługa zdarzeń pinezki: klik i klawiatura wywołują wybór wpisu', () => {
+  const { kontener } = zaiscz();
+  let wywolane = [];
+  const mapa = stworzMape(kontener, { przyZmianieZaznaczenia: (slug) => wywolane.push(slug) });
+  mapa.ustawPinezki([{ slug: 'egungun', nazwa: 'Egungun', lat: 7.84, lon: 3.94 }]);
+  const pinezka = znajdz(mapa.svg, 'pinezka');
+  pinezka.sluchacze.click[0]({ stopPropagation: () => {} });
+  pinezka.sluchacze.keydown[0]({ key: 'Enter', preventDefault: () => {} });
+  pinezka.sluchacze.keydown[0]({ key: 'a', preventDefault: () => {} });
+  assert.deepEqual(wywolane, ['egungun', 'egungun'], 'tylko klik i Enter/Spacja');
+  assert.equal(mapa.svg.classList.contains('przyblizona'), false, 'przy k=1 etykiety ukryte');
+});

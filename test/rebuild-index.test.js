@@ -21,11 +21,14 @@ test('indeks: deterministyczne sortowanie po slugu', () => {
   assert.equal(i1.liczba, 2);
 });
 
-test('indeks: słownik tagów alfabetyczny, ze słowiańskimi znakami', () => {
+test('indeks bez kanonu: słownik tagów alfabetyczny, ze słowiańskimi znakami', () => {
   const c = wpisWzorzec({ slug: 'zmora', tagi: ['źrenica', 'las'] });
   const i = zbudujIndeks([...dwaWpisy(), c]);
+  assert.equal(i.wersja, 3, 'indeks ma wersję 3 (kanon tagów)');
   assert.deepEqual(Object.keys(i.tagi), [...Object.keys(i.tagi)].sort((x, y) => x.localeCompare(y, 'pl')));
-  assert.ok(i.tagi.las.includes('zmora'));
+  assert.deepEqual(i.tagi.las.wpisy, ['byt-testowy', 'zmora', 'zorza']);
+  assert.equal(i.tagi.las.kategoria, 'bez-kanonu', 'bez kanonu nie ma kategorii do pokazania');
+  assert.deepEqual(i.kanon.kategorie, [], 'puste kategorie, gdy kanonu nie podano');
 });
 
 test('indeks: backlinki wyliczone z powiązań jednokierunkowych', () => {

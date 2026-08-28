@@ -5,7 +5,13 @@
 > aplikacja + kartoteka. Protokół opisuje, jak powstaje i co zawiera pojedynczy
 > wpis („kartotka manifestacji”).
 >
-> Status: **obowiązujący** (v1.1). Zmiany protokołu wymagają ADR.
+> Status: **obowiązujący** (v1.4 od 2026-08-28; v1.3 i v1.2 — 2026-08-28; v1.1 — 2026-08-27).
+> Zmiany protokołu wymagają ADR.
+> v1.1 (ADR 0005): rama promptu 21:9. v1.2 (ADR 0011): obowiązująca kolejność
+> prezentacji sekcji oraz adres www jako część źródła. **v1.3 (ADR 0012):
+> **v1.4 (ADR 0015): limit długości SKITa 250 → 300 słów.** W v1.3 (ADR 0012)
+> numeracja sekcji idzie za kolejnością (I = Wizualizacja … V = Rezonans) i
+> dochodzi sekcja VI „SKITy”** (Baza Skitów, ADR 0013).
 
 ## 1. Filozofia systemu
 
@@ -57,10 +63,67 @@ PEŁNY WPIS MFM (data/manifestations/<slug>.json)
 
 ## 4. Struktura wpisu
 
+### 4.1 Numeracja = kolejność prezentacji (od v1.3)
+
+```
+I   Wizualizacja            II  Charakterystyka i natura   III Dokumentacja
+IV  Trofea i dowody         V   Rezonans i tożsamość       VI SKITy
+```
+
+Sekcje układamy i numerujemy w tej kolejności — **numer rzymski to pozycja w
+wpisie**, a nie tylko etykieta treści. Obowiązuje wszędzie: w kartotece
+(`app/ui.js`), w plikach wpisów (`data/manifestations/`), w tym dokumencie i w
+instrukcji `docs/WORKFLOW.md`. Po sekcji VI następują elementy bez numeru:
+powiązania (warstwa wiki) i meta.
+
+> Przeliczenie historyczne (dla wpisów, ADR-ów i notatek sprzed v1.3):
+> IV→I, II→II, III→III, V→IV, I→V (stara numeracja była przypisana do treści).
+
+### 4.2 Nagłówek wpisu
+
+```
 ### [NAZWA BYTU / MANIFESTACJI]
 **Inspiracja kartą:** [NAZWA KARTY MTG]
+```
 
-#### I. REZONANS I TOŻSAMOŚĆ
+### 4.3 Treść sekcji
+
+#### I. WIZUALIZACJA (prompt dla grafiki AI)
+Techniczny prompt zapisany w polu `wizualizacja.prompt`. Rezygnujemy z
+formy figurki/dioramy: celem jest **hiperrealistyczny, filmowy portret
+środowiskowy bytu w jego naturalnym otoczeniu** — patrz §5. W kartotece sekcja
+jest **sekcją I** i zajmuje pełną szerokość wpisu (ADR 0010).
+
+#### II. CHARAKTERYSTYKA I NATURA (opis fabularny)
+* **Wygląd i Aura:** opis fizycznej manifestacji, zapachu, temperatury
+  otoczenia towarzyszącej pojawieniu się bytu.
+* **Charakter i Motywacje:** byt drapieżny, opiekuńczy, amoralny? Czego
+  pragnie? Dlaczego wchodzi w interakcje z ludźmi?
+* **Zdolności (fizyczne i magiczne):** opis mocy **bez terminologii growej** —
+  jak byt manipuluje rzeczywistością, umysłem, materią.
+* **Słabości i metody pokonania:** rytuały, przedmioty, substancje, zachowania.
+* **Preferencje (lubiane/nielubiane):** ofiary, dźwięki, pory dnia, symbole.
+
+#### III. DOKUMENTACJA (The Source Stack)
+Pełna lista źródeł: literatura naukowa (antropologia, religioznawstwo),
+klasyczne teksty mitologiczne, literatura piękna, kino, reportaże, dokumenty
+historyczne. **Źródła muszą być prawdziwe i weryfikowalne.**
+
+Każda pozycja ma postać `{ typ, pozycja, url? }` (pole `dokumentacja`), przy czym:
+
+* **`url` jest obowiązkowy dla co najmniej jednego źródła w wpisie** i prowadzi
+  do samego źródła, do jego opisu (wydawca, biblioteka cyfrowa, recenzja) albo
+  do wzmianki potwierdzającej jego istnienie w sieci (ADR 0008, ADR 0011).
+  Walidator odrzuci wpis bez ani jednego adresu i adres inny niż pełny `http(s)`.
+* gdy źródło ma opisany kontekst (co potwierdza, do czego go użyliśmy),
+  mieści się to w polu `pozycja` po myślniku — bez nowych pól;
+* aplikacja renderuje `url` jako klikalny adres pod pozycją (tylko `http(s)`).
+
+#### IV. TROFEA I DOWODY ELIMINACJI
+* Trofeum Pierwotne
+* Trofeum Wtórne (opcjonalne)
+
+#### V. REZONANS I TOŻSAMOŚĆ
 * **Klucz Przywołania:** analiza, jak nazwa, ilustracja, mechanika i flavor
   karty korelują z danym bytem — w formie tabeli translacji:
 
@@ -78,29 +141,27 @@ PEŁNY WPIS MFM (data/manifestations/<slug>.json)
   lub gdzie odnotowano aktywność bytu — z podaniem regionu i współrzędnych
   dziesiętnych.
 
-#### II. CHARAKTERYSTYKA I NATURA (opis fabularny)
-* **Wygląd i Aura:** opis fizycznej manifestacji, zapachu, temperatury
-  otoczenia towarzyszącej pojawieniu się bytu.
-* **Charakter i Motywacje:** byt drapieżny, opiekuńczy, amoralny? Czego
-  pragnie? Dlaczego wchodzi w interakcje z ludźmi?
-* **Zdolności (fizyczne i magiczne):** opis mocy **bez terminologii growej** —
-  jak byt manipuluje rzeczywistością, umysłem, materią.
-* **Słabości i metody pokonania:** rytuały, przedmioty, substancje, zachowania.
-* **Preferencje (lubiane/nielubiane):** ofiary, dźwięki, pory dnia, symbole.
+### 4.4 Słowniczek: sekcja ↔ pole w JSON
 
-#### III. DOKUMENTACJA (The Source Stack)
-Pełna lista źródeł: literatura naukowa (antropologia, religioznawstwo),
-klasyczne teksty mitologiczne, literatura piękna, kino, reportaże, dokumenty
-historyczne. **Źródła muszą być prawdziwe i weryfikowalne.**
+| Sekcja | Pole w `data/manifestations/<slug>.json` |
+|---|---|
+| I Wizualizacja | `wizualizacja` |
+| II Charakterystyka i natura | `natura` |
+| III Dokumentacja | `dokumentacja` (pozycje z `url`) |
+| IV Trofea | `trofea` |
+| V Rezonans i tożsamość | `rezonans` (+ `karta`, `lokalizacja`, `pochodzenie_i_kultura`) |
+| VI SKITy | **brak pola** — wyliczane z bazy skitów (ADR 0013); autor skitu wskazuje uczestników, wpis ich nie duplikuje |
 
-#### IV. WIZUALIZACJA (prompt dla grafiki AI)
-Techniczny prompt zapisany w polu `wizualizacja.prompt` wpisu. Rezygnamy z
-formy figurki/dioramy: celem jest **hiperrealistyczny, filmowy portret
-środowiskowy bytu w jego naturalnym otoczeniu** — patrz §5.
+### 4.5 Sekcja VI — SKITy
 
-#### V. TROFEA I DOWODY ELIMINACJI
-* Trofeum Pierwotne
-* Trofeum Wtórne (opcjonalne)
+SKIT to fragment prozy (dialog materializacji) z **Bazy Skitów**
+(`data/skity/`, ADR 0013). Sekcja VI wpisu nie jest pisana w pliku wpisu:
+indeks podpowiada wszystkie skity, w których dana manifestacja występuje, a
+aplikacja linkuje je pod kartoteką. Zasady pisania skitów (dramatis personae,
+limit 300 słów, unikalność zestawu uczestników, zakaz terminologii growej)
+reguluje §8.
+
+## 5. Rama promptu wizualizacji (v1.1 — obowiązuje od 2026-08-27)
 
 ## 5. Rama promptu wizualizacji (v1.1 — obowiązuje od 2026-08-27)
 
@@ -134,17 +195,150 @@ nieodtworzona”) razem z gotowym do skopiowania promptem.
 
 Wpis przechowujemy jako `data/manifestations/<slug>.json` zgodny ze schematem
 walidowanym przez `tools/rebuild-index.mjs` (szczegóły pól:
-`docs/ARCHITECTURE.md`). Sekcje tekstu (I–V) noszą nazwy jak wyżej.
+`docs/ARCHITECTURE.md`). Sekcje tekstu (I–V) noszą nazwy jak wyżej, a **klucze
+JSON układamy w kolejności numeracji z §4.1** (czytelność pliku = czytelność
+kartoteki; walidacja patrzy na pola, nie na porządek).
 Tagi i powiązania (`tagi`, `powiazania`) tworzą warstwę wiki — powiązanie
 musi mieć uzasadnienie w polu `opis`, a backlinki wylicza indeks.
 
+### 6.1 Kanon tagów (od v1.4)
+
+Słownikiem tagów jest **`data/kanon-tagow.json`** (ADR 0016): kategorie z limitami
+i dozwolone tagi z opisami. Zasady:
+
+| Kategoria | Skrót | Ile | Co oznacza |
+|---|---|---|---|
+| `kultura` | kultura | dokładnie 1 | tradycja źródłowa bytu (patrz §2: jedna kultura na wpis) |
+| `typ` | typ | dokładnie 1 | czym byt jest (duch przodków, selkie, olbrzym…) |
+| `motyw` | motyw | 1–2 | co wiąże byty ze sobą i z SKITami (złe oko, warunek, opłaty…) |
+| `postac` | postać | 0–1 | w jakiej formie byt występuje (maskarada, kamienna figura…) |
+
+* **tag spoza kanonu = błąd walidatora** (`npm test` i `npm run build`), więc
+  słownik nie rozpełza się na jednozdaniowe etykiety w stylu `nigeria-2026`;
+* **nowy tag dopisuje się do kanonu** w tym samym commicie co wpis: `tag`,
+  `kategoria`, `opis` (zdanie, nie powtórzenie nazwy). Nie potrzeba do tego ADR,
+  ale potrzeba kategorii, która ma sens dla >1 wpisu — jeśli tag miałby opisywać
+  tylko jeden wpis, nie jest tagiem, tylko treścią wpisu (patrz `lokalizacja`,
+  `pochodzenie_i_kultura`);
+* **kraj/państwo nie jest tagiem** — jest w `lokalizacja.kraj` i po nim działa
+  wyszukiwarka;
+* w pliku wpisu `tagi` wymienia się w kolejności kategorii kanonu (jak wyżej);
+* aplikacja prezentuje tagi **pasrami po kategoriach**: podpis kategorii + chipy
+  z licznikiem wpisów i opisem w `title`; w karcie bytu chip ma skrót kategorii
+  (`typ | olbrzym`), a pełna nazwa i opis są w podpowiedzi.
+
 ## 7. Przykład zastosowania (karta: *Tarmogoyf*)
 
-Przykłady rzeczywistych wpisów w repozytorium (oba zweryfikowane wg ADR 0008:
-fetch Scryfall + źródła www):
+Kartoteka zawiera cztery zweryfikowane wg ADR 0008 wpisy (fetch Scryfall +
+źródła www z adresami) — każdy inny przypadek użycia karty:
+
 - [`data/manifestations/egungun.json`](../data/manifestations/egungun.json) —
-  inspiracja: *Krumar Initiate* (TDM 84); pokazuje translację mechaniki
-  „endure/Pay X life” na kult przodków;
+  *Krumar Initiate* (TDM 84, 2025); translacja mechaniki „endure / Pay X life”
+  na rodowy kult przodków egúngún (Oyo);
 - [`data/manifestations/lincoln-imp.json`](../data/manifestations/lincoln-imp.json) —
-  inspiracja: *Forge Devil* (DKA 91); pokazuje tłumaczenie flavoru karty na
-  realną legendę (imp z katedry Lincoln) oraz powiązanie z innym wpisem.
+  *Forge Devil* (DKA 91, 2012); tłumaczenie flavoru na realną legendę (imp
+  z katedry Lincoln) i powiązanie z innym wpisem;
+- [`data/manifestations/balor.json`](../data/manifestations/balor.json) —
+  *Weftblade Enhancer* (EOE 44, 2025); nazwa z warsztatu tkackiego i mechanika
+  „wzmacniania dwóch” czytane przez Cath Maige Tuired: oko jako urządzenie
+  z obsługą, termin zamiast losu;
+- [`data/manifestations/selkie-sule-skerry.json`](../data/manifestations/selkie-sule-skerry.json) —
+  *Kulrath Mystic* (ECL 56, 2026); +2/+0 i vigilance po wielkim czare jako rytm
+  ballady Child 113: moc bytu zapala się na wypowiedzenie warunku i gaśnie wraz
+  z turą.
+
+Przykłady SKITów (Baza Skitów, §8): `znak-i-liczba` (Balor × Selkie — znak na
+dziecku) i `plotno-i-kamien` (Egungun × Imp z Lincoln — kto wchodzi do
+świątyni).
+
+## 8. SKITy — warstwa literacka archiwum (od v1.3)
+
+**SKIT** to niezależny obiekt literacki: krótki fragment prozy dialogowej, który
+łączi manifestacje z różnych kultur w rozmowie mądrej, zabawnej i zajmującej
+(por. przerywniki dialogowe z serii *Tales of…*). SKITy budują warstwę
+filozoficzno-satyryczną archiwum: pokazują, jak byty widziane przez swoje
+tradycje rozmawiają ze sobą.
+
+### 8.1 Gdzie mieszkają
+
+* plik `data/skity/<slug>.json` — **Baza Skitów**; wpisy kartoteki NIE
+  zawierają tekstu skitu;
+* indeks (`npm run build`) wylicza: `skity[]` (skróty), `manifestacje[].skity`
+  (sekcja VI pod kartą bytu) i pozycje feedu „Co nowego";
+* aplikacja: przycisk **✎ skity** (Baza Skitów), widok pojedynczego skitu oraz
+  sekcja **VI SKITy** w karcie materializacji; deep-link `#skit:<slug>`.
+
+Pola: `slug`, `tytul`, `temat?`, `uczestnicy: [{imie, slug}]`, `tekst`,
+`meta: {utworzono, autor?, modyfikacje[]}`. `temat` jest **katalogowe**: służy do
+dobierania niepowtarzalnych tematów i do szukania, ale **nie jest renderowane**
+ani w widoku skitu, ani w liście bazy — widz dostaje nagłówek, uczestników i
+dialog, bez zdań-wstępów. Stopka karty (wpisu i skitu) pokazuje wyłącznie daty:
+`utworzono` i `zmieniono` (najpóźniejsza z `modyfikacje`).
+
+### 8.2 Forma
+
+* nagłówek w pliku wpisu/aplikacji ma postać: `### **SKIT: TYTUŁ**` (tytuł
+  nadaje autor, na podstawie treści; w renderze wersalikami);
+* bezpośrednio pod nim lista uczestników (`Uczestnicy:` + nazwiska);
+* **czysty dialog materializacji** — żadnej narracji autorskiej między replikami,
+  jeśli już, to w didaskaliach w nawiasach kwadratowych;
+* każda replika w wierszu: `**Imię:** [didaskalia] wypowiedź`, akapity rozdzielone
+  pustą linią;
+* długość: **maks. 300 słów** (limit podniesiony z 250 decyzją właściciela 2026-08-28,
+  ADR 0015; walidator liczy w `tekst`; poniżej ~60 słów
+  rozmowa nie ma oddechu — też odrzucamy).
+
+### 8.3 Treść — rygory
+
+1. **100% in-character i 100% z lore.** Rozmawiają byty z naszego świata, w ich
+   kulturach i czasach. Zakaz meta-języka gry: nie ma `mana`, `P/T`, `booster`,
+   `deck`, „karty MtG/Magic", „Scryfall" — karta jest kluczem do bytu, nie jego
+   słownictwem (walidator sprawdza listę żargonu).
+2. **Fakty za tło muszą być prawdziwe.** SKIT jest fabularny, ale zwyczaje,
+   przedmioty, miejsca i wierzenia, które postacie wymieniają, muszą się zgadzać
+   z sekcjami kart ich bytów (a te są zweryfikowane wg ADR 0008). Nowy fakt w
+   skicie = nowy fakt do sprawdzenia w źródłach.
+3. **Tematy dowolne, ale zawsze zgodne z charakterem bytu:** przeszłość,
+   filozofia, wzajemne relacje, obserwacje okolicy, stan fizyczny i psychiczny,
+   przemyślenia, zwyczaje wyniesione z kultury, jedzenie, wolny czas, hobby,
+   pasje, pragnienia, kompleksy, traumy, duma, poczucie humoru.
+4. **Oryginalność.** Każdy SKIT ma inny temat niż poprzednie. Zakazane jest
+   powtórzenie **składu osobowego**: dwa skity z identycznym zestawem
+   materializacji nie przejdą walidatora (`walidujUnikalnoscSkitow`). Skład o
+   jedną osobę mniejszy lub większy jest dozwolony, o ile sam jest unikalny.
+5. **Uczestnicy:** 2–4 materializacje z kartoteki, każda musi zabrać głos
+   (imię w replikach = `imie` z listy uczestników), żadnej postaci spoza składu.
+
+### 8.4 C3 w Pętli Jakości (ADR 0007)
+
+Po C1 (treść wpisów) i przed C2 (featury): **wybierz 2, 3 lub 4 materializacje
+tak, aby taki zestaw nie miał jeszcze swojego SKITa**, napisz SKIT wg §8.2–§8.3,
+dopisz plik do Bazy Skitów, uruchom `npm run build` + `npm test` i zacommituj.
+Sekcja VI kart materializacji oraz feed „Co nowego" podlinkują się same — z
+indeksu.
+
+## 9. Dziennik zmian (feed „Co nowego")
+
+Sekcja **Co nowego** (przycisk **✚ nowości**, deep-link `#nowosci`) jest
+**wyliczana, nie pisana ręcznie**: `tools/rebuild-index.mjs` zbiera z pola
+`meta` każdego wpisu i każdego skitu:
+
+* `meta.utworzono` → pozycja „dodano";
+* każdy wpis w `meta.modyfikacje: [{data, opis}]` → pozycja „zmieniono".
+
+Sortowanie: **najnowsze na górze**. Data ma dokładność dzienną, więc o kolejności
+w obrębie dnia decyduje **chronologia zdarzeń w pliku**: każda pozycja dostaje
+`sekwencja` (0 = `utworzono`, k+1 = k-ty wpis `modyfikacje`, dopisywany na końcu
+tablicy), a sort liczy `data malejąco → sekwencja malejąco → typ (skity przed
+wpisami) → slug`. Utworzenie karty z poprzedniej sesji nie może przysłonić
+zmian z dziś. Klucz `sekwencja` służy tylko sortowaniu i nie trafia do indeksu
+(pozostaje deterministyczny — ADR 0002).
+
+`opis` modyfikacji czyta człowiek w dzienniku archiwum: to **zdanie o treści**
+(co doszło, co się poprawiło w karcie), a nie notatka robocza sesji — bez
+oznaczeń wewnętrznych (`M3`, `B1`, `C1`, `PROTOKÓŁ §`) i bez nazw plików. Zmiany
+techniczne (kod, narzędzia, zasady) idą do `docs/PROJECT_HISTORY.md` i opisu PR.
+Konsekwencja dla agentów: **każda zmiana w treści musi zostać opisana w
+`meta.modyfikacje` z poprawną datą** — inaczej zmiana nie trafi do dziennika i
+łamie §6. Nowy plik (wpis lub skit) dostaje `meta.utworzono` w formacie
+`RRRR-MM-DD`.

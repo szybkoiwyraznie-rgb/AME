@@ -6,7 +6,8 @@
  *   node tools/rebuild-index.mjs --check   # waliduj i porównaj z istniejącym indeksem
  *                                          # (kod 1 przy rozbieżności/błędzie)
  *
- * Zasady: docs/PROTOKOL.md, docs/ARCHITECTURE.md, ADR 0002/0005/0006.
+ * Zasady: docs/PROTOKOL.md (w tym §6 — kanon tagów, §8 — SKITy),
+ * docs/ARCHITECTURE.md, ADR 0002/0005/0006/0008/0013/0016.
  * Indeks jest deterministyczny (sortowanie po slugu) — bez znaczników czasu.
  */
 import { readdir, readFile, writeFile } from 'node:fs/promises';
@@ -15,7 +16,10 @@ import { fileURLToPath } from 'node:url';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 export const KATALOG_WPISOW = join(ROOT, 'data', 'manifestations');
+export const KATALOG_SKITOW = join(ROOT, 'data', 'skity');
 export const PLIK_INDEKSU = join(ROOT, 'data', 'index.json');
+/** Kanon tagów: zamknięty słownik (kategorie + dozwolone tagi), dane źródłowe. */
+export const PLIK_KANONU = join(ROOT, 'data', 'kanon-tagow.json');
 
 /** Rama promptu wizualizacji 21:9 — DOKŁADNIE jak w docs/PROTOKOL.md §5 (ADR 0005). */
 export const RAMA_OTWARCIA =
@@ -27,6 +31,22 @@ export const RAMA_ZAMKNIECIA =
 const ZAKAZANE_W_PROMPCIE = ['figurine', 'diorama', 'miniature', 'render', 'painting', 'illustration'];
 
 const RE_SLUG = /^[a-z0-9-]+$/;
+/**
+ * Slugi zarezerwowane przez routing widoków w hashu (#skity, #nowosci,
+ * #skit:<slug>) — wpis o takim slugu byłby nieosiągalny.
+ */
+export const REZERWOWANE_SLUGI = ['skity', 'nowosci', 'panel', 'mapa', 'lista'];
+/** Limity SKITa (zlecenie właściciela 2026-08-28, PROTOKÓŁ §8, ADR 0013). */
+export const SKIT_MIN_UCZESTNIKOW = 2;
+export const SKIT_MAX_UCZESTNIKOW = 4;
+export const SKIT_MAX_SLOW = 300;
+export const SKIT_MIN_SLOW = 60;
+/** Zakazany żargon gry w SKITcie — to rozmowa bytów, nie kart (PROTOKÓŁ §8.3). */
+const ZAKAZANY_ZARGON = /\b(mana|P\/T|oracle|booster|deck|life total|sorcery|instant|endure|fetch land|commander)\b/i;
+/** Jedna replika: „**Imię:** tekst”. */
+const RE_WYPOWIEDZ = /^\*\*[^*\n]{1,40}:\*\*/;
+/** Adres źródła w sieci WWW — tylko pełny http(s), nic więcej (B3, ADR 0008). */
+const RE_URL = /^https?:\/\/\S+$/i;
 const RE_TAG = /^[a-ząćęłńóśźż0-9-]+$/;
 const RE_DATA = /^\d{4}-\d{2}-\d{2}$/;
 
@@ -40,6 +60,7 @@ export function walidujWpis(w) {
   const blad = (m) => e.push(m);
 
   if (!jestStr(w.slug) || !RE_SLUG.test(w.slug)) blad('slug: wymagane ^[a-z0-9-]+$');
+  else if (REZERWOWANE_SLUGI.includes(w.slug)) blad(`slug: „${w.slug}” jest zarezerwowany przez routing widoków (hash)`);
   if (!jestStr(w.nazwa)) blad('nazwa: brak');
 
   if (!Array.isArray(w.nazwy_alternatywne ?? [])) blad('nazwy_alternatywne: ma być tablicą');
@@ -94,6 +115,12 @@ export function walidujWpis(w) {
         blad('dokumentacja: każdy wpis wymaga {typ, pozycja}');
         break;
       }
+      if (d?.url !== undefined && d?.url !== null && !RE_URL.test(String(d.url).trim())) {
+        blad(`dokumentacja: url musi być pełnym adresem http(s) (dostano: ${JSON.stringify(d.url)})`);
+      }
+    }
+    if (!w.dokumentacja.some((d) => RE_URL.test(String(d?.url ?? '').trim()))) {
+      blad('dokumentacja: co najmniej jedno źródło musi mieć url prowadzący do niego w sieci (protokół III, ADR 0008)');
     }
   }
 
@@ -133,6 +160,163 @@ export function walidujWpis(w) {
   return e;
 }
 
+/** Waliduje sam plik kanonu; zwraca listę błędów (pusta = OK). */
+export function walidujKanon(k) {
+  const e = [];
+  if (!k || typeof k !== 'object') return ['kanon: brak pliku data/kanon-tagow.json'];
+  const kategorie = k.kategorie ?? [];
+  if (!Array.isArray(kategorie) || kategorie.length === 0) e.push('kanon.kategorie: wymagana niepusta tablica');
+  const idy = new Set();
+  for (const kat of kategorie) {
+    if (!jestStr(kat?.id) || !RE_TAG.test(kat.id)) { e.push('kanon.kategorie: każda kategoria wymaga {id: /^[a-z0-9-]+$/}'); continue; }
+    if (idy.has(kat.id)) e.push(`kanon.kategorie: duplikat kategorii „${kat.id}”`);
+    idy.add(kat.id);
+    if (!jestStr(kat.nazwa)) e.push(`kanon.kategorie.${kat.id}: brak nazwy`);
+    if (!jestStr(kat.opis)) e.push(`kanon.kategorie.${kat.id}: brak opisu (pokazujemy go w legendzie paska)`);
+    if (!jestStr(kat.skrot)) e.push(`kanon.kategorie.${kat.id}: brak skrótu (używamy go w chipach w karcie)`);
+    if (!Number.isInteger(kat.min) || !Number.isInteger(kat.max) || kat.min < 0 || kat.min > kat.max) {
+      e.push(`kanon.kategorie.${kat.id}: wymagane liczby {min,max} w porządku min ≤ max`);
+    }
+  }
+  const tagi = k.tagi ?? [];
+  if (!Array.isArray(tagi) || tagi.length === 0) e.push('kanon.tagi: wymagana niepusta tablica');
+  const slugi = new Set();
+  for (const tag of tagi) {
+    if (!jestStr(tag?.tag) || !RE_TAG.test(tag.tag)) { e.push('kanon.tagi: każdy wpis wymaga {tag: /^[a-z0-9-]+$/}'); continue; }
+    if (slugi.has(tag.tag)) e.push(`kanon.tagi: duplikat tagu „${tag.tag}”`);
+    slugi.add(tag.tag);
+    if (!idy.has(tag.kategoria)) e.push(`kanon.tagi.${tag.tag}: kategoria „${tag.kategoria}” nie istnieje`);
+    if (!jestStr(tag.opis)) e.push(`kanon.tagi.${tag.tag}: brak opisu (bez niego tag jest nieczytelny)`);
+  }
+  for (const id of idy) {
+    if (!tagi.some((x) => x?.kategoria === id)) e.push(`kanon.kategorie.${id}: nie ma ani jednego tagu`);
+  }
+  return e;
+}
+
+/** Sprawdzanie tagów jednego wpisu względem kanonu; zwraca listę błędów. */
+export function walidujTagi(w, k) {
+  if (!k) return [];
+  const e = [];
+  const dozwolone = new Map((k.tagi ?? []).map((x) => [x.tag, x.kategoria]));
+  const tagi = w.tagi ?? [];
+  for (const tag of tagi) {
+    if (!dozwolone.has(tag)) {
+      e.push(`tagi: „${tag}” nie istnieje w kanonie — dopisz go do data/kanon-tagow.json (z kategorią i opisem) albo użyj istniejącego`);
+    }
+  }
+  for (const kat of k.kategorie ?? []) {
+    const ile = tagi.filter((tag) => dozwolone.get(tag) === kat.id).length;
+    if (ile < kat.min) e.push(`tagi: kategoria „${kat.id}” wymaga ${kat.min === kat.max ? `dokładnie ${kat.min}` : `co najmniej ${kat.min}`} ${kat.min === 1 ? "tagu" : "tagów"}, ma ${ile}`);
+    if (ile > kat.max) e.push(`tagi: kategoria „${kat.id}” dopuszcza ${kat.max}, jest ${ile}`);
+  }
+  return e;
+}
+
+/** Wczytuje i waliduje kanon tagów. */
+export async function wczytajKanon(sciezka = PLIK_KANONU) {
+  let k;
+  try {
+    k = JSON.parse(await readFile(sciezka, 'utf8'));
+  } catch (err) {
+    if (err?.code === 'ENOENT') throw new Error(`Brak kanonu tagów: ${sciezka} (jest wymagany — ADR 0016)`);
+    throw new Error(`Kanon tagów: niepoprawny JSON (${err.message})`);
+  }
+  const bledy = walidujKanon(k);
+  if (bledy.length) throw new Error(['Walidacja kanonu tagów NIEPRZESZŁA:', ...bledy.map((b) => `  - ${b}`)].join('\n'));
+  return k;
+}
+
+/** Liczba słów w tekście SKITa (limit protokołu: 300 — ADR 0015). */
+export function liczbaSlow(tekst) {
+  return String(tekst ?? '').trim().split(/\s+/).filter(Boolean).length;
+}
+
+/**
+ * Waliduje jeden SKIT; zwraca listę błędów (pusta = OK).
+ * `slugiManifestacji` — zbiór istniejących wpisów; uczestnicy muszą do
+ * niego należeć (inaczej sekcja VI wpisu donikąd nie prowadzi).
+ */
+export function walidujSkit(s, slugiManifestacji = new Set()) {
+  const e = [];
+  const blad = (m) => e.push(m);
+
+  if (!jestStr(s.slug) || !RE_SLUG.test(s.slug)) blad('slug: wymagane ^[a-z0-9-]+$');
+  else if (REZERWOWANE_SLUGI.includes(s.slug)) blad(`slug: „${s.slug}” jest zarezerwowany przez routing widoków (hash)`);
+  if (!jestStr(s.tytul)) blad('tytul: brak (SKIT dostaje nagłówek „SKIT: <tytuł>”)');
+
+  const u = s.uczestnicy;
+  if (!Array.isArray(u) || u.length < SKIT_MIN_UCZESTNIKOW) {
+    blad(`uczestnicy: wymagane ${SKIT_MIN_UCZESTNIKOW}–${SKIT_MAX_UCZESTNIKOW} materializacje`);
+  } else {
+    if (u.length > SKIT_MAX_UCZESTNIKOW) blad(`uczestników nie może być więcej niż ${SKIT_MAX_UCZESTNIKOW}`);
+    const slugi = [];
+    for (const x of u) {
+      if (!jestStr(x?.imie) || !jestStr(x?.slug)) {
+        blad('uczestnicy: każdy wpis wymaga {imie, slug}');
+        continue;
+      }
+      if (!slugiManifestacji.has(x.slug)) blad(`uczestnicy: slug „${x.slug}” nie istnieje w data/manifestations/`);
+      slugi.push(x.slug);
+    }
+    if (new Set(slugi).size !== slugi.length) blad('uczestnicy: duplikat tej samej materializacji w jednym skicie');
+  }
+
+  if (!jestStr(s.tekst)) blad('tekst: brak (dialog postaci)');
+  else {
+    const slow = liczbaSlow(s.tekst);
+    if (slow > SKIT_MAX_SLOW) blad(`tekst: ${slow} słów — limit protokołu to ${SKIT_MAX_SLOW}`);
+    if (slow < SKIT_MIN_SLOW) blad(`tekst: ${slow} słów — za krótko na rozmowę (min. ${SKIT_MIN_SLOW})`);
+    const wiersze = s.tekst.split(/\n+/).map((l) => l.trim()).filter(Boolean);
+    const repliki = wiersze.filter((l) => RE_WYPOWIEDZ.test(l));
+    if (repliki.length < SKIT_MIN_UCZESTNIKOW) {
+      blad(`tekst: oczekiwano co najmniej ${SKIT_MIN_UCZESTNIKOW} replik w formie „**Imię:** …”`);
+    }
+    const imiona = new Set(repliki.map((l) => l.slice(2, l.indexOf(':**')).trim()));
+    for (const nazwa of u ?? []) {
+      if (jestStr(nazwa?.imie) && !imiona.has(nazwa.imie.trim())) blad(`tekst: uczestnik „${nazwa.imie}” nie zabiera głosu`);
+    }
+    for (const nazwa of imiona) {
+      if (jestStr(s.uczestnicy) === false && !(u ?? []).some((x) => x?.imie?.trim() === nazwa)) {
+        blad(`tekst: głos „${nazwa}” należy do postaci spoza uczestników`);
+      }
+    }
+    const zargon = s.tekst.match(ZAKAZANY_ZARGON);
+    if (zargon) blad(`tekst: zakazany żargon gry („${zargon[0]}”) — SKIT to rozmowa bytów, nie kart (PROTOKÓŁ §8.3)`);
+    if (/\bkart\w*\s+(?:MtG|Magic)\b/i.test(s.tekst) || /Scryfall/i.test(s.tekst)) {
+      blad('tekst: zakaz odwołań do kart i zestawów (PROTOKÓŁ §8.3)');
+    }
+  }
+
+  const m = s.meta ?? {};
+  if (!jestStr(m.utworzono) || !RE_DATA.test(m.utworzono)) blad('meta.utworzono: brak lub zły format (RRRR-MM-DD)');
+  if (!Array.isArray(m.modyfikacje ?? [])) blad('meta.modyfikacje: ma być tablicą');
+  for (const mod of m.modyfikacje ?? []) {
+    if (!jestStr(mod?.data) || !RE_DATA.test(mod.data) || !jestStr(mod?.opis)) {
+      blad('meta.modyfikacje: każdy wpis wymaga {data, opis}');
+      break;
+    }
+  }
+
+  return e;
+}
+
+/**
+ * Zestaw uczestników musi być unikalny w całej bazie (zlecenie właściciela:
+ * zakaz powtarzania składu). Zwraca listę błędów.
+ */
+export function walidujUnikalnoscSkitow(skiti) {
+  const e = [];
+  const sklady = new Map();
+  for (const s of skiti) {
+    const klucz = [...(s.uczestnicy ?? []).map((x) => x?.slug).filter(Boolean)].sort().join('+');
+    if (!klucz) continue;
+    if (sklady.has(klucz)) e.push(`${s.slug}.json: ten sam skład uczestników co w „${sklady.get(klucz)}” — każdy SKIT musi mieć unikalny zestaw postaci`);
+    else sklady.set(klucz, s.slug);
+  }
+  return e;
+}
+
 /** Walidacja referencyjna (powiązania) — wymaga zbioru wszystkich slugów. */
 export function walidujPowiazania(w, wszystkieSlugi) {
   const e = [];
@@ -151,8 +335,26 @@ export function walidujPowiazania(w, wszystkieSlugi) {
   return e;
 }
 
-/** Buduje deterministyczny indeks z tablicy zwalidowanych wpisów. */
-export function zbudujIndeks(wpisy) {
+/** Rekord SKITa dla indeksu (skrót potrzebny liście, sekcji VI i feedowi). */
+function rekordSkitu(s) {
+  const uczestnicy = [...(s.uczestnicy ?? [])];
+  return {
+    slug: s.slug,
+    tytul: s.tytul,
+    temat: s.temat ?? null,
+    uczestnicy: uczestnicy.map((u) => u.slug).sort((a, b) => a.localeCompare(b, 'pl')),
+    imiona: uczestnicy.map((u) => u.imie),
+    slow: liczbaSlow(s.tekst),
+    data: s.meta?.utworzono ?? '',
+  };
+}
+
+/**
+ * Buduje deterministyczny indeks: skróty wpisów (+ skity jako sekcja VI),
+ * słownik tagów, backlinki i feed `aktualizacje` (sekcja „Co nowego”,
+ * najnowsze na górze) wyliczony z `meta` wpisów i skitów.
+ */
+export function zbudujIndeks(wpisy, skiti = [], kanon = null) {
   const posortowane = [...wpisy].sort((a, b) => a.slug.localeCompare(b.slug, 'pl'));
   const rekordy = posortowane.map((w) => ({
     slug: w.slug,
@@ -177,17 +379,99 @@ export function zbudujIndeks(wpisy) {
   }
   for (const r of rekordy) r.backlinki.sort((a, b) => a.localeCompare(b, 'pl'));
 
-  const tagi = {};
-  for (const r of rekordy) for (const t of r.tagi) (tagi[t] ??= []).push(r.slug);
-  for (const t of Object.keys(tagi)) tagi[t].sort((a, b) => a.localeCompare(b, 'pl'));
+  // Słownik tagów: kolejność i kategorie bierze kanon (bez kanonu — alfabetycznie,
+  // jak w katalogach testowych), a puste tagi nie trafiają do indeksu.
+  const zbiorTagow = {};
+  for (const r of rekordy) for (const t of r.tagi) (zbiorTagow[t] ??= []).push(r.slug);
+  for (const t of Object.keys(zbiorTagow)) zbiorTagow[t].sort((a, b) => a.localeCompare(b, 'pl'));
+  const porzadek = kanon ? (kanon.tagi ?? []).map((x) => x.tag).filter((t) => zbiorTagow[t]) : Object.keys(zbiorTagow).sort((a, b) => a.localeCompare(b, 'pl'));
+  const meta = new Map((kanon?.tagi ?? []).map((x) => [x.tag, x]));
   const posortowaneTagi = {};
-  for (const t of Object.keys(tagi).sort((a, b) => a.localeCompare(b, 'pl'))) posortowaneTagi[t] = tagi[t];
+  for (const t of porzadek) {
+    const opis = meta.get(t);
+    posortowaneTagi[t] = {
+      kategoria: opis?.kategoria ?? 'bez-kanonu',
+      opis: opis?.opis ?? '',
+      wpisy: zbiorTagow[t],
+    };
+  }
+  for (const t of Object.keys(zbiorTagow)) if (!porzadek.includes(t)) posortowaneTagi[t] = { kategoria: 'bez-kanonu', opis: '', wpisy: zbiorTagow[t] };
+  const kategorie = (kanon?.kategorie ?? []).map((kat) => ({
+    id: kat.id,
+    nazwa: kat.nazwa,
+    skrot: kat.skrot,
+    min: kat.min,
+    max: kat.max,
+    opis: kat.opis,
+    ile: Object.values(posortowaneTagi).filter((x) => x.kategoria === kat.id).length,
+  }));
 
-  return { wersja: 1, liczba: rekordy.length, tagi: posortowaneTagi, manifestacje: rekordy };
+  // Sekcja VI wpisów: skity z daną materializacją w składzie (bez duplikatów).
+  const rekordySkitow = [...skiti].sort((a, b) => a.slug.localeCompare(b.slug, 'pl')).map(rekordSkitu);
+  const skityWpisu = new Map(rekordy.map((r) => [r.slug, []]));
+  for (const s of [...skiti].sort((a, b) => a.slug.localeCompare(b.slug, 'pl'))) {
+    for (const u of new Set((s.uczestnicy ?? []).map((x) => x?.slug).filter(Boolean))) {
+      const lista = skityWpisu.get(u);
+      if (lista && !lista.includes(s.slug)) lista.push(s.slug);
+    }
+  }
+  for (const r of rekordy) r.skity = (skityWpisu.get(r.slug) ?? []).sort((a, b) => a.localeCompare(b, 'pl'));
+
+  // Feed „Co nowego”: powstania i modyfikacje wpisów oraz skitów, najnowsze na górze.
+  // Najnowsze ZDARZENIA na górze. W obrębie pliku numerujemy zdarzenia
+  // (`sekwencja`: 0 = utworzenie, k+1 = k-ty wpis `meta.modyfikacje`, które są
+  // dopisywane chronologicznie), więc dnia, gdy coś zmieniono, zmiana jest nad
+  // utworzeniem — a nie pod nim, jak przy randze po typie akcji. Sort: data
+  // malejąco, sekwencja malejąco, potem typ (skity przed wpisami) i slug;
+  // porządek totalny i powtarzalny.
+  const aktualizacje = [];
+  const dodaj = (wpis, sekwencja) => aktualizacje.push({ ...wpis, sekwencja });
+  for (const w of posortowane) {
+    dodaj(
+      {
+        data: w.meta?.utworzono ?? '',
+        typ: 'manifestacja',
+        akcja: 'nowa',
+        slug: w.slug,
+        tytul: w.nazwa,
+        opis: `wpis w kartotece — materializacja karty „${w.karta?.nazwa ?? '?'}”`,
+      },
+      0
+    );
+    (w.meta?.modyfikacje ?? []).forEach((mod, k) =>
+      dodaj({ data: mod.data, typ: 'manifestacja', akcja: 'zmiana', slug: w.slug, tytul: w.nazwa, opis: mod.opis }, k + 1)
+    );
+  }
+  for (const s of [...skiti].sort((a, b) => a.slug.localeCompare(b.slug, 'pl'))) {
+    const kim = (s.uczestnicy ?? []).map((u) => u.imie).join(', ');
+    dodaj({ data: s.meta?.utworzono ?? '', typ: 'skit', akcja: 'nowy', slug: s.slug, tytul: s.tytul, opis: `SKIT — skład: ${kim}` }, 0);
+    (s.meta?.modyfikacje ?? []).forEach((mod, k) =>
+      dodaj({ data: mod.data, typ: 'skit', akcja: 'zmiana', slug: s.slug, tytul: s.tytul, opis: mod.opis }, k + 1)
+    );
+  }
+  aktualizacje.sort(
+    (a, b) =>
+      String(b.data).localeCompare(String(a.data)) ||
+      b.sekwencja - a.sekwencja ||
+      b.typ.localeCompare(a.typ, 'pl') ||
+      a.slug.localeCompare(b.slug, 'pl')
+  );
+  for (const a of aktualizacje) delete a.sekwencja; // klucz tylko do sortowania — bez szumu w indeksie
+
+  return {
+    wersja: 3,
+    liczba: rekordy.length,
+    liczbaSkitow: rekordySkitow.length,
+    kanon: { kategorie },
+    tagi: posortowaneTagi,
+    manifestacje: rekordy,
+    skity: rekordySkitow,
+    aktualizacje,
+  };
 }
 
 /** Wczytuje i waliduje cały katalog wpisów; rzuca przy błędach (z pełnym raportem). */
-export async function wczytajIKwaliduj(katalog = KATALOG_WPISOW) {
+export async function wczytajIKwaliduj(katalog = KATALOG_WPISOW, kanon = null) {
   const pliki = (await readdir(katalog)).filter((f) => f.endsWith('.json')).sort();
   if (pliki.length === 0) throw new Error(`Brak plików .json w ${katalog}`);
   const wpisy = [];
@@ -204,6 +488,7 @@ export async function wczytajIKwaliduj(katalog = KATALOG_WPISOW) {
     const oczekiwanySlug = basename(f, '.json');
     if (w.slug !== oczekiwanySlug) bledy.push(`${f}: slug "${w.slug}" ≠ nazwa pliku "${oczekiwanySlug}"`);
     for (const blad of walidujWpis(w)) bledy.push(`${f}: ${blad}`);
+    for (const blad of walidujTagi(w, kanon)) bledy.push(`${f}: ${blad}`);
     wpisy.push(w);
   }
   const slugi = new Set(wpisy.map((w) => w.slug));
@@ -216,10 +501,50 @@ export async function wczytajIKwaliduj(katalog = KATALOG_WPISOW) {
   return wpisy;
 }
 
+/**
+ * Wczytuje i waliduje bazę SKITów. Brak katalogu = brak skitów (to nie błąd);
+ * każdy inny błąd odczytu przerywa build. `slugi` — zbiór manifestacji, do
+ * których muszą prowadzić uczestnicy.
+ */
+export async function wczytajSkiti(katalog = KATALOG_SKITOW, slugi = new Set()) {
+  let pliki;
+  try {
+    pliki = (await readdir(katalog)).filter((f) => f.endsWith('.json')).sort();
+  } catch (err) {
+    if (err?.code === 'ENOENT') return [];
+    throw err;
+  }
+  const skiti = [];
+  const bledy = [];
+  for (const f of pliki) {
+    let s;
+    try {
+      s = JSON.parse(await readFile(join(katalog, f), 'utf8'));
+    } catch (err) {
+      bledy.push(`${f}: niepoprawny JSON (${err.message})`);
+      continue;
+    }
+    const oczekiwanySlug = basename(f, '.json');
+    if (s.slug !== oczekiwanySlug) bledy.push(`${f}: slug "${s.slug}" ≠ nazwa pliku "${oczekiwanySlug}"`);
+    for (const blad of walidujSkit(s, slugi)) bledy.push(`${f}: ${blad}`);
+    skiti.push(s);
+  }
+  for (const blad of walidujUnikalnoscSkitow(skiti)) bledy.push(`skity: ${blad}`);
+  const slugiSkitow = skiti.map((s) => s.slug);
+  if (new Set(slugiSkitow).size !== slugiSkitow.length) bledy.push('skity: duplikaty slugów w katalogu');
+  if (bledy.length) {
+    const raport = ['Walidacja SKITów NIEPRZESZŁA:', ...bledy.map((b) => `  - ${b}`)].join('\n');
+    throw new Error(raport);
+  }
+  return skiti;
+}
+
 async function main() {
   const trybCheck = process.argv.includes('--check');
-  const wpisy = await wczytajIKwaliduj();
-  const indeks = zbudujIndeks(wpisy);
+  const kanon = await wczytajKanon();
+  const wpisy = await wczytajIKwaliduj(KATALOG_WPISOW, kanon);
+  const skiti = await wczytajSkiti(KATALOG_SKITOW, new Set(wpisy.map((w) => w.slug)));
+  const indeks = zbudujIndeks(wpisy, skiti, kanon);
   const tresc = JSON.stringify(indeks, null, 2) + '\n';
   if (trybCheck) {
     let istniejacy = '';
@@ -233,10 +558,12 @@ async function main() {
       console.error('--check: data/index.json nie zgadza się z wpisami. Uruchom npm run build i wcommituj indeks.');
       process.exit(1);
     }
-    console.log(`OK: ${indeks.liczba} wpisów, indeks spójny (${Object.keys(indeks.tagi).length} tagów).`);
+    console.log(`OK: ${indeks.liczba} wpisów, ${indeks.liczbaSkitow} SKITów, indeks spójny (${Object.keys(indeks.tagi).length} tagów z kanonu, ${kanon.tagi.length} zdefiniowanych).`);
   } else {
     await writeFile(PLIK_INDEKSU, tresc, 'utf8');
-    console.log(`Zbudowano ${PLIK_INDEKSU}: ${indeks.liczba} wpisów, ${Object.keys(indeks.tagi).length} tagów.`);
+    console.log(
+      `Zbudowano ${PLIK_INDEKSU}: ${indeks.liczba} wpisów, ${indeks.liczbaSkitow} SKITów, ${indeks.aktualizacje.length} wpisów w feedzie, ${Object.keys(indeks.tagi).length} tagów użytych z ${kanon.tagi.length} w kanonie.`
+    );
   }
 }
 

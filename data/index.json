@@ -1,46 +1,312 @@
 {
-  "wersja": 1,
-  "liczba": 2,
-  "tagi": {
-    "afryka-zachodnia": [
-      "egungun"
-    ],
-    "anglia": [
-      "lincoln-imp"
-    ],
-    "demon": [
-      "lincoln-imp"
-    ],
-    "folklor-chrzescijanski": [
-      "lincoln-imp"
-    ],
-    "imp": [
-      "lincoln-imp"
-    ],
-    "joruba": [
-      "egungun"
-    ],
-    "katedra": [
-      "lincoln-imp"
-    ],
-    "kult-przodkow": [
-      "egungun"
-    ],
-    "maskarada": [
-      "egungun"
-    ],
-    "nigeria": [
-      "egungun"
+  "wersja": 3,
+  "liczba": 6,
+  "liczbaSkitow": 3,
+  "kanon": {
+    "kategorie": [
+      {
+        "id": "kultura",
+        "nazwa": "Kultura źródłowa",
+        "skrot": "kultura",
+        "min": 1,
+        "max": 1,
+        "opis": "Jedna tradycja, z której byt pochodzi (PROTOKÓŁ §2: zakaz mieszanek synkretycznych)",
+        "ile": 6
+      },
+      {
+        "id": "typ",
+        "nazwa": "Typ bytu",
+        "skrot": "typ",
+        "min": 1,
+        "max": 1,
+        "opis": "Czym byt jest — podstawowy filtr kartoteki",
+        "ile": 6
+      },
+      {
+        "id": "motyw",
+        "nazwa": "Motyw przewodni",
+        "skrot": "motyw",
+        "min": 1,
+        "max": 2,
+        "opis": "Co wiąże byty i spoiwa sieci: powiązania w kartotekach i tematy SKITów",
+        "ile": 6
+      },
+      {
+        "id": "postac",
+        "nazwa": "Postać",
+        "skrot": "postać",
+        "min": 0,
+        "max": 1,
+        "opis": "W jakiej formie byt występuje (noszony strój, kamień, ciało zwierzęce…)",
+        "ile": 4
+      }
     ]
   },
+  "tagi": {
+    "joruba": {
+      "kategoria": "kultura",
+      "opis": "Religia i kultura Jorubów (Nigeria, Benin, Togo)",
+      "wpisy": [
+        "egungun"
+      ]
+    },
+    "anglia": {
+      "kategoria": "kultura",
+      "opis": "Folklor angielski, w tym kościelny i nizinny",
+      "wpisy": [
+        "lincoln-imp"
+      ]
+    },
+    "szkocja-polnocna": {
+      "kategoria": "kultura",
+      "opis": "Folklor wyspiarski Orkadów i Shetlandu (szkocko-nordycki)",
+      "wpisy": [
+        "selkie-sule-skerry"
+      ]
+    },
+    "irlandia": {
+      "kategoria": "kultura",
+      "opis": "Mitologia irlandzka: Cykl Mitologiczny i podania ludowe",
+      "wpisy": [
+        "balor"
+      ]
+    },
+    "niemcy": {
+      "kategoria": "kultura",
+      "opis": "Podanie i legenda niemiecka (krąg gór i cesarza w górach)",
+      "wpisy": [
+        "barbarossa-kyffhaeuser"
+      ]
+    },
+    "albania": {
+      "kategoria": "kultura",
+      "opis": "Mitologia Albańczyków (krąg gegijski i toskijski)",
+      "wpisy": [
+        "drangue-shala"
+      ]
+    },
+    "duch-przodkow": {
+      "kategoria": "typ",
+      "opis": "Przodek przywoływany przez wspólnotę i wracający w rytuale",
+      "wpisy": [
+        "egungun"
+      ]
+    },
+    "istota-kamienna": {
+      "kategoria": "typ",
+      "opis": "Byt uwięziony w rzeźbie lub kamieniu, trwały i nieruchomy",
+      "wpisy": [
+        "lincoln-imp"
+      ]
+    },
+    "olbrzym": {
+      "kategoria": "typ",
+      "opis": "Byt o skali oblężniczej, z bronią wymagającą obsługi",
+      "wpisy": [
+        "balor"
+      ]
+    },
+    "selkie": {
+      "kategoria": "typ",
+      "opis": "Istota zmieniająca formę przez skórę, pomiędzy wodą a lądem",
+      "wpisy": [
+        "selkie-sule-skerry"
+      ]
+    },
+    "sniacy-zastep": {
+      "kategoria": "typ",
+      "opis": "Zbiorowy bohater uśpiony w krajobrazie, budzony przez znak",
+      "wpisy": [
+        "barbarossa-kyffhaeuser"
+      ]
+    },
+    "heros-burzy": {
+      "kategoria": "typ",
+      "opis": "Półboski obrońca mierzący się z demonem pogody",
+      "wpisy": [
+        "drangue-shala"
+      ]
+    },
+    "zle-oko": {
+      "kategoria": "motyw",
+      "opis": "Wzrok jako broń i jako rana bytu",
+      "wpisy": [
+        "balor",
+        "lincoln-imp"
+      ]
+    },
+    "warunek": {
+      "kategoria": "motyw",
+      "opis": "Moc i los bytu zamknięte w wypowiedzianym warunku lub znaku",
+      "wpisy": [
+        "balor",
+        "barbarossa-kyffhaeuser",
+        "lincoln-imp",
+        "selkie-sule-skerry"
+      ]
+    },
+    "pamiec": {
+      "kategoria": "motyw",
+      "opis": "Istnienie zależne od tego, że wspólnota wymawia imię",
+      "wpisy": [
+        "barbarossa-kyffhaeuser",
+        "egungun"
+      ]
+    },
+    "przemiana": {
+      "kategoria": "motyw",
+      "opis": "Dwa stany tego samego ciała: okrycie, skóra, płótno",
+      "wpisy": [
+        "egungun",
+        "selkie-sule-skerry"
+      ]
+    },
+    "burza": {
+      "kategoria": "motyw",
+      "opis": "Pogoda jako pole bitwy i jako kalendarz",
+      "wpisy": [
+        "drangue-shala"
+      ]
+    },
+    "oplaty": {
+      "kategoria": "motyw",
+      "opis": "Cena za obecność bytu: hołd, ofiara, datek, karmicielne",
+      "wpisy": [
+        "drangue-shala"
+      ]
+    },
+    "maskarada": {
+      "kategoria": "postac",
+      "opis": "Noszona forma rytualna: płótna, maska, strój-roda",
+      "wpisy": [
+        "egungun"
+      ]
+    },
+    "kamienna-figura": {
+      "kategoria": "postac",
+      "opis": "Rzeźba lub figura w budynku, która jest tym samym bytem",
+      "wpisy": [
+        "lincoln-imp"
+      ]
+    },
+    "postac-zwierzeca": {
+      "kategoria": "postac",
+      "opis": "Ciało zwierzęce jako drugi stan tej samej istoty",
+      "wpisy": [
+        "selkie-sule-skerry"
+      ]
+    },
+    "skrzydlata-postac": {
+      "kategoria": "postac",
+      "opis": "Człowiecze ciało ze skrzydłami lub innymi znakami pochodzenia",
+      "wpisy": [
+        "drangue-shala"
+      ]
+    }
+  },
   "manifestacje": [
+    {
+      "slug": "balor",
+      "nazwa": "Balor z Tory Island",
+      "nazwy_alternatywne": [
+        "Balor of the Evil Eye (Balór na Súile Nimhe)",
+        "Balor Béimnech (Uderzający)",
+        "Balar mac Doit meic Néit",
+        "Balor Birugderc (Przeszywający Okiem)",
+        "Balor mac Néit (Fomor)"
+      ],
+      "karta": "Weftblade Enhancer",
+      "miejscowosc": "Tory Island (Oileán Thoraigh) — Dún Bhalair i turnia Tor Mór",
+      "kraj": "Irlandia (hrabstwo Donegal)",
+      "lat": 55.26,
+      "lon": -8.22,
+      "tagi": [
+        "irlandia",
+        "olbrzym",
+        "warunek",
+        "zle-oko"
+      ],
+      "powiazania": [
+        "lincoln-imp",
+        "selkie-sule-skerry"
+      ],
+      "backlinki": [
+        "barbarossa-kyffhaeuser",
+        "selkie-sule-skerry"
+      ],
+      "obraz": "assets/wizualizacje/balor.jpg",
+      "skity": [
+        "hold-oraz-swiatlo",
+        "znak-i-liczba"
+      ]
+    },
+    {
+      "slug": "barbarossa-kyffhaeuser",
+      "nazwa": "Barbarossa w Kyffhäuserze",
+      "nazwy_alternatywne": [
+        "Friedrich Rotbart auf dem Kyffhäuser",
+        "Cesarz pod Kyffhausen",
+        "Der alte Barbarossa (Rückert, 1817)"
+      ],
+      "karta": "Alaborn Trooper",
+      "miejscowosc": "grzbiet Kyffhäuser (góra Kyffhausen) z ruinami zamku i pomnikiem; pod ziemią jaskinia Barbarossahöhle koło Rottleben",
+      "kraj": "Niemcy (Turyngia / Saksonia-Anhalt, Kyffhäuserkreis)",
+      "lat": 51.41,
+      "lon": 11.11,
+      "tagi": [
+        "niemcy",
+        "pamiec",
+        "sniacy-zastep",
+        "warunek"
+      ],
+      "powiazania": [
+        "balor",
+        "selkie-sule-skerry"
+      ],
+      "backlinki": [
+        "drangue-shala"
+      ],
+      "obraz": "assets/wizualizacje/barbarossa-kyffhaeuser.jpg",
+      "skity": []
+    },
+    {
+      "slug": "drangue-shala",
+      "nazwa": "Drangue z doliny Shali",
+      "nazwy_alternatywne": [
+        "drangùe / drangòni (formy określone w albańszczyźnie)",
+        "dragùa — w najstarszych tekstach albańskich tak nazywano smoka/hydrę, zamiennie z kulshedrą",
+        "Shën Ilias i Shën Delli — imiona świętego, pod którymi znany jest w niektórych stronach",
+        "heros burzy z kręgu Zojza"
+      ],
+      "karta": "Thunderstaff",
+      "miejscowosc": "dolina Shali (Theth), Malësia e Madhe, Alpy Albańskie",
+      "kraj": "Albania",
+      "lat": 42.4,
+      "lon": 19.77,
+      "tagi": [
+        "albania",
+        "burza",
+        "heros-burzy",
+        "oplaty",
+        "skrzydlata-postac"
+      ],
+      "powiazania": [
+        "barbarossa-kyffhaeuser",
+        "lincoln-imp"
+      ],
+      "backlinki": [],
+      "obraz": "assets/wizualizacje/drangue-shala.jpg",
+      "skity": []
+    },
     {
       "slug": "egungun",
       "nazwa": "Egungun",
       "nazwy_alternatywne": [
         "Egúngún",
         "Ara Ọ̀run („mieszkańcy nieba”)",
-        "Eegun"
+        "Ará Òrun Kìn-ìn Kin-in („naprawdę mieszkaniec nieba”)",
+        "Eegun",
+        "festiwal egúngún w Oyo (Edun Egungun)"
       ],
       "karta": "Krumar Initiate",
       "miejscowosc": "Oyo (miasto królewstwa Òyó)",
@@ -48,24 +314,30 @@
       "lat": 7.84,
       "lon": 3.94,
       "tagi": [
-        "afryka-zachodnia",
+        "duch-przodkow",
         "joruba",
-        "kult-przodkow",
         "maskarada",
-        "nigeria"
+        "pamiec",
+        "przemiana"
       ],
       "powiazania": [],
       "backlinki": [
-        "lincoln-imp"
+        "lincoln-imp",
+        "selkie-sule-skerry"
       ],
-      "obraz": "assets/wizualizacje/egungun.jpg"
+      "obraz": "assets/wizualizacje/egungun.jpg",
+      "skity": [
+        "hold-oraz-swiatlo",
+        "plotno-i-kamien"
+      ]
     },
     {
       "slug": "lincoln-imp",
       "nazwa": "Imp z Lincoln",
       "nazwy_alternatywne": [
         "Lincoln Imp",
-        "Diabełek z Lincoln"
+        "Diabełek z Lincoln",
+        "groteska z Angel Choir"
       ],
       "karta": "Forge Devil",
       "miejscowosc": "Lincoln — katedra Lincoln, Angel Choir",
@@ -74,16 +346,203 @@
       "lon": -0.54,
       "tagi": [
         "anglia",
-        "demon",
-        "folklor-chrzescijanski",
-        "imp",
-        "katedra"
+        "istota-kamienna",
+        "kamienna-figura",
+        "warunek",
+        "zle-oko"
       ],
       "powiazania": [
         "egungun"
       ],
-      "backlinki": [],
-      "obraz": "assets/wizualizacje/lincoln-imp.jpg"
+      "backlinki": [
+        "balor",
+        "drangue-shala"
+      ],
+      "obraz": "assets/wizualizacje/lincoln-imp.jpg",
+      "skity": [
+        "hold-oraz-swiatlo",
+        "plotno-i-kamien"
+      ]
+    },
+    {
+      "slug": "selkie-sule-skerry",
+      "nazwa": "Wielki Selkie z Sule Skerry",
+      "nazwy_alternatywne": [
+        "The Great Silkie of Sule Skerry",
+        "The Grey Selchie of Sule Skerry",
+        "szary selkie znad Sule Skerry"
+      ],
+      "karta": "Kulrath Mystic",
+      "miejscowosc": "Sule Skerry (Sùlasker) — skały na zachód od Hoy, Orkney",
+      "kraj": "Szkocja (Wielka Brytania)",
+      "lat": 59.08,
+      "lon": -4.41,
+      "tagi": [
+        "postac-zwierzeca",
+        "przemiana",
+        "selkie",
+        "szkocja-polnocna",
+        "warunek"
+      ],
+      "powiazania": [
+        "balor",
+        "egungun"
+      ],
+      "backlinki": [
+        "balor",
+        "barbarossa-kyffhaeuser"
+      ],
+      "obraz": "assets/wizualizacje/selkie-sule-skerry.jpg",
+      "skity": [
+        "znak-i-liczba"
+      ]
+    }
+  ],
+  "skity": [
+    {
+      "slug": "hold-oraz-swiatlo",
+      "tytul": "HOŁD ORAZ ŚWIATŁO",
+      "temat": "trzy modele opłaty za święte miejsce: podatek, zaproszenie i grosz turysty",
+      "uczestnicy": [
+        "balor",
+        "egungun",
+        "lincoln-imp"
+      ],
+      "imiona": [
+        "Balor",
+        "Egungun",
+        "Imp z Lincoln"
+      ],
+      "slow": 276,
+      "data": "2026-08-28"
+    },
+    {
+      "slug": "plotno-i-kamien",
+      "tytul": "PŁÓTNO I KAMIEŃ",
+      "temat": "kto w ogóle wchodzi do świątyni: zaproszony przodek i nieproszony sabotażysta",
+      "uczestnicy": [
+        "egungun",
+        "lincoln-imp"
+      ],
+      "imiona": [
+        "Egungun",
+        "Imp z Lincoln"
+      ],
+      "slow": 241,
+      "data": "2026-08-28"
+    },
+    {
+      "slug": "znak-i-liczba",
+      "tytul": "ZNAK I LICZBA",
+      "temat": "kto stawia znak na dziecku: złoty łańcuch przeciw rozkazowi topienia",
+      "uczestnicy": [
+        "balor",
+        "selkie-sule-skerry"
+      ],
+      "imiona": [
+        "Balor",
+        "Selkie z Sule Skerry"
+      ],
+      "slow": 248,
+      "data": "2026-08-28"
+    }
+  ],
+  "aktualizacje": [
+    {
+      "data": "2026-08-28",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "egungun",
+      "tytul": "Egungun",
+      "opis": "Źródła w Dokumentacji dostały adresy, pod którymi można je sprawdzić (Google Books, MDPI „Genealogy”, ModernGhana); dopisano nazwę ará òrun kìn-ìn kin-in z tłumaczeniem oraz porządek sekcji w pliku."
+    },
+    {
+      "data": "2026-08-28",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "lincoln-imp",
+      "tytul": "Imp z Lincoln",
+      "opis": "Uzupełniony rodowód: datowanie rzeźby na budowę Angel Choir (1250–1280), przydomek z balady 1897 i przysłowie poświadczone od 1562; motyw wiatru, który uwięził diabła w katedrze; źródła z adresami do sprawdzenia."
+    },
+    {
+      "data": "2026-08-28",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "selkie-sule-skerry",
+      "tytul": "Wielki Selkie z Sule Skerry",
+      "opis": "Wpis pogłębiony o tradycję orkadzką i szetlandzką (Dennison i jego zbieranie u pani Hiddleston z Orphir, Hibbert 1822, Marwick) oraz o praktykę przywoływania: siedem łez na brzegu, skóra chowana w sea-kist, wabienie ludzi do wody w przesilenie letnie. Dodane źródła z adresami: Wikipedia „Selkie” i Folklore Scotland."
+    },
+    {
+      "data": "2026-08-28",
+      "typ": "skit",
+      "akcja": "nowy",
+      "slug": "hold-oraz-swiatlo",
+      "tytul": "HOŁD ORAZ ŚWIATŁO",
+      "opis": "SKIT — skład: Balor, Egungun, Imp z Lincoln"
+    },
+    {
+      "data": "2026-08-28",
+      "typ": "skit",
+      "akcja": "nowy",
+      "slug": "plotno-i-kamien",
+      "tytul": "PŁÓTNO I KAMIEŃ",
+      "opis": "SKIT — skład: Egungun, Imp z Lincoln"
+    },
+    {
+      "data": "2026-08-28",
+      "typ": "skit",
+      "akcja": "nowy",
+      "slug": "znak-i-liczba",
+      "tytul": "ZNAK I LICZBA",
+      "opis": "SKIT — skład: Balor, Selkie z Sule Skerry"
+    },
+    {
+      "data": "2026-08-28",
+      "typ": "manifestacja",
+      "akcja": "nowa",
+      "slug": "balor",
+      "tytul": "Balor z Tory Island",
+      "opis": "wpis w kartotece — materializacja karty „Weftblade Enhancer”"
+    },
+    {
+      "data": "2026-08-28",
+      "typ": "manifestacja",
+      "akcja": "nowa",
+      "slug": "barbarossa-kyffhaeuser",
+      "tytul": "Barbarossa w Kyffhäuserze",
+      "opis": "wpis w kartotece — materializacja karty „Alaborn Trooper”"
+    },
+    {
+      "data": "2026-08-28",
+      "typ": "manifestacja",
+      "akcja": "nowa",
+      "slug": "drangue-shala",
+      "tytul": "Drangue z doliny Shali",
+      "opis": "wpis w kartotece — materializacja karty „Thunderstaff”"
+    },
+    {
+      "data": "2026-08-28",
+      "typ": "manifestacja",
+      "akcja": "nowa",
+      "slug": "egungun",
+      "tytul": "Egungun",
+      "opis": "wpis w kartotece — materializacja karty „Krumar Initiate”"
+    },
+    {
+      "data": "2026-08-28",
+      "typ": "manifestacja",
+      "akcja": "nowa",
+      "slug": "lincoln-imp",
+      "tytul": "Imp z Lincoln",
+      "opis": "wpis w kartotece — materializacja karty „Forge Devil”"
+    },
+    {
+      "data": "2026-08-28",
+      "typ": "manifestacja",
+      "akcja": "nowa",
+      "slug": "selkie-sule-skerry",
+      "tytul": "Wielki Selkie z Sule Skerry",
+      "opis": "wpis w kartotece — materializacja karty „Kulrath Mystic”"
     }
   ]
 }

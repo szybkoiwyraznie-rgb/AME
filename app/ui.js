@@ -1,10 +1,89 @@
 /**
- * app/ui.js — panel wpisu, lista manifestacji, tagi, pasek wyszukiwania.
- * Cała treść wpisów jest wstawiana jako tekst (esc), nigdy jako HTML.
+ * app/ui.js — kartoteka bytu (warstwa), Baza Skitów, feed „Co nowego", tagi
+ * wg kanonu (pasmo po pasmie), pasek wyszukiwania i logika motywu. Cała treść wpisów jest
+ * wstawiana jako tekst (esc), nigdy jako HTML.
  */
+
+/** Nazwa kategorii tagu (z kanonu); bez kanonu — surowe id. */
+export function nazwaKategorii(indeks, id) {
+  if (!id) return '';
+  const kat = (indeks?.kanon?.kategorie ?? []).find((k) => k.id === id);
+  return kat?.nazwa ?? id;
+}
+
+/** Krótka etykieta kategorii do chipa (pełna nazwa zostaje w legendzie i `title`). */
+export function skrotKategorii(indeks, id) {
+  if (!id) return '';
+  const kat = (indeks?.kanon?.kategorie ?? []).find((k) => k.id === id);
+  return kat?.skrot ?? kat?.nazwa ?? id;
+}
+
+/** Tagi w kolejności kanonu: kategorie po kolei, w kategorii alfabetycznie (pl). */
+export function tagiPosortowane(indeks, kategoria = null) {
+  return Object.entries(indeks?.tagi ?? {})
+    .filter(([tag, meta]) => (kategoria ? meta?.kategoria === kategoria : true) && (meta?.wpisy?.length ?? 0) > 0)
+    .map(([tag, meta]) => ({ tag, ...meta }))
+    .sort((a, b) => a.tag.localeCompare(b.tag, 'pl'));
+}
+
+/**
+ * Pasek tagów w pasmach po kategoriach kanonu: każda linia ma własny podpis
+ * (z opisem kategorii w `title`), więc czytelnik widzi, czym dany filtr jest,
+ * zamiast przeglądać alfabetyczną zupę etykiet.
+ */
+export function htmlTagow(indeks, aktywnyTag) {
+  const kategorie = indeks?.kanon?.kategorie?.length
+    ? indeks.kanon.kategorie
+    : [{ id: null, nazwa: 'Tagi', opis: '' }];
+  const pasma = kategorie
+    .map((kat) => {
+      const tagi = tagiPosortowane(indeks, kat.id);
+      if (!tagi.length) return '';
+      const chipy = tagi
+        .map(
+          (t) =>
+            `<button class="chip tag${t.tag === aktywnyTag ? ' aktywny' : ''}" data-tag="${esc(t.tag)}" data-kategoria="${esc(kat.id ?? '')}"${
+              t.opis ? ` title="${esc(t.opis)}"` : ''
+            }>${esc(t.tag)} <span class="licznik">${t.wpisy.length}</span></button>`
+        )
+        .join('');
+      return `<div class="tagi-grupa" data-kategoria="${esc(kat.id ?? '')}">
+        <span class="tagi-nazwa"${kat.opis ? ` title="${esc(kat.opis)}"` : ''}>${esc(kat.nazwa ?? kat.id ?? '')}</span>
+        <div class="tagi-pas">${chipy}</div>
+      </div>`;
+    })
+    .join('');
+  return pasma;
+}
 
 export function esc(s) {
   return String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
+}
+
+/* ---- Motyw (A2): logyka niezależna od DOM, żeby dało się przetestować ---- */
+
+export const MOTYWY = ['ciemny', 'jasny'];
+export const KLUCZ_MOTYWU = 'ame:motyw';
+
+/** Kolejny motyw w przełączniku: ciemny → jasny → ciemny. */
+export function nastepnyMotyw(biezacy) {
+  return biezacy === 'jasny' ? 'ciemny' : 'jasny';
+}
+
+/**
+ * Motyw startowy: zapisany wybór użytkownika wygrywa, potem preferencja
+ * systemu, a domyślnie — ciemne archiwum (tożsamość projektu).
+ */
+export function motywPoczatkowy({ zapisany = null, woliJasny = false } = {}) {
+  if (MOTYWY.includes(zapisany)) return zapisany;
+  return woliJasny ? 'jasny' : 'ciemny';
+}
+
+/** Etykieta + opis przycisku motywu (bez dwuznaczności dla czytnika ekranu). */
+export function etykietaMotywu(motyw) {
+  return motyw === 'jasny'
+    ? { ikona: '☀', tekst: 'jasny', aria: 'Tryb jasny — kliknij, aby przejść do ciemnego' }
+    : { ikona: '☾', tekst: 'ciemny', aria: 'Tryb ciemny — kliknij, aby przejść do jasnego' };
 }
 
 const TYPY_DOK = {
@@ -12,14 +91,80 @@ const TYPY_DOK = {
   'literatura piękna': 'Literatura piękna',
   'kino/kultura': 'Kino i kultura',
   'prace badawcze': 'Prace badawcze',
-  językoznawstwo: 'Językoznawstwo',
+  'językoznawstwo': 'Językoznawstwo',
+  'reportaż': 'Reportaż',
+  'materiały katedry': 'Materiały katedry',
+  'materiały archiwalne': 'Materiały archiwalne',
+  'teksty źródłowe': 'Teksty źródłowe',
+  'przewodnik kulturalny': 'Przewodnik kulturalny',
+  'leksykon online': 'Leksykon online',
 };
+
+/**
+ * Adres widoku do udostępnienia: `baza + #slug` dla kartoteki,
+ * `baza + #skit:<slug>` dla skitu. Czyste, żeby dało się zbadać bez przeglądarki.
+ */
+export function linkWidoku(baza, cel) {
+  const czysta = String(baza ?? '').replace(/[#?].*$/, '');
+  return `${czysta}#${String(cel ?? '')}`;
+}
+
+/** Przycisk kopiujący adres bieżącego widoku (kartoteka albo skit/feed). */
+export function przyciskKopiowania(cel) {
+  if (!cel) return '';
+  return `<button class="chip kopiuj-link" type="button" data-kopia="${esc(cel)}" title="Kopiuj adres tego widoku">⧉ kopiuj link</button>`;
+}
+
+/**
+ * Stopka wpisu i skitu: wyłącznie data utworzenia oraz data ostatniej
+ * modyfikacji. Autor i opisy zmian zostają w pliku JSON oraz w feedzie
+ * „Co nowego” — karta nie zasypuje czytelnika notatkami roboczymi
+ * (zlecenie właściciela 2026-08-28).
+ */
+export function htmlStopki(meta) {
+  const daty = (meta?.modyfikacje ?? []).map((m) => m?.data).filter(Boolean).sort((a, b) => String(a).localeCompare(String(b)));
+  const ostatnia = daty[daty.length - 1];
+  const pokaz = ostatnia ? ` · zmieniono ${esc(ostatnia)}` : '';
+  return `<footer class="meta-wpisu">utworzono ${esc(meta?.utworzono ?? '?')}${pokaz}</footer>`;
+}
+
+/** Adres źródła jako link (B3) — tylko http/https, bezpieczny tekst kotwicy. */
+export function linkDoZrodla(url) {
+  const adres = String(url ?? '').trim();
+  if (!/^https?:\/\//i.test(adres)) return '';
+  let tekst = adres
+    .replace(/^https?:\/\//i, '')
+    .replace(/\/$/, '');
+  if (tekst.length > 58) tekst = `${tekst.slice(0, 42)}…${tekst.slice(-14)}`;
+  return ` <a class="zrodlo" href="${esc(adres)}" target="_blank" rel="noopener noreferrer external" title="Otwórz źródło w sieci">${esc(tekst)}</a>`;
+}
 
 function sekcja(numer, tytul, zawartoscHtml) {
   return `<section class="sekcja"><h3><span class="numer">${numer}</span> ${tytul}</h3>${zawartoscHtml}</section>`;
 }
 
-/** Pełny panel wpisu (sekcje I–V wg protokołu MFM). */
+/** Chipy tagów wpisu: kolejność i podpisy kategorii wyznacza kanon (ADR 0016). */
+function chipyTagow(w, indeks) {
+  const used = new Set(w.tagi ?? []);
+  const kategorie = indeks?.kanon?.kategorie?.length
+    ? indeks.kanon.kategorie
+    : [{ id: null, nazwa: 'Tagi' }];
+  const wKolejnosci = kategorie.flatMap((kat) => tagiPosortowane(indeks, kat.id).map((t) => t.tag)).filter((tag) => used.has(tag));
+  const poza = [...used].filter((tag) => !wKolejnosci.includes(tag)).sort((a, b) => a.localeCompare(b, 'pl'));
+  return [...wKolejnosci, ...poza]
+    .map((tag) => {
+      const meta = (indeks?.tagi && indeks.tagi[tag]) || {};
+      const skrot = skrotKategorii(indeks, meta.kategoria);
+      const pelna = nazwaKategorii(indeks, meta.kategoria);
+      const legenda = [pelna && pelna !== skrot ? pelna : '', meta.opis].filter(Boolean).join(' — ');
+      const tytul = legenda ? ` title="${esc(legenda)}"` : '';
+      const etykieta = skrot ? `<span class="kategoria-tagu">${esc(skrot)}</span>` : '';
+      return `<button class="chip tag" data-tag="${esc(tag)}"${tytul}>${etykieta}${esc(tag)}</button>`;
+    })
+    .join('');
+}
+
+/** Pełny wpis kartoteki (sekcje I–VI wg protokołu MFM v1.4). */
 export function htmlWpisu(w, indeks) {
   const rekord = indeks.manifestacje.find((m) => m.slug === w.slug) ?? {};
   const alt = (w.nazwy_alternatywne ?? []).length ? `<p class="alt">znany też jako: ${esc(w.nazwy_alternatywne.join(', '))}</p>` : '';
@@ -30,7 +175,7 @@ export function htmlWpisu(w, indeks) {
       ${alt}
       <p class="lokalizacja">📍 ${esc(w.lokalizacja.miejscowosc)}, ${esc(w.lokalizacja.kraj)} · ${w.lokalizacja.lat.toFixed(2)}°, ${w.lokalizacja.lon.toFixed(2)}°</p>
       <p class="pochodzenie">${esc(w.pochodzenie_i_kultura)}</p>
-      <div class="chipy">${(w.tagi ?? []).map((t) => `<button class="chip tag" data-tag="${esc(t)}">${esc(t)}</button>`).join('')}</div>
+      <div class="chipy">${chipyTagow(w, indeks)}</div>
     </header>`;
 
   const tabela = `
@@ -41,8 +186,8 @@ export function htmlWpisu(w, indeks) {
         .join('')}</tbody>
     </table>`;
 
-  const I = sekcja(
-    'I',
+  const V = sekcja(
+    'V',
     'Rezonans i tożsamość',
     `<p>${esc(w.rezonans.klucz_przywolania)}</p>${tabela}`
   );
@@ -63,15 +208,15 @@ export function htmlWpisu(w, indeks) {
     'III',
     'Dokumentacja (The Source Stack)',
     `<ul class="dokumentacja">${(w.dokumentacja ?? [])
-      .map((d) => `<li><span class="typ">${esc(TYPY_DOK[d.typ] ?? d.typ)}</span> — ${esc(d.pozycja)}</li>`)
+      .map((d) => `<li><span class="typ">${esc(TYPY_DOK[d.typ] ?? d.typ)}</span> — ${esc(d.pozycja)}${linkDoZrodla(d.url)}</li>`)
       .join('')}</ul>`
   );
 
   const obrazHtml = w.wizualizacja?.obraz
     ? `<img src="${esc(w.wizualizacja.obraz)}" alt="Wizualizacja: ${esc(w.nazwa)}" loading="lazy">`
     : `<div class="brak-wizualizacji"><p>Wizualizacja nieodtworzona.</p><p class="maly">Obraz powstanie z promptu poniżej (21:9).</p></div>`;
-  const IV = sekcja(
-    'IV',
+  const I = sekcja(
+    'I',
     'Wizualizacja',
     `${obrazHtml}
      <details class="prompt">
@@ -81,8 +226,8 @@ export function htmlWpisu(w, indeks) {
      </details>`
   );
 
-  const V = sekcja(
-    'V',
+  const IV = sekcja(
+    'IV',
     'Trofea i dowody eliminacji',
     `<dl class="trofea">
       <dt>Trofeum pierwotne</dt><dd>${esc(w.trofea.pierwotne)}</dd>
@@ -99,6 +244,7 @@ export function htmlWpisu(w, indeks) {
   const backlinki = (rekord.backlinki ?? [])
     .map((s) => `<button class="chip link wzmianka" data-slug="${esc(s)}">${esc(nazwaSluga(s, indeks))}</button>`)
     .join(' ');
+  const VI = htmlSkitowWpisu(rekord.skity, indeks);
   const wiki =
     powiazania || backlinki
       ? sekcja(
@@ -110,13 +256,25 @@ export function htmlWpisu(w, indeks) {
         )
       : '';
 
-  const meta = `<footer class="meta-wpisu">utworzono ${esc(w.meta.utworzono)}${w.meta.autor ? ` · ${esc(w.meta.autor)}` : ''}${
-    (w.meta.modyfikacje ?? []).length
-      ? ` · zmiany: ${w.meta.modyfikacje.map((m) => `${esc(m.data)} (${esc(m.opis)})`).join('; ')}`
-      : ''
-  }</footer>`;
+  const meta = htmlStopki(w.meta);
 
-  return `<div class="wpis">${naglowek}${I}${II}${III}${IV}${V}${wiki}${meta}</div>`;
+  // Sekcje I–V w kolejności numeracji (PROTOKÓŁ §4.1, v1.3): numer = pozycja.
+  return `<div class="wpis">${naglowek}${I}${II}${III}${IV}${V}${VI}${wiki}${meta}</div>`;
+}
+
+/**
+ * Pełnoekranowa warstwa z wpisem (B2): nakładka na całe okno, dialog z
+ * porządną dostępnością i przyciskiem zamknięcia. Treść wklejana jako
+ * `htmlWpisu()` — warstwa tylko dodaje rusztowanie.
+ */
+export function htmlWarstwyWpisu(trescHtml, { slug = '', nazwa = '' } = {}) {
+  return `<div class="warstwa-wpisu" role="dialog" aria-modal="true" tabindex="-1" aria-label="Kartoteka: ${esc(nazwa || slug)}">
+  <div class="akcje-kartoteki">
+    ${przyciskKopiowania(slug)}
+    <button class="zamknij" id="zamknij-wpis" type="button" aria-label="Zamknij kartotekę">✕</button>
+  </div>
+  ${trescHtml}
+</div>`;
 }
 
 export function nazwaSluga(slug, indeks) {
@@ -142,14 +300,94 @@ export function htmlListy(indeks, widoczne /* Set|null */) {
     .join('')}</ul>`;
 }
 
-/** Pasek tagów (najpopularniejsze + reszta). */
-export function htmlTagow(indeks, aktywnyTag) {
-  const tagi = Object.entries(indeks.tagi).sort((a, b) => b[1].length - a[1].length || a[0].localeCompare(b[0], 'pl'));
-  const html = tagi
+/* ---- SKITy i feed „Co nowego" (ADR 0013/0014) ---------------------------- */
+
+/** Nagłówek SKITa w formie z protokołu: `### **SKIT: tytuł**`. */
+export function naglowekSkitu(tytul) {
+  return `<h3 class="skit-tytul"><strong>SKIT: ${esc(String(tytul ?? '').toUpperCase())}</strong></h3>`;
+}
+
+/**
+ * Proza-dialogowa treść SKITa → akapity. Replika: „**Imię:** [didaskalia] słowa”.
+ * Tekst najpierw jest escapowany, markup dokładamy po esc() — żadna treść
+ * wpisu nie trafia do HTML jako HTML.
+ */
+export function htmlDialogu(tekst) {
+  const akapity = String(tekst ?? '').split(/\n{2,}/).map((a) => a.trim()).filter(Boolean);
+  return akapity
+    .map((a) => {
+      const m = a.match(/^\*\*([^*\n]{1,40}):\*\*\s*([\s\S]*)$/);
+      if (!m) return `<p class="proza">${esc(a)}</p>`;
+      let reszta = m[2].trim();
+      const dy = reszta.match(/^\[([^\]\n]{1,400})\]\s*/);
+      const didaskalia = dy ? dy[1].trim() : '';
+      if (dy) reszta = reszta.slice(dy[0].length);
+      const slowa = esc(reszta).replace(/\[([^\]\n]{1,400})\]/g, '<em class="didaskalia w-tekscie">[$1]</em>');
+      return `<p class="wypowiedz"><strong class="mowca">${esc(m[1].trim())}</strong>${
+        didaskalia ? `<em class="didaskalia">${esc(didaskalia)}</em>` : ''
+      }<span class="slowa">${slowa}</span></p>`;
+    })
+    .join('');
+}
+
+/** Widok jednego SKITa (z pełnego pliku) wraz z listą uczestników. */
+export function htmlSkitu(s, indeks) {
+  const uczestnicy = (s.uczestnicy ?? [])
+    .map((u) => `<button class="chip link" data-slug="${esc(u.slug)}">${esc(u.imie)}</button>`)
+    .join(' ');
+  const meta = htmlStopki(s.meta);
+  return `<article class="skit" data-skit="${esc(s.slug)}">
+    ${naglowekSkitu(s.tytul)}
+    <p class="skit-uczestnicy"><span>Uczestnicy:</span> ${uczestnicy}</p>
+    <div class="skit-tekst">${htmlDialogu(s.tekst)}</div>
+    ${meta}
+  </article>`;
+}
+
+/** Baza Skitów: lista wszystkich skitów, najnowsze na górze. */
+export function htmlBazySkitow(indeks) {
+  const skity = [...(indeks.skity ?? [])].sort((a, b) => String(b.data).localeCompare(String(a.data)) || a.slug.localeCompare(b.slug, 'pl'));
+  if (skity.length === 0) return '<p class="pusto">Baza skitów jest pusta — pierwszy dopisze następna sesja (PROTOKÓŁ §8).</p>';
+  return `<ul class="skit-lista">${skity
     .map(
-      ([t, slugi]) =>
-        `<button class="chip tag${t === aktywnyTag ? ' aktywny' : ''}" data-tag="${esc(t)}">${esc(t)} <span class="licznik">${slugi.length}</span></button>`
+      (s) => `<li><button class="wiersz" data-skit="${esc(s.slug)}">
+        <span class="nazwa">SKIT: ${esc(s.tytul)}</span>
+        <span class="opis">skład: ${esc((s.imiona ?? []).join(' × '))} · ${s.slow ?? 0} słów${s.data ? ` · ${esc(s.data)}` : ''}</span>
+      </button></li>`
+    )
+    .join('')}</ul>`;
+}
+
+/** Sekcja VI wpisu: skity, w których materializacja zabiera głos. */
+export function htmlSkitowWpisu(slugi, indeks) {
+  if (!slugi?.length) return '';
+  const pola = slugi
+    .map((slug) => indeks.skity?.find((x) => x.slug === slug))
+    .filter(Boolean)
+    .map(
+      (s) => `<li><button class="chip link" data-skit="${esc(s.slug)}">SKIT: ${esc(s.tytul)}</button>
+        <span class="opis">skład: ${esc((s.imiona ?? []).join(', '))} · ${s.slow ?? 0} słów</span></li>`
     )
     .join('');
-  return html || '';
+  if (!pola) return '';
+  return sekcja('VI', 'SKITy', `<ul class="powiazania skity-wpisu">${pola}</ul>`);
+}
+
+/** Feed „Co nowego": najnowsze na górze, każda pozacja linkuje do treści. */
+export function htmlNowosci(indeks) {
+  const wpisy = indeks.aktualizacje ?? [];
+  if (!wpisy.length) return '<p class="pusto">Brak zmian w archiwum.</p>';
+  const TYTUL = { manifestacja: 'kartoteka', skit: 'skit' };
+  const AKCJA = { nowa: 'dodano', nowy: 'dodano', zmiana: 'zmieniono' };
+  return `<ul class="nowosci-lista">${wpisy
+    .map((a) => {
+      const docel = a.typ === 'skit' ? `skit:${a.slug}` : a.slug;
+      return `<li>
+        <time datetime="${esc(a.data)}">${esc(a.data)}</time>
+        <span class="badge-typ">${esc(TYTUL[a.typ] ?? a.typ)} · ${esc(AKCJA[a.akcja] ?? a.akcja)}</span>
+        <button class="tytul" data-link="${esc(docel)}">${esc(a.tytul)}</button>
+        <p class="opis">${esc(a.opis)}</p>
+      </li>`;
+    })
+    .join('')}</ul>`;
 }

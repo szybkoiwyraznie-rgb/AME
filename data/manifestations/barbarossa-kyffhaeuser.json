@@ -1,0 +1,109 @@
+{
+  "slug": "barbarossa-kyffhaeuser",
+  "nazwa": "Barbarossa w Kyffhäuserze",
+  "nazwy_alternatywne": [
+    "Friedrich Rotbart auf dem Kyffhäuser",
+    "Cesarz pod Kyffhausen",
+    "Der alte Barbarossa (Rückert, 1817)"
+  ],
+  "karta": {
+    "nazwa": "Alaborn Trooper",
+    "wydanie": "Portal Second Age (P02) #4",
+    "rok": 1998
+  },
+  "lokalizacja": {
+    "miejscowosc": "grzbiet Kyffhäuser (góra Kyffhausen) z ruinami zamku i pomnikiem; pod ziemią jaskinia Barbarossahöhle koło Rottleben",
+    "kraj": "Niemcy (Turyngia / Saksonia-Anhalt, Kyffhäuserkreis)",
+    "lat": 51.41,
+    "lon": 11.11
+  },
+  "pochodzenie_i_kultura": "Legenda turyńska, spisana jako podanie nr 23 w „Deutsche Sagen” Jakuba i Wilhelma Grimmów (1816/1818) i utrwalona wierszem Friedricha Rückerta „Der alte Barbarossa” (1817). Należy do motywu A 571 w indeksie folkloru (uśpiony bohater kultury w górze), z równoległymi wersjami w całej Europie — m.in. polskim podaniem o śpiących rycerzach w Mątewach, gdzie dotknięcie dzwonu budzi zastęp na zgubę. W XIX w. legenda została upolityczniona: w 1848 r. wniesiono na górę czarno-czerwono-złoty sztandar i pieśń, a w latach 1890–1896 postawiono na ruinach pomnik (proj. Bruno Schmitz, 81 m) z 6,5-metrową piaskowcową figurą cesarza (Nikolaus Geiger), u której stóp leżą rycerze, bestie i dworanie „czekający na zmartwychwstanie w podziemnej celi”.",
+  "wizualizacja": {
+    "prompt": "Style: A wide-angle full-body cinematic photograph. The central objects/persons of the photo are visible from head to toe, standing centrally in the frame. No parts of the body are cropped.\n\nAn elderly red-bearded medieval emperor rising to his feet at a round stone table deep inside an anhydrite cavern, his enormous beard wound twice around the table edge and fused into the rock, rusted mail over a heavy woollen cloak, one hand still pressed to his forehead as if woken mid-nod, a bare sword laid across the table and a withered pear branch breaking into white leaves behind him, rows of sleeping knights and horses filling the dark gallery in pale blue-green light, thin cold daylight falling through a shaft where ravens wheel in flocks, gypsum dust and old iron on wet stone.\n\nCaptured with a 35mm anamorphic lens at f/1.8. Shallow depth of field with a heavy, creamy bokeh background. Environmental portraiture. Dramatic cinematic lighting, sharp focus on the character, hyper-realistic textures of clothing and skin. Shot on 70mm film stock, ultra-wide 21:9 aspect ratio. --ar 21:9",
+    "obraz": "assets/wizualizacje/barbarossa-kyffhaeuser.jpg"
+  },
+  "natura": {
+    "wyglad_i_aura": "Nie duch, nie ciało: uśpiony władca na ławie przy okrągłym kamiennym stole, głowa oparta na dłoni, powieki półotwarte — kiwa głową i mruga, a jego ruda, paląca broda wyrosła przez kamień (w innych wersjach: owinęła się wokół stołu) i musi owinąć się trzy razy, tymczasem są dwa okrążenia. Raz na sto lat wstaje i pyta wysłanego przed górę: „czy kruki jeszcze krążą nad górą?”. Jeśli tak — kładzie się spać dalej. Wokół niego w ciemności stoją w rzędach rycerze, dwór i konie, wszyscy w tym samym stanie niedokończenia. Tam, gdzie wdziera się dzień, słychać kruk: to on, nie siarka, jest aurą tego bytu — znakiem, że warunek nie został spełniony.",
+    "charakter_i_motywacje": "Cierpliwość jako jedyna namiętność. Cesarz nie chce zemsty ani chwały, tylko warunku: jego tarcza ma wisieć na suchym drzewie, które wtedy zielenieje i „nadejdzie lepszy czas”. Boi się nie wroga, lecz przedwczesnego przebudzenia — podanie wie, że wywołany przed czasem zastęp przyniesie pożar i jazdę nad pola. W spisanym przez Grimmów przekazie z 1669 r. (chłop z Reblingen wiózł zboże do Nordhausen, karzełek kazał mu wysypać je i napełnić wory złotem) widać jego hojność i jego dystans: patrzy na władcę zupełnie nieruchomego i dostaje kruszec, ale nie dostaje daty. Dlatego wokół niego kłębi się mit o „lepszych czasach”, których nigdy nie było na żądanie: 1848, 1871, 1914 — za każdym razem wołano go inaczej i za każdym razem odpowiadał milczący kamień.",
+    "zdolnosci": "namierzanie przez znak, nie przez wyzwanie: kto chce go spotkać, wchodzi w rozpadlinę i pozwala prowadzić się „małemu człowieczkowi”; wymiana darów z podwójnym dnem: wysypane zboże wraca złotem, ale dopiero na powietrzu widać, czym ten dar jest; władza nad warunkiem: kruk nad górą to następne sto lat snu, sucha gałąź, która zielenieje przy jego tarczy, to znak otwarcia epoki; mnożenie zastępu w miarę czekania (im dłużej śpi, tym liczniejsze jego rycerstwo); oraz jedna zdolność najbardziej realna: przyciąganie obietnic politycznych, które nie dojrzały.",
+    "slabosci_i_metody_pokonania": "Pokonać go nie sposób — on jest już pokonany przez czas i to jest jego tarcza. Metody konfrontacji w źródłach są trzy: (a) nie budzić przed warunkiem, bo kto budzi, temu zastęp zapada się pod ziemię i nie wraca (polska wersja z Mątew: dotknięcie dzwonu psuje sprawę na wieczność); (b) odpytać kruka, nie cesarza; (c) nie żądać, tylko przyjść z tym, co już zrobione — w 1848 r. wniesiono gotowy sztandar i pieśń, a cesarz nie wstał, bo warunek był zewnętrzny (pomnik z lat 1890–1896 jest próbą udania, że spełniono go inaczej, przez następcę „Białobrodego”). W praktyce terenowej: nie kopać w gruzach, nie wynosić „okazów” (górnicy w 1865 r. weszli w komory przypadkiem i od razu nazwali je jego imieniem) i nigdy nie liczyć, ile razy broda owinęła stół — przy trzecim razie nikt nie zdąży zejść z grzbietu.",
+    "preferencje": "Lubi: porządek w warunkach, kruka jako jedyną pocztę, ciszę w jaskini anhydrytu (wilgoć, niebiesko-zielone jeziorka, krucha skała), suchą gałąź, na której będzie można powiesić tarczę, i konie, które nie zardzewiały. Nielubi: poetów przychodzących po gotową odpowiedź, rocznic z wieńcami, górnika z kilofem oraz ludzi, którzy wołają go po imieniu z okna."
+  },
+  "dokumentacja": [
+    {
+      "typ": "zbiór podań (krytyczny opis z przekładem)",
+      "pozycja": "Jacob i Wilhelm Grimm, „Deutsche Sagen” (1816/1818), poz. 23 „Friedrich Rotbart auf dem Kyffhäuser” — przekład i streszczenie w zbiorze „Sleeping Hero Legends”: władca żyje do Sądu Ostatecznego, tarcza na suchym drzewie, okrągły kamienny stół, broda trzykrotnie wokół stołu (raz na sto lat pytanie o kruki), epizod chłopa z Reblingen z 1669 r., który wymienił zboże na złoto i zobaczył cesarza nieruchomego; to samo opracowanie podaje polski wariant z Mątew",
+      "url": "https://sites.pitt.edu/~dash/sleep.html"
+    },
+    {
+      "typ": "leksykon online",
+      "pozycja": "Wikipedia, „Kyffhäuser Monument” — 51°24′47″N 11°06′35″E, wysokość 81 m, budowa 1890–1896 (Bruno Schmitz), ruiny cesarskiego zamku Kyffhausen (powstającego od ok. 1000 r., rozbudowanego za Fryderyka I), najgłębsza studnia zamkowa na świecie (176 m), figura cesarza autorstwa Nikolausa Geigera (6,5 m) z rycerzami, bestiami i dworzanami u stóp; program narodowy 1871 jako kontynuacja cesarstwa",
+      "url": "https://en.wikipedia.org/wiki/Kyffh%C3%A4user_Monument"
+    },
+    {
+      "typ": "przewodnik speleologiczny",
+      "pozycja": "ShowCaves, „Barbarossahöhle” (Rottleben, Mühlen 6, 99707 Kyffhäuserland; 51.375469, 11.036442) — jaskinia w anhydrycie, udostępniona turystycznie, odkryta w 1865 r. przez górników szukających łupka miedzionośnego; nazwa wzięta wprost z legendy o podziemnym pałacu; bibliografia: Herthum 1868, Baumbauer 2018 (Schnell & Steiner, ISBN 9783795471163)",
+      "url": "https://www.showcaves.com/english/de/showcaves/Barbarossa.html"
+    },
+    {
+      "typ": "strona regionu",
+      "pozycja": "Region Südharz–Kyffhäuser, „Sagen & Mythen” — żywa wersja lokalna: sprawdzanie co sto lat, czy kruki jeszcze krążą; broda przez stół; Fryderyk I w 1147 r. w palatium w Tilledzie u stóp góry; popularyzacja legendy przez Grimmów i Rückerta; pomnik z lat 1890–1896; komory odkryte w 1865 r. nazwane „Barbarossahöhle”",
+      "url": "https://www.region-suedharz-kyffhaeuser.de/en/sagen-mythen"
+    },
+    {
+      "typ": "opracowanie historyczno-kulturowe",
+      "pozycja": "„The Myths of Barbarossa” (History of the Germans, odc. 66) — przeniesienie motywu z Fryderyka II na Fryderyka I i na Kyffhäuser; brak ciała i grobu (Fryderyk I utonął w Saleph, zwłoki rozłożono i chowano w Ziemi Świętej) jako źródło legendy; rok 1848 jako próba obudzenia; freski i pomnik jako przejęcie mitu przez państwo Hohenzollernów",
+      "url": "https://historyofthegermans.com/66-2/"
+    }
+  ],
+  "trofea": {
+    "pierwotne": "garść złota z worów po wysypanym zbożu — do pierwszego zejścia z grzbietu (przekaz z 1669 r.)",
+    "wtórne": "sucha gałąź, która zaczęła zielenieć — dowód, że warunek jest blisko, i że lepiej było nie przychodzić"
+  },
+  "rezonans": {
+    "klucz_przywolania": "Karta „Alaborn Trooper”: {2}{W}, 2/3, ani jednego zdania zdolności, za to rota placeholder my body to my country / And my life to my King.” — Alaborn Soldier’s Oath. To dokładnie to, co mówi Kyffhäuser: byt bez akcji, za to z warunkiem; oddany ciałem temu, co go trzyma, a życiem temu, na kogo czeka. 2/3 znaczy: trudniej go zabić niż obudzić. Brak zdolności nie jest tu zubożeniem karty, tylko jej treścią — śpiący zastęp nie ma zdolności, ma termin.",
+    "tabela": [
+      {
+        "element": "Nazwa",
+        "translacja": "„Alaborn” to nazwa własna wspólnoty z settingu Portalu (P02 zna jeszcze muszkieterów, grenadierów i zelotów Alabornu) i nie ma etymologii, którą potrafię potwierdzić — nie wymyślam jej. Sam przekład nazwy zrobił za to to, co legenda z cesarzem: włoski „Fante Alaborn” widzi piechura, hiszpański „Soldado de caballería de Alaborn” — konnego, francuski „Troupier d’Alaborn”, niemiecki „Alabornkämpfer”. Tak samo pod Kyffhausen: dla jednych to piechota pod górą, dla drugich jazda, a źródło mówi tylko: leży i czeka."
+      },
+      {
+        "element": "Mechanika",
+        "translacja": "Brak zdolności na karcie za pięć man to przepis na Kyffhäuser: płacisz dużo, dostajesz ciało, nie cud. Statystyki 2/3 (więcej wytrwałości niż uderzenia) oddają logikę zastępu, który rośnie, czekając; i koszt {2}{W} to cena wyprawy pod górę. W drugą stronę też się to zgadza: nic tu nie można „zagrać” — w podaniach nikt cesarza nie obudził skutecznie, każdy, kto próbował, wrócił ze złotem albo z niczym."
+      },
+      {
+        "element": "Ilustracja",
+        "translacja": "Artysta: Lubov (P02; przedruk ME4 #2 tej samej autorki). Kompozycji obrazu nie opisujemy — nie zgadujemy (docs/WORKFLOW.md §3). Wiadomo tyle, ile mówią dane karty: człowiek, żołnierz, bez atrybutów nadanych przez mechanikę — czyli nie wróżbita, a szeregowiec roty, która przysięgała ciałem i życiem. To ten sam rejestr, w którym Kyffhäuser działa: nie prorok, tylko pospolite ruszenie z cesarzem w komplecie."
+      },
+      {
+        "element": "Flavor text",
+        "translacja": "„I dedicate my body to my country / And my life to my King” — rzekoma formuła przysięgi, która w legendzie jest zdaniem opisowym: ciało oddane krajowi leży pod jego ziemią, życie oddane królowi nie może się skończyć, dopóki król nie wstanie. Pasuje do tego rytm „na raty”: jedno pytanie, jedna odpowiedź i sto lat snu jako rata długu."
+      },
+      {
+        "element": "Lore/Tło",
+        "translacja": "W settingu Portalu Alaborn należy do ludów Otarii walczących z Bractwem Płomienia — wspólnota żołnierzy-rot, bez króla-boga, z przysięgą w miejscu magii. To kontrapunkt dla legendy turyńskiej: tam zastęp czeka na cesarza, tu pojedynczy żołnierz jest całym aparatem państwa. Dlatego transpozycja idzie w stronę terminu, nie proroctwa, i dlatego karta bez zdolności jest lepszym kluczem do Kyffhäusera niż jakakolwiek karta z cudem."
+      }
+    ]
+  },
+  "tagi": [
+    "niemcy",
+    "sniacy-zastep",
+    "warunek",
+    "pamiec"
+  ],
+  "powiazania": [
+    {
+      "slug": "balor",
+      "opis": "Oba byty są zamknięte w wypowiedzianym warunku i oba go przegrywają: Balor topi noworodki, żeby nie doczekać wnuka, i właśnie go hoduje; Barbarossa co sto lat pyta o kruki, których lot przedłuża jego uwięzienie. Różnica jest w tempie — tam termin wyprzedza przeznaczenie, tu tylko odsuwa epokę — i dlatego pod Kyffhausen nie ma bitwy, jest pomnik."
+    },
+    {
+      "slug": "selkie-sule-skerry",
+      "opis": "Ten sam mechanizm: moc bytu trzyma wspólnota, która zna znak. Selkiemu wystarczy skóra schowana albo zwrócona, cesarzowi — odpowiedź na pytanie o kruki. W obu przekazach ludziom nie zostaje broń, tylko liczenie: ile jeszcze lat, ile jeszcze okrążeń stołu, ile do pierwszego strzału."
+    }
+  ],
+  "meta": {
+    "utworzono": "2026-08-28",
+    "autor": "sesja arena 2026-08-28",
+    "modyfikacje": []
+  }
+}

@@ -1,21 +1,69 @@
-/* AME — styl „ciemne archiwum” (ADR 0001: bez webfontów, bez zależności) */
+/* AME — styl „archiwum” z motywem jasnym i ciemnym (ADR 0001: bez webfontów,
+   bez zależności; ADR 0010: tokeny palety i html[data-motyw]) */
 
-:root {
+/* Paleta „archiwum” (A2). Wszystkie barwy — także mapy — idą przez tokeny,
+ * więc przełącznik html[data-motyw] zmienia CSS na żywo, bez ładowania
+ * drugiego arkusza i bez reguł zależnych od kolejności. */
+:root,
+html[data-motyw='ciemny'] {
+  color-scheme: dark;
   --tlo: #0d1015;
   --tlo-2: #141922;
   --tlo-3: #1b2230;
   --tekst: #d8d2c4;
   --tekst-dim: #8b877c;
+  --tekst-mono: #b9b39f;
   --akcent: #c9a86a; /* stary bursztyn / pieczęć */
   --akcent-2: #b4543c; /* smołowa czerwień */
+  --akcent-tekst: #14100a;
   --linia: #2a3140;
+  /* mapa */
+  --ocean: #0b0e13;
+  --lad: #232c3c;
+  --lad-hover: #2d3849;
+  --kraj-obrys: #39445a;
+  --siatka: #1d2532;
+  --pinezka-obrys: #0d1015;
+  --pinezka-srodek: #f2e6cf;
+  --badge-tlo: #141922f2;
+  --zalona: #0d1015e6;
+  --kolo-tlo: #141922ee;
+  --baner-tlo: #3a2f1b;
+  --baner-tekst: #e8dcc0;
   --serif: Georgia, 'Times New Roman', serif;
   --sans: system-ui, -apple-system, 'Segoe UI', sans-serif;
+}
+
+html[data-motyw='jasny'] {
+  color-scheme: light;
+  --tlo: #f3eee1;
+  --tlo-2: #fbf8f0;
+  --tlo-3: #e8dfca;
+  --tekst: #211c14;
+  --tekst-dim: #6c6252;
+  --tekst-mono: #4a4433;
+  --akcent: #7d5a15;
+  --akcent-2: #96331c;
+  --akcent-tekst: #fdf9ee;
+  --linia: #d6cab0;
+  --ocean: #dde6e6;
+  --lad: #f7f1e0;
+  --lad-hover: #efe3c8;
+  --kraj-obrys: #ab9b78;
+  --siatka: #c9bd9e;
+  --pinezka-obrys: #fdf9ee;
+  --pinezka-srodek: #fdf9ee;
+  --badge-tlo: #fffdf6f2;
+  --zalona: #f3eee1e6;
+  --kolo-tlo: #fbf8f0ee;
+  --baner-tlo: #f6e2b8;
+  --baner-tekst: #4a3510;
 }
 
 * { box-sizing: border-box; }
 
 html, body {
+  transition: background-color 0.22s ease, color 0.22s ease;
   margin: 0;
   height: 100%;
   background: var(--tlo);
@@ -31,14 +79,15 @@ body { display: flex; flex-direction: column; }
 .baner {
   display: none;
   padding: 10px 16px;
-  background: #3a2f1b;
+  background: var(--baner-tlo);
   border-bottom: 1px solid var(--akcent);
-  color: #e8dcc0;
+  color: var(--baner-tekst);
   font-size: 13px;
   line-height: 1.5;
 }
 .baner.widoczny { display: block; }
 .baner code { background: #00000055; padding: 1px 5px; border-radius: 3px; }
+html[data-motyw='jasny'] .baner code { background: #ffffff77; }
 
 /* ---- Górny pasek ---- */
 .gora {
@@ -86,18 +135,33 @@ body { display: flex; flex-direction: column; }
   white-space: nowrap;
 }
 .przycisk:hover { border-color: var(--akcent); }
-.przycisk.aktywny { background: var(--akcent); color: #14100a; border-color: var(--akcent); font-weight: 600; }
+.przycisk.aktywny { background: var(--akcent); color: var(--akcent-tekst); border-color: var(--akcent); font-weight: 600; }
+.przycisk-motyw { min-width: 104px; text-align: center; }
 
-/* ---- Tagi ---- */
+/* ---- Tagi: pasma po kategoriach kanonu (ADR 0016) ---- */
 .tagi {
   display: flex;
-  gap: 6px;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px 18px;
   padding: 8px 16px;
-  overflow-x: auto;
+  max-height: 8.5rem;
+  overflow-y: auto;
   border-bottom: 1px solid var(--linia);
   background: var(--tlo-2);
   scrollbar-width: thin;
 }
+.tagi-grupa { display: flex; align-items: baseline; gap: 8px; min-width: 0; }
+.tagi-grupa + .tagi-grupa { padding-left: 18px; border-left: 1px solid var(--linia); }
+.tagi-nazwa {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--tekst-dim);
+  white-space: nowrap;
+  cursor: help;
+}
+.tagi-pas { display: flex; flex-wrap: wrap; gap: 6px; }
 .chip {
   border: 1px solid var(--linia);
   background: transparent;
@@ -108,8 +172,17 @@ body { display: flex; flex-direction: column; }
   cursor: pointer;
 }
 .chip:hover { border-color: var(--akcent); }
-.chip.aktywny { background: var(--akcent); color: #14100a; }
+.chip.aktywny { background: var(--akcent); color: var(--akcent-tekst); }
 .chip .licznik { opacity: 0.6; font-size: 10px; }
+.chip.tag .kategoria-tagu {
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  opacity: 0.65;
+  margin-right: 6px;
+  padding-right: 6px;
+  border-right: 1px solid currentColor;
+}
 .chip.kopiuj { margin-top: 8px; }
 .chip.link { border-color: var(--akcent); color: var(--akcent); }
 .chip.link.wzmianka { border-style: dashed; }
@@ -121,16 +194,16 @@ body { display: flex; flex-direction: column; }
 .mapa-svg { width: 100%; height: 100%; display: block; cursor: grab; touch-action: none; }
 .mapa-svg.zlapano { cursor: grabbing; }
 
-.ocean { fill: #0b0e13; }
-.siatka { fill: none; stroke: #1d2532; stroke-width: 0.7; }
+.ocean { fill: var(--ocean); }
+.siatka { fill: none; stroke: var(--siatka); stroke-width: 0.8; vector-effect: non-scaling-stroke; }
 .kraj {
-  fill: #232c3c;
-  stroke: #39445a;
+  fill: var(--lad);
+  stroke: var(--kraj-obrys);
   stroke-width: 0.5;
   fill-rule: evenodd;
   vector-effect: non-scaling-stroke;
 }
-.kraj:hover { fill: #2d3849; }
+.kraj:hover { fill: var(--lad-hover); }
 
 .luk {
   fill: none;
@@ -142,30 +215,45 @@ body { display: flex; flex-direction: column; }
 }
 .luk.aktywny { stroke-opacity: 0.95; stroke: var(--akcent-2); stroke-dasharray: none; stroke-width: 2.2; }
 
+/* Pinezka (A5): głowa ø26 px + przezroczyste pole trafienia ø52 px; rozmiar
+ * jest w pikselach CSS, bo grupa pinezki kompensuje skalę widoku (ADR 0009). */
 .pinezka { cursor: pointer; }
+.pinezka .trafienie { fill: transparent; stroke: none; }
 .pinezka .glowa {
   fill: var(--akcent-2);
-  stroke: #0d1015;
-  stroke-width: 2.5;
+  stroke: var(--pinezka-obrys);
+  stroke-width: 3;
 }
-.pinezka .ostrze { fill: var(--akcent-2); }
+.pinezka .zrenica { fill: var(--pinezka-srodek); }
+.pinezka .ostrze { fill: var(--akcent-2); stroke: var(--pinezka-obrys); stroke-width: 1.5; }
 .pinezka:hover .glowa, .pinezka:focus .glowa { fill: var(--akcent); }
+.pinezka:hover .zrenica, .pinezka:focus .zrenica { fill: var(--akcent-2); }
 .pinezka:focus { outline: none; }
-.pinezka.wybrana .glowa { fill: var(--akcent); stroke: #fff; }
+.pinezka.wybrana .glowa { fill: var(--akcent); stroke: var(--akcent-2); }
 .pinezka.wybrana .ostrze { fill: var(--akcent); }
 .pinezka.przygaszona { opacity: 0.14; pointer-events: none; }
+
+/* Etykieta (A4): czytelny badge 19 px z pleckami; jednostka = px CSS. */
 .pinezka .etykieta {
   display: none;
+  pointer-events: none;
+}
+.pinezka .etykieta text {
   font-family: var(--serif);
-  font-size: 15px;
+  font-size: 19px;
+  line-height: 1.2;
   fill: var(--tekst);
   text-anchor: middle;
-  paint-order: stroke;
-  stroke: #0d1015;
-  stroke-width: 4;
+  dominant-baseline: central;
+}
+.pinezka .etykieta .tlo-etykiety {
+  fill: var(--badge-tlo);
+  stroke: var(--akcent);
+  stroke-width: 1.2;
 }
 .mapa-svg.przyblizona .pinezka .etykieta,
 .pinezka:hover .etykieta,
+.pinezka:focus .etykieta,
 .pinezka.wybrana .etykieta { display: block; }
 
 .sterowanie {
@@ -182,7 +270,7 @@ body { display: flex; flex-direction: column; }
   height: 38px;
   border-radius: 50%;
   border: 1px solid var(--linia);
-  background: #141922ee;
+  background: var(--kolo-tlo);
   color: var(--tekst);
   font-size: 17px;
   cursor: pointer;
@@ -204,45 +292,76 @@ body { display: flex; flex-direction: column; }
 .blad-startowy { display: none; position: absolute; inset: 0; margin: 0; padding: 40px; text-align: center; color: var(--akcent-2); z-index: 30; }
 .blad-startowy.widoczny { display: block; }
 
-/* ---- Panel wpisu ---- */
+/* ---- Kartoteka: pełnoekranowa warstwa przykrywająca (B2) ----
+ * Otwiera się na całą szerokość i wysokość okna, więc wizualizacja gra u góry
+ * wpisu na pełnym metrażu, a mapa pod spodem nic nie traci (widok liczony jest
+ * od kontenera mapy, nie od panelu — A1). */
 .panel {
-  width: 0;
-  overflow: hidden;
-  background: var(--tlo-2);
-  border-left: 1px solid var(--linia);
-  transition: width 0.35s ease;
-  position: relative;
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  display: none;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  background: var(--tlo);
+  scrollbar-width: thin;
 }
-.panel.otwarty { width: min(480px, 42vw); }
-.panel:not(.otwarty) { display: none; }
-
-.panel { overflow-y: auto; scrollbar-width: thin; }
+.panel.otwarty { display: block; animation: warstwa-wnika 0.2s ease-out; }
+@keyframes warstwa-wnika {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .panel.otwarty { animation: none; }
+}
+.warstwa-wpisu { min-height: 100%; outline: none; }
+.warstwa-wpisu:focus-visible { outline: 2px solid var(--akcent); outline-offset: -2px; }
 .zamknij {
-  position: sticky;
-  top: 10px;
-  float: right;
-  margin: 10px;
-  width: 34px;
-  height: 34px;
+  position: fixed;
+  top: 14px;
+  right: 16px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   border: 1px solid var(--linia);
-  background: var(--tlo-3);
+  background: var(--kolo-tlo);
   color: var(--tekst);
+  font-size: 17px;
   cursor: pointer;
   z-index: 5;
+  backdrop-filter: blur(4px);
 }
+.zamknij:hover, .zamknij:focus-visible { border-color: var(--akcent); color: var(--akcent); }
+
+/* Akcje kartoteki: ⧉ kopiuj link obok ✕ (stały układ, żeby nie przysłaniać treści) */
+.akcje-kartoteki {
+  position: fixed;
+  top: 14px;
+  right: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 6;
+}
+.akcje-kartoteki .zamknij { position: static; margin: 0; }
+.kopiuj-link {
+  background: var(--kolo-tlo);
+  backdrop-filter: blur(4px);
+  padding: 8px 12px;
+}
+.kopiuj-link:hover, .kopiuj-link:focus-visible { border-color: var(--akcent); color: var(--akcent); }
 .ladowanie, .blad { padding: 24px; color: var(--tekst-dim); }
 .blad { color: var(--akcent-2); }
 
-.wpis { padding: 18px 22px 40px; }
+.wpis { max-width: 1180px; margin: 0 auto; padding: 34px 34px 90px; font-size: 16px; }
 .naglowek-wpisu h2 {
   font-family: var(--serif);
-  font-size: 30px;
+  font-size: 46px;
   margin: 2px 0 4px;
   color: var(--akcent);
   letter-spacing: 0.02em;
 }
-.naglowek-wpisu .karta-inspiracja { margin: 0; font-size: 12px; text-transform: uppercase; letter-spacing: 0.14em; color: var(--tekst-dim); }
+.naglowek-wpisu .karta-inspiracja { margin: 0; font-size: 13px; text-transform: uppercase; letter-spacing: 0.14em; color: var(--tekst-dim); }
 .naglowek-wpisu .karta-inspiracja strong { color: var(--tekst); }
 .alt { margin: 0 0 6px; font-style: italic; color: var(--tekst-dim); font-size: 13px; }
 .lokalizacja { margin: 4px 0; font-size: 14px; }
@@ -250,13 +369,13 @@ body { display: flex; flex-direction: column; }
 .chipy { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0 4px; }
 
 .sekcja {
-  margin-top: 22px;
+  margin-top: 30px;
   padding-top: 14px;
   border-top: 1px solid var(--linia);
 }
 .sekcja h3 {
   font-family: var(--serif);
-  font-size: 15px;
+  font-size: 17px;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--tekst-dim);
@@ -264,7 +383,7 @@ body { display: flex; flex-direction: column; }
 }
 .sekcja .numer { color: var(--akcent); }
 
-.tabela-translacji { width: 100%; border-collapse: collapse; font-size: 13px; margin-top: 10px; }
+.tabela-translacji { width: 100%; border-collapse: collapse; font-size: 14.5px; margin-top: 12px; }
 .tabela-translacji th, .tabela-translacji td { text-align: left; vertical-align: top; padding: 6px 8px; border: 1px solid var(--linia); }
 .tabela-translacji th { font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--tekst-dim); background: var(--tlo-3); }
 .tabela-translacji td:first-child { white-space: nowrap; color: var(--akcent); font-family: var(--serif); }
@@ -276,15 +395,26 @@ body { display: flex; flex-direction: column; }
   color: var(--akcent);
   margin-top: 12px;
 }
-.natura dd, .trofea dd { margin: 4px 0 0; line-height: 1.55; }
+.natura dd, .trofea dd { margin: 4px 0 0; line-height: 1.65; }
 
-.dokumentacja { padding-left: 18px; margin: 0; line-height: 1.5; font-size: 13px; }
-.dokumentacja li { margin-bottom: 8px; }
+.dokumentacja { padding-left: 18px; margin: 0; line-height: 1.55; font-size: 15px; }
+.dokumentacja li { margin-bottom: 12px; }
 .dokumentacja .typ { color: var(--tekst-dim); font-style: italic; }
+.dokumentacja .zrodlo {
+  display: block;
+  margin-top: 2px;
+  font-size: 13px;
+  color: var(--akcent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  overflow-wrap: anywhere;
+}
+.dokumentacja .zrodlo:hover { color: var(--akcent-2); }
 
 .wpis img {
   width: 100%;
   aspect-ratio: 21 / 9;
+  object-position: center 30%;
   object-fit: cover;
   border-radius: 6px;
   border: 1px solid var(--linia);
@@ -300,17 +430,17 @@ body { display: flex; flex-direction: column; }
 }
 .brak-wizualizacji .maly { font-size: 11px; opacity: 0.7; }
 
-.prompt { margin-top: 10px; font-size: 12px; }
+.prompt { margin-top: 12px; font-size: 13.5px; }
 .prompt summary { cursor: pointer; color: var(--tekst-dim); }
 .prompt pre {
   white-space: pre-wrap;
-  background: var(--tlo);
+  background: var(--tlo-2);
   border: 1px solid var(--linia);
   border-radius: 6px;
   padding: 10px;
-  font-size: 11.5px;
-  line-height: 1.5;
-  color: #b9b39f;
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--tekst-mono);
 }
 
 .powiazania { list-style: none; padding: 0; margin: 0; }
@@ -326,11 +456,117 @@ body { display: flex; flex-direction: column; }
   color: var(--tekst-dim);
 }
 
+/* ---- Warstwa pomocnicza: Baza Skitów, widok SKITa, „Co nowego" (ADR 0013/0014) ---- */
+.warstwa {
+  position: fixed;
+  inset: 0;
+  z-index: 70;
+  display: none;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  background: var(--tlo-2);
+  scrollbar-width: thin;
+}
+.warstwa.otwarta { display: block; animation: warstwa-wnika 0.2s ease-out; }
+.warstwa-tresc { max-width: 900px; margin: 0 auto; padding: 26px 28px 90px; }
+.warstwa-tresc > header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 18px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--linia);
+}
+.warstwa-tresc header h2 {
+  font-family: var(--serif);
+  font-size: 21px;
+  letter-spacing: 0.06em;
+  margin: 0;
+  color: var(--akcent);
+}
+.akcje-warstwy { display: flex; align-items: center; gap: 8px; flex: none; }
+.akcje-warstwy .zamknij { position: static; float: none; margin: 0; }
+.naprowadzenie { color: var(--tekst-dim); font-size: 13.5px; margin: 0 0 18px; }
+
+.skit-lista, .nowosci-lista { list-style: none; margin: 0; padding: 0; }
+.skit-lista li { border-bottom: 1px solid var(--linia); }
+.skit-lista .wiersz { padding: 12px 6px; }
+.skit-lista .nazwa { font-size: 18px; letter-spacing: 0.06em; }
+
+.skit { padding-top: 4px; }
+.skit-tytul {
+  font-family: var(--serif);
+  font-size: 26px;
+  letter-spacing: 0.1em;
+  margin: 0 0 12px;
+  color: var(--tekst);
+}
+.skit-uczestnicy { margin: 0 0 6px; font-size: 13px; color: var(--tekst-dim); display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.skit-uczestnicy span { text-transform: uppercase; letter-spacing: 0.14em; font-size: 11px; }
+.skit-tekst { font-size: 16.5px; }
+.wypowiedz {
+  margin: 0 0 15px;
+  padding: 2px 0 2px 14px;
+  border-left: 2px solid var(--akcent);
+  line-height: 1.62;
+}
+.wypowiedz .mowca {
+  display: block;
+  font-family: var(--serif);
+  font-size: 14px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--akcent);
+  margin-bottom: 2px;
+}
+.wypowiedz .didaskalia {
+  display: block;
+  color: var(--tekst-dim);
+  font-size: 14px;
+  margin: 0 0 4px;
+}
+.wypowiedz .didaskalia.w-tekscie { color: var(--tekst-dim); }
+.proza { margin: 0 0 14px; line-height: 1.62; color: var(--tekst-dim); font-style: italic; }
+
+.skity-wpisu { list-style: none; padding: 0; margin: 0; }
+.skity-wpisu li { margin-bottom: 10px; }
+.skity-wpisu .opis { display: block; font-size: 12.5px; color: var(--tekst-dim); margin-top: 3px; }
+
+.nowosci-lista { display: flex; flex-direction: column; gap: 10px; }
+.nowosci-lista li {
+  border: 1px solid var(--linia);
+  border-radius: 8px;
+  padding: 10px 14px;
+  background: var(--tlo);
+}
+.nowosci-lista time { font-size: 12px; color: var(--tekst-dim); letter-spacing: 0.08em; }
+.nowosci-lista .badge-typ {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--akcent-2);
+  margin-left: 8px;
+}
+.nowosci-lista .tytul {
+  display: block;
+  background: none;
+  border: 0;
+  padding: 2px 0 0;
+  text-align: left;
+  font-family: var(--serif);
+  font-size: 18px;
+  color: var(--tekst);
+  cursor: pointer;
+}
+.nowosci-lista .tytul:hover { color: var(--akcent); }
+.nowosci-lista .opis { margin: 2px 0 0; font-size: 13px; color: var(--tekst-dim); line-height: 1.5; }
+
 /* ---- Lista (kartoteka) ---- */
 .lista {
   position: fixed;
   inset: 0;
-  background: #0d1015e6;
+  background: var(--zalona);
   backdrop-filter: blur(3px);
   z-index: 40;
   display: none;
@@ -385,14 +621,12 @@ body { display: flex; flex-direction: column; }
 /* ---- Mobile ---- */
 @media (max-width: 760px) {
   .gora { flex-wrap: wrap; }
+  .tagi { max-height: none; gap: 6px 12px; }
+  .tagi-grupa + .tagi-grupa { padding-left: 0; border-left: 0; }
   #szukaj { order: 3; flex-basis: 100%; max-width: none; }
   .tytul p { display: none; }
-  .tresc { flex-direction: column; }
-  .panel, .panel.otwarty {
-    width: 100%;
-    max-height: 62vh;
-    border-left: 0;
-    border-top: 1px solid var(--linia);
-  }
+  .wpis { padding: 22px 16px 72px; }
+  .naglowek-wpisu h2 { font-size: 32px; }
+  .wpis img { aspect-ratio: auto; }
   .podpowiedz { display: none; }
 }
