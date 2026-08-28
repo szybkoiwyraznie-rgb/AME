@@ -31,7 +31,8 @@ data/
 tools/
   rebuild-index.mjs         — walidacja wpisów + budowa indeksu (--check
                               używany w testach; zapis używany w buildzie)
-test/                       — node --test (geo, schemat, indeks)
+test/                       — node --test (geo, schemat, indeks,
+                              kontrakty: CSS↔klasy mapy, wersja protokołu)
 docs/                       — protokół, ADR, plany, handoffy (patrz AGENTS.md)
 ```
 

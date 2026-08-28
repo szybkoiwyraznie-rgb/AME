@@ -324,3 +324,35 @@ całe drzewo, dlatego audyt prowadzono plik po pliku na stanie `main` (361e9be).
   nazwa powinna być jednoznaczna, a test ma pilnować kontraktu, nie literówki.
 
 **Stan po audycie:** `npm test` 108/108, `npm run check` spójny, CI zielone.
+
+### Naprawa w M5 (zlecenie właściciela)
+
+- **F1 (naprawione).** Grupa świata w SVG: klasa `warstwa` → `swiat`
+  (`app/map.js`), a reguła nakładki UI doprecyzowana do elementu
+  (`div.warstwa` w `app/styles.css`). Bez warunków-specjalnych i bez
+  `!important` — usunięta została przyczyna (wspólna nazwa dwóch komponentów),
+  nie objaw.
+- **F2 (naprawione).** Stopka aplikacji i tabela dokumentów w README cytują
+  v1.4 — wersję wyprowadzoną ze statusu `docs/PROTOKOL.md`.
+- **F3 (naprawione).** `test/pinezka.test.js` szuka grupy świata po nowej,
+  jednoznacznej nazwie.
+- **Nowe testy (111/111):** `test/mapa-css.test.js` (żadna reguła z
+  `display: none` nie gasi klasy renderu mapy; to, co mapa chowa, ma drogę
+  powrotu) oraz kontrakt wersji protokołu w `test/ui.test.js`. Pierwszy z nich
+  przed naprawą zgłaszał: „reguła `.warstwa` gasi klasę mapy .warstwa”.
+- **Weryfikacja w przeglądarce (headless Chromium z paczki npm — swobodny
+  egress jest zablokowany, więc binarkę wzięto z `@sparticuz/chromium`):**
+  1440×900 — kraje 241/241 z niezerowym `getBoundingClientRect`, Polska
+  40×23 px (10°×5,9° przy skali 0,4 = projekcja bez rozciągu), klik w pinezkę
+  otwiera kartotekę (sekcje I–VI + ∞, hash `#egungun`), przybliżenie
+  1440 → 2304 px i reset, oba motywy, 9 łuków powiązań, zero błędów konsoli;
+  820×1180 — skala 0,228, świat wyśrodkowany w pionie. Piksele zrzutu:
+  przed naprawą 80,1% tła oceanu i ani jednego piksela lądu, po naprawie
+  50,1% oceanu i 23,2% lądu.
+- **Lekcje:** L13 (kolizja klas CSS↔SVG i ślepota atrapy DOM na kaskadę),
+  L14 (wersja standardu rozjeżdżająca się między nośnikami).
+
+**Stan na koniec M5:** `npm test` 111/111, `npm run build` i `npm run check`
+zielone, CI na PR #4 zielone; PR #4 (gałąź `arena/01a0482e-ame`) zawiera plan,
+audyt PR #2/#3, naprawę F1–F3 i lekcje. Decyzja o scaleniu należy do
+właściciela.

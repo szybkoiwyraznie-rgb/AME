@@ -149,3 +149,35 @@ uprawnieniami agenta i poza jego zakresem — **zapisz to jako znany, zamknięty
 (w `docs/WORKFLOW.md`, `ENVIRONMENT`), ewentualnie zostaw gotową treść w repo do
 skopiowania, ale nie odnawiaj żądania w PR-ach, handoffach i listach „otwarte”.
 Bramą jakości pozostają lokalne `npm test` + `npm run build` + `npm run check`.
+
+## L13 (2026-08-28, AME) — kolizja nazwy klasy: reguła CSS strony gasi SVG mapy
+
+**Objaw:** mapa nie rysuje się w ogóle — widać wyłącznie tło oceanu; `npm test`
+108/108 zielone, w konsoli ani jednego błędu, 241 ścieżek krajów w drzewie,
+`getBBox()` grupy świata poprawne (0, 0, 3600, 1800), ale
+`getBoundingClientRect()` tej samej grupy = 0, 0, 0, 0.
+**Przyczyna:** `app/map.js` nadawał grupie świata `class: 'warstwa'`, a
+`.warstwa { … display: none }` w `app/styles.css` to pełnoekranowa nakładka UI
+(ADR 0010), domyślnie ukryta — cała zawartość mapy dziedziczyła `display: none`.
+`getComputedStyle(g).display` rozstrzyga sprawę w jednym odczycie. Testy
+milczały, bo atrapa DOM (`test/pinezka.test.js`) nie liczy kaskady CSS, a
+niezmienniki `test/geo.test.js` patrzą na geometrię, nie na render.
+**Reguła:** (1) Klasy wewnątrz SVG mapy mają nazwy własne i nie pożycza się ich
+z warstwy UI strony — takiej kolizji nie widać w testach jednostkowych, widać
+ją dopiero u właściciela. (2) Kontrakt między arkuszem a klasami renderu mapy
+pilnuje `test/mapa-css.test.js`. (3) Gdy „element nie rysuje się”, mierz
+w przeglądarce trzy rzeczy naraz: `getBoundingClientRect`,
+`getComputedStyle().display` i `elementFromPoint(środek)` — rozjazd między nimi
+wskazuje warstwę, na której zgasła treść (tu: kaskada CSS, nie geometria).
+
+## L14 (2026-08-28, AME) — wersja standardu rozjeżdża się między nośnikami
+
+**Objaw:** po podniesieniu protokołu do v1.4 (ADR 0015) stopka aplikacji nadal
+głosiła „protokół MFM v1.3”, a tabela dokumentów w README — v1.2.
+**Przyczyna:** ADR zmienił liczbę w `docs/PROTOKOL.md` i w instrukcjach, ale
+nikt nie zaktualizował dwóch miejsc, w których wersję widzi czytelnik, nie
+agent: stopki `index.html` i opisu repozytorium.
+**Reguła:** numer wersji protokołu jest **wyprowadzany** ze statusu w
+`docs/PROTOKOL.md`, a nie wpisywany ręcznie — kontrakt w `test/ui.test.js`
+porównuje status ze stopką aplikacji i z README i odrzuca cytowanie starszej
+wersji (ta sama zasada co limit SKITa w `test/skit.test.js`).
