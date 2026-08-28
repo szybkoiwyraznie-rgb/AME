@@ -14,6 +14,45 @@ import { projektuj, dekodujKraje, siatka, dopasujWidok, ogranicz, K_MIN, K_MAX, 
 
 const NS = 'http://www.w3.org/2000/svg';
 
+/** Rozmiar badge’a etykiety pinezki (jednostki = piksele CSS, patrz ADR 0009). */
+const ETYKIETA = {
+  rozmiarPisma: 19,
+  paddingX: 11,
+  paddingY: 6,
+  /** Ułamkowa szerokość znaku względem stopnia pisma (Georgia/system-ui ≈ 0,52). */
+  wspolczynnikZnaku: 0.52,
+};
+
+/** Odległość dolnej krawędzi badge’a od środka pinezki (px CSS). */
+const ODSTEP_BADGE = 30;
+
+function el(nazwa, atrybuty = {}, rodzic = null) {
+  const e = document.createElementNS(NS, nazwa);
+  for (const [k, v] of Object.entries(atrybuty)) e.setAttribute(k, v);
+  if (rodzic) rodzic.appendChild(e);
+  return e;
+}
+
+/** Szacowana szerokość tekstu, gdy nie da się zmierzyć (Node, brak layoutu). */
+export function szacujSzerokoscTekstu(tekst, rozmiarPisma = ETYKIETA.rozmiarPisma) {
+  return String(tekst ?? '').length * rozmiarPisma * ETYKIETA.wspolczynnikZnaku;
+}
+
+/** Wymiary badge’a etykiety: zmierz tekst, a jak nie ma layoutu — oszacuj. */
+export function wymiaryEtykiety(nazwa, tekst = null) {
+  let szerokosc = 0;
+  try {
+    szerokosc = typeof tekst?.getComputedTextLength === 'function' ? tekst.getComputedTextLength() : 0;
+  } catch {
+    szerokosc = 0;
+  }
+  if (!szerokosc || !Number.isFinite(szerokosc)) szerokosc = szacujSzerokoscTekstu(nazwa);
+  return {
+    szer: Math.round(szerokosc + ETYKIETA.paddingX * 2),
+    wys: Math.round(ETYKIETA.rozmiarPisma * 1.42 + ETYKIETA.paddingY * 2),
+  };
+}
+
 export function stworzMape(kontener, { przyZmianieZaznaczenia } = {}) {
   const svg = el('svg', { viewBox: `0 0 ${SZER} ${WYS}`, preserveAspectRatio: 'xMidYMid meet', class: 'mapa-svg' });
   svg.setAttribute('role', 'application');
@@ -181,16 +220,31 @@ export function stworzMape(kontener, { przyZmianieZaznaczenia } = {}) {
 
   /* ---- Pinezki i łuki powiązań ---- */
 
+  /** Badge nazwy: szerokość z realnego pomiaru tekstu (px CSS), baseline na środku. */
+  function dopasujBadge(tlo, tekst, nazwa) {
+    const { szer, wys } = wymiaryEtykiety(nazwa, tekst);
+    tlo.setAttribute('x', (-szer / 2).toFixed(1));
+    tlo.setAttribute('y', (-ODSTEP_BADGE - wys).toFixed(1));
+    tlo.setAttribute('width', String(szer));
+    tlo.setAttribute('height', String(wys));
+    tekst.setAttribute('y', (-ODSTEP_BADGE - wys / 2).toFixed(1));
+  }
+
   function ustawPinezki(rekordy) {
     grupaPinezek.innerHTML = '';
     pinezki.clear();
     for (const r of rekordy) {
       const [wx, wy] = projektuj(r.lat, r.lon);
       const g = el('g', { class: 'pinezka', 'data-slug': r.slug, tabindex: 0, role: 'button', 'aria-label': `Manifestacja: ${r.nazwa}` }, grupaPinezek);
-      el('circle', { r: 11, class: 'glowa' }, g);
-      el('path', { d: 'M0,8 L-6,22 L0,16 L6,22 Z', class: 'ostrze' }, g);
-      const label = el('text', { y: -22, class: 'etykieta' }, g);
-      label.textContent = r.nazwa;
+      el('circle', { r: 26, class: 'trafienie' }, g); // pole trafienia (A5)
+      el('circle', { r: 13, class: 'glowa' }, g);
+      el('circle', { r: 4.4, class: 'zrenica' }, g);
+      el('path', { d: 'M0,10 L-7.5,27 L0,19.5 L7.5,27 Z', class: 'ostrze' }, g);
+      const etykieta = el('g', { class: 'etykieta' }, g);
+      const tlo = el('rect', { class: 'tlo-etykiety', rx: 8 }, etykieta);
+      const tekst = el('text', {}, etykieta);
+      tekst.textContent = r.nazwa;
+      dopasujBadge(tlo, tekst, r.nazwa);
       g.addEventListener('click', (ev) => {
         ev.stopPropagation();
         przyZmianieZaznaczenia?.(r.slug);

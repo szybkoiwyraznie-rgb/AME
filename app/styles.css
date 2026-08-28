@@ -9,6 +9,9 @@
   --akcent: #c9a86a; /* stary bursztyn / pieczęć */
   --akcent-2: #b4543c; /* smołowa czerwień */
   --linia: #2a3140;
+  --pinezka-obrys: #0d1015;
+  --pinezka-srodek: #f2e6cf;
+  --badge-tlo: #141922f2;
   --serif: Georgia, 'Times New Roman', serif;
   --sans: system-ui, -apple-system, 'Segoe UI', sans-serif;
 }
@@ -142,30 +145,45 @@ body { display: flex; flex-direction: column; }
 }
 .luk.aktywny { stroke-opacity: 0.95; stroke: var(--akcent-2); stroke-dasharray: none; stroke-width: 2.2; }
 
+/* Pinezka (A5): głowa ø26 px + przezroczyste pole trafienia ø52 px; rozmiar
+ * jest w pikselach CSS, bo grupa pinezki kompensuje skalę widoku (ADR 0009). */
 .pinezka { cursor: pointer; }
+.pinezka .trafienie { fill: transparent; stroke: none; }
 .pinezka .glowa {
   fill: var(--akcent-2);
-  stroke: #0d1015;
-  stroke-width: 2.5;
+  stroke: var(--pinezka-obrys);
+  stroke-width: 3;
 }
-.pinezka .ostrze { fill: var(--akcent-2); }
+.pinezka .zrenica { fill: var(--pinezka-srodek); }
+.pinezka .ostrze { fill: var(--akcent-2); stroke: var(--pinezka-obrys); stroke-width: 1.5; }
 .pinezka:hover .glowa, .pinezka:focus .glowa { fill: var(--akcent); }
+.pinezka:hover .zrenica, .pinezka:focus .zrenica { fill: var(--akcent-2); }
 .pinezka:focus { outline: none; }
-.pinezka.wybrana .glowa { fill: var(--akcent); stroke: #fff; }
+.pinezka.wybrana .glowa { fill: var(--akcent); stroke: var(--akcent-2); }
 .pinezka.wybrana .ostrze { fill: var(--akcent); }
 .pinezka.przygaszona { opacity: 0.14; pointer-events: none; }
+
+/* Etykieta (A4): czytelny badge 19 px z pleckami; jednostka = px CSS. */
 .pinezka .etykieta {
   display: none;
+  pointer-events: none;
+}
+.pinezka .etykieta text {
   font-family: var(--serif);
-  font-size: 15px;
+  font-size: 19px;
+  line-height: 1.2;
   fill: var(--tekst);
   text-anchor: middle;
-  paint-order: stroke;
-  stroke: #0d1015;
-  stroke-width: 4;
+  dominant-baseline: central;
+}
+.pinezka .etykieta .tlo-etykiety {
+  fill: var(--badge-tlo);
+  stroke: var(--akcent);
+  stroke-width: 1.2;
 }
 .mapa-svg.przyblizona .pinezka .etykieta,
 .pinezka:hover .etykieta,
+.pinezka:focus .etykieta,
 .pinezka.wybrana .etykieta { display: block; }
 
 .sterowanie {
