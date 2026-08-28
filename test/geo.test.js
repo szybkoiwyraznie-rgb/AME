@@ -2,6 +2,8 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {
   projektuj,
+  dopasujWidok,
+  K_MAX,
   odwroc,
   dekodujLuki,
   punktyLuku,
@@ -240,4 +242,43 @@ test('dekodujKraje: kraje przekraczające szew nie rysują cięciwy przez świat
     const l = s.match(/-?\d+(\.\d+)?/g).map(Number);
     for (let i = 2; i < l.length; i += 2) assert.ok(Math.abs(l[i] - l[i - 2]) <= 1800 + 1e-6, 'odcinek w granicach półkuli');
   }
+});
+
+/* ---- Widok mapy: dopasowanie do kontenera (A1, ADR 0009) ----------------- */
+
+test('dopasujWidok: skala jednostajna, świat mieści się w oknie bez przycinania', () => {
+  const szeroki = dopasujWidok({ szerokosc: 1600, wysokosc: 640 }, { x: 0, y: 0, k: 1 });
+  assert.equal(szeroki.szerokosc, 1280, 'świat 1280 px szerokości przy 640 px wysokości');
+  assert.equal(szeroki.wysokosc, 640);
+  assert.ok(Math.abs(szeroki.s - 640 / 1800) < 1e-9, 'skala liczona z wysokości (contain)');
+  assert.equal(szeroki.x, 160, 'wyśrodkowany w poziomie, bez ucinania biegunów');
+  assert.equal(szeroki.y, 0);
+
+  const waski = dopasujWidok({ szerokosc: 1000, wysokosc: 900 }, { x: 0, y: 0, k: 1 });
+  assert.equal(waski.szerokosc, 1000, 'przy oknie węższym niż 2:1 świat mieści się co do szerokości');
+  assert.equal(waski.wysokosc, 500);
+  assert.equal(waski.y, 200, 'wyśrodkowany w pionie — ani jednego stopnia nie ucinamy');
+  assert.ok(Math.abs(waski.s - szeroki.s) > 0, 'każde okno ma własną skalę bazową');
+  assert.ok(Math.abs(waski.szerokosc / waski.wysokosc - 2) < 1e-9, 'proporcje świata 2:1 zachowane (brak rozciągu)');
+});
+
+test('dopasujWidok: powiększenie trzyma przesunięcie w granicach świata', () => {
+  const d = dopasujWidok({ szerokosc: 1000, wysokosc: 500 }, { x: -99999, y: 500, k: 4 });
+  assert.equal(d.k, 4);
+  assert.equal(d.x, 1000 - 1000 * 4, `x=${d.x}`);
+  assert.equal(d.y, 0, 'y dociśnięte do góry świata');
+  const minimalny = dopasujWidok({ szerokosc: 1000, wysokosc: 500 }, { x: -50, y: -50, k: 0.2 });
+  assert.equal(minimalny.k, 1, 'zoom poniżej dopasowania jest niedozwolony');
+  const maksymalny = dopasujWidok({ szerokosc: 1000, wysokosc: 500 }, { x: 0, y: 0, k: 99999 });
+  assert.equal(maksymalny.k, K_MAX);
+});
+
+test('dopasujWidok: kontener zero/degenerat nie produkuje NaN', () => {
+  for (const kontener of [{ szerokosc: 0, wysokosc: 0 }, { szerokosc: NaN, wysokosc: undefined }, {}]) {
+    const d = dopasujWidok(kontener, { x: 0, y: 0, k: 1 });
+    assert.ok(Number.isFinite(d.x) && Number.isFinite(d.y) && d.s > 0, JSON.stringify({ kontener, d }));
+  }
+  const bezWidoku = dopasujWidok({ szerokosc: 800, wysokosc: 400 }, { k: NaN });
+  assert.equal(bezWidoku.k, 1);
+  assert.ok(Number.isFinite(bezWidoku.x));
 });

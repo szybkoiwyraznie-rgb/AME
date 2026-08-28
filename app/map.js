@@ -1,35 +1,27 @@
 /**
- * app/map.js — render mapy SVG AME + interakcje (ADR 0003).
+ * app/map.js — render mapy SVG AME + interakcje (ADR 0003, ADR 0009).
  *
- * Pan: przeciąganie (pointer events, 1 wskaźnik). Zoom: kółko myszy do
- * kursora, pinch (2 wskaźniki), dwuklik, przyciski. Pinezki kompensują
- * skalę widoku, by zachować stały rozmiar ekranowy.
+ * Widok mapy żyje w pikselach kontenera: viewBox = rozmiar kontenera, a grupa
+ * świata skalowana jest o `skalaBazowa · k` (geo.js `dopasujWidok`). Dzięki temu
+ * cały świat (2:1) mieści się w oknie bez przycinania i bez rozciągu, a zmiana
+ * rozmiaru okna nie „skacze”.
+ *
+ * Pan: przeciąganie (pointer events, 1 wskaźnik). Zoom: kółko myszy do kursora,
+ * pinch (2 wskaźniki), dwuklik, przyciski. Pinezki i ich etykiety kompensują
+ * skalę widoku, więc mają stały rozmiar w pikselach CSS (ADR 0009).
  */
-import { projektuj, dekodujKraje, siatka, SZEROKOSC as SZER, WYSOKOSC as WYS } from './geo.js';
+import { projektuj, dekodujKraje, siatka, dopasujWidok, ogranicz, K_MIN, K_MAX, SZEROKOSC as SZER, WYSOKOSC as WYS } from './geo.js';
 
 const NS = 'http://www.w3.org/2000/svg';
-const K_MIN = 1;
-const K_MAX = 32;
-
-function el(nazwa, atrybuty = {}, rodzic = null) {
-  const e = document.createElementNS(NS, nazwa);
-  for (const [k, v] of Object.entries(atrybuty)) e.setAttribute(k, v);
-  if (rodzic) rodzic.appendChild(e);
-  return e;
-}
-
-function ogranicz(v, min, max) {
-  return Math.min(max, Math.max(min, v));
-}
 
 export function stworzMape(kontener, { przyZmianieZaznaczenia } = {}) {
-  const svg = el('svg', { viewBox: `0 0 ${SZER} ${WYS}`, preserveAspectRatio: 'xMidYMid slice', class: 'mapa-svg' });
+  const svg = el('svg', { viewBox: `0 0 ${SZER} ${WYS}`, preserveAspectRatio: 'xMidYMid meet', class: 'mapa-svg' });
   svg.setAttribute('role', 'application');
   svg.setAttribute('aria-label', 'Mapa świata z manifestacjami eterycznymi');
   kontener.appendChild(svg);
 
   // Ocean — bardzo duży prostokąt, by przy przesuwaniu nigdy nie pokazało się tło.
-  el('rect', { x: -SZER, y: -WYS, width: SZER * 3, height: WYS * 3, class: 'ocean' }, svg);
+  el('rect', { x: -SZER * 4, y: -WYS * 4, width: SZER * 9, height: WYS * 9, class: 'ocean' }, svg);
 
   const warstwa = el('g', { class: 'warstwa' }, svg);
   el('path', { d: siatka(30), class: 'siatka' }, warstwa);
@@ -37,12 +29,14 @@ export function stworzMape(kontener, { przyZmianieZaznaczenia } = {}) {
   const warstwaLukow = el('g', { class: 'luki', display: 'none' }, warstwa);
   const grupaPinezek = el('g', { class: 'pinezki' }, warstwa);
 
+  const rozmiar = { szerokosc: 0, wysokosc: 0 };
   const widok = { x: 0, y: 0, k: 1 };
+  let skala = 1; // px na jednostkę świata dla bieżącego widoku
   const pinezki = new Map(); // slug -> {el, wx, wy}
   let zaznaczony = null;
   let paryPolaczen = []; // [{a, b}]
 
-  /** Punkt zdarzenia klienta → współrzędne viewBoxu. */
+  /** Punkt zdarzenia klienta → współrzędne viewBoxu (= piksele kontenera). */
   function naSvg(zdarzenie) {
     const ctm = svg.getScreenCTM();
     if (!ctm) return { x: 0, y: 0 };
@@ -51,35 +45,66 @@ export function stworzMape(kontener, { przyZmianieZaznaczenia } = {}) {
   }
 
   function dopusc() {
-    widok.k = ogranicz(widok.k, K_MIN, K_MAX);
-    widok.x = ogranicz(widok.x, SZER * (1 - widok.k), 0);
-    widok.y = ogranicz(widok.y, WYS * (1 - widok.k), 0);
+    const d = dopasujWidok(rozmiar, widok, { min: K_MIN, max: K_MAX });
+    widok.x = d.x;
+    widok.y = d.y;
+    widok.k = d.k;
+    return d;
+  }
+
+  /** Pobierz rozmiar kontenera; zachowaj punkt świata pod środkiem okna. */
+  function wymierz() {
+    const ramka = kontener.getBoundingClientRect();
+    const szerokosc = Math.max(1, Math.round(ramka.width || 0));
+    const wysokosc = Math.max(1, Math.round(ramka.height || 0));
+    if (szerokosc === rozmiar.szerokosc && wysokosc === rozmiar.wysokosc) return false;
+
+    let srodek = null;
+    if (rozmiar.szerokosc > 0 && rozmiar.wysokosc > 0) {
+      const stare = dopasujWidok(rozmiar, widok, { min: K_MIN, max: K_MAX });
+      srodek = {
+        wx: (rozmiar.szerokosc / 2 - stare.x) / stare.s,
+        wy: (rozmiar.wysokosc / 2 - stare.y) / stare.s,
+      };
+    }
+    rozmiar.szerokosc = szerokosc;
+    rozmiar.wysokosc = wysokosc;
+    svg.setAttribute('viewBox', `0 0 ${szerokosc} ${wysokosc}`);
+    if (srodek) {
+      const d = dopasujWidok(rozmiar, widok, { min: K_MIN, max: K_MAX });
+      widok.x = szerokosc / 2 - srodek.wx * d.s;
+      widok.y = wysokosc / 2 - srodek.wy * d.s;
+    }
+    return true;
   }
 
   function zastosuj(animuj = false) {
-    dopusc();
+    const d = dopusc();
+    skala = d.s;
     warstwa.style.transition = animuj ? 'transform .5s cubic-bezier(.22,.61,.36,1)' : 'none';
-    warstwa.style.transform = `translate(${widok.x}px, ${widok.y}px) scale(${widok.k})`;
-    const s = 1 / widok.k;
+    warstwa.style.transform = `translate(${d.x}px, ${d.y}px) scale(${d.s})`;
+    const s = 1 / d.s;
     for (const p of pinezki.values()) p.el.setAttribute('transform', `translate(${p.wx} ${p.wy}) scale(${s})`);
-    svg.classList.toggle('przyblizona', widok.k >= 2.5); // etykiety pinezek
+    svg.classList.toggle('przyblizona', d.k >= 2.5); // etykiety pinezek
   }
 
   /** Zoom w punkt p (współrzędne viewBoxu) o czynnik f. */
   function zoomDoPunktu(p, f, animuj = false) {
-    const noweK = ogranicz(widok.k * f, K_MIN, K_MAX);
-    const r = noweK / widok.k;
-    widok.x = p.x - (p.x - widok.x) * r;
-    widok.y = p.y - (p.y - widok.y) * r;
+    const przed = dopasujWidok(rozmiar, widok, { min: K_MIN, max: K_MAX });
+    const noweK = ogranicz(przed.k * f, K_MIN, K_MAX);
+    const r = noweK / przed.k;
     widok.k = noweK;
+    widok.x = p.x - (p.x - przed.x) * r;
+    widok.y = p.y - (p.y - przed.y) * r;
     zastosuj(animuj);
   }
 
   function wysrodkuj(lat, lon, k = null, animuj = true) {
     if (k !== null) widok.k = k;
     const [wx, wy] = projektuj(lat, lon);
-    widok.x = SZER / 2 - wx * widok.k;
-    widok.y = WYS / 2 - wy * widok.k;
+    const d = dopasujWidok(rozmiar, widok, { min: K_MIN, max: K_MAX });
+    widok.x = rozmiar.szerokosc / 2 - wx * d.s;
+    widok.y = rozmiar.wysokosc / 2 - wy * d.s;
     zastosuj(animuj);
   }
 
@@ -161,7 +186,7 @@ export function stworzMape(kontener, { przyZmianieZaznaczenia } = {}) {
     pinezki.clear();
     for (const r of rekordy) {
       const [wx, wy] = projektuj(r.lat, r.lon);
-      const g = el('g', { class: 'pinezka', 'data-slug': r.slug, tabindex: 0, role: 'button', 'aria-label': `Manifestacja: ${r.nazwa}`, transform: `translate(${wx} ${wy})` }, grupaPinezek);
+      const g = el('g', { class: 'pinezka', 'data-slug': r.slug, tabindex: 0, role: 'button', 'aria-label': `Manifestacja: ${r.nazwa}` }, grupaPinezek);
       el('circle', { r: 11, class: 'glowa' }, g);
       el('path', { d: 'M0,8 L-6,22 L0,16 L6,22 Z', class: 'ostrze' }, g);
       const label = el('text', { y: -22, class: 'etykieta' }, g);
@@ -235,6 +260,17 @@ export function stworzMape(kontener, { przyZmianieZaznaczenia } = {}) {
     grupaKrajow.appendChild(frag);
   }
 
+  /* ---- Reagowanie na rozmiar kontenera (ADR 0009) ---- */
+
+  function odswiezRozmiar() {
+    if (wymierz()) zastosuj();
+  }
+
+  wymierz();
+  zastosuj();
+  if (typeof ResizeObserver !== 'undefined') new ResizeObserver(odswiezRozmiar).observe(kontener);
+  if (typeof window !== 'undefined') window.addEventListener('resize', odswiezRozmiar);
+
   return {
     svg,
     ustawMapeSwiata,
@@ -246,8 +282,15 @@ export function stworzMape(kontener, { przyZmianieZaznaczenia } = {}) {
     wysrodkuj,
     reset,
     zoomDoPunktu,
+    odswiezRozmiar,
     get widok() {
       return { ...widok };
+    },
+    get rozmiar() {
+      return { ...rozmiar };
+    },
+    get skala() {
+      return skala;
     },
   };
 }

@@ -122,7 +122,7 @@ body { display: flex; flex-direction: column; }
 .mapa-svg.zlapano { cursor: grabbing; }
 
 .ocean { fill: #0b0e13; }
-.siatka { fill: none; stroke: #1d2532; stroke-width: 0.7; }
+.siatka { fill: none; stroke: #1d2532; stroke-width: 0.8; vector-effect: non-scaling-stroke; }
 .kraj {
   fill: #232c3c;
   stroke: #39445a;

@@ -54,6 +54,49 @@ export function poskladajPierscien(luki, indeksy) {
   return pkt;
 }
 
+/* ---- Widok mapy: dopasowanie do kontenera (ADR 0009) ---------------------
+ * Dawniej: stały viewBox 3600×1800 z `preserveAspectRatio="…slice"`, przez co
+ * świat był „wciskany” w okno — przy proporcjach innych niż 2:1 rama ucinała
+ * bieguny albo długości, a otwarcie panelu (który zmieniał szerokość kontenera)
+ * powodowało skok skali. Teraz kontener dyktuje viewBox (w pikselach CSS), a
+ * `dopasujWidok` dobiera skalę bazową tak, aby cały świat mieścił się w oknie:
+ * 1° długości geograficznej = 1° szerokości na ekranie, zawsze.
+ */
+
+export const K_MIN = 1;
+export const K_MAX = 32;
+
+/** Ograniczenie wartości do przedziału (odporność na min > max). */
+export function ogranicz(v, min, max) {
+  return Math.min(max, Math.max(min, v));
+}
+
+/**
+ * Czyste dopasowanie widoku: kontener (px) + widok {x, y, k} → {x, y, k, s, baza, …}.
+ * `s` to skala świata (px na jednostkę świata = 0,1 px na stopień),
+ * `k` — powiększenie ponad dopasowanie (1 = cały świat). Przesunięcia są
+ * dociśnięte tak, by nie pokazywać nic poza światem, a przy małym powiększeniu
+ * (gdy świat jest mniejszy od okna) wyśrodkowane.
+ */
+export function dopasujWidok(kontener, widok, { min = K_MIN, max = K_MAX } = {}) {
+  const szerokosc = Math.max(1, kontener?.szerokosc || 1);
+  const wysokosc = Math.max(1, kontener?.wysokosc || 1);
+  const k = ogranicz(Number.isFinite(widok?.k) ? widok.k : min, min, max);
+  const baza = Math.min(szerokosc / SZEROKOSC, wysokosc / WYSOKOSC);
+  const s = baza * k;
+  const szer = SZEROKOSC * s;
+  const wys = WYSOKOSC * s;
+  return {
+    x: szer <= szerokosc ? (szerokosc - szer) / 2 : ogranicz(widok?.x ?? 0, szerokosc - szer, 0),
+    y: wys <= wysokosc ? (wysokosc - wys) / 2 : ogranicz(widok?.y ?? 0, wysokosc - wys, 0),
+    k,
+    s,
+    baza,
+    szerokosc: szer,
+    wysokosc: wys,
+  };
+}
+
 /* ---- Antypołudnik (±180°) — ADR 0009, LESSONS L7 -------------------------
  * Geometrie Natural Earth (Rosja, Fidżi, Antarktyda) potrafią mieć pierścień,
  * który przechodzi przez antypołudnik: kolejna para punktów ma wtedy skok
