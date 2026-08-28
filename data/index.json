@@ -1,7 +1,7 @@
 {
   "wersja": 3,
   "liczba": 8,
-  "liczbaSkitow": 9,
+  "liczbaSkitow": 10,
   "kanon": {
     "kategorie": [
       {
@@ -273,6 +273,7 @@
       "skity": [
         "godzina-otwarcia",
         "hold-oraz-swiatlo",
+        "trzy-zegary",
         "znak-i-liczba"
       ]
     },
@@ -307,7 +308,8 @@
       ],
       "obraz": "assets/wizualizacje/barbarossa-kyffhaeuser.jpg",
       "skity": [
-        "kalendarz-powrotow"
+        "kalendarz-powrotow",
+        "trzy-zegary"
       ]
     },
     {
@@ -345,7 +347,8 @@
       "skity": [
         "dwie-skory",
         "godzina-otwarcia",
-        "kurz-i-piora"
+        "kurz-i-piora",
+        "trzy-zegary"
       ]
     },
     {
@@ -659,6 +662,23 @@
       "data": "2026-08-28"
     },
     {
+      "slug": "trzy-zegary",
+      "tytul": "TRZY ZEGARY",
+      "temat": "trzy sposoby, na jaki byt czeka na swoją godzinę: znak z góry, rzut kamienia i dyżur przy pogodzie",
+      "uczestnicy": [
+        "balor",
+        "barbarossa-kyffhaeuser",
+        "drangue-shala"
+      ],
+      "imiona": [
+        "Barbarossa",
+        "Balor",
+        "Drangue"
+      ],
+      "slow": 225,
+      "data": "2026-08-28 22:25"
+    },
+    {
       "slug": "znak-i-liczba",
       "tytul": "ZNAK I LICZBA",
       "temat": "kto stawia znak na dziecku: złoty łańcuch przeciw rozkazowi topienia",
@@ -675,6 +695,14 @@
     }
   ],
   "aktualizacje": [
+    {
+      "data": "2026-08-28 22:25",
+      "typ": "skit",
+      "akcja": "nowy",
+      "slug": "trzy-zegary",
+      "tytul": "TRZY ZEGARY",
+      "opis": "SKIT — skład: Barbarossa, Balor, Drangue"
+    },
     {
       "data": "2026-08-28 22:05",
       "typ": "manifestacja",
