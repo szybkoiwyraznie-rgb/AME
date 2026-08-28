@@ -1,7 +1,7 @@
 {
   "wersja": 3,
   "liczba": 8,
-  "liczbaSkitow": 11,
+  "liczbaSkitow": 12,
   "kanon": {
     "kategorie": [
       {
@@ -273,6 +273,7 @@
       "skity": [
         "godzina-otwarcia",
         "hold-oraz-swiatlo",
+        "komu-wolno-patrzec",
         "trzy-zegary",
         "znak-i-liczba"
       ]
@@ -425,6 +426,7 @@
       "skity": [
         "dwa-zepsute-wesela",
         "dwie-skory",
+        "komu-wolno-patrzec",
         "nieproszeni-goscie"
       ]
     },
@@ -494,6 +496,7 @@
       "obraz": "assets/wizualizacje/lincoln-imp.jpg",
       "skity": [
         "hold-oraz-swiatlo",
+        "komu-wolno-patrzec",
         "kurz-i-piora",
         "nieproszeni-goscie",
         "plotno-i-kamien"
@@ -625,6 +628,23 @@
       "data": "2026-08-28 18:25"
     },
     {
+      "slug": "komu-wolno-patrzec",
+      "tytul": "KOMU WOLNO PATRZEĆ",
+      "temat": "trzy byty i akt spojrzenia: jedno oko zabija, jedno spojrzenie rozwiewa, jedno spojrzenie utrwala w kamieniu",
+      "uczestnicy": [
+        "balor",
+        "empusa-korynt",
+        "lincoln-imp"
+      ],
+      "imiona": [
+        "Balor",
+        "Empusa",
+        "Imp z Lincoln"
+      ],
+      "slow": 221,
+      "data": "2026-08-28 23:58"
+    },
+    {
       "slug": "kurz-i-piora",
       "tytul": "KURZ I PIÓRA",
       "temat": "ptaki, kurz i pranie skrzydeł: codzienne troski na wysokości",
@@ -722,6 +742,14 @@
     }
   ],
   "aktualizacje": [
+    {
+      "data": "2026-08-28 23:58",
+      "typ": "skit",
+      "akcja": "nowy",
+      "slug": "komu-wolno-patrzec",
+      "tytul": "KOMU WOLNO PATRZEĆ",
+      "opis": "SKIT — skład: Balor, Empusa, Imp z Lincoln"
+    },
     {
       "data": "2026-08-28 23:55",
       "typ": "manifestacja",
