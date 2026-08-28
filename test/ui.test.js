@@ -390,3 +390,12 @@ test('nazwaKategorii i tagiPosortowane: pomocniki kanonu bez DOM', async () => {
   assert.ok(wTypie.every((t) => t.kategoria === 'typ' && t.wpisy.length > 0));
   assert.equal(tagiPosortowane({}, 'typ').length, 0);
 });
+
+test('kopiowanie linku jest w każdym z trzech widoków warstwy i w karcie', async () => {
+  const { htmlWarstwyWpisu } = await import('../app/ui.js');
+  const app = await readFile('app/app.js', 'utf8');
+  assert.match(htmlWarstwyWpisu('<x></x>', { slug: 'drangue-shala', nazwa: 'D' }), /data-kopia="drangue-shala"/, 'karta bytu');
+  assert.match(app, /szkicWarstwy\('Baza Skitów[^\n]*kopia: 'skity'/, 'baza skitów');
+  assert.match(app, /\{ kopia: 'nowosci' \}/, 'feed „Co nowego”');
+  assert.equal((app.match(/data-kopia/g) ?? []).length >= 1, true, 'obsługa [data-kopia] w handlerach');
+});

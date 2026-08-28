@@ -182,7 +182,7 @@ function otworzBazeSkitow() {
   stan.warstwa = { tryb: 'skity' };
   const warstwa = $('#warstwa');
   warstwa.classList.add('otwarta');
-  warstwa.innerHTML = szkicWarstwy('Baza Skitów — rozmowy materializacji', htmlBazySkitow(stan.indeks));
+  warstwa.innerHTML = szkicWarstwy('Baza Skitów — rozmowy materializacji', htmlBazySkitow(stan.indeks), { kopia: 'skity' });
   warstwa.scrollTop = 0;
   warstwaTrybPrzycisku('#przycisk-skity', true);
   warstwaTrybPrzycisku('#przycisk-nowosci', false);
@@ -197,7 +197,8 @@ function otworzNowosci() {
   warstwa.innerHTML = szkicWarstwy(
     'Co nowego',
     `<p class="naprowadzenie">Każda zmiana w treści archiwum trafia tu automatycznie — z ` +
-      `meta wpisów i skitów, najnowsze na górze.</p>${htmlNowosci(stan.indeks)}`
+      `meta wpisów i skitów, najnowsze na górze.</p>${htmlNowosci(stan.indeks)}`,
+    { kopia: 'nowosci' }
   );
   warstwa.scrollTop = 0;
   warstwaTrybPrzycisku('#przycisk-nowosci', true);
