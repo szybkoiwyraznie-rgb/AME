@@ -53,8 +53,9 @@ const klasyWSelektorze = (selektor) => [...selektor.matchAll(/\.(-?[_a-zA-Z][\w-
 const gasi = (cialo) => /(?:^|;|\s)display\s*:\s*none/.test(cialo);
 const przywraca = (cialo) => /(?:^|;|\s)display\s*:\s*(?!none)[\w-]+/.test(cialo);
 
-/** Nazwy, w których zakotwiczone są reguły pisane specjalnie dla mapy. */
-const KOTWICE_MAPY = ['mapa-svg', 'mapa', 'pinezka', 'kraj', 'luk', 'ocean', 'siatka'];
+/** Nazwy, w których zakotwiczone są reguły pisane specjalnie dla mapy
+ * („etykiety” — warstwa badge'ów nad pinezkami, M6/A3). */
+const KOTWICE_MAPY = ['mapa-svg', 'mapa', 'pinezka', 'kraj', 'luk', 'ocean', 'siatka', 'etykiety'];
 const zakotwiczonaWMapie = (selektor) => {
   const klasy = klasyWSelektorze(selektor);
   return klasy.length > 1 && klasy.some((k) => KOTWICE_MAPY.includes(k));
@@ -99,4 +100,11 @@ test('to, co mapa chowa, musi mieć drogę powrotu na ekran (etykieta pinezki)',
   const slepe = [...ukryte].filter((k) => !przywrocone.has(k));
   assert.deepEqual(slepe, [], `klasy gaszone bez reguły przywracającej: ${slepe.join(', ')}`);
   assert.ok(ukryte.size > 0, 'kontrakt ma sens tylko wtedy, gdy coś jest chowane (etykieta pinezki)');
+});
+
+test('A2 (M6): przeciąganie mapy nie zaznacza tekstów — user-select: none na .mapa-svg', async () => {
+  const [, css] = await Promise.all([readFile(MAPA, 'utf8'), readFile(STYLE, 'utf8')]);
+  const reguly = regulyCss(css).filter(({ selektor }) => klasyWSelektorze(selektor).includes('mapa-svg'));
+  const noszace = reguly.filter(({ cialo }) => /(?:^|;|\s)user-select\s*:\s*none/.test(cialo));
+  assert.ok(noszace.length > 0, 'brak reguły user-select: none dla .mapa-svg — przeciąganie zaznacza napisy badge\'ów (A2)');
 });

@@ -191,5 +191,62 @@ test('obsługa zdarzeń pinezki: klik i klawiatura wywołują wybór wpisu', () 
   pinezka.sluchacze.keydown[0]({ key: 'Enter', preventDefault: () => {} });
   pinezka.sluchacze.keydown[0]({ key: 'a', preventDefault: () => {} });
   assert.deepEqual(wywolane, ['egungun', 'egungun'], 'tylko klik i Enter/Spacja');
-  assert.equal(mapa.svg.classList.contains('przyblizona'), false, 'przy k=1 etykiety ukryte');
+});
+
+test('etykiety (A3, M6): warstwa badge\'ów PO pinezkach — badge nie chowa się pod pinezką', () => {
+  const { kontener } = zaiscz();
+  const mapa = stworzMape(kontener, {});
+  mapa.ustawPinezki([
+    { slug: 'a', nazwa: 'A Byt', lat: 10, lon: 10 },
+    { slug: 'b', nazwa: 'B Byt', lat: 10.001, lon: 10.001 },
+  ]);
+  const swiat = mapa.svg.dzieci.find((d) => d.czyMaKlase('swiat'));
+  const indeksKlasy = (klasa) => swiat.dzieci.findIndex((d) => d.czyMaKlase(klasa));
+  const iPinezki = indeksKlasy('pinezki');
+  const iEtykiety = indeksKlasy('etykiety');
+  assert.ok(iPinezki > -1 && iEtykiety > iPinezki, `kolejność malowania SVG: pinezki=${iPinezki}, etykiety=${iEtykiety} — etykiety muszą być PO pinezkach`);
+  const pinezka = znajdz(mapa.svg, 'pinezka');
+  assert.ok(!pinezka.dzieci.some((d) => d.czyMaKlase('etykieta')), 'etykieta nie siedzi w grupie pinezki — musi być nad wszystkimi pinezkami');
+  assert.equal(swiat.dzieci[iEtykiety].dzieci.length, 2, 'obie etykiety w warstwie .etykiety');
+});
+
+test('etykiety (A3, M6): transform etykiety = transform pinezki (ten sam punkt świata)', () => {
+  const { kontener } = zaiscz({ width: 1600, height: 640 });
+  const mapa = stworzMape(kontener, {});
+  mapa.ustawPinezki([{ slug: 'x', nazwa: 'X', lat: 0, lon: 0 }]);
+  const pinezka = znajdz(mapa.svg, 'pinezka');
+  const etykieta = znajdz(mapa.svg, 'etykieta');
+  assert.equal(etykieta.getAttribute('transform'), pinezka.getAttribute('transform'), 'etykieta podąża za pinezką w warstwie świata');
+});
+
+test('etykiety (A1, M6): widoczna po najechaniu i po fokusu, ukryta po opuszczeniu', () => {
+  const { kontener } = zaiscz();
+  const mapa = stworzMape(kontener, {});
+  mapa.ustawPinezki([{ slug: 'x', nazwa: 'X', lat: 0, lon: 0 }]);
+  const pinezka = znajdz(mapa.svg, 'pinezka');
+  const etykieta = znajdz(mapa.svg, 'etykieta');
+  assert.equal(etykieta.czyMaKlase('widoczna'), false, 'na starcie badge ukryty');
+  pinezka.sluchacze.pointerenter[0]();
+  assert.equal(etykieta.czyMaKlase('widoczna'), true, 'najechanie pokazuje badge');
+  pinezka.sluchacze.pointerleave[0]();
+  assert.equal(etykieta.czyMaKlase('widoczna'), false, 'opuszczenie pinezki chowa badge');
+  pinezka.sluchacze.focus[0]();
+  assert.equal(etykieta.czyMaKlase('widoczna'), true, 'fokus klawiatury pokazuje badge');
+  pinezka.sluchacze.blur[0]();
+  assert.equal(etykieta.czyMaKlase('widoczna'), false, 'utrata fokusu chowa badge');
+});
+
+test('etykiety (A1, M6): zaznaczona pinezka trzyma badge; przygaszona gaśnie razem z pinezką', () => {
+  const { kontener } = zaiscz();
+  const mapa = stworzMape(kontener, {});
+  mapa.ustawPinezki([{ slug: 'x', nazwa: 'X', lat: 0, lon: 0 }]);
+  const etykieta = znajdz(mapa.svg, 'etykieta');
+  mapa.zaznacz('x');
+  assert.equal(etykieta.czyMaKlase('wybrana'), true, 'zaznaczona pinezka = widoczny badge');
+  mapa.zaznacz(null);
+  assert.equal(etykieta.czyMaKlase('wybrana'), false, 'bez zaznaczenia badge ukryty');
+  mapa.podswietl(new Set());
+  assert.equal(etykieta.czyMaKlase('przygaszona'), true, 'filtr przygasa badge');
+  mapa.podswietl(null);
+  assert.equal(etykieta.czyMaKlase('przygaszona'), false, 'bez filtra badge pełny');
 });

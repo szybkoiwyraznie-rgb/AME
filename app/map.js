@@ -71,6 +71,11 @@ export function stworzMape(kontener, { przyZmianieZaznaczenia } = {}) {
   const grupaKrajow = el('g', { class: 'kraje' }, grupaSwiata);
   const warstwaLukow = el('g', { class: 'luki', display: 'none' }, grupaSwiata);
   const grupaPinezek = el('g', { class: 'pinezki' }, grupaSwiata);
+  // A3 (M6): badge'y w osobnej grupie PO grupie pinezek — SVG maluje elementy
+  // w kolejności dokumentu, więc etykieta nigdy nie chowa się pod inną pinezką.
+  // Widzialność (A1) sterują klasy na samej etykiecie (widoczna/wybrana),
+  // sprzęgane ze stanem pinezki zdarzeniami pointer/focus — nie zagnieżdżaniem.
+  const grupaEtykiet = el('g', { class: 'etykiety' }, grupaSwiata);
 
   const rozmiar = { szerokosc: 0, wysokosc: 0 };
   const widok = { x: 0, y: 0, k: 1 };
@@ -127,8 +132,13 @@ export function stworzMape(kontener, { przyZmianieZaznaczenia } = {}) {
     grupaSwiata.style.transition = animuj ? 'transform .5s cubic-bezier(.22,.61,.36,1)' : 'none';
     grupaSwiata.style.transform = `translate(${d.x}px, ${d.y}px) scale(${d.s})`;
     const s = 1 / d.s;
-    for (const p of pinezki.values()) p.el.setAttribute('transform', `translate(${p.wx} ${p.wy}) scale(${s})`);
-    svg.classList.toggle('przyblizona', d.k >= 2); // etykiety pinezek (już przy dwukrotnym zbliżeniu świata)
+    const transform = (p) => `translate(${p.wx} ${p.wy}) scale(${s})`;
+    for (const p of pinezki.values()) {
+      p.el.setAttribute('transform', transform(p));
+      p.etykieta.setAttribute('transform', transform(p)); // warstwa etykiet, ten sam punkt świata (A3)
+    }
+    // A1 (M6): bez stałego pokazywania etykiet od progu zoomu — dawny toggle
+    // klasy `przyblizona` usunięty; etykieta żyje na najechanie/fokus/wybranie.
   }
 
   /** Zoom w punkt p (współrzędne viewBoxu) o czynnik f. */
@@ -236,6 +246,7 @@ export function stworzMape(kontener, { przyZmianieZaznaczenia } = {}) {
 
   function ustawPinezki(rekordy) {
     grupaPinezek.innerHTML = '';
+    grupaEtykiet.innerHTML = '';
     pinezki.clear();
     for (const r of rekordy) {
       const [wx, wy] = projektuj(r.lat, r.lon);
@@ -244,11 +255,17 @@ export function stworzMape(kontener, { przyZmianieZaznaczenia } = {}) {
       el('circle', { r: 13, class: 'glowa' }, g);
       el('circle', { r: 4.4, class: 'zrenica' }, g);
       el('path', { d: 'M0,10 L-7.5,27 L0,19.5 L7.5,27 Z', class: 'ostrze' }, g);
-      const etykieta = el('g', { class: 'etykieta' }, g);
+      const etykieta = el('g', { class: 'etykieta' }, grupaEtykiet); // warstwa nad pinezkami (A3)
       const tlo = el('rect', { class: 'tlo-etykiety', rx: 8 }, etykieta);
       const tekst = el('text', {}, etykieta);
       tekst.textContent = r.nazwa;
       dopasujBadge(tlo, tekst, r.nazwa);
+      // A1 (M6): etykieta pokazuje się po najechaniu wskaźnikiem i po fokusu
+      // klawiatury (pinezka jest fokusowalna, tabindex=0).
+      g.addEventListener('pointerenter', () => etykieta.classList.add('widoczna'));
+      g.addEventListener('pointerleave', () => etykieta.classList.remove('widoczna'));
+      g.addEventListener('focus', () => etykieta.classList.add('widoczna'));
+      g.addEventListener('blur', () => etykieta.classList.remove('widoczna'));
       g.addEventListener('click', (ev) => {
         ev.stopPropagation();
         przyZmianieZaznaczenia?.(r.slug);
@@ -259,7 +276,7 @@ export function stworzMape(kontener, { przyZmianieZaznaczenia } = {}) {
           przyZmianieZaznaczenia?.(r.slug);
         }
       });
-      pinezki.set(r.slug, { el: g, wx, wy });
+      pinezki.set(r.slug, { el: g, etykieta, wx, wy });
     }
     zastosuj();
   }
@@ -295,12 +312,20 @@ export function stworzMape(kontener, { przyZmianieZaznaczenia } = {}) {
 
   function zaznacz(slug) {
     zaznaczony = slug;
-    for (const [s, p] of pinezki) p.el.classList.toggle('wybrana', s === slug);
+    for (const [s, p] of pinezki) {
+      const wybrana = s === slug;
+      p.el.classList.toggle('wybrana', wybrana);
+      p.etykieta.classList.toggle('wybrana', wybrana); // badge wybranej pinezki zostaje (A1)
+    }
     rysujLuki();
   }
 
   function podswietl(widoczne /* Set<slug> | null */) {
-    for (const [s, p] of pinezki) p.el.classList.toggle('przygaszona', widoczne !== null && !widoczne.has(s));
+    for (const [s, p] of pinezki) {
+      const przygaszona = widoczne !== null && !widoczne.has(s);
+      p.el.classList.toggle('przygaszona', przygaszona);
+      p.etykieta.classList.toggle('przygaszona', przygaszona); // badge przygasa razem z pinezką
+    }
   }
 
   /* ---- Kraje (asynchronicznie, po załadowaniu TopoJSON) ---- */
