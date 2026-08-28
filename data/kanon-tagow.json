@@ -145,6 +145,26 @@
       "tag": "skrzydlata-postac",
       "kategoria": "postac",
       "opis": "Człowiecze ciało ze skrzydłami lub innymi znakami pochodzenia"
+    },
+    {
+      "tag": "grecja",
+      "kategoria": "kultura",
+      "opis": "Mitologia i podanie greckie: fantomy orszaku Hekaty, rasy tesyjskie, świat Therosu"
+    },
+    {
+      "tag": "fantom",
+      "kategoria": "typ",
+      "opis": "Byt zbudowany z pozoru zmysłowego: trwa, dopóki trwa uwaga, którą się karmi"
+    },
+    {
+      "tag": "kentaur",
+      "kategoria": "typ",
+      "opis": "Gatunek o dwóch połowach: człowiek z przodu, koń z tyłu, obie gotowe do ruchu"
+    },
+    {
+      "tag": "furia",
+      "kategoria": "motyw",
+      "opis": "Krótki napad podwójnej siły przed wyczerpaniem: liczy się w uderzeniach, nie w godzinach"
     }
   ]
 }

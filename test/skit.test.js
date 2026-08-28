@@ -237,9 +237,11 @@ test('feed w repo: godzina rozstrzyga nad zapisami dziennymi; wśród dziennych 
     zmianyDzienne.every(({ i }) => utworzeniaDzienne.every(({ i: j }) => j > i)),
     'wśród dziennych zapisów dnia zmiany są nad utworzeniami (sekwencja, L11)'
   );
-  const idxSkitu = feed.findIndex((f) => f.typ === 'skit' && f.akcja === 'nowy');
-  const idxUtworzenia = feed.findIndex((f) => f.typ === 'manifestacja' && f.akcja === 'nowa');
-  assert.ok(idxSkitu !== -1 && idxUtworzenia !== -1 && idxSkitu < idxUtworzenia, 'najnowszy SKIT jest nad utworzeniami kart');
+  // Po ADR 0017 utworzenia też niosą godziny, więc „skit nad utworzeniami”
+  // przestało być niezmiennikiem — liczy się dosłowna chronologia zapisów.
+  const maleje = (a, b) => (a > b) - (a < b);
+  assert.ok(feed.every((f, i) => i === 0 || maleje(feed[i - 1].data, f.data) >= 0), 'daty w feedzie maleją kodowo, pozycja po pozycji');
+  assert.equal(feed[0].akcja, 'nowa', 'najnowszym zdarzeniem w kartotece jest utworzenie wpisu (ma najpóźniejszą godzinę)');
 });
 
 test('limit długości jest jeden: kod = protokół = instrukcja (ADR 0015)', async () => {

@@ -1,6 +1,6 @@
 {
   "wersja": 3,
-  "liczba": 6,
+  "liczba": 8,
   "liczbaSkitow": 5,
   "kanon": {
     "kategorie": [
@@ -11,7 +11,7 @@
         "min": 1,
         "max": 1,
         "opis": "Jedna tradycja, z której byt pochodzi (PROTOKÓŁ §2: zakaz mieszanek synkretycznych)",
-        "ile": 6
+        "ile": 7
       },
       {
         "id": "typ",
@@ -20,7 +20,7 @@
         "min": 1,
         "max": 1,
         "opis": "Czym byt jest — podstawowy filtr kartoteki",
-        "ile": 6
+        "ile": 8
       },
       {
         "id": "motyw",
@@ -29,7 +29,7 @@
         "min": 1,
         "max": 2,
         "opis": "Co wiąże byty i spoiwa sieci: powiązania w kartotekach i tematy SKITów",
-        "ile": 6
+        "ile": 7
       },
       {
         "id": "postac",
@@ -158,6 +158,7 @@
       "opis": "Dwa stany tego samego ciała: okrycie, skóra, płótno",
       "wpisy": [
         "egungun",
+        "empusa-korynt",
         "selkie-sule-skerry"
       ]
     },
@@ -193,6 +194,7 @@
       "kategoria": "postac",
       "opis": "Ciało zwierzęce jako drugi stan tej samej istoty",
       "wpisy": [
+        "empusa-korynt",
         "selkie-sule-skerry"
       ]
     },
@@ -201,6 +203,35 @@
       "opis": "Człowiecze ciało ze skrzydłami lub innymi znakami pochodzenia",
       "wpisy": [
         "drangue-shala"
+      ]
+    },
+    "grecja": {
+      "kategoria": "kultura",
+      "opis": "Mitologia i podanie greckie: fantomy orszaku Hekaty, rasy tesyjskie, świat Therosu",
+      "wpisy": [
+        "empusa-korynt",
+        "kentaur-pelion"
+      ]
+    },
+    "fantom": {
+      "kategoria": "typ",
+      "opis": "Byt zbudowany z pozoru zmysłowego: trwa, dopóki trwa uwaga, którą się karmi",
+      "wpisy": [
+        "empusa-korynt"
+      ]
+    },
+    "kentaur": {
+      "kategoria": "typ",
+      "opis": "Gatunek o dwóch połowach: człowiek z przodu, koń z tyłu, obie gotowe do ruchu",
+      "wpisy": [
+        "kentaur-pelion"
+      ]
+    },
+    "furia": {
+      "kategoria": "motyw",
+      "opis": "Krótki napad podwójnej siły przed wyczerpaniem: liczy się w uderzeniach, nie w godzinach",
+      "wpisy": [
+        "kentaur-pelion"
       ]
     }
   },
@@ -298,7 +329,9 @@
         "barbarossa-kyffhaeuser",
         "lincoln-imp"
       ],
-      "backlinki": [],
+      "backlinki": [
+        "kentaur-pelion"
+      ],
       "obraz": "assets/wizualizacje/drangue-shala.jpg",
       "skity": [
         "godzina-otwarcia",
@@ -330,6 +363,7 @@
       "powiazania": [],
       "backlinki": [
         "barbarossa-kyffhaeuser",
+        "empusa-korynt",
         "lincoln-imp",
         "selkie-sule-skerry"
       ],
@@ -338,6 +372,59 @@
         "hold-oraz-swiatlo",
         "plotno-i-kamien"
       ]
+    },
+    {
+      "slug": "empusa-korynt",
+      "nazwa": "Empusa z Koryntu",
+      "nazwy_alternatywne": [
+        "Empousa / Empusai — formy greckie, pojedyncza i liczbowa",
+        "Onokole i Onoskelis — „oslonoga”: epithety ze scholiów do „Żab”",
+        "Lamia albo Mormolykeion — tak nazywali ją ci, którzy nie znali kategorii (Filostrat)"
+      ],
+      "karta": "Illusory Demon",
+      "miejscowosc": "Korynt z portem Kenchreje — gościniec, na którym Menippos poznał oblubienicę, i hala weselna w Koryncie",
+      "kraj": "Grecja",
+      "lat": 37.906,
+      "lon": 22.88,
+      "tagi": [
+        "fantom",
+        "grecja",
+        "postac-zwierzeca",
+        "przemiana"
+      ],
+      "powiazania": [
+        "egungun",
+        "selkie-sule-skerry"
+      ],
+      "backlinki": [],
+      "obraz": "assets/wizualizacje/empusa-korynt.jpg",
+      "skity": []
+    },
+    {
+      "slug": "kentaur-pelion",
+      "nazwa": "Kentaur z Pelionu",
+      "nazwy_alternatywne": [
+        "Kentauroi / Centauri — grecka i łacińska nazwa gatunku",
+        "hippocentaury — późniejsza, „końska” forma miana",
+        "„bestie z chmury” (feri nubigeni) — tak nazywa ich Owidiusz"
+      ],
+      "karta": "Savage Surge",
+      "miejscowosc": "góra Pelion (Tesalia) — jaskiniowe kraje kentaurów, karmionych na górze przez nimfy; hala weselna Pejrytoosa na równinie Lapitów u stóp",
+      "kraj": "Grecja",
+      "lat": 39.443,
+      "lon": 23.142,
+      "tagi": [
+        "furia",
+        "grecja",
+        "kentaur"
+      ],
+      "powiazania": [
+        "drangue-shala",
+        "selkie-sule-skerry"
+      ],
+      "backlinki": [],
+      "obraz": "assets/wizualizacje/kentaur-pelion.jpg",
+      "skity": []
     },
     {
       "slug": "lincoln-imp",
@@ -399,7 +486,9 @@
       ],
       "backlinki": [
         "balor",
-        "barbarossa-kyffhaeuser"
+        "barbarossa-kyffhaeuser",
+        "empusa-korynt",
+        "kentaur-pelion"
       ],
       "obraz": "assets/wizualizacje/selkie-sule-skerry.jpg",
       "skity": [
@@ -487,6 +576,22 @@
     }
   ],
   "aktualizacje": [
+    {
+      "data": "2026-08-28 16:05",
+      "typ": "manifestacja",
+      "akcja": "nowa",
+      "slug": "kentaur-pelion",
+      "tytul": "Kentaur z Pelionu",
+      "opis": "wpis w kartotece — materializacja karty „Savage Surge”"
+    },
+    {
+      "data": "2026-08-28 15:55",
+      "typ": "manifestacja",
+      "akcja": "nowa",
+      "slug": "empusa-korynt",
+      "tytul": "Empusa z Koryntu",
+      "opis": "wpis w kartotece — materializacja karty „Illusory Demon”"
+    },
     {
       "data": "2026-08-28 15:35",
       "typ": "skit",
