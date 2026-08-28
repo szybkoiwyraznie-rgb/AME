@@ -202,14 +202,27 @@ musi mieć uzasadnienie w polu `opis`, a backlinki wylicza indeks.
 
 ## 7. Przykład zastosowania (karta: *Tarmogoyf*)
 
-Przykłady rzeczywistych wpisów w repozytorium (oba zweryfikowane wg ADR 0008:
-fetch Scryfall + źródła www):
+Kartoteka zawiera cztery zweryfikowane wg ADR 0008 wpisy (fetch Scryfall +
+źródła www z adresami) — każdy inny przypadek użycia karty:
+
 - [`data/manifestations/egungun.json`](../data/manifestations/egungun.json) —
-  inspiracja: *Krumar Initiate* (TDM 84); pokazuje translację mechaniki
-  „endure/Pay X life” na kult przodków;
+  *Krumar Initiate* (TDM 84, 2025); translacja mechaniki „endure / Pay X life”
+  na rodowy kult przodków egúngún (Oyo);
 - [`data/manifestations/lincoln-imp.json`](../data/manifestations/lincoln-imp.json) —
-  inspiracja: *Forge Devil* (DKA 91); pokazuje tłumaczenie flavoru karty na
-  realną legendę (imp z katedry Lincoln) oraz powiązanie z innym wpisem.
+  *Forge Devil* (DKA 91, 2012); tłumaczenie flavoru na realną legendę (imp
+  z katedry Lincoln) i powiązanie z innym wpisem;
+- [`data/manifestations/balor.json`](../data/manifestations/balor.json) —
+  *Weftblade Enhancer* (EOE 44, 2025); nazwa z warsztatu tkackiego i mechanika
+  „wzmacniania dwóch” czytane przez Cath Maige Tuired: oko jako urządzenie
+  z obsługą, termin zamiast losu;
+- [`data/manifestations/selkie-sule-skerry.json`](../data/manifestations/selkie-sule-skerry.json) —
+  *Kulrath Mystic* (ECL 56, 2026); +2/+0 i vigilance po wielkim czare jako rytm
+  ballady Child 113: moc bytu zapala się na wypowiedzenie warunku i gaśnie wraz
+  z turą.
+
+Przykłady SKITów (Baza Skitów, §8): `znak-i-liczba` (Balor × Selkie — znak na
+dziecku) i `plotno-i-kamien` (Egungun × Imp z Lincoln — kto wchodzi do
+świątyni).
 
 ## 8. SKITy — warstwa literacka archiwum (od v1.3)
 

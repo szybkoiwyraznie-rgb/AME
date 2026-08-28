@@ -45,6 +45,7 @@ je wyłącznie na wyraźne zlecenie właściciela w sesji.
       pełny wpis MFM wg `docs/PROTOKOL.md` (analiza translacji → identyfikacja
       bytu → kartoteka → build → testy → commit).
 - [ ] Rozbudowa istniejących opisów (pogłębienie sekcji II, nowe źródła w III).
+      (M3: zrobione dla egungun i lincoln-imp; powtarzać przy każdej sesji C1.)
 - [ ] SKITy dla nowych składów — odblokowują się wraz z przyrostem kartoteki (C3).
 - [ ] Tagowanie we wspólne grupy i porządkowanie słownika tagów.
 - [ ] Powiązywanie wpisów (uzasadnione `opis`-em), obserwacja spójności sieci.
@@ -82,6 +83,21 @@ je wyłącznie na wyraźne zlecenie właściciela w sesji.
 - [x] **„Co nowego"** (ADR 0014): feed `aktualizacje[]` liczony z `meta`
       (powstania i zmiany wpisów oraz skitów), najnowsze na górze, przycisk
       „✚ nowości", linki do treści; rygor opisywania zmian w `meta.modyfikacje`.
+
+## M3c (2026-08-28) — materializacje na zlecenie: Balor i Wielki Selkie — ✅ w PR #2
+
+- [x] `balor` ← *Weftblade Enhancer* (EOE 44, 2025): pełny wpis v1.3, Tory Island
+      (55.26, −8.22), 6 źródeł z adresami, wizualizacja 21:9.
+- [x] `selkie-sule-skerry` ← *Kulrath Mystic* (ECL 56, 2026): pełny wpis v1.3,
+      Sule Skerry, Orkney (59.08, −4.41), 4 źródła z adresami, wizualizacja 21:9.
+- [x] Sieć: balor ↔ selkie (wypowiedziany termin), balor → lincoln-imp (złe
+      spojrzenie), selkie → egungun (władza w rzeczy okrywającej ciało); backlinki
+      z indeksu.
+- [x] C3: SKIT „ZNAK I LICZBA” (unikalny skład balor + selkie-sule-skerry, 248
+      słów) → sekcja VI obu kart i pozycja w feedzie.
+- [x] Stan bramy: `.github/workflows/ci.yml` na `main` naprawiony przez
+      właściciela (PR #3) i włączony do gałęzi sesji merge’em; w repo została receptura + test
+      „przepis CI jest wklejalny” pilnują formy (L9, L12).
 
 ## F2 — Jakość i ergonomia mapy
 

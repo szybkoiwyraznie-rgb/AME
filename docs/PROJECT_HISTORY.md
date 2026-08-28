@@ -160,3 +160,32 @@ została odrzucona przez GitHub: 403 `workflows`. Ustalenia: **stan CI jest znan
 zamknięty, nikt go nie odnawia**; bramą są lokalne testy i build indeksu; treść
 workflow czeka w `docs/setup/ci-workflow.yml` bez żadnej prośby; reguła opisowa
 w `AGENTS.md` §4, `ENVIRONMENT` §3, `WORKFLOW` (sekcja CI) i `LESSONS` L12.
+
+## M3c (2026-08-28) — zlecenie właściciela: Weftblade Enhancer (EOE) i Kulrath Mystic (ECL)
+
+**Kontekst:** właściciel (po naprawieniu `ci.yml` własnym PR #3) zlecił dwie
+pełne materializacje. Sesja zrobiła obie + C3 (SKIT), bo kartoteka odblokowała
+nowe składy.
+
+**Metoda (ADR 0008, bez wyjątków):** `fetch_page` na strony Scryfall
+(`eoe/44/weftblade-enhancer`, `ecl/56/kulrath-mystic`) — z kart wynikają koszt,
+typ, P/T, pełny Oracle text, pełny flavor, artysta, set/numer i rok wydania
+(EOE 2025, ECL 2026). Każde zdanie folklorystyczne i każda pozycja bibliografii
+potwierdzone w sieci i opatrzone adresem: Balor (Cath Maige Tuired przez
+opracowania, Lebor Gabála Érenn, Toraigh jako twierdza Fomorów, Dún Bhalair i
+Tor Mór, interpretacja „palącego słońca”, niuans: Cethlenn jako żona dopiero od
+Ogygia 1685 i jej brak w spisie Fomorów u Stokesa; „monopol” Tory jako efekt
+druku O’Donovana 1856), selkie (Child 113 / Roud 197, zapis kpt. F. W. L.
+Thomasa ok. 1852 ze Snarra Voe, wersja orkadzka z „The Orcadian” z 11.01.1934,
+melodia Ottona Anderssona od Johna Sinclaira z Flotty 1938, geografia Sule
+Skerry 59°5′3″N 4°24′29″W i latarnia z 1895 r., ciągłość tradycji w
+Tobar an Dualchais).
+
+**Wynik:** 4 wpisy, 2 SKITy, 22 tagi, 8 pozycji feedu, 94/94 testów.
+Sekcja VI pojawiła się automatycznie na obu nowych kartach (`znak-i-liczba`) i
+na dwóch starych (`plotno-i-kamien`) — bez ręcznego dopisywania czegokolwiek do
+plików wpisów.
+
+**Uwaga proceduralna:** limit 250 słów protokołu w SKITach zadziałał na żywo:
+pierwsze wersje „ZNAK I LICZBA” miały 280 i 251 słów i budów nie przepuścił.
+To dowód, że rygor §8.2 jest egzekwowalny, a nie deklaratywny.

@@ -1,7 +1,7 @@
 {
   "wersja": 2,
   "liczba": 4,
-  "liczbaSkitow": 1,
+  "liczbaSkitow": 2,
   "tagi": {
     "afryka-zachodnia": [
       "egungun"
@@ -100,7 +100,9 @@
         "selkie-sule-skerry"
       ],
       "obraz": "assets/wizualizacje/balor.jpg",
-      "skity": []
+      "skity": [
+        "znak-i-liczba"
+      ]
     },
     {
       "slug": "egungun",
@@ -193,7 +195,9 @@
         "balor"
       ],
       "obraz": "assets/wizualizacje/selkie-sule-skerry.jpg",
-      "skity": []
+      "skity": [
+        "znak-i-liczba"
+      ]
     }
   ],
   "skity": [
@@ -210,6 +214,21 @@
         "Imp z Lincoln"
       ],
       "slow": 241,
+      "data": "2026-08-28"
+    },
+    {
+      "slug": "znak-i-liczba",
+      "tytul": "ZNAK I LICZBA",
+      "temat": "kto stawia znak na dziecku: złoty łańcuch przeciw rozkazowi topienia",
+      "uczestnicy": [
+        "balor",
+        "selkie-sule-skerry"
+      ],
+      "imiona": [
+        "Balor",
+        "Selkie z Sule Skerry"
+      ],
+      "slow": 248,
       "data": "2026-08-28"
     }
   ],
@@ -237,6 +256,14 @@
       "slug": "plotno-i-kamien",
       "tytul": "PŁÓTNO I KAMIEŃ",
       "opis": "SKIT — skład: Egungun, Imp z Lincoln"
+    },
+    {
+      "data": "2026-08-28",
+      "typ": "skit",
+      "akcja": "nowy",
+      "slug": "znak-i-liczba",
+      "tytul": "ZNAK I LICZBA",
+      "opis": "SKIT — skład: Balor, Selkie z Sule Skerry"
     },
     {
       "data": "2026-08-28",
