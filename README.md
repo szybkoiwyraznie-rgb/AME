@@ -10,10 +10,17 @@ namierzyć realną emanację w naszym świecie; wynikiem jest wpis w kartotece
 
 - **Mapa świata bez zewnętrznych serwerów** — wektorowa (Natural Earth),
   własny pan/zoom: przeciąganie, kółko myszy, pinch na telefonie, dwuklik.
-- **Pinezki manifestacji** — kliknięcie otwiera pełną kartotekę bytu
-  (rezonans z kartą, natura i słabości, źródła, prompt wizualizacji, trofea).
+  Uczciwe proporcje: 1° długości = 1° szerokości przy każdym rozmiarze okna,
+  geometria krajów cięta na antypołudniku (ADR 0009).
+- **Motyw jasny i ciemny** — przełącznik w górnym pasku zmienia CSS na żywo;
+  wybór zapamiętywany, start od preferencji systemu (ADR 0010).
+- **Pinezki manifestacji** — kliknięcie otwiera kartotekę bytu jako
+  pełnoekranową warstwę: wizualizacja na całą szerokość, natura i słabości,
+  źródła, trofea, na końcu klucz przywołania (PROTOKÓŁ §4.1).
+- **Źródła z adresami** — sekcja Dokumentacja linkuje do źródeł lub ich opisów
+  w sieci; walidator wymaga co najmniej jednego adresu na wpis (ADR 0011).
 - **Warstwa wiki** — tagi, powiązania między bytami (łuki na mapie) i
-  backlinki liczone automatycznie.
+  backlinki liczone automatycznie. Deep-link: `/#<slug>`.
 - **Wizualizacje 21:9** — kinowe, hiperrealistyczne portęty środowiskowe
   generowane z promptów zapisanych w wpisach.
 - **Czysta statyka** — vanilla HTML+JS+CSS, zero zależności, zero builda
@@ -35,7 +42,7 @@ blokują `fetch()` dla plików lokalnych.
 | Ścieżka | Zawartość |
 |---|---|
 | `AGENTS.md` | **zasady pracy agentów — lektura startowa każdej sesji** |
-| `docs/PROTOKOL.md` | protokół MFM: format wpisów, rama promptu 21:9 |
+| `docs/PROTOKOL.md` | protokół MFM v1.2: format i kolejność sekcji, rama promptu 21:9 |
 | `docs/decisions/` | rejestr decyzji architektonicznych (ADR) |
 | `docs/ROADMAP.md` | fazy prac i status (+ Pętla Jakości) |
 | `docs/WORKFLOW.md` | **procedura: dodanie manifestacji z karty, krok po kroku** |

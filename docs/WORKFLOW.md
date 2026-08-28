@@ -6,6 +6,7 @@
 start sesji
   → lektura obowiązkowa (AGENTS §0, w całości)
   → npm test && npm run build        # potwierdź zieloność
+  → gh run list --repo <owner>/<repo> # czy CI faktycznie uruchamia jobs (L9)
   → otwórz PR gałęzi sesji + wpisz plan pracy do opisu PR (ADR 0007 A)
   → szczegółowy audyt poprzedniego scalonego PR (ADR 0007 B)
   → zlecenie właściciela (jeśli jest — priorytet) LUB Pętla Jakości:
@@ -56,6 +57,10 @@ lub aktywności (dokładność ~0,01° wystarcza).
 - Każda teza faktograficzna wpisu = potwierdzona w co najmniej jednym
   źródle www. Każda pozycja sekcji III (dokumentacja) = istnienie
   autora/tytułu potwierdzone w sieci.
+- Spisz **adres** każdego wykorzystanego źródła (do niego, do opisu u wydawcy
+  lub w bibliotece cyfrowej, albo do wzmianki potwierdzającej istnienie) —
+  trafia do `dokumentacja[].url` (PROTOKÓŁ §4.3 III; bez co najmniej jednego
+  adresu walidator nie przepuści wpisu).
 - Detal nie do potwierdzenia → opuszczamy (nie domyślamy się); dziury
   sygnalizujemy w opisie PR jako otwarte pytania.
 
@@ -69,6 +74,10 @@ lub aktywności (dokładność ~0,01° wystarcza).
   illustration*.
 - Tagi: małe litery + myślniki; powiązania: `{slug, opis}` tylko do
   istniejących wpisów, `opis` uzasadnia związek merytorycznie (ADR 0006).
+- Dokumentacja: `{ typ, pozycja, url }`, `url` = pełny `http(s)`; co najmniej
+  jedno źródło w wpisie musi mieć adres (ADR 0011).
+- Kolejność kluczy w pliku = kolejność prezentacji sekcji: `wizualizacja`,
+  `natura`, `dokumentacja`, `trofea`, `rezonans` (PROTOKÓŁ §4.1).
 - `meta.utworzono` = data w formacie **RRRR-MM-DD**; `autor` = sesja (np. „sesja arena 2026-08-28”).
 
 ### 7. Build + testy + commit
@@ -112,8 +121,16 @@ w podglądzie:
 ```bash
 python3 -m http.server 8000 --bind 0.0.0.0   # http://localhost:8000/#<slug>
 ```
-Sprawdź: pinezka na mapie, panel wpisu (sekcje I–V), tag klikalny,
-powiązanie/backlink, ilustracja.
+Sprawdź:
+- pinezka na mapie — klikalna (pole trafienia), badge nazwy czytelny,
+  mapa w uczciwych proporcjach przy szerokości i wysokości okna (ADR 0009);
+- kartoteka jako pełnoekranowa warstwa (B2/ADR 0010), sekcje w kolejności
+  IV → II → III → V → I (PROTOKÓŁ §4.1), obraz na całą szerokość opisu;
+- Dokumentacja: adresy klikalne i prowadzące donikąd tylko tam, gdzie ich nie
+  potwierdzono (a potwierdzać trzeba — ADR 0008);
+- tag klikalny, powiązanie/backlink, łuki powiązań;
+- przełącznik motywu: jasny i ciemny bez utraty czytelności mapy i tekstu;
+- `Esc` i `✕` zamykają warstwę, fokus wraca na pinezkę/listę.
 
 ### 10. Rozbudowa istniejącego wpisu (np. Pętla Jakości C1)
 Research www → dopisz/poszerz sekcje (II, III), nowe tagi/powiązania,

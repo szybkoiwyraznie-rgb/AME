@@ -292,6 +292,7 @@ html[data-motyw='jasny'] .baner code { background: #ffffff77; }
   .panel.otwarty { animation: none; }
 }
 .warstwa-wpisu { min-height: 100%; outline: none; }
+.warstwa-wpisu:focus-visible { outline: 2px solid var(--akcent); outline-offset: -2px; }
 .zamknij {
   position: fixed;
   top: 14px;

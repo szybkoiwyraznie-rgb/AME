@@ -12,10 +12,12 @@ app/
   app.js                    — bootstrap: ładuje indeks, spina moduły
   geo.js                    — dekodowanie TopoJSON, projekcja równoodległa,
                               geometria mapy (czyste funkcje, testowalne w Node)
-  map.js                    — render SVG mapy + pinezki + pan/zoom + łuki
+  map.js                    — render SVG mapy + pinezki + pan/zoom + łuki,
+                              widok liczony z kontenera (ResizeObserver)
   data.js                   — ładowanie indeksu i wpisów, filtrowanie
-  ui.js                     — panel wpisu, tagi, powiązania, lista, szukanie
-  styles.css                — styl „ciemne archiwum” (bez webfontów)
+  ui.js                     — warstwa wpisu (dialog), tagi, powiązania, lista,
+                              szukanie, logika motywu (funkcje czyste)
+  styles.css                — tokeny palety: motyw ciemny i jasny (bez webfontów)
 assets/
   map/countries-50m.json    — Natural Earth jako TopoJSON (vendoring, PD/ISC)
   map/LICENSE.world-atlas   — licencja pakietu world-atlas
@@ -37,10 +39,16 @@ docs/                       — protokół, ADR, plany, handoffy (patrz AGENTS.m
    sortowanie po slugu, słownik tagów, backlinki z powiązań).
 3. `npm test` → walidacja `--check` + testy jednostkowe (projekcja, dekoder
    TopoJSON, schemat) — brama commitu.
-4. Aplikacja: `app.js` pobiera `data/index.json` → rysuje pinezki; kliknięcie
-   dociąga `data/manifestations/<slug>.json` do panelu.
+4. Aplikacja: `app.js` rozstrzyga motyw (zapis w `localStorage` →
+   `prefers-color-scheme` → ciemny) i ustawia `html[data-motyw]`, pobiera
+   `data/index.json` → rysuje pinezki; kliknięcie dociąga
+   `data/manifestations/<slug>.json` do pełnoekranowej warstwy wpisu.
 
 ## Schemat wpisu (skrót; pełna walidacja w tools/rebuild-index.mjs)
+
+Kolejność sekcji w prezentacji i w plikach JSON: `wizualizacja` → `natura` →
+`dokumentacja` → `trofea` → `rezonans` (PROTOKÓŁ §4.1); walidacja i indeks są
+niezależne od porządku kluczy.
 
 ```
 slug, nazwa, nazwy_alternatywne[]
@@ -51,7 +59,7 @@ rezonans: { klucz_przywolania: string,
             tabela: [{ element, translacja } ≥ 5 wierszy: Nazwa/Mechanika/Ilustracja/Flavor/Lore ] }
 natura: { wyglad_i_aura, charakter_i_motywacje, zdolnosci,
           slabosci_i_metody_pokonania, preferencje }  # polskie teksty
-dokumentacja: [{ typ, pozycja }]                     # prawdziwe źródła
+dokumentacja: [{ typ, pozycja, url? }]               # prawdziwe źródła; ≥1 url http(s) na wpis
 wizualizacja: { prompt, obraz? }                     # rama 21:9 walidowana
 trofea: { pierwotne, wtorne? }
 tagi: []                                             # ^[a-ząćęłńóśźż0-9-]+$
@@ -59,14 +67,30 @@ powiazania: [{ slug, opis }]                         # istniejące wpisy, bez se
 meta: { utworzono, autor?, modyfikacje: [{data, opis}] }
 ```
 
-## Mapa (ADR 0003)
+## Mapa (ADR 0003 + ADR 0009)
 
-- Projekcja walcowa równoodległa; świat w prostokącie W×H = 3600×1800 j.u.
-- Widok = transformacja `{x, y, k}` na grupie SVG; zoom do kursora:
-  `k' = k·f`, `x' = px − (px − x)·(k/k')` (analogicznie y); pinch = stosunek
-  odległości dwóch wskaźników; pinezki kompensują skalę `scale(1/k)`.
+- Projekcja walcowa równoodległa; świat w prostokącie W×H = 3600×1800 j.u.,
+  1° długości = 1° szerokości = 10 j.u. (10 j.u. na stopień w obu osiach).
+- **Widok w pikselach kontenera**: `viewBox` = rozmiar kontenera, a grupa świata
+  nosi transformację `translate(x, y) scale(s)`, gdzie `s = skalaBazowa · k`,
+  `skalaBazowa = min(szer/3600, wys/1800)` (contain — cały świat w oknie, bez
+  przycinania i rozciągu). Całą logikę liczy czysta `dopasujWidok()` w `geo.js`
+  (docina przesunięcia do brzegów świata, wyśrodkowuje, gdy świat jest
+  mniejszy od okna); `ResizeObserver` + `window.resize` zachowują punkt pod
+  środkiem okna.
+- Zoom do kursora: `k' = k·f`, `x' = px − (px − x)·(s'/s)` (analogicznie y);
+  pinch = stosunek odległości dwóch wskaźników.
+- **Antypołudnik**: `potnijPierscien()` rozcina pierścienie przekraczające ±180°
+  na kawałki po jednej stronie szwu, domykając je wzdłuż ±180° (albo bieguna,
+  gdy dane są rozcięte na szwie nieparzyście — Antarktyda). Bez tego Rosja i
+  Fidżi rysują cięciwę przez całą mapę (L7).
+- Elementy interfejsu mapy (pinezki, badge nazwy, obrysy) są w **pikselach CSS**:
+  grupa pinezki kompensuje skalę `scale(1/s)`, linie używają
+  `vector-effect: non-scaling-stroke` (L8).
 - Łuki powiązań: krzywa Q z punktu kontrolnego uniesionego prostopadle nad
-  środek segmentu (0.15 długości) — czytelne przy wielu liniach.
+  środek segmentu (0.18 długości) — czytelne przy wielu liniach.
+- Kartoteka bytu jest warstwą przykrywającą okno (ADR 0010), więc otwarcie wpisu
+  nie zmienia rozmiaru kontenera mapy.
 
 ## Konwencje kodu
 
@@ -75,3 +99,7 @@ meta: { utworzono, autor?, modyfikacje: [{data, opis}] }
 - Teksty UI po polsku; klasy CSS `kebab-case`; identyfikatory danych
   (slug/tagi) bez spacji i wielkich liter.
 - Zakaz dependency runtime; nowe assety zewnętrzne → `docs/ASSETS.md`.
+- Kolory wyłącznie przez tokeni CSS z `:root` / `html[data-motyw='jasny']`
+  (barvy mapy też) — inaczej drugi motyw będzie nieczytelny (ADR 0010).
+- Sekcje wpisu identyfikujemy numerem rzymskim (I–V), nie pozycją; numer IV
+  zawsze znaczy „Wizualizacja” (PROTOKÓŁ §4.1).

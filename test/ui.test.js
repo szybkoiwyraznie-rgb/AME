@@ -132,7 +132,7 @@ test('htmlWpisu: powiązania i meta zostają na końcu (B1: reszta bez zmian)', 
 
 test('htmlWarstwyWpisu: pełnoekranowy dialog z przyciskiem zamknięcia (B2)', () => {
   const html = htmlWarstwyWpisu('<div class="wpis">treść</div>', { slug: 'egungun', nazwa: 'Egungun' });
-  assert.match(html, /<div class="warstwa-wpisu" role="dialog" aria-modal="true"/);
+  assert.match(html, /<div class="warstwa-wpisu" role="dialog" aria-modal="true" tabindex="-1"/);
   assert.match(html, /aria-label="Kartoteka: Egungun"/);
   assert.match(html, /id="zamknij-wpis"/, 'w warstwie jest przycisk zamykający (app.js go nasłuchuje)');
   assert.ok(html.includes('<div class="wpis">treść</div>'), 'tresść wpisu wklejona bez zmian');

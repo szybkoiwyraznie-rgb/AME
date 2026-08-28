@@ -168,7 +168,7 @@ export function htmlWpisu(w, indeks) {
  * `htmlWpisu()` — warstwa tylko dodaje rusztowanie.
  */
 export function htmlWarstwyWpisu(trescHtml, { slug = '', nazwa = '' } = {}) {
-  return `<div class="warstwa-wpisu" role="dialog" aria-modal="true" aria-label="Kartoteka: ${esc(nazwa || slug)}">
+  return `<div class="warstwa-wpisu" role="dialog" aria-modal="true" tabindex="-1" aria-label="Kartoteka: ${esc(nazwa || slug)}">
   <button class="zamknij" id="zamknij-wpis" type="button" aria-label="Zamknij kartotekę">✕</button>
   ${trescHtml}
 </div>`;

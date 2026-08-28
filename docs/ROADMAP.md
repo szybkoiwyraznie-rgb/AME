@@ -1,7 +1,8 @@
 # ROADMAP — Archiwum Manifestacji Eterycznych
 
-> Plan faz; status aktualizowany na końcu każdej sesji. Szczegóły bieżącego
-> zadania żyją w `docs/plans/PLAN_*.md`. Nowe pomysły → `docs/BACKLOG.md`.
+> Plan faz; status aktualizowany na końcu każdej sesji (ostatnio: 2026-08-28,
+> sesja M3). Szczegóły bieżącego zadania żyją w `docs/plans/PLAN_*.md`.
+> Nowe pomysły → `docs/BACKLOG.md`.
 
 ## F0 — Fundament (SESJA 2026-08-27) — ✅ UKOŃCZONA
 
@@ -48,13 +49,33 @@ je wyłącznie na wyraźne zlecenie właściciela w sesji.
 - [ ] Powiązywanie wpisów (uzasadnione `opis`-em), obserwacja spójności sieci.
 - [ ] Odtwarzanie wizualizacji dla wpisów bez obrazu (rama 21:9, ≤ 2 MB).
 
+## M3 (2026-08-28) — poprawki z testów właściciela — ✅ KOŃCZONA (czeka na scalenie PR #2)
+
+- [x] **A1** proporcje mapy: widok liczony z kontenera (contain), brak
+      rozciągu i podcinania biegunów, brak skoku przy otwarciu kartoteki (ADR 0009).
+- [x] **A2** motyw jasny/ciemny: przełącznik w prawym górnym rogu, tokeny CSS,
+      `localStorage`, start od `prefers-color-scheme` (ADR 0010).
+- [x] **A3** cięcie geometrii na antypołudniku: koniec „rozlanej Rosji” i
+      pozornego grubego równoleżnika (Fidżi) — ADR 0009, lekcja L7.
+- [x] **A4/A5** pinezka większa + pole trafienia, badge nazwy 19 px z pleckami.
+- [x] **B1** kolejność sekcji IV → II → III → V → I jako standard: UI, przykłady,
+      manual (PROTOKÓŁ §4.1, ADR 0011).
+- [x] **B2** kartoteka jako pełnoekranowa warstwa, wizualizacja na całą
+      szerokość opisu (ADR 0010).
+- [x] **B3** `dokumentacja[].url` w schemacie i walidatorze, linki w UI,
+      adresy zweryfikowane w sieci (ADR 0011).
+- [x] Audyt PR #1 + naprawa receptury CI (L9) — sam plik `.github/workflows/ci.yml`
+      na `main` wciąż wymaga łatki po stronie właściciela.
+
 ## F2 — Jakość i ergonomia mapy
 
-- [ ] Deep-linki (`#/slug` — powracalny stan mapy i otwartego wpisu).
+- [x] Deep-linki (`#<slug>` — stan mapy i otwartego wpisu; działa od M1, tu
+      dopiero odnotowane zgodnie z audytem PR #1).
+- [x] Pełny przegląd na małych ekranach — kartoteka jako pełnoekranowa warstwa
+      zamiast bottom sheetu (M3).
 - [ ] Klastrowanie pinezek przy niskim zoomie / deryterowanie etykiet.
 - [ ] Miniatury wizualizacji na pinezkach przy wysokim zoomie.
 - [ ] Strona tagu (filtr + lista wpisów), eksport PDF kartoteki (media print).
-- [ ] Pełny przegląd na małych ekranach (mobile: panel jako bottom sheet).
 
 ## F3 — Publikacja
 

@@ -124,7 +124,7 @@ export function stworzMape(kontener, { przyZmianieZaznaczenia } = {}) {
     warstwa.style.transform = `translate(${d.x}px, ${d.y}px) scale(${d.s})`;
     const s = 1 / d.s;
     for (const p of pinezki.values()) p.el.setAttribute('transform', `translate(${p.wx} ${p.wy}) scale(${s})`);
-    svg.classList.toggle('przyblizona', d.k >= 2.5); // etykiety pinezek
+    svg.classList.toggle('przyblizona', d.k >= 2); // etykiety pinezek (już przy dwukrotnym zbliżeniu świata)
   }
 
   /** Zoom w punkt p (współrzędne viewBoxu) o czynnik f. */

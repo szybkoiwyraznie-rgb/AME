@@ -42,3 +42,22 @@
   (jak w projekcie mtg) — gdy dokumenty urosną.
 - **Lint stylu wpisów**: prosta heurystyka „zakaz terminologii growej w
   sekcji II” (lista słów: haste, trample, mana…).
+
+## Rozpoznane w sesji M3 (2026-08-28) — po poprawkach z testów
+
+- **Reakcja na zmianę preferencji systemu** — dziś `prefers-color-scheme` liczy
+  się tylko przy braku zapisanego wyboru; można nasłuchiwać `change` i
+  przełączać dopóki użytkownik nie zdecydował samodzielnie.
+- **Miniatura wizualizacji w wierszu kartoteki i w liście** — obraz 21:9 już jest
+  w indeksie (`obraz`), wystarczy `<img loading="lazy">` w `htmlListy`.
+- **Kopiuj link do wpisu** — przycisk w warstwie wpisu (`location.origin +
+  location.pathname + '#' + slug`); przydatne do wskazywania kart innych sesji.
+- **Kontrola żywości adresów źródłowych** — skrypt sesji (narzędzia agenta), NIE
+  CI: egress sandboxa jest ograniczony (L3), a linki bywają przenoszone.
+  Wymagałby decyzji: martwy link = ostrzeżenie czy błąd walidatora.
+- **Widok druku (media print) dla warstwy wpisu** — kartoteka na A4 jako PDF;
+  dziś warstwa przykrywa okno i nie ma stylów drukowych.
+- **Znacznik „źródło bez adresu” w UI** — pozycje bez `url` (papier) warto
+  oznaczać inną kursywą, żeby czytelnik wiedział, czego nie da się kliknąć.
+- **Aspekt motywu w testach** — trzymać kontrakt tokenów (lista zmiennych
+  wymaganych w obu paletach) jako test danych, gdy paleta urośnie.
