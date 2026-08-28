@@ -106,7 +106,11 @@ Ponadto:
   karta (nazwa, mechanika, ilustracja, flavor, lore) służy do identyfikacji i
   uzasadnienia wyboru w sekcji „Klucz Przywołania”.
 - **Źródła są prawdziwe i weryfikowalne.** Zakaz wymyślania tytułów, autorów,
-  lat. Jeśli źródła nie da się potwierdzić — nie wpisuj go.
+  lat. Jeśli źródła nie da się potwierdzić — nie wpisuj go. Każde źródło
+  podpisujemy adresem (`dokumentacja[].url`, pełny `http(s)`) — co najmniej
+  jedno na wpis musi prowadzić do źródła, jego opisu albo wzmianki w sieci.
+- **Kolejność sekcji wpisu (standard): IV → II → III → V → I** (PROTOKÓŁ §4.1).
+  Numery rzymskie zostają przypisane do sekcji; dotyczą UI, przykładów i manuala.
 - **Współrzędne są prawdziwe** (miejsce powstania wierzenia lub aktywności
   bytu), zapis dziesiętny, W szerokość geograficzna jako dodatnia.
 - **Prompt wizualizacji trzyma się RAMY 21:9** z `docs/PROTOKOL.md` §IV.

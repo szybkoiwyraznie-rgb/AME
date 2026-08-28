@@ -5,7 +5,9 @@
 > aplikacja + kartoteka. Protokół opisuje, jak powstaje i co zawiera pojedynczy
 > wpis („kartotka manifestacji”).
 >
-> Status: **obowiązujący** (v1.1). Zmiany protokołu wymagają ADR.
+> Status: **obowiązujący** (v1.2 od 2026-08-28; v1.1 — 2026-08-27). Zmiany
+> protokołu wymagają ADR. W v1.2 (ADR 0011): obowiązująca **kolejność
+> prezentacji** sekcji (§4.1) oraz **adres www jako część źródła** (§4.4).
 
 ## 1. Filozofia systemu
 
@@ -57,8 +59,64 @@ PEŁNY WPIS MFM (data/manifestations/<slug>.json)
 
 ## 4. Struktura wpisu
 
+### 4.1 Kolejność prezentacji (standard od 2026-08-28)
+
+Aplikacja, przykłady w `data/manifestations/` i ten dokument podają sekcje
+w tej samej, obowiązującej kolejności:
+
+```
+IV Wizualizacja  →  II Charakterystyka i natura  →  III Dokumentacja
+                  →  V Trofea  →  I Rezonans i tożsamość
+```
+
+Numery rzymskie są **tożsamością sekcji**, nie pozycją: „IV” zawsze znaczy
+„Wizualizacja”, więc zmiana układu nie wymaga zmian w danych ani w walidatorze.
+Po pięciu sekcjach następują elementy bez numeru: powiązania (warstwa wiki)
+i meta — ich kolejność się nie zmienia.
+
+### 4.2 Nagłówek wpisu
+
+```
 ### [NAZWA BYTU / MANIFESTACJI]
 **Inspiracja kartą:** [NAZWA KARTY MTG]
+```
+
+### 4.3 Treść sekcji
+
+#### IV. WIZUALIZACJA (prompt dla grafiki AI)
+Techniczny prompt zapisany w polu `wizualizacja.prompt`. Rezygnujemy z
+formy figurki/dioramy: celem jest **hiperrealistyczny, filmowy portret
+środowiskowy bytu w jego naturalnym otoczeniu** — patrz §5. W kartotece sekcja
+jest pierwsza i zajmuje pełną szerokość wpisu (ADR 0010).
+
+#### II. CHARAKTERYSTYKA I NATURA (opis fabularny)
+* **Wygląd i Aura:** opis fizycznej manifestacji, zapachu, temperatury
+  otoczenia towarzyszącej pojawieniu się bytu.
+* **Charakter i Motywacje:** byt drapieżny, opiekuńczy, amoralny? Czego
+  pragnie? Dlaczego wchodzi w interakcje z ludźmi?
+* **Zdolności (fizyczne i magiczne):** opis mocy **bez terminologii growej** —
+  jak byt manipuluje rzeczywistością, umysłem, materią.
+* **Słabości i metody pokonania:** rytuały, przedmioty, substancje, zachowania.
+* **Preferencje (lubiane/nielubiane):** ofiary, dźwięki, pory dnia, symbole.
+
+#### III. DOKUMENTACJA (The Source Stack)
+Pełna lista źródeł: literatura naukowa (antropologia, religioznawstwo),
+klasyczne teksty mitologiczne, literatura piękna, kino, reportaże, dokumenty
+historyczne. **Źródła muszą być prawdziwe i weryfikowalne.**
+
+Każda pozycja ma postać `{ typ, pozycja, url? }` (pole `dokumentacja`), przy czym:
+
+* **`url` jest obowiązkowy dla co najmniej jednego źródła w wpisie** i prowadzi
+  do samego źródła, do jego opisu (wydawca, biblioteka cyfrowa, recenzja) albo
+  do wzmianki potwierdzającej jego istnienie w sieci (ADR 0008, ADR 0011).
+  Walidator odrzuci wpis bez ani jednego adresu i adres inny niż pełny `http(s)`.
+* gdy źródło ma opisany kontekst (co potwierdza, do czego go użyliśmy),
+  mieści się to w polu `pozycja` po myślniku — bez nowych pól;
+* aplikacja renderuje `url` jako klikalny adres pod pozycją (tylko `http(s)`).
+
+#### V. TROFEA I DOWODY ELIMINACJI
+* Trofeum Pierwotne
+* Trofeum Wtórne (opcjonalne)
 
 #### I. REZONANS I TOŻSAMOŚĆ
 * **Klucz Przywołania:** analiza, jak nazwa, ilustracja, mechanika i flavor
@@ -78,29 +136,15 @@ PEŁNY WPIS MFM (data/manifestations/<slug>.json)
   lub gdzie odnotowano aktywność bytu — z podaniem regionu i współrzędnych
   dziesiętnych.
 
-#### II. CHARAKTERYSTYKA I NATURA (opis fabularny)
-* **Wygląd i Aura:** opis fizycznej manifestacji, zapachu, temperatury
-  otoczenia towarzyszącej pojawieniu się bytu.
-* **Charakter i Motywacje:** byt drapieżny, opiekuńczy, amoralny? Czego
-  pragnie? Dlaczego wchodzi w interakcje z ludźmi?
-* **Zdolności (fizyczne i magiczne):** opis mocy **bez terminologii growej** —
-  jak byt manipuluje rzeczywistością, umysłem, materią.
-* **Słabości i metody pokonania:** rytuały, przedmioty, substancje, zachowania.
-* **Preferencje (lubiane/nielubiane):** ofiary, dźwięki, pory dnia, symbole.
+### 4.4 Słowniczek pól a sekcje
 
-#### III. DOKUMENTACJA (The Source Stack)
-Pełna lista źródeł: literatura naukowa (antropologia, religioznawstwo),
-klasyczne teksty mitologiczne, literatura piękna, kino, reportaże, dokumenty
-historyczne. **Źródła muszą być prawdziwe i weryfikowalne.**
-
-#### IV. WIZUALIZACJA (prompt dla grafiki AI)
-Techniczny prompt zapisany w polu `wizualizacja.prompt` wpisu. Rezygnamy z
-formy figurki/dioramy: celem jest **hiperrealistyczny, filmowy portret
-środowiskowy bytu w jego naturalnym otoczeniu** — patrz §5.
-
-#### V. TROFEA I DOWODY ELIMINACJI
-* Trofeum Pierwotne
-* Trofeum Wtórne (opcjonalne)
+| Sekcja | Pole w JSON |
+|---|---|
+| IV Wizualizacja | `wizualizacja` |
+| II Charakterystyka i natura | `natura` |
+| III Dokumentacja | `dokumentacja` (z `url`) |
+| V Trofea | `trofea` |
+| I Rezonans i tożsamość | `rezonans` (+ `karta`, `lokalizacja`, `pochodzenie_i_kultura`) |
 
 ## 5. Rama promptu wizualizacji (v1.1 — obowiązuje od 2026-08-27)
 
@@ -134,7 +178,9 @@ nieodtworzona”) razem z gotowym do skopiowania promptem.
 
 Wpis przechowujemy jako `data/manifestations/<slug>.json` zgodny ze schematem
 walidowanym przez `tools/rebuild-index.mjs` (szczegóły pól:
-`docs/ARCHITECTURE.md`). Sekcje tekstu (I–V) noszą nazwy jak wyżej.
+`docs/ARCHITECTURE.md`). Sekcje tekstu (I–V) noszą nazwy jak wyżej, a **klucze
+JSON układamy w kolejności prezentacji z §4.1** (czytelność pliku = czytelność
+kartoteki; walidacja patrzy na pola, nie na porządek).
 Tagi i powiązania (`tagi`, `powiazania`) tworzą warstwę wiki — powiązanie
 musi mieć uzasadnienie w polu `opis`, a backlinki wylicza indeks.
 
