@@ -116,3 +116,17 @@ starszy selector zgaduje kontekst i podnosi rodzica nad dziecko.
 atrybutami ułożonymi wg priorytetu i decyduj po `hasAttribute()`. Testy
 jednostkowe tego nie łapią — sprawdź przepływ na żywo albo w smoke-na-atrapie
 DOM.
+
+## L11 (2026-08-28, AME) — dziennik o dokładności dziennej potrzebuje sekwencji zdarzeń
+
+**Objaw:** w „Co nowego" najnowsze pozycje leżały na dole, mimo że sortowanie
+było „datą malejąco".
+**Przyczyna:** drugi klucz sortowania był **rangą typu akcji** (dodano przed
+zmieniono), a nie chronologią. Ponieważ `meta` nosi tylko datę (RRRR-MM-DD),
+utworzenia kart z porannej sesji i zmiany z popołudniowej mają tę samą datę —
+ranga wyciągnęła więc najstarsze zdarzenia na górę.
+**Reguła:** agregując `meta` do strumienia zmian, nadaj pozycji `sekwencja` w
+obrzębie pliku (0 = `utworzono`, k+1 = k-ty wpis `modyfikacje`, bo ta tablica
+jest dopisywana chronologicznie) i sortuj `data desc → sekwencja desc → typ →
+slug`. Klucz sortujący usuń przed zapisem indeksu, żeby nie generował szumu w
+diffach (PROTOKÓŁ §9, ADR 0014).
