@@ -1,7 +1,7 @@
 {
   "wersja": 3,
   "liczba": 8,
-  "liczbaSkitow": 10,
+  "liczbaSkitow": 11,
   "kanon": {
     "kategorie": [
       {
@@ -309,6 +309,7 @@
       "obraz": "assets/wizualizacje/barbarossa-kyffhaeuser.jpg",
       "skity": [
         "kalendarz-powrotow",
+        "trzy-stoly",
         "trzy-zegary"
       ]
     },
@@ -388,7 +389,8 @@
       "skity": [
         "hold-oraz-swiatlo",
         "kalendarz-powrotow",
-        "plotno-i-kamien"
+        "plotno-i-kamien",
+        "trzy-stoly"
       ]
     },
     {
@@ -454,7 +456,8 @@
       "skity": [
         "dwa-zepsute-wesela",
         "dwie-skory",
-        "nieproszeni-goscie"
+        "nieproszeni-goscie",
+        "trzy-stoly"
       ]
     },
     {
@@ -667,6 +670,23 @@
       "data": "2026-08-28"
     },
     {
+      "slug": "trzy-stoly",
+      "tytul": "TRZY STOŁY",
+      "temat": "gościnność ponad granicą śmierci i czasu: wzywanie zmarłych, zapłata za spokój, gość, który wziął sam",
+      "uczestnicy": [
+        "barbarossa-kyffhaeuser",
+        "egungun",
+        "kentaur-pelion"
+      ],
+      "imiona": [
+        "Egungun",
+        "Barbarossa",
+        "Kentaur z Pelionu"
+      ],
+      "slow": 232,
+      "data": "2026-08-28 23:35"
+    },
+    {
       "slug": "trzy-zegary",
       "tytul": "TRZY ZEGARY",
       "temat": "trzy sposoby, na jaki byt czeka na swoją godzinę: znak z góry, rzut kamienia i dyżur przy pogodzie",
@@ -700,6 +720,14 @@
     }
   ],
   "aktualizacje": [
+    {
+      "data": "2026-08-28 23:35",
+      "typ": "skit",
+      "akcja": "nowy",
+      "slug": "trzy-stoly",
+      "tytul": "TRZY STOŁY",
+      "opis": "SKIT — skład: Egungun, Barbarossa, Kentaur z Pelionu"
+    },
     {
       "data": "2026-08-28 23:15",
       "typ": "manifestacja",
