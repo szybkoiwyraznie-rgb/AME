@@ -94,8 +94,18 @@ chronologiczna) → `sekwencja` w obrębie pliku malejąco (utworzenie = 0, kole
 `sekwencja` służy tylko sortowaniu i nie trafia do pliku indeksu.
 
 Stopka karty (`ui.js: htmlStopki`) wyświetla wyłącznie daty: `utworzono` oraz
-`zmieniono` (najpóźniejsza z `meta.modyfikacje`). Autorzy i opisy zmian zostają
-w plikach JSON i w feedzie — karty nie są miejscem na notatki robocze sesji.
+`zmieniono` (najpóźniejsza z `meta.modyfikacje`), **bez godziny** — meta może
+nieść porę (ADR 0017), ale w karcie liczy się dzień; godzina zdarzenia żyje w
+feedzie „Co nowego”. Autorzy i opisy zmian zostają w plikach JSON i w feedzie —
+karty nie są miejscem na notatki robocze sesji.
+
+„🎲 wylosuj” (tryb ekspedycji): `data.js: wylosujSlug(slugi, {pomin, los})` to
+czysta funkcja losująca slug z podanej puli — pomija wskazany wpis (o ile pula
+> 1), przyjmuje wstrzykiwany RNG (test deterministyczny; produkcja `Math.random`).
+`app.js: losujManifestacje` bierze pulę z `pasujace()` (filtr + tag), pomija
+`stan.ostatniLos` (żeby reroll po zamknięciu karty nie powtarzał) i wywołuje
+`otworzWpis(slug, {przewin: true})`, który przelatuje mapę do pinezki. Losowanie
+dzieje się w przeglądarce na życzenie — determinizm indeksu (ADR 0002) nietknięty.
 
 ## Mapa (ADR 0003 + ADR 0009)
 

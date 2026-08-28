@@ -170,6 +170,23 @@ je wyłącznie na wyraźne zlecenie właściciela w sesji.
       uaktualnione: 7 kultur źródłowych, ≥3 źródła na wpis, proza bez
       cyrylicy/CJK (transliteracje), chronologia feedu dosłowna (ADR 0017).
 
+## M7 (2026-08-28) — audyt PR #5 + Pętla Jakości (C1 → C3 → C2) — ✅ w PR #6 (C2 do akceptacji)
+
+- [x] **Audyt PR #5** (M6: badge A1–A3 + godzina B/ADR 0017 + pętla). Brama
+      lokalna zielona, indeks deterministyczny, bez zaległości.
+- [x] **C1** `egungun`: research www (Bolaji Campbell „Fabric of Immortality”,
+      Wikipedia, Muzeum Snite) — „moce ukryte”, narastanie warstw płócien,
+      nieludzki głos, wir jako przejście, role Alagby/kapłanki/śpiewaczek oríkì;
+      +3 źródła z adresami, odwzajemnione powiązania (selkie, empusa,
+      barbarossa). Naprawa root-cause: stopka karty pokazuje sam dzień, godzina
+      tylko w feedzie (ADR 0017, PROTOKÓŁ §8.1).
+- [x] **C3** SKIT „DWA ZEPSUTE WESELA” (Empusa × Kentaur z Pelionu — skład
+      unikalny, 240 słów, rejestr lekki v1.6).
+- [x] **C2** „🎲 wylosuj” (tryb ekspedycji): losuje z widocznej puli (filtr/tag
+      zawężają), pomija ostatni los, przelatuje do bytu na mapie. Czysta
+      `wylosujSlug` + 5 testów; zweryfikowane headless (8/8 osiągalnych, 0
+      powtórzeń pod rząd, filtr respektowany). **Do akceptacji przed live (ADR 0007).**
+
 ## F2 — Jakość i ergonomia mapy
 
 - [x] Deep-linki (`#<slug>` — stan mapy i otwartego wpisu; działa od M1, tu
@@ -178,6 +195,8 @@ je wyłącznie na wyraźne zlecenie właściciela w sesji.
       zamiast bottom sheetu (M3).
 - [ ] Klastrowanie pinezek przy niskim zoomie / deryterowanie etykiet.
 - [ ] Miniatury wizualizacji na pinezkach przy wysokim zoomie.
+- [x] Tryb „🎲 wylosuj” — losowanie manifestacji z widocznej puli i przelot do
+      niej na mapie (M7, PR #6; do akceptacji właściciela przed live).
 - [x] Czytelny kanon tagów i ich prezentacja (ADR 0016): słownik w danych,
       limity kategorii w walidatorze, pasek w pasmach z licznikami i opisami.
 - [ ] Strona tagu (filtr + lista wpisów), eksport PDF kartoteki (media print).

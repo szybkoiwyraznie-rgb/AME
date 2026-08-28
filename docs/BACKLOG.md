@@ -13,8 +13,11 @@
 - **Miniatury na pinezkach** przy wysokim zoomie (obraz 21:9 małpowany w marker).
 - **Strona tagu**: klik w tag → filtr mapy + lista; słownik tagów w indeksie
   już to umożliwia.
-- **Tryb „wylosuj manifestację”** — przycisk losujący wpis (deterministyczny
-  seed z daty jako opcja).
+- ~~**Tryb „wylosuj manifestację”**~~ — zrealizowane w M7 (PR #6, C2): przycisk
+  „🎲 wylosuj” losuje z widocznej puli (filtr/tag zawężają), pomija ostatni los
+  i przelatuje do bytu na mapie; `wylosujSlug` deterministyczna przy
+  wstrzykniętym RNG (opcja seeda z daty pozostaje otwarta). Do akceptacji
+  właściciela przed live.
 - **Warstwa kręgów kulturowych**: otoczki/halo grupujące wpisy jednej tradycji
   (słowiańska, algonkińska, nordycka…) — wymaga tagu-kręgu jako konwencji.
 - **Oś czasu manifestacji**: sortowanie po epoce pierwszego odnotowania;

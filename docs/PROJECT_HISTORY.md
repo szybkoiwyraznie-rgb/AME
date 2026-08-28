@@ -524,3 +524,64 @@ Met. XII w przekł. Kline (UVA), Arystofanes „Żaby” w Internet Classics Arc
   jako ostatni zapis kartoteki.
 - Stan: `npm test` 120/120, build/check zielone; indeks: **8 wpisów**, 5
   SKITów, 18 pozycji feedu, 26 tagów. Dwie nowe pinezki na mapie (Grecja ×2).
+
+## M7 (2026-08-28) — audyt PR #5 + Pętla Jakości (C1 → C3 → C2)
+
+Sesja bez nowego zlecenia na starcie: po audycie → Pętla Jakości (ADR 0007).
+
+- **Audyt PR #5 (M6):** A1 (badge tylko na hover/fokus/wybranie, zniesiony
+  toggle `przyblizona`), A2 (`user-select: none` na `.mapa-svg`), A3 (grupa
+  `.etykiety` malowana po `.pinezki`), B (godzina w `meta` — ADR 0017/v1.5,
+  `RE_DATA` z `GG:MM`, sort feedu po znakach). Pętla M6: C1 (drangue-shala,
+  barbarossa), C3 (`godzina-otwarcia`), C2 (podgląd powiązań na hover). Brama
+  lokalna 120/120, indeks deterministyczny. Bez zaległości.
+
+### C1 — pogłębienie `egungun` (research www, ADR 0008)
+
+- Rozbudowa sekcji II: etymologia „moce ukryte” (powers concealed), narastanie
+  warstw płócien pokolenie po pokoleniu (najstarsze przy ciele; pierwsza
+  warstwa to indygowo-białe płótno typu grzebalnego — Muzeum Snite/Notre Dame),
+  nieludzki głos zza zasłony, wir tańca jako przejście między światami, role
+  Alagby/Alapini, kapłanki (Iya Agan) i śpiewaczek oríkì, ofiary krwi na
+  płótnach dla utrzymania mocy.
+- **+3 źródła z adresami:** Bolaji Campbell „Fabric of Immortality”
+  (Africa World Industries Press 2020, recenzja Project MUSE), Wikipedia
+  „Egungun”, „Egungun Masquerade Costume” Raclin Murphy Museum (Snite).
+- **Powiązania odwzajemnione:** egungun → selkie (władza w rzeczy okrywającej
+  ciało), → empusa (wejście pod cudzym obliczem do domu), → barbarossa
+  (śmierć odwracalna utrzymywana rytuałem). Wcześniej te trzy wpisy linkowały
+  do egungun jednostronnie; teraz backlinki mają pełne odwzorowanie.
+- **Naprawa root-cause przy okazji (ADR 0017):** `htmlStopki` obcina godzinę
+  z dat — stopka karty pokazuje sam dzień (`utworzono` / `zmieniono`), godzina
+  żyje w feedzie „Co nowego”, nie w karcie (PROTOKÓŁ §8.1). Bez tego pierwsza
+  modyfikacja z godziną wyciekała porą do stopki. Test kontraktowy w
+  `ui.test.js`; niezmiennik szczytu feedu przepisany w `skit.test.js` na
+  „najpóźniejszy znacznik czasu” (utworzenie albo zmiana — decyduje chronologia).
+
+### C3 — SKIT „DWA ZEPSUTE WESELA” (Empusa × Kentaur z Pelionu)
+
+- Skład unikalny (pierwszy SKIT dla obu greckich bytów), 240 słów, rejestr
+  lekki (v1.6 — po serii poważnych): porównanie dwóch stylów psucia wesela
+  (iluzja bez śladu kontra burda przy winie). Fakty zgodne z kartotekami:
+  krater rzucił Tezeusz nie kentaur, wino „unused to wine”, obelga i czosnek
+  z rozstajów Hekaty jako remedium, wygnanie w Pindos, potrójna przysięga.
+  Tytuł wersalikami (kontrakt walidatora). Sekcja VI i feed z indeksu.
+
+### C2 — „🎲 wylosuj” (tryb ekspedycji; do akceptacji właściciela)
+
+- Przycisk w górnym pasku losuje manifestację z aktualnie widocznej puli
+  (filtr tekstowy i tag zawężają zbiór; brak filtra = wszystkie), pomija
+  ostatni los i przelatuje do bytu na mapie, otwierając kartotekę.
+- Czysta funkcja `wylosujSlug(slugi, {pomin, los})` w `data.js`:
+  deterministyczna przy wstrzykniętym RNG (determinizm indeksu ADR 0002
+  nienaruszony — losowanie dzieje się w przeglądarce, nie przy budowie),
+  odfiltrowuje wartości puste, jedyny wpis wraca nawet gdy „pomijany”.
+- `stan.ostatniLos` pomija poprzedni los także po zamknięciu karty Escape'em
+  (bez tego reroll bywał powtórką — złapane w headless: 2/24 powtórzenia →
+  po poprawce 0/24). Weryfikacja headless Chromium: 8/8 bytów osiągalnych,
+  0 powtórzeń pod rząd, filtr „Grecja” zawęża do empusy i kentaura, zero
+  błędów konsoli. **Czeka na akceptację przed live (ADR 0007).**
+- +5 testów (`test/losowanie.test.js`).
+
+- Stan: `npm test` **125/125**, build/check zielone; indeks: 8 wpisów, **6
+  SKITów**, 20 pozycji feedu, 26 tagów. Protokół v1.6 bez zmian.
