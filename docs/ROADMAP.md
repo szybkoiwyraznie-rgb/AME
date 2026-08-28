@@ -272,6 +272,12 @@ je wyłącznie na wyraźne zlecenie właściciela w sesji.
       uniwersalna, niezależna od platformy.
 - [x] **Status metagry: NIEZAAKCEPTOWANA / W OPRACOWANIU.** Bez pilotów i kodu gry
       do czasu spójnej, zaakceptowanej koncepcji. Praca = tropy + Pętla Jakości.
+- [x] **Konsolidacja koncepcji:** `KONCEPCJA_metagra_pytania-otwarte.md` — mapa
+      11 otwartych pytań (pętla, świat, format Kroniki, skala) + co już ustalone;
+      reguła: sesja myślenia odpowiada na pytania, nie mnoży wizji.
+- [x] **C1** `kentaur-pelion`: Chejron jako kontrapunkt + jaskinia Pholosa,
+      +1 źródło, powiązanie z empusą (drugi backlink kentaura).
+- [x] **C3** SKIT „KOMU WOLNO PATRZEĆ” (trio Balor × Empusa × Imp) — blind-draft.
 
 ## F2 — Jakość i ergonomia mapy
 

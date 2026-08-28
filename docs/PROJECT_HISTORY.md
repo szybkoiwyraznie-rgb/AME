@@ -818,3 +818,44 @@ poziomie architektury (nie zweryfikowano samodzielnie zdolności Meta.ai).
 - Stan: `npm test` **144/144**, build/check zielone; indeks: 8 wpisów, **11
   SKITów**, 30 pozycji feedu, 26 tagów. Protokół v1.7. Składy wieloosobowe:
   **6 vs 5 duetów** (ADR 0019).
+
+## M13 (2026-08-28) — STOP przedwczesnemu pilotowi; konsolidacja koncepcji + treść
+
+Właściciel zatrzymał wątek pilota Meta.ai jako przedwczesny: nie ma
+zaakceptowanej koncepcji metagry, więc nie ma czego testować. Powrót do zwykłej
+pracy: Pętla Jakości + realne obmyślanie koncepcji.
+
+### Wycofanie i trwałe reguły
+
+- Usunięto brief pilota (`PILOT_META_kronika-epoka-1.md`).
+- `POMYSL_platforma-budowy-przenosnosc.md` §9: dwie trwałe reguły — (1) projekt
+  może prowadzić runner inny niż Arena (granica = git PR); (2) „głos
+  pojedynczego bytu" wykonują odizolowani subagenci (swarm, priorytet) ALBO
+  symulowani (blind-draft) — koncepcja uniwersalna, niezależna od platformy.
+- Reguła platformowo-neutralna dopięta też w koncepcji SPLOT/KRONIKA (§1a).
+- Status metagry: **NIEZAAKCEPTOWANA / W OPRACOWANIU** (ROADMAP M13).
+
+### Konsolidacja koncepcji (realna praca nad metagrą)
+
+- `KONCEPCJA_metagra_pytania-otwarte.md`: zamiast piątej wizji — mapa DECYZJI.
+  Ustalone (staty z gęstości, obserwator, determinizm, runner wymienny, skity =
+  prototypy) vs 11 pytań otwartych (pętla rozgrywki P1–P3, model świata P4–P6,
+  format Kroniki P7–P9, skala P10–P11). Rekomendowana kolejność + wstępne
+  stanowisko do P1–P3 (feed epok; epokę dokłada agent sesji; wydarzenie = SKIT +
+  pole `skutek`). Reguła: sesja myślenia odpowiada na 1–3 pytania, nie mnoży wizji.
+
+### C1 — pogłębienie `kentaur-pelion` (research www, ADR 0008)
+
+- Chejron z Pelionu jako kontrapunkt dzikiego plemienia (mędrzec, syn Kronosa,
+  nauczyciel Achillesa/Jazona/Asklepiosa) + drugi „winny" epizod spod jaskini
+  Pholosa. +1 źródło. Powiązanie kentaur → empusa (dwa greckie wesela kończące
+  się źle) — kentaur zyskuje drugi backlink.
+
+### C3 — SKIT „KOMU WOLNO PATRZEĆ" (trio, blind-draft)
+
+- Balor × Empusa × Imp z Lincoln — 3 głosy, 221 słów. Motyw spojrzenia: oko
+  Balora zabija, jedno trzeźwe spojrzenie rozwiewa empusę, spojrzenie anioła
+  utrwaliło impa w kamieniu. Blind-draft (każdy głos z własnego dossier).
+
+- Stan: `npm test` **144/144**, build/check zielone; indeks: 8 wpisów, **12
+  SKITów**, 32 pozycje feedu, 26 tagów. Protokół v1.7.
