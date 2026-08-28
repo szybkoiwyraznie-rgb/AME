@@ -48,7 +48,9 @@ const RE_WYPOWIEDZ = /^\*\*[^*\n]{1,40}:\*\*/;
 /** Adres źródła w sieci WWW — tylko pełny http(s), nic więcej (B3, ADR 0008). */
 const RE_URL = /^https?:\/\/\S+$/i;
 const RE_TAG = /^[a-ząćęłńóśźż0-9-]+$/;
-const RE_DATA = /^\d{4}-\d{2}-\d{2}$/;
+// Data w meta (ADR 0017): RRRR-MM-DD albo z godziną RRRR-MM-DD GG:MM (doba
+// 00–23, minuta 00–59); forma bez godziny pozostaje legalna (stare wpisy).
+const RE_DATA = /^\d{4}-\d{2}-\d{2}(?: ([01]\d|2[0-3]):[0-5]\d)?$/;
 
 const WYMAGANE_ELEMENTY_TABELI = ['Nazwa', 'Mechanika', 'Ilustracja', 'Flavor text', 'Lore/Tło'];
 
@@ -148,11 +150,11 @@ export function walidujWpis(w) {
   }
 
   const m = w.meta ?? {};
-  if (!jestStr(m.utworzono) || !RE_DATA.test(m.utworzono)) blad('meta.utworzono: brak lub zły format (RRRR-MM-DD)');
+  if (!jestStr(m.utworzono) || !RE_DATA.test(m.utworzono)) blad('meta.utworzono: brak lub zły format (RRRR-MM-DD albo RRRR-MM-DD GG:MM)');
   if (!Array.isArray(m.modyfikacje ?? [])) blad('meta.modyfikacje: ma być tablicą');
   for (const mod of m.modyfikacje ?? []) {
     if (!jestStr(mod?.data) || !RE_DATA.test(mod.data) || !jestStr(mod?.opis)) {
-      blad('meta.modyfikacje: każdy wpis wymaga {data, opis}');
+      blad('meta.modyfikacje: każdy wpis wymaga {data (RRRR-MM-DD albo RRRR-MM-DD GG:MM), opis}');
       break;
     }
   }
@@ -289,11 +291,11 @@ export function walidujSkit(s, slugiManifestacji = new Set()) {
   }
 
   const m = s.meta ?? {};
-  if (!jestStr(m.utworzono) || !RE_DATA.test(m.utworzono)) blad('meta.utworzono: brak lub zły format (RRRR-MM-DD)');
+  if (!jestStr(m.utworzono) || !RE_DATA.test(m.utworzono)) blad('meta.utworzono: brak lub zły format (RRRR-MM-DD albo RRRR-MM-DD GG:MM)');
   if (!Array.isArray(m.modyfikacje ?? [])) blad('meta.modyfikacje: ma być tablicą');
   for (const mod of m.modyfikacje ?? []) {
     if (!jestStr(mod?.data) || !RE_DATA.test(mod.data) || !jestStr(mod?.opis)) {
-      blad('meta.modyfikacje: każdy wpis wymaga {data, opis}');
+      blad('meta.modyfikacje: każdy wpis wymaga {data (RRRR-MM-DD albo RRRR-MM-DD GG:MM), opis}');
       break;
     }
   }
@@ -449,9 +451,14 @@ export function zbudujIndeks(wpisy, skiti = [], kanon = null) {
       dodaj({ data: mod.data, typ: 'skit', akcja: 'zmiana', slug: s.slug, tytul: s.tytul, opis: mod.opis }, k + 1)
     );
   }
+  // Data malejąco porównywana po znakach (kodowo), nie collation: mieszanka
+  // formatów „RRRR-MM-DD” i „RRRR-MM-DD GG:MM” (ADR 0017) ma wtedy porządek
+  // totalny niezależny od tabel ICU — dzień z godziną wygrywa z dniem bez
+  // godziny, a wśród godzin kolejność jest chronologiczna. Potem sekwencja
+  // (L11), typ i slug.
   aktualizacje.sort(
     (a, b) =>
-      String(b.data).localeCompare(String(a.data)) ||
+      (String(b.data) > String(a.data)) - (String(b.data) < String(a.data)) ||
       b.sekwencja - a.sekwencja ||
       b.typ.localeCompare(a.typ, 'pl') ||
       a.slug.localeCompare(b.slug, 'pl')

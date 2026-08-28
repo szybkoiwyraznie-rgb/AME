@@ -5,13 +5,15 @@
 > aplikacja + kartoteka. Protokół opisuje, jak powstaje i co zawiera pojedynczy
 > wpis („kartotka manifestacji”).
 >
-> Status: **obowiązujący** (v1.4 od 2026-08-28; v1.3 i v1.2 — 2026-08-28; v1.1 — 2026-08-27).
+> Status: **obowiązujący** (v1.5 od 2026-08-28; v1.4, v1.3 i v1.2 — 2026-08-28; v1.1 — 2026-08-27).
 > Zmiany protokołu wymagają ADR.
 > v1.1 (ADR 0005): rama promptu 21:9. v1.2 (ADR 0011): obowiązująca kolejność
 > prezentacji sekcji oraz adres www jako część źródła. **v1.3 (ADR 0012):
 > **v1.4 (ADR 0015): limit długości SKITa 250 → 300 słów.** W v1.3 (ADR 0012)
 > numeracja sekcji idzie za kolejnością (I = Wizualizacja … V = Rezonans) i
-> dochodzi sekcja VI „SKITy”** (Baza Skitów, ADR 0013).
+> dochodzi sekcja VI „SKITy”** (Baza Skitów, ADR 0013). **v1.5 (ADR 0017):
+> data w meta może nieść godzinę — `RRRR-MM-DD` albo `RRRR-MM-DD GG:MM` —
+> a feed „Co nowego” podaje datę i godzinę zdarzenia.**
 
 ## 1. Filozofia systemu
 
@@ -326,13 +328,17 @@ Sekcja **Co nowego** (przycisk **✚ nowości**, deep-link `#nowosci`) jest
 * `meta.utworzono` → pozycja „dodano";
 * każdy wpis w `meta.modyfikacje: [{data, opis}]` → pozycja „zmieniono".
 
-Sortowanie: **najnowsze na górze**. Data ma dokładność dzienną, więc o kolejności
-w obrębie dnia decyduje **chronologia zdarzeń w pliku**: każda pozycja dostaje
-`sekwencja` (0 = `utworzono`, k+1 = k-ty wpis `modyfikacje`, dopisywany na końcu
-tablicy), a sort liczy `data malejąco → sekwencja malejąco → typ (skity przed
-wpisami) → slug`. Utworzenie karty z poprzedniej sesji nie może przysłonić
-zmian z dziś. Klucz `sekwencja` służy tylko sortowaniu i nie trafia do indeksu
-(pozostaje deterministyczny — ADR 0002).
+Sortowanie: **najnowsze na górze**. Data może mieć dokładność dzienną
+(`RRRR-MM-DD`) albo godzinową (`RRRR-MM-DD GG:MM`, ADR 0017). Pozycje z godziną
+układają się w obrębie dnia chronologicznie (godzina rozstrzyga przed
+sekwencją); pozycje bez godziny — zapisy sprzed v1.5 — lądują pod godzinowymi
+tego samego dnia, a ich kolejność wynika z **chronologii zdarzeń w pliku**:
+każda pozycja dostaje `sekwencja` (0 = `utworzono`, k+1 = k-ty wpis
+`modyfikacje`, dopisywany na końcu tablicy). Sort liczy `data malejąco →
+sekwencja malejąco → typ (skity przed wpisami) → slug`. Utworzenie karty
+z poprzedniej sesji nie może przysłonić zmian z dziś. Klucz `sekwencja` służy
+tylko sortowaniu i nie trafia do indeksu (pozostaje deterministyczny —
+ADR 0002).
 
 `opis` modyfikacji czyta człowiek w dzienniku archiwum: to **zdanie o treści**
 (co doszło, co się poprawiło w karcie), a nie notatka robocza sesji — bez
@@ -341,4 +347,6 @@ techniczne (kod, narzędzia, zasady) idą do `docs/PROJECT_HISTORY.md` i opisu P
 Konsekwencja dla agentów: **każda zmiana w treści musi zostać opisana w
 `meta.modyfikacje` z poprawną datą** — inaczej zmiana nie trafi do dziennika i
 łamie §6. Nowy plik (wpis lub skit) dostaje `meta.utworzono` w formacie
-`RRRR-MM-DD`.
+`RRRR-MM-DD`, **zalecane z godziną** (`RRRR-MM-DD GG:MM` — moment zapisu,
+ADR 0017); forma bez godziny pozostaje legalna dla starych zapisów. Godzina
+pochodzi z treści pliku, nigdy z zegara builda (determinizm — ADR 0002).

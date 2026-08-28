@@ -88,6 +88,45 @@ test('meta skitu: data i modyfikacje jak w wpisach', () => {
   assert.ok(walidujSkit(skitWzorzec({ meta: { utworzono: '2026-08-28', modyfikacje: [{ data: 'wczoraj', opis: 'x' }] } }), SLUGI_WPISOW).some((e) => e.includes('modyfikacje')));
 });
 
+test('meta skitu (ADR 0017): data z godziną przechodzi, nieprawidłowa godzina nie', () => {
+  assert.deepEqual(
+    walidujSkit(skitWzorzec({ meta: { utworzono: '2026-08-28 09:07', modyfikacje: [{ data: '2026-08-28 21:44', opis: 'korekta repliki' }] } }), SLUGI_WPISOW),
+    [],
+    'godzina w meta skitu jest legalna'
+  );
+  assert.ok(
+    walidujSkit(skitWzorzec({ meta: { utworzono: '2026-08-28 23:59+' } }), SLUGI_WPISOW).some((e) => e.includes('utworzono')),
+    'śmieci za godziną odrzucane'
+  );
+});
+
+test('feed (ADR 0017): godzina rozstrzyga w obrębie dnia; dzień z godziną nad dniem bez', () => {
+  const wpis = {
+    slug: 'a-byt',
+    nazwa: 'A Byt',
+    karta: { nazwa: 'Karta' },
+    meta: {
+      utworzono: '2026-03-03 08:10',
+      modyfikacje: [
+        { data: '2026-03-03 09:15', opis: 'ranek' },
+        { data: '2026-03-03 14:32', opis: 'popołudnie' },
+        { data: '2026-03-03', opis: 'bez godziny (stary zapis)' },
+      ],
+    },
+  };
+  const feed = zbudujIndeks([wpis], []).aktualizacje;
+  assert.deepEqual(
+    feed.map((f) => `${f.data}|${f.opis}`),
+    [
+      '2026-03-03 14:32|popołudnie',
+      '2026-03-03 09:15|ranek',
+      '2026-03-03 08:10|wpis w kartotece — materializacja karty „Karta”',
+      '2026-03-03|bez godziny (stary zapis)',
+    ],
+    'godziny chronologicznie; pozycje bez godziny (stare zapisy sprzed ADR 0017) pod godzinowymi tego dnia'
+  );
+});
+
 test('Baza Skitów w repo: przechodzi walidację i ma unikalne składy', async () => {
   const wpisy = await wczytajIKwaliduj();
   const slugi = new Set(wpisy.map((w) => w.slug));
@@ -119,7 +158,8 @@ test('indeks: sekcja VI (skity przy wpisie) i feed „Co nowego” wyliczone pop
 
   assert.ok(indeks.aktualizacje.length >= wpisy.length + skiti.length, 'feed obejmuje powstania wpisów i skitów');
   const daty = indeks.aktualizacje.map((a) => a.data);
-  assert.deepEqual(daty, [...daty].sort((a, b) => b.localeCompare(a)), 'najnowsze na górze');
+  const poZnakach = (a, b) => (b > a) - (b < a); // jak w sortowaniu feedu (kodowo, nie collation)
+  assert.deepEqual(daty, [...daty].sort(poZnakach), 'najnowsze na górze');
   for (const a of indeks.aktualizacje) {
     const zbior = a.typ === 'skit' ? indeks.skity : indeks.manifestacje;
     assert.ok(zbior.some((x) => x.slug === a.slug), `feed wskazuje na nieistniejący ${a.typ}: ${a.slug}`);
@@ -160,7 +200,7 @@ test('feed „Co nowego”: najnowsze ZDARZENIA na górze (data desc, sekwencja 
   };
   const feed = zbudujIndeks([wpis, drugi], [skit]).aktualizacje;
   const daty = feed.map((f) => f.data);
-  assert.deepEqual(daty, [...daty].sort((a, b) => b.localeCompare(a)), 'daty malejąco');
+  assert.deepEqual(daty, [...daty].sort((a, b) => (b > a) - (b < a)), 'daty malejąco');
   // 2026-03-03: ostatnia modyfikacja a-byt, potem utworzenia (skit przed wpisami), a 2026-01-01 na końcu
   assert.deepEqual(
     feed.map((f) => `${f.data}|${f.typ}|${f.akcja}|${f.slug}`),
