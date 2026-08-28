@@ -24,9 +24,9 @@
   },
   "natura": {
     "wyglad_i_aura": "Człowiek od głowy do lędźwi, koń od łopatek w dół — i to nie jest symbol, tylko anatomia, którą rzeźbiono w dwóch wersjach: starsza daje mu ludzkie nogi (najdawniejsze przekazy mówią o rasie górskiej), późniejsza, od Fidiasza, całą końską połowę z czterema kopytami i ogonem. Twarz ma ludzką, czasem z zadartym nosem satyra. Aury jest gęsta od góry: pot, żywica sosnowa i skóra, która nigdy nie znała prania; od dołu — kurz klepiska i mokre słoma. Po winie dochodzi trzeci zapach: rozlanej krwi wymieszanej z winem, bo w hali Pejrytoosa te dwie ciepłe ciecze przez jeden wieczór były wymienne.",
-    "charakter_i_motywacje": "Nie jest złym duchem ani bestią-planem: jest gościem, który nie umie być gościem. Wcześniej żądał od Pejrytoosa działu królestwa (Diodor 4.70), na wesele przyszedł jako krewny Hippodamei — i wybuchł z własnej krwi, bo dolna połowa, konna, nie znała roztropności, którą górna uczyła się u Chejrona. Motywacja jest prosta jak napad: pragnienie + środek + okazja w jednym pucharze. Po porażce nie ma zemsty — jest ucieczka w góry Pindos i pamięć, że to on był tu wcześniej: przed hodowlą, przed uzdą, przed gościnnością.",
+    "charakter_i_motywacje": "Nie jest złym duchem ani bestią-planem: jest gościem, który nie umie być gościem. Wcześniej żądał od Pejrytoosa działu królestwa (Diodor 4.70), na wesele przyszedł jako krewny Hippodamei — i wybuchł z własnej krwi, bo dolna połowa, konna, nie znała roztropności, którą górna uczyła się u Chejrona. A Chejron to żywy dowód, że dało się inaczej: mędrzec z tego samego Pelionu, syn Kronosa, nauczyciel Achillesa, Jazona i Asklepiosa, który nosił ubranie, leczył i grał na lirze — jedyny kentaur, co ujarzmił własną naturę, bo nie pochodził z chmury Iksjona, lecz z innego rodu. Reszta plemienia pozostała po drugiej stronie tej granicy. Motywacja jest prosta jak napad: pragnienie + środek + okazja w jednym pucharze — i wino wraca w ich losie jak wyrok: raz na weselu Pejrytoosa, raz pod jaskinią Pholosa, gdzie sam zapach otwartego dzbana ściągnął dzikie kentaury na Heraklesa. Po porażce nie ma zemsty — jest ucieczka w góry Pindos i pamięć, że to on był tu wcześniej: przed hodowlą, przed uzdą, przed gościnnością.",
     "zdolnosci": "podwójny napęd jednego ciała: człowiek celuje, koń daje siłę i drugą prędkość — przeciwnik, który zaatakował „tył”, zostaje zniesiony przez przednią połowę; broń polna: głazy, gałęzie, a w hali wszystko, co pod ręką — brązowe czasze, pochodnie, rogi jeleni na ścianach i żelazne rożny (Owidiusz); wytrzymałość górskiego łowcy i rozpieranie drzwi klatką piersiową konia; oraz specyficzna zdolność podana przez kartę: druga akcja z połowy, którą przeciwnik wyłączył z rachuby. Wina nie są jego mocą — są kruchym warunkiem, w którym moc wychodzi spod kontroli właściciela.",
-    "slabosci_i_metody_pokonania": "Metoda jest opisana na metopach: (a) nie dać mu wina — kentaury są do niego nieprzyzwyczajone i wino działa na kentaury jak lek, z opóźnionym, morderczym skutkiem; (b) uderzyć w moment przełożenia ciężaru — Tezeusz rzucił krater w Eurytosa dokładnie wtedy, gdy ten prostował się z panną; (c) walka przedmiotami stołu, nie mieczem: hala jest bronią Lapitów; (d) po porażce wygnanie — kentaur wraca do gór, nie do hali; tabu terenowe: nie zapraszać do domu dwóch gatunków naraz. Śmierć pojedynczych (Kyllaros i Hylonome) znano, ale plemię ginęło od zgodnej pracy całej hali, nie od jednego bohatera.",
+    "slabosci_i_metody_pokonania": "Metoda jest opisana na metopach: (a) nie dać mu wina — kentaury są do niego nieprzyzwyczajone i wino działa na kentaury jak lek, z opóźnionym, morderczym skutkiem; (b) uderzyć w moment przełożenia ciężaru — Tezeusz rzucił krater w Eurytosa dokładnie wtedy, gdy ten prostował się z panną; (c) walka przedmiotami stołu, nie mieczem: hala jest bronią Lapitów — na płytach z południowej ściany Partenonu Lapici sięgają po głazy z podłogi i po hydrie (dzbany na wodę), a kentaury wymachują gałęziami, co znaczy: broni się tym, co pod ręką, a nie orężem (metopa 30: klęczący Lapita szuka lewą ręką kamienia, żeby odeprzeć cios); (d) po porażce wygnanie — kentaur wraca do gór, nie do hali; tabu terenowe: nie zapraszać do domu dwóch gatunków naraz. Śmierć pojedynczych (Kyllaros i Hylonome) znano, ale plemię ginęło od zgodnej pracy całej hali, nie od jednego bohatera. Uwaga terenowa: na samych zachowanych metopach zwycięża często kentaur — walka jest w toku, a morał (porządek nad dzikością) rozstrzyga się dopiero po ostatniej płycie.",
     "preferencje": "Lubi: jaskinie z południowym wejściem, mięso z polowania zjadane stojąc, śnieżne przełęcze Pindosu, zapach własnej trzody, kobiety porywane bez ceremonii oraz wesela cudze. Nie znosi: wina (a pije je jakby za każdym razem pierwszą), uzdy — której Lapici, nie oni, są wynalazcami — pochodni rzucanych pod kopyta, imienia Chejrona przypominającego, że mógł być lekarzem, i drzwi zamykanych od wewnątrz."
   },
   "dokumentacja": [
@@ -44,6 +44,21 @@
       "typ": "leksykon online",
       "pozycja": "Wikipedia, „Lapiths” (sekcja Centauromachy) — kentaury zaproszone na wesele Pejrytoosa i Hippodamei jako krewni; „unused to wine” — niezwykłe dla nich wino obnażyło dziką naturę; Eurytion „wildest of the centaurs” porwał pannę; Lapici ucięli mu uszy i nos i wyrzucili; po bitwie kentaury wygnano z Tesalii na północny zachód; Lapici uchodzą za wynalazców wędzidła",
       "url": "https://en.wikipedia.org/wiki/Lapiths"
+    },
+    {
+      "typ": "kolekcja muzealna",
+      "pozycja": "Muzeum Akropolu, „Parthenon. South metope 30” (i seria 26–32) — 32 metopy południowej ściany Partenonu przedstawiają kentauromachię na weselu Pejrytoosa: pijane kentaury porywają Lapitki, a walkę toczy się przedmiotami (głazy, hydrie, gałęzie); metopa 30 pokazuje Lapitę sięgającego po kamień do obrony",
+      "url": "https://www.theacropolismuseum.gr/en/parthenon-south-metope-30-replica"
+    },
+    {
+      "typ": "encyklopedia",
+      "pozycja": "„Metopes of the Parthenon”, Wikipedia (sekcja South metopes) — kentauromachia jako temat południowej ściany; Lapici i kentaury to krewni (półbracia), stąd zaproszenie na wesele; bombardowanie Morosiniego (1687) i wywóz Elgina rozproszyły płyty (British Museum, Muzeum Akropolu)",
+      "url": "https://en.wikipedia.org/wiki/Metopes_of_the_Parthenon"
+    },
+    {
+      "typ": "encyklopedia/opracowanie",
+      "pozycja": "„Chiron”, World History Encyclopedia (L. Miate, 2023) oraz Theoi „Kheiron” — Chejron z Pelionu jako przeciwieństwo dzikich kentaurów: syn Kronosa i Filyry, wychowawca Achillesa, Jazona i Asklepiosa, uzdrowiciel „zraniony”, który oddał nieśmiertelność za Prometeusza; epizod z jaskini Pholosa (wino ściąga dzikie kentaury na Heraklesa)",
+      "url": "https://www.worldhistory.org/Chiron/"
     }
   ],
   "trofea": {
@@ -88,11 +103,24 @@
     {
       "slug": "drangue-shala",
       "opis": "Dwa gatunki indoeuropejskich pograniczy człowieka i siły: drangue wygląda jak góral, aż pachnie burzą; kentaur wygląda jak koń, aż pachnie winem. Obaj dostają przewagi od tego, co wspólnota robi obok nich — od wyniesionego żaru albo rozlanego wina — i obaj przegrywają tam, gdzie ich druga natura zostaje zlekceważona."
+    },
+    {
+      "slug": "empusa-korynt",
+      "opis": "Dwa greckie wesela, które kończą się źle, ale z odwrotnej strony stołu. Ja jestem gościem, który wchodzi po ludzku i psuje ucztę od środka, gdy wino zdejmie mi roztropność; empusa sama jest weselem — stawia pozór oblubienicy, złota i domu, żeby zwabić pana młodego. Mnie gubi brak miary, ją jedno trzeźwe słowo; obie historie ostrzegają, kogo wolno posadzić przy weselnym stole."
     }
   ],
   "meta": {
     "utworzono": "2026-08-28 16:05",
     "autor": "sesja arena 2026-08-28",
-    "modyfikacje": []
+    "modyfikacje": [
+      {
+        "data": "2026-08-28 21:10",
+        "opis": "Dopisano świadectwo materialne kentauromachii: 32 metopy południowej ściany Partenonu pokazują walkę przedmiotami z hali (głazy, dzbany-hydrie, gałęzie), a metopa 30 — Lapitę sięgającego po kamień do obrony; na zachowanych płytach zwycięża często kentaur, bo walka jest w toku. Dwa nowe źródła z adresami (Muzeum Akropolu, Wikipedia „Metopes of the Parthenon”)."
+      },
+      {
+        "data": "2026-08-28 23:55",
+        "opis": "Dopisano Chejrona jako kontrapunkt dzikiego plemienia — mędrca z tego samego Pelionu, który ujarzmił własną naturę (nauczyciel Achillesa i Asklepiosa), oraz drugi „winny” epizod spod jaskini Pholosa. Dodano źródło o Chejronie i powiązanie z Empusą (dwa greckie wesela, które kończą się źle)."
+      }
+    ]
   }
 }

@@ -24,7 +24,7 @@
   },
   "natura": {
     "wyglad_i_aura": "Najpierw wygląda jak to, czego widać za mało: piękna przybyszka, często bogata, zawsze niezwykle realna w garderobie i rozsądku. Aury nie wyczuwa się nosem, tylko nagle: świat wokół staje się cichszy i lepiej skomponowany, jak w teatrze. Z bliska zdradzają ją detale, których nie da się upić: jedna noga z miedzi, druga — zależnie od scholiów — ośla albo z krowiego łajna; w wersji arachowskiej cały rząd różnych nóg pod jedną chudą sylwetką. W drodze poświadcza ją też kolor twarzy: „oblicze w ogniu” u Arystofanesa, płomień włosów u leksykografów. Gdy czar pęka, pęka wszystko naraz: złoto, srebro, służba i domostwo okazują się wystudiowanym światłem, a zostaje krzyk odchodzący w wycie.",
-    "charakter_i_motywacje": "Empusa nie poluje — ona wychowuje swój posiłek. Relacja z Koryntu mówi wprost: tuczyła Menipposa, bo młode ciała mają krew najświeższą i najczystszą. Dlatego jej cierpliwość jest ceremoniałem: zaręczyny, wesele, bogaty dom — każdy stopień przybliża ucztę. Jest sługą Hekaty, wysłannikiem do tych, którym przysługuje nieszczęście, ale nie ma w niej gniewu; ma gust. Jej jedyną namiętnością jest utrzymanie czaru — i dlatego jest tak bezbronna wobec wszystkiego, co czar zrywa.",
+    "charakter_i_motywacje": "Empusa nie poluje — ona wychowuje swój posiłek. Relacja z Koryntu mówi wprost: tuczyła Menipposa, bo młode ciała mają krew najświeższą i najczystszą. Dlatego jej cierpliwość jest ceremoniałem: zaręczyny, wesele, bogaty dom — każdy stopień przybliża ucztę. Jest sługą Hekaty, wysłannikiem do tych, którym przysługuje nieszczęście, ale nie ma w niej gniewu; ma gust. Jej jedyną namiętnością jest utrzymanie czaru — i dlatego jest tak bezbronna wobec wszystkiego, co czar zrywa. Ta jedna scena okazała się nieśmiertelna w literaturze: Robert Burton wpisał ją do „Anatomii melancholii” (1621) w rozdziale o miłosnej melancholii jako przykład umysłu zwiedzionego pozorem („no substance, but mere illusions”), stamtąd wziął ją John Keats do poematu „Lamia” (1820), a Goethe — luźno — do ballady „Oblubienica z Koryntu”. W każdej z tych wersji powtarza się to samo jądro: rozpoznanie przez trzeźwy rozum (Apollonios) rozwiewa nie tylko zjawę, lecz i szczęście, które na niej stało — u Keatsa młodzieniec umiera z żalu, gdy oblubienicę nazwano po imieniu.",
     "zdolnosci": "pełna iluzja zmysłowa: dom, złoto, srebro, służba i uczta są światłem ułożonym w rzeczy (znikają w jednej chwili, bez pożegnania); zmiana kształtów w biegu — byk, muł, piękna kobieta, pies — na oczach widza; przyjście nocą, drogą, na pełni światła księżyca (Filostrat: „byli w drodze przy jasnym księżycu, gdy ukazała się empusa”); i jedyna broń tej kategorii bytów: bycie tym, na co patrzy się najchętniej. W boju nic — jej 4/3 to siła pozoru, nie mięśni.",
     "slabosci_i_metody_pokonania": "Zniszczenie jest proceduralne i znane od scholiów: (a) wskazać rzecz po imieniu — Apollonios mówi „obejmujesz węża, który przybrał postać niewiasty”; (b) zastosować remedium z Żab — obelgę: Filostrat każe towarzyszom obrzucać zjawę obelgami, bo „to jest właściwe lekarstwo”; Eusebiusz notuje to samo — precz ugna obelga; (c) nie wynosić z jej domu niczego: wszystko, co zabrane, jest światłem i zniknie razem z nią. Zasada terenowa: nie przyjmować od niej posiłku, nie wypowiadać przy niej przysiąg (Dionizos w Żabach każe sobie przysięgać trzy razy) i pamiętać, że nowy gest — każde własne „rzucenie zaklęcia” — wyłącza jej scenę. Ona sama jest ofiarą pierwszego czynu, którego nie przewidziała.",
     "preferencje": "Lubi: drogi między miastami o zmierzchu, wesela z dobrym winem, młodych filozofów („mięso czyste”), pełnię księżyca i własną doskonałość kompozycji. Nie znosi: prawdy wypowiedzianej wprost, śmiechu z siebie, zapachu czosnku z rozstajnych ołtarzy Hekaty, towarzystwa, które zna scholia, oraz każdego gestu wykonanego poza jej scenariuszem."
@@ -44,6 +44,21 @@
       "typ": "komedia staroattycka (pełny tekst przekładu online)",
       "pozycja": "Arystofanes, „Żaby” (405 p.n.e.) — Internet Classics Archive (MIT), pełny tekst przekładu; scena Empusy (ok. w. 285–305): Ksantias widzi stwora, który „bywszy wszystkim po kolei” jest raz bykiem, raz mułem, raz najpiękniejszą dziewczyną, a potem psem; „oblicze w ogniu”; jedna noga z miedzi, druga z krowiego łajna; Dionizos każe sobie przysięgać trzykrotnie, że odeszła",
       "url": "https://classics.mit.edu/Aristophanes/frogs.html"
+    },
+    {
+      "typ": "źródło klasyczne (przekład online)",
+      "pozycja": "Filostrat, „Żywot Apolloniosa z Tyany” IV.21–25 (Livius.org, przekład F.C. Conybeare'a wg Loeba) — kanoniczna scena koryncka: Menippos z Licji, fenicka oblubienica, pałac ze srebra i służba jako phantasmata, wyznanie empusy, że tuczy młodzieńca na krew, i rozwianie się domu, gdy Apollonios nazywa rzecz",
+      "url": "https://www.livius.org/sources/content/philostratus-life-of-apollonius/apollonius-and-the-vampire/"
+    },
+    {
+      "typ": "recepcja — proza wczesnonowożytna",
+      "pozycja": "Robert Burton, „The Anatomy of Melancholy” (1621), cz. 3 „Love-Melancholy” — przekazuje scenę za Filostratem („Menippus Lycius… a phantasm in the habit of a fair gentlewoman”, „no substance, but mere illusions”); ogniwo, przez które motyw trafił do Keatsa",
+      "url": "https://www.gutenberg.org/files/10800/10800-h/10800-h.htm"
+    },
+    {
+      "typ": "recepcja — poezja",
+      "pozycja": "John Keats, „Lamia” (1820) — poemat oparty na scenie korynckiej za pośrednictwem Burtona (Keats dołączył cytat z „Anatomii” jako przypis); Apollonios demaskuje oblubienicę-węża, a Lycjusz umiera z żalu — literacka drugie życie empusy z Koryntu",
+      "url": "https://www.poetryfoundation.org/poems/44470/lamia"
     }
   ],
   "trofea": {
@@ -94,6 +109,11 @@
   "meta": {
     "utworzono": "2026-08-28 15:55",
     "autor": "sesja arena 2026-08-28",
-    "modyfikacje": []
+    "modyfikacje": [
+      {
+        "data": "2026-08-28 19:40",
+        "opis": "Dopisano literackie drugie życie sceny korynckiej: przez „Anatomię melancholii” Roberta Burtona (1621) trafiła ona do poematu „Lamia” Johna Keatsa (1820) i do goetheańskiej „Oblubienicy z Koryntu”, a jądro pozostaje to samo — rozpoznanie zjawy przez rozum rozwiewa i ją, i szczęście, które na niej stało. Trzy nowe źródła z adresami (Filostrat IV.25 na Livius, Burton na Project Gutenberg, Keats w Poetry Foundation)."
+      }
+    ]
   }
 }

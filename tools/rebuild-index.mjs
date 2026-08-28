@@ -39,8 +39,22 @@ export const REZERWOWANE_SLUGI = ['skity', 'nowosci', 'panel', 'mapa', 'lista'];
 /** Limity SKITa (zlecenie właściciela 2026-08-28, PROTOKÓŁ §8, ADR 0013). */
 export const SKIT_MIN_UCZESTNIKOW = 2;
 export const SKIT_MAX_UCZESTNIKOW = 4;
+/**
+ * Skład PREFEROWANY (zlecenie właściciela 2026-08-28, ADR 0019, PROTOKÓŁ §8.2):
+ * 3–4 rozmówców niosą największy potencjał (spięcie trzech kultur, nie duet).
+ * To nie twardy próg — 2 osoby pozostają legalne — lecz cel, do którego C3
+ * dobiera skład domyślnie; build wypisuje podpowiedź, gdy duetów jest za dużo.
+ */
+export const SKIT_ZALECANE_UCZESTNIKOW = 3;
 export const SKIT_MAX_SLOW = 300;
 export const SKIT_MIN_SLOW = 60;
+/**
+ * Minimalna długość OPISU powiązania (zlecenie właściciela 2026-08-28, ADR 0019,
+ * PROTOKÓŁ §6.2). Powiązanie ma tłumaczyć, dlaczego dwa byty są ze sobą związane
+ * — nie może być jednym słowem ani samym adresem. Istniejące opisy mają 43–78
+ * słów; próg pilnuje, by żaden przyszły nie zszedł do etykiety.
+ */
+export const POWIAZANIE_MIN_SLOW = 12;
 /** Zakazany żargon gry w SKITcie — to rozmowa bytów, nie kart (PROTOKÓŁ §8.3). */
 const ZAKAZANY_ZARGON = /\b(mana|P\/T|oracle|booster|deck|life total|sorcery|instant|endure|fetch land|commander)\b/i;
 /** Jedna replika: „**Imię:** tekst”. */
@@ -332,6 +346,13 @@ export function walidujPowiazania(w, wszystkieSlugi) {
     }
     if (x.slug === w.slug) e.push('powiazania: self-link zabroniony');
     if (!wszystkieSlugi.has(x.slug)) e.push(`powiazania: slug "${x.slug}" nie istnieje w data/manifestations/`);
+    // ADR 0019: opis ma tłumaczyć związek, nie być etykietą ani samym linkiem.
+    const opis = String(x.opis).trim();
+    if (RE_URL.test(opis)) {
+      e.push(`powiazania[${x.slug}]: opis to sam adres — napisz, dlaczego byty są powiązane (nie link)`);
+    } else if (liczbaSlow(opis) < POWIAZANIE_MIN_SLOW) {
+      e.push(`powiazania[${x.slug}]: opis za krótki (${liczbaSlow(opis)} słów, min. ${POWIAZANIE_MIN_SLOW}) — uzasadnij związek zdaniem, nie etykietą`);
+    }
   }
   if (new Set(slugi).size !== slugi.length) e.push('powiazania: duplikaty slugów');
   return e;
@@ -546,6 +567,23 @@ export async function wczytajSkiti(katalog = KATALOG_SKITOW, slugi = new Set()) 
   return skiti;
 }
 
+/**
+ * Podpowiedź o składach SKITów (ADR 0019, zlecenie A): zwraca statystykę i —
+ * gdy duetów jest więcej niż skitów 3–4-osobowych — tekst zachęty do składów
+ * wieloosobowych. Nie jest błędem (2 osoby są legalne), tylko sygnałem dla C3.
+ * Czysta funkcja: łatwa do przetestowania, deterministyczna.
+ */
+export function podpowiedzSkladySkitow(skiti) {
+  const duety = skiti.filter((s) => (s.uczestnicy?.length ?? 0) <= 2).length;
+  const wieloosobowe = skiti.filter((s) => (s.uczestnicy?.length ?? 0) >= SKIT_ZALECANE_UCZESTNIKOW).length;
+  const zacheta =
+    skiti.length > 0 && duety > wieloosobowe
+      ? `Podpowiedź: ${duety} skitów dwuosobowych vs ${wieloosobowe} o składzie ≥${SKIT_ZALECANE_UCZESTNIKOW}. ` +
+        `Preferowane są rozmowy 3–4-osobowe (ADR 0019) — przy kolejnym C3 sięgnij po trójkę lub czwórkę.`
+      : null;
+  return { duety, wieloosobowe, zacheta };
+}
+
 async function main() {
   const trybCheck = process.argv.includes('--check');
   const kanon = await wczytajKanon();
@@ -571,6 +609,8 @@ async function main() {
     console.log(
       `Zbudowano ${PLIK_INDEKSU}: ${indeks.liczba} wpisów, ${indeks.liczbaSkitow} SKITów, ${indeks.aktualizacje.length} wpisów w feedzie, ${Object.keys(indeks.tagi).length} tagów użytych z ${kanon.tagi.length} w kanonie.`
     );
+    const { zacheta } = podpowiedzSkladySkitow(skiti);
+    if (zacheta) console.log(zacheta);
   }
 }
 

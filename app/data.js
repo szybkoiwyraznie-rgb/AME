@@ -31,6 +31,25 @@ export function normalizuj(s) {
 }
 
 /**
+ * Losuje slug manifestacji z podanej puli — „wylosuj manifestację” (tryb
+ * ekspedycji). Cechy:
+ *  • unika `pomin` (aktualnie otwarty wpis), o ile pula ma więcej niż jeden
+ *    element — dwa kliknięcia z rzędu nie trafią w to samo;
+ *  • deterministyczna przy wstrzykniętym `los` (RNG w [0,1)); domyślnie
+ *    `Math.random`, więc kod produkcyjny losuje naprawdę, a testy — powtarzalnie;
+ *  • pusta pula → `null` (nie ma czego losować).
+ * Determinizm indeksu (ADR 0002) nie jest tu naruszony: losowanie dzieje się
+ * w przeglądarce na życzenie użytkownika, nie przy budowie danych.
+ */
+export function wylosujSlug(slugi, { pomin = null, los = Math.random } = {}) {
+  const pula = Array.isArray(slugi) ? slugi.filter((s) => typeof s === 'string' && s) : [];
+  if (pula.length === 0) return null;
+  const kandydaci = pula.length > 1 ? pula.filter((s) => s !== pomin) : pula;
+  const i = Math.min(kandydaci.length - 1, Math.max(0, Math.floor(los() * kandydaci.length)));
+  return kandydaci[i];
+}
+
+/**
  * Zwraca Set<slug> wpisów pasujących do frazy (nazwa, nazwy alternatywne,
  * tagi, kraj, miejscowość, nazwa karty). null = brak filtra (wszystkie).
  */

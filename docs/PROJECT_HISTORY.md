@@ -524,3 +524,338 @@ Met. XII w przekł. Kline (UVA), Arystofanes „Żaby” w Internet Classics Arc
   jako ostatni zapis kartoteki.
 - Stan: `npm test` 120/120, build/check zielone; indeks: **8 wpisów**, 5
   SKITów, 18 pozycji feedu, 26 tagów. Dwie nowe pinezki na mapie (Grecja ×2).
+
+## M7 (2026-08-28) — audyt PR #5 + Pętla Jakości (C1 → C3 → C2)
+
+Sesja bez nowego zlecenia na starcie: po audycie → Pętla Jakości (ADR 0007).
+
+- **Audyt PR #5 (M6):** A1 (badge tylko na hover/fokus/wybranie, zniesiony
+  toggle `przyblizona`), A2 (`user-select: none` na `.mapa-svg`), A3 (grupa
+  `.etykiety` malowana po `.pinezki`), B (godzina w `meta` — ADR 0017/v1.5,
+  `RE_DATA` z `GG:MM`, sort feedu po znakach). Pętla M6: C1 (drangue-shala,
+  barbarossa), C3 (`godzina-otwarcia`), C2 (podgląd powiązań na hover). Brama
+  lokalna 120/120, indeks deterministyczny. Bez zaległości.
+
+### C1 — pogłębienie `egungun` (research www, ADR 0008)
+
+- Rozbudowa sekcji II: etymologia „moce ukryte” (powers concealed), narastanie
+  warstw płócien pokolenie po pokoleniu (najstarsze przy ciele; pierwsza
+  warstwa to indygowo-białe płótno typu grzebalnego — Muzeum Snite/Notre Dame),
+  nieludzki głos zza zasłony, wir tańca jako przejście między światami, role
+  Alagby/Alapini, kapłanki (Iya Agan) i śpiewaczek oríkì, ofiary krwi na
+  płótnach dla utrzymania mocy.
+- **+3 źródła z adresami:** Bolaji Campbell „Fabric of Immortality”
+  (Africa World Industries Press 2020, recenzja Project MUSE), Wikipedia
+  „Egungun”, „Egungun Masquerade Costume” Raclin Murphy Museum (Snite).
+- **Powiązania odwzajemnione:** egungun → selkie (władza w rzeczy okrywającej
+  ciało), → empusa (wejście pod cudzym obliczem do domu), → barbarossa
+  (śmierć odwracalna utrzymywana rytuałem). Wcześniej te trzy wpisy linkowały
+  do egungun jednostronnie; teraz backlinki mają pełne odwzorowanie.
+- **Naprawa root-cause przy okazji (ADR 0017):** `htmlStopki` obcina godzinę
+  z dat — stopka karty pokazuje sam dzień (`utworzono` / `zmieniono`), godzina
+  żyje w feedzie „Co nowego”, nie w karcie (PROTOKÓŁ §8.1). Bez tego pierwsza
+  modyfikacja z godziną wyciekała porą do stopki. Test kontraktowy w
+  `ui.test.js`; niezmiennik szczytu feedu przepisany w `skit.test.js` na
+  „najpóźniejszy znacznik czasu” (utworzenie albo zmiana — decyduje chronologia).
+
+### C3 — SKIT „DWA ZEPSUTE WESELA” (Empusa × Kentaur z Pelionu)
+
+- Skład unikalny (pierwszy SKIT dla obu greckich bytów), 240 słów, rejestr
+  lekki (v1.6 — po serii poważnych): porównanie dwóch stylów psucia wesela
+  (iluzja bez śladu kontra burda przy winie). Fakty zgodne z kartotekami:
+  krater rzucił Tezeusz nie kentaur, wino „unused to wine”, obelga i czosnek
+  z rozstajów Hekaty jako remedium, wygnanie w Pindos, potrójna przysięga.
+  Tytuł wersalikami (kontrakt walidatora). Sekcja VI i feed z indeksu.
+
+### C2 — „🎲 wylosuj” (tryb ekspedycji; do akceptacji właściciela)
+
+- Przycisk w górnym pasku losuje manifestację z aktualnie widocznej puli
+  (filtr tekstowy i tag zawężają zbiór; brak filtra = wszystkie), pomija
+  ostatni los i przelatuje do bytu na mapie, otwierając kartotekę.
+- Czysta funkcja `wylosujSlug(slugi, {pomin, los})` w `data.js`:
+  deterministyczna przy wstrzykniętym RNG (determinizm indeksu ADR 0002
+  nienaruszony — losowanie dzieje się w przeglądarce, nie przy budowie),
+  odfiltrowuje wartości puste, jedyny wpis wraca nawet gdy „pomijany”.
+- `stan.ostatniLos` pomija poprzedni los także po zamknięciu karty Escape'em
+  (bez tego reroll bywał powtórką — złapane w headless: 2/24 powtórzenia →
+  po poprawce 0/24). Weryfikacja headless Chromium: 8/8 bytów osiągalnych,
+  0 powtórzeń pod rząd, filtr „Grecja” zawęża do empusy i kentaura, zero
+  błędów konsoli. **Czeka na akceptację przed live (ADR 0007).**
+- +5 testów (`test/losowanie.test.js`).
+
+- Stan: `npm test` **125/125**, build/check zielone; indeks: 8 wpisów, **6
+  SKITów**, 20 pozycji feedu, 26 tagów. Protokół v1.6 bez zmian.
+
+## M8 (2026-08-28) — zlecenia właściciela A/B/C + Pętla Jakości (C1 → C3 → C2)
+
+Właściciel zaakceptował featurę „🎲 wylosuj" z M7 i zlecił trzy kwestie; praca
+dołożona jako kolejne commity PR #6 (sesja przypięta do gałęzi
+`arena/01a048ac-ame`).
+
+### A — SKITy 3–4-osobowe jako preferowane (ADR 0019, PROTOKÓŁ v1.7 §8.2)
+
+- Powód: baza wypełniła się duetami, a największy potencjał niosą rozmowy 3–4
+  bytów z różnych kultur. Minimum pozostaje 2 (istniejące duety legalne),
+  maksimum 4; nowa stała `SKIT_ZALECANE_UCZESTNIKOW = 3`.
+- Czysta `podpowiedzSkladySkitow(skiti)` liczy duety vs składy ≥3 i zwraca
+  niełamiącą zachętę; `npm run build` wypisuje ją, gdy duetów więcej (sygnał
+  dla C3, nie błąd walidacji).
+
+### B — opis powiązania jako zdanie uzasadniające (ADR 0019, §6.2)
+
+- `walidujPowiazania` odrzuca opis krótszy niż `POWIAZANIE_MIN_SLOW = 12` słów
+  oraz opis będący samym `http(s)`-linkiem. Istniejące opisy (43–78 słów)
+  przechodzą bez migracji; próg pilnuje przyszłości.
+- Protokół v1.7, AGENTS/WORKFLOW, index.html/README zsynchronizowane; +4 testy
+  kontraktowe (kod = protokół = instrukcja), naprawione fixture'y z krótkimi
+  opisami (`rebuild-index.test.js`, `fixtures/katalog-ok/zorza.json`).
+
+### C1 — pogłębienie `lincoln-imp` (research www, ADR 0008)
+
+- Wersja XIII–XIV-wieczna o dwóch impach-bliźniakach: anioł wychodzący z
+  hymnału skamienił śmiałka w Angel Choir („stop me if you can"), a jego
+  towarzysz uciekł do Grimsby (trzyma się za obolały tyłek pod wieżą) — stąd
+  powiedzenie, że wiatr krążący wokół katedry to imp szukający brata. +2 źródła
+  (Liquisearch, zteve t. evans). Obustronne powiązania: → balor (złe spojrzenie),
+  → drangue-shala (święty przedmiot jako herb i tarcza wspólnoty).
+
+### C3 — SKIT „KALENDARZ POWROTÓW" (trio, demonstracja A)
+
+- Barbarossa × Egungun × Selkie z Sule Skerry — skład 3-osobowy, unikalny, 252
+  słowa, rejestr ciepły (v1.6). Wspólny motyw: umówiony powrót — cesarz czeka na
+  kruki i suchą gałąź, egungun wraca co sierpień na bęben i oríkì, selkie sam
+  podał dzień (rok i dzień chowu, letni dzień „gdy słońce grzeje każdy kamień")
+  i własną śmierć od pierwszej strzały. Fakty z kartotek uczestników.
+
+### C2 — „Arena Rezonansu": idle battler (zlecenie C; projekt + zręby)
+
+- Grywalizacja wyprowadzona z tezy AME: byt jest tym silniejszy, im głębiej
+  osadzony w sieci archiwum. Staty (ŻYWOTNOŚĆ/MOC/SPRYT/REZONANS) liczone z
+  rekordu indeksu (backlinki, powiązania, skity, epitety, motywy) — determinizm
+  ADR 0002, losowość wyłącznie ze wstrzykniętego RNG (jak wylosujSlug).
+- Dokument projektowy `docs/plans/POMYSL_arena-rezonansu-idle-battler.md`
+  (mechanika, ryzyka, etapy). Czysty moduł `app/arena.js`: `statyManifestacji`,
+  `motywyZTagow`, `mnoznikKontry` (warunek tłumi złe oko, opłata furię),
+  `obrazeniaRundy`, `kolejnosc`. `test/arena.test.js` (10 testów, w tym kontrakt:
+  każdy motyw kanonu ma wagę). **ZERO wpięcia do UI — fundament do decyzji
+  właściciela o zakresie i tonie.**
+
+- Stan: `npm test` **139/139**, build/check zielone; indeks deterministyczny:
+  8 wpisów, **7 SKITów**, 22 pozycje feedu, 26 tagów. Protokół **v1.7** (ADR 0019).
+
+## M9 (2026-08-28) — luźne pomysły na przyszłość + Pętla Jakości (C1 → C3 → C2)
+
+Właściciel: pomysł statystyk-z-gęstości dobry, ale sama „walka" (Arena
+Rezonansu) za prosta — nie wypychać jako feature; zapisać 10 kierunków i zrobić
+pętlę z głębszym namysłem w C2. Praca dołożona do PR #6.
+
+- **Odzyskanie workspace (L1/L5):** sandbox zresetował HEAD na `main`; praca
+  M7+M8 była wypchnięta, więc `git fetch origin arena/01a048ac-ame` +
+  `reset --hard FETCH_HEAD` przywróciło stan (139/139).
+
+### Zlecenie — magazyn pomysłów
+
+- `docs/LUZNE_POMYSLY_NA_PRZYSZLOSC.md`: 10 kierunków właściciela z oceną
+  ograniczeń (ADR 0001–0003) i ryzyk; kluczowa zasada — klucze API (pomysły
+  9–10) wyłącznie w pamięci sesji przeglądarki, nigdy w repo/na Arenie. Arena
+  Rezonansu (walka 1:1) oznaczona jako WSTRZYMANA; rdzeń `arena.js` zostaje jako
+  fundament.
+
+### C1 — pogłębienie `empusa-korynt` (research www, ADR 0008)
+
+- Literackie drugie życie sceny korynckiej: Filostrat „Żywot Apolloniosa" IV.25
+  → Robert Burton „Anatomy of Melancholy" (1621, „Menippus Lycius… no substance,
+  but mere illusions") → John Keats „Lamia" (1820) → Goethe „Oblubienica z
+  Koryntu". +3 źródła z adresami (Livius, Project Gutenberg, Poetry Foundation).
+
+### C3 — SKIT „DWIE SKÓRY" (kwartet)
+
+- Drangue × Kentaur z Pelionu × Selkie z Sule Skerry × Empusa — pierwszy
+  4-osobowy skład w bazie (demonstracja ADR 0019), unikalny, 249 słów, ton
+  ciepły. Motyw: podwójna natura i „szew", który ją rozpruwa (wiatr, wino,
+  schowane futro, jedno słowo). Fakty z kartotek uczestników.
+
+### C2 — analiza kierunków grywalizacji + fundament (bez UI)
+
+- `docs/plans/POMYSL_kierunki-grywalizacji-analiza.md`: ocena 10 pomysłów wg
+  wartość/koszt/gotowość; trzy spójne wiązki — A „Kustosz Archiwum" (idle-
+  management: staty→zdolności + ekonomia + koalicje), B „Wyprawy/Sploty" (treść
+  z kombinacji, blisko SKIT-ów), C „Teleturniej AI" (najdroższy, klucze API,
+  łamie ADR 0003). Rekomendacja: najpierw kartoteka do ~15–20 wpisów, potem
+  kierunek A; C odłożony.
+- Fundament bez żalu w `app/arena.js` (czyste, deterministyczne, zero UI):
+  `percentyl`, `profileKartoteki` (staty czytane WZGLĘDNIE w obrębie kartoteki —
+  rozwiązuje „stary wpis zawsze wygrywa"), `archetypBytu`
+  (Filar/Drapieżnik/Splotca/Pieśniarz/Samotnik z kształtu profilu). +6 testów.
+  Podgląd na realnej kartotece: Balor=Drapieżnik, Egungun/Selkie=Filar,
+  empusa/kentaur=Samotnik (najnowsze, najmniej powiązań — dokładnie to, co
+  normalizacja ma ujawniać).
+
+- Stan: `npm test` **144/144**, build/check zielone; indeks: 8 wpisów, **8
+  SKITów**, 24 pozycje feedu, 26 tagów. Protokół v1.7.
+
+## M10 (2026-08-28) — pogłębienie koncepcji grywalizacji (SPLOT/KRONIKA) + treść
+
+Właściciel odpowiedział na 3 pytania z M9: A i B oba warte rozważenia (A nie
+może być płaski; B ożywa dzięki subagentom wcielonym w pojedyncze byty), dwie
+architektury AI (runtime z kluczami w sesji albo pregenerowane popychane przez
+agentów Areny), a na razie „myślimy, nie kodujemy gry; w międzyczasie treść".
+
+### Namysł (główny rezultat sesji)
+
+- `docs/plans/POMYSL_splot-i-kronika-koncepcja.md`: A i B jako dwie warstwy
+  jednej gry — SPLOT (świat, który się zmienia: statystyki, powiązania, tereny;
+  auto-gra z opcjonalną ręką gracza-reżysera) + KRONIKA (wcielone spotkania,
+  gdzie każdy byt gra osobny subagent z ograniczonym „dossier": percepcja,
+  wiedza, granice, słabość, zakazy stylu). Metodyka pętli spotkania,
+  Kronikarz-rozjemca, model danych `data/kronika/*.json` (deterministyczny,
+  liczony jak feed z meta), ilustracje pregenerowane w sesji agenta (bez kluczy
+  w runtime), przykład dossier (Balor). Rekomendacja architektury: model 3b
+  (rozgrywka jako dane popychane przez kolejnych agentów Areny) — zgodny z DNA
+  projektu i ADR 0001–0003; runtime (3a) jako późniejsza opcja za osobnym ADR.
+- Wniosek metodyczny: **każdy nowy SKIT piszemy metodą embodimentu** i jest on
+  darmowym prototypem KRONIKI. Cross-link w `LUZNE_POMYSLY_NA_PRZYSZLOSC.md`.
+
+### C1 — pogłębienie `kentaur-pelion` (research www, ADR 0008)
+
+- Świadectwo materialne kentauromachii: 32 metopy południowej ściany Partenonu
+  (walka przedmiotami z hali — głazy, hydrie, gałęzie; metopa 30: Lapita
+  sięgający po kamień; na zachowanych płytach zwycięża często kentaur, bo walka
+  w toku). +2 źródła (Muzeum Akropolu, Wikipedia „Metopes of the Parthenon”).
+
+### C3 — SKIT „NIEPROSZENI GOŚCIE” (trio, metoda embodimentu)
+
+- Imp z Lincoln × Kentaur z Pelionu × Empusa — skład 3-osobowy, unikalny, 229
+  słów, rejestr lekki/komiczny (v1.6, po serii kontemplacyjnych). Napisany jako
+  prototyp KRONIKI: każdy głos rozumuje tylko z własnej wiedzy. Motyw: trzej
+  psujący uroczystości i „odźwierny” każdego z nich (anioł, cała hala, jedno
+  trzeźwe słowo).
+
+- Stan: `npm test` **144/144**, build/check zielone; indeks: 8 wpisów, **9
+  SKITów**, 26 pozycji feedu, 26 tagów. Protokół v1.7. Podpowiedź składów: 5
+  duetów vs 4 składy ≥3 (ADR 0019).
+
+## M11 (2026-08-28) — rola obserwatora, uczciwe realia AI, timeline'y + treść
+
+Właściciel odpowiedział na 3 pytania z M10: (1) rola OBSERWATORA ciekawsza
+(nie faworyzuje, bo robi to system + byty); (2) wątpliwość — czy agent Areny
+może powoływać subagentów?; (3) zależy od (2). Plus nowy pomysł: fabuła jako
+niezależne timeline'y.
+
+### Uczciwe sprostowanie o AI (najważniejsze)
+
+- `POMYSL_splot-i-kronika-koncepcja.md` §1a: agent Areny to JEDEN proces w
+  danej turze — nie powołuje niezależnych modeli z odseparowaną pamięcią.
+  „Subagenci-postacie" z M10 to metafora metody pisania, nie byty techniczne.
+  Trzy uczciwe opcje: (1) symulowany wielogłos „blind-draft" (dziś, bez kluczy,
+  izolacja dyscyplinarna + walidator wycieków — §2.4); (2) izolacja przez
+  kolejne sesje (wolna, bez kluczy); (3) prawdziwa izolacja = architektura 3a
+  (klucze w pamięci sesji, osobny ADR łamiący ADR 0003). „Mega możliwości" z
+  pełną izolacją są realne tylko w 3a — decyzja o kluczach należy do właściciela.
+- §3: rola gracza rozstrzygnięta na OBSERWATORA (domyślny tryb SPLOTU); ciężar
+  ciekawości na mechanice i decyzjach AI, nie na wyborach gracza.
+
+### Timeline'y (pomysł 11 właściciela)
+
+- `LUZNE_POMYSLY_NA_PRZYSZLOSC.md` (11): opowieść jako wiele niezależnych
+  timeline'ów — rozszczepianie, zamieranie (dead-end), krzyżowanie. Kronika
+  jako graf wątków (jak commity w gicie): `rodzice: [...]`, status wątku;
+  determinizm zachowany (stan wątku z jego przodków). Rozwija pomysły 4 i 6.
+
+### C1 — pogłębienie `balor` (research www, ADR 0008)
+
+- Oś proroctwa: druidzi zatruli oko i przepowiedzieli śmierć z ręki wnuka →
+  Ethniu uwięziona w Tor Mór na Tory Island, utopione trojaczki, ocalenie
+  Lugha, Loch na Súl z wypalonego oka (Sligo). +1 źródło. Sieć balora domknięta:
+  obustronne powiązania z barbarossa (warunek, który sam się spełnia) i drangue
+  (rozstrzygający rzut kamieniem; niebo jako pole bitwy).
+
+### C3 — SKIT „TRZY ZEGARY" (trio, blind-draft)
+
+- Barbarossa × Balor × Drangue — skład 3-osobowy, unikalny, 225 słów; pierwszy
+  napisany wg dyscypliny blind-draft (§2.4): każdy głos rozumuje tylko z
+  własnego dossier. Motyw: trzy zegary — znak z góry, rzut kamienia, dyżur
+  przy pogodzie.
+
+- Stan: `npm test` **144/144**, build/check zielone; indeks: 8 wpisów, **10
+  SKITów**, 28 pozycji feedu, 26 tagów. Protokół v1.7. Składy wieloosobowe:
+  5 vs 5 duetów (ADR 0019 — równowaga osiągnięta).
+
+## M12 (2026-08-28) — przenośność platformy budowy (Meta.ai) + treść
+
+Właściciel: a może przenieść rozwój na Meta.ai (czat z wieloagentowością /
+„agent swarm"), kończąc sesje patchem/PR wgrywanym ręcznie? Odpowiedź na
+poziomie architektury (nie zweryfikowano samodzielnie zdolności Meta.ai).
+
+### Analiza (główny rezultat)
+
+- `docs/plans/POMYSL_platforma-budowy-przenosnosc.md`: kluczowe rozróżnienie
+  build-time vs run-time. Build-time (kto buduje) jest z założenia WYMIENNY —
+  granicą przekazania jest git (ADR 0004), a `AGENTS.md` wprost mówi „Runner
+  (Arena i każdy inny)". Meta.ai/swarm nie zastępuje „subagentów w grze" —
+  daje coś lepszego na etapie BUDOWY: prawdziwą izolację przy GENEROWANIU
+  treści KRONIKI (model 3b wzmocniony), bez kluczy w artefakcie. Run-time
+  (artefakt u odbiorcy) zostaje vanilla static (ADR 0001–0003); pełna izolacja
+  na żywo to nadal osobna decyzja (3a, klucze). Warunki przenośności (checklista),
+  ryzyka (utrata connectora GitHub, nieznany sandbox, weryfikacja zdolności),
+  rekomendacja: dodatkowa platforma + pilot (jedna epoka Kroniki, 3 odizolowane
+  byty). Uczciwie odnotowano brak samodzielnej weryfikacji funkcji Meta.ai.
+
+### C1 — pogłębienie `selkie-sule-skerry` (research www, ADR 0008)
+
+- Ballada bywa częścią epickiego cyklu „Lady Odivere"; pentatoniczną melodię
+  spisał Otto Andersson od Johna Sinclaira z Flotty (spopularyzowana melodia
+  Jima Watersa, 1954). Usunięto powtórzone źródło; +1 źródło. Selkie (hub z 5
+  backlinkami) oddaje teraz 4 powiązania: dołożono → empusa (przemiana przez
+  okrycie, odwrotny rachunek) i → kentaur (dwa ciała naprzemiennie/naraz).
+
+### C3 — SKIT „TRZY STOŁY" (trio, blind-draft)
+
+- Egungun × Barbarossa × Kentaur z Pelionu — skład 3-osobowy, unikalny, 232
+  słowa; blind-draft. Motyw: gościnność ponad granicą śmierci i czasu (wzywanie
+  zmarłego przodka, zapłata gościowi za spokój, gość, który wziął sam).
+
+- Stan: `npm test` **144/144**, build/check zielone; indeks: 8 wpisów, **11
+  SKITów**, 30 pozycji feedu, 26 tagów. Protokół v1.7. Składy wieloosobowe:
+  **6 vs 5 duetów** (ADR 0019).
+
+## M13 (2026-08-28) — STOP przedwczesnemu pilotowi; konsolidacja koncepcji + treść
+
+Właściciel zatrzymał wątek pilota Meta.ai jako przedwczesny: nie ma
+zaakceptowanej koncepcji metagry, więc nie ma czego testować. Powrót do zwykłej
+pracy: Pętla Jakości + realne obmyślanie koncepcji.
+
+### Wycofanie i trwałe reguły
+
+- Usunięto brief pilota (`PILOT_META_kronika-epoka-1.md`).
+- `POMYSL_platforma-budowy-przenosnosc.md` §9: dwie trwałe reguły — (1) projekt
+  może prowadzić runner inny niż Arena (granica = git PR); (2) „głos
+  pojedynczego bytu" wykonują odizolowani subagenci (swarm, priorytet) ALBO
+  symulowani (blind-draft) — koncepcja uniwersalna, niezależna od platformy.
+- Reguła platformowo-neutralna dopięta też w koncepcji SPLOT/KRONIKA (§1a).
+- Status metagry: **NIEZAAKCEPTOWANA / W OPRACOWANIU** (ROADMAP M13).
+
+### Konsolidacja koncepcji (realna praca nad metagrą)
+
+- `KONCEPCJA_metagra_pytania-otwarte.md`: zamiast piątej wizji — mapa DECYZJI.
+  Ustalone (staty z gęstości, obserwator, determinizm, runner wymienny, skity =
+  prototypy) vs 11 pytań otwartych (pętla rozgrywki P1–P3, model świata P4–P6,
+  format Kroniki P7–P9, skala P10–P11). Rekomendowana kolejność + wstępne
+  stanowisko do P1–P3 (feed epok; epokę dokłada agent sesji; wydarzenie = SKIT +
+  pole `skutek`). Reguła: sesja myślenia odpowiada na 1–3 pytania, nie mnoży wizji.
+
+### C1 — pogłębienie `kentaur-pelion` (research www, ADR 0008)
+
+- Chejron z Pelionu jako kontrapunkt dzikiego plemienia (mędrzec, syn Kronosa,
+  nauczyciel Achillesa/Jazona/Asklepiosa) + drugi „winny" epizod spod jaskini
+  Pholosa. +1 źródło. Powiązanie kentaur → empusa (dwa greckie wesela kończące
+  się źle) — kentaur zyskuje drugi backlink.
+
+### C3 — SKIT „KOMU WOLNO PATRZEĆ" (trio, blind-draft)
+
+- Balor × Empusa × Imp z Lincoln — 3 głosy, 221 słów. Motyw spojrzenia: oko
+  Balora zabija, jedno trzeźwe spojrzenie rozwiewa empusę, spojrzenie anioła
+  utrwaliło impa w kamieniu. Blind-draft (każdy głos z własnego dossier).
+
+- Stan: `npm test` **144/144**, build/check zielone; indeks: 8 wpisów, **12
+  SKITów**, 32 pozycje feedu, 26 tagów. Protokół v1.7.

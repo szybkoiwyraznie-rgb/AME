@@ -33,6 +33,7 @@ Każdy dokument opisuje kontekst, wybór i jego konsekwencje.
 | [0016](0016-kanon-tagow-i-prezentacja-pasmami.md) | Kanon tagów jako dane źródłowe i prezentacja pasmami kategorii | Zaakceptowana |
 | [0017](0017-data-z-godzina-w-meta-co-nowego-v1-5.md) | Data zdarzeń w meta z godziną; „Co nowego” podaje datę i godzinę (protokół MFM v1.5) | Zaakceptowana |
 | [0018](0018-ton-skitow-humor-i-codziennosc-v1-6.md) | Ton SKITów: humor, luz i codzienność jako pełnoprawny rejestr (protokół MFM v1.6) | Zaakceptowana |
+| [0019](0019-skity-wieloosobowe-i-opis-powiazania.md) | SKITy 3–4-osobowe jako preferowane i twardy wymóg opisu powiązania (protokół MFM v1.7) | Zaakceptowana |
 
 ## Szablon ADR
 

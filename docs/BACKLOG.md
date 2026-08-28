@@ -6,6 +6,15 @@
 
 ## Aplikacja / UX
 
+- **„Arena Rezonansu” (idle battler)** — grywalizacja na zlecenie właściciela
+  (M8, C2). Staty bytu WYPROWADZANE z rekordu indeksu (backlinki, powiązania,
+  skity, epitety, motywy) — determinizm ADR 0002, losowość tylko ze
+  wstrzykniętego RNG. Projekt: `docs/plans/POMYSL_arena-rezonansu-idle-battler.md`.
+  Zręby: `app/arena.js` (`statyManifestacji`, runda) + `test/arena.test.js`.
+  **Do decyzji właściciela: zakres widoku (osobny `#arena` vs profil bojowy w
+  kartotece) i ton (Rezonans/spór tradycji, nie „krew i HP”).** Wpięcie do UI
+  dopiero po akceptacji.
+
 - **Deep-linki** `#/slug`: adresowalne wpisy + stan mapy w URL (kandydat do
   F2). Podstawa: `location.hash`, brak zależności.
 - **Klastrowanie pinezek**: przy > 50 wpisach mapa zrobi się ciasna; prosty
@@ -13,8 +22,11 @@
 - **Miniatury na pinezkach** przy wysokim zoomie (obraz 21:9 małpowany w marker).
 - **Strona tagu**: klik w tag → filtr mapy + lista; słownik tagów w indeksie
   już to umożliwia.
-- **Tryb „wylosuj manifestację”** — przycisk losujący wpis (deterministyczny
-  seed z daty jako opcja).
+- ~~**Tryb „wylosuj manifestację”**~~ — zrealizowane w M7 (PR #6, C2): przycisk
+  „🎲 wylosuj” losuje z widocznej puli (filtr/tag zawężają), pomija ostatni los
+  i przelatuje do bytu na mapie; `wylosujSlug` deterministyczna przy
+  wstrzykniętym RNG (opcja seeda z daty pozostaje otwarta). Do akceptacji
+  właściciela przed live.
 - **Warstwa kręgów kulturowych**: otoczki/halo grupujące wpisy jednej tradycji
   (słowiańska, algonkińska, nordycka…) — wymaga tagu-kręgu jako konwencji.
 - **Oś czasu manifestacji**: sortowanie po epoce pierwszego odnotowania;

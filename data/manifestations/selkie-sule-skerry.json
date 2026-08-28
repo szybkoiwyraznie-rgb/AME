@@ -56,9 +56,9 @@
       "url": "https://www.tobarandualchais.co.uk/track/65881?l=en"
     },
     {
-      "typ": "opracowanie folklorystyczne",
-      "pozycja": "Folklore Scotland, „Selkies” (L. Paraschaki) — siedem łez na brzegu jako sposób sprowadzenia selkiego, rozbieżności źródeł co do częstotliwości przemiany (raz w roku / co siedem nocy / co siedem wiosennych przypływów), przekonanie, że zabicie foky i zdjęcie skóry przynosi nieszczęście, oraz motyw skóry jako jedynego nośnika powrotu do morza",
-      "url": "https://folklorescotland.com/selkies/"
+      "typ": "opracowanie/encyklopedia",
+      "pozycja": "„The Great Silkie of Sule Skerry”, Infogalactic/Wikipedia (Adaptations) — ballada bywa częścią epickiego cyklu „The Lady Odivere”; oryginalną, pentatoniczną melodię spisał Otto Andersson od Johna Sinclaira z wyspy Flotta, a spopularyzowana melodia Jima Watersa (1954) weszła do tradycji przez Joan Baez",
+      "url": "https://infogalactic.com/info/The_Great_Silkie_of_Sule_Skerry"
     }
   ],
   "trofea": {
@@ -105,6 +105,14 @@
     {
       "slug": "balor",
       "opis": "Oba byty są związane wypowiedzianym warunkiem i oba mają swój koniec wpisany w kalendarz: Balor ginie w momencie, w którym otwiera oko zgodnie z przepisem na siebie, selkie w dniu, w którym słońce grzeje każdy kamień — sam go zresztą wskazał. Różnica: Balor próbuje przechytrzyć cudze proroctwo i dlatego jest tyranem, selkie swoje przepowiada sam i dlatego jest tylko wierzycielem."
+    },
+    {
+      "slug": "empusa-korynt",
+      "opis": "Przemiana przez to, co się nosi — ale z odwrotnym rachunkiem. Ja składam skórę na kamieniu i staję się drugim sobą; skóra jest moją własnością i daje mi dwa życia, więc jej złożenie przeżywam. Empusa kładzie na siebie światło i staje się czyimś marzeniem, ale to okrycie jest całą jej istotą — dlatego jedno wypowiedziane słowo, które nazwie pozór, gasi ją bez reszty, a mnie zdjęcie skóry tylko odsłania."
+    },
+    {
+      "slug": "kentaur-pelion",
+      "opis": "Obaj mamy dwa ciała, lecz inaczej je nosimy. Ja mieszkam nimi naprzemiennie — to na lądzie człowiekiem, to w morzu foką — a kentaur dźwiga oba naraz, człowieka z przodu i konia z tyłu. W obu przypadkach łatwo policzyć tylko jedną połowę i wziąć drugą za nieobecną; a wtedy to właśnie ta pominięta połowa rozstrzyga spór — u niego kopyta, u mnie powrót w fale."
     }
   ],
   "meta": {
@@ -114,6 +122,10 @@
       {
         "data": "2026-08-28",
         "opis": "Wpis pogłębiony o tradycję orkadzką i szetlandzką (Dennison i jego zbieranie u pani Hiddleston z Orphir, Hibbert 1822, Marwick) oraz o praktykę przywoływania: siedem łez na brzegu, skóra chowana w sea-kist, wabienie ludzi do wody w przesilenie letnie. Dodane źródła z adresami: Wikipedia „Selkie” i Folklore Scotland."
+      },
+      {
+        "data": "2026-08-28 23:15",
+        "opis": "Uporządkowano Dokumentację (usunięto powtórzone źródło) i dopisano, że ballada bywa częścią epickiego cyklu „Lady Odivere”, a jej pentatoniczną melodię spisał Otto Andersson od Johna Sinclaira z Flotty. Domknięto sieć powiązań: selkie odsyła teraz także do empusy (przemiana przez okrycie, z odwrotnym rachunkiem) i do kentaura (dwa ciała noszone naprzemiennie albo naraz)."
       }
     ]
   }

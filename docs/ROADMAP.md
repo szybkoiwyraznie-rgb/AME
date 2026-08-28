@@ -170,6 +170,115 @@ je wyłącznie na wyraźne zlecenie właściciela w sesji.
       uaktualnione: 7 kultur źródłowych, ≥3 źródła na wpis, proza bez
       cyrylicy/CJK (transliteracje), chronologia feedu dosłowna (ADR 0017).
 
+## M7 (2026-08-28) — audyt PR #5 + Pętla Jakości (C1 → C3 → C2) — ✅ w PR #6 (C2 do akceptacji)
+
+- [x] **Audyt PR #5** (M6: badge A1–A3 + godzina B/ADR 0017 + pętla). Brama
+      lokalna zielona, indeks deterministyczny, bez zaległości.
+- [x] **C1** `egungun`: research www (Bolaji Campbell „Fabric of Immortality”,
+      Wikipedia, Muzeum Snite) — „moce ukryte”, narastanie warstw płócien,
+      nieludzki głos, wir jako przejście, role Alagby/kapłanki/śpiewaczek oríkì;
+      +3 źródła z adresami, odwzajemnione powiązania (selkie, empusa,
+      barbarossa). Naprawa root-cause: stopka karty pokazuje sam dzień, godzina
+      tylko w feedzie (ADR 0017, PROTOKÓŁ §8.1).
+- [x] **C3** SKIT „DWA ZEPSUTE WESELA” (Empusa × Kentaur z Pelionu — skład
+      unikalny, 240 słów, rejestr lekki v1.6).
+- [x] **C2** „🎲 wylosuj” (tryb ekspedycji): losuje z widocznej puli (filtr/tag
+      zawężają), pomija ostatni los, przelatuje do bytu na mapie. Czysta
+      `wylosujSlug` + 5 testów; zweryfikowane headless (8/8 osiągalnych, 0
+      powtórzeń pod rząd, filtr respektowany). **Do akceptacji przed live (ADR 0007).**
+
+## M8 (2026-08-28) — zlecenia A/B/C + Pętla Jakości — ✅ w PR #6 (C2 do akceptacji)
+
+- [x] **A — SKITy 3–4 osobowe preferowane** (ADR 0019, PROTOKÓŁ v1.7 §8.2):
+      stała `SKIT_ZALECANE_UCZESTNIKOW=3`, `podpowiedzSkladySkitow` + niełamiąca
+      podpowiedź w buildzie. Minimum 2 zostaje (duety legalne).
+- [x] **B — opis powiązania jako zdanie** (ADR 0019, §6.2): walidator odrzuca
+      opis <12 słów i goły link (`POWIAZANIE_MIN_SLOW`). Istniejące (43–78 słów)
+      przechodzą.
+- [x] **C1** `lincoln-imp`: research www (dwaj impowie, anioł z hymnału, ucieczka
+      do Grimsby, wiatr krążący za bliźniakiem) + 2 źródła + obustronne
+      powiązania (balor, drangue).
+- [x] **C3** SKIT „KALENDARZ POWROTÓW” — trio Barbarossa × Egungun × Selkie
+      (demonstracja A; skład 3-osobowy, 252 słowa).
+- [x] **C2** „Arena Rezonansu” (idle battler, zlecenie C): projekt
+      (`docs/plans/POMYSL_arena-rezonansu-idle-battler.md`) + zręby `app/arena.js`
+      (staty z rekordu, deterministycznie) + testy. **Do akceptacji właściciela:
+      zakres widoku i wpięcie do UI.**
+
+## M9 (2026-08-28) — luźne pomysły + Pętla Jakości (C1 → C3 → C2) — ✅ w PR #6
+
+- [x] **Zlecenie właściciela:** `docs/LUZNE_POMYSLY_NA_PRZYSZLOSC.md` — 10
+      kierunków (modele/zdolności, ekonomia, generator obrazów, kombinacje/fabuła,
+      panowanie nad regionami, koalicje, mapa granularna, mapa+obrazy, quizy z
+      modelami AI, modele AI zarządzające) + wątki przekrojowe i ryzyka
+      (klucze API tylko w pamięci sesji). Arena Rezonansu (walka 1:1) wstrzymana.
+- [x] **C1** `empusa-korynt`: recepcja literacka sceny korynckiej (Filostrat
+      IV.25 → Burton 1621 → Keats „Lamia” 1820 → Goethe), +3 źródła z adresami.
+- [x] **C3** SKIT „DWIE SKÓRY” — kwartet Drangue × Kentaur × Selkie × Empusa
+      (pierwszy 4-osobowy skład; motyw podwójnej natury i „szwu”).
+- [x] **C2** analiza 10 kierunków grywalizacji
+      (`docs/plans/POMYSL_kierunki-grywalizacji-analiza.md`) + fundament bez żalu:
+      `app/arena.js` — normalizacja percentylowa staty i archetypy
+      (Filar/Drapieżnik/Splotca/Pieśniarz/Samotnik). **Wybór kierunku i wpięcie
+      do UI — do decyzji właściciela.**
+
+## M10 (2026-08-28) — pogłębienie koncepcji (SPLOT/KRONIKA) + treść — ✅ w PR #6
+
+- [x] **Namysł (zlecenie właściciela):** `docs/plans/POMYSL_splot-i-kronika-koncepcja.md`
+      — unifikacja A (SPLOT — świat, który się zmienia) + B (KRONIKA — wcielone
+      spotkania przez **subagentów-postacie** z własnym dossier). Dwie
+      architektury AI (rekomendacja 3b: rozgrywka jako dane w repo popychane
+      przez kolejnych agentów Areny, bez kluczy w runtime), model danych Kroniki,
+      ilustracje pregenerowane, przykład dossier (Balor). Bez kodu gry.
+- [x] **C1** `kentaur-pelion`: metopy Partenonu jako świadectwo materialne
+      kentauromachii, +2 źródła (Muzeum Akropolu, Wikipedia).
+- [x] **C3** SKIT „NIEPROSZENI GOŚCIE” (trio Imp × Kentaur × Empusa) — metoda
+      embodimentu (prototyp KRONIKI), rejestr lekki.
+
+## M11 (2026-08-28) — rola obserwatora + uczciwe realia AI + treść — ✅ w PR #6
+
+- [x] **Sprostowanie o AI (§1a koncepcji):** agent Areny to jeden proces w turze,
+      nie powołuje niezależnych subagentów; „subagenci-postacie" to metafora metody.
+      Trzy uczciwe opcje: symulowany wielogłos „blind-draft" (dziś), izolacja przez
+      kolejne sesje (wolna), prawdziwa izolacja = 3a (klucze, osobny ADR).
+- [x] **Rola gracza = OBSERWATOR** (decyzja właściciela): tryb domyślny SPLOTU;
+      sprawiedliwość na systemie i bytach, nie na graczu.
+- [x] **Pomysł (11)** do `LUZNE_POMYSLY`: fabuła jako niezależne timeline'y
+      (rozszczepienie/dead-end/krzyżowanie) — Kronika jako graf wątków.
+- [x] **C1** `balor`: oś proroctwa (Ethniu/Tor Mór/Loch na Súl), +1 źródło,
+      obustronne powiązania z barbarossa i drangue (sieć balora domknięta).
+- [x] **C3** SKIT „TRZY ZEGARY” (trio Barbarossa × Balor × Drangue) — blind-draft.
+
+## M12 (2026-08-28) — przenośność platformy budowy (Meta.ai) + treść — ✅ w PR #6
+
+- [x] **Analiza (zlecenie właściciela):** `docs/plans/POMYSL_platforma-budowy-przenosnosc.md`
+      — rozróżnienie build-time (kto buduje: wymienny, granica = git PR) vs
+      run-time (artefakt zostaje vanilla static, ADR 0001–0003). Meta.ai/„agent
+      swarm" rozwiązuje INNY problem niż subagenci w grze: daje prawdziwą izolację
+      przy GENEROWANIU Kroniki, bez kluczy w artefakcie. Rekomendacja: dodatkowa
+      platforma, nie zamiennik reguł; pilot = jedna epoka Kroniki.
+- [x] **C1** `selkie-sule-skerry`: „Lady Odivere", melodia Sinclaira/Anderssona,
+      dedup źródła; domknięcie sieci (→ empusa, → kentaur).
+- [x] **C3** SKIT „TRZY STOŁY” (trio Egungun × Barbarossa × Kentaur) — blind-draft.
+
+## M13 (2026-08-28) — zawężenie: metagra w opracowaniu; reguła przenośności — ✅ w PR #6
+
+- [x] **Stop pilotowi Meta.ai jako przedwczesnemu** (brak zaakceptowanej
+      koncepcji metagry → nie ma czego testować). Brief pilota wycofany.
+- [x] **Trwałe reguły** (`POMYSL_platforma-budowy-przenosnosc.md` §9): (1) projekt
+      może prowadzić runner inny niż Arena (granica = git PR, brama w repo);
+      (2) „głos pojedynczego bytu" wykonują odizolowani subagenci (swarm,
+      priorytet) ALBO symulowani przez jednego agenta (blind-draft) — koncepcja
+      uniwersalna, niezależna od platformy.
+- [x] **Status metagry: NIEZAAKCEPTOWANA / W OPRACOWANIU.** Bez pilotów i kodu gry
+      do czasu spójnej, zaakceptowanej koncepcji. Praca = tropy + Pętla Jakości.
+- [x] **Konsolidacja koncepcji:** `KONCEPCJA_metagra_pytania-otwarte.md` — mapa
+      11 otwartych pytań (pętla, świat, format Kroniki, skala) + co już ustalone;
+      reguła: sesja myślenia odpowiada na pytania, nie mnoży wizji.
+- [x] **C1** `kentaur-pelion`: Chejron jako kontrapunkt + jaskinia Pholosa,
+      +1 źródło, powiązanie z empusą (drugi backlink kentaura).
+- [x] **C3** SKIT „KOMU WOLNO PATRZEĆ” (trio Balor × Empusa × Imp) — blind-draft.
+
 ## F2 — Jakość i ergonomia mapy
 
 - [x] Deep-linki (`#<slug>` — stan mapy i otwartego wpisu; działa od M1, tu
@@ -178,6 +287,8 @@ je wyłącznie na wyraźne zlecenie właściciela w sesji.
       zamiast bottom sheetu (M3).
 - [ ] Klastrowanie pinezek przy niskim zoomie / deryterowanie etykiet.
 - [ ] Miniatury wizualizacji na pinezkach przy wysokim zoomie.
+- [x] Tryb „🎲 wylosuj” — losowanie manifestacji z widocznej puli i przelot do
+      niej na mapie (M7, PR #6; do akceptacji właściciela przed live).
 - [x] Czytelny kanon tagów i ich prezentacja (ADR 0016): słownik w danych,
       limity kategorii w walidatorze, pasek w pasmach z licznikami i opisami.
 - [ ] Strona tagu (filtr + lista wpisów), eksport PDF kartoteki (media print).

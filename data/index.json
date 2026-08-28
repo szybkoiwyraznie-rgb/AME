@@ -1,7 +1,7 @@
 {
   "wersja": 3,
   "liczba": 8,
-  "liczbaSkitow": 5,
+  "liczbaSkitow": 12,
   "kanon": {
     "kategorie": [
       {
@@ -258,18 +258,23 @@
         "zle-oko"
       ],
       "powiazania": [
+        "barbarossa-kyffhaeuser",
+        "drangue-shala",
         "lincoln-imp",
         "selkie-sule-skerry"
       ],
       "backlinki": [
         "barbarossa-kyffhaeuser",
         "drangue-shala",
+        "lincoln-imp",
         "selkie-sule-skerry"
       ],
       "obraz": "assets/wizualizacje/balor.jpg",
       "skity": [
         "godzina-otwarcia",
         "hold-oraz-swiatlo",
+        "komu-wolno-patrzec",
+        "trzy-zegary",
         "znak-i-liczba"
       ]
     },
@@ -298,10 +303,16 @@
         "selkie-sule-skerry"
       ],
       "backlinki": [
-        "drangue-shala"
+        "balor",
+        "drangue-shala",
+        "egungun"
       ],
       "obraz": "assets/wizualizacje/barbarossa-kyffhaeuser.jpg",
-      "skity": []
+      "skity": [
+        "kalendarz-powrotow",
+        "trzy-stoly",
+        "trzy-zegary"
+      ]
     },
     {
       "slug": "drangue-shala",
@@ -330,12 +341,16 @@
         "lincoln-imp"
       ],
       "backlinki": [
-        "kentaur-pelion"
+        "balor",
+        "kentaur-pelion",
+        "lincoln-imp"
       ],
       "obraz": "assets/wizualizacje/drangue-shala.jpg",
       "skity": [
+        "dwie-skory",
         "godzina-otwarcia",
-        "kurz-i-piora"
+        "kurz-i-piora",
+        "trzy-zegary"
       ]
     },
     {
@@ -360,7 +375,11 @@
         "pamiec",
         "przemiana"
       ],
-      "powiazania": [],
+      "powiazania": [
+        "barbarossa-kyffhaeuser",
+        "empusa-korynt",
+        "selkie-sule-skerry"
+      ],
       "backlinki": [
         "barbarossa-kyffhaeuser",
         "empusa-korynt",
@@ -370,7 +389,9 @@
       "obraz": "assets/wizualizacje/egungun.jpg",
       "skity": [
         "hold-oraz-swiatlo",
-        "plotno-i-kamien"
+        "kalendarz-powrotow",
+        "plotno-i-kamien",
+        "trzy-stoly"
       ]
     },
     {
@@ -396,9 +417,18 @@
         "egungun",
         "selkie-sule-skerry"
       ],
-      "backlinki": [],
+      "backlinki": [
+        "egungun",
+        "kentaur-pelion",
+        "selkie-sule-skerry"
+      ],
       "obraz": "assets/wizualizacje/empusa-korynt.jpg",
-      "skity": []
+      "skity": [
+        "dwa-zepsute-wesela",
+        "dwie-skory",
+        "komu-wolno-patrzec",
+        "nieproszeni-goscie"
+      ]
     },
     {
       "slug": "kentaur-pelion",
@@ -420,11 +450,19 @@
       ],
       "powiazania": [
         "drangue-shala",
+        "empusa-korynt",
         "selkie-sule-skerry"
       ],
-      "backlinki": [],
+      "backlinki": [
+        "selkie-sule-skerry"
+      ],
       "obraz": "assets/wizualizacje/kentaur-pelion.jpg",
-      "skity": []
+      "skity": [
+        "dwa-zepsute-wesela",
+        "dwie-skory",
+        "nieproszeni-goscie",
+        "trzy-stoly"
+      ]
     },
     {
       "slug": "lincoln-imp",
@@ -447,6 +485,8 @@
         "zle-oko"
       ],
       "powiazania": [
+        "balor",
+        "drangue-shala",
         "egungun"
       ],
       "backlinki": [
@@ -456,7 +496,9 @@
       "obraz": "assets/wizualizacje/lincoln-imp.jpg",
       "skity": [
         "hold-oraz-swiatlo",
+        "komu-wolno-patrzec",
         "kurz-i-piora",
+        "nieproszeni-goscie",
         "plotno-i-kamien"
       ]
     },
@@ -482,21 +524,60 @@
       ],
       "powiazania": [
         "balor",
-        "egungun"
+        "egungun",
+        "empusa-korynt",
+        "kentaur-pelion"
       ],
       "backlinki": [
         "balor",
         "barbarossa-kyffhaeuser",
+        "egungun",
         "empusa-korynt",
         "kentaur-pelion"
       ],
       "obraz": "assets/wizualizacje/selkie-sule-skerry.jpg",
       "skity": [
+        "dwie-skory",
+        "kalendarz-powrotow",
         "znak-i-liczba"
       ]
     }
   ],
   "skity": [
+    {
+      "slug": "dwa-zepsute-wesela",
+      "tytul": "DWA ZEPSUTE WESELA",
+      "temat": "dwa style psucia wesela: iluzja bez śladu kontra prawdziwa burda przy winie",
+      "uczestnicy": [
+        "empusa-korynt",
+        "kentaur-pelion"
+      ],
+      "imiona": [
+        "Empusa",
+        "Kentaur z Pelionu"
+      ],
+      "slow": 240,
+      "data": "2026-08-28 16:45"
+    },
+    {
+      "slug": "dwie-skory",
+      "tytul": "DWIE SKÓRY",
+      "temat": "cztery byty o podwójnej naturze porównują, gdzie mają swój szew i co go rozpruwa",
+      "uczestnicy": [
+        "drangue-shala",
+        "empusa-korynt",
+        "kentaur-pelion",
+        "selkie-sule-skerry"
+      ],
+      "imiona": [
+        "Drangue",
+        "Kentaur z Pelionu",
+        "Selkie z Sule Skerry",
+        "Empusa"
+      ],
+      "slow": 249,
+      "data": "2026-08-28 20:00"
+    },
     {
       "slug": "godzina-otwarcia",
       "tytul": "GODZINA OTWARCIA",
@@ -530,6 +611,40 @@
       "data": "2026-08-28"
     },
     {
+      "slug": "kalendarz-powrotow",
+      "tytul": "KALENDARZ POWROTÓW",
+      "temat": "trzy sposoby na umówiony powrót: cudzy termin, coroczne wołanie i data podana samemu sobie",
+      "uczestnicy": [
+        "barbarossa-kyffhaeuser",
+        "egungun",
+        "selkie-sule-skerry"
+      ],
+      "imiona": [
+        "Barbarossa",
+        "Egungun",
+        "Selkie z Sule Skerry"
+      ],
+      "slow": 252,
+      "data": "2026-08-28 18:25"
+    },
+    {
+      "slug": "komu-wolno-patrzec",
+      "tytul": "KOMU WOLNO PATRZEĆ",
+      "temat": "trzy byty i akt spojrzenia: jedno oko zabija, jedno spojrzenie rozwiewa, jedno spojrzenie utrwala w kamieniu",
+      "uczestnicy": [
+        "balor",
+        "empusa-korynt",
+        "lincoln-imp"
+      ],
+      "imiona": [
+        "Balor",
+        "Empusa",
+        "Imp z Lincoln"
+      ],
+      "slow": 221,
+      "data": "2026-08-28 23:58"
+    },
+    {
       "slug": "kurz-i-piora",
       "tytul": "KURZ I PIÓRA",
       "temat": "ptaki, kurz i pranie skrzydeł: codzienne troski na wysokości",
@@ -545,6 +660,23 @@
       "data": "2026-08-28 15:35"
     },
     {
+      "slug": "nieproszeni-goscie",
+      "tytul": "NIEPROSZENI GOŚCIE",
+      "temat": "trzej psuja uroczystości porównują, jak wchodzą i co ich zatrzymuje (odźwierny każdego z nich)",
+      "uczestnicy": [
+        "empusa-korynt",
+        "kentaur-pelion",
+        "lincoln-imp"
+      ],
+      "imiona": [
+        "Imp z Lincoln",
+        "Kentaur z Pelionu",
+        "Empusa"
+      ],
+      "slow": 229,
+      "data": "2026-08-28 21:30"
+    },
+    {
       "slug": "plotno-i-kamien",
       "tytul": "PŁÓTNO I KAMIEŃ",
       "temat": "kto w ogóle wchodzi do świątyni: zaproszony przodek i nieproszony sabotażysta",
@@ -558,6 +690,40 @@
       ],
       "slow": 241,
       "data": "2026-08-28"
+    },
+    {
+      "slug": "trzy-stoly",
+      "tytul": "TRZY STOŁY",
+      "temat": "gościnność ponad granicą śmierci i czasu: wzywanie zmarłych, zapłata za spokój, gość, który wziął sam",
+      "uczestnicy": [
+        "barbarossa-kyffhaeuser",
+        "egungun",
+        "kentaur-pelion"
+      ],
+      "imiona": [
+        "Egungun",
+        "Barbarossa",
+        "Kentaur z Pelionu"
+      ],
+      "slow": 232,
+      "data": "2026-08-28 23:35"
+    },
+    {
+      "slug": "trzy-zegary",
+      "tytul": "TRZY ZEGARY",
+      "temat": "trzy sposoby, na jaki byt czeka na swoją godzinę: znak z góry, rzut kamienia i dyżur przy pogodzie",
+      "uczestnicy": [
+        "balor",
+        "barbarossa-kyffhaeuser",
+        "drangue-shala"
+      ],
+      "imiona": [
+        "Barbarossa",
+        "Balor",
+        "Drangue"
+      ],
+      "slow": 225,
+      "data": "2026-08-28 22:25"
     },
     {
       "slug": "znak-i-liczba",
@@ -576,6 +742,118 @@
     }
   ],
   "aktualizacje": [
+    {
+      "data": "2026-08-28 23:58",
+      "typ": "skit",
+      "akcja": "nowy",
+      "slug": "komu-wolno-patrzec",
+      "tytul": "KOMU WOLNO PATRZEĆ",
+      "opis": "SKIT — skład: Balor, Empusa, Imp z Lincoln"
+    },
+    {
+      "data": "2026-08-28 23:55",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "kentaur-pelion",
+      "tytul": "Kentaur z Pelionu",
+      "opis": "Dopisano Chejrona jako kontrapunkt dzikiego plemienia — mędrca z tego samego Pelionu, który ujarzmił własną naturę (nauczyciel Achillesa i Asklepiosa), oraz drugi „winny” epizod spod jaskini Pholosa. Dodano źródło o Chejronie i powiązanie z Empusą (dwa greckie wesela, które kończą się źle)."
+    },
+    {
+      "data": "2026-08-28 23:35",
+      "typ": "skit",
+      "akcja": "nowy",
+      "slug": "trzy-stoly",
+      "tytul": "TRZY STOŁY",
+      "opis": "SKIT — skład: Egungun, Barbarossa, Kentaur z Pelionu"
+    },
+    {
+      "data": "2026-08-28 23:15",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "selkie-sule-skerry",
+      "tytul": "Wielki Selkie z Sule Skerry",
+      "opis": "Uporządkowano Dokumentację (usunięto powtórzone źródło) i dopisano, że ballada bywa częścią epickiego cyklu „Lady Odivere”, a jej pentatoniczną melodię spisał Otto Andersson od Johna Sinclaira z Flotty. Domknięto sieć powiązań: selkie odsyła teraz także do empusy (przemiana przez okrycie, z odwrotnym rachunkiem) i do kentaura (dwa ciała noszone naprzemiennie albo naraz)."
+    },
+    {
+      "data": "2026-08-28 22:25",
+      "typ": "skit",
+      "akcja": "nowy",
+      "slug": "trzy-zegary",
+      "tytul": "TRZY ZEGARY",
+      "opis": "SKIT — skład: Barbarossa, Balor, Drangue"
+    },
+    {
+      "data": "2026-08-28 22:05",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "balor",
+      "tytul": "Balor z Tory Island",
+      "opis": "Dopisano oś proroctwa: druidzi, którzy zatruli oko Balora, przepowiedzieli mu śmierć z ręki wnuka, więc uwięził córkę Ethniu w wieży Tor Mór na Tory Island; z utopionych trojaczków ocalał Lugh, a klęskę upamiętnia jezioro Loch na Súl w Sligo. Dodano źródło oraz obustronne powiązania z Barbarossą (warunek, który sam się spełnia) i drangue (rozstrzygający rzut kamieniem, niebo jako pole bitwy)."
+    },
+    {
+      "data": "2026-08-28 21:30",
+      "typ": "skit",
+      "akcja": "nowy",
+      "slug": "nieproszeni-goscie",
+      "tytul": "NIEPROSZENI GOŚCIE",
+      "opis": "SKIT — skład: Imp z Lincoln, Kentaur z Pelionu, Empusa"
+    },
+    {
+      "data": "2026-08-28 21:10",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "kentaur-pelion",
+      "tytul": "Kentaur z Pelionu",
+      "opis": "Dopisano świadectwo materialne kentauromachii: 32 metopy południowej ściany Partenonu pokazują walkę przedmiotami z hali (głazy, dzbany-hydrie, gałęzie), a metopa 30 — Lapitę sięgającego po kamień do obrony; na zachowanych płytach zwycięża często kentaur, bo walka jest w toku. Dwa nowe źródła z adresami (Muzeum Akropolu, Wikipedia „Metopes of the Parthenon”)."
+    },
+    {
+      "data": "2026-08-28 20:00",
+      "typ": "skit",
+      "akcja": "nowy",
+      "slug": "dwie-skory",
+      "tytul": "DWIE SKÓRY",
+      "opis": "SKIT — skład: Drangue, Kentaur z Pelionu, Selkie z Sule Skerry, Empusa"
+    },
+    {
+      "data": "2026-08-28 19:40",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "empusa-korynt",
+      "tytul": "Empusa z Koryntu",
+      "opis": "Dopisano literackie drugie życie sceny korynckiej: przez „Anatomię melancholii” Roberta Burtona (1621) trafiła ona do poematu „Lamia” Johna Keatsa (1820) i do goetheańskiej „Oblubienicy z Koryntu”, a jądro pozostaje to samo — rozpoznanie zjawy przez rozum rozwiewa i ją, i szczęście, które na niej stało. Trzy nowe źródła z adresami (Filostrat IV.25 na Livius, Burton na Project Gutenberg, Keats w Poetry Foundation)."
+    },
+    {
+      "data": "2026-08-28 18:25",
+      "typ": "skit",
+      "akcja": "nowy",
+      "slug": "kalendarz-powrotow",
+      "tytul": "KALENDARZ POWROTÓW",
+      "opis": "SKIT — skład: Barbarossa, Egungun, Selkie z Sule Skerry"
+    },
+    {
+      "data": "2026-08-28 18:05",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "lincoln-imp",
+      "tytul": "Imp z Lincoln",
+      "opis": "Dopisano pełniejszą wersję legendy o dwóch impach-bliźniakach: anioł wychodzący z hymnału skamienił śmiałka w Angel Choir, a jego towarzysz uciekł do Grimsby (trzyma się za obolały tyłek pod wieżą) — stąd powiedzenie, że wiatr krążący wokół katedry to imp szukający zaginionego brata. Dwa nowe źródła oraz obustronne powiązania z Balorem (złe spojrzenie) i drangue z Szali (święty przedmiot jako herb i tarcza wspólnoty)."
+    },
+    {
+      "data": "2026-08-28 16:45",
+      "typ": "skit",
+      "akcja": "nowy",
+      "slug": "dwa-zepsute-wesela",
+      "tytul": "DWA ZEPSUTE WESELA",
+      "opis": "SKIT — skład: Empusa, Kentaur z Pelionu"
+    },
+    {
+      "data": "2026-08-28 16:20",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "egungun",
+      "tytul": "Egungun",
+      "opis": "Rozbudowa opisu: skąd bierze się „moce ukryte” w nazwie, jak narastają warstwy płócien pokolenie po pokoleniu (najstarsze przy ciele, pierwsza warstwa jak całun grzebalny), nieludzki głos zza zasłony, wir tańca jako przejście między światami oraz role Alagby, kapłanki i śpiewaczek oríkì. Dopisano trzy źródła z adresami (Bolaji Campbell „Fabric of Immortality”, Wikipedia, Muzeum Snite) i powiązania z selkie, empusą oraz Barbarossą."
+    },
     {
       "data": "2026-08-28 16:05",
       "typ": "manifestacja",

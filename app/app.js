@@ -2,7 +2,7 @@
  * app/app.js — bootstrap AME: ładuje indeks, mapę świata, spina UI.
  */
 import { stworzMape } from './map.js';
-import { zaladujIndeks, zaladujWpis, zaladujSkit, dopasowania } from './data.js';
+import { zaladujIndeks, zaladujWpis, zaladujSkit, dopasowania, wylosujSlug } from './data.js';
 import {
   htmlWpisu,
   htmlWarstwyWpisu,
@@ -32,6 +32,7 @@ const stan = {
   luki: false,
   motyw: 'ciemny',
   warstwa: null, // { tryb: 'skity' | 'skit' | 'nowosci', slug? }
+  ostatniLos: null, // ostatnio wylosowany slug — reroll go pomija (nawet po zamknięciu karty)
 };
 
 let mapa;
@@ -233,6 +234,26 @@ async function przejdijDo(link) {
   if (tekst) return otworzWpis(tekst);
 }
 
+/**
+ * „Wylosuj” (tryb ekspedycji): losuje manifestację z aktualnie widocznej puli
+ * (filtr + tag zawężają zbiór; brak filtra = wszystkie), pomija otwarty wpis
+ * i przelatuje do niej na mapie, otwierając kartotekę. Zamyka warstwę/listę,
+ * żeby los był widoczny na mapie.
+ */
+function losujManifestacje() {
+  const widoczne = pasujace();
+  const pula = widoczne ? [...widoczne] : stan.indeks.manifestacje.map((m) => m.slug);
+  // Pomijamy ostatni los (a nie tylko aktualnie otwarty wpis) — po zamknięciu
+  // karty Escape'em `stan.wpis` znika, więc bez tego reroll mógłby trafić w to
+  // samo. Dwa kliknięcia z rzędu zawsze dają inną manifestację.
+  const slug = wylosujSlug(pula, { pomin: stan.wpis?.slug ?? stan.ostatniLos });
+  if (!slug) return;
+  stan.ostatniLos = slug;
+  if (stan.warstwa) zamknijWarstwe();
+  if ($('#lista').classList.contains('otwarta')) przelaczListe();
+  otworzWpis(slug, { przewin: true });
+}
+
 function przelaczListe() {
   const lista = $('#lista');
   const otwarta = lista.classList.toggle('otwarta');
@@ -301,6 +322,7 @@ function podepnijZdarzenia() {
     }
   });
 
+  $('#przycisk-los').addEventListener('click', losujManifestacje);
   $('#przycisk-lista').addEventListener('click', przelaczListe);
   $('#przycisk-skity').addEventListener('click', otworzBazeSkitow);
   $('#przycisk-nowosci').addEventListener('click', otworzNowosci);

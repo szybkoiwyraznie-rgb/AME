@@ -126,10 +126,13 @@ Ponadto:
   (PROTOKÓŁ §6.1, ADR 0016). Nowy tag = dopisanie go do kanonu w tym samym
   commicie. Kraj nie jest tagiem (jest w `lokalizacja.kraj`).
 - **Powiązania** wskazują slugi istniejących wpisów; backlinki liczy automatycznie
-  indeks. Nie twórz powiązań „na siłę” — opis powiązania ma uzasadniać związek.
+  indeks. Nie twórz powiązań „na siłę” — **opis powiązania ma być zdaniem
+  uzasadniającym związek** (min. 12 słów, nie sam link — ADR 0019, PROTOKÓŁ §6.2);
+  walidator odrzuci etykietę i goły adres.
 - **Slug** = `^[a-z0-9-]+$`, zgodny z nazwą pliku (`data/manifestations/<slug>.json`).
 - **SKITy (C3, PROTOKÓŁ §8):** dialog materializacji w `data/skity/<slug>.json`
-  — maks. 300 słów (ADR 0015), 2–4 uczestników z kartoteki, każdy zabiera głos, **skład
+  — maks. 300 słów (ADR 0015), 2–4 uczestników z kartoteki, **preferowane 3–4**
+  (ADR 0019 — duet tylko gdy temat go wymaga), każdy zabiera głos, **skład
   osobowy unikalny w całej bazie**, zero żargonu gry, fakty zgodne z lore wpisów.
   Sekcja VI kart i feed „Co nowego" wyliczają się same (z indeksu).
 - **Każda zmiana treści** trafia do `meta.modyfikacje: [{data, opis}]` (albo

@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { walidujWpis, walidujPowiazania, RAMA_OTWARCIA, RAMA_ZAMKNIECIA, REZERWOWANE_SLUGI } from '../tools/rebuild-index.mjs';
+import { walidujWpis, walidujPowiazania, POWIAZANIE_MIN_SLOW, RAMA_OTWARCIA, RAMA_ZAMKNIECIA, REZERWOWANE_SLUGI } from '../tools/rebuild-index.mjs';
 import { wpisWzorzec, ustaw } from './fixtures/wpis-wzorzec.js';
 
 test('wzorzec przechodzi walidację bez błędów', () => {
@@ -66,8 +66,39 @@ test('tagi: konwencja, duplikaty', () => {
 test('powiązania: self-link, nieistniejący slug, duplikaty', () => {
   const w = wpisWzorzec();
   assert.deepEqual(walidujPowiazania(w, new Set(['byt-testowy', 'inny'])), []);
-  assert.ok(walidujPowiazania(ustaw(w, { powiazania: [{ slug: 'byt-testowy', opis: 'sam ze sobą' }] }), new Set(['byt-testowy'])).some((e) => e.includes('self-link')));
+  assert.ok(walidujPowiazania(ustaw(w, { powiazania: [{ slug: 'byt-testowy', opis: 'sam ze sobą uzasadniony długim zdaniem które ma na pewno ponad dwanaście słów treści' }] }), new Set(['byt-testowy'])).some((e) => e.includes('self-link')));
   assert.ok(walidujPowiazania(ustaw(w, { powiazania: [{ slug: 'nie_ma_go', opis: 'x' }] }), new Set(['byt-testowy'])).some((e) => e.includes('nie istnieje')));
+});
+
+test('powiązania: opis musi być zdaniem, nie etykietą ani linkiem (ADR 0019)', () => {
+  const w = wpisWzorzec();
+  const zbior = new Set(['byt-testowy', 'inny']);
+  // za krótki: jedno-dwa słowa
+  assert.ok(
+    walidujPowiazania(ustaw(w, { powiazania: [{ slug: 'inny', opis: 'złe oko' }] }), zbior).some((e) => e.includes('za krótki')),
+    'opis w kilka słów jest odrzucany'
+  );
+  // sam adres www
+  assert.ok(
+    walidujPowiazania(ustaw(w, { powiazania: [{ slug: 'inny', opis: 'https://example.com/artykul-o-powiazaniu' }] }), zbior).some((e) => e.includes('sam adres')),
+    'goły link jest odrzucany'
+  );
+  // dobre, długie zdanie uzasadniające
+  assert.deepEqual(
+    walidujPowiazania(
+      ustaw(w, { powiazania: [{ slug: 'inny', opis: 'oba byty wiąże ten sam wypowiedziany warunek i oba w końcu przegrywają go w kalendarzu, bo termin wyprzedza przeznaczenie' }] }),
+      zbior
+    ),
+    [],
+    'zdanie ≥12 słów przechodzi'
+  );
+});
+
+test('próg opisu powiązania jest jeden: kod = protokół (ADR 0019)', async () => {
+  const fs = await import('node:fs/promises');
+  assert.equal(POWIAZANIE_MIN_SLOW, 12, 'walidator: min. 12 słów');
+  const prot = await fs.readFile('docs/PROTOKOL.md', 'utf8');
+  assert.match(prot, /12 słów/, 'PROTOKÓŁ §6.2 cytuje ten sam próg');
 });
 
 test('meta: format dat i struktura modyfikacji', () => {

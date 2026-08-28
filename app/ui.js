@@ -122,10 +122,15 @@ export function przyciskKopiowania(cel) {
  * (zlecenie właściciela 2026-08-28).
  */
 export function htmlStopki(meta) {
-  const daty = (meta?.modyfikacje ?? []).map((m) => m?.data).filter(Boolean).sort((a, b) => String(a).localeCompare(String(b)));
+  // Stopka pokazuje wyłącznie DATY (bez godziny) — meta może nieść porę
+  // (ADR 0017, v1.5), ale w karcie liczy się dzień utworzenia i ostatniej
+  // zmiany. Godzina żyje w feedzie „Co nowego”, nie w stopce (PROTOKÓŁ §8.1).
+  const dzien = (d) => String(d).slice(0, 10);
+  const daty = (meta?.modyfikacje ?? []).map((m) => m?.data).filter(Boolean).map(dzien).sort((a, b) => (a > b) - (a < b));
   const ostatnia = daty[daty.length - 1];
   const pokaz = ostatnia ? ` · zmieniono ${esc(ostatnia)}` : '';
-  return `<footer class="meta-wpisu">utworzono ${esc(meta?.utworzono ?? '?')}${pokaz}</footer>`;
+  const utworzono = meta?.utworzono ? dzien(meta.utworzono) : '?';
+  return `<footer class="meta-wpisu">utworzono ${esc(utworzono)}${pokaz}</footer>`;
 }
 
 /** Adres źródła jako link (B3) — tylko http/https, bezpieczny tekst kotwicy. */
