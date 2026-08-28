@@ -40,3 +40,32 @@ pierwsza wersja fixture TopoJSON myliła delty łuków z pozycją absolutną
 - włączenie GitHub Pages przez właściciela (branch `main`, folder `/`);
 - scalenie PR sesji;
 - F1 (proces treściowy) czeka na karty od właściciela.
+
+## M2 (2026-08-28) — Pętla Jakości, rygory weryfikacji, pierwsze materializacje na zlecenie
+
+**Kontekst:** właściciel przed scaleniem PR #1 zlecił: (1) domyślną pętlę dla
+sesji bez zlecenia — wzorem mtg; (2) twardy rygor: każda karta fetchowana ze
+Scryfall, każdy wpis weryfikowany w www, nigdy z pamięci; (3) polerowanie
+dokumentacji jako zlecenie sesji (NIE element pętli); (4) usunięcie wpisów
+przykładowych i pełną materializację kart Krumar Initiate (TDM) oraz
+Forge Devil (DKA). Równolegle właściciel dodał na main `.github/workflows/ci.yml`
+i włączył GitHub Pages.
+
+**Decyzje:** ADR 0007 (Pętla Jakości C1↔C2 rekurencyjnie do wyczerpania
+budżetu; dokumentacja tylko na zlecenie), ADR 0008 (Scryfall + www, zakaz
+pisania z pamięci, weryfikacja każdej pozycji bibliografii).
+
+**Wykonanie (commity 1047089..607487a):** zasady w AGENTS/ENVIRONMENT/
+ROADMAP/PROTOKOL + rejestr; pełna procedura dodawania manifestacji w WORKFLOW
++ status CI/Pages; usunięcie wendigo/zmora; pełne wpisy egungun (Krumar
+Initiate → kult egúngún, Oyo) i lincoln-imp (Forge Devil → legenda o impie
+z katedry Lincoln) z wizualizacjami 21:9 i powiązaniem krzyżowym; testy
+przepisane (34/34).
+
+**Zdarzenia operacyjne:** reset workspace między turami (odzysk wg
+ENVIRONMENT §2), utrata upstream po odzyskaniu (L5), start pakietu pip po
+resecie — commit przeskoczył bez kadrowania obrazów, domknięte następnym
+commitem po weryfikacji (L6).
+
+**Otwarte po sesji:** scalenie PR #1; dalsze karty od właściciela; Pętla
+Jakości dla kolejnych sesji.
