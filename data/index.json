@@ -232,6 +232,7 @@
       ],
       "backlinki": [
         "barbarossa-kyffhaeuser",
+        "drangue-shala",
         "selkie-sule-skerry"
       ],
       "obraz": "assets/wizualizacje/balor.jpg",
@@ -291,6 +292,7 @@
         "skrzydlata-postac"
       ],
       "powiazania": [
+        "balor",
         "barbarossa-kyffhaeuser",
         "lincoln-imp"
       ],
@@ -448,6 +450,14 @@
     }
   ],
   "aktualizacje": [
+    {
+      "data": "2026-08-28 15:12",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "drangue-shala",
+      "tytul": "Drangue z doliny Shali",
+      "opis": "dopisano najstarszą relację terenową z Malësii — obserwacje Edith Durham z burz 1908 r. (druk 1910): walki Drangue z Kulshedrą, wiara w siły światła i ciemności, słońce rzeźbione na tronie gospodarza w Shali; dołączono powiązanie z Balorem — zwycięstwo kamieniem rzuconym ręką bohatera"
+    },
     {
       "data": "2026-08-28",
       "typ": "manifestacja",
