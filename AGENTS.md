@@ -126,7 +126,7 @@ Ponadto:
   indeks. Nie twórz powiązań „na siłę” — opis powiązania ma uzasadniać związek.
 - **Slug** = `^[a-z0-9-]+$`, zgodny z nazwą pliku (`data/manifestations/<slug>.json`).
 - **SKITy (C3, PROTOKÓŁ §8):** dialog materializacji w `data/skity/<slug>.json`
-  — maks. 250 słów, 2–4 uczestników z kartoteki, każdy zabiera głos, **skład
+  — maks. 300 słów (ADR 0015), 2–4 uczestników z kartoteki, każdy zabiera głos, **skład
   osobowy unikalny w całej bazie**, zero żargonu gry, fakty zgodne z lore wpisów.
   Sekcja VI kart i feed „Co nowego" wyliczają się same (z indeksu).
 - **Każda zmiana treści** trafia do `meta.modyfikacje: [{data, opis}]` (albo

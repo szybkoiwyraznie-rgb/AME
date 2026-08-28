@@ -23,7 +23,7 @@ namierzyć realną emanację w naszym świecie; wynikiem jest wpis w kartotece
   backlinki liczone automatycznie. Deep-link: `/#<slug>`.
 - **Baza Skitów** — krótkie dialogi materializacji (proza w stylu przerywników
   z gier fabularnych): przycisk „✎ skity", pod każdym bytem sekcja VI z jego
-  rozmowami, deep-link `#skit:<slug>`. Walidator pilnuje limitu 250 słów i
+  rozmowami, deep-link `#skit:<slug>`. Walidator pilnuje limitu 300 słów i
   tego, by żadne dwa skity nie miały tego samego składu (ADR 0013).
 - **Co nowego** — przycisk „✚ nowości": dziennik zmian wyliczany z pola `meta`
   wpisów i skitów, najnowsze na górze, każda pozycja linkuje do treści

@@ -77,7 +77,7 @@ meta: { utworzono, autor?, modyfikacje: [{data, opis}] }
 ```
 slug, tytul, temat?
 uczestnicy: [{ imie, slug }]                         # 2–4, slugi muszą istnieć, zestaw unikalny w bazie
-tekst                                                # „**Imię:** [didaskalia] słowa”, 60–250 słów
+tekst                                                # „**Imię:** [didaskalia] słowa”, 60–300 słów
 meta: { utworzono, autor?, modyfikacje: [] }
 ```
 

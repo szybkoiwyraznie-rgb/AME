@@ -95,7 +95,7 @@ test('Baza Skitów w repo: przechodzi walidację i ma unikalne składy', async (
   assert.ok(skiti.length >= 1, 'pierwszy SKIT powinien być w bazie');
   for (const s of skiti) {
     assert.ok(s.tytul === s.tytul.toUpperCase(), `tytuł skitu powinien być wersalikami: ${s.tytul}`);
-    assert.ok(liczbaSlow(s.tekst) <= SKIT_MAX_SLOW, `${s.slug}: limit 250 słów`);
+    assert.ok(liczbaSlow(s.tekst) <= SKIT_MAX_SLOW, `${s.slug}: limit ${SKIT_MAX_SLOW} słów`);
     for (const u of s.uczestnicy) assert.ok(slugi.has(u.slug), `${s.slug}: uczestnik ${u.slug} nie ma wpisu w kartotece`);
   }
 });
@@ -188,4 +188,17 @@ test('feed w repo: utworzenia kart nie są nad dzisiejszymi zmianami', async () 
   assert.ok(idxSkitu !== -1 && idxUtworzenia !== -1 && idxSkitu < idxUtworzenia, 'dodany dziś SKIT jest nad utworzeniami kart');
   const zmiany = feed.filter((f) => f.akcja === 'zmiana').map((f) => feed.indexOf(f));
   assert.ok(zmiany.every((i) => i < idxSkitu), 'zmiany z tego samego dnia są najwyżej');
+});
+
+test('limit długości jest jeden: kod = protokół = instrukcja (ADR 0015)', async () => {
+  const fs = await import('node:fs/promises');
+  assert.equal(SKIT_MAX_SLOW, 300, 'walidator: 300 słów');
+  assert.equal(SKIT_MIN_SLOW, 60, 'dolna granica bez zmian');
+  const prot = await fs.readFile('docs/PROTOKOL.md', 'utf8');
+  const workflow = await fs.readFile('docs/WORKFLOW.md', 'utf8');
+  const agents = await fs.readFile('AGENTS.md', 'utf8');
+  assert.match(prot, /maks\. 300 słów/, 'PROTOKÓŁ §8.2');
+  assert.ok(!/maks\. 250 słów/.test(prot), 'PROTOKÓŁ nie może głosić starego limitu');
+  assert.match(workflow, /60–300 słów/, 'WORKFLOW');
+  assert.match(agents, /maks\. 300 słów/, 'AGENTS §3');
 });

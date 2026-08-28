@@ -37,7 +37,7 @@ export const REZERWOWANE_SLUGI = ['skity', 'nowosci', 'panel', 'mapa', 'lista'];
 /** Limity SKITa (zlecenie właściciela 2026-08-28, PROTOKÓŁ §8, ADR 0013). */
 export const SKIT_MIN_UCZESTNIKOW = 2;
 export const SKIT_MAX_UCZESTNIKOW = 4;
-export const SKIT_MAX_SLOW = 250;
+export const SKIT_MAX_SLOW = 300;
 export const SKIT_MIN_SLOW = 60;
 /** Zakazany żargon gry w SKITcie — to rozmowa bytów, nie kart (PROTOKÓŁ §8.3). */
 const ZAKAZANY_ZARGON = /\b(mana|P\/T|oracle|booster|deck|life total|sorcery|instant|endure|fetch land|commander)\b/i;
@@ -158,7 +158,7 @@ export function walidujWpis(w) {
   return e;
 }
 
-/** Liczba słów w tekście SKITa (limit protokołu: 250). */
+/** Liczba słów w tekście SKITa (limit protokołu: 300 — ADR 0015). */
 export function liczbaSlow(tekst) {
   return String(tekst ?? '').trim().split(/\s+/).filter(Boolean).length;
 }

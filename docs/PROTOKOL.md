@@ -5,10 +5,11 @@
 > aplikacja + kartoteka. Protokół opisuje, jak powstaje i co zawiera pojedynczy
 > wpis („kartotka manifestacji”).
 >
-> Status: **obowiązujący** (v1.3 od 2026-08-28; v1.2 i v1.1 — 2026-08-27/28).
+> Status: **obowiązujący** (v1.4 od 2026-08-28; v1.3 i v1.2 — 2026-08-28; v1.1 — 2026-08-27).
 > Zmiany protokołu wymagają ADR.
 > v1.1 (ADR 0005): rama promptu 21:9. v1.2 (ADR 0011): obowiązująca kolejność
 > prezentacji sekcji oraz adres www jako część źródła. **v1.3 (ADR 0012):
+> **v1.4 (ADR 0015): limit długości SKITa 250 → 300 słów.** W v1.3 (ADR 0012)
 > numeracja sekcji idzie za kolejnością (I = Wizualizacja … V = Rezonans) i
 > dochodzi sekcja VI „SKITy”** (Baza Skitów, ADR 0013).
 
@@ -157,7 +158,7 @@ SKIT to fragment prozy (dialog materializacji) z **Bazy Skitów**
 (`data/skity/`, ADR 0013). Sekcja VI wpisu nie jest pisana w pliku wpisu:
 indeks podpowiada wszystkie skity, w których dana manifestacja występuje, a
 aplikacja linkuje je pod kartoteką. Zasady pisania skitów (dramatis personae,
-limit 250 słów, unikalność zestawu uczestników, zakaz terminologii growej)
+limit 300 słów, unikalność zestawu uczestników, zakaz terminologii growej)
 reguluje §8.
 
 ## 5. Rama promptu wizualizacji (v1.1 — obowiązuje od 2026-08-27)
@@ -257,7 +258,8 @@ dialog, bez zdań-wstępów. Stopka karty (wpisu i skitu) pokazuje wyłącznie d
   jeśli już, to w didaskaliach w nawiasach kwadratowych;
 * każda replika w wierszu: `**Imię:** [didaskalia] wypowiedź`, akapity rozdzielone
   pustą linią;
-* długość: **maks. 250 słów** (walidator liczy w `tekst`; poniżej ~60 słów
+* długość: **maks. 300 słów** (limit podniesiony z 250 decyzją właściciela 2026-08-28,
+  ADR 0015; walidator liczy w `tekst`; poniżej ~60 słów
   rozmowa nie ma oddechu — też odrzucamy).
 
 ### 8.3 Treść — rygory

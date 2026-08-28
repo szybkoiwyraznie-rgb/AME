@@ -76,7 +76,7 @@ je wyłącznie na wyraźne zlecenie właściciela w sesji.
 ## M3b (2026-08-28) — zlecenia: Baza Skitów i „Co nowego" — ✅ KOŃCZONA (w PR #2)
 
 - [x] **SKITy** (ADR 0013, PROTOKÓŁ §8): format danych `data/skity/`,
-      walidator (2–4 uczestników, unikalny skład, 60–250 słów, zakaz żargonu
+      walidator (2–4 uczestników, unikalny skład, 60–300 słów, zakaz żargonu
       gry), indeks v2, Baza Skitów w UI (przycisk „✎ skity"), sekcja VI pod
       kartą bytu, deep-link `#skit:<slug>`; pierwszy SKIT „PŁÓTNO I KAMIEŃ".
 - [x] **C3 w Pętli Jakości** (nad C2): dopisywanie SKITa o nowym składzie.

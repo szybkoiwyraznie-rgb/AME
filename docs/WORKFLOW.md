@@ -157,7 +157,7 @@ mieścić opisu w stopce karty: wyświetla ona wyłącznie daty.
 3. **Pisanie.** Nagłówek to `tytul` (wersaliki w renderze), pod nim uczestnicy,
    dalej czysty dialog: `**Imię:** [didaskalia] wypowiedź`, akapity po
    pustej linii. Zero żargonu gry, zero narracji autorskiej. Mieść się w
-   60–250 słów.
+   60–300 słów (limit protokołu v1.4, ADR 0015).
 4. **Plik.** `data/skity/<slug>.json` (slug = `^[a-z0-9-]+$`, zgodny z nazwą
    pliku), `meta.utworzono` = dzisiejsza data.
 5. **Build i testy.** `npm run build && npm test` — walidator sprawdza limity,
