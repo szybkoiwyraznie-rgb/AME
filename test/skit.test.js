@@ -142,3 +142,50 @@ test('renderer: struktura dialogu w prawdziwym skicie zgadza się z liczbą repl
   assert.ok(!(html.match(/class="proza"/g) ?? []).length, 'w dialogu nie ma luźnej narracji');
   for (const u of skit.uczestnicy) assert.ok(html.includes(`>${u.imie}</strong>`), `brak głosu: ${u.imie}`);
 });
+
+test('feed „Co nowego”: najnowsze ZDARZENIA na górze (data desc, sekwencja w pliku desc)', () => {
+  const wpis = {
+    slug: 'a-byt',
+    nazwa: 'A Byt',
+    karta: { nazwa: 'Karta' },
+    meta: { utworzono: '2026-01-01', modyfikacje: [{ data: '2026-03-03', opis: 'poprawki źródłowe' }, { data: '2026-03-03', opis: 'dopisane trofeum wtórne' }] },
+  };
+  const drugi = { slug: 'b-byt', nazwa: 'B Byt', karta: { nazwa: 'Karta 2' }, meta: { utworzono: '2026-03-03', modyfikacje: [] } };
+  const skit = {
+    slug: 'c-skit',
+    tytul: 'SKIT C',
+    uczestnicy: [{ imie: 'A Byt', slug: 'a-byt' }, { imie: 'B Byt', slug: 'b-byt' }],
+    tekst: '**A Byt:** zdanie\n\n**B Byt:** druga odpowiedź',
+    meta: { utworzono: '2026-03-03', modyfikacje: [] },
+  };
+  const feed = zbudujIndeks([wpis, drugi], [skit]).aktualizacje;
+  const daty = feed.map((f) => f.data);
+  assert.deepEqual(daty, [...daty].sort((a, b) => b.localeCompare(a)), 'daty malejąco');
+  // 2026-03-03: ostatnia modyfikacja a-byt, potem utworzenia (skit przed wpisami), a 2026-01-01 na końcu
+  assert.deepEqual(
+    feed.map((f) => `${f.data}|${f.typ}|${f.akcja}|${f.slug}`),
+    [
+      '2026-03-03|manifestacja|zmiana|a-byt',
+      '2026-03-03|manifestacja|zmiana|a-byt',
+      '2026-03-03|skit|nowy|c-skit',
+      '2026-03-03|manifestacja|nowa|b-byt',
+      '2026-01-01|manifestacja|nowa|a-byt',
+    ],
+    'kolejność: najnowsza zmiana, wcześniejsza zmiana, nowe skity, nowe wpisy, dawne utworzenia'
+  );
+  assert.equal(feed[0].opis, 'dopisane trofeum wtórne', 'w obrębie dnia liczy się ostatnia modyfikacja');
+  assert.ok(!('sekwencja' in feed[0]), 'klucz sortujący nie trafia do indeksu');
+});
+
+test('feed w repo: utworzenia kart nie są nad dzisiejszymi zmianami', async () => {
+  const fs = await import('node:fs/promises');
+  const indeks2 = JSON.parse(await fs.readFile('data/index.json', 'utf8'));
+  const feed = indeks2.aktualizacje;
+  const pierwsze = feed[0];
+  assert.ok(pierwsze.data === feed[0].data, 'daty malejąco');
+  const idxSkitu = feed.findIndex((f) => f.typ === 'skit' && f.akcja === 'nowy');
+  const idxUtworzenia = feed.findIndex((f) => f.typ === 'manifestacja' && f.akcja === 'nowa');
+  assert.ok(idxSkitu !== -1 && idxUtworzenia !== -1 && idxSkitu < idxUtworzenia, 'dodany dziś SKIT jest nad utworzeniami kart');
+  const zmiany = feed.filter((f) => f.akcja === 'zmiana').map((f) => feed.indexOf(f));
+  assert.ok(zmiany.every((i) => i < idxSkitu), 'zmiany z tego samego dnia są najwyżej');
+});

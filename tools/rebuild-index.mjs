@@ -282,7 +282,7 @@ function rekordSkitu(s) {
 
 /**
  * Buduje deterministyczny indeks: skróty wpisów (+ skity jako sekcja VI),
- * słownik tagów, backlinki i feed `aktualizacje` (sekcja „Co nowego",
+ * słownik tagów, backlinki i feed `aktualizacje` (sekcja „Co nowego”,
  * najnowsze na górze) wyliczony z `meta` wpisów i skitów.
  */
 export function zbudujIndeks(wpisy, skiti = []) {
@@ -328,38 +328,45 @@ export function zbudujIndeks(wpisy, skiti = []) {
   for (const r of rekordy) r.skity = (skityWpisu.get(r.slug) ?? []).sort((a, b) => a.localeCompare(b, 'pl'));
 
   // Feed „Co nowego”: powstania i modyfikacje wpisów oraz skitów, najnowsze na górze.
+  // Najnowsze ZDARZENIA na górze. W obrębie pliku numerujemy zdarzenia
+  // (`sekwencja`: 0 = utworzenie, k+1 = k-ty wpis `meta.modyfikacje`, które są
+  // dopisywane chronologicznie), więc dnia, gdy coś zmieniono, zmiana jest nad
+  // utworzeniem — a nie pod nim, jak przy randze po typie akcji. Sort: data
+  // malejąco, sekwencja malejąco, potem typ (skity przed wpisami) i slug;
+  // porządek totalny i powtarzalny.
   const aktualizacje = [];
-  const dodaj = (wpis) => aktualizacje.push(wpis);
+  const dodaj = (wpis, sekwencja) => aktualizacje.push({ ...wpis, sekwencja });
   for (const w of posortowane) {
-    dodaj({
-      data: w.meta?.utworzono ?? '',
-      typ: 'manifestacja',
-      akcja: 'nowa',
-      slug: w.slug,
-      tytul: w.nazwa,
-      opis: `wpis w kartotece — materializacja karty „${w.karta?.nazwa ?? '?'}”`,
-    });
-    for (const mod of w.meta?.modyfikacje ?? []) {
-      dodaj({ data: mod.data, typ: 'manifestacja', akcja: 'zmiana', slug: w.slug, tytul: w.nazwa, opis: mod.opis });
-    }
+    dodaj(
+      {
+        data: w.meta?.utworzono ?? '',
+        typ: 'manifestacja',
+        akcja: 'nowa',
+        slug: w.slug,
+        tytul: w.nazwa,
+        opis: `wpis w kartotece — materializacja karty „${w.karta?.nazwa ?? '?'}”`,
+      },
+      0
+    );
+    (w.meta?.modyfikacje ?? []).forEach((mod, k) =>
+      dodaj({ data: mod.data, typ: 'manifestacja', akcja: 'zmiana', slug: w.slug, tytul: w.nazwa, opis: mod.opis }, k + 1)
+    );
   }
   for (const s of [...skiti].sort((a, b) => a.slug.localeCompare(b.slug, 'pl'))) {
     const kim = (s.uczestnicy ?? []).map((u) => u.imie).join(', ');
-    dodaj({ data: s.meta?.utworzono ?? '', typ: 'skit', akcja: 'nowy', slug: s.slug, tytul: s.tytul, opis: `SKIT — skład: ${kim}` });
-    for (const mod of s.meta?.modyfikacje ?? []) {
-      dodaj({ data: mod.data, typ: 'skit', akcja: 'zmiana', slug: s.slug, tytul: s.tytul, opis: mod.opis });
-    }
+    dodaj({ data: s.meta?.utworzono ?? '', typ: 'skit', akcja: 'nowy', slug: s.slug, tytul: s.tytul, opis: `SKIT — skład: ${kim}` }, 0);
+    (s.meta?.modyfikacje ?? []).forEach((mod, k) =>
+      dodaj({ data: mod.data, typ: 'skit', akcja: 'zmiana', slug: s.slug, tytul: s.tytul, opis: mod.opis }, k + 1)
+    );
   }
-  // Najnowsze na górze; przy tej samej dacie: najpierw przyrosty (nowe wpisy i
-  // skity), potem zmiany, a na końcu porządek alfabetyczny — totalny i powtarzalny.
-  const RANGA_AKCJI = { nowa: 0, nowy: 0, zmiana: 1 };
   aktualizacje.sort(
     (a, b) =>
       String(b.data).localeCompare(String(a.data)) ||
-      (RANGA_AKCJI[a.akcja] ?? 9) - (RANGA_AKCJI[b.akcja] ?? 9) ||
-      a.typ.localeCompare(b.typ, 'pl') ||
+      b.sekwencja - a.sekwencja ||
+      b.typ.localeCompare(a.typ, 'pl') ||
       a.slug.localeCompare(b.slug, 'pl')
   );
+  for (const a of aktualizacje) delete a.sekwencja; // klucz tylko do sortowania — bez szumu w indeksie
 
   return {
     wersja: 2,

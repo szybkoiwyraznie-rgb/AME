@@ -123,18 +123,18 @@
     {
       "data": "2026-08-28",
       "typ": "manifestacja",
-      "akcja": "nowa",
+      "akcja": "zmiana",
       "slug": "egungun",
       "tytul": "Egungun",
-      "opis": "wpis w kartotece — materializacja karty „Krumar Initiate”"
+      "opis": "sesja M3 (B1/B3/C1): sekcje wpisów w kolejności prezentacji, wszystkie pozycje dokumentacji z adresami zweryfikowanymi w sieci, uzupełnienia źródłowe"
     },
     {
       "data": "2026-08-28",
       "typ": "manifestacja",
-      "akcja": "nowa",
+      "akcja": "zmiana",
       "slug": "lincoln-imp",
       "tytul": "Imp z Lincoln",
-      "opis": "wpis w kartotece — materializacja karty „Forge Devil”"
+      "opis": "sesja M3 (B1/B3/C1): sekcje wpisów w kolejności prezentacji, wszystkie pozycje dokumentacji z adresami zweryfikowanymi w sieci, uzupełnienia źródłowe"
     },
     {
       "data": "2026-08-28",
@@ -147,18 +147,18 @@
     {
       "data": "2026-08-28",
       "typ": "manifestacja",
-      "akcja": "zmiana",
+      "akcja": "nowa",
       "slug": "egungun",
       "tytul": "Egungun",
-      "opis": "sesja M3 (B1/B3/C1): sekcje wpisów w kolejności prezentacji, wszystkie pozycje dokumentacji z adresami zweryfikowanymi w sieci, uzupełnienia źródłowe"
+      "opis": "wpis w kartotece — materializacja karty „Krumar Initiate”"
     },
     {
       "data": "2026-08-28",
       "typ": "manifestacja",
-      "akcja": "zmiana",
+      "akcja": "nowa",
       "slug": "lincoln-imp",
       "tytul": "Imp z Lincoln",
-      "opis": "sesja M3 (B1/B3/C1): sekcje wpisów w kolejności prezentacji, wszystkie pozycje dokumentacji z adresami zweryfikowanymi w sieci, uzupełnienia źródłowe"
+      "opis": "wpis w kartotece — materializacja karty „Forge Devil”"
     }
   ]
 }
