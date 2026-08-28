@@ -264,6 +264,7 @@
       "backlinki": [
         "barbarossa-kyffhaeuser",
         "drangue-shala",
+        "lincoln-imp",
         "selkie-sule-skerry"
       ],
       "obraz": "assets/wizualizacje/balor.jpg",
@@ -331,7 +332,8 @@
         "lincoln-imp"
       ],
       "backlinki": [
-        "kentaur-pelion"
+        "kentaur-pelion",
+        "lincoln-imp"
       ],
       "obraz": "assets/wizualizacje/drangue-shala.jpg",
       "skity": [
@@ -458,6 +460,8 @@
         "zle-oko"
       ],
       "powiazania": [
+        "balor",
+        "drangue-shala",
         "egungun"
       ],
       "backlinki": [
@@ -603,6 +607,14 @@
     }
   ],
   "aktualizacje": [
+    {
+      "data": "2026-08-28 18:05",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "lincoln-imp",
+      "tytul": "Imp z Lincoln",
+      "opis": "Dopisano pełniejszą wersję legendy o dwóch impach-bliźniakach: anioł wychodzący z hymnału skamienił śmiałka w Angel Choir, a jego towarzysz uciekł do Grimsby (trzyma się za obolały tyłek pod wieżą) — stąd powiedzenie, że wiatr krążący wokół katedry to imp szukający zaginionego brata. Dwa nowe źródła oraz obustronne powiązania z Balorem (złe spojrzenie) i drangue z Szali (święty przedmiot jako herb i tarcza wspólnoty)."
+    },
     {
       "data": "2026-08-28 16:45",
       "typ": "skit",
