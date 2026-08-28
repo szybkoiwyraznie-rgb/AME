@@ -334,7 +334,10 @@ test('przyciskKopiowania: etykieta z celem i bez celu pusty', async () => {
 test('kopiowanie linku jest podpięte w obu warstwach (handlerzy widzą data-kopia)', async () => {
   const app = await readFile('app/app.js', 'utf8');
   const panel = app.slice(app.indexOf("$('#panel').addEventListener"), app.indexOf("$('#lista').addEventListener"));
-  const warstwa = app.slice(app.indexOf("$('#warstwa').addEventListener"), app.indexOf("$('#przycisk-motyw')"));
+  const od = app.indexOf("$('#warstwa').addEventListener");
+  const do_ = app.indexOf("$('#przycisk-motyw').addEventListener");
+  assert.ok(od > -1 && do_ > od, 'w app.js handler #warstwa musi poprzedzać podpięcie przycisku motywu');
+  const warstwa = app.slice(od, do_);
   assert.ok(/data-kopia/.test(panel), 'kartoteka: brak obsługi [data-kopia] — przycisk byłby martwy');
   assert.ok(/kopiujLink\(/.test(panel), 'kartoteka: wywołanie kopiujLink');
   assert.ok(/data-kopia/.test(warstwa) && /kopiujLink\(/.test(warstwa), 'warstwa skitów/feedu: to samo');
