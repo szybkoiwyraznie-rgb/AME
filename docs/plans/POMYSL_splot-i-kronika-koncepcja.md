@@ -41,6 +41,66 @@ To pozwala oprzeć całość na tym, co mamy, bez łamania granic (ADR 0001–00
 kanoniczny artefakt zostaje czystą statyką, a „silnikiem AI" jest proces
 sesyjny (agent Areny), którego wynikiem są **dane** dogrywane do repo.
 
+## 1a. Realia zdolności agenta Areny — SZCZERA odpowiedź na wątpliwość (M11)
+
+Właściciel słusznie pyta: czy agent Areny może powoływać subagentów? **Uczciwa
+odpowiedź: nie w sposób, w jaki brzmiało to w koncepcji z M10.** Muszę to
+sprostować, żeby projekt nie stał na fałszywym założeniu.
+
+**Jak jest naprawdę:**
+
+- Agent Areny to **jeden proces w danej turze**. Nie mam narzędzia „powołaj
+  niezależny model z własnym kontekstem", nie odpalam równoległych agentów z
+  odseparowaną pamięcią. Wszystko, co „mówią" postacie, wychodzi z jednego,
+  wspólnego kontekstu — czyli **de facto z jednego wszechwiedzącego umysłu**.
+- „Subagenci wcieleni w byty" z M10 są więc **metaforą metody pisania**, a nie
+  osobnymi bytami technicznymi. Mogę *symulować* wielogłos (pisać każdą postać
+  w jej dossier), ale nie ma twardej izolacji pamięci między nimi — a to
+  właśnie ta izolacja dawała obiecywaną „wybuchowość" i brak wycieków.
+
+**Co z tego wynika (trzy uczciwe opcje):**
+
+1. **Symulowany wielogłos z dyscypliną „blind-draft" (możliwe DZIŚ, bez kluczy).**
+   Jeden agent, ale pisze postaci w narzuconym rygorze: dla każdej repliki
+   świadomie korzysta tylko z jej dossier, a wiedzę spoza niego traktuje jak
+   nieznaną. To da się wymusić proceduralnie (patrz §2.4) i przetestować
+   (walidator „czy postać użyła faktu spoza swojego dossier"). Ograniczenie:
+   izolacja jest **dyscyplinarna, nie techniczna** — ryzyko subtelnego wycieku
+   zostaje, choć walidator łapie te jawne. To jest realny, natychmiastowy tryb.
+2. **Prawdziwie niezależne modele = architektura 3a (runtime z kluczami).**
+   Dopiero osobne wywołania API (różne modele, każdy z własnym promptem-dossier
+   i bez dostępu do cudzego) dają twardą izolację i autentyczny wielogłos. To
+   wymaga kluczy w pamięci sesji przeglądarki i złamania ADR 0003 (osobny ADR).
+   To jedyna droga do tego, co właściciel nazwał „mega możliwościami".
+3. **Wieloturowa Kronika popychana przez KOLEJNE sesje (hybryda, ciekawa!).**
+   Choć w jednej turze jestem jednym umysłem, **różne sesje to różne uruchomienia
+   agenta**, które widzą tylko stan z repo + prompt. Można to wykorzystać jako
+   naturalną, choć powolną izolację: sesja A dopisuje ruch bytu X (znając stan
+   publiczny), sesja B — bytu Y. „Ukryta wiedza" bytu nie żyje wtedy w jednym
+   kontekście, tylko w prywatnych polach danych, których kolejna sesja świadomie
+   nie czyta przy graniu innej postaci. To wolne, ale zgodne z DNA projektu i
+   bez kluczy.
+
+**Wniosek dla kierunku:** obietnica „każdy byt = niezależny agent" jest
+realna tylko w 3a (klucze). Bez kluczy mamy do dyspozycji symulowany wielogłos
+(1) oraz izolację przez kolejne sesje (3) — słabsze, ale uczciwe i wdrażalne
+od zaraz. Rekomendacja aktualizowana: **prototypować na (1)+(3), a 3a trzymać
+jako świadomy, opisany w ADR skok, gdy właściciel zdecyduje o kluczach.**
+
+### 2.4 „Blind-draft": dyscyplina pisania wielogłosu jednym agentem
+
+Skoro izolacja jest dyscyplinarna, potrzebuje twardej procedury i testu:
+
+1. Dla każdej postaci wypisz jej **dossier** (§2.1) PRZED pisaniem dialogu.
+2. Pisz replika po replice; przy każdej patrz WYŁĄCZNIE w dossier mówiącego.
+   Jeśli fakt nie jest w jego dossier, postać go NIE zna (może się mylić,
+   zgadywać, reagować swoimi kategoriami — to jest pożądane).
+3. Po napisaniu: **audyt wycieków** — dla każdej repliki sprawdź, czy nie użyła
+   nazwy własnej / pojęcia / wiedzy spoza dossier mówiącego (np. Balor nie
+   powie „selkie" ani „katedra", bo tego nie zna). Jawne wycieki = poprawka.
+4. Kandydat na walidator (przyszłość): lista „obcych terminów" per byt z jego
+   epoki/kultury; ostrzeżenie, gdy replika ich używa. Heurystyka, nie NLP.
+
 ## 2. KRONIKA (warstwa B) — wcielone spotkania jako źródło treści
 
 ### 2.1 Dossier postaci (to, co dostaje subagent)
@@ -90,8 +150,12 @@ samego wpisu dostają tę samą kartę. Kandydat na czystą funkcję `dossierByt
 
 ## 3. SPLOT (warstwa A) — świat, który się zmienia
 
-A dostarcza KRONICE powodów i stawki, i jest odpowiedzią na „auto-gra vs decyzje".
-Proponuję **auto-grę z opcjonalną ręką gracza** (obie na tym samym silniku):
+A dostarcza KRONICE powodów i stawki. **Decyzja właściciela (M11): tryb
+OBSERWATORA jest domyślny i główny** — jest ciekawszy, bo wymaga więcej od
+mechaniki i od decyzji AI, a obserwator z definicji **nikogo nie faworyzuje**:
+sprawiedliwość spoczywa na systemie (statystyki, reguły) i na „agentach"
+(bytach grających swoje interesy), nie na graczu. Tryb kustosza-reżysera
+zostaje jako możliwe późniejsze rozszerzenie, nie rdzeń.
 
 - **Świat = kartoteka + jej sieć.** Stan świata to statystyki (znormalizowane,
   `profileKartoteki`), powiązania, tereny (kraje z `lokalizacja`).
@@ -99,16 +163,18 @@ Proponuję **auto-grę z opcjonalną ręką gracza** (obie na tym samym silniku)
   z Kroniki modyfikuje relacje i wpływy (kto komu winien, kto z kim w koalicji,
   kto stracił teren). Dochodzą nowe byty (każda nowa materializacja = nowy gracz
   świata) i interferują z resztą.
-- **Rola gracza (do wyboru, nie teraz):**
-  - *tryb obserwatora (auto-gra):* patrzysz, jak świat sam się plecie; klikasz w
-    wydarzenia, one prowadzą do kart (spójne z resztą AME);
-  - *tryb kustosza (decyzje):* rzadkie, znaczące wybory — które spotkanie
-    „rozegrać" jako następne, kogo wesprzeć zasobem, którą koalicję pobłogosławić.
-    Decyzje zmieniają, KTO się spotyka i z jaką stawką — a nie mikro-liczby.
-
-Otwarte pytanie do właściciela pozostaje (jaki dokładnie zakres decyzji), ale
-rama jest: **decyzje gracza operują na poziomie „reżysera spotkań", nie
-mikro-menedżera słupków** — to trzyma A z dala od płaskości.
+- **Rola gracza — OBSERWATOR (domyślna, M11):**
+  - patrzysz, jak świat sam się plecie: byty spotykają się, zawiązują koalicje,
+    tracą tereny, dochodzą nowe materializacje i interferują z resztą;
+  - interakcja jest **eksploracyjna, nie sterująca**: klikasz w wydarzenia,
+    filtrujesz oś czasu, wchodzisz w karty bytów — jak w resztę AME. Nie
+    „grasz" bytem, tylko czytasz kronikę świata, który toczy się sam;
+  - ciężar „ciekawości" spada więc na **mechanikę i decyzje AI** (byty muszą
+    zachowywać się nietrywialnie), a nie na wybory gracza — dokładnie to, co
+    właściciel wskazał jako trudniejsze, ale wartościowe.
+- **Tryb kustosza-reżysera (opcja na później, nie rdzeń):** rzadkie, znaczące
+  wybory (które spotkanie rozegrać, kogo wesprzeć) — do rozważenia dopiero, gdy
+  obserwator zadziała.
 
 ## 4. Model danych „Kroniki" (szkic, nie schemat)
 
@@ -151,13 +217,17 @@ agent przy zapisie, nie przeglądarka.
 | Granice ADR | łamie ADR 0003 (sieć w runtime) → nowy ADR | mieści się w ADR 0001–0003 |
 | Determinizm | trudny (odpowiedzi modeli) | **naturalny** (wynik zapisany jako dane) |
 | Doświadczenie | interaktywne „na żywo" | narracja rosnąca sesja po sesji |
-| Subagenci-postaci | możliwe, ale kosztowne i ulotne | **idealne** — każdy agent gra rolę i zapisuje ślad |
+| Subagenci-postaci | **prawdziwa izolacja** (osobne wywołania modeli) | tylko symulowana (§1a) albo przez kolejne sesje |
 
-**Rekomendacja:** zacząć od **3b** (pregenerowana Kronika popychana przez
-agentów Areny). Jest zgodna z DNA projektu, nie wymaga sekretów, daje
-deterministyczny, wersjonowany artefakt i najlepiej wykorzystuje pomysł
-subagentów-postaci. Runtime (3a) zostaje jako możliwe późniejsze rozszerzenie
-(np. „zagraj jedną turę na żywo swoim kluczem") za osobnym ADR.
+**Rekomendacja (zaktualizowana po §1a, M11):** zacząć od **3b** (Kronika jako
+dane popychane przez kolejne sesje agenta) w połączeniu z **symulowanym
+wielogłosem „blind-draft"** (§2.4) i **izolacją przez kolejne sesje** (§1a
+opcja 3). To realne od zaraz, bez kluczy, zgodne z ADR 0001–0003 i z trybem
+obserwatora (§3). **Ale trzeba nazwać rzecz po imieniu:** twardej izolacji
+wiedzy między bytami (prawdziwych niezależnych „subagentów") **nie da się
+osiągnąć bez 3a** (osobne wywołania modeli, klucze w pamięci sesji, osobny
+ADR łamiący ADR 0003). 3a to jedyna droga do „mega możliwości" z pełną
+izolacją — decyzja o kluczach należy do właściciela.
 
 ## 7. Weryfikacja PRZED kodem (eksperymenty myślowe/treściowe)
 
@@ -204,8 +274,13 @@ zinterpretuje to po swojemu, nie jak wszechwiedzący narrator.
 - **Gdy właściciel zdecyduje:** ADR „Kronika: rozgrywka jako dane popychane przez
   agentów (model 3b)" + `docs/plans/PLAN_...` z modelem danych §4 i pierwszą
   epoką. Dopiero wtedy kod (walidator Kroniki, widok `#kronika`).
-- **Otwarte pytania do właściciela** (nie blokują treści):
-  1. Rola gracza w SPLOCIE: obserwator, kustosz-reżyser, czy oba tryby?
-  2. Architektura AI: potwierdzasz start od 3b (bez kluczy), z 3a jako opcją później?
-  3. Czy „Kronika jako dane w repo" (wersjonowana, popychana sesjami) to
-     kierunek, który chcesz — zanim napiszę pod niego ADR?
+- **Rozstrzygnięte (M11):**
+  1. **Rola gracza = OBSERWATOR** (§3) — domyślny i główny tryb.
+  2. **Realia AI wyjaśnione (§1a):** bez kluczy mamy symulowany wielogłos
+     (blind-draft) + izolację przez kolejne sesje; twarda izolacja „subagentów"
+     wymaga 3a (klucze, osobny ADR). Start prototypu od 3b + blind-draft.
+- **Nadal do decyzji właściciela** (nie blokuje treści):
+  1. Czy akceptujesz, że pełna izolacja bytów = dopiero 3a (klucze w sesji),
+     a do tego czasu jedziemy na symulacji (§1a opcje 1+3)?
+  2. Czy „Kronika jako dane w repo" (wersjonowana, popychana sesjami) to
+     kierunek, pod który mam napisać ADR i plan pierwszej epoki?
