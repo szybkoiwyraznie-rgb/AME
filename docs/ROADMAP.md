@@ -155,6 +155,21 @@ je wyłącznie na wyraźne zlecenie właściciela w sesji.
       241 słów): ptaki pod dachem, kurz, pranie skrzydeł i „przeciąg wysokiej
       jakości” po oknach wybitych przez ima.
 
+## M6d (2026-08-28) — zlecenie: dwie materializacje (F1) — ✅ w PR #5
+
+- [x] **Empusa z Koryntu** — karta *Illusory Demon* (ARB #21, 2009): fantom
+      Hekaty z jedną nogą z miedzi; czar trwa, dopóki niczego nowego nie
+      rzucono — „When you cast a spell, sacrifice this creature” jako reguła
+      koryńska. Źródła: Theoi (Suda, Filostrat VA 2.4/4.25, Eusebiusz),
+      Wikipedia, pełny tekst „Żab” (MIT). Wizualizacja 21:9.
+- [x] **Kentaur z Pelionu** — karta *Savage Surge* (THS #176, 2013): wino
+      na weselu Pejrytoosa jako +2/+2 „do końca tury”, flavor „A centaur has
+      two backs!” jako untap. Źródła: Theoi Kentauroi, Owidiusz Met. XII
+      (Kline), Wikipedia Lapiths. Wizualizacja 21:9.
+- [x] Kanon +4 tagi (`grecja`, `fantom`, `kentaur`, `furia`); kontrakty danych
+      uaktualnione: 7 kultur źródłowych, ≥3 źródła na wpis, proza bez
+      cyrylicy/CJK (transliteracje), chronologia feedu dosłowna (ADR 0017).
+
 ## F2 — Jakość i ergonomia mapy
 
 - [x] Deep-linki (`#<slug>` — stan mapy i otwartego wpisu; działa od M1, tu

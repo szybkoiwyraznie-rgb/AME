@@ -482,3 +482,45 @@ codziennych sprawach”, nie tylko „sążniste elegie”.
   kiwnik do „e enjte” (czwartek, dzień ognia) z dokumentacji drangue.
 - Stan: `npm test` 120/120, build/check zielone, indeks: 6 wpisów, 5 SKITów,
   16 pozycji feedu.
+
+### Zlecenie w sesji M6: materializacje Illusory Demon (ARB) i Savage Surge (THS) — F1
+
+Obie karty pobrane ze Scryfall (ADR 0008; korekty względem pamięci: Illusory
+Demon jest 4/3 — nie 2/2, Savage Surge kosztuje {1}{G} — nie {G}). Research
+źródłowy: Theoi (Empousai, Kentauroi), Wikipedia (Empusa, Lapiths), Owidiusz
+Met. XII w przekł. Kline (UVA), Arystofanes „Żaby” w Internet Classics Archive
+(MIT) — wszystkie adresy otwarte przed zapisem.
+
+- **Empusa z Koryntu** (`empusa-korynt`, Korynt 37.906/22.88): fantom z
+  orszaku Hekaty (Suda: „phantasma daimonios”), scena Filostrata VA IV.25
+  (Menippos, wesele, tuczenie dla czystej krwi, zniknięcie domu i uczty).
+  Klucz karty: „When you cast a spell, sacrifice this creature” — czar empusy
+  trwa, dopóki nie rzucisz niczego własnego; ruling 2009-01-05 (zdolność na
+  stacku nad czarem, wykonuje się pierwszy) = pierwsze nowe słowo wykłada
+  empusę. 4/3 — siła pozoru, kruchość istoty. Powiązania: egungun (kto stoi
+  pod przyodzianiem — zaproszony przodek vs nieproszony pozór), selkie
+  (przemiana przez to, co noszone).
+- **Kentaur z Pelionu** (`kentaur-pelion`, Pelion 39.443/23.142): Nephele +
+  Iksion, wychowanie u córek Chejrona, wesele Pejrytoosa, Eurytion/Eurytos
+  (Owidiusz), krater Tezeusza, uszy i nos Eurytiona (Lapiths/Wikipedia),
+  wygnanie na Pindos. Klucz karty: +2/+2 i untap = „A centaur has two backs!”
+  — druga akcja z połowy, którą przeciwnik wyłączył z rachuby; ruling
+  2013-09-15 (cel także w tapniętą) = cios w moment przełożenia ciężaru.
+  Powiązania: selkie (dwa ciała), drangue (dwie natury na pograniczu).
+- **Kanon +4:** `grecja` (kultura), `fantom`, `kentaur` (typ), `furia`
+  (motyw). Wpisy: Empusa `grecja, fantom, przemiana, postac-zwierzeca`;
+  Kentaur `grecja, kentaur, furia`.
+- **Wizualizacje:** oba prompty z ram §5; wygenerowane i dotknięte do
+  dokładnie 21:9 (1568×672, 0.11/0.16 MB) przez `sharp` (kadrowanie
+  centralne 21:9 z boku i rekomprese — PIL w sandboxie zniknął po resecie,
+  L6: skrypt osobno, stderr czytany, wymiary zweryfikowane metadanymi).
+- **Kontrakty danych rozstrzygnięte przy okazji:** `dane.test.js` wymaga
+  ≥3 źródeł na wpis (Empusa dostała trzecie: MIT „Żaby”) i liczył 6 kultur →
+  7; zakaz cyrylicy/CJK w prozie → rosyjska i japońska nazwa karty w tabeli
+  rezonansu zapisana transliteracją („Prizrachny demon”, „gen’ei no akuma”);
+  `skit.test.js`: niezmiennik „najnowszy SKIT nad utworzeniami” obowiązywał
+  przy datach dziennych — po ADR 0017 utworzenia mają godziny, więc
+  zamieniony na dosłowną monotoniczność dat w feedzie + najnowsze zdarzenie
+  jako ostatni zapis kartoteki.
+- Stan: `npm test` 120/120, build/check zielone; indeks: **8 wpisów**, 5
+  SKITów, 18 pozycji feedu, 26 tagów. Dwie nowe pinezki na mapie (Grecja ×2).
