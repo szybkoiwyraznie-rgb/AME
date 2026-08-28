@@ -77,8 +77,13 @@ Ponadto:
   jawną decyzją właściciela i kończy sesję kodowania.
 - Pytanie do właściciela wolno zadać wyłącznie gdy praca jest **zablokowana**
   decyzją, której agent nie może podjąć sam (zmiana architektury, sprzeczność
-  ADR, nowa granica nienegocjowalna). Nie pytaj „co robimy?” — domyślna praca
-  sesji jest opisana w `docs/ROADMAP.md` i ADR 0004.
+  ADR, nowa granica nienegocjowalna). **Nie pytaj „co robimy?”** — gdy po
+  audycie brak zaległości i zlecenia właściciela, sesja wchodzi w **Pętlę
+  Jakości (ADR 0007)**: rekurencyjnie, do wyczerpania budżetu sesji,
+  C1 (pogłębianie wpisów — zawsze z researchem w www) i C2 (nowe featury:
+  wymyślić, zakodować z testami, zaprezentować właścicielowi do akceptacji
+  PRZED uruchomieniem live). Polerowanie dokumentacji NIE jest częścią pętli —
+  wykonuje się je wyłącznie na zlecenie właściciela w sesji.
 - **Praca istnieje dopiero po `git push`.** Nowa sesja widzi wyłącznie `main`
   i tekst pierwszego promptu. Commituj i pushuj po każdym zielonym kroku.
 - **Obowiązkowy blok na koniec sesji:** wypisz w czacie instrukcję przekazania
@@ -87,6 +92,13 @@ Ponadto:
 
 ## 3. Zasady treści — protokół MFM (szczegóły: `docs/PROTOKOL.md`, ADR 0005)
 
+- **Karta MtG = zawsze fetch ze Scryfall** (ADR 0008): `fetch_page` na
+  `https://scryfall.com/card/<set>/<numer>/<slug>`; z wpisu wynikają dokładne
+  brzmienia (Oracle text, flavor, artysta, set/numer, rok). Zakaz
+  odtwarzania karty z pamięci.
+- **Wpis = zawsze weryfikacja w źródłach www** (ADR 0008): każda teza
+  faktograficzna i każda pozycja bibliograficzna potwierdzona narzędziami
+  agenta (`web_search` / `fetch_page`). Zakaz pisania wpisów z pamięci.
 - **Jeden byt, jedna kultura, jedno miejsce, jedna nazwa.** Zakaz mieszanek
   synkretycznych („Dziki Gon + Santa Compaña + Perchten” w jednym wpisie).
   Byt musi być jednostką: da się go namierzyć, skonfrontować, pokonać.

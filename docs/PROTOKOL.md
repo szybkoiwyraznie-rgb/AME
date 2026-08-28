@@ -33,6 +33,11 @@ Zakazane są: (a) „zjawiska-kosmosy” zamiast konkretnego bytu do upolowania,
 ```
 KARTA (pełny opis: nazwa+set albo grafika od właściciela)
        ↓
+FETCH Z SCRYFALL — OBOWIĄZKOWY (ADR 0008)
+  • fetch_page https://scryfall.com/card/<set>/<numer>/<slug>
+  • dokładne brzmienie: koszt, typ, P/T, Oracle text, flavor, artysta, rok
+  • zakaz odtwarzania karty z pamięci
+       ↓
 ANALIZA TRANSLACJI
   • Nazwa → etymologia, skojarzenia
   • Mechanika → jak przekłada się na zdolności bytu
@@ -41,6 +46,11 @@ ANALIZA TRANSLACJI
   • Lore MTG → kontekst, który może naprowadzić na kulturę źródłową
        ↓
 IDENTYFIKACJA BYTU (folklor, mitologia, legendy miejskie)
+       ↓
+WERYFIKACJA ŹRÓDŁOWA W WWW — OBOWIĄZKOWA (ADR 0008)
+  • każda teza faktograficzna i każde źródło potwierdzone
+    narzędziami agenta (web_search / fetch_page)
+  • detal nie do potwierdzenia → opuszczamy (nie „domyślamy się”)
        ↓
 PEŁNY WPIS MFM (data/manifestations/<slug>.json)
 ```

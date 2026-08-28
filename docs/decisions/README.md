@@ -21,6 +21,8 @@ Każdy dokument opisuje kontekst, wybór i jego konsekwencje.
 | [0004](0004-model-sesji-pr-audyt-inkrementalne-commity.md) | Model sesji: PR, audyt poprzedniego PR, inkrementalne commity | Zaakceptowana |
 | [0005](0005-protokol-mfm-i-rama-promptu-21-9.md) | Protokół MFM jako obowiązujący format treści; rama promptu wizualizacji 21:9 | Zaakceptowana |
 | [0006](0006-warstwa-wiki-tagi-powiazania.md) | Warstwa wiki: tagi, powiązania przez slugi, backlinki liczone w indeksie | Zaakceptowana |
+| [0007](0007-domyslna-petla-jakosci-c1-c2.md) | Domyślna pętla sesji: Pętla Jakości (C1 treść ↔ C2 featury) do wyczerpania budżetu | Zaakceptowana |
+| [0008](0008-obowiazkowa-weryfikacja-scryfall-www.md) | Obowiązkowa weryfikacja zewnętrzna: Scryfall dla kart, źródła www dla wpisów | Zaakceptowana |
 
 ## Szablon ADR
 

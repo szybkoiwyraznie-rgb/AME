@@ -95,7 +95,10 @@ pushuj od razu; przed długimi operacjami upewnij się, że praca jest wypchnię
 3. `npm test` i `npm run build` — potwierdź zieloność przed zmianami.
 4. Otwórz PR gałęzi sesji (ADR 0004), zanim zaczniesz kodować.
 5. Audyt poprzedniego scalonego PR przed nową pracą.
-6. Nie pytaj „co robimy?” — domyślna praca opisana w `docs/ROADMAP.md`.
+6. Nie pytaj „co robimy?” — brak zlecenia po audycie = **Pętla Jakości**
+   (ADR 0007: C1 treść ↔ C2 featury, rekurencyjnie do wyczerpania budżetu).
+7. Nowe karty/wpisy tylko z obowiązkową weryfikacją zewnętrzną (ADR 0008):
+   Scryfall dla kart, źródła www dla manifestacji — nigdy z pamięci.
 
 ## 7. Checklista przed końcem sesji
 

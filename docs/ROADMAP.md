@@ -21,9 +21,24 @@
       do wklejenia przez właściciela (token agenta bez uprawnień `workflows`);
       instrukcja włączenia Pages.
 
-## F1 — Proces treściowy (CIĄGŁA; praca kolejni agentów)
+## PĘTLA JAKOŚCI — domyślna praca sesji (ADR 0007)
 
-Domyślna pętla pracy sesji bez innego zlecenia (ADR 0004):
+Gdy po audycie (B) brak zaległości, brak zlecenia właściciela i brak otwartych
+zadań w planie sesji, sesja pracuje rekurencyjnie **do wyczerpania budżetu
+sesji**:
+
+- **C1 — treść (wiki):** przegląd wpisów (priorytet: ostatnio dodane),
+  research w źródłach www (obowiązkowy — ADR 0008), uzupełnianie informacji
+  i źródeł, powiązania między manifestacjami, grupowanie tagów, rozwój
+  przeklikiwalnej sieci na wzór Wikipedii.
+- **C2 — featury:** wymyślenie pasującej funkcji AME (bank pomysłów:
+  F2–F4, `docs/BACKLOG.md`), zakodowanie z testami, zaprezentowanie
+  właścicielowi w PR **do akceptacji przed uruchomieniem live**.
+
+**Polerowanie dokumentacji NIE jest częścią Pętli Jakości** — wykonuje się
+je wyłącznie na wyraźne zlecenie właściciela w sesji.
+
+## F1 — Proces treściowy NA ZLECENIE (karty od właściciela — priorytet nad pętlą)
 
 - [ ] Właściciel dostarcza kartę (nazwa+set albo grafika) → sesja tworzy
       pełny wpis MFM wg `docs/PROTOKOL.md` (analiza translacji → identyfikacja
