@@ -1,7 +1,7 @@
 {
   "wersja": 3,
   "liczba": 8,
-  "liczbaSkitow": 6,
+  "liczbaSkitow": 7,
   "kanon": {
     "kategorie": [
       {
@@ -303,7 +303,9 @@
         "egungun"
       ],
       "obraz": "assets/wizualizacje/barbarossa-kyffhaeuser.jpg",
-      "skity": []
+      "skity": [
+        "kalendarz-powrotow"
+      ]
     },
     {
       "slug": "drangue-shala",
@@ -377,6 +379,7 @@
       "obraz": "assets/wizualizacje/egungun.jpg",
       "skity": [
         "hold-oraz-swiatlo",
+        "kalendarz-powrotow",
         "plotno-i-kamien"
       ]
     },
@@ -508,6 +511,7 @@
       ],
       "obraz": "assets/wizualizacje/selkie-sule-skerry.jpg",
       "skity": [
+        "kalendarz-powrotow",
         "znak-i-liczba"
       ]
     }
@@ -561,6 +565,23 @@
       "data": "2026-08-28"
     },
     {
+      "slug": "kalendarz-powrotow",
+      "tytul": "KALENDARZ POWROTÓW",
+      "temat": "trzy sposoby na umówiony powrót: cudzy termin, coroczne wołanie i data podana samemu sobie",
+      "uczestnicy": [
+        "barbarossa-kyffhaeuser",
+        "egungun",
+        "selkie-sule-skerry"
+      ],
+      "imiona": [
+        "Barbarossa",
+        "Egungun",
+        "Selkie z Sule Skerry"
+      ],
+      "slow": 252,
+      "data": "2026-08-28 18:25"
+    },
+    {
       "slug": "kurz-i-piora",
       "tytul": "KURZ I PIÓRA",
       "temat": "ptaki, kurz i pranie skrzydeł: codzienne troski na wysokości",
@@ -607,6 +628,14 @@
     }
   ],
   "aktualizacje": [
+    {
+      "data": "2026-08-28 18:25",
+      "typ": "skit",
+      "akcja": "nowy",
+      "slug": "kalendarz-powrotow",
+      "tytul": "KALENDARZ POWROTÓW",
+      "opis": "SKIT — skład: Barbarossa, Egungun, Selkie z Sule Skerry"
+    },
     {
       "data": "2026-08-28 18:05",
       "typ": "manifestacja",
