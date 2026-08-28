@@ -1,7 +1,7 @@
 {
   "wersja": 3,
   "liczba": 6,
-  "liczbaSkitow": 3,
+  "liczbaSkitow": 4,
   "kanon": {
     "kategorie": [
       {
@@ -237,6 +237,7 @@
       ],
       "obraz": "assets/wizualizacje/balor.jpg",
       "skity": [
+        "godzina-otwarcia",
         "hold-oraz-swiatlo",
         "znak-i-liczba"
       ]
@@ -299,7 +300,9 @@
       ],
       "backlinki": [],
       "obraz": "assets/wizualizacje/drangue-shala.jpg",
-      "skity": []
+      "skity": [
+        "godzina-otwarcia"
+      ]
     },
     {
       "slug": "egungun",
@@ -404,6 +407,21 @@
   ],
   "skity": [
     {
+      "slug": "godzina-otwarcia",
+      "tytul": "GODZINA OTWARCIA",
+      "temat": "słabość jako godzina otwarcia: oko otwarte, skrzydło odcięte",
+      "uczestnicy": [
+        "balor",
+        "drangue-shala"
+      ],
+      "imiona": [
+        "Balor",
+        "Drangue z doliny Shali"
+      ],
+      "slow": 239,
+      "data": "2026-08-28 15:35"
+    },
+    {
       "slug": "hold-oraz-swiatlo",
       "tytul": "HOŁD ORAZ ŚWIATŁO",
       "temat": "trzy modele opłaty za święte miejsce: podatek, zaproszenie i grosz turysty",
@@ -452,6 +470,14 @@
     }
   ],
   "aktualizacje": [
+    {
+      "data": "2026-08-28 15:35",
+      "typ": "skit",
+      "akcja": "nowy",
+      "slug": "godzina-otwarcia",
+      "tytul": "GODZINA OTWARCIA",
+      "opis": "SKIT — skład: Balor, Drangue z doliny Shali"
+    },
     {
       "data": "2026-08-28 15:20",
       "typ": "manifestacja",

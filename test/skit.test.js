@@ -217,17 +217,29 @@ test('feed „Co nowego”: najnowsze ZDARZENIA na górze (data desc, sekwencja 
   assert.ok(!('sekwencja' in feed[0]), 'klucz sortujący nie trafia do indeksu');
 });
 
-test('feed w repo: utworzenia kart nie są nad dzisiejszymi zmianami', async () => {
+test('feed w repo: godzina rozstrzyga nad zapisami dziennymi; wśród dziennych zmiany nad utworzeniami (ADR 0017)', async () => {
   const fs = await import('node:fs/promises');
   const indeks2 = JSON.parse(await fs.readFile('data/index.json', 'utf8'));
   const feed = indeks2.aktualizacje;
-  const pierwsze = feed[0];
-  assert.ok(pierwsze.data === feed[0].data, 'daty malejąco');
+  const dzis = feed[0].data.slice(0, 10);
+  const poz = feed.map((f, i) => ({ ...f, i }));
+  const zGodzina = poz.filter((f) => f.data.includes(' '));
+  const dzienne = poz.filter((f) => f.data === dzis);
+  assert.ok(zGodzina.length > 0, 'nowe zapisy niosą godzinę (ADR 0017)');
+  assert.ok(zGodzina.every(({ data }) => data.startsWith(dzis)), 'pozycje godzinowe pochodzą z najnowszego dnia');
+  assert.ok(
+    zGodzina.every(({ i }) => dzienne.every(({ i: j }) => j > i)),
+    'pozycje z godziną są nad dziennymi zapisami tego samego dnia (zapis dzienny = sprzed v1.5)'
+  );
+  const zmianyDzienne = dzienne.filter((f) => f.akcja === 'zmiana');
+  const utworzeniaDzienne = dzienne.filter((f) => f.akcja === 'nowa');
+  assert.ok(
+    zmianyDzienne.every(({ i }) => utworzeniaDzienne.every(({ i: j }) => j > i)),
+    'wśród dziennych zapisów dnia zmiany są nad utworzeniami (sekwencja, L11)'
+  );
   const idxSkitu = feed.findIndex((f) => f.typ === 'skit' && f.akcja === 'nowy');
   const idxUtworzenia = feed.findIndex((f) => f.typ === 'manifestacja' && f.akcja === 'nowa');
-  assert.ok(idxSkitu !== -1 && idxUtworzenia !== -1 && idxSkitu < idxUtworzenia, 'dodany dziś SKIT jest nad utworzeniami kart');
-  const zmiany = feed.filter((f) => f.akcja === 'zmiana').map((f) => feed.indexOf(f));
-  assert.ok(zmiany.every((i) => i < idxSkitu), 'zmiany z tego samego dnia są najwyżej');
+  assert.ok(idxSkitu !== -1 && idxUtworzenia !== -1 && idxSkitu < idxUtworzenia, 'najnowszy SKIT jest nad utworzeniami kart');
 });
 
 test('limit długości jest jeden: kod = protokół = instrukcja (ADR 0015)', async () => {
