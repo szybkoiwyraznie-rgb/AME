@@ -418,6 +418,7 @@
       ],
       "backlinki": [
         "egungun",
+        "kentaur-pelion",
         "selkie-sule-skerry"
       ],
       "obraz": "assets/wizualizacje/empusa-korynt.jpg",
@@ -447,6 +448,7 @@
       ],
       "powiazania": [
         "drangue-shala",
+        "empusa-korynt",
         "selkie-sule-skerry"
       ],
       "backlinki": [
@@ -720,6 +722,14 @@
     }
   ],
   "aktualizacje": [
+    {
+      "data": "2026-08-28 23:55",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "kentaur-pelion",
+      "tytul": "Kentaur z Pelionu",
+      "opis": "Dopisano Chejrona jako kontrapunkt dzikiego plemienia — mędrca z tego samego Pelionu, który ujarzmił własną naturę (nauczyciel Achillesa i Asklepiosa), oraz drugi „winny” epizod spod jaskini Pholosa. Dodano źródło o Chejronie i powiązanie z Empusą (dwa greckie wesela, które kończą się źle)."
+    },
     {
       "data": "2026-08-28 23:35",
       "typ": "skit",
