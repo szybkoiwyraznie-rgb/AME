@@ -5,7 +5,7 @@
 > aplikacja + kartoteka. Protokół opisuje, jak powstaje i co zawiera pojedynczy
 > wpis („kartotka manifestacji”).
 >
-> Status: **obowiązujący** (v1.5 od 2026-08-28; v1.4, v1.3 i v1.2 — 2026-08-28; v1.1 — 2026-08-27).
+> Status: **obowiązujący** (v1.6 od 2026-08-28; v1.5, v1.4, v1.3 i v1.2 — 2026-08-28; v1.1 — 2026-08-27).
 > Zmiany protokołu wymagają ADR.
 > v1.1 (ADR 0005): rama promptu 21:9. v1.2 (ADR 0011): obowiązująca kolejność
 > prezentacji sekcji oraz adres www jako część źródła. **v1.3 (ADR 0012):
@@ -13,7 +13,9 @@
 > numeracja sekcji idzie za kolejnością (I = Wizualizacja … V = Rezonans) i
 > dochodzi sekcja VI „SKITy”** (Baza Skitów, ADR 0013). **v1.5 (ADR 0017):
 > data w meta może nieść godzinę — `RRRR-MM-DD` albo `RRRR-MM-DD GG:MM` —
-> a feed „Co nowego” podaje datę i godzinę zdarzenia.**
+> a feed „Co nowego” podaje datę i godzinę zdarzenia.** **v1.6 (ADR 0018):
+> ton SKITów — obok rozmów poważnych pełnoprawnym rejestrem jest luz:
+> humor, codzienność, rozmowa „przy ognisku”.**
 
 ## 1. Filozofia systemu
 
@@ -256,10 +258,12 @@ dziecku) i `plotno-i-kamien` (Egungun × Imp z Lincoln — kto wchodzi do
 ## 8. SKITy — warstwa literacka archiwum (od v1.3)
 
 **SKIT** to niezależny obiekt literacki: krótki fragment prozy dialogowej, który
-łączi manifestacje z różnych kultur w rozmowie mądrej, zabawnej i zajmującej
+łączy manifestacje z różnych kultur w rozmowie mądrej, zabawnej i zajmującej
 (por. przerywniki dialogowe z serii *Tales of…*). SKITy budują warstwę
 filozoficzno-satyryczną archiwum: pokazują, jak byty widziane przez swoje
-tradycje rozmawiają ze sobą.
+tradycje rozmawiają ze sobą — **nie tylko o rzeczach wielkich**: od v1.6
+pełnoprawnym rejestrem jest zwykła rozmowa przy ognisku, o codzienności,
+z humorem (ADR 0018, patrz §8.3 pkt 3).
 
 ### 8.1 Gdzie mieszkają
 
@@ -304,6 +308,14 @@ dialog, bez zdań-wstępów. Stopka karty (wpisu i skitu) pokazuje wyłącznie d
    filozofia, wzajemne relacje, obserwacje okolicy, stan fizyczny i psychiczny,
    przemyślenia, zwyczaje wyniesione z kultury, jedzenie, wolny czas, hobby,
    pasje, pragnienia, kompleksy, traumy, duma, poczucie humoru.
+   **Ton (sugestia, v1.6 — ADR 0018):** rozmowy nie muszą być poważne, by były
+   dobre. Pisz też luźne — klimatem jak przy ognisku, po robocie: o prostych,
+   codziennych sprawach (jedzenie, sen, pogoda na jutro, kurz i pranie,
+   zwierzęta pod dachem, drobne ndrogi i żale na sąsiadów), z humorem, żartem
+   i ciepłem. Elegia to jeden z rejestrów, nie jedyny: po serii sążnistych
+   rozmów następna powinna być lekka. Humor trzyma się rygorów: postać żartuje
+   tak, jak żartowałaby w swojej kulturze i czasach (pkt 1), a każdy fakt
+   z żartu musi się zgadzać z kartoteką (pkt 2).
 4. **Oryginalność.** Każdy SKIT ma inny temat niż poprzednie. Zakazane jest
    powtórzenie **składu osobowego**: dwa skity z identycznym zestawem
    materializacji nie przejdą walidatora (`walidujUnikalnoscSkitow`). Skład o
