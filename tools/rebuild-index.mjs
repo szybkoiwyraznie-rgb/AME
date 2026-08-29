@@ -488,6 +488,7 @@ export function zbudujIndeks(wpisy, skiti = [], kanon = null) {
 
   return {
     wersja: 3,
+    buildTime: new Date().toISOString(),
     liczba: rekordy.length,
     liczbaSkitow: rekordySkitow.length,
     kanon: { kategorie },
@@ -599,7 +600,12 @@ async function main() {
       console.error(`--check: brak ${PLIK_INDEKSU}. Uruchom npm run build.`);
       process.exit(1);
     }
-    if (istniejacy !== tresc) {
+    
+    const ob1 = JSON.parse(istniejacy);
+    const ob2 = JSON.parse(tresc);
+    delete ob1.buildTime;
+    delete ob2.buildTime;
+    if (JSON.stringify(ob1) !== JSON.stringify(ob2)) {
       console.error('--check: data/index.json nie zgadza się z wpisami. Uruchom npm run build i wcommituj indeks.');
       process.exit(1);
     }

@@ -33,5 +33,5 @@ jobs:
       - name: Indeks aktualny wobec wpisów (ADR 0002)
         run: |
           npm run check
-          git diff --exit-code data/index.json
+          git diff -I'"buildTime":' --exit-code data/index.json
           echo "data/index.json zgodny z data/manifestations/ i data/skity/"

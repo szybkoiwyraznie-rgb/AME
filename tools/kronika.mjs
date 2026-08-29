@@ -664,17 +664,30 @@ export function formatujDialogHTML(tekst) {
 
 /** Wspólny pasek nawigacji aplikacji Kroniki */
 export function generujTopbarHTML(aktywny = 'kronika') {
-  return `
-  <header class="topbar">
-    <a class="brand" href="../index.html">AME<span class="dot">.</span> KRONIKA</a>
-    <nav class="nav-links">
-      <a href="../index.html" class="nav-item">🗺️ Mapa świata</a>
-      <a href="../index.html#lista" class="nav-item">☰ Kartoteka</a>
-      <a href="../index.html#skity" class="nav-item">✎ Skity</a>
-      <a href="../index.html#nowosci" class="nav-item">✚ Nowości</a>
-      <a href="kronika-tom-1.html" class="nav-item ${aktywny === 'tom-1' ? 'active' : ''}">📜 Tom I: Trzy Stoły</a>
-    </nav>
-  </header>`;
+  return `  <header class="gora">
+    <div class="tytul">
+      <h1><a href="../index.html" style="text-decoration:none;color:inherit">AME</a></h1>
+      <p>Archiwum Manifestacji Eterycznych</p>
+    </div>
+    <input id="szukaj" type="search" placeholder="Szukaj: nazwa, karta, tag, kraj…" autocomplete="off" aria-label="Szukaj manifestacji" onkeypress="if(event.key === 'Enter') window.location.href='../index.html?q='+encodeURIComponent(this.value)">
+    <div class="akcje">
+      <a id="przycisk-los" class="przycisk" href="../index.html?action=wylosuj" title="Wylosuj manifestację i przeleć do niej na mapie">🎲 wylosuj</a>
+      <a id="przycisk-luki" class="przycisk" href="../index.html?action=powiazania" title="Pokaż powiązania na mapie">∞ powiązania</a>
+      <a id="przycisk-lista" class="przycisk" href="../index.html#lista" title="Lista wszystkich manifestacji">☰ kartoteka</a>
+      <a id="przycisk-skity" class="przycisk" href="../index.html#skity" title="Baza Skitów — rozmowy materializacji">✎ skity</a>
+      <a id="przycisk-nowosci" class="przycisk" href="../index.html#nowosci" title="Co nowego — aktualizacje archiwum">✚ nowości</a>
+      <a id="przycisk-kronika" class="przycisk ${aktywny === 'tom-1' ? 'aktywny' : ''}" href="kronika-tom-1.html" title="Kronika świata AME — tocząca się opowieść epok">📜 kronika</a>
+      <button id="przycisk-motyw" class="przycisk przycisk-motyw" type="button" aria-pressed="false" title="Przełącz tryb ciemny/jasny" onclick="const m = document.documentElement.dataset.motyw === 'jasny' ? 'ciemny' : 'jasny'; document.documentElement.dataset.motyw = m; localStorage.setItem('ame:motyw', m); this.innerHTML = m === 'jasny' ? '☀ jasny' : '☾ ciemny';">☾ motyw</button>
+    </div>
+  </header>
+  <script>
+    (function() {
+      const m = localStorage.getItem('ame:motyw') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'ciemny' : 'jasny');
+      document.documentElement.dataset.motyw = m;
+      const btn = document.getElementById('przycisk-motyw');
+      if (btn) btn.innerHTML = m === 'jasny' ? '☀ jasny' : '☾ ciemny';
+    })();
+  </script>`;
 }
 
 /** Wspólne style CSS dla wszystkich stron Kroniki */
@@ -712,283 +725,56 @@ body {
   padding: 24px 20px 80px;
 }
 /* TOPBAR */
-.topbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-bottom: 2px solid var(--accent);
-  padding-bottom: 14px;
-  margin-bottom: 24px;
+html[data-motyw="ciemny"] {
+  --bg: #0d1015;
+  --bg-subtle: #141922;
+  --fg: #d8d2c4;
+  --muted: #8b877c;
+  --line: #2a3140;
+  --card: #1b2230;
+  --card-alt: #232c3c;
+  --accent: #c9a86a;
+  --accent-light: #e0ca9a;
+  --accent-glow: rgba(201, 168, 106, 0.15);
+  --mit: #5ab57a;
+  --mit-bg: #22382c;
+  --rac: #6ea3c2;
+  --rac-bg: #23344a;
+  --code: #161b24;
+}
+
+/* Zastąpione klasy .topbar z głównego menu */
+.gora {
+  display: flex; align-items: center; gap: 14px; padding: 10px 16px;
+  background: var(--bg-subtle); border-bottom: 1px solid var(--line);
+  margin: -24px -20px 40px -20px;
   flex-wrap: wrap;
-  gap: 12px;
 }
-.brand {
-  font-weight: 700;
-  font-size: 20px;
-  color: var(--fg);
-  text-decoration: none;
-  letter-spacing: -0.5px;
+.tytul { display: flex; align-items: baseline; gap: 10px; white-space: nowrap; }
+.tytul h1 { margin: 0; font-family: inherit; font-size: 22px; letter-spacing: 0.12em; color: var(--accent); }
+.tytul h1 a { text-decoration: none; color: inherit; }
+.tytul p { margin: 0; font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted); }
+#szukaj {
+  flex: 1; min-width: 120px; max-width: 520px; padding: 8px 14px;
+  border-radius: 999px; border: 1px solid var(--line);
+  background: var(--card); color: var(--fg); font-size: 14px;
 }
-.brand .dot { color: var(--accent); }
-.nav-links {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
+.akcje { display: flex; gap: 8px; flex-wrap: wrap; }
+.przycisk {
+  display: inline-flex; align-items: center; justify-content: center;
+  padding: 7px 12px; border-radius: 8px; border: 1px solid var(--line);
+  background: var(--card); color: var(--fg); font-size: 13px;
+  cursor: pointer; text-decoration: none;
 }
-.nav-item {
-  color: var(--muted);
-  text-decoration: none;
-  font-size: 13.5px;
-  padding: 5px 12px;
-  border-radius: 6px;
-  border: 1px solid transparent;
-  transition: all .15s ease;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-}
-.nav-item:hover {
-  color: var(--accent);
-  background: var(--bg-subtle);
-  border-color: var(--line);
-}
-.nav-item.active {
-  color: var(--accent);
-  font-weight: 600;
-  background: var(--code);
-  border-color: var(--line);
+.przycisk:hover { background: var(--card-alt); border-color: var(--accent-light); }
+.przycisk.aktywny { border-color: var(--accent); color: var(--accent); }
+
+@media (max-width: 900px) {
+  .gora { flex-wrap: wrap; margin: -20px -20px 20px -20px; }
+  #szukaj { order: 3; flex-basis: 100%; max-width: none; }
+  .tytul p { display: none; }
 }
 
-/* HERO */
-.hero {
-  background: var(--card);
-  border: 1px solid var(--line);
-  border-radius: 14px;
-  padding: 24px 28px;
-  margin-bottom: 24px;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.03);
-}
-.hero h1 {
-  margin: 8px 0 8px;
-  font-size: 30px;
-  line-height: 1.25;
-  color: #110e0b;
-}
-.hero .sub {
-  color: var(--muted);
-  font-size: 15px;
-  margin: 0 0 16px;
-  max-width: 840px;
-}
-.badges {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-  align-items: center;
-}
-.badge {
-  font-size: 12px;
-  padding: 3px 10px;
-  border-radius: 999px;
-  border: 1px solid var(--line);
-  background: var(--code);
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  color: var(--muted);
-}
-.badge.tom {
-  background: var(--accent);
-  color: #fff;
-  border-color: var(--accent);
-  font-weight: 600;
-}
-.badge.ok {
-  color: var(--mit);
-  border-color: rgba(52, 122, 77, 0.4);
-  background: var(--mit-bg);
-  font-weight: 600;
-}
-
-/* GAUGE */
-.gauge-wrap {
-  margin-top: 14px;
-  padding-top: 14px;
-  border-top: 1px dashed var(--line);
-}
-.gauge-header {
-  display: flex;
-  justify-content: space-between;
-  font-size: 12.5px;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  font-weight: 600;
-  margin-bottom: 6px;
-}
-.gauge-header .g-mit { color: var(--mit); }
-.gauge-header .g-rac { color: var(--rac); }
-.gauge {
-  position: relative;
-  height: 16px;
-  border-radius: 999px;
-  background: #dbe3f0;
-  border: 1px solid var(--line);
-  overflow: hidden;
-}
-.gauge .mit-bar {
-  height: 100%;
-  background: linear-gradient(90deg, #2d6b43, #438f5d);
-  transition: width .4s ease;
-}
-
-/* MAP CONTAINER */
-.map-container {
-  background: var(--card);
-  border: 1px solid var(--line);
-  border-radius: 14px;
-  overflow: hidden;
-  margin-bottom: 24px;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.03);
-}
-.map-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 18px;
-  background: var(--card-alt);
-  border-bottom: 1px solid var(--line);
-  font-size: 12.5px;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-}
-.map-title {
-  font-weight: 600;
-  color: var(--accent);
-}
-.map-hint {
-  color: var(--muted);
-}
-.kronika-map {
-  display: block;
-  width: 100%;
-  height: auto;
-  max-height: 460px;
-  background: #ede7db;
-}
-.kronika-map .land {
-  fill: #ded6c4;
-  stroke: #c5bba7;
-  stroke-width: 1;
-}
-.kronika-map .arc-glow {
-  fill: none;
-  stroke: #c27c3a;
-  stroke-width: 5;
-  stroke-opacity: 0.35;
-}
-.kronika-map .arc-line {
-  fill: none;
-  stroke: #8d4f1f;
-  stroke-width: 2;
-  stroke-dasharray: 6,4;
-}
-.kronika-map .node {
-  cursor: pointer;
-}
-.kronika-map .node .halo {
-  fill: url(#grad-passive);
-  pointer-events: none;
-}
-.kronika-map .node.active .halo {
-  fill: url(#grad-active);
-  animation: pulse-halo 3s infinite ease-in-out;
-}
-@keyframes pulse-halo {
-  0%, 100% { opacity: 0.7; transform: scale(1); }
-  50% { opacity: 1; transform: scale(1.08); }
-}
-.kronika-map .pin-bg {
-  fill: #fffdf8;
-  stroke: #7a4a22;
-  stroke-width: 2;
-  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.15));
-  transition: r .2s ease;
-}
-.kronika-map .node.active .pin-bg {
-  fill: #7a4a22;
-  stroke: #fff;
-}
-.kronika-map .pin-icon {
-  font-size: 13px;
-  text-anchor: middle;
-  dominant-baseline: central;
-}
-.kronika-map .pin-label {
-  font-size: 13px;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  font-weight: 600;
-  fill: #1d1916;
-  paint-order: stroke;
-  stroke: #fffdf8;
-  stroke-width: 3.5px;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-.kronika-map .node:hover .pin-bg {
-  stroke-width: 3;
-}
-.kronika-map .node:hover .pin-label {
-  fill: var(--accent);
-}
-
-/* GRID & CARDS */
-.grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 24px;
-  margin-bottom: 24px;
-}
-.col {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-@media(max-width: 860px) {
-  .grid { grid-template-columns: 1fr; }
-}
-.card {
-  background: var(--card);
-  border: 1px solid var(--line);
-  border-radius: 12px;
-  padding: 20px 22px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.02);
-}
-.card h2 {
-  margin: 0 0 12px;
-  font-size: 19px;
-  border-left: 4px solid var(--accent);
-  padding-left: 10px;
-  color: #1a1613;
-}
-.card-sub {
-  color: var(--muted);
-  font-size: 13px;
-  margin: -6px 0 14px;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-}
-
-/* PARTICIPANTS LIST */
-.participants-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 10px;
-}
-.part-card {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 10px 14px;
-  border-radius: 10px;
-  border: 1px solid var(--line);
-  background: var(--card-alt);
-  text-decoration: none;
-  color: inherit;
-  transition: all .15s ease;
-}
 .part-card:hover {
   border-color: var(--accent);
   background: #fff;

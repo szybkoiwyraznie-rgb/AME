@@ -102,7 +102,7 @@ function odswiezLicznik(zbior = null) {
   $('#status').textContent =
     `${n} ${n === 1 ? 'manifestacja' : 'manifestacji'} · ${Object.keys(stan.indeks.tagi).length} tagów · ${skitow} ${
       skitow === 1 ? 'skit' : 'skitów'
-    }${kategoria}`;
+    }${kategoria}${stan.indeks.buildTime ? ` · build: ${stan.indeks.buildTime.replace("T", " ").slice(0,16)} UTC` : ``}`;
 }
 
 let punktPowrotu = null; // element, który otworzył kartotekę (fokus po zamknięciu)
