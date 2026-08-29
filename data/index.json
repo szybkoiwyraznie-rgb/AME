@@ -1,6 +1,6 @@
 {
   "wersja": 3,
-  "buildTime": "2026-08-29T22:28:04.077Z",
+  "buildTime": "2026-08-29T22:35:30.183Z",
   "liczba": 20,
   "liczbaSkitow": 19,
   "kanon": {
@@ -1217,7 +1217,7 @@
         "Chejron",
         "Indra"
       ],
-      "slow": 262,
+      "slow": 264,
       "data": "2026-08-28 21:45"
     },
     {
@@ -1251,7 +1251,7 @@
         "Selkie z Sule Skerry",
         "Empusa"
       ],
-      "slow": 238,
+      "slow": 241,
       "data": "2026-08-28 20:00"
     },
     {
@@ -1334,7 +1334,7 @@
         "Egungun",
         "Selkie z Sule Skerry"
       ],
-      "slow": 294,
+      "slow": 293,
       "data": "2026-08-28 18:25"
     },
     {
@@ -1351,7 +1351,7 @@
         "Empusa",
         "Imp z Lincoln"
       ],
-      "slow": 286,
+      "slow": 285,
       "data": "2026-08-28 23:58"
     },
     {
@@ -1383,7 +1383,7 @@
         "Kentaur z Pelionu",
         "Empusa"
       ],
-      "slow": 289,
+      "slow": 287,
       "data": "2026-08-28 21:30"
     },
     {
@@ -1400,7 +1400,7 @@
         "Balor",
         "Empusa"
       ],
-      "slow": 253,
+      "slow": 255,
       "data": "2026-08-29 10:20"
     },
     {
@@ -1432,7 +1432,7 @@
         "Barbarossa",
         "Kentaur z Pelionu"
       ],
-      "slow": 258,
+      "slow": 261,
       "data": "2026-08-28 23:35"
     },
     {
@@ -1449,7 +1449,7 @@
         "Balor",
         "Drangue"
       ],
-      "slow": 264,
+      "slow": 266,
       "data": "2026-08-28 22:25"
     },
     {
@@ -1466,7 +1466,7 @@
         "Talos z Krety",
         "Lincoln Imp"
       ],
-      "slow": 274,
+      "slow": 276,
       "data": "2026-08-29 11:30"
     },
     {
@@ -1483,7 +1483,7 @@
         "Drangue",
         "Barbarossa"
       ],
-      "slow": 263,
+      "slow": 255,
       "data": "2026-08-28 22:30"
     },
     {
@@ -1498,11 +1498,147 @@
         "Balor",
         "Selkie z Sule Skerry"
       ],
-      "slow": 285,
+      "slow": 283,
       "data": "2026-08-28"
     }
   ],
   "aktualizacje": [
+    {
+      "data": "2026-08-30 00:35",
+      "typ": "skit",
+      "akcja": "zmiana",
+      "slug": "dwa-grzbiety",
+      "tytul": "DWA GRZBIETY",
+      "opis": "Redakcja: poprawki językowe (odmiana, literówki), sprostowanie faktów do Kartoteki i rozluźnienie zbyt górnolotnych fragmentów."
+    },
+    {
+      "data": "2026-08-30 00:35",
+      "typ": "skit",
+      "akcja": "zmiana",
+      "slug": "dwa-zepsute-wesela",
+      "tytul": "DWA ZEPSUTE WESELA",
+      "opis": "Redakcja: poprawki językowe (odmiana, literówki), sprostowanie faktów do Kartoteki i rozluźnienie zbyt górnolotnych fragmentów."
+    },
+    {
+      "data": "2026-08-30 00:35",
+      "typ": "skit",
+      "akcja": "zmiana",
+      "slug": "dwie-skory",
+      "tytul": "DWIE SKÓRY",
+      "opis": "Redakcja: poprawki językowe (odmiana, literówki), sprostowanie faktów do Kartoteki i rozluźnienie zbyt górnolotnych fragmentów."
+    },
+    {
+      "data": "2026-08-30 00:35",
+      "typ": "skit",
+      "akcja": "zmiana",
+      "slug": "godzina-otwarcia",
+      "tytul": "GODZINA OTWARCIA",
+      "opis": "Redakcja: poprawki językowe (odmiana, literówki), sprostowanie faktów do Kartoteki i rozluźnienie zbyt górnolotnych fragmentów."
+    },
+    {
+      "data": "2026-08-30 00:35",
+      "typ": "skit",
+      "akcja": "zmiana",
+      "slug": "hold-oraz-swiatlo",
+      "tytul": "HOŁD ORAZ ŚWIATŁO",
+      "opis": "Redakcja: poprawki językowe (odmiana, literówki), sprostowanie faktów do Kartoteki i rozluźnienie zbyt górnolotnych fragmentów."
+    },
+    {
+      "data": "2026-08-30 00:35",
+      "typ": "skit",
+      "akcja": "zmiana",
+      "slug": "imie-na-progu",
+      "tytul": "IMIĘ NA PROGU",
+      "opis": "Redakcja: poprawki językowe (odmiana, literówki), sprostowanie faktów do Kartoteki i rozluźnienie zbyt górnolotnych fragmentów."
+    },
+    {
+      "data": "2026-08-30 00:35",
+      "typ": "skit",
+      "akcja": "zmiana",
+      "slug": "kalendarz-powrotow",
+      "tytul": "KALENDARZ POWROTÓW",
+      "opis": "Redakcja: poprawki językowe (odmiana, literówki), sprostowanie faktów do Kartoteki i rozluźnienie zbyt górnolotnych fragmentów."
+    },
+    {
+      "data": "2026-08-30 00:35",
+      "typ": "skit",
+      "akcja": "zmiana",
+      "slug": "komu-wolno-patrzec",
+      "tytul": "KOMU WOLNO PATRZEĆ",
+      "opis": "Redakcja: poprawki językowe (odmiana, literówki), sprostowanie faktów do Kartoteki i rozluźnienie zbyt górnolotnych fragmentów."
+    },
+    {
+      "data": "2026-08-30 00:35",
+      "typ": "skit",
+      "akcja": "zmiana",
+      "slug": "kurz-i-piora",
+      "tytul": "KURZ I PIÓRA",
+      "opis": "Redakcja: poprawki językowe (odmiana, literówki), sprostowanie faktów do Kartoteki i rozluźnienie zbyt górnolotnych fragmentów."
+    },
+    {
+      "data": "2026-08-30 00:35",
+      "typ": "skit",
+      "akcja": "zmiana",
+      "slug": "nieproszeni-goscie",
+      "tytul": "NIEPROSZENI GOŚCIE",
+      "opis": "Redakcja: poprawki językowe (odmiana, literówki), sprostowanie faktów do Kartoteki i rozluźnienie zbyt górnolotnych fragmentów."
+    },
+    {
+      "data": "2026-08-30 00:35",
+      "typ": "skit",
+      "akcja": "zmiana",
+      "slug": "odzwierni",
+      "tytul": "ODŹWIERNI",
+      "opis": "Redakcja: poprawki językowe (odmiana, literówki), sprostowanie faktów do Kartoteki i rozluźnienie zbyt górnolotnych fragmentów."
+    },
+    {
+      "data": "2026-08-30 00:35",
+      "typ": "skit",
+      "akcja": "zmiana",
+      "slug": "plotno-i-kamien",
+      "tytul": "PŁÓTNO I KAMIEŃ",
+      "opis": "Redakcja: poprawki językowe (odmiana, literówki), sprostowanie faktów do Kartoteki i rozluźnienie zbyt górnolotnych fragmentów."
+    },
+    {
+      "data": "2026-08-30 00:35",
+      "typ": "skit",
+      "akcja": "zmiana",
+      "slug": "trzy-stoly",
+      "tytul": "TRZY STOŁY",
+      "opis": "Redakcja: poprawki językowe (odmiana, literówki), sprostowanie faktów do Kartoteki i rozluźnienie zbyt górnolotnych fragmentów."
+    },
+    {
+      "data": "2026-08-30 00:35",
+      "typ": "skit",
+      "akcja": "zmiana",
+      "slug": "trzy-zegary",
+      "tytul": "TRZY ZEGARY",
+      "opis": "Redakcja: poprawki językowe (odmiana, literówki), sprostowanie faktów do Kartoteki i rozluźnienie zbyt górnolotnych fragmentów."
+    },
+    {
+      "data": "2026-08-30 00:35",
+      "typ": "skit",
+      "akcja": "zmiana",
+      "slug": "znak-burzy",
+      "tytul": "ZNAK BURZY",
+      "opis": "Redakcja: poprawki językowe (odmiana, literówki), sprostowanie faktów do Kartoteki i rozluźnienie zbyt górnolotnych fragmentów."
+    },
+    {
+      "data": "2026-08-30 00:35",
+      "typ": "skit",
+      "akcja": "zmiana",
+      "slug": "znak-i-liczba",
+      "tytul": "ZNAK I LICZBA",
+      "opis": "Redakcja: poprawki językowe (odmiana, literówki), sprostowanie faktów do Kartoteki i rozluźnienie zbyt górnolotnych fragmentów."
+    },
+    {
+      "data": "2026-08-30 00:35",
+      "typ": "skit",
+      "akcja": "zmiana",
+      "slug": "zagadka-ze-spizu",
+      "tytul": "ZAGADKA ZE SPIŻU",
+      "opis": "Redakcja: poprawki językowe (odmiana, literówki), sprostowanie faktów do Kartoteki i rozluźnienie zbyt górnolotnych fragmentów."
+    },
     {
       "data": "2026-08-30 00:20",
       "typ": "manifestacja",
