@@ -8,7 +8,7 @@
     "Córka Echidny i Tyfona",
     "Mścicielka Teb",
     "Phix (Φίξ — nazwa beocka)",
-    "Córka Laiosa (wariant Pausaniasza)"
+    "Córka Lajosa (wariant Pauzaniasza)"
   ],
   "karta": {
     "nazwa": "Jwar Isle Avenger",
@@ -30,7 +30,7 @@
     "wyglad_i_aura": "Z daleka widać tylko sylwetkę lwicy na skale i rozłożone skrzydła; z bliska twarz jest kobieca, spokojna i bezlitosna. Ciało pokrywa złocista, gładka sierść, ogon kończy się grotem; szpony chwytają skałę jak imadło. Obecność odczuwa się jako nagłe zatrzymanie powietrza i zapach gorącego kamienia w upale.",
     "charakter_i_motywacje": "Sfinks nie poluje z głodu: została przez bogów zesłana, by karać Tebańczyków i mścić się za przestępstwo, którego nikt już nie pamięta. Dlatego czeka przy drodze i nie zabija po cichu — najpierw zadaje pytanie. To jej sposób na odzyskanie sprawiedliwości: kto nie potrafi myśleć, ten ginie. Jest dumna, uparta i okrutna w swojej logice, a jej upadek następuje dopiero wtedy, gdy ktoś rozwiąże zagadkę. Pauzaniasz przechował inny wariant (9.26.2): Sfinks miała być nieślubną córką Lajosa, którą ojciec, „bo był do niej przywiązany”, wtajemniczył w wyrocznię otrzymaną przez Kadmosa z Delf. Na górze Fikion testowała wtedy braci: jeśli są synami Lajosa, mają znać wyrocznię Kadmosa — kto jej nie znał, umierał jako człowiek bez prawa do tronu i rodu. W tej samej księdze przytoczona jest i wersja racjonalizująca: Sfinks była piratką, która z flotą wpłynęła do Anthedonu, zajęła górę i plądrowała okolicę, aż Edyp rozbił ją przewagą wojska. W obu wariantach jej pytanie jest bramą nie do wiedzy, lecz do prawa.",
     "zdolnosci": "Porośnięta skrzydłami i szybka jak ptak — z góry widzi całą drogę do Teb i potrafi dopaść uciekającego. Potrafi zwietrzyć i usłyszeć człowieka od podnóża, i pozostaje nieruchoma jak rzeźba, aż ten wejdzie w jej zasięg. Jej najgroźniejszą mocą nie są pazury, lecz zagadka: kto jej nie rozwiąże, tego pozbawia życia, a każdego, kto myśli zbyt długo, pogrąża w strachu. Zagadki nauczyły ją Muzy (Apollodor 3.5.8) — albo wyrocznię z Delf przekazał jej ojciec (Pauzaniasz); w każdym razie jej pytanie ma status boskiego egzaminu, nie łamigłówki dla rozrywki, i dlatego nie da się go ominąć ani przekupić. Zadaje je „jednym głosem”, jak istota o jednej naturze: „co ma jeden głos, a jest czworonożne, dwunożne i trójnożne”.",
-    "slabosci_i_metody_pokonania": "Nie da się jej pokonać bronią, dopóki coś jej nie pozbawi pewności — a tę odbiera rozwiązanie pytania. Gdy odpowiedź pada, Sfinks traci fundament swojej władzy i rzuca się z góry albo zostaje zniszczona. Jej słabością jest też izolacja: nie znosi porażki w logicznym starciu i nie szuka zemsty, gdy ktoś ją pokona umysłem; jest samotna i nieufna wobec tłumu. Rozwiązanie brzmi: człowiek — czworonożny jako niemowlę, dwunożny w dojrzałości, trójnożny na starość (laska). W wariancie Pausaniasza Edyp nie zgaduje z bystrości, lecz zna wyrocznię ze snu: pokonuje Sfinksa nie spryt, lecz przynależność do rodu, który zna swoje słowo.",
+    "slabosci_i_metody_pokonania": "Nie da się jej pokonać bronią, dopóki coś jej nie pozbawi pewności — a tę odbiera rozwiązanie pytania. Gdy odpowiedź pada, Sfinks traci fundament swojej władzy i rzuca się z góry albo zostaje zniszczona. Jej słabością jest też izolacja: nie znosi porażki w logicznym starciu i nie szuka zemsty, gdy ktoś ją pokona umysłem; jest samotna i nieufna wobec tłumu. Rozwiązanie brzmi: człowiek — czworonożny jako niemowlę, dwunożny w dojrzałości, trójnożny na starość (laska). W wariancie Pauzaniasza Edyp nie zgaduje z bystrości, lecz zna wyrocznię ze snu: pokonuje Sfinksa nie spryt, lecz przynależność do rodu, który zna swoje słowo.",
     "preferencje": "Lubi: samotność na górze, ciszę, wymyślne pytania, ludzi odważnych na tyle, by odpowiedzieć. Nie lubi: tłumów, ludzi, którzy nie myślą, hałaśliwych karawan i tego, że musi odpowiadać na to samo pytanie w kółko."
   },
   "dokumentacja": [
@@ -76,7 +76,7 @@
       },
       {
         "element": "Flavor text",
-        "translacja": "„Though solitary by nature, the sphinxes did not hesitate to join in the fight against the Eldrazi.” — Sfinks w mitologii jest z natury samotna, ale gdy jej terytorium staje na krawędzi, potrafi rzucić się w bój. To nie strażniczka litościwa, lecz pomsczenie niesprawiedliwości, które nadchodzi dopiero wtedy, gdy sprowokujesz jej sferę."
+        "translacja": "„Though solitary by nature, the sphinxes did not hesitate to join in the fight against the Eldrazi.” — Sfinks w mitologii jest z natury samotna, ale gdy jej terytorium staje na krawędzi, potrafi rzucić się w bój. To nie strażniczka litościwa, lecz pomszczenie niesprawiedliwości, które nadchodzi dopiero wtedy, gdy sprowokujesz jej sferę."
       },
       {
         "element": "Lore/Tło",
@@ -94,7 +94,7 @@
   "powiazania": [
     {
       "slug": "kentaur-pelion",
-      "opis": "Obaj to greccy hybrydowi strażnicy przejścia, których trzeba zrozumieć, a nie zabić: Chejron z Pelionu wychowuje herosów i uczy ich mądrości, a Sfinks z Fikion zadaje pytanie, na które trzeba odpowiedzieć. Obaj są też pół-człowiekiem, pół-zwierzęciem, więc ich natura — lwica/kobieta oraz koń/człowiek — każe widzieć w nich dwie rozłączone połowy tego samego bytu."
+      "opis": "Obaj to greccy hybrydowi strażnicy przejścia, których trzeba zrozumieć, a nie zabić: kentaur z Pelionu rozrabia na cudzych weselach, a potem ucieka w góry, a Sfinks z Fikion zadaje pytanie, na które trzeba odpowiedzieć. Obaj są też pół-człowiekiem, pół-zwierzęciem, więc ich natura — lwica/kobieta oraz koń/człowiek — każe widzieć w nich dwie rozłączone połowy tego samego bytu."
     },
     {
       "slug": "empusa-korynt",
@@ -124,6 +124,10 @@
       {
         "data": "2026-08-29 21:40",
         "opis": "Pogłębienie karty (C1): wariant Pausaniasza (nieślubna córka Lajosa i wyrocznia Kadmosa; wersja racjonalizująca — piratka z Anthedonu), pochodzenie zagadki od Muz (Apollodor 3.5.8) i szczegóły rozwiązania; dodane źródło pierwotne (Pauzaniasz 9.26.2, Perseus)."
+      },
+      {
+        "data": "2026-08-30 00:38",
+        "opis": "Audyt Kartoteki: poprawki językowe i doprecyzowanie zdań (odmiana, literówki, spójność z mitem)."
       }
     ]
   }

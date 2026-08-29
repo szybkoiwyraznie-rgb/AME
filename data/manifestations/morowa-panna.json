@@ -96,7 +96,7 @@
   "powiazania": [
     {
       "slug": "pandora",
-      "opis": "Pandora wypuściła z pithosu „niezliczone plagi, które wędrują wśród ludzi”, a morowa panna jest tym morowaniem w ludzkiej postaci — nieszczęściem, które przeszło ze słaja na wiejskie progi. Obie działają przez jedną czynność: Pandora zdejmuje pokrywę, morowa panna otwiera usta; obie dają się powstrzymać jedynie w porę — pokrywą albo właściwym słowem."
+      "opis": "Pandora wypuściła z pithosu „niezliczone plagi, które wędrują wśród ludzi”, a morowa panna jest tym morowaniem w ludzkiej postaci — nieszczęściem, które przeszło ze słoja na wiejskie progi. Obie działają przez jedną czynność: Pandora zdejmuje pokrywę, morowa panna otwiera usta; obie dają się powstrzymać jedynie w porę — pokrywą albo właściwym słowem."
     },
     {
       "slug": "empusa-korynt",
@@ -118,6 +118,10 @@
       {
         "data": "2026-08-30 00:20",
         "opis": "Dodana wizualizacja 21:9 w morowa-panna.jpg — powstała z ramowego promptu wpisu i pokazuje byt w jego naturalnym otoczeniu."
+      },
+      {
+        "data": "2026-08-30 00:40",
+        "opis": "Audyt Kartoteki: poprawka literówek („słój” zamiast „słaj”) w powiązaniach i kluczu."
       }
     ]
   }

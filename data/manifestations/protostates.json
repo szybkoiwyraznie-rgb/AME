@@ -24,7 +24,7 @@
     "obraz": "assets/wizualizacje/protostates.jpg"
   },
   "natura": {
-    "wyglad_i_aura": "Z daleka — sylwetka w pełnym rynsztunku: hełm koryncki z czarnym kitą z końskiego włosia, szkarłatny chiton, nagolenniki z brązu, okrągła tarcza z literą i długa włócznia. Z bliska widać, że nie oddycha: pod hełmem pusto albo zbyt ciemno, a na kamieniach nie zostawia śladów. Pojawia się we mgle o świcie, przy wąskim przejściu, gdy powietrze pachnie oliwą i zimnym metalem; stoi tam, gdzie inni już dawno by odeszli.",
+    "wyglad_i_aura": "Z daleka — sylwetka w pełnym rynsztunku: hełm koryncki z czarną kitą z końskiego włosia, szkarłatny chiton, nagolenniki z brązu, okrągła tarcza z literą i długa włócznia. Z bliska widać, że nie oddycha: pod hełmem pusto albo zbyt ciemno, a na kamieniach nie zostawia śladów. Pojawia się we mgle o świcie, przy wąskim przejściu, gdy powietrze pachnie oliwą i zimnym metalem; stoi tam, gdzie inni już dawno by odeszli.",
     "charakter_i_motywacje": "Nie rozmawia, nie grozi, nie żąda haraczu. On pilnuje pierwszej linii: gdy zbliża się wróg, robi jeden krok naprzód i zadaje pierwsze uderzenie — zanim ktokolwiek zdąży się zasłonić. Nie cofa się, bo cofnięcie oznaczałoby zdradę tarczy, a jego tarcza jest „dla wspólnego dobra”: jak mówi Demaratos, hełm nosi się dla siebie, a tarczę dla wszystkich. Motywacją fantomu nie jest zwycięstwo, lecz to, by nikt nie przeszedł za jego plecami.",
     "zdolnosci": "Uderza zawsze pierwszy — zanim przeciwnik dokończy zamach; po pierwszym trafieniu rośnie, bo z każdym opowiedzianym czynem przybywa mu imienia i wzrostu. Nie śpi, nie je, nie męczy się; stoi w tym samym miejscu od stuleci, a gdy przejście otwiera się ku morzu, jego cień staje się dłuższy, jakby za nim dochodziły następne szeregi.",
     "slabosci_i_metody_pokonania": "Nie zwyciężysz go siłą, bo pierwsze cięcie zawsze należy do niego. Jego trwanie opiera się na dwóch rzeczach: na tarczy, którą zasłania się z przodu i którą nosi dla wszystkich, oraz na imieniu, które karmi go pamięcią wspólnoty. Kto odwróci go tyłem do wroga — zabierze mu front — i kto przestanie wymawiać jego imię, ten go rozwiąże: fantom pierwszego szeregu trwa tylko, dopóki ktoś pamięta, że stał pierwszy. Najskuteczniejsza jest więc pieśń o kimś innym: zapomniany protostates gaśnie o świcie.",
@@ -112,6 +112,10 @@
       {
         "data": "2026-08-30 00:20",
         "opis": "Dodana wizualizacja 21:9 w protostates.jpg — powstała z ramowego promptu wpisu i pokazuje byt w jego naturalnym otoczeniu."
+      },
+      {
+        "data": "2026-08-30 00:38",
+        "opis": "Audyt Kartoteki: poprawki językowe i doprecyzowanie zdań (odmiana, literówki, spójność z mitem)."
       }
     ]
   }

@@ -1,6 +1,6 @@
 {
   "wersja": 3,
-  "buildTime": "2026-08-29T22:35:30.183Z",
+  "buildTime": "2026-08-29T22:38:55.707Z",
   "liczba": 20,
   "liczbaSkitow": 19,
   "kanon": {
@@ -1080,7 +1080,7 @@
         "Córka Echidny i Tyfona",
         "Mścicielka Teb",
         "Phix (Φίξ — nazwa beocka)",
-        "Córka Laiosa (wariant Pausaniasza)"
+        "Córka Lajosa (wariant Pauzaniasza)"
       ],
       "karta": "Jwar Isle Avenger",
       "miejscowosc": "Góra Fikion (Phikion), na zachodzie za Tebami (Teba, Beocja) — miejsce, w którym Sfinks czatowała na podróżnych, blokując drogę do miasta",
@@ -1334,7 +1334,7 @@
         "Egungun",
         "Selkie z Sule Skerry"
       ],
-      "slow": 293,
+      "slow": 294,
       "data": "2026-08-28 18:25"
     },
     {
@@ -1503,6 +1503,174 @@
     }
   ],
   "aktualizacje": [
+    {
+      "data": "2026-08-30 00:40",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "knecht-z-koptos",
+      "tytul": "Knecht z Koptos — ożywiony tłuczek, który nie zna słowa końca",
+      "opis": "Audyt Kartoteki: poprawka literówek („słój” zamiast „słaj”) w powiązaniach i kluczu."
+    },
+    {
+      "data": "2026-08-30 00:40",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "pandora",
+      "tytul": "Pandora — pierwsza kobieta i pithos, w którym została nadzieja",
+      "opis": "Audyt Kartoteki: poprawka literówek („słój” zamiast „słaj”) w powiązaniach i kluczu."
+    },
+    {
+      "data": "2026-08-30 00:40",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "morowa-panna",
+      "tytul": "Morowa Panna — zaraza w białej szacie z czerwoną chustą",
+      "opis": "Audyt Kartoteki: poprawka literówek („słój” zamiast „słaj”) w powiązaniach i kluczu."
+    },
+    {
+      "data": "2026-08-30 00:38",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "agni",
+      "tytul": "Agni — bóg ognia ofiarnego",
+      "opis": "Audyt Kartoteki: poprawki językowe i doprecyzowanie zdań (odmiana, literówki, spójność z mitem)."
+    },
+    {
+      "data": "2026-08-30 00:38",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "egungun",
+      "tytul": "Egungun",
+      "opis": "Audyt Kartoteki: poprawki językowe i doprecyzowanie zdań (odmiana, literówki, spójność z mitem)."
+    },
+    {
+      "data": "2026-08-30 00:38",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "kentaur-pelion",
+      "tytul": "Kentaur z Pelionu",
+      "opis": "Audyt Kartoteki: poprawki językowe i doprecyzowanie zdań (odmiana, literówki, spójność z mitem)."
+    },
+    {
+      "data": "2026-08-30 00:38",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "lincoln-imp",
+      "tytul": "Imp z Lincoln",
+      "opis": "Audyt Kartoteki: poprawki językowe i doprecyzowanie zdań (odmiana, literówki, spójność z mitem)."
+    },
+    {
+      "data": "2026-08-30 00:38",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "selkie-sule-skerry",
+      "tytul": "Wielki Selkie z Sule Skerry",
+      "opis": "Audyt Kartoteki: poprawki językowe i doprecyzowanie zdań (odmiana, literówki, spójność z mitem)."
+    },
+    {
+      "data": "2026-08-30 00:38",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "sfinks-teby",
+      "tytul": "Sfinks — strażniczka Tebańskich Wrót",
+      "opis": "Audyt Kartoteki: poprawki językowe i doprecyzowanie zdań (odmiana, literówki, spójność z mitem)."
+    },
+    {
+      "data": "2026-08-30 00:38",
+      "typ": "skit",
+      "akcja": "zmiana",
+      "slug": "kalendarz-powrotow",
+      "tytul": "KALENDARZ POWROTÓW",
+      "opis": "Korekta: Selkie z Sule Skerry jest bytem męskim (ojciec z ballady) — przywrócone formy męskie; zachowane poprawki redakcyjne z tej sesji (focza skóra, trojaczki, spójne fakty)."
+    },
+    {
+      "data": "2026-08-30 00:38",
+      "typ": "skit",
+      "akcja": "zmiana",
+      "slug": "znak-i-liczba",
+      "tytul": "ZNAK I LICZBA",
+      "opis": "Korekta: Selkie z Sule Skerry jest bytem męskim (ojciec z ballady) — przywrócone formy męskie; zachowane poprawki redakcyjne z tej sesji (focza skóra, trojaczki, spójne fakty)."
+    },
+    {
+      "data": "2026-08-30 00:38",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "balor",
+      "tytul": "Balor z Tory Island",
+      "opis": "Audyt Kartoteki: poprawki językowe i doprecyzowanie zdań (odmiana, literówki, spójność z mitem)."
+    },
+    {
+      "data": "2026-08-30 00:38",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "ben-varrey",
+      "tytul": "Ben-Varrey — syrena z Wyspy Man",
+      "opis": "Audyt Kartoteki: poprawki językowe i doprecyzowanie zdań (odmiana, literówki, spójność z mitem)."
+    },
+    {
+      "data": "2026-08-30 00:38",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "drangue-shala",
+      "tytul": "Drangue z doliny Shali",
+      "opis": "Audyt Kartoteki: poprawki językowe i doprecyzowanie zdań (odmiana, literówki, spójność z mitem)."
+    },
+    {
+      "data": "2026-08-30 00:38",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "indra",
+      "tytul": "Indra — władca gromu",
+      "opis": "Audyt Kartoteki: poprawki językowe i doprecyzowanie zdań (odmiana, literówki, spójność z mitem)."
+    },
+    {
+      "data": "2026-08-30 00:38",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "knecht-z-koptos",
+      "tytul": "Knecht z Koptos — ożywiony tłuczek, który nie zna słowa końca",
+      "opis": "Audyt Kartoteki: poprawki językowe i doprecyzowanie zdań (odmiana, literówki, spójność z mitem)."
+    },
+    {
+      "data": "2026-08-30 00:38",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "pandora",
+      "tytul": "Pandora — pierwsza kobieta i pithos, w którym została nadzieja",
+      "opis": "Audyt Kartoteki: poprawki językowe i doprecyzowanie zdań (odmiana, literówki, spójność z mitem)."
+    },
+    {
+      "data": "2026-08-30 00:38",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "protostates",
+      "tytul": "Protostates — fantom pierwszego szeregu",
+      "opis": "Audyt Kartoteki: poprawki językowe i doprecyzowanie zdań (odmiana, literówki, spójność z mitem)."
+    },
+    {
+      "data": "2026-08-30 00:38",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "syama-i-sarvara",
+      "tytul": "Śyāma i Śarvara — czterookie psy Yamy, strażnicy drogi przodków",
+      "opis": "Audyt Kartoteki: poprawki językowe i doprecyzowanie zdań (odmiana, literówki, spójność z mitem)."
+    },
+    {
+      "data": "2026-08-30 00:38",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "talos-kreta",
+      "tytul": "Talos — spiżowy strażnik Krety",
+      "opis": "Audyt Kartoteki: poprawki językowe i doprecyzowanie zdań (odmiana, literówki, spójność z mitem)."
+    },
+    {
+      "data": "2026-08-30 00:38",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "barbarossa-kyffhaeuser",
+      "tytul": "Barbarossa w Kyffhäuserze",
+      "opis": "Audyt Kartoteki: poprawki językowe i doprecyzowanie zdań (odmiana, literówki, spójność z mitem)."
+    },
     {
       "data": "2026-08-30 00:35",
       "typ": "skit",

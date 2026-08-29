@@ -27,8 +27,8 @@
     "wyglad_i_aura": "Młoda kobieta o ciemnych włosach, w srebrnej szacie, z haftowanym welonem i złotą koroną — dokładnie tak, jak odziewa ją Atena, a wieńczą Hory w „Pracach i dniach”. Przy niej wielki gliniany słój z pokrywą, pachnący ziemią i miodem; wokół niej cisza, która robi się gęsta w chwili, gdy pokrywa drży. Nie ma w niej grozy — jest uważne, ciekawe spojrzenie istoty, która dopiero co została stworzona i jeszcze nie wie, czym jest zło.",
     "charakter_i_motywacje": "Pandora nie jest zła: jest ciekawością wcieloną. Hezjod nazywa ją „pięknym złem”, potem „nieodpartą siecią”, a jej wnętrze wypełniają „kłamliwe słowa” od Hermesa; jednocześnie to pierwsza kobieta, która niczego nie wie o świecie. Gdy dostaje słój, wie jedno: nie wolno go otwierać. Właśnie to — jak w każdej opowieści o zakazie — czyni otwarcie niemal pewnym. Nie poluje, nie kusi; ona tylko znosi dar i patrzy, a potem robi to, czego nie powinna.",
     "zdolnosci": "Nosi w sobie wszystko, co bogowie zamknęli: zarazy, choroby, trudy, starość, wojny — i w jednej chwili potrafi to wypuścić, a wtedy nikt wokół nie może się bronić, bo zło nie nadchodzi z jednej strony. Jej ciało jest z gliny, jak słój: ulepione, nie urodzone, więc nie zabija się jej jak człowieka — można tylko zamknąć pokrywę. Po otwarciu zostaje jej jedna rzecz, którą da się jeszcze wydobyć z naczynia: Elpis.",
-    "slabosci_i_metody_pokonania": "Jedyna skuteczna metoda to nie otwierać — trzymać pokrywę. Kto znalazł się w domu, gdzie słój już otwarto, nie zamknie nieszczęść z powrotem; może tylko pamiętać, że na dnie została nadzieja, i to jest jedyny „zysk” z tej katastrofy. Równie ważne jest rozpoznanie wariantu: w tradycji Teognisa z Megary słój zawierał nie zło, lecz dobra, które uciekły ludziom — dlatego przed spotkaniem z Pandorą trzeba wiedzieć, z którą wersją słaja ma się do czynienia.",
-    "preferencje": "Lubi: dary, wesela, nowe domy, pył na dnie naczynia, złoto i pytania o to, co w środku. Nie lubi: zamkniętych pokryw, zakazów, Epimeteusza, który ostrzega za późno, i ludzi, którzy dopytują, co zostało."
+    "slabosci_i_metody_pokonania": "Jedyna skuteczna metoda to nie otwierać — trzymać pokrywę. Kto znalazł się w domu, gdzie słój już otwarto, nie zamknie nieszczęść z powrotem; może tylko pamiętać, że na dnie została nadzieja, i to jest jedyny „zysk” z tej katastrofy. Równie ważne jest rozpoznanie wariantu: w tradycji Teognisa z Megary słój zawierał nie zło, lecz dobra, które uciekły ludziom — dlatego przed spotkaniem z Pandorą trzeba wiedzieć, z którą wersją słoja ma się do czynienia.",
+    "preferencje": "Lubi: dary, wesela, nowe domy, pył na dnie naczynia, złoto i pytania o to, co w środku. Nie lubi: zamkniętych pokryw, zakazów, Epimeteusza, który rozumie wszystko dopiero po fakcie, i ludzi, którzy dopytują, co zostało."
   },
   "dokumentacja": [
     {
@@ -57,7 +57,7 @@
     "wtorne": "Odrzucony wieniec ślubny — pamiątka, że Pandory nie pokonuje się siłą: ślubny dar i zakaz trzeba oddać albo zostawić zamknięte."
   },
   "rezonans": {
-    "klucz_przywolania": "Panic Spellbomb to mała, jednorazowa kula-zaklęcie: otwierasz ją, by wroga ogarnął strach, a potem — już po zniszczeniu — możesz zapłacić i dobrać kartę. Pandora jest dokładnie tym odciskiem w naszym świecie: naczyniem, które zawiera wszystko, co bogowie trzymali z dala od ludzi, i które po otwarciu daje tylko jeden, ostatni zysk — Elpis. „Panic” karty to ślepy strach, który wylatuje ze słaja razem z chorobami i trudem; „spellbomb” to pithos traktowany jak cudowny gadżet: wadliwy dar, który warto było zostawić w kącie. Każde „poświęcenie” naczynia, po którym zostaje jedna karta, odtwarza scenę z „Prac i dni”: pokrywa uniesiona, świat pełen pląg, a pod wieczkiem — nadzieja, „niezłomny dom” na dnie.",
+    "klucz_przywolania": "Panic Spellbomb to mała, jednorazowa kula-zaklęcie: otwierasz ją, by wroga ogarnął strach, a potem — już po zniszczeniu — możesz zapłacić i dobrać kartę. Pandora jest dokładnie tym odciskiem w naszym świecie: naczyniem, które zawiera wszystko, co bogowie trzymali z dala od ludzi, i które po otwarciu daje tylko jeden, ostatni zysk — Elpis. „Panic” karty to ślepy strach, który wylatuje ze słoja razem z chorobami i trudem; „spellbomb” to pithos traktowany jak cudowny gadżet: wadliwy dar, który warto było zostawić w kącie. Każde „poświęcenie” naczynia, po którym zostaje jedna karta, odtwarza scenę z „Prac i dni”: pokrywa uniesiona, świat pełen pląg, a pod wieczkiem — nadzieja, „niezłomny dom” na dnie.",
     "tabela": [
       {
         "element": "Nazwa",
@@ -65,7 +65,7 @@
       },
       {
         "element": "Mechanika",
-        "translacja": "„{T}, Sacrifice: target creature can’t block” — otwarcie słaja: zło ucieka w świat i nikt nie jest już w stanie stanąć w poprzek; każdy, kto miał bronić, traci blokadę. „When put into a graveyard from the battlefield, you may pay {R}. If you do, draw a card” — po opróżnieniu naczynia zostaje jedna karta: Elpis; zapłata many to cena, za którą nadzieję da się jeszcze wyciągnąć."
+        "translacja": "„{T}, Sacrifice: target creature can’t block” — otwarcie słoja: zło ucieka w świat i nikt nie jest już w stanie stanąć w poprzek; każdy, kto miał bronić, traci blokadę. „When put into a graveyard from the battlefield, you may pay {R}. If you do, draw a card” — po opróżnieniu naczynia zostaje jedna karta: Elpis; zapłata many to cena, za którą nadzieję da się jeszcze wyciągnąć."
       },
       {
         "element": "Ilustracja",
@@ -94,7 +94,7 @@
     },
     {
       "slug": "morowa-panna",
-      "opis": "Pandora wypuściła z pithosu „niezliczone plagi, które wędrują pomiędzy ludźmi”, a morowa panna jest właśnie jedną z nich w ludzkiej postaci: zarazą, która chodzi od wsi do wsi i odbiera życie domownikom. Różnica polega na miejscu: Pandorę spotyka się raz, przy naczyniu, a morową pannę — w każdym progu, na który padnie cień z otwartego słaja."
+      "opis": "Pandora wypuściła z pithosu „niezliczone plagi, które wędrują pomiędzy ludźmi”, a morowa panna jest właśnie jedną z nich w ludzkiej postaci: zarazą, która chodzi od wsi do wsi i odbiera życie domownikom. Różnica polega na miejscu: Pandorę spotyka się raz, przy naczyniu, a morową pannę — w każdym progu, na który padnie cień z otwartego słoja."
     },
     {
       "slug": "talos-kreta",
@@ -112,6 +112,14 @@
       {
         "data": "2026-08-30 00:20",
         "opis": "Dodana wizualizacja 21:9 w pandora.jpg — powstała z ramowego promptu wpisu i pokazuje byt w jego naturalnym otoczeniu."
+      },
+      {
+        "data": "2026-08-30 00:38",
+        "opis": "Audyt Kartoteki: poprawki językowe i doprecyzowanie zdań (odmiana, literówki, spójność z mitem)."
+      },
+      {
+        "data": "2026-08-30 00:40",
+        "opis": "Audyt Kartoteki: poprawka literówek („słój” zamiast „słaj”) w powiązaniach i kluczu."
       }
     ]
   }

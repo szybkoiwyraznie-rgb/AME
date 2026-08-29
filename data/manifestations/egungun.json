@@ -29,7 +29,7 @@
     "charakter_i_motywacje": "Egungun to nie kostium, lecz powracający przodek: błogosławi dzieci, rozsądza spory w rodzie, ostrzega przed upadkiem obyczajów i ściga winnych. Wchodzi w interakcje z ludźmi, bo śmierć nie zrywa przynależności do linii — ìdílé trwa po obu stronach granicy światów (ayé i ọ̀run). Jest żywym sumieniem społeczności: wymusza na żywych standardy moralne minionych pokoleń, a swoją obecnością potwierdza, że kontrakt pokoleń nie wygasł.",
     "zdolnosci": "Opętanie naczynia — ciało maskarona staje się miejscem, w którym przebywa duch przodka (płótna kryją też „lekarstwa”, substancje ochronne i przedmioty przywołujące ducha); mowa zza zasłony innym, nieludzkim, wysokim i nosowym głosem; błogosławieństwo płótnem (dotyk głów dzieci i wiernych); sąd i kara — egungun goni i chłoszcze przewinionych (bicz albo kije nosi obsługa); pośrednictwo między ayé a ọ̀run — uzdrawianie sporów rodu; w dawnych czasach rozpoznawanie czarownic i egzekwowanie porządku moralnego i prawnego wspólnoty; pełna konspiracja tożsamości — kto odsłoni twarz naczynia, łamie fundamentalne tabu.",
     "slabosci_i_metody_pokonania": "Egungun nie jest przeciwnikiem do zabicia — jest przodkiem do uhonorowania. Skuteczne „metody konfrontacji” są rytualne: ofiary (koguty, kozy, gołębie — krew wylewana na płótna dla utrzymania ich mocy) i modlitwy w sanktuarium przodków; oríkì — pochwalne pieśni genealogiczne śpiewane przez kobiety, które przywołują przodka po imieniu i które duch przyjmuje jako należną cześć; interwencja Alapini i starszyzny stowarzyszenia maskarady (na czele stoi Alagba/Alagbaa); kapłanka kultu (Iya Agan, przewodniczki procesji Iyamokun) jako pośredniczka; bezwzględne przestrzeganie tabu dystansu i tajemnicy przez niewtajemniczonych. Gdy maskaron wymknie się spod kontroli, równowagę przywraca ofiara i rytualna interwencja starszyzny — siła fizyczna jest bezradna, bo nie walczy się z własnym przodkiem.",
-    "preferencje": "Lubi: rytm bàtá i dùndún, oríkì przodków, ofiary w sanktuariach, śpiewające tłumy i festiwalowe pochody przez miasto (w Òyó — sierpniowy festiwal Odún Egúngún zakończony na dziedzińcu pałacu królewskiego przez Obę, czyli Aláàfin). Ceni tkaninę i strojność: nagość Jorubowie równają z niemowlęctwem, szaleństwem lub brakiem odpowiedzialności, a bogaty strój znaczy moc i prestiż rodu. Nielubi: braku czci, złamanych przysiąg i waśni w rodzie, naruszenia tabu przez niewtajemniczonych (zwłaszcza próby rozpoznania człowieka pod płótnem), profanacji płócien i domów masek (ilé egúngún)."
+    "preferencje": "Lubi: rytm bàtá i dùndún, oríkì przodków, ofiary w sanktuariach, śpiewające tłumy i festiwalowe pochody przez miasto (w Òyó — sierpniowy festiwal Odún Egúngún zakończony na dziedzińcu pałacu królewskiego przez Obę, czyli Aláàfin). Ceni tkaninę i strojność: nagość Jorubowie równają z niemowlęctwem, szaleństwem lub brakiem odpowiedzialności, a bogaty strój znaczy moc i prestiż rodu. Nie lubi: braku czci, złamanych przysiąg i waśni w rodzie, naruszenia tabu przez niewtajemniczonych (zwłaszcza próby rozpoznania człowieka pod płótnem), profanacji płócien i domów masek (ilé egúngún)."
   },
   "dokumentacja": [
     {
@@ -132,6 +132,10 @@
       {
         "data": "2026-08-29 21:36",
         "opis": "Korekta językowa sekcji V: formy czasownika w tabeli klucza przywołania."
+      },
+      {
+        "data": "2026-08-30 00:38",
+        "opis": "Audyt Kartoteki: poprawki językowe i doprecyzowanie zdań (odmiana, literówki, spójność z mitem)."
       }
     ]
   }

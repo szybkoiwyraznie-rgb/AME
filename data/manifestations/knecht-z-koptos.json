@@ -27,7 +27,7 @@
     "wyglad_i_aura": "Zwykły kuchenny tłuczek — dębowa pałka z przewężeniem na rękojeść — odziany w lniane łachmany, z węzłem zamiast głowy; gdy pracuje, chodzi na dwóch krótkich pniakach i niesie mosiężny dzban. Wokół niego pachnie rozgrzaną oliwą i mokrym mułem, próg i podłoga robią się mokre, a z wnętrza domu dobiega miarowe stąpanie twardego drewna i plusk przelewanej wody. Nie wydaje głosu, nie patrzy; po prostu idzie, dopóki ktoś nie wypowie słowa końca.",
     "charakter_i_motywacje": "Nie ma złości ani woli: jest rozkazem w drewnie. Wykonuje dokładnie to, co mu kazano — nosi wodę, a gdy naczynie się przelewa, przynosi następne. Nie da się z nim negocjować i nie słucha próśb ani gróźb: w opowieści Lukiana chłopak mówi do niego „przestań”, a tłuczek „nie zwraca na niego uwagi” i dalej ciągnie wodę, aż dom stoi po dach. Jego jedyną motywacją jest trwanie przy wypowiedzianym rozkazie; kołysze się między posłuszeństwem a katastrofą, bo nie zna granicy, na której powinien stanąć.",
     "zdolnosci": "Chodzi bez stawów, unosi ciężary większe niż jego własna długość, nie męczy się i nie odpoczywa; potrafi wypełnić wodą cały dom, a przecięty na pół — staje się dwoma nosiwodami, bo u Lukiana obie połówki natychmiast biorą dzbany. Ożywia go szept trzech sylab, a ciało i „głowę” zyskuje przez lniane okrycie: w balladzie Goethego miotła musi najpierw przywdziać łachmany, by powstać jako knecht na dwóch nogach.",
-    "slabosci_i_metody_pokonania": "Jedyne pewne zamknięcie to słowo końca, znane wyłącznie prawdziwemu mistrzowi — w „Filopseudesie” Pankrates nie zdradza go uczniowi, choćby ten nie wiem jak prosił, i dopiero powrót maga przywraca drewnu martwotę. Żelazo nie pomaga: rozcięcie rozmnaża nosiwodę. Kształt nie słyszy nikogo poza tym, kto go powołał, więc próba przekonania albo przekupstwa nic nie daje; można go jedynie uwięzić czas — utopić, rozproszyć, wywieźć — ale wraca, gdy tylko ktoś wypowie te same trzy sylaby.",
+    "slabosci_i_metody_pokonania": "Jedyne pewne zamknięcie to słowo końca, znane wyłącznie prawdziwemu mistrzowi — w „Filopseudesie” Pankrates nie zdradza go uczniowi, choćby ten nie wiem jak prosił, i dopiero powrót maga przywraca drewnu martwotę. Żelazo nie pomaga: rozcięcie rozmnaża nosiwodę. Tłuczek nie słyszy nikogo poza tym, kto go powołał, więc próba przekonania albo przekupstwa nic nie daje; można go jedynie uwięzić czas — utopić, rozproszyć, wywieźć — ale wraca, gdy tylko ktoś wypowie te same trzy sylaby.",
     "preferencje": "Lubi: rozkazy wypowiedziane w skupieniu, wodę z rzeki, cudze domy, robotę bez końca i pochwały mistrza (choć ich nie słyszy). Nie lubi: słowa końca, ognia, suchego kija i uczniów, którzy podsłuchują formuły."
   },
   "dokumentacja": [
@@ -95,7 +95,7 @@
   "powiazania": [
     {
       "slug": "pandora",
-      "opis": "Knecht i Pandora to byty stworzone przez mistrzów: tłuczek przez maga, pierwsza kobieta przez Hefajstosa. Łączy ich wspólna pułapka — moc dana wraz z jednym kruchym zamknięciem (słowo końca, pokrywa słaja) — i wspólna konsekwencja: po otwarciu nikt nie wraca do stanu sprzed, nawet gdy mistrz zdąży z pomocą."
+      "opis": "Knecht i Pandora to byty stworzone przez mistrzów: tłuczek przez maga, pierwsza kobieta przez Hefajstosa. Łączy ich wspólna pułapka — moc dana wraz z jednym kruchym zamknięciem (słowo końca, pokrywa słoja) — i wspólna konsekwencja: po otwarciu nikt nie wraca do stanu sprzed, nawet gdy mistrz zdąży z pomocą."
     },
     {
       "slug": "talos-kreta",
@@ -117,6 +117,14 @@
       {
         "data": "2026-08-30 00:20",
         "opis": "Dodana wizualizacja 21:9 w knecht-z-koptos.jpg — powstała z ramowego promptu wpisu i pokazuje byt w jego naturalnym otoczeniu."
+      },
+      {
+        "data": "2026-08-30 00:38",
+        "opis": "Audyt Kartoteki: poprawki językowe i doprecyzowanie zdań (odmiana, literówki, spójność z mitem)."
+      },
+      {
+        "data": "2026-08-30 00:40",
+        "opis": "Audyt Kartoteki: poprawka literówek („słój” zamiast „słaj”) w powiązaniach i kluczu."
       }
     ]
   }

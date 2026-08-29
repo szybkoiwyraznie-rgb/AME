@@ -28,7 +28,7 @@
     "wyglad_i_aura": "Potężny wojownik z jaśniejącą, spiżowo-brązową skórą, czarnymi długimi włosami i złotą koroną; ciało pokryte tysiącem oczu — pamiątką po klątwie Gautamy, która zamieniła się w znak wszechwidzącego władcy. Jedną ręką dzierży wadżrę, drugą łuk z tęczy. Obecność poznaje się po ozonie i zapachu deszczu na gorącym kamieniu, po nagłym grzmocie, kiedy nadciąga burza, i po tym, że rzeki nagle zaczynają płynąć pełne.",
     "charakter_i_motywacje": "Dumny, żądny uciech władca nieba: pije somę, ucztuje, wysyła apsary do ascetów, którzy urosną w siłę, i nie cofa się przed podszywaniem się pod cudzego męża (Ahalya). A zarazem jest obrońcą porządku — to on rozcina chmury, uwalnia wody i zabija Vṛtrę. Motywacją jest tron: chce rządzić Swargą, być czczonym, nie stracić pierwszeństwa przed ludźmi o większej mocy. Kiedy jego nadużycia go osłabiają, staje się podatny — i wtedy musi prosić o pomoc wyższych bogów albo uciekać przed Brahmahatją, uosobionym grzechem braminobójstwa.",
     "zdolnosci": "Włada piorunem — wadżrą z kości mędrca; wywołuje burze, deszcz i błyskawice; uwalnia rzeki z górskich więzień. Potrafi zmieniać kształt (maja), jeździ na białym słoniu Airavata, dowodzi Marutami (duchami burzy) i wysyła niebiańskie nimfy, by rozpraszały potężnych ascetów. Jego moc nie wyczerpuje się do końca: gdy spojrzy na swój lud, potrafi go poderwać do natarcia, a swoją obecnością odwraca jedno uderzenie z każdego napastnika.",
-    "slabosci_i_metody_pokonania": "Pycha i żądza. Nie może pokonać kogoś chronionego silniejszym błogosławieństwem, chyba że zdobędzie broń nie z metalu ani drewna — wadżrę z kości. Mędrcy przeklinający go są groźniejsi niż demony: po romansie z Ahalyą Gautama pozbawił go męskości albo pokrył tysiącem znaków wstydu; grzech zabicia Vritry (braminobójstwo) wciąż go ściga, więc przed Brahmahatją musi uciekać i oczyścić się. Skuteczna konfrontacja to odebrać mu tron i wadżrę, złamać jego dumę ascetyczną siłą albo wstrzymać deszcz, od którego zależy jego kult.",
+    "slabosci_i_metody_pokonania": "Pycha i żądza. Nie może pokonać kogoś chronionego silniejszym błogosławieństwem, chyba że zdobędzie broń nie z metalu ani drewna — wadżrę z kości. Mędrcy przeklinający go są groźniejsi niż demony: po romansie z Ahalyą Gautama pozbawił go męskości albo pokrył tysiącem znaków wstydu; grzech zabicia Vritry (braminobójstwo) wciąż go ściga, więc przed Brahmahatją musi uciekać i oczyścić się. Skuteczna konfrontacja to odebrać mu tron i wadżrę, złamać jego dumę siłą ascety albo wstrzymać deszcz, od którego zależy jego kult.",
     "preferencje": "Lubi: somę, uczty, złoto, piękne apsary, deszcz, modlitwy wojowników i ofiary; nie lubi: ascetów gromadzących tapas (bo stają się zagrożeniem dla jego tronu), wspomnienia zabójstwa Vritry, wyższych bogów, którzy go upokarzają, i obietnic deszczu, których nie może spełnić."
   },
   "dokumentacja": [
@@ -132,6 +132,10 @@
       {
         "data": "2026-08-29 21:36",
         "opis": "Korekty językowe sekcji II i III: „Nie może pokonać”, nazwa Szali, „dwóch natur”."
+      },
+      {
+        "data": "2026-08-30 00:38",
+        "opis": "Audyt Kartoteki: poprawki językowe i doprecyzowanie zdań (odmiana, literówki, spójność z mitem)."
       }
     ]
   }

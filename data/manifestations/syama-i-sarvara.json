@@ -24,10 +24,10 @@
     "obraz": "assets/wizualizacje/syama-i-sarvara.jpg"
   },
   "natura": {
-    "wyglad_i_aura": "Dwa wielkie psy: jeden czarny jak węgiel (Śyāma), drugi cętkowany, brązowo-łaciaty (Śarvara), oba z drugą parą oczu nad zwykłymi — razem cztery oczy, którymi patrzą jednocześnie na świat ludzi i na świat przodków. Nozdrza mają rozdęte, jak u „nienasyconych” wysłanników z hymnu; sierść sucha, nie lśniąca, a wokół pachnie zimnym popiołem i kurzawą drogi. Pojawiają się bezgłośnie, zwykle o zmierzchu albo w noc, gdy we wsi jest zmarły — i stoją na ścieżce, zamiast iść do ludzi.",
+    "wyglad_i_aura": "Dwa wielkie psy: jeden czarny jak węgiel (Śyāma), drugi cętkowany, brązowo-łaciaty (Śarvara), oba z drugą parą oczu nad zwykłymi — razem cztery oczy, którymi patrzą jednocześnie na świat ludzi i na świat przodków. Nozdrza mają rozdęte, jak u „nienasyconych” wysłanników z hymnu; sierść sucha, nie lśniąca, a wokół pachnie zimnym popiołem i kurzawą drogi. Pojawiają się bezgłośnie, zwykle o zmierzchu albo w nocy, gdy we wsi jest zmarły — i stoją na ścieżce, zamiast iść do ludzi.",
     "charakter_i_motywacje": "Nie są złe ani dobre — są porządkiem drogi. Pilnują przejścia, oglądają ludzi i strzegą ścieżki; hymn wzywa Yamy, by „powierzył im tego człowieka” i „obdarzył go pomyślnością”. Ich zadaniem jest wyprowadzić duszę bezpiecznie i sprawdzić, czy naprawdę idzie. Nie napadają na żywych: one wyszukują tych, których pora nadeszła, a potem idą z nimi przez granicę. Nie znają przekupstwa ani pośpiechu — znają jedną drogę i jednego pana.",
     "zdolnosci": "Widzą na dwa sposoby naraz: druga para oczu patrzy tam, gdzie nie sięga wzrok żywych, a tradycja nadaje im miano Mithūdṛśā — „tych, które nie patrzą jednocześnie”: jedno spostrzega to, czego nie widzi drugie, więc przejścia nie da się prześlizgnąć obojgu naraz. Wędrują szybciej niż dusza, węszą umierających (Atharweda) i rozeznają, komu należy się droga prosta, a kogo trzeba prowadzić siłą; bywają też widziane na niebie jako Wielki Pies i Mały Pies (Canis Major i Canis Minor), bo z ich postaci zrobiono gwiazdozbiory.",
-    "slabosci_i_metody_pokonania": "Nie zabija się ich — one są bramą, nie wrogiem. Hymn nie każe z nimi walczyć, lecz „ścigać się i wyprzedzić” na „szczęśliwej ścieżce”: kto idzie godnie, ten przechodzi, bo są strażnikami, nie sędziami. Pomagają obrzędy — ofiara i ogień, którymi Agni niesie dar ku bogom, tłuszcz i ziarno dla przodków — a bywa, że i chwila, gdy jedno z nich nie patrzy; nie wolno jednak liczyć, że nie zauważą powrotu. Ostatnia rada brzmi: wybrać miasto, w którym Yama nie ma władzy — choć droga do niego też wiedzie przez psy.",
+    "slabosci_i_metody_pokonania": "Nie zabija się ich — one są bramą, nie wrogiem. Hymn nie każe z nimi walczyć, lecz „ścigać się i wyprzedzić” na „szczęśliwej ścieżce”: kto idzie godnie, ten przechodzi, bo są strażnikami, nie sędziami. Pomagają obrzędy — ofiara i ogień, którymi Agni niesie dar ku bogom, tłuszcz i ziarno dla przodków — a bywa i chwila, gdy jedno z nich nie patrzy; nie wolno jednak liczyć, że nie zauważą powrotu. Ostatnia rada brzmi: wybrać miasto, w którym Yama nie ma władzy — choć droga do niego też wiedzie przez psy.",
     "preferencje": "Lubią: drogi, po których nikt nie wraca, kremacje, wierne obrzędy, ciszę po zmroku i podróżnych z wyważonym sumieniem. Nie lubią: ludzi, którzy zawracają z połowy drogi, ścieżek skracanych, krzyku przy stosie i miast, w których Yama nie ma władzy."
   },
   "dokumentacja": [
@@ -113,6 +113,10 @@
       {
         "data": "2026-08-30 00:20",
         "opis": "Dodana wizualizacja 21:9 w syama-i-sarvara.jpg — powstała z ramowego promptu wpisu i pokazuje byt w jego naturalnym otoczeniu."
+      },
+      {
+        "data": "2026-08-30 00:38",
+        "opis": "Audyt Kartoteki: poprawki językowe i doprecyzowanie zdań (odmiana, literówki, spójność z mitem)."
       }
     ]
   }

@@ -27,7 +27,7 @@
   "natura": {
     "wyglad_i_aura": "Ogromny mężczyzna odlany z ciemnego brązu: gładka, wypolerowana skóra z odpryskami, szwy na piersi i ramionach jak po formie odlewniczej, nieruchome szerokie stopy. Wokół niego unosi się zapach spalonego metalu, rozgrzanego kamienia i słonej wody; chód słychać jako głuchy, miarowy łoskot, jakby ktoś przesuwał po skałach wielki kocioł. Wokół jego kostki żarzy się cienka złota linia — żyła, którą płynie płyn nieśmiertelnych.",
     "charakter_i_motywacje": "Talos nie jest zły ani dobry: jest urządzeniem granicy. Jego jedynym celem jest, by nikt nie wylądował na Krecie bez pozwolenia — dlatego obrzuca głazami każdą zbliżającą się łódź. Nie kusi go władza, nie ma przyjaciół, nie zna strachu; działa, dopóki płynie ichor, i gaśnie, gdy go zabraknie. To sprawia, że można go oszukać, ale nie przekupić — z nim rozmawia się tylko przez mechanizm: albo odetniesz mu żyłę, albo stoi.",
-    "zdolnosci": "Obiega całą wyspę trzy razy dziennie, więc każde wybrzeże jest pod jego okiem; dźwiga i ciska głazy wielkości woza, potrafi objąć obcego i przycisnąć go do rozżarzonej piersi. Jego jedyna prawdziwa moc to nieprzenikalność: poza jednym punktem w kostce nie ma się gdzie wbić ostrza. Widzi również to, co niewidzialne dla ludzi — zbliżającą się łódź rozpoznaje po zapachu smoły i po śladzie fal na długo przed świtem.",
+    "zdolnosci": "Obiega całą wyspę trzy razy dziennie, więc każde wybrzeże jest pod jego okiem; dźwiga i ciska głazy wielkości wozu, potrafi objąć obcego i przycisnąć go do rozżarzonej piersi. Jego jedyna prawdziwa moc to nieprzenikalność: poza jednym punktem w kostce nie ma się gdzie wbić ostrza. Widzi również to, co niewidzialne dla ludzi — zbliżającą się łódź rozpoznaje po zapachu smoły i po śladzie fal na długo przed świtem.",
     "slabosci_i_metody_pokonania": "Jedyny punkt otwarcia to żyła w kostce, zamknięta gwoździem albo cienką błoną. Kto wyjmie gwóźdź, nie zabija — po prostu zatrzymuje, bo ichor wypływa jak roztopiony ołów i automat sztywnieje. Skuteczne są też oszustwo i hipnoza: Medea potrafiła odwrócić jego uwagę lub zmanić go obietnicą nieśmiertelności, a Poeas w innej wersji trafił go strzałą w kostkę. Nie zadziała na niego czar raniący zwykłe ciało — brąz nie krwawi.",
     "preferencje": "Lubi: cichą, spokojną wyspę bez obcych łodzi, poranne słońce odbijające się od brązu, słoną mgłę. Nie lubi: przecinających wody żagli, hałasu narzędzi, ognia przy samej wodzie — i własnych wspomnień, których nie ma, a które przez noc wracają jak cisza po wielkim upadku."
   },
@@ -92,7 +92,7 @@
   "powiazania": [
     {
       "slug": "nessos",
-      "opis": "Obaj są greckimi strażnikami terytorium, których pokonuje się nie siłą, lecz otwarciem jednego punktu: Nessos pilnuje przeprawy przez Euenos i ginie od strzały Heraklesa, a Talos pilnuje brzegów Krety i upada, gdy z kostki wypada gwóźdź zamykający żyłę. Mają też wspólny los — najlepiej bronią, gdy nikt nie zna ich słabego miejsca."
+      "opis": "Obaj są greckimi strażnikami terytorium, których pokonuje się nie siłą, lecz otwarciem jednego punktu: Nessos pilnuje przeprawy przez Euenos i ginie od strzały Heraklesa, a Talos pilnuje brzegów Krety i upada, gdy z kostki wypada gwóźdź zamykający żyłę. Mają też wspólny los: obaj bronią się najlepiej, dopóki nikt nie zna ich słabego miejsca."
     },
     {
       "slug": "kentaur-pelion",
@@ -118,6 +118,10 @@
       {
         "data": "2026-08-29 21:36",
         "opis": "Dopisane powiązania ze Sfinksem (bastiony nieprzekraczalnej granicy) i z Balorem (kolosy o jednym słabym punkcie konstrukcji)."
+      },
+      {
+        "data": "2026-08-30 00:38",
+        "opis": "Audyt Kartoteki: poprawki językowe i doprecyzowanie zdań (odmiana, literówki, spójność z mitem)."
       }
     ]
   }

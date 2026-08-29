@@ -92,7 +92,7 @@
   "powiazania": [
     {
       "slug": "selkie-sule-skerry",
-      "opis": "Obie to kobiety-morza z północnej Atlantyku, które żyją między lądem a wodą i potrafią pomóc człowiekowi — selkiew z Orkadów wychodzi na brzeg, gdy zdejmie foką skórę, a Ben-Varrey wyskakuje na skały i wskazuje ławicę. Obie wiążą się z nazwą-tabu i rytuałem przejścia, co sprawia, że nie można ich traktować jak zwykłych potworów."
+      "opis": "Obie to kobiety-morza z północnej Atlantyku, które żyją między lądem a wodą i potrafią pomóc człowiekowi — selkie z Orkadów wychodzi na brzeg, gdy zdejmie foką skórę, a Ben-Varrey wyskakuje na skały i wskazuje ławicę. Obie wiążą się z nazwą-tabu i rytuałem przejścia, co sprawia, że nie można ich traktować jak zwykłych potworów."
     },
     {
       "slug": "nessos",
@@ -118,6 +118,10 @@
       {
         "data": "2026-08-29 21:36",
         "opis": "Dopisane powiązania z Balorem (sąsiedztwo wód Morza Irlandzkiego i tabu imienia na morzu) oraz z Drangue (przeciwstawne stany pogody: mgła i sztorm wobec rozpraszania nawałnic); korekta językowa („uszanuje”)."
+      },
+      {
+        "data": "2026-08-30 00:38",
+        "opis": "Audyt Kartoteki: poprawki językowe i doprecyzowanie zdań (odmiana, literówki, spójność z mitem)."
       }
     ]
   }
