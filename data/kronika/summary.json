@@ -305,17 +305,17 @@
             "kogo": "barbarossa-kyffhaeuser",
             "stopien": 2,
             "kontekst": "retoryka gościnności",
-            "komentarz": "Kentaur używa słowa „płacę” i warunku cesarza, żeby nazwać go strażnikiem więzienia, nie gospodarzem. To ocena narratora, nie mechaniczne „wykorzystanie karty”."
+            "komentarz": "Kentaur odwołuje się do motywu zapłaty i warunku cesarza, nazywając go strażnikiem uwięzienia, a nie prawowitym gospodarzem."
           },
           {
             "kto": "egungun",
             "kogo": "kentaur-pelion",
             "stopien": 1,
             "kontekst": "łagodna retoryka rodu",
-            "komentarz": "Egungun delikatnie odwołuje się do wstydu kentaura, żeby pokazać różnicę: przodek nie bierze, gość, który wziął sam, sam się osądza."
+            "komentarz": "Egungun odwołuje się do wstydu kentaura, wskazując różnicę: przodek przychodzi, by obdarować, a ten, kto wziął samowolnie, sam ściąga na siebie sąd."
           }
         ],
-        "podsumowanie": "Żaden z uczestników nie „odpala” słabości jak przycisku; rozmowa tylko sprawia, że świat zaczyna rozumieć, gdzie leży różnica między gościem proszonym a gościem, który bierze."
+        "podsumowanie": "Żaden z uczestników nie wykorzystał wprost słabości rywala; rozmowa sprawiła jednak, że granica między prawem gościnności a zuchwałością została na nowo nazwana."
       }
     },
     {
@@ -632,14 +632,14 @@
             "kogo": "kentaur-pelion",
             "stopien": 2,
             "kontekst": "retoryka żartu",
-            "komentarz": "Imp kończy rozmowę cięciem „po tobie znów będzie pogrzeb zamiast wesela” — używa słabości kentaura przy winie jako puenty. To ocena narratora, nie przycisk exploitu."
+            "komentarz": "Imp kończy rozmowę cięciem „po tobie znów będzie pogrzeb zamiast wesela” — celnie puentując zgubną słabość kentaura do wina."
           },
           {
             "kto": "empusa-korynt",
             "kogo": "kentaur-pelion",
             "stopien": 1,
             "kontekst": "retoryka odźwiernego",
-            "komentarz": "Empusa delikatnie odwołuje się do hali, która chwyciła za dzbany, żeby pokazać kentaurowi jego własny próg — zwięźle, bez triumfu."
+            "komentarz": "Empusa odwołuje się do pamięci o rzuconych dzbanach, przypominając kentaurowi jego własną bezsilność w obliczu trzeźwego porządku."
           }
         ],
         "podsumowanie": "Towarzystwo nie zabija żadnego bytu — po prostu nazywa ich odźwiernych. Świat zyskuje jedno gotowe rozpoznanie: wesele psuje się łatwo, trudniej wejść tak, żeby nikt nie zawołał odźwiernego."
@@ -966,21 +966,21 @@
             "kogo": "balor",
             "stopien": 2,
             "kontekst": "retoryka pieśni",
-            "komentarz": "Egungun odwołuje się do przymusu w obrazie Balora: olbrzym nie pyta, czy chce wracać — i nazywa to za-progiem. To ocena narratora: przodek gra na słabości przymusu, nie odpala go jak przycisku."
+            "komentarz": "Egungun odwołuje się do przymusu w naturze Balora: olbrzym nie pyta, czy chce wracać — i nazywa to za-progiem. Przodek wskazuje na pęknięcie w pozornej nieugiętości oka."
           },
           {
             "kto": "empusa-korynt",
             "kogo": "balor",
             "stopien": 2,
             "kontekst": "retoryka imienia",
-            "komentarz": "Empusa pokazuje, że jej próg znika po wypowiedzianym imieniu, a Balor nie ma imienia tylko powiekę — i w ten sposób odbiera mu monopol na bycie niechybnym. Bez mechanicznego exploitu, tylko przez składnię rozmowy."
+            "komentarz": "Empusa pokazuje, że jej próg znika po wypowiedzeniu imienia, podczas gdy Balor ma jedynie niszczycielskie spojrzenie — odbierając mu tym samym poczucie nieomylności."
           },
           {
             "kto": "egungun",
             "kogo": "empusa-korynt",
             "stopien": 1,
             "kontekst": "łagodne rozpoznanie",
-            "komentarz": "Egungun nie atakuje Empusy — odsłania ją: „ty jesteś progiem, nie gościem”. To najbardziej współczująca z trzech ocen."
+            "komentarz": "Egungun nie atakuje Empusy — odsłania jej tajemnicę: „ty jesteś progiem, nie gościem”. To głębokie, spokojne rozpoznanie natury zjawiska."
           }
         ],
         "podsumowanie": "Rozmowa nie likwiduje żadnego progu — pokazuje, że każdy ma inny. Pieśń zaprasza, powieka otwiera, imię rozwiązuje. Świat rozumie trzy mechanizmy naraz, ale żaden z bytów nie traci pola: Balor zostaje nieodwrócony, Empusa zostaje nienazwana, Egungun zostaje w pieśni."
@@ -1309,21 +1309,21 @@
             "kogo": "indra",
             "stopien": 2,
             "kontekst": "retoryka rozkazu",
-            "komentarz": "Selkie nazywa wybór Indry rozkazem, który sam na siebie nałożył — i w ten sposób odbiera mu część godności. To ocena narratora, nie mechaniczne użycie słabości."
+            "komentarz": "Selkie nazywa wybór Indry brzemieniem, które bóstwo samo na siebie nałożyło — dotykając jego dumy."
           },
           {
             "kto": "egungun",
             "kogo": "selkie-sule-skerry",
             "stopien": 1,
             "kontekst": "łagodne rozpoznanie",
-            "komentarz": "Egungun nie obnaża Selkie — wskazuje, że jej próg jest najprostszy: wystarczy nazwać rzecz. To raczej rozpoznanie niż cios."
+            "komentarz": "Egungun wskazuje, że próg foki jest najprostszy: wystarczy nazwać jej istotę, by uchylić zasłonę tajemnicy."
           },
           {
             "kto": "indra",
             "kogo": "egungun",
             "stopien": 1,
             "kontekst": "retoryka kresu",
-            "komentarz": "Indra odpowiada Egungunowi spokojnie: nie każde drzwi słuchają imienia. Nie atakuje pieśni, tylko wyznacza jej granicę."
+            "komentarz": "Indra odpowiada Egungunowi spokojnie: nie każde wrota słuchają pieśni, a grom nie pyta o imiona."
           }
         ],
         "podsumowanie": "Rozmowa nie znajduje jednego słowa — i właśnie to odkrywa: próg bytu nie jest jeden, a każde z nich wymaga innego klucza. Świat przestaje szukać imienia uniwersalnego i zaczyna rozumieć, że tożsamość bytu jest granicą, nie kodem."
