@@ -90,27 +90,36 @@
     "zasieg": [
       {
         "slug": "egungun",
-        "przed": 0.503,
-        "po": 0.523,
+        "delta": 0.02,
         "opis": "Rozdzielenie mechanizmów wzmacnia kult przodków: pieśń zostaje uznana za jedyne miłe drzwi między światami."
       },
       {
         "slug": "balor",
-        "przed": 0.46,
-        "po": 0.46,
+        "delta": 0.0,
         "opis": "Balor nie zyskuje i nie traci: jego powieka pozostaje nieodwrócona, ale przestaje być jedynym drzwiami, o których ludzie szepczą."
       },
       {
         "slug": "empusa-korynt",
-        "przed": 0.48,
-        "po": 0.48,
+        "delta": 0.0,
         "opis": "Empusa zostaje nienazwana: świat wie, że padnięcie imienia ją rozwiązuje, więc opowiada o niej ostrożnie — na granicy mitu."
       }
     ],
     "dominacje": [
-      { "kultura": "joruba", "kult": "egungun", "przed": 0.503, "po": 0.523 },
-      { "kultura": "irlandia", "kult": "balor", "przed": 0.46, "po": 0.46 },
-      { "kultura": "grecja", "kult": "empusa-korynt", "przed": 0.48, "po": 0.48 }
+      {
+        "kultura": "joruba",
+        "kult": "egungun",
+        "delta": 0.02
+      },
+      {
+        "kultura": "irlandia",
+        "kult": "balor",
+        "delta": 0.0
+      },
+      {
+        "kultura": "grecja",
+        "kult": "empusa-korynt",
+        "delta": 0.0
+      }
     ],
     "pozycje": [
       {

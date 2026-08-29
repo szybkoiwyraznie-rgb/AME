@@ -37,22 +37,26 @@
      z powrotem otworzyć (`walidujCiągłośćWątków`).
   10. **Pierwsze epoki** uruchomione w Tomie I „Kronika trzech stołów”:
       Epoka I na `trzy-stoly`, Epoka II na `nieproszeni-goscie`, Epoka III na
-      nowym `odzwierni` (Egungun × Balor × Empusa, unikalny skład).
-      Wynik w `data/kronika/summary.json` + raporty `docs/kronika-*.html`.
+      `odzwierni` (Egungun × Balor × Empusa), Epoka IV na `imie-na-progu`
+      (Egungun × Selkie × Indra); wszystkie składy unikalne. Wynik w
+      `data/kronika/summary.json` + raporty `docs/kronika-*.html`.
 
 - Konsekwencje:
   - `tools/kronika.mjs` — mechanizm + generowanie raportów; npm `kronika` i
     `kronika:check`.
   - `data/kronika/tom-1.json`, `data/kronika/epoka-1.json`,
-    `data/kronika/epoka-2.json`, `data/kronika/epoka-3.json` — źródło danych.
-  - `test/kronika.test.js` — 9 testów (wzór paliwa, trzy epoki sekwencyjnie,
-    oś zamknięta, ciągłość wątków, gate, zwrot bez zmiany, struktura
-    podsumowania).
+    `data/kronika/epoka-2.json`, `data/kronika/epoka-3.json`,
+    `data/kronika/epoka-4.json` — źródło danych.
+  - `test/kronika.test.js` — 10 testów (wzór paliwa, cztery epoki sekwencyjnie,
+    oś zamknięta, ciągłość wątków, wzorzec delta, gate, zwrot bez zmiany,
+    struktura podsumowania).
   - `docs/KRONIKA_tryb.md` §20–§21; `docs/ROADMAP.md`; `docs/PROJECT_HISTORY.md`.
   - Seedowe wartości osi/zasięgu są umowne (kalibracji w miarę wzrostu
     kartoteki) — dopuszczalne w pierwszym tomie, oznaczone w metryce.
   - Ryzyko: raport HTML generowany przez narzędzie przyciąga ręczne edycje —
-    dlatego `--check` odrzuca różnicę względem `summary.json`/raportu.
+    dlatego `npm run check` odrzuca różnicę względem `summary.json`/raportu.
+  - `npm run build` = rebuild-index + kronika --seed + kronika (raporty się
+    generują automatycznie).
 
 - Powiązania: ADR 0006 (warstwa wiki), ADR 0007 (Pętla Jakości), ADR 0013
   (Baza Skitów), ADR 0016 (kanon tagów), ADR 0019 (skład SKITów), §18–§21

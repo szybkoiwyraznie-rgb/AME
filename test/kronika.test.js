@@ -40,26 +40,28 @@ test('paliwo pasywne: 2×backlinki + tagi kanonu + sieć powiązań (max 3)', as
   assert.equal(paliwoPasywne(mapa.get('lincoln-imp'), kanon), 12);
 });
 
-test('Tom I: dwie epoki przechodzą i oś zamyka się na 100', async () => {
-  const [tom, epoka1, epoka2, indeks, kanon] = await Promise.all([
+test('Tom I: cztery epoki przechodzą sekwencyjnie i oś zamyka się na 100', async () => {
+  const [tom, epoka1, epoka2, epoka3, epoka4, indeks, kanon] = await Promise.all([
     wczytaj(PLIK_TOM_1),
     wczytaj(PLIK_EPOKA_1),
     wczytaj(join(KATALOG_KRONIKA, 'epoka-2.json')),
+    wczytaj(join(KATALOG_KRONIKA, 'epoka-3.json')),
+    wczytaj(join(KATALOG_KRONIKA, 'epoka-4.json')),
     wczytaj(PLIK_INDEKSU),
     wczytaj(PLIK_KANONU),
   ]);
   const wynik = zbudujPodsumowanieTomu({
     tom,
-    epoki: [epoka1, epoka2],
+    epoki: [epoka1, epoka2, epoka3, epoka4],
     indeks,
     kanon,
   });
 
   assert.equal(wynik.walidacja, true, JSON.stringify(wynik.bledy));
-  assert.equal(wynik.epoki.length, 2);
+  assert.equal(wynik.epoki.length, 4);
   assert.equal(wynik.stanPo.os.mit + wynik.stanPo.os.racjonalizacja, 100);
 
-  const [e1, e2] = wynik.epoki;
+  const [e1, e2, e3, e4] = wynik.epoki;
   assert.deepEqual(
     e1.uczestnicy.map((u) => [u.slug, u.saldoPrzed, u.saldoPo]),
     [
@@ -68,8 +70,8 @@ test('Tom I: dwie epoki przechodzą i oś zamyka się na 100', async () => {
       ['kentaur-pelion', 16, 14],
     ]
   );
-  assert.equal(e1.stanPo.os.mit, 35);
-  assert.equal(e1.stanPo.os.racjonalizacja, 65);
+  assert.equal(e1.stanPo.os.mit, 34);
+  assert.equal(e1.stanPo.os.racjonalizacja, 66);
 
   assert.deepEqual(
     e2.uczestnicy.map((u) => [u.slug, u.saldoPrzed, u.saldoPo]),
@@ -79,10 +81,33 @@ test('Tom I: dwie epoki przechodzą i oś zamyka się na 100', async () => {
       ['empusa-korynt', 17, 19],
     ]
   );
-  assert.equal(e2.stanPo.os.mit, 33);
-  assert.equal(e2.stanPo.os.racjonalizacja, 67);
-  assert.equal(e2.stanPo.zasieg.find((z) => z.slug === 'kentaur-pelion').wielkosc, 0.407);
-  assert.equal(e2.stanPo.zasieg.find((z) => z.slug === 'empusa-korynt').wielkosc, 0.48);
+  assert.equal(e2.stanPo.os.mit, 32);
+  assert.equal(e2.stanPo.os.racjonalizacja, 68);
+
+  assert.deepEqual(
+    e3.uczestnicy.map((u) => [u.slug, u.saldoPrzed, u.saldoPo]),
+    [
+      ['egungun', 21, 24],
+      ['balor', 15, 13],
+      ['empusa-korynt', 19, 17],
+    ]
+  );
+  assert.equal(e3.stanPo.os.mit, 30);
+  assert.equal(e3.stanPo.os.racjonalizacja, 70);
+
+  assert.deepEqual(
+    e4.uczestnicy.map((u) => [u.slug, u.saldoPrzed, u.saldoPo]),
+    [
+      ['egungun', 24, 27],
+      ['selkie-sule-skerry', 24, 22],
+      ['indra', 13, 11],
+    ]
+  );
+  assert.equal(e4.stanPo.os.mit, 29);
+  assert.equal(e4.stanPo.os.racjonalizacja, 71);
+  assert.equal(e4.stanPo.zasieg.find((z) => z.slug === 'egungun').wielkosc, 0.535);
+  assert.equal(e4.stanPo.zasieg.find((z) => z.slug === 'selkie-sule-skerry').wielkosc, 0.49);
+  assert.equal(e4.stanPo.zasieg.find((z) => z.slug === 'indra').wielkosc, 0.353);
 });
 
 test('oś: delty mit+racjonalizacja muszą sumować się do 0', async () => {
@@ -135,41 +160,46 @@ test('zwrot wymaga realnej dodatniej zmiany zasięgu', async () => {
   );
 });
 
-test('Tom I: trzy epoki przechodzą sekwencyjnie i wątki są ciągłe', async () => {
-  const [tom, epoka1, epoka2, epoka3, indeks, kanon] = await Promise.all([
+test('epoki zapisują delty, a nie bezwzględne przed/po (auto-rebase seedu)', async () => {
+  const [e1, e4] = await Promise.all([
+    wczytaj(PLIK_EPOKA_1),
+    wczytaj(join(KATALOG_KRONIKA, 'epoka-4.json')),
+  ]);
+  for (const row of e1.konsekwencje.zasieg) {
+    assert.equal(typeof row.delta, 'number');
+    assert.equal(row.przed, undefined);
+    assert.equal(row.po, undefined);
+  }
+  for (const row of e1.konsekwencje.dominacje) {
+    assert.equal(typeof row.delta, 'number');
+    assert.equal(row.przed, undefined);
+    assert.equal(row.po, undefined);
+  }
+  assert.ok(e4.konsekwencje.watki.some((w) => w.id === 'imie-na-progu' && w.stan === 'zamkniety'));
+  assert.ok(e4.konsekwencje.watki.some((w) => w.id === 'kres-indry' && w.stan === 'otwarty'));
+});
+
+test('wątki z Epoki I–II są przenoszone przez cały Tom (do Epoki IV)', async () => {
+  const [tom, epoka1, epoka2, epoka3, epoka4, indeks, kanon] = await Promise.all([
     wczytaj(PLIK_TOM_1),
     wczytaj(PLIK_EPOKA_1),
     wczytaj(join(KATALOG_KRONIKA, 'epoka-2.json')),
     wczytaj(join(KATALOG_KRONIKA, 'epoka-3.json')),
+    wczytaj(join(KATALOG_KRONIKA, 'epoka-4.json')),
     wczytaj(PLIK_INDEKSU),
     wczytaj(PLIK_KANONU),
   ]);
   const wynik = zbudujPodsumowanieTomu({
     tom,
-    epoki: [epoka1, epoka2, epoka3],
+    epoki: [epoka1, epoka2, epoka3, epoka4],
     indeks,
     kanon,
   });
   assert.equal(wynik.walidacja, true, JSON.stringify(wynik.bledy));
-  assert.equal(wynik.epoki.length, 3);
-  assert.equal(wynik.stanPo.os.mit + wynik.stanPo.os.racjonalizacja, 100);
-
-  const e3 = wynik.epoki[2];
-  assert.deepEqual(
-    e3.uczestnicy.map((u) => [u.slug, u.saldoPrzed, u.saldoPo]),
-    [
-      ['egungun', 21, 24],
-      ['balor', 15, 13],
-      ['empusa-korynt', 19, 17],
-    ]
-  );
-  assert.equal(e3.stanPo.os.mit, 31);
-  assert.equal(e3.stanPo.os.racjonalizacja, 69);
-  assert.equal(e3.stanPo.zasieg.find((z) => z.slug === 'egungun').wielkosc, 0.523);
-
-  // Otwarty wątek „odzwierni" domknięty w III; nowy otwarty „imie-na-progu".
-  assert.equal(e3.konsekwencje.watki.find((w) => w.id === 'odzwierni').stan, 'zamkniety');
-  assert.ok(e3.konsekwencje.watki.some((w) => w.id === 'imie-na-progu' && w.stan === 'otwarty'));
+  const e4 = wynik.epoki[3];
+  assert.ok(e4.konsekwencje.watki.some((w) => w.id === 'czwarty-stol' && w.stan === 'otwarty'));
+  assert.ok(e4.konsekwencje.watki.some((w) => w.id === 'warunek-barbarossy' && w.stan === 'otwarty'));
+  assert.ok(e4.konsekwencje.watki.some((w) => w.id === 'wedrowny-dom-empusy' && w.stan === 'otwarty'));
 });
 
 test('ciągłość: otwarty wątek zaginiony jest błędem, zamknięty nie może się otworzyć', () => {

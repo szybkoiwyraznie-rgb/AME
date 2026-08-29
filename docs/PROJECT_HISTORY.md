@@ -1306,3 +1306,25 @@ Kolejna pętla jakości (C1 → C3 → C2) i dalsza implementacja Kroniki.
   ROADMAP uzupełniony.
 - Testy: `test/kronika.test.js` 9 testów, łącznie **162/162**; build/check/
   kronika:check zielone.
+
+## Kronika — Epoka IV + automatyczny raport (2026-08-29)
+
+Pociągnięty wątek i zautomatyzowany raport.
+
+- **Epoka IV** — `data/kronika/epoka-4.json` „Imię na progu: skóra, kres
+  i pieśń” na nowym skicie `imie-na-progu` (Egungun × Selkie × Indra,
+  unikalny skład). Egungun 24→27, Selkie 24→22, Indra 13→11; oś 29/71.
+  Wątek `imie-na-progu` domknięty, otwarty nowy `kres-indry`.
+- **Wzorzec delta** — `konsekwencje.zasieg/dominacje` przechowują `delta`
+  zamiast `przed/po`; `przeliczEpoke` liczy `przed/po` z bieżącego stanu.
+  Dodanie SKITu (zmiana seedu) przestało wymagać ręcznego re-basowania
+  poprzednich epok — mechanizm sam je przelicza.
+- **Automatyczny raport** — `npm run build` = rebuild-index + `kronika --seed`
+  + `kronika`: indeks → seed → `summary.json` + wszystkie raporty HTML.
+  `npm run check` pilnuje aktualności indeksu i raportów.
+- **C3** — nowy SKIT `data/skity/imie-na-progu.json` (210 słów, 3 głosy,
+  unikalny skład); baza ma 17 SKITów.
+- **Dokumentacja** — §21.6 (delta), §21.7 (auto raport), §21.8 (następny
+  krok); ADR 0021 (pkt 9–10, epoki, build); ROADMAP/PROJECT_HISTORY.
+- Testy: `test/kronika.test.js` 10 testów, łącznie **163/163**; build/check
+  zielone.

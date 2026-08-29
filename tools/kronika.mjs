@@ -246,35 +246,57 @@ export function przeliczEpoke({ tom, epoka, indeks, kanon, stan, watkiPoprzednie
   };
   walidujOs(stanPo.os, bledy, 'stanPo');
 
-  const uzyteSlugi = new Set();
-  for (const row of konsekwencje.zasieg || []) {
-    uzyteSlugi.add(row.slug);
+  // Zasięg: epoki zapisują DELTĘ, a powiatą liczy się z bieżącego stanu.
+  // Dzięki temu dodanie nowego SKITu (zmiana seedu) nie wymaga ręcznego
+  // re-basowa wartości „przed/po” w starszych epokach.
+  const zasiegWyliczone = (konsekwencje.zasieg || []).map((row) => {
     const przed = wielkoscZasiegu(stanBiezacy, row.slug);
     if (przed === null) blad(bledy, `zasięg: brak „${row.slug}” w stanie bieżącym`);
-    else if (Math.abs((przed ?? 0) - row.przed) > 1e-9) {
-      blad(bledy, `zasięg: „${row.slug}” przed ${row.przed} != stan ${przed}`);
+    if (typeof row.delta !== 'number' || Number.isNaN(row.delta)) {
+      blad(bledy, `zasięg: „${row.slug}” wymaga liczbowego pola delta`);
     }
     if (row.po < 0) blad(bledy, `zasięg: „${row.slug}” po < 0`);
+    const po = przed === null ? null : Math.round((przed + (row.delta || 0)) * 1000) / 1000;
     const cel = stanPo.zasieg.find((z) => z.slug === row.slug);
-    if (cel) cel.wielkosc = row.po;
-  }
+    if (cel && po !== null) cel.wielkosc = po;
+    return {
+      slug: row.slug,
+      przed,
+      po,
+      delta: row.delta || 0,
+      opis: row.opis || '',
+    };
+  });
 
-  for (const row of konsekwencje.dominacje || []) {
+  const dominacjeWyliczone = (konsekwencje.dominacje || []).map((row) => {
     const przed = wielkoscDominacji(stanBiezacy, row.kultura, row.kult);
     if (przed === null) blad(bledy, `dominacja: brak „${row.kultura}/${row.kult}” w stanie bieżącym`);
-    else if (Math.abs((przed ?? 0) - row.przed) > 1e-9) {
-      blad(bledy, `dominacja: „${row.kultura}/${row.kult}” przed ${row.przed} != stan ${przed}`);
+    if (typeof row.delta !== 'number' || Number.isNaN(row.delta)) {
+      blad(bledy, `dominacja: „${row.kultura}/${row.kult}” wymaga liczbowego pola delta`);
     }
-    if (row.po < 0) blad(bledy, `dominacja: „${row.kultura}/${row.kult}” po < 0`);
+    const po = przed === null ? null : Math.round((przed + (row.delta || 0)) * 1000) / 1000;
     const cel = stanPo.dominacje.find((d) => d.kultura === row.kultura && d.kult === row.kult);
-    if (cel) cel.wielkosc = row.po;
-  }
+    if (cel && po !== null) cel.wielkosc = po;
+    return {
+      kultura: row.kultura,
+      kult: row.kult,
+      przed,
+      po,
+      delta: row.delta || 0,
+    };
+  });
+
+  const konsekwencjeWyliczone = {
+    ...konsekwencje,
+    zasieg: zasiegWyliczone,
+    dominacje: dominacjeWyliczone,
+  };
 
   for (const u of uczestnicy) {
     if (!u) continue;
     const delta = (() => {
       const row = (konsekwencje.zasieg || []).find((r) => r.slug === u.slug);
-      return row ? row.po - row.przed : 0;
+      return row ? row.delta || 0 : 0;
     })();
     if (u.zwrot > 0) {
       if (delta <= 0) {
@@ -321,7 +343,7 @@ export function przeliczEpoke({ tom, epoka, indeks, kanon, stan, watkiPoprzednie
     bledy,
     uczestnicy,
     stanPo,
-    konsekwencje,
+    konsekwencje: konsekwencjeWyliczone,
     narrator: epoka.narrator || null,
     skit: skit ? skit.slug : null,
   };

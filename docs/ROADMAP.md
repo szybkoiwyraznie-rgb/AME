@@ -510,6 +510,8 @@ przycisk) i poleceniu „Rozstaje zostawmy w pomysłach” zbudowano realny siln
       `npm run kronika:seed`, `test/kronika.test.js` (9 testów).
 - [x] **ADR 0021** + §21 w `docs/KRONIKA_tryb.md`.
 
+\(poprzednie podpunkty nadal obowiązują\)
+
 ### Kronika: pętla jakości C1–C3 + Epoka III (2026-08-29)
 
 Pętla jakości wokół Kroniki + dalsza implementacja:
@@ -528,7 +530,21 @@ Pętla jakości wokół Kroniki + dalsza implementacja:
       się otworzyć). Wykryła realny brak: Epoka II gubiła `czwarty-stol`
       i `warunek-barbarossy` — naprawione.
 - [x] **Raport** — `docs/kronika-epoka-3.html` + zaktualizowana strona Tomu.
-- [x] **Testy** — 9 testów w `test/kronika.test.js` (3 epoki, ciągłość, oś).
+#### Pętla jakości: Epoka IV + automatyczny raport (2026-08-29)
+
+- [x] **C3** — nowy SKIT `data/skity/imie-na-progu.json` (Egungun × Selkie ×
+      Indra, unikalny skład) kontynuujący wątek `imie-na-progu`.
+- [x] **C2 / Epoka IV** — `data/kronika/epoka-4.json` (Egungun 24→27, Selkie
+      24→22, Indra 13→11; oś 29/71; domknięty `imie-na-progu`, otwarty
+      `kres-indry`).
+- [x] **Wzorzec delta** — epoki zapisują `delta` zasięgu/dominacji, nie
+      `przed/po`; dodanie SKITu nie wymaga ręcznego re-basowania starszych
+      epok. Auto-rebase po reseedzie.
+- [x] **Automatyczny raport** — `npm run build` = rebuild-index + kronika
+      --seed + kronika (generuje `summary.json` i wszystkie raporty HTML);
+      `npm run check` pilnuje ich aktualności.
+- [x] **Testy** — 10 testów w `test/kronika.test.js` (4 epoki, delta,
+      ciągłość, oś) + całość 163/163.
 
 ## C4 — nazwa miasta na czas przytrzymania + kursor strzałka (nadpisuje C2 UX)
 

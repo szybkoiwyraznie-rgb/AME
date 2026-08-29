@@ -729,18 +729,28 @@ uczestników Tomu.
 | Balor | 15 | −2 | 0 | **13** |
 | Empusa | 19 | −2 | 0 | **17** |
 
-- **oś całego Tomu (po kalibracji seedów 37/63):** MIT 37→**31**,
-  RACJONALIZACJA 63→**69** (Epoka I 35/65, Epoka II 33/67, Epoka III 31/69;
-  każda epoka utrzymuje sumę 100).
-- **zasięg po Tomie (po kalibracji):** Egungun 47.3%→52.3% (+5 przez dwie
-  epoki), Empusa 46%→48% (+2), Kentaur 44.7%→40.7% (uczta wyjaśniona), Balor
-  46%, Barbarossa 46%, Imp 39.3% (bez zmian).
-- **wątki zamknięte:** `wino-w-uczcie`, `pogrzeb-zamiast-wesela`, `odzwierni`;
-  **otwarte:** `czwarty-stol`, `warunek-barbarossy`, `wedrowny-dom-empusy`,
-  `imie-na-progu`.
+**Epoka IV — „Imię na progu: skóra, kres i pieśń”**
+(skit `imie-na-progu`: Egungun × Selkie × Indra; nowy unikalny skład)
+
+| Byty | saldo start | koszt | zwrot | saldo |
+|---|---|---|---|---|
+| Egungun | 24 | −2 | +5 | **27** |
+| Selkie | 24 | −2 | 0 | **22** |
+| Indra | 13 | −2 | 0 | **11** |
+
+- **oś całego Tomu (po kalibracji seedów 36/64):** MIT 36→**29**,
+  RACJONALIZACJA 64→**71** (Epoka I 34/66, Epoka II 32/68, Epoka III 30/70,
+  Epoka IV 29/71; każda epoka utrzymuje sumę 100).
+- **zasięg po Tomie (po kalibracji):** Egungun 47.5%→53.5% (+6 przez trzy
+  epoki), Empusa 43.8%→45.8% (+2), Kentaur 42.5%→38.5% (uczta wyjaśniona),
+  Selkie 50%→49% (−1, nazwana skóra), Indra 36.3%→35.3% (−1, kres zrozumiany),
+  Balor 43.8%, Barbarossa 43.8%, Imp 37.5% (bez zmian).
+- **wątki zamknięte:** `wino-w-uczcie`, `pogrzeb-zamiast-wesela`, `odzwierni`,
+  `imie-na-progu`; **otwarte:** `czwarty-stol`, `warunek-barbarossy`,
+  `wedrowny-dom-empusy`, `kres-indry`.
 - **Czego dowodzi:** byt-statysta **traci**; byt, który realnie zmienił świat
-  (Egungun, Empusa w Ep II) może odzyskać paliwo; Balor i Empusa płacą za
-  wyjaśnienie świata (racjonalizacja rośnie). Skit **nie** dodaje paliwa.
+  (Egungun) może odzyskać paliwo; byty, których klucz został zrozumiany
+  (Selkie, Indra) płacą za racjonalizację. Skit **nie** dodaje paliwa.
 
 ### 21.5 Ciągłość wątków (nowy walidator)
 
@@ -754,15 +764,41 @@ Przykładowe wyniki walidacji w Tomie I:
   zostały dopisane jako przeniesione (to była realna usterka, wykryta przez
   nowy test).
 - Wątek `odzwierni` z Epoki II jest domknięty w Epoce III.
-- Nowy `imie-na-progu` otwiera się w Epoce III (dozwolone).
+- `imie-na-progu` z Epoki III jest domknięty w Epoce IV, a `kres-indry`
+  otwiera się w Epoce IV (dozwolone).
 
-### 21.6 Następny krok (stan po tej iteracji)
+### 21.6 Epoki zapisują DELTY — zero ręcznego re-basowania seedu
 
-1. **Trzy epoki zrobione** — mechanizm utrzymuje ciągłość stanu i wątków.
+Wcześniej epoki zapisywały bezwzględne `przed/po`, więc po dodaniu SKITu
+(zmiana seedu) trzeba było ręcznie przeliczać starsze epoki. To było kruche.
+
+**Zmienione:** `konsekwencje.zasieg` i `konsekwencje.dominacje` przechowują
+**`delta`** (przyrost zasięgu w ułamku, np. `0.02` / `-0.01`). Mechanizm
+`przeliczEpoke` liczy `przed = stan bieżący`, `po = przed + delta`.
+Dzięki temu delta z Epoki I jest ważna niezależnie od tego, jaki seed
+wyjdzie po rozbudowie kartoteki — nowy SKIT nie psuje starych epok.
+
+Walidator pilnuje, że `delta` jest liczbą, a `przed/po` nie pojawiają się
+w danych źródłowych (w `summary.json` są już wartości policzone).
+
+### 21.7 Automatyczny raport — `npm run build` generuje wszystko
+
+Raport przestał być osobnym krokiem. `npm run build` teraz:
+`rebuild-index → kronika --seed → kronika`, czyli przebudowuje indeks,
+kalibruje seed z aktualnej kartoteki i generuje `summary.json` + wszystkie
+raporty HTML (`docs/kronika-tom-1.html`, `docs/kronika-epoka-<N>.html`).
+
+`npm run check` sprawdza spójność indeksu **oraz** aktualność
+`summary.json` i raportów. Testy w `test/kronika.test.js` pilnują wzorca
+delta, ciągłości wątków i oś zamkniętą.
+
+### 21.8 Następny krok (stan po tej iteracji)
+
+1. **Cztery epoki zrobione** — mechanizm utrzymuje ciągłość stanu i wątków,
+   a raport generuje się sam w `npm run build`.
 2. **Prawdziwa strona główna Tomu** — `docs/kronika-tom-1.html`
    (oś, dominacje, chronologia, wątki, uczestnicy, ledger) z `summary.json`.
-3. **Kalibracja seedów zrobiona** — `npm run kronika:seed` liczy je z
-   kartoteki deterministycznie (15 bytów); test pilnuje spójności
-   `tom-1.json` z narzędziem.
-4. Kolejna epoka może iść w stronę otwartego wątku `imie-na-progu` albo
-   `czwarty-stol`, gdy właściciel potwierdzi temat.
+3. **Kalibracja seedów zautomatyzowana** — `npm run build` liczy seed
+   deterministycznie (15 bytów); test pilnuje spójności `tom-1.json`.
+4. Kolejna epoka może iść w stronę otwartego wątku `kres-indry`,
+   `czwarty-stol` albo `warunek-barbarossy`, gdy właściciel potwierdzi temat.

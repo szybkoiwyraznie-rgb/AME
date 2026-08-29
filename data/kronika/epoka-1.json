@@ -76,42 +76,36 @@
     ],
     "zasieg": [
       {
-        "slug": "barbarossa-kyffhaeuser",
-        "przed": 0.46,
-        "po": 0.46,
-        "opis": "Cesarz nie zyskuje i nie traci: jego warunek pozostaje nierozstrzygnięty."
-      },
-      {
         "slug": "egungun",
-        "przed": 0.473,
-        "po": 0.503,
+        "delta": 0.03,
         "opis": "W niektórych rodach pojawia się czwarty stół dla gościa, który wziął sam — kult przodków zyskuje nowy rytuał."
       },
       {
+        "slug": "barbarossa-kyffhaeuser",
+        "delta": 0.0,
+        "opis": "Cesarz nie zyskuje i nie traci: jego warunek pozostaje nierozstrzygnięty."
+      },
+      {
         "slug": "kentaur-pelion",
-        "przed": 0.447,
-        "po": 0.427,
+        "delta": -0.02,
         "opis": "Legenda o kentaúrze uroczystym słabnie — ludzie na ucztach zaczynają próbować wino i patrzeć na drugą połowę gościa."
       }
     ],
     "dominacje": [
       {
-        "kultura": "niemcy",
-        "kult": "barbarossa-kyffhaeuser",
-        "przed": 0.46,
-        "po": 0.46
-      },
-      {
         "kultura": "joruba",
         "kult": "egungun",
-        "przed": 0.473,
-        "po": 0.503
+        "delta": 0.03
+      },
+      {
+        "kultura": "niemcy",
+        "kult": "barbarossa-kyffhaeuser",
+        "delta": 0.0
       },
       {
         "kultura": "grecja",
         "kult": "kentaur-pelion",
-        "przed": 0.447,
-        "po": 0.427
+        "delta": -0.02
       }
     ],
     "pozycje": [

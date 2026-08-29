@@ -1,7 +1,7 @@
 {
   "wersja": 3,
   "liczba": 15,
-  "liczbaSkitow": 16,
+  "liczbaSkitow": 17,
   "kanon": {
     "kategorie": [
       {
@@ -602,6 +602,7 @@
       "obraz": "assets/wizualizacje/egungun.jpg",
       "skity": [
         "hold-oraz-swiatlo",
+        "imie-na-progu",
         "kalendarz-powrotow",
         "odzwierni",
         "plotno-i-kamien",
@@ -684,6 +685,7 @@
       "skity": [
         "cena-znaku",
         "dwa-grzbiety",
+        "imie-na-progu",
         "znak-burzy"
       ]
     },
@@ -880,6 +882,7 @@
       "obraz": "assets/wizualizacje/selkie-sule-skerry.jpg",
       "skity": [
         "dwie-skory",
+        "imie-na-progu",
         "kalendarz-powrotow",
         "znak-i-liczba"
       ]
@@ -1053,6 +1056,23 @@
       "data": "2026-08-28"
     },
     {
+      "slug": "imie-na-progu",
+      "tytul": "IMIĘ NA PROGU",
+      "temat": "jedno słowo ma otwierać wszystkie drzwi — skóra, kres i pieśń; trzy progi, jedno pytanie",
+      "uczestnicy": [
+        "egungun",
+        "indra",
+        "selkie-sule-skerry"
+      ],
+      "imiona": [
+        "Egungun",
+        "Selkie z Sule Skerry",
+        "Indra"
+      ],
+      "slow": 210,
+      "data": "2026-08-29 11:05"
+    },
+    {
       "slug": "kalendarz-powrotow",
       "tytul": "KALENDARZ POWROTÓW",
       "temat": "trzy sposoby na umówiony powrót: cudzy termin, coroczne wołanie i data podana samemu sobie",
@@ -1218,6 +1238,14 @@
     }
   ],
   "aktualizacje": [
+    {
+      "data": "2026-08-29 11:05",
+      "typ": "skit",
+      "akcja": "nowy",
+      "slug": "imie-na-progu",
+      "tytul": "IMIĘ NA PROGU",
+      "opis": "SKIT — skład: Egungun, Selkie z Sule Skerry, Indra"
+    },
     {
       "data": "2026-08-29 10:20",
       "typ": "skit",
