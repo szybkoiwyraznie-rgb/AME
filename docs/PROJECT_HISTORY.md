@@ -1328,3 +1328,43 @@ Pociągnięty wątek i zautomatyzowany raport.
   krok); ADR 0021 (pkt 9–10, epoki, build); ROADMAP/PROJECT_HISTORY.
 - Testy: `test/kronika.test.js` 10 testów, łącznie **163/163**; build/check
   zielone.
+
+
+## Audyt PR #8/#9 + backfill meta (2026-08-29, sesja po scaleniu PR #9)
+
+Sesja na gałęzi `arena/01a04f70-ame` (PR #10). Baza przed pracą: `npm test`
+163/163, `npm run build` + `npm run check` zielone. Audyt wg ADR 0004 —
+PR #9 plik po pliku, PR #8 rzut oka (oba scalone 2026-08-29 bez handoffu).
+
+### PR #9 — „uniwersalna nawigacja i daty w stopkach (buildTime)” (15 plików, +636/−380)
+
+- stopki w `app/ui.js` zachowują godzinę z `meta` (zgodne z ADR 0017;
+  PROTOKÓŁ §8.1 mówi „wyłącznie daty”, godzina jest częścią daty);
+- `tools/rebuild-index.mjs`: `buildTime` w indeksie — przebudowa zachowuje
+  dotychczasowy czas, nowy powstaje tylko przy różnicy funkcjonalnej,
+  `--check` porównuje bez `buildTime`; testy z `fixedTime` (ADR 0002 OK);
+- `replace_topbar.cjs` — jednorazowy skrypt zamiany paska w
+  `tools/kronika.mjs`; odtwarzalny, ale niepodpięty do npm (uwaga: kandydat
+  do przeniesienia do `tools/` albo usunięcia w następnej sesji).
+
+**Znaleziony problem 1 (naprawiony w tej sesji):** nowy pasek Kroniki linkuje
+`../index.html?q=…`, `?action=wylosuj`, `?action=powiazania`, a aplikacja
+główna czyta wyłącznie hash — z Kroniki nie działały wyszukiwanie, losowanie
+i warstwa powiązań (linki otwierały mapę bez akcji). Naprawa: obsługa
+parametrów zapytania w `app.js` + czysta funkcja w `ui.js` + testy (C2).
+
+**Znaleziony problem 2 (naprawiony):** nieaktualny komentarz w `app/ui.js`
+twierdził, że stopka obcina godzinę — doprowadzony do stanu faktycznego.
+
+### PR #8 — „C1 wzbogacenie relacji + C3 Skit + C2 Epoka V” (57 plików, +9844/−1495)
+
+- nowe powiązania z opisami ≥12 słów (ADR 0019/0006), nowy SKIT
+  `zagadka-ze-spizu` (unikalny skład), Epoka V, automatyczne raporty,
+  wymiana wizualizacji (≤ 2 MB), link do Kroniki w nagłówku — zgodnie z ADR.
+
+**Znaleziony problem 3 (naprawiony — backfill):** PR #8 przeredagował treść
+17 istniejących SKITów i 14 wpisów kartoteki (korekty językowe + 8 nowych
+powiązań), ale w `meta.modyfikacje` nie trafił ani jeden wpis — feed
+„Co nowego” nie pokazał tych zmian (naruszenie PROTOKÓŁ §9 / ADR 0014).
+Dopisywane teraz wpisy `meta.modyfikacje` z datą `2026-08-29 21:36` opisują
+te zmiany retrospektywnie, czytelnie dla czytelnika archiwum.

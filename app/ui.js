@@ -133,9 +133,9 @@ export function przyciskKopiowania(cel) {
  * (zlecenie właściciela 2026-08-28).
  */
 export function htmlStopki(meta) {
-  // Stopka pokazuje wyłącznie DATY (bez godziny) — meta może nieść porę
-  // (ADR 0017, v1.5), ale w karcie liczy się dzień utworzenia i ostatniej
-  // zmiany. Godzina żyje w feedzie „Co nowego”, nie w stopce (PROTOKÓŁ §8.1).
+  // Stopka pokazuje daty utworzenia i ostatniej modyfikacji razem z godziną,
+  // jeśli meta ją niesie (ADR 0017, v1.5; PROTOKÓŁ §8.1 — „wyłącznie daty”).
+  // Autorzy i opisy zmian zostają w JSON-ie i w feedzie „Co nowego”.
   const formatujDate = (d) => String(d).replace('T', ' ').trim();
   const daty = (meta?.modyfikacje ?? []).map((m) => m?.data).filter(Boolean).map(formatujDate).sort((a, b) => (a > b) - (a < b));
   const ostatnia = daty[daty.length - 1];

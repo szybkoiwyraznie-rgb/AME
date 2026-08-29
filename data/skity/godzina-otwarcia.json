@@ -3,13 +3,24 @@
   "tytul": "GODZINA OTWARCIA",
   "temat": "słabość jako godzina otwarcia: oko otwarte, skrzydło odcięte",
   "uczestnicy": [
-    { "imie": "Balor", "slug": "balor" },
-    { "imie": "Drangue z doliny Shali", "slug": "drangue-shala" }
+    {
+      "imie": "Balor",
+      "slug": "balor"
+    },
+    {
+      "imie": "Drangue z doliny Shali",
+      "slug": "drangue-shala"
+    }
   ],
   "tekst": "**Balor:** [Ciężko kroczy od brzegu morza; czterej słudzy dźwigają na żelaznych hakach pierścień jego ciężkiej powieki.] Słyszałem twój piorunowy grad nad doliną. Ładne uderzenie. Gdzie podziałeś tamtą chmurę, góralu?\n\n**Drangue z doliny Shali:** [Otrzepuje mokre skrzydła, grom wciąż cicho tli mu się w dłoni.] Odeszła za pasmo Grunas. Ludzie wynieśli żar przed chałupy, bili w miedziane miednice i strzelali na wiwat. Bez ich ognia mój rzut waży tyle, co nic.\n\n**Balor:** Skomplikowana obsługa broni. Znam ten ból. Moją powiekę też muszą podnosić na komendę czterej chłopa z oszczepami. Wyciągają ją jak ciężką kotarę, a wtedy plony w całej krainie więdną bez dotknięcia.\n\n**Drangue z doliny Shali:** I wtedy widzisz najwięcej?\n\n**Balor:** Wtedy widzę wszystko. Ale też wtedy jestem najbliżej śmierci. Kamień z procy, który wybił mi mózg, wszedł prosto w otwarte oko — w żadne inne nie mógł trafić. Wyszedł z tyłu czaszki, a spojrzenie obróciło się przeciw moim wojskom.\n\n**Drangue z doliny Shali:** [Odkłada błyskawicę na płaski głaz.] Wychodzi na to, że nasza największa potęga jest zarazem naszą jedyną godziną słabości.\n\n**Balor:** Dokładnie. A jak to wygląda u ciebie?\n\n**Drangue z doliny Shali:** Skrzydła pod pachami. Dopóki je mam — jestem nie do zranienia. Matki w Malësii pilnują ich jak oka w głowie w pierwszych dniach życia chłopca, bo odcięte pióra robią z ciebie zwykłego śmiertelnika. Każdy z nas ma małą szczelinę w zbroi.\n\n**Balor:** Dlatego walisz z daleka, zanim cokolwiek się otworzy. Ja myślałem, że zamknięte oko to moja tarcza. A to było tylko odraczanie wyroku.\n\n**Drangue z doliny Shali:** [Stawia dzbanek mleka na kamieniu.] Każdy rzuca tym, czym obdarzył go los. Dolina daje mi żar i miedź, więc ja daję jej grad w odpowiednim momencie. Nikt z nas nie gra w tej grze sam.",
   "meta": {
     "utworzono": "2026-08-28 15:35",
     "autor": "sesja arena 2026-08-28",
-    "modyfikacje": []
+    "modyfikacje": [
+      {
+        "data": "2026-08-29 21:36",
+        "opis": "Przeredagowanie dialogu: rozbudowane didaskalia i żywsza, lżejsza mowa (rejestr §8.3 pkt 3); skład uczestników i fakty pozostały bez zmian."
+      }
+    ]
   }
 }
