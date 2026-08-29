@@ -5,20 +5,148 @@
   "cel": "kontrolny pierwszy tom: sprawdzić, czy epoka realnie zmienia osie świata",
   "status": "otwarta",
   "stanStart": {
-    "os": { "mit": 52, "racjonalizacja": 48 },
+    "os": {
+      "mit": 37,
+      "racjonalizacja": 63
+    },
     "zasieg": [
-      { "slug": "egungun", "wielkosc": 0.24 },
-      { "slug": "barbarossa-kyffhaeuser", "wielkosc": 0.20 },
-      { "slug": "kentaur-pelion", "wielkosc": 0.16 },
-      { "slug": "empusa-korynt", "wielkosc": 0.18 },
-      { "slug": "lincoln-imp", "wielkosc": 0.12 }
+      {
+        "slug": "agni",
+        "wielkosc": 0.247
+      },
+      {
+        "slug": "balor",
+        "wielkosc": 0.433
+      },
+      {
+        "slug": "barbarossa-kyffhaeuser",
+        "wielkosc": 0.46
+      },
+      {
+        "slug": "ben-varrey",
+        "wielkosc": 0.247
+      },
+      {
+        "slug": "drangue-shala",
+        "wielkosc": 0.447
+      },
+      {
+        "slug": "egungun",
+        "wielkosc": 0.447
+      },
+      {
+        "slug": "empusa-korynt",
+        "wielkosc": 0.433
+      },
+      {
+        "slug": "indra",
+        "wielkosc": 0.353
+      },
+      {
+        "slug": "kannon-hase",
+        "wielkosc": 0.247
+      },
+      {
+        "slug": "kentaur-pelion",
+        "wielkosc": 0.447
+      },
+      {
+        "slug": "lincoln-imp",
+        "wielkosc": 0.393
+      },
+      {
+        "slug": "nessos",
+        "wielkosc": 0.353
+      },
+      {
+        "slug": "selkie-sule-skerry",
+        "wielkosc": 0.5
+      },
+      {
+        "slug": "sfinks-teby",
+        "wielkosc": 0.247
+      },
+      {
+        "slug": "talos-kreta",
+        "wielkosc": 0.247
+      }
     ],
     "dominacje": [
-      { "kultura": "joruba", "kult": "egungun", "wielkosc": 0.24 },
-      { "kultura": "niemcy", "kult": "barbarossa-kyffhaeuser", "wielkosc": 0.20 },
-      { "kultura": "grecja-kentaur", "kult": "kentaur-pelion", "wielkosc": 0.16 },
-      { "kultura": "grecja-empusa", "kult": "empusa-korynt", "wielkosc": 0.18 },
-      { "kultura": "anglia", "kult": "lincoln-imp", "wielkosc": 0.12 }
+      {
+        "kultura": "indie",
+        "kult": "agni",
+        "wielkosc": 0.247
+      },
+      {
+        "kultura": "irlandia",
+        "kult": "balor",
+        "wielkosc": 0.433
+      },
+      {
+        "kultura": "niemcy",
+        "kult": "barbarossa-kyffhaeuser",
+        "wielkosc": 0.46
+      },
+      {
+        "kultura": "man",
+        "kult": "ben-varrey",
+        "wielkosc": 0.247
+      },
+      {
+        "kultura": "albania",
+        "kult": "drangue-shala",
+        "wielkosc": 0.447
+      },
+      {
+        "kultura": "joruba",
+        "kult": "egungun",
+        "wielkosc": 0.447
+      },
+      {
+        "kultura": "grecja",
+        "kult": "empusa-korynt",
+        "wielkosc": 0.433
+      },
+      {
+        "kultura": "indie",
+        "kult": "indra",
+        "wielkosc": 0.353
+      },
+      {
+        "kultura": "japonia",
+        "kult": "kannon-hase",
+        "wielkosc": 0.247
+      },
+      {
+        "kultura": "grecja",
+        "kult": "kentaur-pelion",
+        "wielkosc": 0.447
+      },
+      {
+        "kultura": "anglia",
+        "kult": "lincoln-imp",
+        "wielkosc": 0.393
+      },
+      {
+        "kultura": "grecja",
+        "kult": "nessos",
+        "wielkosc": 0.353
+      },
+      {
+        "kultura": "szkocja-polnocna",
+        "kult": "selkie-sule-skerry",
+        "wielkosc": 0.5
+      },
+      {
+        "kultura": "grecja",
+        "kult": "sfinks-teby",
+        "wielkosc": 0.247
+      },
+      {
+        "kultura": "grecja",
+        "kult": "talos-kreta",
+        "wielkosc": 0.247
+      }
     ]
   },
   "metryka": {
@@ -28,6 +156,8 @@
     "uwagi": [
       "wartości początkowe osi i zasięgu są seedem do kalibracji przy pełniejszej kartotece",
       "Rozstaje celowo poza tym tomem (pozostają pomysłem)"
-    ]
+    ],
+    "seedKalibracja": "tools/kronika.mjs --seed",
+    "seedWzor": "obecnosc = 2*backlinki + tagi_kanonu + 2*skity + min(3,powiazania); zasieg = 0.10 + 0.40*(obecnosc/max); os = srednia(zasiegow) → mit%"
   }
 }

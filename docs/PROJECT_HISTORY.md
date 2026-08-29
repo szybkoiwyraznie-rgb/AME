@@ -1266,3 +1266,21 @@ Poprawione i utrwalone jako **inwariant mechanizmu**:
 - **Aktualizacje:** `tools/kronika.mjs` (oś + ciągłość + raport Tomu),
   `test/kronika.test.js` (6 testów), ADR 0021, §21, ROADMAP, Czytelnia,
   mockupy linkujące do realnych raportów.
+
+## Kronika — kalibracja seedów z kartoteki (2026-08-29)
+
+Właściciel polecił: „skalibruj seedy, a potem przejdź do Epoki II”.
+
+- **`npm run kronika:seed`** — `tools/kronika.mjs --seed` liczy `stanStart`
+  deterministycznie z indeksu i kanonu tagów: `obecność = 2×backlinki + tagi
+  kanonu + 2×skity + min(3, powiązania)`; `zasięg = 0.10 + 0.40×(obecność/max)`;
+  oś `mit% = średnia zasięgów`, racjonalizacja = 100 − mit.
+- Seed objął **wszystkie 15 bytów** z kartoteki (nie tylko uczestników Tomu),
+  więc kolejne epoki mogą wprowadzać nowych uczestników bez ręcznego wpisu.
+- **Wynik:** oś startowa 37/63; Epoka I 35/65, Epoka II 33/67; zasięg po
+  Tomie: Egungun 44.7→47.7%, Empusa 43.3→45.3%, Kentaur 44.7→40.7%,
+  Barbarossa 46%, Imp 39.3%.
+- **Test** `seedy w tom-1.json są skalibrowane deterministycznie z kartoteki`
+  pilnuje, że `tom-1.json` nie rozjeżdża się z narzędziem.
+- ADR 0021, §21 (3/4/5), ROADMAP, PROJECT_HISTORY zaktualizowane; raporty
+  przeliczone (`docs/kronika-tom-1.html`, epoka-1, epoka-2).

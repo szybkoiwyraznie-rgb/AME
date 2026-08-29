@@ -692,9 +692,15 @@ działający blok.
   - zapis `data/kronika/summary.json` + **raporty generowane**:
     `docs/kronika-tom-1.html` (strona główna Tomu), `docs/kronika-epoka-1.html`,
     `docs/kronika-epoka-2.html`.
-- **Npm** — `npm run kronika`, `npm run kronika:check`; **Testy** —
-  `test/kronika.test.js` (6 testów): wzór paliwa, dwie epoki sekwencyjnie,
-  oś zamknięta, gate, zwrot bez zmiany, struktura podsumowania.
+- **Npm** — `npm run kronika`, `npm run kronika:check`, **`npm run kronika:seed`**
+  (kalibracja seedów z kartoteki); **Testy** — `test/kronika.test.js` (7 testów):
+  seed z kartoteki, wzór paliwa, dwie epoki sekwencyjnie, oś zamknięta, gate,
+  zwrot bez zmiany, struktura podsumowania.
+
+Kalibracja seedów (`--seed`): `obecność = 2×backlinki + tagi kanonu +
+2×skity + min(3, powiązania)`; `zasięg = 0.10 + 0.40×(obecność/max)`; oś
+`mit% = średnia zasięgów`. Seed obejmuje **15 bytów** z kartoteki, nie tylko
+uczestników Tomu.
 
 ### 21.4 Wynik Tomu I (dwie epoki)
 
@@ -714,10 +720,12 @@ działający blok.
 | Kentaur | 14 | −2 | 0 | **12** |
 | Empusa | 17 | −2 | +4 | **19** |
 
-- **oś całego Tomu:** MIT 52→**48**, RACJONALIZACJA 48→**52** (każda epoka
-  utrzymuje sumę 100; Epoka I 50/50, potem −2/+2).
-- **zasięg po Tomie:** Egungun 24%→27% (+3), Empusa 18%→20% (+2), Kentaur
-  16%→12% (uczta wyjaśniona, potem żart Ima), Barbarossa 20%, Imp 12%.
+- **oś całego Tomu (po kalibracji seedów 37/63):** MIT 37→**33**,
+  RACJONALIZACJA 63→**67** (Epoka I 35/65, Epoka II 33/67; każda epoka
+  utrzymuje sumę 100).
+- **zasięg po Tomie (po kalibracji):** Egungun 44.7%→47.7% (+3),
+  Empusa 43.3%→45.3% (+2), Kentaur 44.7%→40.7% (uczta wyjaśniona, potem żart
+  Ima), Barbarossa 46%, Imp 39.3% (bez zmian).
 - **wątki zamknięte:** `wino-w-uczcie`, `pogrzeb-zamiast-wesela`; **otwarte:**
   `czwarty-stol`, `warunek-barbarossy`, `odzwierni`, `wedrowny-dom-empusy`.
 - **Czego dowodzi:** byt-statysta **traci**; byt, który realnie zmienił świat
@@ -730,7 +738,8 @@ działający blok.
    `paliwo` przechodzi dalej).
 2. **Prawdziwa strona główna Tomu zrobiona** — `docs/kronika-tom-1.html`
    (oś, dominacje, chronologia, wątki, uczestnicy, ledger) z `summary.json`.
-3. **Kalibracja seedów zostaje** — wartości osi/zasięgu w `tom-1.json` są
-   umowne (metryka to odnotowuje); do kalibracji przy pełniejszej kartotece.
+3. **Kalibracja seedów zrobiona** — `npm run kronika:seed` liczy je z
+   kartoteki deterministycznie (15 bytów); test pilnuje spójności
+   `tom-1.json` z narzędziem.
 4. Kolejna epoka może iść w stronę otwartego wątku `odzwierni` albo
    `czwarty-stol`, gdy właściciel potwierdzi temat.

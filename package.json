@@ -9,7 +9,8 @@
     "build": "node tools/rebuild-index.mjs",
     "check": "node tools/rebuild-index.mjs --check",
     "kronika": "node tools/kronika.mjs",
-    "kronika:check": "node tools/kronika.mjs --check"
+    "kronika:check": "node tools/kronika.mjs --check",
+    "kronika:seed": "node tools/kronika.mjs --seed"
   },
   "engines": {
     "node": ">=20"

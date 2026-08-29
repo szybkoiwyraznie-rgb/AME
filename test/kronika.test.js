@@ -7,6 +7,7 @@ import {
   paliwoPasywne,
   przeliczEpoke,
   zbudujPodsumowanieTomu,
+  kalibrujStanStart,
   plikRaportu,
   PLIK_TOM_1,
   PLIK_EPOKA_1,
@@ -18,6 +19,15 @@ import {
 async function wczytaj(path) {
   return JSON.parse(await readFile(path, 'utf8'));
 }
+
+test('seedy w tom-1.json są skalibrowane deterministycznie z kartoteki', async () => {
+  const [tom, indeks, kanon] = await Promise.all([
+    wczytaj(PLIK_TOM_1),
+    wczytaj(PLIK_INDEKSU),
+    wczytaj(PLIK_KANONU),
+  ]);
+  assert.deepEqual(kalibrujStanStart(indeks, kanon), tom.stanStart);
+});
 
 test('paliwo pasywne: 2×backlinki + tagi kanonu + sieć powiązań (max 3)', async () => {
   const [indeks, kanon] = await Promise.all([wczytaj(PLIK_INDEKSU), wczytaj(PLIK_KANONU)]);
@@ -57,8 +67,8 @@ test('Tom I: dwie epoki przechodzą i oś zamyka się na 100', async () => {
       ['kentaur-pelion', 16, 14],
     ]
   );
-  assert.equal(e1.stanPo.os.mit, 50);
-  assert.equal(e1.stanPo.os.racjonalizacja, 50);
+  assert.equal(e1.stanPo.os.mit, 35);
+  assert.equal(e1.stanPo.os.racjonalizacja, 65);
 
   assert.deepEqual(
     e2.uczestnicy.map((u) => [u.slug, u.saldoPrzed, u.saldoPo]),
@@ -68,9 +78,10 @@ test('Tom I: dwie epoki przechodzą i oś zamyka się na 100', async () => {
       ['empusa-korynt', 17, 19],
     ]
   );
-  assert.equal(e2.stanPo.os.mit + e2.stanPo.os.racjonalizacja, 100);
-  assert.equal(e2.stanPo.zasieg.find((z) => z.slug === 'kentaur-pelion').wielkosc, 0.12);
-  assert.equal(e2.stanPo.zasieg.find((z) => z.slug === 'empusa-korynt').wielkosc, 0.2);
+  assert.equal(e2.stanPo.os.mit, 33);
+  assert.equal(e2.stanPo.os.racjonalizacja, 67);
+  assert.equal(e2.stanPo.zasieg.find((z) => z.slug === 'kentaur-pelion').wielkosc, 0.407);
+  assert.equal(e2.stanPo.zasieg.find((z) => z.slug === 'empusa-korynt').wielkosc, 0.453);
 });
 
 test('oś: delty mit+racjonalizacja muszą sumować się do 0', async () => {

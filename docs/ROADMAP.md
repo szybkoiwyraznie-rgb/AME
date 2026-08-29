@@ -499,12 +499,15 @@ przycisk) i poleceniu „Rozstaje zostawmy w pomysłach” zbudowano realny siln
 - [x] **Oś zamknięta** — `mit + racjonalizacja = 100`; walidator odrzuca 101
       (delty muszą sumować się do 0). Poprawka po zgłoszeniu właściciela.
 - [x] **Wynik Tomu** — Epoka I: Egungun 18→21, Barbarossa 17→15, Kentaur 16→14;
-      Epoka II: Imp 12→10, Kentaur 14→12, Empusa 17→19; oś 52/48 → 48/52;
-      zasięg Egungun 24→27%, Empusa 18→20%, Kentaur 16→12%.
+      Epoka II: Imp 12→10, Kentaur 14→12, Empusa 17→19; oś 37/63 → 33/67;
+      zasięg Egungun 44.7→47.7%, Empusa 43.3→45.3%, Kentaur 44.7→40.7%.
 - [x] **Raporty** — `docs/kronika-tom-1.html` (strona główna Tomu),
       `docs/kronika-epoka-1.html`, `docs/kronika-epoka-2.html`.
+- [x] **Kalibracja seedów** — `npm run kronika:seed` wylicza stanStart
+      deterministycznie z kartoteki (obecność bytu → zasięg, średnia → oś;
+      15 bytów); test pilnuje zgodności.
 - [x] **Npm/testy** — `npm run kronika`, `npm run kronika:check`,
-      `test/kronika.test.js` (6 testów).
+      `npm run kronika:seed`, `test/kronika.test.js` (7 testów).
 - [x] **ADR 0021** + §21 w `docs/KRONIKA_tryb.md`.
 
 ## C4 — nazwa miasta na czas przytrzymania + kursor strzałka (nadpisuje C2 UX)

@@ -45,6 +45,68 @@ const STATUSY = new Set([
 ]);
 const STANY_WATKU = new Set(['otwarty', 'zamkniety']);
 
+/**
+ * Zwraca pierwszy tag-kulturę bytu z kanonu (np. „grecja”, „joruba”).
+ * Gdy brak — „inna”.
+ */
+export function kulturaBytu(entry, kanon) {
+  const kulturowe = new Set(
+    (kanon?.tagi || []).filter((t) => t.kategoria === 'kultura').map((t) => t.tag)
+  );
+  const tag = (entry?.tagi || []).find((t) => kulturowe.has(t));
+  return tag || 'inna';
+}
+
+/**
+ * Kalibruje seedowe wartości świata na podstawie faktycznej kartoteki.
+ *  - obecność bytu = 2×backlinki + tagi kanonu + 2×skity + min(3, powiązania),
+ *  - zasięg = 0.10 + 0.40 × (obecność / max obecność) (0.10–0.50),
+ *  - oś „rząd dusz” = średni zasięg → mit%, racjonalizacja = 100 − mit%.
+ * Determinystyczna — te same dane dają ten sam seed.
+ */
+export function kalibrujStanStart(indeks, kanon) {
+  const skityPerSlug = new Map();
+  for (const s of indeks.skity || []) {
+    for (const u of s.uczestnicy || []) {
+      const slug = typeof u === 'string' ? u : u.slug;
+      skityPerSlug.set(slug, (skityPerSlug.get(slug) || 0) + 1);
+    }
+  }
+
+  const obecnosci = [];
+  for (const m of indeks.manifestacje || []) {
+    const backlinki = m.backlinki?.length || 0;
+    const powiazania = m.powiazania?.length || 0;
+    const tagi = (m.tagi || []).filter((t) =>
+      new Set((kanon?.tagi || []).map((k) => k.tag)).has(t)
+    ).length;
+    const skity = skityPerSlug.get(m.slug) || 0;
+    const obecnosc = 2 * backlinki + tagi + 2 * skity + Math.min(3, powiazania);
+    obecnosci.push({ slug: m.slug, obecnosc });
+  }
+  const maxObecnosc = Math.max(...obecnosci.map((o) => o.obecnosc), 1);
+
+  const zasieg = obecnosci.map((o) => ({
+    slug: o.slug,
+    wielkosc: Math.round((0.1 + 0.4 * (o.obecnosc / maxObecnosc)) * 1000) / 1000,
+  }));
+
+  const dominacje = zasieg.map((z) => {
+    const m = (indeks.manifestacje || []).find((x) => x.slug === z.slug);
+    return { kultura: kulturaBytu(m, kanon), kult: z.slug, wielkosc: z.wielkosc };
+  });
+
+  const srednia = zasieg.reduce((a, z) => a + z.wielkosc, 0) / (zasieg.length || 1);
+  const mit = Math.round(100 * srednia);
+  const racjonalizacja = 100 - mit;
+
+  return {
+    os: { mit, racjonalizacja },
+    zasieg,
+    dominacje,
+  };
+}
+
 /** Paliwo pasywne = to, co o bycie mówi archiwum. Deterministyczne, build-time. */
 export function paliwoPasywne(entry, kanon) {
   if (!entry) return 0;
@@ -563,6 +625,31 @@ async function wczytajEpoki() {
 }
 
 async function main() {
+  if (process.argv.includes('--seed')) {
+    const [tom, indeks, kanon] = await Promise.all([
+      wczytajJson(PLIK_TOM_1),
+      wczytajJson(PLIK_INDEKSU),
+      wczytajJson(PLIK_KANONU),
+    ]);
+    const stanStart = kalibrujStanStart(indeks, kanon);
+    const nowyTom = {
+      ...tom,
+      stanStart,
+      metryka: {
+        ...(tom.metryka || {}),
+        seedKalibracja: 'tools/kronika.mjs --seed',
+        seedWzor:
+          'obecnosc = 2*backlinki + tagi_kanonu + 2*skity + min(3,powiazania); ' +
+          'zasieg = 0.10 + 0.40*(obecnosc/max); os = srednia(zasiegow) → mit%',
+      },
+    };
+    await writeFile(PLIK_TOM_1, JSON.stringify(nowyTom, null, 2) + '\n');
+    console.log(
+      `Kalibracja seedów OK: os mit ${stanStart.os.mit} / rac ${stanStart.os.racjonalizacja}, bytów ${stanStart.zasieg.length}.`
+    );
+    return;
+  }
+
   const check = process.argv.includes('--check');
   const [tom, epoki, indeks, kanon] = await Promise.all([
     wczytajJson(PLIK_TOM_1),
