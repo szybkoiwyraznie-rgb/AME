@@ -12,7 +12,7 @@
     "zasieg": [
       {
         "slug": "agni",
-        "wielkosc": 0.294
+        "wielkosc": 0.318
       },
       {
         "slug": "balor",
@@ -44,7 +44,7 @@
       },
       {
         "slug": "kannon-hase",
-        "wielkosc": 0.294
+        "wielkosc": 0.318
       },
       {
         "slug": "kentaur-pelion",
@@ -95,7 +95,7 @@
       {
         "kultura": "indie",
         "kult": "agni",
-        "wielkosc": 0.294
+        "wielkosc": 0.318
       },
       {
         "kultura": "irlandia",
@@ -135,7 +135,7 @@
       {
         "kultura": "japonia",
         "kult": "kannon-hase",
-        "wielkosc": 0.294
+        "wielkosc": 0.318
       },
       {
         "kultura": "grecja",

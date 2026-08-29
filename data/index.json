@@ -1,8 +1,8 @@
 {
   "wersja": 3,
-  "buildTime": "2026-08-29T22:21:00.002Z",
+  "buildTime": "2026-08-29T22:28:04.077Z",
   "liczba": 20,
-  "liczbaSkitow": 18,
+  "liczbaSkitow": 19,
   "kanon": {
     "kategorie": [
       {
@@ -407,7 +407,14 @@
         "Jātaveda",
         "Vaiśvānara",
         "Hotar",
-        "Pan Południowego Wschodu"
+        "Pan Południowego Wschodu",
+        "Pāvaka",
+        "Havyavāhana",
+        "Saptajihvā",
+        "Vahni",
+        "Hutāśana",
+        "Anala",
+        "Dhumaketu"
       ],
       "karta": "Wrap in Flames",
       "miejscowosc": "Waranasi (Kashi), ghaty nad Gangesem — miejsce wieczystego ognia ofiarnego, w którym Agni przyjmuje obiaty i wypala cierpienie",
@@ -434,7 +441,9 @@
         "syama-i-sarvara"
       ],
       "obraz": "assets/wizualizacje/agni.jpg",
-      "skity": []
+      "skity": [
+        "dzien-wolnego"
+      ]
     },
     {
       "slug": "balor",
@@ -557,7 +566,9 @@
         "selkie-sule-skerry"
       ],
       "obraz": "assets/wizualizacje/ben-varrey.jpg",
-      "skity": []
+      "skity": [
+        "dzien-wolnego"
+      ]
     },
     {
       "slug": "drangue-shala",
@@ -764,7 +775,9 @@
         "syama-i-sarvara"
       ],
       "obraz": "assets/wizualizacje/kannon-hase.jpg",
-      "skity": []
+      "skity": [
+        "dzien-wolnego"
+      ]
     },
     {
       "slug": "kentaur-pelion",
@@ -1065,7 +1078,9 @@
         "Sphinx",
         "Sfinks tebański",
         "Córka Echidny i Tyfona",
-        "Mścicielka Teb"
+        "Mścicielka Teb",
+        "Phix (Φίξ — nazwa beocka)",
+        "Córka Laiosa (wariant Pausaniasza)"
       ],
       "karta": "Jwar Isle Avenger",
       "miejscowosc": "Góra Fikion (Phikion), na zachodzie za Tebami (Teba, Beocja) — miejsce, w którym Sfinks czatowała na podróżnych, blokując drogę do miasta",
@@ -1238,6 +1253,23 @@
       ],
       "slow": 238,
       "data": "2026-08-28 20:00"
+    },
+    {
+      "slug": "dzien-wolnego",
+      "tytul": "DZIEŃ WOLNEGO",
+      "temat": "urlop od wzywania: kto ma przerwę, gdy wszyscy wołają",
+      "uczestnicy": [
+        "agni",
+        "ben-varrey",
+        "kannon-hase"
+      ],
+      "imiona": [
+        "Agni",
+        "Ben-Varrey",
+        "Kannon"
+      ],
+      "slow": 269,
+      "data": "2026-08-29 21:41"
     },
     {
       "slug": "godzina-otwarcia",
@@ -1590,6 +1622,278 @@
       "slug": "syama-i-sarvara",
       "tytul": "Śyāma i Śarvara — czterookie psy Yamy, strażnicy drogi przodków",
       "opis": "wpis w kartotece — materializacja karty „Trade Route Envoy”"
+    },
+    {
+      "data": "2026-08-29 21:41",
+      "typ": "skit",
+      "akcja": "nowy",
+      "slug": "dzien-wolnego",
+      "tytul": "DZIEŃ WOLNEGO",
+      "opis": "SKIT — skład: Agni, Ben-Varrey, Kannon"
+    },
+    {
+      "data": "2026-08-29 21:40",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "agni",
+      "tytul": "Agni — bóg ognia ofiarnego",
+      "opis": "Pogłębienie karty (C1): trzy poziomy obecności Agniego (ziemia, błyskawica, słońce), siedem języków obrzędowych i imiona (Pāvaka, Havyavāhana, Dhumaketu…), rola świadka saptapadi; dodane źródła: Rigweda 1.1 (Griffith), Wikipedia, Agni Purana."
+    },
+    {
+      "data": "2026-08-29 21:40",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "sfinks-teby",
+      "tytul": "Sfinks — strażniczka Tebańskich Wrót",
+      "opis": "Pogłębienie karty (C1): wariant Pausaniasza (nieślubna córka Lajosa i wyrocznia Kadmosa; wersja racjonalizująca — piratka z Anthedonu), pochodzenie zagadki od Muz (Apollodor 3.5.8) i szczegóły rozwiązania; dodane źródło pierwotne (Pauzaniasz 9.26.2, Perseus)."
+    },
+    {
+      "data": "2026-08-29 21:36",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "egungun",
+      "tytul": "Egungun",
+      "opis": "Korekta językowa sekcji V: formy czasownika w tabeli klucza przywołania."
+    },
+    {
+      "data": "2026-08-29 21:36",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "kentaur-pelion",
+      "tytul": "Kentaur z Pelionu",
+      "opis": "Korekty językowe sekcji II i IV: składnia opisu wyglądu i trofeum wtórnego („dobili”)."
+    },
+    {
+      "data": "2026-08-29 21:36",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "lincoln-imp",
+      "tytul": "Imp z Lincoln",
+      "opis": "Korekty językowe sekcji II–V: „nieproszony”, „filaru”, „Skamieniały”, „dyplomatyczne wyzwiska”."
+    },
+    {
+      "data": "2026-08-29 21:36",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "selkie-sule-skerry",
+      "tytul": "Wielki Selkie z Sule Skerry",
+      "opis": "Korekty językowe powiązań z Nessosem i Ben-Varrey: „Selkie”, „foczą skórę”."
+    },
+    {
+      "data": "2026-08-29 21:36",
+      "typ": "skit",
+      "akcja": "zmiana",
+      "slug": "dwa-grzbiety",
+      "tytul": "DWA GRZBIETY",
+      "opis": "Przeredagowanie dialogu: rozbudowane didaskalia i żywsza, lżejsza mowa (rejestr §8.3 pkt 3); skład uczestników i fakty pozostały bez zmian."
+    },
+    {
+      "data": "2026-08-29 21:36",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "agni",
+      "tytul": "Agni — bóg ognia ofiarnego",
+      "opis": "Dopisane powiązania z Egúngún (dwa uświęcone kanały komunikacji: przodkowie w szatach i Agni jako usta bogów) oraz z Kannon z Hasedery (ogień oczyszczenia i współczucie, które gasi płomienie piekielne)."
+    },
+    {
+      "data": "2026-08-29 21:36",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "balor",
+      "tytul": "Balor z Tory Island",
+      "opis": "Korekta językowa sekcji II: składnia pierwszego zdania wyglądu i aury."
+    },
+    {
+      "data": "2026-08-29 21:36",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "ben-varrey",
+      "tytul": "Ben-Varrey — syrena z Wyspy Man",
+      "opis": "Dopisane powiązania z Balorem (sąsiedztwo wód Morza Irlandzkiego i tabu imienia na morzu) oraz z Drangue (przeciwstawne stany pogody: mgła i sztorm wobec rozpraszania nawałnic); korekta językowa („uszanuje”)."
+    },
+    {
+      "data": "2026-08-29 21:36",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "drangue-shala",
+      "tytul": "Drangue z doliny Shali",
+      "opis": "Korekta językowa sekcji IV: opis trofeum wtórnego."
+    },
+    {
+      "data": "2026-08-29 21:36",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "empusa-korynt",
+      "tytul": "Empusa z Koryntu",
+      "opis": "Korekty językowe sekcji II („którzy wpadają”, „precz gna obelga”) oraz powiązania ze Sfinksem."
+    },
+    {
+      "data": "2026-08-29 21:36",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "indra",
+      "tytul": "Indra — władca gromu",
+      "opis": "Korekty językowe sekcji II i III: „Nie może pokonać”, nazwa Szali, „dwóch natur”."
+    },
+    {
+      "data": "2026-08-29 21:36",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "kannon-hase",
+      "tytul": "Kannon — miłosierna wybawicielka",
+      "opis": "Dopisane powiązanie z Agnim (ogień oczyszczenia i współczucie Kannon); korekta językowa powiązania z Selkie („człowiekiem”)."
+    },
+    {
+      "data": "2026-08-29 21:36",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "sfinks-teby",
+      "tytul": "Sfinks — strażniczka Tebańskich Wrót",
+      "opis": "Dopisane powiązania z Talosem (dwa greckie mechanizmy zaporowe: głaz i zagadka) oraz z Balorem (groza spojrzenia na granicy terytorium); korekty językowe."
+    },
+    {
+      "data": "2026-08-29 21:36",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "talos-kreta",
+      "tytul": "Talos — spiżowy strażnik Krety",
+      "opis": "Dopisane powiązania ze Sfinksem (bastiony nieprzekraczalnej granicy) i z Balorem (kolosy o jednym słabym punkcie konstrukcji)."
+    },
+    {
+      "data": "2026-08-29 21:36",
+      "typ": "skit",
+      "akcja": "zmiana",
+      "slug": "cena-znaku",
+      "tytul": "CENA ZNAKU",
+      "opis": "Przeredagowanie dialogu: rozbudowane didaskalia i żywsza, lżejsza mowa (rejestr §8.3 pkt 3); skład uczestników i fakty pozostały bez zmian."
+    },
+    {
+      "data": "2026-08-29 21:36",
+      "typ": "skit",
+      "akcja": "zmiana",
+      "slug": "dwa-zepsute-wesela",
+      "tytul": "DWA ZEPSUTE WESELA",
+      "opis": "Przeredagowanie dialogu: rozbudowane didaskalia i żywsza, lżejsza mowa (rejestr §8.3 pkt 3); skład uczestników i fakty pozostały bez zmian."
+    },
+    {
+      "data": "2026-08-29 21:36",
+      "typ": "skit",
+      "akcja": "zmiana",
+      "slug": "dwie-skory",
+      "tytul": "DWIE SKÓRY",
+      "opis": "Przeredagowanie dialogu: rozbudowane didaskalia i żywsza, lżejsza mowa (rejestr §8.3 pkt 3); skład uczestników i fakty pozostały bez zmian."
+    },
+    {
+      "data": "2026-08-29 21:36",
+      "typ": "skit",
+      "akcja": "zmiana",
+      "slug": "godzina-otwarcia",
+      "tytul": "GODZINA OTWARCIA",
+      "opis": "Przeredagowanie dialogu: rozbudowane didaskalia i żywsza, lżejsza mowa (rejestr §8.3 pkt 3); skład uczestników i fakty pozostały bez zmian."
+    },
+    {
+      "data": "2026-08-29 21:36",
+      "typ": "skit",
+      "akcja": "zmiana",
+      "slug": "hold-oraz-swiatlo",
+      "tytul": "HOŁD ORAZ ŚWIATŁO",
+      "opis": "Przeredagowanie dialogu: rozbudowane didaskalia i żywsza, lżejsza mowa (rejestr §8.3 pkt 3); skład uczestników i fakty pozostały bez zmian."
+    },
+    {
+      "data": "2026-08-29 21:36",
+      "typ": "skit",
+      "akcja": "zmiana",
+      "slug": "imie-na-progu",
+      "tytul": "IMIĘ NA PROGU",
+      "opis": "Przeredagowanie dialogu: rozbudowane didaskalia i żywsza, lżejsza mowa (rejestr §8.3 pkt 3); skład uczestników i fakty pozostały bez zmian."
+    },
+    {
+      "data": "2026-08-29 21:36",
+      "typ": "skit",
+      "akcja": "zmiana",
+      "slug": "kalendarz-powrotow",
+      "tytul": "KALENDARZ POWROTÓW",
+      "opis": "Przeredagowanie dialogu: rozbudowane didaskalia i żywsza, lżejsza mowa (rejestr §8.3 pkt 3); skład uczestników i fakty pozostały bez zmian."
+    },
+    {
+      "data": "2026-08-29 21:36",
+      "typ": "skit",
+      "akcja": "zmiana",
+      "slug": "komu-wolno-patrzec",
+      "tytul": "KOMU WOLNO PATRZEĆ",
+      "opis": "Przeredagowanie dialogu: rozbudowane didaskalia i żywsza, lżejsza mowa (rejestr §8.3 pkt 3); skład uczestników i fakty pozostały bez zmian."
+    },
+    {
+      "data": "2026-08-29 21:36",
+      "typ": "skit",
+      "akcja": "zmiana",
+      "slug": "kurz-i-piora",
+      "tytul": "KURZ I PIÓRA",
+      "opis": "Przeredagowanie dialogu: rozbudowane didaskalia i żywsza, lżejsza mowa (rejestr §8.3 pkt 3); skład uczestników i fakty pozostały bez zmian."
+    },
+    {
+      "data": "2026-08-29 21:36",
+      "typ": "skit",
+      "akcja": "zmiana",
+      "slug": "nieproszeni-goscie",
+      "tytul": "NIEPROSZENI GOŚCIE",
+      "opis": "Przeredagowanie dialogu: rozbudowane didaskalia i żywsza, lżejsza mowa (rejestr §8.3 pkt 3); skład uczestników i fakty pozostały bez zmian."
+    },
+    {
+      "data": "2026-08-29 21:36",
+      "typ": "skit",
+      "akcja": "zmiana",
+      "slug": "odzwierni",
+      "tytul": "ODŹWIERNI",
+      "opis": "Przeredagowanie dialogu: rozbudowane didaskalia i żywsza, lżejsza mowa (rejestr §8.3 pkt 3); skład uczestników i fakty pozostały bez zmian."
+    },
+    {
+      "data": "2026-08-29 21:36",
+      "typ": "skit",
+      "akcja": "zmiana",
+      "slug": "plotno-i-kamien",
+      "tytul": "PŁÓTNO I KAMIEŃ",
+      "opis": "Przeredagowanie dialogu: rozbudowane didaskalia i żywsza, lżejsza mowa (rejestr §8.3 pkt 3); skład uczestników i fakty pozostały bez zmian."
+    },
+    {
+      "data": "2026-08-29 21:36",
+      "typ": "skit",
+      "akcja": "zmiana",
+      "slug": "trzy-stoly",
+      "tytul": "TRZY STOŁY",
+      "opis": "Przeredagowanie dialogu: rozbudowane didaskalia i żywsza, lżejsza mowa (rejestr §8.3 pkt 3); skład uczestników i fakty pozostały bez zmian."
+    },
+    {
+      "data": "2026-08-29 21:36",
+      "typ": "skit",
+      "akcja": "zmiana",
+      "slug": "trzy-zegary",
+      "tytul": "TRZY ZEGARY",
+      "opis": "Przeredagowanie dialogu: rozbudowane didaskalia i żywsza, lżejsza mowa (rejestr §8.3 pkt 3); skład uczestników i fakty pozostały bez zmian."
+    },
+    {
+      "data": "2026-08-29 21:36",
+      "typ": "skit",
+      "akcja": "zmiana",
+      "slug": "znak-burzy",
+      "tytul": "ZNAK BURZY",
+      "opis": "Przeredagowanie dialogu: rozbudowane didaskalia i żywsza, lżejsza mowa (rejestr §8.3 pkt 3); skład uczestników i fakty pozostały bez zmian."
+    },
+    {
+      "data": "2026-08-29 21:36",
+      "typ": "skit",
+      "akcja": "zmiana",
+      "slug": "znak-i-liczba",
+      "tytul": "ZNAK I LICZBA",
+      "opis": "Przeredagowanie dialogu: rozbudowane didaskalia i żywsza, lżejsza mowa (rejestr §8.3 pkt 3); skład uczestników i fakty pozostały bez zmian."
+    },
+    {
+      "data": "2026-08-29 21:36",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "nessos",
+      "tytul": "Nessos",
+      "opis": "Korekta językowa powiązania z Selkie: „zwodzą człowieka przez zaufanie”."
     },
     {
       "data": "2026-08-29 11:30",
