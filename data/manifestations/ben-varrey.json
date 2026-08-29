@@ -97,6 +97,14 @@
     {
       "slug": "nessos",
       "opis": "Obaj to przewodnicy wodni, którzy prowadzą ludzi przez żywioł — Nessos jako przewoźnik przez Euenos, Ben-Varrey jako wskaźnica bezpiecznego kanału na manxkim wybrzeżu. Różnica: kentaur żąda opłaty i potrafi zaatakować, a syrena chce daru (jabłka, róży) i przeważnie chroni, gdy nie jest zdradzona."
+    },
+    {
+      "slug": "balor",
+      "opis": "Sąsiedztwo wód Morza Irlandzkiego i celtyckich wybrzeży: Balor panuje nad ponurą twierdzą na Tory Island u północnych wybrzeży Irlandii, a Ben-Varrey strzeże cieśniny Calf Sound przy Wyspie Man. Obie tradycje surowo przestrzegają tabu spojrzenia i wypowiadania prawdziwych imion na morzu (Joaney Gorm)."
+    },
+    {
+      "slug": "drangue-shala",
+      "opis": "Władcy przeciwstawnych stanów pogody i żywiołu: Ben-Varrey potrafi sprowadzić mgłę i sztorm, który rozbija statki na skałach manxkich brzegów, podczas gdy Drangue w albańskich wąwozach Shali rozprasza nawałnice i walczy z demonami powodzi i gradu (Kulshedra)."
     }
   ],
   "meta": {

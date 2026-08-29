@@ -92,6 +92,14 @@
     {
       "slug": "empusa-korynt",
       "opis": "Obie to kobieco-potworne istoty zesłane przez bogów, by nękać konkretny region; Empusa czyha na podróżnych i karmi się ich strachem, a Sfinks odbiera życie tym, którzy nie rozwiążą zagadki. Łączy je też kryterium: obie da się pokonać tylko wtedy, gdy odbierze się im ich przewagę — jednej płonące nogi, drugiej pewność zagadki."
+    },
+    {
+      "slug": "talos-kreta",
+      "opis": "Dwa greckie mechanizmy zaporowe o odmiennej naturze: Talos to bezduszny spiżowy automat rozbijający statki głazami, a Sfinks to skrzydlata lwica o intelekcie bogini zatrzymująca podróżnych zagadką logiczną. Obie istoty czynią przejście niemożliwym bez znajomości ich jedynej wewnętrznej reguły."
+    },
+    {
+      "slug": "balor",
+      "opis": "Groza bezpośredniego kontaktu wzrokowego na granicy terytorium: Balor jednym spojrzeniem jadowitego oka obraca w popiół armie u bram Irlandii, podczas gdy Sfinks przeszywa wzrokiem podróżnych u wrót Teb, żądając natychmiastowej odpowiedzi pod karą pożarcia."
     }
   ],
   "meta": {

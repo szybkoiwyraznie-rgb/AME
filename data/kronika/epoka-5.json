@@ -1,0 +1,162 @@
+{
+  "slug": "epoka-5",
+  "tom": "tom-1",
+  "skit": "zagadka-ze-spizu",
+  "tytul": "Zagadka ze spiżu: rozum, żart i głuchy krok",
+  "iskra": "Sfinks z Teb próbuje zatrzymać wędrowców na rozstaju klasyczną zagadką o porach życia. Talos odpowiada miarowym rzutem głazu, a Lincoln Imp obraca powagę pytania w żart. Trzy różne odpowiedzi na jedno pytanie o naturę bytu.",
+  "pytanie": "Czy powaga pytania o byt może przetrwać zderzenie z bezdusznym automatem i złośliwym śmiechem?",
+  "uczestnicy": [
+    {
+      "slug": "sfinks-teby",
+      "rola": "Strażniczka zagadki i lęku",
+      "kosztUdzialu": 2,
+      "kosztKlucza": 0,
+      "boost": 0,
+      "zwrot": 0,
+      "watkiNaruszone": 1
+    },
+    {
+      "slug": "talos-kreta",
+      "rola": "Spiżowy obrońca brzegu",
+      "kosztUdzialu": 2,
+      "kosztKlucza": 0,
+      "boost": 0,
+      "zwrot": 0,
+      "watkiNaruszone": 1
+    },
+    {
+      "slug": "lincoln-imp",
+      "rola": "Chochlik kpiący z powagi",
+      "kosztUdzialu": 2,
+      "kosztKlucza": 0,
+      "boost": 0,
+      "zwrot": 4,
+      "watkiNaruszone": 2
+    }
+  ],
+  "przebieg": "Pełny tekst rozmowy: data/skity/zagadka-ze-spizu.json (uczestnicy zgodni z epoką).",
+  "narrator": {
+    "ocena": [
+      {
+        "kto": "lincoln-imp",
+        "kogo": "sfinks-teby",
+        "stopien": 2,
+        "kontekst": "retoryka kpiny",
+        "komentarz": "Imp wyśmiewa powagę antycznej zagadki, wskazując, że pyta o człowieka kogoś, kto nie jest człowiekiem."
+      },
+      {
+        "kto": "lincoln-imp",
+        "kogo": "talos-kreta",
+        "stopien": 1,
+        "kontekst": "nazwanie automatu",
+        "komentarz": "Imp nazywa Talosa imbrykiem z brązu, obnażając brak świadomości olbrzyma."
+      },
+      {
+        "kto": "sfinks-teby",
+        "kogo": "talos-kreta",
+        "stopien": 1,
+        "kontekst": "rozczarowanie strażnika",
+        "komentarz": "Sfinks zastyga, widząc, że Talos nie ma rozumu do zmanipulowania."
+      }
+    ],
+    "podsumowanie": "Zagadka Sfinksa traci swą bezwzględną moc, gdy trafia na istotę pozbawioną lęku lub na złośliwy śmiech. Świat antyczny zderza się z gotycką ironią i mechanicznym automatyzmem."
+  },
+  "konsekwencje": {
+    "os": {
+      "mit": -1,
+      "racjonalizacja": 1,
+      "opis": "Odrzucenie powagi antycznego mitu przez gotycką ironię i mechaniczny automatyzm przesuwa oś ku racjonalizacji."
+    },
+    "relacje": [
+      {
+        "od": "lincoln-imp",
+        "do": "sfinks-teby",
+        "kierunek": "schłodzenie",
+        "opis": "Sfinks uważa Impa za bezczelnego intruza, który niszczy sakralność zagadki."
+      },
+      {
+        "od": "sfinks-teby",
+        "do": "talos-kreta",
+        "kierunek": "schłodzenie",
+        "opis": "Dwa greckie potwory nie znajdują wspólnego języka — jeden żyje słowem, drugi mechanizmem."
+      },
+      {
+        "od": "lincoln-imp",
+        "do": "talos-kreta",
+        "kierunek": "wzmocnienie",
+        "opis": "Imp traktuje Talosa jako doskonałą zasłonę przed powagą świata."
+      }
+    ],
+    "zasieg": [
+      {
+        "slug": "lincoln-imp",
+        "delta": 0.015,
+        "opis": "Śmiech i drwina zyskują przewagę nad dawną trwogą; chochlik rośnie w siłę."
+      },
+      {
+        "slug": "sfinks-teby",
+        "delta": -0.010,
+        "opis": "Święta groza zagadki słabnie, gdy okazuje się podatna na wyśmianie."
+      },
+      {
+        "slug": "talos-kreta",
+        "delta": -0.005,
+        "opis": "Spiżowy olbrzym pozostaje tylko maszyną strzegącą pustego brzegu."
+      }
+    ],
+    "dominacje": [
+      { "kultura": "anglia", "kult": "lincoln-imp", "delta": 0.015 },
+      { "kultura": "grecja", "kult": "sfinks-teby", "delta": -0.010 },
+      { "kultura": "grecja", "kult": "talos-kreta", "delta": -0.005 }
+    ],
+    "pozycje": [
+      {
+        "slug": "lincoln-imp",
+        "status": "wzmocniony",
+        "opis": "Przekształca powagę w żart i rozszerza zasięg gotyckiej figlarności."
+      },
+      {
+        "slug": "sfinks-teby",
+        "status": "zraniony",
+        "opis": "Zagadka traci aurę nieuchronności."
+      },
+      {
+        "slug": "talos-kreta",
+        "status": "odporny",
+        "opis": "Nie ulega zagadce, trwa na posterunku."
+      }
+    ],
+    "watki": [
+      {
+        "id": "zagadka-ze-spizu",
+        "stan": "zamkniety",
+        "opis": "Wątek domknięty: na pytanie o byt można odpowiedzieć głazem, śmiechem lub milczeniem."
+      },
+      {
+        "id": "czwarty-stol",
+        "stan": "otwarty",
+        "opis": "Czwarty stół z Epoki I wciąż czeka: gość, który wziął sam, czy przodek, który umie wybaczyć."
+      },
+      {
+        "id": "warunek-barbarossy",
+        "stan": "otwarty",
+        "opis": "Dlaczego cesarz woli płacić, żeby gość wyszedł, zamiast przyjąć go przy stole?"
+      },
+      {
+        "id": "wedrowny-dom-empusy",
+        "stan": "otwarty",
+        "opis": "Czy ludzie nauczą się wypowiadać słowo-poznanie w porę, czy samo słowo stanie się rytuałem, który chybia?"
+      },
+      {
+        "id": "kres-indry",
+        "stan": "otwarty",
+        "opis": "Czy kres można oddać, czy tylko przekroczyć? Co znaczy wybrać własną granicę, gdy świat przestaje ją respektować?"
+      }
+    ]
+  },
+  "meta": {
+    "utworzono": "2026-08-29 11:35",
+    "autor": "agent Areny — piąta epoka Tomu I (wątek zagadka ze spiżu)",
+    "wersja": 1
+  }
+}

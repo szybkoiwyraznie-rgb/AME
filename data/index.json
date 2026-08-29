@@ -1,7 +1,7 @@
 {
   "wersja": 3,
   "liczba": 15,
-  "liczbaSkitow": 17,
+  "liczbaSkitow": 18,
   "kanon": {
     "kategorie": [
       {
@@ -395,11 +395,14 @@
       ],
       "powiazania": [
         "barbarossa-kyffhaeuser",
-        "indra"
+        "egungun",
+        "indra",
+        "kannon-hase"
       ],
       "backlinki": [
         "barbarossa-kyffhaeuser",
-        "indra"
+        "indra",
+        "kannon-hase"
       ],
       "obraz": "assets/wizualizacje/agni.jpg",
       "skity": []
@@ -433,9 +436,12 @@
       ],
       "backlinki": [
         "barbarossa-kyffhaeuser",
+        "ben-varrey",
         "drangue-shala",
         "lincoln-imp",
-        "selkie-sule-skerry"
+        "selkie-sule-skerry",
+        "sfinks-teby",
+        "talos-kreta"
       ],
       "obraz": "assets/wizualizacje/balor.jpg",
       "skity": [
@@ -512,6 +518,8 @@
         "syrena"
       ],
       "powiazania": [
+        "balor",
+        "drangue-shala",
         "nessos",
         "selkie-sule-skerry"
       ],
@@ -551,6 +559,7 @@
       ],
       "backlinki": [
         "balor",
+        "ben-varrey",
         "indra",
         "kentaur-pelion",
         "lincoln-imp"
@@ -593,6 +602,7 @@
         "selkie-sule-skerry"
       ],
       "backlinki": [
+        "agni",
         "barbarossa-kyffhaeuser",
         "empusa-korynt",
         "kannon-hase",
@@ -712,10 +722,12 @@
         "uzdrowienie"
       ],
       "powiazania": [
+        "agni",
         "egungun",
         "selkie-sule-skerry"
       ],
       "backlinki": [
+        "agni",
         "egungun",
         "selkie-sule-skerry"
       ],
@@ -799,7 +811,8 @@
         "komu-wolno-patrzec",
         "kurz-i-piora",
         "nieproszeni-goscie",
-        "plotno-i-kamien"
+        "plotno-i-kamien",
+        "zagadka-ze-spizu"
       ]
     },
     {
@@ -910,15 +923,20 @@
         "zagadka"
       ],
       "powiazania": [
+        "balor",
         "empusa-korynt",
-        "kentaur-pelion"
+        "kentaur-pelion",
+        "talos-kreta"
       ],
       "backlinki": [
         "empusa-korynt",
-        "kentaur-pelion"
+        "kentaur-pelion",
+        "talos-kreta"
       ],
       "obraz": "assets/wizualizacje/sfinks-teby.jpg",
-      "skity": []
+      "skity": [
+        "zagadka-ze-spizu"
+      ]
     },
     {
       "slug": "talos-kreta",
@@ -943,15 +961,20 @@
         "warunek"
       ],
       "powiazania": [
+        "balor",
         "kentaur-pelion",
-        "nessos"
+        "nessos",
+        "sfinks-teby"
       ],
       "backlinki": [
         "kentaur-pelion",
-        "nessos"
+        "nessos",
+        "sfinks-teby"
       ],
       "obraz": "assets/wizualizacje/talos-kreta.jpg",
-      "skity": []
+      "skity": [
+        "zagadka-ze-spizu"
+      ]
     }
   ],
   "skity": [
@@ -1205,6 +1228,23 @@
       "data": "2026-08-28 22:25"
     },
     {
+      "slug": "zagadka-ze-spizu",
+      "tytul": "ZAGADKA ZE SPIŻU",
+      "temat": "co zrobić ze strażnikiem, który nie potrafi pomyśleć, i z takim, który myśli za dużo — trzy odpowiedzi na jedno pytanie",
+      "uczestnicy": [
+        "lincoln-imp",
+        "sfinks-teby",
+        "talos-kreta"
+      ],
+      "imiona": [
+        "Sfinks z Teb",
+        "Talos z Krety",
+        "Lincoln Imp"
+      ],
+      "slow": 232,
+      "data": "2026-08-29 11:30"
+    },
+    {
       "slug": "znak-burzy",
       "tytul": "ZNAK BURZY",
       "temat": "kto ma prawo wrócić, gdy nadejdzie grzmot",
@@ -1238,6 +1278,14 @@
     }
   ],
   "aktualizacje": [
+    {
+      "data": "2026-08-29 11:30",
+      "typ": "skit",
+      "akcja": "nowy",
+      "slug": "zagadka-ze-spizu",
+      "tytul": "ZAGADKA ZE SPIŻU",
+      "opis": "SKIT — skład: Sfinks z Teb, Talos z Krety, Lincoln Imp"
+    },
     {
       "data": "2026-08-29 11:05",
       "typ": "skit",
