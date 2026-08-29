@@ -103,6 +103,14 @@
     {
       "slug": "selkie-sule-skerry",
       "opis": "Nessos i selkie z Sule Skerry to istoty granicy wodnej, które zawodzą człowieka przez zaufanie: kentaur-przewoźnik podstępnie zabiera Deianirę z brzegu rzeki, a selkie wyciąga człowieka ku morzu, gdy tylko odda skórę. Obie zdrady są ceną przekroczenia wody, której nie da się cofnąć."
+    },
+    {
+      "slug": "talos-kreta",
+      "opis": "Talos i Nessos to dwaj strażnicy terytorium, których pokonuje się otwarciem jednego punktu: Nessos pilnuje przeprawy przez Euenos i ginie od strzały Heraklesa, a spiżowy Talos obchodzi brzegi Krety i upada, gdy z kostki wypada gwóźdź zamykający żyłę."
+    },
+    {
+      "slug": "ben-varrey",
+      "opis": "Obaj są przewodnikami wodnymi, którzy znają żywioł lepiej niż ludzie: Nessos jako przewoźnik przez rzekę zna prądy i brody, a Ben-Varrey zna każdy kanał i kryjówkę wzdłuż manxkiego wybrzeża. Różni ich cena — kentaur żąda opłaty, syrena przyjmuje dar i częściej ochrania."
     }
   ],
   "meta": {

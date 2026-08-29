@@ -112,6 +112,24 @@ zmianie, niezależnie od „polerowania”.
 - [ ] Powiązywanie wpisów (uzasadnione `opis`-em), obserwacja spójności sieci.
 - [ ] Odtwarzanie wizualizacji dla wpisów bez obrazu (rama 21:9, ≤ 2 MB).
 
+### F1 — 2026-08-29: pięć materializacji na zlecenie (komplet)
+
+- [x] **Dreams of Steel and Oil (BRO #92)** → `talos-kreta` — spiżowy
+      automat z Krety: jedna żyła ichoru, gwóźdź w kostce.
+- [x] **Coralhelm Guide (BFZ #74)** → `ben-varrey` — manxka syrena
+      z Wyspy Man, przewodniczka znająca każde wybrzeże.
+- [x] **Jwar Isle Avenger (OGW #58)** → `sfinks-teby` — skrzydlata lwica
+      z góry Fikion, strażniczka przejścia przez zagadkę.
+- [x] **Aerith Rescue Mission (FIN #5)** → `kannon-hase` — bodhisattwa
+      miłosierdzia z Hasedery, wybawicielka z pielgrzymki 33 Kannon.
+- [x] **Wrap in Flames (MM2 #136)** → `agni` — wedyjski bóg ognia
+      ofiarnego, który rozprasza ciemność i obezwładnia przeciwników.
+- [x] Każdy wpis: pełne sekcje I–V, ≥3 źródła z adresami https, tagi
+      z kanonu (dopisane `man`, `japonia` i kategorie bytów/motywów/form),
+      powiązania zwrotne do sieci, wizualizacja 21:9 (≤ 2 MB).
+- [x] Sieć domknięta: nowe byty weszły w powiązania z
+      nessos/kentaur/empusa/egungun/indra/barbarossa; kultury 8 → 10.
+
 ## M3 (2026-08-28) — poprawki z testów właściciela — ✅ KOŃCZONA (czeka na scalenie PR #2)
 
 - [x] **A1** proporcje mapy: widok liczony z kontenera (contain), brak

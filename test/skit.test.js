@@ -227,11 +227,13 @@ test('feed w repo: godzina rozstrzyga nad zapisami dziennymi; wśród dziennych 
   const poz = feed.map((f, i) => ({ ...f, i }));
   const zGodzina = poz.filter((f) => f.data.includes(' '));
   const dzienne = poz.filter((f) => f.data === dzis);
-  assert.ok(zGodzina.length > 0, 'nowe zapisy niosą godzinę (ADR 0017)');
-  assert.ok(zGodzina.every(({ data }) => data.startsWith(dzis)), 'pozycje godzinowe pochodzą z najnowszego dnia');
+  const najnowszeGodzinowe = zGodzina.filter((f) => f.data.startsWith(dzis));
+  assert.ok(najnowszeGodzinowe.length > 0, 'nowe zapisy najnowszego dnia niosą godzinę (ADR 0017)');
+  // Godzinowe zapisy najnowszego dnia stoją nad dziennymi zapisami tego samego
+  // dnia; starsze dni mogą też mieć godziny, ale leżą niżej w kolejności dat.
   assert.ok(
-    zGodzina.every(({ i }) => dzienne.every(({ i: j }) => j > i)),
-    'pozycje z godziną są nad dziennymi zapisami tego samego dnia (zapis dzienny = sprzed v1.5)'
+    najnowszeGodzinowe.every(({ i }) => dzienne.every(({ i: j }) => j > i)),
+    'pozycje z godziną najnowszego dnia są nad dziennymi zapisami tego samego dnia (zapis dzienny = sprzed v1.5)'
   );
   const zmianyDzienne = dzienne.filter((f) => f.akcja === 'zmiana');
   const utworzeniaDzienne = dzienne.filter((f) => f.akcja === 'nowa');

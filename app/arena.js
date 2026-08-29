@@ -29,6 +29,12 @@ export const WAGA_MOTYWU = {
   przemiana: { atak: 3, obrona: 2 },
   burza: { atak: 5, obrona: 1 },
   furia: { atak: 6, obrona: 1 },
+  obrona: { atak: 0, obrona: 6 },
+  przewodnik: { atak: 1, obrona: 5 },
+  zagadka: { atak: 3, obrona: 4 },
+  ratunek: { atak: 1, obrona: 6 },
+  uzdrowienie: { atak: 0, obrona: 6 },
+  oczyszczenie: { atak: 4, obrona: 3 },
 };
 
 /** Kontry motywów: motyw klucza tłumi siłę motywu z listy (mnożnik ataku). */

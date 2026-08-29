@@ -112,6 +112,10 @@
     {
       "slug": "indra",
       "opis": "Warunkowa potęga czeka na ten sam znak, choć każdy odczytuje go inaczej: Barbarossa na kruki nad Kyffhäuserem, Indra na wadżrę z kości Dadhichiego. Obaj nie działają, zanim warunek nie zostanie dopełniony, i obaj płacą za władzę — jeden stuleciami snu, drugi klątwą tysiąca oczu."
+    },
+    {
+      "slug": "agni",
+      "opis": "Barbarossa i Agni to byty, których moc jest warunkowa i czeka na ludzkie wezwanie: cesarz w górach obudzi się, gdy przyjdzie znak, a ogień zapala się, gdy ludzie złożą ofiarę. Obaj więc są obecni, ale uśpieni, dopóki wspólnota nie odda im tego, co im należne."
     }
   ],
   "meta": {

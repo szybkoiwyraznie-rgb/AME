@@ -1,0 +1,112 @@
+{
+  "slug": "kannon-hase",
+  "nazwa": "Kannon — miłosierna wybawicielka",
+  "nazwy_alternatywne": [
+    "Kannon",
+    "Kanzeon Bosatsu",
+    "Avalokiteshwara",
+    "Bodhisattwa Miłosierdzia",
+    "Pani z Hase"
+  ],
+  "karta": {
+    "nazwa": "Aerith Rescue Mission",
+    "wydanie": "Final Fantasy (FIN) #5",
+    "rok": 2025
+  },
+  "lokalizacja": {
+    "miejscowosc": "Hasedera (Kamakura, prefektura Kanagawa) — czwarta stacja Kamakurańskiej pielgrzymki 33 Kannon, świątynia na zboczu wzgórza nad zatoką; stąd widać, jak wybawicielka schodzi między ludzi",
+    "kraj": "Japonia (region Kanto)",
+    "lat": 35.31,
+    "lon": 139.54
+  },
+  "pochodzenie_i_kultura": "Japoński buddyzm ludowy: Kannon (Kanzeon Bosatsu) to Kannon, bodhisattwa miłosierdzia i „słyszący modlitwy świata”, wywodząca się z indyjskiego Avalokiteshvary. W Japonii czczona jako opiekunka, wybawicielka i patronka pielgrzymek: 33 świątynie Kamakury i 33 Kannon na trasie Saigoku to miejsca, w których ludzie proszą ją o ratunek i uzdrowienie. Jedna kultura, jeden wątek",
+  "wizualizacja": {
+    "prompt": "Style: A wide-angle full-body cinematic photograph. The central objects/persons of the photo are visible from head to toe, standing centrally in the frame. No parts of the body are cropped.\n\nA serene Japanese goddess of mercy with eleven soft faces and many slender arms, dressed in flowing white and pale gold robes, standing on a stone terrace above a dense hillside pilgrimage path; in one hand she holds a lotus, another gestures open, raised toward three small travelers emerging from a shadowy stairway; behind her a tall wooden temple hall with red lanterns and a distant bay; cool dawn light, drifting incense, wet stone and cherry petals in the breeze.\n\nCaptured with a 35mm anamorphic lens at f/1.8. Shallow depth of field with a heavy, creamy bokeh background. Environmental portraiture. Dramatic cinematic lighting, sharp focus on the character, hyper-realistic textures of clothing and skin. Shot on 70mm film stock, ultra-wide 21:9 aspect ratio. --ar 21:9",
+    "obraz": "assets/wizualizacje/kannon-hase.jpg"
+  },
+  "natura": {
+    "wyglad_i_aura": "Piękna, spokojna postać w białych i złotych szatach, z wieloma twarzami i ramionami, która otwiera dłonie ku każdemu, kto woła. Jej aura jest cicha i jasna — jak powietrze po deszczu; wokół rozchodzi się zapach palonego kadzidła, mokrego drewna i kwitnących wiśni. Nie budzi lęku, tylko uspokaja i nakłania do wejścia na schody.",
+    "charakter_i_motywacje": "Kannon nie jest kapryśna ani surowa: jej jedynym celem jest ratować cierpiących, niezależnie od tego, czy proszą słabo, czy mocno. Nie karze, nie wywyższa — schodzi do piekła, do oceanu i na ziemię, żeby wyprowadzić tych, którzy utknęli. Jest wobec siebie bezlitosna, bo nieustannie pamięta o wszystkich, których nie zdołała jeszcze uratować, i dlatego coraz bardziej się rozprasza w poszukiwaniu nowych dróg pomocy.",
+    "zdolnosci": "Słyszy każdy głos i każdą modlitwę w świecie i odpowiada na nie, przyjmując kształt, który jest potrzebny — pojawia się w postaci opiekunki, przewodniczki, matki albo obrońcy. Może uleczyć cierpienie, zdjąć ciężar, otworzyć drogę przez góry, wody i ciemność. Potrafi też powstrzymać zło, nie niszcząc go: trzyma je w miejscu i oślepia, aż straci siłę, a jej wielość rąk oznacza, że może pomóc wielu naraz.",
+    "slabosci_i_metody_pokonania": "Nie można z nią walczyć jak z potworem, bo jej moc rośnie z modlitwy; nie ucieka przed przemocą, ale nie można jej też wciągnąć w nienawiść. Najskuteczniejszy sposób, by ją zatrzymać, to przeciąć jej kontakt z wiernymi — zamknąć świątynię, zasłonić jej „słuch świata”. Jednak wtedy ona po prostu odchodzi, bo nie ma w niej pragnienia panowania nad ludźmi. Nie pokona się jej czarem — można tylko oddalić jej pomoc.",
+    "preferencje": "Lubi: czyste modlitwy, cierpliwą ufność, pielgrzymów idących z błogosławieństwem, ciszę po deszczu; nie lubi: cierpienia, które ludzie sami zadają sobie, pustych modlitw proszących o zemstę, i zatrzymywania jej w jednym miejscu."
+  },
+  "dokumentacja": [
+    {
+      "typ": "słownik buddyzmu japońskiego",
+      "pozycja": "Mark Schumacher, „Kannon Bosatsu — Goddess of Mercy, One Who Hears Prayers of the World” — nazwa Kanzeon, pochodzenie od Avalokiteśvary, 33 formy, postać jedenasto-głowa i tysiąc-ręczna, pomoc w trudnościach, pielgrzymki 33 Kannon w Kamakurze i w całej Japonii",
+      "url": "https://www.onmarkproductions.com/html/kannon.shtml"
+    },
+    {
+      "typ": "encyklopedia buddyjska",
+      "pozycja": "Encyclopedia of Buddhism, „Avalokiteśvara” — istota, która manifestuje się w 33 formach, by ratować istoty w trudnościach; formy wschodnioazjatyckie (Guanyin, Kannon), późniejsza kobieco-biała postać, jej związek z Potalaką i pomoc z niebezpieczeństw",
+      "url": "https://encyclopediaofbuddhism.org/wiki/Avalokitesvara"
+    },
+    {
+      "typ": "portal mitologiczny",
+      "pozycja": "Mythopedia, „Kannon” — Kannon jako bogini miłosierdzia i „słysząca modlitwy świata”, 33 formy, pomoc w ogniu i topieli, mieszkanie w Pudalace (Fudaraku), z której zstępuje, by witać szukających ocalenia; symbol ratunku od cierpienia",
+      "url": "https://mythopedia.com/topics/kannon/"
+    },
+    {
+      "typ": "przewodnik pielgrzymkowy",
+      "pozycja": "Henro, „The Saigoku Kannon Pilgrimage” — 1300-letnia, tysiąckilometrowa trasa przez 33 świątynie Kannon na zachodzie Japonii; wędrówka jako dążenie do uzdrowienia cierpienia; Kannon opisana jako Bodhisattwa Współczucia i Uzdrowienia",
+      "url": "https://www.henro.org/saigoku-kannon-pilgrimage"
+    }
+  ],
+  "trofea": {
+    "pierwotne": "Lotosowy wieniec z podnóża Hasedery, który Kannon ofiarowuje wybawionym — symbol, że ratunek jest darem, nie okupem.",
+    "wtorne": "Mały posążek Kamakura Kannon z kłodą, na którym zapisane są intencje modlitewne pątników — dokument, że byt ten istnieje w ludzkich wezwaniach i nie zanika."
+  },
+  "rezonans": {
+    "klucz_przywolania": "Aerith Rescue Mission to karta, która ratuje bohaterów i podnosi ich do walki: wybiera między windą (natychmiastowe uratowanie, sprzyjające heroi) a 59 schodami (zmęczenie przeciwnika, otępienie). Kannon dokładnie tak działa: schodzi z góry, wysyła ratunek, a gdy trzeba, „zamraża” zło, zamiast je zabić. „Take the Elevator” tworzy trzech Hero-ów — trzy wcielenia wybawionych; „Take 59 Flights of Stairs” obezwładnia trzy istoty i zostawia je otumanione, jak zło oślepione światłem. To manifestacja, która niesie wybawienie, a nie zwycięstwo przez przemoc.",
+    "tabela": [
+      {
+        "element": "Nazwa",
+        "translacja": "„Aerith Rescue Mission” — misja ratunkowa bohaterki, która leczy i prowadzi do wyjścia. Kannon jest dokładnie taką misją ratunkową: „kannon” znaczy „słyszący znajdujący się wzywający”; bodhisattwa słyszy wołanie świata i wyrusza na pomoc. „Rescue” to jej cecha, nie rola, którą przyjmuje — schodzi z Hasedery."
+      },
+      {
+        "element": "Mechanika",
+        "translacja": "„Choose one — Take the Elevator: create three Hero tokens; Take 59 Flights of Stairs: tap up to three creatures, stun one.” — to dwa sposoby wybawienia: szybki (winda) i męczący (schody). Kannon pomaga naraz wielu i w różnym tempie; jednych podnosi (heroes), a innych ogłusza (tap/stun), bo najlepszy ratunek to taki, który powstrzyma zło, nie wymagając jego zabicia."
+      },
+      {
+        "element": "Ilustracja",
+        "translacja": "Artysta Hokuyuu; postać w białej szacie w otoczeniu kwiatów i magii — klasyczna wyobrażenie Kannon jako białorobej, miłosiernej bogini z 33 formami. Jej wielość zaznacza, że ma wiele rąk i twarzy, a kwiaty podkreślają uzdrowienie i odrodzenie."
+      },
+      {
+        "element": "Flavor text",
+        "translacja": "(brak flavoru w tej karcie) — brak cytatu sprawia, że wskazówka jest czysto mechaniczna: ratunek, a nie walka. Kannon też nie ma „flavoru” — jest niepunktowaną, niewypowiedzianą odpowiedzią na wołanie; daje się poznać dopiero przez efekt."
+      },
+      {
+        "element": "Lore/Tło",
+        "translacja": "Świat Final Fantasy to gra o bohaterach, którzy wchodzą w głąb siebie i ratują się nawzajem; Kannon w folklorze buddyjskim pełni rolę tej niewidzialnej siły, która prowadzi. „Aerith” w grze jest uzdrowicielką i posiada moc Cetry, a w tradycji na wschodzie „słysząca łzy” jest tą, która obniża się do ludzi i niesie im ukojenie."
+      }
+    ]
+  },
+  "tagi": [
+    "japonia",
+    "bodhisattwa",
+    "ratunek",
+    "uzdrowienie",
+    "kamienna-figura"
+  ],
+  "powiazania": [
+    {
+      "slug": "egungun",
+      "opis": "Kontrast między wspólnotą, która sama wciela przodka, a bytem, który przychodzi z zewnątrz; egúngún z Oyo wraca przez maskę i rytuał, by przypomnieć o życiu, a Kannon z Kamakury zstępuje do świata, by uleczyć cierpienie. Obie są sakralnymi „ścianami” między światem a sacrum — jedna przez przebranie, druga przez współczucie."
+    },
+    {
+      "slug": "selkie-sule-skerry",
+      "opis": "Obie to istoty morsko-lądowe ofiarujące ludziom pomoc w zamian za zaufanie; selkie z Sule Skerry porusza się między foką a kobietą i przynosi mężowi bogactwo, a Kannon przychodzi zza morza (Pudalaka) i daje uzdrowienie. Różnica: selkie jest domowa i krucha, a Kannon jest poświęcona ratowaniu wszystkich, nawet gdyby miała się rozproszyć."
+    }
+  ],
+  "meta": {
+    "utworzono": "2026-08-29 01:25",
+    "autor": "sesja arena 2026-08-29",
+    "modyfikacje": [
+      {
+        "data": "2026-08-29 01:25",
+        "opis": "Nowa materializacja: Kannon — bodhisattwa miłosierdzia z Hasedery, wybawicielka z pielgrzymki 33 Kannon, na podstawie karty „Aerith Rescue Mission” (FIN #5)."
+      }
+    ]
+  }
+}

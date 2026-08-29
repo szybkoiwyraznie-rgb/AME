@@ -1129,3 +1129,48 @@ Właściciel doprecyzował zachowanie mapy:
   zmianie JS/CSS” zapisana jako komentarz w `index.html`.
 - Podpowiedź UI: „kliknij miasto = nazwa” → „przytrzymaj miasto = nazwa”.
 - `npm test` **153/153**, `npm run check` i `npm run build` zielone.
+
+## F1 — 2026-08-29: pięć materializacji na zlecenie
+
+Właściciel przekazał grupę pięciu kart; każda została zweryfikowana w Scryfall
+(ADR 0008 — dokładne wydanie, koszt, typ, mechanika, flavor, artysta, rok),
+przełożona na konkretny byt z folkloru/mitologii i zbadana w źródłach www.
+
+- **Dreams of Steel and Oil (BRO #92)** → **Talos** (`talos-kreta`): spiżowy
+  automat z Krety, jedna żyła ichoru zamknięta gwoździem w kostce. Stal i
+  „olej ” karty = brąz i roztopiony ołów, którym wypływa życie automatu.
+- **Coralhelm Guide (BFZ #74)** → **Ben-Varrey** (`ben-varrey`): manxka
+  syrena z Wyspy Man, przewodniczka znająca każdy krok wybrzeża nad i pod
+  wodą; otwiera drogę, której nie da się zablokować.
+- **Jwar Isle Avenger (OGW #58)** → **Sfinks** (`sfinks-teby`): skrzydlata
+  lwica z kobieca głową na górze Fikion nad Tebami; „surge” = włącza się do
+  walki, gdy coś ją wyzwie.
+- **Aerith Rescue Mission (FIN #5)** → **Kannon** (`kannon-hase`): bodhisattwa
+  miłosierdzia z Hasedery, „słysząca modlitwy świata”, 33 formy, ratunek i
+  uzdrowienie z pielgrzymki 33 Kannon.
+- **Wrap in Flames (MM2 #136)** → **Agni** (`agni`): wedyjski bóg ognia,
+  który rozprasza ciemność i obezwładnia do trzech przeciwników; ogień, który
+  „nie zabija, ale daje czas”.
+
+Zrobione przy każdej karcie:
+- **Scryfall:** dokładne wydanie (BFZ #74, OGW #58, FIN #5, BRO #92, MM2 #136)
+  — dwie pierwsze próby fetcha wróciły z reprintów (BBD, THB), więc dociągnięto
+  właściwe sety parametrem `set=`.
+- **Wpis MFM:** sekcje I–V (wizualizacja, natura, dokumentacja z ≥3 adresami
+  https, trofea, rezonans + tabela translacji), tagi z kanonu, meta z godziną.
+- **Kanon tagów:** dodane `man`, `japonia` (kultura) oraz typy (automat, syrena,
+  sfinks, bodhisattwa, bog-ognia), motywy (obrona, przewodnik, zagadka, ratunek,
+  uzdrowienie, oczyszczenie) i formy (postac-metalowa, morska-postac,
+  plomienna-postac) — każdy z opisem i kategorią.
+- **Arena:** `WAGA_MOTYWU` rozszerzona o nowe motywy (test „każdy motyw z kanonu
+  ma wagę bojową”).
+- **Sieć:** powiązania zwrotne dodane do `nessos`, `kentaur-pelion`,
+  `selkie-sule-skerry`, `empusa-korynt`, `egungun`, `indra`, `barbarossa-kyffhaeuser`;
+  liczba kultur źródłowych 8 → 10 (test `dane.test.js`).
+- **Feed:** kolejność godzinowa zaktualizowana — test `skit.test.js` opisuje
+  teraz poprawnie starsze dni z godzinami obok najnowszego dnia.
+- **Wizualizacje:** 5 × 21:9 w `assets/wizualizacje/` (≤ 0,34 MB), prompt w
+  wpisie; dwa pierwsze szkice odrzucone przez moderację, przegenerowane
+  z ubranymi/opancerzonymi wizerunkami.
+- Weryfikacja: `npm test` **153/153**, `npm run build` → 15 wpisów / 15 SKITów /
+  49 pozycji feedu / 43 tagi; `npm run check` OK.

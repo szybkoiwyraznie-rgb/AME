@@ -1,0 +1,107 @@
+{
+  "slug": "sfinks-teby",
+  "nazwa": "Sfinks — strażniczka Tebańskich Wrót",
+  "nazwy_alternatywne": [
+    "Sfinks",
+    "Sphinx",
+    "Sfinks tebański",
+    "Córka Echidny i Tyfona",
+    "Mścicielka Teb"
+  ],
+  "karta": {
+    "nazwa": "Jwar Isle Avenger",
+    "wydanie": "Oath of the Gatewatch (OGW) #58",
+    "rok": 2016
+  },
+  "lokalizacja": {
+    "miejscowosc": "Góra Fikion (Phikion), na zachodzie za Tebami (Teba, Beocja) — miejsce, w którym Sfinks czatowała na podróżnych, blokując drogę do miasta",
+    "kraj": "Grecja (Beocja)",
+    "lat": 38.32,
+    "lon": 23.28
+  },
+  "pochodzenie_i_kultura": "Mitologia grecka: Sfinks to hybryda — ciało lwicy, głowa i pierś kobiety, orle skrzydła (niekiedy wężowy ogon), często córka Echidny i Tyfona. Związana z Tebami i cyklem tebańskim (Odyseusz, Edyp). Jedna kultura źródłowa — grecka; nie mylę jej z egipskim sfinksem, który jest płciowy, męski i królewski.",
+  "wizualizacja": {
+    "prompt": "Style: A wide-angle full-body cinematic photograph. The central objects/persons of the photo are visible from head to toe, standing centrally in the frame. No parts of the body are cropped.\n\nA majestic winged sphinx with a beautiful woman's head and chest, a bronze furred lioness body and large eagle wings folded along her flanks, crouched on a rocky ledge on Mount Phikion; her serrated tail curls over the stone; behind her a winding road to Thebes and the city's distant citadel; golden dusk light, dusty haze, a skull and an overturned traveler's staff at the base of the rock, her amber eyes locked on the viewer.\n\nCaptured with a 35mm anamorphic lens at f/1.8. Shallow depth of field with a heavy, creamy bokeh background. Environmental portraiture. Dramatic cinematic lighting, sharp focus on the character, hyper-realistic textures of clothing and skin. Shot on 70mm film stock, ultra-wide 21:9 aspect ratio. --ar 21:9",
+    "obraz": "assets/wizualizacje/sfinks-teby.jpg"
+  },
+  "natura": {
+    "wyglad_i_aura": "Z daleka widać tylko sylwetkę lwicy na skale i rozłożone skrzydła; z bliska twarz jest kobieca, spokojna i bezlitosna. Ciało pokrywa złocista, gładka sierść, ogon kończy się grotem; szpony chwytają skałę jak imadło. Obecność odczuwa się jako nagłe zatrzymanie powietrza i zapach gorącego kamienia w upale.",
+    "charakter_i_motywacje": "Sfinks nie poluje z głodu: została przez bogów zesłana, by karać Tebańczyków i mścić się za przestępstwo, którego nikt już nie pamięta. Dlatego czeka przy drodze i nie zabija po cichu — najpierw zadaje pytanie. To jej sposób na odzyskanie sprawiedliwości: kto nie potrafi myśleć, ten ginie. Jest dumna, uparta i okrutna w swojej logice, a jej upadek następuje dopiero wtedy, gdy ktoś rozwiąże zagadkę.",
+    "zdolnosci": "Porośnięta skrzydłami i szybka jak ptak — z góry widzi całą drogę do Teb i potrafi dopaść uciekającego. Potrafi zwietrzyć i usłyszeć człowieka od podnóża, i pozostaje nieruchoma jak rzeźba, aż ten wejdzie w jej zasięg. Jej najgroźniejszą mocą nie są pazury, lecz zagadka: kogo nie rozwiąże, tego pozbawia życia, a każdego, kto myśli zbyt długo, pogrąża w strachu.",
+    "slabosci_i_metody_pokonania": "Nie da się jej pokonać bronią, dopóki coś jej nie pozbawi pewności — a tę odbiera rozwiązanie pytania. Gdy odpowiedź pada, Sfinks traci fundament swojej władzy i rzuca się z góry albo zostaje zniszczona. Jej słabością jest też izolacja: nie znosi porażki w logicznym starciu i nie szuka zemsty, gdy ktoś ją pokona umysłem; jest samotna i nieufna wobec tłumu.",
+    "preferencje": "Lubi: samotność na górze, ciszę, wymyślne pytania, ludzi odważnych na tyle, by odpowiedzieć. Nie lubi: tłumów, ludzi, którzy nie myślą, hałaśliwych karawan i tego, że musi odpowiadać na to samo pytanie w kółko."
+  },
+  "dokumentacja": [
+    {
+      "typ": "kompendium mitologiczne",
+      "pozycja": "Theoi Project, „Sphinx — Woman-Headed Lion of Greek Mythology” — klasyczne cytaty: potomstwo Orthusa i Chimaery oraz Tyfona i Echidny, kobieca głowa i pierś, lwie ciało, orle skrzydła, wysłanie przez Herę na Teby, zagadka i upadek z urwiska po odpowiedzi Edypa",
+      "url": "https://www.theoi.com/Ther/Sphinx.html"
+    },
+    {
+      "typ": "encyklopedia mitologiczna",
+      "pozycja": "Mythopedia, „Sphinx” — przegląd: hybryda kobiety i lwa, góra Fikion na zachód od Teb, pochodzenie z Etiopii, zagadka „co ma jeden głos, a staje się czworonożne, dwunożne i trójnożne”, śmierć przez skok z góry",
+      "url": "https://mythopedia.com/topics/sphinx/"
+    },
+    {
+      "typ": "artykuł edukacyjny",
+      "pozycja": "Elpedia, „The Sphinx: The Mythical Monster and the Riddle that Marked Thebes” — góra Fikion (Sphinxion) jako miejsce, Herą zesłana kara, zagadka „co chodzi na czterech łapach rano, dwóch w południe, trzech wieczorem”, śmierć po rozwiązaniu",
+      "url": "https://www.elpedia.gr/en/the-sphinx-the-mythical-monster-and-the-riddle-that-marked-thebes/"
+    }
+  ],
+  "trofea": {
+    "pierwotne": "Skrzydło Sfinksa z góry Fikion, wciąż napięte jak łuk, z jasnym piórem kobiety i płową sierścią lwicy — dowód, że bestia była jednym ciałem o dwóch naturach.",
+    "wtorne": "Odłamek skały z góry, na której Sfinks czekała, z rytym tekstem zagadki — pamiątka, że za murem strachu, który zostawia każda brama, stoi pytanie."
+  },
+  "rezonans": {
+    "klucz_przywolania": "Jwar Isle Avenger to samotny sfinks, który „z natury jest samotny”, ale włącza się do walki, gdy jego wyspa jest zagrożona — i dokładnie tak działa Sfinks z Teb. Karta pokazuje istotę skrzydlatą, latającą i dostępną, gdy „sprzymierzy się” z innym — a Mitologiczny Sfinks jest z natury samotna; walczy, gdy nadchodzi zagrażający jej porządek. „Surge” (możliwość szybszego wystawienia, gdy sojusznik już grał) odzwierciedla jej włączenie się do walki wtedy, gdy ktoś inny ją wyzwie — to moment, w którym Sfinks przestaje czekać i rzuca się z góry.",
+    "tabela": [
+      {
+        "element": "Nazwa",
+        "translacja": "„Jwar Isle Avenger” — mścicielka z wyspy. Sfinks jest „avengerem” z góry Fikion: mścicielką zesłaną przez bogów, by karać Tebańczyków za winę miasta. „Isle” oddaje izolację i samotność — Sfinks nie należy do świata ludzi, żyje na skalnym występie ponad cywilizacją."
+      },
+      {
+        "element": "Mechanika",
+        "translacja": "„Flying” — skrzydła ptaka, z których może spaść na podróżnego i które czynią ją nieosiągalną dla zwykłej piechoty na ziemi. „Surge” — pojawia się szybciej, gdy członek drużyny zagrał wcześniej; Sfinks reaguje na sygnał i rusza do walki, gdy zostaje wyzwana, zamiast czekać w ciszy."
+      },
+      {
+        "element": "Ilustracja",
+        "translacja": "Artysta Ryan Pancoast; skrzydlaty bestia o kobieco-lwim profilu w pozie czuwania. To klasyczne wyobrażenie greckiego sfinksa: lwica z głową kobiety i orlimi skrzydłami, siedząca na skale i patrząca w dół na drogę."
+      },
+      {
+        "element": "Flavor text",
+        "translacja": "„Though solitary by nature, the sphinxes did not hesitate to join in the fight against the Eldrazi.” — Sfinks w mitologii jest z natury samotna, ale gdy jej terytorium staje na krawędzi, potrafi rzucić się w bój. To nie strażniczka litościwa, lecz pomsczenie niesprawiedliwości, które nadchodzi dopiero wtedy, gdy sprowokujesz jej sferę."
+      },
+      {
+        "element": "Lore/Tło",
+        "translacja": "Zendikar to wyspa, w której sfy mieszkańcy są ostrożni i często izolowani; na tej wyspie są one „avengers”, które łączą się, gdy zagrożenie przekracza granicę. Ta sama logika rządzi Sfinksem tebańskim: wysłana przez bogów, nie działa na co dzień, ale gdy miasto popełni winę, schodzi z góry i egzekwuje karę."
+      }
+    ]
+  },
+  "tagi": [
+    "grecja",
+    "sfinks",
+    "zagadka",
+    "warunek",
+    "skrzydlata-postac"
+  ],
+  "powiazania": [
+    {
+      "slug": "kentaur-pelion",
+      "opis": "Obaj to greccy hybrydowi strażnicy przejścia, których trzeba zrozumieć, a nie zabić: Chejron z Pelionu wychowuje herosów i uczy ich mądrości, a Sfinks z Fikion pyta pytanie, na które trzeba odpowiedzieć. Obaj są też pół-człowiekiem, pół-zwierzęciem, więc ich natura — lwica/kobieta oraz koń/człowiek — każe widzieć w nich dwie rozłączone połowy tego samego bytu."
+    },
+    {
+      "slug": "empusa-korynt",
+      "opis": "Obie to kobieco-potworne istoty zesłane przez bogów, by nękać konkretny region; Empusa czyha na podróżnych i karmi się ich strachem, a Sfinks odbiera życie tym, którzy nie rozwiążą zagadki. Łączy je też kryterium: obie da się pokonać tylko wtedy, gdy odbierze się im ich przewagę — jednej płonące nogi, drugiej pewność zagadki."
+    }
+  ],
+  "meta": {
+    "utworzono": "2026-08-29 01:20",
+    "autor": "sesja arena 2026-08-29",
+    "modyfikacje": [
+      {
+        "data": "2026-08-29 01:20",
+        "opis": "Nowa materializacja: Sfinks z Teb — skrzydlata lwica z kobieca głową, strażniczka przejścia przez zagadkę, na podstawie karty „Jwar Isle Avenger” (OGW #58)."
+      }
+    ]
+  }
+}
