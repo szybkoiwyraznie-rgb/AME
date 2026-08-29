@@ -184,7 +184,7 @@ test('mapa: klik w miasto pokazuje etykietę, klik w puste miejsce chowa ją', (
   delete mapa.svg.getScreenCTM;
 });
 
-test('mapa: nazwa miasta po najechaniu; klik przypina, drugi klik w tło odprzypina', () => {
+test('mapa: nazwa miasta TYLKO po kliknięciu — hover jej nie pokazuje (świadoma decyzja)', () => {
   const { kontener } = zasciel();
   const mapa = stworzMape(kontener, {});
   mapa.svg.getScreenCTM = () => ({ inverse: () => ({ a: 1, b: 0, c: 0, d: 1, e: 0, f: 0 }) });
@@ -199,28 +199,19 @@ test('mapa: nazwa miasta po najechaniu; klik przypina, drugi klik w tło odprzyp
   const py = mapa.widok.y + wy * mapa.skala;
   const etykieta = znajdzElement(mapa.svg, 'etykieta-miasta');
 
-  // Hover (bez przypięcia): pokazuje, a po zjechaniu chowa.
   const grupaMiast = znajdzElement(mapa.svg, 'miasta');
   const wielkie = znajdzElement(grupaMiast, 'miasta-wielkie');
   const miasto = wielkie.dzieci[0];
-  miasto.sluchacze.pointerenter[0]();
-  assert.ok(etykieta.czyMaKlase('widoczna'), 'hover pokazuje nazwę');
-  miasto.sluchacze.pointerleave[0]();
-  assert.ok(!etykieta.czyMaKlase('widoczna'), 'zjazd chowa nazwę (bez przypięcia)');
 
-  // Klik przypina; zjazd nie chowa przypiętej.
+  // Hover nie jest już obsługiwany (świadoma decyzja: tylko klik).
+  assert.ok(!miasto.sluchacze.pointerenter?.length && !miasto.sluchacze.pointerleave?.length, 'brak listenerów hover na kropce miasta');
+  assert.ok(!etykieta.czyMaKlase('widoczna'), 'bez kliknięcia etykieta nie wisi');
+
+  // Klik pokazuje, klik w tło chowa.
   mapa.svg.sluchacze.click[0]({ target: { closest: () => null }, clientX: px, clientY: py });
-  assert.ok(etykieta.czyMaKlase('widoczna'), 'klik przypina');
-  miasto.sluchacze.pointerleave[0]();
-  assert.ok(etykieta.czyMaKlase('widoczna'), 'przypięta etykieta nie znika po zjeździe');
+  assert.ok(etykieta.czyMaKlase('widoczna'), 'klik w miasto pokazuje tabliczkę');
   mapa.svg.sluchacze.click[0]({ target: { closest: () => null }, clientX: 10, clientY: 10 });
-  assert.ok(!etykieta.czyMaKlase('widoczna'), 'klik w tło odprzypina');
-
-  // Zjechanie po odprzypięciu znowu chowa.
-  miasto.sluchacze.pointerenter[0]();
-  assert.ok(etykieta.czyMaKlase('widoczna'), 'po odprzypięciu hover znowu działa');
-  miasto.sluchacze.pointerleave[0]();
-  assert.ok(!etykieta.czyMaKlase('widoczna'), 'a zjazd chowa');
+  assert.ok(!etykieta.czyMaKlase('widoczna'), 'klik w tło chowa tabliczkę');
 
   delete globalThis.DOMPoint;
   delete mapa.svg.getScreenCTM;

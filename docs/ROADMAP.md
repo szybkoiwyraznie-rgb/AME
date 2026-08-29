@@ -402,8 +402,9 @@ kulturowych, oś czasu manifestacji, wersja EN, import metadanych kart…).
 - [x] **C3 — nowy SKIT:** `data/skity/cena-znaku.json`, „Cena znaku” —
       trio Indra × Barbarossa × Nessos (unikalny skład, 211 słów), temat
       „kto płaci za to, że moc wraca na wezwanie”.
-- [x] **C2 — mała funkcja:** etykiety miast — nazwa po najechaniu
-      (hover), klik przypina, klik w tło / przeciągnięcie odprzypina.
+- [x] **C2 — mała funkcja:** etykiety miast — nazwa i populacja **po kliknięciu**
+      (świadoma decyzja właściciela: bez hoveru). Klik w tło / przeciągnięcie /
+      ukrycie warstwy chowa tabliczkę.
       Uzupełnia klikalne etykiety z poprzedniej iteracji.
 - [x] Weryfikacja: `npm test` **152/152**, build 10 wpisów / 15 SKITów /
       39 feed / 27 tagów, `npm run check` OK.

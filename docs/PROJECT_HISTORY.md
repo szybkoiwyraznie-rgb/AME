@@ -1066,12 +1066,12 @@ pętli (C1/C2/C3) — to był audyt. Ten wpis to pełny obieg.
   na wezwanie”. Kolejny prototyp KRONIKI (metoda embodimentu).
 - Build: 10 wpisów, **15 SKITów**, 39 pozycji feedu.
 
-### C2 — etykiety miast: hover + przypinanie
+### C2 — etykiety miast: tylko po kliknięciu (świadoma decyzja)
 
-- Wcześniej nazwa miasta pokazywała się tylko po kliknięciu. Teraz:
-  - najazd na kropkę → tabliczka „nazwa · populacja” (bez przypinania);
-  - klik → przypina (zjazd nie chowa); klik w tło / przeciągnięcie /
-    ukrycie warstwy → odprzypina;
-  - kompensacja skali i zachowanie przy pan/zoom bez zmian.
-- Test `mapa: nazwa miasta po najechaniu…` — hover/click/pin/unpin.
+- Właściciel potwierdził, że pokazywanie nazw miast **ma być po kliknięciu** —
+  hover został usunięty (to był nadmiar z mojej strony).
+- Zachowanie pozostawione: klik w kropkę → tabliczka „nazwa · populacja”;
+  klik w tło / przeciągnięcie / ukrycie warstwy → chowa.
+- Test pilnuje, że na kropce miasta **nie ma** listenerów
+  `pointerenter/pointerleave`, a klik pokazuje i chowa tabliczkę.
 - `npm test` **152/152**, `npm run check` OK.
