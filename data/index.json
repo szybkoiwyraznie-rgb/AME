@@ -1,6 +1,6 @@
 {
   "wersja": 3,
-  "buildTime": "2026-08-29T22:14:17.840Z",
+  "buildTime": "2026-08-29T22:21:00.002Z",
   "liczba": 20,
   "liczbaSkitow": 18,
   "kanon": {
@@ -837,7 +837,7 @@
       "backlinki": [
         "pandora"
       ],
-      "obraz": null,
+      "obraz": "assets/wizualizacje/knecht-z-koptos.jpg",
       "skity": []
     },
     {
@@ -908,7 +908,7 @@
       "backlinki": [
         "pandora"
       ],
-      "obraz": null,
+      "obraz": "assets/wizualizacje/morowa-panna.jpg",
       "skity": []
     },
     {
@@ -978,7 +978,7 @@
         "knecht-z-koptos",
         "morowa-panna"
       ],
-      "obraz": null,
+      "obraz": "assets/wizualizacje/pandora.jpg",
       "skity": []
     },
     {
@@ -1007,7 +1007,7 @@
         "sfinks-teby"
       ],
       "backlinki": [],
-      "obraz": null,
+      "obraz": "assets/wizualizacje/protostates.jpg",
       "skity": []
     },
     {
@@ -1126,7 +1126,7 @@
         "sfinks-teby"
       ],
       "backlinki": [],
-      "obraz": null,
+      "obraz": "assets/wizualizacje/syama-i-sarvara.jpg",
       "skity": []
     },
     {
@@ -1471,6 +1471,46 @@
     }
   ],
   "aktualizacje": [
+    {
+      "data": "2026-08-30 00:20",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "knecht-z-koptos",
+      "tytul": "Knecht z Koptos — ożywiony tłuczek, który nie zna słowa końca",
+      "opis": "Dodana wizualizacja 21:9 w knecht-z-koptos.jpg — powstała z ramowego promptu wpisu i pokazuje byt w jego naturalnym otoczeniu."
+    },
+    {
+      "data": "2026-08-30 00:20",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "morowa-panna",
+      "tytul": "Morowa Panna — zaraza w białej szacie z czerwoną chustą",
+      "opis": "Dodana wizualizacja 21:9 w morowa-panna.jpg — powstała z ramowego promptu wpisu i pokazuje byt w jego naturalnym otoczeniu."
+    },
+    {
+      "data": "2026-08-30 00:20",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "pandora",
+      "tytul": "Pandora — pierwsza kobieta i pithos, w którym została nadzieja",
+      "opis": "Dodana wizualizacja 21:9 w pandora.jpg — powstała z ramowego promptu wpisu i pokazuje byt w jego naturalnym otoczeniu."
+    },
+    {
+      "data": "2026-08-30 00:20",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "protostates",
+      "tytul": "Protostates — fantom pierwszego szeregu",
+      "opis": "Dodana wizualizacja 21:9 w protostates.jpg — powstała z ramowego promptu wpisu i pokazuje byt w jego naturalnym otoczeniu."
+    },
+    {
+      "data": "2026-08-30 00:20",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "syama-i-sarvara",
+      "tytul": "Śyāma i Śarvara — czterookie psy Yamy, strażnicy drogi przodków",
+      "opis": "Dodana wizualizacja 21:9 w syama-i-sarvara.jpg — powstała z ramowego promptu wpisu i pokazuje byt w jego naturalnym otoczeniu."
+    },
     {
       "data": "2026-08-30 00:09",
       "typ": "manifestacja",

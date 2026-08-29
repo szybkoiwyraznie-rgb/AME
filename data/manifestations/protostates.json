@@ -21,7 +21,7 @@
   "pochodzenie_i_kultura": "Mitologia i podanie greckie — etos falangi: termin „protostates” (πρωτοστάτης, „ten, który stoi pierwszy”, od πρῶτος i ἵστημι) odnotowany u Tukidydesa i Ksenofonta jako żołnierz pierwszej linii; Herodot (7.104) wkłada w usta Demaratosa słowa, że Lacedemończycy są wolni, lecz „panem ich jest prawo, którego boją się bardziej niż twoi poddani boją się ciebie”; Plutarch („Wypowiedzi kobiet spartańskich”) dodaje matkę, która wręczając synowi tarczę, mówi: „albo z tym, albo na tym”. Jedna tradycja, jeden żołnierz, jeden wąwóz.",
   "wizualizacja": {
     "prompt": "Style: A wide-angle full-body cinematic photograph. The central objects/persons of the photo are visible from head to toe, standing centrally in the frame. No parts of the body are cropped.\n\nA tall hoplite in a Corinthian bronze helmet with a black horsehair crest, red tunic and bronze greaves, standing alone in a narrow mountain pass in grey dawn mist; he holds a round shield low and a long spear at rest, his face hidden by the helmet, a long shadow stretching along the cliff wall; behind him the pass narrows toward the sea, broken shields and a fallen banner lying on wet stones, muted bronze and rust tones against pale fog, cold still air.\n\nCaptured with a 35mm anamorphic lens at f/1.8. Shallow depth of field with a heavy, creamy bokeh background. Environmental portraiture. Dramatic cinematic lighting, sharp focus on the character, hyper-realistic textures of clothing and skin. Shot on 70mm film stock, ultra-wide 21:9 aspect ratio. --ar 21:9",
-    "obraz": null
+    "obraz": "assets/wizualizacje/protostates.jpg"
   },
   "natura": {
     "wyglad_i_aura": "Z daleka — sylwetka w pełnym rynsztunku: hełm koryncki z czarnym kitą z końskiego włosia, szkarłatny chiton, nagolenniki z brązu, okrągła tarcza z literą i długa włócznia. Z bliska widać, że nie oddycha: pod hełmem pusto albo zbyt ciemno, a na kamieniach nie zostawia śladów. Pojawia się we mgle o świcie, przy wąskim przejściu, gdy powietrze pachnie oliwą i zimnym metalem; stoi tam, gdzie inni już dawno by odeszli.",
@@ -108,6 +108,10 @@
       {
         "data": "2026-08-30 00:09",
         "opis": "Nowa materializacja: Protostates — fantom pierwszego szeregu z etosu greckiej falangi, na podstawie karty „Akroan Sergeant” (ORI #130)."
+      },
+      {
+        "data": "2026-08-30 00:20",
+        "opis": "Dodana wizualizacja 21:9 w protostates.jpg — powstała z ramowego promptu wpisu i pokazuje byt w jego naturalnym otoczeniu."
       }
     ]
   }
