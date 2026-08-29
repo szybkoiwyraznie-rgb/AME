@@ -314,6 +314,7 @@
       "powiazania": [
         "balor",
         "egungun",
+        "indra",
         "selkie-sule-skerry"
       ],
       "backlinki": [
@@ -477,6 +478,7 @@
         "kentaur-pelion"
       ],
       "backlinki": [
+        "barbarossa-kyffhaeuser",
         "drangue-shala"
       ],
       "obraz": "assets/wizualizacje/indra.jpg",
@@ -506,6 +508,7 @@
       "powiazania": [
         "drangue-shala",
         "empusa-korynt",
+        "nessos",
         "selkie-sule-skerry"
       ],
       "backlinki": [
@@ -585,6 +588,7 @@
         "selkie-sule-skerry"
       ],
       "backlinki": [
+        "kentaur-pelion",
         "selkie-sule-skerry"
       ],
       "obraz": "assets/wizualizacje/nessos.jpg",
