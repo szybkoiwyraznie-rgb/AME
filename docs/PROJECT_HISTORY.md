@@ -1328,3 +1328,54 @@ Pociągnięty wątek i zautomatyzowany raport.
   krok); ADR 0021 (pkt 9–10, epoki, build); ROADMAP/PROJECT_HISTORY.
 - Testy: `test/kronika.test.js` 10 testów, łącznie **163/163**; build/check
   zielone.
+
+## Materializacja 5 kart MtG (2026-08-29/30) — PR #11
+
+Właściciel zlecił pełną materializację pięciu kart do Manifestacji Eterycznych.
+Nowa gałąź `mtg/materializacja-5-kart` (baza: `main`), PR otwarty przed
+kodowaniem (ADR 0004). PR #10 (Pętla Jakości, 6 commitów) pozostał nietknięty.
+
+### Audyt poprzedniego scalonego PR (#9 — uniwersalna nawigacja i daty w stopkach)
+
+Wynik audytu (plik po pliku, `git diff 101c75d^..101c75d`) — do odnotowania:
+
+1. `app/app.js` czyta z indeksu wyłącznie hash `buildTime` — zgodne z kontraktem
+   L16 (determinizm, brak czasu z zegara builda); nawigacja spójna z ADR 0001.
+2. `replace_topbar.cjs` (jednorazowy patch `tools/kronika.mjs`) pozostał
+   **niepodpięty** — defekt otwarty na przyszłą sesję (plik nieszkodliwy).
+3. Nieaktualny komentarz w stopce — naprawiony w ramach audytu.
+4. `tools/rebuild-index.mjs --check` wykonuje `JSON.parse` bez `try/catch`,
+   a `test/dane.test.js` re-używa `buildTime` — drobne uchybienia jakościowe,
+   odnotowane jako defekty otwarte (nie blokują tej sesji).
+
+### Pięć nowych wpisów (dane wyłącznie ze Scryfall, ADR 0008)
+
+| Wpis | Karta | Byt | Źródła kluczowe |
+|---|---|---|---|
+| `knecht-z-koptos` | Apprentice Wizard (2XM #40) | ożywiony tłuczek Pankratesa | Lukian „Filopseudes”, Goethe „Der Zauberlehrling” (1797/1798) |
+| `pandora` | Panic Spellbomb (SOM #191) | pierwsza kobieta i jej pithos | Hezjod „Prace i dnie” 42–105, Theoi, Britannica |
+| `syama-i-sarvara` | Trade Route Envoy (TDM #163) | czterookie psy Yamy | Rigweda 10.14 (Griffith), liter. wedyjska |
+| `protostates` | Akroan Sergeant (ORI #130) | fantom pierwszego szeregu | Herodot 7.104, LSJ (πρωτοστάτης), Plutarch |
+| `morowa-panna` | Infectious Horror (CON #47) | słowiańska personifikacja zarazy | opracowania demonologii moru (lasmgiel, KUL, UWM) |
+
+Każdy wpis: sekcje I–V wg PROTOKÓŁ v1.7 — pełne (wizualizacja 21:9,
+natura, dokumentacja z adresami, trofea, rezonans z tabelą translacji), tagi
+wyłącznie z kanonu, `meta` z godziną zapisu. Wizualizacje: `obraz: null`
+(placeholder „wizualizacja nieodtworzona” — zgodne z §5).
+
+### Kanon tagów
+
+- Dodany tag kulturowy **`polska`** (folklor słowiański ziem polskich:
+  personifikacje zarazy i śmierci, demony moru) — w tym samym commicie co wpis
+  (PROTOKÓŁ §6.1); kultura to kategoria z potencjałem kolejnych wpisów, nie
+  etykieta jednorazowa.
+- Stan: **44 tagi** (10→11 kultur), 20 wpisów, 18 SKITów, 5 epok Kroniki.
+
+### Brama i commit
+
+- `npm run build` + `npm test` **163/163** zielone; `npm run check` zielone.
+- Snapshoty w `test/kronika.test.js` i `test/dane.test.js` zaktualizowane do
+  rozszerzonej sieci powiązań i 11. kultury (testy te pilnują wyliczonych
+  wartości, więc po przyroście sieci wymagają nowych oczekiwań — zmiana
+  mechaniczna, zweryfikowana wynikiem narzędzia).
+- Commit `9aecf1a` (5 wpisów + kanon + indeks + Kronika + testy), wypchnięty.
