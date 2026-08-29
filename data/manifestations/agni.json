@@ -6,7 +6,14 @@
     "Jātaveda",
     "Vaiśvānara",
     "Hotar",
-    "Pan Południowego Wschodu"
+    "Pan Południowego Wschodu",
+    "Pāvaka",
+    "Havyavāhana",
+    "Saptajihvā",
+    "Vahni",
+    "Hutāśana",
+    "Anala",
+    "Dhumaketu"
   ],
   "karta": {
     "nazwa": "Wrap in Flames",
@@ -26,10 +33,10 @@
   },
   "natura": {
     "wyglad_i_aura": "Rudy, ognisty bóg z dwiema twarzami — jedną łagodną, drugą groźną — z włosami wstającymi jak płomienie, trzema nogami i siedmioma rękami. Wokół niego żar, suchy zapach kadzidła i ghee, a jemu towarzyszy baran, zwierzę ofiarne. Gdy schodzi, powietrze pęcznieje od ciepła, a noc wydaje się jeszcze ciemniejsza, zanim blask go nie rozproszy.",
-    "charakter_i_motywacje": "Agni jest pośrednikiem: żywi się ofiarami, a przez nie przynosi ludziom bogactwo, deszcz i zwycięstwo nad demonami. Jest przy tym bezosobowy — nie zapamiętuje ani nie mści się, choć bywa bezlitosny, gdy go wezwie się w złej sprawie. Jego największą chęcią jest być „jednym w wielu”: jako ogień domowy, żar w piersi, błyskawica na niebie, ogień pogrzebowy i ofiarny. Chce być wszędzie tam, gdzie ludzie są w trudzie.",
-    "zdolnosci": "Jest żywiołem ognia i światła: rozświetla ciemność, spala ofiarę i przenosi ją do bogów, a przy tym jest posłańcem. Potrafi ogarnąć do trzech celów naraz, małą raną zmusić ich do wycofania, a ich moc „odebrać” — dopóki płonie, nie mogą się bronić. W rytuale staje się pośrednikiem; w walce „obwija płomieniem” grupę przeciwników i zostawia ich bezbronnymi.",
+    "charakter_i_motywacje": "Agni jest pośrednikiem: żywi się ofiarami, a przez nie przynosi ludziom bogactwo, deszcz i zwycięstwo nad demonami. Jest przy tym bezosobowy — nie zapamiętuje ani nie mści się, choć bywa bezlitosny, gdy go wezwie się w złej sprawie. Jego największą chęcią jest być „jednym w wielu”: jako ogień domowy, żar w piersi, błyskawica na niebie, ogień pogrzebowy i ofiarny. Chce być wszędzie tam, gdzie ludzie są w trudzie. Rigweda otwiera się hymnem do niego (RV 1.1: „Wysławiam Agniego, wybranego kapłana, boga, ministra ofiary, najhojniejszego z dawców”), a w ostatniej strofie prosi, by był „łatwy w dostępie, jak ojciec dla syna” — to najczęściej wzywane bóstwo wedów obok Indry i Somy. W Brahmanach (np. Śatapatha 5.2.3) Agni reprezentuje wszystkich bogów naraz: jest nie tyle jednym z nich, ile samym ogniem pośrednictwa.",
+    "zdolnosci": "Jest żywiołem ognia i światła: rozświetla ciemność, spala ofiarę i przenosi ją do bogów, a przy tym jest posłańcem. Potrafi ogarnąć do trzech celów naraz, małą raną zmusić ich do wycofania, a ich moc „odebrać” — dopóki płonie, nie mogą się bronić. W rytuale staje się pośrednikiem; w walce „obwija płomieniem” grupę przeciwników i zostawia ich bezbronnymi. Istnieje jednocześnie na trzech poziomach: jako ogień na ziemi, błyskawica w atmosferze i słońce na niebie — ta potrójna obecność czyni go posłańcem między ludźmi a bóstwami. W obrządku ma siedem języków (sapta jihvā): Pāvaka oczyszcza wszystko, Havyavāhana niesie masło ofiarne, Hutāśana pożera obiatę, a imię Dhumaketu znaczy „zwieńczony dymem” — jego płomienie są równie ofiarne, co pożerające.",
     "slabosci_i_metody_pokonania": "Agni potrzebuje pokarmu i ofiary: bez paliwa, bez wezwania, bez skupienia nie istnieje. Można go wygasić wodą, rozproszyć, odciąć od rytuału — wtedy jego moc maleje. Jest też lojalny wobec tego, kto go wzywa, i łatwo można nim „zawładnąć”, jeśli sam zgani się z dala od rytualnego ogniska. Ludzie zbyt dumni, że go „używają”, zwykle płacą za to poparzeniem.",
-    "preferencje": "Lubi: ghee, drewno święte, modlitwy i ofiary poranne, blask nad Gangesem, pomoc tym, którzy cierpią; nie lubi: gaśnięcia, zaniedbania, demonów nocy, wody w zbyt dużej ilości i tego, że bywa wzywany tylko po to, by kogoś skrzywdzić."
+    "preferencje": "Lubi: ghee, drewno święte, modlitwy i ofiary poranne, blask nad Gangesem, pomoc tym, którzy cierpią, bycie świadkiem siedmiu kroków (saptapadi) i światło lamp (diyā) w święta; nie lubi: gaśnięcia, zaniedbania, demonów nocy, wody w zbyt dużej ilości i tego, że bywa wzywany tylko po to, by kogoś skrzywdzić."
   },
   "dokumentacja": [
     {
@@ -46,6 +53,21 @@
       "typ": "encyklopedia hinduizmu",
       "pozycja": "Vyasa Online, „Agni” — wedyjski bóg ognia i przekaziciel ofiar; trzy formy (ogień, błyskawica, słońce), postać kapłana bogów, towarzysz walki dewów z asurami, współuczestnik yajan, odbicie „serca” ludzi",
       "url": "https://www.vyasaonline.com/encyclopedia/agni/"
+    },
+    {
+      "typ": "encyklopedia",
+      "pozycja": "Wikipedia, „Agni” — miejsce Agniego w wedach (najczęściej wzywane bóstwo obok Indry i Somy), „usta bogów” i nosiciel obiaty w homie; trzy poziomy obecności (ogień na ziemi, błyskawica w atmosferze, słońce na niebie); świadek saptapadi i upanajany oraz lamp (diyā); imiona: Pāvaka, Havyavāhana, Saptajihvī, Vahni, Hutāśana, Anala, Dhumaketu; etymologia z praindoeuropejskiego *h₁n̥gʷnis (łac. ignis, pol. ogień)",
+      "url": "https://en.wikipedia.org/wiki/Agni"
+    },
+    {
+      "typ": "tekst źródłowy",
+      "pozycja": "Rigveda 1.1 (przeł. R. T. H. Griffith, 1896), Internet Sacred Text Archive — hymn otwierający Rigwedę: Agni jako „chosen Priest, God, minister of sacrifice, the hotar”, „dispeller of the night”, „easy of approach, even as a father to his son”",
+      "url": "https://sacred-texts.com/hin/rigveda/rv01001.htm"
+    },
+    {
+      "typ": "kompendium puraniczne",
+      "pozycja": "Wisdom Library, „Agni Purana” — jeden z osiemnastu mahapuranów (ok. 15 000 wersetów), „recytowany przez Agniego do Wasiszthy, by nauczać o Brahmanie”, potem przekazany Wjasie; tożsamość boga ognia jako mówcy tekstu kanonicznego",
+      "url": "https://www.wisdomlib.org/hinduism/book/the-agni-purana"
     }
   ],
   "trofea": {
@@ -113,6 +135,10 @@
       {
         "data": "2026-08-29 21:36",
         "opis": "Dopisane powiązania z Egúngún (dwa uświęcone kanały komunikacji: przodkowie w szatach i Agni jako usta bogów) oraz z Kannon z Hasedery (ogień oczyszczenia i współczucie, które gasi płomienie piekielne)."
+      },
+      {
+        "data": "2026-08-29 21:40",
+        "opis": "Pogłębienie karty (C1): trzy poziomy obecności Agniego (ziemia, błyskawica, słońce), siedem języków obrzędowych i imiona (Pāvaka, Havyavāhana, Dhumaketu…), rola świadka saptapadi; dodane źródła: Rigweda 1.1 (Griffith), Wikipedia, Agni Purana."
       }
     ]
   }

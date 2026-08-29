@@ -6,7 +6,9 @@
     "Sphinx",
     "Sfinks tebański",
     "Córka Echidny i Tyfona",
-    "Mścicielka Teb"
+    "Mścicielka Teb",
+    "Phix (Φίξ — nazwa beocka)",
+    "Córka Laiosa (wariant Pausaniasza)"
   ],
   "karta": {
     "nazwa": "Jwar Isle Avenger",
@@ -26,9 +28,9 @@
   },
   "natura": {
     "wyglad_i_aura": "Z daleka widać tylko sylwetkę lwicy na skale i rozłożone skrzydła; z bliska twarz jest kobieca, spokojna i bezlitosna. Ciało pokrywa złocista, gładka sierść, ogon kończy się grotem; szpony chwytają skałę jak imadło. Obecność odczuwa się jako nagłe zatrzymanie powietrza i zapach gorącego kamienia w upale.",
-    "charakter_i_motywacje": "Sfinks nie poluje z głodu: została przez bogów zesłana, by karać Tebańczyków i mścić się za przestępstwo, którego nikt już nie pamięta. Dlatego czeka przy drodze i nie zabija po cichu — najpierw zadaje pytanie. To jej sposób na odzyskanie sprawiedliwości: kto nie potrafi myśleć, ten ginie. Jest dumna, uparta i okrutna w swojej logice, a jej upadek następuje dopiero wtedy, gdy ktoś rozwiąże zagadkę.",
-    "zdolnosci": "Porośnięta skrzydłami i szybka jak ptak — z góry widzi całą drogę do Teb i potrafi dopaść uciekającego. Potrafi zwietrzyć i usłyszeć człowieka od podnóża, i pozostaje nieruchoma jak rzeźba, aż ten wejdzie w jej zasięg. Jej najgroźniejszą mocą nie są pazury, lecz zagadka: kto jej nie rozwiąże, tego pozbawia życia, a każdego, kto myśli zbyt długo, pogrąża w strachu.",
-    "slabosci_i_metody_pokonania": "Nie da się jej pokonać bronią, dopóki coś jej nie pozbawi pewności — a tę odbiera rozwiązanie pytania. Gdy odpowiedź pada, Sfinks traci fundament swojej władzy i rzuca się z góry albo zostaje zniszczona. Jej słabością jest też izolacja: nie znosi porażki w logicznym starciu i nie szuka zemsty, gdy ktoś ją pokona umysłem; jest samotna i nieufna wobec tłumu.",
+    "charakter_i_motywacje": "Sfinks nie poluje z głodu: została przez bogów zesłana, by karać Tebańczyków i mścić się za przestępstwo, którego nikt już nie pamięta. Dlatego czeka przy drodze i nie zabija po cichu — najpierw zadaje pytanie. To jej sposób na odzyskanie sprawiedliwości: kto nie potrafi myśleć, ten ginie. Jest dumna, uparta i okrutna w swojej logice, a jej upadek następuje dopiero wtedy, gdy ktoś rozwiąże zagadkę. Pauzaniasz przechował inny wariant (9.26.2): Sfinks miała być nieślubną córką Lajosa, którą ojciec, „bo był do niej przywiązany”, wtajemniczył w wyrocznię otrzymaną przez Kadmosa z Delf. Na górze Fikion testowała wtedy braci: jeśli są synami Lajosa, mają znać wyrocznię Kadmosa — kto jej nie znał, umierał jako człowiek bez prawa do tronu i rodu. W tej samej księdze przytoczona jest i wersja racjonalizująca: Sfinks była piratką, która z flotą wpłynęła do Anthedonu, zajęła górę i plądrowała okolicę, aż Edyp rozbił ją przewagą wojska. W obu wariantach jej pytanie jest bramą nie do wiedzy, lecz do prawa.",
+    "zdolnosci": "Porośnięta skrzydłami i szybka jak ptak — z góry widzi całą drogę do Teb i potrafi dopaść uciekającego. Potrafi zwietrzyć i usłyszeć człowieka od podnóża, i pozostaje nieruchoma jak rzeźba, aż ten wejdzie w jej zasięg. Jej najgroźniejszą mocą nie są pazury, lecz zagadka: kto jej nie rozwiąże, tego pozbawia życia, a każdego, kto myśli zbyt długo, pogrąża w strachu. Zagadki nauczyły ją Muzy (Apollodor 3.5.8) — albo wyrocznię z Delf przekazał jej ojciec (Pauzaniasz); w każdym razie jej pytanie ma status boskiego egzaminu, nie łamigłówki dla rozrywki, i dlatego nie da się go ominąć ani przekupić. Zadaje je „jednym głosem”, jak istota o jednej naturze: „co ma jeden głos, a jest czworonożne, dwunożne i trójnożne”.",
+    "slabosci_i_metody_pokonania": "Nie da się jej pokonać bronią, dopóki coś jej nie pozbawi pewności — a tę odbiera rozwiązanie pytania. Gdy odpowiedź pada, Sfinks traci fundament swojej władzy i rzuca się z góry albo zostaje zniszczona. Jej słabością jest też izolacja: nie znosi porażki w logicznym starciu i nie szuka zemsty, gdy ktoś ją pokona umysłem; jest samotna i nieufna wobec tłumu. Rozwiązanie brzmi: człowiek — czworonożny jako niemowlę, dwunożny w dojrzałości, trójnożny na starość (laska). W wariancie Pausaniasza Edyp nie zgaduje z bystrości, lecz zna wyrocznię ze snu: pokonuje Sfinksa nie spryt, lecz przynależność do rodu, który zna swoje słowo.",
     "preferencje": "Lubi: samotność na górze, ciszę, wymyślne pytania, ludzi odważnych na tyle, by odpowiedzieć. Nie lubi: tłumów, ludzi, którzy nie myślą, hałaśliwych karawan i tego, że musi odpowiadać na to samo pytanie w kółko."
   },
   "dokumentacja": [
@@ -46,6 +48,11 @@
       "typ": "artykuł edukacyjny",
       "pozycja": "Elpedia, „The Sphinx: The Mythical Monster and the Riddle that Marked Thebes” — góra Fikion (Sphinxion) jako miejsce, Herą zesłana kara, zagadka „co chodzi na czterech łapach rano, dwóch w południe, trzech wieczorem”, śmierć po rozwiązaniu",
       "url": "https://www.elpedia.gr/en/the-sphinx-the-mythical-monster-and-the-riddle-that-marked-thebes/"
+    },
+    {
+      "typ": "tekst źródłowy",
+      "pozycja": "Pauzaniasz, „Opis Grecji” 9.26.2 (przeł. W. H. S. Jones, Perseus Digital Library) — warianty: Sfinks jako rabuś z Anthedonu rozbity przez Edypa oraz jako nieślubna córka Lajosa, która testowała braci wyrocznią Kadmosa z Delf; domknięcie wątku: Edyp zna wyrocznię ze snu",
+      "url": "https://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0160%3Abook%3D9%3Achapter%3D26%3Asection%3D2"
     }
   ],
   "trofea": {
@@ -113,6 +120,10 @@
       {
         "data": "2026-08-29 21:36",
         "opis": "Dopisane powiązania z Talosem (dwa greckie mechanizmy zaporowe: głaz i zagadka) oraz z Balorem (groza spojrzenia na granicy terytorium); korekty językowe."
+      },
+      {
+        "data": "2026-08-29 21:40",
+        "opis": "Pogłębienie karty (C1): wariant Pausaniasza (nieślubna córka Lajosa i wyrocznia Kadmosa; wersja racjonalizująca — piratka z Anthedonu), pochodzenie zagadki od Muz (Apollodor 3.5.8) i szczegóły rozwiązania; dodane źródło pierwotne (Pauzaniasz 9.26.2, Perseus)."
       }
     ]
   }

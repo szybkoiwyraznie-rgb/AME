@@ -1,6 +1,6 @@
 {
   "wersja": 3,
-  "buildTime": "2026-08-29T21:37:56.607Z",
+  "buildTime": "2026-08-29T21:40:20.834Z",
   "liczba": 15,
   "liczbaSkitow": 18,
   "kanon": {
@@ -380,7 +380,14 @@
         "Jātaveda",
         "Vaiśvānara",
         "Hotar",
-        "Pan Południowego Wschodu"
+        "Pan Południowego Wschodu",
+        "Pāvaka",
+        "Havyavāhana",
+        "Saptajihvā",
+        "Vahni",
+        "Hutāśana",
+        "Anala",
+        "Dhumaketu"
       ],
       "karta": "Wrap in Flames",
       "miejscowosc": "Waranasi (Kashi), ghaty nad Gangesem — miejsce wieczystego ognia ofiarnego, w którym Agni przyjmuje obiaty i wypala cierpienie",
@@ -909,7 +916,9 @@
         "Sphinx",
         "Sfinks tebański",
         "Córka Echidny i Tyfona",
-        "Mścicielka Teb"
+        "Mścicielka Teb",
+        "Phix (Φίξ — nazwa beocka)",
+        "Córka Laiosa (wariant Pausaniasza)"
       ],
       "karta": "Jwar Isle Avenger",
       "miejscowosc": "Góra Fikion (Phikion), na zachodzie za Tebami (Teba, Beocja) — miejsce, w którym Sfinks czatowała na podróżnych, blokując drogę do miasta",
@@ -1279,6 +1288,22 @@
     }
   ],
   "aktualizacje": [
+    {
+      "data": "2026-08-29 21:40",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "agni",
+      "tytul": "Agni — bóg ognia ofiarnego",
+      "opis": "Pogłębienie karty (C1): trzy poziomy obecności Agniego (ziemia, błyskawica, słońce), siedem języków obrzędowych i imiona (Pāvaka, Havyavāhana, Dhumaketu…), rola świadka saptapadi; dodane źródła: Rigweda 1.1 (Griffith), Wikipedia, Agni Purana."
+    },
+    {
+      "data": "2026-08-29 21:40",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "sfinks-teby",
+      "tytul": "Sfinks — strażniczka Tebańskich Wrót",
+      "opis": "Pogłębienie karty (C1): wariant Pausaniasza (nieślubna córka Lajosa i wyrocznia Kadmosa; wersja racjonalizująca — piratka z Anthedonu), pochodzenie zagadki od Muz (Apollodor 3.5.8) i szczegóły rozwiązania; dodane źródło pierwotne (Pauzaniasz 9.26.2, Perseus)."
+    },
     {
       "data": "2026-08-29 21:36",
       "typ": "manifestacja",
