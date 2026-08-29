@@ -219,6 +219,8 @@ export function stworzMape(kontener, { przyZmianieZaznaczenia, przyZmianieWidoku
   svg.addEventListener('pointerdown', (e) => {
     if (e.target.closest('.pinezka')) return; // kliknięcia pinezki nie przesuwają mapy
     czyPrzesunieto = false;
+    const miasto = miastoPodKlikiem(naSvg(e));
+    if (miasto) pokazEtykieteMiasta(miasto); // C4: nazwa tylko podczas przytrzymania
     svg.setPointerCapture(e.pointerId);
     wskazniki.set(e.pointerId, { x: e.clientX, y: e.clientY });
     if (wskazniki.size === 2) {
@@ -260,6 +262,7 @@ export function stworzMape(kontener, { przyZmianieZaznaczenia, przyZmianieWidoku
     wskazniki.delete(e.pointerId);
     if (wskazniki.size < 2) stanSzczypca = null;
     if (wskazniki.size === 0) svg.classList.remove('zlapano');
+    ukryjEtykieteMiasta(); // C4: puszczenie przycisku zawsze chowa tabliczkę miasta
   };
   svg.addEventListener('pointerup', koniecWskaznika);
   svg.addEventListener('pointercancel', koniecWskaznika);
@@ -276,14 +279,6 @@ export function stworzMape(kontener, { przyZmianieZaznaczenia, przyZmianieWidoku
   svg.addEventListener('dblclick', (e) => {
     if (e.target.closest('.pinezka')) return;
     zoomDoPunktu(naSvg(e), 1.8, true);
-  });
-
-  svg.addEventListener('click', (e) => {
-    if (e.target.closest('.pinezka')) return; // pinezka obsługuje się sama
-    if (czyPrzesunieto) return; // drag/pinch nie jest kliknięciem
-    const m = miastoPodKlikiem(naSvg(e));
-    if (m) pokazEtykieteMiasta(m); // świadoma decyzja: nazwa miasta tylko po kliknięciu
-    else ukryjEtykieteMiasta();
   });
 
   /* ---- Pinezki i łuki powiązań ---- */
@@ -500,12 +495,14 @@ export function stworzMape(kontener, { przyZmianieZaznaczenia, przyZmianieWidoku
       const p = Number(m?.p) || 0;
       const tier = p >= 1_000_000 ? 'wielkie' : p >= 500_000 ? 'srednie' : 'drobne';
       const [wx, wy] = projektuj(Number(m.lat), Number(m.lon));
-      const g = el('g', { class: 'miasto' }, grupyMiast[tier]);
-      const r = tier === 'wielkie' ? 4.5 : tier === 'srednie' ? 3.5 : 2.5;
-      const kropka = el('circle', { class: 'kropka', r: String(r) }, g);
-      const t = el('title', {}, kropka);
       const nazwa = m.n ?? m.nazwa ?? '';
-      t.textContent = `${nazwa}${p ? ` · ${formatujPopulacje(p)}` : ''}`;
+      const opisDostepnosci = `${nazwa}${p ? ` · ${formatujPopulacje(p)}` : ''}`;
+      const g = el('g', { class: 'miasto', 'aria-label': opisDostepnosci }, grupyMiast[tier]);
+      const r = tier === 'wielkie' ? 4.5 : tier === 'srednie' ? 3.5 : 2.5;
+      el('circle', { class: 'kropka', r: String(r) }, g);
+      // C4: przezroczyste pole trafienia o promieniu kliku — zmienia kursor
+      // na strzałkę zamiast łapki (miasto nie przesuwa mapy).
+      el('circle', { class: 'trafienie', r: String(PROMIEN_KLIK_MIASTA) }, g);
       miastaDane.push({ g, wx, wy, nazwa, populacja: p, tier });
     }
     if (aktywneMiasto && !miastaDane.some((m) => m.wx === aktywneMiasto.wx && m.wy === aktywneMiasto.wy)) ukryjEtykieteMiasta();

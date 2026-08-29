@@ -242,6 +242,15 @@ html[data-motyw='jasny'] .baner code { background: #ffffff77; }
   stroke: var(--miasto-obrys);
   stroke-width: 1;
 }
+/* C4: miasto nie przesuwa mapy, więc kursor to strzałka, nie łapka.
+ * Przezroczyste pole trafienia (r = PROMIEN_KLIK_MIASTA) daje wygodny cel
+ * i łapie wskaźnik, żeby `cursor: default` działał także wokół kropki. */
+.warstwy-szczegolow .miasta .miasto { cursor: default; }
+.warstwy-szczegolow .miasta .trafienie {
+  fill: transparent;
+  stroke: none;
+  pointer-events: all;
+}
 .warstwy-szczegolow .poi .punkt {
   fill: var(--poi);
   stroke: var(--poi-obrys);

@@ -108,3 +108,16 @@ test('A2 (M6): przeciąganie mapy nie zaznacza tekstów — user-select: none na
   const noszace = reguly.filter(({ cialo }) => /(?:^|;|\s)user-select\s*:\s*none/.test(cialo));
   assert.ok(noszace.length > 0, 'brak reguły user-select: none dla .mapa-svg — przeciąganie zaznacza napisy badge\'ów (A2)');
 });
+
+test('C4: nad miastem kursor to strzałka, nie łapka, a pole trafienia łapie wskaźnik', async () => {
+  const [, css] = await Promise.all([readFile(MAPA, 'utf8'), readFile(STYLE, 'utf8')]);
+  const reguly = regulyCss(css);
+  const miasto = reguly.find(
+    ({ selektor, cialo }) => /\.warstwy-szczegolow\s+\.miasta\s+\.miasto/.test(selektor) && /cursor\s*:\s*default/.test(cialo)
+  );
+  assert.ok(miasto, 'brak reguły cursor: default dla .warstwy-szczegolow .miasta .miasto');
+  const trafienie = reguly.find(
+    ({ selektor, cialo }) => /\.warstwy-szczegolow\s+\.miasta\s+\.trafienie/.test(selektor) && /pointer-events\s*:\s*all/.test(cialo)
+  );
+  assert.ok(trafienie, 'brak reguły pointer-events: all dla pola trafienia miasta');
+});

@@ -124,14 +124,18 @@ test('mapa: miasta dzielone na rangi i kompensowane do rozmiaru ekranowego', () 
   assert.ok(liczba, `transform=${transform}`);
   assert.ok(Math.abs(Number(liczba) - 1 / mapa.skala) < 1e-6, `kompensacja ${liczba}, oczekiwana ${1 / mapa.skala}`);
 
-  // B (klik w miasto): grupa etykiety istnieje, jest ukryta, a kropka niesie nazwę.
+  // B/C4: grupa etykiety istnieje, jest ukryta, a miasto ma pole trafienia
+  // i opis dostępności (bez <title>, bo nazwa nie ma się pokazywać na hover).
   const etykietaMiasta = znajdzElement(mapa.svg, 'etykieta-miasta');
   assert.ok(etykietaMiasta, 'pływająca etykieta miasta w drzewie SVG');
   assert.ok(!etykietaMiasta.czyMaKlase('widoczna'), 'etykieta ukryta przed kliknięciem');
   const kropka = m.dzieci.find((d) => d.czyMaKlase('kropka'));
-  const tytul = kropka?.dzieci.find((d) => d.nazwa === 'title');
-  assert.ok(tytul, 'kropka ma <title> z nazwą');
-  assert.equal(tytul.textContent, 'Wielkie · 2.0 mln');
+  const trafienie = m.dzieci.find((d) => d.czyMaKlase('trafienie'));
+  assert.ok(kropka, 'miasto ma kropkę');
+  assert.ok(trafienie, 'miasto ma przezroczyste pole trafienia');
+  assert.equal(trafienie.getAttribute('r'), '16', 'pole trafienia = PROMIEN_KLIK_MIASTA');
+  assert.equal(m.getAttribute('aria-label'), 'Wielkie · 2.0 mln');
+  assert.ok(!m.dzieci.some((d) => d.nazwa === 'title'), 'bez <title> — nazwa nie ma się pokazywać na najechanie');
 
   // wyłączenie warstwy chowa całość mimo wysokiego zoomu
   mapa.przelaczWidocznoscWarstwy('miasta', false);
@@ -140,7 +144,7 @@ test('mapa: miasta dzielone na rangi i kompensowane do rozmiaru ekranowego', () 
   assert.equal(grupaMiast.getAttribute('display'), 'inherit');
 });
 
-test('mapa: klik w miasto pokazuje etykietę, klik w puste miejsce chowa ją', () => {
+test('mapa: przytrzymanie wciśniętego przycisku nad miastem pokazuje etykietę, puszczenie chowa ją', () => {
   const { kontener } = zasciel();
   const mapa = stworzMape(kontener, {});
   mapa.svg.getScreenCTM = () => ({ inverse: () => ({ a: 1, b: 0, c: 0, d: 1, e: 0, f: 0 }) });
@@ -157,26 +161,33 @@ test('mapa: klik w miasto pokazuje etykietę, klik w puste miejsce chowa ją', (
   const [wx, wy] = projektuj(52.23, 21.01);
   const px = mapa.widok.x + wx * mapa.skala;
   const py = mapa.widok.y + wy * mapa.skala;
-
-  mapa.svg.sluchacze.click[0]({ target: { closest: () => null }, clientX: px, clientY: py });
   const etykieta = znajdzElement(mapa.svg, 'etykieta-miasta');
+  assert.ok(!etykieta.czyMaKlase('widoczna'), 'etykieta schowana przed wciśnięciem');
+
+  mapa.svg.sluchacze.pointerdown[0]({ pointerId: 1, target: { closest: () => null }, clientX: px, clientY: py });
   const tekst = etykieta?.dzieci.find((d) => d.nazwa === 'text');
-  assert.ok(etykieta?.czyMaKlase('widoczna'), 'klik w miasto pokazuje tabliczkę');
+  assert.ok(etykieta?.czyMaKlase('widoczna'), 'wciśnięcie nad miastem pokazuje tabliczkę');
   assert.equal(tekst?.textContent, 'Warszawa · 1.7 mln');
 
-  mapa.svg.sluchacze.click[0]({ target: { closest: () => null }, clientX: 10, clientY: 10 });
-  assert.ok(!etykieta.czyMaKlase('widoczna'), 'klik poza miastem chowa tabliczkę');
+  mapa.svg.sluchacze.pointerup[0]({ pointerId: 1 });
+  assert.ok(!etykieta.czyMaKlase('widoczna'), 'puszczenie przycisku chowa tabliczkę');
+
+  // Wciśnięcie w tle nic nie pokazuje; puszczenie niczego nie psuje.
+  mapa.svg.sluchacze.pointerdown[0]({ pointerId: 2, target: { closest: () => null }, clientX: 10, clientY: 10 });
+  assert.ok(!etykieta.czyMaKlase('widoczna'), 'wciśnięcie poza miastem nic nie pokazuje');
+  mapa.svg.sluchacze.pointerup[0]({ pointerId: 2 });
+  assert.ok(!etykieta.czyMaKlase('widoczna'), 'po puszczeniu na tle tabliczka pozostaje schowana');
 
   // Wyłączenie warstwy miast (lub zoom poniżej progu) musi schować tabliczkę,
   // inaczej wisiałaby nad punktem, którego już nie ma.
-  mapa.svg.sluchacze.click[0]({ target: { closest: () => null }, clientX: px, clientY: py });
-  assert.ok(etykieta.czyMaKlase('widoczna'), 'ponowne kliknięcie pokazuje tabliczkę');
+  mapa.svg.sluchacze.pointerdown[0]({ pointerId: 3, target: { closest: () => null }, clientX: px, clientY: py });
+  assert.ok(etykieta.czyMaKlase('widoczna'), 'ponowne wciśnięcie pokazuje tabliczkę');
   mapa.przelaczWidocznoscWarstwy('miasta', false);
   assert.ok(!etykieta.czyMaKlase('widoczna'), 'wyłączona warstwa chowa otwartą tabliczkę');
   mapa.przelaczWidocznoscWarstwy('miasta', true);
 
-  mapa.svg.sluchacze.click[0]({ target: { closest: () => null }, clientX: px, clientY: py });
-  assert.ok(etykieta.czyMaKlase('widoczna'), 'warstwa włączona znowu pozwala kliknąć');
+  mapa.svg.sluchacze.pointerdown[0]({ pointerId: 4, target: { closest: () => null }, clientX: px, clientY: py });
+  assert.ok(etykieta.czyMaKlase('widoczna'), 'warstwa włączona znowu pozwala wcisnąć');
   mapa.reset();
   assert.ok(!etykieta.czyMaKlase('widoczna'), 'zoom poniżej progu miast chowa tabliczkę');
 
@@ -184,7 +195,7 @@ test('mapa: klik w miasto pokazuje etykietę, klik w puste miejsce chowa ją', (
   delete mapa.svg.getScreenCTM;
 });
 
-test('mapa: nazwa miasta TYLKO po kliknięciu — hover jej nie pokazuje (świadoma decyzja)', () => {
+test('mapa: nazwa miasta tylko podczas przytrzymania — hover jej nie pokazuje (świadoma decyzja)', () => {
   const { kontener } = zasciel();
   const mapa = stworzMape(kontener, {});
   mapa.svg.getScreenCTM = () => ({ inverse: () => ({ a: 1, b: 0, c: 0, d: 1, e: 0, f: 0 }) });
@@ -203,15 +214,22 @@ test('mapa: nazwa miasta TYLKO po kliknięciu — hover jej nie pokazuje (świad
   const wielkie = znajdzElement(grupaMiast, 'miasta-wielkie');
   const miasto = wielkie.dzieci[0];
 
-  // Hover nie jest już obsługiwany (świadoma decyzja: tylko klik).
+  // Hover nie jest obsługiwany (świadoma decyzja: nazwa tylko podczas przytrzymania).
   assert.ok(!miasto.sluchacze.pointerenter?.length && !miasto.sluchacze.pointerleave?.length, 'brak listenerów hover na kropce miasta');
-  assert.ok(!etykieta.czyMaKlase('widoczna'), 'bez kliknięcia etykieta nie wisi');
+  assert.ok(!etykieta.czyMaKlase('widoczna'), 'bez przytrzymania etykieta nie wisi');
 
-  // Klik pokazuje, klik w tło chowa.
-  mapa.svg.sluchacze.click[0]({ target: { closest: () => null }, clientX: px, clientY: py });
-  assert.ok(etykieta.czyMaKlase('widoczna'), 'klik w miasto pokazuje tabliczkę');
-  mapa.svg.sluchacze.click[0]({ target: { closest: () => null }, clientX: 10, clientY: 10 });
-  assert.ok(!etykieta.czyMaKlase('widoczna'), 'klik w tło chowa tabliczkę');
+  mapa.svg.sluchacze.pointerdown[0]({ pointerId: 1, target: { closest: () => null }, clientX: px, clientY: py });
+  assert.ok(etykieta.czyMaKlase('widoczna'), 'wciśnięcie pokazuje tabliczkę');
+  mapa.svg.sluchacze.pointerup[0]({ pointerId: 1 });
+  assert.ok(!etykieta.czyMaKlase('widoczna'), 'puszczenie chowa tabliczkę');
+
+  // Przeciągnięcie po wciśnięciu też chowa (drag/pinch to nie „klik”).
+  mapa.svg.sluchacze.pointerdown[0]({ pointerId: 2, target: { closest: () => null }, clientX: px, clientY: py });
+  assert.ok(etykieta.czyMaKlase('widoczna'), 'wciśnięcie nad miastem pokazuje tabliczkę');
+  mapa.svg.sluchacze.pointermove[0]({ pointerId: 2, clientX: px + 20, clientY: py + 10 });
+  assert.ok(!etykieta.czyMaKlase('widoczna'), 'przeciągnięcie chowa tabliczkę');
+  mapa.svg.sluchacze.pointerup[0]({ pointerId: 2 });
+  assert.ok(!etykieta.czyMaKlase('widoczna'), 'po przeciągnięciu i puszczeniu tabliczka nie wraca');
 
   delete globalThis.DOMPoint;
   delete mapa.svg.getScreenCTM;

@@ -418,3 +418,17 @@ kulturowych, oś czasu manifestacji, wersja EN, import metadanych kart…).
       epoki 2 na SKICIE „Cena znaku”, kolejność wdrożenia (ADR → walidator →
       widok `#kronika`).
 - [x] Zgodnie z M13: **bez kodu gry** — dokumentacja koncepcyjna, nie dane.
+
+## C4 — nazwa miasta na czas przytrzymania + kursor strzałka (nadpisuje C2 UX)
+
+- [x] **Etykieta miasta tylko podczas przytrzymania:** `pointerdown` pokazuje
+      tabliczkę „nazwa · populacja”, `pointerup`/`pointercancel` ją chowa.
+      Klik-przełącznik z C2 zniesiony — po puszczeniu nic nie „wisi”.
+- [x] **Kursor nad miastem = strzałka, nie łapka:** przezroczyste pole
+      trafienia r=16 px + `cursor: default` (`PROMIEN_KLIK_MIASTA`), więc
+      widać, że miasto nie przesuwa mapy.
+- [x] **Bez nazwy na hover:** usunięty `<title>` z kropki; dostępność przez
+      `aria-label` na grupie miasta. Testy pilnują braku
+      `pointerenter/pointerleave`.
+- [x] Czytelnia Kronik na osobnym porcie (katalog `docs`, `/` = dokument),
+      mapa działa dalej na porcie głównym aplikacji.

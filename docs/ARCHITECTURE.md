@@ -154,6 +154,13 @@ dzieje się w przeglądarce na życzenie — determinizm indeksu (ADR 0002) niet
   niezmieniane przez przełącznik wracają z pamięci i nie są pobierane ponownie.
   W tej iteracji dane istnieją dla rzek, jezior i miast; drogi, szczyty, lasy
   i wysokość n.p.m. są poza zakresem (patrz ADR 0020 i `docs/ASSETS.md`).
+- **Etykieta miasta (C4):** nazwa „miasto · populacja” jest widoczna tylko
+  podczas przytrzymania przycisku (`pointerdown` → `pointerup`), nie po
+  najechaniu. Miasto ma przezroczyste pole trafienia r=16 px
+  (`PROMIEN_KLIK_MIASTA`) z `cursor: default`, więc nad punktem widać strzałkę,
+  a nie łapkę (`grab` z mapy). Opis dostępności dla czytników ekranu niesie
+  `aria-label` grupy miasta (usunięty `<title>`, żeby nazwa nie wyskakiwała na
+  hover).
 - Kartoteka bytu jest warstwą przykrywającą okno (ADR 0010), więc otwarcie wpisu
   nie zmienia rozmiaru kontenera mapy.
 

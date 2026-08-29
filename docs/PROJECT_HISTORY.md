@@ -1092,3 +1092,27 @@ z dokumentacją trybu (zamiast szukania po repo).
   - kolejność wdrożenia (ADR → walidator → widok `#kronika`) i pytania do właściciela.
 - Zgodnie z M13: **bez kodu gry** — praca koncepcyjna; nie modyfikuje danych ani
   indeksu. `npm test` 152/152, `npm run check` OK.
+
+## C4 — miasto na czas przytrzymania i kursor strzałka (nadpisanie UX z C2)
+
+Właściciel doprecyzował zachowanie mapy:
+
+- **Etykieta miasta tylko podczas kliknięcia (przytrzymania):** wciśnięcie
+  (`pointerdown`) pokazuje tabliczkę „nazwa · populacja”, puszczenie
+  (`pointerup`) ją chowa. Usunięty wcześniejszy „klik pokazuje / klik w tło
+  chowa” (tryb przełączany z C2).
+- **Kursor nad miastem to strzałka, nie łapka** — miasto nie przesuwa mapy.
+  Dodane przezroczyste pole trafienia w promieniu kliku
+  (`PROMIEN_KLIK_MIASTA` = 16 px) i reguła `cursor: default`.
+- **Nazwa nie pojawia się na hover:** usunięty `<title>` z kropki; opis
+  dostępności przeniesiony do `aria-label` grupy miasta.
+- Testy: przytrzymanie pokazuje/puszczenie chowa, drag chowa podczas ruszania,
+  brak `pointerenter/pointerleave`, kontrakt CSS `cursor: default` i
+  `pointer-events: all` na polu trafienia.
+- `npm test` **153/153**, `npm run check` OK, `npm run build` OK.
+
+### Czytelnia Kroniki na osobnym porcie
+
+- Dodany `docs/index.html` (przekierowanie na `czytelnia-kronika.html`), żeby
+  serwując katalog `docs` na oddzielnym porcie otwierał się dokument zamiast
+  mapy. Mapa pozostaje na porcie głównym aplikacji.
