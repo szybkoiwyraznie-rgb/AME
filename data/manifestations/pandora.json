@@ -1,0 +1,114 @@
+{
+  "slug": "pandora",
+  "nazwa": "Pandora — pierwsza kobieta i pithos, w którym została nadzieja",
+  "nazwy_alternatywne": [
+    "Anesidora",
+    "Pandôra",
+    "Pierwsza Niewiasta",
+    "Wszystkichdarowana"
+  ],
+  "karta": {
+    "nazwa": "Panic Spellbomb",
+    "wydanie": "Scars of Mirrodin (SOM) #191",
+    "rok": 2010
+  },
+  "lokalizacja": {
+    "miejscowosc": "Ateny — Akropol: płaskorzeźba narodzin Pandory na podstawie posągu Ateny Partenos, opisana przez Pauzaniasza; mit spisany w Beocji przez Hezjoda („Prace i dnie” i „Teogonia”)",
+    "kraj": "Grecja",
+    "lat": 37.9715,
+    "lon": 23.7267
+  },
+  "pochodzenie_i_kultura": "Mitologia grecka (Hezjod, „Teogonia” w. 570–612 i „Prace i dnie” w. 42–105, VIII–VII w. p.n.e.): Zeus każe Hefajstosowi ulepić z gliny pierwszą kobietę, Atena ją odziewa, Afrodyta daje wdzięk, Hermes „bezwstydny umysł i kłamliwe słowa”; imię „Pandora” znaczy „wszystkichdarowana”, bo każdy z bogów dał jej dar — „plagę mężom jedzącym chleb”. Jej ślubnym darem jest pithos — wielki gliniany słój — który otwiera, a z niego na świat wychodzi wszelkie zło; na dnie zostaje Elpis (nadzieja).",
+  "wizualizacja": {
+    "prompt": "Style: A wide-angle full-body cinematic photograph. The central objects/persons of the photo are visible from head to toe, standing centrally in the frame. No parts of the body are cropped.\n\nA young woman in a silver gown and an embroidered veil, a gold crown on her dark hair, standing on the stone base of a colossal statue on the Acropolis at dawn; she holds a large clay pithos in both hands, its heavy lid lifted just a little, dark shapes like smoke and moths streaming from the mouth of the jar toward a sleeping city below; marble columns, olive trees, pale gold morning light, a distant sea, her expression caught between curiosity and horror.\n\nCaptured with a 35mm anamorphic lens at f/1.8. Shallow depth of field with a heavy, creamy bokeh background. Environmental portraiture. Dramatic cinematic lighting, sharp focus on the character, hyper-realistic textures of clothing and skin. Shot on 70mm film stock, ultra-wide 21:9 aspect ratio. --ar 21:9",
+    "obraz": null
+  },
+  "natura": {
+    "wyglad_i_aura": "Młoda kobieta o ciemnych włosach, w srebrnej szacie, z haftowanym welonem i złotą koroną — dokładnie tak, jak odziewa ją Atena, a wieńczą Hory w „Pracach i dniach”. Przy niej wielki gliniany słój z pokrywą, pachnący ziemią i miodem; wokół niej cisza, która robi się gęsta w chwili, gdy pokrywa drży. Nie ma w niej grozy — jest uważne, ciekawe spojrzenie istoty, która dopiero co została stworzona i jeszcze nie wie, czym jest zło.",
+    "charakter_i_motywacje": "Pandora nie jest zła: jest ciekawością wcieloną. Hezjod nazywa ją „pięknym złem”, potem „nieodpartą siecią”, a jej wnętrze wypełniają „kłamliwe słowa” od Hermesa; jednocześnie to pierwsza kobieta, która niczego nie wie o świecie. Gdy dostaje słój, wie jedno: nie wolno go otwierać. Właśnie to — jak w każdej opowieści o zakazie — czyni otwarcie niemal pewnym. Nie poluje, nie kusi; ona tylko znosi dar i patrzy, a potem robi to, czego nie powinna.",
+    "zdolnosci": "Nosi w sobie wszystko, co bogowie zamknęli: zarazy, choroby, trudy, starość, wojny — i w jednej chwili potrafi to wypuścić, a wtedy nikt wokół nie może się bronić, bo zło nie nadchodzi z jednej strony. Jej ciało jest z gliny, jak słój: ulepione, nie urodzone, więc nie zabija się jej jak człowieka — można tylko zamknąć pokrywę. Po otwarciu zostaje jej jedna rzecz, którą da się jeszcze wydobyć z naczynia: Elpis.",
+    "slabosci_i_metody_pokonania": "Jedyna skuteczna metoda to nie otwierać — trzymać pokrywę. Kto znalazł się w domu, gdzie słój już otwarto, nie zamknie nieszczęść z powrotem; może tylko pamiętać, że na dnie została nadzieja, i to jest jedyny „zysk” z tej katastrofy. Równie ważne jest rozpoznanie wariantu: w tradycji Teognisa z Megary słój zawierał nie zło, lecz dobra, które uciekły ludziom — dlatego przed spotkaniem z Pandorą trzeba wiedzieć, z którą wersją słaja ma się do czynienia.",
+    "preferencje": "Lubi: dary, wesela, nowe domy, pył na dnie naczynia, złoto i pytania o to, co w środku. Nie lubi: zamkniętych pokryw, zakazów, Epimeteusza, który ostrzega za późno, i ludzi, którzy dopytują, co zostało."
+  },
+  "dokumentacja": [
+    {
+      "typ": "baza kart",
+      "pozycja": "Scryfall, „Panic Spellbomb” (Scars of Mirrodin #191) — {1}, Artifact; „{T}, Sacrifice this artifact: Target creature can’t block this turn.” oraz „When this artifact is put into a graveyard from the battlefield, you may pay {R}. If you do, draw a card.”; znak wodny Mirran; artysta Franz Vohwinkel; brak tekstu flavor; printy: Commander Anthology II #208, Commander 2014 #259",
+      "url": "https://scryfall.com/card/som/191/panic-spellbomb"
+    },
+    {
+      "typ": "tekst źródłowy",
+      "pozycja": "Hezjod, „Prace i dnie” (przeł. H. G. Evelyn-White, 1914; Internet Sacred Text Archive), w. 60–105 — Hefajstos miesza glinę, Atena odziewa, Hermes daje słowa: „he called this woman Pandora, because all they who dwelt on Olympus gave each a gift, a plague to men who eat bread”; „the woman took off the great lid of the jar with her hands and scattered all these… Only Hope remained there in an unbreakable home within under the rim of the great jar”",
+      "url": "https://www.sacred-texts.com/cla/hesiod/works.htm"
+    },
+    {
+      "typ": "portal mitograficzny",
+      "pozycja": "Theoi, „Pandora” — pierwsza śmiertelniczka ulepiona z gliny przez Hefajstosa, dary bogów, pithos jako dar ślubny, roj duchów zła, tylko Elpis; Pauzaniasz: płaskorzeźba narodzin Pandory na bazie posągu Ateny Partenos („Hesiod and others have sung how this Pandora was the first woman”); wariant Teognisa: to dobre duchy uciekły z naczynia",
+      "url": "https://www.theoi.com/Heroine/Pandora.html"
+    },
+    {
+      "typ": "encyklopedia",
+      "pozycja": "Encyclopaedia Britannica, „Pandora” — pierwsza kobieta; słój (później nazywany „puszką”) zawierał wszelkie nieszczęścia i zło; po otwarciu zło rozeszło się po ziemi, a nadzieja została pod zamkniętą pokrywą; w wariancie późniejszym w naczyniu były błogosławieństwa utracone przez ciekawość",
+      "url": "https://www.britannica.com/topic/Pandora-Greek-mythology"
+    }
+  ],
+  "trofea": {
+    "pierwotne": "Pokrywa pithosu — gliniana płyta z odciskiem dłoni, na której od wewnątrz został tylko pył; zamknięta w płótnie nosi w sobie ostatnią rzecz, jaką da się z tej historii wyciągnąć.",
+    "wtorne": "Odrzucony wieniec ślubny — pamiątka, że Pandory nie pokonuje się siłą: ślubny dar i zakaz trzeba oddać albo zostawić zamknięte."
+  },
+  "rezonans": {
+    "klucz_przywolania": "Panic Spellbomb to mała, jednorazowa kula-zaklęcie: otwierasz ją, by wroga ogarnął strach, a potem — już po zniszczeniu — możesz zapłacić i dobrać kartę. Pandora jest dokładnie tym odciskiem w naszym świecie: naczyniem, które zawiera wszystko, co bogowie trzymali z dala od ludzi, i które po otwarciu daje tylko jeden, ostatni zysk — Elpis. „Panic” karty to ślepy strach, który wylatuje ze słaja razem z chorobami i trudem; „spellbomb” to pithos traktowany jak cudowny gadżet: wadliwy dar, który warto było zostawić w kącie. Każde „poświęcenie” naczynia, po którym zostaje jedna karta, odtwarza scenę z „Prac i dni”: pokrywa uniesiona, świat pełen pląg, a pod wieczkiem — nadzieja, „niezłomny dom” na dnie.",
+    "tabela": [
+      {
+        "element": "Nazwa",
+        "translacja": "„Panic Spellbomb” — bombę paniki czyta się jak słój: mała, zamknięta, groźna dopiero po otwarciu. „Panic” to to, co z niej wylatuje: ślepy strach i zło, które Hezjod nazywa „plagami”; „Spellbomb” to dar-zaklęcie. Pandora jest personifikacją dokładnie takiego naczynia — zawierającego wszystko, czego nie chcemy."
+      },
+      {
+        "element": "Mechanika",
+        "translacja": "„{T}, Sacrifice: target creature can’t block” — otwarcie słaja: zło ucieka w świat i nikt nie jest już w stanie stanąć w poprzek; każdy, kto miał bronić, traci blokadę. „When put into a graveyard from the battlefield, you may pay {R}. If you do, draw a card” — po opróżnieniu naczynia zostaje jedna karta: Elpis; zapłata many to cena, za którą nadzieję da się jeszcze wyciągnąć."
+      },
+      {
+        "element": "Ilustracja",
+        "translacja": "Franz Vohwinkel namalował mosiężną kulę z zatyczką — przedmiot codzienny, „gadżet”, który wybucha jednym ruchem. W przekładzie to pithos z beockiej wsi: wielki słój z pokrywą, który wygląda jak zwykłe naczynie, a jest najdroższym darem, jaki bogowie dali ludziom — i jedynym, którego nie należało otwierać."
+      },
+      {
+        "element": "Flavor text",
+        "translacja": "Wydanie SOM nie zawiera tekstu flavor — projekt opiera się na samej mechanice. Brak cytatu czyta się jednak jak puste wnętrze naczynia: liczy się nie to, co wypisane na kuli, lecz to, co w środku i co z niej wyleci."
+      },
+      {
+        "element": "Lore/Tło",
+        "translacja": "SOM to Mirrodin — świat metalu, w którym „spellbomb” to artefakt jednorazowy: broń o jednym użyciu. W przełożeniu taki przedmiot to pithos z „Prac i dni” — z niego nie da się niczego odzyskać poza jedną rzeczą, a kto go użył, ten już nigdy nie wróci do stanu sprzed otwarcia."
+      }
+    ]
+  },
+  "tagi": [
+    "grecja",
+    "automat",
+    "warunek",
+    "zagadka"
+  ],
+  "powiazania": [
+    {
+      "slug": "knecht-z-koptos",
+      "opis": "Pandora i knecht z Koptos to istoty stworzone ręką mistrza: pierwsza kobieta ulepiona przez Hefajstosa, tłuczek ożywiony przez maga. Obie dostały moc wraz z kruchym zamknięciem — pokrywą albo słowem końca — i obie dowodzą, że skutki otwarcia są nieodwracalne nawet wtedy, gdy twórca zdąży przyjść z pomocą."
+    },
+    {
+      "slug": "morowa-panna",
+      "opis": "Pandora wypuściła z pithosu „niezliczone plagi, które wędrują pomiędzy ludźmi”, a morowa panna jest właśnie jedną z nich w ludzkiej postaci: zarazą, która chodzi od wsi do wsi i odbiera życie domownikom. Różnica polega na miejscu: Pandorę spotyka się raz, przy naczyniu, a morową pannę — w każdym progu, na który padnie cień z otwartego słaja."
+    },
+    {
+      "slug": "talos-kreta",
+      "opis": "Pandora i Talos to bodaj najsłynniejsze istoty, które Hefajstos powołał do życia: kobieta z gliny i strażnik z brązu. Obie są „automatami” w najściślejszym sensie — zbudowane, nie urodzone — i obie mają jeden punkt otwarcia: Talos w żyle ichoru przy kostce, Pandora w pokrywie, którą zdejmuje własną ręką."
+    }
+  ],
+  "meta": {
+    "utworzono": "2026-08-30 00:09",
+    "autor": "sesja arena 2026-08-29/30",
+    "modyfikacje": [
+      {
+        "data": "2026-08-30 00:09",
+        "opis": "Nowa materializacja: Pandora — pierwsza kobieta z „Prac i dni” Hezjoda i jej pithos, na podstawie karty „Panic Spellbomb” (SOM #191)."
+      }
+    ]
+  }
+}
