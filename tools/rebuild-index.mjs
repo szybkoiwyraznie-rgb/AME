@@ -377,7 +377,7 @@ function rekordSkitu(s) {
  * słownik tagów, backlinki i feed `aktualizacje` (sekcja „Co nowego”,
  * najnowsze na górze) wyliczony z `meta` wpisów i skitów.
  */
-export function zbudujIndeks(wpisy, skiti = [], kanon = null) {
+export function zbudujIndeks(wpisy, skiti = [], kanon = null, buildTime = null) {
   const posortowane = [...wpisy].sort((a, b) => a.slug.localeCompare(b.slug, 'pl'));
   const rekordy = posortowane.map((w) => ({
     slug: w.slug,
@@ -488,7 +488,7 @@ export function zbudujIndeks(wpisy, skiti = [], kanon = null) {
 
   return {
     wersja: 3,
-    buildTime: new Date().toISOString(),
+    buildTime: buildTime || new Date().toISOString(),
     liczba: rekordy.length,
     liczbaSkitow: rekordySkitow.length,
     kanon: { kategorie },
@@ -590,8 +590,35 @@ async function main() {
   const kanon = await wczytajKanon();
   const wpisy = await wczytajIKwaliduj(KATALOG_WPISOW, kanon);
   const skiti = await wczytajSkiti(KATALOG_SKITOW, new Set(wpisy.map((w) => w.slug)));
-  const indeks = zbudujIndeks(wpisy, skiti, kanon);
-  const tresc = JSON.stringify(indeks, null, 2) + '\n';
+
+  let istniejacyTresc = '';
+  let istniejacyBuildTime = null;
+  try {
+    istniejacyTresc = await readFile(PLIK_INDEKSU, 'utf8');
+    istniejacyBuildTime = JSON.parse(istniejacyTresc).buildTime;
+  } catch {}
+
+  // 1. Zbuduj z dotychczasowym buildTime
+  let indeks = zbudujIndeks(wpisy, skiti, kanon, istniejacyBuildTime);
+  let tresc = JSON.stringify(indeks, null, 2) + '\n';
+
+  if (istniejacyTresc) {
+    const ob1 = JSON.parse(istniejacyTresc);
+    const ob2 = JSON.parse(tresc);
+    delete ob1.buildTime;
+    delete ob2.buildTime;
+    
+    // Jeśli są różnice funkcjonalne, wygeneruj NOWY buildTime
+    if (JSON.stringify(ob1) !== JSON.stringify(ob2)) {
+      indeks = zbudujIndeks(wpisy, skiti, kanon, new Date().toISOString());
+      tresc = JSON.stringify(indeks, null, 2) + '\n';
+    }
+  } else {
+    // Jeśli plik nie istnieje, wygeneruj NOWY buildTime
+    indeks = zbudujIndeks(wpisy, skiti, kanon, new Date().toISOString());
+    tresc = JSON.stringify(indeks, null, 2) + '\n';
+  }
+
   if (trybCheck) {
     let istniejacy = '';
     try {

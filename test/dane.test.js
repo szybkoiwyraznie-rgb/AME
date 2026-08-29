@@ -23,8 +23,12 @@ test('data/index.json jest spójny z wpisami i bazą skitów (deterministyczny b
   const wpisy = await wczytajIKwaliduj();
   const skiti = await wczytajSkiti(KATALOG_SKITOW, new Set(wpisy.map((w) => w.slug)));
   const kanon = await wczytajKanon();
-  const oczekiwany = JSON.stringify(zbudujIndeks(wpisy, skiti, kanon), null, 2) + '\n';
   const istniejacy = await readFile(PLIK_INDEKSU, 'utf8');
+  let buildTime = null;
+  try {
+    buildTime = JSON.parse(istniejacy).buildTime;
+  } catch {}
+  const oczekiwany = JSON.stringify(zbudujIndeks(wpisy, skiti, kanon, buildTime), null, 2) + '\n';
   assert.equal(istniejacy, oczekiwany, 'data/index.json jest nieaktualny — uruchom npm run build');
 });
 

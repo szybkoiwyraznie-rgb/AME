@@ -11,8 +11,9 @@ function dwaWpisy() {
 }
 
 test('indeks: deterministyczne sortowanie po slugu', () => {
-  const i1 = zbudujIndeks(dwaWpisy());
-  const i2 = zbudujIndeks(dwaWpisy());
+  const fixedTime = '2026-08-29T20:15:04.552Z';
+  const i1 = zbudujIndeks(dwaWpisy(), [], null, fixedTime);
+  const i2 = zbudujIndeks(dwaWpisy(), [], null, fixedTime);
   assert.deepEqual(i1, i2);
   assert.deepEqual(
     i1.manifestacje.map((m) => m.slug),
