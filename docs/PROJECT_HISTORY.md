@@ -1460,3 +1460,14 @@ promptów wpisów i zapisanych jako `assets/wizualizacje/<slug>.jpg`
 `wizualizacja.obraz` podpięte, `meta.modyfikacje` z godziną zapisu, indeks
 przebudowany (`npm run build`), brama 163/163.
  (feat: wizualizacje 21:9 pięciu nowych materializacji + podpięcie obrazów we wpisach)
+
+### Przeniesienie materializacji do PR #10 (2026-08-30)
+
+Na polecenie właściciela cztery commity materializacji (pierwotnie gałąź
+`mtg/materializacja-5-kart`, PR #11) przeniesiono do gałęzi
+`arena/01a04f70-ame` — PR #10 — aby sesja po zamknięciu PR #11 nie straciła
+dostępu do GitHub i aby po resecie sandboxa można było odtworzyć pracę ze
+znanej gałęzi. Mapowanie commitów: `de71db7→fe68821`,
+`9aecf1a→a72b45a`, `9ad8e7f→b620a50`, `2b3fe74→81f910c`. Indeks i Kronika
+przebudowane z połączonych danych (`npm run build`), brama **164/164**.
+PR #11 zamknięty, gałąź `mtg/materializacja-5-kart` usunięta.

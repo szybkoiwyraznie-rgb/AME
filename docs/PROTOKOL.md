@@ -194,8 +194,6 @@ Captured with a 35mm anamorphic lens at f/1.8. Shallow depth of field with a hea
 
 Wygenerowany obraz zapisujemy jako `assets/wizualizacje/<slug>.jpg`
 (JPEG, proporcje 21:9, ≤ 2 MB) i wskazujemy w polu `wizualizacja.obraz`.
-Dopóki obrazu nie ma, aplikacja pokazuje miejsce złożenia („wizualizacja
-nieodtworzona”) razem z gotowym do skopiowania promptem.
 
 ## 6. Forma zapisu technicznego
 
