@@ -33,13 +33,13 @@ test('seedy w tom-1.json są skalibrowane deterministycznie z kartoteki', async 
 test('paliwo pasywne: 2×backlinki + tagi kanonu + sieć powiązań (max 3)', async () => {
   const [indeks, kanon] = await Promise.all([wczytaj(PLIK_INDEKSU), wczytaj(PLIK_KANONU)]);
   const mapa = new Map((indeks.manifestacje || []).map((m) => [m.slug, m]));
-  assert.equal(paliwoPasywne(mapa.get('agni'), kanon), 14);
+  assert.equal(paliwoPasywne(mapa.get('agni'), kanon), 16);
   assert.equal(paliwoPasywne(mapa.get('egungun'), kanon), 20);
-  assert.equal(paliwoPasywne(mapa.get('kentaur-pelion'), kanon), 16);
-  assert.equal(paliwoPasywne(mapa.get('empusa-korynt'), kanon), 17);
+  assert.equal(paliwoPasywne(mapa.get('kentaur-pelion'), kanon), 18);
+  assert.equal(paliwoPasywne(mapa.get('empusa-korynt'), kanon), 19);
   assert.equal(paliwoPasywne(mapa.get('lincoln-imp'), kanon), 12);
-  assert.equal(paliwoPasywne(mapa.get('sfinks-teby'), kanon), 14);
-  assert.equal(paliwoPasywne(mapa.get('talos-kreta'), kanon), 14);
+  assert.equal(paliwoPasywne(mapa.get('sfinks-teby'), kanon), 22);
+  assert.equal(paliwoPasywne(mapa.get('talos-kreta'), kanon), 18);
 });
 
 test('Tom I: epoki przechodzą sekwencyjnie i oś zamyka się na 100', async () => {
@@ -70,33 +70,33 @@ test('Tom I: epoki przechodzą sekwencyjnie i oś zamyka się na 100', async () 
     [
       ['egungun', 20, 23],
       ['barbarossa-kyffhaeuser', 17, 15],
-      ['kentaur-pelion', 16, 14],
+      ['kentaur-pelion', 18, 16],
     ]
   );
-  assert.equal(e1.stanPo.os.mit, 36);
-  assert.equal(e1.stanPo.os.racjonalizacja, 64);
+  assert.equal(e1.stanPo.os.mit, 33);
+  assert.equal(e1.stanPo.os.racjonalizacja, 67);
 
   assert.deepEqual(
     e2.uczestnicy.map((u) => [u.slug, u.saldoPrzed, u.saldoPo]),
     [
       ['lincoln-imp', 12, 10],
-      ['kentaur-pelion', 14, 12],
-      ['empusa-korynt', 17, 19],
+      ['kentaur-pelion', 16, 14],
+      ['empusa-korynt', 19, 21],
     ]
   );
-  assert.equal(e2.stanPo.os.mit, 34);
-  assert.equal(e2.stanPo.os.racjonalizacja, 66);
+  assert.equal(e2.stanPo.os.mit, 31);
+  assert.equal(e2.stanPo.os.racjonalizacja, 69);
 
   assert.deepEqual(
     e3.uczestnicy.map((u) => [u.slug, u.saldoPrzed, u.saldoPo]),
     [
       ['egungun', 23, 26],
       ['balor', 21, 19],
-      ['empusa-korynt', 19, 17],
+      ['empusa-korynt', 21, 19],
     ]
   );
-  assert.equal(e3.stanPo.os.mit, 32);
-  assert.equal(e3.stanPo.os.racjonalizacja, 68);
+  assert.equal(e3.stanPo.os.mit, 29);
+  assert.equal(e3.stanPo.os.racjonalizacja, 71);
 
   assert.deepEqual(
     e4.uczestnicy.map((u) => [u.slug, u.saldoPrzed, u.saldoPo]),
@@ -106,8 +106,8 @@ test('Tom I: epoki przechodzą sekwencyjnie i oś zamyka się na 100', async () 
       ['indra', 13, 11],
     ]
   );
-  assert.equal(e4.stanPo.os.mit, 31);
-  assert.equal(e4.stanPo.os.racjonalizacja, 69);
+  assert.equal(e4.stanPo.os.mit, 28);
+  assert.equal(e4.stanPo.os.racjonalizacja, 72);
   assert.equal(e4.stanPo.zasieg.find((z) => z.slug === 'egungun').wielkosc, 0.548);
   assert.equal(e4.stanPo.zasieg.find((z) => z.slug === 'selkie-sule-skerry').wielkosc, 0.478);
   assert.equal(e4.stanPo.zasieg.find((z) => z.slug === 'indra').wielkosc, 0.345);
@@ -115,16 +115,16 @@ test('Tom I: epoki przechodzą sekwencyjnie i oś zamyka się na 100', async () 
   assert.deepEqual(
     e5.uczestnicy.map((u) => [u.slug, u.saldoPrzed, u.saldoPo]),
     [
-      ['sfinks-teby', 14, 12],
-      ['talos-kreta', 14, 12],
+      ['sfinks-teby', 22, 20],
+      ['talos-kreta', 18, 16],
       ['lincoln-imp', 10, 12],
     ]
   );
-  assert.equal(e5.stanPo.os.mit, 30);
-  assert.equal(e5.stanPo.os.racjonalizacja, 70);
+  assert.equal(e5.stanPo.os.mit, 27);
+  assert.equal(e5.stanPo.os.racjonalizacja, 73);
   assert.equal(e5.stanPo.zasieg.find((z) => z.slug === 'lincoln-imp').wielkosc, 0.406);
-  assert.equal(e5.stanPo.zasieg.find((z) => z.slug === 'sfinks-teby').wielkosc, 0.284);
-  assert.equal(e5.stanPo.zasieg.find((z) => z.slug === 'talos-kreta').wielkosc, 0.289);
+  assert.equal(e5.stanPo.zasieg.find((z) => z.slug === 'sfinks-teby').wielkosc, 0.381);
+  assert.equal(e5.stanPo.zasieg.find((z) => z.slug === 'talos-kreta').wielkosc, 0.337);
 });
 
 test('oś: delty mit+racjonalizacja muszą sumować się do 0', async () => {
