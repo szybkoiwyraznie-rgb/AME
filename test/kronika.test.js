@@ -8,6 +8,7 @@ import {
   przeliczEpoke,
   zbudujPodsumowanieTomu,
   kalibrujStanStart,
+  walidujCiągłośćWątków,
   plikRaportu,
   PLIK_TOM_1,
   PLIK_EPOKA_1,
@@ -132,6 +133,67 @@ test('zwrot wymaga realnej dodatniej zmiany zasięgu', async () => {
   assert.ok(
     wynik.bledy.some((b) => /barbarossa-kyffhaeuser: zwrot 2 bez dodatniej zmiany/.test(b))
   );
+});
+
+test('Tom I: trzy epoki przechodzą sekwencyjnie i wątki są ciągłe', async () => {
+  const [tom, epoka1, epoka2, epoka3, indeks, kanon] = await Promise.all([
+    wczytaj(PLIK_TOM_1),
+    wczytaj(PLIK_EPOKA_1),
+    wczytaj(join(KATALOG_KRONIKA, 'epoka-2.json')),
+    wczytaj(join(KATALOG_KRONIKA, 'epoka-3.json')),
+    wczytaj(PLIK_INDEKSU),
+    wczytaj(PLIK_KANONU),
+  ]);
+  const wynik = zbudujPodsumowanieTomu({
+    tom,
+    epoki: [epoka1, epoka2, epoka3],
+    indeks,
+    kanon,
+  });
+  assert.equal(wynik.walidacja, true, JSON.stringify(wynik.bledy));
+  assert.equal(wynik.epoki.length, 3);
+  assert.equal(wynik.stanPo.os.mit + wynik.stanPo.os.racjonalizacja, 100);
+
+  const e3 = wynik.epoki[2];
+  assert.deepEqual(
+    e3.uczestnicy.map((u) => [u.slug, u.saldoPrzed, u.saldoPo]),
+    [
+      ['egungun', 21, 24],
+      ['balor', 15, 13],
+      ['empusa-korynt', 19, 17],
+    ]
+  );
+  assert.equal(e3.stanPo.os.mit, 31);
+  assert.equal(e3.stanPo.os.racjonalizacja, 69);
+  assert.equal(e3.stanPo.zasieg.find((z) => z.slug === 'egungun').wielkosc, 0.523);
+
+  // Otwarty wątek „odzwierni" domknięty w III; nowy otwarty „imie-na-progu".
+  assert.equal(e3.konsekwencje.watki.find((w) => w.id === 'odzwierni').stan, 'zamkniety');
+  assert.ok(e3.konsekwencje.watki.some((w) => w.id === 'imie-na-progu' && w.stan === 'otwarty'));
+});
+
+test('ciągłość: otwarty wątek zaginiony jest błędem, zamknięty nie może się otworzyć', () => {
+  const bledy = [];
+  walidujCiągłośćWątków(
+    [{ id: 'czwarty-stol', stan: 'otwarty' }],
+    new Map([
+      ['czwarty-stol', { stan: 'otwarty', epoka: 'epoka-1' }],
+      ['warunek-barbarossy', { stan: 'otwarty', epoka: 'epoka-1' }],
+      ['wino-w-uczcie', { stan: 'zamkniety', epoka: 'epoka-1' }],
+    ]),
+    bledy
+  );
+  assert.equal(bledy.length, 1);
+  assert.ok(bledy.some((b) => /zaginął/.test(b)));
+
+  const bledy2 = [];
+  walidujCiągłośćWątków(
+    [{ id: 'wino-w-uczcie', stan: 'otwarty' }],
+    new Map([['wino-w-uczcie', { stan: 'zamkniety', epoka: 'epoka-1' }]]),
+    bledy2
+  );
+  assert.equal(bledy2.length, 1);
+  assert.ok(bledy2.some((b) => /nie może się otworzyć/.test(b)));
 });
 
 test('podsumowanie zawiera epoki, ocenę narratora i raport mapuje się do pliku', async () => {

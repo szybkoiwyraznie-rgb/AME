@@ -32,17 +32,22 @@
   8. **Epoki liczą się sekwencyjnie** — `stanPo` (łącznie z paliwem bytów)
      przechodzi do kolejnej epoki; rozliczenie jest ciągłe, nie per-epoka od
      zera.
-  9. **Pierwsze epoki** uruchomione w Tomie I „Kronika trzech stołów”:
-     Epoka I na skicie `trzy-stoly`, Epoka II na `nieproszeni-goscie`.
-     Wynik w `data/kronika/summary.json` + raporty `docs/kronika-*.html`.
+  9. **Wątki mają ciągłość** — wątek otwarty w poprzedniej epoce musi zostać
+     przeniesiony albo domknięty w kolejnej; wątek zamknięty nie może się
+     z powrotem otworzyć (`walidujCiągłośćWątków`).
+  10. **Pierwsze epoki** uruchomione w Tomie I „Kronika trzech stołów”:
+      Epoka I na `trzy-stoly`, Epoka II na `nieproszeni-goscie`, Epoka III na
+      nowym `odzwierni` (Egungun × Balor × Empusa, unikalny skład).
+      Wynik w `data/kronika/summary.json` + raporty `docs/kronika-*.html`.
 
 - Konsekwencje:
   - `tools/kronika.mjs` — mechanizm + generowanie raportów; npm `kronika` i
     `kronika:check`.
   - `data/kronika/tom-1.json`, `data/kronika/epoka-1.json`,
-    `data/kronika/epoka-2.json` — źródło danych.
-  - `test/kronika.test.js` — 6 testów (wzór paliwa, dwie epoki sekwencyjnie,
-    oś zamknięta, gate, zwrot bez zmiany, struktura podsumowania).
+    `data/kronika/epoka-2.json`, `data/kronika/epoka-3.json` — źródło danych.
+  - `test/kronika.test.js` — 9 testów (wzór paliwa, trzy epoki sekwencyjnie,
+    oś zamknięta, ciągłość wątków, gate, zwrot bez zmiany, struktura
+    podsumowania).
   - `docs/KRONIKA_tryb.md` §20–§21; `docs/ROADMAP.md`; `docs/PROJECT_HISTORY.md`.
   - Seedowe wartości osi/zasięgu są umowne (kalibracji w miarę wzrostu
     kartoteki) — dopuszczalne w pierwszym tomie, oznaczone w metryce.

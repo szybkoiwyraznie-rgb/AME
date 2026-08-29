@@ -150,8 +150,25 @@ function walidujOs(os, bledy, skad) {
   }
 }
 
+/**
+ * Sprawdza ciągłość wątków: wątek otwarty wcześniej musi być w tej epoce
+ * przeniesiony (otwarty) albo domknięty; wątek zamknięty nie może się otworzyć.
+ * `watkiPoprzednie`: Map id -> { stan, epoka }.
+ */
+export function walidujCiągłośćWątków(watkiBiezace, watkiPoprzednie, bledy) {
+  const biezace = new Map(watkiBiezace.map((w) => [w.id, w]));
+  for (const [id, prev] of watkiPoprzednie) {
+    const teraz = biezace.get(id);
+    if (prev.stan === 'otwarty' && !teraz) {
+      blad(bledy, `watki: otwarty wątek „${id}” z epoki „${prev.epoka}” zaginął (przenieś albo domknij)`);
+    } else if (teraz && prev.stan === 'zamkniety' && teraz.stan === 'otwarty') {
+      blad(bledy, `watki: zamknięty wątek „${id}” z epoki „${prev.epoka}” nie może się otworzyć`);
+    }
+  }
+}
+
 /** Przelicza jedną epokę względem bieżącego stanu świata. */
-export function przeliczEpoke({ tom, epoka, indeks, kanon, stan }) {
+export function przeliczEpoke({ tom, epoka, indeks, kanon, stan, watkiPoprzednie }) {
   const bledy = [];
   const stanBiezacy = stan || tom.stanStart;
 
@@ -285,6 +302,9 @@ export function przeliczEpoke({ tom, epoka, indeks, kanon, stan }) {
     if (widy.has(w.id)) blad(bledy, `watki: duplikat „${w.id}”`);
     widy.add(w.id);
   }
+  if (watkiPoprzednie instanceof Map) {
+    walidujCiągłośćWątków(konsekwencje.watki || [], watkiPoprzednie, bledy);
+  }
 
   const oceny = (epoka.narrator || {}).ocena || [];
   for (const o of oceny) {
@@ -310,15 +330,22 @@ export function przeliczEpoke({ tom, epoka, indeks, kanon, stan }) {
 /** Przelicza wszystkie epoki Tomu sekwencyjnie: stanPo poprzedniej → stan wejściowy. */
 export function przeliczTom({ tom, epoki, indeks, kanon }) {
   let stan = klonuj(tom.stanStart);
+  let watkiPoprzednie = new Map();
   const wyniki = [];
   const bledy = [];
   for (const epoka of epoki) {
-    const w = przeliczEpoke({ tom, epoka, indeks, kanon, stan });
+    const w = przeliczEpoke({ tom, epoka, indeks, kanon, stan, watkiPoprzednie });
     wyniki.push({ ...w, slug: epoka.slug, tytul: epoka.tytul });
     if (!w.ok) {
       for (const b of w.bledy) blad(bledy, `${epoka.slug}: ${b}`);
     } else {
       stan = w.stanPo;
+      watkiPoprzednie = new Map(
+        (epoka.konsekwencje?.watki || []).map((x) => [
+          x.id,
+          { stan: x.stan, epoka: epoka.slug },
+        ])
+      );
     }
   }
   return { ok: bledy.length === 0, bledy, wyniki, stan };

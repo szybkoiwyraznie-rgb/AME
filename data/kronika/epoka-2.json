@@ -133,6 +133,16 @@
     ],
     "watki": [
       {
+        "id": "czwarty-stol",
+        "stan": "otwarty",
+        "opis": "(z Epoki I) Kto siada przy czwartym stole: gość, który wziął sam, czy przodek, który umie wybaczyć?"
+      },
+      {
+        "id": "warunek-barbarossy",
+        "stan": "otwarty",
+        "opis": "(z Epoki I) Dlaczego cesarz woli płacić, żeby gość wyszedł, zamiast przyjąć go przy stole?"
+      },
+      {
         "id": "odzwierni",
         "stan": "otwarty",
         "opis": "Czy istnieje wspólny odźwierny dla wszystkich bytów — czy każde ma tylko własny próg?"

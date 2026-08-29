@@ -1,0 +1,165 @@
+{
+  "slug": "epoka-3",
+  "tom": "tom-1",
+  "skit": "odzwierni",
+  "tytul": "Odźwierni: zapraszany, otwierany i ten, który jest drzwiami",
+  "iskra": "Przed wspólnym progiem stanęli: przodek, którego wpuszcza pieśń; olbrzym, którego otwiera czterech; i dom, który sam jest zaproszeniem i znika, gdy padnie imię.",
+  "pytanie": "Kto naprawdę stoi w drzwiach — ten, kto wchodzi, ten, kto otwiera, czy ten, kto jest miejscem?",
+  "uczestnicy": [
+    {
+      "slug": "egungun",
+      "rola": "Przodek, którego wpuszcza pieśń",
+      "kosztUdzialu": 2,
+      "kosztKlucza": 0,
+      "boost": 0,
+      "zwrot": 5,
+      "watkiNaruszone": 2
+    },
+    {
+      "slug": "balor",
+      "rola": "Olbrzym otwierany przez czterech",
+      "kosztUdzialu": 2,
+      "kosztKlucza": 0,
+      "boost": 0,
+      "zwrot": 0,
+      "watkiNaruszone": 2
+    },
+    {
+      "slug": "empusa-korynt",
+      "rola": "Dom, który jest progiem",
+      "kosztUdzialu": 2,
+      "kosztKlucza": 0,
+      "boost": 0,
+      "zwrot": 0,
+      "watkiNaruszone": 2
+    }
+  ],
+  "przebieg": "Pełny tekst rozmowy: data/skity/odzwierni.json (uczestnicy zgodni z epoką).",
+  "narrator": {
+    "ocena": [
+      {
+        "kto": "egungun",
+        "kogo": "balor",
+        "stopien": 2,
+        "kontekst": "retoryka pieśni",
+        "komentarz": "Egungun odwołuje się do przymusu w obrazie Balora: olbrzym nie pyta, czy chce wracać — i nazywa to za-progiem. To ocena narratora: przodek gra na słabości przymusu, nie odpala go jak przycisku."
+      },
+      {
+        "kto": "empusa-korynt",
+        "kogo": "balor",
+        "stopien": 2,
+        "kontekst": "retoryka imienia",
+        "komentarz": "Empusa pokazuje, że jej próg znika po wypowiedzianym imieniu, a Balor nie ma imienia tylko powiekę — i w ten sposób odbiera mu monopol na bycie niechybnym. Bez mechanicznego exploitu, tylko przez składnię rozmowy."
+      },
+      {
+        "kto": "egungun",
+        "kogo": "empusa-korynt",
+        "stopien": 1,
+        "kontekst": "łagodne rozpoznanie",
+        "komentarz": "Egungun nie atakuje Empusy — odsłania ją: „ty jesteś progiem, nie gościem”. To najbardziej współczująca z trzech ocen."
+      }
+    ],
+    "podsumowanie": "Rozmowa nie likwiduje żadnego progu — pokazuje, że każdy ma inny. Pieśń zaprasza, powieka otwiera, imię rozwiązuje. Świat rozumie trzy mechanizmy naraz, ale żaden z bytów nie traci pola: Balor zostaje nieodwrócony, Empusa zostaje nienazwana, Egungun zostaje w pieśni."
+  },
+  "konsekwencje": {
+    "os": {
+      "mit": -2,
+      "racjonalizacja": 2,
+      "opis": "Trzy mechanizmy progu (pieśń, powieka, imię) zostają nazwane i rozdzielone. Świat wie już, że drzwi nie są jedne — a przez to trochę mniej się ich boi."
+    },
+    "relacje": [
+      {
+        "od": "egungun",
+        "do": "balor",
+        "kierunek": "wzmocnienie",
+        "opis": "Przodek i olbrzym spotykają się w tym samym obrazie kogoś, kto nie pyta o zgodę — choć jeden przez pieśń, drugi przez powiekę."
+      },
+      {
+        "od": "empusa-korynt",
+        "do": "balor",
+        "kierunek": "schłodzenie",
+        "opis": "Empusa pozbawia Balora wyłączności na nieuchronność: jej próg znika po imieniu, jego po podniesieniu powieki."
+      },
+      {
+        "od": "egungun",
+        "do": "empusa-korynt",
+        "kierunek": "wzmocnienie",
+        "opis": "Egungun nazywa Empusę progiem, a nie gościem — przez co spina ją z własną rolą: jedno wpuszcza przez pieśń, drugie przez bycie miejscem."
+      }
+    ],
+    "zasieg": [
+      {
+        "slug": "egungun",
+        "przed": 0.503,
+        "po": 0.523,
+        "opis": "Rozdzielenie mechanizmów wzmacnia kult przodków: pieśń zostaje uznana za jedyne miłe drzwi między światami."
+      },
+      {
+        "slug": "balor",
+        "przed": 0.46,
+        "po": 0.46,
+        "opis": "Balor nie zyskuje i nie traci: jego powieka pozostaje nieodwrócona, ale przestaje być jedynym drzwiami, o których ludzie szepczą."
+      },
+      {
+        "slug": "empusa-korynt",
+        "przed": 0.48,
+        "po": 0.48,
+        "opis": "Empusa zostaje nienazwana: świat wie, że padnięcie imienia ją rozwiązuje, więc opowiada o niej ostrożnie — na granicy mitu."
+      }
+    ],
+    "dominacje": [
+      { "kultura": "joruba", "kult": "egungun", "przed": 0.503, "po": 0.523 },
+      { "kultura": "irlandia", "kult": "balor", "przed": 0.46, "po": 0.46 },
+      { "kultura": "grecja", "kult": "empusa-korynt", "przed": 0.48, "po": 0.48 }
+    ],
+    "pozycje": [
+      {
+        "slug": "egungun",
+        "status": "wzmocniony",
+        "opis": "Pieśń zostaje uznana za miłe drzwi; kult przodków rośnie o 2 pp."
+      },
+      {
+        "slug": "balor",
+        "status": "odporny",
+        "opis": "Powieka pozostaje nieodwrócona; olbrzym nie zostaje pokonany, tylko przestaje być wyjątkiem."
+      },
+      {
+        "slug": "empusa-korynt",
+        "status": "odporny",
+        "opis": "Empusa zostaje nienazwana — i dzięki temu zostaje w legendzie, choć świat już wie, jak ją rozproszyć."
+      }
+    ],
+    "watki": [
+      {
+        "id": "odzwierni",
+        "stan": "zamkniety",
+        "opis": "Wątek przymknięty: pieśń, powieka i imię to trzy różne progi, nie jeden wspólny odźwierny."
+      },
+      {
+        "id": "czwarty-stol",
+        "stan": "otwarty",
+        "opis": "Czwarty stół z Epoki I wciąż czeka: gość, który wziął sam, czy przodek, który umie wybaczyć."
+      },
+      {
+        "id": "warunek-barbarossy",
+        "stan": "otwarty",
+        "opis": "Dlaczego cesarz woli płacić, żeby gość wyszedł, zamiast przyjąć go przy stole?"
+      },
+      {
+        "id": "wedrowny-dom-empusy",
+        "stan": "otwarty",
+        "opis": "Czy ludzie nauczą się wypowiadać słowo-poznanie w porę, czy samo słowo stanie się rytuałem, który chybia?"
+      },
+      {
+        "id": "imie-na-progu",
+        "stan": "otwarty",
+        "opis": "Nowy: czy istnieje jedno słowo, które rozwiązuje każdy próg — czy każde drzwi mają własne imię?"
+      }
+    ]
+  },
+  "meta": {
+    "utworzono": "2026-08-29 10:40",
+    "autor": "agent Areny — trzecia epoka Tomu I (wątek odźwierni)",
+    "wersja": 1
+  }
+}

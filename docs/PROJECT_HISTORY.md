@@ -1284,3 +1284,25 @@ Właściciel polecił: „skalibruj seedy, a potem przejdź do Epoki II”.
   pilnuje, że `tom-1.json` nie rozjeżdża się z narzędziem.
 - ADR 0021, §21 (3/4/5), ROADMAP, PROJECT_HISTORY zaktualizowane; raporty
   przeliczone (`docs/kronika-tom-1.html`, epoka-1, epoka-2).
+
+## Kronika — pętla jakości C1–C3 + Epoka III + ciągłość wątków (2026-08-29)
+
+Kolejna pętla jakości (C1 → C3 → C2) i dalsza implementacja Kroniki.
+
+- **C1** — research pod otwarty wątek „odźwierni”: Balor (Cath Maige Tuired;
+  powieka podnoszona przez czterech, żar nie imię), Egungun (wejście przez
+  pieśń/oríkì), Empusa (rozpoznanie przez nazwanie, Life of Apollonius).
+- **C3** — nowy SKIT `data/skity/odzwierni.json` (Egungun × Balor × Empusa;
+  unikalny skład, 201 słów, 3 głosy). Dodanie SKITu przekalibrowało seedy
+  (`2×skity`), więc Tom I przeliczony (Egngun 47.3→50.3%, Empusa 46→48%).
+- **C2 / Epoka III** — `data/kronika/epoka-3.json` „Odźwierni” na skicie
+  `odzwierni`: Egungun 21→24 (+5), Balor 15→13, Empusa 19→17; oś 31/69.
+  Raport `docs/kronika-epoka-3.html`, strona Tomu zaktualizowana.
+- **Ciągłość wątków** — `walidujCiągłośćWątków` w `tools/kronika.mjs`:
+  otwarty wątek musi być przeniesiony/domknięty, zamknięty nie może się
+  otworzyć. Walidator wykrył realny błąd: Epoka II gubiła `czwarty-stol`
+  i `warunek-barbarossy` z Epoki I — naprawione (przeniesione).
+- **ADR 0021** rozszerzony (pkt 9–10); §21.4–§21.6 w `docs/KRONIKA_tryb.md`;
+  ROADMAP uzupełniony.
+- Testy: `test/kronika.test.js` 9 testów, łącznie **162/162**; build/check/
+  kronika:check zielone.

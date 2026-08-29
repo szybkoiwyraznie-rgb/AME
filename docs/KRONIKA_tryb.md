@@ -702,7 +702,7 @@ Kalibracja seedów (`--seed`): `obecność = 2×backlinki + tagi kanonu +
 `mit% = średnia zasięgów`. Seed obejmuje **15 bytów** z kartoteki, nie tylko
 uczestników Tomu.
 
-### 21.4 Wynik Tomu I (dwie epoki)
+### 21.4 Wynik Tomu I (trzy epoki)
 
 **Epoka I — „Trzy stoły”**
 
@@ -720,26 +720,49 @@ uczestników Tomu.
 | Kentaur | 14 | −2 | 0 | **12** |
 | Empusa | 17 | −2 | +4 | **19** |
 
-- **oś całego Tomu (po kalibracji seedów 37/63):** MIT 37→**33**,
-  RACJONALIZACJA 63→**67** (Epoka I 35/65, Epoka II 33/67; każda epoka
-  utrzymuje sumę 100).
-- **zasięg po Tomie (po kalibracji):** Egungun 44.7%→47.7% (+3),
-  Empusa 43.3%→45.3% (+2), Kentaur 44.7%→40.7% (uczta wyjaśniona, potem żart
-  Ima), Barbarossa 46%, Imp 39.3% (bez zmian).
-- **wątki zamknięte:** `wino-w-uczcie`, `pogrzeb-zamiast-wesela`; **otwarte:**
-  `czwarty-stol`, `warunek-barbarossy`, `odzwierni`, `wedrowny-dom-empusy`.
+**Epoka III — „Odźwierni: zapraszany, otwierany i ten, który jest drzwiami”**
+(skit `odzwierni`: Egungun × Balor × Empusa; Egungun i Empusa kontynuują saldo)
+
+| Byty | saldo start | koszt | zwrot | saldo |
+|---|---|---|---|---|
+| Egungun | 21 | −2 | +5 | **24** |
+| Balor | 15 | −2 | 0 | **13** |
+| Empusa | 19 | −2 | 0 | **17** |
+
+- **oś całego Tomu (po kalibracji seedów 37/63):** MIT 37→**31**,
+  RACJONALIZACJA 63→**69** (Epoka I 35/65, Epoka II 33/67, Epoka III 31/69;
+  każda epoka utrzymuje sumę 100).
+- **zasięg po Tomie (po kalibracji):** Egungun 47.3%→52.3% (+5 przez dwie
+  epoki), Empusa 46%→48% (+2), Kentaur 44.7%→40.7% (uczta wyjaśniona), Balor
+  46%, Barbarossa 46%, Imp 39.3% (bez zmian).
+- **wątki zamknięte:** `wino-w-uczcie`, `pogrzeb-zamiast-wesela`, `odzwierni`;
+  **otwarte:** `czwarty-stol`, `warunek-barbarossy`, `wedrowny-dom-empusy`,
+  `imie-na-progu`.
 - **Czego dowodzi:** byt-statysta **traci**; byt, który realnie zmienił świat
-  (Egungun, Empusa) może odzyskać paliwo; Kentaur przechodzi przez dwie epoki
-  z ciągłym saldem. Skit **nie** dodaje paliwa.
+  (Egungun, Empusa w Ep II) może odzyskać paliwo; Balor i Empusa płacą za
+  wyjaśnienie świata (racjonalizacja rośnie). Skit **nie** dodaje paliwa.
 
-### 21.5 Następny krok (stan po tej iteracji)
+### 21.5 Ciągłość wątków (nowy walidator)
 
-1. **Druga epoka zrobiona** — mechanizm utrzymuje ciągłość (`stanPo`.
-   `paliwo` przechodzi dalej).
-2. **Prawdziwa strona główna Tomu zrobiona** — `docs/kronika-tom-1.html`
+Epoki nie mogą „gubić” wątków. Do mechanizmu doszedł `walidujCiągłośćWątków`:
+wątek z poprzedniej epoki, który był **otwarty**, musi być w kolejnej
+**przeniesiony** (`stan: otwarty`) albo **domknięty** (`stan: zamkniety`);
+wątek **zamknięty** nie może się z powrotem otworzyć.
+
+Przykładowe wyniki walidacji w Tomie I:
+- `czwarty-stol` i `warunek-barbarossy` z Epoki I **brakowało** w Epoce II —
+  zostały dopisane jako przeniesione (to była realna usterka, wykryta przez
+  nowy test).
+- Wątek `odzwierni` z Epoki II jest domknięty w Epoce III.
+- Nowy `imie-na-progu` otwiera się w Epoce III (dozwolone).
+
+### 21.6 Następny krok (stan po tej iteracji)
+
+1. **Trzy epoki zrobione** — mechanizm utrzymuje ciągłość stanu i wątków.
+2. **Prawdziwa strona główna Tomu** — `docs/kronika-tom-1.html`
    (oś, dominacje, chronologia, wątki, uczestnicy, ledger) z `summary.json`.
 3. **Kalibracja seedów zrobiona** — `npm run kronika:seed` liczy je z
    kartoteki deterministycznie (15 bytów); test pilnuje spójności
    `tom-1.json` z narzędziem.
-4. Kolejna epoka może iść w stronę otwartego wątku `odzwierni` albo
+4. Kolejna epoka może iść w stronę otwartego wątku `imie-na-progu` albo
    `czwarty-stol`, gdy właściciel potwierdzi temat.

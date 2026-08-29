@@ -507,8 +507,28 @@ przycisk) i poleceniu „Rozstaje zostawmy w pomysłach” zbudowano realny siln
       deterministycznie z kartoteki (obecność bytu → zasięg, średnia → oś;
       15 bytów); test pilnuje zgodności.
 - [x] **Npm/testy** — `npm run kronika`, `npm run kronika:check`,
-      `npm run kronika:seed`, `test/kronika.test.js` (7 testów).
+      `npm run kronika:seed`, `test/kronika.test.js` (9 testów).
 - [x] **ADR 0021** + §21 w `docs/KRONIKA_tryb.md`.
+
+### Kronika: pętla jakości C1–C3 + Epoka III (2026-08-29)
+
+Pętla jakości wokół Kroniki + dalsza implementacja:
+
+- [x] **C1** — research pod wątek „odźwierni” (Balor — Cath Maige Tuired,
+      powieka podnoszona przez czterech; Egungun — wejście przez pieśń/oríkì;
+      Empusa — rozpoznanie/nazwanie z *Life of Apollonius*).
+- [x] **C3** — nowy SKIT `data/skity/odzwierni.json` (Egungun × Balor × Empusa,
+      unikalny skład, 3 głosy, 201 słów).
+- [x] **Reseed** — nowy SKIT wpływa na kalibrację (`2×skity`), więc seedy i
+      epoki I–II przeliczone (Egungun 47.3→50.3%, Empusa 46→48%).
+- [x] **C2 / Epoka III** — `data/kronika/epoka-3.json` na skicie `odzwierni`;
+      III epoka Tomu: Egungun 21→24, Balor 15→13, Empusa 19→17; oś 31/69.
+- [x] **Ciągłość wątków** — `walidujCiągłośćWątków` w `tools/kronika.mjs`
+      (otwarty wątek musi być przeniesiony albo domknięty; zamknięty nie może
+      się otworzyć). Wykryła realny brak: Epoka II gubiła `czwarty-stol`
+      i `warunek-barbarossy` — naprawione.
+- [x] **Raport** — `docs/kronika-epoka-3.html` + zaktualizowana strona Tomu.
+- [x] **Testy** — 9 testów w `test/kronika.test.js` (3 epoki, ciągłość, oś).
 
 ## C4 — nazwa miasta na czas przytrzymania + kursor strzałka (nadpisuje C2 UX)
 
