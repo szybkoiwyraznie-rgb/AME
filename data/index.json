@@ -1,7 +1,7 @@
 {
   "wersja": 3,
   "liczba": 10,
-  "liczbaSkitow": 14,
+  "liczbaSkitow": 15,
   "kanon": {
     "kategorie": [
       {
@@ -325,6 +325,7 @@
       ],
       "obraz": "assets/wizualizacje/barbarossa-kyffhaeuser.jpg",
       "skity": [
+        "cena-znaku",
         "kalendarz-powrotow",
         "trzy-stoly",
         "trzy-zegary",
@@ -483,6 +484,7 @@
       ],
       "obraz": "assets/wizualizacje/indra.jpg",
       "skity": [
+        "cena-znaku",
         "dwa-grzbiety",
         "znak-burzy"
       ]
@@ -593,6 +595,7 @@
       ],
       "obraz": "assets/wizualizacje/nessos.jpg",
       "skity": [
+        "cena-znaku",
         "dwa-grzbiety"
       ]
     },
@@ -640,6 +643,23 @@
     }
   ],
   "skity": [
+    {
+      "slug": "cena-znaku",
+      "tytul": "CENA ZNAKU",
+      "temat": "kto płaci za to, że moc wraca na wezwanie",
+      "uczestnicy": [
+        "barbarossa-kyffhaeuser",
+        "indra",
+        "nessos"
+      ],
+      "imiona": [
+        "Indra",
+        "Barbarossa",
+        "Nessos"
+      ],
+      "slow": 211,
+      "data": "2026-08-28 23:59"
+    },
     {
       "slug": "dwa-grzbiety",
       "tytul": "DWA GRZBIETY",
@@ -872,6 +892,14 @@
     }
   ],
   "aktualizacje": [
+    {
+      "data": "2026-08-28 23:59",
+      "typ": "skit",
+      "akcja": "nowy",
+      "slug": "cena-znaku",
+      "tytul": "CENA ZNAKU",
+      "opis": "SKIT — skład: Indra, Barbarossa, Nessos"
+    },
     {
       "data": "2026-08-28 23:58",
       "typ": "skit",
