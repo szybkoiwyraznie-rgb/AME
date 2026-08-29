@@ -1471,3 +1471,32 @@ znanej gałęzi. Mapowanie commitów: `de71db7→fe68821`,
 `9aecf1a→a72b45a`, `9ad8e7f→b620a50`, `2b3fe74→81f910c`. Indeks i Kronika
 przebudowane z połączonych danych (`npm run build`), brama **164/164**.
 PR #11 zamknięty, gałąź `mtg/materializacja-5-kart` usunięta.
+
+### Redakcja SKITów i audyt Kartoteki (2026-08-30) — zlecenia B i C
+
+Właściciel: „PRZYŁÓŻ SIĘ DO NICH!” — B: przeczytać każdy SKIT i poprawić
+język (B1), logikę i hermetyczność (B2), dodać humor tam, gdzie nadęte
+(B3); C: audyt wszystkich Kart Bytów (B1+B2).
+
+**B — 17/19 SKITów zredagowane** (`37924bd`). Bez zmian: `cena-znaku`
+i `dzien-wolnego` (czytały się dobrze). Najważniejsze poprawki: forma
+żeńska/męska po ustaleniu płci Selkiego (męski — ojciec z ballady),
+„foczą skórę” zamiast „faksy/fiasko”, „czterej chłopi”, „Z twojego
+pucharu”, „w sekundzie”, „z łoskotem”, „wozem”, „balii”, „zadyma”;
+fakty do Kartoteki (krater Tezeusza zamiast głazu, trojaczki Balora
+zamiast trzech chłopców, danina w bydle i dzieciach zamiast złotego
+łańcucha); rozluźnienie końcówek („znak-burzy”, „trzy-zegary” — koniec
+z „philosophy”; „zagadka-ze-spizu” — koniec z wulgaryzmem).
+Wszystkie SKITy ≤ 300 słów.
+
+**C — 16/20 kart poprawionych** (`c193fc1`); reszta bez uwag
+(agni — 1 literówka, ben-varrey, egungun, empusa-korynt, kannon-hase,
+morowa-panna, nessos, protostates, sfinks-teby, syama-i-sarvara,
+talos-kreta, pandora, knecht-z-koptos, lincoln-imp, drangue-shala,
+indra, balor, barbarossa, kentaur-pelion, selkie). Najważniejsze:
+„Nielubi”→“Nie lubi”, „słaja”→“słoja” (5 miejsc), „czarną kitą”,
+„Pauzaniasz”/„Lajos”, „Imię bytu”, „pomszczenie”, doprecyzowanie
+powiązań (sfinks→kentaur nie myli bytu z Chejronem; selkie→nessos
+„jeden/drugi”), zdanie drangue o obietnicach (kto płaci własną siłą).
+Każda zmiana z `meta.modyfikacje` + godziną. Brama: 164/164,
+build/check zielone.
