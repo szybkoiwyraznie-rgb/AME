@@ -16,7 +16,7 @@
       },
       {
         "slug": "balor",
-        "wielkosc": 0.433
+        "wielkosc": 0.46
       },
       {
         "slug": "barbarossa-kyffhaeuser",
@@ -32,11 +32,11 @@
       },
       {
         "slug": "egungun",
-        "wielkosc": 0.447
+        "wielkosc": 0.473
       },
       {
         "slug": "empusa-korynt",
-        "wielkosc": 0.433
+        "wielkosc": 0.46
       },
       {
         "slug": "indra",
@@ -80,7 +80,7 @@
       {
         "kultura": "irlandia",
         "kult": "balor",
-        "wielkosc": 0.433
+        "wielkosc": 0.46
       },
       {
         "kultura": "niemcy",
@@ -100,12 +100,12 @@
       {
         "kultura": "joruba",
         "kult": "egungun",
-        "wielkosc": 0.447
+        "wielkosc": 0.473
       },
       {
         "kultura": "grecja",
         "kult": "empusa-korynt",
-        "wielkosc": 0.433
+        "wielkosc": 0.46
       },
       {
         "kultura": "indie",

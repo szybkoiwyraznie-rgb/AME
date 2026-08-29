@@ -59,7 +59,7 @@
           },
           {
             "slug": "balor",
-            "wielkosc": 0.433
+            "wielkosc": 0.46
           },
           {
             "slug": "barbarossa-kyffhaeuser",
@@ -75,11 +75,11 @@
           },
           {
             "slug": "egungun",
-            "wielkosc": 0.477
+            "wielkosc": 0.503
           },
           {
             "slug": "empusa-korynt",
-            "wielkosc": 0.433
+            "wielkosc": 0.46
           },
           {
             "slug": "indra",
@@ -123,7 +123,7 @@
           {
             "kultura": "irlandia",
             "kult": "balor",
-            "wielkosc": 0.433
+            "wielkosc": 0.46
           },
           {
             "kultura": "niemcy",
@@ -143,12 +143,12 @@
           {
             "kultura": "joruba",
             "kult": "egungun",
-            "wielkosc": 0.477
+            "wielkosc": 0.503
           },
           {
             "kultura": "grecja",
             "kult": "empusa-korynt",
-            "wielkosc": 0.433
+            "wielkosc": 0.46
           },
           {
             "kultura": "indie",
@@ -219,16 +219,16 @@
         ],
         "zasieg": [
           {
-            "slug": "egungun",
-            "przed": 0.447,
-            "po": 0.477,
-            "opis": "W niektórych rodach pojawia się czwarty stół dla gościa, który wziął sam — kult przodków zyskuje nowy rytuał."
-          },
-          {
             "slug": "barbarossa-kyffhaeuser",
             "przed": 0.46,
             "po": 0.46,
             "opis": "Cesarz nie zyskuje i nie traci: jego warunek pozostaje nierozstrzygnięty."
+          },
+          {
+            "slug": "egungun",
+            "przed": 0.473,
+            "po": 0.503,
+            "opis": "W niektórych rodach pojawia się czwarty stół dla gościa, który wziął sam — kult przodków zyskuje nowy rytuał."
           },
           {
             "slug": "kentaur-pelion",
@@ -239,16 +239,16 @@
         ],
         "dominacje": [
           {
-            "kultura": "joruba",
-            "kult": "egungun",
-            "przed": 0.447,
-            "po": 0.477
-          },
-          {
             "kultura": "niemcy",
             "kult": "barbarossa-kyffhaeuser",
             "przed": 0.46,
             "po": 0.46
+          },
+          {
+            "kultura": "joruba",
+            "kult": "egungun",
+            "przed": 0.473,
+            "po": 0.503
           },
           {
             "kultura": "grecja",
@@ -368,7 +368,7 @@
           },
           {
             "slug": "balor",
-            "wielkosc": 0.433
+            "wielkosc": 0.46
           },
           {
             "slug": "barbarossa-kyffhaeuser",
@@ -384,11 +384,11 @@
           },
           {
             "slug": "egungun",
-            "wielkosc": 0.477
+            "wielkosc": 0.503
           },
           {
             "slug": "empusa-korynt",
-            "wielkosc": 0.453
+            "wielkosc": 0.48
           },
           {
             "slug": "indra",
@@ -432,7 +432,7 @@
           {
             "kultura": "irlandia",
             "kult": "balor",
-            "wielkosc": 0.433
+            "wielkosc": 0.46
           },
           {
             "kultura": "niemcy",
@@ -452,12 +452,12 @@
           {
             "kultura": "joruba",
             "kult": "egungun",
-            "wielkosc": 0.477
+            "wielkosc": 0.503
           },
           {
             "kultura": "grecja",
             "kult": "empusa-korynt",
-            "wielkosc": 0.453
+            "wielkosc": 0.48
           },
           {
             "kultura": "indie",
@@ -530,10 +530,10 @@
         ],
         "zasieg": [
           {
-            "slug": "lincoln-imp",
-            "przed": 0.393,
-            "po": 0.393,
-            "opis": "Imp nie zyskuje i nie traci: jego anioł pozostaje granicą, o której świat mówi raczej z uśmiechem niż z lękiem."
+            "slug": "empusa-korynt",
+            "przed": 0.46,
+            "po": 0.48,
+            "opis": "Świat zaczyna sprawdzać domy jednym trzeźwym słowem; sam rytuał rozpoznania zamienia Empusę w znaną przestrogę i podsyca jej legendę."
           },
           {
             "slug": "kentaur-pelion",
@@ -542,18 +542,18 @@
             "opis": "Żart o „pogrzebie zamiast wesela” domyka wątek kentaura na ucztach: jego legenda słabnie jeszcze o 2 pp."
           },
           {
-            "slug": "empusa-korynt",
-            "przed": 0.433,
-            "po": 0.453,
-            "opis": "Świat zaczyna sprawdzać domy jednym trzeźwym słowem; sam rytuał rozpoznania zamienia Empusę w znaną przestrogę i podsyca jej legendę."
+            "slug": "lincoln-imp",
+            "przed": 0.393,
+            "po": 0.393,
+            "opis": "Imp nie zyskuje i nie traci: jego anioł pozostaje granicą, o której świat mówi raczej z uśmiechem niż z lękiem."
           }
         ],
         "dominacje": [
           {
-            "kultura": "anglia",
-            "kult": "lincoln-imp",
-            "przed": 0.393,
-            "po": 0.393
+            "kultura": "grecja",
+            "kult": "empusa-korynt",
+            "przed": 0.46,
+            "po": 0.48
           },
           {
             "kultura": "grecja",
@@ -562,10 +562,10 @@
             "po": 0.407
           },
           {
-            "kultura": "grecja",
-            "kult": "empusa-korynt",
-            "przed": 0.433,
-            "po": 0.453
+            "kultura": "anglia",
+            "kult": "lincoln-imp",
+            "przed": 0.393,
+            "po": 0.393
           }
         ],
         "pozycje": [
@@ -636,7 +636,7 @@
       },
       {
         "slug": "balor",
-        "wielkosc": 0.433
+        "wielkosc": 0.46
       },
       {
         "slug": "barbarossa-kyffhaeuser",
@@ -652,11 +652,11 @@
       },
       {
         "slug": "egungun",
-        "wielkosc": 0.477
+        "wielkosc": 0.503
       },
       {
         "slug": "empusa-korynt",
-        "wielkosc": 0.453
+        "wielkosc": 0.48
       },
       {
         "slug": "indra",
@@ -700,7 +700,7 @@
       {
         "kultura": "irlandia",
         "kult": "balor",
-        "wielkosc": 0.433
+        "wielkosc": 0.46
       },
       {
         "kultura": "niemcy",
@@ -720,12 +720,12 @@
       {
         "kultura": "joruba",
         "kult": "egungun",
-        "wielkosc": 0.477
+        "wielkosc": 0.503
       },
       {
         "kultura": "grecja",
         "kult": "empusa-korynt",
-        "wielkosc": 0.453
+        "wielkosc": 0.48
       },
       {
         "kultura": "indie",

@@ -1,7 +1,7 @@
 {
   "wersja": 3,
   "liczba": 15,
-  "liczbaSkitow": 15,
+  "liczbaSkitow": 16,
   "kanon": {
     "kategorie": [
       {
@@ -442,6 +442,7 @@
         "godzina-otwarcia",
         "hold-oraz-swiatlo",
         "komu-wolno-patrzec",
+        "odzwierni",
         "trzy-zegary",
         "znak-i-liczba"
       ]
@@ -602,6 +603,7 @@
       "skity": [
         "hold-oraz-swiatlo",
         "kalendarz-powrotow",
+        "odzwierni",
         "plotno-i-kamien",
         "trzy-stoly"
       ]
@@ -642,7 +644,8 @@
         "dwa-zepsute-wesela",
         "dwie-skory",
         "komu-wolno-patrzec",
-        "nieproszeni-goscie"
+        "nieproszeni-goscie",
+        "odzwierni"
       ]
     },
     {
@@ -1116,6 +1119,23 @@
       "data": "2026-08-28 21:30"
     },
     {
+      "slug": "odzwierni",
+      "tytul": "ODŹWIERNI",
+      "temat": "próg między światami: kto wchodzi zapraszany, kogo otwierają, a kto sam jest drzwiami",
+      "uczestnicy": [
+        "balor",
+        "egungun",
+        "empusa-korynt"
+      ],
+      "imiona": [
+        "Egungun",
+        "Balor",
+        "Empusa"
+      ],
+      "slow": 201,
+      "data": "2026-08-29 10:20"
+    },
+    {
       "slug": "plotno-i-kamien",
       "tytul": "PŁÓTNO I KAMIEŃ",
       "temat": "kto w ogóle wchodzi do świątyni: zaproszony przodek i nieproszony sabotażysta",
@@ -1198,6 +1218,14 @@
     }
   ],
   "aktualizacje": [
+    {
+      "data": "2026-08-29 10:20",
+      "typ": "skit",
+      "akcja": "nowy",
+      "slug": "odzwierni",
+      "tytul": "ODŹWIERNI",
+      "opis": "SKIT — skład: Egungun, Balor, Empusa"
+    },
     {
       "data": "2026-08-29 01:30",
       "typ": "manifestacja",

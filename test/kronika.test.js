@@ -81,7 +81,7 @@ test('Tom I: dwie epoki przechodzą i oś zamyka się na 100', async () => {
   assert.equal(e2.stanPo.os.mit, 33);
   assert.equal(e2.stanPo.os.racjonalizacja, 67);
   assert.equal(e2.stanPo.zasieg.find((z) => z.slug === 'kentaur-pelion').wielkosc, 0.407);
-  assert.equal(e2.stanPo.zasieg.find((z) => z.slug === 'empusa-korynt').wielkosc, 0.453);
+  assert.equal(e2.stanPo.zasieg.find((z) => z.slug === 'empusa-korynt').wielkosc, 0.48);
 });
 
 test('oś: delty mit+racjonalizacja muszą sumować się do 0', async () => {

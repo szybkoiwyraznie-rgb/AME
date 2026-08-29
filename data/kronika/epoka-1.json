@@ -76,16 +76,16 @@
     ],
     "zasieg": [
       {
-        "slug": "egungun",
-        "przed": 0.447,
-        "po": 0.477,
-        "opis": "W niektórych rodach pojawia się czwarty stół dla gościa, który wziął sam — kult przodków zyskuje nowy rytuał."
-      },
-      {
         "slug": "barbarossa-kyffhaeuser",
         "przed": 0.46,
         "po": 0.46,
         "opis": "Cesarz nie zyskuje i nie traci: jego warunek pozostaje nierozstrzygnięty."
+      },
+      {
+        "slug": "egungun",
+        "przed": 0.473,
+        "po": 0.503,
+        "opis": "W niektórych rodach pojawia się czwarty stół dla gościa, który wziął sam — kult przodków zyskuje nowy rytuał."
       },
       {
         "slug": "kentaur-pelion",
@@ -96,16 +96,16 @@
     ],
     "dominacje": [
       {
-        "kultura": "joruba",
-        "kult": "egungun",
-        "przed": 0.447,
-        "po": 0.477
-      },
-      {
         "kultura": "niemcy",
         "kult": "barbarossa-kyffhaeuser",
         "przed": 0.46,
         "po": 0.46
+      },
+      {
+        "kultura": "joruba",
+        "kult": "egungun",
+        "przed": 0.473,
+        "po": 0.503
       },
       {
         "kultura": "grecja",

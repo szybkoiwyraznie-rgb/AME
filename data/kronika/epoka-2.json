@@ -76,10 +76,10 @@
     ],
     "zasieg": [
       {
-        "slug": "lincoln-imp",
-        "przed": 0.393,
-        "po": 0.393,
-        "opis": "Imp nie zyskuje i nie traci: jego anioł pozostaje granicą, o której świat mówi raczej z uśmiechem niż z lękiem."
+        "slug": "empusa-korynt",
+        "przed": 0.46,
+        "po": 0.48,
+        "opis": "Świat zaczyna sprawdzać domy jednym trzeźwym słowem; sam rytuał rozpoznania zamienia Empusę w znaną przestrogę i podsyca jej legendę."
       },
       {
         "slug": "kentaur-pelion",
@@ -88,18 +88,18 @@
         "opis": "Żart o „pogrzebie zamiast wesela” domyka wątek kentaura na ucztach: jego legenda słabnie jeszcze o 2 pp."
       },
       {
-        "slug": "empusa-korynt",
-        "przed": 0.433,
-        "po": 0.453,
-        "opis": "Świat zaczyna sprawdzać domy jednym trzeźwym słowem; sam rytuał rozpoznania zamienia Empusę w znaną przestrogę i podsyca jej legendę."
+        "slug": "lincoln-imp",
+        "przed": 0.393,
+        "po": 0.393,
+        "opis": "Imp nie zyskuje i nie traci: jego anioł pozostaje granicą, o której świat mówi raczej z uśmiechem niż z lękiem."
       }
     ],
     "dominacje": [
       {
-        "kultura": "anglia",
-        "kult": "lincoln-imp",
-        "przed": 0.393,
-        "po": 0.393
+        "kultura": "grecja",
+        "kult": "empusa-korynt",
+        "przed": 0.46,
+        "po": 0.48
       },
       {
         "kultura": "grecja",
@@ -108,10 +108,10 @@
         "po": 0.407
       },
       {
-        "kultura": "grecja",
-        "kult": "empusa-korynt",
-        "przed": 0.433,
-        "po": 0.453
+        "kultura": "anglia",
+        "kult": "lincoln-imp",
+        "przed": 0.393,
+        "po": 0.393
       }
     ],
     "pozycje": [
