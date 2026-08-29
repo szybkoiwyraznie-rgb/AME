@@ -1043,3 +1043,35 @@ też prośbę o pokazywanie nazw miast po kliknięciu.
   `file://` pozostaje celowo nieobsługiwany (baner w `index.html`).
 - **Stan:** `npm test` **151/151**, `npm run check` i `npm run build` zielone;
   commit pętli + powód odtworzenia gałęzi z origin po resecie sandboxa.
+
+## Pętla Jakości — C1 → C3 → C2 (pełny obieg po poprawkach mapy)
+
+Właściciel słusznie zauważył, że poprzednie podsumowanie nie miało struktury
+pętli (C1/C2/C3) — to był audyt. Ten wpis to pełny obieg.
+
+### C1 — domknięcie sieci
+
+- Audyt: najsłabsze ogniwa to `indra` (1 backlink) i `nessos` (1 backlink),
+  mimo linków wychodzących. Dodane odwzajemnienia:
+  - `barbarossa-kyffhaeuser → indra` — warunkowa potęga czeka na znak
+    (kruki / wadżra z kości Dadhichiego);
+  - `kentaur-pelion → nessos` — lustrzane kentaury: Chejron oddaje
+    nieśmiertelność, Nessos ginie od własnej strzały.
+- Po C1: indra i nessos po 2 backlinki; żadna manifestacja <2.
+
+### C3 — SKIT „Cena znaku”
+
+- Nowy plik `data/skity/cena-znaku.json`, trio **Indra × Barbarossa ×
+  Nessos**, unikalny skład, 211 słów. Temat „kto płaci za to, że moc wraca
+  na wezwanie”. Kolejny prototyp KRONIKI (metoda embodimentu).
+- Build: 10 wpisów, **15 SKITów**, 39 pozycji feedu.
+
+### C2 — etykiety miast: hover + przypinanie
+
+- Wcześniej nazwa miasta pokazywała się tylko po kliknięciu. Teraz:
+  - najazd na kropkę → tabliczka „nazwa · populacja” (bez przypinania);
+  - klik → przypina (zjazd nie chowa); klik w tło / przeciągnięcie /
+    ukrycie warstwy → odprzypina;
+  - kompensacja skali i zachowanie przy pan/zoom bez zmian.
+- Test `mapa: nazwa miasta po najechaniu…` — hover/click/pin/unpin.
+- `npm test` **152/152**, `npm run check` OK.

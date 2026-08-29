@@ -392,3 +392,18 @@ zmianie, niezależnie od „polerowania”.
 
 Patrz `docs/BACKLOG.md` (tryb ekspedycji/„polowania”, warstwy kręgów
 kulturowych, oś czasu manifestacji, wersja EN, import metadanych kart…).
+
+## Pętla Jakości — C1 → C3 → C2 (pełny obieg po poprawkach mapy)
+
+- [x] **C1 — domknięcie sieci:** najsłabsze punkty (`indra` 1 backlink,
+      `nessos` 1) dostały odwzajemnienia: `barbarossa ↔ indra` (warunkowa
+      potęga czeka na znak), `kentaur ↔ nessos` (lustrzane kentaury).
+      Po C1: indra 2, nessos 2, żaden wpis <2 backlinków.
+- [x] **C3 — nowy SKIT:** `data/skity/cena-znaku.json`, „Cena znaku” —
+      trio Indra × Barbarossa × Nessos (unikalny skład, 211 słów), temat
+      „kto płaci za to, że moc wraca na wezwanie”.
+- [x] **C2 — mała funkcja:** etykiety miast — nazwa po najechaniu
+      (hover), klik przypina, klik w tło / przeciągnięcie odprzypina.
+      Uzupełnia klikalne etykiety z poprzedniej iteracji.
+- [x] Weryfikacja: `npm test` **152/152**, build 10 wpisów / 15 SKITów /
+      39 feed / 27 tagów, `npm run check` OK.
