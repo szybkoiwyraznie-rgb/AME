@@ -1037,10 +1037,13 @@ też prośbę o pokazywanie nazw miast po kliknięciu.
   przestało istnieć w danych.
 - **Test:** rozszerzony test kliknięcia — ponowne kliknięcie, wyłączenie
   warstwy i `reset()` chowają tabliczkę; symulowany `getScreenCTM`/`DOMPoint`.
-- **Cache-busting:** `?v=mercator-1` w `index.html` i w importach modułów
-  (`app/app.js`, `app/map.js`) — wymusza pobranie świeżych JS/CSS po zmianie
-  serwera/podglądu. Działa na HTTP (lokalny serwer i GitHub Pages); tryb
-  `file://` pozostaje celowo nieobsługiwany (baner w `index.html`).
+- **Cache-busting:** podbijana wersja `?v=c4-1` w `index.html` i w importach
+  modułów (`app/app.js`, `app/map.js`) — wymusza pobranie świeżych JS/CSS po
+  zmianie kodu. Przy każdej zmianie `app/*.js`/`styles.css` trzeba podnieść
+  wersję, inaczej przeglądarka trzyma stare pliki („mapa bez zmian”).
+  Reguła zapisana jako komentarz w `index.html`. Działa na HTTP (lokalny
+  serwer i GitHub Pages); tryb `file://` pozostaje celowo nieobsługiwany
+  (baner w `index.html`).
 - **Stan:** `npm test` **151/151**, `npm run check` i `npm run build` zielone;
   commit pętli + powód odtworzenia gałęzi z origin po resecie sandboxa.
 
@@ -1116,3 +1119,13 @@ Właściciel doprecyzował zachowanie mapy:
 - Dodany `docs/index.html` (przekierowanie na `czytelnia-kronika.html`), żeby
   serwując katalog `docs` na oddzielnym porcie otwierał się dokument zamiast
   mapy. Mapa pozostaje na porcie głównym aplikacji.
+
+### Cache-busting po zmianach mapy (C4)
+
+- Właściciel zobaczył mapę „bez zmian” — przeglądarka trzymała stare
+  `app/map.js`/`app/styles.css`, bo token `?v=` nie został podbity.
+- Wszędzie (index.html, importy app.js, import geo.js w map.js) wersja
+  podniesiona `?v=mercator-1` → `?v=c4-1`. Reguła „podnieś wersję przy
+  zmianie JS/CSS” zapisana jako komentarz w `index.html`.
+- Podpowiedź UI: „kliknij miasto = nazwa” → „przytrzymaj miasto = nazwa”.
+- `npm test` **153/153**, `npm run check` i `npm run build` zielone.

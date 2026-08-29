@@ -94,9 +94,10 @@ zmianie, niezależnie od „polerowania”.
 - [x] **Test:** rozszerzony `mapa: klik w miasto…` — ponowne kliknięcie,
       wyłączenie warstwy i `reset()` (zoom poniżej progu) chowają tabliczkę;
       test symuluje klik po `getScreenCTM`/`DOMPoint`.
-- [x] **Cache-busting:** `?v=mercator-1` w `index.html` i importach modułów —
-      przeglądarka nie trzyma starych JS/CSS (działa na lokalnym serwerze i
-      GitHub Pages; `file://` i tak jest nieobsługiwane — patrz baner).
+- [x] **Cache-busting:** podbijana wersja `?v=c4-1` w `index.html` i importach
+      modułów — przy zmianie JS/CSS trzeba podnieść wersję, inaczej przeglądarka
+      poda stare pliki (typowy objaw „mapa bez zmian”). Reguła opisana jako
+      komentarz w `index.html`; działa na HTTP (lokalny serwer i GitHub Pages).
 - [x] Weryfikacja: `npm test` **151/151**, `npm run check`/`build` zielone.
 
 ## F1 — Proces treściowy NA ZLECENIE (karty od właściciela — priorytet nad pętlą)
