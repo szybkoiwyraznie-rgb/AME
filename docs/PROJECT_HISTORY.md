@@ -1174,3 +1174,33 @@ Zrobione przy każdej karcie:
   z ubranymi/opancerzonymi wizerunkami.
 - Weryfikacja: `npm test` **153/153**, `npm run build` → 15 wpisów / 15 SKITów /
   49 pozycji feedu / 43 tagi; `npm run check` OK.
+
+## Kronika — rozszerzenie koncepcji po przemyśleniach właściciela (2026-08-29)
+
+Właściciel przeczytał `docs/KRONIKA_tryb.md`, zaakceptował kierunek i zgłosił
+sześć obszarów do dopracowania. Powstały dwa artefakty:
+
+- **`docs/kronika-epoka-podglad.html`** — statyczny **mockup strony „Epoka X”**:
+  konkretny wygląd tego, co zobaczy obserwator (nagłówek, iskra + pytanie,
+  karty uczestników z paliwem, przebieg dialogowy, panel konsekwencji,
+  ledger paliwa, płytka słabości/exploitu, wątki otwarte). Na danych
+  przykładowych (Kannon × Agni × Talos), żeby dało się ocenić układ bez
+  czytania kolejnej teorii.
+- **`docs/KRONIKA_tryb.md` §18–§19** — odpowiedzi na 6 pytań właściciela:
+  1. wygląd strony Epoki (mockup + układ),
+  2. napęd Kroniki + **budżet „paliwa”** (bramka + koszt ciężkich skutków;
+     źródła: backlinki/SKITy/wzmianki kroniki; brak = brak wpływu),
+  3. **konsekwencje jako obserwowalne delty** (oś „rząd dusz”, mapa wpływów,
+     wykres zasięgu, tabela relacji, ledger),
+  4. **słabości jako exploitable leverage** (marginalizacja / zranienie /
+     przemiana / odporność),
+  5. **cel ostateczny** (stany końcowe per tom: mgła / odczarowanie /
+     równowaga / pętla),
+  6. **oś główna „cywilizacja kontra byty niematerialne”** + meta-napięcie:
+     samo archiwizowanie bytów dodaje im paliwo (pamięć), choć je
+     odczarowuje.
+
+Nowe propozycje rozstrzygnięć: **P12–P17** (budżet, wzór paliwa, model
+`konsekwencje`, warstwa prezentacji, słabości, oś główna). Do decyzji
+właściciela w §19. Czytelnia linkuje do mockupu z nagłówka.
+`npm test` bez zmian (koncepcja + statyczny mockup, bez zmian w danych).

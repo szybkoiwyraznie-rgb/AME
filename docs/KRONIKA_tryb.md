@@ -359,3 +359,173 @@ Dla czytelnika chcącego pogłębić (nie trzeba tego czytać do zrozumienia try
 - `docs/plans/POMYSL_platforma-budowy-przenosnosc.md` — build-time vs run-time,
   decyzja o wymiennym runnerze.
 - `docs/plans/POMYSL_arena-rezonansu-idle-battler.md` — odłożona Arena Rezonansu.
+
+---
+
+## 18. Praca nad koncepcją po przemyśleniach właściciela (2026-08-29)
+
+Właściciel przeczytał dokumentację i zgłosił sześć obszarów do dopracowania.
+Poniżej odpowiedzi + propozycje. Wszystkie „propozycje” są nadal do akceptacji;
+§7 i §14 zostają jako stan pierwotny, a te sekcje są aktualizacją koncepcji.
+
+### 18.1 Jak wygląda podstrona Epoki (odpowiedź na pkt 1)
+
+Propozycja układu — a konkretny, statyczny podgląd: **`docs/kronika-epoka-podglad.html`**.
+
+| Blok | Co widać | Po co |
+|---|---|---|
+| Nagłówek | tytuł, `#epoka`, badge „kanon/szkic”, data + agent-sesja, deep-link `#kronika:<slug>` | tożsamość i pochodzenie wpisu |
+| „Iskra + pytanie epoki” | 1–2 zdania, co sprowadza byty do stołu + formułuje pytań | czytelne „o co ta epoka” |
+| Uczestnicy | karty bytów: kultura, rola (archetyp), paliwo, tagi, link do kartoteki | widz wie, kto gra |
+| Przebieg | dialog z Bazy Skitów + jednoliterowy zapis „Kronikarz zapisuje” | narracja, nie teoria |
+| **Konsekwencje** | oś „rząd dusz”, mapa wpływów, wykres zasięgu, tabela zmian relacji | świat widać, że idzie do przodu |
+| Ledger paliwa | kto zapłacił ile za wpływ | koszt ma widoczną rękę |
+| Słabości / exploity | płytka „szew” + efekt dla bytu i świata | jakie wybory się dokonały |
+| Wątki otwarte | długi / następne iskry | paliwo do kolejnych epok |
+
+**Zasada prezentacji:** wszystko jest *read-only* i statyczne (ADR 0003) — widz
+widzi, że świat się zmienił, ale nie może tego samodzielnie kupić.
+
+### 18.2 Co popycha Kronikę + budżet „paliwa” (pkt 2)
+
+**Wyzwalacz (bez zmian):** Pętla Jakości (C3 → nowa epoka przy okazji nowego
+SKIT-u) albo **jawna komenda właściciela** „dodaj epokę”. Nie ma runtime
+automatu; Kronika rośnie, gdy świat ma się czym napędzać.
+
+**Nowe: budżet pamięci („paliwo”).** Byty nie mogą bez końca wpływać na świat.
+Paliwo to metaforyczna „pamięć społeczna” — ile o bycie mówi archiwum i
+wspólnota. Propozycja (P12/P13):
+
+- **Źródła paliwa** (liczone deterministicznie z indeksu, bez nowej symulacji):
+  - wzmianka/backlink w innej karcie: **+2** każda,
+  - udział w SKICIE: **+3** każdy,
+  - wzmianka we wcześniejszej epoce Kroniki: **+4** każda,
+  - bonus kulturowy/zasięg: **+1–3** (pole w `meta` wpisu albo wynik zasięgu).
+- **Koszt epoki** = `1` (baza) + liczba uczestników + „ciężar” skutków
+  (rozbudowa kultury/zerwanie/eksploatacja słabości = +1–2 każda).
+- **Warunek:** suma paliwa uczestników ≥ koszt. Po epoce każdy uczestnik
+  oddaje swój udział (`1` + ciężar jego skutków; zaokrąglane w górę).
+- **Brak paliwa → byt nie może być uczestnikiem** — może co najwyżej
+  występować w tle (wzmianka), ale nie zmienia świata.
+- **Odbudowa paliwa = praca treściowa:** nowe źródła/backlinki (C1), nowy SKIT
+  (C3), bycie „tłem” w epoce. To bardzo ważne: **ekonomia Kroniki jest
+  sprzężona z Pętlą Jakości, nie z losem.** Trzeba najpierw zbudować byta w
+  kartotece, żeby potem mógł wpłynąć na świat.
+
+**Pytanie do właściciela:** czy paliwo ma być tylko *bramką* (tak/nie), czy
+*walutą* — tzn. byt może „kupić” cięższy skutek (rozbudowa kultury, zerwanie,
+eksploit), płacąc więcej. Propozycja: **bramka + koszt ciężkich skutków**.
+
+### 18.3 Konsekwencje i warstwa prezentacji (pkt 3)
+
+To najważniejsza część — żeby Kronika nie była „gadkami”, skutek musi być
+**obserwowalny**. Propozycja rozszerzenia danych o `konsekwencje` (P14):
+
+```jsonc
+"skutek": {
+  "relacje": [ /* jak §7.3 */ ],
+  "tereny": [],
+  "zasob": { "znak": "nierozstrzygnięty" },
+  "konsekwencje": {
+    "os": { "mit": -4, "racjonalizacja": +3, "opis": "…" },
+    "kultury": [{ "kultura": "indie", "kierunek": "ekspansja", "opis": "…" }],
+    "zasieg":  [{ "slug": "agni", "przed": 0.34, "po": 0.41, "opis": "…" }],
+    "pozycje": [{ "slug": "talos-kreta", "status": "zmarginalizowany", "opis": "…" }],
+    "watki":   [{ "id": "maszyna-bez-duszy", "opis": "…" }]
+  }
+}
+```
+
+**Warstwa wizualna (run-time, statyczna):**
+
+1. **Oś „rząd dusz”** — pasek *mit ⟷ racjonalizacja*; globalny + lokalny per epoka.
+   To wspólna metryka, żeby było widać, w którą stronę dryfuje świat.
+2. **Mapa wpływów** — punkty bytów + halo ekspansji/kurczenia wierzeń.
+   Docelowo na prawdziwej projekcji z `geo.js`; w mockupie poglądowo.
+3. **Wykres zasięgu wierzeń** — słupki *przed → po* dla bytów/kultur
+   („walka o rząd dusz”).
+4. **Tabela konsekwencji** — zmiany relacji + statusów (czytelny dziennik świata).
+5. **Ledger paliwa** — kto zapłacił ile.
+
+To odpowiada wprost na „świat idzie do przodu”: święto nie może się skończyć
+bez widocznej delty **zasięgu, pozycji bytu albo osi mit/racjonalizacja**.
+
+### 18.4 Słabości / wrażliwości — o co chodzi (pkt 4)
+
+W kartach już jest `natura.slabosci_i_metody_pokonania`. W Kronice robią z tego
+**punkty zaczepienia narracji** (P16):
+
+- **Słabość** = co bytowi zagraża; **wrażliwość** = na co reaguje (przeważnie
+  jedno i to samo pole).
+- **Exploit** w epoce wymaga: (a) ktoś w fabule *wie* o słabości (musi mieć ją
+  w dossier / źródle), (b) koszt paliwa (cięższy niż zwykły udział), (c) akcja
+  „klucz” zamiast zwykłej rozmowy.
+- **Efekty** (do wyboru w `konsekwencje.pozycje`):
+  - **zmarginalizowany** — byt traci zasięg, „schodzi do legendy”,
+  - **zraniony** — traci paliwo, ale zostaje w grze,
+  - **przemieniony** — słabość rozwiązana → byt zyskuje nową jakość,
+  - **odporny** — słabość nie działa → moc/wiara rośnie.
+- **Konsekwencja dla świata:** exploit zwykle podbija *racjonalizację* (ludzie
+  zrozumieli mechanizm); bywa też tragiczny i *współczucie* = mit.
+- **Zasada:** nie każdą słabość trzeba eksploatować. W niektórych liniach czasu
+  nikt jej nie odkryje — a wtedy świat wygląda inaczej. To jest wybór, który
+  odróżnia Kronikę od zwykłych dialogów.
+
+### 18.5 Cel ostateczny (pkt 5)
+
+**Propozycja:** brak jednego sztywnego celu — ale każda Kronika może dojść do
+**stanu końcowego** zadeklarowanego w tomie:
+
+| Stan końcowy | Znaczenie |
+|---|---|
+| „Świat za mgłą” | mit wygrywa: byty przejmują wyobraźnię ludzi |
+| „Świat odczarowany” | racjonalizacja wygrywa: byty zostają legendami/sztuką |
+| „Równowaga” | kompromis: kultura żyje, cywilizacja postępuje, byty są symbolami |
+| „Pętla” | oś może być cykliczna — świat wraca do tego samego pytania |
+
+**Docelowo:** obserwowanie, jak *mit* i *cywilizacja* rozstrzygają między sobą
+o „rząd dusz”. Ten wskaźnik jest celowo widoczny w każdej epoce, więc cel nie
+jest ukryty — on się **mierzy**.
+
+### 18.6 Oś: cywilizacja kontra byty niematerialne (pkt 6)
+
+To **mocny kandydat na główną oś** (P17):
+
+- **Strona MITU (byty):** lęki, wierzenia, rytuały, sny, „pamięć wspólnoty”.
+- **Strona CYWILIZACJI (człowiek):** nauka, urbanizacja, technika,
+  racjonalizacja, archiwizacja.
+- **Walka o rząd dusz:** byty chcą być dalej wierzone; cywilizacja chce je
+  sprowadzić do legendy/symbolu (wytłumaczyć, zarchiwizować, odczarować).
+- **Wskaźniki:** `mit` (zasięg wierzeń), `racjonalizacja` (wiedza, „wyjaśnione”
+  mity), tempo zmian.
+
+**Meta-napięcie, które bardzo pasuje do AME:** samo archiwum jest narzędziem
+cywilizacji — spisujemy byty, źródła, mechanizmy, odczarowujemy je. **Ale**
+każde zapisanie, wzmianka, SKIT czy epoka **dodaje im paliwo** (pamięć).
+Badacz jednocześnie demistyfikuje i podsyła. To jest naturalny, nierozwiązywalny
+konflikt — idealny jako główna oś Kroniki.
+
+### 18.7 Nowe propozycje do decyzji (P12–P17)
+
+| Pytanie | Propozycja |
+|---|---|
+| **P12** Budżet | Paliwo jako **bramka + koszt ciężkich skutków** (18.2). |
+| **P13** Wzór paliwa | `2×backlinki + 3×skity + 4×wzmianki_kroniki + bonus_kulturowy`; liczony w buildzie, deterministyczny. |
+| **P14** Model skutku | `skutek.konsekwencje` (oś, kultury, zasięg, pozycje, wątki) — 18.3. |
+| **P15** Warstwa prezentacji | Oś „rząd dusz” + mapa wpływów + wykres zasięgu + tabela + ledger — 18.3. |
+| **P16** Słabości | Jawnie **eksploatowalne leverage** (marginalizacja / zranienie / przemiana / odporność) — 18.4. |
+| **P17** Główna oś | „Cywilizacja kontra byty niematerialne” jako wspólny wskaźnik; stany końcowe per Kronika — 18.5–18.6. |
+
+---
+
+## 19. Pytania do właściciela po 2026-08-29
+
+1. Czy główną osią Kroniki ma być **„cywilizacja kontra byty niematerialne”** (P17)?
+2. Czy paliwo jest tylko **bramką** (tak/nie), czy też **walutą** na cięższe
+   skutki (P12)?
+3. Czy akceptujesz `skutek.konsekwencje` (P14) i warstwę wizualną (P15) jako
+   część MVP — czy najpierw chcesz zobaczyć samą epokę bez wykresów?
+4. Czy słabości mają być **jawnie eksploatowalne** w narracji (P16), czy zostawać
+   „charakterystyką” bez aktywnego użycia?
+5. Czy mam z tego przygotować **ADR + plan MVP** (widok epoki + walidator +
+   budżet), czy najpierw dopracować oś i przykładowe 2–3 epoki?

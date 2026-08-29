@@ -438,6 +438,29 @@ kulturowych, oś czasu manifestacji, wersja EN, import metadanych kart…).
       widok `#kronika`).
 - [x] Zgodnie z M13: **bez kodu gry** — dokumentacja koncepcyjna, nie dane.
 
+## Kronika — rozszerzenie koncepcji po przemyśleniach właściciela (2026-08-29)
+
+Właściciel przeczytał dokumentację i zgłosił 6 obszarów. Opracowane w
+`docs/KRONIKA_tryb.md` §18–§19 + wizualny mockup:
+
+- [x] **18.1 Podgląd strony Epoki** — `docs/kronika-epoka-podglad.html`
+      (statyczny mockup): nagłówek, iskra/pytanie, karty uczestników,
+      przebieg, panel konsekwencji (oś „rząd dusz”, mapa wpływów, wykres
+      zasięgu, tabela relacji), ledger paliwa, słabość/exploit, wątki.
+- [x] **18.2 Napęd + budżet „paliwa”** — paliwo z backlinków/SKITów/wzmianek
+      kroniki; koszt epoki; brak paliwa = brak wpływu na świat; odbudowa przez
+      pracę treściową (C1/C3). Propozycje P12–P13.
+- [x] **18.3 Konsekwencje + prezentacja** — model `skutek.konsekwencje`
+      (oś, kultury, zasięg, pozycje, wątki) + 5 widgetów wizualnych. P14–P15.
+- [x] **18.4 Słabości/wrażliwości** — jako exploitable leverage
+      (marginalizacja / zranienie / przemiana / odporność). P16.
+- [x] **18.5 Cel ostateczny** — stany końcowe per tom (mgła / odczarowanie /
+      równowaga / pętla); cel mierzony osią „rząd dusz”.
+- [x] **18.6 Oś „cywilizacja kontra byty”** — główna oś + meta-napięcie
+      (archiwizacja daje bytom paliwo, choć ją odczarowuje). P17.
+- [x] **18.7 Nowe propozycje** P12–P17 + **§19 pytania** do właściciela.
+- [x] Czytelnia linkuje do mockupu z nagłówka.
+
 ## C4 — nazwa miasta na czas przytrzymania + kursor strzałka (nadpisuje C2 UX)
 
 - [x] **Etykieta miasta tylko podczas przytrzymania:** `pointerdown` pokazuje
