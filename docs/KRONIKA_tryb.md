@@ -529,3 +529,112 @@ konflikt — idealny jako główna oś Kroniki.
    „charakterystyką” bez aktywnego użycia?
 5. Czy mam z tego przygotować **ADR + plan MVP** (widok epoki + walidator +
    budżet), czy najpierw dopracować oś i przykładowe 2–3 epoki?
+## 20. Odpowiedzi właściciela (2026-08-29) — szlif mechanizmu, strona główna Tomu
+
+Właściciel przeczytał mockup i odpowiedział na pytania z §19. Rozstrzygnięcia
+i zmiany poniżej **nadpisują odpowiednie propozycje z §18**, gdzie są sprzeczne.
+
+### 20.1 Paliwo — korekta: udział nie może być źródłem (odpowiedź P12/P13)
+
+Właściciel trafnie zauważył: **skoro udział w skicie daje +3, a każda epoka
+jest nowym skitem, to uczestnicy automatycznie pomnażają kapitał zamiast
+wydawać.** To psuje ekonomię. Usunięte.
+
+**Nowa zasada:** samo siedzenie przy stole nie tworzy pamięci. Paliwo powstaje
+z tego, co byt **zostawił w archiwum** i co **realnie zmienił w świecie**.
+Udział jest **kosztem**, a nie nagrodą.
+
+| Część | Wzór (propozycja deterministyczna) | Uwagi |
+|---|---|---|
+| **Pasywne paliwo** (archiwum, build-time) | `2×backlinki + 1×tagi_kanonu + bonus_kulturowy (0–3)` | rośnie przez C1/C3, nie przez uczestnictwo |
+| **Koszt udziału** | `1 + ceil(liczba_naruszonych_wątków / 2)` | płacony na wejściu do epoki |
+| **Koszt klucza/ciężkiego skutku** | `1 + ciężar` (rozbudowa/zerwanie/exploit 1–2) | byt dopłaca, jeśli chce zmienić świat mocniej |
+| **Bonus/boost skutku** | `2×|delta_osi| + 2×|delta_dominacji|` | można wzmocnić zmianę **na plus albo minus** |
+| **Zwrot po skutku** | `3×delta_osi + 2×delta_dominacji` tylko przy realnej zmianie | przegrany **traci** (zasięg/status), nie odzyskuje |
+| **Saldo bytu** | `pasywne + Σ zwroty − Σ koszty − Σ boosty` | stąd ledger paliwa |
+
+Przykład, który pokazuje różnicę:
+
+- **Byt, który tylko „był”** w epokach: płaci `1+…`, nie zmienia świata → paliwo
+  spada, w końcu schodzi do tła.
+- **Byt, który przechylił oś lub dominację:** płaci koszt wejścia i ewentualny
+  boost, ale na końcu odzyskuje część (lub całość) jako zwrot. Czysty zysk jest
+  możliwy **tylko po realnej zmianie świata**.
+
+**Konsekwencja dla C3:** nowy skit to *koszt* (praca nad kanonem), nie automatic
+„dokładanie paliwa”. Kronika może też **odtworzyć** stary skit z nowym pytaniem —
+wtedy to nie tworzy nowego zasobu, tylko okazję do wydatku.
+
+### 20.2 Osie — potwierdzone i doprecyzowane (P17)
+
+- **Główna oś:** „cywilizacja kontra byty niematerialne” — **zatwierdzona.**
+- **Osie poboczne:** dominacja poszczególnych kultów/kultur (to, co już mamy
+  w tagach). Modelujemy jako `dominacje[]` per kultura/kult, z trendem i zasięgiem.
+
+```jsonc
+"dominacje": [
+  { "kultura": "Japonia", "kult": "kannon", "zasieg": 0.35, "trend": +0.02 },
+  { "kultura": "Indie",   "kult": "agni",   "zasieg": 0.41, "trend": +0.05 }
+]
+```
+
+Widok: na stronie głównej Tomu słupki dominacji obok osi głównej; w epoce — mapa
+halo + wykres zasięgu.
+
+### 20.3 Strona główna Kroniki (odpowiedź pkt 9)
+
+Właściciel: *„Poza stroną Epoki potrzebna jest strona główna danej Kroniki
+(nadrzędna wobec Epok)”*. Powstał mockup:
+**`docs/kronika-glowna-podglad.html`.**
+
+Bloki strony głównej:
+
+| Blok | Co pokazuje |
+|---|---|
+| Nagłówek Tomu | `tom`, liczba epok, status (otwarta/zamknięta), paliwo w obiegu, liczba uczestników |
+| Aktualny stan | oś główna „rząd dusz” + słupki **dominacji kultur/kultów** (osie poboczne) |
+| Chronologia epok | klikalne epoki: nr, tytuł, status, kluczowa delta |
+| Wątki | dwie kolumny: **zamknięte** i **otwarte** |
+| Uczestnicy | klikalne karty bytów (→ kartoteka `#slug`) |
+| Skity | lista „kostek” budujących Tom (→ `#skit:<slug>`) |
+| Strefy wpływów | geo-podgląd hal wpływów; docelowo prawdziwa projekcja z mapy |
+| Ledger paliwa | kto naprawdę płaci; start → koszty → skutek → teraz |
+| Rozstaje | warunki końcowe Tomu (mgła / odczarowanie / równowaga / pętla) |
+
+**Powiązanie:** Epoki żyją pod Tomem; Kronika może mieć wiele tomów, a każdy
+Tom może się rozgałęziać w nowe linie czasu („rozstaje”).
+
+### 20.4 Klikalność uczestników (odpowiedź pkt 6)
+
+- W mockupie epoki i strony głównej uczestnicy są **linkami** do
+  `../index.html#<slug>` (pełnoekranowa kartoteka).
+- W podglądzie z portu 8001 mały helper przekierowuje na mapę (port 8000);
+  w realnej aplikacji wystarczy zwykły link `#<slug>`.
+- Karta bytu w epoce pokazuje też „kartoteka ↗”.
+
+### 20.5 Status propozycji z §18 po odpowiedziach
+
+| ID | Status |
+|---|---|
+| **P12** Budżet | **Rozstrzygnięte:** paliwo jest i bramką, i walutą — udział kosztuje, skutek boostuje zmianę na plus/minus (20.1). |
+| **P13** Wzór paliwa | **Poprawiony:** bez `+3/udział w skicie`; pasywne z archiwum + zwrot z realnych skutków (20.1). |
+| **P14** Model skutku | **Zaakceptowane** jako część MVP. |
+| **P15** Warstwa wizualna | **Zaakceptowana** jako część MVP („SUPER”). |
+| **P16** Słabości jako exploitable | **Do potwierdzenia** — właściciel nie odniósł się wprost; sugerowane „jawnie” zostaje wg 18.4. |
+| **P17** Główna oś | **Zatwierdzona** + osie poboczne = dominacje kultur/kultów (20.2). |
+
+### 20.6 Następny krok (zgodnie z pkt 8 właściciela: „najpierw mechanizm”)
+
+Nie przechodzimy jeszcze do pełnego ADR/planu MVP. Najpierw doszlifowanie
+mechanizmu w koncepcie:
+
+1. **Dopisać zasadę bilansu** — paliwo bytu nigdy nie może być ujemne przy
+   wejściu do epoki; jeśli byt nie ma paliwa, może być tylko tłem.
+2. **Dopisać walidator** — `koszt_udziału + koszty_kluczy ≤ paliwo`; każdy
+   uczestnik ma wiersz w ledgerze; suma zwrotów ≤ suma zmian świata.
+3. **Wybrać 1–2 epoki „kontrolne”** i przeliczyć paliwo ręcznie — sprawdzić,
+   że byt-statysta traci, a byt-bohater może odrobić.
+4. **Ustalić szkielet danych** dla strony głównej Tomu (20.3) obok epoki.
+5. **Pytanie do właściciela:** czy P16 (słabości jawnie eksploatowalne) do
+   akceptu, i czy po wyżej wymienionym mam wejść w ADR/plan czy jeszcze rozszerzyć
+   mechanizm.

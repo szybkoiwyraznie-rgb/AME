@@ -1204,3 +1204,24 @@ Nowe propozycje rozstrzygnięć: **P12–P17** (budżet, wzór paliwa, model
 `konsekwencje`, warstwa prezentacji, słabości, oś główna). Do decyzji
 właściciela w §19. Czytelnia linkuje do mockupu z nagłówka.
 `npm test` bez zmian (koncepcja + statyczny mockup, bez zmian w danych).
+
+## Kronika — szlif mechanizmu + strona główna Tomu (2026-08-29)
+
+Właściciel zobaczył mockup epoki i odpowiedział na 9 punktów. Kluczowe:
+
+- **Mechanizm paliwa poprawiony.** Zauważył słusznie, że `+3/udział w skicie`
+  przy „każda epoka = nowy skit” automatycznie pomnażałoby kapitał. Usunięte.
+  Udział jest **kosztem**; paliwo pasywne płynie z archiwum (backlinki + tagi
+  kanonu + bonus kulturowy), a zysk tylko z realnej zmiany świata. Paliwo jest
+  i **bramką**, i **walutą** — udział kosztuje, skutek można boostować na
+  plus/minus (`docs/KRONIKA_tryb.md` §20.1).
+- **Oś główna zatwierdzona** („cywilizacja kontra byty niematerialne”);
+  osie poboczne = dominacje kultur/kultów z tagów (§20.2).
+- **Konsekwencje + warstwa wizualna** w MVP — zaakceptowane (P14/P15).
+- **Strona główna Kroniki** — nowy mockup `docs/kronika-glowna-podglad.html`:
+  aktualny stan, chronologia epok, wątki zamknięte/otwarte, uczestnicy, skity,
+  strefy wpływów, ledger paliwa, rozstaje (§20.3).
+- **Uczestnicy epoki klikalni do kartoteki** (`#slug`); mockup otwiera mapę
+  z podglądu w docs (§20.4).
+- Następny krok: doszlifowanie mechanizmu (bilans, walidator, 1–2 epoki
+  kontrolne) przed ADR/planem (§20.6). P16 pozostaje do potwierdzenia.

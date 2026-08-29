@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Kronika — podgląd strony głównej Tomu (mockup)</title>
+<style>
+:root{
+  --bg:#f7f3ea; --fg:#1e1a16; --muted:#6b655c; --line:#ded4c2;
+  --card:#fffdf8; --accent:#7a4a22; --accent2:#a5652f;
+  --mit:#3e7d54; --rac:#51689a; --up:#3e7d54; --down:#a3442e; --neutral:#8a8175;
+  --code:#f1eadc; --shadow:#00000022;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 Georgia,'Times New Roman',serif}
+.wrap{max-width:1180px;margin:0 auto;padding:28px 20px 80px}
+.topbar{display:flex;align-items:center;gap:14px;flex-wrap:wrap;border-bottom:2px solid var(--accent);padding-bottom:12px;margin-bottom:18px}
+.brand{font-weight:700;font-size:19px;letter-spacing:.02em}
+.brand .dot{color:var(--accent)}
+.topbar a{color:var(--accent);text-decoration:none;margin-left:auto;font-size:13px}
+.nav{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}
+.nav span{padding:6px 14px;border:1px solid var(--line);border-radius:999px;background:var(--card);font-size:13px;color:var(--muted)}
+.nav span.on{background:var(--accent);border-color:var(--accent);color:#fff;font-weight:600}
+.crumb{font-size:13px;color:var(--muted);margin-bottom:14px}
+.crumb b{color:var(--fg)}
+.hero{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px 26px;margin-bottom:26px;box-shadow:0 8px 26px var(--shadow)}
+.hero h1{margin:0 0 6px;font-size:30px;line-height:1.2}
+.hero .sub{color:var(--muted);font-size:14px;margin:0 0 14px}
+.badges{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+.badge{font-size:12px;padding:3px 10px;border-radius:999px;border:1px solid var(--line);background:var(--code)}
+.badge.kanon{border-color:#3e7d54;color:#3e7d54}
+.badge.tom{background:var(--accent);color:#fff;border-color:var(--accent)}
+.badge.otw{color:#3e7d54;border-color:#3e7d54}
+.grid{display:grid;grid-template-columns:minmax(0,2.1fr) minmax(0,1fr);gap:26px;align-items:start}
+@media(max-width:900px){.grid{grid-template-columns:1fr}}
+.col{display:flex;flex-direction:column;gap:22px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px 22px;box-shadow:0 6px 20px var(--shadow)}
+.card h2{margin:0 0 4px;font-size:19px;border-left:4px solid var(--accent);padding-left:10px}
+.card .note{color:var(--muted);font-size:13px;margin:0 0 14px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:760px){.grid2{grid-template-columns:1fr}}
+.chip{border:1px solid var(--line);background:var(--code);border-radius:999px;padding:2px 9px;font-size:12px;color:var(--accent)}
+.chip.green{color:#3e7d54;border-color:#3e7d54}
+.chip.red{color:#a3442e;border-color:#a3442e}
+.gauge-wrap{margin-top:10px}
+.gauge{position:relative;height:20px;border-radius:999px;background:linear-gradient(90deg,#cfe0d2 0%,#f0f0f0 50%,#ccd4e8 100%);border:1px solid var(--line);overflow:hidden}
+.gauge .mit{height:100%;background:linear-gradient(90deg,#3e7d54,#6fae85);position:relative}
+.gauge .label{position:absolute;top:1px;font-size:12px;color:#fff;text-shadow:0 1px 2px #0007}
+.gauge .l-mit{left:10px}
+.gauge .l-rac{right:10px}
+.gauge .pointer{position:absolute;top:-4px;width:3px;height:28px;background:var(--accent);border-radius:2px}
+.gauge-caption{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin-top:4px}
+.bar-row{display:grid;grid-template-columns:110px 1fr 48px;gap:8px;align-items:center;margin:9px 0;font-size:13px}
+.bar-track{background:var(--code);height:14px;border-radius:8px;overflow:hidden;position:relative;border:1px solid var(--line)}
+.bar{height:100%;position:absolute;top:0;left:0;border-radius:8px;background:var(--accent2)}
+.bar.down{background:var(--down)}
+.legend{font-size:12px;color:var(--muted);margin-top:8px}
+.sw{display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:4px}
+.c-green{background:#3e7d54} .c-red{background:#a3442e} .c-org{background:#c98b2d} .c-blue{background:#6f8fb0}
+.tl{display:grid;gap:12px}
+.epoka{display:grid;grid-template-columns:96px 1fr;gap:14px;align-items:start;border:1px solid var(--line);border-radius:10px;padding:12px 14px;background:var(--card);color:inherit;text-decoration:none;transition:border-color .15s, box-shadow .15s}
+.epoka:hover{border-color:var(--accent2);box-shadow:0 4px 12px var(--shadow)}
+.epoka .nr{font-weight:700;color:var(--accent);font-size:14px;text-align:center;border-right:1px solid var(--line);padding-right:10px}
+.epoka .ttl{font-weight:700}
+.epoka .meta{font-size:12px;color:var(--muted)}
+.epoka .delta{font-size:12px;margin-top:5px;display:flex;gap:10px;flex-wrap:wrap}
+.epoka .go{margin-left:auto;font-size:12px;color:var(--accent);white-space:nowrap}
+.threads li{margin:7px 0}
+.threads .st{font-size:11px;padding:1px 7px;border-radius:999px}
+.threads .st.ot{background:#e5efe4;color:#3e7d54}
+.threads .st.zam{background:#ece7dc;color:#6b655c}
+.part{display:grid;gap:10px}
+.part-row{display:flex;gap:14px;align-items:flex-start;border:1px solid var(--line);border-radius:10px;padding:11px 12px;background:var(--card);color:inherit;text-decoration:none;transition:border-color .15s, box-shadow .15s}
+.part-row:hover{border-color:var(--accent2);box-shadow:0 4px 12px var(--shadow)}
+.avatar{width:46px;height:46px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;flex:0 0 46px;background:var(--code);color:var(--accent);border:1px solid var(--line)}
+.part-row .info{flex:1;min-width:0}
+.part-row .name{font-weight:700}
+.part-row .meta{font-size:12px;color:var(--muted)}
+.part-row .stat{margin-top:4px;font-size:12px;display:flex;gap:10px;flex-wrap:wrap}
+.part-row .go{margin-left:auto;align-self:center;font-size:12px;color:var(--accent);white-space:nowrap}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th,td{padding:7px 9px;text-align:left;border-bottom:1px solid var(--line)}
+th{font-size:12px;color:var(--muted);font-weight:600}
+.num{font-variant-numeric:tabular-nums;text-align:right}
+.plus{color:#3e7d54;font-weight:700}
+.minus{color:#a3442e}
+.map{background:#eef2f0;border:1px solid var(--line);border-radius:10px;padding:8px;margin-top:10px}
+.map svg{width:100%;height:auto;display:block}
+.fork{display:grid;gap:10px;margin-top:8px}
+.fork-item{border:1px solid var(--line);border-left:4px solid var(--accent2);border-radius:8px;padding:10px 12px;background:#fffdf8}
+.fork-item b{color:var(--accent)}
+.fork-item .cond{font-size:12px;color:var(--muted)}
+.weak{border:1px dashed #a3442e;border-radius:10px;padding:12px 14px;background:#fdf3ee;margin-top:12px}
+.datalink{margin-top:26px;font-size:13px;color:var(--muted);border-top:1px solid var(--line);padding-top:14px}
+.datalink code{background:var(--code);padding:1px 6px;border-radius:5px}
+.linkline a{color:var(--accent)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="topbar">
+    <div class="brand">AME<span class="dot">.</span> KRONIKA</div>
+    <a href="../index.html">← mapa / kartoteka (8000)</a>
+  </header>
+
+  <nav class="nav">
+    <span class="on">Kronika</span>
+    <span>Epoki</span>
+    <span>Uczestnicy</span>
+    <span>Skity</span>
+    <span>Strefy wpływów</span>
+    <span>Ledger paliwa</span>
+    <span>Rozstaje</span>
+  </nav>
+
+  <p class="crumb"><b>Kronika</b> › Tom I › strona główna</p>
+
+  <div class="hero">
+    <div class="badges">
+      <span class="badge tom">tom I</span>
+      <span class="badge kanon">kanon: 4 epoki</span>
+      <span class="badge otw">otwarta: Epoka IV</span>
+      <span class="badge">paliwo w obiegu: 23</span>
+      <span class="badge">uczestnicy: 11 bytów</span>
+    </div>
+    <h1>Kronika Pierwszego Tomu</h1>
+    <p class="sub">Nadrzędna strona Kroniki: stan świata, chronologia epok, wątki, uczestnicy i rozstaje nowych linii czasu.</p>
+
+    <div class="gauge-wrap">
+      <div class="gauge">
+        <div class="mit" style="width:56%"></div>
+        <span class="label l-mit">MIT 56%</span>
+        <span class="label l-rac">RACJONALIZACJA 44%</span>
+        <div class="pointer" style="left:56%"></div>
+      </div>
+      <div class="gauge-caption"><span>oś główna: „rząd dusz” — cywilizacja ⇄ byty</span><span>4 epoki · Δ +6 racjonalizacji od Tomu I</span></div>
+    </div>
+
+    <div style="margin-top:16px">
+      <p style="margin:0 0 6px;font-size:14px"><strong>Osie poboczne — dominacje kultur/kultów</strong> <span class="chip">z tagów i zasięgu</span></p>
+      <div class="bar-row"><span>Japonia · Kannon</span><div class="bar-track"><div class="bar" style="width:35%"></div></div><span class="num">35%</span></div>
+      <div class="bar-row"><span>Indie · Agni</span><div class="bar-track"><div class="bar" style="width:41%"></div></div><span class="num">41%</span></div>
+      <div class="bar-row"><span>Grecja · Talos</span><div class="bar-track"><div class="bar down" style="width:9%"></div></div><span class="num">9%</span></div>
+      <div class="bar-row"><span>Wyspy · Selkie</span><div class="bar-track"><div class="bar" style="width:27%"></div></div><span class="num">27%</span></div>
+      <div class="bar-row"><span>Man · Ben-Varrey</span><div class="bar-track"><div class="bar" style="width:22%"></div></div><span class="num">22%</span></div>
+    </div>
+  </div>
+
+  <div class="grid">
+
+    <div class="col">
+
+      <div class="card">
+        <h2>Chronologia epok</h2>
+        <p class="note">Każda epoka to osobna podstrona z przebiegiem i skutkiem. Klikalne.</p>
+        <div class="tl">
+          <a class="epoka" href="kronika-epoka-podglad.html#epoka-iv">
+            <div class="nr">IV</div>
+            <div>
+              <div class="ttl">Epoka IV — „Płomień i litość” <span class="chip green">otwarta</span></div>
+              <div class="meta">Kannon × Agni × Talos · skit: „Trzy stoły”</div>
+              <div class="delta"><span class="minus">Agni −2</span><span class="minus">Talos −4</span><span class="plus">Kannon −2 → wątek otwarty</span></div>
+            </div>
+            <span class="go">podgląd ↗</span>
+          </a>
+          <a class="epoka" href="kronika-epoka-podglad.html#epoka-iii">
+            <div class="nr">III</div>
+            <div>
+              <div class="ttl">Epoka III — „Kurz i pióra” <span class="chip">zamknięta</span></div>
+              <div class="meta">Sfinks × Empusa × Kentaur · skit: „Kurz i pióra”</div>
+              <div class="delta"><span class="plus">racjonalizacja +2</span><span class="minus">Sfinks −1</span></div>
+            </div>
+            <span class="go">podgląd ↗</span>
+          </a>
+          <a class="epoka" href="kronika-epoka-podglad.html#epoka-ii">
+            <div class="nr">II</div>
+            <div>
+              <div class="ttl">Epoka II — „Dwie skóry” <span class="chip">zamknięta</span></div>
+              <div class="meta">Kannon × Ben-Varrey · skit: „Dwie skóry”</div>
+              <div class="delta"><span class="plus">Kannon +2</span><span class="minus">Ben-Varrey −1</span></div>
+            </div>
+            <span class="go">podgląd ↗</span>
+          </a>
+          <a class="epoka" href="kronika-epoka-podglad.html#epoka-i">
+            <div class="nr">I</div>
+            <div>
+              <div class="ttl">Epoka I — „Znak i liczba” <span class="chip">zamknięta</span></div>
+              <div class="meta">Selkie × Nessos × Lincoln Imp · skit: „Znak i liczba”</div>
+              <div class="delta"><span class="minus">Selkie −4</span><span class="plus">racjonalizacja +2</span></div>
+            </div>
+            <span class="go">podgląd ↗</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Wątki — zamknięte i otwarte</h2>
+        <p class="note">Kronika trzyma długi między epokami; zamknięte domykają linię, otwarte dają paliwo kolejnym.</p>
+        <div class="grid2">
+          <div>
+            <h3 style="font-size:15px;margin:0 0 8px">Zamknięte</h3>
+            <ul class="threads">
+              <li><span class="st zam">zam</span> <strong>Spiżowy strażnik.</strong> Talos zrozumiany jako narzędzie — wątek „maszyna bez duszy” domknięty w Epoka IV.</li>
+              <li><span class="st zam">zam</span> <strong>Lampa zamiast ognia.</strong> Spór Agniego i Kannon rozstrzygnięty przez trzecią formę ognia.</li>
+              <li><span class="st zam">zam</span> <strong>Sześćdziesiąt sześć.</strong> Związek Selkie i Nessos po Epoka I wygasł, ale zostawił dług.</li>
+            </ul>
+          </div>
+          <div>
+            <h3 style="font-size:15px;margin:0 0 8px">Otwarte</h3>
+            <ul class="threads">
+              <li><span class="st ot">otw</span> <strong>Szlak 33 Kannon.</strong> Nowa droga pielgrzymkowa — dokąd dojdzie?</li>
+              <li><span class="st ot">otw</span> <strong>Trzecia forma ognia.</strong> Agni nie rozumie światła, które nie pali.</li>
+              <li><span class="st ot">otw</span> <strong>Zapomniane imię.</strong> Ben-Varrey szuka imienia, którego nie wolno wymawiać.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Uczestnicy Kroniki</h2>
+        <p class="note">Klikalne — otwierają kartotekę bytu z pełnymi źródłami.</p>
+        <div class="part">
+          <a class="part-row" href="../index.html#agni" data-slug="agni" title="Kartoteka Agni">
+            <div class="avatar">🔥</div>
+            <div class="info"><div class="name">Agni</div><div class="meta">Indie · Bóg ognia · Filar</div><div class="stat"><span>paliwo <b>6</b></span><span class="chip">dominacja: 41%</span></div></div>
+            <span class="go">kartoteka ↗</span>
+          </a>
+          <a class="part-row" href="../index.html#kannon-hase" data-slug="kannon-hase" title="Kartoteka Kannon">
+            <div class="avatar">🕊</div>
+            <div class="info"><div class="name">Kannon</div><div class="meta">Japonia · Bodhisattwa · Pieśniarz</div><div class="stat"><span>paliwo <b>5</b></span><span class="chip">dominacja: 35%</span></div></div>
+            <span class="go">kartoteka ↗</span>
+          </a>
+          <a class="part-row" href="../index.html#talos-kreta" data-slug="talos-kreta" title="Kartoteka Talos">
+            <div class="avatar">🗿</div>
+            <div class="info"><div class="name">Talos</div><div class="meta">Grecja · Automat · Samotnik</div><div class="stat"><span>paliwo <b>1</b></span><span class="chip red">zmarginalizowany</span></div></div>
+            <span class="go">kartoteka ↗</span>
+          </a>
+          <a class="part-row" href="../index.html#ben-varrey" data-slug="ben-varrey" title="Kartoteka Ben-Varrey">
+            <div class="avatar">🧜</div>
+            <div class="info"><div class="name">Ben-Varrey</div><div class="meta">Wyspa Man · Syrena · Łowczyni</div><div class="stat"><span>paliwo <b>3</b></span><span class="chip">dominacja: 22%</span></div></div>
+            <span class="go">kartoteka ↗</span>
+          </a>
+          <a class="part-row" href="../index.html#selkie-sule-skerry" data-slug="selkie-sule-skerry" title="Kartoteka Selkie">
+            <div class="avatar">🌊</div>
+            <div class="info"><div class="name">Selkie</div><div class="meta">Sule Skerry · Duchemorza · Buntownik</div><div class="stat"><span>paliwo <b>2</b></span><span class="chip">dominacja: 27%</span></div></div>
+            <span class="go">kartoteka ↗</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="col">
+
+      <div class="card">
+        <h2>Skity, które zbudowały Tom</h2>
+        <p class="note">Baza Skitów to „kostka” epoki — bez niej nie ma uczestników.</p>
+        <div class="threads">
+          <li><a href="../index.html#skit:trzy-stoly" style="color:var(--accent)">Trzy stoły</a> <span class="chip">Epoka IV</span></li>
+          <li><a href="../index.html#skit:kurz-i-piora" style="color:var(--accent)">Kurz i pióra</a> <span class="chip">Epoka III</span></li>
+          <li><a href="../index.html#skit:dwie-skory" style="color:var(--accent)">Dwie skóry</a> <span class="chip">Epoka II</span></li>
+          <li><a href="../index.html#skit:znak-i-liczba" style="color:var(--accent)">Znak i liczba</a> <span class="chip">Epoka I</span></li>
+        </div>
+        <p class="note" style="margin-top:12px">Pracą nad nowym skitem C3 dodajemy kolejną możliwą epokę — ale <strong>nie</strong> automatycznie paliwo (zob. ledger niżej).</p>
+      </div>
+
+      <div class="card">
+        <h2>Strefy wpływów</h2>
+        <p class="note">Geo-podgląd; docelowo prawdziwa projekcja z mapy.</p>
+        <div class="map">
+          <svg viewBox="0 0 520 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Poglądowe strefy wpływów">
+            <rect x="0" y="0" width="520" height="200" fill="#eef2f0"/>
+            <circle cx="118" cy="70" r="42" fill="#3e7d54" opacity=".28"/>
+            <circle cx="118" cy="70" r="18" fill="#3e7d54"/>
+            <text x="86" y="112" font-size="11" fill="#2c5d3e">Kannon 35%</text>
+            <circle cx="252" cy="54" r="50" fill="#c98b2d" opacity=".25"/>
+            <circle cx="252" cy="54" r="20" fill="#c98b2d"/>
+            <text x="218" y="96" font-size="11" fill="#7a5a1a">Agni 41%</text>
+            <circle cx="430" cy="118" r="54" fill="#ede3e6" opacity=".5"/>
+            <circle cx="430" cy="118" r="12" fill="#a3442e" opacity=".8"/>
+            <text x="388" y="160" font-size="11" fill="#8a4a3a">Talos 9% ↓</text>
+            <circle cx="330" cy="168" r="34" fill="#6f8fb0" opacity=".26"/>
+            <circle cx="330" cy="168" r="13" fill="#6f8fb0"/>
+            <text x="300" y="196" font-size="11" fill="#3f5b78">Ben-Varrey 22%</text>
+          </svg>
+        </div>
+        <p class="legend"><span class="sw c-green"></span>ekspansja <span class="sw c-org"></span>wzrost <span class="sw c-red"></span>kurczenie <span class="sw c-blue"></span>stabilna</p>
+      </div>
+
+      <div class="card">
+        <h2>Ledger paliwa — kto naprawdę płaci</h2>
+        <p class="note">Udział kosztuje. Skutek może zwrócić albo uciąć. Skit sam w sobie nie „dokłada”.</p>
+        <table>
+          <tr><th>Byty</th><th class="num">start</th><th class="num">koszty</th><th class="num">skutek</th><th class="num">teraz</th></tr>
+          <tr><td>Agni</td><td class="num">8</td><td class="num minus">−4</td><td class="num plus">+2</td><td class="num"><b>6</b></td></tr>
+          <tr><td>Kannon</td><td class="num">7</td><td class="num minus">−4</td><td class="num plus">+2</td><td class="num"><b>5</b></td></tr>
+          <tr><td>Talos</td><td class="num">5</td><td class="num minus">−3</td><td class="num minus">−1</td><td class="num"><b>1</b></td></tr>
+          <tr><td>Ben-Varrey</td><td class="num">4</td><td class="num minus">−2</td><td class="num plus">+1</td><td class="num"><b>3</b></td></tr>
+          <tr><td>Selkie</td><td class="num">4</td><td class="num minus">−2</td><td class="num">0</td><td class="num"><b>2</b></td></tr>
+        </table>
+        <p class="note" style="margin-top:10px">Agni startował z wysokiego pasywnego paliwa (backlinki + tagi kanonu), a nie z „bycia w skicie”.</p>
+      </div>
+
+      <div class="card">
+        <h2>Rozstaje — jak Tom może się zakończyć</h2>
+        <p class="note">Warunki końcowe; każda linia to osobna przyszłość Kroniki.</p>
+        <div class="fork">
+          <div class="fork-item">
+            <b>„Świat za mgłą”</b> — mit wygrywa.<br>
+            <span class="cond">warunek: mit &gt; 70% i dominacje kultów rosną w 3 epokach z rzędu.</span>
+          </div>
+          <div class="fork-item">
+            <b>„Świat odczarowany”</b> — racjonalizacja wygrywa.<br>
+            <span class="cond">warunek: racjonalizacja &gt; 65%; byty zostają legendami/sztuką.</span>
+          </div>
+          <div class="fork-item">
+            <b>„Równowaga”</b> — kultura żyje, cywilizacja postępuje.<br>
+            <span class="cond">warunek: obie osie w przedziale 40–60% przez 2 epoki.</span>
+          </div>
+          <div class="fork-item">
+            <b>„Pętla”</b> — świat wraca do tego samego pytania.<br>
+            <span class="cond">warunek: ta sama iskra pojawia się 3× w różnych kulturach.</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="datalink">
+    <strong>Dane pod tym widokiem (propozycja modelu):</strong>
+    <code>data/kronika/tom-1.json</code> z polami <code>stan.os</code>,
+    <code>stan.dominacje</code>, <code>epoki[]</code>, <code>watki[]</code>,
+    <code>uczestnicy[]</code>, <code>skity[]</code>, <code>strefy_wplywow[]</code>,
+    <code>ledger.paliwo</code>, <code>rozstaje[]</code>.
+    <span class="linkline">| <a href="kronika-epoka-podglad.html">→ podgląd strony Epoki</a></span>
+  </div>
+</div>
+
+<script>
+/* Mockup-only helper: z podglądu w docs (port 8001) otwórz kartotekę na mapie (port 8000). */
+document.addEventListener('click', (e) => {
+  const a = e.target.closest('[data-slug]');
+  if (!a) return;
+  const slug = a.dataset.slug;
+  const host = location.host;
+  const other = host.replace(/^(\d+)-/, (m, port) => (port === '8001' ? '8000-' : `${port}-`));
+  if (other !== host) {
+    e.preventDefault();
+    window.open(`${location.protocol}//${other}/index.html#${slug}`, '_blank', 'noopener');
+  }
+});
+</script>
+</body>
+</html>

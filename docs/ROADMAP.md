@@ -461,6 +461,27 @@ Właściciel przeczytał dokumentację i zgłosił 6 obszarów. Opracowane w
 - [x] **18.7 Nowe propozycje** P12–P17 + **§19 pytania** do właściciela.
 - [x] Czytelnia linkuje do mockupu z nagłówka.
 
+### Szlif po odpowiedziach właściciela (2026-08-29)
+
+Właściciel polubił mockup i odpowiedział na `$19`. Opracowane w
+`docs/KRONIKA_tryb.md` §20 + drugi mockup:
+
+- [x] **Korekta paliwa (P12/P13)** — usunięte automatyczne `+3/udział w skicie`;
+      udział kosztuje, paliwo pasywne z archiwum (`2×backlinki+1×tagi+bonus`),
+      zwrot tylko z realnej zmiany świata; skit = koszt, nie źródło.
+- [x] **Paliwo = bramka i waluta** (P12) — udział płaci, skutek boostuje
+      zmianę na plus/minus (20.1).
+- [x] **Osie poboczne** — potwierdzona oś „cywilizacja kontra byty” + `dominacje`
+      kultur/kultów z tagów (20.2).
+- [x] **Strona główna Tomu (pkt 9)** — `docs/kronika-glowna-podglad.html`:
+      stan świata, chronologia epok, wątki zamknięte/otwarte, uczestnicy,
+      skity, strefy wpływów, ledger paliwa, rozstaje (20.3).
+- [x] **Klikalni uczestnicy (pkt 6)** — karty linkują do `#slug` kartoteki
+      (mockup przekierowuje z 8001 na mapę 8000) (20.4).
+- [x] **P14/P15** zaakceptowane (konsekwencje + warstwa wizualna w MVP).
+- [x] **§20.5/§20.6** — status P12–P17 i następny krok: doszlifowanie
+      mechanizmu (bilans, walidator, 1–2 epoki kontrolne) przed ADR/planem.
+
 ## C4 — nazwa miasta na czas przytrzymania + kursor strzałka (nadpisuje C2 UX)
 
 - [x] **Etykieta miasta tylko podczas przytrzymania:** `pointerdown` pokazuje

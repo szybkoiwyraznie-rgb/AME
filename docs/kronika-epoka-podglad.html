@@ -49,7 +49,10 @@ body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 Georgia,'Times 
 .iskra{font-size:16px;font-style:italic;color:#39332c;background:var(--code);border-radius:10px;padding:14px 16px;margin:0}
 .pyt{font-size:14px;color:var(--accent);margin:10px 0 0}
 .part{display:grid;gap:12px}
-.part-row{display:flex;gap:14px;align-items:flex-start;border:1px solid var(--line);border-radius:10px;padding:12px}
+.part-row{display:flex;gap:14px;align-items:flex-start;border:1px solid var(--line);border-radius:10px;padding:12px;background:var(--card);color:inherit;text-decoration:none;transition:border-color .15s, box-shadow .15s, transform .15s}
+.part-row:hover{border-color:var(--accent2);box-shadow:0 4px 14px var(--shadow);transform:translateY(-1px)}
+.part-row:focus-visible{outline:2px solid var(--accent2);outline-offset:2px}
+.part-row .go{margin-left:auto;align-self:center;font-size:12px;color:var(--accent);white-space:nowrap}
 .avatar{width:52px;height:52px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;flex:0 0 52px;background:var(--code);color:var(--accent);border:1px solid var(--line)}
 .part-row .info{flex:1;min-width:0}
 .part-row .name{font-weight:700}
@@ -153,32 +156,35 @@ a{color:var(--accent)}
 
       <div class="card">
         <h2>Uczestnicy epoki</h2>
-        <p class="note">Klikalne karty bytów z kartoteki; rola z archetypu; paliwo = ilość „pamięci” bytu w archiwum.</p>
+        <p class="note">Klikalne karty — otwierają pełnoekranową kartotekę bytu (<code>#slug</code>). Rola z archetypu; paliwo = ilość „pamięci” bytu w archiwum.</p>
         <div class="part">
-          <div class="part-row">
+          <a class="part-row" href="../index.html#kannon-hase" data-slug="kannon-hase" title="Kartoteka Kannon — #kannon-hase">
             <div class="avatar">🕊</div>
             <div class="info">
               <div class="name">Kannon — miłosierna wybawicielka</div>
               <div class="meta">Japonia · Bodhisattwa · rola: <b>Pieśniarz</b></div>
               <div class="stat"><span>paliwo <b>7 → 5</b></span><span class="chip">uzdrowienie</span><span class="chip">ratunek</span></div>
             </div>
-          </div>
-          <div class="part-row">
+            <span class="go">kartoteka ↗</span>
+          </a>
+          <a class="part-row" href="../index.html#agni" data-slug="agni" title="Kartoteka Agni — #agni">
             <div class="avatar">🔥</div>
             <div class="info">
               <div class="name">Agni — bóg ognia ofiarnego</div>
               <div class="meta">Indie · Bóg ognia · rola: <b>Filar</b></div>
               <div class="stat"><span>paliwo <b>8 → 6</b></span><span class="chip">oczyszczenie</span><span class="chip">opłaty</span></div>
             </div>
-          </div>
-          <div class="part-row">
+            <span class="go">kartoteka ↗</span>
+          </a>
+          <a class="part-row" href="../index.html#talos-kreta" data-slug="talos-kreta" title="Kartoteka Talos — #talos-kreta">
             <div class="avatar">🗿</div>
             <div class="info">
               <div class="name">Talos — spiżowy strażnik Krety</div>
               <div class="meta">Grecja · Automat · rola: <b>Samotnik</b> (poza siecią)</div>
               <div class="stat"><span>paliwo <b>5 → 1</b></span><span class="chip">obrona</span><span class="chip">warunek</span></div>
             </div>
-          </div>
+            <span class="go">kartoteka ↗</span>
+          </a>
         </div>
       </div>
 
@@ -347,5 +353,22 @@ a{color:var(--accent)}
     <code>ledger.paliwo</code>, <code>watki</code>.
   </div>
 </div>
+
+<script>
+/* Mockup-only helper: z podglądu w docs (port 8001) otwórz kartotekę na mapie (port 8000).
+   W aplikacji docelowej wystarczy zwykly link ../index.html#<slug> lub #<slug>. */
+document.addEventListener('click', (e) => {
+  const a = e.target.closest('[data-slug]');
+  if (!a) return;
+  const slug = a.dataset.slug;
+  const host = location.host;
+  const other = host.replace(/^(\d+)-/, (m, port) => (port === '8001' ? '8000-' : `${port}-`));
+  if (other !== host) {
+    e.preventDefault();
+    const url = `${location.protocol}//${other}/index.html#${slug}`;
+    window.open(url, '_blank', 'noopener');
+  }
+});
+</script>
 </body>
 </html>
