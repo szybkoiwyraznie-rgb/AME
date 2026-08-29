@@ -1,0 +1,142 @@
+{
+  "slug": "epoka-1",
+  "tom": "tom-1",
+  "skit": "trzy-stoly",
+  "tytul": "Trzy stoły: przodek, gospodarz i gość",
+  "iskra": "W gospodzie, w której ściany pamiętają trzy porządki, zasiedli: przodek, który przychodzi, żeby dać; gospodarz, który płaci, żeby gość sobie poszedł; i gość, który wziął sam, bo nie znał miary.",
+  "pytanie": "Co wolno wziąć gościowi, gdy gospodarz tylko płaci, a przodek przychodzi, żeby dać?",
+  "uczestnicy": [
+    {
+      "slug": "egungun",
+      "rola": "Przodek przy stole",
+      "kosztUdzialu": 2,
+      "kosztKlucza": 0,
+      "boost": 0,
+      "zwrot": 5,
+      "watkiNaruszone": 2
+    },
+    {
+      "slug": "barbarossa-kyffhaeuser",
+      "rola": "Gospodarz warunku",
+      "kosztUdzialu": 2,
+      "kosztKlucza": 0,
+      "boost": 0,
+      "zwrot": 0,
+      "watkiNaruszone": 2
+    },
+    {
+      "slug": "kentaur-pelion",
+      "rola": "Gość, który wziął",
+      "kosztUdzialu": 2,
+      "kosztKlucza": 0,
+      "boost": 0,
+      "zwrot": 0,
+      "watkiNaruszone": 2
+    }
+  ],
+  "przebieg": "Pełny tekst rozmowy: data/skity/trzy-stoly.json (uczestnicy zgodni z epoką).",
+  "narrator": {
+    "ocena": [
+      {
+        "kto": "kentaur-pelion",
+        "kogo": "barbarossa-kyffhaeuser",
+        "stopien": 2,
+        "kontekst": "retoryka gościnności",
+        "komentarz": "Kentaur używa słowa „płacę” i warunku cesarza, żeby nazwać go strażnikiem więzienia, nie gospodarzem. To ocena narratora, nie mechaniczne „wykorzystanie karty”."
+      },
+      {
+        "kto": "egungun",
+        "kogo": "kentaur-pelion",
+        "stopien": 1,
+        "kontekst": "łagodna retoryka rodu",
+        "komentarz": "Egungun delikatnie odwołuje się do wstydu kentaura, żeby pokazać różnicę: przodek nie bierze, gość, który wziął sam, sam się osądza."
+      }
+    ],
+    "podsumowanie": "Żaden z uczestników nie „odpala” słabości jak przycisku; rozmowa tylko sprawia, że świat zaczyna rozumieć, gdzie leży różnica między gościem proszonym a gościem, który bierze."
+  },
+  "konsekwencje": {
+    "os": {
+      "mit": -1,
+      "racjonalizacja": 2,
+      "opis": "Ludzie zaczynają rozróżniać trzy porządki gościnności; wyjaśniony związek kentaura z winem odbiera mu część tajemnicy."
+    },
+    "relacje": [
+      {
+        "od": "egungun",
+        "do": "barbarossa-kyffhaeuser",
+        "kierunek": "wzmocnienie",
+        "opis": "Przodek i cesarz zostają w tym samym micie rozróżnienia: jeden przychodzi, żeby dać, drugi płaci, żeby nie wchodzić przed czasem."
+      },
+      {
+        "od": "kentaur-pelion",
+        "do": "barbarossa-kyffhaeuser",
+        "kierunek": "schłodzenie",
+        "opis": "Kentaur przez retorykę odsuwa siebie od porządku cesarza; świat zapamiętuje, że między nimi nie ma wspólnego stołu."
+      }
+    ],
+    "zasieg": [
+      {
+        "slug": "egungun",
+        "przed": 0.24,
+        "po": 0.27,
+        "opis": "W niektórych rodach pojawia się czwarty stół dla gościa, który wziął sam — kult przodków zyskuje nowy rytuał."
+      },
+      {
+        "slug": "barbarossa-kyffhaeuser",
+        "przed": 0.20,
+        "po": 0.20,
+        "opis": "Cesarz nie zyskuje i nie traci: jego warunek pozostaje nierozstrzygnięty."
+      },
+      {
+        "slug": "kentaur-pelion",
+        "przed": 0.16,
+        "po": 0.14,
+        "opis": "Legenda o kentaúrze uroczystym słabnie — ludzie na ucztach zaczynają próbować wino i patrzeć na drugą połowę gościa."
+      }
+    ],
+    "dominacje": [
+      { "kultura": "joruba", "kult": "egungun", "przed": 0.24, "po": 0.27 },
+      { "kultura": "niemcy", "kult": "barbarossa-kyffhaeuser", "przed": 0.20, "po": 0.20 },
+      { "kultura": "grecja-kentaur", "kult": "kentaur-pelion", "przed": 0.16, "po": 0.14 }
+    ],
+    "pozycje": [
+      {
+        "slug": "egungun",
+        "status": "wzmocniony",
+        "opis": "Zyskuje nowy rytuał (czwarty stół), pozostaje obecny w pamięci wspólnoty."
+      },
+      {
+        "slug": "barbarossa-kyffhaeuser",
+        "status": "odporny",
+        "opis": "Warunek trzyma moc; nikt nie próbuje go obudzić przed czasem."
+      },
+      {
+        "slug": "kentaur-pelion",
+        "status": "zraniony",
+        "opis": "Jego słabość zostaje zrozumiana, ale nie zostaje użyta jako broń — świat po prostu przestaje się go bać na ucztach."
+      }
+    ],
+    "watki": [
+      {
+        "id": "czwarty-stol",
+        "stan": "otwarty",
+        "opis": "Kto siada przy czwartym stole: gość, który wziął sam, czy przodek, który umie wybaczyć?"
+      },
+      {
+        "id": "wino-w-uczcie",
+        "stan": "zamkniety",
+        "opis": "Związek kentaura z winem i porządkiem Lapitów zostaje wyjaśniony; słabnie strach przed ucztą."
+      },
+      {
+        "id": "warunek-barbarossy",
+        "stan": "otwarty",
+        "opis": "Dlaczego cesarz woli płacić, żeby gość wyszedł, zamiast przyjąć go przy stole?"
+      }
+    ]
+  },
+  "meta": {
+    "utworzono": "2026-08-29",
+    "autor": "agent Areny — pierwsza epoka Tomu I",
+    "wersja": 1
+  }
+}

@@ -638,3 +638,79 @@ mechanizmu w koncepcie:
 5. **Pytanie do właściciela:** czy P16 (słabości jawnie eksploatowalne) do
    akceptu, i czy po wyżej wymienionym mam wejść w ADR/plan czy jeszcze rozszerzyć
    mechanizm.
+## 21. Realny mechanizm + pierwsza epoka (2026-08-29)
+
+Właściciel doprecyzował P16 i polecił: *„na razie Rozstaje zostawmy w pomysłach.
+Zacznijmy od budowy faktycznie działującego mechanizmu i odpalenia na nim
+pierwszej epoki w pierwszej kronice”*. Zrobione.
+
+### 21.1 P16 — słabości nie są „przyciskiem exploitu” (odpowiedź właściciela)
+
+Właściciel: *„Nie wiem co rozumiesz przez jawnie eksploatowane? «komentarz
+w skicie mechaniczny? X eksploatuje słabość Y?» To nie. Raczej na zasadzie
+oceny agenta-narratora, na ile działania/słowa jednych bytów eksploatowały /
+wykorzystywały w retoryce słabości innych.”*
+
+**Rozumiem to tak:**
+
+- **Nie** ma być pola `exploit: true` ani komentarza „X wykorzystał słabość Y”
+  przyporządkowanego do akcji.
+- Ma być **ocena narracyjna** (`narrator.ocena[]`): `kto → kogo`, `stopień 0–3`,
+  `kontekst` (np. „retoryka gościnności”) i `komentarz` narratora.
+- Ta ocena **nie nakłada kosztu** w ledgerze; może jedynie wpływać na
+  konsekwencje świata (status „zraniony”/„odporny”/„wyjaśniony”) przez to, jak
+  narrator ją opowie.
+- W danych **pierwszej epoki** są dwie takie oceny — Kentaur→Barbarossa (2/3,
+  retoryka), Egungun→Kentaur (1/3, łagodna). Zero mechanicznego flagowania.
+
+### 21.2 Rozstaje — zostają pomysłem
+
+Zgodnie z poleceniem: `rozstaje` **nie** wchodzą do mechanizmu ani do pierwszej
+epoki. W mockupie strony Tomu są oznaczone jako kierunek docelowy, nie jako
+działający blok.
+
+### 21.3 Co działa (implementacja)
+
+- **`data/kronika/tom-1.json`** — Tom I „Kronika trzech stołów” (stanStart:
+  oś mit/racjonalizacja, zasięg bytów, dominacje kultur).
+- **`data/kronika/epoka-1.json`** — Epoka I „Trzy stoły: przodek, gospodarz
+  i gość” na skicie `trzy-stoly` (uczestnicy zgodni z SKIT-em: Egungun,
+  Barbarossa, Kentaur).
+- **`tools/kronika.mjs`** — mechanic:
+  - paliwo pasywne = `2×backlinki + tagi kanonu + sieć powiązań (max 3)`,
+  - gate: `pasywne ≥ kosztUdzialu + kosztKlucza + boost`,
+  - ledger: `saldo = pasywne − koszt + zwrot`,
+  - zwrot dozwolony **tylko** przy dodatniej zmianie zasięgu (z capem),
+  - walidator struktury: skit = uczestnicy epoki; konsekwencje zgodne ze
+    stanem; statusy/wątki z dozwolonych zbiorów; ocena narratora 0–3,
+  - zapis `data/kronika/summary.json` + **wygenerowany raport**
+    `docs/kronika-epoka-1.html`.
+- **Npm** — nowe polecenia: `npm run kronika`, `npm run kronika:check`.
+- **Testy** — `test/kronika.test.js` (5 testów): wzór paliwa, przebieg Tomu I,
+  gate, zwrot bez zmiany, struktura podsumowania.
+
+### 21.4 Wynik pierwszej epoki
+
+| Byty | paliwo pasywne | koszt | zwrot | saldo |
+|---|---|---|---|---|
+| Egungun | 18 | −2 | +5 | **21** |
+| Barbarossa | 17 | −2 | +0 | **15** |
+| Kentaur | 16 | −2 | +0 | **14** |
+
+- **oś:** MIT 52→51, RACJONALIZACJA 48→50.
+- **zasięg:** Egungun 24%→27% (czwarty stół), Barbarossa 20%→20%, Kentaur
+  16%→14% (wyjaśnione wino).
+- **wątki otwarte:** `czwarty-stol`, `warunek-barbarossy`; zamknięty:
+  `wino-w-uczcie`.
+- **Czego dowodzi:** byt-statysta (Barbarossa, Kentaur) **traci**; byt, który
+  realnie zmienił świat (Egungun) może odzyskać paliwo. Skit **nie** dodaje
+  paliwa — zgodnie z korektą z §20.1.
+
+### 21.5 Następny krok
+
+1. Kalibracja seedów osi/zasięgu przy rosnącej kartotece (obecne wartości są
+   umowne, dokumentowane w `tom-1.metryka`).
+2. Druga epoka Tomu I — na kolejnym SKICIE, z kontynuacją `stanPo` (nie
+   `stanStart`). To sprawdzi, czy mechanizm utrzymuje ciągłość.
+3. Prawdziwa strona główna Tomu (zamiast mockupu) zasilona z `summary.json`
+   (oś, dominacje, wątki, ledger, chronologia epok).

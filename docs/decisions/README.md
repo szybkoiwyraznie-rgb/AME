@@ -35,6 +35,7 @@ Każdy dokument opisuje kontekst, wybór i jego konsekwencje.
 | [0018](0018-ton-skitow-humor-i-codziennosc-v1-6.md) | Ton SKITów: humor, luz i codzienność jako pełnoprawny rejestr (protokół MFM v1.6) | Zaakceptowana |
 | [0019](0019-skity-wieloosobowe-i-opis-powiazania.md) | SKITy 3–4-osobowe jako preferowane i twardy wymóg opisu powiązania (protokół MFM v1.7) | Zaakceptowana |
 | [0020](0020-warstwy-tematyczne-mapy.md) | Warstwy tematyczne mapy (woda, miasta) i LOD treści | Zaakceptowana |
+| [0021](0021-kronika-mechanizm-paliwa-i-konsekwencji.md) | Kronika: mechanizm paliwa, konsekwencje i pierwsza epoka | Zaakceptowana |
 
 ## Szablon ADR
 

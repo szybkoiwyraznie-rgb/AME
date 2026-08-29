@@ -7,7 +7,9 @@
   "scripts": {
     "test": "node --test",
     "build": "node tools/rebuild-index.mjs",
-    "check": "node tools/rebuild-index.mjs --check"
+    "check": "node tools/rebuild-index.mjs --check",
+    "kronika": "node tools/kronika.mjs",
+    "kronika:check": "node tools/kronika.mjs --check"
   },
   "engines": {
     "node": ">=20"

@@ -1,0 +1,29 @@
+{
+  "slug": "tom-1",
+  "tytul": "Kronika trzech stołów",
+  "temat": "gościnność i długi między żywymi, zmarłymi i dwiema naturami",
+  "cel": "kontrolny pierwszy tom: sprawdzić, czy epoka realnie zmienia osie świata",
+  "status": "otwarta",
+  "stanStart": {
+    "os": { "mit": 52, "racjonalizacja": 48 },
+    "zasieg": [
+      { "slug": "egungun", "wielkosc": 0.24 },
+      { "slug": "barbarossa-kyffhaeuser", "wielkosc": 0.20 },
+      { "slug": "kentaur-pelion", "wielkosc": 0.16 }
+    ],
+    "dominacje": [
+      { "kultura": "joruba", "kult": "egungun", "wielkosc": 0.24 },
+      { "kultura": "niemcy", "kult": "barbarossa-kyffhaeuser", "wielkosc": 0.20 },
+      { "kultura": "grecja-kentaur", "kult": "kentaur-pelion", "wielkosc": 0.16 }
+    ]
+  },
+  "metryka": {
+    "wersja": 1,
+    "paliwo_start": "wszyscy uczestnicy zaczynają z paliwem pasywnym z indeksu (backlinki + tagi kanonu + sieć powiązań)",
+    "sposob": "run-time: tools/kronika.mjs",
+    "uwagi": [
+      "wartości początkowe osi i zasięgu są seedem do kalibracji przy pełniejszej kartotece",
+      "Rozstaje celowo poza tym tomem (pozostają pomysłem)"
+    ]
+  }
+}

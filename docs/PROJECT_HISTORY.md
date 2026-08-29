@@ -1225,3 +1225,24 @@ Właściciel zobaczył mockup epoki i odpowiedział na 9 punktów. Kluczowe:
   z podglądu w docs (§20.4).
 - Następny krok: doszlifowanie mechanizmu (bilans, walidator, 1–2 epoki
   kontrolne) przed ADR/planem (§20.6). P16 pozostaje do potwierdzenia.
+
+## Kronika — pierwszy działający mechanizm + Epoka I (2026-08-29)
+
+Właściciel doprecyzował P16 i polecił zbudować mechanizm, nie sam mockup;
+Rozstaje zostawić w pomysłach.
+
+- **P16:** słabości nie są „przyciskiem exploitu” ani komentarzem „X wykorzystał
+  Y”; to ocena **agenta-narratora** (`narrator.ocena[]`: kto→kogo, stopień 0–3,
+  kontekst, komentarz), bez kosztu w ledgerze.
+- **Mechanizm (`tools/kronika.mjs`):** paliwo pasywne = 2×backlinki + tagi kanonu
+  + sieć powiązań (max 3); udział kosztuje; zwrot tylko za dodatnią zmianę
+  zasięgu; walidator konsekwencji (os, relacje, zasięg, dominacje, pozycje,
+  wątki) + ocena narratora.
+- **Pierwsza epoka:** `data/kronika/epoka-1.json` na skicie `trzy-stoly`
+  (Egungun × Barbarossa × Kentaur) w Tomie I „Kronika trzech stołów”.
+  Wynik: Egungun 18→21, Barbarossa 17→15, Kentaur 16→14; oś MIT 52→51 /
+  RACJONALIZACJA 48→50; Egungun +3 pp zasięgu, Kentaur −2 pp.
+- **Raport:** `docs/kronika-epoka-1.html` generowany z `data/kronika/summary.json`.
+- **Npm:** `kronika`, `kronika:check`; **testy:** `test/kronika.test.js` (5).
+- **ADR 0021** w `docs/decisions/`; §21 w `docs/KRONIKA_tryb.md`; ROADMAP i
+  Czytelnia zaktualizowane.

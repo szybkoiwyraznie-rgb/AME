@@ -482,6 +482,24 @@ Właściciel polubił mockup i odpowiedział na `$19`. Opracowane w
 - [x] **§20.5/§20.6** — status P12–P17 i następny krok: doszlifowanie
       mechanizmu (bilans, walidator, 1–2 epoki kontrolne) przed ADR/planem.
 
+### Kronika: działający mechanizm + pierwsza epoka (2026-08-29)
+
+Po doprecyzowaniu P16 („wykorzystanie słabości” = ocena narratora, nie
+przycisk) i poleceniu „Rozstaje zostawmy w pomysłach” zbudowano realny silnik:
+
+- [x] **`data/kronika/tom-1.json`** — Tom I „Kronika trzech stołów” + `stanStart`.
+- [x] **`data/kronika/epoka-1.json`** — Epoka I „Trzy stoły: przodek, gospodarz
+      i gość” (skit `trzy-stoly`, uczestnicy zgodni).
+- [x] **`tools/kronika.mjs`** — paliwo pasywne (2×backlinki + tagi kanonu +
+      sieć powiązań), gate (`pasywne ≥ koszt`), ledger, zwrot tylko za realną
+      zmianę zasięgu, walidator `konsekwencje` + `narrator.ocena[]`.
+- [x] **Wynik** — Egungun 18→21 (zwrot +5), Barbarossa 17→15, Kentaur 16→14;
+      oś MIT 52→51 / RACJONALIZACJA 48→50; zasięg Egungun 24→27%, Kentaur 16→14%.
+- [x] **Raport** — `docs/kronika-epoka-1.html` wygenerowany z danych.
+- [x] **Npm/testy** — `npm run kronika`, `npm run kronika:check`,
+      `test/kronika.test.js` (5 testów).
+- [x] **ADR 0021** + §21 w `docs/KRONIKA_tryb.md`.
+
 ## C4 — nazwa miasta na czas przytrzymania + kursor strzałka (nadpisuje C2 UX)
 
 - [x] **Etykieta miasta tylko podczas przytrzymania:** `pointerdown` pokazuje
