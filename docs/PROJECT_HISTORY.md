@@ -1075,3 +1075,20 @@ pętli (C1/C2/C3) — to był audyt. Ten wpis to pełny obieg.
 - Test pilnuje, że na kropce miasta **nie ma** listenerów
   `pointerenter/pointerleave`, a klik pokazuje i chowa tabliczkę.
 - `npm test` **152/152**, `npm run check` OK.
+
+## Konsolidacja dokumentacji trybu KRONIKA
+
+Właściciel poprosił o pracę nad koncepcją Kronik i o **jeden czytelny plik**
+z dokumentacją trybu (zamiast szukania po repo).
+
+- `docs/KRONIKA_tryb.md` — kompletna, samodzielna dokumentacja:
+  - cel trybu i fundamenty (U1–U5) oraz decyzje już podjęte;
+  - rozróżnienie build-time vs run-time, trzy warstwy (ARKADIA/SPLOT/KRONIKA);
+  - pętla powstawania epoki + dossier postaci;
+  - schemat `data/kronika/epoka-N-slug.json` z pełnym przykładem epoki 2
+    (na SKICIE „Cena znaku”: Indra × Barbarossa × Nessos);
+  - reguły jakości, kanoniczność, opis widoku obserwatora, oś czasu i graf;
+  - granice trybu oraz propozycje rozstrzygnięć P1–P11;
+  - kolejność wdrożenia (ADR → walidator → widok `#kronika`) i pytania do właściciela.
+- Zgodnie z M13: **bez kodu gry** — praca koncepcyjna; nie modyfikuje danych ani
+  indeksu. `npm test` 152/152, `npm run check` OK.

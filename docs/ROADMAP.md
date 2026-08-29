@@ -408,3 +408,13 @@ kulturowych, oś czasu manifestacji, wersja EN, import metadanych kart…).
       Uzupełnia klikalne etykiety z poprzedniej iteracji.
 - [x] Weryfikacja: `npm test` **152/152**, build 10 wpisów / 15 SKITów /
       39 feed / 27 tagów, `npm run check` OK.
+
+## Kronika — konsolidacja dokumentacji trybu
+
+- [x] **Jeden czytelny plik trybu:** `docs/KRONIKA_tryb.md` — pełna,
+      samodzielna dokumentacja Kroniki (fundamenty, decyzje, model danych
+      `data/kronika/`, reguły, granice, propozycje P1–P11).
+- [x] **Rozwinięcie koncepcji:** słownik zmian `relacje[].zmiana`, przykład
+      epoki 2 na SKICIE „Cena znaku”, kolejność wdrożenia (ADR → walidator →
+      widok `#kronika`).
+- [x] Zgodnie z M13: **bez kodu gry** — dokumentacja koncepcyjna, nie dane.
