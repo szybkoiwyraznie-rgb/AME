@@ -167,6 +167,19 @@ test('mapa: klik w miasto pokazuje etykietę, klik w puste miejsce chowa ją', (
   mapa.svg.sluchacze.click[0]({ target: { closest: () => null }, clientX: 10, clientY: 10 });
   assert.ok(!etykieta.czyMaKlase('widoczna'), 'klik poza miastem chowa tabliczkę');
 
+  // Wyłączenie warstwy miast (lub zoom poniżej progu) musi schować tabliczkę,
+  // inaczej wisiałaby nad punktem, którego już nie ma.
+  mapa.svg.sluchacze.click[0]({ target: { closest: () => null }, clientX: px, clientY: py });
+  assert.ok(etykieta.czyMaKlase('widoczna'), 'ponowne kliknięcie pokazuje tabliczkę');
+  mapa.przelaczWidocznoscWarstwy('miasta', false);
+  assert.ok(!etykieta.czyMaKlase('widoczna'), 'wyłączona warstwa chowa otwartą tabliczkę');
+  mapa.przelaczWidocznoscWarstwy('miasta', true);
+
+  mapa.svg.sluchacze.click[0]({ target: { closest: () => null }, clientX: px, clientY: py });
+  assert.ok(etykieta.czyMaKlase('widoczna'), 'warstwa włączona znowu pozwala kliknąć');
+  mapa.reset();
+  assert.ok(!etykieta.czyMaKlase('widoczna'), 'zoom poniżej progu miast chowa tabliczkę');
+
   delete globalThis.DOMPoint;
   delete mapa.svg.getScreenCTM;
 });

@@ -83,6 +83,22 @@ zmianie, niezależnie od „polerowania”.
 - [x] Weryfikacja: `npm test` **150/150**, `npm run build` zielony, ADR 0003/0009
       i ARCHITECTURE/README zaktualizowane.
 
+## Pętla Jakości po poprawkach mapy (audyt przed sprawdzeniem właściciela)
+
+- [x] **Audyt B:** znaleziony defekt — otwarta etykieta miasta wisiała nad
+      pustym punktem po wyłączeniu warstwy „Miasta” albo zoombie poniżej progu
+      4 (kropki znikały, tabliczka zostawała).
+- [x] **Poprawka:** `odswiezMiasta()` przy `!pokazuj` chowa otwartą etykietę
+      (`ukryjEtykieteMiasta()`); dodatkowo `ustawMiasta()` czyści etykietę, gdy
+      aktywne miasto zniknęło z danych.
+- [x] **Test:** rozszerzony `mapa: klik w miasto…` — ponowne kliknięcie,
+      wyłączenie warstwy i `reset()` (zoom poniżej progu) chowają tabliczkę;
+      test symuluje klik po `getScreenCTM`/`DOMPoint`.
+- [x] **Cache-busting:** `?v=mercator-1` w `index.html` i importach modułów —
+      przeglądarka nie trzyma starych JS/CSS (działa na lokalnym serwerze i
+      GitHub Pages; `file://` i tak jest nieobsługiwane — patrz baner).
+- [x] Weryfikacja: `npm test` **151/151**, `npm run check`/`build` zielone.
+
 ## F1 — Proces treściowy NA ZLECENIE (karty od właściciela — priorytet nad pętlą)
 
 - [ ] Właściciel dostarcza kartę (nazwa+set albo grafika) → sesja tworzy

@@ -1023,3 +1023,23 @@ też prośbę o pokazywanie nazw miast po kliknięciu.
 
 - `npm test` **150/150**, `npm run check` OK, `npm run build` zielony.
 - Commity: `43483ad` (Mercator) + commit z etykietami miast (poniższy wpis).
+
+## Pętla Jakości po poprawkach mapy (audyt przed sprawdzeniem właściciela)
+
+- **Audyt:** po starcie nowej wersji właściciel miał dostęp do świeżego
+  podglądu, ale przed ostatecznym sprawdzeniem zlecił pętlę jakości. Sprawdzono
+  oba kierunki (Mercator + etykiety miast) i aktualny stan gita.
+- **Znaleziony defekt:** gdy warstwa „Miasta” była wyłączona albo zoom spadał
+  poniżej progu `miastaWielkie`, kropki miast znikały, ale otwarta po kliknięciu
+  tabliczka z nazwą zostawała na mapie.
+- **Poprawka (przed commit):** `odswiezMiasta()` przy `!pokazuj` wywołuje
+  `ukryjEtykieteMiasta()`; `ustawMiasta()` czyści etykietę, gdy aktywne miasto
+  przestało istnieć w danych.
+- **Test:** rozszerzony test kliknięcia — ponowne kliknięcie, wyłączenie
+  warstwy i `reset()` chowają tabliczkę; symulowany `getScreenCTM`/`DOMPoint`.
+- **Cache-busting:** `?v=mercator-1` w `index.html` i w importach modułów
+  (`app/app.js`, `app/map.js`) — wymusza pobranie świeżych JS/CSS po zmianie
+  serwera/podglądu. Działa na HTTP (lokalny serwer i GitHub Pages); tryb
+  `file://` pozostaje celowo nieobsługiwany (baner w `index.html`).
+- **Stan:** `npm test` **151/151**, `npm run check` i `npm run build` zielone;
+  commit pętli + powód odtworzenia gałęzi z origin po resecie sandboxa.

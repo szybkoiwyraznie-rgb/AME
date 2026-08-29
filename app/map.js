@@ -525,7 +525,13 @@ export function stworzMape(kontener, { przyZmianieZaznaczenia, przyZmianieWidoku
     for (const [tier, gr] of Object.entries(grupyMiast)) {
       gr.setAttribute('display', pokazuj && k >= progi[tier] ? 'inherit' : 'none');
     }
-    if (!pokazuj || Math.abs(skala - ostatnieSkala) <= 1e-9) return;
+    if (!pokazuj) {
+      // C2: gdy miasta znikają (zoom poniżej progu albo wyłączona warstwa),
+      // zniknąć musi też otwarta etykieta — inaczej „wisi” nad pustym punktem.
+      ukryjEtykieteMiasta();
+      return;
+    }
+    if (Math.abs(skala - ostatnieSkala) <= 1e-9) return;
     const komp = 1 / skala;
     for (const m of miastaDane) {
       if (grupyMiast[m.tier].getAttribute('display') === 'none') continue;
