@@ -664,17 +664,30 @@ export function formatujDialogHTML(tekst) {
 
 /** Wspólny pasek nawigacji aplikacji Kroniki */
 export function generujTopbarHTML(aktywny = 'kronika') {
-  return `
-  <header class="topbar">
-    <a class="brand" href="../index.html">AME<span class="dot">.</span> KRONIKA</a>
-    <nav class="nav-links">
-      <a href="../index.html" class="nav-item">🗺️ Mapa świata</a>
-      <a href="../index.html#lista" class="nav-item">☰ Kartoteka</a>
-      <a href="../index.html#skity" class="nav-item">✎ Skity</a>
-      <a href="../index.html#nowosci" class="nav-item">✚ Nowości</a>
-      <a href="kronika-tom-1.html" class="nav-item ${aktywny === 'tom-1' ? 'active' : ''}">📜 Tom I: Trzy Stoły</a>
-    </nav>
-  </header>`;
+  return `  <header class="gora">
+    <div class="tytul">
+      <h1><a href="../index.html" style="text-decoration:none;color:inherit">AME</a></h1>
+      <p>Archiwum Manifestacji Eterycznych</p>
+    </div>
+    <input id="szukaj" type="search" placeholder="Szukaj: nazwa, karta, tag, kraj…" autocomplete="off" aria-label="Szukaj manifestacji" onkeypress="if(event.key === 'Enter') window.location.href='../index.html?q='+encodeURIComponent(this.value)">
+    <div class="akcje">
+      <a id="przycisk-los" class="przycisk" href="../index.html?action=wylosuj" title="Wylosuj manifestację i przeleć do niej na mapie">🎲 wylosuj</a>
+      <a id="przycisk-luki" class="przycisk" href="../index.html?action=powiazania" title="Pokaż powiązania na mapie">∞ powiązania</a>
+      <a id="przycisk-lista" class="przycisk" href="../index.html#lista" title="Lista wszystkich manifestacji">☰ kartoteka</a>
+      <a id="przycisk-skity" class="przycisk" href="../index.html#skity" title="Baza Skitów — rozmowy materializacji">✎ skity</a>
+      <a id="przycisk-nowosci" class="przycisk" href="../index.html#nowosci" title="Co nowego — aktualizacje archiwum">✚ nowości</a>
+      <a id="przycisk-kronika" class="przycisk ${aktywny === 'tom-1' ? 'aktywny' : ''}" href="kronika-tom-1.html" title="Kronika świata AME — tocząca się opowieść epok">📜 kronika</a>
+      <button id="przycisk-motyw" class="przycisk przycisk-motyw" type="button" aria-pressed="false" title="Przełącz tryb ciemny/jasny" onclick="const m = document.documentElement.dataset.motyw === 'jasny' ? 'ciemny' : 'jasny'; document.documentElement.dataset.motyw = m; localStorage.setItem('ame:motyw', m); this.innerHTML = m === 'jasny' ? '☀ jasny' : '☾ ciemny';">☾ motyw</button>
+    </div>
+  </header>
+  <script>
+    (function() {
+      const m = localStorage.getItem('ame:motyw') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'ciemny' : 'jasny');
+      document.documentElement.dataset.motyw = m;
+      const btn = document.getElementById('przycisk-motyw');
+      if (btn) btn.innerHTML = m === 'jasny' ? '☀ jasny' : '☾ ciemny';
+    })();
+  </script>`;
 }
 
 /** Wspólne style CSS dla wszystkich stron Kroniki */
@@ -712,49 +725,54 @@ body {
   padding: 24px 20px 80px;
 }
 /* TOPBAR */
-.topbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-bottom: 2px solid var(--accent);
-  padding-bottom: 14px;
-  margin-bottom: 24px;
+html[data-motyw="ciemny"] {
+  --bg: #0d1015;
+  --bg-subtle: #141922;
+  --fg: #d8d2c4;
+  --muted: #8b877c;
+  --line: #2a3140;
+  --card: #1b2230;
+  --card-alt: #232c3c;
+  --accent: #c9a86a;
+  --accent-light: #e0ca9a;
+  --accent-glow: rgba(201, 168, 106, 0.15);
+  --mit: #5ab57a;
+  --mit-bg: #22382c;
+  --rac: #6ea3c2;
+  --rac-bg: #23344a;
+  --code: #161b24;
+}
+
+/* Zastąpione klasy .topbar z głównego menu */
+.gora {
+  display: flex; align-items: center; gap: 14px; padding: 10px 16px;
+  background: var(--bg-subtle); border-bottom: 1px solid var(--line);
+  margin: -24px -20px 40px -20px;
   flex-wrap: wrap;
-  gap: 12px;
 }
-.brand {
-  font-weight: 700;
-  font-size: 20px;
-  color: var(--fg);
-  text-decoration: none;
-  letter-spacing: -0.5px;
+.tytul { display: flex; align-items: baseline; gap: 10px; white-space: nowrap; }
+.tytul h1 { margin: 0; font-family: inherit; font-size: 22px; letter-spacing: 0.12em; color: var(--accent); }
+.tytul h1 a { text-decoration: none; color: inherit; }
+.tytul p { margin: 0; font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted); }
+#szukaj {
+  flex: 1; min-width: 120px; max-width: 520px; padding: 8px 14px;
+  border-radius: 999px; border: 1px solid var(--line);
+  background: var(--card); color: var(--fg); font-size: 14px;
 }
-.brand .dot { color: var(--accent); }
-.nav-links {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
+.akcje { display: flex; gap: 8px; flex-wrap: wrap; }
+.przycisk {
+  display: inline-flex; align-items: center; justify-content: center;
+  padding: 7px 12px; border-radius: 8px; border: 1px solid var(--line);
+  background: var(--card); color: var(--fg); font-size: 13px;
+  cursor: pointer; text-decoration: none;
 }
-.nav-item {
-  color: var(--muted);
-  text-decoration: none;
-  font-size: 13.5px;
-  padding: 5px 12px;
-  border-radius: 6px;
-  border: 1px solid transparent;
-  transition: all .15s ease;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-}
-.nav-item:hover {
-  color: var(--accent);
-  background: var(--bg-subtle);
-  border-color: var(--line);
-}
-.nav-item.active {
-  color: var(--accent);
-  font-weight: 600;
-  background: var(--code);
-  border-color: var(--line);
+.przycisk:hover { background: var(--card-alt); border-color: var(--accent-light); }
+.przycisk.aktywny { border-color: var(--accent); color: var(--accent); }
+
+@media (max-width: 900px) {
+  .gora { flex-wrap: wrap; margin: -20px -20px 20px -20px; }
+  #szukaj { order: 3; flex-basis: 100%; max-width: none; }
+  .tytul p { display: none; }
 }
 
 /* HERO */
@@ -770,7 +788,7 @@ body {
   margin: 8px 0 8px;
   font-size: 30px;
   line-height: 1.25;
-  color: #110e0b;
+  color: var(--fg);
 }
 .hero .sub {
   color: var(--muted);
@@ -962,7 +980,7 @@ body {
   font-size: 19px;
   border-left: 4px solid var(--accent);
   padding-left: 10px;
-  color: #1a1613;
+  color: var(--fg);
 }
 .card-sub {
   color: var(--muted);
@@ -989,6 +1007,7 @@ body {
   color: inherit;
   transition: all .15s ease;
 }
+
 .part-card:hover {
   border-color: var(--accent);
   background: #fff;

@@ -136,11 +136,11 @@ export function htmlStopki(meta) {
   // Stopka pokazuje wyłącznie DATY (bez godziny) — meta może nieść porę
   // (ADR 0017, v1.5), ale w karcie liczy się dzień utworzenia i ostatniej
   // zmiany. Godzina żyje w feedzie „Co nowego”, nie w stopce (PROTOKÓŁ §8.1).
-  const dzien = (d) => String(d).slice(0, 10);
-  const daty = (meta?.modyfikacje ?? []).map((m) => m?.data).filter(Boolean).map(dzien).sort((a, b) => (a > b) - (a < b));
+  const formatujDate = (d) => String(d).replace('T', ' ').trim();
+  const daty = (meta?.modyfikacje ?? []).map((m) => m?.data).filter(Boolean).map(formatujDate).sort((a, b) => (a > b) - (a < b));
   const ostatnia = daty[daty.length - 1];
   const pokaz = ostatnia ? ` · zmieniono ${esc(ostatnia)}` : '';
-  const utworzono = meta?.utworzono ? dzien(meta.utworzono) : '?';
+  const utworzono = meta?.utworzono ? formatujDate(meta.utworzono) : '?';
   return `<footer class="meta-wpisu">utworzono ${esc(utworzono)}${pokaz}</footer>`;
 }
 
