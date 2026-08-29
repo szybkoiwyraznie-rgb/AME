@@ -671,8 +671,8 @@ export function generujTopbarHTML(aktywny = 'kronika') {
       <a href="../index.html" class="nav-item">🗺️ Mapa świata</a>
       <a href="../index.html#lista" class="nav-item">☰ Kartoteka</a>
       <a href="../index.html#skity" class="nav-item">✎ Skity</a>
+      <a href="../index.html#nowosci" class="nav-item">✚ Nowości</a>
       <a href="kronika-tom-1.html" class="nav-item ${aktywny === 'tom-1' ? 'active' : ''}">📜 Tom I: Trzy Stoły</a>
-      <a href="czytelnia-kronika.html" class="nav-item ${aktywny === 'czytelnia' ? 'active' : ''}">📖 O Kronice</a>
     </nav>
   </header>`;
 }
