@@ -120,6 +120,7 @@ export function stworzMape(kontener, { przyZmianieZaznaczenia, przyZmianieWidoku
   let miastaDane = []; // [{g, wx, wy, nazwa, populacja, tier}]
   let ostatnieSkala = null; // do pomijania przebudowy transformów punktów przy samym panu
   let aktywneMiasto = null; // miasto pokazane po kliknięciu
+  let przypieteMiasto = null; // miasto przypięte klikiem — hover go nie nadpisuje
   let czyPrzesunieto = false; // pan/pinch nie może być mylony z kliknięciem w miasto
 
   /** Punkt zdarzenia klienta → współrzędne viewBoxu (= piksele kontenera). */
@@ -234,7 +235,7 @@ export function stworzMape(kontener, { przyZmianieZaznaczenia, przyZmianieWidoku
     wskazniki.set(e.pointerId, { x: e.clientX, y: e.clientY });
     if (Math.hypot(e.clientX - poprzedni.x, e.clientY - poprzedni.y) > 4) {
       czyPrzesunieto = true;
-      ukryjEtykieteMiasta();
+      ukryjEtykieteMiasta(true); // przeciągnięcie odprzypina
     }
 
     if (wskazniki.size === 1) {
@@ -282,8 +283,8 @@ export function stworzMape(kontener, { przyZmianieZaznaczenia, przyZmianieWidoku
     if (e.target.closest('.pinezka')) return; // pinezka obsługuje się sama
     if (czyPrzesunieto) return; // drag/pinch nie jest kliknięciem
     const m = miastoPodKlikiem(naSvg(e));
-    if (m) pokazEtykieteMiasta(m);
-    else ukryjEtykieteMiasta();
+    if (m) pokazEtykieteMiasta(m, { przypnij: true });
+    else ukryjEtykieteMiasta(true); // klik w tło odprzypina
   });
 
   /* ---- Pinezki i łuki powiązań ---- */
@@ -450,14 +451,17 @@ export function stworzMape(kontener, { przyZmianieZaznaczenia, przyZmianieWidoku
     etykietaMiasta.setAttribute('transform', `translate(${aktywneMiasto.wx} ${aktywneMiasto.wy}) scale(${komp})`);
   }
 
-  function ukryjEtykieteMiasta() {
+  function ukryjEtykieteMiasta(czyscPrzypiecie = false) {
+    if (czyscPrzypiecie) przypieteMiasto = null;
+    if (przypieteMiasto) return; // przypięte klikiem zostaje do kliknięcia w tło
     aktywneMiasto = null;
     etykietaMiasta.classList.remove('widoczna');
     etykietaMiasta.innerHTML = '';
   }
 
-  function pokazEtykieteMiasta(m) {
-    if (!m) return ukryjEtykieteMiasta();
+  function pokazEtykieteMiasta(m, { przypnij = false } = {}) {
+    if (!m) return ukryjEtykieteMiasta(przypnij);
+    if (przypnij) przypieteMiasto = m;
     aktywneMiasto = m;
     etykietaMiasta.innerHTML = '';
     const tlo = el('rect', { class: 'tlo-etykiety', rx: 8 }, etykietaMiasta);
@@ -506,9 +510,17 @@ export function stworzMape(kontener, { przyZmianieZaznaczenia, przyZmianieWidoku
       const t = el('title', {}, kropka);
       const nazwa = m.n ?? m.nazwa ?? '';
       t.textContent = `${nazwa}${p ? ` · ${formatujPopulacje(p)}` : ''}`;
-      miastaDane.push({ g, wx, wy, nazwa, populacja: p, tier });
+      const rekordMiasta = { g, wx, wy, nazwa, populacja: p, tier };
+      // C2: nazwa miasta po najechaniu (bez przypinania); klik przypina.
+      g.addEventListener('pointerenter', () => {
+        if (przypieteMiasto !== rekordMiasta) pokazEtykieteMiasta(rekordMiasta);
+      });
+      g.addEventListener('pointerleave', () => {
+        if (przypieteMiasto !== rekordMiasta) ukryjEtykieteMiasta();
+      });
+      miastaDane.push(rekordMiasta);
     }
-    if (aktywneMiasto && !miastaDane.some((m) => m.wx === aktywneMiasto.wx && m.wy === aktywneMiasto.wy)) ukryjEtykieteMiasta();
+    if (aktywneMiasto && !miastaDane.some((m) => m.wx === aktywneMiasto.wx && m.wy === aktywneMiasto.wy)) ukryjEtykieteMiasta(true);
     ostatnieSkala = null; // wymuś ustawienie transformów punktów
     odswiezWidocznoscWarstw();
   }
@@ -528,7 +540,7 @@ export function stworzMape(kontener, { przyZmianieZaznaczenia, przyZmianieWidoku
     if (!pokazuj) {
       // C2: gdy miasta znikają (zoom poniżej progu albo wyłączona warstwa),
       // zniknąć musi też otwarta etykieta — inaczej „wisi” nad pustym punktem.
-      ukryjEtykieteMiasta();
+      ukryjEtykieteMiasta(true);
       return;
     }
     if (Math.abs(skala - ostatnieSkala) <= 1e-9) return;

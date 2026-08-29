@@ -184,6 +184,48 @@ test('mapa: klik w miasto pokazuje etykietę, klik w puste miejsce chowa ją', (
   delete mapa.svg.getScreenCTM;
 });
 
+test('mapa: nazwa miasta po najechaniu; klik przypina, drugi klik w tło odprzypina', () => {
+  const { kontener } = zasciel();
+  const mapa = stworzMape(kontener, {});
+  mapa.svg.getScreenCTM = () => ({ inverse: () => ({ a: 1, b: 0, c: 0, d: 1, e: 0, f: 0 }) });
+  globalThis.DOMPoint = class {
+    constructor(x, y) { this.x = x; this.y = y; }
+    matrixTransform(m) { return { x: m.a * this.x + m.c * this.y + m.e, y: m.b * this.x + m.d * this.y + m.f }; }
+  };
+  mapa.ustawMiasta([{ n: 'Kraków', lat: 50.06, lon: 19.94, p: 1_200_000 }]);
+  mapa.zoomDoPunktu({ x: 800, y: 320 }, 4);
+  const [wx, wy] = projektuj(50.06, 19.94);
+  const px = mapa.widok.x + wx * mapa.skala;
+  const py = mapa.widok.y + wy * mapa.skala;
+  const etykieta = znajdzElement(mapa.svg, 'etykieta-miasta');
+
+  // Hover (bez przypięcia): pokazuje, a po zjechaniu chowa.
+  const grupaMiast = znajdzElement(mapa.svg, 'miasta');
+  const wielkie = znajdzElement(grupaMiast, 'miasta-wielkie');
+  const miasto = wielkie.dzieci[0];
+  miasto.sluchacze.pointerenter[0]();
+  assert.ok(etykieta.czyMaKlase('widoczna'), 'hover pokazuje nazwę');
+  miasto.sluchacze.pointerleave[0]();
+  assert.ok(!etykieta.czyMaKlase('widoczna'), 'zjazd chowa nazwę (bez przypięcia)');
+
+  // Klik przypina; zjazd nie chowa przypiętej.
+  mapa.svg.sluchacze.click[0]({ target: { closest: () => null }, clientX: px, clientY: py });
+  assert.ok(etykieta.czyMaKlase('widoczna'), 'klik przypina');
+  miasto.sluchacze.pointerleave[0]();
+  assert.ok(etykieta.czyMaKlase('widoczna'), 'przypięta etykieta nie znika po zjeździe');
+  mapa.svg.sluchacze.click[0]({ target: { closest: () => null }, clientX: 10, clientY: 10 });
+  assert.ok(!etykieta.czyMaKlase('widoczna'), 'klik w tło odprzypina');
+
+  // Zjechanie po odprzypięciu znowu chowa.
+  miasto.sluchacze.pointerenter[0]();
+  assert.ok(etykieta.czyMaKlase('widoczna'), 'po odprzypięciu hover znowu działa');
+  miasto.sluchacze.pointerleave[0]();
+  assert.ok(!etykieta.czyMaKlase('widoczna'), 'a zjazd chowa');
+
+  delete globalThis.DOMPoint;
+  delete mapa.svg.getScreenCTM;
+});
+
 test('mapa: przycisk przelaczWidocznoscWarstwy nie psuje warstw wodnych', () => {
   const { kontener } = zasciel();
   const mapa = stworzMape(kontener, {});
