@@ -674,43 +674,63 @@ działający blok.
 - **`data/kronika/tom-1.json`** — Tom I „Kronika trzech stołów” (stanStart:
   oś mit/racjonalizacja, zasięg bytów, dominacje kultur).
 - **`data/kronika/epoka-1.json`** — Epoka I „Trzy stoły: przodek, gospodarz
-  i gość” na skicie `trzy-stoly` (uczestnicy zgodni z SKIT-em: Egungun,
-  Barbarossa, Kentaur).
-- **`tools/kronika.mjs`** — mechanic:
+  i gość” na skicie `trzy-stoly` (Egungun, Barbarossa, Kentaur).
+- **`data/kronika/epoka-2.json`** — Epoka II „Nieproszeni goście: psuj,
+  zaproszony i zaproszenie” na skicie `nieproszeni-goscie` (Lincoln Imp,
+  Kentaur, Empusa) — **kontynuacja stanPo** z Epoki I.
+- **`tools/kronika.mjs`** — mechanizm:
   - paliwo pasywne = `2×backlinki + tagi kanonu + sieć powiązań (max 3)`,
-  - gate: `pasywne ≥ kosztUdzialu + kosztKlucza + boost`,
-  - ledger: `saldo = pasywne − koszt + zwrot`,
+  - **gate na bieżącym paliwie** `saldoPrzed ≥ kosztUdzialu + kosztKlucza + boost`,
+  - ledger z **ciągłością** (`stanPo.paliwo` przechodzi między epokami:
+    Kentaur w Epoka II startuje z 14, nie z pasywnego 16),
   - zwrot dozwolony **tylko** przy dodatniej zmianie zasięgu (z capem),
+  - **oś zamknięta**: `mit + racjonalizacja = 100`, a delty sumują się do 0
+    (walidator odrzuca 101),
   - walidator struktury: skit = uczestnicy epoki; konsekwencje zgodne ze
-    stanem; statusy/wątki z dozwolonych zbiorów; ocena narratora 0–3,
-  - zapis `data/kronika/summary.json` + **wygenerowany raport**
-    `docs/kronika-epoka-1.html`.
-- **Npm** — nowe polecenia: `npm run kronika`, `npm run kronika:check`.
-- **Testy** — `test/kronika.test.js` (5 testów): wzór paliwa, przebieg Tomu I,
-  gate, zwrot bez zmiany, struktura podsumowania.
+    stanem (także z bieżącym `stanPo`, nie tylko `stanStart`); statusy/wątki
+    z dozwolonych zbiorów; ocena narratora 0–3,
+  - zapis `data/kronika/summary.json` + **raporty generowane**:
+    `docs/kronika-tom-1.html` (strona główna Tomu), `docs/kronika-epoka-1.html`,
+    `docs/kronika-epoka-2.html`.
+- **Npm** — `npm run kronika`, `npm run kronika:check`; **Testy** —
+  `test/kronika.test.js` (6 testów): wzór paliwa, dwie epoki sekwencyjnie,
+  oś zamknięta, gate, zwrot bez zmiany, struktura podsumowania.
 
-### 21.4 Wynik pierwszej epoki
+### 21.4 Wynik Tomu I (dwie epoki)
 
-| Byty | paliwo pasywne | koszt | zwrot | saldo |
+**Epoka I — „Trzy stoły”**
+
+| Byty | saldo start | koszt | zwrot | saldo |
 |---|---|---|---|---|
 | Egungun | 18 | −2 | +5 | **21** |
-| Barbarossa | 17 | −2 | +0 | **15** |
-| Kentaur | 16 | −2 | +0 | **14** |
+| Barbarossa | 17 | −2 | 0 | **15** |
+| Kentaur | 16 | −2 | 0 | **14** |
 
-- **oś:** MIT 52→51, RACJONALIZACJA 48→50.
-- **zasięg:** Egungun 24%→27% (czwarty stół), Barbarossa 20%→20%, Kentaur
-  16%→14% (wyjaśnione wino).
-- **wątki otwarte:** `czwarty-stol`, `warunek-barbarossy`; zamknięty:
-  `wino-w-uczcie`.
-- **Czego dowodzi:** byt-statysta (Barbarossa, Kentaur) **traci**; byt, który
-  realnie zmienił świat (Egungun) może odzyskać paliwo. Skit **nie** dodaje
-  paliwa — zgodnie z korektą z §20.1.
+**Epoka II — „Nieproszeni goście”** (ciągłość: Kentaur startuje z 14)
 
-### 21.5 Następny krok
+| Byty | saldo start | koszt | zwrot | saldo |
+|---|---|---|---|---|
+| Lincoln Imp | 12 | −2 | 0 | **10** |
+| Kentaur | 14 | −2 | 0 | **12** |
+| Empusa | 17 | −2 | +4 | **19** |
 
-1. Kalibracja seedów osi/zasięgu przy rosnącej kartotece (obecne wartości są
-   umowne, dokumentowane w `tom-1.metryka`).
-2. Druga epoka Tomu I — na kolejnym SKICIE, z kontynuacją `stanPo` (nie
-   `stanStart`). To sprawdzi, czy mechanizm utrzymuje ciągłość.
-3. Prawdziwa strona główna Tomu (zamiast mockupu) zasilona z `summary.json`
-   (oś, dominacje, wątki, ledger, chronologia epok).
+- **oś całego Tomu:** MIT 52→**48**, RACJONALIZACJA 48→**52** (każda epoka
+  utrzymuje sumę 100; Epoka I 50/50, potem −2/+2).
+- **zasięg po Tomie:** Egungun 24%→27% (+3), Empusa 18%→20% (+2), Kentaur
+  16%→12% (uczta wyjaśniona, potem żart Ima), Barbarossa 20%, Imp 12%.
+- **wątki zamknięte:** `wino-w-uczcie`, `pogrzeb-zamiast-wesela`; **otwarte:**
+  `czwarty-stol`, `warunek-barbarossy`, `odzwierni`, `wedrowny-dom-empusy`.
+- **Czego dowodzi:** byt-statysta **traci**; byt, który realnie zmienił świat
+  (Egungun, Empusa) może odzyskać paliwo; Kentaur przechodzi przez dwie epoki
+  z ciągłym saldem. Skit **nie** dodaje paliwa.
+
+### 21.5 Następny krok (stan po tej iteracji)
+
+1. **Druga epoka zrobiona** — mechanizm utrzymuje ciągłość (`stanPo`.
+   `paliwo` przechodzi dalej).
+2. **Prawdziwa strona główna Tomu zrobiona** — `docs/kronika-tom-1.html`
+   (oś, dominacje, chronologia, wątki, uczestnicy, ledger) z `summary.json`.
+3. **Kalibracja seedów zostaje** — wartości osi/zasięgu w `tom-1.json` są
+   umowne (metryka to odnotowuje); do kalibracji przy pełniejszej kartotece.
+4. Kolejna epoka może iść w stronę otwartego wątku `odzwierni` albo
+   `czwarty-stol`, gdy właściciel potwierdzi temat.

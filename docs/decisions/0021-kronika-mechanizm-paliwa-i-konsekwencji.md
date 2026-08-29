@@ -25,18 +25,24 @@
   5. **Konsekwencje** w strukturze `konsekwencje`: `os` (mit/racjonalizacja),
      `relacje`, `zasieg` (per byt), `dominacje` (kultura/kult), `pozycje`,
      `watki`; walidator sprawdza spójność ze `stanStart` i dozwolone zbiory.
-  6. **Rozstaje nie wchodzą do pierwszej epoki** — zostają pomysłem
+  6. **Oś „rząd dusz” jest zamknięta** — `mit + racjonalizacja = 100`, a delty
+     konsekwencji sumują się do 0. Walidator odrzuca stany typu 51/50.
+  7. **Rozstaje nie wchodzą do mechanizmu** — zostają pomysłem
      (`docs/BACKLOG.md` / mockup jako kierunek, nie funkcja).
-  7. **Pierwsza epoka** uruchomiona na skicie `trzy-stoly` w Tomie I
-     „Kronika trzech stołów”; wynik w `data/kronika/summary.json` i raporcie
-     `docs/kronika-epoka-1.html`.
+  8. **Epoki liczą się sekwencyjnie** — `stanPo` (łącznie z paliwem bytów)
+     przechodzi do kolejnej epoki; rozliczenie jest ciągłe, nie per-epoka od
+     zera.
+  9. **Pierwsze epoki** uruchomione w Tomie I „Kronika trzech stołów”:
+     Epoka I na skicie `trzy-stoly`, Epoka II na `nieproszeni-goscie`.
+     Wynik w `data/kronika/summary.json` + raporty `docs/kronika-*.html`.
 
 - Konsekwencje:
-  - `tools/kronika.mjs` — mechanizm + generowanie raportu; npm `kronika` i
+  - `tools/kronika.mjs` — mechanizm + generowanie raportów; npm `kronika` i
     `kronika:check`.
-  - `data/kronika/tom-1.json`, `data/kronika/epoka-1.json` — źródło danych.
-  - `test/kronika.test.js` — 5 testów (wzór paliwa, przebieg Tomu I, gate,
-    zwrot bez zmiany, struktura podsumowania).
+  - `data/kronika/tom-1.json`, `data/kronika/epoka-1.json`,
+    `data/kronika/epoka-2.json` — źródło danych.
+  - `test/kronika.test.js` — 6 testów (wzór paliwa, dwie epoki sekwencyjnie,
+    oś zamknięta, gate, zwrot bez zmiany, struktura podsumowania).
   - `docs/KRONIKA_tryb.md` §20–§21; `docs/ROADMAP.md`; `docs/PROJECT_HISTORY.md`.
   - Seedowe wartości osi/zasięgu są umowne (kalibracji w miarę wzrostu
     kartoteki) — dopuszczalne w pierwszym tomie, oznaczone w metryce.

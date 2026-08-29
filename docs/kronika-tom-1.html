@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Kronika — Kronika trzech stołów (wynik działania mechanizmu)</title>
+<style>
+:root{--bg:#f7f3ea;--fg:#1e1a16;--muted:#6b655c;--line:#ded4c2;--card:#fffdf8;--accent:#7a4a22;--accent2:#a5652f;--mit:#3e7d54;--rac:#51689a;--up:#3e7d54;--down:#a3442e;--code:#f1eadc}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 Georgia,serif}
+.wrap{max-width:1080px;margin:0 auto;padding:28px 20px 80px}.topbar{display:flex;align-items:center;gap:14px;border-bottom:2px solid var(--accent);padding-bottom:12px;margin-bottom:18px}
+.brand{font-weight:700;font-size:19px}.brand .dot{color:var(--accent)}.topbar a{color:var(--accent);margin-left:auto;font-size:13px}
+.hero{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px 24px;margin-bottom:20px}
+.hero h1{margin:0 0 6px;font-size:28px}.hero .sub{color:var(--muted);font-size:14px}.badges{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}
+.badge{font-size:12px;padding:3px 10px;border-radius:999px;border:1px solid var(--line);background:var(--code)}.badge.ok{color:#3e7d54;border-color:#3e7d54}
+.gauge{position:relative;height:18px;border-radius:999px;background:linear-gradient(90deg,#cfe0d2,#f0f0f0,#ccd4e8);border:1px solid var(--line);overflow:hidden;margin-top:8px}
+.gauge .mit{height:100%;background:linear-gradient(90deg,#3e7d54,#6fae85)}.gauge .l{position:absolute;top:0;font-size:11px;color:#fff;text-shadow:0 1px 2px #0007}.gauge .lm{left:10px}.gauge .lr{right:10px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}.col{display:flex;flex-direction:column;gap:20px}@media(max-width:800px){.grid{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px 20px}.card h2{margin:0 0 12px;font-size:18px;border-left:4px solid var(--accent);padding-left:10px}
+.note{color:var(--muted);font-size:13px;margin:0 0 12px}
+.epoka{display:grid;grid-template-columns:72px 1fr auto;gap:14px;align-items:start;border:1px solid var(--line);border-radius:10px;padding:12px 14px;background:var(--card);color:inherit;text-decoration:none;margin-bottom:10px;transition:border-color .15s, box-shadow .15s}
+.epoka:hover{border-color:var(--accent2);box-shadow:0 4px 12px #0002}.epoka .nr{font-weight:700;color:var(--accent);font-size:14px;text-align:center;border-right:1px solid var(--line)}
+.epoka .ttl{font-weight:700}.epoka .meta{font-size:12px;color:var(--muted)}.epoka .delta{font-size:12px;margin-top:5px;display:flex;gap:8px;flex-wrap:wrap}.epoka .go{font-size:12px;color:var(--accent);white-space:nowrap}
+table{width:100%;border-collapse:collapse;font-size:14px}th,td{padding:7px 9px;text-align:left;border-bottom:1px solid var(--line)}th{font-size:12px;color:var(--muted)}.num{font-variant-numeric:tabular-nums;text-align:right}
+.chip{border:1px solid var(--line);background:var(--code);border-radius:999px;padding:1px 8px;font-size:12px}.chip.up{color:#3e7d54;border-color:#3e7d54}.chip.down{color:#a3442e;border-color:#a3442e}.chip.neutral{color:#6b655c}
+.muted{color:var(--muted);font-size:12px}.up{color:#3e7d54}.down{color:#a3442e}ul{margin:0;padding-left:20px}li{margin:6px 0}.st{font-size:11px;padding:1px 7px;border-radius:999px}
+.st.ot{background:#e5efe4;color:#3e7d54}.st.zam{background:#ece7dc;color:#6b655c}.foot{margin-top:22px;font-size:12px;color:var(--muted);border-top:1px solid var(--line);padding-top:12px}
+code{background:var(--code);padding:1px 6px;border-radius:5px}
+</style>
+</head>
+<body><div class="wrap">
+<header class="topbar"><div class="brand">AME<span class="dot">.</span> KRONIKA</div><a href="../index.html">← mapa / kartoteka</a></header>
+
+<div class="hero">
+  <div class="badges"><span class="badge ok">mechanizm: OK</span><span class="badge">epoki: 2</span><span class="badge">skity: trzy-stoly, nieproszeni-goscie</span></div>
+  <h1>Kronika trzech stołów</h1>
+  <p class="sub">tom-1 — prawdziwa strona główna Tomu, zasilona z <code>data/kronika/summary.json</code>.</p>
+  <div class="gauge"><div class="mit" style="width:48%"></div><span class="l lm">MIT 48</span><span class="l lr">RACJONALIZACJA 52</span></div>
+  <p class="note" style="margin-top:8px">Oś zamknięta: 48+52=100 · dominacje: joruba/egungun 27% · niemcy/barbarossa-kyffhaeuser 20% · grecja-kentaur/kentaur-pelion 12% · grecja-empusa/empusa-korynt 20% · anglia/lincoln-imp 12%</p>
+</div>
+
+<div class="grid">
+  <div class="col">
+    <div class="card"><h2>Chronologia epok</h2><p class="note">Klikalne raporty kolejnych epok Tomu.</p><a class="epoka" href="kronika-epoka-1.html">
+        <div class="nr">1</div>
+        <div>
+          <div class="ttl">Trzy stoły: przodek, gospodarz i gość <span class="chip up">ok</span></div>
+          <div class="meta">skit: trzy-stoly · mit 50 / rac 50</div>
+          <div class="delta"><span class="chip up">egungun +3 pp</span> <span class="chip neutral">barbarossa-kyffhaeuser 0 pp</span> <span class="chip down">kentaur-pelion -2 pp</span></div>
+        </div>
+        <span class="go">raport ↗</span>
+      </a><a class="epoka" href="kronika-epoka-2.html">
+        <div class="nr">2</div>
+        <div>
+          <div class="ttl">Nieproszeni goście: psuj, zaproszony i zaproszenie <span class="chip up">ok</span></div>
+          <div class="meta">skit: nieproszeni-goscie · mit 48 / rac 52</div>
+          <div class="delta"><span class="chip neutral">lincoln-imp 0 pp</span> <span class="chip down">kentaur-pelion -2 pp</span> <span class="chip up">empusa-korynt +2 pp</span></div>
+        </div>
+        <span class="go">raport ↗</span>
+      </a></div>
+    <div class="card"><h2>Wątki — zamknięte i otwarte</h2><p class="note">Zebrane z kolejnych epok; ten sam wątek nadpisuje swój stan.</p>
+      <div class="grid" style="grid-template-columns:1fr 1fr;gap:14px">
+        <div><h3 style="font-size:15px;margin:0 0 8px">Zamknięte</h3><ul><li><span class="st zam">zam</span> <strong>wino-w-uczcie</strong> — Związek kentaura z winem i porządkiem Lapitów zostaje wyjaśniony; słabnie strach przed ucztą. <span class="muted">[epoka-1]</span></li><li><span class="st zam">zam</span> <strong>pogrzeb-zamiast-wesela</strong> — Żart Ima domyka wątek kentaura przy ucztach: po nim zostaje pogrzeb, nie wesela. <span class="muted">[epoka-2]</span></li></ul></div>
+        <div><h3 style="font-size:15px;margin:0 0 8px">Otwarte</h3><ul><li><span class="st ot">otw</span> <strong>czwarty-stol</strong> — Kto siada przy czwartym stole: gość, który wziął sam, czy przodek, który umie wybaczyć? <span class="muted">[epoka-1]</span></li><li><span class="st ot">otw</span> <strong>warunek-barbarossy</strong> — Dlaczego cesarz woli płacić, żeby gość wyszedł, zamiast przyjąć go przy stole? <span class="muted">[epoka-1]</span></li><li><span class="st ot">otw</span> <strong>odzwierni</strong> — Czy istnieje wspólny odźwierny dla wszystkich bytów — czy każde ma tylko własny próg? <span class="muted">[epoka-2]</span></li><li><span class="st ot">otw</span> <strong>wedrowny-dom-empusy</strong> — Czy ludzie nauczą się wypowiadać słowo-poznanie, zanim Empusa zdąży zaprosić, czy samo słowo też stanie się rytuałem? <span class="muted">[epoka-2]</span></li></ul></div>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card"><h2>Uczestnicy i paliwo po Tomie</h2><p class="note">Bieżące salda z ledgera po wszystkich epokach.</p><ul><li><strong>Egungun</strong> <span class="muted">[egungun]</span> —
+      paliwo <b>21</b> · zasięg 27% · dom. 27%</li><li><strong>Barbarossa w Kyffhäuserze</strong> <span class="muted">[barbarossa-kyffhaeuser]</span> —
+      paliwo <b>15</b> · zasięg 20% · dom. 20%</li><li><strong>Kentaur z Pelionu</strong> <span class="muted">[kentaur-pelion]</span> —
+      paliwo <b>12</b> · zasięg 12% · dom. 12%</li><li><strong>Imp z Lincoln</strong> <span class="muted">[lincoln-imp]</span> —
+      paliwo <b>10</b> · zasięg 12% · dom. 12%</li><li><strong>Empusa z Koryntu</strong> <span class="muted">[empusa-korynt]</span> —
+      paliwo <b>19</b> · zasięg 20% · dom. 20%</li></ul></div>
+    <div class="card"><h2>Ledger epok</h2><p class="note">Kto ile zarobił (lub stracił) w całym Tomie.</p>
+      <table><tr><th>Epoka</th><th>Tytuł</th><th>salda po</th></tr><tr><td><a href="kronika-epoka-1.html">epoka-1</a></td><td>Trzy stoły: przodek, gospodarz i gość</td><td class="num">egungun 21, barbarossa-kyffhaeuser 15, kentaur-pelion 14</td></tr><tr><td><a href="kronika-epoka-2.html">epoka-2</a></td><td>Nieproszeni goście: psuj, zaproszony i zaproszenie</td><td class="num">lincoln-imp 10, kentaur-pelion 12, empusa-korynt 19</td></tr></table>
+    </div>
+  </div>
+</div>
+
+<div class="foot">Wygenerowano przez <code>npm run kronika</code> z <code>data/kronika/summary.json</code> · mechanizm: <code>tools/kronika.mjs</code> · seedowe wartości osi/zasięgu w <code>data/kronika/tom-1.json</code> (kalibracja przy wzroście kartoteki) · Rozstaje pozostają pomysłem.</div>
+</div></body></html>

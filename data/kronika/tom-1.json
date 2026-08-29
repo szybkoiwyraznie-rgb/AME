@@ -9,12 +9,16 @@
     "zasieg": [
       { "slug": "egungun", "wielkosc": 0.24 },
       { "slug": "barbarossa-kyffhaeuser", "wielkosc": 0.20 },
-      { "slug": "kentaur-pelion", "wielkosc": 0.16 }
+      { "slug": "kentaur-pelion", "wielkosc": 0.16 },
+      { "slug": "empusa-korynt", "wielkosc": 0.18 },
+      { "slug": "lincoln-imp", "wielkosc": 0.12 }
     ],
     "dominacje": [
       { "kultura": "joruba", "kult": "egungun", "wielkosc": 0.24 },
       { "kultura": "niemcy", "kult": "barbarossa-kyffhaeuser", "wielkosc": 0.20 },
-      { "kultura": "grecja-kentaur", "kult": "kentaur-pelion", "wielkosc": 0.16 }
+      { "kultura": "grecja-kentaur", "kult": "kentaur-pelion", "wielkosc": 0.16 },
+      { "kultura": "grecja-empusa", "kult": "empusa-korynt", "wielkosc": 0.18 },
+      { "kultura": "anglia", "kult": "lincoln-imp", "wielkosc": 0.12 }
     ]
   },
   "metryka": {

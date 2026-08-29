@@ -1246,3 +1246,23 @@ Rozstaje zostawić w pomysłach.
 - **Npm:** `kronika`, `kronika:check`; **testy:** `test/kronika.test.js` (5).
 - **ADR 0021** w `docs/decisions/`; §21 w `docs/KRONIKA_tryb.md`; ROADMAP i
   Czytelnia zaktualizowane.
+
+## Kronika — oś do 100 + Epoka II + prawdziwa strona główna Tomu (2026-08-29)
+
+Właściciel wychwycił błąd: w pierwszym wyniku MIT 51 + RACJONALIZACJA 50 = 101.
+Poprawione i utrwalone jako **inwariant mechanizmu**:
+
+- **Oś zamknięta:** `mit + racjonalizacja = 100`; delty konsekwencji sumują się
+  do 0; walidator odrzuca 101. Epoka I ma teraz delty −2/+2 (50/50).
+- **`data/kronika/epoka-2.json`** — Epoka II „Nieproszeni goście” na skicie
+  `nieproszeni-goscie` (Imp × Kentaur × Empusa). Mechanizm liczy **sekwencyjnie**:
+  `stanPo` (w tym `paliwo`) przechodzi do kolejnej epoki — Kentaur startuje
+  z 14 (po Epoce I), nie z pasywnego 16.
+- **Wynik Tomu I:** Epoka I (50/50), Epoka II (48/52); Egungun 18→21, Empusa
+  17→19, Kentaur 16→14→12, Imp 12→10, Barbarossa 17→15.
+- **`docs/kronika-tom-1.html`** — prawdziwa strona główna Tomu zasilona
+  z `summary.json` (oś, dominacje, chronologia epok, wątki, uczestnicy z
+  paliwem, ledger) — zamiast samego mockupu.
+- **Aktualizacje:** `tools/kronika.mjs` (oś + ciągłość + raport Tomu),
+  `test/kronika.test.js` (6 testów), ADR 0021, §21, ROADMAP, Czytelnia,
+  mockupy linkujące do realnych raportów.

@@ -490,14 +490,21 @@ przycisk) i poleceniu „Rozstaje zostawmy w pomysłach” zbudowano realny siln
 - [x] **`data/kronika/tom-1.json`** — Tom I „Kronika trzech stołów” + `stanStart`.
 - [x] **`data/kronika/epoka-1.json`** — Epoka I „Trzy stoły: przodek, gospodarz
       i gość” (skit `trzy-stoly`, uczestnicy zgodni).
+- [x] **`data/kronika/epoka-2.json`** — Epoka II „Nieproszeni goście: psuj,
+      zaproszony i zaproszenie” (skit `nieproszeni-goscie`; kontynuacja `stanPo`,
+      Kentaur startuje z 14).
 - [x] **`tools/kronika.mjs`** — paliwo pasywne (2×backlinki + tagi kanonu +
-      sieć powiązań), gate (`pasywne ≥ koszt`), ledger, zwrot tylko za realną
-      zmianę zasięgu, walidator `konsekwencje` + `narrator.ocena[]`.
-- [x] **Wynik** — Egungun 18→21 (zwrot +5), Barbarossa 17→15, Kentaur 16→14;
-      oś MIT 52→51 / RACJONALIZACJA 48→50; zasięg Egungun 24→27%, Kentaur 16→14%.
-- [x] **Raport** — `docs/kronika-epoka-1.html` wygenerowany z danych.
+      sieć powiązań), gate na bieżącym saldzie, ledger z ciągłością, zwrot tylko
+      za realną zmianę zasięgu, walidator `konsekwencje` + `narrator.ocena[]`.
+- [x] **Oś zamknięta** — `mit + racjonalizacja = 100`; walidator odrzuca 101
+      (delty muszą sumować się do 0). Poprawka po zgłoszeniu właściciela.
+- [x] **Wynik Tomu** — Epoka I: Egungun 18→21, Barbarossa 17→15, Kentaur 16→14;
+      Epoka II: Imp 12→10, Kentaur 14→12, Empusa 17→19; oś 52/48 → 48/52;
+      zasięg Egungun 24→27%, Empusa 18→20%, Kentaur 16→12%.
+- [x] **Raporty** — `docs/kronika-tom-1.html` (strona główna Tomu),
+      `docs/kronika-epoka-1.html`, `docs/kronika-epoka-2.html`.
 - [x] **Npm/testy** — `npm run kronika`, `npm run kronika:check`,
-      `test/kronika.test.js` (5 testów).
+      `test/kronika.test.js` (6 testów).
 - [x] **ADR 0021** + §21 w `docs/KRONIKA_tryb.md`.
 
 ## C4 — nazwa miasta na czas przytrzymania + kursor strzałka (nadpisuje C2 UX)
