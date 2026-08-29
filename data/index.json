@@ -1,8 +1,8 @@
 {
   "wersja": 3,
-  "buildTime": "2026-08-29T21:40:20.834Z",
+  "buildTime": "2026-08-29T21:41:48.030Z",
   "liczba": 15,
-  "liczbaSkitow": 18,
+  "liczbaSkitow": 19,
   "kanon": {
     "kategorie": [
       {
@@ -413,7 +413,9 @@
         "kannon-hase"
       ],
       "obraz": "assets/wizualizacje/agni.jpg",
-      "skity": []
+      "skity": [
+        "dzien-wolnego"
+      ]
     },
     {
       "slug": "balor",
@@ -536,7 +538,9 @@
         "selkie-sule-skerry"
       ],
       "obraz": "assets/wizualizacje/ben-varrey.jpg",
-      "skity": []
+      "skity": [
+        "dzien-wolnego"
+      ]
     },
     {
       "slug": "drangue-shala",
@@ -740,7 +744,9 @@
         "selkie-sule-skerry"
       ],
       "obraz": "assets/wizualizacje/kannon-hase.jpg",
-      "skity": []
+      "skity": [
+        "dzien-wolnego"
+      ]
     },
     {
       "slug": "kentaur-pelion",
@@ -1057,6 +1063,23 @@
       "data": "2026-08-28 20:00"
     },
     {
+      "slug": "dzien-wolnego",
+      "tytul": "DZIEŃ WOLNEGO",
+      "temat": "urlop od wzywania: kto ma przerwę, gdy wszyscy wołają",
+      "uczestnicy": [
+        "agni",
+        "ben-varrey",
+        "kannon-hase"
+      ],
+      "imiona": [
+        "Agni",
+        "Ben-Varrey",
+        "Kannon"
+      ],
+      "slow": 269,
+      "data": "2026-08-29 21:41"
+    },
+    {
       "slug": "godzina-otwarcia",
       "tytul": "GODZINA OTWARCIA",
       "temat": "słabość jako godzina otwarcia: oko otwarte, skrzydło odcięte",
@@ -1288,6 +1311,14 @@
     }
   ],
   "aktualizacje": [
+    {
+      "data": "2026-08-29 21:41",
+      "typ": "skit",
+      "akcja": "nowy",
+      "slug": "dzien-wolnego",
+      "tytul": "DZIEŃ WOLNEGO",
+      "opis": "SKIT — skład: Agni, Ben-Varrey, Kannon"
+    },
     {
       "data": "2026-08-29 21:40",
       "typ": "manifestacja",
