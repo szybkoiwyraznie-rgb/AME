@@ -1,0 +1,376 @@
+<!doctype html><html lang="pl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Czytelnia — Kronika AME</title><style>
+:root{--bg:#faf7f0;--fg:#1e1a16;--muted:#6b655c;--accent:#7a4a22;--card:#fffdf8;--border:#e3dccd;--code:#f2ece0}
+body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.65 Georgia,'Times New Roman',serif}
+.wrap{max-width:900px;margin:0 auto;padding:40px 22px 80px}
+header{border-bottom:2px solid var(--accent);padding-bottom:18px;margin-bottom:28px}
+h1{font-size:30px;margin:0 0 6px} p.lead{color:var(--muted);margin:0}
+.toc{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:16px 22px;margin-bottom:32px}
+.toc ul{margin:0;padding-left:6px;list-style:none} .toc a{color:var(--accent)}
+section{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:8px 30px 26px;margin-bottom:36px}
+section>h1{font-size:24px;border-bottom:1px solid var(--border);padding-bottom:8px}
+h2{font-size:21px;margin:30px 0 10px;border-left:4px solid var(--accent);padding-left:10px}
+h3{font-size:18px;margin:24px 0 8px} h4{font-size:16px;margin:20px 0 6px}
+p{margin:10px 0} a{color:var(--accent)} strong{font-weight:700} em{font-style:italic}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:14px;background:var(--code);padding:1px 5px;border-radius:4px}
+pre{background:var(--code);padding:14px 16px;overflow:auto;border-radius:8px;border:1px solid var(--border)}
+pre code{background:none;padding:0;font-size:13.5px;line-height:1.5}
+blockquote{margin:14px 0;padding:10px 18px;background:var(--code);border-left:4px solid var(--muted);color:var(--muted)}
+ul,ol{margin:8px 0;padding-left:26px} li{margin:3px 0}
+ul.nested{padding-left:32px;margin:2px 0} ul.nested>li{list-style:circle}
+table{border-collapse:collapse;margin:14px 0;width:100%;font-size:15px}
+th,td{border:1px solid var(--border);padding:7px 10px;text-align:left;vertical-align:top}
+th{background:var(--code)} hr{border:0;border-top:1px solid var(--border);margin:22px 0}
+</style></head><body><div class="wrap"><header><h1>Czytelnia — koncepcja trybu KRONIKA</h1><p class="lead">Trzy dokumenty w jednym miejscu: pełna dokumentacja trybu, mapa otwartych pytań metagry i prototyp pierwszej epoki.</p></header><nav class="toc"><strong>Spis treści</strong><ul><li><a href="#doc-0">Tryb Kronika — pełna dokumentacja</a></li><li><a href="#doc-1">Metagra — mapa otwartych pytań</a></li><li><a href="#doc-2">Prototyp: pierwsza epoka Kroniki</a></li></ul></nav><section class="doc"><h1 id="doc-0">Tryb Kronika — pełna dokumentacja</h1><h2>Tryb KRONIKA — dokumentacja koncepcji</h2>
+<blockquote><strong>Status:</strong> koncepcja w opracowaniu, <strong>niezaakceptowana</strong> (zgodnie z M13).<br>Bez kodu gry, bez pilota produkcyjnego, dopóki właściciel nie zatwierdzi<br>spójnej wizji. Ten plik jest <strong>jednym miejscem</strong>, w którym opisany jest cały<br>tryb — nie trzeba szukać po repo.<br><br><strong>Co znajdziesz:</strong> jedną spójną propozycję trybu „Kronika”, jej fundamenty,<br>decyzje już podjęte, model danych z przykładem, reguły treści, granice oraz<br>otwarte pytania z proponowanymi odpowiedziami. Wszystkie propozycje są<br>oznaczone jako *propozycja* — nie są decyzjami właściciela.</blockquote>
+<hr>
+<h3>0. Tryb Kroniki w jednym zdaniu</h3>
+<p>**Kronika to fabularna oś czasu świata AME: kolejne „epoki” to wcielone<br>spotkania bytów z kartoteki, a każde spotkanie zostawia w danych krótki<br><code>skutek</code> — to, co zmienia się w relacjach między bytami.** Widz nie steruje<br>nikim; czyta kronikę świata, który toczy się sam.</p>
+<hr>
+<h3>1. Po co ten tryb</h3>
+<p>AME jest archiwum bytów, które „istnieją, dopóki wspólnota je pamięta i<br>nazywa”. Dotąd mamy trzy rzeczy:</p>
+<ul>
+<li><strong>kartotekę</strong> (pełne wpisy o bytach),</li>
+<li><strong>mapę</strong> (gdzie byty mieszkają),</li>
+<li><strong>SKIT-y</strong> (krótkie wcielone rozmowy bytów).</li>
+</ul>
+<p>Kronika jest następnym krokiem: <strong>łączy SKIT-y w ciągłą opowieść świata</strong>.<br>Zamiast pojedynczych dialogów czytelnik dostaje historię, w której<br>każde spotkanie ma przyczynę (<code>iskra</code>) i konsekwencję (<code>skutek</code>). Dzięki temu<br>archiwum przestaje być zbiorem ciekawostek, a staje się **światem, który ma<br>pamięć i następstwo**.</p>
+<hr>
+<h3>2. Fundamenty (nie do podważania bez wyraźnego powodu)</h3>
+<p>Te rzeczy są już ustalone w projekcie i tryb Kroniki się na nich opiera:</p>
+<ul>
+<li><strong>UStatystyki z gęstości rekordu.</strong> Siła bytu wynika z tego, jak głęboko jest osadzony w sieci (backlinki, powiązania, SKIT-y, epitety, motywy). Gotowe i przetestowane: <code>app/arena.js</code> — <code>statyManifestacji</code>, <code>profileKartoteki</code>, <code>archetypBytu</code> (Filar / Drapieżnik / Splotca / Pieśniarz / Samotnik), znormalizowane percentylami.</li>
+<li><strong>URola widza = OBSERWATOR.</strong> Świat toczy się sam; widz czyta, nie steruje. Sprawiedliwość spoczywa na systemie i bytach, nie na graczu.</li>
+<li><strong>UDeterminizm i brak sekretów w artefakcie</strong> (ADR 0001–0003). Artefakt pozostaje vanilla static; losowość tylko ze wstrzykiwanego RNG (seed z daty).</li>
+<li><strong>URunner wymienny.</strong> Kto buduje, jest podmienialne (Arena / Meta / inny); granicą przekazania jest git PR. „Głos pojedynczego bytu” wykonują odizolowani subagenci (priorytet) albo symulowani subagenci przez jednego agenta sesji.</li>
+<li><strong>UKażdy nowy SKIT to darmowy prototyp Kroniki.</strong> Pisujemy je metodą embodimentu, więc każdy SKIT jest zarazem testem metody.</li>
+</ul>
+<hr>
+<h3>3. Co już rozstrzygnięte (decyzje właściciela)</h3>
+<table><tr><th>Decyzja</th><th>Treść</th></tr><tr><td>Rola widza</td><td><strong>Obserwator</strong> — domyślny i główny tryb (M11).</td></tr><tr><td>Realia AI</td><td>Agent Areny to <strong>jeden proces</strong>; „subagenci-postacie” to dziś metafora metody (blind-draft). Twarda izolacja wymaga osobnych wywołań modeli.</td></tr><tr><td>Architektura AI</td><td>Start od <strong>3b</strong>: Kronika jako <strong>dane w repo popychane przez kolejne sesje agenta</strong>, bez kluczy w runtime.</td></tr><tr><td>Runner</td><td>Platforma budowy jest <strong>wymienna</strong>; granica = git PR.</td></tr><tr><td>Aksjomat metagry</td><td>Metagra <strong>niezaakceptowana / w opracowaniu</strong> — najpierw koncepcja, potem ADR i plan.</td></tr><tr><td>Kierunek „walki”</td><td>Arena Rezonansu (idle battler 1:1) <strong>odłożona</strong> — płaska, bez pętli decyzyjnej.</td></tr></table>
+<hr>
+<h3>4. Dwa czasy: budowa i odbiór</h3>
+<p>Krytyczne rozróżnienie, które porządkuje całość:</p>
+<ul>
+<li><strong>BUILD-TIME</strong> — kto *tworzy* Kronikę (pisze epoki, dobiera skład, generuje ilustracje). To robi agent w sesji (Arena, Meta, inny runner). Wynik wraca do repo jako dane.</li>
+<li><strong>RUN-TIME</strong> — co widzi odbiorca w przeglądarce. <strong>Zero AI, zero sieci</strong>: to statyczna prezentacja danych z repo (zgodnie z ADR 0003).</li>
+</ul>
+<p>Konsekwencja: cała „magia” Kroniki dzieje się na etapie budowy, a odbiorca<br>dostaje gotowy, deterministyczny zapis.</p>
+<hr>
+<h3>5. Trzy warstwy świata</h3>
+<p>Kronika nie jest osobną grą — jest jedną z trzech warstw tego samego świata.</p>
+<table><tr><th>Warstwa</th><th>Nazwa robocza</th><th>Co zawiera</th><th>Kto tworzy</th></tr><tr><td>Wiki / kartoteka</td><td><strong>ARKADIA</strong></td><td>wpisy bytów, tagi, powiązania, źródła, wizualizacje</td><td>agent sesji (C1)</td></tr><tr><td>Świat, który się zmienia</td><td><strong>SPLOT</strong></td><td>stan relacji i „długów” między bytami, na którym rodzą się spotkania</td><td>wynika z Kroniki</td></tr><tr><td>Opowieść</td><td><strong>KRONIKA</strong></td><td>epoki: wcielone spotkania + skutek dla świata</td><td>agent sesji (C3, prototyp)</td></tr></table>
+<p><strong>ARKADIA</strong> to statyczna baza wiedzy. <strong>SPLOT</strong> to warstwa stanu — nie musi być<br>od razu osobnym widokiem; na start wystarcza, że rośnie z każdym <code>skutek</code><br>epoki. <strong>KRONIKA</strong> to fasada: to, co czyta obserwator.</p>
+<hr>
+<h3>6. Pętla Kroniki — jak powstaje epoka</h3>
+<p>Epoka to najmniejsza jednostka opowieści. Powstaje w pięciu krokach:</p>
+<ul>
+<li><strong>Iskra.</strong> Coś w świecie daje powód do spotkania: susza, spór o teren, wspólne zagrożenie, dług z poprzedniej epoki, święto, przepowiednia. (*Propozycja P5 niżej.*)</li>
+<li><strong>Dobór składu.</strong> 2–4 byty, których spotkanie ma sens w świetle <code>powiazania</code> i <code>iskra</code>. Preferowany skład 3-osobowy (ADR 0019). Do tego narzędzie <code>podpowiedzSkladySkitow</code> podpowiada nieużyte kombinacje.</li>
+<li><strong>Role.</strong> Każdy uczestnik dostaje rolę z <code>profileKartoteki</code> (archetyp): Filar trzyma strukturę, Drapieżnik tnie, Splotca nawiązuje, Pieśniarz żyje w rozmowie, Samotnik działa poza siecią. Rola kieruje głosem.</li>
+<li><strong>Odegranie (embodiment).</strong> Każdy głos pisany jest z własnego *dossier* (§8.2 poniżej) i <strong>nie zna cudzego</strong> — rozmawia z tego, co sam widzi i wie. (Zależnie od runnera: odizolowani subagenci albo blind-draft jednym agentem.)</li>
+<li><strong>Kronikarz spisuje wynik.</strong> Nadrzędny głos pilnuje reguł (fakty z kart, brak anachronizmów, unikalność składu, limity) i zapisuje epokę jako dane: SKIT + pole <code>skutek</code>.</li>
+</ul>
+<h3>6.1 Dossier postaci (to, co dostaje głos bytu)</h3>
+<p>Sedno wcielenia to <strong>ograniczona karta wiedzy</strong>. Głos NIE dostaje całego<br>archiwum — dostaje dossier wycięte z wpisu:</p>
+<ul>
+<li><strong>Tożsamość i głos:</strong> nazwa, epitety, kultura, epoka, rejestr mowy.</li>
+<li><strong>Percepcja świata:</strong> czego byt szuka, czego się boi, co uznaje za oczywiste.</li>
+<li><strong>Wiedza i granice:</strong> co wie (fakty ze swojego wpisu), a czego wiedzieć NIE może (nic o kartach MtG, nic o bytach spoza jego kultury, nic z przyszłości).</li>
+<li><strong>Słabość / „szew”:</strong> jak można go pokonać lub zdemaskować.</li>
+<li><strong>Zakazy stylu:</strong> żargon gry, anachronizmy, pisma spoza alfabetu łacińskiego.</li>
+</ul>
+<p>To deterministyczne: dossier powstaje z pliku wpisu, więc dwie sesje z tego<br>samego bytu dostają tę samą kartę. (*Kandydat na przyszłą czystą funkcję<br><code>dossierBytu(wpis)</code> — dziś tylko projekt, bez kodu.*)</p>
+<hr>
+<h3>7. Element epoki — model danych</h3>
+<p>Epoka jest <strong>osobnym typem danych</strong> w <code>data/kronika/</code>. Nie duplikuje dialogu:<br>odwołuje się do SKIT-u, a dodaje kontekst i skutek.</p>
+<h4>7.1 Schemat (propozycja, nie jeszcze plik)</h4>
+<pre><code>{
+  &quot;slug&quot;: &quot;epoka-2-linia-dlugu&quot;,
+  &quot;epoka&quot;: 2,
+  &quot;tytul&quot;: &quot;LINIA DŁUGU&quot;,
+  &quot;skit&quot;: &quot;cena-znaku&quot;,              // odwołanie do data/skity/&lt;slug&gt;.json
+  &quot;iskra&quot;: &quot;Dług z pierwszej burzy wisi nad trzema dolinami.&quot;,  // 1–2 zdania
+  &quot;uczestnicy&quot;: [
+    { &quot;slug&quot;: &quot;indra&quot;,                 &quot;rola&quot;: &quot;Drapieżnik&quot; },
+    { &quot;slug&quot;: &quot;barbarossa-kyffhaeuser&quot;,&quot;rola&quot;: &quot;Filar&quot; },
+    { &quot;slug&quot;: &quot;nessos&quot;,                &quot;rola&quot;: &quot;Splotca&quot; }
+  ],
+  &quot;przebieg&quot;: [
+    { &quot;typ&quot;: &quot;zrodlo&quot;, &quot;sciezka&quot;: &quot;data/skity/cena-znaku.json&quot; },
+    { &quot;typ&quot;: &quot;sad&quot;, &quot;tekst&quot;: &quot;Nikt nie płaci wprost; każdy inaczej rozumie znak.&quot; },
+    { &quot;typ&quot;: &quot;obserwacja&quot;, &quot;tekst&quot;: &quot;Trzej byty rozchodzą się bez rozstrzygnięcia.&quot; }
+  ],
+  &quot;skutek&quot;: {
+    &quot;relacje&quot;: [
+      { &quot;para&quot;: [&quot;indra&quot;, &quot;barbarossa-kyffhaeuser&quot;], &quot;zmiana&quot;: &quot;schlodzenie&quot;,
+        &quot;opis&quot;: &quot;Indra przestaje kpić z czekania, ale nie uznaje go za mądrość.&quot; },
+      { &quot;para&quot;: [&quot;indra&quot;, &quot;nessos&quot;], &quot;zmiana&quot;: &quot;uwaga&quot;,
+        &quot;opis&quot;: &quot;Indra widzi w Nessos własne ryzyko: moc wzięta bez pytania o cenę.&quot; },
+      { &quot;para&quot;: [&quot;barbarossa-kyffhaeuser&quot;, &quot;nessos&quot;], &quot;zmiana&quot;: &quot;brak&quot;,
+        &quot;opis&quot;: &quot;Brak ruchu — obaj stoją po swojej stronie rzeki.&quot; }
+    ],
+    &quot;tereny&quot;: [],
+    &quot;zasob&quot;: { &quot;znak&quot;: &quot;nierozstrzygnięty&quot; }
+  },
+  &quot;meta&quot;: {
+    &quot;utworzono&quot;: &quot;2026-08-28 23:59&quot;,
+    &quot;autor&quot;: &quot;sesja arena 2026-08-28&quot;,
+    &quot;typ&quot;: &quot;prototyp&quot;
+  }
+}</code></pre>
+<h4>7.2 Uczestnicy i rola</h4>
+<p><code>uczestnicy[].rola</code> to archetyp z <code>profileKartoteki</code>. Rola determinuje głos i<br>sposób reagowania na <code>iskra</code>. To <strong>nie</strong> nowa mechanika — to czytelna etykieta<br>nad statystykami, które już liczymy.</p>
+<h4>7.3 Skutek — słownik zmian (propozycja, do akceptacji)</h4>
+<p>Żeby SPLOT dało się liczyć, <code>skutek.relacje[].zmiana</code> powinno być **słownikiem<br>kontrolowanym**, nie wolnym tekstem. Propozycja wartości:</p>
+<table><tr><th>wartość</th><th>znaczenie</th></tr><tr><td><code>indeks</code></td><td>relacja rośnie / zobowiązanie</td></tr><tr><td><code>schlodzenie</code></td><td>relacja chłodnieje</td></tr><tr><td><code>uwaga</code></td><td>jeden byt zaczyna obserwować drugiego</td></tr><tr><td><code>brak</code></td><td>bez zmiany</td></tr><tr><td><code>zerwanie</code></td><td>relacja się zrywa</td></tr><tr><td><code>spor</code></td><td>powstaje otwarty konflikt</td></tr></table>
+<p><code>tereny[]</code> rezerwujemy na przyszłość (przejmowanie/utrata obszaru) — na start<br>puste. <code>zasob</code> to jedno krótkie pole „co wisi nad światem” (nierozstrzygnięte<br>pytanie, dług, znak).</p>
+<hr>
+<h3>8. Reguły jakości epoki</h3>
+<p>Analogiczne do SKIT-ów, z jednym rozszerzeniem:</p>
+<ul>
+<li><strong>Uczestnicy istnieją</strong> w kartotece; <code>slug</code> musi być w <code>data/index.json</code>.</li>
+<li><strong>Unikalny skład</strong> w obrębie Kroniki (nie powtarzamy tego samego trio).</li>
+<li><strong>Wierność źródłom</strong> — fakty z <code>dokumentacja</code> (ADR 0008), zakaz anachronizmów.</li>
+<li><strong>Limit długości</strong> — SKIT 60–300 słów; <code>iskra</code> i <code>skutek</code> po 1–2 zdania.</li>
+<li><strong>Brak żargonu gry</strong> — byty nie wiedzą, że są „materializacjami”.</li>
+<li><strong>Spójność skutku</strong> — <code>skutek</code> nie może przeczyć wcześniejszym epokom ani faktom z kart; audyt „długu” robi agent przed zapisem.</li>
+<li><strong>Determinizm</strong> — <code>data/index.json</code> pozostaje identyczny po buildzie; epoki są osobnym typem i <strong>nie</strong> modyfikują pól <code>powiazania</code>/<code>tagi</code> w kartach.</li>
+</ul>
+<hr>
+<h3>9. Kanoniczność</h3>
+<p><strong>Propozycja:</strong> Kronika jest <strong>opcjonalną warstwą narratorską</strong>, nie twardą<br>prawdą archiwum.</p>
+<ul>
+<li>Epoki <strong>nie zmieniają</strong> kart bytów — <code>skutek</code> jest opisem narracji, nie faktem w <code>powiazania</code>.</li>
+<li>Da się epokę <strong>odrzucić bez psucia wpisów</strong> — wystarczy nie brać pliku do indeksu.</li>
+<li>Kolejne sesje mogą się do skutku <strong>odwoływać</strong> („dług z pierwszej burzy”), ale nie muszą go respektować — to daje swobodę rozgałęziania, a nie konieczność trzymania jednej linii.</li>
+</ul>
+<hr>
+<h3>10. Co widzi obserwator (opis UI, nie implementacja)</h3>
+<p>Tryb Obserwatora otwiera się jako <strong>trzeci widok</strong> obok mapy i kartoteki<br>(spójny z istniejącym wzorcem przycisków „✎ skity”, „✚ nowości”):</p>
+<ul>
+<li><strong>Feed epok</strong> — jak „Co nowego”, ale fabularny: <code>tytul</code>, uczestnicy (linki do kart), <code>iskra</code>, zwięzły opis <code>skutek</code>. Najnowsze na górze.</li>
+<li><strong>Karta epoki</strong> — pełny SKIT + skutek + linki do uczestników / powiązanych epok; przycisk „⧉ kopiuj link” (deep-link <code>#kronika:&lt;slug&gt;</code>).</li>
+<li><strong>Oś czasu</strong> — pionowa lista epok; *propozycja:* najpierw <strong>jedna liniowa oś</strong> (P8), graf wątków później.</li>
+<li><strong>Filtr bytów</strong> — wybranie bytu pokazuje epoki, w których uczestniczył (naturalne rozszerzenie tagów).</li>
+</ul>
+<p>Całość statyczna, bez sieci, deterministyczna.</p>
+<hr>
+<h3>11. Oś czasu i graf wątków (P8)</h3>
+<p>Propozycja etapowa, żeby nie przepłacić:</p>
+<ul>
+<li><strong>Krok 1 (liniowa oś).</strong> Każda epoka ma <code>epoka</code> (kolejność) i <code>slug</code>. Widok pokazuje chronologię. Zero nowej maszynerii.</li>
+<li><strong>Krok 2 (odwołania).</strong> Epoka może wskazywać <code>poprzednik</code>/<code>kontynuacja</code> (slugi) — to już wystarcza, by czytać „gałąź” bez budowania grafu.</li>
+<li><strong>Krok 3 (graf).</strong> Dopiero gdy epok jest &gt;~15, budujemy widok grafu (rozszczepienie, dead-end, skrzyżowanie — pomysł 11). Wymaga UI i walidacji; świadomie odłożone.</li>
+</ul>
+<hr>
+<h3>12. Prototypy w repo</h3>
+<p>Dwa istniejące materiały służą jako dowód koncepcji (dokumenty, nie dane<br>produkcyjne):</p>
+<ul>
+<li><code>docs/plans/PROTOTYP_kroniki-epoka-1.md</code> — epoka 1 „Znak burzy” (Indra × Drangue × Barbarossa), zbudowana na SKICIE <code>znak-burzy</code>.</li>
+<li><code>data/skity/cena-znaku.json</code> — SKIT „Cena znaku” (Indra × Barbarossa × Nessos), napisany metodą embodimentu; w tej dokumentacji użyty jako podstawa przykładowej epoki 2 (zob. §7.1).</li>
+</ul>
+<p>Oba pokazują, że model „SKIT + skutek” <strong>działa na realnym materiale</strong> i nie<br>wymaga nowej maszynerii.</p>
+<hr>
+<h3>13. Czego Kronika NIE jest (granice)</h3>
+<ul>
+<li><strong>Nie jest grą sterowaną przez widza</strong> — rola obserwatora jest niezmienna.</li>
+<li><strong>Nie jest walką</strong> — Arena Rezonansu odłożona; Kronika to fabuła, nie turniej.</li>
+<li><strong>Nie jest runtime AI</strong> — zero kluczy, zero sieci u odbiorcy.</li>
+<li><strong>Nie jest koalicją / przejmowaniem terenów</strong> — <code>tereny</code> rezerwujemy, ale nie wprowadzamy na start (za duże przy 10–15 wpisach).</li>
+<li><strong>Nie jest osobną kartoteką</strong> — byty i fakty pochodzą z ARKADII; Kronika tylko opowiada, co się z nimi dzieje.</li>
+</ul>
+<hr>
+<h3>14. Propozycje rozstrzygnięć otwartych pytań (P1–P11)</h3>
+<p>Poniżej <strong>propozycje</strong> do decyzji właściciela — nie są jeszcze przyjęte.</p>
+<table><tr><th>Pytanie</th><th>Propozycja</th></tr><tr><td><strong>P1</strong> Co widz widzi?</td><td>Feed epok (fabularne „Co nowego”) + karta epoki + oś czasu.</td></tr><tr><td><strong>P2</strong> Co napędza kolejną epokę?</td><td>Agent sesji dokłada epokę przy okazji Pętli Jakości; bez runtime automatu.</td></tr><tr><td><strong>P3</strong> Czym jest wydarzenie?</td><td>SKIT + <code>skutek</code>; epoka odwołuje się do SKIT-u.</td></tr><tr><td><strong>P4</strong> Stan świata?</td><td>Min. zestaw: <code>relacje</code> (słownik zmian), <code>zasob</code>, <code>tereny</code> (rezerwa).</td></tr><tr><td><strong>P5</strong> Skąd iskry?</td><td>Z powiązań, mapy i <strong>długu z poprzedniej epoki</strong> (<code>skutek.zasob</code>); nie z czystego losu.</td></tr><tr><td><strong>P6</strong> Normalizacja siły?</td><td>Percentyle (już w <code>profileKartoteki</code>) + świadome „zmęczenie” epok (byt nie występuje co epokę).</td></tr><tr><td><strong>P7</strong> Format epoki?</td><td><code>data/kronika/epoka-N-slug.json</code> wg §7.1; odwołanie do SKIT-u.</td></tr><tr><td><strong>P8</strong> Graf wątków?</td><td>Najpierw oś liniowa + odwołania, graf po &gt;15 epokach.</td></tr><tr><td><strong>P9</strong> Kanoniczność?</td><td>Opcjonalna warstwa narratorska; nie modyfikuje kart.</td></tr><tr><td><strong>P10</strong> Ile bytów?</td><td>Nie blokować startu; budować równolegle z Pętlą Jakości (dziś 10, cel ~15–20).</td></tr><tr><td><strong>P11</strong> MVP?</td><td>„Jedna epoka = jeden SKIT + skutek + widok osi”, plus <code>#kronika:&lt;slug&gt;</code>.</td></tr></table>
+<hr>
+<h3>15. Kolejność wdrożenia (po akceptacji koncepcji)</h3>
+<ul>
+<li><strong>Akceptacja</strong> — właściciel zatwierdza tę dokumentację (albo wskazuje zmiany).</li>
+<li><strong>ADR</strong> — „Kronika: rozgrywka jako dane popychane przez agentów (model 3b)” + wpis do <code>docs/decisions/</code>.</li>
+<li><strong>Plan MVP</strong> — <code>docs/plans/PLAN_kronika-mvp.md</code> z pierwszą epoką.</li>
+<li><strong>Walidator Kroniki</strong> — czysta funkcja sprawdzająca <code>data/kronika/*.json</code> (istnienie bytów, słownik <code>zmiana</code>, odwołanie do SKIT-u, limity).</li>
+<li><strong>Widok <code>#kronika</code></strong> — feed epok + karta epoki + deep-link; spójny z UI.</li>
+<li><strong>Rozbudowa treści</strong> — kolejne epoki w Pętli Jakości (C3), aż świat ma sens (~15–20 bytów, &gt;6 epok).</li>
+</ul>
+<hr>
+<h3>16. Pytania do właściciela</h3>
+<ul>
+<li>Czy akceptujesz model <strong>„SKIT + skutek”</strong> jako definicję wydarzenia (P3/P7)?</li>
+<li>Czy akceptujesz słownik zmian <code>relacje[].zmiana</code> (§7.3) zamiast wolnego tekstu?</li>
+<li>Czy Kronika ma być <strong>opcjonalną warstwą narratorską</strong> (P9), czy twardą kontynuacją kanonu?</li>
+<li>Czy startujemy od <strong>liniowej osi</strong> (P8), czy chcesz od razu graf wątków?</li>
+<li>Czy mogę, po Twojej akceptacji, napisać <strong>ADR + plan MVP</strong> i zacząć od walidatora (bez widoku UI), czy najpierw pokazać więcej epok?</li>
+</ul>
+<hr>
+<h3>17. Skąd pochodzą materiały (minimalne odnośniki)</h3>
+<p>Dla czytelnika chcącego pogłębić (nie trzeba tego czytać do zrozumienia trybu):</p>
+<ul>
+<li><code>docs/plans/POMYSL_splot-i-kronika-koncepcja.md</code> — źródłowa koncepcja SPLOT/KRONIKA.</li>
+<li><code>docs/plans/KONCEPCJA_metagra_pytania-otwarte.md</code> — mapa otwartych pytań metagry.</li>
+<li><code>docs/plans/PROTOTYP_kroniki-epoka-1.md</code> — prototyp epoki 1 na „Znaku burzy”.</li>
+<li><code>docs/plans/POMYSL_kierunki-grywalizacji-analiza.md</code> — ocena 10 pomysłów (A/B/C).</li>
+<li><code>docs/plans/POMYSL_platforma-budowy-przenosnosc.md</code> — build-time vs run-time, decyzja o wymiennym runnerze.</li>
+<li><code>docs/plans/POMYSL_arena-rezonansu-idle-battler.md</code> — odłożona Arena Rezonansu.</li>
+</ul></section><section class="doc"><h1 id="doc-1">Metagra — mapa otwartych pytań</h1><h2>METAGRA AME — mapa otwartych pytań (przed akceptacją koncepcji)</h2>
+<blockquote><strong>Status: KONCEPCJA W OPRACOWANIU, NIEZAAKCEPTOWANA.</strong> Właściciel słusznie<br>zauważył (M13), że metagry jeszcze nie ma — są tropy rozsypane po czterech<br>dokumentach <code>POMYSL_*</code>. Ten plik jest <strong>spisem decyzji do podjęcia</strong>, nie<br>kolejną wizją. Dopiero gdy odpowiemy na pytania z §2, powstanie ADR i plan.<br>Zasada: żadnego kodu gry ani pilotów, dopóki koncepcja nie zostanie przyjęta.</blockquote>
+<h3>0. Po co ten dokument</h3>
+<p>Cztery dotychczasowe pliki mieszają diagnozy, wizje i realia:</p>
+<ul>
+<li><code>POMYSL_arena-rezonansu-idle-battler.md</code> — pierwsza (odrzucona) walka 1:1.</li>
+<li><code>POMYSL_kierunki-grywalizacji-analiza.md</code> — 10 pomysłów w 3 wiązki (A/B/C).</li>
+<li><code>POMYSL_splot-i-kronika-koncepcja.md</code> — SPLOT+KRONIKA, dossier, realia AI (§1a).</li>
+<li><code>POMYSL_platforma-budowy-przenosnosc.md</code> — build-time vs run-time, przenośność.</li>
+</ul>
+<p>Trudno to zaakceptować „w kawałkach". Poniżej: co już jest USTALONE, i co jest<br>jeszcze OTWARTE. Akceptacja koncepcji = odpowiedzi na §2.</p>
+<h3>1. Co już jest ustalone (fundamenty, nie do podważania bez powodu)</h3>
+<ul>
+<li><strong>UStatystyki z gęstości rekordu</strong> (backlinki, powiązania, skity, epitety, motywy) — zaakceptowane przez właściciela jako dobra idea. Gotowe i przetestowane: <code>app/arena.js</code> (<code>statyManifestacji</code>, <code>profileKartoteki</code>, <code>archetypBytu</code>), znormalizowane (percentyle) → nowy wpis nie deklasuje reszty.</li>
+<li><strong>URola gracza = OBSERWATOR</strong> (M11): świat toczy się sam; gracz czyta, nie steruje. Sprawiedliwość na systemie i bytach, nie na graczu.</li>
+<li><strong>UDeterminizm + brak sekretów w artefakcie</strong> (ADR 0001–0003): artefakt zostaje vanilla static; losowość tylko ze wstrzykiwanego RNG (seed z daty).</li>
+<li><strong>URunner wymienny</strong> (M13): build-time dowolny (Arena / Meta / inny), granica = git PR; „głos pojedynczego bytu" → subagenci odizolowani (priorytet) albo symulowani (blind-draft).</li>
+<li><strong>UKażdy nowy SKIT to darmowy prototyp KRONIKI</strong> — piszemy je metodą embodimentu; już to robimy w Pętli Jakości (C3).</li>
+</ul>
+<h3>2. Pytania OTWARTE (na nie trzeba odpowiedzieć, by przyjąć koncepcję)</h3>
+<p>Pogrupowane; przy każdym: dlaczego to blokuje, i wstępne opcje.</p>
+<h4>A. Pętla rozgrywki (czym właściwie JEST gra dla obserwatora)</h4>
+<ul>
+<li><strong>PCo widz właściwie ogląda?</strong> Oś czasu wydarzeń? Mapę zmieniających się wpływów? Kolejne SKIT-y/„epoki"? — bez tego nie wiadomo, co budować jako UI. *Opcje:* (a) feed epok (jak „Co nowego", ale fabularny); (b) mapa z animacją wpływów; (c) graf wątków (timeline'y, pomysł 11).</li>
+<li><strong>PCo napędza kolejną epokę?</strong> Czas (codzienny seed)? Dodanie wpisu/skitu? Ręczne „pchnięcie" przez agenta sesji? — decyduje, czy gra „żyje" sama.</li>
+<li><strong>PCzym jest „wydarzenie"?</strong> Spotkanie 2–4 bytów (jak SKIT) + skutek dla świata? Czy coś więcej (koalicje, przejęcia terenów)?</li>
+</ul>
+<h4>B. Model świata (SPLOT) — co się właściwie zmienia</h4>
+<ul>
+<li><strong>PJaki jest stan świata i jak się zmienia?</strong> Relacje między bytami? Wpływy na terenach (kraje z <code>lokalizacja</code>)? Zasób („Rezonans")? — trzeba wybrać MINIMALNY zestaw zmiennych, bo inaczej to za duże na 8–12 wpisów.</li>
+<li><strong>PSkąd biorą się „iskry" spotkań?</strong> Z powiązań wiki? Z sąsiedztwa na mapie? Losowo z seeda? — to determinuje, czy świat jest spójny narracyjnie.</li>
+<li><strong>PNormalizacja siły w czasie</strong> — staty rosną z rozbudową wpisów; jak nie dopuścić, by „najstarszy = wieczny hegemon"? (percentyle to część odpowiedzi; czy potrzeba „resetu epok" albo „zmęczenia"?).</li>
+</ul>
+<h4>C. Treść (KRONIKA) — jak powstaje i gdzie mieszka</h4>
+<ul>
+<li><strong>PFormat danych epoki</strong> — <code>data/kronika/*.json</code>: pola, walidacja (jak skity). Czy epoka to „SKIT + skutek", czy osobny typ? — przesądza schemat.</li>
+<li><strong>PTimeline'y jako graf wątków (pomysł 11)</strong> — od razu, czy najpierw jedna liniowa oś? Graf jest potężny, ale kosztowny w UI i walidacji.</li>
+<li><strong>PKanoniczność</strong> — czy epoki Kroniki są „prawdą" archiwum (jak wpisy), czy osobną, „fabularną" warstwą, którą można odrzucać/rozgałęziać bez psucia kart?</li>
+</ul>
+<h4>D. Skala i kolejność</h4>
+<ul>
+<li><strong>PIle bytów, zanim gra ma sens?</strong> Wstępnie ustaliliśmy ~15–Czy to warunek wejścia, czy budujemy prototyp gry równolegle z treścią?</li>
+<li><strong>PNajmniejszy grywalny wycinek (MVP)</strong> — od czego zacząć kod, gdy już koncepcja przyjęta? Kandydat: „jedna epoka = jedno spotkanie + widok osi".</li>
+</ul>
+<h3>3. Rekomendowana kolejność rozstrzygania (propozycja, nie decyzja)</h3>
+<ul>
+<li>Najpierw <strong>A (pętla)</strong> — bez tego reszta wisi w próżni. Zwłaszcza P1/P2.</li>
+<li>Potem <strong>B (świat)</strong> w wersji MINIMALNEJ — jak najmniej zmiennych (P4).</li>
+<li><strong>C (dane/format)</strong> dopiero, gdy A+B znane — schemat wynika z mechaniki.</li>
+<li><strong>D (skala)</strong> równolegle: dowozić treść w Pętli Jakości niezależnie od gry.</li>
+</ul>
+<h3>4. Jak używać tego pliku</h3>
+<ul>
+<li>Każda sesja myślenia nad metagrą <strong>odpowiada na 1–3 pytania z §2</strong> (albo dokłada nowe), zamiast pisać nową wizję. Odpowiedzi wędrują do §1 (ustalone).</li>
+<li>Gdy §2 jest w większości puste, a §1 spójne → piszemy <strong>ADR metagry</strong> i plan MVP. Wtedy (i tylko wtedy) zaczyna się kod.</li>
+<li>Do tego czasu: Pętla Jakości (C1 treść, C3 skity-prototypy) buduje świat, na którym gra kiedyś stanie.</li>
+</ul>
+<h3>5. Pierwszy wkład (M13): wstępne stanowisko do P1–P3</h3>
+<p>Nie są to decyzje właściciela — to propozycja do dyskusji, żeby ruszyć §2:</p>
+<ul>
+<li><strong>P1 (co widać):</strong> feed „epok" jak „Co nowego", ale każda pozycja to mini-wydarzenie z linkami do uczestników i (docelowo) ilustracją. Najtańsze, spójne z istniejącym UI, rozszerzalne później o mapę/graf.</li>
+<li><strong>P2 (co napędza):</strong> kolejną epokę dokłada <strong>agent sesji</strong> przy okazji Pętli Jakości (jak dziś dokłada SKIT) — świat rośnie „ludzkim" tempem, deterministy- cznie, bez runtime AI. Codzienny seed zostaje jako opcja na później.</li>
+<li><strong>P3 (czym jest wydarzenie):</strong> na start = SKIT + krótkie pole <code>skutek</code> (1–2 zdania: co ta rozmowa zmienia w relacjach). Minimalne rozszerzenie tego, co już umiemy — zero nowej maszynerii.</li>
+</ul>
+<p>To stanowisko celowo jest MAŁE: chroni przed „za dużą grą na 12 wpisach".</p>
+<h3>6. Drugi wkład (Pętla Jakości po M15): prototyp pierwszej epoki KRONIKI</h3>
+<p>[Nie jest to decyzja właściciela — to pierwsza <strong>konkretna próbka</strong> modelu<br>danych z §1/§2, żeby przestać rozważać P3/P7/P9 w powietrzu.]</p>
+<ul>
+<li><strong>Dokument:</strong> <code>docs/plans/PROTOTYP_kroniki-epoka-1.md</code>.</li>
+<li><strong>Próba:</strong> pierwsza „epoka” zbudowana na istniejącym SKICIE <strong>„Znak burzy”</strong> (Indra × Drangue × Barbarossa). Nie duplikujemy dialogu — epoka odwołuje się do SKIT-u i dodaje <code>iskra</code> + <code>skutek</code>.</li>
+<li><strong>Co odpowiada (wstępnie):</strong></li>
+<li class="nested"><strong>P3:</strong> wydarzenie = SKIT + krótki <code>skutek</code> dla świata. Potwierdzone na konkretnym materiale; dialog zostaje jednokrotnie.</li>
+<li class="nested"><strong>P7:</strong> minimalny rekord <code>data/kronika/epoka-N-*.json</code> — <code>skit</code>, <code>iskra</code>, <code>uczestnicy</code> (rola z <code>profileKartoteki</code>), <code>przebieg</code> (odwołanie + ślad), <code>skutek</code>, <code>meta</code>. Bez nowej maszynerii.</li>
+<li class="nested"><strong>P9:</strong> epoka jest proponowana jako <strong>opcjonalna, narratorska warstwa</strong> — nie modyfikuje kart archiwum, więc da się ją odrzucić bez psucia wpisów.</li>
+<li><strong>Co dalej otwarte (z prototypu):</strong> słownik <code>skutek.relacje</code> (wolny tekst vs kontrolowane wartości), strzeżenie spójności kolejnych epok, oraz P1/P2 — czy następna epoka rusza z „długu” opisanego w skutku, czy z osobnego seeda.</li>
+<li><strong>Stan:</strong> prototyp koncepcyjny, nie dane produkcyjne; brak kodu, brak walidatora, brak wpięcia do UI (zgodnie z M13).</li>
+</ul></section><section class="doc"><h1 id="doc-2">Prototyp: pierwsza epoka Kroniki</h1><h2>PROTOTYP: pierwsza epoka KRONIKI — „Znak burzy”</h2>
+<blockquote>Status: <strong>koncepcyjny prototyp, nie dane produkcyjne.</strong> Wpisuje się w Pętlę<br>Jakości (za zgodą właściciela: zamiast nowej featurki — twórczy rozwój idei<br>KRONIKI). Nie wpinamy tego do builda ani UI; to materiał do decyzji, czy<br>kierunek „SKIT + skutek” (§ KONCEPCJA, P3/P7) naprawdę daje się zrealizować.<br>Brak kodu gry zgodnie z M13 — dopóki koncepcja nie zostanie przyjęta.</blockquote>
+<h3>1. Co chcieliśmy sprawdzić</h3>
+<p>Koncepcja SPLOT/KRONIKA (§2 i §4 <code>POMYSL_splot-i-kronika-koncepcja.md</code>)<br>wskazuje, że wydarzeniem świata powinno być <strong>wcielone spotkanie + skutek</strong>.<br>Dotąd mieliśmy tylko SKIT-y, czyli warstwę B (rozmowa). Poniżej pierwsza<br>próba domknięcia pętli na realnym materiale z repozytorium:</p>
+<ul>
+<li><strong>P3 (czym jest wydarzenie)</strong> — czy da się opisać „SKIT + skutek” tak, żeby dało się to zapisać jako dane i nie wymyślać nowej maszynerii?</li>
+<li><strong>P7 (format epoki)</strong> — jak wygląda minimalny rekord <code>data/kronika/…</code>?</li>
+<li><strong>P9 (kanoniczność)</strong> — czy prototypowe epoki można trzymać jako osobną, „narratorską” warstwę, którą wolno odrzucić bez ruszania kart bytów?</li>
+</ul>
+<p>Wszystkie trzy odpowiedzi są tu <strong>propozycją do dyskusji</strong>, nie decyzją.</p>
+<h3>2. Wybrany materiał</h3>
+<p>Używamy SKIT-u <strong>„Znak burzy”</strong> (<code>data/skity/znak-burzy.json</code>, C3 z poprzedniej<br>Pętli Jakości): Indra × Drangue × Barbarossa. To świadome posunięcie — ten<br>SKIT już był pisany jako prototyp KRONIKI (embodiment, trzy różne dossier),<br>więc powtórzenie go w roli „epoki” jest najtańszym możliwym testem: **nie<br>piszemy nowej rozmowy, tylko sprawdzamy, czy z gotowej rozmowy da się wywieść<br>stan świata A.**</p>
+<p>Role uczestników wyliczone z istniejącej mechaniki (<code>profileKartoteki</code>):</p>
+<table><tr><th>byt</th><th>archetyp</th><th>co to znaczy w tym spotkaniu</th></tr><tr><td><code>indra</code></td><td>Drapieżnik</td><td>tnie, atakuje, chce rozstrzygnięcia teraz</td></tr><tr><td><code>drangue-shala</code></td><td>Pieśniarz</td><td>żyje w rozmowach i tradycji; oddaje głos wspólnocie</td></tr><tr><td><code>barbarossa-kyffhaeuser</code></td><td>Filar</td><td>trzyma strukturę; czeka i pilnuje terminu</td></tr></table>
+<h3>3. Konkretny rekord (szkic, nie jeszcze plik)</h3>
+<pre><code>data/kronika/epoka-1-znak-burzy.json
+
+{
+  &quot;slug&quot;: &quot;epoka-1-znak-burzy&quot;,
+  &quot;epoka&quot;: 1,
+  &quot;rodzaj&quot;: &quot;prototyp&quot;,
+  &quot;skit&quot;: &quot;znak-burzy&quot;,
+  &quot;uczestnicy&quot;: [
+    { &quot;slug&quot;: &quot;indra&quot;, &quot;rola&quot;: &quot;Drapieżnik&quot; },
+    { &quot;slug&quot;: &quot;drangue-shala&quot;, &quot;rola&quot;: &quot;Pieśniarz&quot; },
+    { &quot;slug&quot;: &quot;barbarossa-kyffhaeuser&quot;, &quot;rola&quot;: &quot;Filar&quot; }
+  ],
+  &quot;iskra&quot;: &quot;Trzy doliny milczą — nad Gomati, nad Shali i nad Kyffhäuserem deszcz
+            nie pada. Każdy z trzech bytów widzi inny znak: Indra suszę i
+            otwarte niebo, drangue cień kulshedry pod wodą, Barbarossa kruki,
+            które jeszcze nie odleciały.&quot;,
+  &quot;przebieg&quot;: [
+    { &quot;typ&quot;: &quot;zrodlo&quot;, &quot;sciezka&quot;: &quot;data/skity/znak-burzy.json&quot; },
+    { &quot;typ&quot;: &quot;sad&quot;, &quot;tekst&quot;: &quot;Indra chce ciąć, Barbarossa czeka; drangue odbiera
+            obu prawo do bycia panem burzy i zwraca ją wspólnocie.&quot; },
+    { &quot;typ&quot;: &quot;obserwacja&quot;, &quot;tekst&quot;: &quot;Grzmot przychodzi trzykrotnie, ale nikt
+            nie otwiera nieba. Spotkanie kończy się rozejmem, nie zwycięstwem.&quot; }
+  ],
+  &quot;skutek&quot;: {
+    &quot;relacje&quot;: [
+      { &quot;para&quot;: [&quot;indra&quot;, &quot;drangue-shala&quot;],
+        &quot;zmiana&quot;: &quot;indeks&quot;,
+        &quot;opis&quot;: &quot;Indra przyjmuje drangue jako równego wysłannika burzy; powstaje
+                 zobowiązanie: staną razem, gdy kulshedra naprawdę wyjdzie.&quot; },
+      { &quot;para&quot;: [&quot;indra&quot;, &quot;barbarossa-kyffhaeuser&quot;],
+        &quot;zmiana&quot;: &quot;schlodzenie&quot;,
+        &quot;opis&quot;: &quot;Drwina zostaje, ale Indra przestaje nazywać czekanie tchórzostwem;
+                 to pierwszy pęknięty kant, nie przyjaźń.&quot; },
+      { &quot;para&quot;: [&quot;drangue-shala&quot;, &quot;barbarossa-kyffhaeuser&quot;],
+        &quot;zmiana&quot;: &quot;uznanie&quot;,
+        &quot;opis&quot;: &quot;Barbarossa nazywa drangue „domem”; po raz pierwszy widzi w
+                 drugim bycie nie wojownika, ale pamięć miejsca.&quot; }
+    ],
+    &quot;tereny&quot;: [],
+    &quot;zasob&quot;: {
+      &quot;znak&quot;: &quot;nierozstrzygnięty&quot;,
+      &quot;opis&quot;: &quot;Nikt nie zdobywa pola. Świat zostaje w zawieszeniu; rachunek
+               burzy wisi nad trzema dolinami.&quot;
+    }
+  },
+  &quot;meta&quot;: {
+    &quot;utworzono&quot;: &quot;2026-08-28 23:59&quot;,
+    &quot;autor&quot;: &quot;sesja arena 2026-08-28 (Pętla Jakości, prototyp)&quot;,
+    &quot;typ&quot;: &quot;koncepcyjny&quot;,
+    &quot;status&quot;: &quot;do decyzji właściciela&quot;
+  }
+}</code></pre>
+<h3>4. Kronikarz zapisuje (narratorsko, obok danych)</h3>
+<blockquote>Świat, który zobaczyłby obserwator w tej epoce.</blockquote>
+<p>Susza nie biła w słońce — biła w milczenie. Trzy doliny czekały na deszcz<br>i każda czekała inaczej: na Gangesie ktoś rozcinał chmurę, w Albanii<br>wychodziły się patrzeć w rzekę, a pod Kyffhäuser nie pytano, tylko wsłuchiwano,<br>czy kruki już zniknęły.</p>
+<p>Wtedy usłyszeli siebie nawzajem. Bóg z tysiącem oczu powiedział, że on nie<br>czeka — on robi. Skrzydlaty mężczyzna z Shali powiedział, że nie robi się<br>samemu, bo kulshedra tylko na to czeka. Cesarz powiedział, że powrót to nie<br>pośpiech, tylko posłuszeństwo.</p>
+<p>Grzmot przyszedł trzy razy. Nikt nie otworzył nieba. I właśnie w tym było<br>pierwsze wydarzenie KRONIKI: **nie ten, kto ma moc, rozstrzyga, tylko ten,<br>kto potrafi czekać razem z miejscem.** Z tego rachunku nie zrodziła się jeszcze<br>walka, ale zrodził się dług: trzech bytów, które teraz wiedzą o sobie i o<br>wodzie, że nie należą do nikogo z nich.</p>
+<h3>5. Co to daje koncepcji (wnioski, nie decyzje)</h3>
+<ul>
+<li><strong>P3 — wydarzenie = SKIT + skutek:</strong> działa. SKIT już przechowuje pełny „przebieg”; epoka nie musi duplikować replik, wystarczy odwołanie do niego. To oszczędza miejsce i trzyma jeden kanoniczny dialog.</li>
+<li><strong>P7 — minimalny format:</strong> proponowane pola to <code>skit</code>, <code>iskra</code>, <code>uczestnicy</code> (z rolami z <code>profileKartoteki</code>), <code>przebieg</code> (odwołanie + ślad + obserwacja), <code>skutek</code>, <code>meta</code>. Zero nowych typów poza tym, co już mamy (dane w repo, <code>meta</code> jak w wpisach/skitach — ADR 0017).</li>
+<li><strong>P9 — kanoniczność:</strong> prototyp trzymamy jako *osobną, opcjonalną warstwę*. Nie modyfikuje <code>powiazania</code> ani <code>tagi</code> kart — skutek jest opisem narracji, nie faktem w archiwum. Gdy właściciel odrzuci epokę, wystarczy nie brać pliku do indeksu.</li>
+<li><strong>Czego jeszcze brakuje (do następnych pytań):</strong></li>
+<li class="nested">Czy <code>skutek.relacje</code> ma być <strong>wolnym tekstem</strong>, czy słownikiem ze zbioru <code>{indeks, schlodzenie, uznanie, zerwanie, ...}</code>? W prototypie wybrałem listę — łatwiej liczyć stan świata, trudniej pisać.</li>
+<li class="nested">Kto pilnuje, by skutek nie przeczył kolejnym SKIT-om? (Kandydat: sekcja „dossier” przy zapisie epoki, nie walidator w buildzie.)</li>
+<li class="nested">P1/P2 nadal otwarte: czy kolejna epoka startuje z tego długu, czy z osobnego seeda? Prototyp podpowiada <strong>dług</strong> (świat ma motyw do kolejnego spotkania), ale to nie jest jeszcze decyzja.</li>
+</ul>
+<h3>6. Możliwa następna iskra (pokaz, że świat A się zmienił)</h3>
+<p>Wypisana ze <code>skutku</code> wyżej propozycja na epokę 2 (też tylko prototyp):</p>
+<blockquote>Po „Znaku burzy” drangue ma zobowiązanie wobec Indry, a Barbarossa — wobec<br>drangue. Kulshedra schodzi z rzeki. Drangue nie chce wzywać Indry, bo boi się,<br>że bóg z tysiącem oczu znowu nie będzie czekał; Barbarossa kładzie na szali<br>swój rachunek „powrotu”. Iskra: **czy dług z pierwszej burzy ma być spłacony<br>siłą, czy rytuałem?**</blockquote>
+<p>To już nie jest luźny pomysł — to konkretne następstwo stanu, który da się<br>zapisać w <code>data/kronika/</code>. Dokładnie o to chodziło w pomyśle „Kronika jako<br>dane popychane przez kolejne sesje”.</p></section><footer style="color:var(--muted);font-size:13px;margin-top:20px">Wygenerowano z materiałów repozytorium AME (2026-08-28).</footer></div></body></html>
