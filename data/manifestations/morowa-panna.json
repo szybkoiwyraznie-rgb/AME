@@ -22,7 +22,7 @@
   "pochodzenie_i_kultura": "Folklor słowiański (krąg polsko-rusko-litewski, ujęty tu przez tradycję ziem polskich): personifikacja zarazy — nienaturalnie wysoka, wychudła niewiasta w białym pogrzebowym całunie albo brudnej płachcie, z czerwoną lub zakrwawioną chustą; zjawia się nocą, prowadzi z domownikami rozmowę i jedną odpowiedzią przesądza o losie domu, a na wiosnę bywa odprawiana jako kukła. Jedna tradycja, jeden byt — mór; nie mieszam jej z aniołem śmierci ani z greckimi Kerami.",
   "wizualizacja": {
     "prompt": "Style: A wide-angle full-body cinematic photograph. The central objects/persons of the photo are visible from head to toe, standing centrally in the frame. No parts of the body are cropped.\n\nAn unnaturally tall, gaunt woman in a soiled white burial shroud standing at a half-open cottage doorway at night, one skeletal hand reaching through the gap holding a blood-red cloth; behind her a narrow village lane and the dark mass of an old town wall, low fog rolling over the threshold, a single candle flame guttering inside the house; cold moonlight, muted white and deep red against blue-black shadows, wet cobblestones, utterly silent air.\n\nCaptured with a 35mm anamorphic lens at f/1.8. Shallow depth of field with a heavy, creamy bokeh background. Environmental portraiture. Dramatic cinematic lighting, sharp focus on the character, hyper-realistic textures of clothing and skin. Shot on 70mm film stock, ultra-wide 21:9 aspect ratio. --ar 21:9",
-    "obraz": null
+    "obraz": "assets/wizualizacje/morowa-panna.jpg"
   },
   "natura": {
     "wyglad_i_aura": "Nienaturalnie wysoka, wychudła i blada kobieta w białym, pogrzebowym całunie albo w wielkiej brudnej płachcie, z czerwoną — nierzadko zakrwawioną — chustą w dłoni. W tradycji ukraińskiej staje na mogiłach i powiewa chustą, dmuchając na osady morowym powietrzem; w podaniach litewskich wsuwa kościstą rękę z chustą przez uchylone drzwi albo okno. Twarzy nie widać; powietrze wokół niej gęstnieje jak przed gradem, a zapach bywa słodkawy, jak z piwnicy, w której leżał umarły.",
@@ -114,6 +114,10 @@
       {
         "data": "2026-08-30 00:09",
         "opis": "Nowa materializacja: Morowa Panna — słowiańska personifikacja zarazy z czerwoną chustą, na podstawie karty „Infectious Horror” (CON #47); do kanonu dopisany tag kulturowy „polska”."
+      },
+      {
+        "data": "2026-08-30 00:20",
+        "opis": "Dodana wizualizacja 21:9 w morowa-panna.jpg — powstała z ramowego promptu wpisu i pokazuje byt w jego naturalnym otoczeniu."
       }
     ]
   }

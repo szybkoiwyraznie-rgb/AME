@@ -21,7 +21,7 @@
   "pochodzenie_i_kultura": "Religia wedyjska Indii: Rigweda 10.14 (hymn pogrzebowy do Yamy, przeł. R. T. H. Griffith, 1896) nazywa je „potomstwem Saramy, brązowymi, czterookimi”, „stróżami drogi” i „wysłannikami Yamy, wędrującymi wśród ludzi”; tradycja późniejsza (Atharwaweda, za „Encyclopedia of Indo-European Culture” J. P. Mallory'ego i D. Q. Adamsa) czyni z nich wysłanników wyszukujących umierających, a w przekazach klasycznych (Monier-Williams, Tilak) rozróżnia cętkowaną Śarvarę i ciemną Śyāmę. Jedna droga, jeden pan, jedno plemię.",
   "wizualizacja": {
     "prompt": "Style: A wide-angle full-body cinematic photograph. The central objects/persons of the photo are visible from head to toe, standing centrally in the frame. No parts of the body are cropped.\n\nTwo large hounds standing side by side on a narrow dirt road at moonless midnight, one dark as new charcoal, the other brindled with pale patches; each head carrying a second small pair of eyes set above the ordinary ones, all four watching the road; the road runs between flooded rice fields and a line of cremation pyres, smoke rising to a starry sky, distant temple silhouettes, the Ganges glinting behind, cold blue silver light, damp earth and drifting mist.\n\nCaptured with a 35mm anamorphic lens at f/1.8. Shallow depth of field with a heavy, creamy bokeh background. Environmental portraiture. Dramatic cinematic lighting, sharp focus on the character, hyper-realistic textures of clothing and skin. Shot on 70mm film stock, ultra-wide 21:9 aspect ratio. --ar 21:9",
-    "obraz": null
+    "obraz": "assets/wizualizacje/syama-i-sarvara.jpg"
   },
   "natura": {
     "wyglad_i_aura": "Dwa wielkie psy: jeden czarny jak węgiel (Śyāma), drugi cętkowany, brązowo-łaciaty (Śarvara), oba z drugą parą oczu nad zwykłymi — razem cztery oczy, którymi patrzą jednocześnie na świat ludzi i na świat przodków. Nozdrza mają rozdęte, jak u „nienasyconych” wysłanników z hymnu; sierść sucha, nie lśniąca, a wokół pachnie zimnym popiołem i kurzawą drogi. Pojawiają się bezgłośnie, zwykle o zmierzchu albo w noc, gdy we wsi jest zmarły — i stoją na ścieżce, zamiast iść do ludzi.",
@@ -109,6 +109,10 @@
       {
         "data": "2026-08-30 00:09",
         "opis": "Nowa materializacja: Śyāma i Śarvara — czterookie psy Yamy z Rigwedy 10.14, na podstawie karty „Trade Route Envoy” (TDM #163)."
+      },
+      {
+        "data": "2026-08-30 00:20",
+        "opis": "Dodana wizualizacja 21:9 w syama-i-sarvara.jpg — powstała z ramowego promptu wpisu i pokazuje byt w jego naturalnym otoczeniu."
       }
     ]
   }

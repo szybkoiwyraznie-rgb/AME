@@ -21,7 +21,7 @@
   "pochodzenie_i_kultura": "Mitologia grecka (Hezjod, „Teogonia” w. 570–612 i „Prace i dnie” w. 42–105, VIII–VII w. p.n.e.): Zeus każe Hefajstosowi ulepić z gliny pierwszą kobietę, Atena ją odziewa, Afrodyta daje wdzięk, Hermes „bezwstydny umysł i kłamliwe słowa”; imię „Pandora” znaczy „wszystkichdarowana”, bo każdy z bogów dał jej dar — „plagę mężom jedzącym chleb”. Jej ślubnym darem jest pithos — wielki gliniany słój — który otwiera, a z niego na świat wychodzi wszelkie zło; na dnie zostaje Elpis (nadzieja).",
   "wizualizacja": {
     "prompt": "Style: A wide-angle full-body cinematic photograph. The central objects/persons of the photo are visible from head to toe, standing centrally in the frame. No parts of the body are cropped.\n\nA young woman in a silver gown and an embroidered veil, a gold crown on her dark hair, standing on the stone base of a colossal statue on the Acropolis at dawn; she holds a large clay pithos in both hands, its heavy lid lifted just a little, dark shapes like smoke and moths streaming from the mouth of the jar toward a sleeping city below; marble columns, olive trees, pale gold morning light, a distant sea, her expression caught between curiosity and horror.\n\nCaptured with a 35mm anamorphic lens at f/1.8. Shallow depth of field with a heavy, creamy bokeh background. Environmental portraiture. Dramatic cinematic lighting, sharp focus on the character, hyper-realistic textures of clothing and skin. Shot on 70mm film stock, ultra-wide 21:9 aspect ratio. --ar 21:9",
-    "obraz": null
+    "obraz": "assets/wizualizacje/pandora.jpg"
   },
   "natura": {
     "wyglad_i_aura": "Młoda kobieta o ciemnych włosach, w srebrnej szacie, z haftowanym welonem i złotą koroną — dokładnie tak, jak odziewa ją Atena, a wieńczą Hory w „Pracach i dniach”. Przy niej wielki gliniany słój z pokrywą, pachnący ziemią i miodem; wokół niej cisza, która robi się gęsta w chwili, gdy pokrywa drży. Nie ma w niej grozy — jest uważne, ciekawe spojrzenie istoty, która dopiero co została stworzona i jeszcze nie wie, czym jest zło.",
@@ -108,6 +108,10 @@
       {
         "data": "2026-08-30 00:09",
         "opis": "Nowa materializacja: Pandora — pierwsza kobieta z „Prac i dni” Hezjoda i jej pithos, na podstawie karty „Panic Spellbomb” (SOM #191)."
+      },
+      {
+        "data": "2026-08-30 00:20",
+        "opis": "Dodana wizualizacja 21:9 w pandora.jpg — powstała z ramowego promptu wpisu i pokazuje byt w jego naturalnym otoczeniu."
       }
     ]
   }

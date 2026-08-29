@@ -21,7 +21,7 @@
   "pochodzenie_i_kultura": "Tradycja grecka — opowieść w „Filopseudesie” („Miłośniku kłamstw”) Lukiana z Samosaty (ok. 150 n.e.): młody Eukrates w Koptos podgląda egipskiego maga Pankratesa, który ożywia przedmioty trzema sylabami, a potem sam próbuje tej sztuki i nie potrafi już zatrzymać tłuczka. Byt wziąłem z tej właśnie opowieści — jedna tradycja, jeden motyw; balladę Goethego (1797, wyd. 1798) traktuję jako jej nowożytne echo i świadectwo wędrówki baśniowego typu, nie jako drugą kulturę.",
   "wizualizacja": {
     "prompt": "Style: A wide-angle full-body cinematic photograph. The central objects/persons of the photo are visible from head to toe, standing centrally in the frame. No parts of the body are cropped.\n\nA weathered wooden pestle standing upright on two stubby legs, a coarse linen rag wrapped around its head like a servant's hood, a tarnished bronze water jar slung across one splintered shoulder, water spilling over the jar rim and pooling across the Nile mud of the Koptos riverbank at dusk; behind it a young Greek student in a white scholar's robe crouches beside a second, split half of the pestle that drags its own pitcher toward the flooded basin; reed boats and mud-brick granaries on the far bank, low amber sun, drifting dust, ochre and umber tones against pale teal water.\n\nCaptured with a 35mm anamorphic lens at f/1.8. Shallow depth of field with a heavy, creamy bokeh background. Environmental portraiture. Dramatic cinematic lighting, sharp focus on the character, hyper-realistic textures of clothing and skin. Shot on 70mm film stock, ultra-wide 21:9 aspect ratio. --ar 21:9",
-    "obraz": null
+    "obraz": "assets/wizualizacje/knecht-z-koptos.jpg"
   },
   "natura": {
     "wyglad_i_aura": "Zwykły kuchenny tłuczek — dębowa pałka z przewężeniem na rękojeść — odziany w lniane łachmany, z węzłem zamiast głowy; gdy pracuje, chodzi na dwóch krótkich pniakach i niesie mosiężny dzban. Wokół niego pachnie rozgrzaną oliwą i mokrym mułem, próg i podłoga robią się mokre, a z wnętrza domu dobiega miarowe stąpanie twardego drewna i plusk przelewanej wody. Nie wydaje głosu, nie patrzy; po prostu idzie, dopóki ktoś nie wypowie słowa końca.",
@@ -113,6 +113,10 @@
       {
         "data": "2026-08-30 00:09",
         "opis": "Nowa materializacja: knecht z Koptos — ożywiony tłuczek z „Filopseudesa” Lukiana, na podstawie karty „Apprentice Wizard” (2XM #40)."
+      },
+      {
+        "data": "2026-08-30 00:20",
+        "opis": "Dodana wizualizacja 21:9 w knecht-z-koptos.jpg — powstała z ramowego promptu wpisu i pokazuje byt w jego naturalnym otoczeniu."
       }
     ]
   }

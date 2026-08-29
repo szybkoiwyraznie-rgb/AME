@@ -1449,3 +1449,14 @@ wyłącznie z kanonu, `meta` z godziną zapisu. Wizualizacje: `obraz: null`
   mechaniczna, zweryfikowana wynikiem narzędzia).
 - Commit `9aecf1a` (5 wpisów + kanon + indeks + Kronika + testy), wypchnięty.
  (docs: dziennik sesji — materializacja 5 kart MtG + audyt PR #9 i handoff)
+
+
+### Wizualizacje 21:9 (2026-08-30)
+
+Na pytanie właściciela o ilustracje: pięć obrazów wygenerowanych z ramowych
+promptów wpisów i zapisanych jako `assets/wizualizacje/<slug>.jpg`
+(1915×821 = 21:9, 209–276 KB, ≤ 2 MB) — `knecht-z-koptos`, `pandora`,
+`syama-i-sarvara`, `protostates`, `morowa-panna`. Pola
+`wizualizacja.obraz` podpięte, `meta.modyfikacje` z godziną zapisu, indeks
+przebudowany (`npm run build`), brama 163/163.
+ (feat: wizualizacje 21:9 pięciu nowych materializacji + podpięcie obrazów we wpisach)
