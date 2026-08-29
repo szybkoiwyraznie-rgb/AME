@@ -2,7 +2,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
-import { htmlWpisu, htmlWarstwyWpisu, linkDoZrodla, htmlListy, htmlTagow, htmlDialogu, htmlSkitu, htmlBazySkitow, htmlNowosci, esc, nastepnyMotyw, motywPoczatkowy, etykietaMotywu, MOTYWY, KLUCZ_MOTYWU } from '../app/ui.js';
+import { htmlWpisu, htmlWarstwyWpisu, linkDoZrodla, htmlListy, htmlTagow, htmlDialogu, htmlSkitu, htmlBazySkitow, htmlNowosci, esc, nastepnyMotyw, motywPoczatkowy, etykietaMotywu, MOTYWY, KLUCZ_MOTYWU, akcjeZZapytania } from '../app/ui.js';
 
 async function dane(plik = 'egungun') {
   const wpis = JSON.parse(await readFile(`data/manifestations/${plik}.json`, 'utf8'));
@@ -332,6 +332,16 @@ test('linkWidoku: baza + adres widoku, bez reszty z bieżącego adresu', async (
   assert.equal(linkWidoku('http://x/AME/index.html#nowosci', 'skit:znak-i-liczba'), 'http://x/AME/index.html#skit:znak-i-liczba');
   assert.equal(linkWidoku('https://example.github.io/AME/', 'balor'), 'https://example.github.io/AME/#balor');
   assert.equal(linkWidoku('', ''), '#', 'brak bazy nie produkuje undefined');
+});
+
+test('akcjeZZapytania: ?q i ?action z Kroniki (PR #9); nieznane parametry ignorowane', () => {
+  assert.deepEqual(akcjeZZapytania(''), { action: null, q: null });
+  assert.deepEqual(akcjeZZapytania(null), { action: null, q: null });
+  assert.deepEqual(akcjeZZapytania('?q=sfinks'), { action: null, q: 'sfinks' });
+  assert.deepEqual(akcjeZZapytania('?action=wylosuj'), { action: 'wylosuj', q: null });
+  assert.deepEqual(akcjeZZapytania('?action=powiazania&q=ogon'), { action: 'powiazania', q: 'ogon' });
+  assert.deepEqual(akcjeZZapytania('?action=nieznana&q=%20%20'), { action: null, q: null });
+  assert.deepEqual(akcjeZZapytania('?q=%20Imp%20z%20Lincoln%20'), { action: null, q: 'Imp z Lincoln' });
 });
 
 test('tagZFragmantu: czyta #tag:…, odrzuca resztę', async () => {

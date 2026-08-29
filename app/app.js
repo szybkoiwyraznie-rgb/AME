@@ -20,6 +20,7 @@ import {
   motywPoczatkowy,
   etykietaMotywu,
   KLUCZ_MOTYWU,
+  akcjeZZapytania,
 } from './ui.js?v=c4-1';
 import { SZEROKOSC, WYSOKOSC } from './geo.js?v=c4-1';
 
@@ -509,6 +510,23 @@ async function start() {
   odswiezLicznik();
   podepnijZdarzenia();
   odswiezFiltr();
+
+  // Uniwersalna nawigacja (PR #9): linki z Kroniki niosą ?q= i ?action=…
+  // — aplikacja główna traktuje je jak wpisanie frazy albo klik w przycisk.
+  const zamowienie = akcjeZZapytania(location.search);
+  if (zamowienie.q) {
+    $('#szukaj').value = zamowienie.q;
+    stan.filtr = dopasowania(stan.indeks, zamowienie.q);
+    odswiezFiltr();
+  }
+  if (zamowienie.action === 'powiazania') {
+    stan.luki = true;
+    mapa.przelaczLuki(true);
+    const przycisk = $('#przycisk-luki');
+    przycisk.classList.add('aktywny');
+    przycisk.setAttribute('aria-pressed', 'true');
+  }
+  if (zamowienie.action === 'wylosuj') losujManifestacje();
 
   if (fragment.startsWith('skit:')) {
     const slug = fragment.slice(5);

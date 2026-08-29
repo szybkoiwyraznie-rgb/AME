@@ -120,6 +120,20 @@ export function tagZFragmantu(fragment) {
   return tag ? tag : null;
 }
 
+/**
+ * Zamówienia z parametrów zapytania dla startu aplikacji (PR #9):
+ * `?q=…` ustawia wyszukiwanie, `?action=wylosuj|powiazania` wykonuje akcję.
+ * Nieznane parametry są ignorowane — aplikacja startuje normalnie.
+ * Zwraca `{ action, q }`: action ∈ {'wylosuj','powiazania',null}, q — string albo null.
+ */
+export function akcjeZZapytania(zapytanie) {
+  const p = new URLSearchParams(String(zapytanie ?? ''));
+  const akcja = p.get('action');
+  const action = akcja === 'wylosuj' || akcja === 'powiazania' ? akcja : null;
+  const q = (p.get('q') ?? '').trim();
+  return { action, q: q || null };
+}
+
 /** Przycisk kopiujący adres bieżącego widoku (kartoteka albo skit/feed). */
 export function przyciskKopiowania(cel) {
   if (!cel) return '';

@@ -677,7 +677,7 @@ export function generujTopbarHTML(aktywny = 'kronika') {
       <a id="przycisk-skity" class="przycisk" href="../index.html#skity" title="Baza Skitów — rozmowy materializacji">✎ skity</a>
       <a id="przycisk-nowosci" class="przycisk" href="../index.html#nowosci" title="Co nowego — aktualizacje archiwum">✚ nowości</a>
       <a id="przycisk-kronika" class="przycisk ${aktywny === 'tom-1' ? 'aktywny' : ''}" href="kronika-tom-1.html" title="Kronika świata AME — tocząca się opowieść epok">📜 kronika</a>
-      <button id="przycisk-motyw" class="przycisk przycisk-motyw" type="button" aria-pressed="false" title="Przełącz tryb ciemny/jasny" onclick="const m = document.documentElement.dataset.motyw === 'jasny' ? 'ciemny' : 'jasny'; document.documentElement.dataset.motyw = m; localStorage.setItem('ame:motyw', m); this.innerHTML = m === 'jasny' ? '☀ jasny' : '☾ ciemny';">☾ motyw</button>
+      <button id="przycisk-motyw" class="przycisk przycisk-motyw" type="button" aria-pressed="false" title="Przełącz tryb ciemny/jasny" onclick="const m = document.documentElement.dataset.motyw === 'jasny' ? 'ciemny' : 'jasny'; document.documentElement.dataset.motyw = m; localStorage.setItem('ame:motyw', m); this.innerHTML = m === 'jasny' ? '☀ jasny' : '☾ ciemny'; this.setAttribute('aria-pressed', String(m === 'jasny'));">☾ motyw</button>
     </div>
   </header>
   <script>
@@ -685,7 +685,7 @@ export function generujTopbarHTML(aktywny = 'kronika') {
       const m = localStorage.getItem('ame:motyw') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'ciemny' : 'jasny');
       document.documentElement.dataset.motyw = m;
       const btn = document.getElementById('przycisk-motyw');
-      if (btn) btn.innerHTML = m === 'jasny' ? '☀ jasny' : '☾ ciemny';
+      if (btn) { btn.innerHTML = m === 'jasny' ? '☀ jasny' : '☾ ciemny'; btn.setAttribute('aria-pressed', String(m === 'jasny')); }
     })();
   </script>`;
 }
