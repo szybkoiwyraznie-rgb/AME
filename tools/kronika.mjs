@@ -2054,17 +2054,16 @@ async function main() {
   const manifestacjePelne = {};
   try {
     const plikiManifestacji = (await readdir(KATALOG_MANIFESTACJI)).filter((f) => f.endsWith('.json'));
-    await Promise.all(
-      plikiManifestacji.map(async (f) => {
-        const slug = f.replace('.json', '');
-        try {
-          const mData = await wczytajJson(join(KATALOG_MANIFESTACJI, f));
-          manifestacjePelne[slug] = mData;
-        } catch (err) {
-          // ignore
-        }
-      })
-    );
+    plikiManifestacji.sort();
+    for (const f of plikiManifestacji) {
+      const slug = f.replace('.json', '');
+      try {
+        const mData = await wczytajJson(join(KATALOG_MANIFESTACJI, f));
+        manifestacjePelne[slug] = mData;
+      } catch (err) {
+        // ignore
+      }
+    }
   } catch (err) {
     // ignore
   }
