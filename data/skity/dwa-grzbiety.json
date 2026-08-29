@@ -1,0 +1,30 @@
+{
+  "slug": "dwa-grzbiety",
+  "tytul": "DWA GRZBIETY",
+  "temat": "dwie natury i porządek",
+  "uczestnicy": [
+    {
+      "imie": "Nessos",
+      "slug": "nessos"
+    },
+    {
+      "imie": "Chejron",
+      "slug": "kentaur-pelion"
+    },
+    {
+      "imie": "Indra",
+      "slug": "indra"
+    }
+  ],
+  "tekst": "**Nessos:** [broda w wodzie] Mówisz, że nie mogłem mieć dwóch grzbietów? A ty, Chejronie, widziałeś mnie na rzece — człowiek patrzy w jedną stronę, koń mknie w drugą. Herakles myślał, że uciekam tyłem. Tymczasem to koń niósł mnie dalej.\n\n**Chejron:** [spokojnie] Niósł cię tam, gdzie miałeś zginąć. Dwa grzbiety to nie przewaga, Nessosie — to dwie odpowiedzialności. Ty wykorzystałeś końską połowę, żeby porwać kobietę; ja nauczyłem się, kiedy człowiek musi zatrzymać konia.\n\n**Indra:** [grzmot w tle] Pięknie mówisz o dwóch połowach. A ja mam tysiąc oczu i jedno pytanie: który z twoich grzbietów pamięta, kiedy się zatrzymać? Bo mój tron nie zapomina. Somę piję, apsary wysyłam, a jednak to ja rozcinałem chmury, żeby wróciła woda.\n\n**Nessos:** [parska] Więc po co ci niebo, skoro nie umiesz się nim upić?\n\n**Indra:** Niebo nie jest do upicia. Jest do tego, żeby przywrócić rzeki, kiedy ktoś zatrzyma je dla siebie.\n\n**Chejron:** Słyszysz? Twoja krew zabiła Heraklesa, Nessosie. Ty, Indrze, wróciłeś wody — ale grzech po Vritrze wciąż nie puszcza twojego tronu. Może dlatego siedzę między wami: nauczyć się, gdzie kończy się dzikość, a zaczyna rozum.\n\n**Nessos:** [ciszej] A ja chciałem tylko, żeby rzeka mnie poniosła.\n\n**Indra:** I poniosła. Na brzeg, z którego nie wraca się z koroną.",
+  "meta": {
+    "utworzono": "2026-08-28 21:45",
+    "autor": "sesja arena 2026-08-28",
+    "modyfikacje": [
+      {
+        "data": "2026-08-28 22:05",
+        "opis": "Zmiana uczestnika trzeciego z Wadżry na żywego boga Indrę po korekcie materializacji — głos przedmiotu zastąpiony głosem władcy gromu, pozostaje temat dwóch natur."
+      }
+    ]
+  }
+}

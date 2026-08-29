@@ -19,10 +19,11 @@
 - Decyzja:
   1. **Widok liczony z kontenera.** viewBox = rozmiar kontenera w pikselach CSS;
      grupa świata skalowana o `skalaBazowa · k`, gdzie
-     `skalaBazowa = min(szer/3600, wys/1800)` (contain, nie slice). Funkcja
-     `dopasujWidok` w `app/geo.js` jest czysta i testowana: utrzymuje proporcje
-     1° długości = 1° szerokości, docina przesunięcia do brzegów świata, a gdy
-     świat jest mniejszy od okna — wyśrodkowuje go.
+     `skalaBazowa = min(szer/3600, wys/3600)` (contain, nie slice; świat
+     Merkatora jest kwadratowy). Funkcja `dopasujWidok` w `app/geo.js` jest
+     czysta i testowana: utrzymuje jednostajną skalę w obu osiach (bez
+     rozciągu), docina przesunięcia do brzegów świata, a gdy świat jest
+     mniejszy od okna — wyśrodkowuje go.
   2. **Reagowanie na rozmiar.** `ResizeObserver` na kontenerze + `window.resize`;
      przy zmianie rozmiaru zachowywany jest punkt świata pod środkiem okna, więc
      kartoteka otwierana jako warstwa (ADR 0010) nie „porusza” mapą.
@@ -44,9 +45,9 @@
   - Przy bardzo szerokich oknach po bokach widać tło (marginesy) zamiast
     rozciągniętego lądu — świadoma cena uczciwej projekcji; wypełnia je ocean.
   - Antarktyda i Rosja po cięciu mają „obcięte” brzegi przy ±180° — tak samo
-    rysuje je każda płaska mapa świata; ADR 0003 pozostaje aktualne co do
-    projekcji i samowystarczalności, zmienia się tylko model widoku i obróbka
-    geometrii na szwie.
+    rysuje je każda płaska mapa świata; ADR 0003 określa projekcję
+    (Mercator) i samowystarczalność, ten ADR dotyczy widoku i obróbki
+    geometrii na szwie. Szerokości >85,051° są przycięte do krawędzi świata.
   - Render jest deterministyczny i nadal bez zależności (ADR 0001); koszt —
     dodatkowy przebieg po pierścieniach przy starcie (0 ms na 241 krajach).
 - Powiązania: 0001, 0003, 0010

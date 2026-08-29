@@ -107,6 +107,18 @@
     {
       "slug": "empusa-korynt",
       "opis": "Dwa greckie wesela, które kończą się źle, ale z odwrotnej strony stołu. Ja jestem gościem, który wchodzi po ludzku i psuje ucztę od środka, gdy wino zdejmie mi roztropność; empusa sama jest weselem — stawia pozór oblubienicy, złota i domu, żeby zwabić pana młodego. Mnie gubi brak miary, ją jedno trzeźwe słowo; obie historie ostrzegają, kogo wolno posadzić przy weselnym stole."
+    },
+    {
+      "slug": "nessos",
+      "opis": "Lustrzane kentaury z jednego plemienia: Chejron oddaje nieśmiertelność i uczy herosów panować nad mocą, a Nessos używa jej do porwania i ginie od własnej strzały. Obaj pokazują, że ta sama natura może być mędrcem albo zdrajcą — różnica leży w tym, kto panuje nad żądzą."
+    },
+    {
+      "slug": "talos-kreta",
+      "opis": "Chejron i Talos to dwa greckie byty złożone z dwóch natur — kentaur z człowieka i konia, automat z brązu i ichoru. Chejron uczy herosów rozumieć własną moc, a Talos jest czystym mechanizmem, który mocy nie rozumie, tylko ją wykonuje; obaj zostają pokonani, gdy ktoś odkryje ich pojedynczą słabość."
+    },
+    {
+      "slug": "sfinks-teby",
+      "opis": "Chejron i Sfinks to strażnicy przejścia, których trzeba zrozumieć — jeden wychowuje herosów, druga zadaje pytanie, na które trzeba odpowiedzieć. Obie połowy ich ciał są hybrydowe (koń i człowiek, lwica i kobieta), więc z oboma rozmawia się inaczej niż mieczem."
     }
   ],
   "meta": {

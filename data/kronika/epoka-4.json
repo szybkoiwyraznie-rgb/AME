@@ -1,0 +1,162 @@
+{
+  "slug": "epoka-4",
+  "tom": "tom-1",
+  "skit": "imie-na-progu",
+  "tytul": "Imię na progu: skóra, kres i pieśń",
+  "iskra": "Przetestowano jedno słowo, które miało otwierać wszystkie drzwi. Okazało się, że skóra otwiera morze, kres otwiera warunek, a pieśń — tylko serce. Trzy progi, jedno pytanie.",
+  "pytanie": "Czy istnieje jedno słowo otwierające każdy próg — czy każde drzwi mają własne imię?",
+  "uczestnicy": [
+    {
+      "slug": "egungun",
+      "rola": "Przodek odpowiadający na pieśń",
+      "kosztUdzialu": 2,
+      "kosztKlucza": 0,
+      "boost": 0,
+      "zwrot": 5,
+      "watkiNaruszone": 2
+    },
+    {
+      "slug": "selkie-sule-skerry",
+      "rola": "Ta, którą nazywa skóra",
+      "kosztUdzialu": 2,
+      "kosztKlucza": 0,
+      "boost": 0,
+      "zwrot": 0,
+      "watkiNaruszone": 2
+    },
+    {
+      "slug": "indra",
+      "rola": "Pan kresu i warunku",
+      "kosztUdzialu": 2,
+      "kosztKlucza": 0,
+      "boost": 0,
+      "zwrot": 0,
+      "watkiNaruszone": 2
+    }
+  ],
+  "przebieg": "Pełny tekst rozmowy: data/skity/imie-na-progu.json (uczestnicy zgodni z epoką).",
+  "narrator": {
+    "ocena": [
+      {
+        "kto": "selkie-sule-skerry",
+        "kogo": "indra",
+        "stopien": 2,
+        "kontekst": "retoryka rozkazu",
+        "komentarz": "Selkie nazywa wybór Indry rozkazem, który sam na siebie nałożył — i w ten sposób odbiera mu część godności. To ocena narratora, nie mechaniczne użycie słabości."
+      },
+      {
+        "kto": "egungun",
+        "kogo": "selkie-sule-skerry",
+        "stopien": 1,
+        "kontekst": "łagodne rozpoznanie",
+        "komentarz": "Egungun nie obnaża Selkie — wskazuje, że jej próg jest najprostszy: wystarczy nazwać rzecz. To raczej rozpoznanie niż cios."
+      },
+      {
+        "kto": "indra",
+        "kogo": "egungun",
+        "stopien": 1,
+        "kontekst": "retoryka kresu",
+        "komentarz": "Indra odpowiada Egungunowi spokojnie: nie każde drzwi słuchają imienia. Nie atakuje pieśni, tylko wyznacza jej granicę."
+      }
+    ],
+    "podsumowanie": "Rozmowa nie znajduje jednego słowa — i właśnie to odkrywa: próg bytu nie jest jeden, a każde z nich wymaga innego klucza. Świat przestaje szukać imienia uniwersalnego i zaczyna rozumieć, że tożsamość bytu jest granicą, nie kodem."
+  },
+  "konsekwencje": {
+    "os": {
+      "mit": -1,
+      "racjonalizacja": 1,
+      "opis": "Odkrycie, że nie ma jednego imienia na wszystkie drzwi, minimalnie zwiększa rozumienie świata (o 1 pp), ale przez ostrożność wobec mitu nie przesuwa osi mocniej."
+    },
+    "relacje": [
+      {
+        "od": "selkie-sule-skerry",
+        "do": "indra",
+        "kierunek": "schłodzenie",
+        "opis": "Selkie widzi w Indrze kogoś, kto sam uwięził się w rozkazie; między nimi nie ma wspólnego morza."
+      },
+      {
+        "od": "egungun",
+        "do": "selkie-sule-skerry",
+        "kierunek": "wzmocnienie",
+        "opis": "Przodek rozpoznaje w Selkie najprostszy z progów — przez co oboje mówią o granicy na swój sposób, ale nie o tej samej."
+      },
+      {
+        "od": "indra",
+        "do": "egungun",
+        "kierunek": "wzmocnienie",
+        "opis": "Indra i Egungun zostają w tym samym obrazie: jedno ma kres, drugie pieśń, oboje wiedzą, że nie każde imię otwiera."
+      }
+    ],
+    "zasieg": [
+      {
+        "slug": "egungun",
+        "delta": 0.010,
+        "opis": "Pieśń zostaje uznana za jeden z trzech równoważnych progów — kult przodków rośnie delikatnie, ale nie dominuje."
+      },
+      {
+        "slug": "selkie-sule-skerry",
+        "delta": -0.010,
+        "opis": "Świat uczy się nazywać skórę i w ten sposób lekko traci strach przed Selkie; jej legenda kurczy się o 1 pp."
+      },
+      {
+        "slug": "indra",
+        "delta": -0.010,
+        "opis": "Kres Indry przestaje być świętym rozkazem — świat częściej pyta, czy nie da się go ominąć; zasięg spada o 1 pp."
+      }
+    ],
+    "dominacje": [
+      { "kultura": "joruba", "kult": "egungun", "delta": 0.010 },
+      { "kultura": "szkocja-polnocna", "kult": "selkie-sule-skerry", "delta": -0.010 },
+      { "kultura": "indie", "kult": "indra", "delta": -0.010 }
+    ],
+    "pozycje": [
+      {
+        "slug": "egungun",
+        "status": "wzmocniony",
+        "opis": "Pieśń zostaje uznana za jeden z trzech równoważnych kluczy; przodek pozostaje obecny."
+      },
+      {
+        "slug": "selkie-sule-skerry",
+        "status": "odporny",
+        "opis": "Selkie zostaje nienazwana wprost; świat tylko przestaje się jej bać, nie pokonuje jej."
+      },
+      {
+        "slug": "indra",
+        "status": "zraniony",
+        "opis": "Kres Indry zostaje zrozumiany jako granica wyboru, nie świętość; jego rozkaz traci część mocy."
+      }
+    ],
+    "watki": [
+      {
+        "id": "imie-na-progu",
+        "stan": "zamkniety",
+        "opis": "Wątek domknięty: nie ma jednego słowa na wszystkie drzwi — skóra, kres i pieśń to trzy różne progi."
+      },
+      {
+        "id": "czwarty-stol",
+        "stan": "otwarty",
+        "opis": "Czwarty stół z Epoki I wciąż czeka: gość, który wziął sam, czy przodek, który umie wybaczyć."
+      },
+      {
+        "id": "warunek-barbarossy",
+        "stan": "otwarty",
+        "opis": "Dlaczego cesarz woli płacić, żeby gość wyszedł, zamiast przyjąć go przy stole?"
+      },
+      {
+        "id": "wedrowny-dom-empusy",
+        "stan": "otwarty",
+        "opis": "Czy ludzie nauczą się wypowiadać słowo-poznanie w porę, czy samo słowo stanie się rytuałem, który chybia?"
+      },
+      {
+        "id": "kres-indry",
+        "stan": "otwarty",
+        "opis": "Czy kres można oddać, czy tylko przekroczyć? Co znaczy wybrać własną granicę, gdy świat przestaje ją respektować?"
+      }
+    ]
+  },
+  "meta": {
+    "utworzono": "2026-08-29 11:10",
+    "autor": "agent Areny — czwarta epoka Tomu I (wątek imię na progu)",
+    "wersja": 1
+  }
+}

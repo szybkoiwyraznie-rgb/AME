@@ -1,0 +1,121 @@
+{
+  "slug": "nessos",
+  "nazwa": "Nessos",
+  "nazwy_alternatywne": [
+    "Nessus",
+    "Nessos z Evenosu",
+    "kentaur-przewoźnik z rzeki Euenos"
+  ],
+  "karta": {
+    "nazwa": "Savage Surge",
+    "wydanie": "Theros (THS) #176",
+    "rok": 2013
+  },
+  "lokalizacja": {
+    "miejscowosc": "rzeka Evenos (starożytnie Euenos, Lykormas; dziś Évinos) — okolice brodu i ujścia do Zatoki Patraskiej",
+    "kraj": "Grecja (Etolia-Akarnania, Grecja Zachodnia)",
+    "lat": 38.38,
+    "lon": 21.55
+  },
+  "pochodzenie_i_kultura": "Grecka mitologia heroiczna, krąg heraklesowy: Nessos to jeden z tesalskich kentaurów, który po wojnie z Lapitami uciekł do rzeki Euenos w Etolii i został przewoźnikiem. Zginął z ręki Heraklesa, gdy próbował porwać i zgwałcić Deianirę podczas przeprawy, a ostatnim podstępem — krwią zatrutą jadem hydry — doprowadził do śmierci samego herosa. To jedna tradycja, jedno miejsce i jedna istota, choć dwie natury: człowiek i koń.",
+  "wizualizacja": {
+    "prompt": "Style: A wide-angle full-body cinematic photograph. The central objects/persons of the photo are visible from head to toe, standing centrally in the frame. No parts of the body are cropped.\n\nA broad-shouldered centaur with a weathered human torso, thick dark beard and wild mane, and the lower body of a powerful bay horse with glossy black hooves, standing waist-deep in the olive-green Evenus river at golden dusk, two backs visible in one frame — his human back and his equine back — as he turns sharply to face a lone archer standing on the far bank with a raised bow; the water churns around his legs, tall reeds and a wooden ferry pole drift nearby, low warm light raking across the wet skin and leather bridle.\n\nCaptured with a 35mm anamorphic lens at f/1.8. Shallow depth of field with a heavy, creamy bokeh background. Environmental portraiture. Dramatic cinematic lighting, sharp focus on the character, hyper-realistic textures of clothing and skin. Shot on 70mm film stock, ultra-wide 21:9 aspect ratio. --ar 21:9",
+    "obraz": "assets/wizualizacje/nessos.jpg"
+  },
+  "natura": {
+    "wyglad_i_aura": "Pół człowiek, pół koń: od pasa w górę męski tors, broda, zmierzwione włosy, czasem wieniec lub nagie plecy, a od pasa w dół potężne, muskularne ciało rumaka z kopytami i ogonem. W sztuce starożytnej kentaurowie mają płaskie rysy, nastroszone brody i coś bestialskiego w twarzy. Nessos dodatkowo unosi zapach rzeki, potu i błota; w chwili namiętności jego aura robi się ciężka i gorąca, jak przed burzą w dolinie.",
+    "charakter_i_motywacje": "Cwany i pożądliwy przewoźnik. Zna wartość wygody i ufności — oferuje pomoc, żeby mieć ofiarę pod ręką. Nie jest głupi: wie, że Herakles może go zabić łukiem, ale mimo to podejmuje ryzyko, bo żądza i duma zasłaniają mu rachunek. Po śmierci zamienia się w mściwego ducha: ostatnią rzeczą, jaką robi, jest kłamstwo, które odbiera życie temu, kto go pokonał.",
+    "zdolnosci": "Siła centaura i szybkość konia; umie przenosić na grzbiecie ludzi przez rzekę, chodzić po dnie i przebijać się przez nurty, które dla człowieka są nie do przejścia. Jego krew po zmieszaniu z jadem hydry staje się trucizną, która nie zabija od razu, lecz dopieka, aż ofiara woła o śmierć. Ma też podwójny grzbiet — człowieczy i koński — więc może zaatakować jedną połową ciała, podczas gdy druga odwróci się od napastnika.",
+    "slabosci_i_metody_pokonania": "Nie jest nieśmiertelny ani niezawodny. Herakles zabił go strzałą zatrutą krwią hydry, wystrzeloną z przeciwległego brzegu w chwili, gdy Nessos odpływał z Deianirą. Najskuteczniejsza metoda to nie dać się zaskoczyć i uderzyć z dystansu: łuk, włócznia albo oszczep, zanim centaur znajdzie się blisko. Można też wykorzystać jego chciwość — zapłacić za przewóz i pozwolić, by sam wszedł w pułapkę brodu.",
+    "preferencje": "Lubi: młode kobiety na grzbiecie, wysoką zapłatę, rzekę i okazję do nadużycia zaufania; nie lubi: Heraklesa, krótkiego łuku z zatrutą strzałą i sytuacji, w której ktoś z przeciwległego brzegu ma go w celowniku — wtedy jego pewność siebie zamienia się w panikę."
+  },
+  "dokumentacja": [
+    {
+      "typ": "leksykon mitologiczny",
+      "pozycja": "Theoi, „Nessus (Nessos)” — centaur tesalski, po wojnie z Lapitami uciekł do rzeki Euenos w Etolii, został przewoźnikiem; gdy niósł Deianirę na grzbiecie, próbował ją porwać i zgwałcić, a Herakles zabił go zatrutą strzałą; umierający kentaur kazał Deianirze zachować jego krew jako „napój miłości”",
+      "url": "https://www.theoi.com/Georgikos/KentaurosNessos.html"
+    },
+    {
+      "typ": "opracowanie mitologiczne",
+      "pozycja": "Mythopedia, „Nessus” — kentaur znany z dzikiej, pożądliwej natury; po Centauromachii pracował jako przewoźnik na rzece Evenos; jego atak na Deianirę zakończył się strzałą Heraklesa z jadem hydry, a przed śmiercią podstępnie przekazał Deianirze trującą krew",
+      "url": "https://mythopedia.com/topics/nessus/"
+    },
+    {
+      "typ": "przekład klasyczny online",
+      "pozycja": "Sofokles, „Trachiniae” w serwisie Perseus Digital Library (Tufts University) — tekst grecki i przekład (red. R. Jebb); dramat o Deianirze, która po śmierci Nessosa wykorzystuje jego krew jak rzekomy „napój miłości” i niechcący zabija Heraklesa",
+      "url": "https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0196"
+    },
+    {
+      "typ": "przekład klasyczny online",
+      "pozycja": "Sofokles, „Trachiniae” — przekład Roberta Torrance'a w serwisie Perseus Digital Library (Tufts University); scena z Acheloosem, Deianirą, Heraklesem i Nessosem",
+      "url": "https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0222:card%3D1"
+    },
+    {
+      "typ": "opracowanie historyczne rzeki",
+      "pozycja": "ToposText, „Euenos R. (Aitolia)” — identyfikacja starożytnej rzeki Euenos z dzisiejszym Évinos/Fidaris w Aitoloakarnanii, współrzędne 38.376, 21.552; źródło topograficzne dla lokalizacji przewozu Nessosa",
+      "url": "https://topostext.org/place/384216WEve"
+    }
+  ],
+  "trofea": {
+    "pierwotne": "Kość z kopytowego stawu Nessosa z nacięciem od zatrutej strzały — dowód, że kentaur został pokonany z dystansu, zanim zdążył dobiec",
+    "wtorne": "Współczesna fotografia brodu na Évinos, w miejscu, gdzie według tradycji Nessos przewoził podróżnych"
+  },
+  "rezonans": {
+    "klucz_przywolania": "Savage Surge to natychmiastowy przypływ dzikiej siły: cel dostaje +2/+2 i zostaje odblokowany — może uderzyć raz jeszcze, a nawet wtedy, gdy wydawało się, że jest obrócony plecami. Flavorowa wymiana — „I thought its back was turned! / A centaur has two backs!” — to niemal definicja Nessosa: kentaur o dwóch grzbietach, człowieczym i końskim, który atakuje z połowy ciała odwróconej od wroga. W micie dokładnie tak dzieje się na rzece: Herakles widzi Deianirę na grzbiecie Nessosa, ten oddala się z nią, a jego człowiecza połowa jest zwrócona w inną stronę — Herakles strzela w plecy, a kentaur pada z zatrutą strzałą w piersi.",
+    "tabela": [
+      {
+        "element": "Nazwa",
+        "translacja": "„Savage Surge” to „dziki przypływ” — dokładnie to, czym jest Nessos: nagły, gwałtowny, niczym nieusprawiedliwiony wybuch kentaurejskiej żądzy i siły, który wymyka się spod kontroli i kończy katastrofą."
+      },
+      {
+        "element": "Mechanika",
+        "translacja": "„Target creature gets +2/+2 until end of turn. Untap that creature.” — wzmocnienie i odblokowanie to dwie cechy Nessosa: potworna siła końska + kentaurejska zdolność do ruchu, nawet gdy wydaje się zajęty czymś innym. „Untap” znaczy: ta istota może zrobić coś, czego nie powinna, mimo że była już zużyta."
+      },
+      {
+        "element": "Ilustracja",
+        "translacja": "Artysta: Jasper Sandner. Klimat karty jest grecki, z centaurem i zieloną naturą — bezpośrednie nawiązanie do Therosu i do kentaurów, których najbardziej znanym w mitologii jest Nessos: pół człowiek, pół koń, na rzece."
+      },
+      {
+        "element": "Flavor text",
+        "translacja": "„I thought its back was turned! / A centaur has two backs!” — to w istocie komentarz do anatomii kentaurejskiej i do zdrady z zaskoczenia. Nessos ma dwa grzbiety: człowieczy zwrócony w jedną stronę i koński w drugą; gdy jego ludzkie plecy są odwrócone od Heraklesa, końska połowa nadal niesie Deianirę w stronę ucieczki — i to właśnie wtedy pada strzała."
+      },
+      {
+        "element": "Lore/Tło",
+        "translacja": "Theros to świat wzorowany na mitologii greckiej, a Savage Surge wpisuje się w ten sam krąg co historia heraklesowa: kentaur, który bierze na grzbiet kobietę i próbuje ją uwieźć, zostaje zabity strzałą z przeciwległego brzegu — a jego trująca krew, jako „napój miłości”, ostatecznie zabija herosa. To dokładna oś fabularna Nessosa."
+      }
+    ]
+  },
+  "tagi": [
+    "grecja",
+    "kentaur",
+    "furia",
+    "postac-zwierzeca"
+  ],
+  "powiazania": [
+    {
+      "slug": "kentaur-pelion",
+      "opis": "Lustrzane kentaury: Chejron z Pelionu to nauczyciel i uzdrowiciel, który oddaje nieśmiertelność za Prometeusza i uczy herosów mądrego używania siły; Nessos z Evenosu to przewoźnik, który tę samą siłę wykorzystuje do zdrady i gwałtu. Obaj mają ciało z dwóch połówek, ale tylko jeden z nich rozumie, że człowiek musi panować nad końską połową."
+    },
+    {
+      "slug": "empusa-korynt",
+      "opis": "Nessos i Empusa z Koryntu to dwie manifestacje przewrotnej natury kuszenia: on zwabia ofiarę pomocą przewoźnika, ona pojawia się w nocy jako piękna kobieta i zjada tych, którzy jej ulegną. Obie zdrady kończą się śmiercią ofiary, ale Nessos ginie od strzały Heraklesa, a Empusa — jak podaje tradycja — od bycia zdemaskowaną i przepędzoną."
+    },
+    {
+      "slug": "selkie-sule-skerry",
+      "opis": "Nessos i selkie z Sule Skerry to istoty granicy wodnej, które zawodzą człowieka przez zaufanie: kentaur-przewoźnik podstępnie zabiera Deianirę z brzegu rzeki, a selkie wyciąga człowieka ku morzu, gdy tylko odda skórę. Obie zdrady są ceną przekroczenia wody, której nie da się cofnąć."
+    },
+    {
+      "slug": "talos-kreta",
+      "opis": "Talos i Nessos to dwaj strażnicy terytorium, których pokonuje się otwarciem jednego punktu: Nessos pilnuje przeprawy przez Euenos i ginie od strzały Heraklesa, a spiżowy Talos obchodzi brzegi Krety i upada, gdy z kostki wypada gwóźdź zamykający żyłę."
+    },
+    {
+      "slug": "ben-varrey",
+      "opis": "Obaj są przewodnikami wodnymi, którzy znają żywioł lepiej niż ludzie: Nessos jako przewoźnik przez rzekę zna prądy i brody, a Ben-Varrey zna każdy kanał i kryjówkę wzdłuż manxkiego wybrzeża. Różni ich cena — kentaur żąda opłaty, syrena przyjmuje dar i częściej ochrania."
+    }
+  ],
+  "meta": {
+    "utworzono": "2026-08-28 21:40",
+    "autor": "sesja arena 2026-08-28",
+    "modyfikacje": []
+  }
+}

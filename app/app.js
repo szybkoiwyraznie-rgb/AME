@@ -1,8 +1,8 @@
 /**
  * app/app.js — bootstrap AME: ładuje indeks, mapę świata, spina UI.
  */
-import { stworzMape } from './map.js';
-import { zaladujIndeks, zaladujWpis, zaladujSkit, dopasowania, wylosujSlug } from './data.js';
+import { stworzMape, PROGI_WARSTW } from './map.js?v=c4-1';
+import { zaladujIndeks, zaladujWpis, zaladujSkit, dopasowania, wylosujSlug } from './data.js?v=c4-1';
 import {
   htmlWpisu,
   htmlWarstwyWpisu,
@@ -15,12 +15,13 @@ import {
   przyciskKopiowania,
   linkWidoku,
   esc,
+  tagZFragmantu,
   nastepnyMotyw,
   motywPoczatkowy,
   etykietaMotywu,
   KLUCZ_MOTYWU,
-} from './ui.js';
-import { SZEROKOSC, WYSOKOSC } from './geo.js';
+} from './ui.js?v=c4-1';
+import { SZEROKOSC, WYSOKOSC } from './geo.js?v=c4-1';
 
 const $ = (sel) => document.querySelector(sel);
 
@@ -33,6 +34,9 @@ const stan = {
   motyw: 'ciemny',
   warstwa: null, // { tryb: 'skity' | 'skit' | 'nowosci', slug? }
   ostatniLos: null, // ostatnio wylosowany slug — reroll go pomija (nawet po zamknięciu karty)
+  warstwy: { rzeki: true, jeziora: true, miasta: true, poi: false }, // włączone przełącznikami
+  zaladowane: { rzeki: false, jeziora: false, miasta: false, poi: false },
+  panelWarstw: false,
 };
 
 let mapa;
@@ -81,6 +85,14 @@ function odswiezFiltr() {
   mapa.podswietl(zbior);
   odswiezLicznik(zbior);
   if (stan.wpis && zbior && !zbior.has(stan.wpis.slug)) zamknijWpis(false);
+}
+
+/** Ustawia aktywny tag (C2, deep-link #tag:…) i odświeża pasek + filtr. */
+function zastosujTag(tag) {
+  const istniejacy = tag && stan.indeks.tagi[tag] ? tag : null;
+  stan.aktywnyTag = istniejacy;
+  $('#tagi').innerHTML = htmlTagow(stan.indeks, stan.aktywnyTag);
+  odswiezFiltr();
 }
 
 function odswiezLicznik(zbior = null) {
@@ -254,6 +266,58 @@ function losujManifestacje() {
   otworzWpis(slug, { przewin: true });
 }
 
+/** Ładuje i rysuje rzeki (kiedy użytkownik wejdzie w wymagany zoom). */
+async function zaladujRzeki() {
+  if (stan.zaladowane.rzeki) return;
+  stan.zaladowane.rzeki = true;
+  try {
+    const data = await fetch(new URL('assets/map/rivers-2km5.json', document.baseURI)).then((r) => (r.ok ? r.json() : Promise.reject(new Error(`HTTP ${r.status}`))));
+    mapa.ustawRzeki(data);
+  } catch {
+    /* warstwa opcjonalna — mapa zostaje na państwach i pinezkach */
+  }
+}
+
+/** Ładuje i rysuje jeziora (ten sam próg zoomu co rzeki). */
+async function zaladujJeziora() {
+  if (stan.zaladowane.jeziora) return;
+  stan.zaladowane.jeziora = true;
+  try {
+    const data = await fetch(new URL('assets/map/lakes-2km5.json', document.baseURI)).then((r) => (r.ok ? r.json() : Promise.reject(new Error(`HTTP ${r.status}`))));
+    mapa.ustawJeziora(data);
+  } catch {
+    /* opcjonalna */
+  }
+}
+
+/** Ładuje i rysuje miasta (punkty o populacji ≥100 tys. lub stolice). */
+async function zaladujMiasta() {
+  if (stan.zaladowane.miasta) return;
+  stan.zaladowane.miasta = true;
+  try {
+    const data = await fetch(new URL('assets/map/miasta.json', document.baseURI)).then((r) => (r.ok ? r.json() : Promise.reject(new Error(`HTTP ${r.status}`))));
+    mapa.ustawMiasta(data);
+  } catch {
+    /* opcjonalna */
+  }
+}
+
+/** LOD (ADR 0020): przy zoobie powyżej progu dojadą warstwy danych tematycznych. */
+function odswiezWarstwyDane(k) {
+  if (k < PROGI_WARSTW.woda || !mapa) return;
+  if (stan.warstwy.rzeki && !stan.zaladowane.rzeki) zaladujRzeki();
+  if (stan.warstwy.jeziora && !stan.zaladowane.jeziora) zaladujJeziora();
+  if (stan.warstwy.miasta && !stan.zaladowane.miasta) zaladujMiasta();
+}
+
+/** Przełącznik panelu „warstwy” na mapie. */
+function przelaczPanelWarstw() {
+  const panel = $('#warstwy-panel');
+  stan.panelWarstw = !stan.panelWarstw;
+  panel.hidden = !stan.panelWarstw;
+  $('#przycisk-warstwy').setAttribute('aria-pressed', String(stan.panelWarstw));
+}
+
 function przelaczListe() {
   const lista = $('#lista');
   const otwarta = lista.classList.toggle('otwarta');
@@ -275,9 +339,11 @@ function podepnijZdarzenia() {
     const btn = e.target.closest('[data-tag]');
     if (!btn) return;
     const tag = btn.dataset.tag;
-    stan.aktywnyTag = stan.aktywnyTag === tag ? null : tag;
-    $('#tagi').innerHTML = htmlTagow(stan.indeks, stan.aktywnyTag);
-    odswiezFiltr();
+    const nastepny = stan.aktywnyTag === tag ? null : tag;
+    zastosujTag(nastepny);
+    // C2: filtr tagu jest adresowalny — zapisz go w hashu.
+    if (nastepny) history.replaceState(null, '', `#tag:${nastepny}`);
+    else if (location.hash) history.replaceState(null, '', location.pathname + location.search);
   });
 
   $('#panel').addEventListener('click', (e) => {
@@ -292,9 +358,8 @@ function podepnijZdarzenia() {
     }
     const tag = e.target.closest('[data-tag]');
     if (tag) {
-      stan.aktywnyTag = tag.dataset.tag;
-      $('#tagi').innerHTML = htmlTagow(stan.indeks, stan.aktywnyTag);
-      odswiezFiltr();
+      zastosujTag(tag.dataset.tag);
+      history.replaceState(null, '', `#tag:${tag.dataset.tag}`);
       zamknijWpis(false);
       return;
     }
@@ -326,6 +391,16 @@ function podepnijZdarzenia() {
   $('#przycisk-lista').addEventListener('click', przelaczListe);
   $('#przycisk-skity').addEventListener('click', otworzBazeSkitow);
   $('#przycisk-nowosci').addEventListener('click', otworzNowosci);
+  $('#przycisk-warstwy').addEventListener('click', przelaczPanelWarstw);
+  for (const klucz of ['rzeki', 'jeziora', 'miasta', 'poi']) {
+    const el = document.querySelector(`#warstwa-${klucz}`);
+    if (!el) continue;
+    el.addEventListener('change', (e) => {
+      stan.warstwy[klucz] = e.target.checked;
+      mapa.przelaczWidocznoscWarstwy(klucz, e.target.checked);
+      if (e.target.checked) odswiezWarstwyDane(mapa.widok.k); // dojedź warstwę po włączeniu
+    });
+  }
 
   $('#warstwa').addEventListener('click', (e) => {
     if (e.target.closest('#zamknij-warstwe')) return zamknijWarstwe();
@@ -363,6 +438,12 @@ function podepnijZdarzenia() {
 
   window.addEventListener('hashchange', () => {
     const fragment = decodeURIComponent(location.hash.replace(/^#/, ''));
+    const tag = tagZFragmantu(fragment);
+    if (tag) {
+      // C2: deep-link do filtra tagów; nieznany tag tylko czyści filtr.
+      zastosujTag(stan.indeks.tagi[tag] ? tag : null);
+      return;
+    }
     if (fragment.startsWith('skit:')) {
       const slug = fragment.slice(5);
       if (stan.indeks.skity?.some((s) => s.slug === slug)) otworzSkit(slug, { zBazy: true });
@@ -405,7 +486,10 @@ async function start() {
     $('#blad-startowy').classList.add('widoczny');
     return;
   }
-  mapa = stworzMape($('#mapa'), { przyZmianieZaznaczenia: (slug) => otworzWpis(slug, { przewin: false }) });
+  mapa = stworzMape($('#mapa'), {
+    przyZmianieZaznaczenia: (slug) => otworzWpis(slug, { przewin: false }),
+    przyZmianieWidoku: (k) => odswiezWarstwyDane(k),
+  });
   try {
     const topo = await fetch(new URL('assets/map/countries-50m.json', document.baseURI)).then((r) => {
       if (!r.ok) throw new Error(`HTTP ${r.status}`);
@@ -418,11 +502,14 @@ async function start() {
   }
   mapa.ustawPinezki(stan.indeks.manifestacje);
   mapa.ustawPolaczenia(stan.indeks.manifestacje);
-  $('#tagi').innerHTML = htmlTagow(stan.indeks, null);
+  const fragment = decodeURIComponent(location.hash.replace(/^#/, ''));
+  const tagStartu = tagZFragmantu(fragment);
+  $('#tagi').innerHTML = htmlTagow(stan.indeks, tagStartu && stan.indeks.tagi[tagStartu] ? tagStartu : null);
+  stan.aktywnyTag = tagStartu && stan.indeks.tagi[tagStartu] ? tagStartu : null;
   odswiezLicznik();
   podepnijZdarzenia();
+  odswiezFiltr();
 
-  const fragment = decodeURIComponent(location.hash.replace(/^#/, ''));
   if (fragment.startsWith('skit:')) {
     const slug = fragment.slice(5);
     if (stan.indeks.skity?.some((s) => s.slug === slug)) otworzSkit(slug);

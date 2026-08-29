@@ -1,0 +1,163 @@
+{
+  "slug": "tom-1",
+  "tytul": "Kronika trzech stołów",
+  "temat": "gościnność i długi między żywymi, zmarłymi i dwiema naturami",
+  "cel": "kontrolny pierwszy tom: sprawdzić, czy epoka realnie zmienia osie świata",
+  "status": "otwarta",
+  "stanStart": {
+    "os": {
+      "mit": 36,
+      "racjonalizacja": 64
+    },
+    "zasieg": [
+      {
+        "slug": "agni",
+        "wielkosc": 0.238
+      },
+      {
+        "slug": "balor",
+        "wielkosc": 0.438
+      },
+      {
+        "slug": "barbarossa-kyffhaeuser",
+        "wielkosc": 0.438
+      },
+      {
+        "slug": "ben-varrey",
+        "wielkosc": 0.238
+      },
+      {
+        "slug": "drangue-shala",
+        "wielkosc": 0.425
+      },
+      {
+        "slug": "egungun",
+        "wielkosc": 0.475
+      },
+      {
+        "slug": "empusa-korynt",
+        "wielkosc": 0.438
+      },
+      {
+        "slug": "indra",
+        "wielkosc": 0.363
+      },
+      {
+        "slug": "kannon-hase",
+        "wielkosc": 0.238
+      },
+      {
+        "slug": "kentaur-pelion",
+        "wielkosc": 0.425
+      },
+      {
+        "slug": "lincoln-imp",
+        "wielkosc": 0.375
+      },
+      {
+        "slug": "nessos",
+        "wielkosc": 0.338
+      },
+      {
+        "slug": "selkie-sule-skerry",
+        "wielkosc": 0.5
+      },
+      {
+        "slug": "sfinks-teby",
+        "wielkosc": 0.238
+      },
+      {
+        "slug": "talos-kreta",
+        "wielkosc": 0.238
+      }
+    ],
+    "dominacje": [
+      {
+        "kultura": "indie",
+        "kult": "agni",
+        "wielkosc": 0.238
+      },
+      {
+        "kultura": "irlandia",
+        "kult": "balor",
+        "wielkosc": 0.438
+      },
+      {
+        "kultura": "niemcy",
+        "kult": "barbarossa-kyffhaeuser",
+        "wielkosc": 0.438
+      },
+      {
+        "kultura": "man",
+        "kult": "ben-varrey",
+        "wielkosc": 0.238
+      },
+      {
+        "kultura": "albania",
+        "kult": "drangue-shala",
+        "wielkosc": 0.425
+      },
+      {
+        "kultura": "joruba",
+        "kult": "egungun",
+        "wielkosc": 0.475
+      },
+      {
+        "kultura": "grecja",
+        "kult": "empusa-korynt",
+        "wielkosc": 0.438
+      },
+      {
+        "kultura": "indie",
+        "kult": "indra",
+        "wielkosc": 0.363
+      },
+      {
+        "kultura": "japonia",
+        "kult": "kannon-hase",
+        "wielkosc": 0.238
+      },
+      {
+        "kultura": "grecja",
+        "kult": "kentaur-pelion",
+        "wielkosc": 0.425
+      },
+      {
+        "kultura": "anglia",
+        "kult": "lincoln-imp",
+        "wielkosc": 0.375
+      },
+      {
+        "kultura": "grecja",
+        "kult": "nessos",
+        "wielkosc": 0.338
+      },
+      {
+        "kultura": "szkocja-polnocna",
+        "kult": "selkie-sule-skerry",
+        "wielkosc": 0.5
+      },
+      {
+        "kultura": "grecja",
+        "kult": "sfinks-teby",
+        "wielkosc": 0.238
+      },
+      {
+        "kultura": "grecja",
+        "kult": "talos-kreta",
+        "wielkosc": 0.238
+      }
+    ]
+  },
+  "metryka": {
+    "wersja": 1,
+    "paliwo_start": "wszyscy uczestnicy zaczynają z paliwem pasywnym z indeksu (backlinki + tagi kanonu + sieć powiązań)",
+    "sposob": "run-time: tools/kronika.mjs",
+    "uwagi": [
+      "wartości początkowe osi i zasięgu są seedem do kalibracji przy pełniejszej kartotece",
+      "Rozstaje celowo poza tym tomem (pozostają pomysłem)"
+    ],
+    "seedKalibracja": "tools/kronika.mjs --seed",
+    "seedWzor": "obecnosc = 2*backlinki + tagi_kanonu + 2*skity + min(3,powiazania); zasieg = 0.10 + 0.40*(obecnosc/max); os = srednia(zasiegow) → mit%"
+  }
+}

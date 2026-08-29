@@ -10,7 +10,7 @@
  * pinch (2 wskaźniki), dwuklik, przyciski. Pinezki i ich etykiety kompensują
  * skalę widoku, więc mają stały rozmiar w pikselach CSS (ADR 0009).
  */
-import { projektuj, dekodujKraje, siatka, dopasujWidok, ogranicz, K_MIN, K_MAX, SZEROKOSC as SZER, WYSOKOSC as WYS } from './geo.js';
+import { projektuj, dekodujKraje, siatka, dopasujWidok, ogranicz, K_MIN, K_MAX, SZEROKOSC as SZER, WYSOKOSC as WYS, sciezkaGeoMultiPoligon } from './geo.js?v=c4-1';
 
 const NS = 'http://www.w3.org/2000/svg';
 
@@ -25,6 +25,21 @@ const ETYKIETA = {
 
 /** Odległość dolnej krawędzi badge’a od środka pinezki (px CSS). */
 const ODSTEP_BADGE = 30;
+/** Odległość dolnej krawędzi etykiety miasta od środka kropki (px CSS). */
+const ODSTEP_MIASTA = 22;
+/** Maksymalna odległość kliknięcia od kropki miasta, która pokazuje etykietę (px CSS). */
+const PROMIEN_KLIK_MIASTA = 16;
+
+/** Warstwy szczegółowości (ADR 0020): progi zoomu dla danych tematycznych. */
+export const PROGI_WARSTW = {
+  woda: 4,
+  miastaWielkie: 4,
+  miastaSrednie: 7,
+  miastaDrobne: 10,
+  poi: 8,
+};
+/** Czy warstwa jest włączona użytkownikowi (domyślnie wszystkie dostępne). */
+const WIDOCZNE_WARSTWY = { rzeki: true, jeziora: true, miasta: true, poi: false };
 
 function el(nazwa, atrybuty = {}, rodzic = null) {
   const e = document.createElementNS(NS, nazwa);
@@ -53,7 +68,7 @@ export function wymiaryEtykiety(nazwa, tekst = null) {
   };
 }
 
-export function stworzMape(kontener, { przyZmianieZaznaczenia } = {}) {
+export function stworzMape(kontener, { przyZmianieZaznaczenia, przyZmianieWidoku } = {}) {
   const svg = el('svg', { viewBox: `0 0 ${SZER} ${WYS}`, preserveAspectRatio: 'xMidYMid meet', class: 'mapa-svg' });
   svg.setAttribute('role', 'application');
   svg.setAttribute('aria-label', 'Mapa świata z manifestacjami eterycznymi');
@@ -69,6 +84,20 @@ export function stworzMape(kontener, { przyZmianieZaznaczenia } = {}) {
   const grupaSwiata = el('g', { class: 'swiat' }, svg);
   el('path', { d: siatka(30), class: 'siatka' }, grupaSwiata);
   const grupaKrajow = el('g', { class: 'kraje' }, grupaSwiata);
+  // Warstwy szczegółowości (ADR 0020): woda rysowana nad lądem, miasta i POI
+  // w osobnych grupach punktowych — wszystkie w układzie świata.
+  const grupaWarstw = el('g', { class: 'warstwy-szczegolow' }, grupaSwiata);
+  const grupaRzek = el('g', { class: 'rzeki', display: 'none' }, grupaWarstw);
+  const grupaJezior = el('g', { class: 'jeziora', display: 'none' }, grupaWarstw);
+  const grupaMiast = el('g', { class: 'miasta', display: 'none' }, grupaWarstw);
+  const grupaPOI = el('g', { class: 'poi', display: 'none' }, grupaWarstw);
+  // Miasta dzielimy na rangi, żeby przy zmianie zoomu sterować liczbą punktów
+  // bez przebudowywania drzewa (ADR 0020 — LOD treści, nie tylko geometrii).
+  const grupyMiast = {
+    wielkie: el('g', { class: 'miasta-wielkie' }, grupaMiast),
+    srednie: el('g', { class: 'miasta-srednie' }, grupaMiast),
+    drobne: el('g', { class: 'miasta-drobne' }, grupaMiast),
+  };
   const warstwaLukow = el('g', { class: 'luki', display: 'none' }, grupaSwiata);
   const grupaPinezek = el('g', { class: 'pinezki' }, grupaSwiata);
   // A3 (M6): badge'y w osobnej grupie PO grupie pinezek — SVG maluje elementy
@@ -76,6 +105,9 @@ export function stworzMape(kontener, { przyZmianieZaznaczenia } = {}) {
   // Widzialność (A1) sterują klasy na samej etykiecie (widoczna/wybrana),
   // sprzęgane ze stanem pinezki zdarzeniami pointer/focus — nie zagnieżdżaniem.
   const grupaEtykiet = el('g', { class: 'etykiety' }, grupaSwiata);
+  // C2: pływająca etykieta miasta (klik) — poza grupaPinezek, w stałym
+  // rozmiarze ekranowym dzięki odwrotnej skali (jak badge pinezki).
+  const etykietaMiasta = el('g', { class: 'etykieta-miasta' }, grupaSwiata);
 
   const rozmiar = { szerokosc: 0, wysokosc: 0 };
   const widok = { x: 0, y: 0, k: 1 };
@@ -85,6 +117,10 @@ export function stworzMape(kontener, { przyZmianieZaznaczenia } = {}) {
   let paryPolaczen = []; // [{a, b}]
   let lukiStale = false; // warstwa ∞ włączona przyciskiem (przelaczLuki)
   let podgladSlug = null; // C2: pinezka pod wskaźnikiem/fokusem — podgląd jej powiązań
+  let miastaDane = []; // [{g, wx, wy, nazwa, populacja, tier}]
+  let ostatnieSkala = null; // do pomijania przebudowy transformów punktów przy samym panu
+  let aktywneMiasto = null; // miasto pokazane po kliknięciu
+  let czyPrzesunieto = false; // pan/pinch nie może być mylony z kliknięciem w miasto
 
   /** Punkt zdarzenia klienta → współrzędne viewBoxu (= piksele kontenera). */
   function naSvg(zdarzenie) {
@@ -141,6 +177,9 @@ export function stworzMape(kontener, { przyZmianieZaznaczenia } = {}) {
     }
     // A1 (M6): bez stałego pokazywania etykiet od progu zoomu — dawny toggle
     // klasy `przyblizona` usunięty; etykieta żyje na najechanie/fokus/wybranie.
+    odswiezWidocznoscWarstw();
+    przelozEtykieteMiasta();
+    przyZmianieWidoku?.(widok.k, { skala: skala });
   }
 
   /** Zoom w punkt p (współrzędne viewBoxu) o czynnik f. */
@@ -179,6 +218,9 @@ export function stworzMape(kontener, { przyZmianieZaznaczenia } = {}) {
 
   svg.addEventListener('pointerdown', (e) => {
     if (e.target.closest('.pinezka')) return; // kliknięcia pinezki nie przesuwają mapy
+    czyPrzesunieto = false;
+    const miasto = miastoPodKlikiem(naSvg(e));
+    if (miasto) pokazEtykieteMiasta(miasto); // C4: nazwa tylko podczas przytrzymania
     svg.setPointerCapture(e.pointerId);
     wskazniki.set(e.pointerId, { x: e.clientX, y: e.clientY });
     if (wskazniki.size === 2) {
@@ -192,6 +234,10 @@ export function stworzMape(kontener, { przyZmianieZaznaczenia } = {}) {
     if (!wskazniki.has(e.pointerId)) return;
     const poprzedni = wskazniki.get(e.pointerId);
     wskazniki.set(e.pointerId, { x: e.clientX, y: e.clientY });
+    if (Math.hypot(e.clientX - poprzedni.x, e.clientY - poprzedni.y) > 4) {
+      czyPrzesunieto = true;
+      ukryjEtykieteMiasta();
+    }
 
     if (wskazniki.size === 1) {
       const teraz = naSvg(e);
@@ -216,6 +262,7 @@ export function stworzMape(kontener, { przyZmianieZaznaczenia } = {}) {
     wskazniki.delete(e.pointerId);
     if (wskazniki.size < 2) stanSzczypca = null;
     if (wskazniki.size === 0) svg.classList.remove('zlapano');
+    ukryjEtykieteMiasta(); // C4: puszczenie przycisku zawsze chowa tabliczkę miasta
   };
   svg.addEventListener('pointerup', koniecWskaznika);
   svg.addEventListener('pointercancel', koniecWskaznika);
@@ -283,11 +330,13 @@ export function stworzMape(kontener, { przyZmianieZaznaczenia } = {}) {
       });
       g.addEventListener('click', (ev) => {
         ev.stopPropagation();
+        ukryjEtykieteMiasta();
         przyZmianieZaznaczenia?.(r.slug);
       });
       g.addEventListener('keydown', (ev) => {
         if (ev.key === 'Enter' || ev.key === ' ') {
           ev.preventDefault();
+          ukryjEtykieteMiasta();
           przyZmianieZaznaczenia?.(r.slug);
         }
       });
@@ -365,6 +414,145 @@ export function stworzMape(kontener, { przyZmianieZaznaczenia } = {}) {
     }
   }
 
+  /* ---- Warstwy szczegółowości (ADR 0020): woda, miasta, POI ------ */
+
+  /** Rysuje jedną warstwę wodną (rzeki albo jeziora) z GeoJSON MultiPolygon. */
+  function ustawWode(grupa, geo) {
+    grupa.innerHTML = '';
+    for (const g of geo?.geometries ?? []) {
+      if (g.type === 'MultiPolygon' || g.type === 'Polygon') {
+        const coords = g.type === 'MultiPolygon' ? g.coordinates : [g.coordinates];
+        el('path', { d: sciezkaGeoMultiPoligon(coords), class: 'szczegol' }, grupa);
+      }
+    }
+    odswiezWidocznoscWarstw();
+  }
+
+  function ustawRzeki(geo) {
+    ustawWode(grupaRzek, geo);
+  }
+
+  function ustawJeziora(geo) {
+    ustawWode(grupaJezior, geo);
+  }
+
+  const formatujPopulacje = (p) => (p >= 1_000_000 ? `${(p / 1_000_000).toFixed(1)} mln` : `${(p / 1_000).toFixed(0)} tys.`);
+
+  /** Ustawia transform etykiety miasta (stały rozmiar ekranowy, jak badge). */
+  function przelozEtykieteMiasta() {
+    if (!aktywneMiasto) return;
+    const komp = 1 / skala;
+    etykietaMiasta.setAttribute('transform', `translate(${aktywneMiasto.wx} ${aktywneMiasto.wy}) scale(${komp})`);
+  }
+
+  function ukryjEtykieteMiasta() {
+    aktywneMiasto = null;
+    etykietaMiasta.classList.remove('widoczna');
+    etykietaMiasta.innerHTML = '';
+  }
+
+  function pokazEtykieteMiasta(m) {
+    if (!m) return ukryjEtykieteMiasta();
+    aktywneMiasto = m;
+    etykietaMiasta.innerHTML = '';
+    const tlo = el('rect', { class: 'tlo-etykiety', rx: 8 }, etykietaMiasta);
+    const tekst = el('text', {}, etykietaMiasta);
+    tekst.textContent = `${m.nazwa ?? ''}${m.populacja ? ` · ${formatujPopulacje(m.populacja)}` : ''}`;
+    const { szer, wys } = wymiaryEtykiety(tekst.textContent, tekst);
+    tlo.setAttribute('x', (-szer / 2).toFixed(1));
+    tlo.setAttribute('y', (-ODSTEP_MIASTA - wys).toFixed(1));
+    tlo.setAttribute('width', String(szer));
+    tlo.setAttribute('height', String(wys));
+    tekst.setAttribute('y', (-ODSTEP_MIASTA - wys / 2).toFixed(1));
+    przelozEtykieteMiasta();
+    etykietaMiasta.classList.add('widoczna');
+  }
+
+  /** Najbliższe widoczne miasto w promieniu kliknięcia (px ekranu). */
+  function miastoPodKlikiem(p) {
+    let najlepsze = null;
+    let najlepszyDystans = PROMIEN_KLIK_MIASTA ** 2;
+    for (const m of miastaDane) {
+      if (grupyMiast[m.tier].getAttribute('display') === 'none') continue;
+      const sx = widok.x + m.wx * skala;
+      const sy = widok.y + m.wy * skala;
+      const d2 = (sx - p.x) ** 2 + (sy - p.y) ** 2;
+      if (d2 <= najlepszyDystans) {
+        najlepszyDystans = d2;
+        najlepsze = m;
+      }
+    }
+    return najlepsze;
+  }
+
+  /** Miasta: punkty o stałym rozmiarze ekranowym, podzielone na rangi LOD. */
+  function ustawMiasta(lista) {
+    grupyMiast.wielkie.innerHTML = '';
+    grupyMiast.srednie.innerHTML = '';
+    grupyMiast.drobne.innerHTML = '';
+    miastaDane = [];
+    for (const m of Array.isArray(lista) ? lista : []) {
+      const p = Number(m?.p) || 0;
+      const tier = p >= 1_000_000 ? 'wielkie' : p >= 500_000 ? 'srednie' : 'drobne';
+      const [wx, wy] = projektuj(Number(m.lat), Number(m.lon));
+      const nazwa = m.n ?? m.nazwa ?? '';
+      const opisDostepnosci = `${nazwa}${p ? ` · ${formatujPopulacje(p)}` : ''}`;
+      const g = el('g', { class: 'miasto', 'aria-label': opisDostepnosci }, grupyMiast[tier]);
+      const r = tier === 'wielkie' ? 4.5 : tier === 'srednie' ? 3.5 : 2.5;
+      el('circle', { class: 'kropka', r: String(r) }, g);
+      // C4: przezroczyste pole trafienia o promieniu kliku — zmienia kursor
+      // na strzałkę zamiast łapki (miasto nie przesuwa mapy).
+      el('circle', { class: 'trafienie', r: String(PROMIEN_KLIK_MIASTA) }, g);
+      miastaDane.push({ g, wx, wy, nazwa, populacja: p, tier });
+    }
+    if (aktywneMiasto && !miastaDane.some((m) => m.wx === aktywneMiasto.wx && m.wy === aktywneMiasto.wy)) ukryjEtykieteMiasta();
+    ostatnieSkala = null; // wymuś ustawienie transformów punktów
+    odswiezWidocznoscWarstw();
+  }
+
+  /** Widoczność warstw od zoomu + odbicia punktów miast (tylko gdy skala się zmieni). */
+  function odswiezMiasta() {
+    const k = widok.k;
+    const progi = {
+      wielkie: PROGI_WARSTW.miastaWielkie,
+      srednie: PROGI_WARSTW.miastaSrednie,
+      drobne: PROGI_WARSTW.miastaDrobne,
+    };
+    const pokazuj = WIDOCZNE_WARSTWY.miasta && k >= PROGI_WARSTW.miastaWielkie;
+    for (const [tier, gr] of Object.entries(grupyMiast)) {
+      gr.setAttribute('display', pokazuj && k >= progi[tier] ? 'inherit' : 'none');
+    }
+    if (!pokazuj) {
+      // Gdy miasta znikają (zoom poniżej progu albo wyłączona warstwa),
+      // zniknąć musi też otwarta etykieta — inaczej „wisi” nad pustym punktem.
+      ukryjEtykieteMiasta();
+      return;
+    }
+    if (Math.abs(skala - ostatnieSkala) <= 1e-9) return;
+    const komp = 1 / skala;
+    for (const m of miastaDane) {
+      if (grupyMiast[m.tier].getAttribute('display') === 'none') continue;
+      m.g.setAttribute('transform', `translate(${m.wx} ${m.wy}) scale(${komp})`);
+    }
+    ostatnieSkala = skala;
+  }
+
+  /** Widoczność wszystkich warstw szczegółów — wywoływane z `zastosuj`. */
+  function odswiezWidocznoscWarstw() {
+    const k = widok.k;
+    grupaRzek.setAttribute('display', WIDOCZNE_WARSTWY.rzeki && k >= PROGI_WARSTW.woda ? 'inherit' : 'none');
+    grupaJezior.setAttribute('display', WIDOCZNE_WARSTWY.jeziora && k >= PROGI_WARSTW.woda ? 'inherit' : 'none');
+    grupaMiast.setAttribute('display', WIDOCZNE_WARSTWY.miasta && k >= PROGI_WARSTW.miastaWielkie ? 'inherit' : 'none');
+    grupaPOI.setAttribute('display', WIDOCZNE_WARSTWY.poi && k >= PROGI_WARSTW.poi ? 'inherit' : 'none');
+    odswiezMiasta();
+  }
+
+  /** Włącza/wyłącza warstwę bez przebudowywania danych (switch w UI). */
+  function przelaczWidocznoscWarstwy(klucz, widoczny) {
+    if (klucz in WIDOCZNE_WARSTWY) WIDOCZNE_WARSTWY[klucz] = !!widoczny;
+    odswiezWidocznoscWarstw();
+  }
+
   /* ---- Kraje (asynchronicznie, po załadowaniu TopoJSON) ---- */
 
   function ustawMapeSwiata(topologia) {
@@ -396,6 +584,10 @@ export function stworzMape(kontener, { przyZmianieZaznaczenia } = {}) {
     ustawMapeSwiata,
     ustawPinezki,
     ustawPolaczenia,
+    ustawRzeki,
+    ustawJeziora,
+    ustawMiasta,
+    przelaczWidocznoscWarstwy,
     zaznacz,
     podswietl,
     przelaczLuki,

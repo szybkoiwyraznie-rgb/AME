@@ -152,6 +152,11 @@
       "opis": "Mitologia i podanie greckie: fantomy orszaku Hekaty, rasy tesyjskie, świat Therosu"
     },
     {
+      "tag": "indie",
+      "kategoria": "kultura",
+      "opis": "Religia i mitologia indyjska: wedyjska i puraniczna (hinduizm)"
+    },
+    {
       "tag": "fantom",
       "kategoria": "typ",
       "opis": "Byt zbudowany z pozoru zmysłowego: trwa, dopóki trwa uwaga, którą się karmi"
@@ -165,6 +170,86 @@
       "tag": "furia",
       "kategoria": "motyw",
       "opis": "Krótki napad podwójnej siły przed wyczerpaniem: liczy się w uderzeniach, nie w godzinach"
+    },
+    {
+      "tag": "man",
+      "kategoria": "kultura",
+      "opis": "Folklor Wyspy Man (tradycja celtycko-manx, nazwy z języka manx)"
+    },
+    {
+      "tag": "japonia",
+      "kategoria": "kultura",
+      "opis": "Buddyjska pobożność ludowa Japonii (kulty Kannon i Jizō, pielgrzymki)"
+    },
+    {
+      "tag": "automat",
+      "kategoria": "typ",
+      "opis": "Żywy automat: istota odlana lub zbudowana, poruszana płynem/duchem, nie zrodzona"
+    },
+    {
+      "tag": "syrena",
+      "kategoria": "typ",
+      "opis": "Pół kobieta, pół ryba: morska powabnica i przewodniczka wód"
+    },
+    {
+      "tag": "sfinks",
+      "kategoria": "typ",
+      "opis": "Stwór złożony: ciało lwa, głowa kobiety, skrzydła — strażnik przejścia przez zagadkę"
+    },
+    {
+      "tag": "bodhisattwa",
+      "kategoria": "typ",
+      "opis": "Istota oświecona, która zostaje po wyzwoleniu, by ratować cierpiących"
+    },
+    {
+      "tag": "bog-ognia",
+      "kategoria": "typ",
+      "opis": "Bóg ognia: palenisko, ofiara, słońce i błyskawica w jednym bycie"
+    },
+    {
+      "tag": "obrona",
+      "kategoria": "motyw",
+      "opis": "Straż granicy: byt pilnuje jednego terytorium, przejścia albo bramy"
+    },
+    {
+      "tag": "przewodnik",
+      "kategoria": "motyw",
+      "opis": "Prowadzenie przez niebezpieczną drogę: byt zna szlak, którego nikt inny nie zna"
+    },
+    {
+      "tag": "zagadka",
+      "kategoria": "motyw",
+      "opis": "Bramą jest pytanie: wejście tylko dla tego, kto potrafi otworzyć zagadkę"
+    },
+    {
+      "tag": "ratunek",
+      "kategoria": "motyw",
+      "opis": "Wyciąganie z opresji: byt przychodzi na wołanie i wyprowadza z niebezpieczeństwa"
+    },
+    {
+      "tag": "uzdrowienie",
+      "kategoria": "motyw",
+      "opis": "Łagodzenie cierpienia: byt leczy ciało, umysł i los"
+    },
+    {
+      "tag": "oczyszczenie",
+      "kategoria": "motyw",
+      "opis": "Ogień i rytuał, które wypalają zło, ciemność i przekroczenie"
+    },
+    {
+      "tag": "postac-metalowa",
+      "kategoria": "postac",
+      "opis": "Ciało odlane: brąz, żelazo, spiż — materializacja jako rzeźba-żywioł"
+    },
+    {
+      "tag": "morska-postac",
+      "kategoria": "postac",
+      "opis": "Kobieca postać wód: ogon, łuski, morska szata — forma pomiędzy falami"
+    },
+    {
+      "tag": "plomienna-postac",
+      "kategoria": "postac",
+      "opis": "Postać z ognia: włosy-płomienie, rozżarzone ciało, aura żaru"
     }
   ]
 }

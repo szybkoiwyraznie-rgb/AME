@@ -17,7 +17,7 @@ Każdy dokument opisuje kontekst, wybór i jego konsekwencje.
 | --- | --- | --- |
 | [0001](0001-vanilla-static-app-no-build.md) | Statyczna aplikacja vanilla HTML+JS (ESM) bez kroku budowania (Pages + wersja lokalna) | Zaakceptowana |
 | [0002](0002-dane-wpisow-json-generowany-indeks.md) | Wpisy jako pliki JSON + generowany `data/index.json` | Zaakceptowana |
-| [0003](0003-mapa-samowystarczalna-wektorowa.md) | Samowystarczalna wektorowa mapa świata (Natural Earth/TopoJSON, projekcja walcowa równoodległa) | Zaakceptowana |
+| [0003](0003-mapa-samowystarczalna-wektorowa.md) | Samowystarczalna wektorowa mapa świata (Natural Earth/TopoJSON, Web Mercator) | Zaakceptowana |
 | [0004](0004-model-sesji-pr-audyt-inkrementalne-commity.md) | Model sesji: PR, audyt poprzedniego PR, inkrementalne commity | Zaakceptowana |
 | [0005](0005-protokol-mfm-i-rama-promptu-21-9.md) | Protokół MFM jako obowiązujący format treści; rama promptu wizualizacji 21:9 | Zaakceptowana |
 | [0006](0006-warstwa-wiki-tagi-powiazania.md) | Warstwa wiki: tagi, powiązania przez slugi, backlinki liczone w indeksie | Zaakceptowana |
@@ -34,6 +34,8 @@ Każdy dokument opisuje kontekst, wybór i jego konsekwencje.
 | [0017](0017-data-z-godzina-w-meta-co-nowego-v1-5.md) | Data zdarzeń w meta z godziną; „Co nowego” podaje datę i godzinę (protokół MFM v1.5) | Zaakceptowana |
 | [0018](0018-ton-skitow-humor-i-codziennosc-v1-6.md) | Ton SKITów: humor, luz i codzienność jako pełnoprawny rejestr (protokół MFM v1.6) | Zaakceptowana |
 | [0019](0019-skity-wieloosobowe-i-opis-powiazania.md) | SKITy 3–4-osobowe jako preferowane i twardy wymóg opisu powiązania (protokół MFM v1.7) | Zaakceptowana |
+| [0020](0020-warstwy-tematyczne-mapy.md) | Warstwy tematyczne mapy (woda, miasta) i LOD treści | Zaakceptowana |
+| [0021](0021-kronika-mechanizm-paliwa-i-konsekwencji.md) | Kronika: mechanizm paliwa, konsekwencje i pierwsza epoka | Zaakceptowana |
 
 ## Szablon ADR
 

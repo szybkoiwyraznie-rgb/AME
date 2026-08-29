@@ -6,7 +6,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { szacujSzerokoscTekstu, wymiaryEtykiety, stworzMape } from '../app/map.js';
-import { SZEROKOSC, WYSOKOSC } from '../app/geo.js';
+import { SZEROKOSC, WYSOKOSC, projektuj } from '../app/geo.js';
 
 function stworzElement(nazwa) {
   const klasy = new Set();
@@ -167,8 +167,7 @@ test('zoom i środowanie: punkt świata zostaje pod środkiem okna', () => {
   mapa.wysrodkuj(52.23, 21.01, 4, false); // Warszawa
   assert.equal(mapa.widok.k, 4);
   const s = mapa.skala;
-  const wx = ((21.01 + 180) / 360) * SZEROKOSC;
-  const wy = ((90 - 52.23) / 180) * WYSOKOSC;
+  const [wx, wy] = projektuj(52.23, 21.01);
   assert.ok(Math.abs(mapa.widok.x + wx * s - 600) < 1e-6, 'Warszawa w środku okna (x)');
   assert.ok(Math.abs(mapa.widok.y + wy * s - 300) < 1e-6, 'Warszawa w środku okna (y)');
 

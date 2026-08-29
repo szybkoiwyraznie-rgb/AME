@@ -109,6 +109,17 @@ export function linkWidoku(baza, cel) {
   return `${czysta}#${String(cel ?? '')}`;
 }
 
+/**
+ * Tag z fragmentu adresu `#tag:<slug>` — deep-link do filtra tagów (C2).
+ * Zwraca tag bez prefiksu albo null, gdy fragment nie jest filtrem tagu.
+ */
+export function tagZFragmantu(fragment) {
+  const f = String(fragment ?? '').trim();
+  if (!f.startsWith('tag:')) return null;
+  const tag = f.slice(4);
+  return tag ? tag : null;
+}
+
 /** Przycisk kopiujący adres bieżącego widoku (kartoteka albo skit/feed). */
 export function przyciskKopiowania(cel) {
   if (!cel) return '';

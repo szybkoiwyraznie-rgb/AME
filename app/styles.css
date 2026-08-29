@@ -23,6 +23,13 @@ html[data-motyw='ciemny'] {
   --lad-hover: #2d3849;
   --kraj-obrys: #39445a;
   --siatka: #1d2532;
+  --woda: #24445c99;
+  --woda-obrys: #3a5e7a;
+  --rzeka: #4a7189;
+  --miasto: #6ea3c2;
+  --miasto-obrys: #0d1015;
+  --poi: #b4543c;
+  --poi-obrys: #0d1015;
   --pinezka-obrys: #0d1015;
   --pinezka-srodek: #f2e6cf;
   --badge-tlo: #141922f2;
@@ -51,6 +58,13 @@ html[data-motyw='jasny'] {
   --lad-hover: #efe3c8;
   --kraj-obrys: #ab9b78;
   --siatka: #c9bd9e;
+  --woda: #9fc0cf99;
+  --woda-obrys: #6c93a5;
+  --rzeka: #4b7086;
+  --miasto: #5d7f9b;
+  --miasto-obrys: #fdf9ee;
+  --poi: #96331c;
+  --poi-obrys: #fdf9ee;
   --pinezka-obrys: #fdf9ee;
   --pinezka-srodek: #fdf9ee;
   --badge-tlo: #fffdf6f2;
@@ -207,6 +221,42 @@ html[data-motyw='jasny'] .baner code { background: #ffffff77; }
 }
 .kraj:hover { fill: var(--lad-hover); }
 
+/* Warstwy szczegółowości (ADR 0020). Woda rysowana nad lądem; miasta i POI to
+ * punkty o stałym rozmiarze ekranowym (kompensacja skali w map.js). */
+.warstwy-szczegolow .rzeki .szczegol {
+  fill: none;
+  stroke: var(--rzeka);
+  stroke-width: 0.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+}
+.warstwy-szczegolow .jeziora .szczegol {
+  fill: var(--woda);
+  stroke: var(--woda-obrys);
+  stroke-width: 0.45;
+  vector-effect: non-scaling-stroke;
+}
+.warstwy-szczegolow .miasta .kropka {
+  fill: var(--miasto);
+  stroke: var(--miasto-obrys);
+  stroke-width: 1;
+}
+/* C4: miasto nie przesuwa mapy, więc kursor to strzałka, nie łapka.
+ * Przezroczyste pole trafienia (r = PROMIEN_KLIK_MIASTA) daje wygodny cel
+ * i łapie wskaźnik, żeby `cursor: default` działał także wokół kropki. */
+.warstwy-szczegolow .miasta .miasto { cursor: default; }
+.warstwy-szczegolow .miasta .trafienie {
+  fill: transparent;
+  stroke: none;
+  pointer-events: all;
+}
+.warstwy-szczegolow .poi .punkt {
+  fill: var(--poi);
+  stroke: var(--poi-obrys);
+  stroke-width: 1;
+}
+
 .luk {
   fill: none;
   stroke: var(--akcent);
@@ -262,6 +312,74 @@ html[data-motyw='jasny'] .baner code { background: #ffffff77; }
   stroke-width: 1.2;
 }
 .etykiety .etykieta.przygaszona { opacity: 0.14; }
+
+/* Etykieta miasta (klik): osobna pływająca tabliczka, ten sam wygląd co badge. */
+.mapa-svg .etykieta-miasta {
+  display: none;
+  pointer-events: none;
+}
+.mapa-svg .etykieta-miasta.widoczna { display: block; }
+.mapa-svg .etykieta-miasta text {
+  font-family: var(--serif);
+  font-size: 19px;
+  line-height: 1.2;
+  fill: var(--tekst);
+  text-anchor: middle;
+  dominant-baseline: central;
+}
+.mapa-svg .etykieta-miasta .tlo-etykiety {
+  fill: var(--badge-tlo);
+  stroke: var(--akcent);
+  stroke-width: 1.2;
+}
+
+.podpowiedz {
+  position: absolute;
+  left: 14px;
+  bottom: 18px;
+  margin: 0;
+  font-size: 12px;
+  color: var(--tekst-dim);
+  pointer-events: none;
+  user-select: none;
+}
+.warstwy-panel {
+  position: absolute;
+  left: 14px;
+  bottom: 44px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 12px 14px;
+  background: var(--kolo-tlo);
+  border: 1px solid var(--linia);
+  border-radius: 10px;
+  box-shadow: 0 10px 30px #00000055;
+  font-size: 13px;
+  z-index: 5;
+}
+.warstwy-panel[hidden] { display: none; }
+.warstwy-panel label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--tekst);
+  cursor: pointer;
+}
+.warstwy-panel input { accent-color: var(--akcent); }
+.warstwy-panel .naglowek-panelu {
+  font-family: var(--serif);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  color: var(--akcent);
+}
+.warstwy-panel .uwaga-panelu {
+  margin: 0;
+  max-width: 240px;
+  font-size: 11px;
+  line-height: 1.35;
+  color: var(--tekst-dim);
+}
 
 .sterowanie {
   position: absolute;

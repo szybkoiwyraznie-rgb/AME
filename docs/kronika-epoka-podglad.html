@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Kronika — podgląd strony Epoki (mockup)</title>
+<style>
+:root{
+  --bg:#f7f3ea; --fg:#1e1a16; --muted:#6b655c; --line:#ded4c2;
+  --card:#fffdf8; --accent:#7a4a22; --accent2:#a5652f;
+  --mit:#3e7d54; --rac:#51689a; --up:#3e7d54; --down:#a3442e; --neutral:#8a8175;
+  --code:#f1eadc; --shadow:#00000022;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 Georgia,'Times New Roman',serif}
+.wrap{max-width:1180px;margin:0 auto;padding:28px 20px 80px}
+.topbar{display:flex;align-items:center;gap:14px;flex-wrap:wrap;border-bottom:2px solid var(--accent);padding-bottom:12px;margin-bottom:18px}
+.brand{font-weight:700;font-size:19px;letter-spacing:.02em}
+.brand .dot{color:var(--accent)}
+.topbar a{color:var(--accent);text-decoration:none;margin-left:auto;font-size:13px}
+.nav{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}
+.nav span{padding:6px 14px;border:1px solid var(--line);border-radius:999px;background:var(--card);font-size:13px;color:var(--muted)}
+.nav span.on{background:var(--accent);border-color:var(--accent);color:#fff;font-weight:600}
+.crumb{font-size:13px;color:var(--muted);margin-bottom:14px}
+.crumb b{color:var(--fg)}
+.hero{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px 26px;margin-bottom:26px;box-shadow:0 8px 26px var(--shadow)}
+.hero h1{margin:0 0 6px;font-size:30px;line-height:1.2}
+.hero .sub{color:var(--muted);font-size:14px;margin:0 0 14px}
+.badges{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+.badge{font-size:12px;padding:3px 10px;border-radius:999px;border:1px solid var(--line);background:var(--code)}
+.badge.kanon{border-color:#3e7d54;color:#3e7d54}
+.badge.szkic{border-color:var(--accent2);color:var(--accent2)}
+.badge.koszt{background:var(--accent);color:#fff;border-color:var(--accent)}
+.meta-row{display:flex;gap:22px;flex-wrap:wrap;font-size:13px;color:var(--muted)}
+.gauge-wrap{margin-top:10px}
+.gauge{position:relative;height:20px;border-radius:999px;background:linear-gradient(90deg,#cfe0d2 0%,#f0f0f0 50%,#ccd4e8 100%);border:1px solid var(--line);overflow:hidden}
+.gauge .mit{height:100%;background:linear-gradient(90deg,#3e7d54,#6fae85);position:relative}
+.gauge .label{position:absolute;top:1px;font-size:12px;color:#fff;text-shadow:0 1px 2px #0007}
+.gauge .l-mit{left:10px}
+.gauge .l-rac{right:10px}
+.gauge .pointer{position:absolute;top:-4px;width:3px;height:28px;background:var(--accent);border-radius:2px}
+.gauge-caption{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin-top:4px}
+.grid{display:grid;grid-template-columns:minmax(0,2.1fr) minmax(0,1fr);gap:26px;align-items:start}
+@media(max-width:900px){.grid{grid-template-columns:1fr}}
+.col{display:flex;flex-direction:column;gap:22px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px 22px;box-shadow:0 6px 20px var(--shadow)}
+.card h2{margin:0 0 4px;font-size:19px;border-left:4px solid var(--accent);padding-left:10px}
+.card .note{color:var(--muted);font-size:13px;margin:0 0 14px}
+.iskra{font-size:16px;font-style:italic;color:#39332c;background:var(--code);border-radius:10px;padding:14px 16px;margin:0}
+.pyt{font-size:14px;color:var(--accent);margin:10px 0 0}
+.part{display:grid;gap:12px}
+.part-row{display:flex;gap:14px;align-items:flex-start;border:1px solid var(--line);border-radius:10px;padding:12px;background:var(--card);color:inherit;text-decoration:none;transition:border-color .15s, box-shadow .15s, transform .15s}
+.part-row:hover{border-color:var(--accent2);box-shadow:0 4px 14px var(--shadow);transform:translateY(-1px)}
+.part-row:focus-visible{outline:2px solid var(--accent2);outline-offset:2px}
+.part-row .go{margin-left:auto;align-self:center;font-size:12px;color:var(--accent);white-space:nowrap}
+.avatar{width:52px;height:52px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;flex:0 0 52px;background:var(--code);color:var(--accent);border:1px solid var(--line)}
+.part-row .info{flex:1;min-width:0}
+.part-row .name{font-weight:700}
+.part-row .meta{font-size:12px;color:var(--muted)}
+.part-row .stat{margin-top:6px;font-size:13px;display:flex;gap:12px;flex-wrap:wrap}
+.stat b{color:var(--accent)}
+.dialog{display:flex;flex-direction:column;gap:14px}
+.msg{display:flex;gap:12px}
+.msg .who{flex:0 0 86px;font-weight:700;font-size:14px;color:var(--accent);text-align:right}
+.msg .body{flex:1;background:var(--code);border-radius:0 10px 10px 10px;padding:10px 14px;font-size:15px}
+.msg.alt .who{color:var(--muted)}
+.msg.alt .body{background:#efe8d8}
+.kronikarz{font-style:italic;border-top:1px dashed var(--line);padding-top:12px;margin-top:6px;color:#4a443a}
+.kronikarz b{font-style:normal;letter-spacing:.06em}
+.threads li{margin:6px 0}
+.chip{border:1px solid var(--line);background:var(--code);border-radius:999px;padding:2px 9px;font-size:12px;color:var(--accent)}
+/* sidebar widgets */
+.osi{margin:10px 0 4px}
+.legend{font-size:12px;color:var(--muted);margin-top:8px}
+.legend span{display:inline-block;margin-right:12px}
+.sw{display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:4px}
+.c-green{background:#3e7d54} .c-red{background:#a3442e} .c-org{background:#c98b2d} .c-blue{background:#6f8fb0}
+.map{background:#eef2f0;border:1px solid var(--line);border-radius:10px;padding:6px;margin-top:8px}
+.bar-row{display:grid;grid-template-columns:96px 1fr 46px;gap:8px;align-items:center;margin:9px 0;font-size:13px}
+.bar-track{background:var(--code);height:16px;border-radius:8px;overflow:hidden;position:relative;border:1px solid var(--line)}
+.bar{height:100%;position:absolute;top:0;left:0;border-radius:8px}
+.bar.before{background:#c7bfae}
+.bar.after{background:var(--accent)}
+.bar-val{font-size:12px;color:var(--muted);text-align:right}
+.ledger{font-size:13px;border-collapse:collapse;width:100%;margin-top:8px}
+.ledger th,.ledger td{border-bottom:1px solid var(--line);padding:6px 6px;text-align:left}
+.ledger th{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.ledger .plus{color:#3e7d54} .ledger .minus{color:#a3442e}
+.weak{border:1px solid #c98b2d;background:#fdf3e4;border-radius:10px;padding:12px;font-size:14px}
+.weak h3{margin:0 0 8px;font-size:15px;color:#8a5d18}
+.weak .tags{margin-top:8px}
+.weak ul{margin:6px 0 0;padding-left:18px}
+.notice{background:var(--code);border:1px dashed var(--line);border-radius:10px;padding:12px 16px;font-size:13px;color:var(--muted);margin-bottom:24px}
+.datalink{font-size:13px}
+.datalink code{background:var(--code);padding:2px 6px;border-radius:4px}
+a{color:var(--accent)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="topbar">
+    <div class="brand">AME<span class="dot">·</span>KRONIKA</div>
+    <a href="./KRONIKA_tryb.md">← pełna dokumentacja koncepcji</a>
+  </div>
+
+  <div class="nav">
+    <span>MAPA</span><span>ARKADIA</span><span class="on">KRONIKA</span><span>SKITY</span><span>NOWOŚCI</span>
+  </div>
+
+  <div class="notice">
+    <strong>Mockup koncepcyjny (2026-08-29).</strong> To <em>propozycja wyglądu</em> strony
+    „Epoka X” w trybie Kroniki — na danych przykładowych, żeby właściciel mógł ocenić
+    układ, a nie czytać kolejną teorię. Nie jest to widok produkcyjny; żadna dana na tej
+    stronie nie trafia jeszcze do kartoteki.
+  </div>
+
+  <div class="crumb">KRONIKA &nbsp;›&nbsp; <b>Oś czasu: „Cena światła”</b> &nbsp;›&nbsp; Epoka IV</div>
+
+  <div class="hero">
+    <div class="badges">
+      <span class="badge kanon">kanon: propozycja</span>
+      <span class="badge szkic">szkic</span>
+      <span class="badge koszt">koszt epoki: 8 paliwa</span>
+    </div>
+    <h1>Epoka IV — „PŁOMIEŃ I LITOŚĆ”</h1>
+    <p class="sub">Kannon schodzi przez ogień, Agni szuka trzeciej formy żaru, a Talos zatrzymuje statek. Trzej byty rozstrzygają, czy świat ma być palony, prowadzony — czy rozumiany.</p>
+    <div class="meta-row">
+      <span><b>Data:</b> 2026-08-29</span>
+      <span><b>Agent-sesja:</b> arena 2026-08-29</span>
+      <span><b>Zapisał:</b> Kronikarz (Nadrzędny głos)</span>
+      <span><b>Odwołanie:</b> <span class="chip">#kronika:epoka-4-plomien-i-litosc</span></span>
+    </div>
+    <div class="gauge-wrap">
+      <div class="gauge">
+        <div class="mit" style="width:58%"></div>
+        <span class="label l-mit">MIT 58%</span>
+        <span class="label l-rac">RACJONALIZACJA 42%</span>
+        <div class="pointer" style="left:58%"></div>
+      </div>
+      <div class="gauge-caption"><span>byty, wierzenia, lęk</span><span>wiedza, postęp, odczarowanie</span></div>
+    </div>
+  </div>
+
+  <div class="grid">
+
+    <!-- LEFT column -->
+    <div class="col">
+
+      <div class="card">
+        <h2>Iskra i pytanie epoki</h2>
+        <p class="note">Co sprowadza byty do jednego stołu (1–2 zdania).</p>
+        <p class="iskra">„Na ghatach ktoś zaczął gasić ogień ofiarny, tłumacząc, że wystarczy lampa. Agni zapłonął gniewem, a Kannon zeszła mu pod nogi, żeby wyjaśnić: nikt nie ucieka przed światłem, tylko przed strachem, że można je mieć tylko ze spalenia.”</p>
+        <p class="pyt">Pytanie epoki: <em>czy ogień ma strzec — czy prowadzić?</em></p>
+      </div>
+
+      <div class="card">
+        <h2>Uczestnicy epoki</h2>
+        <p class="note">Klikalne karty — otwierają pełnoekranową kartotekę bytu (<code>#slug</code>). Rola z archetypu; paliwo = ilość „pamięci” bytu w archiwum.</p>
+        <div class="part">
+          <a class="part-row" href="../index.html#kannon-hase" data-slug="kannon-hase" title="Kartoteka Kannon — #kannon-hase">
+            <div class="avatar">🕊</div>
+            <div class="info">
+              <div class="name">Kannon — miłosierna wybawicielka</div>
+              <div class="meta">Japonia · Bodhisattwa · rola: <b>Pieśniarz</b></div>
+              <div class="stat"><span>paliwo <b>7 → 5</b></span><span class="chip">uzdrowienie</span><span class="chip">ratunek</span></div>
+            </div>
+            <span class="go">kartoteka ↗</span>
+          </a>
+          <a class="part-row" href="../index.html#agni" data-slug="agni" title="Kartoteka Agni — #agni">
+            <div class="avatar">🔥</div>
+            <div class="info">
+              <div class="name">Agni — bóg ognia ofiarnego</div>
+              <div class="meta">Indie · Bóg ognia · rola: <b>Filar</b></div>
+              <div class="stat"><span>paliwo <b>8 → 6</b></span><span class="chip">oczyszczenie</span><span class="chip">opłaty</span></div>
+            </div>
+            <span class="go">kartoteka ↗</span>
+          </a>
+          <a class="part-row" href="../index.html#talos-kreta" data-slug="talos-kreta" title="Kartoteka Talos — #talos-kreta">
+            <div class="avatar">🗿</div>
+            <div class="info">
+              <div class="name">Talos — spiżowy strażnik Krety</div>
+              <div class="meta">Grecja · Automat · rola: <b>Samotnik</b> (poza siecią)</div>
+              <div class="stat"><span>paliwo <b>5 → 1</b></span><span class="chip">obrona</span><span class="chip">warunek</span></div>
+            </div>
+            <span class="go">kartoteka ↗</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Przebieg (narratorski odczyt SKIT-u)</h2>
+        <p class="note">Dialog z Bazy Skitów + zapis Kronikarza; pokazuje „kto kogo słuchał”.</p>
+        <div class="dialog">
+          <div class="msg">
+            <div class="who">Kannon</div>
+            <div class="body">Zanim kogokolwiek spalisz, powiedz mi, kogo bronisz.</div>
+          </div>
+          <div class="msg alt">
+            <div class="who">Agni</div>
+            <div class="body">Bronię tego, co ofiarowali. Nie obchodzi mnie, że inni wolą lampę, dopóki nikt nie gasi ogniska.</div>
+          </div>
+          <div class="msg">
+            <div class="who">Kannon</div>
+            <div class="body">Nie chcę go gasić. Chcę, żebyś palił tak, żeby nikt nie musiał uciekać.</div>
+          </div>
+          <div class="msg alt">
+            <div class="who">Talos</div>
+            <div class="body">[głucho, bez odwracania głowy] Statek bez zezwolenia. Nikt nie przechodzi.</div>
+          </div>
+          <div class="msg">
+            <div class="who">Kannon</div>
+            <div class="body">A kto zabrania ci wyjąć gwóźdź i sprawdzić, czy naprawdę jesteś?</div>
+          </div>
+        </div>
+        <p class="kronikarz"><b>KRONIKARZ ZAPISUJE:</b> Talos nie odpowiedział. Kannon dotknęła jego żyły i zamieniła żar Agniego w światło, które nie pali. Trzej byty rozeszły się: dwóch wie, że świat może być inny, trzeci zostaje w legendzie.</p>
+      </div>
+
+      <div class="card">
+        <h2>Wątki otwarte</h2>
+        <p class="note">Co epoka zostawia w zawieszeniu — paliwo dla kolejnych epok.</p>
+        <ul class="threads">
+          <li><strong>Maszyna bez duszy.</strong> Jeśli narzędzie można zrozumieć, czy można je jeszcze bać się? <span class="chip">dług</span></li>
+          <li><strong>Trzecia forma ognia.</strong> Agni nie rozumie światła, które nie pali. <span class="chip">iskra → Epoka V</span></li>
+          <li><strong>Szlak 33 Kannon.</strong> Nowa droga pielgrzymkowa rośnie tam, gdzie wcześniej nie było nikogo, kto by szedł. <span class="chip">ekspansja kulturowa</span></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- RIGHT column: consequences -->
+    <div class="col">
+
+      <div class="card">
+        <h2>Konsekwencje dla świata</h2>
+        <p class="note">Warstwa prezentacyjna: widać, że świat idzie do przodu.</p>
+
+        <div class="osi">
+          <strong style="font-size:13px;color:var(--muted)">Oś „rząd dusz”</strong>
+          <div class="gauge">
+            <div class="mit" style="width:58%"></div>
+            <span class="label l-mit">MIT 58%</span>
+            <span class="label l-rac">RACJONALIZACJA 42%</span>
+            <div class="pointer" style="left:58%"></div>
+          </div>
+          <div class="gauge-caption"><span>po epoce: −4 mit</span><span>+3 racjonalizacja</span></div>
+        </div>
+
+        <div class="map">
+          <svg viewBox="0 0 800 250" role="img" aria-label="Mapa wpływów epoki (poglądowa)" style="width:100%;height:auto">
+            <rect x="0" y="0" width="800" height="250" fill="#dbe7ea"/>
+            <path d="M40 70 L120 50 L190 62 L235 40 L280 52 L255 92 L205 108 L150 96 L95 108 L52 92 Z" fill="#e7e0cd" stroke="#c7bfae"/>
+            <path d="M300 44 L420 28 L560 36 L660 30 L730 44 L700 78 L620 86 L520 78 L420 92 L330 86 L300 66 Z" fill="#e7e0cd" stroke="#c7bfae"/>
+            <path d="M590 92 L650 80 L690 96 L655 130 L600 124 L576 108 Z" fill="#e7e0cd" stroke="#c7bfae"/>
+            <path d="M700 56 L730 50 L742 66 L724 80 L702 74 Z" fill="#e7e0cd" stroke="#c7bfae"/>
+            <path d="M760 78 L780 72 L790 88 L774 98 L758 90 Z" fill="#e7e0cd" stroke="#c7bfae"/>
+            <!-- Waranasi / Agni expansion -->
+            <circle cx="602" cy="110" r="26" fill="none" stroke="#3e7d54" stroke-width="2" stroke-dasharray="5 4" opacity=".7"/>
+            <circle cx="602" cy="110" r="40" fill="#3e7d5422" stroke="#3e7d54" stroke-width="1.5" stroke-dasharray="3 4" opacity=".6"/>
+            <circle cx="602" cy="110" r="6" fill="#3e7d54"/>
+            <text x="610" y="106" font-size="12" fill="#264d34">Waranasi — <tspan font-weight="bold">kult na wschód</tspan></text>
+            <!-- Hase / Kannon route -->
+            <circle cx="690" cy="66" r="6" fill="#c98b2d"/>
+            <path d="M690 66 C 730 40, 760 48, 776 84" fill="none" stroke="#c98b2d" stroke-width="2" stroke-dasharray="4 5"/>
+            <circle cx="776" cy="86" r="5" fill="#c98b2d"/>
+            <text x="694" y="54" font-size="12" fill="#7a5a1a">Hase — <tspan font-weight="bold">szlak 33 Kannon</tspan></text>
+            <!-- Kreta / Talos fading -->
+            <circle cx="96" cy="96" r="5" fill="#a3442e" opacity=".8"/>
+            <circle cx="96" cy="96" r="14" fill="#a3442e18" stroke="#a3442e" stroke-width="1.5" stroke-dasharray="3 4" opacity=".5"/>
+            <text x="106" y="120" font-size="12" fill="#6e2617">Kreta — <tspan font-weight="bold">legenda, nie żywa wiara</tspan></text>
+          </svg>
+          <div class="legend">
+            <span><i class="sw c-green"></i>ekspansja wiary</span>
+            <span><i class="sw c-org"></i>nowy szlak</span>
+            <span><i class="sw c-red"></i>marginalizacja</span>
+          </div>
+          <div style="font-size:11px;color:var(--muted);margin-top:6px">Mapa poglądowa — docelowo prawdziwa projekcja świata z <code>geo.js</code> + halo zasięgu.</div>
+        </div>
+
+        <div style="margin-top:14px">
+          <strong style="font-size:13px;color:var(--muted)">Zasięg wierzeń (przed → po)</strong>
+          <div class="bar-row"><span>Agni</span>
+            <div class="bar-track"><div class="bar before" style="width:34%"></div><div class="bar after" style="width:41%"></div></div>
+            <span class="bar-val">34 → 41</span></div>
+          <div class="bar-row"><span>Kannon</span>
+            <div class="bar-track"><div class="bar before" style="width:22%"></div><div class="bar after" style="width:31%"></div></div>
+            <span class="bar-val">22 → 31</span></div>
+          <div class="bar-row"><span>Talos</span>
+            <div class="bar-track"><div class="bar before" style="width:28%"></div><div class="bar after" style="width:9%"></div></div>
+            <span class="bar-val">28 → 9</span></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Tabela zmian w relacjach</h2>
+        <p class="note">Słownik `zmiana` — czytelny „dziennik zmian świata”.</p>
+        <table class="ledger" style="margin-top:6px">
+          <thead><tr><th>Para</th><th>Zmiana</th></tr></thead>
+          <tbody>
+            <tr><td>Kannon ↔ Agni</td><td><span class="plus">indeks</span> — litość jako trzecia forma ognia</td></tr>
+            <tr><td>Agni ↔ Talos</td><td><span class="minus">schłodzenie</span> — ogień nie uznaje głuchego strażnika</td></tr>
+            <tr><td>Kannon ↔ Talos</td><td><span class="minus">zerwanie</span> — Talos nie rozumie litości</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="card">
+        <h2>Ledger paliwa</h2>
+        <p class="note">Kto zapłacił za wpływ na świat (budżet „pamięci” bytu).</p>
+        <table class="ledger">
+          <thead><tr><th>Byt</th><th>Przed</th><th>Koszt</th><th>Po</th></tr></thead>
+          <tbody>
+            <tr><td>Kannon</td><td>7</td><td class="minus">−2</td><td><b>5</b></td></tr>
+            <tr><td>Agni</td><td>8</td><td class="minus">−2</td><td><b>6</b></td></tr>
+            <tr><td>Talos</td><td>5</td><td class="minus">−4 <em>(eksploatacja słabości)</em></td><td><b>1</b></td></tr>
+          </tbody>
+        </table>
+        <div style="font-size:12px;color:var(--muted);margin-top:10px">
+          Źródła paliwa: <b>wzmianki w innych bytach</b> (backlinki) · <b>udział w SKITach</b> ·
+          <b>wzmianki we wcześniejszych epokach</b>. Koszt epoki = 1 + liczba uczestników + ciężar
+          skutków (tu: eksploatacja słabości = +2).
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Słabość / „szew” (leverage)</h2>
+        <p class="note">Wrażliwość bytu w tej epoce — co dało się zrobić z tą wiedzą.</p>
+        <div class="weak">
+          <h3>Talos — żyła w kostce, jeden gwóźdź</h3>
+          <p>W kartotece: <em>„jedyny punkt otwarcia to żyła… zamknięta gwoździem albo cienką błoną”.</em></p>
+          <div class="tags"><span class="chip">wymóg: wiedza/dossier</span><span class="chip">koszt: 4 paliwa</span></div>
+          <ul>
+            <li><b>Exploit:</b> ktoś rozumie, że Talos jest narzędziem, a nie istotą.</li>
+            <li><b>Efekt dla bytu:</b> <strong style="color:#a3442e">zmarginalizowany</strong> — „zepchnięty do legendy”, zasięg 28% → 9%.</li>
+            <li><b>Efekt dla świata:</b> racjonalizacja +3 (ludzie wyjaśnili mechanizm).</li>
+          </ul>
+        </div>
+        <div style="font-size:12px;color:var(--muted);margin-top:10px">
+          Gdyby słabość NIE została użyta: Talos zostaje strażnikiem, jego zasięg rośnie, a
+          wątek „maszyna bez duszy” się nie otwiera. To jest właśnie wybór, który robi z Kroniki
+          <em>walkę o rząd dusz</em>, a nie szkolne dialogi.
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="datalink" style="margin-top:26px">
+    <strong>Dane pod tym widokiem (propozycja modelu):</strong>
+    <code>data/kronika/epoka-4-plomien-i-litosc.json</code> z polami
+    <code>iskra</code>, <code>uczestnicy</code>, <code>przebieg</code>, <code>skutek.relacje</code>,
+    <code>konsekwencje.os</code>, <code>konsekwencje.zasieg</code>, <code>konsekwencje.pozycje</code>,
+    <code>ledger.paliwo</code>, <code>watki</code>.
+    | <a href="kronika-epoka-1.html" style="color:#7a4a22;font-weight:600">→ realny wynik Epoki I</a>
+  </div>
+</div>
+
+<script>
+/* Mockup-only helper: z podglądu w docs (port 8001) otwórz kartotekę na mapie (port 8000).
+   W aplikacji docelowej wystarczy zwykly link ../index.html#<slug> lub #<slug>. */
+document.addEventListener('click', (e) => {
+  const a = e.target.closest('[data-slug]');
+  if (!a) return;
+  const slug = a.dataset.slug;
+  const host = location.host;
+  const other = host.replace(/^(\d+)-/, (m, port) => (port === '8001' ? '8000-' : `${port}-`));
+  if (other !== host) {
+    e.preventDefault();
+    const url = `${location.protocol}//${other}/index.html#${slug}`;
+    window.open(url, '_blank', 'noopener');
+  }
+});
+</script>
+</body>
+</html>

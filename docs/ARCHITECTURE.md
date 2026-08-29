@@ -10,7 +10,7 @@ Aplikacja to statyczna strona (ADR 0001): `index.html` + moduły ES w `app/`
 index.html                  — powłoka UI (topbar, mapa, panel, lista)
 app/
   app.js                    — bootstrap: ładuje indeks, spina moduły
-  geo.js                    — dekodowanie TopoJSON, projekcja równoodległa,
+  geo.js                    — dekodowanie TopoJSON, projekcja Web Mercator,
                               geometria mapy (czyste funkcje, testowalne w Node)
   map.js                    — render SVG mapy + pinezki + pan/zoom + łuki,
                               widok liczony z kontenera (ResizeObserver)
@@ -21,6 +21,9 @@ app/
   styles.css                — tokeny palety: motyw ciemny i jasny (bez webfontów)
 assets/
   map/countries-50m.json    — Natural Earth jako TopoJSON (vendoring, PD/ISC)
+  map/rivers-2km5.json      — obszary rzeczne OSM (GeoJSON MultiPolygon, geo-maps)
+  map/lakes-2km5.json       — obszary jezior OSM (GeoJSON MultiPolygon, geo-maps)
+  map/miasta.json           — miasta ≥100 tys. lub stolice (world-cities-json, CC BY 4.0)
   map/LICENSE.world-atlas   — licencja pakietu world-atlas
   wizualizacje/<slug>.jpg   — wygenerowane obrazy 21:9 (≤ 2 MB)
 data/
@@ -109,11 +112,13 @@ dzieje się w przeglądarce na życzenie — determinizm indeksu (ADR 0002) niet
 
 ## Mapa (ADR 0003 + ADR 0009)
 
-- Projekcja walcowa równoodległa; świat w prostokącie W×H = 3600×1800 j.u.,
-  1° długości = 1° szerokości = 10 j.u. (10 j.u. na stopień w obu osiach).
+- Projekcja walcowa **Web Mercator** (kula): świat w kwadracie W×H = 3600×3600
+  j.u.; x = (lon+180)/360·3600, y = H/2·(1 − atanh(sin φ)/π), szerokości
+  przycięte do ±85,05112878°. 1° długości = 10 j.u., a skala lokalna w pionie
+  rośnie jak 1/cos(φ) — dzięki temu Polska ma proporcje zbliżone do map Google.
 - **Widok w pikselach kontenera**: `viewBox` = rozmiar kontenera, a grupa świata
   nosi transformację `translate(x, y) scale(s)`, gdzie `s = skalaBazowa · k`,
-  `skalaBazowa = min(szer/3600, wys/1800)` (contain — cały świat w oknie, bez
+  `skalaBazowa = min(szer/3600, wys/3600)` (contain — cały świat w oknie, bez
   przycinania i rozciągu). Całą logikę liczy czysta `dopasujWidok()` w `geo.js`
   (docina przesunięcia do brzegów świata, wyśrodkowuje, gdy świat jest
   mniejszy od okna); `ResizeObserver` + `window.resize` zachowują punkt pod
@@ -138,6 +143,24 @@ dzieje się w przeglądarce na życzenie — determinizm indeksu (ADR 0002) niet
   napisów (M6/A2).
 - Łuki powiązań: krzywa Q z punktu kontrolnego uniesionego prostopadle nad
   środek segmentu (0.18 długości) — czytelne przy wielu liniach.
+- **Warstwy tematyczne (ADR 0020).** `g.warstwy-szczegolow` nad kaflami
+  `.kraje` zawiera `.rzeki`, `.jeziora`, `.miasta`, `.poi`. Warstwy ładowane są
+  asynchronicznie dopiero po przekroczeniu progu zoomu (`PROGI_WARSTW`), a ich
+  widoczność zależy od `k` (LOD treści): rzeki/jeziora od `k=4`, wielkie miasta
+  od `k=4`, średnie od `k=7`, drobne od `k=10`, POI od `k=8`. Punkty miast i POI
+  kompensują skalę `scale(1/s)` jak pinezki; linie wodne używają
+  `vector-effect: non-scaling-stroke`. `app.js` spina przełącznik
+  `#przycisk-warstwy` z checkboxami (stan: `{rzeki, jeziora, miasta, poi}`); dane
+  niezmieniane przez przełącznik wracają z pamięci i nie są pobierane ponownie.
+  W tej iteracji dane istnieją dla rzek, jezior i miast; drogi, szczyty, lasy
+  i wysokość n.p.m. są poza zakresem (patrz ADR 0020 i `docs/ASSETS.md`).
+- **Etykieta miasta (C4):** nazwa „miasto · populacja” jest widoczna tylko
+  podczas przytrzymania przycisku (`pointerdown` → `pointerup`), nie po
+  najechaniu. Miasto ma przezroczyste pole trafienia r=16 px
+  (`PROMIEN_KLIK_MIASTA`) z `cursor: default`, więc nad punktem widać strzałkę,
+  a nie łapkę (`grab` z mapy). Opis dostępności dla czytników ekranu niesie
+  `aria-label` grupy miasta (usunięty `<title>`, żeby nazwa nie wyskakiwała na
+  hover).
 - Kartoteka bytu jest warstwą przykrywającą okno (ADR 0010), więc otwarcie wpisu
   nie zmienia rozmiaru kontenera mapy.
 

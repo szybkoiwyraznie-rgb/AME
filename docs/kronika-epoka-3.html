@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Kronika — Odźwierni: zapraszany, otwierany i ten, który jest drzwiami (wynik działania mechanizmu)</title>
+<style>
+:root{--bg:#f7f3ea;--fg:#1e1a16;--muted:#6b655c;--line:#ded4c2;--card:#fffdf8;--accent:#7a4a22;--accent2:#a5652f;--mit:#3e7d54;--rac:#51689a;--up:#3e7d54;--down:#a3442e;--code:#f1eadc}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 Georgia,serif}
+.wrap{max-width:1080px;margin:0 auto;padding:28px 20px 80px}.topbar{display:flex;align-items:center;gap:14px;border-bottom:2px solid var(--accent);padding-bottom:12px;margin-bottom:18px}
+.brand{font-weight:700;font-size:19px}.brand .dot{color:var(--accent)}.topbar a{color:var(--accent);margin-left:auto;font-size:13px}
+.hero{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px 24px;margin-bottom:22px}
+.hero h1{margin:0 0 6px;font-size:28px}.hero .sub{color:var(--muted);font-size:14px}.badges{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}
+.badge{font-size:12px;padding:3px 10px;border-radius:999px;border:1px solid var(--line);background:var(--code)}
+.badge.tom{background:var(--accent);color:#fff;border-color:var(--accent)}.badge.ok{color:#3e7d54;border-color:#3e7d54}
+.gauge{position:relative;height:18px;border-radius:999px;background:linear-gradient(90deg,#cfe0d2,#f0f0f0,#ccd4e8);border:1px solid var(--line);overflow:hidden;margin-top:8px}
+.gauge .mit{height:100%;background:linear-gradient(90deg,#3e7d54,#6fae85)}
+.gauge .l{position:absolute;top:0;font-size:11px;color:#fff;text-shadow:0 1px 2px #0007}.gauge .lm{left:10px}.gauge .lr{right:10px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}.col{display:flex;flex-direction:column;gap:20px}@media(max-width:800px){.grid{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px 20px}
+.card h2{margin:0 0 12px;font-size:18px;border-left:4px solid var(--accent);padding-left:10px}
+.note{color:var(--muted);font-size:13px;margin:0 0 12px}
+table{width:100%;border-collapse:collapse;font-size:14px}th,td{padding:7px 9px;text-align:left;border-bottom:1px solid var(--line)}
+th{font-size:12px;color:var(--muted)}.num{font-variant-numeric:tabular-nums;text-align:right}
+.chip{border:1px solid var(--line);background:var(--code);border-radius:999px;padding:1px 8px;font-size:12px}
+.chip.up{color:#3e7d54;border-color:#3e7d54}.chip.down{color:#a3442e;border-color:#a3442e}.chip.neutral{color:#6b655c}
+.muted{color:var(--muted);font-size:12px}.up{color:#3e7d54}.down{color:#a3442e}ul{margin:0;padding-left:20px}li{margin:7px 0}
+.foot{margin-top:22px;font-size:12px;color:var(--muted);border-top:1px solid var(--line);padding-top:12px}
+code{background:var(--code);padding:1px 6px;border-radius:5px}
+</style>
+</head>
+<body><div class="wrap">
+<header class="topbar"><div class="brand">AME<span class="dot">.</span> KRONIKA</div><a href="kronika-glowna-podglad.html">← strona główna Tomu (mockup)</a></header>
+
+<div class="hero">
+  <div class="badges"><span class="badge tom">tom-1</span><span class="badge">epoka: epoka-3</span><span class="badge ok">mechanizm: OK</span><span class="badge">skit: odzwierni</span></div>
+  <h1>Odźwierni: zapraszany, otwierany i ten, który jest drzwiami</h1>
+  <p class="sub">Kronika trzech stołów — epoka uruchomiona na działającym mechanizmie Kroniki.</p>
+  <div class="gauge"><div class="mit" style="width:30%"></div><span class="l lm">MIT 30</span><span class="l lr">RACJONALIZACJA 70</span></div>
+</div>
+
+<div class="grid">
+  <div class="col">
+    <div class="card"><h2>Ledger paliwa</h2><p class="note">Udział kosztuje; zwrot tylko za realną zmianę zasięgu.</p>
+      <table><tr><th>Byty</th><th class="num">pasywne</th><th class="num">start</th><th class="num">koszt</th><th class="num">zwrot</th><th class="num">saldo</th></tr><tr>
+        <td><strong>Egungun</strong><br><span class="muted">egungun</span></td>
+        <td class="num">18</td>
+        <td class="num">21</td>
+        <td class="num">−2</td>
+        <td class="num">+5</td>
+        <td class="num"><b>24</b></td>
+      </tr><tr>
+        <td><strong>Balor z Tory Island</strong><br><span class="muted">balor</span></td>
+        <td class="num">15</td>
+        <td class="num">15</td>
+        <td class="num">−2</td>
+        <td class="num">0</td>
+        <td class="num"><b>13</b></td>
+      </tr><tr>
+        <td><strong>Empusa z Koryntu</strong><br><span class="muted">empusa-korynt</span></td>
+        <td class="num">17</td>
+        <td class="num">19</td>
+        <td class="num">−2</td>
+        <td class="num">0</td>
+        <td class="num"><b>17</b></td>
+      </tr></table>
+    </div>
+    <div class="card"><h2>Pozycje bytów</h2><p class="note">Stan po epoce.</p><ul><li><strong>egungun</strong> — <em>wzmocniony</em>.<br><span class="muted">Pieśń zostaje uznana za miłe drzwi; kult przodków rośnie o 2 pp.</span></li><li><strong>balor</strong> — <em>odporny</em>.<br><span class="muted">Powieka pozostaje nieodwrócona; olbrzym nie zostaje pokonany, tylko przestaje być wyjątkiem.</span></li><li><strong>empusa-korynt</strong> — <em>odporny</em>.<br><span class="muted">Empusa zostaje nienazwana — i dzięki temu zostaje w legendzie, choć świat już wie, jak ją rozproszyć.</span></li></ul></div>
+    <div class="card"><h2>Wątki</h2><p class="note">Zamknięte domykają linię; otwarte dają paliwo kolejnym epokom.</p><ul><li><strong>odzwierni</strong> <span class="chip ">zamkniety</span> — Wątek przymknięty: pieśń, powieka i imię to trzy różne progi, nie jeden wspólny odźwierny.</li><li><strong>czwarty-stol</strong> <span class="chip up">otwarty</span> — Czwarty stół z Epoki I wciąż czeka: gość, który wziął sam, czy przodek, który umie wybaczyć.</li><li><strong>warunek-barbarossy</strong> <span class="chip up">otwarty</span> — Dlaczego cesarz woli płacić, żeby gość wyszedł, zamiast przyjąć go przy stole?</li><li><strong>wedrowny-dom-empusy</strong> <span class="chip up">otwarty</span> — Czy ludzie nauczą się wypowiadać słowo-poznanie w porę, czy samo słowo stanie się rytuałem, który chybia?</li><li><strong>imie-na-progu</strong> <span class="chip up">otwarty</span> — Nowy: czy istnieje jedno słowo, które rozwiązuje każdy próg — czy każde drzwi mają własne imię?</li></ul></div>
+  </div>
+  <div class="col">
+    <div class="card"><h2>Konsekwencje dla świata</h2><p class="note">Zasięg wierzeń; oś dusz pozostaje zamknięta (mit + racjonalizacja = 100).</p><ul><li><strong>egungun</strong> — 51% → 53%
+        <span class="chip up">+2 pp</span><br>
+        <span class="muted">Rozdzielenie mechanizmów wzmacnia kult przodków: pieśń zostaje uznana za jedyne miłe drzwi między światami.</span></li><li><strong>balor</strong> — 44% → 44%
+        <span class="chip neutral">0 pp</span><br>
+        <span class="muted">Balor nie zyskuje i nie traci: jego powieka pozostaje nieodwrócona, ale przestaje być jedynym drzwiami, o których ludzie szepczą.</span></li><li><strong>empusa-korynt</strong> — 46% → 46%
+        <span class="chip neutral">0 pp</span><br>
+        <span class="muted">Empusa zostaje nienazwana: świat wie, że padnięcie imienia ją rozwiązuje, więc opowiada o niej ostrożnie — na granicy mitu.</span></li></ul></div>
+    <div class="card"><h2>Ocena narratora (bez mechanicznego „exploitu”)</h2><p class="note">Stopień 0–3 mówi, jak bardzo działania/słowa jednego bytu wykorzystywały w retoryce słabości drugiego.</p><ul><li><strong>egungun</strong> → <strong>balor</strong> ·
+        <span class="chip">2/3</span> <em>retoryka pieśni</em><br>
+        <span class="muted">Egungun odwołuje się do przymusu w obrazie Balora: olbrzym nie pyta, czy chce wracać — i nazywa to za-progiem. To ocena narratora: przodek gra na słabości przymusu, nie odpala go jak przycisku.</span></li><li><strong>empusa-korynt</strong> → <strong>balor</strong> ·
+        <span class="chip">2/3</span> <em>retoryka imienia</em><br>
+        <span class="muted">Empusa pokazuje, że jej próg znika po wypowiedzianym imieniu, a Balor nie ma imienia tylko powiekę — i w ten sposób odbiera mu monopol na bycie niechybnym. Bez mechanicznego exploitu, tylko przez składnię rozmowy.</span></li><li><strong>egungun</strong> → <strong>empusa-korynt</strong> ·
+        <span class="chip">1/3</span> <em>łagodne rozpoznanie</em><br>
+        <span class="muted">Egungun nie atakuje Empusy — odsłania ją: „ty jesteś progiem, nie gościem”. To najbardziej współczująca z trzech ocen.</span></li></ul>
+      <p class="note" style="margin-top:10px">Rozmowa nie likwiduje żadnego progu — pokazuje, że każdy ma inny. Pieśń zaprasza, powieka otwiera, imię rozwiązuje. Świat rozumie trzy mechanizmy naraz, ale żaden z bytów nie traci pola: Balor zostaje nieodwrócony, Empusa zostaje nienazwana, Egungun zostaje w pieśni.</p>
+    </div>
+  </div>
+</div>
+
+<div class="foot">Wygenerowano z <code>data/kronika/summary.json</code> przez <code>npm run kronika</code> · mechanizm: <code>tools/kronika.mjs</code> · P12–P17 wg <code>docs/KRONIKA_tryb.md</code> §20–§21 · Rozstaje pozostają pomysłem.</div>
+</div></body></html>

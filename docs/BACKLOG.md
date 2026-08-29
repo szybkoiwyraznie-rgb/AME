@@ -29,6 +29,13 @@
   właściciela przed live.
 - **Warstwa kręgów kulturowych**: otoczki/halo grupujące wpisy jednej tradycji
   (słowiańska, algonkińska, nordycka…) — wymaga tagu-kręgu jako konwencji.
+- **Mapa tematyczna — rozszerzenia (ADR 0020, M14):** drogi główne, POI typu
+  szczyty, kompleksy leśne i kolorowa wysokość n.p.m. Badanie wykazało brak
+  gotowych, offlineowych pakietów (`earth-roads-*`, `earth-peaks-*`,
+  `earth-forests-*`, `earth-relief-*` — E404; `@freetiler/nasa-bluemarble`
+  to raster bez DEM). Wymaga znalezienia wiarygodnego źródła danych
+  (np. dedykowany dataset Natural Earth/OSM/GeoNames) z licencją możliwą do
+  vendoringu.
 - **Oś czasu manifestacji**: sortowanie po epoce pierwszego odnotowania;
   wymaga pola `data_pierwszego_odnotowania` w schemacie (migracja indeksu).
 - **Wersja EN wpisów**: pole `nazwa_en` / dwujęzyczne sekcje — dopiero po

@@ -31,7 +31,7 @@ test('assets/map/countries-50m.json dekoduje się (Natural Earth, ADR 0003)', as
   assert.ok(kraje.every((k) => /^M-?\d/.test(k.d)));
 });
 
-test('każdy punkt mieści się w prostokącie świata (projekcja równoodległa)', async () => {
+test('każdy punkt mieści się w prostokącie świata (Web Mercator)', async () => {
   const kraje = dekodujKraje(JSON.parse(await readFile(TOPO, 'utf8')));
   const poza = [];
   for (const k of kraje)
@@ -79,24 +79,32 @@ test('Rosja, Fidżi i Antarktyda są pocięte na strony szwu (A3)', async () => 
   assert.ok(antarktyda.some((p) => p.some(([, y]) => Math.abs(y - WYSOKOSC) < ε)), 'domknięcie po linii bieguna');
 });
 
-test('projekcja jest jednostajna w obu osiach: 1° długości = 1° szerokości (A1)', () => {
+test('Mercator: skala lokalna zachowuje kształty — na 52°N pion mierzy ~1/cos(φ) więcej (A1)', () => {
   const [x0, y0] = projektuj(0, 0);
   const [x1] = projektuj(0, 10); // 10° na wschód
-  const [, y1] = projektuj(-10, 0); // 10° na południe
   assert.equal(x1 - x0, 100, '10° długości = 100 j.u.');
-  assert.equal(y1 - y0, 100, '10° szerokości = 100 j.u. — ta sama skala, brak rozciągu');
-  assert.equal(SZEROKOSC / WYSOKOSC, 2, 'świat ma proporcje 2:1');
+  const lat = 52;
+  const rad = (lat * Math.PI) / 180;
+  const [, ya] = projektuj(lat - 0.5, 0);
+  const [, yb] = projektuj(lat + 0.5, 0);
+  const dxStopien = (projektuj(lat, 1)[0] - projektuj(lat, 0)[0]);
+  const dyStopien = yb - ya; // przyrost przez 1° szerokości
+  assert.ok(Math.abs(dxStopien - 10) < 1e-9, `1° dł. = ${dxStopien} j.u.`);
+  const wzmocnienie = Math.abs(dyStopien) / dxStopien;
+  assert.ok(Math.abs(wzmocnienie - 1 / Math.cos(rad)) < 0.02, `wzmocnienie pionu ${wzmocnienie.toFixed(3)} ≈ 1/cos(${lat}°) = ${(1 / Math.cos(rad)).toFixed(3)}`);
+  assert.equal(SZEROKOSC / WYSOKOSC, 1, 'świat Merkatora jest kwadratowy');
 });
 
-test('Polska pozostaje krajem, nie pasem na całą mapę (A1 + A3)', async () => {
+test('Polska pozostaje krajem o proporcjach zbliżonych do rzeczywistych (A1 + A3)', async () => {
   const kraje = dekodujKraje(JSON.parse(await readFile(TOPO, 'utf8')));
   const [polska] = podsciezki(kraje.find((k) => k.nazwa === 'Poland').d);
   const x = polska.map(([v]) => v);
   const y = polska.map(([, v]) => v);
   const szerokosc = Math.max(...x) - Math.min(...x);
   const wysokosc = Math.max(...y) - Math.min(...y);
-  // ~10° na ~5,9° w skali 10 j.u./stopień
-  assert.ok(Math.abs(szerokosc / wysokosc - 10 / 5.9) < 0.25, `szer/wys = ${(szerokosc / wysokosc).toFixed(3)}`);
+  // W Merkatorze ~10° dł. × ~5,9° szer. na 52°N daje stosunek bliski ~1:1
+  // (Google pokazuje Polskę w ten sposób), a nie ~1,7:1 jak równoodległa.
+  assert.ok(szerokosc / wysokosc > 0.9 && szerokosc / wysokosc < 1.25, `szer/wys = ${(szerokosc / wysokosc).toFixed(3)}`);
   assert.ok(szerokosc < SZEROKOSC / 10 && wysokosc < WYSOKOSC / 10, 'Polska nie jest pasem na całą mapę');
 });
 

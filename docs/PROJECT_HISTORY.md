@@ -859,3 +859,472 @@ pracy: Pętla Jakości + realne obmyślanie koncepcji.
 
 - Stan: `npm test` **144/144**, build/check zielone; indeks: 8 wpisów, **12
   SKITów**, 32 pozycje feedu, 26 tagów. Protokół v1.7.
+
+## M15 (2026-08-28) — materializacja dwóch kart: Thunderstaff (DST) i Savage Surge (THS)
+
+Właściciel zlecił materializację dwóch nowych kart. Fetch Scryfall (ADR 0008)
+wykonany dla konkretnych wydań: `Thunderstaff` (Darksteel #153, 2004) i
+`Savage Surge` (Theros #176, 2013); dane Oracle, flavor, artysta, rok pobrane
+z API i strony karty.
+
+### C1 — dwa nowe wpisy
+
+- **`indra`** (Thunderstaff → żywy bóg gromu Indra): istota z własną jaźnią —
+  król Swargi, władca pioruna i deszczu z wedyjsko-puranicznej tradycji Indii.
+  Jego wadżra, wykuta z kręgosłupa mędrca Dadhichiego, przełamuje odporność
+  Vṛtry i wraca wodę światu, ale przedmiot jest tylko atrybutem; byt to sam
+  Indra, z dumą, żądzą, grzechem braminobójstwa i klątwą Gautamy. Lokalizacja:
+  Naimisharanya (Dadhichi Kund, brzeg Gomati, Uttar Pradesh). 6 źródeł
+  (`encyclopedia.com`, `vyasaonline.com`, `thehindu.com`, `amarchitrakatha.com`,
+  `art-eater.com`, `wanderlog.com`); tagi `indie`, `heros-burzy`, `burza`,
+  `warunek`. Powiązania z Barbarossą (warunkowa potęga władcy) i Chejronem
+  (kontrola nad mocą a dzika natura).
+- **`nessos`** (Savage Surge → Nessos): kentaur-przewoźnik z rzeki Euenos,
+  który próbował porwać Deianirę i zginął od strzały Heraklesa; flavor
+  „A centaur has two backs!” tłumaczy się anatomią i zdradą z zaskoczenia.
+  Lokalizacja: rzeka Évinos w Etolii-Akarnanii. 5 źródeł (Theoi, Mythopedia,
+  Perseus ×2, ToposText), tagi `grecja`, `kentaur`, `furia`, `postac-zwierzeca`.
+  Powiązania z Chejronem (lustrzane kentaury) i Empusą (kuszenie śmiercią).
+
+### C3 — SKIT „DWA GRZBIETY” (trio, blind-draft)
+
+- Nessos × Chejron × Indra — skład 3-osobowy, unikalny, 280 słów. Motyw:
+  dwa grzbiety / dwie natury; każdy byt mówi o tym, jak panować nad
+  dziką połową. Zgodnie z lore: Nessos traci przez żądzę, Chejron oddaje
+  nieśmiertelność, Indra trzyma porządek, ale nie bez grzechu.
+
+### Wizualizacje
+
+- `assets/wizualizacje/indra.jpg` i `nessos.jpg` (21:9, ≤ 2 MB).
+  Prompt Nessosa przeredagowany po odrzuceniu przez moderację (usunięta
+  scena z kobietą; łucznik na przeciwległym brzegu) — treść wpisu
+  zaktualizowana do wygenerowanej, bezpiecznej sceny.
+
+### Stan
+
+- `npm test` 149/149, `npm run build` zielony; indeks: **10 wpisów, 13
+  SKITów**, 35 pozycji feedu, 28 tagów (nowy w kanonie: `indie`).
+- Test `dane.test.js` zaktualizowany (8 kultur zamiast 7) — realna zmiana
+  po dodaniu kultury indyjskiej.
+
+## Pętla Jakości (po M15) — C1 → C3 → C2 — commit `f8265c0` (PR #7)
+
+Po M15 właściciel poprosił o pętlę jakości. Trzy fazy: domknięcie sieci (C1),
+nowy SKIT (C3), mała featura (C2). Wszystkie wypchnięte na
+`arena/01a04a01-ame`; PR #7 zaktualizowany o wyniki.
+
+### C1 — domknięcie sieci powiązań
+
+- Sprawdzono kartotekę: `indra` i `nessos` miały najmniej backlinków; wybrano
+  najsłabsze pary.
+- `indra ↔ drangue-shala` — dwaj herosi burzy uwalniający wodę (Indra zabija
+  Vṛtrę, drangue walczy z kulshedrą; wspólny indoeuropejski wzorzec
+  „smok wstrzymuje wodę → heros ją odpycha”).
+- `nessos ↔ selkie-sule-skerry` — byty na granicy wody, zdradzające przez
+  zaufanie (przewoźnik-zdrajca i foka-selkie, której skóra oddaje władzę).
+- Po tym żaden wpis nie ma 0 backlinków; build/tests zielone (149/149).
+
+### C3 — SKIT „Znak burzy”
+
+- Nowy plik `data/skity/znak-burzy.json`: **Indra × Drangue × Barbarossa**,
+  unikalne trio, 221 słów. Motyw: „kto ma prawo wrócić, gdy nadejdzie grzmot”.
+- Pisany metodą embodimentu (każdy głos z własnego dossier) — kolejny
+  prototyp KRONIKI.
+- Poprawka do ADR 0017: timestamp `2026-08-28 22:30` (wszystkie godziny w
+  repo muszą pochodzić z najnowszego dnia feedu). Build: 10 wpisów, **14
+  SKITów**, 38 pozycji feedu, 27 tagów.
+
+### C2 — deep-link do filtra tagów `#tag:<tag>`
+
+- Adres `#tag:<tag>` otwiera mapę z aktywnym filtrem tagu; nieznany slug jest
+  odrzucany względem kanonu.
+- Klik w chip na pasku tagów aktualizuje URL przez `history.replaceState`
+  (a dezaktywacja czyści hash), bez dodawania historii.
+- Nowy helper `tagZFragmantu` w `app/ui.js` + test w `test/ui.test.js`.
+- `npm test` **150/150**; commit `f8265c0`.
+
+## Pętla Jakości (po M15) — twórczy rozwój idei KRONIKI
+
+Właściciel zaproponował kolejną pętlę jakości: **zamiast wymyślać nowe
+featury — twórczy wkład w ideę KRONIKI** z poprzednich PR-ów. Wykonana
+praca: pierwszy **prototyp epoki** jako konkretna próbka modelu
+„SKIT + skutek”.
+
+### Prototyp pierwszej epoki
+
+- `docs/plans/PROTOTYP_kroniki-epoka-1.md` — epoka **„Znak burzy”**
+  zbudowana na istniejącym SKICIE (Indra × Drangue × Barbarossa), bez
+  duplikowania dialogu.
+- Role uczestników wyliczone z `profileKartoteki`: Indra = Drapieżnik,
+  Drangue = Pieśniarz, Barbarossa = Filar.
+- Szkic rekordu `data/kronika/epoka-1-znak-burzy.json` (koncepcyjny, nie
+  dane produkcyjne): `skit`, `iskra`, `uczestnicy`, `przebieg`, `skutek`,
+  `meta`.
+- `skutek.relacje` proponuje pierwsze zmiany stanu: Indra↔Drangue
+  (indeks/zobowiązanie), Indra↔Barbarossa (schłodzenie), Drangue↔Barbarossa
+  (uznanie). Tereny bez zmian; zasób „znak” nierozstrzygnięty.
+- Narratorski zapis „Kronikarz zapisuje” + **następna iskra** wynikająca z
+  długu po epoce 1 (kulshedra schodzi z rzeki — spłata siłą czy rytuałem?).
+
+### Wkład do mapy pytań metagry
+
+- `docs/plans/KONCEPCJA_metagra_pytania-otwarte.md` §6: wstępne odpowiedzi
+  na **P3** (wydarzenie = SKIT + skutek), **P7** (minimalny format epoki) i
+  **P9** (epoka jako opcjonalna warstwa narratorska, odrzucalna bez psucia
+  kart).
+- Świadomie **bez kodu i bez walidatora** — zgodnie z M13 metagra jest w
+  opracowaniu; dopiero po decyzji właściciela można pisać ADR i plan MVP.
+
+### Stan po tej pętli
+
+- `npm test` 150/150, `npm run build` zielony, `npm run check` OK.
+- Dokumentacja ROADMAP/PROJECT_HISTORY uzupełniona o faktyczny zapis obu
+  pętli (na jawne zlecenie właściciela — patrz też uwaga w ROADMAP: zapis
+  tego, co przyniósł commit, to nie „polerowanie”).
+
+## Poprawka mapy: Web Mercator + klikalne nazwy miast (uwagi właściciela)
+
+Właściciel porównał wygląd Polski w AME z mapą Google: mapa była wyraźnie
+„spłaszczona” (szersza niż wyższa), co jest realnym defektem projekcji. Zgłosił
+też prośbę o pokazywanie nazw miast po kliknięciu.
+
+### A — proporcje: równoodległa → Web Mercator
+
+- **Przyczyna:** `geo.js` używała projekcji walcowej równoodległej
+  (equirectangular) z założeniem „1° długości = 1° szerokości na ekranie”.
+  Na szerokości ~52°N (Polska) 1° długości to na kuli tylko ~cos(52°) ≈ 0,61
+  stopnia szerokości, więc mapa wyglądała ~1,7× za szeroko.
+- **Rozwiązanie:** przejście na **Web Mercator** (sfera): świat kwadratowy
+  3600×3600, `y = H/2·(1 − atanh(sin φ)/π)`, szerokości przycięte do
+  ±85,05112878° (standard, jak Google Maps). Lokalne kształty na średnich
+  szerokościach są teraz zgodne z rzeczywistością.
+- **Zakres zmian:** `app/geo.js` (`projektuj`, `odwroc`, `GRANICA_MERCATORA`,
+  wymiary świata), testy `geo.test.js`, `mapa-dane.test.js` (nowy test
+  „Polska ≈ 1,06:1” oraz wzmocnienie pionu ~sec(52°)), `pinezka.test.js`
+  (Warszawa liczona przez `projektuj`).
+- Zachowane: cięcie na antypołudniku (ADR 0009), `contain` bez rozciągu,
+  brak nowych zależności.
+- ADR 0003/0009, ARCHITECTURE i README zaktualizowane do Mercatora.
+
+### B — klikalne etykiety miast
+
+- Klik w kropkę miasta (lub blisko, w promieniu 16 px ekranu) pokazuje
+  pływającą tabliczkę `.etykieta-miasta` z nazwą i populacją (np.
+  „Warszawa · 1.7 mln”).
+- Etykieta ma stały rozmiar ekranowy (kompensacja skali jak badge pinezki),
+  podąża za miastem przy pan/zoom i chowa się przy przeciągnięciu, kliknięciu
+  w pinezkę lub kliknięciu poza miastem.
+- Drag/pinch odróżniony od kliknięcia (`czyPrzesunieto`), więc przesuwanie
+  mapy nie wywołuje etykiet.
+- Podpowiedź w `index.html` rozszerzona o „kliknij miasto = nazwa”; test
+  warstw miast sprawdza obecność `<title>` z nazwą i ukrytą etykietę.
+
+### Stan
+
+- `npm test` **150/150**, `npm run check` OK, `npm run build` zielony.
+- Commity: `43483ad` (Mercator) + commit z etykietami miast (poniższy wpis).
+
+## Pętla Jakości po poprawkach mapy (audyt przed sprawdzeniem właściciela)
+
+- **Audyt:** po starcie nowej wersji właściciel miał dostęp do świeżego
+  podglądu, ale przed ostatecznym sprawdzeniem zlecił pętlę jakości. Sprawdzono
+  oba kierunki (Mercator + etykiety miast) i aktualny stan gita.
+- **Znaleziony defekt:** gdy warstwa „Miasta” była wyłączona albo zoom spadał
+  poniżej progu `miastaWielkie`, kropki miast znikały, ale otwarta po kliknięciu
+  tabliczka z nazwą zostawała na mapie.
+- **Poprawka (przed commit):** `odswiezMiasta()` przy `!pokazuj` wywołuje
+  `ukryjEtykieteMiasta()`; `ustawMiasta()` czyści etykietę, gdy aktywne miasto
+  przestało istnieć w danych.
+- **Test:** rozszerzony test kliknięcia — ponowne kliknięcie, wyłączenie
+  warstwy i `reset()` chowają tabliczkę; symulowany `getScreenCTM`/`DOMPoint`.
+- **Cache-busting:** podbijana wersja `?v=c4-1` w `index.html` i w importach
+  modułów (`app/app.js`, `app/map.js`) — wymusza pobranie świeżych JS/CSS po
+  zmianie kodu. Przy każdej zmianie `app/*.js`/`styles.css` trzeba podnieść
+  wersję, inaczej przeglądarka trzyma stare pliki („mapa bez zmian”).
+  Reguła zapisana jako komentarz w `index.html`. Działa na HTTP (lokalny
+  serwer i GitHub Pages); tryb `file://` pozostaje celowo nieobsługiwany
+  (baner w `index.html`).
+- **Stan:** `npm test` **151/151**, `npm run check` i `npm run build` zielone;
+  commit pętli + powód odtworzenia gałęzi z origin po resecie sandboxa.
+
+## Pętla Jakości — C1 → C3 → C2 (pełny obieg po poprawkach mapy)
+
+Właściciel słusznie zauważył, że poprzednie podsumowanie nie miało struktury
+pętli (C1/C2/C3) — to był audyt. Ten wpis to pełny obieg.
+
+### C1 — domknięcie sieci
+
+- Audyt: najsłabsze ogniwa to `indra` (1 backlink) i `nessos` (1 backlink),
+  mimo linków wychodzących. Dodane odwzajemnienia:
+  - `barbarossa-kyffhaeuser → indra` — warunkowa potęga czeka na znak
+    (kruki / wadżra z kości Dadhichiego);
+  - `kentaur-pelion → nessos` — lustrzane kentaury: Chejron oddaje
+    nieśmiertelność, Nessos ginie od własnej strzały.
+- Po C1: indra i nessos po 2 backlinki; żadna manifestacja <2.
+
+### C3 — SKIT „Cena znaku”
+
+- Nowy plik `data/skity/cena-znaku.json`, trio **Indra × Barbarossa ×
+  Nessos**, unikalny skład, 211 słów. Temat „kto płaci za to, że moc wraca
+  na wezwanie”. Kolejny prototyp KRONIKI (metoda embodimentu).
+- Build: 10 wpisów, **15 SKITów**, 39 pozycji feedu.
+
+### C2 — etykiety miast: tylko po kliknięciu (świadoma decyzja)
+
+- Właściciel potwierdził, że pokazywanie nazw miast **ma być po kliknięciu** —
+  hover został usunięty (to był nadmiar z mojej strony).
+- Zachowanie pozostawione: klik w kropkę → tabliczka „nazwa · populacja”;
+  klik w tło / przeciągnięcie / ukrycie warstwy → chowa.
+- Test pilnuje, że na kropce miasta **nie ma** listenerów
+  `pointerenter/pointerleave`, a klik pokazuje i chowa tabliczkę.
+- `npm test` **152/152**, `npm run check` OK.
+
+## Konsolidacja dokumentacji trybu KRONIKA
+
+Właściciel poprosił o pracę nad koncepcją Kronik i o **jeden czytelny plik**
+z dokumentacją trybu (zamiast szukania po repo).
+
+- `docs/KRONIKA_tryb.md` — kompletna, samodzielna dokumentacja:
+  - cel trybu i fundamenty (U1–U5) oraz decyzje już podjęte;
+  - rozróżnienie build-time vs run-time, trzy warstwy (ARKADIA/SPLOT/KRONIKA);
+  - pętla powstawania epoki + dossier postaci;
+  - schemat `data/kronika/epoka-N-slug.json` z pełnym przykładem epoki 2
+    (na SKICIE „Cena znaku”: Indra × Barbarossa × Nessos);
+  - reguły jakości, kanoniczność, opis widoku obserwatora, oś czasu i graf;
+  - granice trybu oraz propozycje rozstrzygnięć P1–P11;
+  - kolejność wdrożenia (ADR → walidator → widok `#kronika`) i pytania do właściciela.
+- Zgodnie z M13: **bez kodu gry** — praca koncepcyjna; nie modyfikuje danych ani
+  indeksu. `npm test` 152/152, `npm run check` OK.
+
+## C4 — miasto na czas przytrzymania i kursor strzałka (nadpisanie UX z C2)
+
+Właściciel doprecyzował zachowanie mapy:
+
+- **Etykieta miasta tylko podczas kliknięcia (przytrzymania):** wciśnięcie
+  (`pointerdown`) pokazuje tabliczkę „nazwa · populacja”, puszczenie
+  (`pointerup`) ją chowa. Usunięty wcześniejszy „klik pokazuje / klik w tło
+  chowa” (tryb przełączany z C2).
+- **Kursor nad miastem to strzałka, nie łapka** — miasto nie przesuwa mapy.
+  Dodane przezroczyste pole trafienia w promieniu kliku
+  (`PROMIEN_KLIK_MIASTA` = 16 px) i reguła `cursor: default`.
+- **Nazwa nie pojawia się na hover:** usunięty `<title>` z kropki; opis
+  dostępności przeniesiony do `aria-label` grupy miasta.
+- Testy: przytrzymanie pokazuje/puszczenie chowa, drag chowa podczas ruszania,
+  brak `pointerenter/pointerleave`, kontrakt CSS `cursor: default` i
+  `pointer-events: all` na polu trafienia.
+- `npm test` **153/153**, `npm run check` OK, `npm run build` OK.
+
+### Czytelnia Kroniki na osobnym porcie
+
+- Dodany `docs/index.html` (przekierowanie na `czytelnia-kronika.html`), żeby
+  serwując katalog `docs` na oddzielnym porcie otwierał się dokument zamiast
+  mapy. Mapa pozostaje na porcie głównym aplikacji.
+
+### Cache-busting po zmianach mapy (C4)
+
+- Właściciel zobaczył mapę „bez zmian” — przeglądarka trzymała stare
+  `app/map.js`/`app/styles.css`, bo token `?v=` nie został podbity.
+- Wszędzie (index.html, importy app.js, import geo.js w map.js) wersja
+  podniesiona `?v=mercator-1` → `?v=c4-1`. Reguła „podnieś wersję przy
+  zmianie JS/CSS” zapisana jako komentarz w `index.html`.
+- Podpowiedź UI: „kliknij miasto = nazwa” → „przytrzymaj miasto = nazwa”.
+- `npm test` **153/153**, `npm run check` i `npm run build` zielone.
+
+## F1 — 2026-08-29: pięć materializacji na zlecenie
+
+Właściciel przekazał grupę pięciu kart; każda została zweryfikowana w Scryfall
+(ADR 0008 — dokładne wydanie, koszt, typ, mechanika, flavor, artysta, rok),
+przełożona na konkretny byt z folkloru/mitologii i zbadana w źródłach www.
+
+- **Dreams of Steel and Oil (BRO #92)** → **Talos** (`talos-kreta`): spiżowy
+  automat z Krety, jedna żyła ichoru zamknięta gwoździem w kostce. Stal i
+  „olej ” karty = brąz i roztopiony ołów, którym wypływa życie automatu.
+- **Coralhelm Guide (BFZ #74)** → **Ben-Varrey** (`ben-varrey`): manxka
+  syrena z Wyspy Man, przewodniczka znająca każdy krok wybrzeża nad i pod
+  wodą; otwiera drogę, której nie da się zablokować.
+- **Jwar Isle Avenger (OGW #58)** → **Sfinks** (`sfinks-teby`): skrzydlata
+  lwica z kobieca głową na górze Fikion nad Tebami; „surge” = włącza się do
+  walki, gdy coś ją wyzwie.
+- **Aerith Rescue Mission (FIN #5)** → **Kannon** (`kannon-hase`): bodhisattwa
+  miłosierdzia z Hasedery, „słysząca modlitwy świata”, 33 formy, ratunek i
+  uzdrowienie z pielgrzymki 33 Kannon.
+- **Wrap in Flames (MM2 #136)** → **Agni** (`agni`): wedyjski bóg ognia,
+  który rozprasza ciemność i obezwładnia do trzech przeciwników; ogień, który
+  „nie zabija, ale daje czas”.
+
+Zrobione przy każdej karcie:
+- **Scryfall:** dokładne wydanie (BFZ #74, OGW #58, FIN #5, BRO #92, MM2 #136)
+  — dwie pierwsze próby fetcha wróciły z reprintów (BBD, THB), więc dociągnięto
+  właściwe sety parametrem `set=`.
+- **Wpis MFM:** sekcje I–V (wizualizacja, natura, dokumentacja z ≥3 adresami
+  https, trofea, rezonans + tabela translacji), tagi z kanonu, meta z godziną.
+- **Kanon tagów:** dodane `man`, `japonia` (kultura) oraz typy (automat, syrena,
+  sfinks, bodhisattwa, bog-ognia), motywy (obrona, przewodnik, zagadka, ratunek,
+  uzdrowienie, oczyszczenie) i formy (postac-metalowa, morska-postac,
+  plomienna-postac) — każdy z opisem i kategorią.
+- **Arena:** `WAGA_MOTYWU` rozszerzona o nowe motywy (test „każdy motyw z kanonu
+  ma wagę bojową”).
+- **Sieć:** powiązania zwrotne dodane do `nessos`, `kentaur-pelion`,
+  `selkie-sule-skerry`, `empusa-korynt`, `egungun`, `indra`, `barbarossa-kyffhaeuser`;
+  liczba kultur źródłowych 8 → 10 (test `dane.test.js`).
+- **Feed:** kolejność godzinowa zaktualizowana — test `skit.test.js` opisuje
+  teraz poprawnie starsze dni z godzinami obok najnowszego dnia.
+- **Wizualizacje:** 5 × 21:9 w `assets/wizualizacje/` (≤ 0,34 MB), prompt w
+  wpisie; dwa pierwsze szkice odrzucone przez moderację, przegenerowane
+  z ubranymi/opancerzonymi wizerunkami.
+- Weryfikacja: `npm test` **153/153**, `npm run build` → 15 wpisów / 15 SKITów /
+  49 pozycji feedu / 43 tagi; `npm run check` OK.
+
+## Kronika — rozszerzenie koncepcji po przemyśleniach właściciela (2026-08-29)
+
+Właściciel przeczytał `docs/KRONIKA_tryb.md`, zaakceptował kierunek i zgłosił
+sześć obszarów do dopracowania. Powstały dwa artefakty:
+
+- **`docs/kronika-epoka-podglad.html`** — statyczny **mockup strony „Epoka X”**:
+  konkretny wygląd tego, co zobaczy obserwator (nagłówek, iskra + pytanie,
+  karty uczestników z paliwem, przebieg dialogowy, panel konsekwencji,
+  ledger paliwa, płytka słabości/exploitu, wątki otwarte). Na danych
+  przykładowych (Kannon × Agni × Talos), żeby dało się ocenić układ bez
+  czytania kolejnej teorii.
+- **`docs/KRONIKA_tryb.md` §18–§19** — odpowiedzi na 6 pytań właściciela:
+  1. wygląd strony Epoki (mockup + układ),
+  2. napęd Kroniki + **budżet „paliwa”** (bramka + koszt ciężkich skutków;
+     źródła: backlinki/SKITy/wzmianki kroniki; brak = brak wpływu),
+  3. **konsekwencje jako obserwowalne delty** (oś „rząd dusz”, mapa wpływów,
+     wykres zasięgu, tabela relacji, ledger),
+  4. **słabości jako exploitable leverage** (marginalizacja / zranienie /
+     przemiana / odporność),
+  5. **cel ostateczny** (stany końcowe per tom: mgła / odczarowanie /
+     równowaga / pętla),
+  6. **oś główna „cywilizacja kontra byty niematerialne”** + meta-napięcie:
+     samo archiwizowanie bytów dodaje im paliwo (pamięć), choć je
+     odczarowuje.
+
+Nowe propozycje rozstrzygnięć: **P12–P17** (budżet, wzór paliwa, model
+`konsekwencje`, warstwa prezentacji, słabości, oś główna). Do decyzji
+właściciela w §19. Czytelnia linkuje do mockupu z nagłówka.
+`npm test` bez zmian (koncepcja + statyczny mockup, bez zmian w danych).
+
+## Kronika — szlif mechanizmu + strona główna Tomu (2026-08-29)
+
+Właściciel zobaczył mockup epoki i odpowiedział na 9 punktów. Kluczowe:
+
+- **Mechanizm paliwa poprawiony.** Zauważył słusznie, że `+3/udział w skicie`
+  przy „każda epoka = nowy skit” automatycznie pomnażałoby kapitał. Usunięte.
+  Udział jest **kosztem**; paliwo pasywne płynie z archiwum (backlinki + tagi
+  kanonu + bonus kulturowy), a zysk tylko z realnej zmiany świata. Paliwo jest
+  i **bramką**, i **walutą** — udział kosztuje, skutek można boostować na
+  plus/minus (`docs/KRONIKA_tryb.md` §20.1).
+- **Oś główna zatwierdzona** („cywilizacja kontra byty niematerialne”);
+  osie poboczne = dominacje kultur/kultów z tagów (§20.2).
+- **Konsekwencje + warstwa wizualna** w MVP — zaakceptowane (P14/P15).
+- **Strona główna Kroniki** — nowy mockup `docs/kronika-glowna-podglad.html`:
+  aktualny stan, chronologia epok, wątki zamknięte/otwarte, uczestnicy, skity,
+  strefy wpływów, ledger paliwa, rozstaje (§20.3).
+- **Uczestnicy epoki klikalni do kartoteki** (`#slug`); mockup otwiera mapę
+  z podglądu w docs (§20.4).
+- Następny krok: doszlifowanie mechanizmu (bilans, walidator, 1–2 epoki
+  kontrolne) przed ADR/planem (§20.6). P16 pozostaje do potwierdzenia.
+
+## Kronika — pierwszy działający mechanizm + Epoka I (2026-08-29)
+
+Właściciel doprecyzował P16 i polecił zbudować mechanizm, nie sam mockup;
+Rozstaje zostawić w pomysłach.
+
+- **P16:** słabości nie są „przyciskiem exploitu” ani komentarzem „X wykorzystał
+  Y”; to ocena **agenta-narratora** (`narrator.ocena[]`: kto→kogo, stopień 0–3,
+  kontekst, komentarz), bez kosztu w ledgerze.
+- **Mechanizm (`tools/kronika.mjs`):** paliwo pasywne = 2×backlinki + tagi kanonu
+  + sieć powiązań (max 3); udział kosztuje; zwrot tylko za dodatnią zmianę
+  zasięgu; walidator konsekwencji (os, relacje, zasięg, dominacje, pozycje,
+  wątki) + ocena narratora.
+- **Pierwsza epoka:** `data/kronika/epoka-1.json` na skicie `trzy-stoly`
+  (Egungun × Barbarossa × Kentaur) w Tomie I „Kronika trzech stołów”.
+  Wynik: Egungun 18→21, Barbarossa 17→15, Kentaur 16→14; oś MIT 52→51 /
+  RACJONALIZACJA 48→50; Egungun +3 pp zasięgu, Kentaur −2 pp.
+- **Raport:** `docs/kronika-epoka-1.html` generowany z `data/kronika/summary.json`.
+- **Npm:** `kronika`, `kronika:check`; **testy:** `test/kronika.test.js` (5).
+- **ADR 0021** w `docs/decisions/`; §21 w `docs/KRONIKA_tryb.md`; ROADMAP i
+  Czytelnia zaktualizowane.
+
+## Kronika — oś do 100 + Epoka II + prawdziwa strona główna Tomu (2026-08-29)
+
+Właściciel wychwycił błąd: w pierwszym wyniku MIT 51 + RACJONALIZACJA 50 = 101.
+Poprawione i utrwalone jako **inwariant mechanizmu**:
+
+- **Oś zamknięta:** `mit + racjonalizacja = 100`; delty konsekwencji sumują się
+  do 0; walidator odrzuca 101. Epoka I ma teraz delty −2/+2 (50/50).
+- **`data/kronika/epoka-2.json`** — Epoka II „Nieproszeni goście” na skicie
+  `nieproszeni-goscie` (Imp × Kentaur × Empusa). Mechanizm liczy **sekwencyjnie**:
+  `stanPo` (w tym `paliwo`) przechodzi do kolejnej epoki — Kentaur startuje
+  z 14 (po Epoce I), nie z pasywnego 16.
+- **Wynik Tomu I:** Epoka I (50/50), Epoka II (48/52); Egungun 18→21, Empusa
+  17→19, Kentaur 16→14→12, Imp 12→10, Barbarossa 17→15.
+- **`docs/kronika-tom-1.html`** — prawdziwa strona główna Tomu zasilona
+  z `summary.json` (oś, dominacje, chronologia epok, wątki, uczestnicy z
+  paliwem, ledger) — zamiast samego mockupu.
+- **Aktualizacje:** `tools/kronika.mjs` (oś + ciągłość + raport Tomu),
+  `test/kronika.test.js` (6 testów), ADR 0021, §21, ROADMAP, Czytelnia,
+  mockupy linkujące do realnych raportów.
+
+## Kronika — kalibracja seedów z kartoteki (2026-08-29)
+
+Właściciel polecił: „skalibruj seedy, a potem przejdź do Epoki II”.
+
+- **`npm run kronika:seed`** — `tools/kronika.mjs --seed` liczy `stanStart`
+  deterministycznie z indeksu i kanonu tagów: `obecność = 2×backlinki + tagi
+  kanonu + 2×skity + min(3, powiązania)`; `zasięg = 0.10 + 0.40×(obecność/max)`;
+  oś `mit% = średnia zasięgów`, racjonalizacja = 100 − mit.
+- Seed objął **wszystkie 15 bytów** z kartoteki (nie tylko uczestników Tomu),
+  więc kolejne epoki mogą wprowadzać nowych uczestników bez ręcznego wpisu.
+- **Wynik:** oś startowa 37/63; Epoka I 35/65, Epoka II 33/67; zasięg po
+  Tomie: Egungun 44.7→47.7%, Empusa 43.3→45.3%, Kentaur 44.7→40.7%,
+  Barbarossa 46%, Imp 39.3%.
+- **Test** `seedy w tom-1.json są skalibrowane deterministycznie z kartoteki`
+  pilnuje, że `tom-1.json` nie rozjeżdża się z narzędziem.
+- ADR 0021, §21 (3/4/5), ROADMAP, PROJECT_HISTORY zaktualizowane; raporty
+  przeliczone (`docs/kronika-tom-1.html`, epoka-1, epoka-2).
+
+## Kronika — pętla jakości C1–C3 + Epoka III + ciągłość wątków (2026-08-29)
+
+Kolejna pętla jakości (C1 → C3 → C2) i dalsza implementacja Kroniki.
+
+- **C1** — research pod otwarty wątek „odźwierni”: Balor (Cath Maige Tuired;
+  powieka podnoszona przez czterech, żar nie imię), Egungun (wejście przez
+  pieśń/oríkì), Empusa (rozpoznanie przez nazwanie, Life of Apollonius).
+- **C3** — nowy SKIT `data/skity/odzwierni.json` (Egungun × Balor × Empusa;
+  unikalny skład, 201 słów, 3 głosy). Dodanie SKITu przekalibrowało seedy
+  (`2×skity`), więc Tom I przeliczony (Egngun 47.3→50.3%, Empusa 46→48%).
+- **C2 / Epoka III** — `data/kronika/epoka-3.json` „Odźwierni” na skicie
+  `odzwierni`: Egungun 21→24 (+5), Balor 15→13, Empusa 19→17; oś 31/69.
+  Raport `docs/kronika-epoka-3.html`, strona Tomu zaktualizowana.
+- **Ciągłość wątków** — `walidujCiągłośćWątków` w `tools/kronika.mjs`:
+  otwarty wątek musi być przeniesiony/domknięty, zamknięty nie może się
+  otworzyć. Walidator wykrył realny błąd: Epoka II gubiła `czwarty-stol`
+  i `warunek-barbarossy` z Epoki I — naprawione (przeniesione).
+- **ADR 0021** rozszerzony (pkt 9–10); §21.4–§21.6 w `docs/KRONIKA_tryb.md`;
+  ROADMAP uzupełniony.
+- Testy: `test/kronika.test.js` 9 testów, łącznie **162/162**; build/check/
+  kronika:check zielone.
+
+## Kronika — Epoka IV + automatyczny raport (2026-08-29)
+
+Pociągnięty wątek i zautomatyzowany raport.
+
+- **Epoka IV** — `data/kronika/epoka-4.json` „Imię na progu: skóra, kres
+  i pieśń” na nowym skicie `imie-na-progu` (Egungun × Selkie × Indra,
+  unikalny skład). Egungun 24→27, Selkie 24→22, Indra 13→11; oś 29/71.
+  Wątek `imie-na-progu` domknięty, otwarty nowy `kres-indry`.
+- **Wzorzec delta** — `konsekwencje.zasieg/dominacje` przechowują `delta`
+  zamiast `przed/po`; `przeliczEpoke` liczy `przed/po` z bieżącego stanu.
+  Dodanie SKITu (zmiana seedu) przestało wymagać ręcznego re-basowania
+  poprzednich epok — mechanizm sam je przelicza.
+- **Automatyczny raport** — `npm run build` = rebuild-index + `kronika --seed`
+  + `kronika`: indeks → seed → `summary.json` + wszystkie raporty HTML.
+  `npm run check` pilnuje aktualności indeksu i raportów.
+- **C3** — nowy SKIT `data/skity/imie-na-progu.json` (210 słów, 3 głosy,
+  unikalny skład); baza ma 17 SKITów.
+- **Dokumentacja** — §21.6 (delta), §21.7 (auto raport), §21.8 (następny
+  krok); ADR 0021 (pkt 9–10, epoki, build); ROADMAP/PROJECT_HISTORY.
+- Testy: `test/kronika.test.js` 10 testów, łącznie **163/163**; build/check
+  zielone.

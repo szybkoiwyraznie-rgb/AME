@@ -1,0 +1,162 @@
+{
+  "slug": "epoka-2",
+  "tom": "tom-1",
+  "skit": "nieproszeni-goscie",
+  "tytul": "Nieproszeni goście: psuj, zaproszony i zaproszenie",
+  "iskra": "Trzej psuja uroczystości porównują, jak wchodzą: kościelny psuj, zaproszony gość, który sięgnął sam, i dom, który sam jest zaproszeniem.",
+  "pytanie": "Jeśli każdy ma swojego odźwiernego — anioła, halę albo jedno trzeźwe słowo — to co naprawdę zatrzymuje, a nie tylko wypędza?",
+  "uczestnicy": [
+    {
+      "slug": "lincoln-imp",
+      "rola": "Psuj, którego zatrzymał anioł",
+      "kosztUdzialu": 2,
+      "kosztKlucza": 0,
+      "boost": 0,
+      "zwrot": 0,
+      "watkiNaruszone": 2
+    },
+    {
+      "slug": "kentaur-pelion",
+      "rola": "Zaproszony, który wziął",
+      "kosztUdzialu": 2,
+      "kosztKlucza": 0,
+      "boost": 0,
+      "zwrot": 0,
+      "watkiNaruszone": 2
+    },
+    {
+      "slug": "empusa-korynt",
+      "rola": "Dom, który jest zaproszeniem",
+      "kosztUdzialu": 2,
+      "kosztKlucza": 0,
+      "boost": 0,
+      "zwrot": 4,
+      "watkiNaruszone": 2
+    }
+  ],
+  "przebieg": "Pełny tekst rozmowy: data/skity/nieproszeni-goscie.json (uczestnicy zgodni z epoką).",
+  "narrator": {
+    "ocena": [
+      {
+        "kto": "lincoln-imp",
+        "kogo": "kentaur-pelion",
+        "stopien": 2,
+        "kontekst": "retoryka żartu",
+        "komentarz": "Imp kończy rozmowę cięciem „po tobie znów będzie pogrzeb zamiast wesela” — używa słabości kentaura przy winie jako puenty. To ocena narratora, nie przycisk exploitu."
+      },
+      {
+        "kto": "empusa-korynt",
+        "kogo": "kentaur-pelion",
+        "stopien": 1,
+        "kontekst": "retoryka odźwiernego",
+        "komentarz": "Empusa delikatnie odwołuje się do hali, która chwyciła za dzbany, żeby pokazać kentaurowi jego własny próg — zwięźle, bez triumfu."
+      }
+    ],
+    "podsumowanie": "Towarzystwo nie zabija żadnego bytu — po prostu nazywa ich odźwiernych. Świat zyskuje jedno gotowe rozpoznanie: wesele psuje się łatwo, trudniej wejść tak, żeby nikt nie zawołał odźwiernego."
+  },
+  "konsekwencje": {
+    "os": {
+      "mit": -2,
+      "racjonalizacja": 2,
+      "opis": "Świat zaczyna nazywać próg każdego przybysza: anioł, hala, jedno trzeźwe słowo. Empusa przestaje być nieuchwytna, ale jej legenda rośnie jako przestroga."
+    },
+    "relacje": [
+      {
+        "od": "lincoln-imp",
+        "do": "kentaur-pelion",
+        "kierunek": "wzmocnienie",
+        "opis": "Imp i Kentaur zostają w tym samym żarcie: obaj zepsuci przez jedną nieumiarkowaną rzeczy — on przez księgę, tamten przez wino."
+      },
+      {
+        "od": "empusa-korynt",
+        "do": "kentaur-pelion",
+        "kierunek": "schłodzenie",
+        "opis": "Empusa stawia kentaurowi próg, którego on nie potrafi przekroczyć w rozmowie; między nimi nie ma wspólnego stołu."
+      }
+    ],
+    "zasieg": [
+      {
+        "slug": "lincoln-imp",
+        "delta": 0.0,
+        "opis": "Imp nie zyskuje i nie traci: jego anioł pozostaje granicą, o której świat mówi raczej z uśmiechem niż z lękiem."
+      },
+      {
+        "slug": "kentaur-pelion",
+        "delta": -0.02,
+        "opis": "Żart o „pogrzebie zamiast wesela” domyka wątek kentaura na ucztach: jego legenda słabnie jeszcze o 2 pp."
+      },
+      {
+        "slug": "empusa-korynt",
+        "delta": 0.02,
+        "opis": "Świat zaczyna sprawdzać domy jednym trzeźwym słowem; sam rytuał rozpoznania zamienia Empusę w znaną przestrogę i podsyca jej legendę."
+      }
+    ],
+    "dominacje": [
+      {
+        "kultura": "anglia",
+        "kult": "lincoln-imp",
+        "delta": 0.0
+      },
+      {
+        "kultura": "grecja",
+        "kult": "kentaur-pelion",
+        "delta": -0.02
+      },
+      {
+        "kultura": "grecja",
+        "kult": "empusa-korynt",
+        "delta": 0.02
+      }
+    ],
+    "pozycje": [
+      {
+        "slug": "lincoln-imp",
+        "status": "odporny",
+        "opis": "Granica z aniołem pozostaje; nikt nie próbuje go wypuścić z kamienia."
+      },
+      {
+        "slug": "kentaur-pelion",
+        "status": "zraniony",
+        "opis": "Słabość przy winie zostaje nazwana w żarcie; nie zostaje użyta jako broń, ale świat przestaje go zapraszać na uczty."
+      },
+      {
+        "slug": "empusa-korynt",
+        "status": "wzmocniony",
+        "opis": "Zyskuje status znanej przestrogi; ludzie zamiast się bać — sprawdzają."
+      }
+    ],
+    "watki": [
+      {
+        "id": "czwarty-stol",
+        "stan": "otwarty",
+        "opis": "(z Epoki I) Kto siada przy czwartym stole: gość, który wziął sam, czy przodek, który umie wybaczyć?"
+      },
+      {
+        "id": "warunek-barbarossy",
+        "stan": "otwarty",
+        "opis": "(z Epoki I) Dlaczego cesarz woli płacić, żeby gość wyszedł, zamiast przyjąć go przy stole?"
+      },
+      {
+        "id": "odzwierni",
+        "stan": "otwarty",
+        "opis": "Czy istnieje wspólny odźwierny dla wszystkich bytów — czy każde ma tylko własny próg?"
+      },
+      {
+        "id": "wedrowny-dom-empusy",
+        "stan": "otwarty",
+        "opis": "Czy ludzie nauczą się wypowiadać słowo-poznanie, zanim Empusa zdąży zaprosić, czy samo słowo też stanie się rytuałem?"
+      },
+      {
+        "id": "pogrzeb-zamiast-wesela",
+        "stan": "zamkniety",
+        "opis": "Żart Ima domyka wątek kentaura przy ucztach: po nim zostaje pogrzeb, nie wesela."
+      }
+    ]
+  },
+  "meta": {
+    "utworzono": "2026-08-29",
+    "autor": "agent Areny — druga epoka Tomu I (ciągłość stanPo)",
+    "wersja": 1,
+    "uwagi": "Kentaur startuje z salda 14 z Epoki I; Empusa i Imp wchodzą z paliwa pasywnego."
+  }
+}

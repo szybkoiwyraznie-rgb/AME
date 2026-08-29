@@ -14,8 +14,11 @@
       if (localStorage.getItem('ame:motyw') === 'jasny') document.documentElement.dataset.motyw = 'jasny';
     } catch (e) { /* brak dostępu do pamięci — zostaje domyślny ciemny */ }
   </script>
-  <link rel="stylesheet" href="app/styles.css">
-  <script type="module" src="app/app.js"></script>
+  <!-- Cache-busting: przy zmianie app/*.js lub app/styles.css podnieś wersję
+       w ?v= (np. c4-1 → c4-2). Ta sama wersja musi być w importach modułów,
+       inaczej przeglądarka poda stare pliki (typowy objaw „mapa bez zmian”). -->
+  <link rel="stylesheet" href="app/styles.css?v=c4-1">
+  <script type="module" src="app/app.js?v=c4-1"></script>
 </head>
 <body>
   <div id="baner" class="baner" hidden></div>
@@ -32,6 +35,7 @@
       <button id="przycisk-lista" class="przycisk" title="Lista wszystkich manifestacji">☰ kartoteka</button>
       <button id="przycisk-skity" class="przycisk" aria-pressed="false" title="Baza Skitów — rozmowy materializacji">✎ skity</button>
       <button id="przycisk-nowosci" class="przycisk" aria-pressed="false" title="Co nowego — aktualizacje archiwum">✚ nowości</button>
+      <button id="przycisk-warstwy" class="przycisk" aria-pressed="false" title="Warstwy szczegółów: woda, miasta, punkty">🗺 warstwy</button>
       <button id="przycisk-motyw" class="przycisk przycisk-motyw" type="button" aria-pressed="false" title="Przełącz tryb ciemny/jasny">☾ motyw</button>
     </div>
   </header>
@@ -46,7 +50,15 @@
         <button id="zoom-out" class="przycisk-kolo" aria-label="Oddal">−</button>
         <button id="zoom-reset" class="przycisk-kolo" aria-label="Reset widoku">⟲</button>
       </div>
-      <p class="podpowiedz">przeciągnij · kółko = zoom · dwuklik = przybliż · pinch na telefonie</p>
+      <p class="podpowiedz">przeciągnij · kółko = zoom · dwuklik = przybliż · przytrzymaj miasto = nazwa · pinch na telefonie</p>
+      <div id="warstwy-panel" class="warstwy-panel" hidden>
+        <div class="naglowek-panelu">Warstwy szczegółów</div>
+        <label><input id="warstwa-rzeki" type="checkbox" checked> Rzeki</label>
+        <label><input id="warstwa-jeziora" type="checkbox" checked> Jeziora</label>
+        <label><input id="warstwa-miasta" type="checkbox" checked> Miasta</label>
+        <label><input id="warstwa-poi" type="checkbox" disabled title="Warstwa wymaga danych o szczytach — do uzupełnienia w kolejnej iteracji"> POI / szczyty (wkrótce)</label>
+        <p class="uwaga-panelu">Drogi, kompleksy leśne i wysokość n.p.m. wymagają źródeł spoza dostępnych offline danych — plan na kolejną iterację.</p>
+      </div>
     </div>
     <aside id="panel" class="panel" aria-label="Kartoteka manifestacji"></aside>
   </main>
