@@ -28,7 +28,7 @@
     "wyglad_i_aura": "Potężny wojownik z jaśniejącą, spiżowo-brązową skórą, czarnymi długimi włosami i złotą koroną; ciało pokryte tysiącem oczu — pamiątką po klątwie Gautamy, która zamieniła się w znak wszechwidzącego władcy. Jedną ręką dzierży wadżrę, drugą łuk z tęczy. Obecność poznaje się po ozonie i zapachu deszczu na gorącym kamieniu, po nagłym grzmocie, kiedy nadciąga burza, i po tym, że rzeki nagle zaczynają płynąć pełne.",
     "charakter_i_motywacje": "Dumny, żądny uciech władca nieba: pije somę, ucztuje, wysyła apsary do ascetów, którzy urosną w siłę, i nie cofa się przed podszywaniem się pod cudzego męża (Ahalya). A zarazem jest obrońcą porządku — to on rozcina chmury, uwalnia wody i zabija Vṛtrę. Motywacją jest tron: chce rządzić Swargą, być czczonym, nie stracić pierwszeństwa przed ludźmi o większej mocy. Kiedy jego nadużycia go osłabiają, staje się podatny — i wtedy musi prosić o pomoc wyższych bogów albo uciekać przed Brahmahatją, uosobionym grzechem braminobójstwa.",
     "zdolnosci": "Włada piorunem — wadżrą z kości mędrca; wywołuje burze, deszcz i błyskawice; uwalnia rzeki z górskich więzień. Potrafi zmieniać kształt (maja), jeździ na białym słoniu Airavata, dowodzi Marutami (duchami burzy) i wysyła niebiańskie nimfy, by rozpraszały potężnych ascetów. Jego moc nie wyczerpuje się do końca: gdy spojrzy na swój lud, potrafi go poderwać do natarcia, a swoją obecnością odwraca jedno uderzenie z każdego napastnika.",
-    "slabosci_i_metody_pokonania": "Pycha i żądza. Ne może pokonać kogoś chronionego silniejszym błogosławieństwem, chyba że zdobędzie broń nie z metalu ani drewna — wadżrę z kości. Mędrcy przeklinający go są groźniejsi niż demony: po romansie z Ahalyą Gautama pozbawił go męskości albo pokrył tysiącem znaków wstydu; grzech zabicia Vritry (braminobójstwo) wciąż go ściga, więc przed Brahmahatją musi uciekać i oczyścić się. Skuteczna konfrontacja to odebrać mu tron i wadżrę, złamać jego dumę ascetyczną siłą albo wstrzymać deszcz, od którego zależy jego kult.",
+    "slabosci_i_metody_pokonania": "Pycha i żądza. Nie może pokonać kogoś chronionego silniejszym błogosławieństwem, chyba że zdobędzie broń nie z metalu ani drewna — wadżrę z kości. Mędrcy przeklinający go są groźniejsi niż demony: po romansie z Ahalyą Gautama pozbawił go męskości albo pokrył tysiącem znaków wstydu; grzech zabicia Vritry (braminobójstwo) wciąż go ściga, więc przed Brahmahatją musi uciekać i oczyścić się. Skuteczna konfrontacja to odebrać mu tron i wadżrę, złamać jego dumę ascetyczną siłą albo wstrzymać deszcz, od którego zależy jego kult.",
     "preferencje": "Lubi: somę, uczty, złoto, piękne apsary, deszcz, modlitwy wojowników i ofiary; nie lubi: ascetów gromadzących tapas (bo stają się zagrożeniem dla jego tronu), wspomnienia zabójstwa Vritry, wyższych bogów, którzy go upokarzają, i obietnic deszczu, których nie może spełnić."
   },
   "dokumentacja": [
@@ -73,7 +73,7 @@
     "wtorne": "Płaskorzeźba (lub współczesna rzeźba) Indry na Airavata z wadżrą w ręku — świadectwo kultu boga, który wciąż jest czczony, ale już nie jako jedyny władca"
   },
   "rezonans": {
-    "klucz_przywolania": "Thunderstaff pokazuje sam przedmiot — laskę, która odbija ciosy i napędza atakujących. Ale w naszej tradycji ten sam przedmiot nie istnieje bez żywego pana: wadżra jest wadżrą tylko w dłoni Indry. To on jest materializacją: żywym bogiem, który haruje z mocą niebios, chroni swój lud (odbija jedno uderzenie, dopóki nie zostanie zmuszony do działania) i potrafi poderwać go do ataku (wzmacnia nacierających). Jego jaźń jest wyraźna: duma, żądza, somać, grzech po Vritrze, klątwa Gautamy — wszystko to sprawia, że można go namierzyć, sprowokować i pokonać, a nie tylko schować go do skrzyni jak relikt.",
+    "klucz_przywolania": "Thunderstaff pokazuje sam przedmiot — laskę, która odbija ciosy i napędza atakujących. Ale w naszej tradycji ten sam przedmiot nie istnieje bez żywego pana: wadżra jest wadżrą tylko w dłoni Indry. To on jest materializacją: żywym bogiem, który haruje z mocą niebios, chroni swój lud (odbija jedno uderzenie, dopóki nie zostanie zmuszony do działania) i potrafi poderwać go do ataku (wzmacnia nacierających). Jego jaźń jest wyraźna: duma, żądza, soma, grzech po Vritrze, klątwa Gautamy — wszystko to sprawia, że można go namierzyć, sprowokować i pokonać, a nie tylko schować go do skrzyni jak relikt.",
     "tabela": [
       {
         "element": "Nazwa",
@@ -110,11 +110,11 @@
     },
     {
       "slug": "kentaur-pelion",
-      "opis": "Kontrast między boską mocą a mądrym umiarem: Indra bywa pyszny, hedonistyczny i przegrywa, gdy nadużywa siły, a Chejron z Pelionu uczy herosów panować nad własną mocą zamiast ją rozpalać. Obaj są nauczycielami przez przykład — jeden pokazuje, co się dzieje, gdy nie ma się dwóch natury pod kontrolą."
+      "opis": "Kontrast między boską mocą a mądrym umiarem: Indra bywa pyszny, hedonistyczny i przegrywa, gdy nadużywa siły, a Chejron z Pelionu uczy herosów panować nad własną mocą zamiast ją rozpalać. Obaj są nauczycielami przez przykład — jeden pokazuje, co się dzieje, gdy nie ma się dwóch natur pod kontrolą."
     },
     {
       "slug": "drangue-shala",
-      "opis": "Obaj są herosami burzy, którzy uwalniają wodę: Indra zabija Vṛtrę — węża zamykającego rzeki — a drangue z Szali walczy z kulshedrą, wielogłową gadziną suszy i powodzi; grzmot jest ich bronią, a deszcz nagrodą dla ludzi. To ten sam indoeuropejski wzorzec zabójcy smoka, który przywraca wodę światu."
+      "opis": "Obaj są herosami burzy, którzy uwalniają wodę: Indra zabija Vṛtrę — węża zamykającego rzeki — a drangue z Shali walczy z kulshedrą, wielogłową gadziną suszy i powodzi; grzmot jest ich bronią, a deszcz nagrodą dla ludzi. To ten sam indoeuropejski wzorzec zabójcy smoka, który przywraca wodę światu."
     },
     {
       "slug": "agni",

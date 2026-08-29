@@ -1,7 +1,7 @@
 {
   "wersja": 3,
   "liczba": 15,
-  "liczbaSkitow": 17,
+  "liczbaSkitow": 18,
   "kanon": {
     "kategorie": [
       {
@@ -395,11 +395,14 @@
       ],
       "powiazania": [
         "barbarossa-kyffhaeuser",
-        "indra"
+        "egungun",
+        "indra",
+        "kannon-hase"
       ],
       "backlinki": [
         "barbarossa-kyffhaeuser",
-        "indra"
+        "indra",
+        "kannon-hase"
       ],
       "obraz": "assets/wizualizacje/agni.jpg",
       "skity": []
@@ -433,9 +436,12 @@
       ],
       "backlinki": [
         "barbarossa-kyffhaeuser",
+        "ben-varrey",
         "drangue-shala",
         "lincoln-imp",
-        "selkie-sule-skerry"
+        "selkie-sule-skerry",
+        "sfinks-teby",
+        "talos-kreta"
       ],
       "obraz": "assets/wizualizacje/balor.jpg",
       "skity": [
@@ -512,6 +518,8 @@
         "syrena"
       ],
       "powiazania": [
+        "balor",
+        "drangue-shala",
         "nessos",
         "selkie-sule-skerry"
       ],
@@ -551,6 +559,7 @@
       ],
       "backlinki": [
         "balor",
+        "ben-varrey",
         "indra",
         "kentaur-pelion",
         "lincoln-imp"
@@ -593,6 +602,7 @@
         "selkie-sule-skerry"
       ],
       "backlinki": [
+        "agni",
         "barbarossa-kyffhaeuser",
         "empusa-korynt",
         "kannon-hase",
@@ -712,10 +722,12 @@
         "uzdrowienie"
       ],
       "powiazania": [
+        "agni",
         "egungun",
         "selkie-sule-skerry"
       ],
       "backlinki": [
+        "agni",
         "egungun",
         "selkie-sule-skerry"
       ],
@@ -799,7 +811,8 @@
         "komu-wolno-patrzec",
         "kurz-i-piora",
         "nieproszeni-goscie",
-        "plotno-i-kamien"
+        "plotno-i-kamien",
+        "zagadka-ze-spizu"
       ]
     },
     {
@@ -910,15 +923,20 @@
         "zagadka"
       ],
       "powiazania": [
+        "balor",
         "empusa-korynt",
-        "kentaur-pelion"
+        "kentaur-pelion",
+        "talos-kreta"
       ],
       "backlinki": [
         "empusa-korynt",
-        "kentaur-pelion"
+        "kentaur-pelion",
+        "talos-kreta"
       ],
       "obraz": "assets/wizualizacje/sfinks-teby.jpg",
-      "skity": []
+      "skity": [
+        "zagadka-ze-spizu"
+      ]
     },
     {
       "slug": "talos-kreta",
@@ -943,15 +961,20 @@
         "warunek"
       ],
       "powiazania": [
+        "balor",
         "kentaur-pelion",
-        "nessos"
+        "nessos",
+        "sfinks-teby"
       ],
       "backlinki": [
         "kentaur-pelion",
-        "nessos"
+        "nessos",
+        "sfinks-teby"
       ],
       "obraz": "assets/wizualizacje/talos-kreta.jpg",
-      "skity": []
+      "skity": [
+        "zagadka-ze-spizu"
+      ]
     }
   ],
   "skity": [
@@ -969,7 +992,7 @@
         "Barbarossa",
         "Nessos"
       ],
-      "slow": 211,
+      "slow": 259,
       "data": "2026-08-28 23:59"
     },
     {
@@ -986,7 +1009,7 @@
         "Chejron",
         "Indra"
       ],
-      "slow": 203,
+      "slow": 262,
       "data": "2026-08-28 21:45"
     },
     {
@@ -1001,7 +1024,7 @@
         "Empusa",
         "Kentaur z Pelionu"
       ],
-      "slow": 240,
+      "slow": 297,
       "data": "2026-08-28 16:45"
     },
     {
@@ -1020,7 +1043,7 @@
         "Selkie z Sule Skerry",
         "Empusa"
       ],
-      "slow": 249,
+      "slow": 238,
       "data": "2026-08-28 20:00"
     },
     {
@@ -1035,7 +1058,7 @@
         "Balor",
         "Drangue z doliny Shali"
       ],
-      "slow": 239,
+      "slow": 287,
       "data": "2026-08-28 15:35"
     },
     {
@@ -1052,7 +1075,7 @@
         "Egungun",
         "Imp z Lincoln"
       ],
-      "slow": 276,
+      "slow": 264,
       "data": "2026-08-28"
     },
     {
@@ -1069,7 +1092,7 @@
         "Selkie z Sule Skerry",
         "Indra"
       ],
-      "slow": 210,
+      "slow": 260,
       "data": "2026-08-29 11:05"
     },
     {
@@ -1086,7 +1109,7 @@
         "Egungun",
         "Selkie z Sule Skerry"
       ],
-      "slow": 252,
+      "slow": 294,
       "data": "2026-08-28 18:25"
     },
     {
@@ -1103,7 +1126,7 @@
         "Empusa",
         "Imp z Lincoln"
       ],
-      "slow": 221,
+      "slow": 286,
       "data": "2026-08-28 23:58"
     },
     {
@@ -1118,7 +1141,7 @@
         "Drangue z doliny Shali",
         "Imp z Lincoln"
       ],
-      "slow": 241,
+      "slow": 290,
       "data": "2026-08-28 15:35"
     },
     {
@@ -1135,7 +1158,7 @@
         "Kentaur z Pelionu",
         "Empusa"
       ],
-      "slow": 229,
+      "slow": 289,
       "data": "2026-08-28 21:30"
     },
     {
@@ -1152,7 +1175,7 @@
         "Balor",
         "Empusa"
       ],
-      "slow": 201,
+      "slow": 253,
       "data": "2026-08-29 10:20"
     },
     {
@@ -1167,7 +1190,7 @@
         "Egungun",
         "Imp z Lincoln"
       ],
-      "slow": 241,
+      "slow": 286,
       "data": "2026-08-28"
     },
     {
@@ -1184,7 +1207,7 @@
         "Barbarossa",
         "Kentaur z Pelionu"
       ],
-      "slow": 232,
+      "slow": 258,
       "data": "2026-08-28 23:35"
     },
     {
@@ -1201,8 +1224,25 @@
         "Balor",
         "Drangue"
       ],
-      "slow": 225,
+      "slow": 264,
       "data": "2026-08-28 22:25"
+    },
+    {
+      "slug": "zagadka-ze-spizu",
+      "tytul": "ZAGADKA ZE SPIŻU",
+      "temat": "co zrobić ze strażnikiem, który nie potrafi pomyśleć, i z takim, który myśli za dużo — trzy odpowiedzi na jedno pytanie",
+      "uczestnicy": [
+        "lincoln-imp",
+        "sfinks-teby",
+        "talos-kreta"
+      ],
+      "imiona": [
+        "Sfinks z Teb",
+        "Talos z Krety",
+        "Lincoln Imp"
+      ],
+      "slow": 274,
+      "data": "2026-08-29 11:30"
     },
     {
       "slug": "znak-burzy",
@@ -1218,7 +1258,7 @@
         "Drangue",
         "Barbarossa"
       ],
-      "slow": 221,
+      "slow": 263,
       "data": "2026-08-28 22:30"
     },
     {
@@ -1233,11 +1273,19 @@
         "Balor",
         "Selkie z Sule Skerry"
       ],
-      "slow": 248,
+      "slow": 285,
       "data": "2026-08-28"
     }
   ],
   "aktualizacje": [
+    {
+      "data": "2026-08-29 11:30",
+      "typ": "skit",
+      "akcja": "nowy",
+      "slug": "zagadka-ze-spizu",
+      "tytul": "ZAGADKA ZE SPIŻU",
+      "opis": "SKIT — skład: Sfinks z Teb, Talos z Krety, Lincoln Imp"
+    },
     {
       "data": "2026-08-29 11:05",
       "typ": "skit",
@@ -1292,7 +1340,7 @@
       "akcja": "zmiana",
       "slug": "sfinks-teby",
       "tytul": "Sfinks — strażniczka Tebańskich Wrót",
-      "opis": "Nowa materializacja: Sfinks z Teb — skrzydlata lwica z kobieca głową, strażniczka przejścia przez zagadkę, na podstawie karty „Jwar Isle Avenger” (OGW #58)."
+      "opis": "Nowa materializacja: Sfinks z Teb — skrzydlata lwica z kobiecą głową, strażniczka przejścia przez zagadkę, na podstawie karty „Jwar Isle Avenger” (OGW #58)."
     },
     {
       "data": "2026-08-29 01:20",

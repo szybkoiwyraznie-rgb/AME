@@ -42,17 +42,17 @@
         "kogo": "barbarossa-kyffhaeuser",
         "stopien": 2,
         "kontekst": "retoryka gościnności",
-        "komentarz": "Kentaur używa słowa „płacę” i warunku cesarza, żeby nazwać go strażnikiem więzienia, nie gospodarzem. To ocena narratora, nie mechaniczne „wykorzystanie karty”."
+        "komentarz": "Kentaur odwołuje się do motywu zapłaty i warunku cesarza, nazywając go strażnikiem uwięzienia, a nie prawowitym gospodarzem."
       },
       {
         "kto": "egungun",
         "kogo": "kentaur-pelion",
         "stopien": 1,
         "kontekst": "łagodna retoryka rodu",
-        "komentarz": "Egungun delikatnie odwołuje się do wstydu kentaura, żeby pokazać różnicę: przodek nie bierze, gość, który wziął sam, sam się osądza."
+        "komentarz": "Egungun odwołuje się do wstydu kentaura, wskazując różnicę: przodek przychodzi, by obdarować, a ten, kto wziął samowolnie, sam ściąga na siebie sąd."
       }
     ],
-    "podsumowanie": "Żaden z uczestników nie „odpala” słabości jak przycisku; rozmowa tylko sprawia, że świat zaczyna rozumieć, gdzie leży różnica między gościem proszonym a gościem, który bierze."
+    "podsumowanie": "Żaden z uczestników nie wykorzystał wprost słabości rywala; rozmowa sprawiła jednak, że granica między prawem gościnności a zuchwałością została na nowo nazwana."
   },
   "konsekwencje": {
     "os": {

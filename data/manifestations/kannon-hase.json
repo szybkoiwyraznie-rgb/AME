@@ -19,7 +19,7 @@
     "lat": 35.31,
     "lon": 139.54
   },
-  "pochodzenie_i_kultura": "Japoński buddyzm ludowy: Kannon (Kanzeon Bosatsu) to Kannon, bodhisattwa miłosierdzia i „słyszący modlitwy świata”, wywodząca się z indyjskiego Avalokiteshvary. W Japonii czczona jako opiekunka, wybawicielka i patronka pielgrzymek: 33 świątynie Kamakury i 33 Kannon na trasie Saigoku to miejsca, w których ludzie proszą ją o ratunek i uzdrowienie. Jedna kultura, jeden wątek",
+  "pochodzenie_i_kultura": "Japoński buddyzm ludowy: Kannon (Kanzeon Bosatsu) to Kannon, bodhisattwa miłosierdzia i „słyszący modlitwy świata”, wywodząca się z indyjskiego Avalokiteshvary. W Japonii czczona jako opiekunka, wybawicielka i patronka pielgrzymek: 33 świątynie Kamakury i 33 Kannon na trasie Saigoku to miejsca, w których ludzie proszą ją o ratunek i uzdrowienie. Jedna kultura, jeden wątek.",
   "wizualizacja": {
     "prompt": "Style: A wide-angle full-body cinematic photograph. The central objects/persons of the photo are visible from head to toe, standing centrally in the frame. No parts of the body are cropped.\n\nA serene Japanese goddess of mercy with eleven soft faces and many slender arms, dressed in flowing white and pale gold robes, standing on a stone terrace above a dense hillside pilgrimage path; in one hand she holds a lotus, another gestures open, raised toward three small travelers emerging from a shadowy stairway; behind her a tall wooden temple hall with red lanterns and a distant bay; cool dawn light, drifting incense, wet stone and cherry petals in the breeze.\n\nCaptured with a 35mm anamorphic lens at f/1.8. Shallow depth of field with a heavy, creamy bokeh background. Environmental portraiture. Dramatic cinematic lighting, sharp focus on the character, hyper-realistic textures of clothing and skin. Shot on 70mm film stock, ultra-wide 21:9 aspect ratio. --ar 21:9",
     "obraz": "assets/wizualizacje/kannon-hase.jpg"
@@ -70,7 +70,7 @@
       },
       {
         "element": "Ilustracja",
-        "translacja": "Artysta Hokuyuu; postać w białej szacie w otoczeniu kwiatów i magii — klasyczna wyobrażenie Kannon jako białorobej, miłosiernej bogini z 33 formami. Jej wielość zaznacza, że ma wiele rąk i twarzy, a kwiaty podkreślają uzdrowienie i odrodzenie."
+        "translacja": "Artysta Hokuyuu; postać w białej szacie w otoczeniu kwiatów i magii — klasyczne wyobrażenie Kannon jako białorobej, miłosiernej bogini z 33 formami. Jej wielość zaznacza, że ma wiele rąk i twarzy, a kwiaty podkreślają uzdrowienie i odrodzenie."
       },
       {
         "element": "Flavor text",
@@ -96,7 +96,11 @@
     },
     {
       "slug": "selkie-sule-skerry",
-      "opis": "Obie to istoty morsko-lądowe ofiarujące ludziom pomoc w zamian za zaufanie; selkie z Sule Skerry porusza się między foką a kobietą i przynosi mężowi bogactwo, a Kannon przychodzi zza morza (Pudalaka) i daje uzdrowienie. Różnica: selkie jest domowa i krucha, a Kannon jest poświęcona ratowaniu wszystkich, nawet gdyby miała się rozproszyć."
+      "opis": "Obie to istoty morsko-lądowe ofiarujące ludziom pomoc w zamian za zaufanie; selkie z Sule Skerry porusza się między foką a człowiekiem i przynosi mężowi bogactwo, a Kannon przychodzi zza morza (Pudalaka) i daje uzdrowienie. Różnica: selkie jest domowa i krucha, a Kannon jest poświęcona ratowaniu wszystkich, nawet gdyby miała się rozproszyć."
+    },
+    {
+      "slug": "agni",
+      "opis": "Spotkanie żywiołu oczyszczenia ze współczuciem: wedyjski ogień ofiarny Agniego wypala cierpienie i rozprasza koszmary nocy, podczas gdy Kannon z Hasedery zstępuje na wezwanie cierpiących, by gasić płomienie piekielne i wyprowadzać istoty z matni."
     }
   ],
   "meta": {

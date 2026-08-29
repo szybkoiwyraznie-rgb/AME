@@ -14,13 +14,13 @@
           "slug": "egungun",
           "nazwa": "Egungun",
           "rola": "Przodek przy stole",
-          "pasywne": 18,
-          "saldoPrzed": 18,
+          "pasywne": 20,
+          "saldoPrzed": 20,
           "kosztUdzialu": 2,
           "kosztKlucza": 0,
           "boost": 0,
           "zwrot": 5,
-          "saldoPo": 21
+          "saldoPo": 23
         },
         {
           "slug": "barbarossa-kyffhaeuser",
@@ -49,150 +49,150 @@
       ],
       "stanPo": {
         "os": {
-          "mit": 34,
-          "racjonalizacja": 66
+          "mit": 36,
+          "racjonalizacja": 64
         },
         "zasieg": [
           {
             "slug": "agni",
-            "wielkosc": 0.238
+            "wielkosc": 0.27
           },
           {
             "slug": "balor",
-            "wielkosc": 0.438
-          },
-          {
-            "slug": "barbarossa-kyffhaeuser",
-            "wielkosc": 0.438
-          },
-          {
-            "slug": "ben-varrey",
-            "wielkosc": 0.238
-          },
-          {
-            "slug": "drangue-shala",
-            "wielkosc": 0.425
-          },
-          {
-            "slug": "egungun",
-            "wielkosc": 0.505
-          },
-          {
-            "slug": "empusa-korynt",
-            "wielkosc": 0.438
-          },
-          {
-            "slug": "indra",
-            "wielkosc": 0.363
-          },
-          {
-            "slug": "kannon-hase",
-            "wielkosc": 0.238
-          },
-          {
-            "slug": "kentaur-pelion",
-            "wielkosc": 0.405
-          },
-          {
-            "slug": "lincoln-imp",
-            "wielkosc": 0.375
-          },
-          {
-            "slug": "nessos",
-            "wielkosc": 0.338
-          },
-          {
-            "slug": "selkie-sule-skerry",
             "wielkosc": 0.5
           },
           {
+            "slug": "barbarossa-kyffhaeuser",
+            "wielkosc": 0.427
+          },
+          {
+            "slug": "ben-varrey",
+            "wielkosc": 0.245
+          },
+          {
+            "slug": "drangue-shala",
+            "wielkosc": 0.439
+          },
+          {
+            "slug": "egungun",
+            "wielkosc": 0.518
+          },
+          {
+            "slug": "empusa-korynt",
+            "wielkosc": 0.427
+          },
+          {
+            "slug": "indra",
+            "wielkosc": 0.355
+          },
+          {
+            "slug": "kannon-hase",
+            "wielkosc": 0.27
+          },
+          {
+            "slug": "kentaur-pelion",
+            "wielkosc": 0.395
+          },
+          {
+            "slug": "lincoln-imp",
+            "wielkosc": 0.391
+          },
+          {
+            "slug": "nessos",
+            "wielkosc": 0.33
+          },
+          {
+            "slug": "selkie-sule-skerry",
+            "wielkosc": 0.488
+          },
+          {
             "slug": "sfinks-teby",
-            "wielkosc": 0.238
+            "wielkosc": 0.294
           },
           {
             "slug": "talos-kreta",
-            "wielkosc": 0.238
+            "wielkosc": 0.294
           }
         ],
         "dominacje": [
           {
             "kultura": "indie",
             "kult": "agni",
-            "wielkosc": 0.238
+            "wielkosc": 0.27
           },
           {
             "kultura": "irlandia",
             "kult": "balor",
-            "wielkosc": 0.438
+            "wielkosc": 0.5
           },
           {
             "kultura": "niemcy",
             "kult": "barbarossa-kyffhaeuser",
-            "wielkosc": 0.438
+            "wielkosc": 0.427
           },
           {
             "kultura": "man",
             "kult": "ben-varrey",
-            "wielkosc": 0.238
+            "wielkosc": 0.245
           },
           {
             "kultura": "albania",
             "kult": "drangue-shala",
-            "wielkosc": 0.425
+            "wielkosc": 0.439
           },
           {
             "kultura": "joruba",
             "kult": "egungun",
-            "wielkosc": 0.505
+            "wielkosc": 0.518
           },
           {
             "kultura": "grecja",
             "kult": "empusa-korynt",
-            "wielkosc": 0.438
+            "wielkosc": 0.427
           },
           {
             "kultura": "indie",
             "kult": "indra",
-            "wielkosc": 0.363
+            "wielkosc": 0.355
           },
           {
             "kultura": "japonia",
             "kult": "kannon-hase",
-            "wielkosc": 0.238
+            "wielkosc": 0.27
           },
           {
             "kultura": "grecja",
             "kult": "kentaur-pelion",
-            "wielkosc": 0.405
+            "wielkosc": 0.395
           },
           {
             "kultura": "anglia",
             "kult": "lincoln-imp",
-            "wielkosc": 0.375
+            "wielkosc": 0.391
           },
           {
             "kultura": "grecja",
             "kult": "nessos",
-            "wielkosc": 0.338
+            "wielkosc": 0.33
           },
           {
             "kultura": "szkocja-polnocna",
             "kult": "selkie-sule-skerry",
-            "wielkosc": 0.5
+            "wielkosc": 0.488
           },
           {
             "kultura": "grecja",
             "kult": "sfinks-teby",
-            "wielkosc": 0.238
+            "wielkosc": 0.294
           },
           {
             "kultura": "grecja",
             "kult": "talos-kreta",
-            "wielkosc": 0.238
+            "wielkosc": 0.294
           }
         ],
         "paliwo": {
-          "egungun": 21,
+          "egungun": 23,
           "barbarossa-kyffhaeuser": 15,
           "kentaur-pelion": 14
         }
@@ -220,22 +220,22 @@
         "zasieg": [
           {
             "slug": "egungun",
-            "przed": 0.475,
-            "po": 0.505,
+            "przed": 0.488,
+            "po": 0.518,
             "delta": 0.03,
             "opis": "W niektórych rodach pojawia się czwarty stół dla gościa, który wziął sam — kult przodków zyskuje nowy rytuał."
           },
           {
             "slug": "barbarossa-kyffhaeuser",
-            "przed": 0.438,
-            "po": 0.438,
+            "przed": 0.427,
+            "po": 0.427,
             "delta": 0,
             "opis": "Cesarz nie zyskuje i nie traci: jego warunek pozostaje nierozstrzygnięty."
           },
           {
             "slug": "kentaur-pelion",
-            "przed": 0.425,
-            "po": 0.405,
+            "przed": 0.415,
+            "po": 0.395,
             "delta": -0.02,
             "opis": "Legenda o kentaúrze uroczystym słabnie — ludzie na ucztach zaczynają próbować wino i patrzeć na drugą połowę gościa."
           }
@@ -244,22 +244,22 @@
           {
             "kultura": "joruba",
             "kult": "egungun",
-            "przed": 0.475,
-            "po": 0.505,
+            "przed": 0.488,
+            "po": 0.518,
             "delta": 0.03
           },
           {
             "kultura": "niemcy",
             "kult": "barbarossa-kyffhaeuser",
-            "przed": 0.438,
-            "po": 0.438,
+            "przed": 0.427,
+            "po": 0.427,
             "delta": 0
           },
           {
             "kultura": "grecja",
             "kult": "kentaur-pelion",
-            "przed": 0.425,
-            "po": 0.405,
+            "przed": 0.415,
+            "po": 0.395,
             "delta": -0.02
           }
         ],
@@ -305,17 +305,17 @@
             "kogo": "barbarossa-kyffhaeuser",
             "stopien": 2,
             "kontekst": "retoryka gościnności",
-            "komentarz": "Kentaur używa słowa „płacę” i warunku cesarza, żeby nazwać go strażnikiem więzienia, nie gospodarzem. To ocena narratora, nie mechaniczne „wykorzystanie karty”."
+            "komentarz": "Kentaur odwołuje się do motywu zapłaty i warunku cesarza, nazywając go strażnikiem uwięzienia, a nie prawowitym gospodarzem."
           },
           {
             "kto": "egungun",
             "kogo": "kentaur-pelion",
             "stopien": 1,
             "kontekst": "łagodna retoryka rodu",
-            "komentarz": "Egungun delikatnie odwołuje się do wstydu kentaura, żeby pokazać różnicę: przodek nie bierze, gość, który wziął sam, sam się osądza."
+            "komentarz": "Egungun odwołuje się do wstydu kentaura, wskazując różnicę: przodek przychodzi, by obdarować, a ten, kto wziął samowolnie, sam ściąga na siebie sąd."
           }
         ],
-        "podsumowanie": "Żaden z uczestników nie „odpala” słabości jak przycisku; rozmowa tylko sprawia, że świat zaczyna rozumieć, gdzie leży różnica między gościem proszonym a gościem, który bierze."
+        "podsumowanie": "Żaden z uczestników nie wykorzystał wprost słabości rywala; rozmowa sprawiła jednak, że granica między prawem gościnności a zuchwałością została na nowo nazwana."
       }
     },
     {
@@ -364,150 +364,150 @@
       ],
       "stanPo": {
         "os": {
-          "mit": 32,
-          "racjonalizacja": 68
+          "mit": 34,
+          "racjonalizacja": 66
         },
         "zasieg": [
           {
             "slug": "agni",
-            "wielkosc": 0.238
+            "wielkosc": 0.27
           },
           {
             "slug": "balor",
-            "wielkosc": 0.438
-          },
-          {
-            "slug": "barbarossa-kyffhaeuser",
-            "wielkosc": 0.438
-          },
-          {
-            "slug": "ben-varrey",
-            "wielkosc": 0.238
-          },
-          {
-            "slug": "drangue-shala",
-            "wielkosc": 0.425
-          },
-          {
-            "slug": "egungun",
-            "wielkosc": 0.505
-          },
-          {
-            "slug": "empusa-korynt",
-            "wielkosc": 0.458
-          },
-          {
-            "slug": "indra",
-            "wielkosc": 0.363
-          },
-          {
-            "slug": "kannon-hase",
-            "wielkosc": 0.238
-          },
-          {
-            "slug": "kentaur-pelion",
-            "wielkosc": 0.385
-          },
-          {
-            "slug": "lincoln-imp",
-            "wielkosc": 0.375
-          },
-          {
-            "slug": "nessos",
-            "wielkosc": 0.338
-          },
-          {
-            "slug": "selkie-sule-skerry",
             "wielkosc": 0.5
           },
           {
+            "slug": "barbarossa-kyffhaeuser",
+            "wielkosc": 0.427
+          },
+          {
+            "slug": "ben-varrey",
+            "wielkosc": 0.245
+          },
+          {
+            "slug": "drangue-shala",
+            "wielkosc": 0.439
+          },
+          {
+            "slug": "egungun",
+            "wielkosc": 0.518
+          },
+          {
+            "slug": "empusa-korynt",
+            "wielkosc": 0.447
+          },
+          {
+            "slug": "indra",
+            "wielkosc": 0.355
+          },
+          {
+            "slug": "kannon-hase",
+            "wielkosc": 0.27
+          },
+          {
+            "slug": "kentaur-pelion",
+            "wielkosc": 0.375
+          },
+          {
+            "slug": "lincoln-imp",
+            "wielkosc": 0.391
+          },
+          {
+            "slug": "nessos",
+            "wielkosc": 0.33
+          },
+          {
+            "slug": "selkie-sule-skerry",
+            "wielkosc": 0.488
+          },
+          {
             "slug": "sfinks-teby",
-            "wielkosc": 0.238
+            "wielkosc": 0.294
           },
           {
             "slug": "talos-kreta",
-            "wielkosc": 0.238
+            "wielkosc": 0.294
           }
         ],
         "dominacje": [
           {
             "kultura": "indie",
             "kult": "agni",
-            "wielkosc": 0.238
+            "wielkosc": 0.27
           },
           {
             "kultura": "irlandia",
             "kult": "balor",
-            "wielkosc": 0.438
+            "wielkosc": 0.5
           },
           {
             "kultura": "niemcy",
             "kult": "barbarossa-kyffhaeuser",
-            "wielkosc": 0.438
+            "wielkosc": 0.427
           },
           {
             "kultura": "man",
             "kult": "ben-varrey",
-            "wielkosc": 0.238
+            "wielkosc": 0.245
           },
           {
             "kultura": "albania",
             "kult": "drangue-shala",
-            "wielkosc": 0.425
+            "wielkosc": 0.439
           },
           {
             "kultura": "joruba",
             "kult": "egungun",
-            "wielkosc": 0.505
+            "wielkosc": 0.518
           },
           {
             "kultura": "grecja",
             "kult": "empusa-korynt",
-            "wielkosc": 0.458
+            "wielkosc": 0.447
           },
           {
             "kultura": "indie",
             "kult": "indra",
-            "wielkosc": 0.363
+            "wielkosc": 0.355
           },
           {
             "kultura": "japonia",
             "kult": "kannon-hase",
-            "wielkosc": 0.238
+            "wielkosc": 0.27
           },
           {
             "kultura": "grecja",
             "kult": "kentaur-pelion",
-            "wielkosc": 0.385
+            "wielkosc": 0.375
           },
           {
             "kultura": "anglia",
             "kult": "lincoln-imp",
-            "wielkosc": 0.375
+            "wielkosc": 0.391
           },
           {
             "kultura": "grecja",
             "kult": "nessos",
-            "wielkosc": 0.338
+            "wielkosc": 0.33
           },
           {
             "kultura": "szkocja-polnocna",
             "kult": "selkie-sule-skerry",
-            "wielkosc": 0.5
+            "wielkosc": 0.488
           },
           {
             "kultura": "grecja",
             "kult": "sfinks-teby",
-            "wielkosc": 0.238
+            "wielkosc": 0.294
           },
           {
             "kultura": "grecja",
             "kult": "talos-kreta",
-            "wielkosc": 0.238
+            "wielkosc": 0.294
           }
         ],
         "paliwo": {
-          "egungun": 21,
+          "egungun": 23,
           "barbarossa-kyffhaeuser": 15,
           "kentaur-pelion": 12,
           "lincoln-imp": 10,
@@ -537,22 +537,22 @@
         "zasieg": [
           {
             "slug": "lincoln-imp",
-            "przed": 0.375,
-            "po": 0.375,
+            "przed": 0.391,
+            "po": 0.391,
             "delta": 0,
             "opis": "Imp nie zyskuje i nie traci: jego anioł pozostaje granicą, o której świat mówi raczej z uśmiechem niż z lękiem."
           },
           {
             "slug": "kentaur-pelion",
-            "przed": 0.405,
-            "po": 0.385,
+            "przed": 0.395,
+            "po": 0.375,
             "delta": -0.02,
             "opis": "Żart o „pogrzebie zamiast wesela” domyka wątek kentaura na ucztach: jego legenda słabnie jeszcze o 2 pp."
           },
           {
             "slug": "empusa-korynt",
-            "przed": 0.438,
-            "po": 0.458,
+            "przed": 0.427,
+            "po": 0.447,
             "delta": 0.02,
             "opis": "Świat zaczyna sprawdzać domy jednym trzeźwym słowem; sam rytuał rozpoznania zamienia Empusę w znaną przestrogę i podsyca jej legendę."
           }
@@ -561,22 +561,22 @@
           {
             "kultura": "anglia",
             "kult": "lincoln-imp",
-            "przed": 0.375,
-            "po": 0.375,
+            "przed": 0.391,
+            "po": 0.391,
             "delta": 0
           },
           {
             "kultura": "grecja",
             "kult": "kentaur-pelion",
-            "przed": 0.405,
-            "po": 0.385,
+            "przed": 0.395,
+            "po": 0.375,
             "delta": -0.02
           },
           {
             "kultura": "grecja",
             "kult": "empusa-korynt",
-            "przed": 0.438,
-            "po": 0.458,
+            "przed": 0.427,
+            "po": 0.447,
             "delta": 0.02
           }
         ],
@@ -632,14 +632,14 @@
             "kogo": "kentaur-pelion",
             "stopien": 2,
             "kontekst": "retoryka żartu",
-            "komentarz": "Imp kończy rozmowę cięciem „po tobie znów będzie pogrzeb zamiast wesela” — używa słabości kentaura przy winie jako puenty. To ocena narratora, nie przycisk exploitu."
+            "komentarz": "Imp kończy rozmowę cięciem „po tobie znów będzie pogrzeb zamiast wesela” — celnie puentując zgubną słabość kentaura do wina."
           },
           {
             "kto": "empusa-korynt",
             "kogo": "kentaur-pelion",
             "stopien": 1,
             "kontekst": "retoryka odźwiernego",
-            "komentarz": "Empusa delikatnie odwołuje się do hali, która chwyciła za dzbany, żeby pokazać kentaurowi jego własny próg — zwięźle, bez triumfu."
+            "komentarz": "Empusa odwołuje się do pamięci o rzuconych dzbanach, przypominając kentaurowi jego własną bezsilność w obliczu trzeźwego porządku."
           }
         ],
         "podsumowanie": "Towarzystwo nie zabija żadnego bytu — po prostu nazywa ich odźwiernych. Świat zyskuje jedno gotowe rozpoznanie: wesele psuje się łatwo, trudniej wejść tak, żeby nikt nie zawołał odźwiernego."
@@ -656,25 +656,25 @@
           "slug": "egungun",
           "nazwa": "Egungun",
           "rola": "Przodek, którego wpuszcza pieśń",
-          "pasywne": 18,
-          "saldoPrzed": 21,
+          "pasywne": 20,
+          "saldoPrzed": 23,
           "kosztUdzialu": 2,
           "kosztKlucza": 0,
           "boost": 0,
           "zwrot": 5,
-          "saldoPo": 24
+          "saldoPo": 26
         },
         {
           "slug": "balor",
           "nazwa": "Balor z Tory Island",
           "rola": "Olbrzym otwierany przez czterech",
-          "pasywne": 15,
-          "saldoPrzed": 15,
+          "pasywne": 21,
+          "saldoPrzed": 21,
           "kosztUdzialu": 2,
           "kosztKlucza": 0,
           "boost": 0,
           "zwrot": 0,
-          "saldoPo": 13
+          "saldoPo": 19
         },
         {
           "slug": "empusa-korynt",
@@ -691,155 +691,155 @@
       ],
       "stanPo": {
         "os": {
-          "mit": 30,
-          "racjonalizacja": 70
+          "mit": 32,
+          "racjonalizacja": 68
         },
         "zasieg": [
           {
             "slug": "agni",
-            "wielkosc": 0.238
+            "wielkosc": 0.27
           },
           {
             "slug": "balor",
-            "wielkosc": 0.438
-          },
-          {
-            "slug": "barbarossa-kyffhaeuser",
-            "wielkosc": 0.438
-          },
-          {
-            "slug": "ben-varrey",
-            "wielkosc": 0.238
-          },
-          {
-            "slug": "drangue-shala",
-            "wielkosc": 0.425
-          },
-          {
-            "slug": "egungun",
-            "wielkosc": 0.525
-          },
-          {
-            "slug": "empusa-korynt",
-            "wielkosc": 0.458
-          },
-          {
-            "slug": "indra",
-            "wielkosc": 0.363
-          },
-          {
-            "slug": "kannon-hase",
-            "wielkosc": 0.238
-          },
-          {
-            "slug": "kentaur-pelion",
-            "wielkosc": 0.385
-          },
-          {
-            "slug": "lincoln-imp",
-            "wielkosc": 0.375
-          },
-          {
-            "slug": "nessos",
-            "wielkosc": 0.338
-          },
-          {
-            "slug": "selkie-sule-skerry",
             "wielkosc": 0.5
           },
           {
+            "slug": "barbarossa-kyffhaeuser",
+            "wielkosc": 0.427
+          },
+          {
+            "slug": "ben-varrey",
+            "wielkosc": 0.245
+          },
+          {
+            "slug": "drangue-shala",
+            "wielkosc": 0.439
+          },
+          {
+            "slug": "egungun",
+            "wielkosc": 0.538
+          },
+          {
+            "slug": "empusa-korynt",
+            "wielkosc": 0.447
+          },
+          {
+            "slug": "indra",
+            "wielkosc": 0.355
+          },
+          {
+            "slug": "kannon-hase",
+            "wielkosc": 0.27
+          },
+          {
+            "slug": "kentaur-pelion",
+            "wielkosc": 0.375
+          },
+          {
+            "slug": "lincoln-imp",
+            "wielkosc": 0.391
+          },
+          {
+            "slug": "nessos",
+            "wielkosc": 0.33
+          },
+          {
+            "slug": "selkie-sule-skerry",
+            "wielkosc": 0.488
+          },
+          {
             "slug": "sfinks-teby",
-            "wielkosc": 0.238
+            "wielkosc": 0.294
           },
           {
             "slug": "talos-kreta",
-            "wielkosc": 0.238
+            "wielkosc": 0.294
           }
         ],
         "dominacje": [
           {
             "kultura": "indie",
             "kult": "agni",
-            "wielkosc": 0.238
+            "wielkosc": 0.27
           },
           {
             "kultura": "irlandia",
             "kult": "balor",
-            "wielkosc": 0.438
+            "wielkosc": 0.5
           },
           {
             "kultura": "niemcy",
             "kult": "barbarossa-kyffhaeuser",
-            "wielkosc": 0.438
+            "wielkosc": 0.427
           },
           {
             "kultura": "man",
             "kult": "ben-varrey",
-            "wielkosc": 0.238
+            "wielkosc": 0.245
           },
           {
             "kultura": "albania",
             "kult": "drangue-shala",
-            "wielkosc": 0.425
+            "wielkosc": 0.439
           },
           {
             "kultura": "joruba",
             "kult": "egungun",
-            "wielkosc": 0.525
+            "wielkosc": 0.538
           },
           {
             "kultura": "grecja",
             "kult": "empusa-korynt",
-            "wielkosc": 0.458
+            "wielkosc": 0.447
           },
           {
             "kultura": "indie",
             "kult": "indra",
-            "wielkosc": 0.363
+            "wielkosc": 0.355
           },
           {
             "kultura": "japonia",
             "kult": "kannon-hase",
-            "wielkosc": 0.238
+            "wielkosc": 0.27
           },
           {
             "kultura": "grecja",
             "kult": "kentaur-pelion",
-            "wielkosc": 0.385
+            "wielkosc": 0.375
           },
           {
             "kultura": "anglia",
             "kult": "lincoln-imp",
-            "wielkosc": 0.375
+            "wielkosc": 0.391
           },
           {
             "kultura": "grecja",
             "kult": "nessos",
-            "wielkosc": 0.338
+            "wielkosc": 0.33
           },
           {
             "kultura": "szkocja-polnocna",
             "kult": "selkie-sule-skerry",
-            "wielkosc": 0.5
+            "wielkosc": 0.488
           },
           {
             "kultura": "grecja",
             "kult": "sfinks-teby",
-            "wielkosc": 0.238
+            "wielkosc": 0.294
           },
           {
             "kultura": "grecja",
             "kult": "talos-kreta",
-            "wielkosc": 0.238
+            "wielkosc": 0.294
           }
         ],
         "paliwo": {
-          "egungun": 24,
+          "egungun": 26,
           "barbarossa-kyffhaeuser": 15,
           "kentaur-pelion": 12,
           "lincoln-imp": 10,
           "empusa-korynt": 17,
-          "balor": 13
+          "balor": 19
         }
       },
       "konsekwencje": {
@@ -871,22 +871,22 @@
         "zasieg": [
           {
             "slug": "egungun",
-            "przed": 0.505,
-            "po": 0.525,
+            "przed": 0.518,
+            "po": 0.538,
             "delta": 0.02,
             "opis": "Rozdzielenie mechanizmów wzmacnia kult przodków: pieśń zostaje uznana za jedyne miłe drzwi między światami."
           },
           {
             "slug": "balor",
-            "przed": 0.438,
-            "po": 0.438,
+            "przed": 0.5,
+            "po": 0.5,
             "delta": 0,
             "opis": "Balor nie zyskuje i nie traci: jego powieka pozostaje nieodwrócona, ale przestaje być jedynym drzwiami, o których ludzie szepczą."
           },
           {
             "slug": "empusa-korynt",
-            "przed": 0.458,
-            "po": 0.458,
+            "przed": 0.447,
+            "po": 0.447,
             "delta": 0,
             "opis": "Empusa zostaje nienazwana: świat wie, że padnięcie imienia ją rozwiązuje, więc opowiada o niej ostrożnie — na granicy mitu."
           }
@@ -895,22 +895,22 @@
           {
             "kultura": "joruba",
             "kult": "egungun",
-            "przed": 0.505,
-            "po": 0.525,
+            "przed": 0.518,
+            "po": 0.538,
             "delta": 0.02
           },
           {
             "kultura": "irlandia",
             "kult": "balor",
-            "przed": 0.438,
-            "po": 0.438,
+            "przed": 0.5,
+            "po": 0.5,
             "delta": 0
           },
           {
             "kultura": "grecja",
             "kult": "empusa-korynt",
-            "przed": 0.458,
-            "po": 0.458,
+            "przed": 0.447,
+            "po": 0.447,
             "delta": 0
           }
         ],
@@ -966,21 +966,21 @@
             "kogo": "balor",
             "stopien": 2,
             "kontekst": "retoryka pieśni",
-            "komentarz": "Egungun odwołuje się do przymusu w obrazie Balora: olbrzym nie pyta, czy chce wracać — i nazywa to za-progiem. To ocena narratora: przodek gra na słabości przymusu, nie odpala go jak przycisku."
+            "komentarz": "Egungun odwołuje się do przymusu w naturze Balora: olbrzym nie pyta, czy chce wracać — i nazywa to za-progiem. Przodek wskazuje na pęknięcie w pozornej nieugiętości oka."
           },
           {
             "kto": "empusa-korynt",
             "kogo": "balor",
             "stopien": 2,
             "kontekst": "retoryka imienia",
-            "komentarz": "Empusa pokazuje, że jej próg znika po wypowiedzianym imieniu, a Balor nie ma imienia tylko powiekę — i w ten sposób odbiera mu monopol na bycie niechybnym. Bez mechanicznego exploitu, tylko przez składnię rozmowy."
+            "komentarz": "Empusa pokazuje, że jej próg znika po wypowiedzeniu imienia, podczas gdy Balor ma jedynie niszczycielskie spojrzenie — odbierając mu tym samym poczucie nieomylności."
           },
           {
             "kto": "egungun",
             "kogo": "empusa-korynt",
             "stopien": 1,
             "kontekst": "łagodne rozpoznanie",
-            "komentarz": "Egungun nie atakuje Empusy — odsłania ją: „ty jesteś progiem, nie gościem”. To najbardziej współczująca z trzech ocen."
+            "komentarz": "Egungun nie atakuje Empusy — odsłania jej tajemnicę: „ty jesteś progiem, nie gościem”. To głębokie, spokojne rozpoznanie natury zjawiska."
           }
         ],
         "podsumowanie": "Rozmowa nie likwiduje żadnego progu — pokazuje, że każdy ma inny. Pieśń zaprasza, powieka otwiera, imię rozwiązuje. Świat rozumie trzy mechanizmy naraz, ale żaden z bytów nie traci pola: Balor zostaje nieodwrócony, Empusa zostaje nienazwana, Egungun zostaje w pieśni."
@@ -997,13 +997,13 @@
           "slug": "egungun",
           "nazwa": "Egungun",
           "rola": "Przodek odpowiadający na pieśń",
-          "pasywne": 18,
-          "saldoPrzed": 24,
+          "pasywne": 20,
+          "saldoPrzed": 26,
           "kosztUdzialu": 2,
           "kosztKlucza": 0,
           "boost": 0,
           "zwrot": 5,
-          "saldoPo": 27
+          "saldoPo": 29
         },
         {
           "slug": "selkie-sule-skerry",
@@ -1032,155 +1032,155 @@
       ],
       "stanPo": {
         "os": {
-          "mit": 29,
-          "racjonalizacja": 71
+          "mit": 31,
+          "racjonalizacja": 69
         },
         "zasieg": [
           {
             "slug": "agni",
-            "wielkosc": 0.238
+            "wielkosc": 0.27
           },
           {
             "slug": "balor",
-            "wielkosc": 0.438
+            "wielkosc": 0.5
           },
           {
             "slug": "barbarossa-kyffhaeuser",
-            "wielkosc": 0.438
+            "wielkosc": 0.427
           },
           {
             "slug": "ben-varrey",
-            "wielkosc": 0.238
+            "wielkosc": 0.245
           },
           {
             "slug": "drangue-shala",
-            "wielkosc": 0.425
+            "wielkosc": 0.439
           },
           {
             "slug": "egungun",
-            "wielkosc": 0.535
+            "wielkosc": 0.548
           },
           {
             "slug": "empusa-korynt",
-            "wielkosc": 0.458
+            "wielkosc": 0.447
           },
           {
             "slug": "indra",
-            "wielkosc": 0.353
+            "wielkosc": 0.345
           },
           {
             "slug": "kannon-hase",
-            "wielkosc": 0.238
+            "wielkosc": 0.27
           },
           {
             "slug": "kentaur-pelion",
-            "wielkosc": 0.385
-          },
-          {
-            "slug": "lincoln-imp",
             "wielkosc": 0.375
           },
           {
+            "slug": "lincoln-imp",
+            "wielkosc": 0.391
+          },
+          {
             "slug": "nessos",
-            "wielkosc": 0.338
+            "wielkosc": 0.33
           },
           {
             "slug": "selkie-sule-skerry",
-            "wielkosc": 0.49
+            "wielkosc": 0.478
           },
           {
             "slug": "sfinks-teby",
-            "wielkosc": 0.238
+            "wielkosc": 0.294
           },
           {
             "slug": "talos-kreta",
-            "wielkosc": 0.238
+            "wielkosc": 0.294
           }
         ],
         "dominacje": [
           {
             "kultura": "indie",
             "kult": "agni",
-            "wielkosc": 0.238
+            "wielkosc": 0.27
           },
           {
             "kultura": "irlandia",
             "kult": "balor",
-            "wielkosc": 0.438
+            "wielkosc": 0.5
           },
           {
             "kultura": "niemcy",
             "kult": "barbarossa-kyffhaeuser",
-            "wielkosc": 0.438
+            "wielkosc": 0.427
           },
           {
             "kultura": "man",
             "kult": "ben-varrey",
-            "wielkosc": 0.238
+            "wielkosc": 0.245
           },
           {
             "kultura": "albania",
             "kult": "drangue-shala",
-            "wielkosc": 0.425
+            "wielkosc": 0.439
           },
           {
             "kultura": "joruba",
             "kult": "egungun",
-            "wielkosc": 0.535
+            "wielkosc": 0.548
           },
           {
             "kultura": "grecja",
             "kult": "empusa-korynt",
-            "wielkosc": 0.458
+            "wielkosc": 0.447
           },
           {
             "kultura": "indie",
             "kult": "indra",
-            "wielkosc": 0.353
+            "wielkosc": 0.345
           },
           {
             "kultura": "japonia",
             "kult": "kannon-hase",
-            "wielkosc": 0.238
+            "wielkosc": 0.27
           },
           {
             "kultura": "grecja",
             "kult": "kentaur-pelion",
-            "wielkosc": 0.385
+            "wielkosc": 0.375
           },
           {
             "kultura": "anglia",
             "kult": "lincoln-imp",
-            "wielkosc": 0.375
+            "wielkosc": 0.391
           },
           {
             "kultura": "grecja",
             "kult": "nessos",
-            "wielkosc": 0.338
+            "wielkosc": 0.33
           },
           {
             "kultura": "szkocja-polnocna",
             "kult": "selkie-sule-skerry",
-            "wielkosc": 0.49
+            "wielkosc": 0.478
           },
           {
             "kultura": "grecja",
             "kult": "sfinks-teby",
-            "wielkosc": 0.238
+            "wielkosc": 0.294
           },
           {
             "kultura": "grecja",
             "kult": "talos-kreta",
-            "wielkosc": 0.238
+            "wielkosc": 0.294
           }
         ],
         "paliwo": {
-          "egungun": 27,
+          "egungun": 29,
           "barbarossa-kyffhaeuser": 15,
           "kentaur-pelion": 12,
           "lincoln-imp": 10,
           "empusa-korynt": 17,
-          "balor": 13,
+          "balor": 19,
           "selkie-sule-skerry": 22,
           "indra": 11
         }
@@ -1214,22 +1214,22 @@
         "zasieg": [
           {
             "slug": "egungun",
-            "przed": 0.525,
-            "po": 0.535,
+            "przed": 0.538,
+            "po": 0.548,
             "delta": 0.01,
             "opis": "Pieśń zostaje uznana za jeden z trzech równoważnych progów — kult przodków rośnie delikatnie, ale nie dominuje."
           },
           {
             "slug": "selkie-sule-skerry",
-            "przed": 0.5,
-            "po": 0.49,
+            "przed": 0.488,
+            "po": 0.478,
             "delta": -0.01,
             "opis": "Świat uczy się nazywać skórę i w ten sposób lekko traci strach przed Selkie; jej legenda kurczy się o 1 pp."
           },
           {
             "slug": "indra",
-            "przed": 0.363,
-            "po": 0.353,
+            "przed": 0.355,
+            "po": 0.345,
             "delta": -0.01,
             "opis": "Kres Indry przestaje być świętym rozkazem — świat częściej pyta, czy nie da się go ominąć; zasięg spada o 1 pp."
           }
@@ -1238,22 +1238,22 @@
           {
             "kultura": "joruba",
             "kult": "egungun",
-            "przed": 0.525,
-            "po": 0.535,
+            "przed": 0.538,
+            "po": 0.548,
             "delta": 0.01
           },
           {
             "kultura": "szkocja-polnocna",
             "kult": "selkie-sule-skerry",
-            "przed": 0.5,
-            "po": 0.49,
+            "przed": 0.488,
+            "po": 0.478,
             "delta": -0.01
           },
           {
             "kultura": "indie",
             "kult": "indra",
-            "przed": 0.363,
-            "po": 0.353,
+            "przed": 0.355,
+            "po": 0.345,
             "delta": -0.01
           }
         ],
@@ -1309,180 +1309,527 @@
             "kogo": "indra",
             "stopien": 2,
             "kontekst": "retoryka rozkazu",
-            "komentarz": "Selkie nazywa wybór Indry rozkazem, który sam na siebie nałożył — i w ten sposób odbiera mu część godności. To ocena narratora, nie mechaniczne użycie słabości."
+            "komentarz": "Selkie nazywa wybór Indry brzemieniem, które bóstwo samo na siebie nałożyło — dotykając jego dumy."
           },
           {
             "kto": "egungun",
             "kogo": "selkie-sule-skerry",
             "stopien": 1,
             "kontekst": "łagodne rozpoznanie",
-            "komentarz": "Egungun nie obnaża Selkie — wskazuje, że jej próg jest najprostszy: wystarczy nazwać rzecz. To raczej rozpoznanie niż cios."
+            "komentarz": "Egungun wskazuje, że próg foki jest najprostszy: wystarczy nazwać jej istotę, by uchylić zasłonę tajemnicy."
           },
           {
             "kto": "indra",
             "kogo": "egungun",
             "stopien": 1,
             "kontekst": "retoryka kresu",
-            "komentarz": "Indra odpowiada Egungunowi spokojnie: nie każde drzwi słuchają imienia. Nie atakuje pieśni, tylko wyznacza jej granicę."
+            "komentarz": "Indra odpowiada Egungunowi spokojnie: nie każde wrota słuchają pieśni, a grom nie pyta o imiona."
           }
         ],
         "podsumowanie": "Rozmowa nie znajduje jednego słowa — i właśnie to odkrywa: próg bytu nie jest jeden, a każde z nich wymaga innego klucza. Świat przestaje szukać imienia uniwersalnego i zaczyna rozumieć, że tożsamość bytu jest granicą, nie kodem."
+      }
+    },
+    {
+      "slug": "epoka-5",
+      "tytul": "Zagadka ze spiżu: rozum, żart i głuchy krok",
+      "skit": "zagadka-ze-spizu",
+      "walidacja": true,
+      "bledy": [],
+      "uczestnicy": [
+        {
+          "slug": "sfinks-teby",
+          "nazwa": "Sfinks — strażniczka Tebańskich Wrót",
+          "rola": "Strażniczka zagadki i lęku",
+          "pasywne": 14,
+          "saldoPrzed": 14,
+          "kosztUdzialu": 2,
+          "kosztKlucza": 0,
+          "boost": 0,
+          "zwrot": 0,
+          "saldoPo": 12
+        },
+        {
+          "slug": "talos-kreta",
+          "nazwa": "Talos — spiżowy strażnik Krety",
+          "rola": "Spiżowy obrońca brzegu",
+          "pasywne": 14,
+          "saldoPrzed": 14,
+          "kosztUdzialu": 2,
+          "kosztKlucza": 0,
+          "boost": 0,
+          "zwrot": 0,
+          "saldoPo": 12
+        },
+        {
+          "slug": "lincoln-imp",
+          "nazwa": "Imp z Lincoln",
+          "rola": "Chochlik kpiący z powagi",
+          "pasywne": 12,
+          "saldoPrzed": 10,
+          "kosztUdzialu": 2,
+          "kosztKlucza": 0,
+          "boost": 0,
+          "zwrot": 4,
+          "saldoPo": 12
+        }
+      ],
+      "stanPo": {
+        "os": {
+          "mit": 30,
+          "racjonalizacja": 70
+        },
+        "zasieg": [
+          {
+            "slug": "agni",
+            "wielkosc": 0.27
+          },
+          {
+            "slug": "balor",
+            "wielkosc": 0.5
+          },
+          {
+            "slug": "barbarossa-kyffhaeuser",
+            "wielkosc": 0.427
+          },
+          {
+            "slug": "ben-varrey",
+            "wielkosc": 0.245
+          },
+          {
+            "slug": "drangue-shala",
+            "wielkosc": 0.439
+          },
+          {
+            "slug": "egungun",
+            "wielkosc": 0.548
+          },
+          {
+            "slug": "empusa-korynt",
+            "wielkosc": 0.447
+          },
+          {
+            "slug": "indra",
+            "wielkosc": 0.345
+          },
+          {
+            "slug": "kannon-hase",
+            "wielkosc": 0.27
+          },
+          {
+            "slug": "kentaur-pelion",
+            "wielkosc": 0.375
+          },
+          {
+            "slug": "lincoln-imp",
+            "wielkosc": 0.406
+          },
+          {
+            "slug": "nessos",
+            "wielkosc": 0.33
+          },
+          {
+            "slug": "selkie-sule-skerry",
+            "wielkosc": 0.478
+          },
+          {
+            "slug": "sfinks-teby",
+            "wielkosc": 0.284
+          },
+          {
+            "slug": "talos-kreta",
+            "wielkosc": 0.289
+          }
+        ],
+        "dominacje": [
+          {
+            "kultura": "indie",
+            "kult": "agni",
+            "wielkosc": 0.27
+          },
+          {
+            "kultura": "irlandia",
+            "kult": "balor",
+            "wielkosc": 0.5
+          },
+          {
+            "kultura": "niemcy",
+            "kult": "barbarossa-kyffhaeuser",
+            "wielkosc": 0.427
+          },
+          {
+            "kultura": "man",
+            "kult": "ben-varrey",
+            "wielkosc": 0.245
+          },
+          {
+            "kultura": "albania",
+            "kult": "drangue-shala",
+            "wielkosc": 0.439
+          },
+          {
+            "kultura": "joruba",
+            "kult": "egungun",
+            "wielkosc": 0.548
+          },
+          {
+            "kultura": "grecja",
+            "kult": "empusa-korynt",
+            "wielkosc": 0.447
+          },
+          {
+            "kultura": "indie",
+            "kult": "indra",
+            "wielkosc": 0.345
+          },
+          {
+            "kultura": "japonia",
+            "kult": "kannon-hase",
+            "wielkosc": 0.27
+          },
+          {
+            "kultura": "grecja",
+            "kult": "kentaur-pelion",
+            "wielkosc": 0.375
+          },
+          {
+            "kultura": "anglia",
+            "kult": "lincoln-imp",
+            "wielkosc": 0.406
+          },
+          {
+            "kultura": "grecja",
+            "kult": "nessos",
+            "wielkosc": 0.33
+          },
+          {
+            "kultura": "szkocja-polnocna",
+            "kult": "selkie-sule-skerry",
+            "wielkosc": 0.478
+          },
+          {
+            "kultura": "grecja",
+            "kult": "sfinks-teby",
+            "wielkosc": 0.284
+          },
+          {
+            "kultura": "grecja",
+            "kult": "talos-kreta",
+            "wielkosc": 0.289
+          }
+        ],
+        "paliwo": {
+          "egungun": 29,
+          "barbarossa-kyffhaeuser": 15,
+          "kentaur-pelion": 12,
+          "lincoln-imp": 12,
+          "empusa-korynt": 17,
+          "balor": 19,
+          "selkie-sule-skerry": 22,
+          "indra": 11,
+          "sfinks-teby": 12,
+          "talos-kreta": 12
+        }
+      },
+      "konsekwencje": {
+        "os": {
+          "mit": -1,
+          "racjonalizacja": 1,
+          "opis": "Odrzucenie powagi antycznego mitu przez gotycką ironię i mechaniczny automatyzm przesuwa oś ku racjonalizacji."
+        },
+        "relacje": [
+          {
+            "od": "lincoln-imp",
+            "do": "sfinks-teby",
+            "kierunek": "schłodzenie",
+            "opis": "Sfinks uważa Impa za bezczelnego intruza, który niszczy sakralność zagadki."
+          },
+          {
+            "od": "sfinks-teby",
+            "do": "talos-kreta",
+            "kierunek": "schłodzenie",
+            "opis": "Dwa greckie potwory nie znajdują wspólnego języka — jeden żyje słowem, drugi mechanizmem."
+          },
+          {
+            "od": "lincoln-imp",
+            "do": "talos-kreta",
+            "kierunek": "wzmocnienie",
+            "opis": "Imp traktuje Talosa jako doskonałą zasłonę przed powagą świata."
+          }
+        ],
+        "zasieg": [
+          {
+            "slug": "lincoln-imp",
+            "przed": 0.391,
+            "po": 0.406,
+            "delta": 0.015,
+            "opis": "Śmiech i drwina zyskują przewagę nad dawną trwogą; chochlik rośnie w siłę."
+          },
+          {
+            "slug": "sfinks-teby",
+            "przed": 0.294,
+            "po": 0.284,
+            "delta": -0.01,
+            "opis": "Święta groza zagadki słabnie, gdy okazuje się podatna na wyśmianie."
+          },
+          {
+            "slug": "talos-kreta",
+            "przed": 0.294,
+            "po": 0.289,
+            "delta": -0.005,
+            "opis": "Spiżowy olbrzym pozostaje tylko maszyną strzegącą pustego brzegu."
+          }
+        ],
+        "dominacje": [
+          {
+            "kultura": "anglia",
+            "kult": "lincoln-imp",
+            "przed": 0.391,
+            "po": 0.406,
+            "delta": 0.015
+          },
+          {
+            "kultura": "grecja",
+            "kult": "sfinks-teby",
+            "przed": 0.294,
+            "po": 0.284,
+            "delta": -0.01
+          },
+          {
+            "kultura": "grecja",
+            "kult": "talos-kreta",
+            "przed": 0.294,
+            "po": 0.289,
+            "delta": -0.005
+          }
+        ],
+        "pozycje": [
+          {
+            "slug": "lincoln-imp",
+            "status": "wzmocniony",
+            "opis": "Przekształca powagę w żart i rozszerza zasięg gotyckiej figlarności."
+          },
+          {
+            "slug": "sfinks-teby",
+            "status": "zraniony",
+            "opis": "Zagadka traci aurę nieuchronności."
+          },
+          {
+            "slug": "talos-kreta",
+            "status": "odporny",
+            "opis": "Nie ulega zagadce, trwa na posterunku."
+          }
+        ],
+        "watki": [
+          {
+            "id": "zagadka-ze-spizu",
+            "stan": "zamkniety",
+            "opis": "Wątek domknięty: na pytanie o byt można odpowiedzieć głazem, śmiechem lub milczeniem."
+          },
+          {
+            "id": "czwarty-stol",
+            "stan": "otwarty",
+            "opis": "Czwarty stół z Epoki I wciąż czeka: gość, który wziął sam, czy przodek, który umie wybaczyć."
+          },
+          {
+            "id": "warunek-barbarossy",
+            "stan": "otwarty",
+            "opis": "Dlaczego cesarz woli płacić, żeby gość wyszedł, zamiast przyjąć go przy stole?"
+          },
+          {
+            "id": "wedrowny-dom-empusy",
+            "stan": "otwarty",
+            "opis": "Czy ludzie nauczą się wypowiadać słowo-poznanie w porę, czy samo słowo stanie się rytuałem, który chybia?"
+          },
+          {
+            "id": "kres-indry",
+            "stan": "otwarty",
+            "opis": "Czy kres można oddać, czy tylko przekroczyć? Co znaczy wybrać własną granicę, gdy świat przestaje ją respektować?"
+          }
+        ]
+      },
+      "narrator": {
+        "ocena": [
+          {
+            "kto": "lincoln-imp",
+            "kogo": "sfinks-teby",
+            "stopien": 2,
+            "kontekst": "retoryka kpiny",
+            "komentarz": "Imp wyśmiewa powagę antycznej zagadki, wskazując, że pyta o człowieka kogoś, kto nie jest człowiekiem."
+          },
+          {
+            "kto": "lincoln-imp",
+            "kogo": "talos-kreta",
+            "stopien": 1,
+            "kontekst": "nazwanie automatu",
+            "komentarz": "Imp nazywa Talosa imbrykiem z brązu, obnażając brak świadomości olbrzyma."
+          },
+          {
+            "kto": "sfinks-teby",
+            "kogo": "talos-kreta",
+            "stopien": 1,
+            "kontekst": "rozczarowanie strażnika",
+            "komentarz": "Sfinks zastyga, widząc, że Talos nie ma rozumu do zmanipulowania."
+          }
+        ],
+        "podsumowanie": "Zagadka Sfinksa traci swą bezwzględną moc, gdy trafia na istotę pozbawioną lęku lub na złośliwy śmiech. Świat antyczny zderza się z gotycką ironią i mechanicznym automatyzmem."
       }
     }
   ],
   "stanPo": {
     "os": {
-      "mit": 29,
-      "racjonalizacja": 71
+      "mit": 30,
+      "racjonalizacja": 70
     },
     "zasieg": [
       {
         "slug": "agni",
-        "wielkosc": 0.238
+        "wielkosc": 0.27
       },
       {
         "slug": "balor",
-        "wielkosc": 0.438
+        "wielkosc": 0.5
       },
       {
         "slug": "barbarossa-kyffhaeuser",
-        "wielkosc": 0.438
+        "wielkosc": 0.427
       },
       {
         "slug": "ben-varrey",
-        "wielkosc": 0.238
+        "wielkosc": 0.245
       },
       {
         "slug": "drangue-shala",
-        "wielkosc": 0.425
+        "wielkosc": 0.439
       },
       {
         "slug": "egungun",
-        "wielkosc": 0.535
+        "wielkosc": 0.548
       },
       {
         "slug": "empusa-korynt",
-        "wielkosc": 0.458
+        "wielkosc": 0.447
       },
       {
         "slug": "indra",
-        "wielkosc": 0.353
+        "wielkosc": 0.345
       },
       {
         "slug": "kannon-hase",
-        "wielkosc": 0.238
+        "wielkosc": 0.27
       },
       {
         "slug": "kentaur-pelion",
-        "wielkosc": 0.385
-      },
-      {
-        "slug": "lincoln-imp",
         "wielkosc": 0.375
       },
       {
+        "slug": "lincoln-imp",
+        "wielkosc": 0.406
+      },
+      {
         "slug": "nessos",
-        "wielkosc": 0.338
+        "wielkosc": 0.33
       },
       {
         "slug": "selkie-sule-skerry",
-        "wielkosc": 0.49
+        "wielkosc": 0.478
       },
       {
         "slug": "sfinks-teby",
-        "wielkosc": 0.238
+        "wielkosc": 0.284
       },
       {
         "slug": "talos-kreta",
-        "wielkosc": 0.238
+        "wielkosc": 0.289
       }
     ],
     "dominacje": [
       {
         "kultura": "indie",
         "kult": "agni",
-        "wielkosc": 0.238
+        "wielkosc": 0.27
       },
       {
         "kultura": "irlandia",
         "kult": "balor",
-        "wielkosc": 0.438
+        "wielkosc": 0.5
       },
       {
         "kultura": "niemcy",
         "kult": "barbarossa-kyffhaeuser",
-        "wielkosc": 0.438
+        "wielkosc": 0.427
       },
       {
         "kultura": "man",
         "kult": "ben-varrey",
-        "wielkosc": 0.238
+        "wielkosc": 0.245
       },
       {
         "kultura": "albania",
         "kult": "drangue-shala",
-        "wielkosc": 0.425
+        "wielkosc": 0.439
       },
       {
         "kultura": "joruba",
         "kult": "egungun",
-        "wielkosc": 0.535
+        "wielkosc": 0.548
       },
       {
         "kultura": "grecja",
         "kult": "empusa-korynt",
-        "wielkosc": 0.458
+        "wielkosc": 0.447
       },
       {
         "kultura": "indie",
         "kult": "indra",
-        "wielkosc": 0.353
+        "wielkosc": 0.345
       },
       {
         "kultura": "japonia",
         "kult": "kannon-hase",
-        "wielkosc": 0.238
+        "wielkosc": 0.27
       },
       {
         "kultura": "grecja",
         "kult": "kentaur-pelion",
-        "wielkosc": 0.385
+        "wielkosc": 0.375
       },
       {
         "kultura": "anglia",
         "kult": "lincoln-imp",
-        "wielkosc": 0.375
+        "wielkosc": 0.406
       },
       {
         "kultura": "grecja",
         "kult": "nessos",
-        "wielkosc": 0.338
+        "wielkosc": 0.33
       },
       {
         "kultura": "szkocja-polnocna",
         "kult": "selkie-sule-skerry",
-        "wielkosc": 0.49
+        "wielkosc": 0.478
       },
       {
         "kultura": "grecja",
         "kult": "sfinks-teby",
-        "wielkosc": 0.238
+        "wielkosc": 0.284
       },
       {
         "kultura": "grecja",
         "kult": "talos-kreta",
-        "wielkosc": 0.238
+        "wielkosc": 0.289
       }
     ],
     "paliwo": {
-      "egungun": 27,
+      "egungun": 29,
       "barbarossa-kyffhaeuser": 15,
       "kentaur-pelion": 12,
-      "lincoln-imp": 10,
+      "lincoln-imp": 12,
       "empusa-korynt": 17,
-      "balor": 13,
+      "balor": 19,
       "selkie-sule-skerry": 22,
-      "indra": 11
+      "indra": 11,
+      "sfinks-teby": 12,
+      "talos-kreta": 12
     }
   },
   "walidacja": true,
