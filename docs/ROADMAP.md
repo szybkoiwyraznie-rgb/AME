@@ -1,7 +1,7 @@
 # ROADMAP — Archiwum Manifestacji Eterycznych
 
-> Plan faz; status aktualizowany na końcu każdej sesji (ostatnio: 2026-08-28,
-> M15 + dwie Pętle Jakości). Szczegóły bieżącego zadania żyją w
+> Plan faz; status aktualizowany na końcu każdej sesji (ostatnio: 2026-08-29,
+> sesja po PR #9: audyt + Pętla Jakości C1→C3→C2). Szczegóły bieżącego zadania żyją w
 > `docs/plans/PLAN_*.md`.
 > Nowe pomysły → `docs/BACKLOG.md`.
 
@@ -559,3 +559,27 @@ Pętla jakości wokół Kroniki + dalsza implementacja:
       `pointerenter/pointerleave`.
 - [x] Czytelnia Kronik na osobnym porcie (katalog `docs`, `/` = dokument),
       mapa działa dalej na porcie głównym aplikacji.
+
+## Pętla Jakości — sesja 2026-08-29 (po scaleniu PR #9) — ✅ PR #10
+
+- [x] **Audyt B** PR #9 (nawigacja + daty w stopkach + buildTime) i rzut oka na
+      PR #8: zieloność bramy, zgodność z ADR, znalezione defekty (patrz niżej).
+- [x] **Naprawa audytowa:** backfill `meta.modyfikacje` po PR #8 (17 skitów +
+      14 wpisów zmienionych bez wpisu w meta — feed „Co nowego” ich nie
+      pokazywał); nieaktualny komentarz w `app/ui.js` doprowadzony do stanu.
+- [x] **C1** `agni`: trzy poziomy obecności (ziemia/błyskawica/słońce), siedem
+      języków obrzędowych i imiona (Pāvaka, Havyavāhana, Dhumaketu), świadek
+      saptapadi; źródła 3 → 6 (Rigweda 1.1 Griffith, Wikipedia, Agni Purana).
+- [x] **C1** `sfinks-teby`: wariant Pausaniasza (nieślubna córka Lajosa i
+      wyrocznia Kadmosa; piratka z Anthedonu), zagadka od Muz (Apollodor 3.5.8);
+      źródła 3 → 4 (Pauzaniasz 9.26.2, Perseus).
+- [x] **C3** SKIT „DZIEŃ WOLNEGO” (`data/skity/dzien-wolnego.json`) — trio
+      Agni × Ben-Varrey × Kannon (unikalny skład, 269 słów, rejestr lekki v1.6);
+      trzy byty bez żadnego skitu dostały debiut.
+- [x] **C2** obsługa parametrów zapytania w aplikacji: `?q=`, `?action=wylosuj`,
+      `?action=powiazania` (czysta `akcjeZZapytania` w `app/ui.js` + testy +
+      wpięcie w `start()`); naprawia martwe linki z paska Kroniki (PR #9).
+      Dodatkowo `aria-pressed` przycisku motywu w `tools/kronika.mjs`.
+- [x] Weryfikacja: `npm test` **164/164**, `npm run build` + `npm run check`
+      zielone; sprawdzenie na żywo w headless Chromium (filtr, powiązania,
+      losowanie — wszystkie akcje z Kroniki działają).

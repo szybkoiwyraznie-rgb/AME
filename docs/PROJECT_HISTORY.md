@@ -1368,3 +1368,32 @@ powiązań), ale w `meta.modyfikacje` nie trafił ani jeden wpis — feed
 „Co nowego” nie pokazał tych zmian (naruszenie PROTOKÓŁ §9 / ADR 0014).
 Dopisywane teraz wpisy `meta.modyfikacje` z datą `2026-08-29 21:36` opisują
 te zmiany retrospektywnie, czytelnie dla czytelnika archiwum.
+
+
+## Pętla Jakości C1→C3→C2 po audycie (2026-08-29, PR #10)
+
+Po audycie PR #8/#9 (opis wyżej) i naprawach audytowych pętla poszła
+klasycznie: C1 (treść z researchu) → C3 (SKIT) → C2 (featura z testami).
+
+- **C1** — `agni` (źródła 3 → 6): trzy poziomy obecności, siedem języków
+  obrzędowych (sapta jihvā) i imiona (Pāvaka, Havyavāhana, Hutāśana,
+  Dhumaketu), rola świadka saptapadi (Wikipedia, Rigweda 1.1 Griffith na
+  sacred-texts, Agni Purana w Wisdom Library).
+  `sfinks-teby` (źródła 3 → 4): wariant Pausaniasza 9.26.2 — Sfinks jako
+  nieślubna córka Lajosa testująca braci wyrocznią Kadmosa z Delf oraz wersja
+  racjonalizująca (piratka z Anthedonu); zagadka od Muz (Apollodor 3.5.8),
+  rozwiązanie „człowiek” (Perseus Digital Library).
+- **C3** — SKIT „DZIEŃ WOLNEGO” (`dzien-wolnego`, 269 słów): Agni ×
+  Ben-Varrey × Kannon — pierwszy skit dla trzech bytów bez żadnego udziału;
+  unikalny skład (walidator), rejestr lekki (v1.6), temat „przerwa od
+  wzywania”. Każdy z uczestników po raz pierwszy w Bazie Skitów.
+- **C2** — parametry zapytania dla aplikacji głównej: `?q=` (wyszukiwanie),
+  `?action=wylosuj`, `?action=powiazania` — czysta `akcjeZZapytania()` +
+  7 asercji, wpięcie w `start()`, `aria-pressed` przycisku motywu w pasku
+  Kroniki. To domknięcie linków z PR #9 (wcześniej martwe — patrz audyt).
+- **Weryfikacja:** `npm test` 164/164, `npm run check` OK; headless Chromium:
+  `?q=sfinks` → filtr 1 manifestacji, `?action=powiazania` → przycisk aktywny,
+  `?action=wylosuj` → otwarta kartoteka; pasek Kroniki prowadzi do działających
+  adresów. Lekcja L16.
+- **Stan:** indeks 15 wpisów / **19 skitów** / 43 tagi / feed z nowymi
+  pozycjami; buildTime 2026-08-29 21:41 UTC.

@@ -42,7 +42,7 @@ namierzyć realną emanację w naszym świecie; wynikiem jest wpis w kartotece
 ```bash
 npm run build                              # przebuduj data/index.json (opcjonalnie na start)
 python3 -m http.server 8000 --bind 0.0.0.0
-# otwórz http://localhost:8000   (widoki: /#egungun, /#skit:<slug>, /#nowosci)
+# otwórz http://localhost:8000   (widoki: /#egungun, /#skit:<slug>, /#nowosci, /?q=sfinks, /?action=wylosuj)
 ```
 
 Bez serwera (`file://`) aplikacja pokaże baner z instrukcją — przeglądarki
