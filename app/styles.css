@@ -904,3 +904,59 @@ div.warstwa.otwarta { display: block; animation: warstwa-wnika 0.2s ease-out; }
   .wpis img { aspect-ratio: auto; }
   .podpowiedz { display: none; }
 }
+
+/* ---- Druk / PDF kartoteki (media print) ----
+ * Gdy kartoteka jest otwarta, wydruk/Pdf zawiera samą kartę bytu: chowamy
+ * górny pasek, tagi, mapę, listę i warstwy, a otwartą kartotekę układamy
+ * jako zwykły dokument na białym tle (tokeny nadpisane pod druk — niezależnie
+ * od motywu tekst zostaje ciemny na jasnym). */
+@media print {
+  .gora,
+  #tagi,
+  #mapa,
+  #lista,
+  #warstwa,
+  .dol,
+  .akcje-kartoteki {
+    display: none !important;
+  }
+  html,
+  body {
+    height: auto;
+    overflow: visible;
+    background: #fff !important;
+  }
+  .tresc {
+    display: block;
+    flex: none;
+    min-height: 0;
+  }
+  .panel.otwarty {
+    position: static;
+    inset: auto;
+    display: block;
+    overflow: visible;
+    background: #fff;
+  }
+  .warstwa-wpisu {
+    min-height: 0;
+  }
+  .wpis {
+    max-width: none;
+    padding: 0;
+  }
+  :root,
+  html[data-motyw='ciemny'],
+  html[data-motyw='jasny'] {
+    --tlo: #fff;
+    --tlo-2: #fff;
+    --tlo-3: #fff;
+    --tekst: #1a1a1a;
+    --tekst-dim: #5a544a;
+    --tekst-mono: #3c372f;
+    --akcent: #7d5a15;
+    --akcent-2: #96331c;
+    --akcent-tekst: #fff;
+    --linia: #ccc5b6;
+  }
+}

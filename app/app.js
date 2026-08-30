@@ -1,7 +1,7 @@
 /**
  * app/app.js — bootstrap AME: ładuje indeks, mapę świata, spina UI.
  */
-import { stworzMape, PROGI_WARSTW, PODKLADY_ONLINE } from './map.js?v=c5-7';
+import { stworzMape, PROGI_WARSTW, PODKLADY_ONLINE } from './map.js?v=c5-8';
 import { zaladujIndeks, zaladujWpis, zaladujSkit, dopasowania, wylosujSlug } from './data.js?v=c5-1';
 import {
   htmlWpisu,
@@ -23,8 +23,8 @@ import {
   etykietaMotywu,
   KLUCZ_MOTYWU,
   akcjeZZapytania,
-} from './ui.js?v=c5-7';
-import { SZEROKOSC, WYSOKOSC } from './geo.js?v=c5-7';
+} from './ui.js?v=c5-8';
+import { SZEROKOSC, WYSOKOSC } from './geo.js?v=c5-8';
 
 const $ = (sel) => document.querySelector(sel);
 
@@ -511,6 +511,7 @@ function podepnijZdarzenia() {
 
   $('#panel').addEventListener('click', (e) => {
     if (e.target.closest('#zamknij-wpis')) return zamknijWpis();
+    if (e.target.closest('[data-druk]')) return window.print();
     const kopia = e.target.closest('[data-kopia]');
     if (kopia) return kopiujLink(kopia.dataset.kopia, kopia);
     const cel = e.target.closest('[data-slug], [data-skit]');

@@ -508,6 +508,18 @@ test('kopiowanie linku jest w każdym z trzech widoków warstwy i w karcie', asy
   assert.equal((app.match(/data-kopia/g) ?? []).length >= 1, true, 'obsługa [data-kopia] w handlerach');
 });
 
+test('kartoteka ma przycisk druku; app.js woła window.print(); arkusz ma @media print (C2)', async () => {
+  const { htmlWarstwyWpisu } = await import('../app/ui.js');
+  const app = await readFile('app/app.js', 'utf8');
+  const css = await readFile('app/styles.css', 'utf8');
+  assert.match(htmlWarstwyWpisu('<x></x>', { slug: 'egungun', nazwa: 'Egungun' }), /data-druk/, 'przycisk druku w warstwie kartoteki');
+  assert.ok(app.includes('[data-druk]') && app.includes('window.print()'), 'klik [data-druk] → window.print()');
+  assert.match(css, /@media print/, 'arkusz ma blok @media print');
+  assert.match(css, /\.gora,\s*\n?\s*#tagi,[\s\S]*display:\s*none/, 'topbar i tagi ukryte w druku');
+  assert.match(css, /\.panel\.otwarty\s*\{[\s\S]*position:\s*static/, 'otwarta kartoteka układa się w dokumencie');
+  assert.match(css, /:root,[\s\S]*html\[data-motyw='ciemny'\][\s\S]*--tekst:\s*#1a1a1a/, 'tokeny nadpisane pod druk (ciemny tekst na jasnym tle)');
+});
+
 test('wersja protokołu jest jedna: stopka aplikacji = PROTOKÓŁ = README (F2)', async () => {
   const [protokol, html, readme] = await Promise.all([
     readFile('docs/PROTOKOL.md', 'utf8'),
