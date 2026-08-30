@@ -57,8 +57,8 @@
       ],
       "stanPo": {
         "os": {
-          "mit": 35,
-          "racjonalizacja": 65
+          "mit": 36,
+          "racjonalizacja": 64
         },
         "zasieg": [
           {
@@ -95,7 +95,7 @@
           },
           {
             "slug": "kannon-hase",
-            "wielkosc": 0.318
+            "wielkosc": 0.342
           },
           {
             "slug": "kentaur-pelion",
@@ -115,7 +115,7 @@
           },
           {
             "slug": "nessos",
-            "wielkosc": 0.379
+            "wielkosc": 0.403
           },
           {
             "slug": "pandora",
@@ -135,7 +135,7 @@
           },
           {
             "slug": "syama-i-sarvara",
-            "wielkosc": 0.27
+            "wielkosc": 0.294
           },
           {
             "slug": "talos-kreta",
@@ -186,7 +186,7 @@
           {
             "kultura": "japonia",
             "kult": "kannon-hase",
-            "wielkosc": 0.318
+            "wielkosc": 0.342
           },
           {
             "kultura": "grecja",
@@ -211,7 +211,7 @@
           {
             "kultura": "grecja",
             "kult": "nessos",
-            "wielkosc": 0.379
+            "wielkosc": 0.403
           },
           {
             "kultura": "grecja",
@@ -236,7 +236,7 @@
           {
             "kultura": "indie",
             "kult": "syama-i-sarvara",
-            "wielkosc": 0.27
+            "wielkosc": 0.294
           },
           {
             "kultura": "grecja",
@@ -447,8 +447,8 @@
       ],
       "stanPo": {
         "os": {
-          "mit": 33,
-          "racjonalizacja": 67
+          "mit": 34,
+          "racjonalizacja": 66
         },
         "zasieg": [
           {
@@ -485,7 +485,7 @@
           },
           {
             "slug": "kannon-hase",
-            "wielkosc": 0.318
+            "wielkosc": 0.342
           },
           {
             "slug": "kentaur-pelion",
@@ -505,7 +505,7 @@
           },
           {
             "slug": "nessos",
-            "wielkosc": 0.379
+            "wielkosc": 0.403
           },
           {
             "slug": "pandora",
@@ -525,7 +525,7 @@
           },
           {
             "slug": "syama-i-sarvara",
-            "wielkosc": 0.27
+            "wielkosc": 0.294
           },
           {
             "slug": "talos-kreta",
@@ -576,7 +576,7 @@
           {
             "kultura": "japonia",
             "kult": "kannon-hase",
-            "wielkosc": 0.318
+            "wielkosc": 0.342
           },
           {
             "kultura": "grecja",
@@ -601,7 +601,7 @@
           {
             "kultura": "grecja",
             "kult": "nessos",
-            "wielkosc": 0.379
+            "wielkosc": 0.403
           },
           {
             "kultura": "grecja",
@@ -626,7 +626,7 @@
           {
             "kultura": "indie",
             "kult": "syama-i-sarvara",
-            "wielkosc": 0.27
+            "wielkosc": 0.294
           },
           {
             "kultura": "grecja",
@@ -855,8 +855,8 @@
       ],
       "stanPo": {
         "os": {
-          "mit": 31,
-          "racjonalizacja": 69
+          "mit": 32,
+          "racjonalizacja": 68
         },
         "zasieg": [
           {
@@ -893,7 +893,7 @@
           },
           {
             "slug": "kannon-hase",
-            "wielkosc": 0.318
+            "wielkosc": 0.342
           },
           {
             "slug": "kentaur-pelion",
@@ -913,7 +913,7 @@
           },
           {
             "slug": "nessos",
-            "wielkosc": 0.379
+            "wielkosc": 0.403
           },
           {
             "slug": "pandora",
@@ -933,7 +933,7 @@
           },
           {
             "slug": "syama-i-sarvara",
-            "wielkosc": 0.27
+            "wielkosc": 0.294
           },
           {
             "slug": "talos-kreta",
@@ -984,7 +984,7 @@
           {
             "kultura": "japonia",
             "kult": "kannon-hase",
-            "wielkosc": 0.318
+            "wielkosc": 0.342
           },
           {
             "kultura": "grecja",
@@ -1009,7 +1009,7 @@
           {
             "kultura": "grecja",
             "kult": "nessos",
-            "wielkosc": 0.379
+            "wielkosc": 0.403
           },
           {
             "kultura": "grecja",
@@ -1034,7 +1034,7 @@
           {
             "kultura": "indie",
             "kult": "syama-i-sarvara",
-            "wielkosc": 0.27
+            "wielkosc": 0.294
           },
           {
             "kultura": "grecja",
@@ -1278,8 +1278,8 @@
       ],
       "stanPo": {
         "os": {
-          "mit": 30,
-          "racjonalizacja": 70
+          "mit": 31,
+          "racjonalizacja": 69
         },
         "zasieg": [
           {
@@ -1316,7 +1316,7 @@
           },
           {
             "slug": "kannon-hase",
-            "wielkosc": 0.318
+            "wielkosc": 0.342
           },
           {
             "slug": "kentaur-pelion",
@@ -1336,7 +1336,7 @@
           },
           {
             "slug": "nessos",
-            "wielkosc": 0.379
+            "wielkosc": 0.403
           },
           {
             "slug": "pandora",
@@ -1356,7 +1356,7 @@
           },
           {
             "slug": "syama-i-sarvara",
-            "wielkosc": 0.27
+            "wielkosc": 0.294
           },
           {
             "slug": "talos-kreta",
@@ -1407,7 +1407,7 @@
           {
             "kultura": "japonia",
             "kult": "kannon-hase",
-            "wielkosc": 0.318
+            "wielkosc": 0.342
           },
           {
             "kultura": "grecja",
@@ -1432,7 +1432,7 @@
           {
             "kultura": "grecja",
             "kult": "nessos",
-            "wielkosc": 0.379
+            "wielkosc": 0.403
           },
           {
             "kultura": "grecja",
@@ -1457,7 +1457,7 @@
           {
             "kultura": "indie",
             "kult": "syama-i-sarvara",
-            "wielkosc": 0.27
+            "wielkosc": 0.294
           },
           {
             "kultura": "grecja",
@@ -1701,8 +1701,8 @@
       ],
       "stanPo": {
         "os": {
-          "mit": 29,
-          "racjonalizacja": 71
+          "mit": 30,
+          "racjonalizacja": 70
         },
         "zasieg": [
           {
@@ -1739,7 +1739,7 @@
           },
           {
             "slug": "kannon-hase",
-            "wielkosc": 0.318
+            "wielkosc": 0.342
           },
           {
             "slug": "kentaur-pelion",
@@ -1759,7 +1759,7 @@
           },
           {
             "slug": "nessos",
-            "wielkosc": 0.379
+            "wielkosc": 0.403
           },
           {
             "slug": "pandora",
@@ -1779,7 +1779,7 @@
           },
           {
             "slug": "syama-i-sarvara",
-            "wielkosc": 0.27
+            "wielkosc": 0.294
           },
           {
             "slug": "talos-kreta",
@@ -1830,7 +1830,7 @@
           {
             "kultura": "japonia",
             "kult": "kannon-hase",
-            "wielkosc": 0.318
+            "wielkosc": 0.342
           },
           {
             "kultura": "grecja",
@@ -1855,7 +1855,7 @@
           {
             "kultura": "grecja",
             "kult": "nessos",
-            "wielkosc": 0.379
+            "wielkosc": 0.403
           },
           {
             "kultura": "grecja",
@@ -1880,7 +1880,7 @@
           {
             "kultura": "indie",
             "kult": "syama-i-sarvara",
-            "wielkosc": 0.27
+            "wielkosc": 0.294
           },
           {
             "kultura": "grecja",
@@ -2121,8 +2121,8 @@
       ],
       "stanPo": {
         "os": {
-          "mit": 28,
-          "racjonalizacja": 72
+          "mit": 29,
+          "racjonalizacja": 71
         },
         "zasieg": [
           {
@@ -2159,7 +2159,7 @@
           },
           {
             "slug": "kannon-hase",
-            "wielkosc": 0.318
+            "wielkosc": 0.342
           },
           {
             "slug": "kentaur-pelion",
@@ -2179,7 +2179,7 @@
           },
           {
             "slug": "nessos",
-            "wielkosc": 0.379
+            "wielkosc": 0.403
           },
           {
             "slug": "pandora",
@@ -2199,7 +2199,7 @@
           },
           {
             "slug": "syama-i-sarvara",
-            "wielkosc": 0.27
+            "wielkosc": 0.294
           },
           {
             "slug": "talos-kreta",
@@ -2250,7 +2250,7 @@
           {
             "kultura": "japonia",
             "kult": "kannon-hase",
-            "wielkosc": 0.318
+            "wielkosc": 0.342
           },
           {
             "kultura": "grecja",
@@ -2275,7 +2275,7 @@
           {
             "kultura": "grecja",
             "kult": "nessos",
-            "wielkosc": 0.379
+            "wielkosc": 0.403
           },
           {
             "kultura": "grecja",
@@ -2300,7 +2300,7 @@
           {
             "kultura": "indie",
             "kult": "syama-i-sarvara",
-            "wielkosc": 0.27
+            "wielkosc": 0.294
           },
           {
             "kultura": "grecja",
@@ -2550,8 +2550,8 @@
       ],
       "stanPo": {
         "os": {
-          "mit": 27,
-          "racjonalizacja": 73
+          "mit": 28,
+          "racjonalizacja": 72
         },
         "zasieg": [
           {
@@ -2588,7 +2588,7 @@
           },
           {
             "slug": "kannon-hase",
-            "wielkosc": 0.318
+            "wielkosc": 0.342
           },
           {
             "slug": "kentaur-pelion",
@@ -2608,7 +2608,7 @@
           },
           {
             "slug": "nessos",
-            "wielkosc": 0.379
+            "wielkosc": 0.403
           },
           {
             "slug": "pandora",
@@ -2628,7 +2628,7 @@
           },
           {
             "slug": "syama-i-sarvara",
-            "wielkosc": 0.275
+            "wielkosc": 0.299
           },
           {
             "slug": "talos-kreta",
@@ -2679,7 +2679,7 @@
           {
             "kultura": "japonia",
             "kult": "kannon-hase",
-            "wielkosc": 0.318
+            "wielkosc": 0.342
           },
           {
             "kultura": "grecja",
@@ -2704,7 +2704,7 @@
           {
             "kultura": "grecja",
             "kult": "nessos",
-            "wielkosc": 0.379
+            "wielkosc": 0.403
           },
           {
             "kultura": "grecja",
@@ -2729,7 +2729,7 @@
           {
             "kultura": "indie",
             "kult": "syama-i-sarvara",
-            "wielkosc": 0.275
+            "wielkosc": 0.299
           },
           {
             "kultura": "grecja",
@@ -2798,8 +2798,8 @@
           },
           {
             "slug": "syama-i-sarvara",
-            "przed": 0.27,
-            "po": 0.275,
+            "przed": 0.294,
+            "po": 0.299,
             "delta": 0.005,
             "opis": "Droga przodków zyskuje nowe podanie: woda zostawiona przez pierwszego — pielgrzymi w Waranasi zaczynają stawiać dzbany u bramy."
           }
@@ -2822,8 +2822,8 @@
           {
             "kultura": "indie",
             "kult": "syama-i-sarvara",
-            "przed": 0.27,
-            "po": 0.275,
+            "przed": 0.294,
+            "po": 0.299,
             "delta": 0.005
           }
         ],
@@ -2929,8 +2929,8 @@
   ],
   "stanPo": {
     "os": {
-      "mit": 27,
-      "racjonalizacja": 73
+      "mit": 28,
+      "racjonalizacja": 72
     },
     "zasieg": [
       {
@@ -2967,7 +2967,7 @@
       },
       {
         "slug": "kannon-hase",
-        "wielkosc": 0.318
+        "wielkosc": 0.342
       },
       {
         "slug": "kentaur-pelion",
@@ -2987,7 +2987,7 @@
       },
       {
         "slug": "nessos",
-        "wielkosc": 0.379
+        "wielkosc": 0.403
       },
       {
         "slug": "pandora",
@@ -3007,7 +3007,7 @@
       },
       {
         "slug": "syama-i-sarvara",
-        "wielkosc": 0.275
+        "wielkosc": 0.299
       },
       {
         "slug": "talos-kreta",
@@ -3058,7 +3058,7 @@
       {
         "kultura": "japonia",
         "kult": "kannon-hase",
-        "wielkosc": 0.318
+        "wielkosc": 0.342
       },
       {
         "kultura": "grecja",
@@ -3083,7 +3083,7 @@
       {
         "kultura": "grecja",
         "kult": "nessos",
-        "wielkosc": 0.379
+        "wielkosc": 0.403
       },
       {
         "kultura": "grecja",
@@ -3108,7 +3108,7 @@
       {
         "kultura": "indie",
         "kult": "syama-i-sarvara",
-        "wielkosc": 0.275
+        "wielkosc": 0.299
       },
       {
         "kultura": "grecja",

@@ -1,8 +1,8 @@
 {
   "wersja": 3,
-  "buildTime": "2026-08-30T21:50:09.124Z",
+  "buildTime": "2026-08-30T21:50:58.092Z",
   "liczba": 20,
-  "liczbaSkitow": 22,
+  "liczbaSkitow": 23,
   "kanon": {
     "kategorie": [
       {
@@ -779,7 +779,8 @@
       ],
       "obraz": "assets/wizualizacje/kannon-hase.jpg",
       "skity": [
-        "dzien-wolnego"
+        "dzien-wolnego",
+        "zaplata-za-przewoz"
       ]
     },
     {
@@ -974,7 +975,8 @@
       "skity": [
         "cena-znaku",
         "dwa-grzbiety",
-        "prezent-z-defektem"
+        "prezent-z-defektem",
+        "zaplata-za-przewoz"
       ]
     },
     {
@@ -1177,7 +1179,8 @@
       ],
       "obraz": "assets/wizualizacje/syama-i-sarvara.jpg",
       "skity": [
-        "pierwszy"
+        "pierwszy",
+        "zaplata-za-przewoz"
       ]
     },
     {
@@ -1559,6 +1562,23 @@
       "data": "2026-08-29 11:30"
     },
     {
+      "slug": "zaplata-za-przewoz",
+      "tytul": "ZAPŁATA ZA PRZEWÓZ",
+      "temat": "cena przeprawy — opłata przewoźnika, obowiązek strażników i łaska wybawicielki",
+      "uczestnicy": [
+        "kannon-hase",
+        "nessos",
+        "syama-i-sarvara"
+      ],
+      "imiona": [
+        "Nessos",
+        "Śyāma i Śarvara",
+        "Kannon"
+      ],
+      "slow": 248,
+      "data": "2026-08-30 21:47"
+    },
+    {
       "slug": "znak-burzy",
       "tytul": "ZNAK BURZY",
       "temat": "kto ma prawo wrócić, gdy nadejdzie grzmot",
@@ -1599,6 +1619,14 @@
       "slug": "syama-i-sarvara",
       "tytul": "Śyāma i Śarvara — czterookie psy Yamy, strażnicy drogi przodków",
       "opis": "Pętla Jakości (C1): dopisana matka psów — Saramā, suka Indry z Rigwedy 10.108 (przekroczenie Rasā, odmowa łapówki Paṇich) oraz nowe źródło pierwotne."
+    },
+    {
+      "data": "2026-08-30 21:47",
+      "typ": "skit",
+      "akcja": "nowy",
+      "slug": "zaplata-za-przewoz",
+      "tytul": "ZAPŁATA ZA PRZEWÓZ",
+      "opis": "SKIT — skład: Nessos, Śyāma i Śarvara, Kannon"
     },
     {
       "data": "2026-08-30 13:30",

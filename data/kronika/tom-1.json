@@ -6,8 +6,8 @@
   "status": "otwarta",
   "stanStart": {
     "os": {
-      "mit": 37,
-      "racjonalizacja": 63
+      "mit": 38,
+      "racjonalizacja": 62
     },
     "zasieg": [
       {
@@ -44,7 +44,7 @@
       },
       {
         "slug": "kannon-hase",
-        "wielkosc": 0.318
+        "wielkosc": 0.342
       },
       {
         "slug": "kentaur-pelion",
@@ -64,7 +64,7 @@
       },
       {
         "slug": "nessos",
-        "wielkosc": 0.379
+        "wielkosc": 0.403
       },
       {
         "slug": "pandora",
@@ -84,7 +84,7 @@
       },
       {
         "slug": "syama-i-sarvara",
-        "wielkosc": 0.27
+        "wielkosc": 0.294
       },
       {
         "slug": "talos-kreta",
@@ -135,7 +135,7 @@
       {
         "kultura": "japonia",
         "kult": "kannon-hase",
-        "wielkosc": 0.318
+        "wielkosc": 0.342
       },
       {
         "kultura": "grecja",
@@ -160,7 +160,7 @@
       {
         "kultura": "grecja",
         "kult": "nessos",
-        "wielkosc": 0.379
+        "wielkosc": 0.403
       },
       {
         "kultura": "grecja",
@@ -185,7 +185,7 @@
       {
         "kultura": "indie",
         "kult": "syama-i-sarvara",
-        "wielkosc": 0.27
+        "wielkosc": 0.294
       },
       {
         "kultura": "grecja",
