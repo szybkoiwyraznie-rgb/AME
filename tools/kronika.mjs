@@ -631,9 +631,9 @@ export function generujMapeSVG({
         <title>${esc(tytulHalo)}</title>
         <circle class="halo" r="${rHalo}" />
         <a href="#${esc(p.slug)}" class="otworz-kartoteke" data-slug="${esc(p.slug)}" title="${esc(p.nazwa)} (${esc(p.kraj)}) — otwórz kartotekę">
-          <circle class="pin-bg" r="${p.jestUczestnikiem ? 15 : 10}" />
-          <text class="pin-icon" dy="${p.jestUczestnikiem ? '4' : '3'}">${p.emoji}</text>
-          <text class="pin-label" x="${p.jestUczestnikiem ? 18 : 14}" y="4">${esc(p.nazwa.split('—')[0].trim())}</text>
+          <circle class="pin-bg" r="${p.jestUczestnikiem ? 20 : 13}" />
+          <text class="pin-icon" dy="${p.jestUczestnikiem ? 7 : 5}">${p.emoji}</text>
+          <text class="pin-label" x="${p.jestUczestnikiem ? 24 : 17}" y="5">${esc(p.nazwa.split('—')[0].trim())}</text>
         </a>
       </g>`;
     })
@@ -722,7 +722,7 @@ export function ramkaEpokiHTML(e) {
 }
 
 /** W2 — wykres osi MIT/RACJONALIZACJA po epokach (SVG, bez zależności). */
-export function wykresOsiSVG(epoki, { szer = 880, wysokosc = 210 } = {}) {
+export function wykresOsiSVG(epoki, { szer = 560, wysokosc = 210 } = {}) {
   // os.mit: 0-1 (ułamek) albo 0-100 (procenty) — unormuj do procentów.
   const dane = (epoki || []).map((e) => {
     const mit = Number(e.stanPo?.os?.mit ?? 0);
@@ -800,15 +800,15 @@ export function tekstWieloliniowy(x, y, klasa, tekst, { maxZnakow = 22, maxLinii
 }
 
 /** W3 — słupki zasięgów przed→po (każdy wiersz: pasek przed i po, delta). */
-export function wykresZasiegowSVG(wiersze, { szer = 700 } = {}) {
+export function wykresZasiegowSVG(wiersze, { szer = 560 } = {}) {
   const nazwy = new Map((wiersze || []).map((z) => [z.slug, z.nazwa]).filter(([, n]) => n));
   const rows = (wiersze || []).filter((z) => Number.isFinite(z.przed) || Number.isFinite(z.po));
   if (!rows.length) return `<p class="muted">Brak danych o zasięgach.</p>`;
-  const wysWiersza = 46;
+  const wysWiersza = 50;
   const gora = 16;
   const wysokosc = gora + rows.length * wysWiersza + 10;
-  const lewo = 158;
-  const prawo = 90;
+  const lewo = 186;
+  const prawo = 92;
   const szerBar = szer - lewo - prawo;
   const bar = (v) => `${Math.round(Math.max(0, Math.min(1, v)) * szerBar)}`;
   const wierszeSvg = rows
@@ -819,9 +819,15 @@ export function wykresZasiegowSVG(wiersze, { szer = 700 } = {}) {
       const delta = Math.round((po - przed) * 100);
       const cls = delta > 0 ? 'up' : delta < 0 ? 'down' : 'neutral';
       const deltaks = `${delta > 0 ? '+' : ''}${delta} pp`;
+      const etykieta = tekstWieloliniowy(lewo - 14, 30, 'zasieg-etykieta', nazwaBytu(nazwy, z.slug), {
+        maxZnakow: 20,
+        maxLinii: 2,
+        dy: 15,
+        anchor: 'end',
+      });
       return `
       <g class="zasieg-wiersz" transform="translate(0,${yy})">
-        <text class="zasieg-etykieta" x="${lewo - 10}" y="26" text-anchor="end">${esc(nazwaBytu(nazwy, z.slug))}</text>
+        ${etykieta}
         <rect class="zasieg-tor" x="${lewo}" y="8" width="${szerBar}" height="10" rx="4" />
         <rect class="zasieg-przed" x="${lewo}" y="8" width="${bar(przed)}" height="10" rx="4">
           <title>${esc(z.slug)}: przed ${pct(przed)}</title>
@@ -896,7 +902,7 @@ export function heroEpokiHTML(grafika) {
 
 /** W5 — słupki dominacji kultur/kultów (per epoka i na końcu Tomu).
  *  `dopisek` (opcjonalny) to dodatkowy tekst obok wartości, np. „7 bytów”. */
-export function slupkiDominacjiSVG(wiersze, { szer = 640, wysokosc = null } = {}) {
+export function slupkiDominacjiSVG(wiersze, { szer = 560, wysokosc = null } = {}) {
   const rows = (wiersze || []).filter((d) => Number.isFinite(d.wielkosc) && d.wielkosc > 0);
   if (!rows.length) return `<p class="muted">Brak dominacji do pokazania.</p>`;
   // `grupa` (np. kultura) wstawia nagłówek; kolejność wierszy = ranking.
@@ -909,9 +915,9 @@ export function slupkiDominacjiSVG(wiersze, { szer = 640, wysokosc = null } = {}
     }
     pozycje.push({ typ: 'wiersz', ...d });
   }
-  const h = wysokosc || pozycje.length * 40 + 24;
-  const lewo = 190;
-  const prawo = 110;
+  const h = wysokosc || pozycje.length * 44 + 24;
+  const lewo = 216;
+  const prawo = 112;
   const szerBar = szer - lewo - prawo;
   const wierszeSvg = pozycje
     .map((d, i) => {
@@ -925,16 +931,16 @@ export function slupkiDominacjiSVG(wiersze, { szer = 640, wysokosc = null } = {}
       }
       const delta = d.delta !== undefined && d.delta !== null ? Math.round(Number(d.delta) * 100) : null;
       const cls = delta === null ? 'neutral' : delta > 0 ? 'up' : delta < 0 ? 'down' : 'neutral';
-      const etykieta = tekstWieloliniowy(lewo - 100, 15, 'dom-etykieta', d.etykieta, {
-        maxZnakow: 15,
+      const etykieta = tekstWieloliniowy(lewo - 104, 14, 'dom-etykieta', d.etykieta, {
+        maxZnakow: 20,
         maxLinii: 2,
-        dy: 13,
+        dy: 15,
         anchor: 'start',
       });
       const dopisek = d.dopisek ? ` · ${esc(d.dopisek)}` : '';
       return `
       <g class="dom-wiersz" transform="translate(0,${yy.toFixed(1)})">
-        <circle class="dom-kropka" cx="${lewo - 112}" cy="14" r="4" />
+        <circle class="dom-kropka" cx="${lewo - 118}" cy="14" r="4" />
         ${etykieta}
         <rect class="dom-tor" x="${lewo}" y="4" width="${szerBar}" height="20" rx="5" />
         <rect class="dom-bar" x="${lewo}" y="4" width="${Math.round(d.wielkosc * szerBar)}" height="20" rx="5">
@@ -1140,10 +1146,10 @@ export function diagramRelacjiSVG(relacje, uczestnicy) {
   const osoby = uczestnicy || [];
   const byty = [...new Set([...rel.flatMap((r) => [r.od, r.do]), ...osoby.map((u) => u.slug)])];
   const nazwy = new Map(osoby.map((u) => [u.slug, u.nazwa]));
-  const cx = 360;
-  const cy = 210;
-  const rx = 300;
-  const ry = 150;
+  const cx = 280;
+  const cy = 200;
+  const rx = 236;
+  const ry = 132;
   const poz = (slug, i) => {
     const kat = (-Math.PI / 2) + (2 * Math.PI * i) / Math.max(1, byty.length);
     return { x: cx + rx * Math.cos(kat), y: cy + ry * Math.sin(kat), kat };
@@ -1159,7 +1165,7 @@ export function diagramRelacjiSVG(relacje, uczestnicy) {
       const dx = p2.x - p1.x;
       const dy = p2.y - p1.y;
       const d = Math.hypot(dx, dy) || 1;
-      const off = Math.min(90, d * 0.25);
+      const off = Math.min(80, d * 0.25);
       const wx = midX + (dy / d) * off;
       const wy = midY - (dx / d) * off;
       const cls = r.kierunek === 'wzmocnienie' ? 'wzmocnienie' : r.kierunek === 'schlodzenie' || r.kierunek === 'schłodzenie' ? 'schlodzenie' : 'neutralna';
@@ -1171,15 +1177,20 @@ export function diagramRelacjiSVG(relacje, uczestnicy) {
   const wezly = [...punkty.entries()]
     .map(([slug, p]) => {
       const nazwa = nazwy.get(slug) || slug;
+      const etykieta = tekstWieloliniowy(0, 56, 'rel-nazwa', nazwa, {
+        maxZnakow: 18,
+        maxLinii: 2,
+        dy: 15,
+      });
       return `<g class="rel-wezel" transform="translate(${p.x.toFixed(1)},${p.y.toFixed(1)})">
         <title>${esc(nazwa)}</title>
         <circle r="34" />
         <text class="rel-emoji" y="8">${getEmoji(slug)}</text>
-        <text class="rel-nazwa" y="58">${esc(nazwa)}</text>
+        ${etykieta}
       </g>`;
     })
     .join('');
-  return `<svg class="chart rel-chart" viewBox="0 0 720 460" role="img" aria-label="Diagram relacji między uczestnikami epoki">
+  return `<svg class="chart rel-chart" viewBox="0 0 560 400" role="img" aria-label="Diagram relacji między uczestnikami epoki">
     <path class="rel-elipsa" d="M ${cx - rx} ${cy} A ${rx} ${ry} 0 1 1 ${cx + rx - 0.1} ${cy} A ${rx} ${ry} 0 1 1 ${cx - rx} ${cy}" />
     ${luki}
     ${wezly}
@@ -1240,8 +1251,8 @@ export function osWatkowSVG(epoki) {
           x(i),
           22,
           'watki-os-x',
-          `${rzymskie(i + 1)} · ${e.tytul}`,
-          { maxZnakow: 13, maxLinii: 3, dy: 12 }
+          `${rzymskie(i + 1)} · ${String(e.tytul || '').split(':')[0].trim() || e.tytul}`,
+          { maxZnakow: 14, maxLinii: 2, dy: 13 }
         )
     )
     .join('');
@@ -1312,10 +1323,10 @@ export function heatmapZasiegowSVG(epoki, nazwy = {}) {
   for (const e of epokiLista) for (const u of e.uczestnicy || []) if (!slugi.includes(u.slug)) slugi.push(u.slug);
   const suma = (s) => epokiLista.reduce((acc, e) => acc + ((e.stanPo?.zasieg || []).find((z) => z.slug === s)?.wielkosc ?? 0), 0);
   slugi.sort((a, b) => suma(b) - suma(a));
-  const szerKom = 96;
-  const wysWiersza = 42;
-  const lewo = 224;
-  const szer = lewo + epokiLista.length * szerKom + 40;
+  const szerKom = 104;
+  const wysWiersza = 44;
+  const lewo = 246;
+  const szer = lewo + epokiLista.length * szerKom + 48;
   const wysokosc = 76 + slugi.length * wysWiersza;
   const komorki = slugi
     .map((s, i) => {
@@ -1337,9 +1348,9 @@ export function heatmapZasiegowSVG(epoki, nazwy = {}) {
         .join('');
       const total = epokiLista.length ? Math.round((suma(s) / epokiLista.length) * 100) : 0;
       const etykieta = tekstWieloliniowy(lewo - 12, yy + wysWiersza / 2 + 2, 'heat-etykieta', `${getEmoji(s)} ${nazwy[s] || s}`, {
-        maxZnakow: 17,
+        maxZnakow: 18,
         maxLinii: 2,
-        dy: 14,
+        dy: 15,
         anchor: 'end',
       });
       return `${cells}${etykieta}
@@ -1348,10 +1359,10 @@ export function heatmapZasiegowSVG(epoki, nazwy = {}) {
     .join('');
   const naglowek = epokiLista
     .map((e, j) =>
-      tekstWieloliniowy(lewo + j * szerKom + szerKom / 2, 26, 'heat-os-x', `${rzymskie(j + 1)} · ${e.tytul}`, {
-        maxZnakow: 12,
+      tekstWieloliniowy(lewo + j * szerKom + szerKom / 2, 26, 'heat-os-x', `${rzymskie(j + 1)} · ${String(e.tytul || '').split(':')[0].trim() || e.tytul}`, {
+        maxZnakow: 13,
         maxLinii: 2,
-        dy: 12,
+        dy: 13,
       })
     )
     .join('');
@@ -1754,7 +1765,7 @@ html[data-motyw="ciemny"] {
   padding: 10px 18px;
   background: var(--card-alt);
   border-bottom: 1px solid var(--line);
-  font-size: 12.5px;
+  font-size: 13.5px;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 .map-title {
@@ -1815,18 +1826,18 @@ html[data-motyw="ciemny"] {
   stroke: #fff;
 }
 .kronika-map .pin-icon {
-  font-size: 13px;
+  font-size: 20px;
   text-anchor: middle;
   dominant-baseline: central;
 }
 .kronika-map .pin-label {
-  font-size: 13px;
+  font-size: 19px;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-weight: 600;
   fill: #1d1916;
   paint-order: stroke;
   stroke: #fffdf8;
-  stroke-width: 3.5px;
+  stroke-width: 4.5px;
   stroke-linecap: round;
   stroke-linejoin: round;
 }
@@ -1849,6 +1860,10 @@ html[data-motyw="ciemny"] {
   flex-direction: column;
   gap: 24px;
 }
+/* Wykres szeroki: rozpięty na obie kolumny gridu (Kronika, 2026-08-30). */
+.kart-szeroka {
+  grid-column: 1 / -1;
+}
 @media(max-width: 860px) {
   .grid { grid-template-columns: 1fr; }
 }
@@ -1868,7 +1883,7 @@ html[data-motyw="ciemny"] {
 }
 .card-sub {
   color: var(--muted);
-  font-size: 13px;
+  font-size: 14px;
   margin: -6px 0 14px;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
@@ -2098,7 +2113,7 @@ th {
 /* LISTS & HELPERS */
 ul { margin: 0; padding-left: 20px; }
 li { margin: 8px 0; }
-.muted { color: var(--muted); font-size: 12.5px; }
+.muted { color: var(--muted); font-size: 13.5px; }
 
 /* PAGER */
 .epoka-pager {
@@ -2370,14 +2385,14 @@ li { margin: 8px 0; }
 
 .chart { width: 100%; height: auto; display: block; }
 .os-grid { stroke: var(--line); stroke-width: 1; }
-.os-grid-label { fill: var(--muted); font-size: 12px; text-anchor: end; }
+.os-grid-label { fill: var(--muted); font-size: 14.5px; text-anchor: end; }
 .os-area { fill: var(--mit); fill-opacity: 0.12; }
 .os-line { fill: none; stroke: var(--mit); stroke-width: 2.5; stroke-linejoin: round; }
 .os-dot circle { fill: var(--accent); stroke: var(--fg); stroke-width: 1.5; }
-.os-wartosc { fill: var(--fg); font-size: 12px; text-anchor: middle; }
-.os-label { fill: var(--muted); font-size: 12px; }
+.os-wartosc { fill: var(--fg); font-size: 14.5px; text-anchor: middle; }
+.os-label { fill: var(--muted); font-size: 14.5px; }
 
-.zasieg-chip, .zasieg-wiersz text { font-size: 12px; }
+.zasieg-chip, .zasieg-wiersz text { font-size: 14.5px; }
 .zasieg-etykieta { fill: var(--fg); font-weight: 600; }
 .zasieg-tor { fill: var(--card-alt); stroke: var(--line); stroke-width: 1; }
 .zasieg-przed { fill: var(--muted); opacity: 0.45; }
@@ -2387,28 +2402,28 @@ li { margin: 8px 0; }
 .zasieg-delta { fill: var(--muted); font-weight: 700; }
 .zasieg-delta.up { fill: var(--up); }
 .zasieg-delta.down { fill: var(--down); }
-.chart-legenda { fill: var(--muted); font-size: 12px; }
+.chart-legenda { fill: var(--muted); font-size: 13.5px; }
 .leg-przed { fill: var(--muted); }
 .leg-po { fill: var(--accent); }
 
 .wykres-paliwa { display: flex; gap: 10px; align-items: flex-start; flex-wrap: wrap; }
-.paliwo-chart { flex: 1 1 520px; min-width: 0; }
+.paliwo-chart { flex: 1 1 340px; min-width: 0; }
 .paliwo-linia { fill: none; stroke-width: 2.2; stroke-linejoin: round; }
 .paliwo-punkt { stroke: var(--card); stroke-width: 1; }
-.paliwo-os, .paliwo-os-x { fill: var(--muted); font-size: 12px; text-anchor: end; }
+.paliwo-os, .paliwo-os-x { fill: var(--muted); font-size: 14px; text-anchor: end; }
 .paliwo-os-x { text-anchor: middle; }
-.paliwo-legenda-box { flex: 0 1 200px; display: flex; flex-direction: column; gap: 4px; font-size: 13px; }
+.paliwo-legenda-box { flex: 1 1 190px; min-width: 0; display: flex; flex-direction: column; gap: 4px; font-size: 14px; }
 .paliwo-legenda { display: flex; gap: 8px; align-items: center; color: var(--fg); }
 .paliwo-legenda .kropka { width: 10px; height: 10px; border-radius: 50%; background: var(--l); display: inline-block; }
 .paliwo-legenda b { margin-left: auto; }
 
-.dom-grupa-etykieta { fill: var(--accent); font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+.dom-grupa-etykieta { fill: var(--accent); font-size: 13.5px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
 .dom-grupa-linia { stroke: var(--accent); stroke-width: 1.4; stroke-dasharray: 3 3; }
 .dom-tor { fill: var(--card-alt); stroke: var(--line); stroke-width: 1; }
 .dom-bar { fill: var(--accent); }
-.dom-etykieta { fill: var(--fg); font-size: 12.5px; font-weight: 600; }
+.dom-etykieta { fill: var(--fg); font-size: 14.5px; font-weight: 600; }
 .dom-kropka { fill: var(--accent); }
-.dom-delta { fill: var(--muted); font-size: 12px; }
+.dom-delta { fill: var(--muted); font-size: 14px; }
 .dom-delta.up { fill: var(--up); }
 .dom-delta.down { fill: var(--down); }
 
@@ -2418,9 +2433,9 @@ li { margin: 8px 0; }
 .rel-luk.schlodzenie { stroke: var(--down); }
 .rel-luk.neutralna { stroke: var(--muted); stroke-dasharray: 5 4; }
 .rel-wezel circle { fill: var(--card); stroke: var(--accent); stroke-width: 1.6; }
-.rel-emoji { text-anchor: middle; font-size: 26px; }
-.rel-nazwa { text-anchor: middle; font-size: 12.5px; fill: var(--fg); font-weight: 600; }
-.rel-legenda { display: flex; gap: 18px; margin-top: 6px; font-size: 12px; color: var(--muted); }
+.rel-emoji { text-anchor: middle; font-size: 24px; }
+.rel-nazwa { text-anchor: middle; font-size: 14.5px; fill: var(--fg); font-weight: 600; }
+.rel-legenda { display: flex; gap: 18px; margin-top: 6px; font-size: 13.5px; color: var(--muted); }
 .rel-leg.wzmocnienie { border-bottom: 3px solid var(--up); }
 .rel-leg.schlodzenie { border-bottom: 3px solid var(--down); }
 .rel-leg.neutralna { border-bottom: 3px dashed var(--muted); }
@@ -2429,25 +2444,25 @@ li { margin: 8px 0; }
 .watki-marker { stroke: var(--card); stroke-width: 2; }
 .watki-marker.otwarty { fill: var(--up); }
 .watki-marker.zamkniety { fill: var(--down); }
-.watki-etykieta { fill: var(--fg); font-size: 12px; }
-.watki-os-x { fill: var(--muted); font-size: 12px; }
+.watki-etykieta { fill: var(--fg); font-size: 14px; }
+.watki-os-x { fill: var(--muted); font-size: 14px; }
 
 .heat-cell { stroke: var(--card); stroke-width: 1; }
-.heat-liczba { font-size: 12px; font-weight: 700; text-anchor: middle; dominant-baseline: middle; }
+.heat-liczba { font-size: 14px; font-weight: 700; text-anchor: middle; dominant-baseline: middle; }
 .heat-legenda { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; margin-top: 6px; }
 .heat-leg-kolor { padding: 2px 9px; border-radius: 999px; font-weight: 600; }
-.heat-etykieta { fill: var(--fg); font-size: 12.5px; font-weight: 600; }
-.heat-sum { fill: var(--muted); font-size: 12px; }
-.heat-os-x { fill: var(--muted); font-size: 12px; }
+.heat-etykieta { fill: var(--fg); font-size: 14.5px; font-weight: 600; }
+.heat-sum { fill: var(--muted); font-size: 14px; }
+.heat-os-x { fill: var(--muted); font-size: 14px; }
 
 .graf-os { stroke: var(--accent); stroke-width: 2.4; }
 .graf-odwolanie { stroke: var(--accent-light); stroke-width: 1.6; stroke-dasharray: 6 4; }
 .graf-wezel circle { fill: var(--card); stroke: var(--accent); stroke-width: 2; }
 .graf-wezel.rozgalezienie circle { fill: var(--accent-light); }
-.graf-nr { text-anchor: middle; fill: var(--fg); font-size: 13px; font-weight: 700; }
-.graf-etykieta { fill: var(--muted); font-size: 12px; }
+.graf-nr { text-anchor: middle; fill: var(--fg); font-size: 15px; font-weight: 700; }
+.graf-etykieta { fill: var(--muted); font-size: 14px; }
 .graf-galez path { fill: var(--accent-light); }
-.graf-galez-opis { fill: var(--muted); font-size: 12px; }
+.graf-galez-opis { fill: var(--muted); font-size: 13.5px; }
 
 .tomy-pasek { display: flex; gap: 8px; flex-wrap: wrap; margin: 0 0 14px; }
 .tomy-pasek .pager-btn.aktywny { background: var(--accent); color: var(--card); }
@@ -2457,7 +2472,7 @@ li { margin: 8px 0; }
 .powiazane-epoki { margin: 22px 0 0; font-size: 13.5px; color: var(--muted); }
 .powiazane-epoki .chip { text-decoration: none; }
 .dziennik { width: 100%; border-collapse: collapse; }
-.dziennik th, .dziennik td { padding: 7px 8px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; font-size: 13.5px; }
+.dziennik th, .dziennik td { padding: 7px 8px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; font-size: 14px; }
 .dziennik .num { text-align: right; white-space: nowrap; }
 .tom-karta { max-width: 640px; }
 `;
@@ -2740,7 +2755,7 @@ export function generujRaportHTML(dane) {
   );
   const wykresDominacji = slupkiDominacjiSVG(
     (dane.konsekwencje.dominacje || []).map((d) => ({
-      etykieta: `${d.kultura} · ${d.kult}`,
+      etykieta: `${nazwaKultury(d.kultura)} · ${nazwyEpoki.get(d.kult) || d.kult}`,
       wielkosc: Number.isFinite(d.po) ? d.po : d.wielkosc,
       delta: d.delta,
     }))
@@ -3099,7 +3114,20 @@ ${generujTopbarHTML('tom-1')}
 <!-- GLOBALNA MAPA TOMU I -->
 ${mapaSvg}
 
-<!-- S1: wykresy Tomu -->
+<!-- S1: wykresy Tomu — szerokie (paliwo, wątki, macierz) na całą szerokość,
+     wąskie (oś świata, dominacje końcowe) w kolumnach — czytelne czcionki. -->
+<div class="card">
+  <h2>Kto spalał pamięć</h2>
+  <div class="card-sub">Paliwo każdego uczestnika na koniec kolejnych epok.</div>
+  ${paliwo}
+</div>
+
+<div class="card">
+  <h2>Oś czasu wątków</h2>
+  <div class="card-sub">Wątek otwarty (●) i zamknięty (●) na przestrzeni Tomu; linia = ciągłość.</div>
+  ${osWatkow}
+</div>
+
 <div class="grid">
   <div class="col">
     <div class="card">
@@ -3107,29 +3135,20 @@ ${mapaSvg}
       <div class="card-sub">Jak przez epoki przesuwała się granica między mitem a racjonalizacją.</div>
       ${wykresOsi}
     </div>
-    <div class="card">
-      <h2>Kto spalał pamięć</h2>
-      <div class="card-sub">Paliwo każdego uczestnika na koniec kolejnych epok.</div>
-      ${paliwo}
-    </div>
-    <div class="card">
-      <h2>Oś czasu wątków</h2>
-      <div class="card-sub">Wątek otwarty (●) i zamknięty (●) na przestrzeni Tomu; linia = ciągłość.</div>
-      ${osWatkow}
-    </div>
   </div>
   <div class="col">
-    <div class="card">
-      <h2>Macierz zasięgów</h2>
-      <div class="card-sub">Jak daleko sięgał wpływ każdego bytu po kolejnych epokach (średnia po prawej).</div>
-      ${heatmap}
-    </div>
     <div class="card">
       <h2>Dominacje na koniec Tomu</h2>
       <div class="card-sub">Kultury obecne w tym Tomie — łączny głos ich bytów (agregat, od najsilniejszej).</div>
       ${dominacjeFinal}
     </div>
   </div>
+</div>
+
+<div class="card kart-szeroka">
+  <h2>Macierz zasięgów</h2>
+  <div class="card-sub">Jak daleko sięgał wpływ każdego bytu po kolejnych epokach (średnia po prawej).</div>
+  ${heatmap}
 </div>
 
 <div class="grid">

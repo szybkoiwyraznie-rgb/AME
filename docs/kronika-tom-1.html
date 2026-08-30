@@ -226,7 +226,7 @@ html[data-motyw="ciemny"] {
   padding: 10px 18px;
   background: var(--card-alt);
   border-bottom: 1px solid var(--line);
-  font-size: 12.5px;
+  font-size: 13.5px;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 .map-title {
@@ -287,18 +287,18 @@ html[data-motyw="ciemny"] {
   stroke: #fff;
 }
 .kronika-map .pin-icon {
-  font-size: 13px;
+  font-size: 20px;
   text-anchor: middle;
   dominant-baseline: central;
 }
 .kronika-map .pin-label {
-  font-size: 13px;
+  font-size: 19px;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-weight: 600;
   fill: #1d1916;
   paint-order: stroke;
   stroke: #fffdf8;
-  stroke-width: 3.5px;
+  stroke-width: 4.5px;
   stroke-linecap: round;
   stroke-linejoin: round;
 }
@@ -321,6 +321,10 @@ html[data-motyw="ciemny"] {
   flex-direction: column;
   gap: 24px;
 }
+/* Wykres szeroki: rozpięty na obie kolumny gridu (Kronika, 2026-08-30). */
+.kart-szeroka {
+  grid-column: 1 / -1;
+}
 @media(max-width: 860px) {
   .grid { grid-template-columns: 1fr; }
 }
@@ -340,7 +344,7 @@ html[data-motyw="ciemny"] {
 }
 .card-sub {
   color: var(--muted);
-  font-size: 13px;
+  font-size: 14px;
   margin: -6px 0 14px;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
@@ -570,7 +574,7 @@ th {
 /* LISTS & HELPERS */
 ul { margin: 0; padding-left: 20px; }
 li { margin: 8px 0; }
-.muted { color: var(--muted); font-size: 12.5px; }
+.muted { color: var(--muted); font-size: 13.5px; }
 
 /* PAGER */
 .epoka-pager {
@@ -842,14 +846,14 @@ li { margin: 8px 0; }
 
 .chart { width: 100%; height: auto; display: block; }
 .os-grid { stroke: var(--line); stroke-width: 1; }
-.os-grid-label { fill: var(--muted); font-size: 12px; text-anchor: end; }
+.os-grid-label { fill: var(--muted); font-size: 14.5px; text-anchor: end; }
 .os-area { fill: var(--mit); fill-opacity: 0.12; }
 .os-line { fill: none; stroke: var(--mit); stroke-width: 2.5; stroke-linejoin: round; }
 .os-dot circle { fill: var(--accent); stroke: var(--fg); stroke-width: 1.5; }
-.os-wartosc { fill: var(--fg); font-size: 12px; text-anchor: middle; }
-.os-label { fill: var(--muted); font-size: 12px; }
+.os-wartosc { fill: var(--fg); font-size: 14.5px; text-anchor: middle; }
+.os-label { fill: var(--muted); font-size: 14.5px; }
 
-.zasieg-chip, .zasieg-wiersz text { font-size: 12px; }
+.zasieg-chip, .zasieg-wiersz text { font-size: 14.5px; }
 .zasieg-etykieta { fill: var(--fg); font-weight: 600; }
 .zasieg-tor { fill: var(--card-alt); stroke: var(--line); stroke-width: 1; }
 .zasieg-przed { fill: var(--muted); opacity: 0.45; }
@@ -859,28 +863,28 @@ li { margin: 8px 0; }
 .zasieg-delta { fill: var(--muted); font-weight: 700; }
 .zasieg-delta.up { fill: var(--up); }
 .zasieg-delta.down { fill: var(--down); }
-.chart-legenda { fill: var(--muted); font-size: 12px; }
+.chart-legenda { fill: var(--muted); font-size: 13.5px; }
 .leg-przed { fill: var(--muted); }
 .leg-po { fill: var(--accent); }
 
 .wykres-paliwa { display: flex; gap: 10px; align-items: flex-start; flex-wrap: wrap; }
-.paliwo-chart { flex: 1 1 520px; min-width: 0; }
+.paliwo-chart { flex: 1 1 340px; min-width: 0; }
 .paliwo-linia { fill: none; stroke-width: 2.2; stroke-linejoin: round; }
 .paliwo-punkt { stroke: var(--card); stroke-width: 1; }
-.paliwo-os, .paliwo-os-x { fill: var(--muted); font-size: 12px; text-anchor: end; }
+.paliwo-os, .paliwo-os-x { fill: var(--muted); font-size: 14px; text-anchor: end; }
 .paliwo-os-x { text-anchor: middle; }
-.paliwo-legenda-box { flex: 0 1 200px; display: flex; flex-direction: column; gap: 4px; font-size: 13px; }
+.paliwo-legenda-box { flex: 1 1 190px; min-width: 0; display: flex; flex-direction: column; gap: 4px; font-size: 14px; }
 .paliwo-legenda { display: flex; gap: 8px; align-items: center; color: var(--fg); }
 .paliwo-legenda .kropka { width: 10px; height: 10px; border-radius: 50%; background: var(--l); display: inline-block; }
 .paliwo-legenda b { margin-left: auto; }
 
-.dom-grupa-etykieta { fill: var(--accent); font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+.dom-grupa-etykieta { fill: var(--accent); font-size: 13.5px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
 .dom-grupa-linia { stroke: var(--accent); stroke-width: 1.4; stroke-dasharray: 3 3; }
 .dom-tor { fill: var(--card-alt); stroke: var(--line); stroke-width: 1; }
 .dom-bar { fill: var(--accent); }
-.dom-etykieta { fill: var(--fg); font-size: 12.5px; font-weight: 600; }
+.dom-etykieta { fill: var(--fg); font-size: 14.5px; font-weight: 600; }
 .dom-kropka { fill: var(--accent); }
-.dom-delta { fill: var(--muted); font-size: 12px; }
+.dom-delta { fill: var(--muted); font-size: 14px; }
 .dom-delta.up { fill: var(--up); }
 .dom-delta.down { fill: var(--down); }
 
@@ -890,9 +894,9 @@ li { margin: 8px 0; }
 .rel-luk.schlodzenie { stroke: var(--down); }
 .rel-luk.neutralna { stroke: var(--muted); stroke-dasharray: 5 4; }
 .rel-wezel circle { fill: var(--card); stroke: var(--accent); stroke-width: 1.6; }
-.rel-emoji { text-anchor: middle; font-size: 26px; }
-.rel-nazwa { text-anchor: middle; font-size: 12.5px; fill: var(--fg); font-weight: 600; }
-.rel-legenda { display: flex; gap: 18px; margin-top: 6px; font-size: 12px; color: var(--muted); }
+.rel-emoji { text-anchor: middle; font-size: 24px; }
+.rel-nazwa { text-anchor: middle; font-size: 14.5px; fill: var(--fg); font-weight: 600; }
+.rel-legenda { display: flex; gap: 18px; margin-top: 6px; font-size: 13.5px; color: var(--muted); }
 .rel-leg.wzmocnienie { border-bottom: 3px solid var(--up); }
 .rel-leg.schlodzenie { border-bottom: 3px solid var(--down); }
 .rel-leg.neutralna { border-bottom: 3px dashed var(--muted); }
@@ -901,25 +905,25 @@ li { margin: 8px 0; }
 .watki-marker { stroke: var(--card); stroke-width: 2; }
 .watki-marker.otwarty { fill: var(--up); }
 .watki-marker.zamkniety { fill: var(--down); }
-.watki-etykieta { fill: var(--fg); font-size: 12px; }
-.watki-os-x { fill: var(--muted); font-size: 12px; }
+.watki-etykieta { fill: var(--fg); font-size: 14px; }
+.watki-os-x { fill: var(--muted); font-size: 14px; }
 
 .heat-cell { stroke: var(--card); stroke-width: 1; }
-.heat-liczba { font-size: 12px; font-weight: 700; text-anchor: middle; dominant-baseline: middle; }
+.heat-liczba { font-size: 14px; font-weight: 700; text-anchor: middle; dominant-baseline: middle; }
 .heat-legenda { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; margin-top: 6px; }
 .heat-leg-kolor { padding: 2px 9px; border-radius: 999px; font-weight: 600; }
-.heat-etykieta { fill: var(--fg); font-size: 12.5px; font-weight: 600; }
-.heat-sum { fill: var(--muted); font-size: 12px; }
-.heat-os-x { fill: var(--muted); font-size: 12px; }
+.heat-etykieta { fill: var(--fg); font-size: 14.5px; font-weight: 600; }
+.heat-sum { fill: var(--muted); font-size: 14px; }
+.heat-os-x { fill: var(--muted); font-size: 14px; }
 
 .graf-os { stroke: var(--accent); stroke-width: 2.4; }
 .graf-odwolanie { stroke: var(--accent-light); stroke-width: 1.6; stroke-dasharray: 6 4; }
 .graf-wezel circle { fill: var(--card); stroke: var(--accent); stroke-width: 2; }
 .graf-wezel.rozgalezienie circle { fill: var(--accent-light); }
-.graf-nr { text-anchor: middle; fill: var(--fg); font-size: 13px; font-weight: 700; }
-.graf-etykieta { fill: var(--muted); font-size: 12px; }
+.graf-nr { text-anchor: middle; fill: var(--fg); font-size: 15px; font-weight: 700; }
+.graf-etykieta { fill: var(--muted); font-size: 14px; }
 .graf-galez path { fill: var(--accent-light); }
-.graf-galez-opis { fill: var(--muted); font-size: 12px; }
+.graf-galez-opis { fill: var(--muted); font-size: 13.5px; }
 
 .tomy-pasek { display: flex; gap: 8px; flex-wrap: wrap; margin: 0 0 14px; }
 .tomy-pasek .pager-btn.aktywny { background: var(--accent); color: var(--card); }
@@ -929,7 +933,7 @@ li { margin: 8px 0; }
 .powiazane-epoki { margin: 22px 0 0; font-size: 13.5px; color: var(--muted); }
 .powiazane-epoki .chip { text-decoration: none; }
 .dziennik { width: 100%; border-collapse: collapse; }
-.dziennik th, .dziennik td { padding: 7px 8px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; font-size: 13.5px; }
+.dziennik th, .dziennik td { padding: 7px 8px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; font-size: 14px; }
 .dziennik .num { text-align: right; white-space: nowrap; }
 .tom-karta { max-width: 640px; }
 </style>
@@ -1386,194 +1390,147 @@ li { margin: 8px 0; }
         <title>Balor z Tory Island — zasięg 50%%</title>
         <circle class="halo" r="84" />
         <a href="#balor" class="otworz-kartoteke" data-slug="balor" title="Balor z Tory Island (Irlandia (hrabstwo Donegal)) — otwórz kartotekę">
-          <circle class="pin-bg" r="15" />
-          <text class="pin-icon" dy="4">👁️</text>
-          <text class="pin-label" x="18" y="4">Balor z Tory Island</text>
+          <circle class="pin-bg" r="20" />
+          <text class="pin-icon" dy="7">👁️</text>
+          <text class="pin-label" x="24" y="5">Balor z Tory Island</text>
         </a>
       </g>
       <g class="node active" data-slug="barbarossa-kyffhaeuser" transform="translate(1911,1199)">
         <title>Barbarossa w Kyffhäuserze — zasięg 43%%</title>
         <circle class="halo" r="75" />
         <a href="#barbarossa-kyffhaeuser" class="otworz-kartoteke" data-slug="barbarossa-kyffhaeuser" title="Barbarossa w Kyffhäuserze (Niemcy (Turyngia / Saksonia-Anhalt, Kyffhäuserkreis)) — otwórz kartotekę">
-          <circle class="pin-bg" r="15" />
-          <text class="pin-icon" dy="4">👑</text>
-          <text class="pin-label" x="18" y="4">Barbarossa w Kyffhäuserze</text>
+          <circle class="pin-bg" r="20" />
+          <text class="pin-icon" dy="7">👑</text>
+          <text class="pin-label" x="24" y="5">Barbarossa w Kyffhäuserze</text>
         </a>
       </g>
       <g class="node active" data-slug="egungun" transform="translate(1839,1721)">
         <title>Egungun — zasięg 55%%</title>
         <circle class="halo" r="90" />
         <a href="#egungun" class="otworz-kartoteke" data-slug="egungun" title="Egungun (Nigeria) — otwórz kartotekę">
-          <circle class="pin-bg" r="15" />
-          <text class="pin-icon" dy="4">🎭</text>
-          <text class="pin-label" x="18" y="4">Egungun</text>
+          <circle class="pin-bg" r="20" />
+          <text class="pin-icon" dy="7">🎭</text>
+          <text class="pin-label" x="24" y="5">Egungun</text>
         </a>
       </g>
       <g class="node active" data-slug="empusa-korynt" transform="translate(2029,1390)">
         <title>Empusa z Koryntu — zasięg 50%%</title>
         <circle class="halo" r="84" />
         <a href="#empusa-korynt" class="otworz-kartoteke" data-slug="empusa-korynt" title="Empusa z Koryntu (Grecja) — otwórz kartotekę">
-          <circle class="pin-bg" r="15" />
-          <text class="pin-icon" dy="4">🕷️</text>
-          <text class="pin-label" x="18" y="4">Empusa z Koryntu</text>
+          <circle class="pin-bg" r="20" />
+          <text class="pin-icon" dy="7">🕷️</text>
+          <text class="pin-label" x="24" y="5">Empusa z Koryntu</text>
         </a>
       </g>
       <g class="node active" data-slug="indra" transform="translate(2605,1515)">
         <title>Indra — władca gromu — zasięg 35%%</title>
         <circle class="halo" r="65" />
         <a href="#indra" class="otworz-kartoteke" data-slug="indra" title="Indra — władca gromu (Indie (Uttar Pradesh, powiat Sitapur)) — otwórz kartotekę">
-          <circle class="pin-bg" r="15" />
-          <text class="pin-icon" dy="4">🌩️</text>
-          <text class="pin-label" x="18" y="4">Indra</text>
+          <circle class="pin-bg" r="20" />
+          <text class="pin-icon" dy="7">🌩️</text>
+          <text class="pin-label" x="24" y="5">Indra</text>
         </a>
       </g>
       <g class="node active" data-slug="kentaur-pelion" transform="translate(2031,1370)">
         <title>Kentaur z Pelionu — zasięg 40%%</title>
         <circle class="halo" r="72" />
         <a href="#kentaur-pelion" class="otworz-kartoteke" data-slug="kentaur-pelion" title="Kentaur z Pelionu (Grecja) — otwórz kartotekę">
-          <circle class="pin-bg" r="15" />
-          <text class="pin-icon" dy="4">🐎</text>
-          <text class="pin-label" x="18" y="4">Kentaur z Pelionu</text>
+          <circle class="pin-bg" r="20" />
+          <text class="pin-icon" dy="7">🐎</text>
+          <text class="pin-label" x="24" y="5">Kentaur z Pelionu</text>
         </a>
       </g>
       <g class="node active" data-slug="knecht-z-koptos" transform="translate(2128,1531)">
         <title>Knecht z Koptos — ożywiony tłuczek, który nie zna słowa końca — zasięg 29%%</title>
         <circle class="halo" r="59" />
         <a href="#knecht-z-koptos" class="otworz-kartoteke" data-slug="knecht-z-koptos" title="Knecht z Koptos — ożywiony tłuczek, który nie zna słowa końca (Egipt (tradycja grecka)) — otwórz kartotekę">
-          <circle class="pin-bg" r="15" />
-          <text class="pin-icon" dy="4">🪵</text>
-          <text class="pin-label" x="18" y="4">Knecht z Koptos</text>
+          <circle class="pin-bg" r="20" />
+          <text class="pin-icon" dy="7">🪵</text>
+          <text class="pin-label" x="24" y="5">Knecht z Koptos</text>
         </a>
       </g>
       <g class="node active" data-slug="lincoln-imp" transform="translate(1795,1169)">
         <title>Imp z Lincoln — zasięg 41%%</title>
         <circle class="halo" r="73" />
         <a href="#lincoln-imp" class="otworz-kartoteke" data-slug="lincoln-imp" title="Imp z Lincoln (Anglia (Wielka Brytania)) — otwórz kartotekę">
-          <circle class="pin-bg" r="15" />
-          <text class="pin-icon" dy="4">😈</text>
-          <text class="pin-label" x="18" y="4">Imp z Lincoln</text>
+          <circle class="pin-bg" r="20" />
+          <text class="pin-icon" dy="7">😈</text>
+          <text class="pin-label" x="24" y="5">Imp z Lincoln</text>
         </a>
       </g>
       <g class="node active" data-slug="morowa-panna" transform="translate(1976,1161)">
         <title>Morowa Panna — zaraza w białej szacie z czerwoną chustą — zasięg 27%%</title>
         <circle class="halo" r="56" />
         <a href="#morowa-panna" class="otworz-kartoteke" data-slug="morowa-panna" title="Morowa Panna — zaraza w białej szacie z czerwoną chustą (Polska) — otwórz kartotekę">
-          <circle class="pin-bg" r="15" />
-          <text class="pin-icon" dy="4">🧣</text>
-          <text class="pin-label" x="18" y="4">Morowa Panna</text>
+          <circle class="pin-bg" r="20" />
+          <text class="pin-icon" dy="7">🧣</text>
+          <text class="pin-label" x="24" y="5">Morowa Panna</text>
         </a>
       </g>
       <g class="node active" data-slug="pandora" transform="translate(2037,1389)">
         <title>Pandora — pierwsza kobieta i pithos, w którym została nadzieja — zasięg 37%%</title>
         <circle class="halo" r="68" />
         <a href="#pandora" class="otworz-kartoteke" data-slug="pandora" title="Pandora — pierwsza kobieta i pithos, w którym została nadzieja (Grecja) — otwórz kartotekę">
-          <circle class="pin-bg" r="15" />
-          <text class="pin-icon" dy="4">🏺</text>
-          <text class="pin-label" x="18" y="4">Pandora</text>
+          <circle class="pin-bg" r="20" />
+          <text class="pin-icon" dy="7">🏺</text>
+          <text class="pin-label" x="24" y="5">Pandora</text>
         </a>
       </g>
       <g class="node active" data-slug="protostates" transform="translate(2025,1378)">
         <title>Protostates — fantom pierwszego szeregu — zasięg 27%%</title>
         <circle class="halo" r="56" />
         <a href="#protostates" class="otworz-kartoteke" data-slug="protostates" title="Protostates — fantom pierwszego szeregu (Grecja (Ftiotyda)) — otwórz kartotekę">
-          <circle class="pin-bg" r="15" />
-          <text class="pin-icon" dy="4">🛡️</text>
-          <text class="pin-label" x="18" y="4">Protostates</text>
+          <circle class="pin-bg" r="20" />
+          <text class="pin-icon" dy="7">🛡️</text>
+          <text class="pin-label" x="24" y="5">Protostates</text>
         </a>
       </g>
       <g class="node active" data-slug="selkie-sule-skerry" transform="translate(1756,1064)">
         <title>Wielki Selkie z Sule Skerry — zasięg 48%%</title>
         <circle class="halo" r="81" />
         <a href="#selkie-sule-skerry" class="otworz-kartoteke" data-slug="selkie-sule-skerry" title="Wielki Selkie z Sule Skerry (Szkocja (Wielka Brytania)) — otwórz kartotekę">
-          <circle class="pin-bg" r="15" />
-          <text class="pin-icon" dy="4">🦭</text>
-          <text class="pin-label" x="18" y="4">Wielki Selkie z Sule Skerry</text>
+          <circle class="pin-bg" r="20" />
+          <text class="pin-icon" dy="7">🦭</text>
+          <text class="pin-label" x="24" y="5">Wielki Selkie z Sule Skerry</text>
         </a>
       </g>
       <g class="node active" data-slug="sfinks-teby" transform="translate(2033,1385)">
         <title>Sfinks — strażniczka Tebańskich Wrót — zasięg 38%%</title>
         <circle class="halo" r="70" />
         <a href="#sfinks-teby" class="otworz-kartoteke" data-slug="sfinks-teby" title="Sfinks — strażniczka Tebańskich Wrót (Grecja (Beocja)) — otwórz kartotekę">
-          <circle class="pin-bg" r="15" />
-          <text class="pin-icon" dy="4">🦁</text>
-          <text class="pin-label" x="18" y="4">Sfinks</text>
+          <circle class="pin-bg" r="20" />
+          <text class="pin-icon" dy="7">🦁</text>
+          <text class="pin-label" x="24" y="5">Sfinks</text>
         </a>
       </g>
       <g class="node active" data-slug="syama-i-sarvara" transform="translate(2630,1538)">
         <title>Śyāma i Śarvara — czterookie psy Yamy, strażnicy drogi przodków — zasięg 28%%</title>
         <circle class="halo" r="57" />
         <a href="#syama-i-sarvara" class="otworz-kartoteke" data-slug="syama-i-sarvara" title="Śyāma i Śarvara — czterookie psy Yamy, strażnicy drogi przodków (Indie (Uttar Pradesh)) — otwórz kartotekę">
-          <circle class="pin-bg" r="15" />
-          <text class="pin-icon" dy="4">🐕</text>
-          <text class="pin-label" x="18" y="4">Śyāma i Śarvara</text>
+          <circle class="pin-bg" r="20" />
+          <text class="pin-icon" dy="7">🐕</text>
+          <text class="pin-label" x="24" y="5">Śyāma i Śarvara</text>
         </a>
       </g>
       <g class="node active" data-slug="talos-kreta" transform="translate(2052,1422)">
         <title>Talos — spiżowy strażnik Krety — zasięg 34%%</title>
         <circle class="halo" r="64" />
         <a href="#talos-kreta" class="otworz-kartoteke" data-slug="talos-kreta" title="Talos — spiżowy strażnik Krety (Grecja (Kreta)) — otwórz kartotekę">
-          <circle class="pin-bg" r="15" />
-          <text class="pin-icon" dy="4">🗿</text>
-          <text class="pin-label" x="18" y="4">Talos</text>
+          <circle class="pin-bg" r="20" />
+          <text class="pin-icon" dy="7">🗿</text>
+          <text class="pin-label" x="24" y="5">Talos</text>
         </a>
       </g>
       </g>
     </svg>
   </div>
 
-<!-- S1: wykresy Tomu -->
-<div class="grid">
-  <div class="col">
-    <div class="card">
-      <h2>Dryf osi świata</h2>
-      <div class="card-sub">Jak przez epoki przesuwała się granica między mitem a racjonalizacją.</div>
-      
-  <svg class="chart os-chart" viewBox="0 0 880 210" role="img" aria-label="Wykres osi mit/racjonalizacja po epokach">
-    <line class="os-grid" x1="46" x2="860" y1="170.0" y2="170.0" /><text class="os-grid-label" x="38" y="174.0">20%</text><line class="os-grid" x1="46" x2="860" y1="132.5" y2="132.5" /><text class="os-grid-label" x="38" y="136.5">25%</text><line class="os-grid" x1="46" x2="860" y1="95.0" y2="95.0" /><text class="os-grid-label" x="38" y="99.0">30%</text><line class="os-grid" x1="46" x2="860" y1="57.5" y2="57.5" /><text class="os-grid-label" x="38" y="61.5">35%</text><line class="os-grid" x1="46" x2="860" y1="20.0" y2="20.0" /><text class="os-grid-label" x="38" y="24.0">40%</text>
-    <path class="os-area" d="M 46.0,57.5 L 181.7,72.5 L 317.3,87.5 L 453.0,95.0 L 588.7,102.5 L 724.3,110.0 L 860.0,117.5 L 860.0,170.0 L 46.0,170.0 Z" />
-    <path class="os-line" d="M 46.0,57.5 L 181.7,72.5 L 317.3,87.5 L 453.0,95.0 L 588.7,102.5 L 724.3,110.0 L 860.0,117.5" />
-    <g class="os-dot" transform="translate(46.0,57.5)">
-        <title>epoka-1 — Trzy stoły: przodek, gospodarz i gość: mit 35.0%</title>
-        <text class="os-wartosc" x="0" y="-10">35.0%</text>
-        <circle r="5" />
-      </g>
-      <text class="os-label" x="46.0" y="196.0" text-anchor="middle">I</text><g class="os-dot" transform="translate(181.7,72.5)">
-        <title>epoka-2 — Nieproszeni goście: psuj, zaproszony i zaproszenie: mit 33.0%</title>
-        <text class="os-wartosc" x="0" y="-10">33.0%</text>
-        <circle r="5" />
-      </g>
-      <text class="os-label" x="181.7" y="196.0" text-anchor="middle">II</text><g class="os-dot" transform="translate(317.3,87.5)">
-        <title>epoka-3 — Odźwierni: zapraszany, otwierany i ten, który jest drzwiami: mit 31.0%</title>
-        <text class="os-wartosc" x="0" y="-10">31.0%</text>
-        <circle r="5" />
-      </g>
-      <text class="os-label" x="317.3" y="196.0" text-anchor="middle">III</text><g class="os-dot" transform="translate(453.0,95.0)">
-        <title>epoka-4 — Imię na progu: skóra, kres i pieśń: mit 30.0%</title>
-        <text class="os-wartosc" x="0" y="-10">30.0%</text>
-        <circle r="5" />
-      </g>
-      <text class="os-label" x="453.0" y="196.0" text-anchor="middle">IV</text><g class="os-dot" transform="translate(588.7,102.5)">
-        <title>epoka-5 — Zagadka ze spiżu: rozum, żart i głuchy krok: mit 29.0%</title>
-        <text class="os-wartosc" x="0" y="-10">29.0%</text>
-        <circle r="5" />
-      </g>
-      <text class="os-label" x="588.7" y="196.0" text-anchor="middle">V</text><g class="os-dot" transform="translate(724.3,110.0)">
-        <title>epoka-6 — Czwarty stół: kto nie wie, że bierze: mit 28.0%</title>
-        <text class="os-wartosc" x="0" y="-10">28.0%</text>
-        <circle r="5" />
-      </g>
-      <text class="os-label" x="724.3" y="196.0" text-anchor="middle">VI</text><g class="os-dot" transform="translate(860.0,117.5)">
-        <title>epoka-7 — Kolejność: nikt nie szedł za pierwszym: mit 27.0%</title>
-        <text class="os-wartosc" x="0" y="-10">27.0%</text>
-        <circle r="5" />
-      </g>
-      <text class="os-label" x="860.0" y="196.0" text-anchor="middle">VII</text>
-  </svg>
-    </div>
-    <div class="card">
-      <h2>Kto spalał pamięć</h2>
-      <div class="card-sub">Paliwo każdego uczestnika na koniec kolejnych epok.</div>
-      
+<!-- S1: wykresy Tomu — szerokie (paliwo, wątki, macierz) na całą szerokość,
+     wąskie (oś świata, dominacje końcowe) w kolumnach — czytelne czcionki. -->
+<div class="card">
+  <h2>Kto spalał pamięć</h2>
+  <div class="card-sub">Paliwo każdego uczestnika na koniec kolejnych epok.</div>
+  
   <div class="wykres-paliwa">
     <svg class="chart paliwo-chart" viewBox="0 0 880 300" role="img" aria-label="Wykres paliwa uczestników po epokach">
       <text class="paliwo-os" x="38" y="252.0">0</text><text class="paliwo-os" x="38" y="134.1">15</text><text class="paliwo-os" x="38" y="24.0">29</text><text class="paliwo-os-x" x="46.0" y="270.0" text-anchor="middle">I</text><text class="paliwo-os-x" x="153.3" y="270.0" text-anchor="middle">II</text><text class="paliwo-os-x" x="260.7" y="270.0" text-anchor="middle">III</text><text class="paliwo-os-x" x="368.0" y="270.0" text-anchor="middle">IV</text><text class="paliwo-os-x" x="475.3" y="270.0" text-anchor="middle">V</text><text class="paliwo-os-x" x="582.7" y="270.0" text-anchor="middle">VI</text><text class="paliwo-os-x" x="690.0" y="270.0" text-anchor="middle">VII</text>
@@ -1593,11 +1550,12 @@ li { margin: 8px 0; }
     </svg>
     <div class="paliwo-legenda-box"><div class="paliwo-legenda" style="--l:hsl(0, 45%, 55%)"><span class="kropka"></span> egungun <b>29</b></div><div class="paliwo-legenda" style="--l:hsl(138, 45%, 55%)"><span class="kropka"></span> barbarossa-kyffhaeuser <b>15</b></div><div class="paliwo-legenda" style="--l:hsl(275, 45%, 55%)"><span class="kropka"></span> kentaur-pelion <b>14</b></div><div class="paliwo-legenda" style="--l:hsl(53, 45%, 55%)"><span class="kropka"></span> lincoln-imp <b>12</b></div><div class="paliwo-legenda" style="--l:hsl(190, 45%, 55%)"><span class="kropka"></span> empusa-korynt <b>18</b></div><div class="paliwo-legenda" style="--l:hsl(328, 45%, 55%)"><span class="kropka"></span> balor <b>19</b></div><div class="paliwo-legenda" style="--l:hsl(105, 45%, 55%)"><span class="kropka"></span> selkie-sule-skerry <b>22</b></div><div class="paliwo-legenda" style="--l:hsl(243, 45%, 55%)"><span class="kropka"></span> indra <b>11</b></div><div class="paliwo-legenda" style="--l:hsl(20, 45%, 55%)"><span class="kropka"></span> sfinks-teby <b>20</b></div><div class="paliwo-legenda" style="--l:hsl(158, 45%, 55%)"><span class="kropka"></span> talos-kreta <b>16</b></div><div class="paliwo-legenda" style="--l:hsl(295, 45%, 55%)"><span class="kropka"></span> pandora <b>17</b></div><div class="paliwo-legenda" style="--l:hsl(73, 45%, 55%)"><span class="kropka"></span> morowa-panna <b>9</b></div><div class="paliwo-legenda" style="--l:hsl(210, 45%, 55%)"><span class="kropka"></span> protostates <b>12</b></div><div class="paliwo-legenda" style="--l:hsl(348, 45%, 55%)"><span class="kropka"></span> knecht-z-koptos <b>13</b></div><div class="paliwo-legenda" style="--l:hsl(125, 45%, 55%)"><span class="kropka"></span> syama-i-sarvara <b>11</b></div></div>
   </div>
-    </div>
-    <div class="card">
-      <h2>Oś czasu wątków</h2>
-      <div class="card-sub">Wątek otwarty (●) i zamknięty (●) na przestrzeni Tomu; linia = ciągłość.</div>
-      <svg class="chart watki-chart" viewBox="0 0 880 504" role="img" aria-label="Oś czasu wątków fabularnych"><text class="watki-os-x" x="228.0" y="22.0" text-anchor="middle"><tspan x="228.0">I · Trzy</tspan><tspan x="228.0" dy="12">stoły:</tspan><tspan x="228.0" dy="12">przodek,…</tspan></text><text class="watki-os-x" x="331.7" y="22.0" text-anchor="middle"><tspan x="331.7">II ·</tspan><tspan x="331.7" dy="12">Nieproszeni</tspan><tspan x="331.7" dy="12">goście: psuj…</tspan></text><text class="watki-os-x" x="435.3" y="22.0" text-anchor="middle"><tspan x="435.3">III ·</tspan><tspan x="435.3" dy="12">Odźwierni:</tspan><tspan x="435.3" dy="12">zapraszany,…</tspan></text><text class="watki-os-x" x="539.0" y="22.0" text-anchor="middle"><tspan x="539.0">IV · Imię na</tspan><tspan x="539.0" dy="12">progu: skóra,</tspan><tspan x="539.0" dy="12">kres i pieśń</tspan></text><text class="watki-os-x" x="642.7" y="22.0" text-anchor="middle"><tspan x="642.7">V · Zagadka</tspan><tspan x="642.7" dy="12">ze spiżu:</tspan><tspan x="642.7" dy="12">rozum, żart…</tspan></text><text class="watki-os-x" x="746.3" y="22.0" text-anchor="middle"><tspan x="746.3">VI · Czwarty</tspan><tspan x="746.3" dy="12">stół: kto nie</tspan><tspan x="746.3" dy="12">wie, że…</tspan></text><text class="watki-os-x" x="850.0" y="22.0" text-anchor="middle"><tspan x="850.0">VII ·</tspan><tspan x="850.0" dy="12">Kolejność:</tspan><tspan x="850.0" dy="12">nikt nie…</tspan></text><line class="watki-linia" x1="228.0" y1="60.0" x2="331.7" y2="60.0" /><line class="watki-linia" x1="331.7" y1="60.0" x2="435.3" y2="60.0" /><line class="watki-linia" x1="435.3" y1="60.0" x2="539.0" y2="60.0" /><line class="watki-linia" x1="539.0" y1="60.0" x2="642.7" y2="60.0" /><line class="watki-linia" x1="642.7" y1="60.0" x2="746.3" y2="60.0" /><circle class="watki-marker otwarty" cx="228.0" cy="60.0" r="7">
+</div>
+
+<div class="card">
+  <h2>Oś czasu wątków</h2>
+  <div class="card-sub">Wątek otwarty (●) i zamknięty (●) na przestrzeni Tomu; linia = ciągłość.</div>
+  <svg class="chart watki-chart" viewBox="0 0 880 504" role="img" aria-label="Oś czasu wątków fabularnych"><text class="watki-os-x" x="228.0" y="22.0" text-anchor="middle"><tspan x="228.0">I · Trzy stoły</tspan></text><text class="watki-os-x" x="331.7" y="22.0" text-anchor="middle"><tspan x="331.7">II ·</tspan><tspan x="331.7" dy="13">Nieproszeni…</tspan></text><text class="watki-os-x" x="435.3" y="22.0" text-anchor="middle"><tspan x="435.3">III ·</tspan><tspan x="435.3" dy="13">Odźwierni</tspan></text><text class="watki-os-x" x="539.0" y="22.0" text-anchor="middle"><tspan x="539.0">IV · Imię na</tspan><tspan x="539.0" dy="13">progu</tspan></text><text class="watki-os-x" x="642.7" y="22.0" text-anchor="middle"><tspan x="642.7">V · Zagadka ze</tspan><tspan x="642.7" dy="13">spiżu</tspan></text><text class="watki-os-x" x="746.3" y="22.0" text-anchor="middle"><tspan x="746.3">VI · Czwarty</tspan><tspan x="746.3" dy="13">stół</tspan></text><text class="watki-os-x" x="850.0" y="22.0" text-anchor="middle"><tspan x="850.0">VII ·</tspan><tspan x="850.0" dy="13">Kolejność</tspan></text><line class="watki-linia" x1="228.0" y1="60.0" x2="331.7" y2="60.0" /><line class="watki-linia" x1="331.7" y1="60.0" x2="435.3" y2="60.0" /><line class="watki-linia" x1="435.3" y1="60.0" x2="539.0" y2="60.0" /><line class="watki-linia" x1="539.0" y1="60.0" x2="642.7" y2="60.0" /><line class="watki-linia" x1="642.7" y1="60.0" x2="746.3" y2="60.0" /><circle class="watki-marker otwarty" cx="228.0" cy="60.0" r="7">
           <title>czwarty-stol · epoka-1: otwarty</title>
         </circle><circle class="watki-marker otwarty" cx="331.7" cy="60.0" r="7">
           <title>czwarty-stol · epoka-2: otwarty</title>
@@ -1664,635 +1622,685 @@ li { margin: 8px 0; }
         </circle><text class="watki-etykieta" x="216.0" y="425.0" text-anchor="end"><tspan x="216.0">niewinny-bierca</tspan></text><circle class="watki-marker otwarty" cx="850.0" cy="460.0" r="7">
           <title>pierwszy-w-linii · epoka-7: otwarty</title>
         </circle><text class="watki-etykieta" x="216.0" y="465.0" text-anchor="end"><tspan x="216.0">pierwszy-w-linii</tspan></text></svg>
+</div>
+
+<div class="grid">
+  <div class="col">
+    <div class="card">
+      <h2>Dryf osi świata</h2>
+      <div class="card-sub">Jak przez epoki przesuwała się granica między mitem a racjonalizacją.</div>
+      
+  <svg class="chart os-chart" viewBox="0 0 560 210" role="img" aria-label="Wykres osi mit/racjonalizacja po epokach">
+    <line class="os-grid" x1="46" x2="540" y1="170.0" y2="170.0" /><text class="os-grid-label" x="38" y="174.0">20%</text><line class="os-grid" x1="46" x2="540" y1="132.5" y2="132.5" /><text class="os-grid-label" x="38" y="136.5">25%</text><line class="os-grid" x1="46" x2="540" y1="95.0" y2="95.0" /><text class="os-grid-label" x="38" y="99.0">30%</text><line class="os-grid" x1="46" x2="540" y1="57.5" y2="57.5" /><text class="os-grid-label" x="38" y="61.5">35%</text><line class="os-grid" x1="46" x2="540" y1="20.0" y2="20.0" /><text class="os-grid-label" x="38" y="24.0">40%</text>
+    <path class="os-area" d="M 46.0,57.5 L 128.3,72.5 L 210.7,87.5 L 293.0,95.0 L 375.3,102.5 L 457.7,110.0 L 540.0,117.5 L 540.0,170.0 L 46.0,170.0 Z" />
+    <path class="os-line" d="M 46.0,57.5 L 128.3,72.5 L 210.7,87.5 L 293.0,95.0 L 375.3,102.5 L 457.7,110.0 L 540.0,117.5" />
+    <g class="os-dot" transform="translate(46.0,57.5)">
+        <title>epoka-1 — Trzy stoły: przodek, gospodarz i gość: mit 35.0%</title>
+        <text class="os-wartosc" x="0" y="-10">35.0%</text>
+        <circle r="5" />
+      </g>
+      <text class="os-label" x="46.0" y="196.0" text-anchor="middle">I</text><g class="os-dot" transform="translate(128.3,72.5)">
+        <title>epoka-2 — Nieproszeni goście: psuj, zaproszony i zaproszenie: mit 33.0%</title>
+        <text class="os-wartosc" x="0" y="-10">33.0%</text>
+        <circle r="5" />
+      </g>
+      <text class="os-label" x="128.3" y="196.0" text-anchor="middle">II</text><g class="os-dot" transform="translate(210.7,87.5)">
+        <title>epoka-3 — Odźwierni: zapraszany, otwierany i ten, który jest drzwiami: mit 31.0%</title>
+        <text class="os-wartosc" x="0" y="-10">31.0%</text>
+        <circle r="5" />
+      </g>
+      <text class="os-label" x="210.7" y="196.0" text-anchor="middle">III</text><g class="os-dot" transform="translate(293.0,95.0)">
+        <title>epoka-4 — Imię na progu: skóra, kres i pieśń: mit 30.0%</title>
+        <text class="os-wartosc" x="0" y="-10">30.0%</text>
+        <circle r="5" />
+      </g>
+      <text class="os-label" x="293.0" y="196.0" text-anchor="middle">IV</text><g class="os-dot" transform="translate(375.3,102.5)">
+        <title>epoka-5 — Zagadka ze spiżu: rozum, żart i głuchy krok: mit 29.0%</title>
+        <text class="os-wartosc" x="0" y="-10">29.0%</text>
+        <circle r="5" />
+      </g>
+      <text class="os-label" x="375.3" y="196.0" text-anchor="middle">V</text><g class="os-dot" transform="translate(457.7,110.0)">
+        <title>epoka-6 — Czwarty stół: kto nie wie, że bierze: mit 28.0%</title>
+        <text class="os-wartosc" x="0" y="-10">28.0%</text>
+        <circle r="5" />
+      </g>
+      <text class="os-label" x="457.7" y="196.0" text-anchor="middle">VI</text><g class="os-dot" transform="translate(540.0,117.5)">
+        <title>epoka-7 — Kolejność: nikt nie szedł za pierwszym: mit 27.0%</title>
+        <text class="os-wartosc" x="0" y="-10">27.0%</text>
+        <circle r="5" />
+      </g>
+      <text class="os-label" x="540.0" y="196.0" text-anchor="middle">VII</text>
+  </svg>
     </div>
   </div>
   <div class="col">
     <div class="card">
-      <h2>Macierz zasięgów</h2>
-      <div class="card-sub">Jak daleko sięgał wpływ każdego bytu po kolejnych epokach (średnia po prawej).</div>
-      <svg class="chart heat-chart" viewBox="0 0 936 706" role="img" aria-label="Macierz zasięgów bytów po epokach"><text class="heat-os-x" x="272.0" y="26.0" text-anchor="middle"><tspan x="272.0">I · Trzy</tspan><tspan x="272.0" dy="12">stoły:…</tspan></text><text class="heat-os-x" x="368.0" y="26.0" text-anchor="middle"><tspan x="368.0">II ·</tspan><tspan x="368.0" dy="12">Nieproszeni…</tspan></text><text class="heat-os-x" x="464.0" y="26.0" text-anchor="middle"><tspan x="464.0">III ·</tspan><tspan x="464.0" dy="12">Odźwierni:…</tspan></text><text class="heat-os-x" x="560.0" y="26.0" text-anchor="middle"><tspan x="560.0">IV · Imię na</tspan><tspan x="560.0" dy="12">progu:…</tspan></text><text class="heat-os-x" x="656.0" y="26.0" text-anchor="middle"><tspan x="656.0">V · Zagadka</tspan><tspan x="656.0" dy="12">ze spiżu:…</tspan></text><text class="heat-os-x" x="752.0" y="26.0" text-anchor="middle"><tspan x="752.0">VI · Czwarty</tspan><tspan x="752.0" dy="12">stół: kto…</tspan></text><text class="heat-os-x" x="848.0" y="26.0" text-anchor="middle"><tspan x="848.0">VII ·</tspan><tspan x="848.0" dy="12">Kolejność:…</tspan></text><g class="heat-cell-g">
-            <rect class="heat-cell" x="227" y="79" width="90" height="36" rx="4" style="fill:rgb(216,140,82)">
-              <title>Egungun · epoka-1: 52%</title>
-            </rect>
-            <text class="heat-liczba" x="272" y="101" style="fill:#151a24">52%</text>
-          </g><g class="heat-cell-g">
-            <rect class="heat-cell" x="323" y="79" width="90" height="36" rx="4" style="fill:rgb(216,140,82)">
-              <title>Egungun · epoka-2: 52%</title>
-            </rect>
-            <text class="heat-liczba" x="368" y="101" style="fill:#151a24">52%</text>
-          </g><g class="heat-cell-g">
-            <rect class="heat-cell" x="419" y="79" width="90" height="36" rx="4" style="fill:rgb(216,140,82)">
-              <title>Egungun · epoka-3: 54%</title>
-            </rect>
-            <text class="heat-liczba" x="464" y="101" style="fill:#151a24">54%</text>
-          </g><g class="heat-cell-g">
-            <rect class="heat-cell" x="515" y="79" width="90" height="36" rx="4" style="fill:rgb(216,140,82)">
-              <title>Egungun · epoka-4: 55%</title>
-            </rect>
-            <text class="heat-liczba" x="560" y="101" style="fill:#151a24">55%</text>
-          </g><g class="heat-cell-g">
-            <rect class="heat-cell" x="611" y="79" width="90" height="36" rx="4" style="fill:rgb(216,140,82)">
-              <title>Egungun · epoka-5: 55%</title>
-            </rect>
-            <text class="heat-liczba" x="656" y="101" style="fill:#151a24">55%</text>
-          </g><g class="heat-cell-g">
-            <rect class="heat-cell" x="707" y="79" width="90" height="36" rx="4" style="fill:rgb(216,140,82)">
-              <title>Egungun · epoka-6: 55%</title>
-            </rect>
-            <text class="heat-liczba" x="752" y="101" style="fill:#151a24">55%</text>
-          </g><g class="heat-cell-g">
-            <rect class="heat-cell" x="803" y="79" width="90" height="36" rx="4" style="fill:rgb(216,140,82)">
-              <title>Egungun · epoka-7: 55%</title>
-            </rect>
-            <text class="heat-liczba" x="848" y="101" style="fill:#151a24">55%</text>
-          </g><text class="heat-etykieta" x="212.0" y="99.0" text-anchor="end"><tspan x="212.0">🎭 Egungun</tspan></text>
-        <text class="heat-sum" x="908" y="102">54%</text><g class="heat-cell-g">
-            <rect class="heat-cell" x="227" y="121" width="90" height="36" rx="4" style="fill:rgb(216,140,82)">
-              <title>Balor z Tory Island · epoka-1: 50%</title>
-            </rect>
-            <text class="heat-liczba" x="272" y="143" style="fill:#151a24">50%</text>
-          </g><g class="heat-cell-g">
-            <rect class="heat-cell" x="323" y="121" width="90" height="36" rx="4" style="fill:rgb(216,140,82)">
-              <title>Balor z Tory Island · epoka-2: 50%</title>
-            </rect>
-            <text class="heat-liczba" x="368" y="143" style="fill:#151a24">50%</text>
-          </g><g class="heat-cell-g">
-            <rect class="heat-cell" x="419" y="121" width="90" height="36" rx="4" style="fill:rgb(216,140,82)">
-              <title>Balor z Tory Island · epoka-3: 50%</title>
-            </rect>
-            <text class="heat-liczba" x="464" y="143" style="fill:#151a24">50%</text>
-          </g><g class="heat-cell-g">
-            <rect class="heat-cell" x="515" y="121" width="90" height="36" rx="4" style="fill:rgb(216,140,82)">
-              <title>Balor z Tory Island · epoka-4: 50%</title>
-            </rect>
-            <text class="heat-liczba" x="560" y="143" style="fill:#151a24">50%</text>
-          </g><g class="heat-cell-g">
-            <rect class="heat-cell" x="611" y="121" width="90" height="36" rx="4" style="fill:rgb(216,140,82)">
-              <title>Balor z Tory Island · epoka-5: 50%</title>
-            </rect>
-            <text class="heat-liczba" x="656" y="143" style="fill:#151a24">50%</text>
-          </g><g class="heat-cell-g">
-            <rect class="heat-cell" x="707" y="121" width="90" height="36" rx="4" style="fill:rgb(216,140,82)">
-              <title>Balor z Tory Island · epoka-6: 50%</title>
-            </rect>
-            <text class="heat-liczba" x="752" y="143" style="fill:#151a24">50%</text>
-          </g><g class="heat-cell-g">
-            <rect class="heat-cell" x="803" y="121" width="90" height="36" rx="4" style="fill:rgb(216,140,82)">
-              <title>Balor z Tory Island · epoka-7: 50%</title>
-            </rect>
-            <text class="heat-liczba" x="848" y="143" style="fill:#151a24">50%</text>
-          </g><text class="heat-etykieta" x="212.0" y="141.0" text-anchor="end"><tspan x="212.0">👁️ Balor z Tory</tspan><tspan x="212.0" dy="14">Island</tspan></text>
-        <text class="heat-sum" x="908" y="144">50%</text><g class="heat-cell-g">
-            <rect class="heat-cell" x="227" y="163" width="90" height="36" rx="4" style="fill:rgb(207,136,83)">
-              <title>Empusa z Koryntu · epoka-1: 48%</title>
-            </rect>
-            <text class="heat-liczba" x="272" y="185" style="fill:#f4ecdc">48%</text>
-          </g><g class="heat-cell-g">
-            <rect class="heat-cell" x="323" y="163" width="90" height="36" rx="4" style="fill:rgb(214,139,82)">
-              <title>Empusa z Koryntu · epoka-2: 50%</title>
-            </rect>
-            <text class="heat-liczba" x="368" y="185" style="fill:#151a24">50%</text>
-          </g><g class="heat-cell-g">
-            <rect class="heat-cell" x="419" y="163" width="90" height="36" rx="4" style="fill:rgb(214,139,82)">
-              <title>Empusa z Koryntu · epoka-3: 50%</title>
-            </rect>
-            <text class="heat-liczba" x="464" y="185" style="fill:#151a24">50%</text>
-          </g><g class="heat-cell-g">
-            <rect class="heat-cell" x="515" y="163" width="90" height="36" rx="4" style="fill:rgb(214,139,82)">
-              <title>Empusa z Koryntu · epoka-4: 50%</title>
-            </rect>
-            <text class="heat-liczba" x="560" y="185" style="fill:#151a24">50%</text>
-          </g><g class="heat-cell-g">
-            <rect class="heat-cell" x="611" y="163" width="90" height="36" rx="4" style="fill:rgb(214,139,82)">
-              <title>Empusa z Koryntu · epoka-5: 50%</title>
-            </rect>
-            <text class="heat-liczba" x="656" y="185" style="fill:#151a24">50%</text>
-          </g><g class="heat-cell-g">
-            <rect class="heat-cell" x="707" y="163" width="90" height="36" rx="4" style="fill:rgb(216,140,82)">
-              <title>Empusa z Koryntu · epoka-6: 50%</title>
-            </rect>
-            <text class="heat-liczba" x="752" y="185" style="fill:#151a24">50%</text>
-          </g><g class="heat-cell-g">
-            <rect class="heat-cell" x="803" y="163" width="90" height="36" rx="4" style="fill:rgb(216,140,82)">
-              <title>Empusa z Koryntu · epoka-7: 50%</title>
-            </rect>
-            <text class="heat-liczba" x="848" y="185" style="fill:#151a24">50%</text>
-          </g><text class="heat-etykieta" x="212.0" y="183.0" text-anchor="end"><tspan x="212.0">🕷️ Empusa z</tspan><tspan x="212.0" dy="14">Koryntu</tspan></text>
-        <text class="heat-sum" x="908" y="186">49%</text><g class="heat-cell-g">
-            <rect class="heat-cell" x="227" y="205" width="90" height="36" rx="4" style="fill:rgb(211,138,83)">
-              <title>Wielki Selkie z Sule Skerry · epoka-1: 49%</title>
-            </rect>
-            <text class="heat-liczba" x="272" y="227" style="fill:#f4ecdc">49%</text>
-          </g><g class="heat-cell-g">
-            <rect class="heat-cell" x="323" y="205" width="90" height="36" rx="4" style="fill:rgb(211,138,83)">
-              <title>Wielki Selkie z Sule Skerry · epoka-2: 49%</title>
-            </rect>
-            <text class="heat-liczba" x="368" y="227" style="fill:#f4ecdc">49%</text>
-          </g><g class="heat-cell-g">
-            <rect class="heat-cell" x="419" y="205" width="90" height="36" rx="4" style="fill:rgb(211,138,83)">
-              <title>Wielki Selkie z Sule Skerry · epoka-3: 49%</title>
-            </rect>
-            <text class="heat-liczba" x="464" y="227" style="fill:#f4ecdc">49%</text>
-          </g><g class="heat-cell-g">
-            <rect class="heat-cell" x="515" y="205" width="90" height="36" rx="4" style="fill:rgb(207,136,83)">
-              <title>Wielki Selkie z Sule Skerry · epoka-4: 48%</title>
-            </rect>
-            <text class="heat-liczba" x="560" y="227" style="fill:#f4ecdc">48%</text>
-          </g><g class="heat-cell-g">
-            <rect class="heat-cell" x="611" y="205" width="90" height="36" rx="4" style="fill:rgb(207,136,83)">
-              <title>Wielki Selkie z Sule Skerry · epoka-5: 48%</title>
-            </rect>
-            <text class="heat-liczba" x="656" y="227" style="fill:#f4ecdc">48%</text>
-          </g><g class="heat-cell-g">
-            <rect class="heat-cell" x="707" y="205" width="90" height="36" rx="4" style="fill:rgb(207,136,83)">
-              <title>Wielki Selkie z Sule Skerry · epoka-6: 48%</title>
-            </rect>
-            <text class="heat-liczba" x="752" y="227" style="fill:#f4ecdc">48%</text>
-          </g><g class="heat-cell-g">
-            <rect class="heat-cell" x="803" y="205" width="90" height="36" rx="4" style="fill:rgb(207,136,83)">
-              <title>Wielki Selkie z Sule Skerry · epoka-7: 48%</title>
-            </rect>
-            <text class="heat-liczba" x="848" y="227" style="fill:#f4ecdc">48%</text>
-          </g><text class="heat-etykieta" x="212.0" y="225.0" text-anchor="end"><tspan x="212.0">🦭 Wielki Selkie</tspan><tspan x="212.0" dy="14">z Sule Skerry</tspan></text>
-        <text class="heat-sum" x="908" y="228">48%</text><g class="heat-cell-g">
-            <rect class="heat-cell" x="227" y="247" width="90" height="36" rx="4" style="fill:rgb(187,128,85)">
-              <title>Barbarossa w Kyffhäuserze · epoka-1: 43%</title>
-            </rect>
-            <text class="heat-liczba" x="272" y="269" style="fill:#f4ecdc">43%</text>
-          </g><g class="heat-cell-g">
-            <rect class="heat-cell" x="323" y="247" width="90" height="36" rx="4" style="fill:rgb(187,128,85)">
-              <title>Barbarossa w Kyffhäuserze · epoka-2: 43%</title>
-            </rect>
-            <text class="heat-liczba" x="368" y="269" style="fill:#f4ecdc">43%</text>
-          </g><g class="heat-cell-g">
-            <rect class="heat-cell" x="419" y="247" width="90" height="36" rx="4" style="fill:rgb(187,128,85)">
-              <title>Barbarossa w Kyffhäuserze · epoka-3: 43%</title>
-            </rect>
-            <text class="heat-liczba" x="464" y="269" style="fill:#f4ecdc">43%</text>
-          </g><g class="heat-cell-g">
-            <rect class="heat-cell" x="515" y="247" width="90" height="36" rx="4" style="fill:rgb(187,128,85)">
-              <title>Barbarossa w Kyffhäuserze · epoka-4: 43%</title>
-            </rect>
-            <text class="heat-liczba" x="560" y="269" style="fill:#f4ecdc">43%</text>
-          </g><g class="heat-cell-g">
-            <rect class="heat-cell" x="611" y="247" width="90" height="36" rx="4" style="fill:rgb(187,128,85)">
-              <title>Barbarossa w Kyffhäuserze · epoka-5: 43%</title>
-            </rect>
-            <text class="heat-liczba" x="656" y="269" style="fill:#f4ecdc">43%</text>
-          </g><g class="heat-cell-g">
-            <rect class="heat-cell" x="707" y="247" width="90" height="36" rx="4" style="fill:rgb(187,128,85)">
-              <title>Barbarossa w Kyffhäuserze · epoka-6: 43%</title>
-            </rect>
-            <text class="heat-liczba" x="752" y="269" style="fill:#f4ecdc">43%</text>
-          </g><g class="heat-cell-g">
-            <rect class="heat-cell" x="803" y="247" width="90" height="36" rx="4" style="fill:rgb(187,128,85)">
-              <title>Barbarossa w Kyffhäuserze · epoka-7: 43%</title>
-            </rect>
-            <text class="heat-liczba" x="848" y="269" style="fill:#f4ecdc">43%</text>
-          </g><text class="heat-etykieta" x="212.0" y="267.0" text-anchor="end"><tspan x="212.0">👑 Barbarossa w</tspan><tspan x="212.0" dy="14">Kyffhäuserze</tspan></text>
-        <text class="heat-sum" x="908" y="270">43%</text><g class="heat-cell-g">
-            <rect class="heat-cell" x="227" y="289" width="90" height="36" rx="4" style="fill:rgb(184,127,86)">
-              <title>Kentaur z Pelionu · epoka-1: 42%</title>
-            </rect>
-            <text class="heat-liczba" x="272" y="311" style="fill:#f4ecdc">42%</text>
-          </g><g class="heat-cell-g">
-            <rect class="heat-cell" x="323" y="289" width="90" height="36" rx="4" style="fill:rgb(176,123,87)">
-              <title>Kentaur z Pelionu · epoka-2: 40%</title>
-            </rect>
-            <text class="heat-liczba" x="368" y="311" style="fill:#f4ecdc">40%</text>
-          </g><g class="heat-cell-g">
-            <rect class="heat-cell" x="419" y="289" width="90" height="36" rx="4" style="fill:rgb(176,123,87)">
-              <title>Kentaur z Pelionu · epoka-3: 40%</title>
-            </rect>
-            <text class="heat-liczba" x="464" y="311" style="fill:#f4ecdc">40%</text>
-          </g><g class="heat-cell-g">
-            <rect class="heat-cell" x="515" y="289" width="90" height="36" rx="4" style="fill:rgb(176,123,87)">
-              <title>Kentaur z Pelionu · epoka-4: 40%</title>
-            </rect>
-            <text class="heat-liczba" x="560" y="311" style="fill:#f4ecdc">40%</text>
-          </g><g class="heat-cell-g">
-            <rect class="heat-cell" x="611" y="289" width="90" height="36" rx="4" style="fill:rgb(176,123,87)">
-              <title>Kentaur z Pelionu · epoka-5: 40%</title>
-            </rect>
-            <text class="heat-liczba" x="656" y="311" style="fill:#f4ecdc">40%</text>
-          </g><g class="heat-cell-g">
-            <rect class="heat-cell" x="707" y="289" width="90" height="36" rx="4" style="fill:rgb(176,123,87)">
-              <title>Kentaur z Pelionu · epoka-6: 40%</title>
-            </rect>
-            <text class="heat-liczba" x="752" y="311" style="fill:#f4ecdc">40%</text>
-          </g><g class="heat-cell-g">
-            <rect class="heat-cell" x="803" y="289" width="90" height="36" rx="4" style="fill:rgb(176,123,87)">
-              <title>Kentaur z Pelionu · epoka-7: 40%</title>
-            </rect>
-            <text class="heat-liczba" x="848" y="311" style="fill:#f4ecdc">40%</text>
-          </g><text class="heat-etykieta" x="212.0" y="309.0" text-anchor="end"><tspan x="212.0">🐎 Kentaur z</tspan><tspan x="212.0" dy="14">Pelionu</tspan></text>
-        <text class="heat-sum" x="908" y="312">40%</text><g class="heat-cell-g">
-            <rect class="heat-cell" x="227" y="331" width="90" height="36" rx="4" style="fill:rgb(173,122,87)">
-              <title>Imp z Lincoln · epoka-1: 39%</title>
-            </rect>
-            <text class="heat-liczba" x="272" y="353" style="fill:#f4ecdc">39%</text>
-          </g><g class="heat-cell-g">
-            <rect class="heat-cell" x="323" y="331" width="90" height="36" rx="4" style="fill:rgb(173,122,87)">
-              <title>Imp z Lincoln · epoka-2: 39%</title>
-            </rect>
-            <text class="heat-liczba" x="368" y="353" style="fill:#f4ecdc">39%</text>
-          </g><g class="heat-cell-g">
-            <rect class="heat-cell" x="419" y="331" width="90" height="36" rx="4" style="fill:rgb(173,122,87)">
-              <title>Imp z Lincoln · epoka-3: 39%</title>
-            </rect>
-            <text class="heat-liczba" x="464" y="353" style="fill:#f4ecdc">39%</text>
-          </g><g class="heat-cell-g">
-            <rect class="heat-cell" x="515" y="331" width="90" height="36" rx="4" style="fill:rgb(173,122,87)">
-              <title>Imp z Lincoln · epoka-4: 39%</title>
-            </rect>
-            <text class="heat-liczba" x="560" y="353" style="fill:#f4ecdc">39%</text>
-          </g><g class="heat-cell-g">
-            <rect class="heat-cell" x="611" y="331" width="90" height="36" rx="4" style="fill:rgb(179,124,86)">
-              <title>Imp z Lincoln · epoka-5: 41%</title>
-            </rect>
-            <text class="heat-liczba" x="656" y="353" style="fill:#f4ecdc">41%</text>
-          </g><g class="heat-cell-g">
-            <rect class="heat-cell" x="707" y="331" width="90" height="36" rx="4" style="fill:rgb(179,124,86)">
-              <title>Imp z Lincoln · epoka-6: 41%</title>
-            </rect>
-            <text class="heat-liczba" x="752" y="353" style="fill:#f4ecdc">41%</text>
-          </g><g class="heat-cell-g">
-            <rect class="heat-cell" x="803" y="331" width="90" height="36" rx="4" style="fill:rgb(179,124,86)">
-              <title>Imp z Lincoln · epoka-7: 41%</title>
-            </rect>
-            <text class="heat-liczba" x="848" y="353" style="fill:#f4ecdc">41%</text>
-          </g><text class="heat-etykieta" x="212.0" y="351.0" text-anchor="end"><tspan x="212.0">😈 Imp z Lincoln</tspan></text>
-        <text class="heat-sum" x="908" y="354">40%</text><g class="heat-cell-g">
-            <rect class="heat-cell" x="227" y="373" width="90" height="36" rx="4" style="fill:rgb(173,122,87)">
-              <title>Sfinks — strażniczka Tebańskich Wrót · epoka-1: 39%</title>
-            </rect>
-            <text class="heat-liczba" x="272" y="395" style="fill:#f4ecdc">39%</text>
-          </g><g class="heat-cell-g">
-            <rect class="heat-cell" x="323" y="373" width="90" height="36" rx="4" style="fill:rgb(173,122,87)">
-              <title>Sfinks — strażniczka Tebańskich Wrót · epoka-2: 39%</title>
-            </rect>
-            <text class="heat-liczba" x="368" y="395" style="fill:#f4ecdc">39%</text>
-          </g><g class="heat-cell-g">
-            <rect class="heat-cell" x="419" y="373" width="90" height="36" rx="4" style="fill:rgb(173,122,87)">
-              <title>Sfinks — strażniczka Tebańskich Wrót · epoka-3: 39%</title>
-            </rect>
-            <text class="heat-liczba" x="464" y="395" style="fill:#f4ecdc">39%</text>
-          </g><g class="heat-cell-g">
-            <rect class="heat-cell" x="515" y="373" width="90" height="36" rx="4" style="fill:rgb(173,122,87)">
-              <title>Sfinks — strażniczka Tebańskich Wrót · epoka-4: 39%</title>
-            </rect>
-            <text class="heat-liczba" x="560" y="395" style="fill:#f4ecdc">39%</text>
-          </g><g class="heat-cell-g">
-            <rect class="heat-cell" x="611" y="373" width="90" height="36" rx="4" style="fill:rgb(169,120,87)">
-              <title>Sfinks — strażniczka Tebańskich Wrót · epoka-5: 38%</title>
-            </rect>
-            <text class="heat-liczba" x="656" y="395" style="fill:#f4ecdc">38%</text>
-          </g><g class="heat-cell-g">
-            <rect class="heat-cell" x="707" y="373" width="90" height="36" rx="4" style="fill:rgb(169,120,87)">
-              <title>Sfinks — strażniczka Tebańskich Wrót · epoka-6: 38%</title>
-            </rect>
-            <text class="heat-liczba" x="752" y="395" style="fill:#f4ecdc">38%</text>
-          </g><g class="heat-cell-g">
-            <rect class="heat-cell" x="803" y="373" width="90" height="36" rx="4" style="fill:rgb(169,120,87)">
-              <title>Sfinks — strażniczka Tebańskich Wrót · epoka-7: 38%</title>
-            </rect>
-            <text class="heat-liczba" x="848" y="395" style="fill:#f4ecdc">38%</text>
-          </g><text class="heat-etykieta" x="212.0" y="393.0" text-anchor="end"><tspan x="212.0">🦁 Sfinks —</tspan><tspan x="212.0" dy="14">strażniczka…</tspan></text>
-        <text class="heat-sum" x="908" y="396">39%</text><g class="heat-cell-g">
-            <rect class="heat-cell" x="227" y="415" width="90" height="36" rx="4" style="fill:rgb(159,116,89)">
-              <title>Pandora — pierwsza kobieta i pithos, w którym została nadzieja · epoka-1: 36%</title>
-            </rect>
-            <text class="heat-liczba" x="272" y="437" style="fill:#f4ecdc">36%</text>
-          </g><g class="heat-cell-g">
-            <rect class="heat-cell" x="323" y="415" width="90" height="36" rx="4" style="fill:rgb(159,116,89)">
-              <title>Pandora — pierwsza kobieta i pithos, w którym została nadzieja · epoka-2: 36%</title>
-            </rect>
-            <text class="heat-liczba" x="368" y="437" style="fill:#f4ecdc">36%</text>
-          </g><g class="heat-cell-g">
-            <rect class="heat-cell" x="419" y="415" width="90" height="36" rx="4" style="fill:rgb(159,116,89)">
-              <title>Pandora — pierwsza kobieta i pithos, w którym została nadzieja · epoka-3: 36%</title>
-            </rect>
-            <text class="heat-liczba" x="464" y="437" style="fill:#f4ecdc">36%</text>
-          </g><g class="heat-cell-g">
-            <rect class="heat-cell" x="515" y="415" width="90" height="36" rx="4" style="fill:rgb(159,116,89)">
-              <title>Pandora — pierwsza kobieta i pithos, w którym została nadzieja · epoka-4: 36%</title>
-            </rect>
-            <text class="heat-liczba" x="560" y="437" style="fill:#f4ecdc">36%</text>
-          </g><g class="heat-cell-g">
-            <rect class="heat-cell" x="611" y="415" width="90" height="36" rx="4" style="fill:rgb(159,116,89)">
-              <title>Pandora — pierwsza kobieta i pithos, w którym została nadzieja · epoka-5: 36%</title>
-            </rect>
-            <text class="heat-liczba" x="656" y="437" style="fill:#f4ecdc">36%</text>
-          </g><g class="heat-cell-g">
-            <rect class="heat-cell" x="707" y="415" width="90" height="36" rx="4" style="fill:rgb(163,118,88)">
-              <title>Pandora — pierwsza kobieta i pithos, w którym została nadzieja · epoka-6: 37%</title>
-            </rect>
-            <text class="heat-liczba" x="752" y="437" style="fill:#f4ecdc">37%</text>
-          </g><g class="heat-cell-g">
-            <rect class="heat-cell" x="803" y="415" width="90" height="36" rx="4" style="fill:rgb(163,118,88)">
-              <title>Pandora — pierwsza kobieta i pithos, w którym została nadzieja · epoka-7: 37%</title>
-            </rect>
-            <text class="heat-liczba" x="848" y="437" style="fill:#f4ecdc">37%</text>
-          </g><text class="heat-etykieta" x="212.0" y="435.0" text-anchor="end"><tspan x="212.0">🏺 Pandora —</tspan><tspan x="212.0" dy="14">pierwsza kobieta…</tspan></text>
-        <text class="heat-sum" x="908" y="438">36%</text><g class="heat-cell-g">
-            <rect class="heat-cell" x="227" y="457" width="90" height="36" rx="4" style="fill:rgb(159,116,89)">
-              <title>Indra — władca gromu · epoka-1: 36%</title>
-            </rect>
-            <text class="heat-liczba" x="272" y="479" style="fill:#f4ecdc">36%</text>
-          </g><g class="heat-cell-g">
-            <rect class="heat-cell" x="323" y="457" width="90" height="36" rx="4" style="fill:rgb(159,116,89)">
-              <title>Indra — władca gromu · epoka-2: 36%</title>
-            </rect>
-            <text class="heat-liczba" x="368" y="479" style="fill:#f4ecdc">36%</text>
-          </g><g class="heat-cell-g">
-            <rect class="heat-cell" x="419" y="457" width="90" height="36" rx="4" style="fill:rgb(159,116,89)">
-              <title>Indra — władca gromu · epoka-3: 36%</title>
-            </rect>
-            <text class="heat-liczba" x="464" y="479" style="fill:#f4ecdc">36%</text>
-          </g><g class="heat-cell-g">
-            <rect class="heat-cell" x="515" y="457" width="90" height="36" rx="4" style="fill:rgb(155,114,89)">
-              <title>Indra — władca gromu · epoka-4: 35%</title>
-            </rect>
-            <text class="heat-liczba" x="560" y="479" style="fill:#f4ecdc">35%</text>
-          </g><g class="heat-cell-g">
-            <rect class="heat-cell" x="611" y="457" width="90" height="36" rx="4" style="fill:rgb(155,114,89)">
-              <title>Indra — władca gromu · epoka-5: 35%</title>
-            </rect>
-            <text class="heat-liczba" x="656" y="479" style="fill:#f4ecdc">35%</text>
-          </g><g class="heat-cell-g">
-            <rect class="heat-cell" x="707" y="457" width="90" height="36" rx="4" style="fill:rgb(155,114,89)">
-              <title>Indra — władca gromu · epoka-6: 35%</title>
-            </rect>
-            <text class="heat-liczba" x="752" y="479" style="fill:#f4ecdc">35%</text>
-          </g><g class="heat-cell-g">
-            <rect class="heat-cell" x="803" y="457" width="90" height="36" rx="4" style="fill:rgb(155,114,89)">
-              <title>Indra — władca gromu · epoka-7: 35%</title>
-            </rect>
-            <text class="heat-liczba" x="848" y="479" style="fill:#f4ecdc">35%</text>
-          </g><text class="heat-etykieta" x="212.0" y="477.0" text-anchor="end"><tspan x="212.0">🌩️ Indra —</tspan><tspan x="212.0" dy="14">władca gromu</tspan></text>
-        <text class="heat-sum" x="908" y="480">35%</text><g class="heat-cell-g">
-            <rect class="heat-cell" x="227" y="499" width="90" height="36" rx="4" style="fill:rgb(154,114,89)">
-              <title>Talos — spiżowy strażnik Krety · epoka-1: 34%</title>
-            </rect>
-            <text class="heat-liczba" x="272" y="521" style="fill:#f4ecdc">34%</text>
-          </g><g class="heat-cell-g">
-            <rect class="heat-cell" x="323" y="499" width="90" height="36" rx="4" style="fill:rgb(154,114,89)">
-              <title>Talos — spiżowy strażnik Krety · epoka-2: 34%</title>
-            </rect>
-            <text class="heat-liczba" x="368" y="521" style="fill:#f4ecdc">34%</text>
-          </g><g class="heat-cell-g">
-            <rect class="heat-cell" x="419" y="499" width="90" height="36" rx="4" style="fill:rgb(154,114,89)">
-              <title>Talos — spiżowy strażnik Krety · epoka-3: 34%</title>
-            </rect>
-            <text class="heat-liczba" x="464" y="521" style="fill:#f4ecdc">34%</text>
-          </g><g class="heat-cell-g">
-            <rect class="heat-cell" x="515" y="499" width="90" height="36" rx="4" style="fill:rgb(154,114,89)">
-              <title>Talos — spiżowy strażnik Krety · epoka-4: 34%</title>
-            </rect>
-            <text class="heat-liczba" x="560" y="521" style="fill:#f4ecdc">34%</text>
-          </g><g class="heat-cell-g">
-            <rect class="heat-cell" x="611" y="499" width="90" height="36" rx="4" style="fill:rgb(152,113,89)">
-              <title>Talos — spiżowy strażnik Krety · epoka-5: 34%</title>
-            </rect>
-            <text class="heat-liczba" x="656" y="521" style="fill:#f4ecdc">34%</text>
-          </g><g class="heat-cell-g">
-            <rect class="heat-cell" x="707" y="499" width="90" height="36" rx="4" style="fill:rgb(152,113,89)">
-              <title>Talos — spiżowy strażnik Krety · epoka-6: 34%</title>
-            </rect>
-            <text class="heat-liczba" x="752" y="521" style="fill:#f4ecdc">34%</text>
-          </g><g class="heat-cell-g">
-            <rect class="heat-cell" x="803" y="499" width="90" height="36" rx="4" style="fill:rgb(152,113,89)">
-              <title>Talos — spiżowy strażnik Krety · epoka-7: 34%</title>
-            </rect>
-            <text class="heat-liczba" x="848" y="521" style="fill:#f4ecdc">34%</text>
-          </g><text class="heat-etykieta" x="212.0" y="519.0" text-anchor="end"><tspan x="212.0">🗿 Talos —</tspan><tspan x="212.0" dy="14">spiżowy strażnik…</tspan></text>
-        <text class="heat-sum" x="908" y="522">34%</text><g class="heat-cell-g">
-            <rect class="heat-cell" x="227" y="541" width="90" height="36" rx="4" style="fill:rgb(130,104,92)">
-              <title>Knecht z Koptos — ożywiony tłuczek, który nie zna słowa końca · epoka-1: 28%</title>
-            </rect>
-            <text class="heat-liczba" x="272" y="563" style="fill:#f4ecdc">28%</text>
-          </g><g class="heat-cell-g">
-            <rect class="heat-cell" x="323" y="541" width="90" height="36" rx="4" style="fill:rgb(130,104,92)">
-              <title>Knecht z Koptos — ożywiony tłuczek, który nie zna słowa końca · epoka-2: 28%</title>
-            </rect>
-            <text class="heat-liczba" x="368" y="563" style="fill:#f4ecdc">28%</text>
-          </g><g class="heat-cell-g">
-            <rect class="heat-cell" x="419" y="541" width="90" height="36" rx="4" style="fill:rgb(130,104,92)">
-              <title>Knecht z Koptos — ożywiony tłuczek, który nie zna słowa końca · epoka-3: 28%</title>
-            </rect>
-            <text class="heat-liczba" x="464" y="563" style="fill:#f4ecdc">28%</text>
-          </g><g class="heat-cell-g">
-            <rect class="heat-cell" x="515" y="541" width="90" height="36" rx="4" style="fill:rgb(130,104,92)">
-              <title>Knecht z Koptos — ożywiony tłuczek, który nie zna słowa końca · epoka-4: 28%</title>
-            </rect>
-            <text class="heat-liczba" x="560" y="563" style="fill:#f4ecdc">28%</text>
-          </g><g class="heat-cell-g">
-            <rect class="heat-cell" x="611" y="541" width="90" height="36" rx="4" style="fill:rgb(130,104,92)">
-              <title>Knecht z Koptos — ożywiony tłuczek, który nie zna słowa końca · epoka-5: 28%</title>
-            </rect>
-            <text class="heat-liczba" x="656" y="563" style="fill:#f4ecdc">28%</text>
-          </g><g class="heat-cell-g">
-            <rect class="heat-cell" x="707" y="541" width="90" height="36" rx="4" style="fill:rgb(130,104,92)">
-              <title>Knecht z Koptos — ożywiony tłuczek, który nie zna słowa końca · epoka-6: 28%</title>
-            </rect>
-            <text class="heat-liczba" x="752" y="563" style="fill:#f4ecdc">28%</text>
-          </g><g class="heat-cell-g">
-            <rect class="heat-cell" x="803" y="541" width="90" height="36" rx="4" style="fill:rgb(134,106,91)">
-              <title>Knecht z Koptos — ożywiony tłuczek, który nie zna słowa końca · epoka-7: 29%</title>
-            </rect>
-            <text class="heat-liczba" x="848" y="563" style="fill:#f4ecdc">29%</text>
-          </g><text class="heat-etykieta" x="212.0" y="561.0" text-anchor="end"><tspan x="212.0">🪵 Knecht z</tspan><tspan x="212.0" dy="14">Koptos — ożywion…</tspan></text>
-        <text class="heat-sum" x="908" y="564">28%</text><g class="heat-cell-g">
-            <rect class="heat-cell" x="227" y="583" width="90" height="36" rx="4" style="fill:rgb(130,104,92)">
-              <title>Morowa Panna — zaraza w białej szacie z czerwoną chustą · epoka-1: 28%</title>
-            </rect>
-            <text class="heat-liczba" x="272" y="605" style="fill:#f4ecdc">28%</text>
-          </g><g class="heat-cell-g">
-            <rect class="heat-cell" x="323" y="583" width="90" height="36" rx="4" style="fill:rgb(130,104,92)">
-              <title>Morowa Panna — zaraza w białej szacie z czerwoną chustą · epoka-2: 28%</title>
-            </rect>
-            <text class="heat-liczba" x="368" y="605" style="fill:#f4ecdc">28%</text>
-          </g><g class="heat-cell-g">
-            <rect class="heat-cell" x="419" y="583" width="90" height="36" rx="4" style="fill:rgb(130,104,92)">
-              <title>Morowa Panna — zaraza w białej szacie z czerwoną chustą · epoka-3: 28%</title>
-            </rect>
-            <text class="heat-liczba" x="464" y="605" style="fill:#f4ecdc">28%</text>
-          </g><g class="heat-cell-g">
-            <rect class="heat-cell" x="515" y="583" width="90" height="36" rx="4" style="fill:rgb(130,104,92)">
-              <title>Morowa Panna — zaraza w białej szacie z czerwoną chustą · epoka-4: 28%</title>
-            </rect>
-            <text class="heat-liczba" x="560" y="605" style="fill:#f4ecdc">28%</text>
-          </g><g class="heat-cell-g">
-            <rect class="heat-cell" x="611" y="583" width="90" height="36" rx="4" style="fill:rgb(130,104,92)">
-              <title>Morowa Panna — zaraza w białej szacie z czerwoną chustą · epoka-5: 28%</title>
-            </rect>
-            <text class="heat-liczba" x="656" y="605" style="fill:#f4ecdc">28%</text>
-          </g><g class="heat-cell-g">
-            <rect class="heat-cell" x="707" y="583" width="90" height="36" rx="4" style="fill:rgb(124,102,92)">
-              <title>Morowa Panna — zaraza w białej szacie z czerwoną chustą · epoka-6: 27%</title>
-            </rect>
-            <text class="heat-liczba" x="752" y="605" style="fill:#f4ecdc">27%</text>
-          </g><g class="heat-cell-g">
-            <rect class="heat-cell" x="803" y="583" width="90" height="36" rx="4" style="fill:rgb(124,102,92)">
-              <title>Morowa Panna — zaraza w białej szacie z czerwoną chustą · epoka-7: 27%</title>
-            </rect>
-            <text class="heat-liczba" x="848" y="605" style="fill:#f4ecdc">27%</text>
-          </g><text class="heat-etykieta" x="212.0" y="603.0" text-anchor="end"><tspan x="212.0">🧣 Morowa Panna —</tspan><tspan x="212.0" dy="14">zaraza w białej…</tspan></text>
-        <text class="heat-sum" x="908" y="606">28%</text><g class="heat-cell-g">
-            <rect class="heat-cell" x="227" y="625" width="90" height="36" rx="4" style="fill:rgb(125,102,92)">
-              <title>Śyāma i Śarvara — czterookie psy Yamy, strażnicy drogi przodków · epoka-1: 27%</title>
-            </rect>
-            <text class="heat-liczba" x="272" y="647" style="fill:#f4ecdc">27%</text>
-          </g><g class="heat-cell-g">
-            <rect class="heat-cell" x="323" y="625" width="90" height="36" rx="4" style="fill:rgb(125,102,92)">
-              <title>Śyāma i Śarvara — czterookie psy Yamy, strażnicy drogi przodków · epoka-2: 27%</title>
-            </rect>
-            <text class="heat-liczba" x="368" y="647" style="fill:#f4ecdc">27%</text>
-          </g><g class="heat-cell-g">
-            <rect class="heat-cell" x="419" y="625" width="90" height="36" rx="4" style="fill:rgb(125,102,92)">
-              <title>Śyāma i Śarvara — czterookie psy Yamy, strażnicy drogi przodków · epoka-3: 27%</title>
-            </rect>
-            <text class="heat-liczba" x="464" y="647" style="fill:#f4ecdc">27%</text>
-          </g><g class="heat-cell-g">
-            <rect class="heat-cell" x="515" y="625" width="90" height="36" rx="4" style="fill:rgb(125,102,92)">
-              <title>Śyāma i Śarvara — czterookie psy Yamy, strażnicy drogi przodków · epoka-4: 27%</title>
-            </rect>
-            <text class="heat-liczba" x="560" y="647" style="fill:#f4ecdc">27%</text>
-          </g><g class="heat-cell-g">
-            <rect class="heat-cell" x="611" y="625" width="90" height="36" rx="4" style="fill:rgb(125,102,92)">
-              <title>Śyāma i Śarvara — czterookie psy Yamy, strażnicy drogi przodków · epoka-5: 27%</title>
-            </rect>
-            <text class="heat-liczba" x="656" y="647" style="fill:#f4ecdc">27%</text>
-          </g><g class="heat-cell-g">
-            <rect class="heat-cell" x="707" y="625" width="90" height="36" rx="4" style="fill:rgb(125,102,92)">
-              <title>Śyāma i Śarvara — czterookie psy Yamy, strażnicy drogi przodków · epoka-6: 27%</title>
-            </rect>
-            <text class="heat-liczba" x="752" y="647" style="fill:#f4ecdc">27%</text>
-          </g><g class="heat-cell-g">
-            <rect class="heat-cell" x="803" y="625" width="90" height="36" rx="4" style="fill:rgb(127,103,92)">
-              <title>Śyāma i Śarvara — czterookie psy Yamy, strażnicy drogi przodków · epoka-7: 28%</title>
-            </rect>
-            <text class="heat-liczba" x="848" y="647" style="fill:#f4ecdc">28%</text>
-          </g><text class="heat-etykieta" x="212.0" y="645.0" text-anchor="end"><tspan x="212.0">🐕 Śyāma i</tspan><tspan x="212.0" dy="14">Śarvara —…</tspan></text>
-        <text class="heat-sum" x="908" y="648">27%</text><g class="heat-cell-g">
-            <rect class="heat-cell" x="227" y="667" width="90" height="36" rx="4" style="fill:rgb(120,100,93)">
-              <title>Protostates — fantom pierwszego szeregu · epoka-1: 26%</title>
-            </rect>
-            <text class="heat-liczba" x="272" y="689" style="fill:#f4ecdc">26%</text>
-          </g><g class="heat-cell-g">
-            <rect class="heat-cell" x="323" y="667" width="90" height="36" rx="4" style="fill:rgb(120,100,93)">
-              <title>Protostates — fantom pierwszego szeregu · epoka-2: 26%</title>
-            </rect>
-            <text class="heat-liczba" x="368" y="689" style="fill:#f4ecdc">26%</text>
-          </g><g class="heat-cell-g">
-            <rect class="heat-cell" x="419" y="667" width="90" height="36" rx="4" style="fill:rgb(120,100,93)">
-              <title>Protostates — fantom pierwszego szeregu · epoka-3: 26%</title>
-            </rect>
-            <text class="heat-liczba" x="464" y="689" style="fill:#f4ecdc">26%</text>
-          </g><g class="heat-cell-g">
-            <rect class="heat-cell" x="515" y="667" width="90" height="36" rx="4" style="fill:rgb(120,100,93)">
-              <title>Protostates — fantom pierwszego szeregu · epoka-4: 26%</title>
-            </rect>
-            <text class="heat-liczba" x="560" y="689" style="fill:#f4ecdc">26%</text>
-          </g><g class="heat-cell-g">
-            <rect class="heat-cell" x="611" y="667" width="90" height="36" rx="4" style="fill:rgb(120,100,93)">
-              <title>Protostates — fantom pierwszego szeregu · epoka-5: 26%</title>
-            </rect>
-            <text class="heat-liczba" x="656" y="689" style="fill:#f4ecdc">26%</text>
-          </g><g class="heat-cell-g">
-            <rect class="heat-cell" x="707" y="667" width="90" height="36" rx="4" style="fill:rgb(120,100,93)">
-              <title>Protostates — fantom pierwszego szeregu · epoka-6: 26%</title>
-            </rect>
-            <text class="heat-liczba" x="752" y="689" style="fill:#f4ecdc">26%</text>
-          </g><g class="heat-cell-g">
-            <rect class="heat-cell" x="803" y="667" width="90" height="36" rx="4" style="fill:rgb(125,102,92)">
-              <title>Protostates — fantom pierwszego szeregu · epoka-7: 27%</title>
-            </rect>
-            <text class="heat-liczba" x="848" y="689" style="fill:#f4ecdc">27%</text>
-          </g><text class="heat-etykieta" x="212.0" y="687.0" text-anchor="end"><tspan x="212.0">🛡️ Protostates —</tspan><tspan x="212.0" dy="14">fantom pierwszeg…</tspan></text>
-        <text class="heat-sum" x="908" y="690">26%</text>
-    <text class="heat-os-x" x="908" y="26">śr.</text>
-  </svg>
-  <div class="chart-legenda heat-legenda"><span>zasięg bytu na koniec epoki:</span><span class="heat-leg-kolor" style="background:rgb(58,74,100);color:#f4ecdc">10%</span><span class="heat-leg-kolor" style="background:rgb(98,91,96);color:#f4ecdc">20%</span><span class="heat-leg-kolor" style="background:rgb(137,107,91);color:#f4ecdc">30%</span><span class="heat-leg-kolor" style="background:rgb(177,124,87);color:#f4ecdc">40%</span><span class="heat-leg-kolor" style="background:rgb(216,140,82);color:#151a24">50%</span></div>
-    </div>
-    <div class="card">
       <h2>Dominacje na koniec Tomu</h2>
       <div class="card-sub">Kultury obecne w tym Tomie — łączny głos ich bytów (agregat, od najsilniejszej).</div>
-      <svg class="chart dom-chart" viewBox="0 0 640 344" role="img" aria-label="Słupki dominacji">
+      <svg class="chart dom-chart" viewBox="0 0 560 376" role="img" aria-label="Słupki dominacji">
       <g class="dom-wiersz" transform="translate(0,22.0)">
-        <circle class="dom-kropka" cx="78" cy="14" r="4" />
-        <text class="dom-etykieta" x="90.0" y="15.0" text-anchor="start"><tspan x="90.0">Grecja</tspan></text>
-        <rect class="dom-tor" x="190" y="4" width="340" height="20" rx="5" />
-        <rect class="dom-bar" x="190" y="4" width="149" height="20" rx="5">
+        <circle class="dom-kropka" cx="98" cy="14" r="4" />
+        <text class="dom-etykieta" x="112.0" y="14.0" text-anchor="start"><tspan x="112.0">Grecja</tspan></text>
+        <rect class="dom-tor" x="216" y="4" width="232" height="20" rx="5" />
+        <rect class="dom-bar" x="216" y="4" width="102" height="20" rx="5">
           <title>Grecja: 44% · 7 bytów</title>
         </rect>
-        <text class="dom-delta neutral" x="540" y="18">44% · 7 bytów</text>
+        <text class="dom-delta neutral" x="458" y="18">44% · 7 bytów</text>
       </g>
-      <g class="dom-wiersz" transform="translate(0,61.3)">
-        <circle class="dom-kropka" cx="78" cy="14" r="4" />
-        <text class="dom-etykieta" x="90.0" y="15.0" text-anchor="start"><tspan x="90.0">Indie</tspan></text>
-        <rect class="dom-tor" x="190" y="4" width="340" height="20" rx="5" />
-        <rect class="dom-bar" x="190" y="4" width="36" height="20" rx="5">
+      <g class="dom-wiersz" transform="translate(0,65.3)">
+        <circle class="dom-kropka" cx="98" cy="14" r="4" />
+        <text class="dom-etykieta" x="112.0" y="14.0" text-anchor="start"><tspan x="112.0">Indie</tspan></text>
+        <rect class="dom-tor" x="216" y="4" width="232" height="20" rx="5" />
+        <rect class="dom-bar" x="216" y="4" width="25" height="20" rx="5">
           <title>Indie: 11% · 2 byty</title>
         </rect>
-        <text class="dom-delta neutral" x="540" y="18">11% · 2 byty</text>
+        <text class="dom-delta neutral" x="458" y="18">11% · 2 byty</text>
       </g>
-      <g class="dom-wiersz" transform="translate(0,100.5)">
-        <circle class="dom-kropka" cx="78" cy="14" r="4" />
-        <text class="dom-etykieta" x="90.0" y="15.0" text-anchor="start"><tspan x="90.0">Joruba</tspan></text>
-        <rect class="dom-tor" x="190" y="4" width="340" height="20" rx="5" />
-        <rect class="dom-bar" x="190" y="4" width="32" height="20" rx="5">
+      <g class="dom-wiersz" transform="translate(0,108.5)">
+        <circle class="dom-kropka" cx="98" cy="14" r="4" />
+        <text class="dom-etykieta" x="112.0" y="14.0" text-anchor="start"><tspan x="112.0">Joruba</tspan></text>
+        <rect class="dom-tor" x="216" y="4" width="232" height="20" rx="5" />
+        <rect class="dom-bar" x="216" y="4" width="22" height="20" rx="5">
           <title>Joruba: 9% · 1 byt</title>
         </rect>
-        <text class="dom-delta neutral" x="540" y="18">9% · 1 byt</text>
+        <text class="dom-delta neutral" x="458" y="18">9% · 1 byt</text>
       </g>
-      <g class="dom-wiersz" transform="translate(0,139.8)">
-        <circle class="dom-kropka" cx="78" cy="14" r="4" />
-        <text class="dom-etykieta" x="90.0" y="15.0" text-anchor="start"><tspan x="90.0">Irlandia</tspan></text>
-        <rect class="dom-tor" x="190" y="4" width="340" height="20" rx="5" />
-        <rect class="dom-bar" x="190" y="4" width="29" height="20" rx="5">
+      <g class="dom-wiersz" transform="translate(0,151.8)">
+        <circle class="dom-kropka" cx="98" cy="14" r="4" />
+        <text class="dom-etykieta" x="112.0" y="14.0" text-anchor="start"><tspan x="112.0">Irlandia</tspan></text>
+        <rect class="dom-tor" x="216" y="4" width="232" height="20" rx="5" />
+        <rect class="dom-bar" x="216" y="4" width="20" height="20" rx="5">
           <title>Irlandia: 9% · 1 byt</title>
         </rect>
-        <text class="dom-delta neutral" x="540" y="18">9% · 1 byt</text>
+        <text class="dom-delta neutral" x="458" y="18">9% · 1 byt</text>
       </g>
-      <g class="dom-wiersz" transform="translate(0,179.0)">
-        <circle class="dom-kropka" cx="78" cy="14" r="4" />
-        <text class="dom-etykieta" x="90.0" y="15.0" text-anchor="start"><tspan x="90.0">Szkocja</tspan><tspan x="90.0" dy="13">Północna</tspan></text>
-        <rect class="dom-tor" x="190" y="4" width="340" height="20" rx="5" />
-        <rect class="dom-bar" x="190" y="4" width="28" height="20" rx="5">
+      <g class="dom-wiersz" transform="translate(0,195.0)">
+        <circle class="dom-kropka" cx="98" cy="14" r="4" />
+        <text class="dom-etykieta" x="112.0" y="14.0" text-anchor="start"><tspan x="112.0">Szkocja Północna</tspan></text>
+        <rect class="dom-tor" x="216" y="4" width="232" height="20" rx="5" />
+        <rect class="dom-bar" x="216" y="4" width="19" height="20" rx="5">
           <title>Szkocja Północna: 8% · 1 byt</title>
         </rect>
-        <text class="dom-delta neutral" x="540" y="18">8% · 1 byt</text>
+        <text class="dom-delta neutral" x="458" y="18">8% · 1 byt</text>
       </g>
-      <g class="dom-wiersz" transform="translate(0,218.3)">
-        <circle class="dom-kropka" cx="78" cy="14" r="4" />
-        <text class="dom-etykieta" x="90.0" y="15.0" text-anchor="start"><tspan x="90.0">Niemcy</tspan></text>
-        <rect class="dom-tor" x="190" y="4" width="340" height="20" rx="5" />
-        <rect class="dom-bar" x="190" y="4" width="25" height="20" rx="5">
+      <g class="dom-wiersz" transform="translate(0,238.3)">
+        <circle class="dom-kropka" cx="98" cy="14" r="4" />
+        <text class="dom-etykieta" x="112.0" y="14.0" text-anchor="start"><tspan x="112.0">Niemcy</tspan></text>
+        <rect class="dom-tor" x="216" y="4" width="232" height="20" rx="5" />
+        <rect class="dom-bar" x="216" y="4" width="17" height="20" rx="5">
           <title>Niemcy: 7% · 1 byt</title>
         </rect>
-        <text class="dom-delta neutral" x="540" y="18">7% · 1 byt</text>
+        <text class="dom-delta neutral" x="458" y="18">7% · 1 byt</text>
       </g>
-      <g class="dom-wiersz" transform="translate(0,257.5)">
-        <circle class="dom-kropka" cx="78" cy="14" r="4" />
-        <text class="dom-etykieta" x="90.0" y="15.0" text-anchor="start"><tspan x="90.0">Anglia</tspan></text>
-        <rect class="dom-tor" x="190" y="4" width="340" height="20" rx="5" />
-        <rect class="dom-bar" x="190" y="4" width="24" height="20" rx="5">
+      <g class="dom-wiersz" transform="translate(0,281.5)">
+        <circle class="dom-kropka" cx="98" cy="14" r="4" />
+        <text class="dom-etykieta" x="112.0" y="14.0" text-anchor="start"><tspan x="112.0">Anglia</tspan></text>
+        <rect class="dom-tor" x="216" y="4" width="232" height="20" rx="5" />
+        <rect class="dom-bar" x="216" y="4" width="16" height="20" rx="5">
           <title>Anglia: 7% · 1 byt</title>
         </rect>
-        <text class="dom-delta neutral" x="540" y="18">7% · 1 byt</text>
+        <text class="dom-delta neutral" x="458" y="18">7% · 1 byt</text>
       </g>
-      <g class="dom-wiersz" transform="translate(0,296.8)">
-        <circle class="dom-kropka" cx="78" cy="14" r="4" />
-        <text class="dom-etykieta" x="90.0" y="15.0" text-anchor="start"><tspan x="90.0">Polska</tspan></text>
-        <rect class="dom-tor" x="190" y="4" width="340" height="20" rx="5" />
-        <rect class="dom-bar" x="190" y="4" width="16" height="20" rx="5">
+      <g class="dom-wiersz" transform="translate(0,324.8)">
+        <circle class="dom-kropka" cx="98" cy="14" r="4" />
+        <text class="dom-etykieta" x="112.0" y="14.0" text-anchor="start"><tspan x="112.0">Polska</tspan></text>
+        <rect class="dom-tor" x="216" y="4" width="232" height="20" rx="5" />
+        <rect class="dom-bar" x="216" y="4" width="11" height="20" rx="5">
           <title>Polska: 5% · 1 byt</title>
         </rect>
-        <text class="dom-delta neutral" x="540" y="18">5% · 1 byt</text>
+        <text class="dom-delta neutral" x="458" y="18">5% · 1 byt</text>
       </g></svg>
     </div>
   </div>
+</div>
+
+<div class="card kart-szeroka">
+  <h2>Macierz zasięgów</h2>
+  <div class="card-sub">Jak daleko sięgał wpływ każdego bytu po kolejnych epokach (średnia po prawej).</div>
+  <svg class="chart heat-chart" viewBox="0 0 1022 736" role="img" aria-label="Macierz zasięgów bytów po epokach"><text class="heat-os-x" x="298.0" y="26.0" text-anchor="middle"><tspan x="298.0">I · Trzy</tspan><tspan x="298.0" dy="13">stoły</tspan></text><text class="heat-os-x" x="402.0" y="26.0" text-anchor="middle"><tspan x="402.0">II ·</tspan><tspan x="402.0" dy="13">Nieproszeni…</tspan></text><text class="heat-os-x" x="506.0" y="26.0" text-anchor="middle"><tspan x="506.0">III ·</tspan><tspan x="506.0" dy="13">Odźwierni</tspan></text><text class="heat-os-x" x="610.0" y="26.0" text-anchor="middle"><tspan x="610.0">IV · Imię na</tspan><tspan x="610.0" dy="13">progu</tspan></text><text class="heat-os-x" x="714.0" y="26.0" text-anchor="middle"><tspan x="714.0">V · Zagadka</tspan><tspan x="714.0" dy="13">ze spiżu</tspan></text><text class="heat-os-x" x="818.0" y="26.0" text-anchor="middle"><tspan x="818.0">VI · Czwarty</tspan><tspan x="818.0" dy="13">stół</tspan></text><text class="heat-os-x" x="922.0" y="26.0" text-anchor="middle"><tspan x="922.0">VII ·</tspan><tspan x="922.0" dy="13">Kolejność</tspan></text><g class="heat-cell-g">
+            <rect class="heat-cell" x="249" y="79" width="98" height="38" rx="4" style="fill:rgb(216,140,82)">
+              <title>Egungun · epoka-1: 52%</title>
+            </rect>
+            <text class="heat-liczba" x="298" y="102" style="fill:#151a24">52%</text>
+          </g><g class="heat-cell-g">
+            <rect class="heat-cell" x="353" y="79" width="98" height="38" rx="4" style="fill:rgb(216,140,82)">
+              <title>Egungun · epoka-2: 52%</title>
+            </rect>
+            <text class="heat-liczba" x="402" y="102" style="fill:#151a24">52%</text>
+          </g><g class="heat-cell-g">
+            <rect class="heat-cell" x="457" y="79" width="98" height="38" rx="4" style="fill:rgb(216,140,82)">
+              <title>Egungun · epoka-3: 54%</title>
+            </rect>
+            <text class="heat-liczba" x="506" y="102" style="fill:#151a24">54%</text>
+          </g><g class="heat-cell-g">
+            <rect class="heat-cell" x="561" y="79" width="98" height="38" rx="4" style="fill:rgb(216,140,82)">
+              <title>Egungun · epoka-4: 55%</title>
+            </rect>
+            <text class="heat-liczba" x="610" y="102" style="fill:#151a24">55%</text>
+          </g><g class="heat-cell-g">
+            <rect class="heat-cell" x="665" y="79" width="98" height="38" rx="4" style="fill:rgb(216,140,82)">
+              <title>Egungun · epoka-5: 55%</title>
+            </rect>
+            <text class="heat-liczba" x="714" y="102" style="fill:#151a24">55%</text>
+          </g><g class="heat-cell-g">
+            <rect class="heat-cell" x="769" y="79" width="98" height="38" rx="4" style="fill:rgb(216,140,82)">
+              <title>Egungun · epoka-6: 55%</title>
+            </rect>
+            <text class="heat-liczba" x="818" y="102" style="fill:#151a24">55%</text>
+          </g><g class="heat-cell-g">
+            <rect class="heat-cell" x="873" y="79" width="98" height="38" rx="4" style="fill:rgb(216,140,82)">
+              <title>Egungun · epoka-7: 55%</title>
+            </rect>
+            <text class="heat-liczba" x="922" y="102" style="fill:#151a24">55%</text>
+          </g><text class="heat-etykieta" x="234.0" y="100.0" text-anchor="end"><tspan x="234.0">🎭 Egungun</tspan></text>
+        <text class="heat-sum" x="986" y="103">54%</text><g class="heat-cell-g">
+            <rect class="heat-cell" x="249" y="123" width="98" height="38" rx="4" style="fill:rgb(216,140,82)">
+              <title>Balor z Tory Island · epoka-1: 50%</title>
+            </rect>
+            <text class="heat-liczba" x="298" y="146" style="fill:#151a24">50%</text>
+          </g><g class="heat-cell-g">
+            <rect class="heat-cell" x="353" y="123" width="98" height="38" rx="4" style="fill:rgb(216,140,82)">
+              <title>Balor z Tory Island · epoka-2: 50%</title>
+            </rect>
+            <text class="heat-liczba" x="402" y="146" style="fill:#151a24">50%</text>
+          </g><g class="heat-cell-g">
+            <rect class="heat-cell" x="457" y="123" width="98" height="38" rx="4" style="fill:rgb(216,140,82)">
+              <title>Balor z Tory Island · epoka-3: 50%</title>
+            </rect>
+            <text class="heat-liczba" x="506" y="146" style="fill:#151a24">50%</text>
+          </g><g class="heat-cell-g">
+            <rect class="heat-cell" x="561" y="123" width="98" height="38" rx="4" style="fill:rgb(216,140,82)">
+              <title>Balor z Tory Island · epoka-4: 50%</title>
+            </rect>
+            <text class="heat-liczba" x="610" y="146" style="fill:#151a24">50%</text>
+          </g><g class="heat-cell-g">
+            <rect class="heat-cell" x="665" y="123" width="98" height="38" rx="4" style="fill:rgb(216,140,82)">
+              <title>Balor z Tory Island · epoka-5: 50%</title>
+            </rect>
+            <text class="heat-liczba" x="714" y="146" style="fill:#151a24">50%</text>
+          </g><g class="heat-cell-g">
+            <rect class="heat-cell" x="769" y="123" width="98" height="38" rx="4" style="fill:rgb(216,140,82)">
+              <title>Balor z Tory Island · epoka-6: 50%</title>
+            </rect>
+            <text class="heat-liczba" x="818" y="146" style="fill:#151a24">50%</text>
+          </g><g class="heat-cell-g">
+            <rect class="heat-cell" x="873" y="123" width="98" height="38" rx="4" style="fill:rgb(216,140,82)">
+              <title>Balor z Tory Island · epoka-7: 50%</title>
+            </rect>
+            <text class="heat-liczba" x="922" y="146" style="fill:#151a24">50%</text>
+          </g><text class="heat-etykieta" x="234.0" y="144.0" text-anchor="end"><tspan x="234.0">👁️ Balor z Tory</tspan><tspan x="234.0" dy="15">Island</tspan></text>
+        <text class="heat-sum" x="986" y="147">50%</text><g class="heat-cell-g">
+            <rect class="heat-cell" x="249" y="167" width="98" height="38" rx="4" style="fill:rgb(207,136,83)">
+              <title>Empusa z Koryntu · epoka-1: 48%</title>
+            </rect>
+            <text class="heat-liczba" x="298" y="190" style="fill:#f4ecdc">48%</text>
+          </g><g class="heat-cell-g">
+            <rect class="heat-cell" x="353" y="167" width="98" height="38" rx="4" style="fill:rgb(214,139,82)">
+              <title>Empusa z Koryntu · epoka-2: 50%</title>
+            </rect>
+            <text class="heat-liczba" x="402" y="190" style="fill:#151a24">50%</text>
+          </g><g class="heat-cell-g">
+            <rect class="heat-cell" x="457" y="167" width="98" height="38" rx="4" style="fill:rgb(214,139,82)">
+              <title>Empusa z Koryntu · epoka-3: 50%</title>
+            </rect>
+            <text class="heat-liczba" x="506" y="190" style="fill:#151a24">50%</text>
+          </g><g class="heat-cell-g">
+            <rect class="heat-cell" x="561" y="167" width="98" height="38" rx="4" style="fill:rgb(214,139,82)">
+              <title>Empusa z Koryntu · epoka-4: 50%</title>
+            </rect>
+            <text class="heat-liczba" x="610" y="190" style="fill:#151a24">50%</text>
+          </g><g class="heat-cell-g">
+            <rect class="heat-cell" x="665" y="167" width="98" height="38" rx="4" style="fill:rgb(214,139,82)">
+              <title>Empusa z Koryntu · epoka-5: 50%</title>
+            </rect>
+            <text class="heat-liczba" x="714" y="190" style="fill:#151a24">50%</text>
+          </g><g class="heat-cell-g">
+            <rect class="heat-cell" x="769" y="167" width="98" height="38" rx="4" style="fill:rgb(216,140,82)">
+              <title>Empusa z Koryntu · epoka-6: 50%</title>
+            </rect>
+            <text class="heat-liczba" x="818" y="190" style="fill:#151a24">50%</text>
+          </g><g class="heat-cell-g">
+            <rect class="heat-cell" x="873" y="167" width="98" height="38" rx="4" style="fill:rgb(216,140,82)">
+              <title>Empusa z Koryntu · epoka-7: 50%</title>
+            </rect>
+            <text class="heat-liczba" x="922" y="190" style="fill:#151a24">50%</text>
+          </g><text class="heat-etykieta" x="234.0" y="188.0" text-anchor="end"><tspan x="234.0">🕷️ Empusa z</tspan><tspan x="234.0" dy="15">Koryntu</tspan></text>
+        <text class="heat-sum" x="986" y="191">49%</text><g class="heat-cell-g">
+            <rect class="heat-cell" x="249" y="211" width="98" height="38" rx="4" style="fill:rgb(211,138,83)">
+              <title>Wielki Selkie z Sule Skerry · epoka-1: 49%</title>
+            </rect>
+            <text class="heat-liczba" x="298" y="234" style="fill:#f4ecdc">49%</text>
+          </g><g class="heat-cell-g">
+            <rect class="heat-cell" x="353" y="211" width="98" height="38" rx="4" style="fill:rgb(211,138,83)">
+              <title>Wielki Selkie z Sule Skerry · epoka-2: 49%</title>
+            </rect>
+            <text class="heat-liczba" x="402" y="234" style="fill:#f4ecdc">49%</text>
+          </g><g class="heat-cell-g">
+            <rect class="heat-cell" x="457" y="211" width="98" height="38" rx="4" style="fill:rgb(211,138,83)">
+              <title>Wielki Selkie z Sule Skerry · epoka-3: 49%</title>
+            </rect>
+            <text class="heat-liczba" x="506" y="234" style="fill:#f4ecdc">49%</text>
+          </g><g class="heat-cell-g">
+            <rect class="heat-cell" x="561" y="211" width="98" height="38" rx="4" style="fill:rgb(207,136,83)">
+              <title>Wielki Selkie z Sule Skerry · epoka-4: 48%</title>
+            </rect>
+            <text class="heat-liczba" x="610" y="234" style="fill:#f4ecdc">48%</text>
+          </g><g class="heat-cell-g">
+            <rect class="heat-cell" x="665" y="211" width="98" height="38" rx="4" style="fill:rgb(207,136,83)">
+              <title>Wielki Selkie z Sule Skerry · epoka-5: 48%</title>
+            </rect>
+            <text class="heat-liczba" x="714" y="234" style="fill:#f4ecdc">48%</text>
+          </g><g class="heat-cell-g">
+            <rect class="heat-cell" x="769" y="211" width="98" height="38" rx="4" style="fill:rgb(207,136,83)">
+              <title>Wielki Selkie z Sule Skerry · epoka-6: 48%</title>
+            </rect>
+            <text class="heat-liczba" x="818" y="234" style="fill:#f4ecdc">48%</text>
+          </g><g class="heat-cell-g">
+            <rect class="heat-cell" x="873" y="211" width="98" height="38" rx="4" style="fill:rgb(207,136,83)">
+              <title>Wielki Selkie z Sule Skerry · epoka-7: 48%</title>
+            </rect>
+            <text class="heat-liczba" x="922" y="234" style="fill:#f4ecdc">48%</text>
+          </g><text class="heat-etykieta" x="234.0" y="232.0" text-anchor="end"><tspan x="234.0">🦭 Wielki Selkie z</tspan><tspan x="234.0" dy="15">Sule Skerry</tspan></text>
+        <text class="heat-sum" x="986" y="235">48%</text><g class="heat-cell-g">
+            <rect class="heat-cell" x="249" y="255" width="98" height="38" rx="4" style="fill:rgb(187,128,85)">
+              <title>Barbarossa w Kyffhäuserze · epoka-1: 43%</title>
+            </rect>
+            <text class="heat-liczba" x="298" y="278" style="fill:#f4ecdc">43%</text>
+          </g><g class="heat-cell-g">
+            <rect class="heat-cell" x="353" y="255" width="98" height="38" rx="4" style="fill:rgb(187,128,85)">
+              <title>Barbarossa w Kyffhäuserze · epoka-2: 43%</title>
+            </rect>
+            <text class="heat-liczba" x="402" y="278" style="fill:#f4ecdc">43%</text>
+          </g><g class="heat-cell-g">
+            <rect class="heat-cell" x="457" y="255" width="98" height="38" rx="4" style="fill:rgb(187,128,85)">
+              <title>Barbarossa w Kyffhäuserze · epoka-3: 43%</title>
+            </rect>
+            <text class="heat-liczba" x="506" y="278" style="fill:#f4ecdc">43%</text>
+          </g><g class="heat-cell-g">
+            <rect class="heat-cell" x="561" y="255" width="98" height="38" rx="4" style="fill:rgb(187,128,85)">
+              <title>Barbarossa w Kyffhäuserze · epoka-4: 43%</title>
+            </rect>
+            <text class="heat-liczba" x="610" y="278" style="fill:#f4ecdc">43%</text>
+          </g><g class="heat-cell-g">
+            <rect class="heat-cell" x="665" y="255" width="98" height="38" rx="4" style="fill:rgb(187,128,85)">
+              <title>Barbarossa w Kyffhäuserze · epoka-5: 43%</title>
+            </rect>
+            <text class="heat-liczba" x="714" y="278" style="fill:#f4ecdc">43%</text>
+          </g><g class="heat-cell-g">
+            <rect class="heat-cell" x="769" y="255" width="98" height="38" rx="4" style="fill:rgb(187,128,85)">
+              <title>Barbarossa w Kyffhäuserze · epoka-6: 43%</title>
+            </rect>
+            <text class="heat-liczba" x="818" y="278" style="fill:#f4ecdc">43%</text>
+          </g><g class="heat-cell-g">
+            <rect class="heat-cell" x="873" y="255" width="98" height="38" rx="4" style="fill:rgb(187,128,85)">
+              <title>Barbarossa w Kyffhäuserze · epoka-7: 43%</title>
+            </rect>
+            <text class="heat-liczba" x="922" y="278" style="fill:#f4ecdc">43%</text>
+          </g><text class="heat-etykieta" x="234.0" y="276.0" text-anchor="end"><tspan x="234.0">👑 Barbarossa w</tspan><tspan x="234.0" dy="15">Kyffhäuserze</tspan></text>
+        <text class="heat-sum" x="986" y="279">43%</text><g class="heat-cell-g">
+            <rect class="heat-cell" x="249" y="299" width="98" height="38" rx="4" style="fill:rgb(184,127,86)">
+              <title>Kentaur z Pelionu · epoka-1: 42%</title>
+            </rect>
+            <text class="heat-liczba" x="298" y="322" style="fill:#f4ecdc">42%</text>
+          </g><g class="heat-cell-g">
+            <rect class="heat-cell" x="353" y="299" width="98" height="38" rx="4" style="fill:rgb(176,123,87)">
+              <title>Kentaur z Pelionu · epoka-2: 40%</title>
+            </rect>
+            <text class="heat-liczba" x="402" y="322" style="fill:#f4ecdc">40%</text>
+          </g><g class="heat-cell-g">
+            <rect class="heat-cell" x="457" y="299" width="98" height="38" rx="4" style="fill:rgb(176,123,87)">
+              <title>Kentaur z Pelionu · epoka-3: 40%</title>
+            </rect>
+            <text class="heat-liczba" x="506" y="322" style="fill:#f4ecdc">40%</text>
+          </g><g class="heat-cell-g">
+            <rect class="heat-cell" x="561" y="299" width="98" height="38" rx="4" style="fill:rgb(176,123,87)">
+              <title>Kentaur z Pelionu · epoka-4: 40%</title>
+            </rect>
+            <text class="heat-liczba" x="610" y="322" style="fill:#f4ecdc">40%</text>
+          </g><g class="heat-cell-g">
+            <rect class="heat-cell" x="665" y="299" width="98" height="38" rx="4" style="fill:rgb(176,123,87)">
+              <title>Kentaur z Pelionu · epoka-5: 40%</title>
+            </rect>
+            <text class="heat-liczba" x="714" y="322" style="fill:#f4ecdc">40%</text>
+          </g><g class="heat-cell-g">
+            <rect class="heat-cell" x="769" y="299" width="98" height="38" rx="4" style="fill:rgb(176,123,87)">
+              <title>Kentaur z Pelionu · epoka-6: 40%</title>
+            </rect>
+            <text class="heat-liczba" x="818" y="322" style="fill:#f4ecdc">40%</text>
+          </g><g class="heat-cell-g">
+            <rect class="heat-cell" x="873" y="299" width="98" height="38" rx="4" style="fill:rgb(176,123,87)">
+              <title>Kentaur z Pelionu · epoka-7: 40%</title>
+            </rect>
+            <text class="heat-liczba" x="922" y="322" style="fill:#f4ecdc">40%</text>
+          </g><text class="heat-etykieta" x="234.0" y="320.0" text-anchor="end"><tspan x="234.0">🐎 Kentaur z</tspan><tspan x="234.0" dy="15">Pelionu</tspan></text>
+        <text class="heat-sum" x="986" y="323">40%</text><g class="heat-cell-g">
+            <rect class="heat-cell" x="249" y="343" width="98" height="38" rx="4" style="fill:rgb(173,122,87)">
+              <title>Imp z Lincoln · epoka-1: 39%</title>
+            </rect>
+            <text class="heat-liczba" x="298" y="366" style="fill:#f4ecdc">39%</text>
+          </g><g class="heat-cell-g">
+            <rect class="heat-cell" x="353" y="343" width="98" height="38" rx="4" style="fill:rgb(173,122,87)">
+              <title>Imp z Lincoln · epoka-2: 39%</title>
+            </rect>
+            <text class="heat-liczba" x="402" y="366" style="fill:#f4ecdc">39%</text>
+          </g><g class="heat-cell-g">
+            <rect class="heat-cell" x="457" y="343" width="98" height="38" rx="4" style="fill:rgb(173,122,87)">
+              <title>Imp z Lincoln · epoka-3: 39%</title>
+            </rect>
+            <text class="heat-liczba" x="506" y="366" style="fill:#f4ecdc">39%</text>
+          </g><g class="heat-cell-g">
+            <rect class="heat-cell" x="561" y="343" width="98" height="38" rx="4" style="fill:rgb(173,122,87)">
+              <title>Imp z Lincoln · epoka-4: 39%</title>
+            </rect>
+            <text class="heat-liczba" x="610" y="366" style="fill:#f4ecdc">39%</text>
+          </g><g class="heat-cell-g">
+            <rect class="heat-cell" x="665" y="343" width="98" height="38" rx="4" style="fill:rgb(179,124,86)">
+              <title>Imp z Lincoln · epoka-5: 41%</title>
+            </rect>
+            <text class="heat-liczba" x="714" y="366" style="fill:#f4ecdc">41%</text>
+          </g><g class="heat-cell-g">
+            <rect class="heat-cell" x="769" y="343" width="98" height="38" rx="4" style="fill:rgb(179,124,86)">
+              <title>Imp z Lincoln · epoka-6: 41%</title>
+            </rect>
+            <text class="heat-liczba" x="818" y="366" style="fill:#f4ecdc">41%</text>
+          </g><g class="heat-cell-g">
+            <rect class="heat-cell" x="873" y="343" width="98" height="38" rx="4" style="fill:rgb(179,124,86)">
+              <title>Imp z Lincoln · epoka-7: 41%</title>
+            </rect>
+            <text class="heat-liczba" x="922" y="366" style="fill:#f4ecdc">41%</text>
+          </g><text class="heat-etykieta" x="234.0" y="364.0" text-anchor="end"><tspan x="234.0">😈 Imp z Lincoln</tspan></text>
+        <text class="heat-sum" x="986" y="367">40%</text><g class="heat-cell-g">
+            <rect class="heat-cell" x="249" y="387" width="98" height="38" rx="4" style="fill:rgb(173,122,87)">
+              <title>Sfinks — strażniczka Tebańskich Wrót · epoka-1: 39%</title>
+            </rect>
+            <text class="heat-liczba" x="298" y="410" style="fill:#f4ecdc">39%</text>
+          </g><g class="heat-cell-g">
+            <rect class="heat-cell" x="353" y="387" width="98" height="38" rx="4" style="fill:rgb(173,122,87)">
+              <title>Sfinks — strażniczka Tebańskich Wrót · epoka-2: 39%</title>
+            </rect>
+            <text class="heat-liczba" x="402" y="410" style="fill:#f4ecdc">39%</text>
+          </g><g class="heat-cell-g">
+            <rect class="heat-cell" x="457" y="387" width="98" height="38" rx="4" style="fill:rgb(173,122,87)">
+              <title>Sfinks — strażniczka Tebańskich Wrót · epoka-3: 39%</title>
+            </rect>
+            <text class="heat-liczba" x="506" y="410" style="fill:#f4ecdc">39%</text>
+          </g><g class="heat-cell-g">
+            <rect class="heat-cell" x="561" y="387" width="98" height="38" rx="4" style="fill:rgb(173,122,87)">
+              <title>Sfinks — strażniczka Tebańskich Wrót · epoka-4: 39%</title>
+            </rect>
+            <text class="heat-liczba" x="610" y="410" style="fill:#f4ecdc">39%</text>
+          </g><g class="heat-cell-g">
+            <rect class="heat-cell" x="665" y="387" width="98" height="38" rx="4" style="fill:rgb(169,120,87)">
+              <title>Sfinks — strażniczka Tebańskich Wrót · epoka-5: 38%</title>
+            </rect>
+            <text class="heat-liczba" x="714" y="410" style="fill:#f4ecdc">38%</text>
+          </g><g class="heat-cell-g">
+            <rect class="heat-cell" x="769" y="387" width="98" height="38" rx="4" style="fill:rgb(169,120,87)">
+              <title>Sfinks — strażniczka Tebańskich Wrót · epoka-6: 38%</title>
+            </rect>
+            <text class="heat-liczba" x="818" y="410" style="fill:#f4ecdc">38%</text>
+          </g><g class="heat-cell-g">
+            <rect class="heat-cell" x="873" y="387" width="98" height="38" rx="4" style="fill:rgb(169,120,87)">
+              <title>Sfinks — strażniczka Tebańskich Wrót · epoka-7: 38%</title>
+            </rect>
+            <text class="heat-liczba" x="922" y="410" style="fill:#f4ecdc">38%</text>
+          </g><text class="heat-etykieta" x="234.0" y="408.0" text-anchor="end"><tspan x="234.0">🦁 Sfinks —</tspan><tspan x="234.0" dy="15">strażniczka…</tspan></text>
+        <text class="heat-sum" x="986" y="411">39%</text><g class="heat-cell-g">
+            <rect class="heat-cell" x="249" y="431" width="98" height="38" rx="4" style="fill:rgb(159,116,89)">
+              <title>Pandora — pierwsza kobieta i pithos, w którym została nadzieja · epoka-1: 36%</title>
+            </rect>
+            <text class="heat-liczba" x="298" y="454" style="fill:#f4ecdc">36%</text>
+          </g><g class="heat-cell-g">
+            <rect class="heat-cell" x="353" y="431" width="98" height="38" rx="4" style="fill:rgb(159,116,89)">
+              <title>Pandora — pierwsza kobieta i pithos, w którym została nadzieja · epoka-2: 36%</title>
+            </rect>
+            <text class="heat-liczba" x="402" y="454" style="fill:#f4ecdc">36%</text>
+          </g><g class="heat-cell-g">
+            <rect class="heat-cell" x="457" y="431" width="98" height="38" rx="4" style="fill:rgb(159,116,89)">
+              <title>Pandora — pierwsza kobieta i pithos, w którym została nadzieja · epoka-3: 36%</title>
+            </rect>
+            <text class="heat-liczba" x="506" y="454" style="fill:#f4ecdc">36%</text>
+          </g><g class="heat-cell-g">
+            <rect class="heat-cell" x="561" y="431" width="98" height="38" rx="4" style="fill:rgb(159,116,89)">
+              <title>Pandora — pierwsza kobieta i pithos, w którym została nadzieja · epoka-4: 36%</title>
+            </rect>
+            <text class="heat-liczba" x="610" y="454" style="fill:#f4ecdc">36%</text>
+          </g><g class="heat-cell-g">
+            <rect class="heat-cell" x="665" y="431" width="98" height="38" rx="4" style="fill:rgb(159,116,89)">
+              <title>Pandora — pierwsza kobieta i pithos, w którym została nadzieja · epoka-5: 36%</title>
+            </rect>
+            <text class="heat-liczba" x="714" y="454" style="fill:#f4ecdc">36%</text>
+          </g><g class="heat-cell-g">
+            <rect class="heat-cell" x="769" y="431" width="98" height="38" rx="4" style="fill:rgb(163,118,88)">
+              <title>Pandora — pierwsza kobieta i pithos, w którym została nadzieja · epoka-6: 37%</title>
+            </rect>
+            <text class="heat-liczba" x="818" y="454" style="fill:#f4ecdc">37%</text>
+          </g><g class="heat-cell-g">
+            <rect class="heat-cell" x="873" y="431" width="98" height="38" rx="4" style="fill:rgb(163,118,88)">
+              <title>Pandora — pierwsza kobieta i pithos, w którym została nadzieja · epoka-7: 37%</title>
+            </rect>
+            <text class="heat-liczba" x="922" y="454" style="fill:#f4ecdc">37%</text>
+          </g><text class="heat-etykieta" x="234.0" y="452.0" text-anchor="end"><tspan x="234.0">🏺 Pandora —</tspan><tspan x="234.0" dy="15">pierwsza kobieta…</tspan></text>
+        <text class="heat-sum" x="986" y="455">36%</text><g class="heat-cell-g">
+            <rect class="heat-cell" x="249" y="475" width="98" height="38" rx="4" style="fill:rgb(159,116,89)">
+              <title>Indra — władca gromu · epoka-1: 36%</title>
+            </rect>
+            <text class="heat-liczba" x="298" y="498" style="fill:#f4ecdc">36%</text>
+          </g><g class="heat-cell-g">
+            <rect class="heat-cell" x="353" y="475" width="98" height="38" rx="4" style="fill:rgb(159,116,89)">
+              <title>Indra — władca gromu · epoka-2: 36%</title>
+            </rect>
+            <text class="heat-liczba" x="402" y="498" style="fill:#f4ecdc">36%</text>
+          </g><g class="heat-cell-g">
+            <rect class="heat-cell" x="457" y="475" width="98" height="38" rx="4" style="fill:rgb(159,116,89)">
+              <title>Indra — władca gromu · epoka-3: 36%</title>
+            </rect>
+            <text class="heat-liczba" x="506" y="498" style="fill:#f4ecdc">36%</text>
+          </g><g class="heat-cell-g">
+            <rect class="heat-cell" x="561" y="475" width="98" height="38" rx="4" style="fill:rgb(155,114,89)">
+              <title>Indra — władca gromu · epoka-4: 35%</title>
+            </rect>
+            <text class="heat-liczba" x="610" y="498" style="fill:#f4ecdc">35%</text>
+          </g><g class="heat-cell-g">
+            <rect class="heat-cell" x="665" y="475" width="98" height="38" rx="4" style="fill:rgb(155,114,89)">
+              <title>Indra — władca gromu · epoka-5: 35%</title>
+            </rect>
+            <text class="heat-liczba" x="714" y="498" style="fill:#f4ecdc">35%</text>
+          </g><g class="heat-cell-g">
+            <rect class="heat-cell" x="769" y="475" width="98" height="38" rx="4" style="fill:rgb(155,114,89)">
+              <title>Indra — władca gromu · epoka-6: 35%</title>
+            </rect>
+            <text class="heat-liczba" x="818" y="498" style="fill:#f4ecdc">35%</text>
+          </g><g class="heat-cell-g">
+            <rect class="heat-cell" x="873" y="475" width="98" height="38" rx="4" style="fill:rgb(155,114,89)">
+              <title>Indra — władca gromu · epoka-7: 35%</title>
+            </rect>
+            <text class="heat-liczba" x="922" y="498" style="fill:#f4ecdc">35%</text>
+          </g><text class="heat-etykieta" x="234.0" y="496.0" text-anchor="end"><tspan x="234.0">🌩️ Indra — władca</tspan><tspan x="234.0" dy="15">gromu</tspan></text>
+        <text class="heat-sum" x="986" y="499">35%</text><g class="heat-cell-g">
+            <rect class="heat-cell" x="249" y="519" width="98" height="38" rx="4" style="fill:rgb(154,114,89)">
+              <title>Talos — spiżowy strażnik Krety · epoka-1: 34%</title>
+            </rect>
+            <text class="heat-liczba" x="298" y="542" style="fill:#f4ecdc">34%</text>
+          </g><g class="heat-cell-g">
+            <rect class="heat-cell" x="353" y="519" width="98" height="38" rx="4" style="fill:rgb(154,114,89)">
+              <title>Talos — spiżowy strażnik Krety · epoka-2: 34%</title>
+            </rect>
+            <text class="heat-liczba" x="402" y="542" style="fill:#f4ecdc">34%</text>
+          </g><g class="heat-cell-g">
+            <rect class="heat-cell" x="457" y="519" width="98" height="38" rx="4" style="fill:rgb(154,114,89)">
+              <title>Talos — spiżowy strażnik Krety · epoka-3: 34%</title>
+            </rect>
+            <text class="heat-liczba" x="506" y="542" style="fill:#f4ecdc">34%</text>
+          </g><g class="heat-cell-g">
+            <rect class="heat-cell" x="561" y="519" width="98" height="38" rx="4" style="fill:rgb(154,114,89)">
+              <title>Talos — spiżowy strażnik Krety · epoka-4: 34%</title>
+            </rect>
+            <text class="heat-liczba" x="610" y="542" style="fill:#f4ecdc">34%</text>
+          </g><g class="heat-cell-g">
+            <rect class="heat-cell" x="665" y="519" width="98" height="38" rx="4" style="fill:rgb(152,113,89)">
+              <title>Talos — spiżowy strażnik Krety · epoka-5: 34%</title>
+            </rect>
+            <text class="heat-liczba" x="714" y="542" style="fill:#f4ecdc">34%</text>
+          </g><g class="heat-cell-g">
+            <rect class="heat-cell" x="769" y="519" width="98" height="38" rx="4" style="fill:rgb(152,113,89)">
+              <title>Talos — spiżowy strażnik Krety · epoka-6: 34%</title>
+            </rect>
+            <text class="heat-liczba" x="818" y="542" style="fill:#f4ecdc">34%</text>
+          </g><g class="heat-cell-g">
+            <rect class="heat-cell" x="873" y="519" width="98" height="38" rx="4" style="fill:rgb(152,113,89)">
+              <title>Talos — spiżowy strażnik Krety · epoka-7: 34%</title>
+            </rect>
+            <text class="heat-liczba" x="922" y="542" style="fill:#f4ecdc">34%</text>
+          </g><text class="heat-etykieta" x="234.0" y="540.0" text-anchor="end"><tspan x="234.0">🗿 Talos — spiżowy</tspan><tspan x="234.0" dy="15">strażnik Krety</tspan></text>
+        <text class="heat-sum" x="986" y="543">34%</text><g class="heat-cell-g">
+            <rect class="heat-cell" x="249" y="563" width="98" height="38" rx="4" style="fill:rgb(130,104,92)">
+              <title>Knecht z Koptos — ożywiony tłuczek, który nie zna słowa końca · epoka-1: 28%</title>
+            </rect>
+            <text class="heat-liczba" x="298" y="586" style="fill:#f4ecdc">28%</text>
+          </g><g class="heat-cell-g">
+            <rect class="heat-cell" x="353" y="563" width="98" height="38" rx="4" style="fill:rgb(130,104,92)">
+              <title>Knecht z Koptos — ożywiony tłuczek, który nie zna słowa końca · epoka-2: 28%</title>
+            </rect>
+            <text class="heat-liczba" x="402" y="586" style="fill:#f4ecdc">28%</text>
+          </g><g class="heat-cell-g">
+            <rect class="heat-cell" x="457" y="563" width="98" height="38" rx="4" style="fill:rgb(130,104,92)">
+              <title>Knecht z Koptos — ożywiony tłuczek, który nie zna słowa końca · epoka-3: 28%</title>
+            </rect>
+            <text class="heat-liczba" x="506" y="586" style="fill:#f4ecdc">28%</text>
+          </g><g class="heat-cell-g">
+            <rect class="heat-cell" x="561" y="563" width="98" height="38" rx="4" style="fill:rgb(130,104,92)">
+              <title>Knecht z Koptos — ożywiony tłuczek, który nie zna słowa końca · epoka-4: 28%</title>
+            </rect>
+            <text class="heat-liczba" x="610" y="586" style="fill:#f4ecdc">28%</text>
+          </g><g class="heat-cell-g">
+            <rect class="heat-cell" x="665" y="563" width="98" height="38" rx="4" style="fill:rgb(130,104,92)">
+              <title>Knecht z Koptos — ożywiony tłuczek, który nie zna słowa końca · epoka-5: 28%</title>
+            </rect>
+            <text class="heat-liczba" x="714" y="586" style="fill:#f4ecdc">28%</text>
+          </g><g class="heat-cell-g">
+            <rect class="heat-cell" x="769" y="563" width="98" height="38" rx="4" style="fill:rgb(130,104,92)">
+              <title>Knecht z Koptos — ożywiony tłuczek, który nie zna słowa końca · epoka-6: 28%</title>
+            </rect>
+            <text class="heat-liczba" x="818" y="586" style="fill:#f4ecdc">28%</text>
+          </g><g class="heat-cell-g">
+            <rect class="heat-cell" x="873" y="563" width="98" height="38" rx="4" style="fill:rgb(134,106,91)">
+              <title>Knecht z Koptos — ożywiony tłuczek, który nie zna słowa końca · epoka-7: 29%</title>
+            </rect>
+            <text class="heat-liczba" x="922" y="586" style="fill:#f4ecdc">29%</text>
+          </g><text class="heat-etykieta" x="234.0" y="584.0" text-anchor="end"><tspan x="234.0">🪵 Knecht z Koptos</tspan><tspan x="234.0" dy="15">— ożywiony…</tspan></text>
+        <text class="heat-sum" x="986" y="587">28%</text><g class="heat-cell-g">
+            <rect class="heat-cell" x="249" y="607" width="98" height="38" rx="4" style="fill:rgb(130,104,92)">
+              <title>Morowa Panna — zaraza w białej szacie z czerwoną chustą · epoka-1: 28%</title>
+            </rect>
+            <text class="heat-liczba" x="298" y="630" style="fill:#f4ecdc">28%</text>
+          </g><g class="heat-cell-g">
+            <rect class="heat-cell" x="353" y="607" width="98" height="38" rx="4" style="fill:rgb(130,104,92)">
+              <title>Morowa Panna — zaraza w białej szacie z czerwoną chustą · epoka-2: 28%</title>
+            </rect>
+            <text class="heat-liczba" x="402" y="630" style="fill:#f4ecdc">28%</text>
+          </g><g class="heat-cell-g">
+            <rect class="heat-cell" x="457" y="607" width="98" height="38" rx="4" style="fill:rgb(130,104,92)">
+              <title>Morowa Panna — zaraza w białej szacie z czerwoną chustą · epoka-3: 28%</title>
+            </rect>
+            <text class="heat-liczba" x="506" y="630" style="fill:#f4ecdc">28%</text>
+          </g><g class="heat-cell-g">
+            <rect class="heat-cell" x="561" y="607" width="98" height="38" rx="4" style="fill:rgb(130,104,92)">
+              <title>Morowa Panna — zaraza w białej szacie z czerwoną chustą · epoka-4: 28%</title>
+            </rect>
+            <text class="heat-liczba" x="610" y="630" style="fill:#f4ecdc">28%</text>
+          </g><g class="heat-cell-g">
+            <rect class="heat-cell" x="665" y="607" width="98" height="38" rx="4" style="fill:rgb(130,104,92)">
+              <title>Morowa Panna — zaraza w białej szacie z czerwoną chustą · epoka-5: 28%</title>
+            </rect>
+            <text class="heat-liczba" x="714" y="630" style="fill:#f4ecdc">28%</text>
+          </g><g class="heat-cell-g">
+            <rect class="heat-cell" x="769" y="607" width="98" height="38" rx="4" style="fill:rgb(124,102,92)">
+              <title>Morowa Panna — zaraza w białej szacie z czerwoną chustą · epoka-6: 27%</title>
+            </rect>
+            <text class="heat-liczba" x="818" y="630" style="fill:#f4ecdc">27%</text>
+          </g><g class="heat-cell-g">
+            <rect class="heat-cell" x="873" y="607" width="98" height="38" rx="4" style="fill:rgb(124,102,92)">
+              <title>Morowa Panna — zaraza w białej szacie z czerwoną chustą · epoka-7: 27%</title>
+            </rect>
+            <text class="heat-liczba" x="922" y="630" style="fill:#f4ecdc">27%</text>
+          </g><text class="heat-etykieta" x="234.0" y="628.0" text-anchor="end"><tspan x="234.0">🧣 Morowa Panna —</tspan><tspan x="234.0" dy="15">zaraza w białej…</tspan></text>
+        <text class="heat-sum" x="986" y="631">28%</text><g class="heat-cell-g">
+            <rect class="heat-cell" x="249" y="651" width="98" height="38" rx="4" style="fill:rgb(125,102,92)">
+              <title>Śyāma i Śarvara — czterookie psy Yamy, strażnicy drogi przodków · epoka-1: 27%</title>
+            </rect>
+            <text class="heat-liczba" x="298" y="674" style="fill:#f4ecdc">27%</text>
+          </g><g class="heat-cell-g">
+            <rect class="heat-cell" x="353" y="651" width="98" height="38" rx="4" style="fill:rgb(125,102,92)">
+              <title>Śyāma i Śarvara — czterookie psy Yamy, strażnicy drogi przodków · epoka-2: 27%</title>
+            </rect>
+            <text class="heat-liczba" x="402" y="674" style="fill:#f4ecdc">27%</text>
+          </g><g class="heat-cell-g">
+            <rect class="heat-cell" x="457" y="651" width="98" height="38" rx="4" style="fill:rgb(125,102,92)">
+              <title>Śyāma i Śarvara — czterookie psy Yamy, strażnicy drogi przodków · epoka-3: 27%</title>
+            </rect>
+            <text class="heat-liczba" x="506" y="674" style="fill:#f4ecdc">27%</text>
+          </g><g class="heat-cell-g">
+            <rect class="heat-cell" x="561" y="651" width="98" height="38" rx="4" style="fill:rgb(125,102,92)">
+              <title>Śyāma i Śarvara — czterookie psy Yamy, strażnicy drogi przodków · epoka-4: 27%</title>
+            </rect>
+            <text class="heat-liczba" x="610" y="674" style="fill:#f4ecdc">27%</text>
+          </g><g class="heat-cell-g">
+            <rect class="heat-cell" x="665" y="651" width="98" height="38" rx="4" style="fill:rgb(125,102,92)">
+              <title>Śyāma i Śarvara — czterookie psy Yamy, strażnicy drogi przodków · epoka-5: 27%</title>
+            </rect>
+            <text class="heat-liczba" x="714" y="674" style="fill:#f4ecdc">27%</text>
+          </g><g class="heat-cell-g">
+            <rect class="heat-cell" x="769" y="651" width="98" height="38" rx="4" style="fill:rgb(125,102,92)">
+              <title>Śyāma i Śarvara — czterookie psy Yamy, strażnicy drogi przodków · epoka-6: 27%</title>
+            </rect>
+            <text class="heat-liczba" x="818" y="674" style="fill:#f4ecdc">27%</text>
+          </g><g class="heat-cell-g">
+            <rect class="heat-cell" x="873" y="651" width="98" height="38" rx="4" style="fill:rgb(127,103,92)">
+              <title>Śyāma i Śarvara — czterookie psy Yamy, strażnicy drogi przodków · epoka-7: 28%</title>
+            </rect>
+            <text class="heat-liczba" x="922" y="674" style="fill:#f4ecdc">28%</text>
+          </g><text class="heat-etykieta" x="234.0" y="672.0" text-anchor="end"><tspan x="234.0">🐕 Śyāma i Śarvara</tspan><tspan x="234.0" dy="15">— czterookie psy…</tspan></text>
+        <text class="heat-sum" x="986" y="675">27%</text><g class="heat-cell-g">
+            <rect class="heat-cell" x="249" y="695" width="98" height="38" rx="4" style="fill:rgb(120,100,93)">
+              <title>Protostates — fantom pierwszego szeregu · epoka-1: 26%</title>
+            </rect>
+            <text class="heat-liczba" x="298" y="718" style="fill:#f4ecdc">26%</text>
+          </g><g class="heat-cell-g">
+            <rect class="heat-cell" x="353" y="695" width="98" height="38" rx="4" style="fill:rgb(120,100,93)">
+              <title>Protostates — fantom pierwszego szeregu · epoka-2: 26%</title>
+            </rect>
+            <text class="heat-liczba" x="402" y="718" style="fill:#f4ecdc">26%</text>
+          </g><g class="heat-cell-g">
+            <rect class="heat-cell" x="457" y="695" width="98" height="38" rx="4" style="fill:rgb(120,100,93)">
+              <title>Protostates — fantom pierwszego szeregu · epoka-3: 26%</title>
+            </rect>
+            <text class="heat-liczba" x="506" y="718" style="fill:#f4ecdc">26%</text>
+          </g><g class="heat-cell-g">
+            <rect class="heat-cell" x="561" y="695" width="98" height="38" rx="4" style="fill:rgb(120,100,93)">
+              <title>Protostates — fantom pierwszego szeregu · epoka-4: 26%</title>
+            </rect>
+            <text class="heat-liczba" x="610" y="718" style="fill:#f4ecdc">26%</text>
+          </g><g class="heat-cell-g">
+            <rect class="heat-cell" x="665" y="695" width="98" height="38" rx="4" style="fill:rgb(120,100,93)">
+              <title>Protostates — fantom pierwszego szeregu · epoka-5: 26%</title>
+            </rect>
+            <text class="heat-liczba" x="714" y="718" style="fill:#f4ecdc">26%</text>
+          </g><g class="heat-cell-g">
+            <rect class="heat-cell" x="769" y="695" width="98" height="38" rx="4" style="fill:rgb(120,100,93)">
+              <title>Protostates — fantom pierwszego szeregu · epoka-6: 26%</title>
+            </rect>
+            <text class="heat-liczba" x="818" y="718" style="fill:#f4ecdc">26%</text>
+          </g><g class="heat-cell-g">
+            <rect class="heat-cell" x="873" y="695" width="98" height="38" rx="4" style="fill:rgb(125,102,92)">
+              <title>Protostates — fantom pierwszego szeregu · epoka-7: 27%</title>
+            </rect>
+            <text class="heat-liczba" x="922" y="718" style="fill:#f4ecdc">27%</text>
+          </g><text class="heat-etykieta" x="234.0" y="716.0" text-anchor="end"><tspan x="234.0">🛡️ Protostates —</tspan><tspan x="234.0" dy="15">fantom pierwszego…</tspan></text>
+        <text class="heat-sum" x="986" y="719">26%</text>
+    <text class="heat-os-x" x="986" y="26">śr.</text>
+  </svg>
+  <div class="chart-legenda heat-legenda"><span>zasięg bytu na koniec epoki:</span><span class="heat-leg-kolor" style="background:rgb(58,74,100);color:#f4ecdc">10%</span><span class="heat-leg-kolor" style="background:rgb(98,91,96);color:#f4ecdc">20%</span><span class="heat-leg-kolor" style="background:rgb(137,107,91);color:#f4ecdc">30%</span><span class="heat-leg-kolor" style="background:rgb(177,124,87);color:#f4ecdc">40%</span><span class="heat-leg-kolor" style="background:rgb(216,140,82);color:#151a24">50%</span></div>
 </div>
 
 <div class="grid">

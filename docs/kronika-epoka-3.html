@@ -226,7 +226,7 @@ html[data-motyw="ciemny"] {
   padding: 10px 18px;
   background: var(--card-alt);
   border-bottom: 1px solid var(--line);
-  font-size: 12.5px;
+  font-size: 13.5px;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 .map-title {
@@ -287,18 +287,18 @@ html[data-motyw="ciemny"] {
   stroke: #fff;
 }
 .kronika-map .pin-icon {
-  font-size: 13px;
+  font-size: 20px;
   text-anchor: middle;
   dominant-baseline: central;
 }
 .kronika-map .pin-label {
-  font-size: 13px;
+  font-size: 19px;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-weight: 600;
   fill: #1d1916;
   paint-order: stroke;
   stroke: #fffdf8;
-  stroke-width: 3.5px;
+  stroke-width: 4.5px;
   stroke-linecap: round;
   stroke-linejoin: round;
 }
@@ -321,6 +321,10 @@ html[data-motyw="ciemny"] {
   flex-direction: column;
   gap: 24px;
 }
+/* Wykres szeroki: rozpięty na obie kolumny gridu (Kronika, 2026-08-30). */
+.kart-szeroka {
+  grid-column: 1 / -1;
+}
 @media(max-width: 860px) {
   .grid { grid-template-columns: 1fr; }
 }
@@ -340,7 +344,7 @@ html[data-motyw="ciemny"] {
 }
 .card-sub {
   color: var(--muted);
-  font-size: 13px;
+  font-size: 14px;
   margin: -6px 0 14px;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
@@ -570,7 +574,7 @@ th {
 /* LISTS & HELPERS */
 ul { margin: 0; padding-left: 20px; }
 li { margin: 8px 0; }
-.muted { color: var(--muted); font-size: 12.5px; }
+.muted { color: var(--muted); font-size: 13.5px; }
 
 /* PAGER */
 .epoka-pager {
@@ -842,14 +846,14 @@ li { margin: 8px 0; }
 
 .chart { width: 100%; height: auto; display: block; }
 .os-grid { stroke: var(--line); stroke-width: 1; }
-.os-grid-label { fill: var(--muted); font-size: 12px; text-anchor: end; }
+.os-grid-label { fill: var(--muted); font-size: 14.5px; text-anchor: end; }
 .os-area { fill: var(--mit); fill-opacity: 0.12; }
 .os-line { fill: none; stroke: var(--mit); stroke-width: 2.5; stroke-linejoin: round; }
 .os-dot circle { fill: var(--accent); stroke: var(--fg); stroke-width: 1.5; }
-.os-wartosc { fill: var(--fg); font-size: 12px; text-anchor: middle; }
-.os-label { fill: var(--muted); font-size: 12px; }
+.os-wartosc { fill: var(--fg); font-size: 14.5px; text-anchor: middle; }
+.os-label { fill: var(--muted); font-size: 14.5px; }
 
-.zasieg-chip, .zasieg-wiersz text { font-size: 12px; }
+.zasieg-chip, .zasieg-wiersz text { font-size: 14.5px; }
 .zasieg-etykieta { fill: var(--fg); font-weight: 600; }
 .zasieg-tor { fill: var(--card-alt); stroke: var(--line); stroke-width: 1; }
 .zasieg-przed { fill: var(--muted); opacity: 0.45; }
@@ -859,28 +863,28 @@ li { margin: 8px 0; }
 .zasieg-delta { fill: var(--muted); font-weight: 700; }
 .zasieg-delta.up { fill: var(--up); }
 .zasieg-delta.down { fill: var(--down); }
-.chart-legenda { fill: var(--muted); font-size: 12px; }
+.chart-legenda { fill: var(--muted); font-size: 13.5px; }
 .leg-przed { fill: var(--muted); }
 .leg-po { fill: var(--accent); }
 
 .wykres-paliwa { display: flex; gap: 10px; align-items: flex-start; flex-wrap: wrap; }
-.paliwo-chart { flex: 1 1 520px; min-width: 0; }
+.paliwo-chart { flex: 1 1 340px; min-width: 0; }
 .paliwo-linia { fill: none; stroke-width: 2.2; stroke-linejoin: round; }
 .paliwo-punkt { stroke: var(--card); stroke-width: 1; }
-.paliwo-os, .paliwo-os-x { fill: var(--muted); font-size: 12px; text-anchor: end; }
+.paliwo-os, .paliwo-os-x { fill: var(--muted); font-size: 14px; text-anchor: end; }
 .paliwo-os-x { text-anchor: middle; }
-.paliwo-legenda-box { flex: 0 1 200px; display: flex; flex-direction: column; gap: 4px; font-size: 13px; }
+.paliwo-legenda-box { flex: 1 1 190px; min-width: 0; display: flex; flex-direction: column; gap: 4px; font-size: 14px; }
 .paliwo-legenda { display: flex; gap: 8px; align-items: center; color: var(--fg); }
 .paliwo-legenda .kropka { width: 10px; height: 10px; border-radius: 50%; background: var(--l); display: inline-block; }
 .paliwo-legenda b { margin-left: auto; }
 
-.dom-grupa-etykieta { fill: var(--accent); font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+.dom-grupa-etykieta { fill: var(--accent); font-size: 13.5px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
 .dom-grupa-linia { stroke: var(--accent); stroke-width: 1.4; stroke-dasharray: 3 3; }
 .dom-tor { fill: var(--card-alt); stroke: var(--line); stroke-width: 1; }
 .dom-bar { fill: var(--accent); }
-.dom-etykieta { fill: var(--fg); font-size: 12.5px; font-weight: 600; }
+.dom-etykieta { fill: var(--fg); font-size: 14.5px; font-weight: 600; }
 .dom-kropka { fill: var(--accent); }
-.dom-delta { fill: var(--muted); font-size: 12px; }
+.dom-delta { fill: var(--muted); font-size: 14px; }
 .dom-delta.up { fill: var(--up); }
 .dom-delta.down { fill: var(--down); }
 
@@ -890,9 +894,9 @@ li { margin: 8px 0; }
 .rel-luk.schlodzenie { stroke: var(--down); }
 .rel-luk.neutralna { stroke: var(--muted); stroke-dasharray: 5 4; }
 .rel-wezel circle { fill: var(--card); stroke: var(--accent); stroke-width: 1.6; }
-.rel-emoji { text-anchor: middle; font-size: 26px; }
-.rel-nazwa { text-anchor: middle; font-size: 12.5px; fill: var(--fg); font-weight: 600; }
-.rel-legenda { display: flex; gap: 18px; margin-top: 6px; font-size: 12px; color: var(--muted); }
+.rel-emoji { text-anchor: middle; font-size: 24px; }
+.rel-nazwa { text-anchor: middle; font-size: 14.5px; fill: var(--fg); font-weight: 600; }
+.rel-legenda { display: flex; gap: 18px; margin-top: 6px; font-size: 13.5px; color: var(--muted); }
 .rel-leg.wzmocnienie { border-bottom: 3px solid var(--up); }
 .rel-leg.schlodzenie { border-bottom: 3px solid var(--down); }
 .rel-leg.neutralna { border-bottom: 3px dashed var(--muted); }
@@ -901,25 +905,25 @@ li { margin: 8px 0; }
 .watki-marker { stroke: var(--card); stroke-width: 2; }
 .watki-marker.otwarty { fill: var(--up); }
 .watki-marker.zamkniety { fill: var(--down); }
-.watki-etykieta { fill: var(--fg); font-size: 12px; }
-.watki-os-x { fill: var(--muted); font-size: 12px; }
+.watki-etykieta { fill: var(--fg); font-size: 14px; }
+.watki-os-x { fill: var(--muted); font-size: 14px; }
 
 .heat-cell { stroke: var(--card); stroke-width: 1; }
-.heat-liczba { font-size: 12px; font-weight: 700; text-anchor: middle; dominant-baseline: middle; }
+.heat-liczba { font-size: 14px; font-weight: 700; text-anchor: middle; dominant-baseline: middle; }
 .heat-legenda { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; margin-top: 6px; }
 .heat-leg-kolor { padding: 2px 9px; border-radius: 999px; font-weight: 600; }
-.heat-etykieta { fill: var(--fg); font-size: 12.5px; font-weight: 600; }
-.heat-sum { fill: var(--muted); font-size: 12px; }
-.heat-os-x { fill: var(--muted); font-size: 12px; }
+.heat-etykieta { fill: var(--fg); font-size: 14.5px; font-weight: 600; }
+.heat-sum { fill: var(--muted); font-size: 14px; }
+.heat-os-x { fill: var(--muted); font-size: 14px; }
 
 .graf-os { stroke: var(--accent); stroke-width: 2.4; }
 .graf-odwolanie { stroke: var(--accent-light); stroke-width: 1.6; stroke-dasharray: 6 4; }
 .graf-wezel circle { fill: var(--card); stroke: var(--accent); stroke-width: 2; }
 .graf-wezel.rozgalezienie circle { fill: var(--accent-light); }
-.graf-nr { text-anchor: middle; fill: var(--fg); font-size: 13px; font-weight: 700; }
-.graf-etykieta { fill: var(--muted); font-size: 12px; }
+.graf-nr { text-anchor: middle; fill: var(--fg); font-size: 15px; font-weight: 700; }
+.graf-etykieta { fill: var(--muted); font-size: 14px; }
 .graf-galez path { fill: var(--accent-light); }
-.graf-galez-opis { fill: var(--muted); font-size: 12px; }
+.graf-galez-opis { fill: var(--muted); font-size: 13.5px; }
 
 .tomy-pasek { display: flex; gap: 8px; flex-wrap: wrap; margin: 0 0 14px; }
 .tomy-pasek .pager-btn.aktywny { background: var(--accent); color: var(--card); }
@@ -929,7 +933,7 @@ li { margin: 8px 0; }
 .powiazane-epoki { margin: 22px 0 0; font-size: 13.5px; color: var(--muted); }
 .powiazane-epoki .chip { text-decoration: none; }
 .dziennik { width: 100%; border-collapse: collapse; }
-.dziennik th, .dziennik td { padding: 7px 8px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; font-size: 13.5px; }
+.dziennik th, .dziennik td { padding: 7px 8px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; font-size: 14px; }
 .dziennik .num { text-align: right; white-space: nowrap; }
 .tom-karta { max-width: 640px; }
 </style>
@@ -1063,27 +1067,27 @@ li { margin: 8px 0; }
         <title>Balor z Tory Island — zasięg 50%% (przed 50%, 0 pp)</title>
         <circle class="halo" r="84" />
         <a href="#balor" class="otworz-kartoteke" data-slug="balor" title="Balor z Tory Island (Irlandia (hrabstwo Donegal)) — otwórz kartotekę">
-          <circle class="pin-bg" r="15" />
-          <text class="pin-icon" dy="4">👁️</text>
-          <text class="pin-label" x="18" y="4">Balor z Tory Island</text>
+          <circle class="pin-bg" r="20" />
+          <text class="pin-icon" dy="7">👁️</text>
+          <text class="pin-label" x="24" y="5">Balor z Tory Island</text>
         </a>
       </g>
       <g class="node active" data-slug="egungun" transform="translate(1839,1721)">
         <title>Egungun — zasięg 54%% (przed 52%, +2 pp)</title>
         <circle class="halo" r="89" />
         <a href="#egungun" class="otworz-kartoteke" data-slug="egungun" title="Egungun (Nigeria) — otwórz kartotekę">
-          <circle class="pin-bg" r="15" />
-          <text class="pin-icon" dy="4">🎭</text>
-          <text class="pin-label" x="18" y="4">Egungun</text>
+          <circle class="pin-bg" r="20" />
+          <text class="pin-icon" dy="7">🎭</text>
+          <text class="pin-label" x="24" y="5">Egungun</text>
         </a>
       </g>
       <g class="node active" data-slug="empusa-korynt" transform="translate(2029,1390)">
         <title>Empusa z Koryntu — zasięg 50%% (przed 50%, 0 pp)</title>
         <circle class="halo" r="84" />
         <a href="#empusa-korynt" class="otworz-kartoteke" data-slug="empusa-korynt" title="Empusa z Koryntu (Grecja) — otwórz kartotekę">
-          <circle class="pin-bg" r="15" />
-          <text class="pin-icon" dy="4">🕷️</text>
-          <text class="pin-label" x="18" y="4">Empusa z Koryntu</text>
+          <circle class="pin-bg" r="20" />
+          <text class="pin-icon" dy="7">🕷️</text>
+          <text class="pin-label" x="24" y="5">Empusa z Koryntu</text>
         </a>
       </g>
       </g>
@@ -1288,41 +1292,41 @@ li { margin: 8px 0; }
     <div class="card">
       <h2>Konsekwencje dla świata</h2>
       <div class="card-sub">Przesunięcia wierzeń i zasięgów kulturowych w wyniku epoki.</div>
-      <svg class="chart zasieg-chart" viewBox="0 0 700 164" role="img" aria-label="Wykres zasięgów przed i po epoce">
-    <text class="chart-legenda" x="158" y="12"><tspan class="leg-przed">▬ przed</tspan> <tspan class="leg-po">▬ po</tspan></text>
+      <svg class="chart zasieg-chart" viewBox="0 0 560 176" role="img" aria-label="Wykres zasięgów przed i po epoce">
+    <text class="chart-legenda" x="186" y="12"><tspan class="leg-przed">▬ przed</tspan> <tspan class="leg-po">▬ po</tspan></text>
     
       <g class="zasieg-wiersz" transform="translate(0,16)">
-        <text class="zasieg-etykieta" x="148" y="26" text-anchor="end">Egungun</text>
-        <rect class="zasieg-tor" x="158" y="8" width="452" height="10" rx="4" />
-        <rect class="zasieg-przed" x="158" y="8" width="234" height="10" rx="4">
+        <text class="zasieg-etykieta" x="172.0" y="30.0" text-anchor="end"><tspan x="172.0">Egungun</tspan></text>
+        <rect class="zasieg-tor" x="186" y="8" width="282" height="10" rx="4" />
+        <rect class="zasieg-przed" x="186" y="8" width="146" height="10" rx="4">
           <title>egungun: przed 52%</title>
         </rect>
-        <rect class="zasieg-po up" x="158" y="24" width="243" height="10" rx="4">
+        <rect class="zasieg-po up" x="186" y="24" width="152" height="10" rx="4">
           <title>egungun: po 54% · Rozdzielenie mechanizmów wzmacnia kult przodków: pieśń zostaje uznana za jedyne miłe drzwi między światami.</title>
         </rect>
-        <text class="zasieg-delta up" x="620" y="33">+2 pp</text>
+        <text class="zasieg-delta up" x="478" y="33">+2 pp</text>
       </g>
-      <g class="zasieg-wiersz" transform="translate(0,62)">
-        <text class="zasieg-etykieta" x="148" y="26" text-anchor="end">Balor z Tory Island</text>
-        <rect class="zasieg-tor" x="158" y="8" width="452" height="10" rx="4" />
-        <rect class="zasieg-przed" x="158" y="8" width="226" height="10" rx="4">
+      <g class="zasieg-wiersz" transform="translate(0,66)">
+        <text class="zasieg-etykieta" x="172.0" y="30.0" text-anchor="end"><tspan x="172.0">Balor z Tory Island</tspan></text>
+        <rect class="zasieg-tor" x="186" y="8" width="282" height="10" rx="4" />
+        <rect class="zasieg-przed" x="186" y="8" width="141" height="10" rx="4">
           <title>balor: przed 50%</title>
         </rect>
-        <rect class="zasieg-po neutral" x="158" y="24" width="226" height="10" rx="4">
+        <rect class="zasieg-po neutral" x="186" y="24" width="141" height="10" rx="4">
           <title>balor: po 50% · Balor nie zyskuje i nie traci: jego powieka pozostaje nieodwrócona, ale przestaje być jedynym drzwiami, o których ludzie szepczą.</title>
         </rect>
-        <text class="zasieg-delta neutral" x="620" y="33">0 pp</text>
+        <text class="zasieg-delta neutral" x="478" y="33">0 pp</text>
       </g>
-      <g class="zasieg-wiersz" transform="translate(0,108)">
-        <text class="zasieg-etykieta" x="148" y="26" text-anchor="end">Empusa z Koryntu</text>
-        <rect class="zasieg-tor" x="158" y="8" width="452" height="10" rx="4" />
-        <rect class="zasieg-przed" x="158" y="8" width="224" height="10" rx="4">
+      <g class="zasieg-wiersz" transform="translate(0,116)">
+        <text class="zasieg-etykieta" x="172.0" y="30.0" text-anchor="end"><tspan x="172.0">Empusa z Koryntu</tspan></text>
+        <rect class="zasieg-tor" x="186" y="8" width="282" height="10" rx="4" />
+        <rect class="zasieg-przed" x="186" y="8" width="140" height="10" rx="4">
           <title>empusa-korynt: przed 50%</title>
         </rect>
-        <rect class="zasieg-po neutral" x="158" y="24" width="224" height="10" rx="4">
+        <rect class="zasieg-po neutral" x="186" y="24" width="140" height="10" rx="4">
           <title>empusa-korynt: po 50% · Empusa zostaje nienazwana: świat wie, że padnięcie imienia ją rozwiązuje, więc opowiada o niej ostrożnie — na granicy mitu.</title>
         </rect>
-        <text class="zasieg-delta neutral" x="620" y="33">0 pp</text>
+        <text class="zasieg-delta neutral" x="478" y="33">0 pp</text>
       </g>
   </svg>
       <ul><li><strong><a href="#egungun" class="otworz-kartoteke" data-slug="egungun" style="color:inherit">egungun</a></strong> — 52% → 54%
@@ -1338,30 +1342,30 @@ li { margin: 8px 0; }
     <div class="card">
       <h2>Relacje między bytami</h2>
       <div class="card-sub">Kto kogo wzmocnił, a kogo odsunął — i co świat z tego zapamiętał.</div>
-      <svg class="chart rel-chart" viewBox="0 0 720 460" role="img" aria-label="Diagram relacji między uczestnikami epoki">
-    <path class="rel-elipsa" d="M 60 210 A 300 150 0 1 1 659.9 210 A 300 150 0 1 1 60 210" />
-    <path class="rel-luk wzmocnienie" d="M 360.0 60.0 Q 546.2 107.5 619.8 285.0">
+      <svg class="chart rel-chart" viewBox="0 0 560 400" role="img" aria-label="Diagram relacji między uczestnikami epoki">
+    <path class="rel-elipsa" d="M 44 200 A 236 132 0 1 1 515.9 200 A 236 132 0 1 1 44 200" />
+    <path class="rel-luk wzmocnienie" d="M 280.0 68.0 Q 431.7 115.9 484.4 266.0">
         <title>egungun → balor: wzmocnienie · Przodek i olbrzym spotykają się w tym samym obrazie kogoś, kto nie pyta o zgodę — choć jeden przez pieśń, drugi przez powiekę.</title>
-      </path><path class="rel-luk schlodzenie" d="M 100.2 285.0 Q 360.0 195.0 619.8 285.0">
+      </path><path class="rel-luk schlodzenie" d="M 75.6 266.0 Q 280.0 186.0 484.4 266.0">
         <title>empusa-korynt → balor: schłodzenie · Empusa pozbawia Balora wyłączności na nieuchronność: jej próg znika po imieniu, jego po podniesieniu powieki.</title>
-      </path><path class="rel-luk wzmocnienie" d="M 360.0 60.0 Q 286.3 237.5 100.2 285.0">
+      </path><path class="rel-luk wzmocnienie" d="M 280.0 68.0 Q 227.3 218.1 75.6 266.0">
         <title>egungun → empusa-korynt: wzmocnienie · Egungun nazywa Empusę progiem, a nie gościem — przez co spina ją z własną rolą: jedno wpuszcza przez pieśń, drugie przez bycie miejscem.</title>
       </path>
-    <g class="rel-wezel" transform="translate(360.0,60.0)">
+    <g class="rel-wezel" transform="translate(280.0,68.0)">
         <title>Egungun</title>
         <circle r="34" />
         <text class="rel-emoji" y="8">🎭</text>
-        <text class="rel-nazwa" y="58">Egungun</text>
-      </g><g class="rel-wezel" transform="translate(619.8,285.0)">
+        <text class="rel-nazwa" x="0.0" y="56.0" text-anchor="middle"><tspan x="0.0">Egungun</tspan></text>
+      </g><g class="rel-wezel" transform="translate(484.4,266.0)">
         <title>Balor z Tory Island</title>
         <circle r="34" />
         <text class="rel-emoji" y="8">👁️</text>
-        <text class="rel-nazwa" y="58">Balor z Tory Island</text>
-      </g><g class="rel-wezel" transform="translate(100.2,285.0)">
+        <text class="rel-nazwa" x="0.0" y="56.0" text-anchor="middle"><tspan x="0.0">Balor z Tory</tspan><tspan x="0.0" dy="15">Island</tspan></text>
+      </g><g class="rel-wezel" transform="translate(75.6,266.0)">
         <title>Empusa z Koryntu</title>
         <circle r="34" />
         <text class="rel-emoji" y="8">🕷️</text>
-        <text class="rel-nazwa" y="58">Empusa z Koryntu</text>
+        <text class="rel-nazwa" x="0.0" y="56.0" text-anchor="middle"><tspan x="0.0">Empusa z Koryntu</tspan></text>
       </g>
   </svg>
   <div class="rel-legenda"><span class="rel-leg wzmocnienie">— wzmocnienie</span><span class="rel-leg schlodzenie">— schłodzenie</span><span class="rel-leg neutralna">— neutralne</span></div>
@@ -1371,33 +1375,33 @@ li { margin: 8px 0; }
     <div class="card">
       <h2>Dominacje kultur</h2>
       <div class="card-sub">Kultury i kulty, których głos w tej epoce zyskał lub stracił na znaczeniu.</div>
-      <svg class="chart dom-chart" viewBox="0 0 640 144" role="img" aria-label="Słupki dominacji">
+      <svg class="chart dom-chart" viewBox="0 0 560 156" role="img" aria-label="Słupki dominacji">
       <g class="dom-wiersz" transform="translate(0,22.0)">
-        <circle class="dom-kropka" cx="78" cy="14" r="4" />
-        <text class="dom-etykieta" x="90.0" y="15.0" text-anchor="start"><tspan x="90.0">joruba ·</tspan><tspan x="90.0" dy="13">egungun</tspan></text>
-        <rect class="dom-tor" x="190" y="4" width="340" height="20" rx="5" />
-        <rect class="dom-bar" x="190" y="4" width="183" height="20" rx="5">
-          <title>joruba · egungun: 54% (+2 pp)</title>
+        <circle class="dom-kropka" cx="98" cy="14" r="4" />
+        <text class="dom-etykieta" x="112.0" y="14.0" text-anchor="start"><tspan x="112.0">Joruba · Egungun</tspan></text>
+        <rect class="dom-tor" x="216" y="4" width="232" height="20" rx="5" />
+        <rect class="dom-bar" x="216" y="4" width="125" height="20" rx="5">
+          <title>Joruba · Egungun: 54% (+2 pp)</title>
         </rect>
-        <text class="dom-delta up" x="540" y="18">54% · +2 pp</text>
+        <text class="dom-delta up" x="458" y="18">54% · +2 pp</text>
       </g>
-      <g class="dom-wiersz" transform="translate(0,60.0)">
-        <circle class="dom-kropka" cx="78" cy="14" r="4" />
-        <text class="dom-etykieta" x="90.0" y="15.0" text-anchor="start"><tspan x="90.0">irlandia ·</tspan><tspan x="90.0" dy="13">balor</tspan></text>
-        <rect class="dom-tor" x="190" y="4" width="340" height="20" rx="5" />
-        <rect class="dom-bar" x="190" y="4" width="170" height="20" rx="5">
-          <title>irlandia · balor: 50% (0 pp)</title>
+      <g class="dom-wiersz" transform="translate(0,64.0)">
+        <circle class="dom-kropka" cx="98" cy="14" r="4" />
+        <text class="dom-etykieta" x="112.0" y="14.0" text-anchor="start"><tspan x="112.0">Irlandia · Balor z</tspan><tspan x="112.0" dy="15">Tory Island</tspan></text>
+        <rect class="dom-tor" x="216" y="4" width="232" height="20" rx="5" />
+        <rect class="dom-bar" x="216" y="4" width="116" height="20" rx="5">
+          <title>Irlandia · Balor z Tory Island: 50% (0 pp)</title>
         </rect>
-        <text class="dom-delta neutral" x="540" y="18">50% · 0 pp</text>
+        <text class="dom-delta neutral" x="458" y="18">50% · 0 pp</text>
       </g>
-      <g class="dom-wiersz" transform="translate(0,98.0)">
-        <circle class="dom-kropka" cx="78" cy="14" r="4" />
-        <text class="dom-etykieta" x="90.0" y="15.0" text-anchor="start"><tspan x="90.0">grecja ·</tspan><tspan x="90.0" dy="13">empusa-korynt</tspan></text>
-        <rect class="dom-tor" x="190" y="4" width="340" height="20" rx="5" />
-        <rect class="dom-bar" x="190" y="4" width="169" height="20" rx="5">
-          <title>grecja · empusa-korynt: 50% (0 pp)</title>
+      <g class="dom-wiersz" transform="translate(0,106.0)">
+        <circle class="dom-kropka" cx="98" cy="14" r="4" />
+        <text class="dom-etykieta" x="112.0" y="14.0" text-anchor="start"><tspan x="112.0">Grecja · Empusa z</tspan><tspan x="112.0" dy="15">Koryntu</tspan></text>
+        <rect class="dom-tor" x="216" y="4" width="232" height="20" rx="5" />
+        <rect class="dom-bar" x="216" y="4" width="115" height="20" rx="5">
+          <title>Grecja · Empusa z Koryntu: 50% (0 pp)</title>
         </rect>
-        <text class="dom-delta neutral" x="540" y="18">50% · 0 pp</text>
+        <text class="dom-delta neutral" x="458" y="18">50% · 0 pp</text>
       </g></svg>
     </div>
 
