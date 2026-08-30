@@ -108,6 +108,10 @@
     {
       "slug": "sfinks-teby",
       "opis": "Empusa i Sfinks to kobieco-potworne istoty zesłane przez bogów, by nękać konkretny region — korynckie drogi i tebańską drogę. Obie żywią się ludźmi, którzy wpadają w ich pułapkę, i obie da się pokonać tylko wtedy, gdy odbierze się im ich przewagę: jedną płonącą nogę, drugiej pewność zagadki."
+    },
+    {
+      "slug": "pandora",
+      "opis": "Obie są gośćmi, których lepiej nie przyjmować: Empusa sama jest zaproszeniem — pałac, srebra, uczta — a Pandora jest darem z zakazem. Przy obu wystarczy jedno słowo, żeby rozpruć całość: nazwać potwór po imieniu (Filostrat IV.21–25) albo nie otwierać pokrywy (Hezjod 42–105). Różnica: Empusę zrywa trzeźwa obelga, Pandorę — sama ciekawość; obie znikają w momencie, gdy ktoś powie właściwą rzecz w złym momencie."
     }
   ],
   "meta": {
@@ -121,6 +125,10 @@
       {
         "data": "2026-08-29 21:36",
         "opis": "Korekty językowe sekcji II („którzy wpadają”, „precz gna obelga”) oraz powiązania ze Sfinksem."
+      },
+      {
+        "data": "2026-08-30 01:35",
+        "opis": "Pogłębienie sieci powiązań (C1): cztery nowe pary połączeń między bytami, oparte na źródłach już odnotowanych w kartotekach (Hezjod „Prace i dnie” 60–68, pseudo-Apollodoros „Biblioteka” 1.9.26, Filostrat IV.21–25, Lukian „Filopseudes” 34–36, Herodot 7.104, lasmgiel.pl/„Zaraza nadchodzi i odchodzi”)."
       }
     ]
   }

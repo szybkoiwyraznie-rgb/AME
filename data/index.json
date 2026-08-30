@@ -1,8 +1,8 @@
 {
   "wersja": 3,
-  "buildTime": "2026-08-29T22:38:55.707Z",
+  "buildTime": "2026-08-29T22:51:19.900Z",
   "liczba": 20,
-  "liczbaSkitow": 19,
+  "liczbaSkitow": 20,
   "kanon": {
     "kategorie": [
       {
@@ -681,6 +681,7 @@
       ],
       "powiazania": [
         "egungun",
+        "pandora",
         "selkie-sule-skerry",
         "sfinks-teby"
       ],
@@ -694,6 +695,7 @@
       ],
       "obraz": "assets/wizualizacje/empusa-korynt.jpg",
       "skity": [
+        "czwarty-stol",
         "dwa-zepsute-wesela",
         "dwie-skory",
         "komu-wolno-patrzec",
@@ -848,7 +850,8 @@
         "talos-kreta"
       ],
       "backlinki": [
-        "pandora"
+        "pandora",
+        "talos-kreta"
       ],
       "obraz": "assets/wizualizacje/knecht-z-koptos.jpg",
       "skity": []
@@ -919,10 +922,13 @@
         "sfinks-teby"
       ],
       "backlinki": [
-        "pandora"
+        "pandora",
+        "protostates"
       ],
       "obraz": "assets/wizualizacje/morowa-panna.jpg",
-      "skity": []
+      "skity": [
+        "czwarty-stol"
+      ]
     },
     {
       "slug": "nessos",
@@ -988,11 +994,15 @@
         "talos-kreta"
       ],
       "backlinki": [
+        "empusa-korynt",
         "knecht-z-koptos",
-        "morowa-panna"
+        "morowa-panna",
+        "talos-kreta"
       ],
       "obraz": "assets/wizualizacje/pandora.jpg",
-      "skity": []
+      "skity": [
+        "czwarty-stol"
+      ]
     },
     {
       "slug": "protostates",
@@ -1017,6 +1027,7 @@
       "powiazania": [
         "drangue-shala",
         "kentaur-pelion",
+        "morowa-panna",
         "sfinks-teby"
       ],
       "backlinki": [],
@@ -1169,7 +1180,9 @@
       "powiazania": [
         "balor",
         "kentaur-pelion",
+        "knecht-z-koptos",
         "nessos",
+        "pandora",
         "sfinks-teby"
       ],
       "backlinki": [
@@ -1202,6 +1215,23 @@
       ],
       "slow": 259,
       "data": "2026-08-28 23:59"
+    },
+    {
+      "slug": "czwarty-stol",
+      "tytul": "CZWARTY STÓŁ",
+      "temat": "kto siada przy stole, którego nikt nie nakrył: dar z zakazem, pytanie z jedną odpowiedzią i zaproszenie, które zjada gości",
+      "uczestnicy": [
+        "empusa-korynt",
+        "morowa-panna",
+        "pandora"
+      ],
+      "imiona": [
+        "Pandora",
+        "Morowa Panna",
+        "Empusa"
+      ],
+      "slow": 300,
+      "data": "2026-08-30 01:57"
     },
     {
       "slug": "dwa-grzbiety",
@@ -1503,6 +1533,46 @@
     }
   ],
   "aktualizacje": [
+    {
+      "data": "2026-08-30 01:57",
+      "typ": "skit",
+      "akcja": "zmiana",
+      "slug": "czwarty-stol",
+      "tytul": "CZWARTY STÓŁ",
+      "opis": "Nowy SKIT: trzy gościnie przy czwartym stole z Epoki I — rozmowa o tym, kto bierze, a kto tylko patrzy, lekko i bez patosu."
+    },
+    {
+      "data": "2026-08-30 01:57",
+      "typ": "skit",
+      "akcja": "nowy",
+      "slug": "czwarty-stol",
+      "tytul": "CZWARTY STÓŁ",
+      "opis": "SKIT — skład: Pandora, Morowa Panna, Empusa"
+    },
+    {
+      "data": "2026-08-30 01:35",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "protostates",
+      "tytul": "Protostates — fantom pierwszego szeregu",
+      "opis": "Pogłębienie sieci powiązań (C1): cztery nowe pary połączeń między bytami, oparte na źródłach już odnotowanych w kartotekach (Hezjod „Prace i dnie” 60–68, pseudo-Apollodoros „Biblioteka” 1.9.26, Filostrat IV.21–25, Lukian „Filopseudes” 34–36, Herodot 7.104, lasmgiel.pl/„Zaraza nadchodzi i odchodzi”)."
+    },
+    {
+      "data": "2026-08-30 01:35",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "talos-kreta",
+      "tytul": "Talos — spiżowy strażnik Krety",
+      "opis": "Pogłębienie sieci powiązań (C1): cztery nowe pary połączeń między bytami, oparte na źródłach już odnotowanych w kartotekach (Hezjod „Prace i dnie” 60–68, pseudo-Apollodoros „Biblioteka” 1.9.26, Filostrat IV.21–25, Lukian „Filopseudes” 34–36, Herodot 7.104, lasmgiel.pl/„Zaraza nadchodzi i odchodzi”)."
+    },
+    {
+      "data": "2026-08-30 01:35",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "empusa-korynt",
+      "tytul": "Empusa z Koryntu",
+      "opis": "Pogłębienie sieci powiązań (C1): cztery nowe pary połączeń między bytami, oparte na źródłach już odnotowanych w kartotekach (Hezjod „Prace i dnie” 60–68, pseudo-Apollodoros „Biblioteka” 1.9.26, Filostrat IV.21–25, Lukian „Filopseudes” 34–36, Herodot 7.104, lasmgiel.pl/„Zaraza nadchodzi i odchodzi”)."
+    },
     {
       "data": "2026-08-30 00:40",
       "typ": "manifestacja",

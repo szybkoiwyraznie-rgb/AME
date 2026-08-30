@@ -1,0 +1,30 @@
+{
+  "slug": "czwarty-stol",
+  "tytul": "CZWARTY STÓŁ",
+  "temat": "kto siada przy stole, którego nikt nie nakrył: dar z zakazem, pytanie z jedną odpowiedzią i zaproszenie, które zjada gości",
+  "uczestnicy": [
+    {
+      "imie": "Pandora",
+      "slug": "pandora"
+    },
+    {
+      "imie": "Morowa Panna",
+      "slug": "morowa-panna"
+    },
+    {
+      "imie": "Empusa",
+      "slug": "empusa-korynt"
+    }
+  ],
+  "tekst": "**Pandora:** [Odsuwa nakrycie z pustego stołu i stawia na nim swój słój.] Nikt nie przyszedł, więc pewnie stół jest dla mnie. Tylko powiedzcie: to się otwiera samo, czy ktoś musi otworzyć?\n\n**Morowa Panna:** [Staje w progu, wysoka i biała; czerwona chustka drży jej w dłoni.] Czy śpicie?\n\n**Pandora:** [Mruga.] Nie wiem. Mnie dopiero co ulepili — jak to się robi?\n\n**Morowa Panna:** [Kwili cicho.] To nie była odpowiedź. Powiedz po prostu: „śpimy”.\n\n**Pandora:** Ale ja nie śpię. Ja patrzę. I pytam: co to za chustka? Też się otwiera?\n\n**Morowa Panna:** [Chowa chustkę za plecami.] Nie dotykaj! To nie puszka!\n\n**Empusa:** [Rozkłada wokół stołu pałac: srebra, świece, służbę w liberii.] Kto u mnie gada o śnie, ten nie zna mojego menu. Siadajcie — wino, pieczeń, złote talerze. Nie pytajcie, co jest w środku.\n\n**Pandora:** [Słojem na kolanach.] A co jest w środku?\n\n**Empusa:** [Pałac drży.] Niczego się nie otwiera przy stole! To moja zasada.\n\n**Pandora:** U mnie też jest zasada: „nie otwierać”. Tylko nikt nie powiedział, dlaczego. [Unosi pokrywę na palec.] Może się komuś przyda?\n\n**Morowa Panna:** [Zasłania oczy.] Nie tak! Ja mam jedno pytanie i jedną odpowiedź, a ty mi je psujesz — nie wiem, czy mam cię przepuścić, czy zamknąć dom!\n\n**Empusa:** [Siada na złocie, które od razu wygląda jak zwykłe światło.] Ja mam sto sztuczek, a ta jedna ma sto pytań. Kto tak wychowuje gościa?\n\n**Pandora:** [Zamyka słój.] To powiedzcie mi wreszcie: kto siada przy czwartym stole? Bo każda z nas coś wzięła. Ty — [do Morowej] pytanie. Ty — [do Empusy] obiad. A ja — tylko zajrzałam.\n\n**Morowa Panna:** [Szeptem.] Kto nie wie, że bierze…\n\n**Empusa:** [Wzdycha i posuwa krzesło.] To nie ona bierze. To ją biorą — ludzie, którzy patrzą. Siadaj, dziecko. I nie otwieraj nic.\n\n**Pandora:** [Siada, kładąc słój na kolanach.] W końcu ktoś zaprosił.",
+  "meta": {
+    "utworzono": "2026-08-30 01:57",
+    "autor": "agent Areny — Pętla Jakości C3 (Epoka VI Kroniki)",
+    "modyfikacje": [
+      {
+        "data": "2026-08-30 01:57",
+        "opis": "Nowy SKIT: trzy gościnie przy czwartym stole z Epoki I — rozmowa o tym, kto bierze, a kto tylko patrzy, lekko i bez patosu."
+      }
+    ]
+  }
+}

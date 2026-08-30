@@ -403,6 +403,11 @@ export function zbudujPodsumowanieTomu({ tom, epoki, indeks, kanon }) {
   };
 }
 
+const RZYMSKIE = ['I','II','III','IV','V','VI','VII','VIII','IX','X','XI','XII'];
+function rzymskie(n) {
+  return RZYMSKIE[(n || 1) - 1] || String(n);
+}
+
 function esc(s) {
   return String(s ?? '')
     .replaceAll('&', '&amp;')
@@ -432,6 +437,11 @@ const EMOJI_BYTU = {
   'selkie-sule-skerry': '🦭',
   'sfinks-teby': '🦁',
   'talos-kreta': '🗿',
+  'knecht-z-koptos': '🪵',
+  'pandora': '🏺',
+  'protostates': '🛡️',
+  'syama-i-sarvara': '🐕',
+  'morowa-panna': '🧣',
 };
 
 function getEmoji(slug) {
@@ -1686,8 +1696,9 @@ export function generujRaportHTML(dane) {
 
   // Nawigacja między epokami
   const epokaNr = parseInt(dane.slug.replace('epoka-', ''), 10) || 1;
+  const liczbaEpok = dane.liczbaEpok || 5;
   const prevEpoka = epokaNr > 1 ? `kronika-epoka-${epokaNr - 1}.html` : null;
-  const nextEpoka = epokaNr < 5 ? `kronika-epoka-${epokaNr + 1}.html` : null;
+  const nextEpoka = epokaNr < liczbaEpok ? `kronika-epoka-${epokaNr + 1}.html` : null;
 
   return `<!doctype html>
 <html lang="pl">
@@ -1833,7 +1844,7 @@ export function generujRaportTomuHTML(podsumowanie, indeks, landD = '', manifest
   // Karty poszczególnych epok
   const kartyEpok = s.epoki
     .map((e) => {
-      const nrRzymski = e.slug.replace('epoka-1', 'I').replace('epoka-2', 'II').replace('epoka-3', 'III').replace('epoka-4', 'IV').replace('epoka-5', 'V');
+      const nrRzymski = rzymskie(parseInt(e.slug.replace('epoka-', ''), 10) || 1);
       const delty = (e.konsekwencje.zasieg || [])
         .map((z) => {
           const d = Math.round((z.po - z.przed) * 100);
@@ -1918,7 +1929,7 @@ ${generujTopbarHTML('tom-1')}
 <div class="hero">
   <div class="badges">
     <span class="badge tom">Tom I</span>
-    <span class="badge ok">5 epok zamkniętych</span>
+    <span class="badge ok">${s.epoki.length} epok zamkniętych</span>
     <span class="badge">Oś stabilna: MIT ${mit}% / RAC ${rac}%</span>
   </div>
   <h1>${esc(s.tytulTomu)}</h1>
@@ -1968,7 +1979,7 @@ ${mapaSvg}
     <!-- BYTY I PALIWO -->
     <div class="card">
       <h2>Uczestnicy i stan pamięci</h2>
-      <div class="card-sub">Paliwo zgromadzone w archiwum oraz zasięg wpływów po 5 epokach.</div>
+      <div class="card-sub">Paliwo zgromadzone w archiwum oraz zasięg wpływów po ${s.epoki.length} epokach.</div>
       <ul>${byty}</ul>
     </div>
 
@@ -2109,6 +2120,7 @@ async function main() {
         landD,
         manifestacjePelne,
         indeks,
+        liczbaEpok: podsumowanie.epoki.length,
       }),
     };
   });

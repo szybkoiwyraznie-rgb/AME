@@ -6,8 +6,8 @@
   "status": "otwarta",
   "stanStart": {
     "os": {
-      "mit": 35,
-      "racjonalizacja": 65
+      "mit": 36,
+      "racjonalizacja": 64
     },
     "zasieg": [
       {
@@ -36,7 +36,7 @@
       },
       {
         "slug": "empusa-korynt",
-        "wielkosc": 0.452
+        "wielkosc": 0.476
       },
       {
         "slug": "indra",
@@ -52,7 +52,7 @@
       },
       {
         "slug": "knecht-z-koptos",
-        "wielkosc": 0.209
+        "wielkosc": 0.233
       },
       {
         "slug": "lincoln-imp",
@@ -60,7 +60,7 @@
       },
       {
         "slug": "morowa-panna",
-        "wielkosc": 0.209
+        "wielkosc": 0.258
       },
       {
         "slug": "nessos",
@@ -68,7 +68,7 @@
       },
       {
         "slug": "pandora",
-        "wielkosc": 0.233
+        "wielkosc": 0.306
       },
       {
         "slug": "protostates",
@@ -125,7 +125,7 @@
       {
         "kultura": "grecja",
         "kult": "empusa-korynt",
-        "wielkosc": 0.452
+        "wielkosc": 0.476
       },
       {
         "kultura": "indie",
@@ -145,7 +145,7 @@
       {
         "kultura": "grecja",
         "kult": "knecht-z-koptos",
-        "wielkosc": 0.209
+        "wielkosc": 0.233
       },
       {
         "kultura": "anglia",
@@ -155,7 +155,7 @@
       {
         "kultura": "polska",
         "kult": "morowa-panna",
-        "wielkosc": 0.209
+        "wielkosc": 0.258
       },
       {
         "kultura": "grecja",
@@ -165,7 +165,7 @@
       {
         "kultura": "grecja",
         "kult": "pandora",
-        "wielkosc": 0.233
+        "wielkosc": 0.306
       },
       {
         "kultura": "grecja",

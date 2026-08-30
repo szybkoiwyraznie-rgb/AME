@@ -49,8 +49,8 @@
       ],
       "stanPo": {
         "os": {
-          "mit": 33,
-          "racjonalizacja": 67
+          "mit": 34,
+          "racjonalizacja": 66
         },
         "zasieg": [
           {
@@ -79,7 +79,7 @@
           },
           {
             "slug": "empusa-korynt",
-            "wielkosc": 0.452
+            "wielkosc": 0.476
           },
           {
             "slug": "indra",
@@ -95,7 +95,7 @@
           },
           {
             "slug": "knecht-z-koptos",
-            "wielkosc": 0.209
+            "wielkosc": 0.233
           },
           {
             "slug": "lincoln-imp",
@@ -103,7 +103,7 @@
           },
           {
             "slug": "morowa-panna",
-            "wielkosc": 0.209
+            "wielkosc": 0.258
           },
           {
             "slug": "nessos",
@@ -111,7 +111,7 @@
           },
           {
             "slug": "pandora",
-            "wielkosc": 0.233
+            "wielkosc": 0.306
           },
           {
             "slug": "protostates",
@@ -168,7 +168,7 @@
           {
             "kultura": "grecja",
             "kult": "empusa-korynt",
-            "wielkosc": 0.452
+            "wielkosc": 0.476
           },
           {
             "kultura": "indie",
@@ -188,7 +188,7 @@
           {
             "kultura": "grecja",
             "kult": "knecht-z-koptos",
-            "wielkosc": 0.209
+            "wielkosc": 0.233
           },
           {
             "kultura": "anglia",
@@ -198,7 +198,7 @@
           {
             "kultura": "polska",
             "kult": "morowa-panna",
-            "wielkosc": 0.209
+            "wielkosc": 0.258
           },
           {
             "kultura": "grecja",
@@ -208,7 +208,7 @@
           {
             "kultura": "grecja",
             "kult": "pandora",
-            "wielkosc": 0.233
+            "wielkosc": 0.306
           },
           {
             "kultura": "grecja",
@@ -409,8 +409,8 @@
       ],
       "stanPo": {
         "os": {
-          "mit": 31,
-          "racjonalizacja": 69
+          "mit": 32,
+          "racjonalizacja": 68
         },
         "zasieg": [
           {
@@ -439,7 +439,7 @@
           },
           {
             "slug": "empusa-korynt",
-            "wielkosc": 0.472
+            "wielkosc": 0.496
           },
           {
             "slug": "indra",
@@ -455,7 +455,7 @@
           },
           {
             "slug": "knecht-z-koptos",
-            "wielkosc": 0.209
+            "wielkosc": 0.233
           },
           {
             "slug": "lincoln-imp",
@@ -463,7 +463,7 @@
           },
           {
             "slug": "morowa-panna",
-            "wielkosc": 0.209
+            "wielkosc": 0.258
           },
           {
             "slug": "nessos",
@@ -471,7 +471,7 @@
           },
           {
             "slug": "pandora",
-            "wielkosc": 0.233
+            "wielkosc": 0.306
           },
           {
             "slug": "protostates",
@@ -528,7 +528,7 @@
           {
             "kultura": "grecja",
             "kult": "empusa-korynt",
-            "wielkosc": 0.472
+            "wielkosc": 0.496
           },
           {
             "kultura": "indie",
@@ -548,7 +548,7 @@
           {
             "kultura": "grecja",
             "kult": "knecht-z-koptos",
-            "wielkosc": 0.209
+            "wielkosc": 0.233
           },
           {
             "kultura": "anglia",
@@ -558,7 +558,7 @@
           {
             "kultura": "polska",
             "kult": "morowa-panna",
-            "wielkosc": 0.209
+            "wielkosc": 0.258
           },
           {
             "kultura": "grecja",
@@ -568,7 +568,7 @@
           {
             "kultura": "grecja",
             "kult": "pandora",
-            "wielkosc": 0.233
+            "wielkosc": 0.306
           },
           {
             "kultura": "grecja",
@@ -641,8 +641,8 @@
           },
           {
             "slug": "empusa-korynt",
-            "przed": 0.452,
-            "po": 0.472,
+            "przed": 0.476,
+            "po": 0.496,
             "delta": 0.02,
             "opis": "Świat zaczyna sprawdzać domy jednym trzeźwym słowem; sam rytuał rozpoznania zamienia Empusę w znaną przestrogę i podsyca jej legendę."
           }
@@ -665,8 +665,8 @@
           {
             "kultura": "grecja",
             "kult": "empusa-korynt",
-            "przed": 0.452,
-            "po": 0.472,
+            "przed": 0.476,
+            "po": 0.496,
             "delta": 0.02
           }
         ],
@@ -781,8 +781,8 @@
       ],
       "stanPo": {
         "os": {
-          "mit": 29,
-          "racjonalizacja": 71
+          "mit": 30,
+          "racjonalizacja": 70
         },
         "zasieg": [
           {
@@ -811,7 +811,7 @@
           },
           {
             "slug": "empusa-korynt",
-            "wielkosc": 0.472
+            "wielkosc": 0.496
           },
           {
             "slug": "indra",
@@ -827,7 +827,7 @@
           },
           {
             "slug": "knecht-z-koptos",
-            "wielkosc": 0.209
+            "wielkosc": 0.233
           },
           {
             "slug": "lincoln-imp",
@@ -835,7 +835,7 @@
           },
           {
             "slug": "morowa-panna",
-            "wielkosc": 0.209
+            "wielkosc": 0.258
           },
           {
             "slug": "nessos",
@@ -843,7 +843,7 @@
           },
           {
             "slug": "pandora",
-            "wielkosc": 0.233
+            "wielkosc": 0.306
           },
           {
             "slug": "protostates",
@@ -900,7 +900,7 @@
           {
             "kultura": "grecja",
             "kult": "empusa-korynt",
-            "wielkosc": 0.472
+            "wielkosc": 0.496
           },
           {
             "kultura": "indie",
@@ -920,7 +920,7 @@
           {
             "kultura": "grecja",
             "kult": "knecht-z-koptos",
-            "wielkosc": 0.209
+            "wielkosc": 0.233
           },
           {
             "kultura": "anglia",
@@ -930,7 +930,7 @@
           {
             "kultura": "polska",
             "kult": "morowa-panna",
-            "wielkosc": 0.209
+            "wielkosc": 0.258
           },
           {
             "kultura": "grecja",
@@ -940,7 +940,7 @@
           {
             "kultura": "grecja",
             "kult": "pandora",
-            "wielkosc": 0.233
+            "wielkosc": 0.306
           },
           {
             "kultura": "grecja",
@@ -1020,8 +1020,8 @@
           },
           {
             "slug": "empusa-korynt",
-            "przed": 0.472,
-            "po": 0.472,
+            "przed": 0.496,
+            "po": 0.496,
             "delta": 0,
             "opis": "Empusa zostaje nienazwana: świat wie, że padnięcie imienia ją rozwiązuje, więc opowiada o niej ostrożnie — na granicy mitu."
           }
@@ -1044,8 +1044,8 @@
           {
             "kultura": "grecja",
             "kult": "empusa-korynt",
-            "przed": 0.472,
-            "po": 0.472,
+            "przed": 0.496,
+            "po": 0.496,
             "delta": 0
           }
         ],
@@ -1167,8 +1167,8 @@
       ],
       "stanPo": {
         "os": {
-          "mit": 28,
-          "racjonalizacja": 72
+          "mit": 29,
+          "racjonalizacja": 71
         },
         "zasieg": [
           {
@@ -1197,7 +1197,7 @@
           },
           {
             "slug": "empusa-korynt",
-            "wielkosc": 0.472
+            "wielkosc": 0.496
           },
           {
             "slug": "indra",
@@ -1213,7 +1213,7 @@
           },
           {
             "slug": "knecht-z-koptos",
-            "wielkosc": 0.209
+            "wielkosc": 0.233
           },
           {
             "slug": "lincoln-imp",
@@ -1221,7 +1221,7 @@
           },
           {
             "slug": "morowa-panna",
-            "wielkosc": 0.209
+            "wielkosc": 0.258
           },
           {
             "slug": "nessos",
@@ -1229,7 +1229,7 @@
           },
           {
             "slug": "pandora",
-            "wielkosc": 0.233
+            "wielkosc": 0.306
           },
           {
             "slug": "protostates",
@@ -1286,7 +1286,7 @@
           {
             "kultura": "grecja",
             "kult": "empusa-korynt",
-            "wielkosc": 0.472
+            "wielkosc": 0.496
           },
           {
             "kultura": "indie",
@@ -1306,7 +1306,7 @@
           {
             "kultura": "grecja",
             "kult": "knecht-z-koptos",
-            "wielkosc": 0.209
+            "wielkosc": 0.233
           },
           {
             "kultura": "anglia",
@@ -1316,7 +1316,7 @@
           {
             "kultura": "polska",
             "kult": "morowa-panna",
-            "wielkosc": 0.209
+            "wielkosc": 0.258
           },
           {
             "kultura": "grecja",
@@ -1326,7 +1326,7 @@
           {
             "kultura": "grecja",
             "kult": "pandora",
-            "wielkosc": 0.233
+            "wielkosc": 0.306
           },
           {
             "kultura": "grecja",
@@ -1555,8 +1555,8 @@
       ],
       "stanPo": {
         "os": {
-          "mit": 27,
-          "racjonalizacja": 73
+          "mit": 28,
+          "racjonalizacja": 72
         },
         "zasieg": [
           {
@@ -1585,7 +1585,7 @@
           },
           {
             "slug": "empusa-korynt",
-            "wielkosc": 0.472
+            "wielkosc": 0.496
           },
           {
             "slug": "indra",
@@ -1601,7 +1601,7 @@
           },
           {
             "slug": "knecht-z-koptos",
-            "wielkosc": 0.209
+            "wielkosc": 0.233
           },
           {
             "slug": "lincoln-imp",
@@ -1609,7 +1609,7 @@
           },
           {
             "slug": "morowa-panna",
-            "wielkosc": 0.209
+            "wielkosc": 0.258
           },
           {
             "slug": "nessos",
@@ -1617,7 +1617,7 @@
           },
           {
             "slug": "pandora",
-            "wielkosc": 0.233
+            "wielkosc": 0.306
           },
           {
             "slug": "protostates",
@@ -1674,7 +1674,7 @@
           {
             "kultura": "grecja",
             "kult": "empusa-korynt",
-            "wielkosc": 0.472
+            "wielkosc": 0.496
           },
           {
             "kultura": "indie",
@@ -1694,7 +1694,7 @@
           {
             "kultura": "grecja",
             "kult": "knecht-z-koptos",
-            "wielkosc": 0.209
+            "wielkosc": 0.233
           },
           {
             "kultura": "anglia",
@@ -1704,7 +1704,7 @@
           {
             "kultura": "polska",
             "kult": "morowa-panna",
-            "wielkosc": 0.209
+            "wielkosc": 0.258
           },
           {
             "kultura": "grecja",
@@ -1714,7 +1714,7 @@
           {
             "kultura": "grecja",
             "kult": "pandora",
-            "wielkosc": 0.233
+            "wielkosc": 0.306
           },
           {
             "kultura": "grecja",
@@ -1898,6 +1898,398 @@
         ],
         "podsumowanie": "Zagadka Sfinksa traci swą bezwzględną moc, gdy trafia na istotę pozbawioną lęku lub na złośliwy śmiech. Świat antyczny zderza się z gotycką ironią i mechanicznym automatyzmem."
       }
+    },
+    {
+      "slug": "epoka-6",
+      "tytul": "Czwarty stół: kto nie wie, że bierze",
+      "skit": "czwarty-stol",
+      "walidacja": true,
+      "bledy": [],
+      "uczestnicy": [
+        {
+          "slug": "pandora",
+          "nazwa": "Pandora — pierwsza kobieta i pithos, w którym została nadzieja",
+          "rola": "Dar, który zajrzał",
+          "pasywne": 15,
+          "saldoPrzed": 15,
+          "kosztUdzialu": 2,
+          "kosztKlucza": 0,
+          "boost": 0,
+          "zwrot": 2,
+          "saldoPo": 15
+        },
+        {
+          "slug": "morowa-panna",
+          "nazwa": "Morowa Panna — zaraza w białej szacie z czerwoną chustą",
+          "rola": "Pytanie z jedną odpowiedzią",
+          "pasywne": 11,
+          "saldoPrzed": 11,
+          "kosztUdzialu": 2,
+          "kosztKlucza": 0,
+          "boost": 0,
+          "zwrot": 0,
+          "saldoPo": 9
+        },
+        {
+          "slug": "empusa-korynt",
+          "nazwa": "Empusa z Koryntu",
+          "rola": "Zaproszenie, które zjada gości",
+          "pasywne": 19,
+          "saldoPrzed": 19,
+          "kosztUdzialu": 2,
+          "kosztKlucza": 0,
+          "boost": 0,
+          "zwrot": 1,
+          "saldoPo": 18
+        }
+      ],
+      "stanPo": {
+        "os": {
+          "mit": 27,
+          "racjonalizacja": 73
+        },
+        "zasieg": [
+          {
+            "slug": "agni",
+            "wielkosc": 0.318
+          },
+          {
+            "slug": "balor",
+            "wielkosc": 0.5
+          },
+          {
+            "slug": "barbarossa-kyffhaeuser",
+            "wielkosc": 0.427
+          },
+          {
+            "slug": "ben-varrey",
+            "wielkosc": 0.27
+          },
+          {
+            "slug": "drangue-shala",
+            "wielkosc": 0.464
+          },
+          {
+            "slug": "egungun",
+            "wielkosc": 0.548
+          },
+          {
+            "slug": "empusa-korynt",
+            "wielkosc": 0.501
+          },
+          {
+            "slug": "indra",
+            "wielkosc": 0.345
+          },
+          {
+            "slug": "kannon-hase",
+            "wielkosc": 0.318
+          },
+          {
+            "slug": "kentaur-pelion",
+            "wielkosc": 0.399
+          },
+          {
+            "slug": "knecht-z-koptos",
+            "wielkosc": 0.233
+          },
+          {
+            "slug": "lincoln-imp",
+            "wielkosc": 0.406
+          },
+          {
+            "slug": "morowa-panna",
+            "wielkosc": 0.243
+          },
+          {
+            "slug": "nessos",
+            "wielkosc": 0.33
+          },
+          {
+            "slug": "pandora",
+            "wielkosc": 0.316
+          },
+          {
+            "slug": "protostates",
+            "wielkosc": 0.185
+          },
+          {
+            "slug": "selkie-sule-skerry",
+            "wielkosc": 0.478
+          },
+          {
+            "slug": "sfinks-teby",
+            "wielkosc": 0.381
+          },
+          {
+            "slug": "syama-i-sarvara",
+            "wielkosc": 0.197
+          },
+          {
+            "slug": "talos-kreta",
+            "wielkosc": 0.337
+          }
+        ],
+        "dominacje": [
+          {
+            "kultura": "indie",
+            "kult": "agni",
+            "wielkosc": 0.318
+          },
+          {
+            "kultura": "irlandia",
+            "kult": "balor",
+            "wielkosc": 0.5
+          },
+          {
+            "kultura": "niemcy",
+            "kult": "barbarossa-kyffhaeuser",
+            "wielkosc": 0.427
+          },
+          {
+            "kultura": "man",
+            "kult": "ben-varrey",
+            "wielkosc": 0.27
+          },
+          {
+            "kultura": "albania",
+            "kult": "drangue-shala",
+            "wielkosc": 0.464
+          },
+          {
+            "kultura": "joruba",
+            "kult": "egungun",
+            "wielkosc": 0.548
+          },
+          {
+            "kultura": "grecja",
+            "kult": "empusa-korynt",
+            "wielkosc": 0.501
+          },
+          {
+            "kultura": "indie",
+            "kult": "indra",
+            "wielkosc": 0.345
+          },
+          {
+            "kultura": "japonia",
+            "kult": "kannon-hase",
+            "wielkosc": 0.318
+          },
+          {
+            "kultura": "grecja",
+            "kult": "kentaur-pelion",
+            "wielkosc": 0.399
+          },
+          {
+            "kultura": "grecja",
+            "kult": "knecht-z-koptos",
+            "wielkosc": 0.233
+          },
+          {
+            "kultura": "anglia",
+            "kult": "lincoln-imp",
+            "wielkosc": 0.406
+          },
+          {
+            "kultura": "polska",
+            "kult": "morowa-panna",
+            "wielkosc": 0.243
+          },
+          {
+            "kultura": "grecja",
+            "kult": "nessos",
+            "wielkosc": 0.33
+          },
+          {
+            "kultura": "grecja",
+            "kult": "pandora",
+            "wielkosc": 0.316
+          },
+          {
+            "kultura": "grecja",
+            "kult": "protostates",
+            "wielkosc": 0.185
+          },
+          {
+            "kultura": "szkocja-polnocna",
+            "kult": "selkie-sule-skerry",
+            "wielkosc": 0.478
+          },
+          {
+            "kultura": "grecja",
+            "kult": "sfinks-teby",
+            "wielkosc": 0.381
+          },
+          {
+            "kultura": "indie",
+            "kult": "syama-i-sarvara",
+            "wielkosc": 0.197
+          },
+          {
+            "kultura": "grecja",
+            "kult": "talos-kreta",
+            "wielkosc": 0.337
+          }
+        ],
+        "paliwo": {
+          "egungun": 29,
+          "barbarossa-kyffhaeuser": 15,
+          "kentaur-pelion": 14,
+          "lincoln-imp": 12,
+          "empusa-korynt": 18,
+          "balor": 19,
+          "selkie-sule-skerry": 22,
+          "indra": 11,
+          "sfinks-teby": 20,
+          "talos-kreta": 16,
+          "pandora": 15,
+          "morowa-panna": 9
+        }
+      },
+      "konsekwencje": {
+        "os": {
+          "mit": -1,
+          "racjonalizacja": 1,
+          "opis": "Rytuał Morowej Panny pęka na szczerej niewiedzy: ludzie zaczynają rozumieć, że pytanie o próg można rozbroić uczciwą odpowiedzią — świat znów rozumie więcej, niż wierzy."
+        },
+        "relacje": [
+          {
+            "od": "pandora",
+            "do": "morowa-panna",
+            "kierunek": "schłodzenie",
+            "opis": "Pandora łamie rytuał nie z przekory, lecz z niewiedzy — Morowa Panna nie może jej ani przepuścić, ani zamknąć domu."
+          },
+          {
+            "od": "empusa-korynt",
+            "do": "pandora",
+            "kierunek": "wzmocnienie",
+            "opis": "Iluzja Empusy działa na Pandorę najlepiej z możliwych: ta nie umie porównać złota ze światłem, więc pałac stoi, a gospodyni dostaje widza idealnego."
+          },
+          {
+            "od": "morowa-panna",
+            "do": "empusa-korynt",
+            "kierunek": "schłodzenie",
+            "opis": "Obie pracują słowem, ale przepis Morowej Panny i teatr Empusy nie znoszą się wzajemnie — jedna potrzebuje jednej prawdy, druga stu pozorów."
+          }
+        ],
+        "zasieg": [
+          {
+            "slug": "pandora",
+            "przed": 0.306,
+            "po": 0.316,
+            "delta": 0.01,
+            "opis": "Opowieść o darze, który zajrzał do środka, obiega gospody: nadzieja na dnie naczynia zaczyna być widoczna."
+          },
+          {
+            "slug": "morowa-panna",
+            "przed": 0.258,
+            "po": 0.243,
+            "delta": -0.015,
+            "opis": "Ludzie ćwiczą szczerą odpowiedź na jej pytanie; rytuał traci jedną z nóg."
+          },
+          {
+            "slug": "empusa-korynt",
+            "przed": 0.496,
+            "po": 0.501,
+            "delta": 0.005,
+            "opis": "Iluzja zyskuje sojuszniczkę, która nie widzi różnicy — ale tylko dopóki ta nie nauczy się pytać."
+          }
+        ],
+        "dominacje": [
+          {
+            "kultura": "grecja",
+            "kult": "pandora",
+            "przed": 0.306,
+            "po": 0.316,
+            "delta": 0.01
+          },
+          {
+            "kultura": "polska",
+            "kult": "morowa-panna",
+            "przed": 0.258,
+            "po": 0.243,
+            "delta": -0.015
+          },
+          {
+            "kultura": "grecja",
+            "kult": "empusa-korynt",
+            "przed": 0.496,
+            "po": 0.501,
+            "delta": 0.005
+          }
+        ],
+        "pozycje": [
+          {
+            "slug": "pandora",
+            "status": "wzmocniony",
+            "opis": "Jej niewiedza okazuje się kluczem do czwartego stołu — i do naczynia, które wciąż ma zamknięte."
+          },
+          {
+            "slug": "morowa-panna",
+            "status": "zraniony",
+            "opis": "Przepis pęka w zderzeniu ze szczerością; pytanie nadal działa, ale straciło jedną z nóg."
+          },
+          {
+            "slug": "empusa-korynt",
+            "status": "odporny",
+            "opis": "Pałac stoi, bo widz, który nie porównuje, niczego nie psuje — dopóki nie zacznie pytać."
+          }
+        ],
+        "watki": [
+          {
+            "id": "czwarty-stol",
+            "stan": "zamkniety",
+            "opis": "Przy czwartym stole siada ten, kto nie wie, że bierze — w Tomie I zasiada Pandora. Stół przestaje być pytaniem."
+          },
+          {
+            "id": "wedrowny-dom-empusy",
+            "stan": "otwarty",
+            "opis": "Czy słowo-poznanie straci moc, gdy pojawi się ktoś, kto naprawdę nie umie porównać złota ze światłem? I czy taką osobę da się tego nauczyć?"
+          },
+          {
+            "id": "warunek-barbarossy",
+            "stan": "otwarty",
+            "opis": "Dlaczego cesarz woli płacić, żeby gość wyszedł, zamiast przyjąć go przy stole?"
+          },
+          {
+            "id": "kres-indry",
+            "stan": "otwarty",
+            "opis": "Czy kres można oddać, czy tylko przekroczyć? Co znaczy wybrać własną granicę, gdy świat przestaje ją respektować?"
+          },
+          {
+            "id": "niewinny-bierca",
+            "stan": "otwarty",
+            "opis": "Czy ten, kto bierze, nie wiedząc, że bierze, jest winny? Pandora zajrzała do naczynia — co się stanie, gdy naprawdę się dowie, co wypuściła?"
+          }
+        ]
+      },
+      "narrator": {
+        "ocena": [
+          {
+            "kto": "morowa-panna",
+            "kogo": "pandora",
+            "stopien": 1,
+            "kontekst": "próba rytuału progu",
+            "komentarz": "Morowa Panna próbuje przeprowadzić swój test „Czy śpicie?”, ale szczera niewiedza Pandory wybija ją z przepisu — nie jest to jednak atak, tylko zderzenie dwóch porządków słowa."
+          },
+          {
+            "kto": "empusa-korynt",
+            "kogo": "morowa-panna",
+            "stopien": 2,
+            "kontekst": "kpina z jednej odpowiedzi",
+            "komentarz": "Empusa wyśmiewa sztywny rytuał Morowej Panny, pokazując, że jedno pytanie i jedna odpowiedź to najsłabszy możliwy przepis na gościa, który potrafi odpowiedzieć szczerze."
+          },
+          {
+            "kto": "pandora",
+            "kogo": "empusa-korynt",
+            "stopien": 1,
+            "kontekst": "niewinne pytanie",
+            "komentarz": "Pandora pyta o zawartość każdej rzeczy — Empusa drży, bo jej pałac też ma „środek”, którego nie wolno otwierać, a pytanie pada czysto i bez złośliwości."
+          }
+        ],
+        "podsumowanie": "Trzy porządki brania spotykają się przy pustym stole: dar z zakazem, przepis z jedną odpowiedzią i iluzja, która zjada gości. Żaden nie potrafi rozstrzygnąć pytania, a rozwiązanie przychodzi z zaskoczenia — siada ten, kto bierze, bo nie wie, że bierze."
+      }
     }
   ],
   "stanPo": {
@@ -1932,7 +2324,7 @@
       },
       {
         "slug": "empusa-korynt",
-        "wielkosc": 0.472
+        "wielkosc": 0.501
       },
       {
         "slug": "indra",
@@ -1948,7 +2340,7 @@
       },
       {
         "slug": "knecht-z-koptos",
-        "wielkosc": 0.209
+        "wielkosc": 0.233
       },
       {
         "slug": "lincoln-imp",
@@ -1956,7 +2348,7 @@
       },
       {
         "slug": "morowa-panna",
-        "wielkosc": 0.209
+        "wielkosc": 0.243
       },
       {
         "slug": "nessos",
@@ -1964,7 +2356,7 @@
       },
       {
         "slug": "pandora",
-        "wielkosc": 0.233
+        "wielkosc": 0.316
       },
       {
         "slug": "protostates",
@@ -2021,7 +2413,7 @@
       {
         "kultura": "grecja",
         "kult": "empusa-korynt",
-        "wielkosc": 0.472
+        "wielkosc": 0.501
       },
       {
         "kultura": "indie",
@@ -2041,7 +2433,7 @@
       {
         "kultura": "grecja",
         "kult": "knecht-z-koptos",
-        "wielkosc": 0.209
+        "wielkosc": 0.233
       },
       {
         "kultura": "anglia",
@@ -2051,7 +2443,7 @@
       {
         "kultura": "polska",
         "kult": "morowa-panna",
-        "wielkosc": 0.209
+        "wielkosc": 0.243
       },
       {
         "kultura": "grecja",
@@ -2061,7 +2453,7 @@
       {
         "kultura": "grecja",
         "kult": "pandora",
-        "wielkosc": 0.233
+        "wielkosc": 0.316
       },
       {
         "kultura": "grecja",
@@ -2094,12 +2486,14 @@
       "barbarossa-kyffhaeuser": 15,
       "kentaur-pelion": 14,
       "lincoln-imp": 12,
-      "empusa-korynt": 19,
+      "empusa-korynt": 18,
       "balor": 19,
       "selkie-sule-skerry": 22,
       "indra": 11,
       "sfinks-teby": 20,
-      "talos-kreta": 16
+      "talos-kreta": 16,
+      "pandora": 15,
+      "morowa-panna": 9
     }
   },
   "walidacja": true,

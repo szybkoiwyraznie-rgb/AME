@@ -99,6 +99,10 @@
     {
       "slug": "sfinks-teby",
       "opis": "Sfinks i protostates pilnują przejścia: przy Tebach bramą jest pytanie, w Termopilach — pierwsze cięcie. Obie są nie do obejścia z boku i obie wymagają od podróżnego tej samej rzeczy: odpowiedzi albo postawy. Kto potrafi rozwiązać zagadkę sfinksa, ten wie też, że przed protostatesem trzeba stanąć, a nie biec."
+    },
+    {
+      "slug": "morowa-panna",
+      "opis": "Dwa porządki progu, dwa sposoby domagania się odpowiedzi: Morowa Panna pyta u drzwi „Czy śpicie?” i zabiera dom, gdy padnie zła odpowiedź (lasmgiel.pl, „Zaraza nadchodzi i odchodzi”), a Protostates stoi w przejściu i uderza pierwszy, zanim ktokolwiek zdąży odpowiedzieć krokiem (Herodot 7.104). Obaj trwają, dopóki wspólnota ich wzywa — panna gaśnie, gdy ludzie odpowiedzą „chwalimy Boga”, fantom znika, gdy nikt już nie pamięta pierwszego szeregu."
     }
   ],
   "meta": {
@@ -116,6 +120,10 @@
       {
         "data": "2026-08-30 00:38",
         "opis": "Audyt Kartoteki: poprawki językowe i doprecyzowanie zdań (odmiana, literówki, spójność z mitem)."
+      },
+      {
+        "data": "2026-08-30 01:35",
+        "opis": "Pogłębienie sieci powiązań (C1): cztery nowe pary połączeń między bytami, oparte na źródłach już odnotowanych w kartotekach (Hezjod „Prace i dnie” 60–68, pseudo-Apollodoros „Biblioteka” 1.9.26, Filostrat IV.21–25, Lukian „Filopseudes” 34–36, Herodot 7.104, lasmgiel.pl/„Zaraza nadchodzi i odchodzi”)."
       }
     ]
   }
