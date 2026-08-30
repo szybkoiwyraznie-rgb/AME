@@ -1,6 +1,6 @@
 {
   "wersja": 3,
-  "buildTime": "2026-08-29T22:51:19.900Z",
+  "buildTime": "2026-08-30T09:37:32.593Z",
   "liczba": 20,
   "liczbaSkitow": 20,
   "kanon": {
@@ -846,11 +846,13 @@
       ],
       "powiazania": [
         "pandora",
+        "protostates",
         "sfinks-teby",
         "talos-kreta"
       ],
       "backlinki": [
         "pandora",
+        "protostates",
         "talos-kreta"
       ],
       "obraz": "assets/wizualizacje/knecht-z-koptos.jpg",
@@ -1027,10 +1029,15 @@
       "powiazania": [
         "drangue-shala",
         "kentaur-pelion",
+        "knecht-z-koptos",
         "morowa-panna",
-        "sfinks-teby"
+        "sfinks-teby",
+        "syama-i-sarvara"
       ],
-      "backlinki": [],
+      "backlinki": [
+        "knecht-z-koptos",
+        "syama-i-sarvara"
+      ],
       "obraz": "assets/wizualizacje/protostates.jpg",
       "skity": []
     },
@@ -1149,9 +1156,12 @@
       "powiazania": [
         "agni",
         "kannon-hase",
+        "protostates",
         "sfinks-teby"
       ],
-      "backlinki": [],
+      "backlinki": [
+        "protostates"
+      ],
       "obraz": "assets/wizualizacje/syama-i-sarvara.jpg",
       "skity": []
     },
@@ -1533,6 +1543,30 @@
     }
   ],
   "aktualizacje": [
+    {
+      "data": "2026-08-30 10:05",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "knecht-z-koptos",
+      "tytul": "Knecht z Koptos — ożywiony tłuczek, który nie zna słowa końca",
+      "opis": "Pętla Jakości C1: powiązanie z protostatesem — dwa porządki trwające na rozkazie i pamięci."
+    },
+    {
+      "data": "2026-08-30 10:05",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "protostates",
+      "tytul": "Protostates — fantom pierwszego szeregu",
+      "opis": "Pętla Jakości C1: pogłębiony Protostates — 2 nowe źródła (Tukidydes 5.66–70 — pierwszy szereg 448 ludzi; Herodot VII, 226 — Dienekes „w cieniu”) + nowe powiązania z knechtem z Koptos i psami Yamy."
+    },
+    {
+      "data": "2026-08-30 10:05",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "syama-i-sarvara",
+      "tytul": "Śyāma i Śarvara — czterookie psy Yamy, strażnicy drogi przodków",
+      "opis": "Pętla Jakości C1: powiązanie z protostatesem — dwie strony jednego progu (przejście dla żywych i droga przodków)."
+    },
     {
       "data": "2026-08-30 01:57",
       "typ": "skit",

@@ -1,131 +1,139 @@
 {
-  "slug": "knecht-z-koptos",
-  "nazwa": "Knecht z Koptos — ożywiony tłuczek, który nie zna słowa końca",
-  "nazwy_alternatywne": [
-    "Tłuczek Pankratesa",
-    "Knecht",
-    "Sługa trzech sylab",
-    "Niosący wodę"
-  ],
-  "karta": {
-    "nazwa": "Apprentice Wizard",
-    "wydanie": "Double Masters (2XM) #40",
-    "rok": 2020
-  },
-  "lokalizacja": {
-    "miejscowosc": "Koptos nad Nilem (Górny Egipt) — w opowieści Eukratesa to tu ożywiony tłuczek nosi wodę i zalewa dom; motyw wędrował z Grecji przez Rzym do Niemiec, gdzie ballada Goethego nadała mu drugie życie",
-    "kraj": "Egipt (tradycja grecka)",
-    "lat": 26.0,
-    "lon": 32.81
-  },
-  "pochodzenie_i_kultura": "Tradycja grecka — opowieść w „Filopseudesie” („Miłośniku kłamstw”) Lukiana z Samosaty (ok. 150 n.e.): młody Eukrates w Koptos podgląda egipskiego maga Pankratesa, który ożywia przedmioty trzema sylabami, a potem sam próbuje tej sztuki i nie potrafi już zatrzymać tłuczka. Byt wziąłem z tej właśnie opowieści — jedna tradycja, jeden motyw; balladę Goethego (1797, wyd. 1798) traktuję jako jej nowożytne echo i świadectwo wędrówki baśniowego typu, nie jako drugą kulturę.",
-  "wizualizacja": {
-    "prompt": "Style: A wide-angle full-body cinematic photograph. The central objects/persons of the photo are visible from head to toe, standing centrally in the frame. No parts of the body are cropped.\n\nA weathered wooden pestle standing upright on two stubby legs, a coarse linen rag wrapped around its head like a servant's hood, a tarnished bronze water jar slung across one splintered shoulder, water spilling over the jar rim and pooling across the Nile mud of the Koptos riverbank at dusk; behind it a young Greek student in a white scholar's robe crouches beside a second, split half of the pestle that drags its own pitcher toward the flooded basin; reed boats and mud-brick granaries on the far bank, low amber sun, drifting dust, ochre and umber tones against pale teal water.\n\nCaptured with a 35mm anamorphic lens at f/1.8. Shallow depth of field with a heavy, creamy bokeh background. Environmental portraiture. Dramatic cinematic lighting, sharp focus on the character, hyper-realistic textures of clothing and skin. Shot on 70mm film stock, ultra-wide 21:9 aspect ratio. --ar 21:9",
-    "obraz": "assets/wizualizacje/knecht-z-koptos.jpg"
-  },
-  "natura": {
-    "wyglad_i_aura": "Zwykły kuchenny tłuczek — dębowa pałka z przewężeniem na rękojeść — odziany w lniane łachmany, z węzłem zamiast głowy; gdy pracuje, chodzi na dwóch krótkich pniakach i niesie mosiężny dzban. Wokół niego pachnie rozgrzaną oliwą i mokrym mułem, próg i podłoga robią się mokre, a z wnętrza domu dobiega miarowe stąpanie twardego drewna i plusk przelewanej wody. Nie wydaje głosu, nie patrzy; po prostu idzie, dopóki ktoś nie wypowie słowa końca.",
-    "charakter_i_motywacje": "Nie ma złości ani woli: jest rozkazem w drewnie. Wykonuje dokładnie to, co mu kazano — nosi wodę, a gdy naczynie się przelewa, przynosi następne. Nie da się z nim negocjować i nie słucha próśb ani gróźb: w opowieści Lukiana chłopak mówi do niego „przestań”, a tłuczek „nie zwraca na niego uwagi” i dalej ciągnie wodę, aż dom stoi po dach. Jego jedyną motywacją jest trwanie przy wypowiedzianym rozkazie; kołysze się między posłuszeństwem a katastrofą, bo nie zna granicy, na której powinien stanąć.",
-    "zdolnosci": "Chodzi bez stawów, unosi ciężary większe niż jego własna długość, nie męczy się i nie odpoczywa; potrafi wypełnić wodą cały dom, a przecięty na pół — staje się dwoma nosiwodami, bo u Lukiana obie połówki natychmiast biorą dzbany. Ożywia go szept trzech sylab, a ciało i „głowę” zyskuje przez lniane okrycie: w balladzie Goethego miotła musi najpierw przywdziać łachmany, by powstać jako knecht na dwóch nogach.",
-    "slabosci_i_metody_pokonania": "Jedyne pewne zamknięcie to słowo końca, znane wyłącznie prawdziwemu mistrzowi — w „Filopseudesie” Pankrates nie zdradza go uczniowi, choćby ten nie wiem jak prosił, i dopiero powrót maga przywraca drewnu martwotę. Żelazo nie pomaga: rozcięcie rozmnaża nosiwodę. Tłuczek nie słyszy nikogo poza tym, kto go powołał, więc próba przekonania albo przekupstwa nic nie daje; można go jedynie uwięzić czas — utopić, rozproszyć, wywieźć — ale wraca, gdy tylko ktoś wypowie te same trzy sylaby.",
-    "preferencje": "Lubi: rozkazy wypowiedziane w skupieniu, wodę z rzeki, cudze domy, robotę bez końca i pochwały mistrza (choć ich nie słyszy). Nie lubi: słowa końca, ognia, suchego kija i uczniów, którzy podsłuchują formuły."
-  },
-  "dokumentacja": [
-    {
-      "typ": "baza kart",
-      "pozycja": "Scryfall, „Apprentice Wizard” (Double Masters #40) — {1}{U}{U}, Creature — Human Wizard 0/1; „{U}, {T}: Add {C}{C}{C}.”; flavor „Aspiring wizards must demonstrate basic levels of willpower and mental discipline to even be considered for an apprenticeship.”; artysta Richard Kane Ferguson; printy: The Dark #21 (1977), 4ED #61, Masters Edition, Renaissance; w wydaniu niemieckim karta nosi tytuł „Zauberlehrling”",
-      "url": "https://scryfall.com/card/2xm/40/apprentice-wizard"
+    "slug": "knecht-z-koptos",
+    "nazwa": "Knecht z Koptos — ożywiony tłuczek, który nie zna słowa końca",
+    "nazwy_alternatywne": [
+        "Tłuczek Pankratesa",
+        "Knecht",
+        "Sługa trzech sylab",
+        "Niosący wodę"
+    ],
+    "karta": {
+        "nazwa": "Apprentice Wizard",
+        "wydanie": "Double Masters (2XM) #40",
+        "rok": 2020
     },
-    {
-      "typ": "tekst źródłowy",
-      "pozycja": "Lukian z Samosaty, „Filopseudes” (The Liar), przeł. H. W. Fowler i F. G. Fowler, „The Works of Lucian of Samosata” (1905), §§35–38 — Eukrates w Koptos, mag Pankrates i trzy sylaby, ożywiony tłuczek noszący wodę; „there was another incantation, after which the broom was a broom once more”, a wobec rozkazu ucznia „the thing would take no notice of me”",
-      "url": "https://lucianofsamosata.info/wiki/doku.php?id=home:texts_and_library:dialogues:the-liar"
+    "lokalizacja": {
+        "miejscowosc": "Koptos nad Nilem (Górny Egipt) — w opowieści Eukratesa to tu ożywiony tłuczek nosi wodę i zalewa dom; motyw wędrował z Grecji przez Rzym do Niemiec, gdzie ballada Goethego nadała mu drugie życie",
+        "kraj": "Egipt (tradycja grecka)",
+        "lat": 26.0,
+        "lon": 32.81
     },
-    {
-      "typ": "tekst źródłowy",
-      "pozycja": "Johann Wolfgang von Goethe, „Der Zauberlehrling” (1797; pierwszy druk: Schiller, „Musen-Almanach für das Jahr 1798”, wyd. Cotta, Tübingen; tekst na Wikisource) — „Hab ich doch das Wort vergessen! / Ach! das Wort, worauf am Ende / Er das wird was er gewesen” oraz „Die ich rief, die Geister / Werd ich nun nicht los”",
-      "url": "https://de.wikisource.org/wiki/Der_Zauberlehrling_(1798)"
+    "pochodzenie_i_kultura": "Tradycja grecka — opowieść w „Filopseudesie” („Miłośniku kłamstw”) Lukiana z Samosaty (ok. 150 n.e.): młody Eukrates w Koptos podgląda egipskiego maga Pankratesa, który ożywia przedmioty trzema sylabami, a potem sam próbuje tej sztuki i nie potrafi już zatrzymać tłuczka. Byt wziąłem z tej właśnie opowieści — jedna tradycja, jeden motyw; balladę Goethego (1797, wyd. 1798) traktuję jako jej nowożytne echo i świadectwo wędrówki baśniowego typu, nie jako drugą kulturę.",
+    "wizualizacja": {
+        "prompt": "Style: A wide-angle full-body cinematic photograph. The central objects/persons of the photo are visible from head to toe, standing centrally in the frame. No parts of the body are cropped.\n\nA weathered wooden pestle standing upright on two stubby legs, a coarse linen rag wrapped around its head like a servant's hood, a tarnished bronze water jar slung across one splintered shoulder, water spilling over the jar rim and pooling across the Nile mud of the Koptos riverbank at dusk; behind it a young Greek student in a white scholar's robe crouches beside a second, split half of the pestle that drags its own pitcher toward the flooded basin; reed boats and mud-brick granaries on the far bank, low amber sun, drifting dust, ochre and umber tones against pale teal water.\n\nCaptured with a 35mm anamorphic lens at f/1.8. Shallow depth of field with a heavy, creamy bokeh background. Environmental portraiture. Dramatic cinematic lighting, sharp focus on the character, hyper-realistic textures of clothing and skin. Shot on 70mm film stock, ultra-wide 21:9 aspect ratio. --ar 21:9",
+        "obraz": "assets/wizualizacje/knecht-z-koptos.jpg"
     },
-    {
-      "typ": "encyklopedia",
-      "pozycja": "Wikipedia (de), „Der Zauberlehrling” — ballada powstała na początku lipca 1797 i ukazała się w almanachu Schillera na rok 1798; Goethe znał motyw z „Filopseudesa” Lukiana za pośrednictwem przekładu Christopha Martina Wielanda (1788); ten sam motyw rzeczy, których nie da się „wyłączyć”, występuje w baśniach „Stolik nakryj się” i „Słodka kaszka”",
-      "url": "https://de.wikipedia.org/wiki/Der_Zauberlehrling"
+    "natura": {
+        "wyglad_i_aura": "Zwykły kuchenny tłuczek — dębowa pałka z przewężeniem na rękojeść — odziany w lniane łachmany, z węzłem zamiast głowy; gdy pracuje, chodzi na dwóch krótkich pniakach i niesie mosiężny dzban. Wokół niego pachnie rozgrzaną oliwą i mokrym mułem, próg i podłoga robią się mokre, a z wnętrza domu dobiega miarowe stąpanie twardego drewna i plusk przelewanej wody. Nie wydaje głosu, nie patrzy; po prostu idzie, dopóki ktoś nie wypowie słowa końca.",
+        "charakter_i_motywacje": "Nie ma złości ani woli: jest rozkazem w drewnie. Wykonuje dokładnie to, co mu kazano — nosi wodę, a gdy naczynie się przelewa, przynosi następne. Nie da się z nim negocjować i nie słucha próśb ani gróźb: w opowieści Lukiana chłopak mówi do niego „przestań”, a tłuczek „nie zwraca na niego uwagi” i dalej ciągnie wodę, aż dom stoi po dach. Jego jedyną motywacją jest trwanie przy wypowiedzianym rozkazie; kołysze się między posłuszeństwem a katastrofą, bo nie zna granicy, na której powinien stanąć.",
+        "zdolnosci": "Chodzi bez stawów, unosi ciężary większe niż jego własna długość, nie męczy się i nie odpoczywa; potrafi wypełnić wodą cały dom, a przecięty na pół — staje się dwoma nosiwodami, bo u Lukiana obie połówki natychmiast biorą dzbany. Ożywia go szept trzech sylab, a ciało i „głowę” zyskuje przez lniane okrycie: w balladzie Goethego miotła musi najpierw przywdziać łachmany, by powstać jako knecht na dwóch nogach.",
+        "slabosci_i_metody_pokonania": "Jedyne pewne zamknięcie to słowo końca, znane wyłącznie prawdziwemu mistrzowi — w „Filopseudesie” Pankrates nie zdradza go uczniowi, choćby ten nie wiem jak prosił, i dopiero powrót maga przywraca drewnu martwotę. Żelazo nie pomaga: rozcięcie rozmnaża nosiwodę. Tłuczek nie słyszy nikogo poza tym, kto go powołał, więc próba przekonania albo przekupstwa nic nie daje; można go jedynie uwięzić czas — utopić, rozproszyć, wywieźć — ale wraca, gdy tylko ktoś wypowie te same trzy sylaby.",
+        "preferencje": "Lubi: rozkazy wypowiedziane w skupieniu, wodę z rzeki, cudze domy, robotę bez końca i pochwały mistrza (choć ich nie słyszy). Nie lubi: słowa końca, ognia, suchego kija i uczniów, którzy podsłuchują formuły."
     },
-    {
-      "typ": "opracowanie",
-      "pozycja": "„Lucian’s Sorcerer’s Apprentice” (Exiw, 2021) — cytat z przekładu Fowlera wraz z oznaczeniem typu baśniowego Aarne–Thompson–Uther 325* („The Sorcerer’s Apprentice”): najstarszą znaną wersję motywu ożywionego pomocnika stanowi opowieść Lukiana z Samosaty",
-      "url": "https://exiw.wordpress.com/2021/02/12/lucians-sorcerers-apprentice/"
+    "dokumentacja": [
+        {
+            "typ": "baza kart",
+            "pozycja": "Scryfall, „Apprentice Wizard” (Double Masters #40) — {1}{U}{U}, Creature — Human Wizard 0/1; „{U}, {T}: Add {C}{C}{C}.”; flavor „Aspiring wizards must demonstrate basic levels of willpower and mental discipline to even be considered for an apprenticeship.”; artysta Richard Kane Ferguson; printy: The Dark #21 (1977), 4ED #61, Masters Edition, Renaissance; w wydaniu niemieckim karta nosi tytuł „Zauberlehrling”",
+            "url": "https://scryfall.com/card/2xm/40/apprentice-wizard"
+        },
+        {
+            "typ": "tekst źródłowy",
+            "pozycja": "Lukian z Samosaty, „Filopseudes” (The Liar), przeł. H. W. Fowler i F. G. Fowler, „The Works of Lucian of Samosata” (1905), §§35–38 — Eukrates w Koptos, mag Pankrates i trzy sylaby, ożywiony tłuczek noszący wodę; „there was another incantation, after which the broom was a broom once more”, a wobec rozkazu ucznia „the thing would take no notice of me”",
+            "url": "https://lucianofsamosata.info/wiki/doku.php?id=home:texts_and_library:dialogues:the-liar"
+        },
+        {
+            "typ": "tekst źródłowy",
+            "pozycja": "Johann Wolfgang von Goethe, „Der Zauberlehrling” (1797; pierwszy druk: Schiller, „Musen-Almanach für das Jahr 1798”, wyd. Cotta, Tübingen; tekst na Wikisource) — „Hab ich doch das Wort vergessen! / Ach! das Wort, worauf am Ende / Er das wird was er gewesen” oraz „Die ich rief, die Geister / Werd ich nun nicht los”",
+            "url": "https://de.wikisource.org/wiki/Der_Zauberlehrling_(1798)"
+        },
+        {
+            "typ": "encyklopedia",
+            "pozycja": "Wikipedia (de), „Der Zauberlehrling” — ballada powstała na początku lipca 1797 i ukazała się w almanachu Schillera na rok 1798; Goethe znał motyw z „Filopseudesa” Lukiana za pośrednictwem przekładu Christopha Martina Wielanda (1788); ten sam motyw rzeczy, których nie da się „wyłączyć”, występuje w baśniach „Stolik nakryj się” i „Słodka kaszka”",
+            "url": "https://de.wikipedia.org/wiki/Der_Zauberlehrling"
+        },
+        {
+            "typ": "opracowanie",
+            "pozycja": "„Lucian’s Sorcerer’s Apprentice” (Exiw, 2021) — cytat z przekładu Fowlera wraz z oznaczeniem typu baśniowego Aarne–Thompson–Uther 325* („The Sorcerer’s Apprentice”): najstarszą znaną wersję motywu ożywionego pomocnika stanowi opowieść Lukiana z Samosaty",
+            "url": "https://exiw.wordpress.com/2021/02/12/lucians-sorcerers-apprentice/"
+        }
+    ],
+    "trofea": {
+        "pierwotne": "Odcięta połówka ramienia tłuczka — kawałek dębiny z resztkami lnianego łachmana i śladem smoły z dzbana; po wypowiedzeniu słowa końca drewno wraca do martwoty i daje się trzymać w ręku.",
+        "wtorne": "Trzy zapisane sylaby na skrawku papirusu (kopia z notatek Eukratesa) — podpowiedź, jak nie wzywać tego, czego nie umie się zamknąć."
+    },
+    "rezonans": {
+        "klucz_przywolania": "Apprentice Wizard to nie mag piorunów, lecz uczeń, który podglądnął formułę i uruchomił skutek, którego nie umie cofnąć; w wydaniach niemieckich karta nazywa się wprost „Zauberlehrling” — a to tytuł ballady, w której miotła wstaje z łachmanów i nie chce stanąć. Przełożenie na nasz świat prowadzi więc nie do „czarnoksiężnika”, lecz do bytu, który on powołuje: do ożywionego tłuczka z Koptos, udokumentowanego u Lukiana na sto lat przed jakimkolwiek jej niemieckim wcieleniem. Uczeń z karty to Eukrates albo czeladnik Goethego, a knecht to konsekwencja ich ciekawości — potwierdzenie tezy samej karty: samo „praktykanctwo” (willpower i mental discipline z flavoru) nie wystarcza, by zamknąć to, co się otworzyło.",
+        "tabela": [
+            {
+                "element": "Nazwa",
+                "translacja": "„Apprentice Wizard” — uczeń czarodzieja; niemieckie wydanie nosi tytuł „Zauberlehrling”, czyli rozpoznawalną nazwę ballady Goethego. Uczeń to ten, który podsłuchał trzy sylaby — Eukrates albo młody czeladnik z poematu — a knecht to byt, który przez niego powstał: nie do poskromienia słowami ucznia."
+            },
+            {
+                "element": "Mechanika",
+                "translacja": "„{U}, {T}: Add {C}{C}{C}” — jedno odchylenie daje trzy nici mocy; w przełożeniu: jedna wypowiedziana sylaba (a u Lukiana są dokładnie trzy) ożywia przedmiot i uruchamia pracę, która sama się nie kończy. Karta nie daje żadnego „kosztu wyłączenia” — tak jak knecht nie ma słowa końca, dopóki nie przyjdzie mistrz."
+            },
+            {
+                "element": "Ilustracja",
+                "translacja": "Richard Kane Ferguson — karta z 2XM to przedruk wydania The Dark (1977); typ i nazwa mówią o młodym magu w drodze po praktykę, czyli o postaci, która ma „wolę i dyscyplinę” dopiero w zalążku. W przekładzie to Eukrates nad brzegiem Nilu: człowiek, który wierzy, że zrozumiał metodę, a nie rozumie bariery."
+            },
+            {
+                "element": "Flavor text",
+                "translacja": "„Aspiring wizards must demonstrate basic levels of willpower and mental discipline to even be considered for an apprenticeship.” — wymóg praktykanta: wola i dyscyplina psychiczna. To dokładnie próg, którego nie przekroczył Eukrates: miał siłę wezwania, ale nie miał dyscypliny, by poznać słowo końca. Flavor czyta się więc jak regulamin, którego złamanie wytwarza knechta."
+            },
+            {
+                "element": "Lore/Tło",
+                "translacja": "Edycja 2XM zbiera wybrane karty z historii gry, a „Apprentice Wizard” pochodzi z The Dark (1977) i w języku niemieckim brzmi „Zauberlehrling” — bezpośredni most do ballady Goethego, a przez nią do Lukiana. Świat karty nie jest naszym światem, ale motyw „wezwania bez zamknięcia” jest w naszej tradycji udokumentowany od II wieku n.e."
+            }
+        ]
+    },
+    "tagi": [
+        "grecja",
+        "automat",
+        "warunek",
+        "przemiana"
+    ],
+    "powiazania": [
+        {
+            "slug": "pandora",
+            "opis": "Knecht i Pandora to byty stworzone przez mistrzów: tłuczek przez maga, pierwsza kobieta przez Hefajstosa. Łączy ich wspólna pułapka — moc dana wraz z jednym kruchym zamknięciem (słowo końca, pokrywa słoja) — i wspólna konsekwencja: po otwarciu nikt nie wraca do stanu sprzed, nawet gdy mistrz zdąży z pomocą."
+        },
+        {
+            "slug": "talos-kreta",
+            "opis": "Talos i knecht z Koptos to dwie odsłony tego samego problemu: byt wykonany ręką mistrza, bez własnej woli, z samym mechanizmem. Talosa zatrzymuje gwóźdź w kostce, knechta słowo końca — oba są nie do przekonania, a ich jedyny punkt otwarcia pozostaje ukryty w konstrukcji: żyle ichoru albo trzech sylabach znanych wyłącznie twórcy."
+        },
+        {
+            "slug": "sfinks-teby",
+            "opis": "Sfinks i knecht stawiają bramę w języku: sfinks pyta i przepuszcza tylko tego, kto odpowie, a knecht słucha tylko tego, kto zna właściwe słowo. Różnica polega na kierunku zagadki — przy Tebach pytanie chroni przejście, w Koptos brak odpowiedzi zalewa dom; oba byty pokonuje się więc nie siłą, lecz właściwym zdaniem."
+        },
+        {
+            "slug": "protostates",
+            "opis": "Tłuczek z Koptos nosi wodę, dopóki mag nie wypowie słowa końca, a fantom pierwszego szeregu stoi, dopóki ktoś pamięta, że stał pierwszy: oba porządki trzymają się jednego rozkazu i jednej pamięci (Lukian, „Filopseudes”; Herodot, „Dzieje” VII)."
+        }
+    ],
+    "meta": {
+        "utworzono": "2026-08-30 00:09",
+        "autor": "sesja arena 2026-08-29/30",
+        "modyfikacje": [
+            {
+                "data": "2026-08-30 00:09",
+                "opis": "Nowa materializacja: knecht z Koptos — ożywiony tłuczek z „Filopseudesa” Lukiana, na podstawie karty „Apprentice Wizard” (2XM #40)."
+            },
+            {
+                "data": "2026-08-30 00:20",
+                "opis": "Dodana wizualizacja 21:9 w knecht-z-koptos.jpg — powstała z ramowego promptu wpisu i pokazuje byt w jego naturalnym otoczeniu."
+            },
+            {
+                "data": "2026-08-30 00:38",
+                "opis": "Audyt Kartoteki: poprawki językowe i doprecyzowanie zdań (odmiana, literówki, spójność z mitem)."
+            },
+            {
+                "data": "2026-08-30 00:40",
+                "opis": "Audyt Kartoteki: poprawka literówek („słój” zamiast „słaj”) w powiązaniach i kluczu."
+            },
+            {
+                "data": "2026-08-30 10:05",
+                "opis": "Pętla Jakości C1: powiązanie z protostatesem — dwa porządki trwające na rozkazie i pamięci."
+            }
+        ]
     }
-  ],
-  "trofea": {
-    "pierwotne": "Odcięta połówka ramienia tłuczka — kawałek dębiny z resztkami lnianego łachmana i śladem smoły z dzbana; po wypowiedzeniu słowa końca drewno wraca do martwoty i daje się trzymać w ręku.",
-    "wtorne": "Trzy zapisane sylaby na skrawku papirusu (kopia z notatek Eukratesa) — podpowiedź, jak nie wzywać tego, czego nie umie się zamknąć."
-  },
-  "rezonans": {
-    "klucz_przywolania": "Apprentice Wizard to nie mag piorunów, lecz uczeń, który podglądnął formułę i uruchomił skutek, którego nie umie cofnąć; w wydaniach niemieckich karta nazywa się wprost „Zauberlehrling” — a to tytuł ballady, w której miotła wstaje z łachmanów i nie chce stanąć. Przełożenie na nasz świat prowadzi więc nie do „czarnoksiężnika”, lecz do bytu, który on powołuje: do ożywionego tłuczka z Koptos, udokumentowanego u Lukiana na sto lat przed jakimkolwiek jej niemieckim wcieleniem. Uczeń z karty to Eukrates albo czeladnik Goethego, a knecht to konsekwencja ich ciekawości — potwierdzenie tezy samej karty: samo „praktykanctwo” (willpower i mental discipline z flavoru) nie wystarcza, by zamknąć to, co się otworzyło.",
-    "tabela": [
-      {
-        "element": "Nazwa",
-        "translacja": "„Apprentice Wizard” — uczeń czarodzieja; niemieckie wydanie nosi tytuł „Zauberlehrling”, czyli rozpoznawalną nazwę ballady Goethego. Uczeń to ten, który podsłuchał trzy sylaby — Eukrates albo młody czeladnik z poematu — a knecht to byt, który przez niego powstał: nie do poskromienia słowami ucznia."
-      },
-      {
-        "element": "Mechanika",
-        "translacja": "„{U}, {T}: Add {C}{C}{C}” — jedno odchylenie daje trzy nici mocy; w przełożeniu: jedna wypowiedziana sylaba (a u Lukiana są dokładnie trzy) ożywia przedmiot i uruchamia pracę, która sama się nie kończy. Karta nie daje żadnego „kosztu wyłączenia” — tak jak knecht nie ma słowa końca, dopóki nie przyjdzie mistrz."
-      },
-      {
-        "element": "Ilustracja",
-        "translacja": "Richard Kane Ferguson — karta z 2XM to przedruk wydania The Dark (1977); typ i nazwa mówią o młodym magu w drodze po praktykę, czyli o postaci, która ma „wolę i dyscyplinę” dopiero w zalążku. W przekładzie to Eukrates nad brzegiem Nilu: człowiek, który wierzy, że zrozumiał metodę, a nie rozumie bariery."
-      },
-      {
-        "element": "Flavor text",
-        "translacja": "„Aspiring wizards must demonstrate basic levels of willpower and mental discipline to even be considered for an apprenticeship.” — wymóg praktykanta: wola i dyscyplina psychiczna. To dokładnie próg, którego nie przekroczył Eukrates: miał siłę wezwania, ale nie miał dyscypliny, by poznać słowo końca. Flavor czyta się więc jak regulamin, którego złamanie wytwarza knechta."
-      },
-      {
-        "element": "Lore/Tło",
-        "translacja": "Edycja 2XM zbiera wybrane karty z historii gry, a „Apprentice Wizard” pochodzi z The Dark (1977) i w języku niemieckim brzmi „Zauberlehrling” — bezpośredni most do ballady Goethego, a przez nią do Lukiana. Świat karty nie jest naszym światem, ale motyw „wezwania bez zamknięcia” jest w naszej tradycji udokumentowany od II wieku n.e."
-      }
-    ]
-  },
-  "tagi": [
-    "grecja",
-    "automat",
-    "warunek",
-    "przemiana"
-  ],
-  "powiazania": [
-    {
-      "slug": "pandora",
-      "opis": "Knecht i Pandora to byty stworzone przez mistrzów: tłuczek przez maga, pierwsza kobieta przez Hefajstosa. Łączy ich wspólna pułapka — moc dana wraz z jednym kruchym zamknięciem (słowo końca, pokrywa słoja) — i wspólna konsekwencja: po otwarciu nikt nie wraca do stanu sprzed, nawet gdy mistrz zdąży z pomocą."
-    },
-    {
-      "slug": "talos-kreta",
-      "opis": "Talos i knecht z Koptos to dwie odsłony tego samego problemu: byt wykonany ręką mistrza, bez własnej woli, z samym mechanizmem. Talosa zatrzymuje gwóźdź w kostce, knechta słowo końca — oba są nie do przekonania, a ich jedyny punkt otwarcia pozostaje ukryty w konstrukcji: żyle ichoru albo trzech sylabach znanych wyłącznie twórcy."
-    },
-    {
-      "slug": "sfinks-teby",
-      "opis": "Sfinks i knecht stawiają bramę w języku: sfinks pyta i przepuszcza tylko tego, kto odpowie, a knecht słucha tylko tego, kto zna właściwe słowo. Różnica polega na kierunku zagadki — przy Tebach pytanie chroni przejście, w Koptos brak odpowiedzi zalewa dom; oba byty pokonuje się więc nie siłą, lecz właściwym zdaniem."
-    }
-  ],
-  "meta": {
-    "utworzono": "2026-08-30 00:09",
-    "autor": "sesja arena 2026-08-29/30",
-    "modyfikacje": [
-      {
-        "data": "2026-08-30 00:09",
-        "opis": "Nowa materializacja: knecht z Koptos — ożywiony tłuczek z „Filopseudesa” Lukiana, na podstawie karty „Apprentice Wizard” (2XM #40)."
-      },
-      {
-        "data": "2026-08-30 00:20",
-        "opis": "Dodana wizualizacja 21:9 w knecht-z-koptos.jpg — powstała z ramowego promptu wpisu i pokazuje byt w jego naturalnym otoczeniu."
-      },
-      {
-        "data": "2026-08-30 00:38",
-        "opis": "Audyt Kartoteki: poprawki językowe i doprecyzowanie zdań (odmiana, literówki, spójność z mitem)."
-      },
-      {
-        "data": "2026-08-30 00:40",
-        "opis": "Audyt Kartoteki: poprawka literówek („słój” zamiast „słaj”) w powiązaniach i kluczu."
-      }
-    ]
-  }
 }
