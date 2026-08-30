@@ -54,7 +54,7 @@
 - **PWA / offline**: service worker cache'ujący assety; wymaga HTTPS (Pages OK)
   i ADR (zmienia charakter aplikacji statycznej).
 - **Import metadanych kart**: narzędzie sesji (nie przeglądarka!) pobierające
-  dane karty (nazwa, set, artysta, flavor) do sekcji „Klucz Przywołania”;
+  dane karty (nazwa, set, artysta, flavor) do pola `karta` wpisu (metadane, nie lore);
   egress sandboxa jest zablokowany, więc przez `fetch_page`/`web_search`.
 
 ## Treść / protokół

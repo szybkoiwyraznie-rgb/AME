@@ -194,7 +194,7 @@ function chipyTagow(w, indeks) {
     .join('');
 }
 
-/** Pełny wpis kartoteki (sekcje I–VI wg protokołu MFM v1.4). `kronika` to
+/** Pełny wpis kartoteki (sekcje I–VII wg protokołu MFM v1.8). `kronika` to
  *  podsumowanie Tomu (summary.json) — jeśli podane, wpis dostaje sekcję
  *  „Tomy i Epoki” (E, 2026-08-30) z linkami do raportów. */
 export function htmlWpisu(w, indeks, kronika = null) {
