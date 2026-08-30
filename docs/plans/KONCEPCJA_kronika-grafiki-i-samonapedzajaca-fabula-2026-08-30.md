@@ -3,8 +3,19 @@
 > Zlecenie właściciela: *„Zastanów się, w jaki sposób ubarwić Kronikę generowaniem
 > grafik. Zastanowiłbym się też nad rozwojem Kroniki w stronę ciekawej fabuły,
 > samonapędzającej się historii z wieloma rozwinięciami.”*
-> Dokument jest **koncepcją + planem etapów — bez wdrażania**; decyzje na końcu.
+> Dokument jest **koncepcją + planem etapów**; decyzje na końcu.
 > Odwołania: `docs/KRONIKA_tryb.md` (§5–§6, §18, §20–21), `ANALIZA_kronika-rozwoj-2026-08-30.md`.
+
+**Status wdrożenia (commit `7af6145`, 2026-08-30):**
+- **G1 wdrożona**: 7 key-artów epok (`assets/wizualizacje/kronika-tom-1-epoka-N.jpg`),
+  hero-grafika na stronie Epoki (podpis + prompt w `<details>`), miniatury na stronie
+  Tomu; styl = hiperrealistyczna kinowa fotografia (21:9, 70mm anamorfika, f/1.8);
+  prompty w `data/kronika/epoka-N.json:grafika`, wpisy w `docs/ASSETS.md`.
+- **Silnik R1–R5 wdrożony (build-time)**: `proponujEpoke` + `agendaTomu` +
+  `bytyOtwartychWatkow` w `tools/kronika.mjs`; strona Tomu pokazuje sekcję
+  **„Rozstaje — drogi dalej”** (4 zróżnicowane propozycje składów, deterministyczne).
+- **Status trybu rozstajów: propozycje (hybryda A/C)** — warianty NIE są jeszcze
+  prekompilowane jako strony; decyzja właściciela w §4 nadal otwarta.
 
 ---
 
