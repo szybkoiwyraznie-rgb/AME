@@ -165,7 +165,7 @@ test('Tom I: epoki przechodzą sekwencyjnie i oś zamyka się na 100', async () 
     [
       ['protostates', 11, 12],
       ['knecht-z-koptos', 13, 13],
-      ['syama-i-sarvara', 10, 9],
+      ['syama-i-sarvara', 12, 11],
     ]
   );
   assert.equal(e7.stanPo.os.mit, 27);
@@ -173,7 +173,7 @@ test('Tom I: epoki przechodzą sekwencyjnie i oś zamyka się na 100', async () 
   assert.equal(e7.meta.poprzednik, 'epoka-6');
   assert.equal(e7.stanPo.zasieg.find((z) => z.slug === 'protostates').wielkosc, 0.27);
   assert.equal(e7.stanPo.zasieg.find((z) => z.slug === 'knecht-z-koptos').wielkosc, 0.292);
-  assert.equal(e7.stanPo.zasieg.find((z) => z.slug === 'syama-i-sarvara').wielkosc, 0.25);
+  assert.equal(e7.stanPo.zasieg.find((z) => z.slug === 'syama-i-sarvara').wielkosc, 0.275);
   // S3: odwołanie poprzednik widoczne także w grafie epok (bez cyklu)
   assert.ok(e7.konsekwencje.watki.some((w) => w.id === 'pierwszy-w-linii' && w.stan === 'otwarty'));
 });

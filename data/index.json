@@ -1,6 +1,6 @@
 {
   "wersja": 3,
-  "buildTime": "2026-08-30T13:13:39.370Z",
+  "buildTime": "2026-08-30T13:18:17.528Z",
   "liczba": 20,
   "liczbaSkitow": 22,
   "kanon": {
@@ -754,7 +754,7 @@
         "Pani z Hase"
       ],
       "karta": "Aerith Rescue Mission",
-      "miejscowosc": "Hasedera (Kamakura, prefektura Kanagawa) — czwarta stacja Kamakurańskiej pielgrzymki 33 Kannon, świątynia na zboczu wzgórza nad zatoką; stąd widać, jak wybawicielka schodzi między ludzi",
+      "miejscowosc": "Hasedera (Kamakura, prefektura Kanagawa) — czwarta stacja trasy Bandō Sanjūsankasho (33 Kannon w Kantō) i kamakurańskiej pielgrzymki Kannon; świątynia na zboczu góry Kamakura nad zatoką, z 9,18-metrowym posągiem Jūichimen Kannon (jedenastogłowej) w głównej hali",
       "kraj": "Japonia (region Kanto)",
       "lat": 35.31,
       "lon": 139.54,
@@ -768,7 +768,8 @@
       "powiazania": [
         "agni",
         "egungun",
-        "selkie-sule-skerry"
+        "selkie-sule-skerry",
+        "syama-i-sarvara"
       ],
       "backlinki": [
         "agni",
@@ -1171,6 +1172,7 @@
         "sfinks-teby"
       ],
       "backlinki": [
+        "kannon-hase",
         "protostates"
       ],
       "obraz": "assets/wizualizacje/syama-i-sarvara.jpg",
@@ -1597,6 +1599,14 @@
       "slug": "prezent-z-defektem",
       "tytul": "PREZENT Z DEFEKTEM",
       "opis": "SKIT — skład: Nessos, Pandora, Morowa Panna"
+    },
+    {
+      "data": "2026-08-30 13:18",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "kannon-hase",
+      "tytul": "Kannon — miłosierna wybawicielka",
+      "opis": "Pętla Jakości (C1, drugi obieg): korekta tras — Hasedera (Kamakura) to 4. stacja Bandō Sanjūsankasho i kamakurańskiej pielgrzymki Kannon, NIE Saigoku (Saigoku = Kansai, Hase-dera w Narze); źródła: Wikipedia „Hase-dera (Kamakura)” i „Bandō Sanjūsankasho” (legenda Tokudō 721, 11 głów, 9,18 m, plaża Nagai 736); nowe powiązanie z Śyāmą i Śarvarą (droga dusz)."
     },
     {
       "data": "2026-08-30 13:11",
