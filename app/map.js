@@ -33,10 +33,11 @@ const PROMIEN_KLIK_MIASTA = 16;
 const ODSTEP_PUNKTU = 18;
 /** Maksymalna odległość kliknięcia od punktu POI/historii (px CSS). */
 const PROMIEN_KLIK_PUNKTU = 13;
-/** Górna granica przybliżenia z włączonym podkładem online (zgłoszenie C,
- *  2026-08-30): tyle, by kafelki docelowego źródła (z ≈ 19) miały rozdzielczość
- *  piksel w piksel przy typowym oknie; offline sufit zostaje 32× (K_MAX). */
-const K_MAX_ONLINE = 524288;
+/** Górna granica przybliżenia z włączonym podkładem online (2026-08-30).
+ *  Właściciel zweryfikował w przeglądarce: kafelki są sensowne do 67×,
+ *  a przy 68. przybliżeniu i głębiej źródła pokazują puste bloki — stąd
+ *  twarda blokada na 67×. Offline sufit zostaje 32× (K_MAX). */
+const K_MAX_ONLINE = 67;
 
 /** Warstwy szczegółowości (ADR 0020): progi zoomu dla danych tematycznych. */
 export const PROGI_WARSTW = {
@@ -83,13 +84,6 @@ export const PODKLADY_ONLINE = {
     url: (z, x, y) => `https://tile.openstreetmap.org/${z}/${x}/${y}.png`,
     subdomeny: [''],
     maxZoom: 19,
-  },
-  'esri-teren': {
-    etykieta: 'Esri World Physical Map',
-    atrybucja: 'Powered by Esri · © Esri, © OpenStreetMap contributors',
-    url: (z, x, y) => `https://server.arcgisonline.com/ArcGIS/rest/services/World_Physical_Map/MapServer/tile/${z}/${y}/${x}`,
-    subdomeny: [''],
-    maxZoom: 16,
   },
   'esri-satelita': {
     etykieta: 'Esri World Imagery',
@@ -252,7 +246,15 @@ export function stworzMape(kontener, { przyZmianieZaznaczenia, przyZmianieWidoku
     odswiezWidocznoscWarstw();
     przelozEtykieteMiasta();
     przelozEtykietePunktu();
-    przyZmianieWidoku?.(widok.k, { skala: skala });
+    // D (2026-08-30): do zapisu widoku w localStorage app.js potrzebuje punktu
+    // świata pod środkiem okna (niezależnego od rozmiaru okna) i powiększenia.
+    const srodek = skala > 0
+      ? {
+          wx: (rozmiar.szerokosc / 2 - widok.x) / skala,
+          wy: (rozmiar.wysokosc / 2 - widok.y) / skala,
+        }
+      : null;
+    przyZmianieWidoku?.(widok.k, { skala: skala, srodek });
   }
 
   /** Zoom w punkt p (współrzędne viewBoxu) o czynnik f. */
@@ -269,6 +271,15 @@ export function stworzMape(kontener, { przyZmianieZaznaczenia, przyZmianieWidoku
   function wysrodkuj(lat, lon, k = null, animuj = true) {
     if (k !== null) widok.k = k;
     const [wx, wy] = projektuj(lat, lon);
+    const d = dopasujWidok(rozmiar, widok, { min: K_MIN, max: maksymalneK() });
+    widok.x = rozmiar.szerokosc / 2 - wx * d.s;
+    widok.y = rozmiar.wysokosc / 2 - wy * d.s;
+    zastosuj(animuj);
+  }
+
+  /** Przywraca widok z zapisu (D): wycentruj na punkcie świata (wx, wy) przy k. */
+  function ustawWidok(wx, wy, k = null, animuj = false) {
+    if (k !== null) widok.k = k;
     const d = dopasujWidok(rozmiar, widok, { min: K_MIN, max: maksymalneK() });
     widok.x = rozmiar.szerokosc / 2 - wx * d.s;
     widok.y = rozmiar.wysokosc / 2 - wy * d.s;
@@ -819,10 +830,21 @@ export function stworzMape(kontener, { przyZmianieZaznaczenia, przyZmianieWidoku
     } else if (klucz in WIDOCZNE_WARSTWY) {
       WIDOCZNE_WARSTWY[klucz] = !!widoczny;
     }
-    // C: włączenie/wyłączenie podkładu zmienia sufit przybliżenia — przelicz
-    // widok od razu, żeby k nie wisiał poza nowym limitem.
-    if (klucz === 'podklad') zastosuj();
-    else odswiezWidocznoscWarstw();
+    // C+B: zmiana podkładu zmienia sufit przybliżenia. Przy WYŁĄCZANIU oddalamy
+    // w miejscu (środek okna zostaje na tym samym punkcie świata) — sam clamp
+    // x/y zostawiał widok na krawędzi świata („skok na ocean atlantycki”).
+    if (klucz === 'podklad') {
+      const noweMax = maksymalneK();
+      if (widok.k > noweMax && skala > 0 && !WIDOCZNE_WARSTWY.podklad) {
+        const wx = (rozmiar.szerokosc / 2 - widok.x) / skala;
+        const wy = (rozmiar.wysokosc / 2 - widok.y) / skala;
+        widok.k = noweMax;
+        const d = dopasujWidok(rozmiar, widok, { min: K_MIN, max: noweMax });
+        widok.x = rozmiar.szerokosc / 2 - wx * d.s;
+        widok.y = rozmiar.wysokosc / 2 - wy * d.s;
+      }
+      zastosuj();
+    } else odswiezWidocznoscWarstw();
   }
 
   /* ---- Kraje (asynchronicznie, po załadowaniu TopoJSON) ---- */
@@ -868,6 +890,7 @@ export function stworzMape(kontener, { przyZmianieZaznaczenia, przyZmianieWidoku
     podswietl,
     przelaczLuki,
     wysrodkuj,
+    ustawWidok,
     reset,
     zoomDoPunktu,
     odswiezRozmiar,

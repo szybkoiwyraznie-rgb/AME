@@ -17,8 +17,8 @@
   <!-- Cache-busting: przy zmianie app/*.js lub app/styles.css podnieś wersję
        w ?v= (np. c5-1 → c4-2). Ta sama wersja musi być w importach modułów,
        inaczej przeglądarka poda stare pliki (typowy objaw „mapa bez zmian”). -->
-  <link rel="stylesheet" href="app/styles.css?v=c5-2">
-  <script type="module" src="app/app.js?v=c5-2"></script>
+  <link rel="stylesheet" href="app/styles.css?v=c5-3">
+  <script type="module" src="app/app.js?v=c5-3"></script>
 </head>
 <body>
   <div id="baner" class="baner" hidden></div>
@@ -59,7 +59,7 @@
         <label><input id="warstwa-rzeki" type="checkbox"> Rzeki</label>
         <label><input id="warstwa-jeziora" type="checkbox"> Jeziora</label>
         <label><input id="warstwa-miasta" type="checkbox"> Miasta</label>
-        <label><input id="warstwa-poi" type="checkbox" title="Szczyty i pasma (Natural Earth)"> POI / szczyty</label>
+        <label><input id="warstwa-poi" type="checkbox" title="Szczyty i pasma (Natural Earth)"> Szczyty</label>
         <label><input id="warstwa-hipsometria" type="checkbox" title="Rzeźba terenu i batymetria (Natural Earth 50m)"> Hipsometria</label>
         <div class="naglowek-grupy">Świat starożytny</div>
         <label><input id="warstwa-historia" type="checkbox" title="Miejsca starożytne — Pleiades (CC BY 3.0)"> Miejsca historyczne</label>
@@ -68,7 +68,6 @@
           <option value="">Wyłączony (100% offline)</option>
           <option value="opentopo">OpenTopoMap</option>
           <option value="osm">OpenStreetMap</option>
-          <option value="esri-teren">Esri — świat fizyczny</option>
           <option value="esri-satelita">Esri — satelita</option>
         </select>
         <p class="uwaga-panelu">Wszystkie warstwy są domyślnie wyłączone; włączasz je ręcznie. Podkłady online pobierają kafelki z sieci (atrybucje w <code>docs/ASSETS.md</code> i pod mapą).</p>

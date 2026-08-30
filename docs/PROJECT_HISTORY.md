@@ -1610,4 +1610,24 @@ wdrożone w tej samej sesji:
   wyłączeniu podkładu widok wraca do 32×. Precyzyjniejsze wymiary kafelków
   przy wysokim zoomie (toPrecision zamiast toFixed(1)).
 
-Brama: `npm test` **179/179**, `npm run check` zielone.
+Brama: `npm test` **184/184**, `npm run check` zielone.
+
+### Druga recenzja właściciela — zgłoszenia A–E (2026-08-30, PR #10)
+
+Po pierwszym podglądzie na żywo właściciel zgłosił kolejne poprawki —
+wszystkie wdrożone w tej samej sesji:
+
+- **A.** Blokada zoomu online na **67×** (dane kafelków sensowne do 67.,
+  od 68. puste bloki) + usunięty podkład **Esri „świat fizyczny”** jako
+  niewnoszący nic (zostają OpenTopoMap, OSM, Esri World Imagery).
+- **B.** Wyłączenie podkładu po głębokim zoomie **oddala w miejscu** —
+  środek okna zostaje na tym samym punkcie świata (wcześniej clamp x/y
+  wyrzucał widok na krawędź, „ocean atlantycki”).
+- **C.** Warstwa „POI / szczyty” → **„Szczyty”**.
+- **D.** `localStorage`: ostatnio wybrane warstwy (`ame:mapa:warstwy`)
+  i ostatni widok — środek świata + powiększenie (`ame:mapa:widok`,
+  debounce 400 ms, `mapa.ustawWidok` przy starcie).
+- **E.** Karta bytu: sekcja **„Tomy i Epoki”** z linkami do stron Tomu
+  i Epok z udziałem bytu (dane z `summary.json`, ładowane raz).
+
+Brama: `npm test` **184/184** (mapa 14/14, UI 42/42), `npm run check` zielone.

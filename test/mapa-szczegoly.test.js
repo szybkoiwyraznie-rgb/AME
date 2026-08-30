@@ -393,7 +393,8 @@ test('mapa: podkłady online — wyłączone domyślnie; wybór klucza rysuje ka
   const mapa = stworzMape(kontener, {});
   assert.equal(mapa.PODKLADY_ONLINE.opentopo.etykieta, 'OpenTopoMap');
   assert.equal(mapa.PODKLADY_ONLINE['esri-satelita'].etykieta, 'Esri World Imagery');
-  assert.ok(Object.keys(mapa.PODKLADY_ONLINE).length === 4, 'cztery darmowe podkłady bez klucza');
+  assert.ok(Object.keys(mapa.PODKLADY_ONLINE).length === 3, 'trzy darmowe podkłady bez klucza');
+  assert.ok(!('esri-teren' in mapa.PODKLADY_ONLINE), 'Esri „świat fizyczny” usunięty (A2)');
 
   const podklad = znajdzElement(mapa.svg, 'podklad-online');
   assert.equal(podklad.getAttribute('display'), 'none', 'domyślnie OFF');
@@ -423,7 +424,7 @@ test('mapa: głębsze przybliżenie tylko z podkładem online (C)', () => {
   mapa.przelaczWidocznoscWarstwy('podklad', 'opentopo');
   mapa.zoomDoPunktu({ x: 800, y: 320 }, 2048);
   assert.ok(mapa.widok.k > 32, `k=${mapa.widok.k} — przekroczono K_MAX`);
-  assert.ok(mapa.widok.k > 1000, `k=${mapa.widok.k}`);
+  assert.equal(mapa.widok.k, 67, 'sufit online = K_MAX_ONLINE (67× — A)');
 
   // kafelki wciąż rysowane dla tego powiększenia (z>0, bez NaN)
   const podklad = znajdzElement(mapa.svg, 'podklad-online');
@@ -434,6 +435,52 @@ test('mapa: głębsze przybliżenie tylko z podkładem online (C)', () => {
   // wyłączenie podkładu wraca do sufiksu offline
   mapa.przelaczWidocznoscWarstwy('podklad', null);
   assert.equal(mapa.widok.k, 32, 'po wyłączeniu podkładu sufit wraca do 32×');
+});
+
+test('mapa: wyłączenie podkładu oddala w miejscu, nie skacze na krawędź świata (B)', () => {
+  const { kontener } = zasciel();
+  const mapa = stworzMape(kontener, {});
+  // wycentruj na Europie przy maksymalnym zoomie online
+  mapa.przelaczWidocznoscWarstwy('podklad', 'opentopo');
+  const [wx, wy] = projektuj(52.23, 21.01);
+  mapa.ustawWidok(wx, wy, 67);
+  const srodekPrzed = {
+    wx: (1600 / 2 - mapa.widok.x) / mapa.skala,
+    wy: (640 / 2 - mapa.widok.y) / mapa.skala,
+  };
+  assert.ok(Math.abs(srodekPrzed.wx - wx) < 1e-6 && Math.abs(srodekPrzed.wy - wy) < 1e-6, 'widok wycentrowany na punkcie');
+
+  mapa.przelaczWidocznoscWarstwy('podklad', null);
+  assert.equal(mapa.widok.k, 32, 'po wyłączeniu podkładu k wraca do 32×');
+  const srodekPo = {
+    wx: (1600 / 2 - mapa.widok.x) / mapa.skala,
+    wy: (640 / 2 - mapa.widok.y) / mapa.skala,
+  };
+  assert.ok(
+    Math.abs(srodekPo.wx - wx) < 1e-6 && Math.abs(srodekPo.wy - wy) < 1e-6,
+    `środek po wyłączeniu (${srodekPo.wx.toFixed(3)}, ${srodekPo.wy.toFixed(3)}) ≠ przed (${wx.toFixed(3)}, ${wy.toFixed(3)})`
+  );
+});
+
+test('mapa: ustawWidok przywraca środek świata i powiększenie (D)', () => {
+  const { kontener } = zasciel();
+  const mapa = stworzMape(kontener, {});
+  const [wx, wy] = projektuj(50.06, 19.94);
+  mapa.ustawWidok(wx, wy, 12);
+  assert.equal(mapa.widok.k, 12);
+  const srodek = {
+    wx: (1600 / 2 - mapa.widok.x) / mapa.skala,
+    wy: (640 / 2 - mapa.widok.y) / mapa.skala,
+  };
+  assert.ok(Math.abs(srodek.wx - wx) < 1e-6 && Math.abs(srodek.wy - wy) < 1e-6, 'środek na zadanym punkcie świata');
+  // przywraca też callback zoomu z punktem środka (do zapisu localStorage)
+  let widokZKallbacku = null;
+  const { kontener: k2 } = zasciel();
+  const m2 = stworzMape(k2, { przyZmianieWidoku: (k, info) => { widokZKallbacku = { k, ...info }; } });
+  m2.ustawWidok(wx, wy, 9);
+  assert.equal(widokZKallbacku.k, 9);
+  assert.ok(widokZKallbacku.srodek, 'callback niesie środek świata');
+  assert.ok(Math.abs(widokZKallbacku.srodek.wx - wx) < 1e-6 && Math.abs(widokZKallbacku.srodek.wy - wy) < 1e-6);
 });
 
 test('assets: nowe warstwy M1–M3 dekodują się do punktów (POI, historia)', async () => {

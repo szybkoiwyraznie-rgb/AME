@@ -196,6 +196,7 @@ html[data-motyw='jasny'] .baner code { background: #ffffff77; }
   cursor: pointer;
 }
 .chip:hover { border-color: var(--akcent); }
+a.chip { display: inline-block; text-decoration: none; }
 .chip.aktywny { background: var(--akcent); color: var(--akcent-tekst); }
 .chip .licznik { opacity: 0.6; font-size: 10px; }
 .chip.tag .kategoria-tagu {

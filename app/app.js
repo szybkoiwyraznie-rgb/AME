@@ -1,7 +1,7 @@
 /**
  * app/app.js — bootstrap AME: ładuje indeks, mapę świata, spina UI.
  */
-import { stworzMape, PROGI_WARSTW, PODKLADY_ONLINE } from './map.js?v=c5-2';
+import { stworzMape, PROGI_WARSTW, PODKLADY_ONLINE } from './map.js?v=c5-3';
 import { zaladujIndeks, zaladujWpis, zaladujSkit, dopasowania, wylosujSlug } from './data.js?v=c5-1';
 import {
   htmlWpisu,
@@ -22,7 +22,7 @@ import {
   etykietaMotywu,
   KLUCZ_MOTYWU,
   akcjeZZapytania,
-} from './ui.js?v=c5-1';
+} from './ui.js?v=c5-3';
 import { SZEROKOSC, WYSOKOSC } from './geo.js?v=c5-2';
 
 const $ = (sel) => document.querySelector(sel);
@@ -50,6 +50,75 @@ const stan = {
 };
 
 /** Gdzie szukać danych warstwy i jak je narysować (ADR 0020 / M1–M3). */
+/** Zapis stanu mapy (D, 2026-08-30): wybrane warstwy + ostatni widok (środek
+ *  świata i powiększenie). Osobne klucze; odczyt odporny na brak/dane z innych
+ *  wersji aplikacji. */
+const KLUCZ_WARSTW_MAPY = 'ame:mapa:warstwy';
+const KLUCZ_WIDOKU_MAPY = 'ame:mapa:widok';
+let timerZapisuWidoku = null;
+
+function zapiszWarstwyMapy() {
+  try {
+    localStorage.setItem(KLUCZ_WARSTW_MAPY, JSON.stringify(stan.warstwy));
+  } catch {
+    /* tryb prywatny / file:// — stan tylko na tę sesję */
+  }
+}
+
+function zapiszWidokMapy(k, srodek) {
+  if (!srodek || !Number.isFinite(k)) return;
+  clearTimeout(timerZapisuWidoku);
+  timerZapisuWidoku = setTimeout(() => {
+    try {
+      localStorage.setItem(KLUCZ_WIDOKU_MAPY, JSON.stringify({ k, wx: srodek.wx, wy: srodek.wy }));
+    } catch {
+      /* jak wyżej */
+    }
+  }, 400);
+}
+
+function przywrocWarstwyMapy() {
+  let zapis = null;
+  try {
+    zapis = JSON.parse(localStorage.getItem(KLUCZ_WARSTW_MAPY) || 'null');
+  } catch {
+    return;
+  }
+  if (!zapis || typeof zapis !== 'object') return;
+  for (const klucz of Object.keys(WARSTWY_MAPY)) {
+    const el = document.querySelector(`#warstwa-${klucz}`);
+    if (!el) continue;
+    if (zapis[klucz]) {
+      el.checked = true;
+      stan.warstwy[klucz] = true;
+      mapa.przelaczWidocznoscWarstwy(klucz, true);
+      zaladujWarstwe(klucz);
+    }
+  }
+  const podklad = zapis.podklad;
+  if (podklad && PODKLADY_ONLINE[podklad]) {
+    const sel = $('#warstwa-podklad');
+    if (sel) sel.value = podklad;
+    stan.warstwy.podklad = podklad;
+    mapa.przelaczWidocznoscWarstwy('podklad', podklad);
+    odswiezAtrybucjePodkladu();
+  }
+}
+
+function przywrocWidokMapy() {
+  let zapis = null;
+  try {
+    zapis = JSON.parse(localStorage.getItem(KLUCZ_WIDOKU_MAPY) || 'null');
+  } catch {
+    return;
+  }
+  const k = Number(zapis?.k);
+  const wx = Number(zapis?.wx);
+  const wy = Number(zapis?.wy);
+  if (!Number.isFinite(k) || !Number.isFinite(wx) || !Number.isFinite(wy) || k < 1) return;
+  mapa.ustawWidok(wx, wy, k);
+}
+
 const WARSTWY_MAPY = {
   rzeki: { plik: 'rivers-2km5.json', prog: PROGI_WARSTW.woda, rysuj: 'ustawRzeki' },
   jeziora: { plik: 'lakes-2km5.json', prog: PROGI_WARSTW.woda, rysuj: 'ustawJeziora' },
@@ -139,7 +208,17 @@ async function otworzWpis(slug, { przewin = true } = {}) {
   try {
     const wpis = await zaladujWpis(slug);
     stan.wpis = wpis;
-    panel.innerHTML = htmlWarstwyWpisu(htmlWpisu(wpis, stan.indeks), { slug: wpis.slug, nazwa: wpis.nazwa });
+    // E: sekcja „Tomy i Epoki” wymaga podsumowania Kroniki — ładujemy raz,
+    // a gdy się nie uda (np. brak builda), karta po prostu jej nie ma.
+    let kronika = stan.kronika;
+    if (!kronika) {
+      try {
+        kronika = await zaladujKronike();
+      } catch {
+        kronika = null;
+      }
+    }
+    panel.innerHTML = htmlWarstwyWpisu(htmlWpisu(wpis, stan.indeks, kronika), { slug: wpis.slug, nazwa: wpis.nazwa });
     panel.scrollTop = 0;
     panel.querySelector('.warstwa-wpisu')?.focus?.();
     mapa.zaznacz(slug);
@@ -240,6 +319,15 @@ function otworzNowosci() {
 }
 
 /** Feed Kroniki (U3): wczytywane raz, karty epok z ramą narracji i filtra bytów (U1). */
+async function zaladujKronike() {
+  if (!stan.kronika) {
+    const r = await fetch(new URL('data/kronika/summary.json', document.baseURI));
+    if (!r.ok) throw new Error(`HTTP ${r.status}`);
+    stan.kronika = await r.json();
+  }
+  return stan.kronika;
+}
+
 async function otworzKronike() {
   if (stan.warstwa?.tryb === 'kroniki') return zamknijWarstwe();
   stan.warstwa = { tryb: 'kroniki' };
@@ -250,11 +338,7 @@ async function otworzKronike() {
   warstwaTrybPrzycisku('#przycisk-skity', false);
   warstwaTrybPrzycisku('#przycisk-nowosci', false);
   try {
-    if (!stan.kronika) {
-      const r = await fetch(new URL('data/kronika/summary.json', document.baseURI));
-      if (!r.ok) throw new Error(`HTTP ${r.status}`);
-      stan.kronika = await r.json();
-    }
+    await zaladujKronike();
     warstwa.innerHTML = szkicWarstwy('Kronika świata AME', htmlKronik(stan.kronika, stan.indeks), { kopia: 'kroniki' });
     const filtr = warstwa.querySelector('#kronika-filtr');
     if (filtr) {
@@ -458,6 +542,7 @@ function podepnijZdarzenia() {
       stan.warstwy[klucz] = e.target.checked;
       mapa.przelaczWidocznoscWarstwy(klucz, e.target.checked);
       if (e.target.checked) zaladujWarstwe(klucz); // dociągnij od razu po włączeniu
+      zapiszWarstwyMapy(); // D: zapamiętaj wybór
     });
   }
   const podklad = $('#warstwa-podklad');
@@ -468,6 +553,7 @@ function podepnijZdarzenia() {
       // Radiowa semantyka: wybranie innego podkładu wyłącza poprzedni.
       mapa.przelaczWidocznoscWarstwy('podklad', klucz);
       odswiezAtrybucjePodkladu();
+      zapiszWarstwyMapy(); // D: zapamiętaj wybór (także „Wyłączony”)
     });
   }
 
@@ -563,7 +649,10 @@ async function start() {
   }
   mapa = stworzMape($('#mapa'), {
     przyZmianieZaznaczenia: (slug) => otworzWpis(slug, { przewin: false }),
-    przyZmianieWidoku: (k) => odswiezWarstwyDane(k),
+    przyZmianieWidoku: (k, { srodek } = {}) => {
+      odswiezWarstwyDane(k);
+      zapiszWidokMapy(k, srodek); // D: debounce 400 ms — stan po resecie/odświeżeniu
+    },
   });
   try {
     const topo = await fetch(new URL('assets/map/countries-50m.json', document.baseURI)).then((r) => {
@@ -577,6 +666,10 @@ async function start() {
   }
   mapa.ustawPinezki(stan.indeks.manifestacje);
   mapa.ustawPolaczenia(stan.indeks.manifestacje);
+  // D: ostatnio wybrane warstwy i ostatni widok — najpierw warstwy (żeby
+  // przywrócenie głębokiego zoomu miało prawidłowy sufit), potem widok.
+  przywrocWarstwyMapy();
+  przywrocWidokMapy();
   const fragment = decodeURIComponent(location.hash.replace(/^#/, ''));
   const tagStartu = tagZFragmantu(fragment);
   $('#tagi').innerHTML = htmlTagow(stan.indeks, tagStartu && stan.indeks.tagi[tagStartu] ? tagStartu : null);

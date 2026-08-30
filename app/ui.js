@@ -194,8 +194,10 @@ function chipyTagow(w, indeks) {
     .join('');
 }
 
-/** Pełny wpis kartoteki (sekcje I–VI wg protokołu MFM v1.4). */
-export function htmlWpisu(w, indeks) {
+/** Pełny wpis kartoteki (sekcje I–VI wg protokołu MFM v1.4). `kronika` to
+ *  podsumowanie Tomu (summary.json) — jeśli podane, wpis dostaje sekcję
+ *  „Tomy i Epoki” (E, 2026-08-30) z linkami do raportów. */
+export function htmlWpisu(w, indeks, kronika = null) {
   const rekord = indeks.manifestacje.find((m) => m.slug === w.slug) ?? {};
   const alt = (w.nazwy_alternatywne ?? []).length ? `<p class="alt">znany też jako: ${esc(w.nazwy_alternatywne.join(', '))}</p>` : '';
   const naglowek = `
@@ -286,10 +288,11 @@ export function htmlWpisu(w, indeks) {
         )
       : '';
 
+  const tomyIEpoki = htmlTomyIEpoki(w.slug, kronika);
   const meta = htmlStopki(w.meta);
 
   // Sekcje I–V w kolejności numeracji (PROTOKÓŁ §4.1, v1.3): numer = pozycja.
-  return `<div class="wpis">${naglowek}${I}${II}${III}${IV}${V}${VI}${wiki}${meta}</div>`;
+  return `<div class="wpis">${naglowek}${I}${II}${III}${IV}${V}${VI}${tomyIEpoki}${wiki}${meta}</div>`;
 }
 
 /**
@@ -446,6 +449,25 @@ export function htmlKronik(podsumowanie, indeks = {}) {
   </div>
   <div class="kronika-lista">${karty}</div>
   <p class="naprowadzenie"><a class="link-zewnetrzny" href="docs/kronika.html">Otwórz stronę Kroniki (Tomy i raporty) ↗</a></p>`;
+}
+
+/** Sekcja „Tomy i Epoki” w karcie bytu (E, 2026-08-30): linki do raportu Tomu
+ *  i do stron Epok, w których byt występuje. Puste, gdy brak danych lub byt
+ *  nigdzie nie występuje. */
+export function htmlTomyIEpoki(slug, kronika) {
+  const epoki = (kronika?.epoki ?? []).filter((e) => (e.uczestnicy ?? []).some((u) => u.slug === slug));
+  if (!epoki.length) return '';
+  const tomSlug = kronika?.tom || 'tom-1';
+  const tytulTomu = kronika?.tytulTomu || tomSlug;
+  const chipsy = epoki
+    .map((e) => `<a class="chip link" href="docs/kronika-${esc(e.slug)}.html" title="${esc(e.tytul ?? '')}">${esc(e.slug)}${e.tytul ? ` · ${esc(e.tytul)}` : ''}</a>`)
+    .join('');
+  const slowo = epoki.length === 1 ? 'epoce' : 'epokach';
+  return sekcja(
+    'K',
+    'Tomy i Epoki',
+    `<p class="maly">Występuje w ${epoki.length} ${slowo} Tomu <a class="link-zewnetrzny" href="docs/kronika-${esc(tomSlug)}.html">${esc(tytulTomu)} ↗</a>:</p><div class="chipy">${chipsy}</div>`
+  );
 }
 
 /** Symbol bytu z kartoteki (spójny z mapą; fallback: pierwsza litera emoji-zestawu). */

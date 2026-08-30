@@ -29,7 +29,7 @@
   właściciela przed live.
 - **Warstwa kręgów kulturowych**: otoczki/halo grupujące wpisy jednej tradycji
   (słowiańska, algonkińska, nordycka…) — wymaga tagu-kręgu jako konwencji.
-- ~~**Mapa tematyczna — rozszerzenia (ADR 0020, M14)**~~ — **WDROŻONE (2026-08-30, PR #10):** M1 hipsometria raster, M2 szczyty/POI (NE 10m), M3 Pleiades (miejsca historyczne) + podkłady online (opentopo/osm/esri, bez klucza, ręcznie włączane). Wszystkie warstwy domyślnie **wyłączone** (100% offline bez zgody na sieć). **Zmiana po recenzji (2026-08-30):** warstwy „lasy” (WWF), „urban” i „morza” **usunięte** (A); POI/miejsca historyczne — nazwa on-press (B); głębsze przybliżenie z podkładem online (C).
+- ~~**Mapa tematyczna — rozszerzenia (ADR 0020, M14)**~~ — **WDROŻONE (2026-08-30, PR #10):** M1 hipsometria raster, M2 szczyty/POI (NE 10m), M3 Pleiades (miejsca historyczne) + podkłady online (opentopo/osm/esri World Imagery, bez klucza, ręcznie włączane). Wszystkie warstwy domyślnie **wyłączone** (100% offline bez zgody na sieć). **Zmiany po recenzji (2026-08-30):** warstwy „lasy” (WWF), „urban” i „morza” **usunięte** (A), Esri „świat fizyczny” **usunięty** (A2), zoom online zablokowany na 67× (A); POI/miejsca historyczne — nazwa on-press (B) i przy wyłączeniu podkładu widok oddala się w miejscu (B2); warstwa nazwana „Szczyty” (C); zapamiętywanie warstw i widoku w localStorage (D); sekcja „Tomy i Epoki” w karcie bytu (E).
 - **Mapa tematyczna — dalsze kierunki (po M3):** GeoNames szczyty (CC BY 4.0) i DARE/AWMC drogi rzymskie (CC BY-SA 3.0) — wete na rzecz NE/Pleiades w M3; katalog źródeł w `docs/ASSETS.md`.
   drogi główne, POI typu szczyty, kompleksy leśne i kolorowa wysokość n.p.m.
   Research (patrz `docs/plans/RESEARCH_mapa-warstwy-2026-08-30.md`)

@@ -2,13 +2,59 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
-import { htmlWpisu, htmlWarstwyWpisu, linkDoZrodla, htmlListy, htmlTagow, htmlDialogu, htmlSkitu, htmlBazySkitow, htmlNowosci, htmlKronik, esc, nastepnyMotyw, motywPoczatkowy, etykietaMotywu, MOTYWY, KLUCZ_MOTYWU, akcjeZZapytania } from '../app/ui.js';
+import { htmlWpisu, htmlWarstwyWpisu, linkDoZrodla, htmlListy, htmlTagow, htmlDialogu, htmlSkitu, htmlBazySkitow, htmlNowosci, htmlKronik, htmlTomyIEpoki, esc, nastepnyMotyw, motywPoczatkowy, etykietaMotywu, MOTYWY, KLUCZ_MOTYWU, akcjeZZapytania } from '../app/ui.js';
 
 async function dane(plik = 'egungun') {
   const wpis = JSON.parse(await readFile(`data/manifestations/${plik}.json`, 'utf8'));
   const indeks = JSON.parse(await readFile('data/index.json', 'utf8'));
   return { wpis, indeks };
 }
+
+test('Tomy i Epoki: sekcja linkuje Tom i Epoki z udziałem bytu (E)', () => {
+  const kronika = {
+    tom: 'tom-1',
+    tytulTomu: 'Kronika trzech stołów',
+    epoki: [
+      { slug: 'epoka-1', tytul: 'Trzy stoły: przodek, gospodarz i gość', uczestnicy: [{ slug: 'egungun' }, { slug: 'kentaur-pelion' }] },
+      { slug: 'epoka-2', tytul: 'Nieproszeni goście', uczestnicy: [{ slug: 'lincoln-imp' }] },
+      { slug: 'epoka-3', tytul: 'Odźwierni', uczestnicy: [{ slug: 'egungun' }, { slug: 'balor' }] },
+    ],
+  };
+  const html = htmlTomyIEpoki('egungun', kronika);
+  assert.match(html, /Tomy i Epoki/);
+  assert.match(html, /href="docs\/kronika-tom-1\.html"/, 'link do Tomu');
+  assert.match(html, /href="docs\/kronika-epoka-1\.html"/, 'link do epoki 1');
+  assert.match(html, /href="docs\/kronika-epoka-3\.html"/, 'link do epoki 3');
+  assert.ok(!html.includes('epoka-2'), 'epoka bez bytu nie jest linkowana');
+  assert.match(html, /2 epokach/);
+  assert.equal(htmlTomyIEpoki('nessos', kronika), '', 'byt spoza Kroniki — brak sekcji');
+  assert.equal(htmlTomyIEpoki('egungun', null), '', 'brak danych — brak sekcji');
+});
+
+test('htmlWpisu: sekcja Tomy i Epoki tylko z podsumowaniem Kroniki (E)', async () => {
+  const { wpis, indeks } = await dane();
+  assert.ok(!htmlWpisu(wpis, indeks).includes('Tomy i Epoki'), 'bez kroniki sekcji nie ma');
+  const zKronika = htmlWpisu(wpis, indeks, {
+    tom: 'tom-1',
+    tytulTomu: 'Kronika trzech stołów',
+    epoki: [{ slug: 'epoka-1', tytul: 'Trzy stoły', uczestnicy: [{ slug: wpis.slug }] }],
+  });
+  assert.ok(zKronika.includes('Tomy i Epoki'), 'z kroniką sekcja jest');
+  assert.match(zKronika, /href="docs\/kronika-epoka-1\.html"/);
+  // sekcja idzie po SKITach, przed Powiązaniami
+  assert.ok(zKronika.indexOf('Tomy i Epoki') > zKronika.indexOf('SKITy'));
+  assert.ok(zKronika.indexOf('Tomy i Epoki') < zKronika.indexOf('Powiązania'));
+});
+
+test('app.js: zapamiętywanie warstw i widoku mapy w localStorage (D)', async () => {
+  const app = await readFile('app/app.js', 'utf8');
+  assert.ok(app.includes("'ame:mapa:warstwy'"), 'klucz warstw');
+  assert.ok(app.includes("'ame:mapa:widok'"), 'klucz widoku');
+  assert.ok(app.includes('zapiszWarstwyMapy') && app.includes('przywrocWarstwyMapy'), 'zapis/odczyt warstw');
+  assert.ok(app.includes('zapiszWidokMapy') && app.includes('przywrocWidokMapy'), 'zapis/odczyt widoku');
+  assert.ok(app.includes('try {') && app.includes('localStorage.setItem'), 'zapis w try/catch (file://)');
+  assert.ok(app.includes('index.html, "v=c5' ) || app.includes("c5-3"), 'cache-bust podbity');
+});
 
 test('esc: znaki HTML uciekają', () => {
   assert.equal(esc('<script>&"\''), '&lt;script&gt;&amp;&quot;&#39;');

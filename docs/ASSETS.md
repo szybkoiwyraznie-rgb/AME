@@ -17,6 +17,10 @@ Warstwy „lasy” (WWF), „obszary zurbanizowane” i „morza i oceany” (Na
 zostały **usunięte decyzją właściciela 2026-08-30** (zgłoszenie A — na tej mapie
 nie wnosiły czytelnej informacji); usunięte też ich pliki i narzędzia
 (`tools/warstwy-lasy-pmtiles.py`, `tools/pmtiles.py`).
+Podkład **Esri „świat fizyczny”** (`esri-teren`) również usunięty po recenzji
+(A2) — nie wnosił informacji ponad OpenTopoMap/OSM; zostają OpenTopoMap, OSM
+i Esri World Imagery. Zoom online zablokowany na **67×** (właściciel: dalej
+źródła pokazują puste bloki).
 
 ### Podkłady online (opcjonalne, włączane ręcznie, bez klucza)
 
@@ -28,7 +32,6 @@ warstwa ma charakter „podglądu” (ADR 0001/0003, decyzja właściciela 2026-
 |---|---|---|---|---|
 | `opentopo` | OpenTopoMap | `https://{a,b,c}.tile.opentopomap.org/{z}/{x}/{y}.png` | © OpenStreetMap contributors · © OpenTopoMap (CC-BY-SA) | [opentopomap.org/credits](https://opentopomap.org/credits): używaj oszczędnie, nie do komercyjnych serwisów bez zgody |
 | `osm` | OpenStreetMap standard | `https://tile.openstreetmap.org/{z}/{x}/{y}.png` | © OpenStreetMap contributors (ODbL) | [operations.osmfoundation.org/policies/tiles](https://operations.osmfoundation.org/policies/tiles/): lekkie użycie, atrybucja, bez dużych aplikacji |
-| `esri-teren` | Esri World Physical Map | `https://server.arcgisonline.com/ArcGIS/rest/services/World_Physical_Map/MapServer/tile/{z}/{y}/{x}` | Powered by Esri · © Esri, © OpenStreetMap contributors | [Esri Master Agreement](https://www.esri.com/en-us/legal/terms/full-master-agreement): bezpłatne usługi, atrybucja |
 | `esri-satelita` | Esri World Imagery | `https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}` | Powered by Esri · © Esri, Maxar, Earthstar Geographics | j.w. |
 
 Serwery wybrane bez klucza API i bez kosztów; przełącznik `<select>` w panelu warstw.
