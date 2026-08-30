@@ -1575,3 +1575,13 @@ Narzędzia: `tools/warstwy-mapy.mjs` (+`--check`),
 --test test/mapa-szczegoly.test.js` 10/10, `test/kronika.test.js` 17/17.
 `docs/ASSETS.md` — licencje (CC BY 4.0 Dinerstein 2017, CC BY 3.0 Pleiades,
 public domain NE) + polityki podkładów online.
+
+### Pętla Jakości — C1/C3/C2 (2026-08-30, kontynuacja)
+
+Po wdrożeniu S1–S3 i M1–M3: C1 — protostates pogłębiony (Tukidydes 5.66–70
+— pierwszy szereg 448 ludzi; Herodot VII, 226 — Dienekes „w cieniu”) +
+powiązania z knechtem z Koptos i psami Yamy; C3 — SKIT „PIERWSZY”
+(Protostates × Knecht × Śyāma i Śarvara, 154 słowa); C2 — **Epoka VII
+„Kolejność: nikt nie szedł za pierwszym”** (oś 27/73 po epoce, seed 35/65,
+meta.poprzednik = epoka-6 — pierwsze realne odwołanie S3 w grafie epok).
+Brama: 176/176, check zielone.
