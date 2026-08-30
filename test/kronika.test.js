@@ -55,7 +55,7 @@ test('paliwo pasywne: 2×backlinki + tagi kanonu + sieć powiązań (max 3)', as
 });
 
 test('Tom I: epoki przechodzą sekwencyjnie i oś zamyka się na 100', async () => {
-  const [tom, epoka1, epoka2, epoka3, epoka4, epoka5, epoka6, indeks, kanon] = await Promise.all([
+  const [tom, epoka1, epoka2, epoka3, epoka4, epoka5, epoka6, epoka7, indeks, kanon] = await Promise.all([
     wczytaj(PLIK_TOM_1),
     wczytaj(PLIK_EPOKA_1),
     wczytaj(join(KATALOG_KRONIKA, 'epoka-2.json')),
@@ -63,21 +63,22 @@ test('Tom I: epoki przechodzą sekwencyjnie i oś zamyka się na 100', async () 
     wczytaj(join(KATALOG_KRONIKA, 'epoka-4.json')),
     wczytaj(join(KATALOG_KRONIKA, 'epoka-5.json')),
     wczytaj(join(KATALOG_KRONIKA, 'epoka-6.json')),
+    wczytaj(join(KATALOG_KRONIKA, 'epoka-7.json')),
     wczytaj(PLIK_INDEKSU),
     wczytaj(PLIK_KANONU),
   ]);
   const wynik = zbudujPodsumowanieTomu({
     tom,
-    epoki: [epoka1, epoka2, epoka3, epoka4, epoka5, epoka6],
+    epoki: [epoka1, epoka2, epoka3, epoka4, epoka5, epoka6, epoka7],
     indeks,
     kanon,
   });
 
   assert.equal(wynik.walidacja, true, JSON.stringify(wynik.bledy));
-  assert.equal(wynik.epoki.length, 6);
+  assert.equal(wynik.epoki.length, 7);
   assert.equal(wynik.stanPo.os.mit + wynik.stanPo.os.racjonalizacja, 100);
 
-  const [e1, e2, e3, e4, e5, e6] = wynik.epoki;
+  const [e1, e2, e3, e4, e5, e6, e7] = wynik.epoki;
   assert.deepEqual(
     e1.uczestnicy.map((u) => [u.slug, u.saldoPrzed, u.saldoPo]),
     [
@@ -86,8 +87,8 @@ test('Tom I: epoki przechodzą sekwencyjnie i oś zamyka się na 100', async () 
       ['kentaur-pelion', 18, 16],
     ]
   );
-  assert.equal(e1.stanPo.os.mit, 34);
-  assert.equal(e1.stanPo.os.racjonalizacja, 66);
+  assert.equal(e1.stanPo.os.mit, 35);
+  assert.equal(e1.stanPo.os.racjonalizacja, 65);
 
   assert.deepEqual(
     e2.uczestnicy.map((u) => [u.slug, u.saldoPrzed, u.saldoPo]),
@@ -97,8 +98,8 @@ test('Tom I: epoki przechodzą sekwencyjnie i oś zamyka się na 100', async () 
       ['empusa-korynt', 19, 21],
     ]
   );
-  assert.equal(e2.stanPo.os.mit, 32);
-  assert.equal(e2.stanPo.os.racjonalizacja, 68);
+  assert.equal(e2.stanPo.os.mit, 33);
+  assert.equal(e2.stanPo.os.racjonalizacja, 67);
 
   assert.deepEqual(
     e3.uczestnicy.map((u) => [u.slug, u.saldoPrzed, u.saldoPo]),
@@ -108,8 +109,8 @@ test('Tom I: epoki przechodzą sekwencyjnie i oś zamyka się na 100', async () 
       ['empusa-korynt', 21, 19],
     ]
   );
-  assert.equal(e3.stanPo.os.mit, 30);
-  assert.equal(e3.stanPo.os.racjonalizacja, 70);
+  assert.equal(e3.stanPo.os.mit, 31);
+  assert.equal(e3.stanPo.os.racjonalizacja, 69);
 
   assert.deepEqual(
     e4.uczestnicy.map((u) => [u.slug, u.saldoPrzed, u.saldoPo]),
@@ -119,8 +120,8 @@ test('Tom I: epoki przechodzą sekwencyjnie i oś zamyka się na 100', async () 
       ['indra', 13, 11],
     ]
   );
-  assert.equal(e4.stanPo.os.mit, 29);
-  assert.equal(e4.stanPo.os.racjonalizacja, 71);
+  assert.equal(e4.stanPo.os.mit, 30);
+  assert.equal(e4.stanPo.os.racjonalizacja, 70);
   assert.equal(e4.stanPo.zasieg.find((z) => z.slug === 'egungun').wielkosc, 0.548);
   assert.equal(e4.stanPo.zasieg.find((z) => z.slug === 'selkie-sule-skerry').wielkosc, 0.478);
   assert.equal(e4.stanPo.zasieg.find((z) => z.slug === 'indra').wielkosc, 0.345);
@@ -133,8 +134,8 @@ test('Tom I: epoki przechodzą sekwencyjnie i oś zamyka się na 100', async () 
       ['lincoln-imp', 10, 12],
     ]
   );
-  assert.equal(e5.stanPo.os.mit, 28);
-  assert.equal(e5.stanPo.os.racjonalizacja, 72);
+  assert.equal(e5.stanPo.os.mit, 29);
+  assert.equal(e5.stanPo.os.racjonalizacja, 71);
   assert.equal(e5.stanPo.zasieg.find((z) => z.slug === 'lincoln-imp').wielkosc, 0.406);
   assert.equal(e5.stanPo.zasieg.find((z) => z.slug === 'sfinks-teby').wielkosc, 0.381);
   assert.equal(e5.stanPo.zasieg.find((z) => z.slug === 'talos-kreta').wielkosc, 0.337);
@@ -147,11 +148,28 @@ test('Tom I: epoki przechodzą sekwencyjnie i oś zamyka się na 100', async () 
       ['empusa-korynt', 19, 18],
     ]
   );
-  assert.equal(e6.stanPo.os.mit, 27);
-  assert.equal(e6.stanPo.os.racjonalizacja, 73);
+  assert.equal(e6.stanPo.os.mit, 28);
+  assert.equal(e6.stanPo.os.racjonalizacja, 72);
   assert.equal(e6.stanPo.zasieg.find((z) => z.slug === 'pandora').wielkosc, 0.316);
   assert.equal(e6.stanPo.zasieg.find((z) => z.slug === 'morowa-panna').wielkosc, 0.243);
   assert.equal(e6.stanPo.zasieg.find((z) => z.slug === 'empusa-korynt').wielkosc, 0.501);
+
+  assert.deepEqual(
+    e7.uczestnicy.map((u) => [u.slug, u.saldoPrzed, u.saldoPo]),
+    [
+      ['protostates', 11, 12],
+      ['knecht-z-koptos', 13, 13],
+      ['syama-i-sarvara', 10, 9],
+    ]
+  );
+  assert.equal(e7.stanPo.os.mit, 27);
+  assert.equal(e7.stanPo.os.racjonalizacja, 73);
+  assert.equal(e7.meta.poprzednik, 'epoka-6');
+  assert.equal(e7.stanPo.zasieg.find((z) => z.slug === 'protostates').wielkosc, 0.27);
+  assert.equal(e7.stanPo.zasieg.find((z) => z.slug === 'knecht-z-koptos').wielkosc, 0.292);
+  assert.equal(e7.stanPo.zasieg.find((z) => z.slug === 'syama-i-sarvara').wielkosc, 0.25);
+  // S3: odwołanie poprzednik widoczne także w grafie epok (bez cyklu)
+  assert.ok(e7.konsekwencje.watki.some((w) => w.id === 'pierwszy-w-linii' && w.stan === 'otwarty'));
 });
 
 test('oś: delty mit+racjonalizacja muszą sumować się do 0', async () => {

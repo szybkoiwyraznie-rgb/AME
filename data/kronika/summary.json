@@ -57,8 +57,8 @@
       ],
       "stanPo": {
         "os": {
-          "mit": 34,
-          "racjonalizacja": 66
+          "mit": 35,
+          "racjonalizacja": 65
         },
         "zasieg": [
           {
@@ -103,7 +103,7 @@
           },
           {
             "slug": "knecht-z-koptos",
-            "wielkosc": 0.258
+            "wielkosc": 0.282
           },
           {
             "slug": "lincoln-imp",
@@ -123,7 +123,7 @@
           },
           {
             "slug": "protostates",
-            "wielkosc": 0.233
+            "wielkosc": 0.258
           },
           {
             "slug": "selkie-sule-skerry",
@@ -135,7 +135,7 @@
           },
           {
             "slug": "syama-i-sarvara",
-            "wielkosc": 0.221
+            "wielkosc": 0.245
           },
           {
             "slug": "talos-kreta",
@@ -196,7 +196,7 @@
           {
             "kultura": "grecja",
             "kult": "knecht-z-koptos",
-            "wielkosc": 0.258
+            "wielkosc": 0.282
           },
           {
             "kultura": "anglia",
@@ -221,7 +221,7 @@
           {
             "kultura": "grecja",
             "kult": "protostates",
-            "wielkosc": 0.233
+            "wielkosc": 0.258
           },
           {
             "kultura": "szkocja-polnocna",
@@ -236,7 +236,7 @@
           {
             "kultura": "indie",
             "kult": "syama-i-sarvara",
-            "wielkosc": 0.221
+            "wielkosc": 0.245
           },
           {
             "kultura": "grecja",
@@ -426,8 +426,8 @@
       ],
       "stanPo": {
         "os": {
-          "mit": 32,
-          "racjonalizacja": 68
+          "mit": 33,
+          "racjonalizacja": 67
         },
         "zasieg": [
           {
@@ -472,7 +472,7 @@
           },
           {
             "slug": "knecht-z-koptos",
-            "wielkosc": 0.258
+            "wielkosc": 0.282
           },
           {
             "slug": "lincoln-imp",
@@ -492,7 +492,7 @@
           },
           {
             "slug": "protostates",
-            "wielkosc": 0.233
+            "wielkosc": 0.258
           },
           {
             "slug": "selkie-sule-skerry",
@@ -504,7 +504,7 @@
           },
           {
             "slug": "syama-i-sarvara",
-            "wielkosc": 0.221
+            "wielkosc": 0.245
           },
           {
             "slug": "talos-kreta",
@@ -565,7 +565,7 @@
           {
             "kultura": "grecja",
             "kult": "knecht-z-koptos",
-            "wielkosc": 0.258
+            "wielkosc": 0.282
           },
           {
             "kultura": "anglia",
@@ -590,7 +590,7 @@
           {
             "kultura": "grecja",
             "kult": "protostates",
-            "wielkosc": 0.233
+            "wielkosc": 0.258
           },
           {
             "kultura": "szkocja-polnocna",
@@ -605,7 +605,7 @@
           {
             "kultura": "indie",
             "kult": "syama-i-sarvara",
-            "wielkosc": 0.221
+            "wielkosc": 0.245
           },
           {
             "kultura": "grecja",
@@ -806,8 +806,8 @@
       ],
       "stanPo": {
         "os": {
-          "mit": 30,
-          "racjonalizacja": 70
+          "mit": 31,
+          "racjonalizacja": 69
         },
         "zasieg": [
           {
@@ -852,7 +852,7 @@
           },
           {
             "slug": "knecht-z-koptos",
-            "wielkosc": 0.258
+            "wielkosc": 0.282
           },
           {
             "slug": "lincoln-imp",
@@ -872,7 +872,7 @@
           },
           {
             "slug": "protostates",
-            "wielkosc": 0.233
+            "wielkosc": 0.258
           },
           {
             "slug": "selkie-sule-skerry",
@@ -884,7 +884,7 @@
           },
           {
             "slug": "syama-i-sarvara",
-            "wielkosc": 0.221
+            "wielkosc": 0.245
           },
           {
             "slug": "talos-kreta",
@@ -945,7 +945,7 @@
           {
             "kultura": "grecja",
             "kult": "knecht-z-koptos",
-            "wielkosc": 0.258
+            "wielkosc": 0.282
           },
           {
             "kultura": "anglia",
@@ -970,7 +970,7 @@
           {
             "kultura": "grecja",
             "kult": "protostates",
-            "wielkosc": 0.233
+            "wielkosc": 0.258
           },
           {
             "kultura": "szkocja-polnocna",
@@ -985,7 +985,7 @@
           {
             "kultura": "indie",
             "kult": "syama-i-sarvara",
-            "wielkosc": 0.221
+            "wielkosc": 0.245
           },
           {
             "kultura": "grecja",
@@ -1200,8 +1200,8 @@
       ],
       "stanPo": {
         "os": {
-          "mit": 29,
-          "racjonalizacja": 71
+          "mit": 30,
+          "racjonalizacja": 70
         },
         "zasieg": [
           {
@@ -1246,7 +1246,7 @@
           },
           {
             "slug": "knecht-z-koptos",
-            "wielkosc": 0.258
+            "wielkosc": 0.282
           },
           {
             "slug": "lincoln-imp",
@@ -1266,7 +1266,7 @@
           },
           {
             "slug": "protostates",
-            "wielkosc": 0.233
+            "wielkosc": 0.258
           },
           {
             "slug": "selkie-sule-skerry",
@@ -1278,7 +1278,7 @@
           },
           {
             "slug": "syama-i-sarvara",
-            "wielkosc": 0.221
+            "wielkosc": 0.245
           },
           {
             "slug": "talos-kreta",
@@ -1339,7 +1339,7 @@
           {
             "kultura": "grecja",
             "kult": "knecht-z-koptos",
-            "wielkosc": 0.258
+            "wielkosc": 0.282
           },
           {
             "kultura": "anglia",
@@ -1364,7 +1364,7 @@
           {
             "kultura": "grecja",
             "kult": "protostates",
-            "wielkosc": 0.233
+            "wielkosc": 0.258
           },
           {
             "kultura": "szkocja-polnocna",
@@ -1379,7 +1379,7 @@
           {
             "kultura": "indie",
             "kult": "syama-i-sarvara",
-            "wielkosc": 0.221
+            "wielkosc": 0.245
           },
           {
             "kultura": "grecja",
@@ -1596,8 +1596,8 @@
       ],
       "stanPo": {
         "os": {
-          "mit": 28,
-          "racjonalizacja": 72
+          "mit": 29,
+          "racjonalizacja": 71
         },
         "zasieg": [
           {
@@ -1642,7 +1642,7 @@
           },
           {
             "slug": "knecht-z-koptos",
-            "wielkosc": 0.258
+            "wielkosc": 0.282
           },
           {
             "slug": "lincoln-imp",
@@ -1662,7 +1662,7 @@
           },
           {
             "slug": "protostates",
-            "wielkosc": 0.233
+            "wielkosc": 0.258
           },
           {
             "slug": "selkie-sule-skerry",
@@ -1674,7 +1674,7 @@
           },
           {
             "slug": "syama-i-sarvara",
-            "wielkosc": 0.221
+            "wielkosc": 0.245
           },
           {
             "slug": "talos-kreta",
@@ -1735,7 +1735,7 @@
           {
             "kultura": "grecja",
             "kult": "knecht-z-koptos",
-            "wielkosc": 0.258
+            "wielkosc": 0.282
           },
           {
             "kultura": "anglia",
@@ -1760,7 +1760,7 @@
           {
             "kultura": "grecja",
             "kult": "protostates",
-            "wielkosc": 0.233
+            "wielkosc": 0.258
           },
           {
             "kultura": "szkocja-polnocna",
@@ -1775,7 +1775,7 @@
           {
             "kultura": "indie",
             "kult": "syama-i-sarvara",
-            "wielkosc": 0.221
+            "wielkosc": 0.245
           },
           {
             "kultura": "grecja",
@@ -1994,8 +1994,8 @@
       ],
       "stanPo": {
         "os": {
-          "mit": 27,
-          "racjonalizacja": 73
+          "mit": 28,
+          "racjonalizacja": 72
         },
         "zasieg": [
           {
@@ -2040,7 +2040,7 @@
           },
           {
             "slug": "knecht-z-koptos",
-            "wielkosc": 0.258
+            "wielkosc": 0.282
           },
           {
             "slug": "lincoln-imp",
@@ -2060,7 +2060,7 @@
           },
           {
             "slug": "protostates",
-            "wielkosc": 0.233
+            "wielkosc": 0.258
           },
           {
             "slug": "selkie-sule-skerry",
@@ -2072,7 +2072,7 @@
           },
           {
             "slug": "syama-i-sarvara",
-            "wielkosc": 0.221
+            "wielkosc": 0.245
           },
           {
             "slug": "talos-kreta",
@@ -2133,7 +2133,7 @@
           {
             "kultura": "grecja",
             "kult": "knecht-z-koptos",
-            "wielkosc": 0.258
+            "wielkosc": 0.282
           },
           {
             "kultura": "anglia",
@@ -2158,7 +2158,7 @@
           {
             "kultura": "grecja",
             "kult": "protostates",
-            "wielkosc": 0.233
+            "wielkosc": 0.258
           },
           {
             "kultura": "szkocja-polnocna",
@@ -2173,7 +2173,7 @@
           {
             "kultura": "indie",
             "kult": "syama-i-sarvara",
-            "wielkosc": 0.221
+            "wielkosc": 0.245
           },
           {
             "kultura": "grecja",
@@ -2339,6 +2339,411 @@
         ],
         "podsumowanie": "Trzy porządki brania spotykają się przy pustym stole: dar z zakazem, przepis z jedną odpowiedzią i iluzja, która zjada gości. Żaden nie potrafi rozstrzygnąć pytania, a rozwiązanie przychodzi z zaskoczenia — siada ten, kto bierze, bo nie wie, że bierze."
       }
+    },
+    {
+      "slug": "epoka-7",
+      "tytul": "Kolejność: nikt nie szedł za pierwszym",
+      "skit": "pierwszy",
+      "iskra": "Mgła z wąwozu pod Termopilami wyszła w świat szukać rozkazu, który by ją rozwiązał; w Koptos tłuczek z dzbarem stanął na progu cudzego domu; w Waranasi dwa czterookie psy zawyły, bo po drodze przodków szedł ktoś, kto nie był umarły.",
+      "pytanie": "Czy ten, kto stoi pierwszy, jest panem — czy tylko pierwszym, za którym nikt nie idzie?",
+      "przebieg": "Pełny tekst rozmowy: data/skity/pierwszy.json (uczestnicy zgodni z epoką).",
+      "meta": {
+        "utworzono": "2026-08-30 10:30",
+        "autor": "agent Areny — Pętla Jakości C2 (Epoka VII Kroniki)",
+        "wersja": 1,
+        "poprzednik": "epoka-6",
+        "uwagi": "Pierwsza epoka z odwołaniem meta.poprzednik (S3 graf epok); wątek czwarty-stol pozostaje zamknięty, otwarty nowy: pierwszy-w-linii."
+      },
+      "walidacja": true,
+      "bledy": [],
+      "uczestnicy": [
+        {
+          "slug": "protostates",
+          "nazwa": "Protostates — fantom pierwszego szeregu",
+          "rola": "Pierwszy, którego nikt nie dogania",
+          "pasywne": 11,
+          "saldoPrzed": 11,
+          "kosztUdzialu": 2,
+          "kosztKlucza": 0,
+          "boost": 0,
+          "zwrot": 3,
+          "saldoPo": 12
+        },
+        {
+          "slug": "knecht-z-koptos",
+          "nazwa": "Knecht z Koptos — ożywiony tłuczek, który nie zna słowa końca",
+          "rola": "Rzecz, która nie znała słowa końca",
+          "pasywne": 13,
+          "saldoPrzed": 13,
+          "kosztUdzialu": 2,
+          "kosztKlucza": 0,
+          "boost": 0,
+          "zwrot": 2,
+          "saldoPo": 13
+        },
+        {
+          "slug": "syama-i-sarvara",
+          "nazwa": "Śyāma i Śarvara — czterookie psy Yamy, strażnicy drogi przodków",
+          "rola": "Dwoje oczu jednej drogi",
+          "pasywne": 10,
+          "saldoPrzed": 10,
+          "kosztUdzialu": 2,
+          "kosztKlucza": 0,
+          "boost": 0,
+          "zwrot": 1,
+          "saldoPo": 9
+        }
+      ],
+      "stanPo": {
+        "os": {
+          "mit": 27,
+          "racjonalizacja": 73
+        },
+        "zasieg": [
+          {
+            "slug": "agni",
+            "wielkosc": 0.318
+          },
+          {
+            "slug": "balor",
+            "wielkosc": 0.5
+          },
+          {
+            "slug": "barbarossa-kyffhaeuser",
+            "wielkosc": 0.427
+          },
+          {
+            "slug": "ben-varrey",
+            "wielkosc": 0.27
+          },
+          {
+            "slug": "drangue-shala",
+            "wielkosc": 0.464
+          },
+          {
+            "slug": "egungun",
+            "wielkosc": 0.548
+          },
+          {
+            "slug": "empusa-korynt",
+            "wielkosc": 0.501
+          },
+          {
+            "slug": "indra",
+            "wielkosc": 0.345
+          },
+          {
+            "slug": "kannon-hase",
+            "wielkosc": 0.318
+          },
+          {
+            "slug": "kentaur-pelion",
+            "wielkosc": 0.399
+          },
+          {
+            "slug": "knecht-z-koptos",
+            "wielkosc": 0.292
+          },
+          {
+            "slug": "lincoln-imp",
+            "wielkosc": 0.406
+          },
+          {
+            "slug": "morowa-panna",
+            "wielkosc": 0.243
+          },
+          {
+            "slug": "nessos",
+            "wielkosc": 0.33
+          },
+          {
+            "slug": "pandora",
+            "wielkosc": 0.316
+          },
+          {
+            "slug": "protostates",
+            "wielkosc": 0.27
+          },
+          {
+            "slug": "selkie-sule-skerry",
+            "wielkosc": 0.478
+          },
+          {
+            "slug": "sfinks-teby",
+            "wielkosc": 0.381
+          },
+          {
+            "slug": "syama-i-sarvara",
+            "wielkosc": 0.25
+          },
+          {
+            "slug": "talos-kreta",
+            "wielkosc": 0.337
+          }
+        ],
+        "dominacje": [
+          {
+            "kultura": "indie",
+            "kult": "agni",
+            "wielkosc": 0.318
+          },
+          {
+            "kultura": "irlandia",
+            "kult": "balor",
+            "wielkosc": 0.5
+          },
+          {
+            "kultura": "niemcy",
+            "kult": "barbarossa-kyffhaeuser",
+            "wielkosc": 0.427
+          },
+          {
+            "kultura": "man",
+            "kult": "ben-varrey",
+            "wielkosc": 0.27
+          },
+          {
+            "kultura": "albania",
+            "kult": "drangue-shala",
+            "wielkosc": 0.464
+          },
+          {
+            "kultura": "joruba",
+            "kult": "egungun",
+            "wielkosc": 0.548
+          },
+          {
+            "kultura": "grecja",
+            "kult": "empusa-korynt",
+            "wielkosc": 0.501
+          },
+          {
+            "kultura": "indie",
+            "kult": "indra",
+            "wielkosc": 0.345
+          },
+          {
+            "kultura": "japonia",
+            "kult": "kannon-hase",
+            "wielkosc": 0.318
+          },
+          {
+            "kultura": "grecja",
+            "kult": "kentaur-pelion",
+            "wielkosc": 0.399
+          },
+          {
+            "kultura": "grecja",
+            "kult": "knecht-z-koptos",
+            "wielkosc": 0.292
+          },
+          {
+            "kultura": "anglia",
+            "kult": "lincoln-imp",
+            "wielkosc": 0.406
+          },
+          {
+            "kultura": "polska",
+            "kult": "morowa-panna",
+            "wielkosc": 0.243
+          },
+          {
+            "kultura": "grecja",
+            "kult": "nessos",
+            "wielkosc": 0.33
+          },
+          {
+            "kultura": "grecja",
+            "kult": "pandora",
+            "wielkosc": 0.316
+          },
+          {
+            "kultura": "grecja",
+            "kult": "protostates",
+            "wielkosc": 0.27
+          },
+          {
+            "kultura": "szkocja-polnocna",
+            "kult": "selkie-sule-skerry",
+            "wielkosc": 0.478
+          },
+          {
+            "kultura": "grecja",
+            "kult": "sfinks-teby",
+            "wielkosc": 0.381
+          },
+          {
+            "kultura": "indie",
+            "kult": "syama-i-sarvara",
+            "wielkosc": 0.25
+          },
+          {
+            "kultura": "grecja",
+            "kult": "talos-kreta",
+            "wielkosc": 0.337
+          }
+        ],
+        "paliwo": {
+          "egungun": 29,
+          "barbarossa-kyffhaeuser": 15,
+          "kentaur-pelion": 14,
+          "lincoln-imp": 12,
+          "empusa-korynt": 18,
+          "balor": 19,
+          "selkie-sule-skerry": 22,
+          "indra": 11,
+          "sfinks-teby": 20,
+          "talos-kreta": 16,
+          "pandora": 15,
+          "morowa-panna": 9,
+          "protostates": 12,
+          "knecht-z-koptos": 13,
+          "syama-i-sarvara": 9
+        }
+      },
+      "konsekwencje": {
+        "os": {
+          "mit": -1,
+          "racjonalizacja": 1,
+          "opis": "Kolejność przestaje być święta: ludzie zaczynają widzieć rozkaz jako umowę, a nie ład świata — pieśń o pierwszym w szeregu coraz częściej kończy się pytaniem, kto pierwszy, a nie „stań”."
+        },
+        "relacje": [
+          {
+            "od": "protostates",
+            "do": "knecht-z-koptos",
+            "kierunek": "wzmocnienie",
+            "opis": "Tłuczek staje przy progu i zostawia wodę — fantom dostaje kogoś obok pierwszej linii, choć nie na swój rozkaz; cień rośnie, bo jego pozycja zostaje opowiedziana komuś, kto nie umie się cofnąć."
+          },
+          {
+            "od": "syama-i-sarvara",
+            "do": "protostates",
+            "kierunek": "schlodzenie",
+            "opis": "Psy przechodzą mimo i mówią wprost: kto już nie oddycha, tego pierwszy i tak nie zatrzyma — front traci jedyną rzecz, na której stał, czyli strach przed przejściem."
+          },
+          {
+            "od": "knecht-z-koptos",
+            "do": "syama-i-sarvara",
+            "kierunek": "neutralna",
+            "opis": "Woda zostaje na progu drogi przodków — dar bez adresata; psy przyjmują go jak rzecz, którą niesie się dalej, nie jak rozkaz, który trzeba wykonać."
+          }
+        ],
+        "zasieg": [
+          {
+            "slug": "protostates",
+            "przed": 0.258,
+            "po": 0.27,
+            "delta": 0.012,
+            "opis": "Pieśń o pierwszym z pierwszego szeregu obiega wąwozy: fantom rośnie u tych, którzy pamiętają, że ktoś stał pierwszy — nawet gdy nikt już nie idzie."
+          },
+          {
+            "slug": "knecht-z-koptos",
+            "przed": 0.282,
+            "po": 0.292,
+            "delta": 0.01,
+            "opis": "Opowieść o tłuczku, który pierwszy zostawił wodę przy progu, uczy słuchaczy kończyć rozkazy słowem — Koptos zaczyna zamykać drzwi po zmroku."
+          },
+          {
+            "slug": "syama-i-sarvara",
+            "przed": 0.245,
+            "po": 0.25,
+            "delta": 0.005,
+            "opis": "Droga przodków zyskuje nowe podanie: woda zostawiona przez pierwszego — pielgrzymi w Waranasi zaczynają stawiać dzbany u bramy."
+          }
+        ],
+        "dominacje": [
+          {
+            "kultura": "grecja",
+            "kult": "protostates",
+            "przed": 0.258,
+            "po": 0.27,
+            "delta": 0.012
+          },
+          {
+            "kultura": "grecja",
+            "kult": "knecht-z-koptos",
+            "przed": 0.282,
+            "po": 0.292,
+            "delta": 0.01
+          },
+          {
+            "kultura": "indie",
+            "kult": "syama-i-sarvara",
+            "przed": 0.245,
+            "po": 0.25,
+            "delta": 0.005
+          }
+        ],
+        "pozycje": [
+          {
+            "slug": "protostates",
+            "status": "wzmocniony",
+            "opis": "Stoi dalej, ale teraz wie, po co stoi: dopóki ktoś idzie za nim — inaczej pozostaje tylko cieniem bez frontu."
+          },
+          {
+            "slug": "knecht-z-koptos",
+            "status": "przemieniony",
+            "opis": "Zostawia dzban i słowo końca przestaje być jedynym wyjściem: rzecz, która niosła wodę, po raz pierwszy sama wybiera, gdzie ją postawić."
+          },
+          {
+            "slug": "syama-i-sarvara",
+            "status": "odporny",
+            "opis": "Przechodzą przez każdy front, bo droga przodków nie zna pierwszeństwa — żadna tarcza i żaden rozkaz ich nie zatrzyma."
+          }
+        ],
+        "watki": [
+          {
+            "id": "wedrowny-dom-empusy",
+            "stan": "otwarty",
+            "opis": "Czy słowo-poznanie straci moc, gdy pojawi się ktoś, kto mówi „nie słyszę rozkazu”?"
+          },
+          {
+            "id": "warunek-barbarossy",
+            "stan": "otwarty",
+            "opis": "Dlaczego cesarz woli płacić, żeby gość wchodził — i czy dawny dług da się oddać komuś innemu?"
+          },
+          {
+            "id": "kres-indry",
+            "stan": "otwarty",
+            "opis": "Czy kres można oddać, czy tylko przekroczyć — i co zostaje z pierwszego, gdy nikt nie idzie za nim?"
+          },
+          {
+            "id": "niewinny-bierca",
+            "stan": "otwarty",
+            "opis": "Czy ten, kto bierze, nie wiedząc, że bierze, jest gościem czy złodziejem — a woda zostawiona na progu to dar czy dług?"
+          },
+          {
+            "id": "pierwszy-w-linii",
+            "stan": "otwarty",
+            "opis": "Nowy: czy pierwszy w linii jest panem, czy tylko pierwszym narzędziem porządku — i kto wypowiada słowo końca?"
+          }
+        ]
+      },
+      "narrator": {
+        "ocena": [
+          {
+            "kto": "syama-i-sarvara",
+            "kogo": "protostates",
+            "stopien": 2,
+            "kontekst": "przejście obok pierwszego",
+            "komentarz": "Psy nie próbują fantomu pokonać — pokazują mu, że jego front trzyma się tylko pamięci, a nie drogi: on zatrzymuje żywych, a umarłych nie zatrzymywał nigdy."
+          },
+          {
+            "kto": "protostates",
+            "kogo": "knecht-z-koptos",
+            "stopien": 1,
+            "kontekst": "nakaz stania",
+            "komentarz": "Protostates próbuje zatrzymać tłuczek swoim rozkazem, ale knecht słucha wyłącznie słowa końca; pierwszy w szeregu po raz pierwszy odkrywa, że jego front nie znaczy nic dla kogoś, kto niesie wodę."
+          },
+          {
+            "kto": "knecht-z-koptos",
+            "kogo": "syama-i-sarvara",
+            "stopien": 1,
+            "kontekst": "dzban zostawiony przy progu",
+            "komentarz": "Tłuczek nie rozumie drogi przodków, ale zostawia wodę komuś pierwszemu w linii — dar bez adresata, który psy przyjmują jak rzecz, nie jak rozkaz."
+          }
+        ],
+        "podsumowanie": "Trzy porządki pierwszego spotykają się w jednym przejściu: front, który zatrzymuje żywych; rozkaz, który nosi wodę; i droga, która prowadzi umarłych. Żaden nie wie, kto jest pierwszy — a rozwiązanie przychodzi z boku: pierwszy istnieje tylko dopóki ktoś idzie za nim, a woda zostaje na progu, bo nikt nie wypowiedział słowa końca."
+      }
     }
   ],
   "stanPo": {
@@ -2389,7 +2794,7 @@
       },
       {
         "slug": "knecht-z-koptos",
-        "wielkosc": 0.258
+        "wielkosc": 0.292
       },
       {
         "slug": "lincoln-imp",
@@ -2409,7 +2814,7 @@
       },
       {
         "slug": "protostates",
-        "wielkosc": 0.233
+        "wielkosc": 0.27
       },
       {
         "slug": "selkie-sule-skerry",
@@ -2421,7 +2826,7 @@
       },
       {
         "slug": "syama-i-sarvara",
-        "wielkosc": 0.221
+        "wielkosc": 0.25
       },
       {
         "slug": "talos-kreta",
@@ -2482,7 +2887,7 @@
       {
         "kultura": "grecja",
         "kult": "knecht-z-koptos",
-        "wielkosc": 0.258
+        "wielkosc": 0.292
       },
       {
         "kultura": "anglia",
@@ -2507,7 +2912,7 @@
       {
         "kultura": "grecja",
         "kult": "protostates",
-        "wielkosc": 0.233
+        "wielkosc": 0.27
       },
       {
         "kultura": "szkocja-polnocna",
@@ -2522,7 +2927,7 @@
       {
         "kultura": "indie",
         "kult": "syama-i-sarvara",
-        "wielkosc": 0.221
+        "wielkosc": 0.25
       },
       {
         "kultura": "grecja",
@@ -2542,7 +2947,10 @@
       "sfinks-teby": 20,
       "talos-kreta": 16,
       "pandora": 15,
-      "morowa-panna": 9
+      "morowa-panna": 9,
+      "protostates": 12,
+      "knecht-z-koptos": 13,
+      "syama-i-sarvara": 9
     }
   },
   "walidacja": true,
