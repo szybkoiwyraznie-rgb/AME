@@ -210,20 +210,6 @@ export function htmlWpisu(w, indeks, kronika = null) {
       <div class="chipy">${chipyTagow(w, indeks)}</div>
     </header>`;
 
-  const tabela = `
-    <table class="tabela-translacji">
-      <thead><tr><th>Element karty</th><th>Translacja na byt</th></tr></thead>
-      <tbody>${(w.rezonans.tabela ?? [])
-        .map((r) => `<tr><td>${esc(r.element)}</td><td>${esc(r.translacja)}</td></tr>`)
-        .join('')}</tbody>
-    </table>`;
-
-  const V = sekcja(
-    'V',
-    'Rezonans i tożsamość',
-    `<p>${esc(w.rezonans.klucz_przywolania)}</p>${tabela}`
-  );
-
   const II = sekcja(
     'II',
     'Charakterystyka i natura',
@@ -276,11 +262,11 @@ export function htmlWpisu(w, indeks, kronika = null) {
   const backlinki = (rekord.backlinki ?? [])
     .map((s) => `<button class="chip link wzmianka" data-slug="${esc(s)}">${esc(nazwaSluga(s, indeks))}</button>`)
     .join(' ');
-  const VI = htmlSkitowWpisu(rekord.skity, indeks);
+  const V = htmlSkitowWpisu(rekord.skity, indeks);
   const wiki =
     powiazania || backlinki
       ? sekcja(
-          '∞',
+          'VII',
           'Powiązania',
           `${powiazania ? `<ul class="powiazania">${powiazania}</ul>` : ''}${
             backlinki ? `<p class="wzmiankowane">wzmiankowany przez: ${backlinki}</p>` : ''
@@ -291,8 +277,9 @@ export function htmlWpisu(w, indeks, kronika = null) {
   const tomyIEpoki = htmlTomyIEpoki(w.slug, kronika);
   const meta = htmlStopki(w.meta);
 
-  // Sekcje I–V w kolejności numeracji (PROTOKÓŁ §4.1, v1.3): numer = pozycja.
-  return `<div class="wpis">${naglowek}${I}${II}${III}${IV}${V}${VI}${tomyIEpoki}${wiki}${meta}</div>`;
+  // Sekcje I–VII w kolejności numeracji (PROTOKÓŁ §4.1, MFM v1.8):
+  // numer = pozycja; V = SKITy, VI = Tomy i Epoki, VII = Powiązania.
+  return `<div class="wpis">${naglowek}${I}${II}${III}${IV}${V}${tomyIEpoki}${wiki}${meta}</div>`;
 }
 
 /**
@@ -411,7 +398,7 @@ export function htmlBazySkitow(indeks) {
     .join('')}</ul>`;
 }
 
-/** Sekcja VI wpisu: skity, w których materializacja zabiera głos. */
+/** Sekcja V wpisu (MFM v1.8): skity, w których materializacja zabiera głos. */
 export function htmlSkitowWpisu(slugi, indeks) {
   if (!slugi?.length) return '';
   const pola = slugi
@@ -423,7 +410,7 @@ export function htmlSkitowWpisu(slugi, indeks) {
     )
     .join('');
   if (!pola) return '';
-  return sekcja('VI', 'SKITy', `<ul class="powiazania skity-wpisu">${pola}</ul>`);
+  return sekcja('V', 'SKITy', `<ul class="powiazania skity-wpisu">${pola}</ul>`);
 }
 
 /** Feed „Co nowego": najnowsze na górze, każda pozacja linkuje do treści. */
@@ -483,10 +470,12 @@ export function htmlTomyIEpoki(slug, kronika) {
     .map((e) => `<a class="chip link" href="docs/kronika-${esc(e.slug)}.html" title="${esc(e.tytul ?? '')}">${esc(e.slug)}${e.tytul ? ` · ${esc(e.tytul)}` : ''}</a>`)
     .join('');
   const slowo = epoki.length === 1 ? 'epoce' : 'epokach';
+  // odnośnik do Tomu w tej samej konwencji „brązowego przycisku” co epoki
+  // (recenzja właściciela 2026-08-30: niebieski link zewnętrzny był odstępstwem).
   return sekcja(
-    'K',
+    'VI',
     'Tomy i Epoki',
-    `<p class="maly">Występuje w ${epoki.length} ${slowo} Tomu <a class="link-zewnetrzny" href="docs/kronika-${esc(tomSlug)}.html">${esc(tytulTomu)} ↗</a>:</p><div class="chipy">${chipsy}</div>`
+    `<p class="maly">Występuje w ${epoki.length} ${slowo} Tomu <a class="chip link" href="docs/kronika-${esc(tomSlug)}.html" title="Raport Tomu">${esc(tytulTomu)} ↗</a>:</p><div class="chipy">${chipsy}</div>`
   );
 }
 

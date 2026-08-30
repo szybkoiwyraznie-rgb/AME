@@ -32,11 +32,6 @@
   },
   "dokumentacja": [
     {
-      "typ": "baza kart",
-      "pozycja": "Scryfall, „Panic Spellbomb” (Scars of Mirrodin #191) — {1}, Artifact; „{T}, Sacrifice this artifact: Target creature can’t block this turn.” oraz „When this artifact is put into a graveyard from the battlefield, you may pay {R}. If you do, draw a card.”; znak wodny Mirran; artysta Franz Vohwinkel; brak tekstu flavor; printy: Commander Anthology II #208, Commander 2014 #259",
-      "url": "https://scryfall.com/card/som/191/panic-spellbomb"
-    },
-    {
       "typ": "tekst źródłowy",
       "pozycja": "Hezjod, „Prace i dnie” (przeł. H. G. Evelyn-White, 1914; Internet Sacred Text Archive), w. 60–105 — Hefajstos miesza glinę, Atena odziewa, Hermes daje słowa: „he called this woman Pandora, because all they who dwelt on Olympus gave each a gift, a plague to men who eat bread”; „the woman took off the great lid of the jar with her hands and scattered all these… Only Hope remained there in an unbreakable home within under the rim of the great jar”",
       "url": "https://www.sacred-texts.com/cla/hesiod/works.htm"
@@ -55,31 +50,6 @@
   "trofea": {
     "pierwotne": "Pokrywa pithosu — gliniana płyta z odciskiem dłoni, na której od wewnątrz został tylko pył; zamknięta w płótnie nosi w sobie ostatnią rzecz, jaką da się z tej historii wyciągnąć.",
     "wtorne": "Odrzucony wieniec ślubny — pamiątka, że Pandory nie pokonuje się siłą: ślubny dar i zakaz trzeba oddać albo zostawić zamknięte."
-  },
-  "rezonans": {
-    "klucz_przywolania": "Panic Spellbomb to mała, jednorazowa kula-zaklęcie: otwierasz ją, by wroga ogarnął strach, a potem — już po zniszczeniu — możesz zapłacić i dobrać kartę. Pandora jest dokładnie tym odciskiem w naszym świecie: naczyniem, które zawiera wszystko, co bogowie trzymali z dala od ludzi, i które po otwarciu daje tylko jeden, ostatni zysk — Elpis. „Panic” karty to ślepy strach, który wylatuje ze słoja razem z chorobami i trudem; „spellbomb” to pithos traktowany jak cudowny gadżet: wadliwy dar, który warto było zostawić w kącie. Każde „poświęcenie” naczynia, po którym zostaje jedna karta, odtwarza scenę z „Prac i dni”: pokrywa uniesiona, świat pełen pląg, a pod wieczkiem — nadzieja, „niezłomny dom” na dnie.",
-    "tabela": [
-      {
-        "element": "Nazwa",
-        "translacja": "„Panic Spellbomb” — bombę paniki czyta się jak słój: mała, zamknięta, groźna dopiero po otwarciu. „Panic” to to, co z niej wylatuje: ślepy strach i zło, które Hezjod nazywa „plagami”; „Spellbomb” to dar-zaklęcie. Pandora jest personifikacją dokładnie takiego naczynia — zawierającego wszystko, czego nie chcemy."
-      },
-      {
-        "element": "Mechanika",
-        "translacja": "„{T}, Sacrifice: target creature can’t block” — otwarcie słoja: zło ucieka w świat i nikt nie jest już w stanie stanąć w poprzek; każdy, kto miał bronić, traci blokadę. „When put into a graveyard from the battlefield, you may pay {R}. If you do, draw a card” — po opróżnieniu naczynia zostaje jedna karta: Elpis; zapłata many to cena, za którą nadzieję da się jeszcze wyciągnąć."
-      },
-      {
-        "element": "Ilustracja",
-        "translacja": "Franz Vohwinkel namalował mosiężną kulę z zatyczką — przedmiot codzienny, „gadżet”, który wybucha jednym ruchem. W przekładzie to pithos z beockiej wsi: wielki słój z pokrywą, który wygląda jak zwykłe naczynie, a jest najdroższym darem, jaki bogowie dali ludziom — i jedynym, którego nie należało otwierać."
-      },
-      {
-        "element": "Flavor text",
-        "translacja": "Wydanie SOM nie zawiera tekstu flavor — projekt opiera się na samej mechanice. Brak cytatu czyta się jednak jak puste wnętrze naczynia: liczy się nie to, co wypisane na kuli, lecz to, co w środku i co z niej wyleci."
-      },
-      {
-        "element": "Lore/Tło",
-        "translacja": "SOM to Mirrodin — świat metalu, w którym „spellbomb” to artefakt jednorazowy: broń o jednym użyciu. W przełożeniu taki przedmiot to pithos z „Prac i dni” — z niego nie da się niczego odzyskać poza jedną rzeczą, a kto go użył, ten już nigdy nie wróci do stanu sprzed otwarcia."
-      }
-    ]
   },
   "tagi": [
     "grecja",

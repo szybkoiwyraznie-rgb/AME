@@ -65,31 +65,6 @@
     "pierwotne": "Skamieniały imp na filarze w Angel Choir — trofeum na miejscu, nierozdzielne z katedrą",
     "wtorne": "Oświecona monetą fotografia groteski (współczesna relikwia pątnicza)"
   },
-  "rezonans": {
-    "klucz_przywolania": "Flavor Forge Devil opisuje diabły wdzierające się na dolne poziomy katedry Thraben, pękające filary nośne i podpalające archiwa — to niemal dosłowne streszczenie legendy o impach z Lincoln: dwa impy wysłane przez Szatana demolowały katedrę, tłukąc sprzęty i podkładając nogę biskupowi, a jeden wdrapał się na filar i rzucał kamieniami w anioła, przez co został przez anioła obrócony w kamień. Jego skamienienie do dziś siedzi na kolumnie w Angel Choir — trofeum na miejscu, symbol miasta Lincoln. Mechanika karty (obowiązkowe obrażenia dla celu I dla gracza) oddaje naturę sabotażysty, którego zło nieodłącznie obraca się też przeciwko temu, kto je wysłał.",
-    "tabela": [
-      {
-        "element": "Nazwa",
-        "translacja": "„Forge Devil” — diabeł kuźni: drobny, ognisty sabotuer. W angielskiej legendzie odpowiednikiem „małego diabła-sługusa” jest imp; „forge” wskazuje żywioł ognia, którym posługuje się także lincolnska wersja (podpalanie archiwów, spalone księgi liturgiczne)."
-      },
-      {
-        "element": "Mechanika",
-        "translacja": "„When this creature enters, it deals 1 damage to target creature and 1 damage to you” — zdolność OBOWIĄZKOWA (ruling Scryfall 2014-07-18: przy braku innych celów imp rani też samego siebie): sabotażysta nie słucha przywołującego, jego wandalizm zawsze kosztuje także nadawcę. P/T 1/1 → fizycznie lichy byt: da się namierzyć i pokonać; jego bronią jest ukrytność i szkody, nie siła."
-      },
-      {
-        "element": "Ilustracja",
-        "translacja": "Artysta: Austin Hsu; typ Creature — Devil przedstawia diabła jako małego, fizycznego sprawcę zniszczeń (nie abstrakcyjną siłę) — dokładnie kanon angielskiej groteski kościelnej i legend o impach, które „da się złapać” albo ukamienować. (Kompozycji obrazu nie opisujemy — nie zgadujemy.)"
-      },
-      {
-        "element": "Flavor text",
-        "translacja": "„Devils infiltrated the lower levels of Thraben Cathedral, making cracks in load-bearing pillars and setting fire to precious archives.” — jako dokument terenowy: infiltracja świątyni, pęknięcia filarów nośnych, ogień w składnicach wiedzy. W Lincoln: impy tłukły stoły i krzesła, wywracały biskupa, niszczyły Angel Choir, a skamieniały imp siedzi NA FILARZE NOŚNYM — dokładnie tam, gdzie wg flavoru diabły zostawiają pęknięcia."
-      },
-      {
-        "element": "Lore/Tło",
-        "translacja": "W MtG Innistrad to kościelne miasto Thraben i jego katedra oblegane przez demony; w naszym świecie — katedra Lincoln z najslawniejszą groteską Anglii: impem, który przybył czynić zło i został zatrzymany przez anioła. Warianty legendy tłoczą się wokół tego samego motywu: dwóch impów (drugi uciekł — wiatr krążący wokół katedry albo „imp z Grimsby” w St James'), Chesterfield i jego krzywa iglica, anioł z hymnalu."
-      }
-    ]
-  },
   "tagi": [
     "anglia",
     "istota-kamienna",

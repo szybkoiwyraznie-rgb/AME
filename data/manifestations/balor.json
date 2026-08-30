@@ -72,31 +72,6 @@
     "pierwotne": "kamień z procy, który przebił oko na wylot — w logice przekazu nie relikwia, lecz dowód, że moment otwarcia był momentem zamknięcia",
     "wtorne": "Loch na Súl („jezioro oka”) w hrabstwie Sligo oraz skała pod Mizen Head, którą miał skruszyć ciężar odciętej głowy — Carn Uí Néit, „kurhan wnuka Néita”"
   },
-  "rezonans": {
-    "klucz_przywolania": "„Weftblade Enhancer” to karta z nazwą wziętą z warsztatu tkackiego: weft to wątek, a enhancer — to, co go dobija i wzmacnia dwa inne wątki (+1/+1 na dwa cele). Balor jest we własnym micie właśnie takim wzmacniaczem: jego oko nie tnie, tylko mnoży siłę swoich — otwarcie powieki dawało garstce Fomorów władzę nad armią, a ciało, gdy padło, przygniotło dwudziestu siedmiu z nich. „Warp {2}{W}” z wygnaniem na końcu następnej tury i możliwym powrotem z wygnania w późniejszej turze to kalendarz tego bytu: znika za morze, wraca w wyznaczonym terminie, a wszystko, co zostało w międzyczasie wypowiedziane — przepowiednia o wnuku — cierpliwie czeka na swoją turę. Flavor karty (lud, który patrzył, jak wschodzą Eldrazi i padają Fomorianie, i już nigdy nie spojrzy) jest o tym, że Balor jest bytem samego patrzenia: kto patrzy na jego oko, ten kończy, a kto je otwiera, ten pracuje dla niego.",
-    "tabela": [
-      {
-        "element": "Nazwa",
-        "translacja": "Imię bytu znaczy tyle, co „lśniący” albo „uderzający”: hipotetyczne *Boleros „the flashing one”, przydomki Balor Béimnech (uderzający), Balor Balcbéimnech (mocno uderzający), Balor Birugderc (przeszywający okiem). To nazwa narzędzia, nie osoby — i pasuje do karty podwójnie, bo jej nazwa też jest narzędziem warsztatu. Moc Balora nie jest ciosem, tylko rytmicznym dobijaniem: jedno otwarcie powieki wykonuje całą robotę za jego wojowników."
-      },
-      {
-        "element": "Mechanika",
-        "translacja": "„When this creature enters, put a +1/+1 counter on each of up to two target creatures” → wejście Balora w świat ludzi zawsze kogoś wzmacniało: jego wojowników (garść przy otwartym oku przytłacza armię — przekaz Cath Maige Tuired) oraz tych, którym służył jako czempion i budowniczy (warownia Rath Breisi dla Bresa). „Warp {2}{W}” (wygnanie na końcu następnej tury i powrót z wygnania) → cała strategia Fomorian na wyspie jest opóźniona i wygnana: topienie dzieci, wieża dla córki, powrót wnuka w dokładnie wyznaczonej turze."
-      },
-      {
-        "element": "Ilustracja",
-        "translacja": "Artysta: Nathaniel Himawan. Kompozycji obrazu nie opisujemy — nie zgadujemy (docs/WORKFLOW.md §3). Sama karta mówi dość: koszt {5}{W} przy ciele 3/4 to machina ciężka i wolna, a typ „Drix Artificer” każe czytać Balora jako rzemiosło wojenne z obsługą — oko jest urządzeniem, które potrzebuje czterech ludzi, pierścienia i chwili, żeby zostało otwarte."
-      },
-      {
-        "element": "Flavor text",
-        "translacja": "„His people watched the Eldrazi rise and the Fomori fall. Never will they watch again.” — jako dokument terenowy: kamień z procy wszedł w otwierane właśnie oko i wyszedł z tyłu czaszki, a wzrok zabił dwudziestu siedmiu Fomorów stojących za Balorem. „Nigdy więcej nie spojrzą” jest w tej historii zdaniem technicznym, nie poetyckim: kto był obsługą oka, ten zginął od oka."
-      },
-      {
-        "element": "Lore/Tło",
-        "translacja": "Edge of Eternities opowiada o przybyszach z międzyprzestrzeni i o tym, że samo przyglądanie się katastrofie jest formą winy. U nas: Tory Island jest w Lebor Gabála Érenn najpierw twierdzą Fomorów (wieża Conanda), a potem siedzibą Balora; wyspa nosi do dziś Dún Bhalair i Tor Mór. Trzeba jednak znać proporcje: folklorystyka (O’Donovan 1856, później H. Morris) ostrzega, że „monopol” Tory na Balora jest w dużej mierze skutkiem druku z XIX w. — przekazy o nim krążyły także w Farney, w Monaghan i nad Gweedore Loch."
-      }
-    ]
-  },
   "tagi": [
     "irlandia",
     "olbrzym",

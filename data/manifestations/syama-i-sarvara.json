@@ -1,131 +1,101 @@
 {
-    "slug": "syama-i-sarvara",
-    "nazwa": "Śyāma i Śarvara — czterookie psy Yamy, strażnicy drogi przodków",
-    "nazwy_alternatywne": [
-        "Śyāma i Śabala",
-        "Sarameya (potomkowie Saramy)",
-        "Mithūdṛśā",
-        "psy strzegące ścieżki"
-    ],
-    "karta": {
-        "nazwa": "Trade Route Envoy",
-        "wydanie": "Tarkir: Dragonstorm (TDM) #163",
-        "rok": 2025
+  "slug": "syama-i-sarvara",
+  "nazwa": "Śyāma i Śarvara — czterookie psy Yamy, strażnicy drogi przodków",
+  "nazwy_alternatywne": [
+    "Śyāma i Śabala",
+    "Sarameya (potomkowie Saramy)",
+    "Mithūdṛśā",
+    "psy strzegące ścieżki"
+  ],
+  "karta": {
+    "nazwa": "Trade Route Envoy",
+    "wydanie": "Tarkir: Dragonstorm (TDM) #163",
+    "rok": 2025
+  },
+  "lokalizacja": {
+    "miejscowosc": "Waranasi (Kashi) — miasto przekroczenia nad Gangesem, wedle legendy Manikarnika wolne od władzy Yamy; przy tej samej drodze, na południe, psy strzegą ścieżki przodków (pitṛ-yāna) biegnącej ku siedzibie Yamy",
+    "kraj": "Indie (Uttar Pradesh)",
+    "lat": 25.3176,
+    "lon": 82.9739
+  },
+  "pochodzenie_i_kultura": "Religia wedyjska Indii: Rigweda 10.14 (hymn pogrzebowy do Yamy, przeł. R. T. H. Griffith, 1896) nazywa je „potomstwem Saramy, brązowymi, czterookimi”, „stróżami drogi” i „wysłannikami Yamy, wędrującymi wśród ludzi”; tradycja późniejsza (Atharwaweda, za „Encyclopedia of Indo-European Culture” J. P. Mallory'ego i D. Q. Adamsa) czyni z nich wysłanników wyszukujących umierających, a w przekazach klasycznych (Monier-Williams, Tilak) rozróżnia cętkowaną Śarvarę i ciemną Śyāmę. Jedna droga, jeden pan, jedno plemię.",
+  "wizualizacja": {
+    "prompt": "Style: A wide-angle full-body cinematic photograph. The central objects/persons of the photo are visible from head to toe, standing centrally in the frame. No parts of the body are cropped.\n\nTwo large hounds standing side by side on a narrow dirt road at moonless midnight, one dark as new charcoal, the other brindled with pale patches; each head carrying a second small pair of eyes set above the ordinary ones, all four watching the road; the road runs between flooded rice fields and a line of cremation pyres, smoke rising to a starry sky, distant temple silhouettes, the Ganges glinting behind, cold blue silver light, damp earth and drifting mist.\n\nCaptured with a 35mm anamorphic lens at f/1.8. Shallow depth of field with a heavy, creamy bokeh background. Environmental portraiture. Dramatic cinematic lighting, sharp focus on the character, hyper-realistic textures of clothing and skin. Shot on 70mm film stock, ultra-wide 21:9 aspect ratio. --ar 21:9",
+    "obraz": "assets/wizualizacje/syama-i-sarvara.jpg"
+  },
+  "natura": {
+    "wyglad_i_aura": "Dwa wielkie psy: jeden czarny jak węgiel (Śyāma), drugi cętkowany, brązowo-łaciaty (Śarvara), oba z drugą parą oczu nad zwykłymi — razem cztery oczy, którymi patrzą jednocześnie na świat ludzi i na świat przodków. Nozdrza mają rozdęte, jak u „nienasyconych” wysłanników z hymnu; sierść sucha, nie lśniąca, a wokół pachnie zimnym popiołem i kurzawą drogi. Pojawiają się bezgłośnie, zwykle o zmierzchu albo w nocy, gdy we wsi jest zmarły — i stoją na ścieżce, zamiast iść do ludzi.",
+    "charakter_i_motywacje": "Nie są złe ani dobre — są porządkiem drogi. Pilnują przejścia, oglądają ludzi i strzegą ścieżki; hymn wzywa Yamy, by „powierzył im tego człowieka” i „obdarzył go pomyślnością”. Ich zadaniem jest wyprowadzić duszę bezpiecznie i sprawdzić, czy naprawdę idzie. Nie napadają na żywych: one wyszukują tych, których pora nadeszła, a potem idą z nimi przez granicę. Nie znają przekupstwa ani pośpiechu — znają jedną drogę i jednego pana.",
+    "zdolnosci": "Widzą na dwa sposoby naraz: druga para oczu patrzy tam, gdzie nie sięga wzrok żywych, a tradycja nadaje im miano Mithūdṛśā — „tych, które nie patrzą jednocześnie”: jedno spostrzega to, czego nie widzi drugie, więc przejścia nie da się prześlizgnąć obojgu naraz. Wędrują szybciej niż dusza, węszą umierających (Atharweda) i rozeznają, komu należy się droga prosta, a kogo trzeba prowadzić siłą; bywają też widziane na niebie jako Wielki Pies i Mały Pies (Canis Major i Canis Minor), bo z ich postaci zrobiono gwiazdozbiory.",
+    "slabosci_i_metody_pokonania": "Nie zabija się ich — one są bramą, nie wrogiem. Hymn nie każe z nimi walczyć, lecz „ścigać się i wyprzedzić” na „szczęśliwej ścieżce”: kto idzie godnie, ten przechodzi, bo są strażnikami, nie sędziami. Pomagają obrzędy — ofiara i ogień, którymi Agni niesie dar ku bogom, tłuszcz i ziarno dla przodków — a bywa i chwila, gdy jedno z nich nie patrzy; nie wolno jednak liczyć, że nie zauważą powrotu. Ostatnia rada brzmi: wybrać miasto, w którym Yama nie ma władzy — choć droga do niego też wiedzie przez psy.",
+    "preferencje": "Lubią: drogi, po których nikt nie wraca, kremacje, wierne obrzędy, ciszę po zmroku i podróżnych z wyważonym sumieniem. Nie lubią: ludzi, którzy zawracają z połowy drogi, ścieżek skracanych, krzyku przy stosie i miast, w których Yama nie ma władzy."
+  },
+  "dokumentacja": [
+    {
+      "typ": "tekst źródłowy",
+      "pozycja": "Rigweda 10.14 (przeł. R. T. H. Griffith, 1896; Internet Sacred Text Archive), w. 10–12 — „Run and outspeed the two dogs, Saramā’s offspring, brindled, four-eyed, upon thy happy pathway”; „those two dogs of thine, Yama, the watchers, four-eyed, who look on men and guard the pathway”; „Dark-hued, insatiate, with distended nostrils, Yama’s two envoys roam among the People”",
+      "url": "https://www.sacred-texts.com/hin/rigveda/rv10014.htm"
     },
-    "lokalizacja": {
-        "miejscowosc": "Waranasi (Kashi) — miasto przekroczenia nad Gangesem, wedle legendy Manikarnika wolne od władzy Yamy; przy tej samej drodze, na południe, psy strzegą ścieżki przodków (pitṛ-yāna) biegnącej ku siedzibie Yamy",
-        "kraj": "Indie (Uttar Pradesh)",
-        "lat": 25.3176,
-        "lon": 82.9739
+    {
+      "typ": "encyklopedia",
+      "pozycja": "Wikipedia, „Sharvara and Shyama” — dwa czterookie psy Yamy z Yamasukty Rigwedy, potomkowie Saramy; miano Mithūdṛśā (nie patrzą jednocześnie); Atharweda: wysłannicy wyszukujący umierających (za Mallorym i Adamsem); Śarvara utożsamiana z Canis Major, Śyāma z Canis Minor; imiona: „cętkowana” i „ciemna” (Monier-Williams, Tilak)",
+      "url": "https://en.wikipedia.org/wiki/Sharvara_and_Shyama"
     },
-    "pochodzenie_i_kultura": "Religia wedyjska Indii: Rigweda 10.14 (hymn pogrzebowy do Yamy, przeł. R. T. H. Griffith, 1896) nazywa je „potomstwem Saramy, brązowymi, czterookimi”, „stróżami drogi” i „wysłannikami Yamy, wędrującymi wśród ludzi”; tradycja późniejsza (Atharwaweda, za „Encyclopedia of Indo-European Culture” J. P. Mallory'ego i D. Q. Adamsa) czyni z nich wysłanników wyszukujących umierających, a w przekazach klasycznych (Monier-Williams, Tilak) rozróżnia cętkowaną Śarvarę i ciemną Śyāmę. Jedna droga, jeden pan, jedno plemię.",
-    "wizualizacja": {
-        "prompt": "Style: A wide-angle full-body cinematic photograph. The central objects/persons of the photo are visible from head to toe, standing centrally in the frame. No parts of the body are cropped.\n\nTwo large hounds standing side by side on a narrow dirt road at moonless midnight, one dark as new charcoal, the other brindled with pale patches; each head carrying a second small pair of eyes set above the ordinary ones, all four watching the road; the road runs between flooded rice fields and a line of cremation pyres, smoke rising to a starry sky, distant temple silhouettes, the Ganges glinting behind, cold blue silver light, damp earth and drifting mist.\n\nCaptured with a 35mm anamorphic lens at f/1.8. Shallow depth of field with a heavy, creamy bokeh background. Environmental portraiture. Dramatic cinematic lighting, sharp focus on the character, hyper-realistic textures of clothing and skin. Shot on 70mm film stock, ultra-wide 21:9 aspect ratio. --ar 21:9",
-        "obraz": "assets/wizualizacje/syama-i-sarvara.jpg"
-    },
-    "natura": {
-        "wyglad_i_aura": "Dwa wielkie psy: jeden czarny jak węgiel (Śyāma), drugi cętkowany, brązowo-łaciaty (Śarvara), oba z drugą parą oczu nad zwykłymi — razem cztery oczy, którymi patrzą jednocześnie na świat ludzi i na świat przodków. Nozdrza mają rozdęte, jak u „nienasyconych” wysłanników z hymnu; sierść sucha, nie lśniąca, a wokół pachnie zimnym popiołem i kurzawą drogi. Pojawiają się bezgłośnie, zwykle o zmierzchu albo w nocy, gdy we wsi jest zmarły — i stoją na ścieżce, zamiast iść do ludzi.",
-        "charakter_i_motywacje": "Nie są złe ani dobre — są porządkiem drogi. Pilnują przejścia, oglądają ludzi i strzegą ścieżki; hymn wzywa Yamy, by „powierzył im tego człowieka” i „obdarzył go pomyślnością”. Ich zadaniem jest wyprowadzić duszę bezpiecznie i sprawdzić, czy naprawdę idzie. Nie napadają na żywych: one wyszukują tych, których pora nadeszła, a potem idą z nimi przez granicę. Nie znają przekupstwa ani pośpiechu — znają jedną drogę i jednego pana.",
-        "zdolnosci": "Widzą na dwa sposoby naraz: druga para oczu patrzy tam, gdzie nie sięga wzrok żywych, a tradycja nadaje im miano Mithūdṛśā — „tych, które nie patrzą jednocześnie”: jedno spostrzega to, czego nie widzi drugie, więc przejścia nie da się prześlizgnąć obojgu naraz. Wędrują szybciej niż dusza, węszą umierających (Atharweda) i rozeznają, komu należy się droga prosta, a kogo trzeba prowadzić siłą; bywają też widziane na niebie jako Wielki Pies i Mały Pies (Canis Major i Canis Minor), bo z ich postaci zrobiono gwiazdozbiory.",
-        "slabosci_i_metody_pokonania": "Nie zabija się ich — one są bramą, nie wrogiem. Hymn nie każe z nimi walczyć, lecz „ścigać się i wyprzedzić” na „szczęśliwej ścieżce”: kto idzie godnie, ten przechodzi, bo są strażnikami, nie sędziami. Pomagają obrzędy — ofiara i ogień, którymi Agni niesie dar ku bogom, tłuszcz i ziarno dla przodków — a bywa i chwila, gdy jedno z nich nie patrzy; nie wolno jednak liczyć, że nie zauważą powrotu. Ostatnia rada brzmi: wybrać miasto, w którym Yama nie ma władzy — choć droga do niego też wiedzie przez psy.",
-        "preferencje": "Lubią: drogi, po których nikt nie wraca, kremacje, wierne obrzędy, ciszę po zmroku i podróżnych z wyważonym sumieniem. Nie lubią: ludzi, którzy zawracają z połowy drogi, ścieżek skracanych, krzyku przy stosie i miast, w których Yama nie ma władzy."
-    },
-    "dokumentacja": [
-        {
-            "typ": "baza kart",
-            "pozycja": "Scryfall, „Trade Route Envoy” (Tarkir: Dragonstorm #163) — {3}{G}, Creature — Dog Soldier 4/3; „When this creature enters, draw a card if you control a creature with a counter on it. If you don’t draw a card this way, put a +1/+1 counter on this creature.”; flavor „The Abzan pride themselves on the safety of their roads. To reject their escorts invites storm and sorrow.”; artysta Gaboleps; legalny w Standardzie",
-            "url": "https://scryfall.com/card/tdm/163/trade-route-envoy"
-        },
-        {
-            "typ": "tekst źródłowy",
-            "pozycja": "Rigweda 10.14 (przeł. R. T. H. Griffith, 1896; Internet Sacred Text Archive), w. 10–12 — „Run and outspeed the two dogs, Saramā’s offspring, brindled, four-eyed, upon thy happy pathway”; „those two dogs of thine, Yama, the watchers, four-eyed, who look on men and guard the pathway”; „Dark-hued, insatiate, with distended nostrils, Yama’s two envoys roam among the People”",
-            "url": "https://www.sacred-texts.com/hin/rigveda/rv10014.htm"
-        },
-        {
-            "typ": "encyklopedia",
-            "pozycja": "Wikipedia, „Sharvara and Shyama” — dwa czterookie psy Yamy z Yamasukty Rigwedy, potomkowie Saramy; miano Mithūdṛśā (nie patrzą jednocześnie); Atharweda: wysłannicy wyszukujący umierających (za Mallorym i Adamsem); Śarvara utożsamiana z Canis Major, Śyāma z Canis Minor; imiona: „cętkowana” i „ciemna” (Monier-Williams, Tilak)",
-            "url": "https://en.wikipedia.org/wiki/Sharvara_and_Shyama"
-        },
-        {
-            "typ": "źródło krajoznawcze",
-            "pozycja": "„Manikarnika Ghat, Varanasi” (visitvaranasi.in) — legenda: Śiwa zobowiązuje się, że każdy spalony na ghatcie osiągnie wyzwolenie, przez co Yama traci dusze i ma pretensje; stąd wiara, że Waranasi pozostaje „nietknięte wpływem Yamy” — miasto, przy którym droga przodków skręca w drugą stronę",
-            "url": "https://visitvaranasi.in/burning-ghats/manikarnika-ghat/"
-        }
-    ],
-    "trofea": {
-        "pierwotne": "Wiązka sierści dwóch maści — czarnej i łaciatej — zebrana z drogi nad Gangesem; dowód, że kto przeszedł, zostawia po sobie tylko ślad, a psy wracają po następnych.",
-        "wtorne": "Kamyk z ghatu Manikarnika — z miejsca, gdzie Yama nie ma władzy; noszony przy drodze przypomina, którą ścieżkę wybrać."
-    },
-    "rezonans": {
-        "klucz_przywolania": "Trade Route Envoy to pies-żołnierz, „posłaniec szlaku”, który wchodzi do gry z pytaniem: czy ktokolwiek w twojej drużynie niesie znak? Jeśli tak — dobierasz kartę (prowadzi cię dalej); jeśli nie — to on sam rośnie, bo musi udźwignąć podróżnego bez zasług. Rigweda 10.14 mówi o dokładnie takich posłańcach: „wysłannikach Yamy, wędrujących wśród ludzi”, „stróżach drogi”, którym hymn powierza zmarłego. Przełożenie na nasz świat jest więc proste: „trasa handlowa” to ścieżka przodków, „eskorta” to para czterookich psów, a „znak na istocie” to ślad zasługi albo winy, który człowiek niesie, wchodząc na drogę. Kto odrzuci eskortę, ten — jak mówi flavor — zaprasza „burzę i żal”.",
-        "tabela": [
-            {
-                "element": "Nazwa",
-                "translacja": "„Trade Route Envoy” — posłaniec szlaku; Rigweda 10.14 nazywa psy wprost „wysłannikami Yamy”, którzy „wędrują wśród ludzi”. Trasa handlowa to w przełożeniu ścieżka przodków (pitṛ-yāna), a jej „bezpieczeństwo” — gwarancja, że dusza dojdzie do celu."
-            },
-            {
-                "element": "Mechanika",
-                "translacja": "Wejście z pytaniem o „licznik”: jeśli kontrolujesz istotę ze znakiem, dobierasz kartę (psy prowadzą i wydobywają duszę); jeśli nie — na posłańcu ląduje +1/+1, bo musi sam unieść podróżnego bez zasług. „Counter” czyta się więc jako ślad zasługi: licznik na istocie = znak na duszy, a „dobrana karta” = poprowadzona dusza."
-            },
-            {
-                "element": "Ilustracja",
-                "translacja": "Gaboleps namalował psa-żołnierza w barwach Abzan, eskortę traktu. W przekładzie to czterooki wartownik drogi, którego „zbroją” są cztery oczy i rozdęte nozdrza, a strój eskorty to tylko znak służby: szlak nie należy do niego, należy do tego, kto nim idzie."
-            },
-            {
-                "element": "Flavor text",
-                "translacja": "„The Abzan pride themselves on the safety of their roads. To reject their escorts invites storm and sorrow.” — eskorta, której nie wolno odrzucić. Psy Yamy też są eskortą: hymn błaga, by „powierzyć im człowieka”, a odrzucenie prowadzących oznacza samotną drogę w burzę i żal — dokładnie to, co zapowiada flavor."
-            },
-            {
-                "element": "Lore/Tło",
-                "translacja": "Tarkir to świat klanów i dróg, a Abzan słyną z bezpiecznych traktów; wedyjska wspólnota dbała tak samo o ścieżkę zmarłych. Przełożenie na nasz świat: bezpieczeństwo szlaku jest sprawą życia i śmierci — dlatego posłańcem na trasie okazuje się pies, a nie kupiec."
-            }
-        ]
-    },
-    "tagi": [
-        "indie",
-        "fantom",
-        "przewodnik",
-        "obrona",
-        "postac-zwierzeca"
-    ],
-    "powiazania": [
-        {
-            "slug": "agni",
-            "opis": "Agni niesie obiatę ku bogom, a psy Yamy wyprowadzają dusze ku przodkom — to dwie wedyjskie drogi, którymi wędruje ofiara wspólnoty. Pies pilnuje ścieżki, ogień ją oświetla i przekazuje; oba byty są posłańcami, których nie wzywa się dla siebie, lecz dla tych, którzy odchodzą albo przynoszą dar."
-        },
-        {
-            "slug": "kannon-hase",
-            "opis": "Kannon wyprowadza z cierpienia każdego, kto woła, a psy Yamy — każdego, kogo pora nadeszła: oba byty prowadzą przechodniów, ale w przeciwnych kierunkach — bodhisattwa ku wyzwoleniu, strażnicy ku sądowi. Spotkanie na tej samej ścieżce jest więc rozstrzygnięciem: kto idzie wołany, a kto prowadzony."
-        },
-        {
-            "slug": "sfinks-teby",
-            "opis": "Sfinks stoi przy drodze i przepuszcza za odpowiedź, psy Yamy stoją na ścieżce i przepuszczają za uczciwe przejście. Obie bramy są etapem, nie wyrokiem: sfinks sprawdza rozum, czterookie psy sprawdzają drogę — a kto nie zna właściwego słowa albo właściwego kroku, ten z bramy nie wychodzi."
-        },
-        {
-            "slug": "protostates",
-            "opis": "W Termopilach pierwszy w szeregu zamyka przejście dla żywych, a w Waranasi psy Yamy otwierają drogę dla umarłych — jedna brama przed, druga po, a między nimi tylko cień człowieka, który nie przepuszcza nikogo (Herodot, „Dzieje” VII; Rigweda 10.14)."
-        }
-    ],
-    "meta": {
-        "utworzono": "2026-08-30 00:09",
-        "autor": "sesja arena 2026-08-29/30",
-        "modyfikacje": [
-            {
-                "data": "2026-08-30 00:09",
-                "opis": "Nowa materializacja: Śyāma i Śarvara — czterookie psy Yamy z Rigwedy 10.14, na podstawie karty „Trade Route Envoy” (TDM #163)."
-            },
-            {
-                "data": "2026-08-30 00:20",
-                "opis": "Dodana wizualizacja 21:9 w syama-i-sarvara.jpg — powstała z ramowego promptu wpisu i pokazuje byt w jego naturalnym otoczeniu."
-            },
-            {
-                "data": "2026-08-30 00:38",
-                "opis": "Audyt Kartoteki: poprawki językowe i doprecyzowanie zdań (odmiana, literówki, spójność z mitem)."
-            },
-            {
-                "data": "2026-08-30 10:05",
-                "opis": "Pętla Jakości C1: powiązanie z protostatesem — dwie strony jednego progu (przejście dla żywych i droga przodków)."
-            }
-        ]
+    {
+      "typ": "źródło krajoznawcze",
+      "pozycja": "„Manikarnika Ghat, Varanasi” (visitvaranasi.in) — legenda: Śiwa zobowiązuje się, że każdy spalony na ghatcie osiągnie wyzwolenie, przez co Yama traci dusze i ma pretensje; stąd wiara, że Waranasi pozostaje „nietknięte wpływem Yamy” — miasto, przy którym droga przodków skręca w drugą stronę",
+      "url": "https://visitvaranasi.in/burning-ghats/manikarnika-ghat/"
     }
+  ],
+  "trofea": {
+    "pierwotne": "Wiązka sierści dwóch maści — czarnej i łaciatej — zebrana z drogi nad Gangesem; dowód, że kto przeszedł, zostawia po sobie tylko ślad, a psy wracają po następnych.",
+    "wtorne": "Kamyk z ghatu Manikarnika — z miejsca, gdzie Yama nie ma władzy; noszony przy drodze przypomina, którą ścieżkę wybrać."
+  },
+  "tagi": [
+    "indie",
+    "fantom",
+    "przewodnik",
+    "obrona",
+    "postac-zwierzeca"
+  ],
+  "powiazania": [
+    {
+      "slug": "agni",
+      "opis": "Agni niesie obiatę ku bogom, a psy Yamy wyprowadzają dusze ku przodkom — to dwie wedyjskie drogi, którymi wędruje ofiara wspólnoty. Pies pilnuje ścieżki, ogień ją oświetla i przekazuje; oba byty są posłańcami, których nie wzywa się dla siebie, lecz dla tych, którzy odchodzą albo przynoszą dar."
+    },
+    {
+      "slug": "kannon-hase",
+      "opis": "Kannon wyprowadza z cierpienia każdego, kto woła, a psy Yamy — każdego, kogo pora nadeszła: oba byty prowadzą przechodniów, ale w przeciwnych kierunkach — bodhisattwa ku wyzwoleniu, strażnicy ku sądowi. Spotkanie na tej samej ścieżce jest więc rozstrzygnięciem: kto idzie wołany, a kto prowadzony."
+    },
+    {
+      "slug": "sfinks-teby",
+      "opis": "Sfinks stoi przy drodze i przepuszcza za odpowiedź, psy Yamy stoją na ścieżce i przepuszczają za uczciwe przejście. Obie bramy są etapem, nie wyrokiem: sfinks sprawdza rozum, czterookie psy sprawdzają drogę — a kto nie zna właściwego słowa albo właściwego kroku, ten z bramy nie wychodzi."
+    },
+    {
+      "slug": "protostates",
+      "opis": "W Termopilach pierwszy w szeregu zamyka przejście dla żywych, a w Waranasi psy Yamy otwierają drogę dla umarłych — jedna brama przed, druga po, a między nimi tylko cień człowieka, który nie przepuszcza nikogo (Herodot, „Dzieje” VII; Rigweda 10.14)."
+    }
+  ],
+  "meta": {
+    "utworzono": "2026-08-30 00:09",
+    "autor": "sesja arena 2026-08-29/30",
+    "modyfikacje": [
+      {
+        "data": "2026-08-30 00:09",
+        "opis": "Nowa materializacja: Śyāma i Śarvara — czterookie psy Yamy z Rigwedy 10.14, na podstawie karty „Trade Route Envoy” (TDM #163)."
+      },
+      {
+        "data": "2026-08-30 00:20",
+        "opis": "Dodana wizualizacja 21:9 w syama-i-sarvara.jpg — powstała z ramowego promptu wpisu i pokazuje byt w jego naturalnym otoczeniu."
+      },
+      {
+        "data": "2026-08-30 00:38",
+        "opis": "Audyt Kartoteki: poprawki językowe i doprecyzowanie zdań (odmiana, literówki, spójność z mitem)."
+      },
+      {
+        "data": "2026-08-30 10:05",
+        "opis": "Pętla Jakości C1: powiązanie z protostatesem — dwie strony jednego progu (przejście dla żywych i droga przodków)."
+      }
+    ]
+  }
 }

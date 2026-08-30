@@ -57,31 +57,6 @@
     "pierwotne": "Spiżowy gwóźdź z kostki Talosa — ostatnie uszczelnienie żyły, po którego wyjęciu automat zamilkł. To dowód, że maszyna granicy nie miała słabości w sercu ani w mieczu, tylko w jednej, precyzyjnie dobranej śrubie.",
     "wtorne": "Odłamany kawałek brązowej łydki z widocznym szwem odlewniczym — pamiątka po bycie, który był kiedyś narzędziem, a nie istotą."
   },
-  "rezonans": {
-    "klucz_przywolania": "Dreams of Steel and Oil to karta o śnie metalu i ropy: ciemna, jednostronna magia, która sięga do pamięci (ręki) i do grobu (cmentarza), wybiera tam jeden przedmiot i jedną istotę i wyrzuca je poza świat. W naszej tradycji takim bytem jest Talos: spiżowy olbrzym, którego wnętrze wypełnia płyn nieśmiertelnych — coś jak ropa, tylko że zamiast paliwa daje życie. Karta nie materializuje broni ani smoka; materializuje koszmar maszyny, która jest zbyt dobrze zrobiona i zbyt długo czeka.",
-    "tabela": [
-      {
-        "element": "Nazwa",
-        "translacja": "„Dreams of Steel and Oil” — sen ze stali i oleju. Talos jest dokładnie takim snem: zbudowany ze stali (spiżu / brązu) i wypełniony oleistym płynem — ichorem, który wypływa jak roztopiony ołów. To nie człowiek, tylko odlew, który śni, że jest człowiekiem, i napędza go płyn zamiast krwi."
-      },
-      {
-        "element": "Mechanika",
-        "translacja": "„Target opponent reveals their hand. You choose an artifact or creature card from it, then choose an artifact or creature card from their graveyard. Exile the chosen cards.” — wybór z ręki (pamięci/planu) i z grobu (przeszłości) to wyjęcie dwóch śrub, które trzymają Talosa w świecie. W mitologii wystarczy wyjąć gwóźdź w kostce i istota znika; magia karty sięga jeszcze głębiej — wyjmuje byt z jego własnej historii."
-      },
-      {
-        "element": "Ilustracja",
-        "translacja": "Artysta Jeremy Wilson; scena oddaje koszmar przetworzonych maszyn — metalu, który jęczy i porusza się jak żywy. Talos na starożytnej Krecie jest prototypem takiej wyobraźni: odlana postać, która obchodzi wyspę i nie śpi; jego metal „pamięta” formę, w której go odlano."
-      },
-      {
-        "element": "Flavor text",
-        "translacja": "„Mishra's nightmares of Phyrexia rang with screams of agony and groans of twisted metal.” — karta nie o smoku, tylko o metalu, który cierpi. Talos też nie ma duszy, ale jego upadek Apolloniusz opisuje jak powalenie drzewa: cisza, wstrząs brzegu, rozkołysane morze — to groza i litość jednocześnie, a nie triumf."
-      },
-      {
-        "element": "Lore/Tło",
-        "translacja": "Świat The Brothers' War to wojna dwóch wynalazców i maszyn, które zyskują własną wolę. W Grecji to samo napięcie oddaje mit o automatonie Hefajstosa: technika, która zaczyna służyć granicy i nie pyta o litość. Talos nie jest „dobrym robotem” ani „złym robotem” — jest doskonałym narzędziem, które trzeba było zatrzymać."
-      }
-    ]
-  },
   "tagi": [
     "grecja",
     "automat",

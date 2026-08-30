@@ -80,7 +80,8 @@ lub aktywności (dokładność ~0,01° wystarcza).
 - Dokumentacja: `{ typ, pozycja, url }`, `url` = pełny `http(s)`; co najmniej
   jedno źródło w wpisie musi mieć adres (ADR 0011).
 - Kolejność kluczy w pliku = numeracja sekcji: `wizualizacja` (I), `natura` (II),
-  `dokumentacja` (III), `trofea` (IV), `rezonans` (V) — PROTOKÓŁ §4.1/§4.4.
+  `dokumentacja` (III), `trofea` (IV) — PROTOKÓŁ §4.1/§4.4. Sekcje V–VII są
+  wyliczane, nie zapisywane; pole `rezonans` nie istnieje (v1.8, ADR 0022).
 - `meta.utworzono` = data w formacie **RRRR-MM-DD** (zalecane z godziną: **RRRR-MM-DD GG:MM**, ADR 0017); `autor` = sesja (np. „sesja arena 2026-08-28”).
 
 ### 7. Build + testy + commit
@@ -128,13 +129,14 @@ Sprawdź:
 - pinezka na mapie — klikalna (pole trafienia), badge nazwy czytelny,
   mapa w uczciwych proporcjach przy szerokości i wysokości okna (ADR 0009);
 - kartoteka jako pełnoekranowa warstwa (B2/ADR 0010), sekcje w kolejności
-  I → II → III → IV → V (→ VI SKITy), obraz na całą szerokość opisu;
+  I → II → III → IV → V SKITy → VI Tomy i Epoki → VII Powiązania (v1.8),
+  obraz na całą szerokość opisu;
 - Dokumentacja: adresy klikalne i prowadzące donikąd tylko tam, gdzie ich nie
   potwierdzono (a potwierdzać trzeba — ADR 0008);
 - tag klikalny (pasek w pasmach kategorii, licznik, opis w `title`),
   powiązanie/backlink, łuki powiązań; filtr po tagu pokazuje kategorię w statusie;
 - przełącznik motywu: jasny i ciemny bez utraty czytelności mapy i tekstu;
-- sekcja VI: skity bytu linkują do Bazy Skitów, `#skit:<slug>` otwiera tekst;
+- sekcja V (SKITy): skity bytu linkują do Bazy Skitów, `#skit:<slug>` otwiera tekst;
   „✚ nowości" pokazuje zmiany z dzisiejszego commita na górze;
 - `Esc` i `✕` zamykają warstwę, fokus wraca na pinezkę/listę.
 
@@ -157,7 +159,7 @@ mieścić opisu w stopce karty: wyświetla ona wyłącznie daty.
    odrzuci powtórkę). **Domyślnie 3–4 uczestników** (preferowane, ADR 0019) —
    duet tylko, gdy temat naprawdę go wymaga; `npm run build` przypomni o tym
    podpowiedzią, gdy duetów w bazie jest za dużo.
-2. **Materiał.** Przeczytaj sekcje II/III/V kart uczestników; zwyczaje,
+2. **Materiał.** Przeczytaj sekcje II/III kart uczestników; zwyczaje,
    przedmioty i miejsca, które mają wypowiedzieć, muszą się z nimi zgadzać
    (ADR 0008). Nowy fakt w dialogu = fakt do sprawdzenia w sieci.
 3. **Pisanie.** Nagłówek to `tytul` (wersaliki w renderze), pod nim uczestnicy,
@@ -168,7 +170,7 @@ mieścić opisu w stopce karty: wyświetla ona wyłącznie daty.
    pliku), `meta.utworzono` = dzisiejsza data.
 5. **Build i testy.** `npm run build && npm test` — walidator sprawdza limity,
    głos każdej postaci, istnienie uczestników i unikalność składów; indeks
-   sam dopisze sekcję VI w kartach i pozycję w feedzie.
+   sam dopisze sekcję V w kartach i pozycję w feedzie.
 6. **Commit.** `skity: dodano „<TYTUŁ>” (<byt(a)>)`, indeks w tym samym commicie.
 
 ### Rygor: każda zmiana treści trafia do dziennika (ADR 0014)

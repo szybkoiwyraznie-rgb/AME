@@ -25,10 +25,20 @@ test('lokalizacja: zakresy współrzędnych', () => {
   assert.ok(walidujWpis(ustaw(wpisWzorzec(), { 'lokalizacja.lon': -180 })).length === 0);
 });
 
-test('rezonans.tabela: wymagane wszystkie elementy translacji', () => {
-  const bezFlavor = wpisWzorzec();
-  bezFlavor.rezonans.tabela = bezFlavor.rezonans.tabela.filter((w) => w.element !== 'Flavor text');
-  assert.ok(walidujWpis(bezFlavor).some((e) => e.includes('Flavor text')));
+test('v1.8: wpis bez pola rezonans przechodzi walidację (ADR 0022)', () => {
+  const bezRezonans = wpisWzorzec();
+  delete bezRezonans.rezonans;
+  assert.deepEqual(walidujWpis(bezRezonans), [], 'protokół v1.8 nie wymaga już sekcji V');
+});
+
+test('v1.8: dokumentacja nie może cytować mechaniki karty jako źródła', () => {
+  const zMechanika = wpisWzorzec();
+  zMechanika.dokumentacja = [
+    { typ: 'baza kart', pozycja: 'Scryfall, „X” ({1}{U}, Creature — 0/1; „{U}, {T}: …”)', url: 'https://scryfall.com/card/x/1/x' },
+    { typ: 'książka', pozycja: 'Autor, Tytuł (2000)', url: 'https://example.org/x' },
+  ];
+  const bledy = walidujWpis(zMechanika);
+  assert.ok(bledy.some((e) => e.includes('baza kart')), 'typ „baza kart” odrzucany (4. ściana)');
 });
 
 test('natura: komplet pięciu pól protokołu II', () => {

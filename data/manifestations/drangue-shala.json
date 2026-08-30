@@ -66,31 +66,6 @@
     "pierwotne": "kamień piorunowy (kokrra e rrufesë) wydobyty z grzędy po nawałnicy — trzymany w izbie, dopóki go nie odda się górze",
     "wtorne": "spalony na kamieniu strzęp wełny z kurtki, pod którą schowane były skrzydła — znak, że heros stał tuż obok i nie dał się tknąć"
   },
-  "rezonans": {
-    "klucz_przywolania": "Karta „Thunderstaff” jest artefaktem za {3} i robi dwie rzeczy: dopóki nie jest tapnięta, zmniejsza o 1 obrażenia od każdej atakującej jej istoty, a za {2} i tapnięcie daje atakującym +1/+0 do końca tury. To gotowy przepis na dolinę Shali w burzę: w domu leży kamień piorunowy i dopóki go nie ruszono, uderzenia „przelatują obok”; jeśli rodzina wyniesie ogień i zacznie bić w metal, tego wieczoru wszyscy uderzają mocniej — i tak tylko do końca nawałnicy. Dlatego transpozycja nie prowadzi do boga, tylko do jego obsługiwanej siły: drangue działa, bo ktoś wykonał gest.",
-    "tabela": [
-      {
-        "element": "Nazwa",
-        "translacja": "Thunderstaff = „kij/laska grzmotu”. W albańskim kręgu odpowiada mu przedmiot, nie broń do trzymania w ręku: kokrra e rrufesë / guri i rejës — „ziarno pioruna”, kamień z nieba, którego nie dzierży bohater, lecz przechowuje rodzina. Przekłady nazwy karty trzymają się zresztą tego samego napięcia przedmiotu i siły: es „Bastóntrueno”, fr „Bâton de tonnerre”, de „Donnerstab”, it „Bastone delle Tempeste”."
-      },
-      {
-        "element": "Mechanika",
-        "translacja": "„As long as this artifact is untapped, if a creature would deal combat damage to you, prevent 1 of that damage” → kamień leży na swoim miejscu w chałpie i każdy cios wymierzony w domowników trafia obok (reguła z 2004 r. mówi wprost: po jednym obrażeniu od każdego stworzenia i przy każdym trafieniu — przy trzech atakujących z podwójnym uderzeniem da to sześć zapobieżonych obrażeń, czyli ochrona liczona od uderzenia, nie od bitwy). „{2}, {T}: Attacking creatures get +1/+0 until end of turn” → wyniesienie żaru, bicia w miednicę i strzału w chmurę kosztuje, ale do końca burzy uderzenia jej sojuszników ważą więcej. W obu wypadkach to nie jego moc, tylko ich obsługa — i dlatego karta jest artefaktem, a nie istotą."
-      },
-      {
-        "element": "Ilustracja",
-        "translacja": "Artysta: Kaja Foglio (druk DST #153; nowsze przedruki mają innego autora, np. CMA #237 — Cliff Childs). Kompozycji obrazu nie opisujemy — nie zgadujemy (docs/WORKFLOW.md §3). Istotne jest co innego: ten druk nie ma flavor textu, więc karta jest „czystym” mechanizmem, dokładnie tak jak w albańskim zwyczaju — nie ma mitu, jest gest i kamień."
-      },
-      {
-        "element": "Flavor text",
-        "translacja": "Na druku, który otworzył kartotekę (Darksteel), flavor nie występuje. W nowszych drukach karty dodano zdanie: „Jort the Thunder-Mad spent his life perfecting a way to harness the power of the heavens.” — człowiek, który poświęcił życie oswojeniu mocy niebios; dalej idzie ono w linii, w której idzie dolina Shali: siła nie jest darem, tylko rzeczą, którą się opanowało i za którą się płaci. Reszty biografii Jorta nie potwierdzam i nie wymyślam."
-      },
-      {
-        "element": "Lore/Tło",
-        "translacja": "Darksteel (2004) jest setem, w którym artefakty są osią świata, a „harness the power of the heavens” brzmi jak program tej mechaniki: nie modlitwa, tylko inżynieria. Albański odpowiednik jest jeszcze starszy i jeszcze bardziej dosłowny: piorun jest Zjarri i Qiellit, ogniem nieba, a jedyną „inżynierią”, którą nań ma wspólnota, jest łańcuch żaru wyniesiony z chaty, miednica i kula wystrzelona w chmurę. Karta bez zdolności bojowych (nie atakuje, tylko zmienia reguły bitwy) to ten sam model: liczy się usługa, nie bohaterstwo."
-      }
-    ]
-  },
   "tagi": [
     "albania",
     "heros-burzy",

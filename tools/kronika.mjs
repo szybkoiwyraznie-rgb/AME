@@ -2531,14 +2531,8 @@ function generujSkryptKartoteki(manifestacjePelne, indeks) {
       '<div class="chipy">' + tagiHtml + '</div>' +
       '</header>';
 
-    const tabela = '<table class="tabela-translacji">' +
-      '<thead><tr><th>Element karty</th><th>Translacja na byt</th></tr></thead>' +
-      '<tbody>' + ((w.rezonans && w.rezonans.tabela) || []).map(function(r) {
-        return '<tr><td>' + esc(r.element) + '</td><td>' + esc(r.translacja) + '</td></tr>';
-      }).join('') + '</tbody></table>';
-
-    const sekcjaV = '<section class="sekcja"><h3><span class="numer">V.</span> Rezonans i tożsamość</h3>' +
-      '<p>' + esc((w.rezonans && w.rezonans.klucz_przywolania) || '') + '</p>' + tabela + '</section>';
+    // v1.8 (2026-08-30): sekcja „Rezonans i tożsamość” usunięta z protokołu —
+    // kartoteka pokazuje I–IV (Wizualizacja → Trofea).
 
     const sekcjaII = '<section class="sekcja"><h3><span class="numer">II.</span> Charakterystyka i natura</h3>' +
       '<dl class="natura">' +
@@ -2593,7 +2587,7 @@ function generujSkryptKartoteki(manifestacjePelne, indeks) {
 
     const metaHtml = w.meta ? '<div class="meta-wpisu">Protokół MFM v' + esc(w.meta.wersja_protokolu || '1.4') + ' · Rejestracja: ' + esc(w.meta.utworzono || '') + ' · Hash: ' + esc(w.meta.kod_weryfikacyjny || '') + '</div>' : '';
 
-    return '<div class="wpis">' + naglowek + sekcjaI + sekcjaII + sekcjaIII + sekcjaIV + sekcjaV + metaHtml + '</div>';
+    return '<div class="wpis">' + naglowek + sekcjaI + sekcjaII + sekcjaIII + sekcjaIV + metaHtml + '</div>';
   }
 
   function otworz(slug) {

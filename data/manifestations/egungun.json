@@ -67,31 +67,6 @@
     "pierwotne": "Kosmyk płótna z wiru egúngún (relikwia — przechowywana w sanktuarium rodu, nie w prywatnej kolekcji)",
     "wtorne": "Kauria zhaftowana na płótnach maskarady"
   },
-  "rezonans": {
-    "klucz_przywolania": "Krumar Initiate to żyjący NOWICJUSZ kultu przodków: zapłaciwszy własną siłą życiową (Pay X life), przywołuje ducha, który materializuje się obok niego jako biały Duch (token X/X), albo sam wzrasta w mocy. To dokładna struktura egúngún: wybrany członek rodu zostaje wtajemniczony i staje się naczyniem, przez które przodek — ara ọ̀run, „mieszkaniec nieba” — powraca do świata żywych w cielesnej, zamaskowanej postaci. Flavor karty (głosy duchów rodu witające nowego „sprout of our Kin-Tree”) brzmi jak zapis inicjacyjnego objawienia w kulcie egúngún.",
-    "tabela": [
-      {
-        "element": "Nazwa",
-        "translacja": "„Initiate” = nowicjusz przyjmowany do grona wtajemniczonych — w kulcie egúngún tylko wybrane osoby z konkretnych rodów przechodzą inicjację do stowarzyszenia maskarady. „Krumar” to w lore Tarkiru sieroty z wrogich klanów przyswojone przez rody Abzan jako „bond-kin” — przyjęcie kogoś do linii rodowej; u Jorubów linia (ìdílé) również liczy się bardziej niż krew: przynależność do rodu decyduje o dostępie do przodków."
-      },
-      {
-        "element": "Mechanika",
-        "translacja": "{X}{B}, {T}, Pay X life: endures X → inicjant płaci własną życiową siłą, by przodek się objawił: token X/X white Spirit to ara ọ̀run przybierający cielesną postać, a alternatywa (+1/+1 counters) to wzmocnienie samego naczynia przez moc przodka. „Activate only as a sorcery” → rytuał wymaga czasu i oprawy, nie wykonuje się go „w biegu”. Human Cleric → żyjący kapłan-inicjant, nie sam duch."
-      },
-      {
-        "element": "Ilustracja",
-        "translacja": "Artysta: Josu Solano; watermark rodu Abzan — podpis rodowy, nie jednostkowy: kult egúngún jest własnością rodów i ich domów masek (ilé egúngún), nigdy osoby prywatnej. (Kompozycji obrazu nie opisujemy — nie zgadujemy.)"
-      },
-      {
-        "element": "Flavor text",
-        "translacja": "„Welcome, newest sprout of our Kin-Tree” — duchy zmarłych rodu witają żyjącego nowicjusza w linii. Jorubskie źródła oddają ten sam stan: przodkowie są „odejści, lecz nie umarli” („departed but not deceased”, Drewal–Pemberton 1989) i wracają do społeczności, którą znali; inicjacja jest przyjęciem do tego dialogu obu światów."
-      },
-      {
-        "element": "Lore/Tło",
-        "translacja": "Na Tarkirze rody Abzan czczą duchy przodków skupione wokół Drzewa Krewnych, a „spirit speakers” przywołują je rytualnie; w naszym świecie odpowiednikiem jest rodowy kult egúngún Jorubów z Oyo — coroczny festiwal (w Òyó w sierpniu), kapłan Alapini przywołujący duchy przodków, chóry kobiet śpiewające oríkì i domy masek przechowujące płócienne kostiumy."
-      }
-    ]
-  },
   "tagi": [
     "joruba",
     "duch-przodkow",

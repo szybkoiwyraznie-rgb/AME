@@ -21,8 +21,11 @@ test('Tomy i Epoki: sekcja linkuje Tom i Epoki z udziałem bytu (E)', () => {
     ],
   };
   const html = htmlTomyIEpoki('egungun', kronika);
-  assert.match(html, /Tomy i Epoki/);
+  assert.match(html, /<span class="numer">VI<\/span> Tomy i Epoki/, 'sekcja VI (v1.8)');
   assert.match(html, /href="docs\/kronika-tom-1\.html"/, 'link do Tomu');
+  // odnośnik do Tomu w konwencji „brązowego przycisku” jak epoki (recenzja 2026-08-30)
+  assert.match(html, /<a class="chip link" href="docs\/kronika-tom-1\.html"/, 'Tom jako chip, nie niebieski link');
+  assert.ok(!html.includes('link-zewnetrzny'), 'brak niebieskiego linku zewnętrznego do Tomu');
   assert.match(html, /href="docs\/kronika-epoka-1\.html"/, 'link do epoki 1');
   assert.match(html, /href="docs\/kronika-epoka-3\.html"/, 'link do epoki 3');
   assert.ok(!html.includes('epoka-2'), 'epoka bez bytu nie jest linkowana');
@@ -40,8 +43,9 @@ test('htmlWpisu: sekcja Tomy i Epoki tylko z podsumowaniem Kroniki (E)', async (
     epoki: [{ slug: 'epoka-1', tytul: 'Trzy stoły', uczestnicy: [{ slug: wpis.slug }] }],
   });
   assert.ok(zKronika.includes('Tomy i Epoki'), 'z kroniką sekcja jest');
+  assert.match(zKronika, /<span class="numer">VI<\/span> Tomy i Epoki/, 'numeracja v1.8');
   assert.match(zKronika, /href="docs\/kronika-epoka-1\.html"/);
-  // sekcja idzie po SKITach, przed Powiązaniami
+  // sekcja idzie po SKITach (V), przed Powiązaniami (VII)
   assert.ok(zKronika.indexOf('Tomy i Epoki') > zKronika.indexOf('SKITy'));
   assert.ok(zKronika.indexOf('Tomy i Epoki') < zKronika.indexOf('Powiązania'));
 });
@@ -70,17 +74,20 @@ test('htmlWpisu: komplet sekcji protokołu I–V (egungun)', async () => {
   const { wpis, indeks } = await dane();
   const html = htmlWpisu(wpis, indeks);
   for (const fraza of [
-    'Rezonans i tożsamość',
     'Charakterystyka i natura',
     'Dokumentacja (The Source Stack)',
     'Wizualizacja',
     'Trofea i dowody eliminacji',
+    'SKITy',
     '--ar 21:9',
     'inspiracja kartą',
     'Krumar Initiate',
   ]) {
     assert.ok(html.includes(fraza), `brak: ${fraza}`);
   }
+  // v1.8 (ADR 0022): sekcja „Rezonans i tożsamość” usunięta z protokołu
+  assert.ok(!html.includes('Rezonans i tożsamość'), 'brak sekcji V „Rezonans”');
+  assert.ok(!html.includes('tabela-translacji'), 'brak tabeli translacji karty');
   assert.ok(!html.includes('<script'), 'treść wpisu nigdy jako HTML');
 });
 
@@ -183,24 +190,26 @@ test('index.html: przełącznik w prawym górnym rogu + strażnik przed błyskie
 
 const naNumerze = (html, numer) => html.search(new RegExp(`<span class="numer">${numer}</span>`));
 
-test('htmlWpisu: numeracja sekcji = kolejność, I Wizualizacja … V Rezonans (B1 + v1.3)', async () => {
+test('htmlWpisu: numeracja sekcji = kolejność I–IV … V SKITy (B1 + v1.8)', async () => {
   const { wpis, indeks } = await dane();
   const html = htmlWpisu(wpis, indeks);
   const pozycje = ['I', 'II', 'III', 'IV', 'V'].map((n) => naNumerze(html, n));
   assert.ok(pozycje.every((p) => p > 0), 'każda sekcja ma numer w nagłówku');
   assert.deepEqual([...pozycje].sort((a, b) => a - b), pozycje, `numery muszą iść w kolejności rosnącej: ${pozycje}`);
-  // mapa numerów na treść wg PROTOKÓŁ §4.1 (v1.3)
+  // mapa numerów na treść wg PROTOKÓŁ §4.1 (v1.8, ADR 0022)
   assert.match(html, /<span class="numer">I<\/span> Wizualizacja/);
   assert.match(html, /<span class="numer">II<\/span> Charakterystyka i natura/);
   assert.match(html, /<span class="numer">III<\/span> Dokumentacja \(The Source Stack\)/);
   assert.match(html, /<span class="numer">IV<\/span> Trofea i dowody eliminacji/);
-  assert.match(html, /<span class="numer">V<\/span> Rezonans i tożsamość/);
+  assert.match(html, /<span class="numer">V<\/span> SKITy/);
+  assert.ok(!html.includes('Rezonans i tożsamość'), 'sekcja V „Rezonans” usunięta (v1.8)');
 });
 
-test('htmlWpisu: powiązania i meta zostają na końcu (B1: reszta bez zmian)', async () => {
+test('htmlWpisu: powiązania (VII) i meta zostają na końcu (B1: reszta bez zmian)', async () => {
   const { wpis, indeks } = await dane('lincoln-imp');
   const html = htmlWpisu(wpis, indeks);
   assert.ok(naNumerze(html, 'V') < html.indexOf('Powiązania'), 'sekcje przed wiki');
+  assert.match(html, /<span class="numer">VII<\/span> Powiązania/, 'powiązania = VII (v1.8)');
   assert.ok(html.indexOf('Powiązania') < html.indexOf('meta-wpisu'), 'potem powiązania, na końcu meta');
 });
 
@@ -251,7 +260,7 @@ test('kontrakt identyfikatorów: każdy selektor app.js istnieje w index.html lu
   assert.deepEqual(braki, [], `app.js woła elementy, których nie ma w markupie: ${braki.join(', ')}`);
 });
 
-/* ---- SKITy w UI: dialog, widok, baza, sekcja VI, feed (ADR 0013/0014) ---- */
+/* ---- SKITy w UI: dialog, widok, baza, sekcja V, feed (ADR 0013/0014) ---- */
 
 test('htmlDialogu: repliki, didaskalia i safety po escapowaniu', () => {
   const html = htmlDialogu(
@@ -306,14 +315,14 @@ test('htmlBazySkitow: wiersze z data-skit, najnowsze na górze, stan pusty', asy
   assert.ok(kolejnosc.indexOf('NOWY') < kolejnosc.indexOf('STARY'), 'najnowsze na górze');
 });
 
-test('sekcja VI wpisu wylicza skity z indeksu (nie z pliku wpisu)', async () => {
+test('sekcja V wpisu wylicza skity z indeksu (nie z pliku wpisu)', async () => {
   const { wpis, indeks } = await dane();
   const html = htmlWpisu(wpis, indeks);
-  assert.match(html, /<span class="numer">VI<\/span> SKITy/);
+  assert.match(html, /<span class="numer">V<\/span> SKITy/);
   assert.ok(html.includes('data-skit="plotno-i-kamien"'), 'link do skitu pod kartą');
   const bez = { ...wpis, dokumentacja: wpis.dokumentacja };
   const indeksBez = { ...indeks, manifestacje: indeks.manifestacje.map((m) => ({ ...m, skity: [] })) };
-  assert.ok(!htmlWpisu(bez, indeksBez).includes('SKITy'), 'brak skitów = brak sekcji VI');
+  assert.ok(!htmlWpisu(bez, indeksBez).includes('SKITy'), 'brak skitów = brak sekcji V');
 });
 
 test('htmlNowosci: feed z linkami do treści i bezwzględnym escapowaniem', async () => {
@@ -339,7 +348,7 @@ test('htmlNowosci: feed z linkami do treści i bezwzględnym escapowaniem', asyn
   assert.match(htmlNowosci({ ...indeks, aktualizacje: [] }), /Brak zmian w archiwum/);
 });
 
-test('indeks repo: feed i sekcja VI spójne z danymi (bez ręki)', async () => {
+test('indeks repo: feed i sekcja V spójne z danymi (bez ręki)', async () => {
   const { indeks } = await dane();
   assert.equal(indeks.wersja, 3);
   assert.ok(indeks.aktualizacje.length >= 5, `feed ma ${indeks.aktualizacje.length} pozycji`);
@@ -369,11 +378,11 @@ test('htmlStopki: data utworzenia i data ostatniej modyfikacji, nic więcej', as
   );
 });
 
-test('karta bytu: brak notatek roboczych w stopce i w sekcji VI', async () => {
+test('karta bytu: brak notatek roboczych w stopce i w sekcji V', async () => {
   const { wpis, indeks } = await dane();
   const html = htmlWpisu(wpis, indeks);
   assert.ok(!/sesja arena|sesja M\d|PROTOKÓŁ §\d|C1|C3/.test(html), 'stopka i sekcje nie cytują wewnętrznych oznaczeń sesji');
-  assert.ok(!html.includes('pisze je kolejna sesja'), 'sekcja VI bez zdania roboczego');
+  assert.ok(!html.includes('pisze je kolejna sesja'), 'sekcja V bez zdania roboczego');
   assert.match(html, /<footer class="meta-wpisu">utworzono \d{4}-\d{2}-\d{2}(?: \d{2}:\d{2})?(?: · zmieniono \d{4}-\d{2}-\d{2}(?: \d{2}:\d{2})?)?<\/footer>/);
   const { indeks: i2 } = await dane('lincoln-imp');
   const wpis2 = JSON.parse(await readFile('data/manifestations/lincoln-imp.json', 'utf8'));

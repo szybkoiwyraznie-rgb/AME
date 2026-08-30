@@ -1,1 +1,49 @@
-{"slug": "inny-slug", "nazwa": "Byt Testowy", "nazwy_alternatywne": ["Testownik"], "karta": {"nazwa": "Grizzly Bears", "wydanie": "Alpha", "rok": 1993}, "lokalizacja": {"miejscowosc": "Białowieża", "kraj": "Polska", "lat": 52.7, "lon": 23.85}, "pochodzenie_i_kultura": "folklor testowy", "rezonans": {"klucz_przywolania": "Testowy klucz przywołania.", "tabela": [{"element": "Nazwa", "translacja": "t"}, {"element": "Mechanika", "translacja": "t"}, {"element": "Ilustracja", "translacja": "t"}, {"element": "Flavor text", "translacja": "t"}, {"element": "Lore/Tło", "translacja": "t"}]}, "natura": {"wyglad_i_aura": "o", "charakter_i_motywacje": "o", "zdolnosci": "o", "slabosci_i_metody_pokonania": "o", "preferencje": "o"}, "dokumentacja": [{"typ": "literatura naukowa", "pozycja": "Autor, Tytuł (2000)"}], "wizualizacja": {"prompt": "Style: A wide-angle full-body cinematic photograph. The central objects/persons of the photo are visible from head to toe, standing centrally in the frame. No parts of the body are cropped.\n\nGaunt grey humanoid in misty primeval forest at dawn, cold blue light between trunks, breath visible in air.\n\nCaptured with a 35mm anamorphic lens at f/1.8. Shallow depth of field with a heavy, creamy bokeh background. Environmental portraiture. Dramatic cinematic lighting, sharp focus on the character, hyper-realistic textures of clothing and skin. Shot on 70mm film stock, ultra-wide 21:9 aspect ratio. --ar 21:9", "obraz": null}, "trofea": {"pierwotne": "kłącze", "wtorne": null}, "tagi": ["las"], "powiazania": [], "meta": {"utworzono": "2026-08-27", "autor": "test", "modyfikacje": []}}
+{
+  "slug": "inny-slug",
+  "nazwa": "Byt Testowy",
+  "nazwy_alternatywne": [
+    "Testownik"
+  ],
+  "karta": {
+    "nazwa": "Grizzly Bears",
+    "wydanie": "Alpha",
+    "rok": 1993
+  },
+  "lokalizacja": {
+    "miejscowosc": "Białowieża",
+    "kraj": "Polska",
+    "lat": 52.7,
+    "lon": 23.85
+  },
+  "pochodzenie_i_kultura": "folklor testowy",
+  "natura": {
+    "wyglad_i_aura": "o",
+    "charakter_i_motywacje": "o",
+    "zdolnosci": "o",
+    "slabosci_i_metody_pokonania": "o",
+    "preferencje": "o"
+  },
+  "dokumentacja": [
+    {
+      "typ": "literatura naukowa",
+      "pozycja": "Autor, Tytuł (2000)"
+    }
+  ],
+  "wizualizacja": {
+    "prompt": "Style: A wide-angle full-body cinematic photograph. The central objects/persons of the photo are visible from head to toe, standing centrally in the frame. No parts of the body are cropped.\n\nGaunt grey humanoid in misty primeval forest at dawn, cold blue light between trunks, breath visible in air.\n\nCaptured with a 35mm anamorphic lens at f/1.8. Shallow depth of field with a heavy, creamy bokeh background. Environmental portraiture. Dramatic cinematic lighting, sharp focus on the character, hyper-realistic textures of clothing and skin. Shot on 70mm film stock, ultra-wide 21:9 aspect ratio. --ar 21:9",
+    "obraz": null
+  },
+  "trofea": {
+    "pierwotne": "kłącze",
+    "wtorne": null
+  },
+  "tagi": [
+    "las"
+  ],
+  "powiazania": [],
+  "meta": {
+    "utworzono": "2026-08-27",
+    "autor": "test",
+    "modyfikacje": []
+  }
+}

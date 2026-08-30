@@ -72,31 +72,6 @@
     "pierwotne": "Wadżra wyrwana z dłoni Indry w chwili, gdy jego duma została złamana i tron opanował ktoś pokorniejszy — złoty piorun z kości, który już nie grzmi, bo nie ma pana",
     "wtorne": "Płaskorzeźba (lub współczesna rzeźba) Indry na Airavata z wadżrą w ręku — świadectwo kultu boga, który wciąż jest czczony, ale już nie jako jedyny władca"
   },
-  "rezonans": {
-    "klucz_przywolania": "Thunderstaff pokazuje sam przedmiot — laskę, która odbija ciosy i napędza atakujących. Ale w naszej tradycji ten sam przedmiot nie istnieje bez żywego pana: wadżra jest wadżrą tylko w dłoni Indry. To on jest materializacją: żywym bogiem, który haruje z mocą niebios, chroni swój lud (odbija jedno uderzenie, dopóki nie zostanie zmuszony do działania) i potrafi poderwać go do ataku (wzmacnia nacierających). Jego jaźń jest wyraźna: duma, żądza, soma, grzech po Vritrze, klątwa Gautamy — wszystko to sprawia, że można go namierzyć, sprowokować i pokonać, a nie tylko schować go do skrzyni jak relikt.",
-    "tabela": [
-      {
-        "element": "Nazwa",
-        "translacja": "„Thunderstaff” to laska gromu — ale w naszym bycie ta laska nie jest osobną rzeczą. Jest atrybutem Indry, a jego imię oznacza „posiadającego siłę” / „potężnego”. Karta nazywa przedmiot, my materializujemy jego pana: żywego boga, który trzyma grom i jest jego źródłem."
-      },
-      {
-        "element": "Mechanika",
-        "translacja": "„As long as this artifact is untapped, if a creature would deal combat damage to you, prevent 1 of that damage” — to bierna osłona Indry: jego obecność odwraca jedno uderzenie z każdego napastnika, dopóki sam nie zdecyduje się ruszyć. „{2}, {T}: Attacking creatures get +1/+0 until end of turn” — gdy bóg burzy obraca wadżrę, jego wojownicy czują przypływ piorunowej siły i idą do natarcia. „Untap” = bóg nigdy nie jest do końca wyczerpany; jego moc odnawia się jak deszcz."
-      },
-      {
-        "element": "Ilustracja",
-        "translacja": "Artysta: Kaja Foglio; karta jest Artifact, czyli pozbawiona twarzy — pokazuje wyłącznie narzędzie. W naszym świecie to spójne z mitologią: Indra bywa przedstawiany bezpośrednio (cztery ramiona, tysiąc oczu, Airavata), ale jego istotę najłatwiej poznać po wadżrze. Sam przedmiot to tylko klucz; byt to władca, który go dzierży."
-      },
-      {
-        "element": "Flavor text",
-        "translacja": "„Jort the Thunder-Mad spent his life perfecting a way to harness the power of the heavens.” W mitologii indyjskiej to Indra jest tym, kto „ujeździł” moc niebios: rozciął chmury i uwolnił wody, powstrzymywane przez Vṛtrę. Nie jest to spokojny rzemieślnik — to furiat, który pije somę i nie znosi, gdy ktoś zagraża jego tronowi, a jednak to dzięki niemu deszcz wraca na ziemię."
-      },
-      {
-        "element": "Lore/Tło",
-        "translacja": "Mirrodin to świat artefaktów, a „Thunderstaff” to niezniszczalny grom. W hinduizmie wadżra jest zarazem diamentem (niezniszczalność) i piorunem (moc), ale jest skuteczna tylko dlatego, że ktoś się jej boi i ktoś ją niesie. Indra to istota, która traci moc, gdy grzeszy, gdy przeklina go asceta albo gdy ktoś odbierze mu wadżrę — dlatego jest bytem, a nie skarbem."
-      }
-    ]
-  },
   "tagi": [
     "indie",
     "heros-burzy",

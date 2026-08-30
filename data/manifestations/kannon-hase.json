@@ -67,31 +67,6 @@
     "pierwotne": "Lotosowy wieniec z podnóża Hasedery, który Kannon ofiarowuje wybawionym — symbol, że ratunek jest darem, nie okupem.",
     "wtorne": "Mały posążek Kamakura Kannon z kłodą, na którym zapisane są intencje modlitewne pątników — dokument, że byt ten istnieje w ludzkich wezwaniach i nie zanika."
   },
-  "rezonans": {
-    "klucz_przywolania": "Aerith Rescue Mission to karta, która ratuje bohaterów i podnosi ich do walki: wybiera między windą (natychmiastowe uratowanie, sprzyjające heroi) a 59 schodami (zmęczenie przeciwnika, otępienie). Kannon dokładnie tak działa: schodzi z góry, wysyła ratunek, a gdy trzeba, „zamraża” zło, zamiast je zabić. „Take the Elevator” tworzy trzech Hero-ów — trzy wcielenia wybawionych; „Take 59 Flights of Stairs” obezwładnia trzy istoty i zostawia je otumanione, jak zło oślepione światłem. To manifestacja, która niesie wybawienie, a nie zwycięstwo przez przemoc.",
-    "tabela": [
-      {
-        "element": "Nazwa",
-        "translacja": "„Aerith Rescue Mission” — misja ratunkowa bohaterki, która leczy i prowadzi do wyjścia. Kannon jest dokładnie taką misją ratunkową: „kannon” znaczy „słyszący znajdujący się wzywający”; bodhisattwa słyszy wołanie świata i wyrusza na pomoc. „Rescue” to jej cecha, nie rola, którą przyjmuje — schodzi z Hasedery."
-      },
-      {
-        "element": "Mechanika",
-        "translacja": "„Choose one — Take the Elevator: create three Hero tokens; Take 59 Flights of Stairs: tap up to three creatures, stun one.” — to dwa sposoby wybawienia: szybki (winda) i męczący (schody). Kannon pomaga naraz wielu i w różnym tempie; jednych podnosi (heroes), a innych ogłusza (tap/stun), bo najlepszy ratunek to taki, który powstrzyma zło, nie wymagając jego zabicia."
-      },
-      {
-        "element": "Ilustracja",
-        "translacja": "Artysta Hokuyuu; postać w białej szacie w otoczeniu kwiatów i magii — klasyczne wyobrażenie Kannon jako białorobej, miłosiernej bogini z 33 formami. Jej wielość zaznacza, że ma wiele rąk i twarzy, a kwiaty podkreślają uzdrowienie i odrodzenie."
-      },
-      {
-        "element": "Flavor text",
-        "translacja": "(brak flavoru w tej karcie) — brak cytatu sprawia, że wskazówka jest czysto mechaniczna: ratunek, a nie walka. Kannon też nie ma „flavoru” — jest niepunktowaną, niewypowiedzianą odpowiedzią na wołanie; daje się poznać dopiero przez efekt."
-      },
-      {
-        "element": "Lore/Tło",
-        "translacja": "Świat Final Fantasy to gra o bohaterach, którzy wchodzą w głąb siebie i ratują się nawzajem; Kannon w folklorze buddyjskim pełni rolę tej niewidzialnej siły, która prowadzi. „Aerith” w grze jest uzdrowicielką i posiada moc Cetry, a w tradycji na wschodzie „słysząca łzy” jest tą, która obniża się do ludzi i niesie im ukojenie."
-      }
-    ]
-  },
   "tagi": [
     "japonia",
     "bodhisattwa",

@@ -75,31 +75,6 @@
     "pierwotne": "Kość z kopytowego stawu Nessosa z nacięciem od zatrutej strzały — dowód, że kentaur został pokonany z dystansu, zanim zdążył dobiec",
     "wtorne": "Współczesna fotografia brodu na Évinos, w miejscu, gdzie według tradycji Nessos przewoził podróżnych"
   },
-  "rezonans": {
-    "klucz_przywolania": "Savage Surge to natychmiastowy przypływ dzikiej siły: cel dostaje +2/+2 i zostaje odblokowany — może uderzyć raz jeszcze, a nawet wtedy, gdy wydawało się, że jest obrócony plecami. Flavorowa wymiana — „I thought its back was turned! / A centaur has two backs!” — to niemal definicja Nessosa: kentaur o dwóch grzbietach, człowieczym i końskim, który atakuje z połowy ciała odwróconej od wroga. W micie dokładnie tak dzieje się na rzece: Herakles widzi Deianirę na grzbiecie Nessosa, ten oddala się z nią, a jego człowiecza połowa jest zwrócona w inną stronę — Herakles strzela w plecy, a kentaur pada z zatrutą strzałą w piersi.",
-    "tabela": [
-      {
-        "element": "Nazwa",
-        "translacja": "„Savage Surge” to „dziki przypływ” — dokładnie to, czym jest Nessos: nagły, gwałtowny, niczym nieusprawiedliwiony wybuch kentaurejskiej żądzy i siły, który wymyka się spod kontroli i kończy katastrofą."
-      },
-      {
-        "element": "Mechanika",
-        "translacja": "„Target creature gets +2/+2 until end of turn. Untap that creature.” — wzmocnienie i odblokowanie to dwie cechy Nessosa: potworna siła końska + kentaurejska zdolność do ruchu, nawet gdy wydaje się zajęty czymś innym. „Untap” znaczy: ta istota może zrobić coś, czego nie powinna, mimo że była już zużyta."
-      },
-      {
-        "element": "Ilustracja",
-        "translacja": "Artysta: Jasper Sandner. Klimat karty jest grecki, z centaurem i zieloną naturą — bezpośrednie nawiązanie do Therosu i do kentaurów, których najbardziej znanym w mitologii jest Nessos: pół człowiek, pół koń, na rzece."
-      },
-      {
-        "element": "Flavor text",
-        "translacja": "„I thought its back was turned! / A centaur has two backs!” — to w istocie komentarz do anatomii kentaurejskiej i do zdrady z zaskoczenia. Nessos ma dwa grzbiety: człowieczy zwrócony w jedną stronę i koński w drugą; gdy jego ludzkie plecy są odwrócone od Heraklesa, końska połowa nadal niesie Deianirę w stronę ucieczki — i to właśnie wtedy pada strzała."
-      },
-      {
-        "element": "Lore/Tło",
-        "translacja": "Theros to świat wzorowany na mitologii greckiej, a Savage Surge wpisuje się w ten sam krąg co historia heraklesowa: kentaur, który bierze na grzbiet kobietę i próbuje ją uwieźć, zostaje zabity strzałą z przeciwległego brzegu — a jego trująca krew, jako „napój miłości”, ostatecznie zabija herosa. To dokładna oś fabularna Nessosa."
-      }
-    ]
-  },
   "tagi": [
     "grecja",
     "kentaur",

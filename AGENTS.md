@@ -111,9 +111,10 @@ Ponadto:
   lat. Jeśli źródła nie da się potwierdzić — nie wpisuj go. Każde źródło
   podpisujemy adresem (`dokumentacja[].url`, pełny `http(s)`) — co najmniej
   jedno na wpis musi prowadzić do źródła, jego opisu albo wzmianki w sieci.
-- **Numeracja sekcji wpisu = ich kolejność** (PROTOKÓŁ §4.1, od v1.3):
-  I Wizualizacja, II Charakterystyka i natura, III Dokumentacja, IV Trofea,
-  V Rezonans i tożsamość, VI SKITy. Dotyczy UI, przykładów i manuala.
+- **Numeracja sekcji wpisu = ich kolejność** (PROTOKÓŁ §4.1, od v1.3; układ
+  od v1.8): I Wizualizacja, II Charakterystyka i natura, III Dokumentacja,
+  IV Trofea, V SKITy, VI Tomy i Epoki, VII Powiązania. Pole `rezonans` nie
+  istnieje (ADR 0022). Dotyczy UI, przykładów i manuala.
 - **Współrzędne są prawdziwe** (miejsce powstania wierzenia lub aktywności
   bytu), zapis dziesiętny, W szerokość geograficzna jako dodatnia.
 - **Prompt wizualizacji trzyma się RAMY 21:9** z `docs/PROTOKOL.md` §5 (sekcja I).
@@ -134,7 +135,7 @@ Ponadto:
   — maks. 300 słów (ADR 0015), 2–4 uczestników z kartoteki, **preferowane 3–4**
   (ADR 0019 — duet tylko gdy temat go wymaga), każdy zabiera głos, **skład
   osobowy unikalny w całej bazie**, zero żargonu gry, fakty zgodne z lore wpisów.
-  Sekcja VI kart i feed „Co nowego" wyliczają się same (z indeksu).
+  Sekcja V kart i feed „Co nowego" wyliczają się same (z indeksu).
 - **Każda zmiana treści** trafia do `meta.modyfikacje: [{data, opis}]` (albo
   `meta.utworzono`, gdy plik jest nowy) — na tym oparty jest dziennik „Co
   nowego" (PROTOKÓŁ §9); bez tego zmiana jest niewidoczna dla właściciela.
@@ -153,7 +154,7 @@ Ponadto:
   budowania** (ADR 0001). Zmiana tego paradigmatu = wyraźna decyzja właściciela
   + nowy ADR.
 - **`data/index.json` jest generowany** przez `tools/rebuild-index.mjs`
-  (wpisy + Baza Skitów + sekcja VI + feed zmian; `wersja: 2`).
+  (wpisy + Baza Skitów + sekcja V + feed zmian; `wersja: 2`).
   Ręczna edycja indeksu jest zakazana; edytuje się pliki wpisów i uruchamia build.
 - Nie commituj sekretów. Pojedyncze pliki binarne > 2 MB wymagają zgody
   właściciela; wygenerowane wizualizacje zapisuj jako JPEG ≤ 2 MB w

@@ -141,7 +141,8 @@ zmianie, niezależnie od „polerowania”.
 - [x] **A4/A5** pinezka większa + pole trafienia, badge nazwy 19 px z pleckami.
 - [x] **B1** kolejność sekcji jako standard: UI, przykłady, manual (ADR 0011);
       uściślenie właściciela (2026-08-28): numeracja idzie za kolejnością —
-      I Wizualizacja … V Rezonans, od v1.3 protokołu (ADR 0012).
+      I Wizualizacja … V SKITy (od v1.8 bez „Rezonansu” — ADR 0022),
+      układu v1.3-1.7 pilnował ADR 0012.
 - [x] **B2** kartoteka jako pełnoekranowa warstwa, wizualizacja na całą
       szerokość opisu (ADR 0010).
 - [x] **B3** `dokumentacja[].url` w schemacie i walidatorze, linki w UI,
@@ -156,8 +157,9 @@ zmianie, niezależnie od „polerowania”.
 
 - [x] **SKITy** (ADR 0013, PROTOKÓŁ §8): format danych `data/skity/`,
       walidator (2–4 uczestników, unikalny skład, 60–300 słów, zakaz żargonu
-      gry), indeks v2, Baza Skitów w UI (przycisk „✎ skity"), sekcja VI pod
-      kartą bytu, deep-link `#skit:<slug>`; pierwszy SKIT „PŁÓTNO I KAMIEŃ".
+      gry), indeks v2, Baza Skitów w UI (przycisk „✎ skity"), sekcja V pod
+      kartą bytu (od v1.8; wcześniej VI), deep-link `#skit:<slug>`; pierwszy
+      SKIT „PŁÓTNO I KAMIEŃ".
 - [x] **C3 w Pętli Jakości** (nad C2): dopisywanie SKITa o nowym składzie.
 - [x] **„Co nowego"** (ADR 0014): feed `aktualizacje[]` liczony z `meta`
       (powstania i zmiany wpisów oraz skitów), najnowsze na górze, przycisk
@@ -173,7 +175,7 @@ zmianie, niezależnie od „polerowania”.
       spojrzenie), selkie → egungun (władza w rzeczy okrywającej ciało); backlinki
       z indeksu.
 - [x] C3: SKIT „ZNAK I LICZBA” (unikalny skład balor + selkie-sule-skerry, 248
-      słów) → sekcja VI obu kart i pozycja w feedzie.
+      słów) → sekcja V obu kart (od v1.8) i pozycja w feedzie.
 - [x] Stan bramy: `.github/workflows/ci.yml` na `main` naprawiony przez
       właściciela (PR #3) i włączony do gałęzi sesji merge’em; w repo została receptura + test
       „przepis CI jest wklejalny” pilnują formy (L9, L12).

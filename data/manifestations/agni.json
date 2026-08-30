@@ -74,31 +74,6 @@
     "pierwotne": "Żar z gatu w Waranasi w szczelnym naczyniu — ogień, który Agni zostawił jako „gość”, a który przyjmuje obiatę i wypala cierpienie.",
     "wtorne": "Barani amulet z wizerunkiem Agniego, noszony przez kapłana ognia — symbol tego, że byt może być przyzywany wciąż na nowo, ale tylko na krótko."
   },
-  "rezonans": {
-    "klucz_przywolania": "Wrap in Flames to ogień, który „owija” do trzech celów, rani je i sprawia, że nie mogą się bronić — „darkest nightmares” z flavoru THB brzmi jak nocne upiory, a MM2 mówi wprost: „Our pyromancer's flames may not have killed them, but they bought us the time we needed”. Agni jest dokładnie takim ogniem: płomieniem pośrednim, który nie zabija ofiary, lecz wypala jej zdolność do walki i rozprasza ciemność. Jego baran i siedem rąk, jego „trzy języki”, które obejmują trzy cele, to karty: 1 obrażenia do trzech celów i odebranie im blokady.",
-    "tabela": [
-      {
-        "element": "Nazwa",
-        "translacja": "„Wrap in Flames” — owinięcie w ogień. Agni jest tym ogniem, który „owija”; jego sformułowanie „w płomienie” oddaje nie tyle zniszczenie, ile obezwładnienie — płomienie ogniska, które otaczają ofiarę i oślepiają ją."
-      },
-      {
-        "element": "Mechanika",
-        "translacja": "„deals 1 damage to each of up to three target creatures; those creatures can't block” — Agni razi do trzech przeciwników naraz („trzy języki”), zadaje drobną, czystą ranę (1 damage) i pozbawia ich mocy obrony (can't block). To ognista „ochrona” — zablokowanie, a nie dobijanie; taka, jaką ofiarny ogień daje ludziom między nocą a dniem."
-      },
-      {
-        "element": "Flavor text",
-        "translacja": "„Our pyromancer's flames may not have killed them, but they bought us the time we needed.” — to symbolika Agniego: ogień nie zabija, tylko daje ludziom czas. W innym wydaniu (THB) karta mówi, że „jasne płomienie rozpraszają najciemniejsze koszmary” — Agni jest właśnie tym płomieniem pośrodku ciemności."
-      },
-      {
-        "element": "Ilustracja",
-        "translacja": "Artystka Véronique Meignaud; ogień, który zakręca się wokół do trzech postaci. Agni często przedstawiany jest z „językami” ognia i siedmioma ramionami, które sięgają wielu ofiar naraz; jego płomienna forma może sięgać do trzech i więcej celów."
-      },
-      {
-        "element": "Lore/Tło",
-        "translacja": "MM2 to zbiór kart z różnych światów, ale ogniowa magia jest w nim taka sama jak wedyjski rytuał: ogień pośredni, który ochrania i „obezwładnia”. Agni jest patronem ogniska domowego i ofiarnika, nie zaś wojownikiem — odbiera atakującym siłę, zamiast ich niszczyć."
-      }
-    ]
-  },
   "tagi": [
     "indie",
     "bog-ognia",

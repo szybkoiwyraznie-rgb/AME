@@ -153,8 +153,6 @@ test('polska proza wpisów i skitów nie zawiera pisma japońskich/chińskich an
     for (const pole of pola) sprawdź(`${w.slug}.${pole}`, w[pole]);
     for (const [pole, wartosc] of Object.entries(w.natura ?? {})) sprawdź(`${w.slug}.natura.${pole}`, wartosc);
     for (const [pole, wartosc] of Object.entries(w.trofea ?? {})) sprawdź(`${w.slug}.trofea.${pole}`, wartosc);
-    sprawdź(`${w.slug}.rezonans.klucz_przywolania`, w.rezonans?.klucz_przywolania);
-    (w.rezonans?.tabela ?? []).forEach((r, i) => sprawdź(`${w.slug}.rezonans.tabela[${i}]`, r?.translacja));
     (w.dokumentacja ?? []).forEach((r, i) => sprawdź(`${w.slug}.dokumentacja[${i}]`, r?.pozycja));
     (w.powiazania ?? []).forEach((r, i) => sprawdź(`${w.slug}.powiazania[${i}]`, r?.opis));
   }

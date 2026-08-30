@@ -33,11 +33,6 @@
   },
   "dokumentacja": [
     {
-      "typ": "baza kart",
-      "pozycja": "Scryfall, „Infectious Horror” (Conflux #47) — {3}{B}, Creature — Zombie Horror 2/2; „Whenever this creature attacks, each opponent loses 2 life.”; flavor „Not once in the history of Grixis has anyone died of old age.”; artysta Pete Venters; ruling 2018-07-13: w grze Two-Headed Giant zespół przeciwny traci 4 życia; printy: Core Set 2019 #101, Conspiracy #115, Archenemy #18",
-      "url": "https://scryfall.com/card/con/47/infectious-horror"
-    },
-    {
       "typ": "opracowanie",
       "pozycja": "lasmgiel.pl, „Morowa Dziewica. Jak słowiańska wieś walczyła z demonem zarazy?” — postać nienaturalnie wysokiej, wychudłej kobiety w białym całunie; czerwona lub skrwawiona chustka jako główny atrybut; tradycja ukraińska (stanie na mogiłach, dmuchanie morowego powietrza) i litewska (koścista ręka z chustą przez okno); dialog „Czy śpicie?” — „Śpijcież na wieki!” i właściwa odpowiedź „Nic nie robimy, tylko Boga chwalimy”",
       "url": "https://lasmgiel.pl/wsuwala-reke-z-czerwona-chusta-przez-okno-kim-byla-morowa-panna-w-wierzeniach-slowian"
@@ -61,31 +56,6 @@
   "trofea": {
     "pierwotne": "Czerwona chusta — znaleziona na progu po nocy, w której nikt nie odpowiedział; zwinięta z wapnem i solą, żeby mór nie wrócił do tego domu.",
     "wtorne": "Kukła Marzanny — słomiana panna, którą wspólnota wyniosła i utopiła; dowód, że zarazę da się odprawić, jeśli pamięta się właściwą odpowiedź i porę roku."
-  },
-  "rezonans": {
-    "klucz_przywolania": "Infectious Horror to zaraźliwy strach w ciele zombie: byt, który „atakuje” i przy każdym ataku odejmuje życie każdemu przeciwnikowi — a w grze wieloosobowej całemu zespołowi. Nasz świat ma na to byt tak prosty, że aż przerażający: morową pannę, personifikację zarazy, która nie gryzie i nie dźga, lecz odbiera życie powiewem chusty i jednym pytaniem. Flavor karty — „Not once in the history of Grixis has anyone died of old age” — to dokładnie to, co mówiły wsie przed dżumą: śmierć nie przychodzi z wieku, tylko z powietrza i z progu. W przełożeniu Grixis to nie kraina z gry, lecz każde domostwo, w którym ktoś odpowiedział „śpimy”.",
-    "tabela": [
-      {
-        "element": "Nazwa",
-        "translacja": "„Infectious Horror” — zaraźliwa groza; morowa panna jest dokładnie tym: zaraźliwym przerażeniem, które nie zabija zębem, lecz morym powietrzem i jednym zdaniem przy progu. „Horror” oddaje jej postać — zjawę, którą widać tylko z bliska i tylko nocą."
-      },
-      {
-        "element": "Mechanika",
-        "translacja": "„Whenever this creature attacks, each opponent loses 2 life” — gdy zaraza rusza na wieś, każdy po drugiej stronie traci życie; ruling 2018-07-13 dodaje, że w Two-Headed Giant zespół przeciwny traci 4 życia, czyli epidemia nie oszczędza domostwa, tylko uderza w całą rodzinę. „Atak” znaczy tu: przekroczenie granicy wsi, rzeki albo progu."
-      },
-      {
-        "element": "Ilustracja",
-        "translacja": "Pete Venters namalował zombie w rozkładzie; w przełożeniu to zjawa w całunie, której „rozkład” widać dopiero z bliska. Z daleka — tylko biała postać z płótna, jakby ktoś wynosił pranie; to właśnie ta pomyłka, że to nie groza, tylko ktoś znajomy, otwiera drzwi."
-      },
-      {
-        "element": "Flavor text",
-        "translacja": "„Not once in the history of Grixis has anyone died of old age.” — świat, w którym nikt nie umiera ze starości. To samo mówią wsie dotknięte dżumą: śmierć nie przychodzi z wieku, tylko z chusty i z powietrza, i nie ma w niej naturalnej miary — dlatego zjawę trzeba odprawić słowem, a nie przeczekać."
-      },
-      {
-        "element": "Lore/Tło",
-        "translacja": "Grixis to fragment świata, w którym śmierć jest walutą i siłą życia; w przełożeniu to kraina, gdzie zaraza jest bytem, a nie wypadkiem. I właśnie dlatego można ją odprawić, jak odprawia się niewiastę z chustą — rytuałem, kukłą i właściwą odpowiedzią."
-      }
-    ]
   },
   "tagi": [
     "polska",

@@ -26,7 +26,7 @@ namierzyć realną emanację w naszym świecie; wynikiem jest wpis w kartotece
   między bytami (łuki na mapie) i backlinki liczone automatycznie. Deep-link: `/#<slug>`, a w kartotece i w
   widoku skitu przycisk „⧉ kopiuj link" do wysłania adresu dalej.
 - **Baza Skitów** — krótkie dialogi materializacji (proza w stylu przerywników
-  z gier fabularnych): przycisk „✎ skity", pod każdym bytem sekcja VI z jego
+  z gier fabularnych): przycisk „✎ skity", pod każdym bytem sekcja V z jego
   rozmowami, deep-link `#skit:<slug>`. Walidator pilnuje limitu 300 słów i
   tego, by żadne dwa skity nie miały tego samego składu (ADR 0013).
 - **Co nowego** — przycisk „✚ nowości": dziennik zmian wyliczany z pola `meta`
@@ -53,12 +53,12 @@ blokują `fetch()` dla plików lokalnych.
 | Ścieżka | Zawartość |
 |---|---|
 | `AGENTS.md` | **zasady pracy agentów — lektura startowa każdej sesji** |
-| `docs/PROTOKOL.md` | protokół MFM v1.7: format i kolejność sekcji, rama promptu 21:9 |
+| `docs/PROTOKOL.md` | protokół MFM v1.8: format i kolejność sekcji, rama promptu 21:9 |
 | `docs/decisions/` | rejestr decyzji architektonicznych (ADR) |
 | `docs/ROADMAP.md` | fazy prac i status (+ Pętla Jakości) |
 | `docs/WORKFLOW.md` | **procedura: dodanie manifestacji z karty, krok po kroku** |
 | `data/manifestations/` | wpisy manifestacji (źródło prawdy treści) |
-| `data/skity/` | Baza Skitów — dialogi materializacji (sekcja VI kart) |
+| `data/skity/` | Baza Skitów — dialogi materializacji (sekcja V kart) |
 | `data/index.json` | indeks GENEROWANY (`npm run build`) |
 | `app/`, `index.html` | aplikacja |
 | `assets/` | mapa, wizualizacje (licencje: `docs/ASSETS.md`) |

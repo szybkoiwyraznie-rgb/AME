@@ -1,152 +1,122 @@
 {
-    "slug": "protostates",
-    "nazwa": "Protostates — fantom pierwszego szeregu",
-    "nazwy_alternatywne": [
-        "Prōtostatēs",
-        "Pierwszy z szeregu",
-        "Ten, który stoi",
-        "Fantom hoplity"
-    ],
-    "karta": {
-        "nazwa": "Akroan Sergeant",
-        "wydanie": "Magic Origins (ORI) #130",
-        "rok": 2015
+  "slug": "protostates",
+  "nazwa": "Protostates — fantom pierwszego szeregu",
+  "nazwy_alternatywne": [
+    "Prōtostatēs",
+    "Pierwszy z szeregu",
+    "Ten, który stoi",
+    "Fantom hoplity"
+  ],
+  "karta": {
+    "nazwa": "Akroan Sergeant",
+    "wydanie": "Magic Origins (ORI) #130",
+    "rok": 2015
+  },
+  "lokalizacja": {
+    "miejscowosc": "Termopile — wąwóz między górami Kallidromos a Zatoką Maliacką; przy tym przejściu Kserkses pyta Demaratosa o odwagę greckich wojowników, a fantom pierwszego szeregu staje tam, gdzie pierwsza linia nigdy nie ustąpiła",
+    "kraj": "Grecja (Ftiotyda)",
+    "lat": 38.7967,
+    "lon": 22.5367
+  },
+  "pochodzenie_i_kultura": "Mitologia i podanie greckie — etos falangi: termin „protostates” (πρωτοστάτης, „ten, który stoi pierwszy”, od πρῶτος i ἵστημι) odnotowany u Tukidydesa i Ksenofonta jako żołnierz pierwszej linii; Herodot (7.104) wkłada w usta Demaratosa słowa, że Lacedemończycy są wolni, lecz „panem ich jest prawo, którego boją się bardziej niż twoi poddani boją się ciebie”; Plutarch („Wypowiedzi kobiet spartańskich”) dodaje matkę, która wręczając synowi tarczę, mówi: „albo z tym, albo na tym”. Jedna tradycja, jeden żołnierz, jeden wąwóz.",
+  "wizualizacja": {
+    "prompt": "Style: A wide-angle full-body cinematic photograph. The central objects/persons of the photo are visible from head to toe, standing centrally in the frame. No parts of the body are cropped.\n\nA tall hoplite in a Corinthian bronze helmet with a black horsehair crest, red tunic and bronze greaves, standing alone in a narrow mountain pass in grey dawn mist; he holds a round shield low and a long spear at rest, his face hidden by the helmet, a long shadow stretching along the cliff wall; behind him the pass narrows toward the sea, broken shields and a fallen banner lying on wet stones, muted bronze and rust tones against pale fog, cold still air.\n\nCaptured with a 35mm anamorphic lens at f/1.8. Shallow depth of field with a heavy, creamy bokeh background. Environmental portraiture. Dramatic cinematic lighting, sharp focus on the character, hyper-realistic textures of clothing and skin. Shot on 70mm film stock, ultra-wide 21:9 aspect ratio. --ar 21:9",
+    "obraz": "assets/wizualizacje/protostates.jpg"
+  },
+  "natura": {
+    "wyglad_i_aura": "Z daleka — sylwetka w pełnym rynsztunku: hełm koryncki z czarną kitą z końskiego włosia, szkarłatny chiton, nagolenniki z brązu, okrągła tarcza z literą i długa włócznia. Z bliska widać, że nie oddycha: pod hełmem pusto albo zbyt ciemno, a na kamieniach nie zostawia śladów. Pojawia się we mgle o świcie, przy wąskim przejściu, gdy powietrze pachnie oliwą i zimnym metalem; stoi tam, gdzie inni już dawno by odeszli.",
+    "charakter_i_motywacje": "Nie rozmawia, nie grozi, nie żąda haraczu. On pilnuje pierwszej linii: gdy zbliża się wróg, robi jeden krok naprzód i zadaje pierwsze uderzenie — zanim ktokolwiek zdąży się zasłonić. Nie cofa się, bo cofnięcie oznaczałoby zdradę tarczy, a jego tarcza jest „dla wspólnego dobra”: jak mówi Demaratos, hełm nosi się dla siebie, a tarczę dla wszystkich. Motywacją fantomu nie jest zwycięstwo, lecz to, by nikt nie przeszedł za jego plecami. Gdy Dienekesowi mówią, że Persowie zasłonią słońce strzałami, odpowiada, że będą walczyć w cieniu — tak i on nie liczy zagrożenia, tylko front: dopóki stoi pierwszy, przejście jest zamknięte.",
+    "zdolnosci": "Uderza zawsze pierwszy — zanim przeciwnik dokończy zamach; po pierwszym trafieniu rośnie, bo z każdym opowiedzianym czynem przybywa mu imienia i wzrostu. Nie śpi, nie je, nie męczy się; stoi w tym samym miejscu od stuleci, a gdy przejście otwiera się ku morzu, jego cień staje się dłuższy, jakby za nim dochodziły następne szeregi.",
+    "slabosci_i_metody_pokonania": "Nie zwyciężysz go siłą, bo pierwsze cięcie zawsze należy do niego. Jego trwanie opiera się na dwóch rzeczach: na tarczy, którą zasłania się z przodu i którą nosi dla wszystkich, oraz na imieniu, które karmi go pamięcią wspólnoty. Kto odwróci go tyłem do wroga — zabierze mu front — i kto przestanie wymawiać jego imię, ten go rozwiąże: fantom pierwszego szeregu trwa tylko, dopóki ktoś pamięta, że stał pierwszy. Najskuteczniejsza jest więc pieśń o kimś innym: zapomniany protostates gaśnie o świcie.",
+    "preferencje": "Lubi: wąskie przejścia, mgłę o świcie, ciszę przed bitwą, tarcze z przodu i imię w pieśniach. Nie lubi: pleców, ucieczki, pochwał bez krwi, zimy i mórz, które otwierają przejście za jego plecami."
+  },
+  "dokumentacja": [
+    {
+      "typ": "tekst źródłowy",
+      "pozycja": "Tukidydes, „Wojna peloponeska” 5.66–70 (przeł. R. Crawley, livius.org) — bitwa pod Mantineą (418 p.n.e.): pierwszy szereg enomotii liczy czterech żołnierzy, a cała pierwsza linia bez Skiritów 448 ludzi; komenda schodzi od króla przez polemarchów, lochagów, pentekostyrów i enomotarchów do enomotii.",
+      "url": "https://www.livius.org/sources/content/thucydides-historian/the-battle-of-mantinea-418-bce/"
     },
-    "lokalizacja": {
-        "miejscowosc": "Termopile — wąwóz między górami Kallidromos a Zatoką Maliacką; przy tym przejściu Kserkses pyta Demaratosa o odwagę greckich wojowników, a fantom pierwszego szeregu staje tam, gdzie pierwsza linia nigdy nie ustąpiła",
-        "kraj": "Grecja (Ftiotyda)",
-        "lat": 38.7967,
-        "lon": 22.5367
+    {
+      "typ": "tekst źródłowy",
+      "pozycja": "Herodot, „Dzieje” VII, §208–233 (przeł. G. Rawlinson, Internet Classics Archive) — Termopile: wąskie przejście, 300 Lacedemończyków, odpowiedź Dienekesa, że będą walczyć „w cieniu” strzał (VII, 226), i porządek tych, którzy stali pierwsi, gdy nikt nie miał już stać.",
+      "url": "https://classics.mit.edu/Herodotus/history.7.vii.html"
     },
-    "pochodzenie_i_kultura": "Mitologia i podanie greckie — etos falangi: termin „protostates” (πρωτοστάτης, „ten, który stoi pierwszy”, od πρῶτος i ἵστημι) odnotowany u Tukidydesa i Ksenofonta jako żołnierz pierwszej linii; Herodot (7.104) wkłada w usta Demaratosa słowa, że Lacedemończycy są wolni, lecz „panem ich jest prawo, którego boją się bardziej niż twoi poddani boją się ciebie”; Plutarch („Wypowiedzi kobiet spartańskich”) dodaje matkę, która wręczając synowi tarczę, mówi: „albo z tym, albo na tym”. Jedna tradycja, jeden żołnierz, jeden wąwóz.",
-    "wizualizacja": {
-        "prompt": "Style: A wide-angle full-body cinematic photograph. The central objects/persons of the photo are visible from head to toe, standing centrally in the frame. No parts of the body are cropped.\n\nA tall hoplite in a Corinthian bronze helmet with a black horsehair crest, red tunic and bronze greaves, standing alone in a narrow mountain pass in grey dawn mist; he holds a round shield low and a long spear at rest, his face hidden by the helmet, a long shadow stretching along the cliff wall; behind him the pass narrows toward the sea, broken shields and a fallen banner lying on wet stones, muted bronze and rust tones against pale fog, cold still air.\n\nCaptured with a 35mm anamorphic lens at f/1.8. Shallow depth of field with a heavy, creamy bokeh background. Environmental portraiture. Dramatic cinematic lighting, sharp focus on the character, hyper-realistic textures of clothing and skin. Shot on 70mm film stock, ultra-wide 21:9 aspect ratio. --ar 21:9",
-        "obraz": "assets/wizualizacje/protostates.jpg"
+    {
+      "typ": "tekst źródłowy",
+      "pozycja": "Herodot, „Dzieje” 7.104 (przeł. G. C. Macaulay, wyd. tekstu na parstimes.com) — Demaratos do Kserksesa: „For though they be free-men, they are not in all respects free; Law is the master whom they own; and this master they fear more than thy subjects fear thee… it forbids them to flee in battle… and requires them to stand firm, and either to conquer or die”",
+      "url": "https://www.parstimes.com/history/herodotus/persian_wars/polymnia.html"
     },
-    "natura": {
-        "wyglad_i_aura": "Z daleka — sylwetka w pełnym rynsztunku: hełm koryncki z czarną kitą z końskiego włosia, szkarłatny chiton, nagolenniki z brązu, okrągła tarcza z literą i długa włócznia. Z bliska widać, że nie oddycha: pod hełmem pusto albo zbyt ciemno, a na kamieniach nie zostawia śladów. Pojawia się we mgle o świcie, przy wąskim przejściu, gdy powietrze pachnie oliwą i zimnym metalem; stoi tam, gdzie inni już dawno by odeszli.",
-        "charakter_i_motywacje": "Nie rozmawia, nie grozi, nie żąda haraczu. On pilnuje pierwszej linii: gdy zbliża się wróg, robi jeden krok naprzód i zadaje pierwsze uderzenie — zanim ktokolwiek zdąży się zasłonić. Nie cofa się, bo cofnięcie oznaczałoby zdradę tarczy, a jego tarcza jest „dla wspólnego dobra”: jak mówi Demaratos, hełm nosi się dla siebie, a tarczę dla wszystkich. Motywacją fantomu nie jest zwycięstwo, lecz to, by nikt nie przeszedł za jego plecami. Gdy Dienekesowi mówią, że Persowie zasłonią słońce strzałami, odpowiada, że będą walczyć w cieniu — tak i on nie liczy zagrożenia, tylko front: dopóki stoi pierwszy, przejście jest zamknięte.",
-        "zdolnosci": "Uderza zawsze pierwszy — zanim przeciwnik dokończy zamach; po pierwszym trafieniu rośnie, bo z każdym opowiedzianym czynem przybywa mu imienia i wzrostu. Nie śpi, nie je, nie męczy się; stoi w tym samym miejscu od stuleci, a gdy przejście otwiera się ku morzu, jego cień staje się dłuższy, jakby za nim dochodziły następne szeregi.",
-        "slabosci_i_metody_pokonania": "Nie zwyciężysz go siłą, bo pierwsze cięcie zawsze należy do niego. Jego trwanie opiera się na dwóch rzeczach: na tarczy, którą zasłania się z przodu i którą nosi dla wszystkich, oraz na imieniu, które karmi go pamięcią wspólnoty. Kto odwróci go tyłem do wroga — zabierze mu front — i kto przestanie wymawiać jego imię, ten go rozwiąże: fantom pierwszego szeregu trwa tylko, dopóki ktoś pamięta, że stał pierwszy. Najskuteczniejsza jest więc pieśń o kimś innym: zapomniany protostates gaśnie o świcie.",
-        "preferencje": "Lubi: wąskie przejścia, mgłę o świcie, ciszę przed bitwą, tarcze z przodu i imię w pieśniach. Nie lubi: pleców, ucieczki, pochwał bez krwi, zimy i mórz, które otwierają przejście za jego plecami."
+    {
+      "typ": "słownik",
+      "pozycja": "LSJ (Liddell–Scott–Jones) w serwisie studybible.info, hasło G4414 „πρωτοστάτης” — „one who stands first, on the right, the right-hand man”; „of soldiers, one who stands first, one in the front rank (Thuc., Xen.)”; etymologia: πρῶτος + ἵστημι, stąd „one standing first in the ranks”",
+      "url": "https://studybible.info/strongs/G4414"
     },
-    "dokumentacja": [
-        {
-            "typ": "tekst źródłowy",
-            "pozycja": "Tukidydes, „Wojna peloponeska” 5.66–70 (przeł. R. Crawley, livius.org) — bitwa pod Mantineą (418 p.n.e.): pierwszy szereg enomotii liczy czterech żołnierzy, a cała pierwsza linia bez Skiritów 448 ludzi; komenda schodzi od króla przez polemarchów, lochagów, pentekostyrów i enomotarchów do enomotii.",
-            "url": "https://www.livius.org/sources/content/thucydides-historian/the-battle-of-mantinea-418-bce/"
-        },
-        {
-            "typ": "tekst źródłowy",
-            "pozycja": "Herodot, „Dzieje” VII, §208–233 (przeł. G. Rawlinson, Internet Classics Archive) — Termopile: wąskie przejście, 300 Lacedemończyków, odpowiedź Dienekesa, że będą walczyć „w cieniu” strzał (VII, 226), i porządek tych, którzy stali pierwsi, gdy nikt nie miał już stać.",
-            "url": "https://classics.mit.edu/Herodotus/history.7.vii.html"
-        },
-        {
-            "typ": "baza kart",
-            "pozycja": "Scryfall, „Akroan Sergeant” (Magic Origins #130) — {2}{R}, Creature — Human Soldier 2/2; „First strike” i „Renown 1” (…put a +1/+1 counter on it and it becomes renowned); artysta Zack Stella; brak tekstu flavor; reguły 2015-06-22: renown nie uruchamia się przy obrażeniach do planeswalkera ani innej istoty ani przy obrażeniach pozakombatowych, uruchamia się przy przeredagowaniu obrażeń, a byt, który zniknął przed rozwiązaniem, nie staje się renowned",
-            "url": "https://scryfall.com/card/ori/130/akroan-sergeant"
-        },
-        {
-            "typ": "tekst źródłowy",
-            "pozycja": "Herodot, „Dzieje” 7.104 (przeł. G. C. Macaulay, wyd. tekstu na parstimes.com) — Demaratos do Kserksesa: „For though they be free-men, they are not in all respects free; Law is the master whom they own; and this master they fear more than thy subjects fear thee… it forbids them to flee in battle… and requires them to stand firm, and either to conquer or die”",
-            "url": "https://www.parstimes.com/history/herodotus/persian_wars/polymnia.html"
-        },
-        {
-            "typ": "słownik",
-            "pozycja": "LSJ (Liddell–Scott–Jones) w serwisie studybible.info, hasło G4414 „πρωτοστάτης” — „one who stands first, on the right, the right-hand man”; „of soldiers, one who stands first, one in the front rank (Thuc., Xen.)”; etymologia: πρῶτος + ἵστημι, stąd „one standing first in the ranks”",
-            "url": "https://studybible.info/strongs/G4414"
-        },
-        {
-            "typ": "tekst źródłowy",
-            "pozycja": "Plutarch, „Moralia” (Loeb Classical Library, t. III, 1931): „Wypowiedzi kobiet spartańskich” — „Another, as she handed her son his shield, exhorted him, saying: ‘Either this or upon this.’” oraz odpowiedź Demaratosa o hełmie i tarczy: „Because the latter they put on for their own protection, but the shield for the common good of all”",
-            "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Plutarch/Moralia/Sayings_of_Spartan_Women*.html"
-        }
-    ],
-    "trofea": {
-        "pierwotne": "Tarcza pierwszego szeregu — brązowa, wytarta od krawędzi, z literą wytłoczoną od zewnątrz; ktokolwiek zdejmie ją z kamienia w wąwozie, musi sam stanąć na jej miejscu.",
-        "wtorne": "Czarny kita z hełmu — pęk końskiego włosia, który pozostaje we mgle po zniknięciu fantomu, jako znak, że „albo z tym, albo na tym” wciąż obowiązuje."
-    },
-    "rezonans": {
-        "klucz_przywolania": "Akroan Sergeant to wojownik z polis Akros — greckiego świata Theros — i pierwsza z dwóch zdolności mówi wszystko: „first strike”, cios przed ciosem. Nasz świat ma na to dokładne słowo i dokładne podanie: protostates (πρωτοστάτης), „ten, który stoi pierwszy”, żołnierz pierwszej linii, którego zachowanie opisują Herodot i Plutarch. Drugą zdolność — „Renown 1”, wzrost po pierwszym trafieniu — czyta się jako sławę: fantom rośnie z każdym powtórzonym czynem, a jego istnienie zależy od tego, czy wspólnota wciąż wymawia jego imię. Przełożenie zamyka się więc w trzech zdaniach: uderza pierwszy, rośnie od pierwszej rany, gaśnie, gdy przestaje być pamiętany.",
-        "tabela": [
-            {
-                "element": "Nazwa",
-                "translacja": "„Akroan Sergeant” — sierżant, czyli pierwszy z szeregu; Akros w świecie Theros to polis wojowników o greckim rodowodzie, a „protostates” to greckie słowo na żołnierza, który stoi w pierwszej linii i którego zadaniem jest zadać pierwszy cios."
-            },
-            {
-                "element": "Mechanika",
-                "translacja": "„First strike” — cios pada przed ciosem; „Renown 1” — wzrost po pierwszej ranie zadanej graczowi. Reguły 2015-06-22 precyzują, że sława nie rośnie od ciosu w istotę ani w planeswalkera ani od obrażeń pozakombatowych: liczy się rana zadana w samą osobę — w przełożeniu: wspólnocie, nie jej sługom."
-            },
-            {
-                "element": "Ilustracja",
-                "translacja": "Zack Stella — żołnierz Akros w rynsztunku nawiązującym do greckiej falangi. To właśnie ta forma — hełm, zbroja, włócznia i tarcza — rozstrzyga o odczytaniu bytu: fantom hoplity, nie kawalerzysta ani łucznik."
-            },
-            {
-                "element": "Flavor text",
-                "translacja": "Wydanie ORI nie zawiera tekstu flavor — rolę cytatu pełnią nazwa i reguła „first strike”. Przekład znajduje się w słowach Demaratosa z Herodota: prawo każe im „stać i albo zwyciężyć, albo zginąć”, a to właśnie ta zasada jest jedynym „głosem” fantomu."
-            },
-            {
-                "element": "Lore/Tło",
-                "translacja": "Magic Origins opowiada początki bohaterów Theros, a Akroan Sergeant to wojownik z polis o greckim rodowodzie. Stąd proste przełożenie na rzeczywisty etos greckiej falangi i na podanie o pierwszym szeregu, który nie ustępuje — i który zostaje w wąwozie na zawsze."
-            }
-        ]
-    },
-    "tagi": [
-        "grecja",
-        "fantom",
-        "furia",
-        "pamiec"
-    ],
-    "powiazania": [
-        {
-            "slug": "drangue-shala",
-            "opis": "Drangue i protostates to obrońcy, którzy nie ustępują: jeden wychodzi przeciw kulshedrze nad doliną, drugi staje w pierwszej linii przed wąwozem. Obaj też nie dają się zabić zwykłą bronią — drangue tylko odcięcie skrzydeł, fantom odebranie imienia; obaj wygrywają czasem, nie przemocą, bo ich siła leży w trwaniu na posterunku."
-        },
-        {
-            "slug": "kentaur-pelion",
-            "opis": "Protostates i kentaur z Pelionu dzielą tę samą krótką furię: pierwszy uderza, zanim wróg dokończy zamach, drugi wybucha w jednej chwili wesela. Różnica jest w kierunku — kentaur nie zna panowania nad sobą, a fantom nie zna niczego poza nim; obaj płacą za to, że ich moc liczy się w uderzeniach, nie w godzinach."
-        },
-        {
-            "slug": "sfinks-teby",
-            "opis": "Sfinks i protostates pilnują przejścia: przy Tebach bramą jest pytanie, w Termopilach — pierwsze cięcie. Obie są nie do obejścia z boku i obie wymagają od podróżnego tej samej rzeczy: odpowiedzi albo postawy. Kto potrafi rozwiązać zagadkę sfinksa, ten wie też, że przed protostatesem trzeba stanąć, a nie biec."
-        },
-        {
-            "slug": "morowa-panna",
-            "opis": "Dwa porządki progu, dwa sposoby domagania się odpowiedzi: Morowa Panna pyta u drzwi „Czy śpicie?” i zabiera dom, gdy padnie zła odpowiedź (lasmgiel.pl, „Zaraza nadchodzi i odchodzi”), a Protostates stoi w przejściu i uderza pierwszy, zanim ktokolwiek zdąży odpowiedzieć krokiem (Herodot 7.104). Obaj trwają, dopóki wspólnota ich wzywa — panna gaśnie, gdy ludzie odpowiedzą „chwalimy Boga”, fantom znika, gdy nikt już nie pamięta pierwszego szeregu."
-        },
-        {
-            "slug": "knecht-z-koptos",
-            "opis": "Protostates i knecht są pierwszymi w linii — człowiek i rzecz: jeden stoi przed szeregiem, drugi przed pracą; obu nie zwycięża cios, lecz koniec rozkazu, którego nikt nie wypowiedział na głos (Lukian, „Filopseudes”; Tukidydes 5.68.3)."
-        },
-        {
-            "slug": "syama-i-sarvara",
-            "opis": "Pierwszy w szeregu broni wąskiego przejścia, przez które nie wolno iść tyłem, a czterookie psy Yamy pilnują drogi, którą odchodzą przodkowie — obie straże stoją po dwóch stronach jednego progu, którego nie da się obejść (Herodot, „Dzieje” VII; Rigweda 10.14)."
-        }
-    ],
-    "meta": {
-        "utworzono": "2026-08-30 00:09",
-        "autor": "sesja arena 2026-08-29/30",
-        "modyfikacje": [
-            {
-                "data": "2026-08-30 00:09",
-                "opis": "Nowa materializacja: Protostates — fantom pierwszego szeregu z etosu greckiej falangi, na podstawie karty „Akroan Sergeant” (ORI #130)."
-            },
-            {
-                "data": "2026-08-30 00:20",
-                "opis": "Dodana wizualizacja 21:9 w protostates.jpg — powstała z ramowego promptu wpisu i pokazuje byt w jego naturalnym otoczeniu."
-            },
-            {
-                "data": "2026-08-30 00:38",
-                "opis": "Audyt Kartoteki: poprawki językowe i doprecyzowanie zdań (odmiana, literówki, spójność z mitem)."
-            },
-            {
-                "data": "2026-08-30 01:35",
-                "opis": "Pogłębienie sieci powiązań (C1): cztery nowe pary połączeń między bytami, oparte na źródłach już odnotowanych w kartotekach (Hezjod „Prace i dnie” 60–68, pseudo-Apollodoros „Biblioteka” 1.9.26, Filostrat IV.21–25, Lukian „Filopseudes” 34–36, Herodot 7.104, lasmgiel.pl/„Zaraza nadchodzi i odchodzi”)."
-            },
-            {
-                "data": "2026-08-30 10:05",
-                "opis": "Pętla Jakości C1: pogłębiony Protostates — 2 nowe źródła (Tukidydes 5.66–70 — pierwszy szereg 448 ludzi; Herodot VII, 226 — Dienekes „w cieniu”) + nowe powiązania z knechtem z Koptos i psami Yamy."
-            }
-        ]
+    {
+      "typ": "tekst źródłowy",
+      "pozycja": "Plutarch, „Moralia” (Loeb Classical Library, t. III, 1931): „Wypowiedzi kobiet spartańskich” — „Another, as she handed her son his shield, exhorted him, saying: ‘Either this or upon this.’” oraz odpowiedź Demaratosa o hełmie i tarczy: „Because the latter they put on for their own protection, but the shield for the common good of all”",
+      "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Plutarch/Moralia/Sayings_of_Spartan_Women*.html"
     }
+  ],
+  "trofea": {
+    "pierwotne": "Tarcza pierwszego szeregu — brązowa, wytarta od krawędzi, z literą wytłoczoną od zewnątrz; ktokolwiek zdejmie ją z kamienia w wąwozie, musi sam stanąć na jej miejscu.",
+    "wtorne": "Czarny kita z hełmu — pęk końskiego włosia, który pozostaje we mgle po zniknięciu fantomu, jako znak, że „albo z tym, albo na tym” wciąż obowiązuje."
+  },
+  "tagi": [
+    "grecja",
+    "fantom",
+    "furia",
+    "pamiec"
+  ],
+  "powiazania": [
+    {
+      "slug": "drangue-shala",
+      "opis": "Drangue i protostates to obrońcy, którzy nie ustępują: jeden wychodzi przeciw kulshedrze nad doliną, drugi staje w pierwszej linii przed wąwozem. Obaj też nie dają się zabić zwykłą bronią — drangue tylko odcięcie skrzydeł, fantom odebranie imienia; obaj wygrywają czasem, nie przemocą, bo ich siła leży w trwaniu na posterunku."
+    },
+    {
+      "slug": "kentaur-pelion",
+      "opis": "Protostates i kentaur z Pelionu dzielą tę samą krótką furię: pierwszy uderza, zanim wróg dokończy zamach, drugi wybucha w jednej chwili wesela. Różnica jest w kierunku — kentaur nie zna panowania nad sobą, a fantom nie zna niczego poza nim; obaj płacą za to, że ich moc liczy się w uderzeniach, nie w godzinach."
+    },
+    {
+      "slug": "sfinks-teby",
+      "opis": "Sfinks i protostates pilnują przejścia: przy Tebach bramą jest pytanie, w Termopilach — pierwsze cięcie. Obie są nie do obejścia z boku i obie wymagają od podróżnego tej samej rzeczy: odpowiedzi albo postawy. Kto potrafi rozwiązać zagadkę sfinksa, ten wie też, że przed protostatesem trzeba stanąć, a nie biec."
+    },
+    {
+      "slug": "morowa-panna",
+      "opis": "Dwa porządki progu, dwa sposoby domagania się odpowiedzi: Morowa Panna pyta u drzwi „Czy śpicie?” i zabiera dom, gdy padnie zła odpowiedź (lasmgiel.pl, „Zaraza nadchodzi i odchodzi”), a Protostates stoi w przejściu i uderza pierwszy, zanim ktokolwiek zdąży odpowiedzieć krokiem (Herodot 7.104). Obaj trwają, dopóki wspólnota ich wzywa — panna gaśnie, gdy ludzie odpowiedzą „chwalimy Boga”, fantom znika, gdy nikt już nie pamięta pierwszego szeregu."
+    },
+    {
+      "slug": "knecht-z-koptos",
+      "opis": "Protostates i knecht są pierwszymi w linii — człowiek i rzecz: jeden stoi przed szeregiem, drugi przed pracą; obu nie zwycięża cios, lecz koniec rozkazu, którego nikt nie wypowiedział na głos (Lukian, „Filopseudes”; Tukidydes 5.68.3)."
+    },
+    {
+      "slug": "syama-i-sarvara",
+      "opis": "Pierwszy w szeregu broni wąskiego przejścia, przez które nie wolno iść tyłem, a czterookie psy Yamy pilnują drogi, którą odchodzą przodkowie — obie straże stoją po dwóch stronach jednego progu, którego nie da się obejść (Herodot, „Dzieje” VII; Rigweda 10.14)."
+    }
+  ],
+  "meta": {
+    "utworzono": "2026-08-30 00:09",
+    "autor": "sesja arena 2026-08-29/30",
+    "modyfikacje": [
+      {
+        "data": "2026-08-30 00:09",
+        "opis": "Nowa materializacja: Protostates — fantom pierwszego szeregu z etosu greckiej falangi, na podstawie karty „Akroan Sergeant” (ORI #130)."
+      },
+      {
+        "data": "2026-08-30 00:20",
+        "opis": "Dodana wizualizacja 21:9 w protostates.jpg — powstała z ramowego promptu wpisu i pokazuje byt w jego naturalnym otoczeniu."
+      },
+      {
+        "data": "2026-08-30 00:38",
+        "opis": "Audyt Kartoteki: poprawki językowe i doprecyzowanie zdań (odmiana, literówki, spójność z mitem)."
+      },
+      {
+        "data": "2026-08-30 01:35",
+        "opis": "Pogłębienie sieci powiązań (C1): cztery nowe pary połączeń między bytami, oparte na źródłach już odnotowanych w kartotekach (Hezjod „Prace i dnie” 60–68, pseudo-Apollodoros „Biblioteka” 1.9.26, Filostrat IV.21–25, Lukian „Filopseudes” 34–36, Herodot 7.104, lasmgiel.pl/„Zaraza nadchodzi i odchodzi”)."
+      },
+      {
+        "data": "2026-08-30 10:05",
+        "opis": "Pętla Jakości C1: pogłębiony Protostates — 2 nowe źródła (Tukidydes 5.66–70 — pierwszy szereg 448 ludzi; Herodot VII, 226 — Dienekes „w cieniu”) + nowe powiązania z knechtem z Koptos i psami Yamy."
+      }
+    ]
+  }
 }

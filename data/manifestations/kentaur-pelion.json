@@ -65,31 +65,6 @@
     "pierwotne": "odłamek brzuśca wielkiego krateru, którym Tezeusz powalił Eurytosa — w tej hali wygrywa ten, kto w ręku trzyma najcięższą część uczty",
     "wtórne": "żelazny rożen z hali weselnej — broń, którą goście dobili bitwę, gdy skończyło się wino, a zaczęła się rzeź"
   },
-  "rezonans": {
-    "klucz_przywolania": "„Savage Surge” to instant za {1}{G}: „Target creature gets +2/+2 until end of turn. Untap that creature.” Wino tesalskie działa dokładnie tak: +2/+2 to napad siły ponad siebie, liczony do końca uczty, a „untap” jest czystym korynckim… pardon, peliońskim żartem karty — „A centaur has two backs!”. Przeciwnik ułożył sobie bitwę na jedną stronę kentaura: tył. Kentaur wyprostował drugą. Ruling z 2013-09-15 dopowiada resztę: „Savage Surge can target an untapped creature” — napad może uderzyć także tego, który już ruszył; kentaur bił i jeszcze raz bił. {1}{G} — jedna zielona mana: gatunek, nie bohater.",
-    "tabela": [
-      {
-        "element": "Nazwa",
-        "translacja": "Savage Surge — dziki przyrost: wino, którego kentaury nie znały, działa jak przyrost mocy: dwa punkty siły i wytrzymałości „do końca tury”. Przekłady robią to samo z innego końca: niemiecki „Anschwellende Wildheit” (pęczniejąca dzikość) opisuje +2/+2 dosłownie, francuski „Déferlement sauvage” (dzika fala) i hiszpański „Oleada salvaje” trzymają nagły, ciężki napływ, który musi opaść."
-      },
-      {
-        "element": "Mechanika",
-        "translacja": "Untap tej karty jest dowcipem o anatomii: „I thought its back was turned!” — myślałem, że ma tył odwrócony — „A centaur has two backs!” — kentaur ma dwa tyły. Przeciwnik wyłączył z rachuby połowę bytu, a połowa wstaje i atakuje; ruling potwierdza, że celować można nawet w kreaturę już tapniętą, więc furia bywa drugą akcją tego samego ciała w tej samej turze. Instant: nie plan, tylko reakcja przy stole."
-      },
-      {
-        "element": "Ilustracja",
-        "translacja": "Artysta: Jasper Sandner (druk THS #176). Kompozycji obrazu nie opisujemy — nie zgadujemy (docs/WORKFLOW.md §3). Dane karty mówią: common z Theros, czyli zabieg codzienny — w świecie Theros kentaury żyją w górach Setessy i napad wina to ich pora dnia, nie wyjątek."
-      },
-      {
-        "element": "Flavor text",
-        "translacja": "Dwugłos dwóch śmiertelników: „Myślałem, że jego tył był odwrócony!” — „Kentaur ma dwa tyły!” — to komedia omyłki jak u Arystofanesa i zarazem podręcznik do mechaniki: przy kentaurze żadna połowa nie jest tyłem. Omyłka nie jest głupotą — jest kategorialna: kto liczy ciała kentaura jak ciała człowieka, ten liczy o połowę za mało."
-      },
-      {
-        "element": "Lore/Tło",
-        "translacja": "Theros (2013) jest światem zbudowanym z greckiego mitu — karta wprost gra na bestiariuszu, który budował metopy Partenonu. W lore setu kentaury Setessy są dziką połową świata, pielęgnowaną przez góry: Savage Surge jest ich zwykłym stanem podniesionej gotowości. To, co u Lapitów skończyło się wygnaniem, w grze jest zabiegiem za jedną zieloną manę — mit sprowadzony do ręki, jak w całym archiwum."
-      }
-    ]
-  },
   "tagi": [
     "grecja",
     "kentaur",

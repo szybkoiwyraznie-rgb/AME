@@ -65,31 +65,6 @@
     "pierwotne": "złoty łańcuch znad skerry — znak, po którym matka poznała syna, a potem poznała to, kogo zabił strzelec",
     "wtorne": "drugi mieszciec: srebrna moneta karmicielna (nouris-fee), którą na Orkadach kładzie się na progu, spłacając dług zaciągnięty u morza"
   },
-  "rezonans": {
-    "klucz_przywolania": "„Kulrath Mystic” to 2/4 w niebieskim, który nigdy nie atakuje pierwszy: rośnie o +2/+0 i zyskuje czujność dopiero wtedy, gdy ktoś obok wypowie wielkie słowo (czar o wartości 4 lub więcej), a efekt gaśnie wraz z końcem tury. To dokładny rytm ballady o selkim: istota nie ma własnego impetu, dopóki nie wypowiedziano warunku, terminu i ceny; gdy zostanie wypowiedziany, jej siła jest widoczna przez jeden dzień i zawsze łączy się z czuwaniem. Flavor karty — różnica między namiętnością a złością to tylko to, kto panuje — w orkadzkiej tradycji jest zdaniem opisowym, nie metaforą: władza nad selkim leży w jego skórze i w wymówionym na głos terminie. Dlatego ta karta otwiera byt, a nie temat: materializacją jest sam Wielki Selkie, który przychodzi po syna.",
-    "tabela": [
-      {
-        "element": "Nazwa",
-        "translacja": "„Mystic” nie znaczy tu „wieszcz”, tylko tyle, kto zna i wyznacza warunki — i tak właśnie działa selkie z ballady: wchodzi do izby, mówi, gdzie mieszka („my dwelling is in Sule Skerry”), podaje termin, płaci, przepowiada strzelca. „Kulrath” brzmi jak nazwa miejsca — i to jest zgodne z tradycją, bo selkie przedstawia się przez swoją skałę, nie przez imię."
-      },
-      {
-        "element": "Mechanika",
-        "translacja": "„Whenever you cast a spell with mana value 4 or greater, this creature gets +2/+0 and gains vigilance until end of turn” → moc bytu zapala się na jedną turę od wielkiego aktu mowy (kontrakt, naznaczenie złotem, wypowiedzenie przyszłości) i gaśnie nazajutrz. +2/+0, nie +2/+2: uderza mocniej, ale nie staje się trwalszy — selkie w każdej wersji ballady płaci za to samo co jego syn. Vigilance = czuwanie na brzegu, którego nie wolno mu opuścić nawet w chwili ataku."
-      },
-      {
-        "element": "Ilustracja",
-        "translacja": "Artysta: Jason A. Engle. Kompozycji obrazu nie opisujemy — nie zgadujemy (docs/WORKFLOW.md §3). Rejestr karty jest jednoznaczny bez patrzenia na nią: typ „Elemental Wizard” to żywioł z umową, nie bestia, a tytuły wydania w innych językach („Mística de Kulrath”, „Kulrath-Mystikerin”) mówią o kobiecie-obcokrajowczyni, co pasuje do selkiego obcego na lądzie i u siebie w wodzie."
-      },
-      {
-        "element": "Flavor text",
-        "translacja": "„The difference between passion and anger is nothing more than who is in control.” — jako dokument terenowy: w folklorze foczych ludzi kontrola jest przedmiotem. Skóra schowana = selkie zostanie mężem; skóra zwrócona albo skradziona = selkie odejdzie w tę samą stronę, w którą poszedł selkie z ballady — po syna. Nic tu nie wybucha; wygrywa ten, kto trzyma warunek."
-      },
-      {
-        "element": "Lore/Tło",
-        "translacja": "Lorwyn Eclipsed (2026) jest powrotem na plan, na którym noc i dzień walczą o władzę, a istoty zmieniają naturę zależnie od tego, która z nich nadeszła. U nas ten sam podział jest fizyczny i brzegowy: „I am a man upon the land, I am a silkie in the sea, and when I’m far frae every strand, my dwelling is in Sule Skerry” — jeden byt, dwie przynależności, krawędź wody jako granica jurysdykcji."
-      }
-    ]
-  },
   "tagi": [
     "szkocja-polnocna",
     "selkie",

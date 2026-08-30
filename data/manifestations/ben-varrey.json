@@ -57,31 +57,6 @@
     "pierwotne": "Muszla z Calf Sound, którą Ben-Varrey zostawiła w podzięce za jabłko — przedmiot, który wciąż pachnie słoną wodą i wskazuje najkrótszą drogę do zatoki, gdy ludzie są w potrzebie.",
     "wtorne": "Gruby warkocz z wodorostów zawiązany na skale w miejscu, gdzie manxka syrena czekała na rybaka — dowód, że ciekawość bytu może być czasem silniejsza niż strach przed suszą na lądzie."
   },
-  "rezonans": {
-    "klucz_przywolania": "Coralhelm Guide to przewodniczka, która „zna każdy krok tego wybrzeża, zarówno nad, jak i pod powierzchnią, i ma kryjówki na całej drodze” — i dokładnie taką istotą jest Ben-Varrey: manxka syrena, która zna każdą rafę i każdy prąd na brzegu i pod nim. Jej zdolność „nie da się zablokować” odzwierciedla rolę przewodniczki, która otwiera kanał, gdzie inni widzą wodospad i skały; a jej 2/1 (kruchość) to cena tej wiedzy — silna w prowadzeniu, słaba w starciu.",
-    "tabela": [
-      {
-        "element": "Nazwa",
-        "translacja": "„Coralhelm” przywołuje korale i morską pannę; Ben-Varrey w tradycji manx przynosi korale, perły i muszle. „Guide” to jej rola przewodniczki: prowadzi rybaków i podróżnych przez znane jej, niewidoczne dla innych szlaki. Imię „Ben-Varrey” (kwiat morza / kobieta morza) też jest podpowiedzią — to postać, która wskazuje drogę."
-      },
-      {
-        "element": "Mechanika",
-        "translacja": "„{4}{U}: Target creature can't be blocked this turn.” — nieprzeciętna zdolność otwarcia drogi. Ben-Varrey potrafi przeprowadzić statek przez rafy i wir, których nikt nie zna; w walce czyni cel „nie do zatrzymania”, bo zna wszystkie boczne kanały. 2/1 to jej kruchość — morska panna nie jest wojownikiem, jest nawigatorką."
-      },
-      {
-        "element": "Ilustracja",
-        "translacja": "Artysta Viktor Titov; kobieta z morskimi włosami, siedząca nad wodą, wśród korali. Na manxkim wybrzeżu to typowy obraz Ben-Varrey: pół-człowiek, pół-ryba wyglądająca zza skał, z grzebieniem i błyskotkami, obserwująca ludzi."
-      },
-      {
-        "element": "Flavor text",
-        "translacja": "„She knows every step of this coastline, both above and below the surface, and she has hideouts all along the way. She will get you there.” — to dokładny opis ben-varrey: zna każdy prąd, każdą zatokę i każdą kryjówkę. Potrafi poprowadzić do ławicy, podać śledzie i wskazać drogę przez ten fragment morza."
-      },
-      {
-        "element": "Lore/Tło",
-        "translacja": "Świat Zendikar to niebezpieczny kontynent, na którym podróż bez przewodnika bywa wyrokiem; Ben-Varrey w tradycji manx pełni podobną rolę — jest przychylna ludziom, gdy ją ucieszą, i nie ma zamiaru ich uwięzić, choć jej przyjaźń bywa kosztowna."
-      }
-    ]
-  },
   "tagi": [
     "man",
     "syrena",

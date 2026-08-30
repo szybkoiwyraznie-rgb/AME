@@ -66,8 +66,6 @@ const RE_TAG = /^[a-ząćęłńóśźż0-9-]+$/;
 // 00–23, minuta 00–59); forma bez godziny pozostaje legalna (stare wpisy).
 const RE_DATA = /^\d{4}-\d{2}-\d{2}(?: ([01]\d|2[0-3]):[0-5]\d)?$/;
 
-const WYMAGANE_ELEMENTY_TABELI = ['Nazwa', 'Mechanika', 'Ilustracja', 'Flavor text', 'Lore/Tło'];
-
 const jestStr = (v) => typeof v === 'string' && v.trim().length > 0;
 
 /** Waliduje jeden wpis; zwraca listę błędów (pusta = OK). */
@@ -93,24 +91,8 @@ export function walidujWpis(w) {
 
   if (!jestStr(w.pochodzenie_i_kultura)) blad('pochodzenie_i_kultura: brak');
 
-  const r = w.rezonans ?? {};
-  if (!jestStr(r.klucz_przywolania)) blad('rezonans.klucz_przywolania: brak');
-  const tabela = r.tabela ?? [];
-  if (!Array.isArray(tabela) || tabela.length < WYMAGANE_ELEMENTY_TABELI.length) {
-    blad(`rezonans.tabela: wymagane >= ${WYMAGANE_ELEMENTY_TABELI.length} wierszy`);
-  }
-  if (Array.isArray(tabela)) {
-    const elementy = tabela.map((wiersz) => wiersz?.element);
-    for (const el of WYMAGANE_ELEMENTY_TABELI) {
-      if (!elementy.includes(el)) blad(`rezonans.tabela: brak wiersza "${el}"`);
-    }
-    for (const wiersz of tabela) {
-      if (!jestStr(wiersz?.element) || !jestStr(wiersz?.translacja)) {
-        blad('rezonans.tabela: każdy wiersz wymaga {element, translacja}');
-        break;
-      }
-    }
-  }
+  // v1.8 (2026-08-30): sekcja V „Rezonans i tożsamość” usunięta z protokołu —
+  // pola `rezonans` nie ma już w materializacjach (decyzja właściciela).
 
   const n = w.natura ?? {};
   for (const pole of [
@@ -137,6 +119,11 @@ export function walidujWpis(w) {
     }
     if (!w.dokumentacja.some((d) => RE_URL.test(String(d?.url ?? '').trim()))) {
       blad('dokumentacja: co najmniej jedno źródło musi mieć url prowadzący do niego w sieci (protokół III, ADR 0008)');
+    }
+    // v1.8 (ADR 0022): zakaz przebicia czwartej ściany — mechanika karty MtG
+    // (koszty many, typy, flavor, artyści, printy) nie jest źródłem o bycie.
+    if (w.dokumentacja.some((d) => String(d?.typ ?? '').trim() === 'baza kart')) {
+      blad('dokumentacja: typ „baza kart” zakazany — mechanika MtG nie jest dokumentacją bytu (ADR 0022)');
     }
   }
 

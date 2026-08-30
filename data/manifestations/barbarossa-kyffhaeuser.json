@@ -65,31 +65,6 @@
     "pierwotne": "garść złota z worów po wysypanym zbożu — do pierwszego zejścia z grzbietu (przekaz z 1669 r.)",
     "wtórne": "sucha gałąź, która zaczęła zielenieć — dowód, że warunek jest blisko, i że lepiej było nie przychodzić"
   },
-  "rezonans": {
-    "klucz_przywolania": "Karta „Alaborn Trooper”: {2}{W}, 2/3, ani jednego zdania zdolności, za to rota placeholder my body to my country / And my life to my King.” — Alaborn Soldier’s Oath. To dokładnie to, co mówi Kyffhäuser: byt bez akcji, za to z warunkiem; oddany ciałem temu, co go trzyma, a życiem temu, na kogo czeka. 2/3 znaczy: trudniej go zabić niż obudzić. Brak zdolności nie jest tu zubożeniem karty, tylko jej treścią — śpiący zastęp nie ma zdolności, ma termin.",
-    "tabela": [
-      {
-        "element": "Nazwa",
-        "translacja": "„Alaborn” to nazwa własna wspólnoty z settingu Portalu (P02 zna jeszcze muszkieterów, grenadierów i zelotów Alabornu) i nie ma etymologii, którą potrafię potwierdzić — nie wymyślam jej. Sam przekład nazwy zrobił za to to, co legenda z cesarzem: włoski „Fante Alaborn” widzi piechura, hiszpański „Soldado de caballería de Alaborn” — konnego, francuski „Troupier d’Alaborn”, niemiecki „Alabornkämpfer”. Tak samo pod Kyffhausen: dla jednych to piechota pod górą, dla drugich jazda, a źródło mówi tylko: leży i czeka."
-      },
-      {
-        "element": "Mechanika",
-        "translacja": "Brak zdolności na karcie za pięć man to przepis na Kyffhäuser: płacisz dużo, dostajesz ciało, nie cud. Statystyki 2/3 (więcej wytrwałości niż uderzenia) oddają logikę zastępu, który rośnie, czekając; i koszt {2}{W} to cena wyprawy pod górę. W drugą stronę też się to zgadza: nic tu nie można „zagrać” — w podaniach nikt cesarza nie obudził skutecznie, każdy, kto próbował, wrócił ze złotem albo z niczym."
-      },
-      {
-        "element": "Ilustracja",
-        "translacja": "Artysta: Lubov (P02; przedruk ME4 #2 tej samej autorki). Kompozycji obrazu nie opisujemy — nie zgadujemy (docs/WORKFLOW.md §3). Wiadomo tyle, ile mówią dane karty: człowiek, żołnierz, bez atrybutów nadanych przez mechanikę — czyli nie wróżbita, a szeregowiec roty, która przysięgała ciałem i życiem. To ten sam rejestr, w którym Kyffhäuser działa: nie prorok, tylko pospolite ruszenie z cesarzem w komplecie."
-      },
-      {
-        "element": "Flavor text",
-        "translacja": "„I dedicate my body to my country / And my life to my King” — rzekoma formuła przysięgi, która w legendzie jest zdaniem opisowym: ciało oddane krajowi leży pod jego ziemią, życie oddane królowi nie może się skończyć, dopóki król nie wstanie. Pasuje do tego rytm „na raty”: jedno pytanie, jedna odpowiedź i sto lat snu jako rata długu."
-      },
-      {
-        "element": "Lore/Tło",
-        "translacja": "W settingu Portalu Alaborn należy do ludów Otarii walczących z Bractwem Płomienia — wspólnota żołnierzy-rot, bez króla-boga, z przysięgą w miejscu magii. To kontrapunkt dla legendy turyńskiej: tam zastęp czeka na cesarza, tu pojedynczy żołnierz jest całym aparatem państwa. Dlatego transpozycja idzie w stronę terminu, nie proroctwa, i dlatego karta bez zdolności jest lepszym kluczem do Kyffhäusera niż jakakolwiek karta z cudem."
-      }
-    ]
-  },
   "tagi": [
     "niemcy",
     "sniacy-zastep",

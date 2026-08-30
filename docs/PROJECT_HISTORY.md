@@ -1705,3 +1705,29 @@ Sieć: syama w Epocze VII 10/9→12/11, zasięg 0.25→0.275.
 
 Brama: `npm test` **191/191**, `npm run check` zielone; indeks 20 wpisów /
 22 SKITy / 44 tagi; build deterministyczny.
+
+## Protokół MFM v1.8 — usunięcie sekcji „Rezonans” + zakaz mechaniki MtG w lore (2026-08-30)
+
+**Zlecenie właściciela (recenzja kartoteki):**
+- przebicie czwartej ściany w sekcji III *Knechta z Koptos* — dokumentacja
+  bytu cytowała mechanikę karty MtG (Scryfall: koszt many, typ, flavor,
+  printy) jako „źródło wiedzy o manifestacji”; podobne wpisy „baza kart”
+  znaleziono w morowa-panna, pandora, protostates, syama-i-sarvara;
+- usunięcie całej sekcji V („Rezonans i tożsamość”) z instrukcji
+  materializacji i ze wszystkich 20 materializacji (tam też tłumaczono
+  mechaniki karty: Mechanika/Ilustracja/Flavor/Lore MTG);
+- renumercja: VI SKITy → V, „Tomy i Epoki” (litera K) → VI, „Powiązania”
+  (symbol ∞) → VII;
+- odnośnik do Tomu w sekcji „Tomy i Epoki” jak brązowy przycisk
+  (`chip link`), nie niebieski link.
+
+**Wykonanie:**
+- ADR 0022; protokół MFM v1.8 w `docs/PROTOKOL.md` (§4.1–§4.7),
+  `README.md`, `index.html` (stopka), `AGENTS.md`, `docs/ARCHITECTURE.md`,
+  `docs/WORKFLOW.md`, `docs/ROADMAP.md`;
+- renderer `app/ui.js` + kartoteka osadzona `tools/kronika.mjs` — sekcje
+  I–IV, V SKITy, VI Tomy i Epoki, VII Powiązania; Tom jako chip;
+- migracja danych: `rezonans` usunięty z 20 wpisów, pozycje „baza kart”
+  usunięte z 5 wpisów (zostają źródła kulturowe, np. Lukian, Goethe,
+  Roczniki KUL); walidator odrzuca typ „baza kart” i nie wymaga `rezonans`;
+- cache-bust `c5-6` → `c5-7`; testy 199/199, build + check zielone.
