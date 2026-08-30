@@ -1582,6 +1582,7 @@ Po wdrożeniu S1–S3 i M1–M3: C1 — protostates pogłębiony (Tukidydes 5.66
 — pierwszy szereg 448 ludzi; Herodot VII, 226 — Dienekes „w cieniu”) +
 powiązania z knechtem z Koptos i psami Yamy; C3 — SKIT „PIERWSZY”
 (Protostates × Knecht × Śyāma i Śarvara, 154 słowa); C2 — **Epoka VII
-„Kolejność: nikt nie szedł za pierwszym”** (oś 27/73 po epoce, seed 35/65,
-meta.poprzednik = epoka-6 — pierwsze realne odwołanie S3 w grafie epok).
-Brama: 176/176, check zielone.
+„Kolejność: nikt nie szedł za pierwszym”** (oś **27/73** po epoce; stanStart
+puli seedów = 37/63 — wartość drukowana przez `kronika.mjs --seed`, po e1
+oś 35/65), meta.poprzednik = epoka-6 — pierwsze realne odwołanie S3 w
+grafie epok). Brama: 176/176, check zielone.
