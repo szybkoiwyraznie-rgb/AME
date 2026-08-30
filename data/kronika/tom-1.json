@@ -64,11 +64,11 @@
       },
       {
         "slug": "nessos",
-        "wielkosc": 0.33
+        "wielkosc": 0.355
       },
       {
         "slug": "pandora",
-        "wielkosc": 0.306
+        "wielkosc": 0.33
       },
       {
         "slug": "protostates",
@@ -160,12 +160,12 @@
       {
         "kultura": "grecja",
         "kult": "nessos",
-        "wielkosc": 0.33
+        "wielkosc": 0.355
       },
       {
         "kultura": "grecja",
         "kult": "pandora",
-        "wielkosc": 0.306
+        "wielkosc": 0.33
       },
       {
         "kultura": "grecja",

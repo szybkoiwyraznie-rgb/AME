@@ -1,6 +1,6 @@
 {
   "wersja": 3,
-  "buildTime": "2026-08-30T09:40:04.943Z",
+  "buildTime": "2026-08-30T13:11:23.374Z",
   "liczba": 20,
   "liczbaSkitow": 21,
   "kanon": {
@@ -957,12 +957,14 @@
         "ben-varrey",
         "empusa-korynt",
         "kentaur-pelion",
+        "pandora",
         "selkie-sule-skerry",
         "talos-kreta"
       ],
       "backlinki": [
         "ben-varrey",
         "kentaur-pelion",
+        "pandora",
         "selkie-sule-skerry",
         "talos-kreta"
       ],
@@ -995,12 +997,14 @@
       "powiazania": [
         "knecht-z-koptos",
         "morowa-panna",
+        "nessos",
         "talos-kreta"
       ],
       "backlinki": [
         "empusa-korynt",
         "knecht-z-koptos",
         "morowa-panna",
+        "nessos",
         "talos-kreta"
       ],
       "obraz": "assets/wizualizacje/pandora.jpg",
@@ -1566,6 +1570,22 @@
     }
   ],
   "aktualizacje": [
+    {
+      "data": "2026-08-30 13:11",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "pandora",
+      "tytul": "Pandora — pierwsza kobieta i pithos, w którym została nadzieja",
+      "opis": "Pętla Jakości (C1): powiązanie z Nessosem (dar-zguba) na podstawie źródeł pierwotnych (Apollodoros 2.151, Diodor 4.36.3, Owidiusz IX)."
+    },
+    {
+      "data": "2026-08-30 13:11",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "nessos",
+      "tytul": "Nessos",
+      "opis": "Pętla Jakości (C1): źródła pierwotne mitu — Pseudo-Apollodoros „Biblioteka” 2.151/2.157 (via Theoi, przeł. Aldrich), Diodor „Biblioteka historyczna” 4.36.3/4.38.1 (przeł. Oldfather), Owidiusz „Metamorfozy” IX.98–210 (Perseus); doprecyzowany wariant przepisu na „napój miłosny” (nasienie+krew / oliwa+krew+grot) i nowe powiązanie z Pandorą (dar-zguba)."
+    },
     {
       "data": "2026-08-30 10:20",
       "typ": "skit",

@@ -149,14 +149,14 @@ test('Tom I: epoki przechodzą sekwencyjnie i oś zamyka się na 100', async () 
   assert.deepEqual(
     e6.uczestnicy.map((u) => [u.slug, u.saldoPrzed, u.saldoPo]),
     [
-      ['pandora', 15, 15],
+      ['pandora', 17, 17],
       ['morowa-panna', 11, 9],
       ['empusa-korynt', 19, 18],
     ]
   );
   assert.equal(e6.stanPo.os.mit, 28);
   assert.equal(e6.stanPo.os.racjonalizacja, 72);
-  assert.equal(e6.stanPo.zasieg.find((z) => z.slug === 'pandora').wielkosc, 0.316);
+  assert.equal(e6.stanPo.zasieg.find((z) => z.slug === 'pandora').wielkosc, 0.34);
   assert.equal(e6.stanPo.zasieg.find((z) => z.slug === 'morowa-panna').wielkosc, 0.243);
   assert.equal(e6.stanPo.zasieg.find((z) => z.slug === 'empusa-korynt').wielkosc, 0.501);
 

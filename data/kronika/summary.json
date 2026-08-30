@@ -115,11 +115,11 @@
           },
           {
             "slug": "nessos",
-            "wielkosc": 0.33
+            "wielkosc": 0.355
           },
           {
             "slug": "pandora",
-            "wielkosc": 0.306
+            "wielkosc": 0.33
           },
           {
             "slug": "protostates",
@@ -211,12 +211,12 @@
           {
             "kultura": "grecja",
             "kult": "nessos",
-            "wielkosc": 0.33
+            "wielkosc": 0.355
           },
           {
             "kultura": "grecja",
             "kult": "pandora",
-            "wielkosc": 0.306
+            "wielkosc": 0.33
           },
           {
             "kultura": "grecja",
@@ -484,11 +484,11 @@
           },
           {
             "slug": "nessos",
-            "wielkosc": 0.33
+            "wielkosc": 0.355
           },
           {
             "slug": "pandora",
-            "wielkosc": 0.306
+            "wielkosc": 0.33
           },
           {
             "slug": "protostates",
@@ -580,12 +580,12 @@
           {
             "kultura": "grecja",
             "kult": "nessos",
-            "wielkosc": 0.33
+            "wielkosc": 0.355
           },
           {
             "kultura": "grecja",
             "kult": "pandora",
-            "wielkosc": 0.306
+            "wielkosc": 0.33
           },
           {
             "kultura": "grecja",
@@ -864,11 +864,11 @@
           },
           {
             "slug": "nessos",
-            "wielkosc": 0.33
+            "wielkosc": 0.355
           },
           {
             "slug": "pandora",
-            "wielkosc": 0.306
+            "wielkosc": 0.33
           },
           {
             "slug": "protostates",
@@ -960,12 +960,12 @@
           {
             "kultura": "grecja",
             "kult": "nessos",
-            "wielkosc": 0.33
+            "wielkosc": 0.355
           },
           {
             "kultura": "grecja",
             "kult": "pandora",
-            "wielkosc": 0.306
+            "wielkosc": 0.33
           },
           {
             "kultura": "grecja",
@@ -1258,11 +1258,11 @@
           },
           {
             "slug": "nessos",
-            "wielkosc": 0.33
+            "wielkosc": 0.355
           },
           {
             "slug": "pandora",
-            "wielkosc": 0.306
+            "wielkosc": 0.33
           },
           {
             "slug": "protostates",
@@ -1354,12 +1354,12 @@
           {
             "kultura": "grecja",
             "kult": "nessos",
-            "wielkosc": 0.33
+            "wielkosc": 0.355
           },
           {
             "kultura": "grecja",
             "kult": "pandora",
-            "wielkosc": 0.306
+            "wielkosc": 0.33
           },
           {
             "kultura": "grecja",
@@ -1654,11 +1654,11 @@
           },
           {
             "slug": "nessos",
-            "wielkosc": 0.33
+            "wielkosc": 0.355
           },
           {
             "slug": "pandora",
-            "wielkosc": 0.306
+            "wielkosc": 0.33
           },
           {
             "slug": "protostates",
@@ -1750,12 +1750,12 @@
           {
             "kultura": "grecja",
             "kult": "nessos",
-            "wielkosc": 0.33
+            "wielkosc": 0.355
           },
           {
             "kultura": "grecja",
             "kult": "pandora",
-            "wielkosc": 0.306
+            "wielkosc": 0.33
           },
           {
             "kultura": "grecja",
@@ -1959,13 +1959,13 @@
           "slug": "pandora",
           "nazwa": "Pandora — pierwsza kobieta i pithos, w którym została nadzieja",
           "rola": "Dar, który zajrzał",
-          "pasywne": 15,
-          "saldoPrzed": 15,
+          "pasywne": 17,
+          "saldoPrzed": 17,
           "kosztUdzialu": 2,
           "kosztKlucza": 0,
           "boost": 0,
           "zwrot": 2,
-          "saldoPo": 15
+          "saldoPo": 17
         },
         {
           "slug": "morowa-panna",
@@ -2052,11 +2052,11 @@
           },
           {
             "slug": "nessos",
-            "wielkosc": 0.33
+            "wielkosc": 0.355
           },
           {
             "slug": "pandora",
-            "wielkosc": 0.316
+            "wielkosc": 0.34
           },
           {
             "slug": "protostates",
@@ -2148,12 +2148,12 @@
           {
             "kultura": "grecja",
             "kult": "nessos",
-            "wielkosc": 0.33
+            "wielkosc": 0.355
           },
           {
             "kultura": "grecja",
             "kult": "pandora",
-            "wielkosc": 0.316
+            "wielkosc": 0.34
           },
           {
             "kultura": "grecja",
@@ -2192,7 +2192,7 @@
           "indra": 11,
           "sfinks-teby": 20,
           "talos-kreta": 16,
-          "pandora": 15,
+          "pandora": 17,
           "morowa-panna": 9
         }
       },
@@ -2225,8 +2225,8 @@
         "zasieg": [
           {
             "slug": "pandora",
-            "przed": 0.306,
-            "po": 0.316,
+            "przed": 0.33,
+            "po": 0.34,
             "delta": 0.01,
             "opis": "Opowieść o darze, który zajrzał do środka, obiega gospody: nadzieja na dnie naczynia zaczyna być widoczna."
           },
@@ -2249,8 +2249,8 @@
           {
             "kultura": "grecja",
             "kult": "pandora",
-            "przed": 0.306,
-            "po": 0.316,
+            "przed": 0.33,
+            "po": 0.34,
             "delta": 0.01
           },
           {
@@ -2454,11 +2454,11 @@
           },
           {
             "slug": "nessos",
-            "wielkosc": 0.33
+            "wielkosc": 0.355
           },
           {
             "slug": "pandora",
-            "wielkosc": 0.316
+            "wielkosc": 0.34
           },
           {
             "slug": "protostates",
@@ -2550,12 +2550,12 @@
           {
             "kultura": "grecja",
             "kult": "nessos",
-            "wielkosc": 0.33
+            "wielkosc": 0.355
           },
           {
             "kultura": "grecja",
             "kult": "pandora",
-            "wielkosc": 0.316
+            "wielkosc": 0.34
           },
           {
             "kultura": "grecja",
@@ -2594,7 +2594,7 @@
           "indra": 11,
           "sfinks-teby": 20,
           "talos-kreta": 16,
-          "pandora": 15,
+          "pandora": 17,
           "morowa-panna": 9,
           "protostates": 12,
           "knecht-z-koptos": 13,
@@ -2806,11 +2806,11 @@
       },
       {
         "slug": "nessos",
-        "wielkosc": 0.33
+        "wielkosc": 0.355
       },
       {
         "slug": "pandora",
-        "wielkosc": 0.316
+        "wielkosc": 0.34
       },
       {
         "slug": "protostates",
@@ -2902,12 +2902,12 @@
       {
         "kultura": "grecja",
         "kult": "nessos",
-        "wielkosc": 0.33
+        "wielkosc": 0.355
       },
       {
         "kultura": "grecja",
         "kult": "pandora",
-        "wielkosc": 0.316
+        "wielkosc": 0.34
       },
       {
         "kultura": "grecja",
@@ -2946,7 +2946,7 @@
       "indra": 11,
       "sfinks-teby": 20,
       "talos-kreta": 16,
-      "pandora": 15,
+      "pandora": 17,
       "morowa-panna": 9,
       "protostates": 12,
       "knecht-z-koptos": 13,

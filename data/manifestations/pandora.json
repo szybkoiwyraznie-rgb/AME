@@ -99,6 +99,10 @@
     {
       "slug": "talos-kreta",
       "opis": "Pandora i Talos to bodaj najsłynniejsze istoty, które Hefajstos powołał do życia: kobieta z gliny i strażnik z brązu. Obie są „automatami” w najściślejszym sensie — zbudowane, nie urodzone — i obie mają jeden punkt otwarcia: Talos w żyle ichoru przy kostce, Pandora w pokrywie, którą zdejmuje własną ręką."
+    },
+    {
+      "slug": "nessos",
+      "opis": "Pandora i Nessos to dary, które miały gwarantować miłość albo porządek, a skończyły zagładą: pierwsza z nich otwiera pithos i wypuszcza plagi na świat (Hezjod, „Prace i dnie” 60–68), drugi umierając podaje Dejanirze przepis na „napój miłosny” z własnej krwi i nasienia, którym po latach skrapia szatę Heraklesa (Apollodoros 2.151, Diodor 4.36.3, Owidiusz „Metamorfozy” IX). Oboje nie zabijają sami — zabija zaufanie do ich daru."
     }
   ],
   "meta": {
@@ -120,6 +124,10 @@
       {
         "data": "2026-08-30 00:40",
         "opis": "Audyt Kartoteki: poprawka literówek („słój” zamiast „słaj”) w powiązaniach i kluczu."
+      },
+      {
+        "data": "2026-08-30 13:11",
+        "opis": "Pętla Jakości (C1): powiązanie z Nessosem (dar-zguba) na podstawie źródeł pierwotnych (Apollodoros 2.151, Diodor 4.36.3, Owidiusz IX)."
       }
     ]
   }
