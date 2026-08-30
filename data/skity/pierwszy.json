@@ -1,0 +1,30 @@
+{
+    "slug": "pierwszy",
+    "tytul": "PIERWSZY",
+    "temat": "kto jest pierwszy w linii — człowiek, rzecz czy pies; i co zostaje, gdy pierwszy stoi, a nikt nie idzie za nim",
+    "uczestnicy": [
+        {
+            "imie": "Protostates",
+            "slug": "protostates"
+        },
+        {
+            "imie": "Knecht",
+            "slug": "knecht-z-koptos"
+        },
+        {
+            "imie": "Śyāma i Śarvara",
+            "slug": "syama-i-sarvara"
+        }
+    ],
+    "tekst": "**Protostates:** [Stoi w wąskim przejściu; pod hełmem pusto, na kamieniu ani śladu.] Tu pierwszy już stoi. Kto idzie pierwszy?\n\n**Śyāma i Śarvara:** [Śyāma pierwsza wchodzi; oba psy idą razem — cztery oczy, jeden cień.] My nie idziemy, my prowadzimy. Ty zamykasz przejście żywym; my otwieramy drogę tym, którzy nie pamiętają drogi. To nie to samo przejście.\n\n**Protostates:** Tutaj jest jedno. Tarcza jest dla wszystkich, więc zatrzymuję wszystkich.\n\n**Śyāma i Śarvara:** [Śarvara obwąchuje kamień.] Tego nie zatrzymasz. On już nie oddycha. Ty też nie — dlatego go widzisz.\n\n**Knecht:** [Wchodzi z wielkim dzbanem na ramieniu, stawia go przy progu.] Niosę wodę. Powiedziano mi: „nieś, aż powiem”. Nie powiedziano, komu.\n\n**Protostates:** Nie ruszaj się stąd.\n\n**Knecht:** Nie mogę, dopóki nie usłyszę słowa. Kto pierwszy — niech pije.\n\n**Śyāma i Śarvara:** [Śyāma, do Protostatesa.] On nie jest pierwszy ani ostatni; on jest niesiony. [Do Knechta.] Woda ciebie niesie, nie rozkaz — prawda?\n\n**Knecht:** [Wpatruje się w dzban.] Słyszę tylko wodę. [Odsuwa dzban.] Zostawiam. Jeśli tu ktoś stoi pierwszy, niech pije.\n\n**Protostates:** [Długo milczy.] Ja nie piję. Ja stoję — dopóki ktoś pamięta, że stałem pierwszy.\n\n**Śyāma i Śarvara:** [Śarvara kładzie się w poprzek przejścia.] Więc stój. My pójdziemy. Pierwszy jest tylko po to, żeby za nim szedł ktoś.\n\n**Śyāma i Śarvara:** [Przechodząc obok dzbana, jednym głosem.] Woda zostanie. Przy drodze przodków woda też jest darem — od tego, który pierwszy ją zostawił.",
+    "meta": {
+        "utworzono": "2026-08-30 10:20",
+        "autor": "agent Areny — Pętla Jakości C3 (Epoka VII Kroniki)",
+        "modyfikacje": [
+            {
+                "data": "2026-08-30 10:20",
+                "opis": "Nowy SKIT: Protostates × Knecht z Koptos × Śyāma i Śarvara — rozmowa o tym, kto jest pierwszy w linii, gdy rozkaz się kończy, a droga przodków nie zna frontu."
+            }
+        ]
+    }
+}

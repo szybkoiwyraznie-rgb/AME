@@ -1,8 +1,8 @@
 {
   "wersja": 3,
-  "buildTime": "2026-08-30T09:37:32.593Z",
+  "buildTime": "2026-08-30T09:40:04.943Z",
   "liczba": 20,
-  "liczbaSkitow": 20,
+  "liczbaSkitow": 21,
   "kanon": {
     "kategorie": [
       {
@@ -856,7 +856,9 @@
         "talos-kreta"
       ],
       "obraz": "assets/wizualizacje/knecht-z-koptos.jpg",
-      "skity": []
+      "skity": [
+        "pierwszy"
+      ]
     },
     {
       "slug": "lincoln-imp",
@@ -1039,7 +1041,9 @@
         "syama-i-sarvara"
       ],
       "obraz": "assets/wizualizacje/protostates.jpg",
-      "skity": []
+      "skity": [
+        "pierwszy"
+      ]
     },
     {
       "slug": "selkie-sule-skerry",
@@ -1163,7 +1167,9 @@
         "protostates"
       ],
       "obraz": "assets/wizualizacje/syama-i-sarvara.jpg",
-      "skity": []
+      "skity": [
+        "pierwszy"
+      ]
     },
     {
       "slug": "talos-kreta",
@@ -1444,6 +1450,23 @@
       "data": "2026-08-29 10:20"
     },
     {
+      "slug": "pierwszy",
+      "tytul": "PIERWSZY",
+      "temat": "kto jest pierwszy w linii — człowiek, rzecz czy pies; i co zostaje, gdy pierwszy stoi, a nikt nie idzie za nim",
+      "uczestnicy": [
+        "knecht-z-koptos",
+        "protostates",
+        "syama-i-sarvara"
+      ],
+      "imiona": [
+        "Protostates",
+        "Knecht",
+        "Śyāma i Śarvara"
+      ],
+      "slow": 229,
+      "data": "2026-08-30 10:20"
+    },
+    {
       "slug": "plotno-i-kamien",
       "tytul": "PŁÓTNO I KAMIEŃ",
       "temat": "kto w ogóle wchodzi do świątyni: zaproszony przodek i nieproszony sabotażysta",
@@ -1543,6 +1566,22 @@
     }
   ],
   "aktualizacje": [
+    {
+      "data": "2026-08-30 10:20",
+      "typ": "skit",
+      "akcja": "zmiana",
+      "slug": "pierwszy",
+      "tytul": "PIERWSZY",
+      "opis": "Nowy SKIT: Protostates × Knecht z Koptos × Śyāma i Śarvara — rozmowa o tym, kto jest pierwszy w linii, gdy rozkaz się kończy, a droga przodków nie zna frontu."
+    },
+    {
+      "data": "2026-08-30 10:20",
+      "typ": "skit",
+      "akcja": "nowy",
+      "slug": "pierwszy",
+      "tytul": "PIERWSZY",
+      "opis": "SKIT — skład: Protostates, Knecht, Śyāma i Śarvara"
+    },
     {
       "data": "2026-08-30 10:05",
       "typ": "manifestacja",
