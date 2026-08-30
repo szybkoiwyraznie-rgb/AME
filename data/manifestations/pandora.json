@@ -18,7 +18,7 @@
     "lat": 37.9715,
     "lon": 23.7267
   },
-  "pochodzenie_i_kultura": "Mitologia grecka (Hezjod, „Teogonia” w. 570–612 i „Prace i dnie” w. 42–105, VIII–VII w. p.n.e.): Zeus każe Hefajstosowi ulepić z gliny pierwszą kobietę, Atena ją odziewa, Afrodyta daje wdzięk, Hermes „bezwstydny umysł i kłamliwe słowa”; imię „Pandora” znaczy „wszystkichdarowana”, bo każdy z bogów dał jej dar — „plagę mężom jedzącym chleb”. Jej ślubnym darem jest pithos — wielki gliniany słój — który otwiera, a z niego na świat wychodzi wszelkie zło; na dnie zostaje Elpis (nadzieja).",
+  "pochodzenie_i_kultura": "Mitologia grecka (Hezjod, „Teogonia” w. 570–612 i „Prace i dnie” w. 42–105, VIII–VII w. p.n.e.): Zeus każe Hefajstosowi ulepić z gliny pierwszą kobietę, Atena ją odziewa, Afrodyta daje wdzięk, Hermes „bezwstydny umysł i kłamliwe słowa”; imię „Pandora” znaczy „wszystkichdarowana”, bo każdy z bogów dał jej dar — „plagę mężom jedzącym chleb”. Jej ślubnym darem jest pithos — wielki gliniany słój — który otwiera, a z niego na świat wychodzi wszelkie zło; na dnie zostaje Elpis (nadzieja). Jej córką z Epimeteuszem jest Pyrrha — pierwsza śmiertelniczka zrodzona z matki; Pyrrha i jej mąż Deukalion przeżyli wielki potop i odtworzyli ród ludzki, rzucając za siebie kamienie (Apollodoros 1.46; Hygin, „Fabulae” 142).",
   "wizualizacja": {
     "prompt": "Style: A wide-angle full-body cinematic photograph. The central objects/persons of the photo are visible from head to toe, standing centrally in the frame. No parts of the body are cropped.\n\nA young woman in a silver gown and an embroidered veil, a gold crown on her dark hair, standing on the stone base of a colossal statue on the Acropolis at dawn; she holds a large clay pithos in both hands, its heavy lid lifted just a little, dark shapes like smoke and moths streaming from the mouth of the jar toward a sleeping city below; marble columns, olive trees, pale gold morning light, a distant sea, her expression caught between curiosity and horror.\n\nCaptured with a 35mm anamorphic lens at f/1.8. Shallow depth of field with a heavy, creamy bokeh background. Environmental portraiture. Dramatic cinematic lighting, sharp focus on the character, hyper-realistic textures of clothing and skin. Shot on 70mm film stock, ultra-wide 21:9 aspect ratio. --ar 21:9",
     "obraz": "assets/wizualizacje/pandora.jpg"
@@ -38,7 +38,7 @@
     },
     {
       "typ": "portal mitograficzny",
-      "pozycja": "Theoi, „Pandora” — pierwsza śmiertelniczka ulepiona z gliny przez Hefajstosa, dary bogów, pithos jako dar ślubny, roj duchów zła, tylko Elpis; Pauzaniasz: płaskorzeźba narodzin Pandory na bazie posągu Ateny Partenos („Hesiod and others have sung how this Pandora was the first woman”); wariant Teognisa: to dobre duchy uciekły z naczynia",
+      "pozycja": "Theoi, „Pandora” — pierwsza śmiertelniczka ulepiona z gliny przez Hefajstosa, dary bogów, pithos jako dar ślubny, roj duchów zła, tylko Elpis; Pauzaniasz: płaskorzeźba narodzin Pandory na bazie posągu Ateny Partenos („Hesiod and others have sung how this Pandora was the first woman”); wariant Teognisa: to dobre duchy uciekły z naczynia; genealogia: córka Pyrrha (z Epimeteuszem) i Deukalion — jedyni, którzy przeżyli potop, odtwarzając ludzkość (Apollodoros 1.46, Hygin „Fabulae” 142)",
       "url": "https://www.theoi.com/Heroine/Pandora.html"
     },
     {
@@ -98,6 +98,10 @@
       {
         "data": "2026-08-30 13:11",
         "opis": "Pętla Jakości (C1): powiązanie z Nessosem (dar-zguba) na podstawie źródeł pierwotnych (Apollodoros 2.151, Diodor 4.36.3, Owidiusz IX)."
+      },
+      {
+        "data": "2026-08-30 21:57",
+        "opis": "Pętla Jakości (C1): dopisana genealogia Pandory — córka Pyrrha i Deukalion, którzy przeżyli potop i odtworzyli ludzkość (Theoi; Apollodoros 1.46, Hygin „Fabulae” 142)."
       }
     ]
   }

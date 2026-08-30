@@ -1,6 +1,6 @@
 {
   "wersja": 3,
-  "buildTime": "2026-08-30T21:50:58.092Z",
+  "buildTime": "2026-08-30T22:03:31.338Z",
   "liczba": 20,
   "liczbaSkitow": 23,
   "kanon": {
@@ -1612,6 +1612,14 @@
     }
   ],
   "aktualizacje": [
+    {
+      "data": "2026-08-30 21:57",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "pandora",
+      "tytul": "Pandora — pierwsza kobieta i pithos, w którym została nadzieja",
+      "opis": "Pętla Jakości (C1): dopisana genealogia Pandory — córka Pyrrha i Deukalion, którzy przeżyli potop i odtworzyli ludzkość (Theoi; Apollodoros 1.46, Hygin „Fabulae” 142)."
+    },
     {
       "data": "2026-08-30 21:47",
       "typ": "manifestacja",
