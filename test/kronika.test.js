@@ -22,7 +22,11 @@ import {
   osWatkowSVG,
   dziennikZmianyHTML,
   heatmapZasiegowSVG,
+  kolorZasiegu,
   grafEpokSVG,
+  lamaczTekstu,
+  tekstWieloliniowy,
+  KRONIKA_CSS,
   generujSpisTomowHTML,
   generujRaportHTML,
   generujRaportTomuHTML,
@@ -361,6 +365,68 @@ test('S1: W3/W5/W6/W7/W9 i graf epok nie zawracają NaN i mają klasy', () => {
   assert.match(z, /zasieg-po/);
   assert.match(r, /rel-luk wzmocnienie/);
   assert.match(g, /graf-os/);
+});
+
+test('S1: etykiety wykresów łamią się (tspan) — nazwy nie są ucinane (recenzja A)', () => {
+  const dlugie = 'Barbarossa z Kyffhäuser i jego siedmiu towarzyszy';
+  assert.deepEqual(lamaczTekstu(dlugie, 19, 2), ['Barbarossa z', 'Kyffhäuser i jego…'], 'łamanie z wielokropkiem');
+  assert.deepEqual(lamaczTekstu('Krótka nazwa', 19, 2), ['Krótka nazwa'], 'krótki tekst bez łamania');
+  const t = tekstWieloliniowy(100, 50, 'graf-etykieta', dlugie, { maxZnakow: 15, maxLinii: 2 });
+  assert.match(t, /<text class="graf-etykieta"/);
+  assert.match(t, /<tspan x="100.0">Barbarossa z<\/tspan>/);
+  assert.match(t, /<tspan x="100.0" dy="13">Kyffhäuser i…<\/tspan>/);
+  assert.equal((t.match(/<tspan/g) ?? []).length, 2, 'dwa wiersze');
+
+  const epoki = [
+    { slug: 'epoka-1', tytul: 'Trzy stoły: przodek, gospodarz i gość', uczestnicy: [{ slug: 'egungun', nazwa: 'Egungun' }], konsekwencje: { watki: [{ id: 'pierwszy-w-linii', stan: 'otwarty' }] }, stanPo: { zasieg: [{ slug: 'egungun', wielkosc: 0.5 }], os: { mit: 34 } } },
+    { slug: 'epoka-2', tytul: 'Nieproszeni goście: psuj, zaproszony i zaproszenie', uczestnicy: [{ slug: 'egungun', nazwa: 'Egungun' }], konsekwencje: { watki: [{ id: 'pierwszy-w-linii', stan: 'otwarty' }] }, stanPo: { zasieg: [{ slug: 'egungun', wielkosc: 0.4 }], os: { mit: 33 } } },
+  ];
+  for (const [nazwa, html] of Object.entries({
+    graf: grafEpokSVG(epoki),
+    watki: osWatkowSVG(epoki),
+    heat: heatmapZasiegowSVG(epoki, { egungun: 'Egungun' }),
+  })) {
+    assert.ok(html.includes('<tspan'), `${nazwa}: etykiety łamane w tspan`);
+    assert.ok(!html.includes('NaN'), `${nazwa}: bez NaN`);
+  }
+});
+
+test('W9: macierz zasięgów ma skalę kolorów, wartości w komórkach i legendę (recenzja A)', () => {
+  assert.notEqual(kolorZasiegu(0.1).rgb, kolorZasiegu(0.5).rgb, 'skala: różne wartości = różne kolory');
+  assert.match(kolorZasiegu(0.5).rgb, /^rgb\(\d+,\d+,\d+\)$/);
+  const epoki = [
+    { slug: 'epoka-1', tytul: 'A', uczestnicy: [{ slug: 'egungun', nazwa: 'Egungun' }, { slug: 'balor', nazwa: 'Balor' }], stanPo: { zasieg: [{ slug: 'egungun', wielkosc: 0.1 }, { slug: 'balor', wielkosc: 0.5 }] } },
+    { slug: 'epoka-2', tytul: 'B', uczestnicy: [{ slug: 'egungun', nazwa: 'Egungun' }, { slug: 'balor', nazwa: 'Balor' }], stanPo: { zasieg: [{ slug: 'egungun', wielkosc: 0.3 }, { slug: 'balor', wielkosc: 0.4 }] } },
+  ];
+  const h = heatmapZasiegowSVG(epoki, { egungun: 'Egungun', balor: 'Balor' });
+  assert.match(h, /class="heat-liczba"/);
+  assert.match(h, /heat-legenda/);
+  assert.match(h, /heat-leg-kolor/);
+  assert.ok(h.includes('10%') && h.includes('50%'), 'procenty w komórkach');
+  const kolory = [...new Set([...h.matchAll(/style="fill:rgb\(([^)]+)\)"/g)].map((m) => m[1]))];
+  assert.ok(kolory.length >= 4, `różne kolory komórek: ${kolory.length}`);
+});
+
+test('W5: dominacje Tomu — grupowanie kulturami i ranking (recenzja A)', () => {
+  const rows = [
+    { grupa: 'grecja', etykieta: 'Kentaur', wielkosc: 0.4 },
+    { grupa: 'grecja', etykieta: 'Talos', wielkosc: 0.2 },
+    { grupa: 'germania', etykieta: 'Barbarossa', wielkosc: 0.3 },
+  ];
+  const d = slupkiDominacjiSVG(rows);
+  assert.equal((d.match(/class="dom-grupa"/g) ?? []).length, 2, 'nagłówek na każdą kulturę');
+  assert.match(d, /class="dom-grupa-etykieta"/);
+  assert.ok(d.indexOf('Kentaur') < d.indexOf('Talos'), 'ranking wewnątrz kultury zachowany');
+  // łamanie etykiet w pierwszej kolumnie
+  const dluga = slupkiDominacjiSVG([{ etykieta: 'Barbarossa z Kyffhäuser i jego towarzysze', wielkosc: 0.4 }]);
+  assert.match(dluga, /<tspan/);
+});
+
+test('KRONIKA_CSS: minimalna czcionka 12px — żadna mniejsza (recenzja A)', () => {
+  const male = KRONIKA_CSS.match(/font-size:\s*(?:9|10|11|11\.5)px/g) || [];
+  assert.deepEqual(male, [], `mniejsze niż 12px: ${male.join(', ')}`);
+  assert.match(KRONIKA_CSS, /\.heat-legenda/);
+  assert.match(KRONIKA_CSS, /\.dom-grupa-etykieta/);
 });
 
 test('S1: dziennik zmiany to tabela z paliwem, zasięgiem, dominacją i pozycją', () => {

@@ -142,3 +142,9 @@ test('B: POI i miejsca historyczne — kursor strzałka, pole trafienia jak mias
     assert.ok(trafienie, `brak reguły pointer-events: all dla pola trafienia .${warstwa}`);
   }
 });
+
+test('minimalna czcionka aplikacji: 12px — żadna mniejsza (recenzja właściciela)', async () => {
+  const css = await readFile(STYLE, 'utf8');
+  const male = css.match(/font-size:\s*(?:9|10|11|11\.5)px/g) || [];
+  assert.deepEqual(male, [], `mniejsze niż 12px: ${male.join(', ')}`);
+});

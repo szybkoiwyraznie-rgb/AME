@@ -66,7 +66,7 @@ html[data-motyw="ciemny"] {
 .tytul { display: flex; align-items: baseline; gap: 10px; white-space: nowrap; }
 .tytul h1 { margin: 0; font-family: inherit; font-size: 22px; letter-spacing: 0.12em; color: var(--accent); }
 .tytul h1 a { text-decoration: none; color: inherit; }
-.tytul p { margin: 0; font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted); }
+.tytul p { margin: 0; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted); }
 #szukaj {
   flex: 1; min-width: 120px; max-width: 520px; padding: 8px 14px;
   border-radius: 999px; border: 1px solid var(--line);
@@ -683,7 +683,7 @@ li { margin: 8px 0; }
   display: block;
 }
 .natura dt, .trofea dt {
-  font-size: 11.5px;
+  font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: var(--accent);
@@ -714,7 +714,7 @@ li { margin: 8px 0; }
 }
 .tabela-translacji th {
   background: var(--code);
-  font-size: 11.5px;
+  font-size: 12px;
 }
 .meta-wpisu {
   margin-top: 28px;
@@ -748,11 +748,11 @@ li { margin: 8px 0; }
 
 .chart { width: 100%; height: auto; display: block; }
 .os-grid { stroke: var(--line); stroke-width: 1; }
-.os-grid-label { fill: var(--muted); font-size: 10px; text-anchor: end; }
+.os-grid-label { fill: var(--muted); font-size: 12px; text-anchor: end; }
 .os-area { fill: var(--mit); fill-opacity: 0.12; }
 .os-line { fill: none; stroke: var(--mit); stroke-width: 2.5; stroke-linejoin: round; }
 .os-dot circle { fill: var(--accent); stroke: var(--fg); stroke-width: 1.5; }
-.os-wartosc { fill: var(--fg); font-size: 11px; text-anchor: middle; }
+.os-wartosc { fill: var(--fg); font-size: 12px; text-anchor: middle; }
 .os-label { fill: var(--muted); font-size: 12px; }
 
 .zasieg-chip, .zasieg-wiersz text { font-size: 12px; }
@@ -765,7 +765,7 @@ li { margin: 8px 0; }
 .zasieg-delta { fill: var(--muted); font-weight: 700; }
 .zasieg-delta.up { fill: var(--up); }
 .zasieg-delta.down { fill: var(--down); }
-.chart-legenda { fill: var(--muted); font-size: 11px; }
+.chart-legenda { fill: var(--muted); font-size: 12px; }
 .leg-przed { fill: var(--muted); }
 .leg-po { fill: var(--accent); }
 
@@ -773,13 +773,15 @@ li { margin: 8px 0; }
 .paliwo-chart { flex: 1 1 520px; min-width: 0; }
 .paliwo-linia { fill: none; stroke-width: 2.2; stroke-linejoin: round; }
 .paliwo-punkt { stroke: var(--card); stroke-width: 1; }
-.paliwo-os, .paliwo-os-x { fill: var(--muted); font-size: 11px; text-anchor: end; }
+.paliwo-os, .paliwo-os-x { fill: var(--muted); font-size: 12px; text-anchor: end; }
 .paliwo-os-x { text-anchor: middle; }
 .paliwo-legenda-box { flex: 0 1 200px; display: flex; flex-direction: column; gap: 4px; font-size: 13px; }
 .paliwo-legenda { display: flex; gap: 8px; align-items: center; color: var(--fg); }
 .paliwo-legenda .kropka { width: 10px; height: 10px; border-radius: 50%; background: var(--l); display: inline-block; }
 .paliwo-legenda b { margin-left: auto; }
 
+.dom-grupa-etykieta { fill: var(--accent); font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+.dom-grupa-linia { stroke: var(--accent); stroke-width: 1.4; stroke-dasharray: 3 3; }
 .dom-tor { fill: var(--card-alt); stroke: var(--line); stroke-width: 1; }
 .dom-bar { fill: var(--accent); }
 .dom-etykieta { fill: var(--fg); font-size: 12.5px; font-weight: 600; }
@@ -806,9 +808,12 @@ li { margin: 8px 0; }
 .watki-marker.otwarty { fill: var(--up); }
 .watki-marker.zamkniety { fill: var(--down); }
 .watki-etykieta { fill: var(--fg); font-size: 12px; }
-.watki-os-x { fill: var(--muted); font-size: 11px; }
+.watki-os-x { fill: var(--muted); font-size: 12px; }
 
-.heat-cell { fill: var(--accent); stroke: var(--card); }
+.heat-cell { stroke: var(--card); stroke-width: 1; }
+.heat-liczba { font-size: 12px; font-weight: 700; text-anchor: middle; dominant-baseline: middle; }
+.heat-legenda { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; margin-top: 6px; }
+.heat-leg-kolor { padding: 2px 9px; border-radius: 999px; font-weight: 600; }
 .heat-etykieta { fill: var(--fg); font-size: 12.5px; font-weight: 600; }
 .heat-sum { fill: var(--muted); font-size: 12px; }
 .heat-os-x { fill: var(--muted); font-size: 12px; }
@@ -818,9 +823,9 @@ li { margin: 8px 0; }
 .graf-wezel circle { fill: var(--card); stroke: var(--accent); stroke-width: 2; }
 .graf-wezel.rozgalezienie circle { fill: var(--accent-light); }
 .graf-nr { text-anchor: middle; fill: var(--fg); font-size: 13px; font-weight: 700; }
-.graf-etykieta { fill: var(--muted); font-size: 11.5px; }
+.graf-etykieta { fill: var(--muted); font-size: 12px; }
 .graf-galez path { fill: var(--accent-light); }
-.graf-galez-opis { fill: var(--muted); font-size: 11px; }
+.graf-galez-opis { fill: var(--muted); font-size: 12px; }
 
 .tomy-pasek { display: flex; gap: 8px; flex-wrap: wrap; margin: 0 0 14px; }
 .tomy-pasek .pager-btn.aktywny { background: var(--accent); color: var(--card); }
@@ -1287,29 +1292,29 @@ li { margin: 8px 0; }
       <h2>Dominacje kultur</h2>
       <div class="card-sub">Kultury i kulty, których głos w tej epoce zyskał lub stracił na znaczeniu.</div>
       <svg class="chart dom-chart" viewBox="0 0 640 144" role="img" aria-label="Słupki dominacji">
-      <g class="dom-wiersz" transform="translate(0,22)">
-        <circle class="dom-kropka" cx="82" cy="14" r="4" />
-        <text class="dom-etykieta" x="96" y="19">grecja · protostates</text>
-        <rect class="dom-tor" x="168" y="4" width="362" height="20" rx="5" />
-        <rect class="dom-bar" x="168" y="4" width="98" height="20" rx="5">
+      <g class="dom-wiersz" transform="translate(0,22.0)">
+        <circle class="dom-kropka" cx="78" cy="14" r="4" />
+        <text class="dom-etykieta" x="90.0" y="15.0" text-anchor="start"><tspan x="90.0">grecja ·</tspan><tspan x="90.0" dy="13">protostates</tspan></text>
+        <rect class="dom-tor" x="190" y="4" width="340" height="20" rx="5" />
+        <rect class="dom-bar" x="190" y="4" width="92" height="20" rx="5">
           <title>grecja · protostates: 27% (+1 pp)</title>
         </rect>
         <text class="dom-delta up" x="540" y="18">27% · +1 pp</text>
       </g>
-      <g class="dom-wiersz" transform="translate(0,60)">
-        <circle class="dom-kropka" cx="82" cy="14" r="4" />
-        <text class="dom-etykieta" x="96" y="19">grecja · knecht-z-koptos</text>
-        <rect class="dom-tor" x="168" y="4" width="362" height="20" rx="5" />
-        <rect class="dom-bar" x="168" y="4" width="106" height="20" rx="5">
+      <g class="dom-wiersz" transform="translate(0,60.0)">
+        <circle class="dom-kropka" cx="78" cy="14" r="4" />
+        <text class="dom-etykieta" x="90.0" y="15.0" text-anchor="start"><tspan x="90.0">grecja ·</tspan><tspan x="90.0" dy="13">knecht-z-koptos</tspan></text>
+        <rect class="dom-tor" x="190" y="4" width="340" height="20" rx="5" />
+        <rect class="dom-bar" x="190" y="4" width="99" height="20" rx="5">
           <title>grecja · knecht-z-koptos: 29% (+1 pp)</title>
         </rect>
         <text class="dom-delta up" x="540" y="18">29% · +1 pp</text>
       </g>
-      <g class="dom-wiersz" transform="translate(0,98)">
-        <circle class="dom-kropka" cx="82" cy="14" r="4" />
-        <text class="dom-etykieta" x="96" y="19">indie · syama-i-sarvara</text>
-        <rect class="dom-tor" x="168" y="4" width="362" height="20" rx="5" />
-        <rect class="dom-bar" x="168" y="4" width="91" height="20" rx="5">
+      <g class="dom-wiersz" transform="translate(0,98.0)">
+        <circle class="dom-kropka" cx="78" cy="14" r="4" />
+        <text class="dom-etykieta" x="90.0" y="15.0" text-anchor="start"><tspan x="90.0">indie ·</tspan><tspan x="90.0" dy="13">syama-i-sarvara</tspan></text>
+        <rect class="dom-tor" x="190" y="4" width="340" height="20" rx="5" />
+        <rect class="dom-bar" x="190" y="4" width="85" height="20" rx="5">
           <title>indie · syama-i-sarvara: 25% (+1 pp)</title>
         </rect>
         <text class="dom-delta up" x="540" y="18">25% · +1 pp</text>

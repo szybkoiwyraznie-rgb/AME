@@ -1632,3 +1632,14 @@ wszystkie wdrożone w tej samej sesji:
   i Epok z udziałem bytu (dane z `summary.json`, ładowane raz).
 
 Brama: `npm test` **184/184** (mapa 14/14, UI 42/42), `npm run check` zielone.
+
+### Trzecia recenzja właściciela — widoki Kroniki (2026-08-30, PR #10)
+
+Po obejrzeniu raportów Tomu i Epok: (a) nazwy epok/bytów w wykresach
+łamały się przez ucinanie — dodany `lamaczTekstu`/`tekstWieloliniowy`
+(SVG `<tspan>`), użyte w grafie epok, macierzy zasięgów, dominacjach
+i osi wątków; (b) macierz zasięgów miała jednolity kolor — teraz skala
+granat→bursztyn z wartościami % w komórkach i legendą; (c) dominacje
+Tomu grupowane wg kultur i rankowane (kultura → kulty od najsilniejszego);
+(d) minimalna czcionka projektu **12px** (`KRONIKA_CSS` + `app/styles.css`).
+Brama: `npm test` 189/189, `npm run check` zielone.

@@ -743,6 +743,39 @@ export function wykresOsiSVG(epoki, { szer = 880, wysokosc = 210 } = {}) {
   </svg>`;
 }
 
+/** Dzieli tekst SVG na linie po słowach — SVG samo nie zawija, przez co
+ *  nazwy epok i bytów były ucinane (recenzja właściciela 2026-08-30). */
+export function lamaczTekstu(tekst, maxZnakow = 22, maxLinii = 2) {
+  const slowa = String(tekst ?? '').trim().split(/\s+/).filter(Boolean);
+  if (!slowa.length) return [''];
+  const linie = [];
+  let biezaca = '';
+  for (const s of slowa) {
+    const proba = biezaca ? `${biezaca} ${s}` : s;
+    if (proba.length <= maxZnakow || !biezaca) biezaca = proba;
+    else {
+      linie.push(biezaca);
+      biezaca = s;
+    }
+  }
+  if (biezaca) linie.push(biezaca);
+  if (linie.length <= maxLinii) return linie;
+  const koniec = [...linie.slice(0, maxLinii)];
+  let ostatnia = koniec[maxLinii - 1];
+  while (ostatnia.length > maxZnakow - 1) ostatnia = ostatnia.slice(0, -1);
+  koniec[maxLinii - 1] = ostatnia.replace(/\s+$/, '') + '…';
+  return koniec;
+}
+
+/** `<text>` z wieloma liniami `<tspan>` — czytelne nazwy zamiast poucinanych. */
+export function tekstWieloliniowy(x, y, klasa, tekst, { maxZnakow = 22, maxLinii = 2, dy = 13, anchor = 'middle' } = {}) {
+  const linie = lamaczTekstu(tekst, maxZnakow, maxLinii);
+  const tspany = linie
+    .map((l, i) => `<tspan x="${Number(x).toFixed(1)}"${i ? ` dy="${dy}"` : ''}>${esc(l)}</tspan>`)
+    .join('');
+  return `<text class="${klasa}" x="${Number(x).toFixed(1)}" y="${Number(y).toFixed(1)}" text-anchor="${anchor}">${tspany}</text>`;
+}
+
 /** W3 — słupki zasięgów przed→po (każdy wiersz: pasek przed i po, delta). */
 export function wykresZasiegowSVG(wiersze, { szer = 700 } = {}) {
   const nazwy = new Map((wiersze || []).map((z) => [z.slug, z.nazwa]).filter(([, n]) => n));
@@ -827,19 +860,42 @@ export function wykresPaliwaSVG(epoki, { szer = 880, wysokosc = 300 } = {}) {
 export function slupkiDominacjiSVG(wiersze, { szer = 640, wysokosc = null } = {}) {
   const rows = (wiersze || []).filter((d) => Number.isFinite(d.wielkosc) && d.wielkosc > 0);
   if (!rows.length) return `<p class="muted">Brak dominacji do pokazania.</p>`;
-  const h = wysokosc || rows.length * 40 + 24;
-  const lewo = 168;
+  // `grupa` (np. kultura) wstawia nagłówek; kolejność wierszy = ranking.
+  const pozycje = [];
+  let ostatniaGrupa = null;
+  for (const d of rows) {
+    if (d.grupa && d.grupa !== ostatniaGrupa) {
+      ostatniaGrupa = d.grupa;
+      pozycje.push({ typ: 'grupa', etykieta: d.grupa });
+    }
+    pozycje.push({ typ: 'wiersz', ...d });
+  }
+  const h = wysokosc || pozycje.length * 40 + 24;
+  const lewo = 190;
   const prawo = 110;
   const szerBar = szer - lewo - prawo;
-  const wierszeSvg = rows
+  const wierszeSvg = pozycje
     .map((d, i) => {
-      const yy = 22 + i * ((h - 30) / rows.length);
+      const yy = 22 + i * ((h - 30) / pozycje.length);
+      if (d.typ === 'grupa') {
+        return `
+      <g class="dom-grupa" transform="translate(0,${yy.toFixed(1)})">
+        <text class="dom-grupa-etykieta" x="${lewo - 104}" y="16">${esc(d.etykieta)}</text>
+        <line class="dom-grupa-linia" x1="${lewo}" y1="9" x2="${szer - prawo}" y2="9" />
+      </g>`;
+      }
       const delta = d.delta !== undefined && d.delta !== null ? Math.round(Number(d.delta) * 100) : null;
       const cls = delta === null ? 'neutral' : delta > 0 ? 'up' : delta < 0 ? 'down' : 'neutral';
+      const etykieta = tekstWieloliniowy(lewo - 100, 15, 'dom-etykieta', d.etykieta, {
+        maxZnakow: 15,
+        maxLinii: 2,
+        dy: 13,
+        anchor: 'start',
+      });
       return `
-      <g class="dom-wiersz" transform="translate(0,${yy})">
-        <circle class="dom-kropka" cx="${lewo - 86}" cy="14" r="4" />
-        <text class="dom-etykieta" x="${lewo - 72}" y="19">${esc(d.etykieta)}</text>
+      <g class="dom-wiersz" transform="translate(0,${yy.toFixed(1)})">
+        <circle class="dom-kropka" cx="${lewo - 112}" cy="14" r="4" />
+        ${etykieta}
         <rect class="dom-tor" x="${lewo}" y="4" width="${szerBar}" height="20" rx="5" />
         <rect class="dom-bar" x="${lewo}" y="4" width="${Math.round(d.wielkosc * szerBar)}" height="20" rx="5">
           <title>${esc(d.etykieta)}: ${pct(d.wielkosc)}${delta === null ? '' : ` (${cls === 'up' ? '+' : ''}${delta} pp)`}</title>
@@ -914,12 +970,12 @@ export function osWatkowSVG(epoki) {
   }
   if (kolejnosc.length === 0) return `<p class="muted">Brak wątków do narysowania.</p>`;
   const szer = 880;
-  const wysWiersza = 36;
-  const wysokosc = 30 + kolejnosc.length * wysWiersza;
-  const m = { lewo: 210, prawo: 30 };
+  const wysWiersza = 40;
+  const wysokosc = 64 + kolejnosc.length * wysWiersza;
+  const m = { lewo: 228, prawo: 30 };
   const szerPlot = szer - m.lewo - m.prawo;
   const x = (i) => m.lewo + (szerPlot * i) / Math.max(1, epokiLista.length - 1);
-  const y = (i) => 30 + i * wysWiersza;
+  const y = (i) => 60 + i * wysWiersza;
   const wystapienia = new Map();
   for (const w of kolejnosc) {
     const wyst = [];
@@ -942,10 +998,27 @@ export function osWatkowSVG(epoki) {
           <title>${esc(w)} · ${esc(epokiLista[wst.i].slug)}: ${esc(wst.stan)}</title>
         </circle>`)
         .join('');
-      return `${seg.join('')}${markery}<text class="watki-etykieta" x="${m.lewo - 12}" y="${(y(wi) + 5).toFixed(1)}" text-anchor="end">${esc(w.length > 26 ? w.slice(0, 25) + '…' : w)}</text>`;
+      const etykietaWatku = tekstWieloliniowy(m.lewo - 12, y(wi) + 5, 'watki-etykieta', w, {
+        maxZnakow: 24,
+        maxLinii: 2,
+        dy: 13,
+        anchor: 'end',
+      });
+      return `${seg.join('')}${markery}${etykietaWatku}`;
     })
     .join('');
-  const osX = epokiLista.map((e, i) => `<text class="watki-os-x" x="${x(i).toFixed(1)}" y="18" text-anchor="middle">${rzymskie(i + 1)} · ${esc(e.tytul.length > 18 ? e.tytul.slice(0, 17) + '…' : e.tytul)}</text>`).join('');
+  const osX = epokiLista
+    .map(
+      (e, i) =>
+        tekstWieloliniowy(
+          x(i),
+          22,
+          'watki-os-x',
+          `${rzymskie(i + 1)} · ${e.tytul}`,
+          { maxZnakow: 13, maxLinii: 3, dy: 12 }
+        )
+    )
+    .join('');
   return `<svg class="chart watki-chart" viewBox="0 0 ${szer} ${wysokosc}" role="img" aria-label="Oś czasu wątków fabularnych">${osX}${linie}</svg>`;
 }
 
@@ -993,6 +1066,18 @@ export function dziennikZmianyHTML(e, nazwy = {}) {
   </table>`;
 }
 
+/** Kolor komórki macierzy zasięgów: interpolacja granat→bursztyn po
+ *  t = (w − 0,10) / 0,40 (zakres zasięgów 10–50%). Wcześniej wszystkie
+ *  komórki miały ten sam kolor i różniły się tylko delikatną przezroczystością
+ *  — wyglądały jak jednolita plansza (recenzja właściciela 2026-08-30). */
+const ZASIEG_KOL_MIN = [58, 74, 100];
+const ZASIEG_KOL_MAX = [216, 140, 82];
+export function kolorZasiegu(w) {
+  const t = Math.max(0, Math.min(1, ((Number(w) || 0) - 0.1) / 0.4));
+  const [r, g, b] = ZASIEG_KOL_MIN.map((c, i) => Math.round(c + (ZASIEG_KOL_MAX[i] - c) * t));
+  return { rgb: `rgb(${r},${g},${b})`, jasnosc: 0.2126 * r + 0.7152 * g + 0.0722 * b };
+}
+
 /** W9 — heatmap zasięgów: wiersz = byt, kolumna = epoka. */
 export function heatmapZasiegowSVG(epoki, nazwy = {}) {
   const epokiLista = epoki || [];
@@ -1001,33 +1086,61 @@ export function heatmapZasiegowSVG(epoki, nazwy = {}) {
   for (const e of epokiLista) for (const u of e.uczestnicy || []) if (!slugi.includes(u.slug)) slugi.push(u.slug);
   const suma = (s) => epokiLista.reduce((acc, e) => acc + ((e.stanPo?.zasieg || []).find((z) => z.slug === s)?.wielkosc ?? 0), 0);
   slugi.sort((a, b) => suma(b) - suma(a));
-  const szerKom = 92;
-  const wysWiersza = 34;
-  const lewo = 190;
-  const szer = lewo + epokiLista.length * szerKom + 20;
-  const wysokosc = 64 + slugi.length * wysWiersza;
+  const szerKom = 96;
+  const wysWiersza = 42;
+  const lewo = 224;
+  const szer = lewo + epokiLista.length * szerKom + 40;
+  const wysokosc = 76 + slugi.length * wysWiersza;
   const komorki = slugi
     .map((s, i) => {
-      const yy = 64 + i * wysWiersza;
+      const yy = 76 + i * wysWiersza;
       const cells = epokiLista
         .map((e, j) => {
           const z = (e.stanPo?.zasieg || []).find((x) => x.slug === s);
           const w = z?.wielkosc ?? 0;
-          const op = (0.06 + 0.94 * w).toFixed(2);
-          return `<rect class="heat-cell" x="${lewo + j * szerKom + 3}" y="${yy + 3}" width="${szerKom - 6}" height="${wysWiersza - 6}" rx="4" style="fill-opacity:${op}">
-            <title>${esc(nazwy[s] || s)} · ${esc(e.slug)}: ${pct(w)}</title>
-          </rect>`;
+          const { rgb, jasnosc } = kolorZasiegu(w);
+          const kolorTekstu = jasnosc > 150 ? '#151a24' : '#f4ecdc';
+          const cx = lewo + j * szerKom + szerKom / 2;
+          return `<g class="heat-cell-g">
+            <rect class="heat-cell" x="${lewo + j * szerKom + 3}" y="${yy + 3}" width="${szerKom - 6}" height="${wysWiersza - 6}" rx="4" style="fill:${rgb}">
+              <title>${esc(nazwy[s] || s)} · ${esc(e.slug)}: ${pct(w)}</title>
+            </rect>
+            <text class="heat-liczba" x="${cx}" y="${yy + wysWiersza / 2 + 4}" style="fill:${kolorTekstu}">${Math.round(w * 100)}%</text>
+          </g>`;
         })
         .join('');
       const total = epokiLista.length ? Math.round((suma(s) / epokiLista.length) * 100) : 0;
-      return `${cells}<text class="heat-etykieta" x="${lewo - 12}" y="${(yy + wysWiersza / 2 + 5).toFixed(1)}" text-anchor="end">${getEmoji(s)} ${esc(nazwy[s] || s)}</text>
-        <text class="heat-sum" x="${lewo + epokiLista.length * szerKom + 10}" y="${(yy + wysWiersza / 2 + 5).toFixed(1)}">${total}%</text>`;
+      const etykieta = tekstWieloliniowy(lewo - 12, yy + wysWiersza / 2 + 2, 'heat-etykieta', `${getEmoji(s)} ${nazwy[s] || s}`, {
+        maxZnakow: 17,
+        maxLinii: 2,
+        dy: 14,
+        anchor: 'end',
+      });
+      return `${cells}${etykieta}
+        <text class="heat-sum" x="${lewo + epokiLista.length * szerKom + 12}" y="${yy + wysWiersza / 2 + 5}">${total}%</text>`;
     })
     .join('');
-  const naglowek = epokiLista.map((e, j) => `<text class="heat-os-x" x="${(lewo + j * szerKom + szerKom / 2).toFixed(1)}" y="26" text-anchor="middle">${rzymskie(j + 1)}</text>`).join('');
+  const naglowek = epokiLista
+    .map((e, j) =>
+      tekstWieloliniowy(lewo + j * szerKom + szerKom / 2, 26, 'heat-os-x', `${rzymskie(j + 1)} · ${e.tytul}`, {
+        maxZnakow: 12,
+        maxLinii: 2,
+        dy: 12,
+      })
+    )
+    .join('');
+  const progi = [0.1, 0.2, 0.3, 0.4, 0.5];
+  const legenda = `<div class="chart-legenda heat-legenda"><span>zasięg bytu na koniec epoki:</span>${progi
+    .map((w) => {
+      const { rgb, jasnosc } = kolorZasiegu(w);
+      const kolorTekstu = jasnosc > 150 ? '#151a24' : '#f4ecdc';
+      return `<span class="heat-leg-kolor" style="background:${rgb};color:${kolorTekstu}">${Math.round(w * 100)}%</span>`;
+    })
+    .join('')}</div>`;
   return `<svg class="chart heat-chart" viewBox="0 0 ${szer} ${wysokosc}" role="img" aria-label="Macierz zasięgów bytów po epokach">${naglowek}${komorki}
-    <text class="heat-os-x" x="${(lewo + epokiLista.length * szerKom + 10).toFixed(1)}" y="26">śr.</text>
-  </svg>`;
+    <text class="heat-os-x" x="${lewo + epokiLista.length * szerKom + 12}" y="26">śr.</text>
+  </svg>
+  ${legenda}`;
 }
 
 /** S3 — graf epok: oś czasu, odwołania poprzednik/kontynuacja, rozgałęzienia. */
@@ -1035,7 +1148,7 @@ export function grafEpokSVG(epoki) {
   const epokiLista = epoki || [];
   if (epokiLista.length < 2) return '<p class="muted">Graf epok wymaga co najmniej dwóch epok.</p>';
   const szer = 880;
-  const wysokosc = 150;
+  const wysokosc = 200;
   const m = { lewo: 60, prawo: 60 };
   const szerPlot = szer - m.lewo - m.prawo;
   const x = (i) => m.lewo + (szerPlot * i) / (epokiLista.length - 1);
@@ -1071,7 +1184,7 @@ export function grafEpokSVG(epoki) {
       const rozgalezienie = e.meta?.rozgalezienie;
       const cls = rozgalezienie ? 'graf-wezel rozgalezienie' : 'graf-wezel';
       const pod = rozgalezienie
-        ? `<g class="graf-galez" transform="translate(${x(i).toFixed(1)},${y + 40})"><path d="M 0 0 L -10 14 L 0 28 L 10 14 Z" /></g><text class="graf-galez-opis" x="${x(i).toFixed(1)}" y="${y + 82}" text-anchor="middle">${esc((rozgalezienie.opis || 'rozstaje').length > 24 ? (rozgalezienie.opis || '').slice(0, 23) + '…' : rozgalezienie.opis || 'rozstaje')}</text>`
+        ? `<g class="graf-galez" transform="translate(${x(i).toFixed(1)},${y + 40})"><path d="M 0 0 L -10 14 L 0 28 L 10 14 Z" /></g>${tekstWieloliniowy(x(i), y + 96, 'graf-galez-opis', rozgalezienie.opis || 'rozstaje', { maxZnakow: 20, maxLinii: 2, dy: 13 })}`
         : '';
       return `<g class="${cls}" transform="translate(${x(i).toFixed(1)},${y})">
         <title>${esc(e.slug)} — ${esc(e.tytul)}${rozgalezienie ? ' · rozstaje' : ''}</title>
@@ -1080,7 +1193,15 @@ export function grafEpokSVG(epoki) {
       </g>${pod}`;
     })
     .join('');
-  const etykiety = epokiLista.map((e, i) => `<text class="graf-etykieta" x="${x(i).toFixed(1)}" y="${(y - 34).toFixed(1)}" text-anchor="middle">${esc(e.tytul.length > 24 ? e.tytul.slice(0, 23) + '…' : e.tytul)}</text>`).join('');
+  const etykiety = epokiLista
+    .map((e, i) =>
+      tekstWieloliniowy(x(i), y - 50, 'graf-etykieta', e.tytul, {
+        maxZnakow: 21,
+        maxLinii: 2,
+        dy: 13,
+      })
+    )
+    .join('');
   return `<svg class="chart graf-chart" viewBox="0 0 ${szer} ${wysokosc}" role="img" aria-label="Graf epok z odwołaniami i rozgałęzieniami">${etykiety}${edycja.join('')}${wezly}</svg>`;
 }
 
@@ -1184,7 +1305,8 @@ export function generujTopbarHTML(aktywny = 'kronika') {
 }
 
 /** Wspólne style CSS dla wszystkich stron Kroniki */
-const KRONIKA_CSS = `
+/** Arkusz Kroniki — minimalna czytelna czcionka projektu: 12px. */
+export const KRONIKA_CSS = `
 :root {
   --bg: #f5f0e6;
   --bg-subtle: #ede7db;
@@ -1246,7 +1368,7 @@ html[data-motyw="ciemny"] {
 .tytul { display: flex; align-items: baseline; gap: 10px; white-space: nowrap; }
 .tytul h1 { margin: 0; font-family: inherit; font-size: 22px; letter-spacing: 0.12em; color: var(--accent); }
 .tytul h1 a { text-decoration: none; color: inherit; }
-.tytul p { margin: 0; font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted); }
+.tytul p { margin: 0; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted); }
 #szukaj {
   flex: 1; min-width: 120px; max-width: 520px; padding: 8px 14px;
   border-radius: 999px; border: 1px solid var(--line);
@@ -1863,7 +1985,7 @@ li { margin: 8px 0; }
   display: block;
 }
 .natura dt, .trofea dt {
-  font-size: 11.5px;
+  font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: var(--accent);
@@ -1894,7 +2016,7 @@ li { margin: 8px 0; }
 }
 .tabela-translacji th {
   background: var(--code);
-  font-size: 11.5px;
+  font-size: 12px;
 }
 .meta-wpisu {
   margin-top: 28px;
@@ -1928,11 +2050,11 @@ li { margin: 8px 0; }
 
 .chart { width: 100%; height: auto; display: block; }
 .os-grid { stroke: var(--line); stroke-width: 1; }
-.os-grid-label { fill: var(--muted); font-size: 10px; text-anchor: end; }
+.os-grid-label { fill: var(--muted); font-size: 12px; text-anchor: end; }
 .os-area { fill: var(--mit); fill-opacity: 0.12; }
 .os-line { fill: none; stroke: var(--mit); stroke-width: 2.5; stroke-linejoin: round; }
 .os-dot circle { fill: var(--accent); stroke: var(--fg); stroke-width: 1.5; }
-.os-wartosc { fill: var(--fg); font-size: 11px; text-anchor: middle; }
+.os-wartosc { fill: var(--fg); font-size: 12px; text-anchor: middle; }
 .os-label { fill: var(--muted); font-size: 12px; }
 
 .zasieg-chip, .zasieg-wiersz text { font-size: 12px; }
@@ -1945,7 +2067,7 @@ li { margin: 8px 0; }
 .zasieg-delta { fill: var(--muted); font-weight: 700; }
 .zasieg-delta.up { fill: var(--up); }
 .zasieg-delta.down { fill: var(--down); }
-.chart-legenda { fill: var(--muted); font-size: 11px; }
+.chart-legenda { fill: var(--muted); font-size: 12px; }
 .leg-przed { fill: var(--muted); }
 .leg-po { fill: var(--accent); }
 
@@ -1953,13 +2075,15 @@ li { margin: 8px 0; }
 .paliwo-chart { flex: 1 1 520px; min-width: 0; }
 .paliwo-linia { fill: none; stroke-width: 2.2; stroke-linejoin: round; }
 .paliwo-punkt { stroke: var(--card); stroke-width: 1; }
-.paliwo-os, .paliwo-os-x { fill: var(--muted); font-size: 11px; text-anchor: end; }
+.paliwo-os, .paliwo-os-x { fill: var(--muted); font-size: 12px; text-anchor: end; }
 .paliwo-os-x { text-anchor: middle; }
 .paliwo-legenda-box { flex: 0 1 200px; display: flex; flex-direction: column; gap: 4px; font-size: 13px; }
 .paliwo-legenda { display: flex; gap: 8px; align-items: center; color: var(--fg); }
 .paliwo-legenda .kropka { width: 10px; height: 10px; border-radius: 50%; background: var(--l); display: inline-block; }
 .paliwo-legenda b { margin-left: auto; }
 
+.dom-grupa-etykieta { fill: var(--accent); font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+.dom-grupa-linia { stroke: var(--accent); stroke-width: 1.4; stroke-dasharray: 3 3; }
 .dom-tor { fill: var(--card-alt); stroke: var(--line); stroke-width: 1; }
 .dom-bar { fill: var(--accent); }
 .dom-etykieta { fill: var(--fg); font-size: 12.5px; font-weight: 600; }
@@ -1986,9 +2110,12 @@ li { margin: 8px 0; }
 .watki-marker.otwarty { fill: var(--up); }
 .watki-marker.zamkniety { fill: var(--down); }
 .watki-etykieta { fill: var(--fg); font-size: 12px; }
-.watki-os-x { fill: var(--muted); font-size: 11px; }
+.watki-os-x { fill: var(--muted); font-size: 12px; }
 
-.heat-cell { fill: var(--accent); stroke: var(--card); }
+.heat-cell { stroke: var(--card); stroke-width: 1; }
+.heat-liczba { font-size: 12px; font-weight: 700; text-anchor: middle; dominant-baseline: middle; }
+.heat-legenda { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; margin-top: 6px; }
+.heat-leg-kolor { padding: 2px 9px; border-radius: 999px; font-weight: 600; }
 .heat-etykieta { fill: var(--fg); font-size: 12.5px; font-weight: 600; }
 .heat-sum { fill: var(--muted); font-size: 12px; }
 .heat-os-x { fill: var(--muted); font-size: 12px; }
@@ -1998,9 +2125,9 @@ li { margin: 8px 0; }
 .graf-wezel circle { fill: var(--card); stroke: var(--accent); stroke-width: 2; }
 .graf-wezel.rozgalezienie circle { fill: var(--accent-light); }
 .graf-nr { text-anchor: middle; fill: var(--fg); font-size: 13px; font-weight: 700; }
-.graf-etykieta { fill: var(--muted); font-size: 11.5px; }
+.graf-etykieta { fill: var(--muted); font-size: 12px; }
 .graf-galez path { fill: var(--accent-light); }
-.graf-galez-opis { fill: var(--muted); font-size: 11px; }
+.graf-galez-opis { fill: var(--muted); font-size: 12px; }
 
 .tomy-pasek { display: flex; gap: 8px; flex-wrap: wrap; margin: 0 0 14px; }
 .tomy-pasek .pager-btn.aktywny { background: var(--accent); color: var(--card); }
@@ -2485,8 +2612,26 @@ export function generujRaportTomuHTML(podsumowanie, indeks, landD = '', manifest
   const wykresOsi = wykresOsiSVG(s.epoki);
   const heatmap = heatmapZasiegowSVG(s.epoki, Object.fromEntries(nazwy));
   const paliwo = wykresPaliwaSVG(s.epoki);
+  // Dominacje na koniec Tomu: grupowane wg kultur, ranking od najsilniejszego
+  // (recenzja właściciela 2026-08-30 — wcześniej płaska lista bez porządku).
+  const kultury = new Map();
+  for (const d of s.stanPo.dominacje || []) {
+    const k = d.kultura || 'inna';
+    const lista = kultury.get(k) || [];
+    lista.push(d);
+    kultury.set(k, lista);
+  }
   const dominacjeFinal = slupkiDominacjiSVG(
-    (s.stanPo.dominacje || []).map((d) => ({ etykieta: `${d.kultura} · ${d.kult}`, wielkosc: d.wielkosc }))
+    [...kultury.entries()]
+      .map(([kultura, lista]) => ({
+        kultura,
+        suma: lista.reduce((a, d) => a + (Number(d.wielkosc) || 0), 0),
+        lista: [...lista].sort((a, b) => (Number(b.wielkosc) || 0) - (Number(a.wielkosc) || 0)),
+      }))
+      .sort((a, b) => b.suma - a.suma)
+      .flatMap(({ kultura, lista }) =>
+        lista.map((d) => ({ grupa: kultura, etykieta: nazwy.get(d.kult) || d.kult, wielkosc: d.wielkosc }))
+      )
   );
   const osWatkow = osWatkowSVG(s.epoki);
   const grafEpok = grafEpokSVG(s.epoki);

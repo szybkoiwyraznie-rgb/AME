@@ -125,7 +125,7 @@ html[data-motyw='jasny'] .baner code { background: #ffffff77; }
   letter-spacing: 0.12em;
   color: var(--akcent);
 }
-.tytul p { margin: 0; font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--tekst-dim); }
+.tytul p { margin: 0; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--tekst-dim); }
 
 #szukaj {
   flex: 1;
@@ -178,7 +178,7 @@ html[data-motyw='jasny'] .baner code { background: #ffffff77; }
 .tagi-grupa { display: flex; align-items: baseline; gap: 8px; min-width: 0; }
 .tagi-grupa + .tagi-grupa { padding-left: 18px; border-left: 1px solid var(--linia); }
 .tagi-nazwa {
-  font-size: 10px;
+  font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 0.16em;
   color: var(--tekst-dim);
@@ -198,9 +198,9 @@ html[data-motyw='jasny'] .baner code { background: #ffffff77; }
 .chip:hover { border-color: var(--akcent); }
 a.chip { display: inline-block; text-decoration: none; }
 .chip.aktywny { background: var(--akcent); color: var(--akcent-tekst); }
-.chip .licznik { opacity: 0.6; font-size: 10px; }
+.chip .licznik { opacity: 0.6; font-size: 12px; }
 .chip.tag .kategoria-tagu {
-  font-size: 9px;
+  font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 0.12em;
   opacity: 0.65;
@@ -417,7 +417,7 @@ a.chip { display: inline-block; text-decoration: none; }
   margin: 0;
   max-width: 60%;
   padding: 3px 8px;
-  font-size: 11px;
+  font-size: 12px;
   color: var(--tekst-dim);
   background: var(--kolo-tlo);
   border: 1px solid var(--linia);
@@ -460,7 +460,7 @@ a.chip { display: inline-block; text-decoration: none; }
 }
 .warstwy-panel .naglowek-grupy {
   margin-top: 2px;
-  font-size: 11px;
+  font-size: 12px;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   color: var(--tekst-dim);
@@ -478,7 +478,7 @@ a.chip { display: inline-block; text-decoration: none; }
 .warstwy-panel .uwaga-panelu {
   margin: 0;
   max-width: 240px;
-  font-size: 11px;
+  font-size: 12px;
   line-height: 1.35;
   color: var(--tekst-dim);
 }
@@ -514,7 +514,7 @@ a.chip { display: inline-block; text-decoration: none; }
   left: 14px;
   bottom: 14px;
   margin: 0;
-  font-size: 11px;
+  font-size: 12px;
   color: var(--tekst-dim);
   letter-spacing: 0.04em;
   z-index: 10;
@@ -617,11 +617,11 @@ a.chip { display: inline-block; text-decoration: none; }
 
 .tabela-translacji { width: 100%; border-collapse: collapse; font-size: 14.5px; margin-top: 12px; }
 .tabela-translacji th, .tabela-translacji td { text-align: left; vertical-align: top; padding: 6px 8px; border: 1px solid var(--linia); }
-.tabela-translacji th { font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--tekst-dim); background: var(--tlo-3); }
+.tabela-translacji th { font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--tekst-dim); background: var(--tlo-3); }
 .tabela-translacji td:first-child { white-space: nowrap; color: var(--akcent); font-family: var(--serif); }
 
 .natura dt, .trofea dt {
-  font-size: 11px;
+  font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 0.12em;
   color: var(--akcent);
@@ -660,7 +660,7 @@ a.chip { display: inline-block; text-decoration: none; }
   color: var(--tekst-dim);
   font-size: 13px;
 }
-.brak-wizualizacji .maly { font-size: 11px; opacity: 0.7; }
+.brak-wizualizacji .maly { font-size: 12px; opacity: 0.7; }
 
 .prompt { margin-top: 12px; font-size: 13.5px; }
 .prompt summary { cursor: pointer; color: var(--tekst-dim); }
@@ -684,7 +684,7 @@ a.chip { display: inline-block; text-decoration: none; }
   margin-top: 26px;
   padding-top: 10px;
   border-top: 1px solid var(--linia);
-  font-size: 11px;
+  font-size: 12px;
   color: var(--tekst-dim);
 }
 
@@ -740,7 +740,7 @@ div.warstwa.otwarta { display: block; animation: warstwa-wnika 0.2s ease-out; }
   color: var(--tekst);
 }
 .skit-uczestnicy { margin: 0 0 6px; font-size: 13px; color: var(--tekst-dim); display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
-.skit-uczestnicy span { text-transform: uppercase; letter-spacing: 0.14em; font-size: 11px; }
+.skit-uczestnicy span { text-transform: uppercase; letter-spacing: 0.14em; font-size: 12px; }
 .skit-tekst { font-size: 16.5px; }
 .wypowiedz {
   margin: 0 0 15px;
@@ -779,7 +779,7 @@ div.warstwa.otwarta { display: block; animation: warstwa-wnika 0.2s ease-out; }
 }
 .nowosci-lista time { font-size: 12px; color: var(--tekst-dim); letter-spacing: 0.08em; }
 .nowosci-lista .badge-typ {
-  font-size: 11px;
+  font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: var(--akcent-2);
@@ -820,7 +820,7 @@ div.warstwa.otwarta { display: block; animation: warstwa-wnika 0.2s ease-out; }
 }
 .kronika-karta header { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
 .kronika-karta .kronika-nr {
-  font-size: 11px;
+  font-size: 12px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--akcent);
@@ -885,7 +885,7 @@ div.warstwa.otwarta { display: block; animation: warstwa-wnika 0.2s ease-out; }
   gap: 10px;
   padding: 6px 16px;
   border-top: 1px solid var(--linia);
-  font-size: 11px;
+  font-size: 12px;
   letter-spacing: 0.06em;
   color: var(--tekst-dim);
   background: var(--tlo-2);
