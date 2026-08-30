@@ -1500,3 +1500,39 @@ powiązań (sfinks→kentaur nie myli bytu z Chejronem; selkie→nessos
 „jeden/drugi”), zdanie drangue o obietnicach (kto płaci własną siłą).
 Każda zmiana z `meta.modyfikacje` + godziną. Brama: 164/164,
 build/check zielone.
+
+### Pętla Jakości → Epoka VI + analiza Kroniki + research mapy (2026-08-30)
+
+**Pętla Jakości (zlecenie: „kolejna Epoka Kroniki w C2”):**
+- C1 — 4 nowe pary powiązań na źródłach z kartotek (talos→knecht,
+  talos→pandora, empusa→pandora, protostates→morowa-panna); seed
+  przeliczony, osie epok +1/+1/… (e1 34,…), snapshoty zaktualizowane.
+- C3 — SKIT „CZWARTY STÓŁ” (Pandora × Morowa Panna × Empusa, 300 słów,
+  unikalny skład, ton lekki); domyka wątek czwartego stołu z Epoki I.
+- C2 — **Epoka VI „Czwarty stół: kto nie wie, że bierze”** (os 27/73,
+  wątek `czwarty-stol` zamknięty, nowy `niewinny-bierca`, zasięg
+  pandora +0.01 / empusa +0.005 / morowa −0.015). Narzędzie:
+  nawigacja i numery rzymskie liczone z liczby epok (nie sztywne „<5”),
+  badge „N epok”, emoji 5 nowych bytów; czytelnia + link Epoki VI;
+  testy 6 epok. Brama 164/164, check OK.
+- **Uwaga techniczna:** sandbox odtworzył lokalne `.git` jako świeży klon
+  (HEAD na `main`), a cała praca sesji została w drzewie jako zmiany —
+  odtworzone przez fetch + reset na `arena/01a04f70-ame`; praca
+  zrekomitowana jako `b1fcec6` (zawiera C1+C3+C2 tej tury).
+
+**Analiza trybu Kroniki** (`docs/plans/ANALIZA_kronika-rozwoj-2026-08-30.md`):
+co renderują raporty, a co ginie w danych (`iskra`, `pytanie`, `przebieg`,
+`relacje`, `dominacje`, trend osi/paliwa); 10 propozycji S1 (wykresy
+i tabele w szablonach — generator-only, bez zmian ADR), S2 (feed/filtr/
+deep-link w aplikacji — ADR 0007), S3 (graf wątków >~15 epok); źródła
+pomysłów z BACKLOG i KRONIKA_tryb §10/P8; pytania D1–D3 do właściciela.
+
+**Research mapy głównej** (`docs/plans/RESEARCH_mapa-warstwy-2026-08-30.md`):
+offline — NE 10m `geography_regions_elevation` (poligony hipsometryczne,
+public domain), `geography_regions_points` (szczyty), `urban_areas`,
+`marine_polys`; GeoNames szczyty CC BY 4.0; WWF Ecoregions 2017
+(CC BY 4.0) / OSM–Overpass (ODbL) jako „kompleksy leśne”; historyczne —
+Pleiades (CC BY 3.0) + DARE (CC BY-SA 3.0). Online (opcjonalne, wymaga
+decyzji o ADR 0001/0003): OSM tiles, OpenTopoMap, Esri basemaps,
+CARTO (free 5M req/mc, klucz). Rekomendacja etapów M1→M2→M3.
+BACKLOG zaktualizowany (sekcja Kronika, wpis M14, martwy link Theoi).
