@@ -111,15 +111,15 @@
           },
           {
             "slug": "morowa-panna",
-            "wielkosc": 0.258
+            "wielkosc": 0.282
           },
           {
             "slug": "nessos",
-            "wielkosc": 0.355
+            "wielkosc": 0.379
           },
           {
             "slug": "pandora",
-            "wielkosc": 0.33
+            "wielkosc": 0.355
           },
           {
             "slug": "protostates",
@@ -206,17 +206,17 @@
           {
             "kultura": "polska",
             "kult": "morowa-panna",
-            "wielkosc": 0.258
+            "wielkosc": 0.282
           },
           {
             "kultura": "grecja",
             "kult": "nessos",
-            "wielkosc": 0.355
+            "wielkosc": 0.379
           },
           {
             "kultura": "grecja",
             "kult": "pandora",
-            "wielkosc": 0.33
+            "wielkosc": 0.355
           },
           {
             "kultura": "grecja",
@@ -480,15 +480,15 @@
           },
           {
             "slug": "morowa-panna",
-            "wielkosc": 0.258
+            "wielkosc": 0.282
           },
           {
             "slug": "nessos",
-            "wielkosc": 0.355
+            "wielkosc": 0.379
           },
           {
             "slug": "pandora",
-            "wielkosc": 0.33
+            "wielkosc": 0.355
           },
           {
             "slug": "protostates",
@@ -575,17 +575,17 @@
           {
             "kultura": "polska",
             "kult": "morowa-panna",
-            "wielkosc": 0.258
+            "wielkosc": 0.282
           },
           {
             "kultura": "grecja",
             "kult": "nessos",
-            "wielkosc": 0.355
+            "wielkosc": 0.379
           },
           {
             "kultura": "grecja",
             "kult": "pandora",
-            "wielkosc": 0.33
+            "wielkosc": 0.355
           },
           {
             "kultura": "grecja",
@@ -860,15 +860,15 @@
           },
           {
             "slug": "morowa-panna",
-            "wielkosc": 0.258
+            "wielkosc": 0.282
           },
           {
             "slug": "nessos",
-            "wielkosc": 0.355
+            "wielkosc": 0.379
           },
           {
             "slug": "pandora",
-            "wielkosc": 0.33
+            "wielkosc": 0.355
           },
           {
             "slug": "protostates",
@@ -955,17 +955,17 @@
           {
             "kultura": "polska",
             "kult": "morowa-panna",
-            "wielkosc": 0.258
+            "wielkosc": 0.282
           },
           {
             "kultura": "grecja",
             "kult": "nessos",
-            "wielkosc": 0.355
+            "wielkosc": 0.379
           },
           {
             "kultura": "grecja",
             "kult": "pandora",
-            "wielkosc": 0.33
+            "wielkosc": 0.355
           },
           {
             "kultura": "grecja",
@@ -1254,15 +1254,15 @@
           },
           {
             "slug": "morowa-panna",
-            "wielkosc": 0.258
+            "wielkosc": 0.282
           },
           {
             "slug": "nessos",
-            "wielkosc": 0.355
+            "wielkosc": 0.379
           },
           {
             "slug": "pandora",
-            "wielkosc": 0.33
+            "wielkosc": 0.355
           },
           {
             "slug": "protostates",
@@ -1349,17 +1349,17 @@
           {
             "kultura": "polska",
             "kult": "morowa-panna",
-            "wielkosc": 0.258
+            "wielkosc": 0.282
           },
           {
             "kultura": "grecja",
             "kult": "nessos",
-            "wielkosc": 0.355
+            "wielkosc": 0.379
           },
           {
             "kultura": "grecja",
             "kult": "pandora",
-            "wielkosc": 0.33
+            "wielkosc": 0.355
           },
           {
             "kultura": "grecja",
@@ -1650,15 +1650,15 @@
           },
           {
             "slug": "morowa-panna",
-            "wielkosc": 0.258
+            "wielkosc": 0.282
           },
           {
             "slug": "nessos",
-            "wielkosc": 0.355
+            "wielkosc": 0.379
           },
           {
             "slug": "pandora",
-            "wielkosc": 0.33
+            "wielkosc": 0.355
           },
           {
             "slug": "protostates",
@@ -1745,17 +1745,17 @@
           {
             "kultura": "polska",
             "kult": "morowa-panna",
-            "wielkosc": 0.258
+            "wielkosc": 0.282
           },
           {
             "kultura": "grecja",
             "kult": "nessos",
-            "wielkosc": 0.355
+            "wielkosc": 0.379
           },
           {
             "kultura": "grecja",
             "kult": "pandora",
-            "wielkosc": 0.33
+            "wielkosc": 0.355
           },
           {
             "kultura": "grecja",
@@ -2048,15 +2048,15 @@
           },
           {
             "slug": "morowa-panna",
-            "wielkosc": 0.243
+            "wielkosc": 0.267
           },
           {
             "slug": "nessos",
-            "wielkosc": 0.355
+            "wielkosc": 0.379
           },
           {
             "slug": "pandora",
-            "wielkosc": 0.34
+            "wielkosc": 0.365
           },
           {
             "slug": "protostates",
@@ -2143,17 +2143,17 @@
           {
             "kultura": "polska",
             "kult": "morowa-panna",
-            "wielkosc": 0.243
+            "wielkosc": 0.267
           },
           {
             "kultura": "grecja",
             "kult": "nessos",
-            "wielkosc": 0.355
+            "wielkosc": 0.379
           },
           {
             "kultura": "grecja",
             "kult": "pandora",
-            "wielkosc": 0.34
+            "wielkosc": 0.365
           },
           {
             "kultura": "grecja",
@@ -2225,15 +2225,15 @@
         "zasieg": [
           {
             "slug": "pandora",
-            "przed": 0.33,
-            "po": 0.34,
+            "przed": 0.355,
+            "po": 0.365,
             "delta": 0.01,
             "opis": "Opowieść o darze, który zajrzał do środka, obiega gospody: nadzieja na dnie naczynia zaczyna być widoczna."
           },
           {
             "slug": "morowa-panna",
-            "przed": 0.258,
-            "po": 0.243,
+            "przed": 0.282,
+            "po": 0.267,
             "delta": -0.015,
             "opis": "Ludzie ćwiczą szczerą odpowiedź na jej pytanie; rytuał traci jedną z nóg."
           },
@@ -2249,15 +2249,15 @@
           {
             "kultura": "grecja",
             "kult": "pandora",
-            "przed": 0.33,
-            "po": 0.34,
+            "przed": 0.355,
+            "po": 0.365,
             "delta": 0.01
           },
           {
             "kultura": "polska",
             "kult": "morowa-panna",
-            "przed": 0.258,
-            "po": 0.243,
+            "przed": 0.282,
+            "po": 0.267,
             "delta": -0.015
           },
           {
@@ -2450,15 +2450,15 @@
           },
           {
             "slug": "morowa-panna",
-            "wielkosc": 0.243
+            "wielkosc": 0.267
           },
           {
             "slug": "nessos",
-            "wielkosc": 0.355
+            "wielkosc": 0.379
           },
           {
             "slug": "pandora",
-            "wielkosc": 0.34
+            "wielkosc": 0.365
           },
           {
             "slug": "protostates",
@@ -2545,17 +2545,17 @@
           {
             "kultura": "polska",
             "kult": "morowa-panna",
-            "wielkosc": 0.243
+            "wielkosc": 0.267
           },
           {
             "kultura": "grecja",
             "kult": "nessos",
-            "wielkosc": 0.355
+            "wielkosc": 0.379
           },
           {
             "kultura": "grecja",
             "kult": "pandora",
-            "wielkosc": 0.34
+            "wielkosc": 0.365
           },
           {
             "kultura": "grecja",
@@ -2802,15 +2802,15 @@
       },
       {
         "slug": "morowa-panna",
-        "wielkosc": 0.243
+        "wielkosc": 0.267
       },
       {
         "slug": "nessos",
-        "wielkosc": 0.355
+        "wielkosc": 0.379
       },
       {
         "slug": "pandora",
-        "wielkosc": 0.34
+        "wielkosc": 0.365
       },
       {
         "slug": "protostates",
@@ -2897,17 +2897,17 @@
       {
         "kultura": "polska",
         "kult": "morowa-panna",
-        "wielkosc": 0.243
+        "wielkosc": 0.267
       },
       {
         "kultura": "grecja",
         "kult": "nessos",
-        "wielkosc": 0.355
+        "wielkosc": 0.379
       },
       {
         "kultura": "grecja",
         "kult": "pandora",
-        "wielkosc": 0.34
+        "wielkosc": 0.365
       },
       {
         "kultura": "grecja",

@@ -1,8 +1,8 @@
 {
   "wersja": 3,
-  "buildTime": "2026-08-30T13:11:23.374Z",
+  "buildTime": "2026-08-30T13:13:39.370Z",
   "liczba": 20,
-  "liczbaSkitow": 21,
+  "liczbaSkitow": 22,
   "kanon": {
     "kategorie": [
       {
@@ -931,7 +931,8 @@
       ],
       "obraz": "assets/wizualizacje/morowa-panna.jpg",
       "skity": [
-        "czwarty-stol"
+        "czwarty-stol",
+        "prezent-z-defektem"
       ]
     },
     {
@@ -971,7 +972,8 @@
       "obraz": "assets/wizualizacje/nessos.jpg",
       "skity": [
         "cena-znaku",
-        "dwa-grzbiety"
+        "dwa-grzbiety",
+        "prezent-z-defektem"
       ]
     },
     {
@@ -1009,7 +1011,8 @@
       ],
       "obraz": "assets/wizualizacje/pandora.jpg",
       "skity": [
-        "czwarty-stol"
+        "czwarty-stol",
+        "prezent-z-defektem"
       ]
     },
     {
@@ -1486,6 +1489,23 @@
       "data": "2026-08-28"
     },
     {
+      "slug": "prezent-z-defektem",
+      "tytul": "PREZENT Z DEFEKTEM",
+      "temat": "trzy dary, które miały chronić, a zrobiły szkodę — i kto ponosi winę",
+      "uczestnicy": [
+        "morowa-panna",
+        "nessos",
+        "pandora"
+      ],
+      "imiona": [
+        "Nessos",
+        "Pandora",
+        "Morowa Panna"
+      ],
+      "slow": 288,
+      "data": "2026-08-30 13:30"
+    },
+    {
       "slug": "trzy-stoly",
       "tytul": "TRZY STOŁY",
       "temat": "gościnność ponad granicą śmierci i czasu: wzywanie zmarłych, zapłata za spokój, gość, który wziął sam",
@@ -1570,6 +1590,14 @@
     }
   ],
   "aktualizacje": [
+    {
+      "data": "2026-08-30 13:30",
+      "typ": "skit",
+      "akcja": "nowy",
+      "slug": "prezent-z-defektem",
+      "tytul": "PREZENT Z DEFEKTEM",
+      "opis": "SKIT — skład: Nessos, Pandora, Morowa Panna"
+    },
     {
       "data": "2026-08-30 13:11",
       "typ": "manifestacja",
