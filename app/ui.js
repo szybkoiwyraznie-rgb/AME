@@ -333,6 +333,26 @@ export function htmlListy(indeks, widoczne /* Set|null */) {
     .join('')}</ul>`;
 }
 
+/**
+ * Strona tagu (F2, C2 2026-08-30): nagłówek z kategorią, opisem i licznikiem
+ * + lista manifestacji z tym tagiem (klik → kartoteka). Adresowalna przez
+ * `#tag:<slug>`; współpracuje z filtrem mapy (zastosujTag).
+ */
+export function htmlStronyTagu(indeks, tag) {
+  const dane = indeks?.tagi?.[tag];
+  if (!dane) return '<p class="pusto">Nieznany tag.</p>';
+  const kat = (indeks.kanon?.kategorie || []).find((k) => k.id === dane.kategoria);
+  const nazwa = kat?.nazwa || dane.kategoria || 'Tagi';
+  const opis = dane.opis || kat?.opis || '';
+  const ile = dane.wpisy.length;
+  return `
+    <p class="naprowadzenie"><strong class="tag-nazwa">${esc(tag)}</strong> — ${esc(nazwa)} · ${
+      ile === 1 ? '1 manifestacja' : `${ile} manifestacji`
+    }${opis ? ` · ${esc(opis)}` : ''}</p>
+    ${htmlListy(indeks, new Set(dane.wpisy))}
+  `;
+}
+
 /* ---- SKITy i feed „Co nowego" (ADR 0013/0014) ---------------------------- */
 
 /** Nagłówek SKITa w formie z protokołu: `### **SKIT: tytuł**`. */

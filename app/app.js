@@ -1,12 +1,13 @@
 /**
  * app/app.js — bootstrap AME: ładuje indeks, mapę świata, spina UI.
  */
-import { stworzMape, PROGI_WARSTW, PODKLADY_ONLINE } from './map.js?v=c5-5';
+import { stworzMape, PROGI_WARSTW, PODKLADY_ONLINE } from './map.js?v=c5-6';
 import { zaladujIndeks, zaladujWpis, zaladujSkit, dopasowania, wylosujSlug } from './data.js?v=c5-1';
 import {
   htmlWpisu,
   htmlWarstwyWpisu,
   htmlListy,
+  htmlStronyTagu,
   htmlTagow,
   nazwaKategorii,
   htmlBazySkitow,
@@ -22,8 +23,8 @@ import {
   etykietaMotywu,
   KLUCZ_MOTYWU,
   akcjeZZapytania,
-} from './ui.js?v=c5-5';
-import { SZEROKOSC, WYSOKOSC } from './geo.js?v=c5-5';
+} from './ui.js?v=c5-6';
+import { SZEROKOSC, WYSOKOSC } from './geo.js?v=c5-6';
 
 const $ = (sel) => document.querySelector(sel);
 
@@ -182,6 +183,25 @@ function zastosujTag(tag) {
   stan.aktywnyTag = istniejacy;
   $('#tagi').innerHTML = htmlTagow(stan.indeks, stan.aktywnyTag);
   odswiezFiltr();
+}
+
+/** Strona tagu (F2): warstwa z kategorią, opisem i listą manifestacji. */
+function otworzStroneTagu(tag) {
+  const istniejacy = tag && stan.indeks.tagi[tag] ? tag : null;
+  if (!istniejacy) return;
+  if (stan.warstwa?.tryb === 'tag' && stan.warstwa.slug === istniejacy) return;
+  stan.warstwa = { tryb: 'tag', slug: istniejacy };
+  const warstwa = $('#warstwa');
+  warstwa.classList.add('otwarta');
+  warstwa.innerHTML = szkicWarstwy(
+    `Tag: ${istniejacy}`,
+    htmlStronyTagu(stan.indeks, istniejacy),
+    { kopia: `tag:${istniejacy}` }
+  );
+  warstwa.scrollTop = 0;
+  warstwaTrybPrzycisku('#przycisk-skity', false);
+  warstwaTrybPrzycisku('#przycisk-nowosci', false);
+  if (location.hash !== `#tag:${istniejacy}`) history.replaceState(null, '', `#tag:${istniejacy}`);
 }
 
 function odswiezLicznik(zbior = null) {
@@ -483,8 +503,9 @@ function podepnijZdarzenia() {
     const tag = btn.dataset.tag;
     const nastepny = stan.aktywnyTag === tag ? null : tag;
     zastosujTag(nastepny);
-    // C2: filtr tagu jest adresowalny — zapisz go w hashu.
-    if (nastepny) history.replaceState(null, '', `#tag:${nastepny}`);
+    // C2: filtr tagu jest adresowalny + otwiera stronę tagu (F2) z listą wpisów.
+    if (nastepny) otworzStroneTagu(nastepny);
+    else if (stan.warstwa?.tryb === 'tag') zamknijWarstwe();
     else if (location.hash) history.replaceState(null, '', location.pathname + location.search);
   });
 
@@ -501,7 +522,7 @@ function podepnijZdarzenia() {
     const tag = e.target.closest('[data-tag]');
     if (tag) {
       zastosujTag(tag.dataset.tag);
-      history.replaceState(null, '', `#tag:${tag.dataset.tag}`);
+      otworzStroneTagu(tag.dataset.tag);
       zamknijWpis(false);
       return;
     }
@@ -595,8 +616,10 @@ function podepnijZdarzenia() {
     const fragment = decodeURIComponent(location.hash.replace(/^#/, ''));
     const tag = tagZFragmantu(fragment);
     if (tag) {
-      // C2: deep-link do filtra tagów; nieznany tag tylko czyści filtr.
-      zastosujTag(stan.indeks.tagi[tag] ? tag : null);
+      // C2: deep-link do filtra tagów + strony tagu (F2); nieznany tag czyści filtr.
+      const istniejacy = stan.indeks.tagi[tag] ? tag : null;
+      zastosujTag(istniejacy);
+      if (istniejacy) otworzStroneTagu(istniejacy);
       return;
     }
     if (fragment.startsWith('skit:')) {
@@ -705,6 +728,7 @@ async function start() {
     const slug = fragment.slice(8);
     if (slug) location.href = `docs/kronika-${slug}.html#kronika:${slug}`;
   }
+  else if (tagStartu) otworzStroneTagu(tagStartu);
   else if (fragment && stan.indeks.manifestacje.some((m) => m.slug === fragment)) otworzWpis(fragment, { przewin: true });
 }
 

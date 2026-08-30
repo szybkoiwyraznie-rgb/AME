@@ -2,7 +2,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
-import { htmlWpisu, htmlWarstwyWpisu, linkDoZrodla, htmlListy, htmlTagow, htmlDialogu, htmlSkitu, htmlBazySkitow, htmlNowosci, htmlKronik, htmlTomyIEpoki, esc, nastepnyMotyw, motywPoczatkowy, etykietaMotywu, MOTYWY, KLUCZ_MOTYWU, akcjeZZapytania } from '../app/ui.js';
+import { htmlWpisu, htmlWarstwyWpisu, linkDoZrodla, htmlListy, htmlStronyTagu, htmlTagow, htmlDialogu, htmlSkitu, htmlBazySkitow, htmlNowosci, htmlKronik, htmlTomyIEpoki, esc, nastepnyMotyw, motywPoczatkowy, etykietaMotywu, MOTYWY, KLUCZ_MOTYWU, akcjeZZapytania } from '../app/ui.js';
 
 async function dane(plik = 'egungun') {
   const wpis = JSON.parse(await readFile(`data/manifestations/${plik}.json`, 'utf8'));
@@ -124,6 +124,22 @@ test('htmlListy i htmlTagow: rekordy z indeksu, licznik tagów', async () => {
   assert.ok(poKolei > -1 && poKolei < tagi.indexOf('Typ bytu'), 'pasma w kolejności kanonu');
   assert.ok(htmlListy(indeks, new Set(['egungun'])).includes('Egungun'));
   assert.ok(!htmlListy(indeks, new Set(['egungun'])).includes('Imp z Lincoln</span>'));
+});
+
+test('htmlStronyTagu: strona tagu z kategorią, opisem i listą wpisów (F2/C2)', async () => {
+  const { indeks } = await dane();
+  const strona = htmlStronyTagu(indeks, 'grecja');
+  assert.ok(strona.includes('Kultura źródłowa'), 'nazwa kategorii z kanonu');
+  assert.ok(/1 manifestacja|\d+ manifestacji/.test(strona), 'licznik wpisów');
+  assert.ok(strona.includes('Egungun') === false && !strona.includes('Imp z Lincoln'), 'lista zawężona do tagu');
+  const wpisy = (indeks.tagi['grecja'] || {}).wpisy || [];
+  assert.ok(wpisy.length > 0, 'tag kultura ma wpisy w indeksie');
+  const tylkoGreckie = htmlStronyTagu(indeks, 'grecja');
+  for (const slug of wpisy) {
+    const m = indeks.manifestacje.find((x) => x.slug === slug);
+    assert.ok(tylkoGreckie.includes(m.nazwa), `wpis ${slug} na stronie tagu`);
+  }
+  assert.ok(htmlStronyTagu(indeks, 'nie-ma-takiego').includes('Nieznany tag'), 'nieznany tag');
 });
 
 /* ---- Motyw jasny/ciemny (A2) ---- */
