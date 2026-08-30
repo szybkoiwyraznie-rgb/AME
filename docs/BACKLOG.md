@@ -29,13 +29,22 @@
   właściciela przed live.
 - **Warstwa kręgów kulturowych**: otoczki/halo grupujące wpisy jednej tradycji
   (słowiańska, algonkińska, nordycka…) — wymaga tagu-kręgu jako konwencji.
-- **Mapa tematyczna — rozszerzenia (ADR 0020, M14):** drogi główne, POI typu
-  szczyty, kompleksy leśne i kolorowa wysokość n.p.m. Badanie wykazało brak
-  gotowych, offlineowych pakietów (`earth-roads-*`, `earth-peaks-*`,
-  `earth-forests-*`, `earth-relief-*` — E404; `@freetiler/nasa-bluemarble`
-  to raster bez DEM). Wymaga znalezienia wiarygodnego źródła danych
-  (np. dedykowany dataset Natural Earth/OSM/GeoNames) z licencją możliwą do
-  vendoringu.
+- **Mapa tematyczna — rozszerzenia (ADR 0020, M14) — ROZPOZNANE (2026-08-30):**
+  drogi główne, POI typu szczyty, kompleksy leśne i kolorowa wysokość n.p.m.
+  Research (patrz `docs/plans/RESEARCH_mapa-warstwy-2026-08-30.md`)
+  znalazł realne źródła offline: **Natural Earth 10m physical** —
+  `geography_regions_elevation` (poligony hipsometryczne = kolorowe
+  wypełnienie wg wysokości, public domain), `geography_regions_points`
+  (nazwane szczyty), `urban_areas`, `glaciated_areas`, `marine_polys`;
+  **GeoNames** (szczyty, CC BY 4.0, atrybucja); **WWF Ecoregions 2017**
+  (biomy leśne = „kompleksy leśne”, CC BY 4.0, 150 MB → wyciąg + simpl.);
+  **OSM/Overpass** `landuse=forest` (ODbL, jednorazowy vendor);
+  **Pleiades** (miejsca antyczne, CC BY 3.0) i **DARE/AWMC** (drogi rzymskie,
+  CC BY-SA). **Pakiety `earth-roads|peaks|forests|relief-*` — nadal E404.**
+  Warstwy online (opcjonalne, wymagają zgody na ADR 0001/0003 + atrybucja):
+  OSM tiles, OpenTopoMap, Esri static basemaps, CARTO (free 5M req/mc,
+  klucz API). **Rekomendacja: M1 = NE 10m (public domain, ~<3 MB),**
+  M2 = GeoNames + lasy, M3 = historyczne Pleiades/DARE.
 - **Oś czasu manifestacji**: sortowanie po epoce pierwszego odnotowania;
   wymaga pola `data_pierwszego_odnotowania` w schemacie (migracja indeksu).
 - **Wersja EN wpisów**: pole `nazwa_en` / dwujęzyczne sekcje — dopiero po
@@ -62,6 +71,23 @@
   (jak w projekcie mtg) — gdy dokumenty urosną.
 - **Lint stylu wpisów**: prosta heurystyka „zakaz terminologii growej w
   sekcji II” (lista słów: haste, trample, mana…).
+## Kronika — propozycje rozwoju wizualizacji (2026-08-30)
+
+- **Analiza:** `docs/plans/ANALIZA_kronika-rozwoj-2026-08-30.md` (co
+  niewidoczne w raportach, S1–S3, D1–D3).
+- **S1 (bezpieczne, generator-only, czeka na „tak”):** W1 ramka epoki
+  (`iskra`/`pytanie`/`przebieg` — dziś giną w summary), W2 wykres osi mit/rac
+  po epokach, W3 słupki zasięgów przed→po, W4 linie paliwa, W5 słupki
+  dominacji, W6 diagram relacji (łuki), W7 oś czasu wątków, W8 „dziennik
+  zmiany” (jedna tabela), W9 heatmap byt×epoka, W10 łuki na mapie epoki
+  (adaptacja „widoku rozmowy na mapie”).
+- **S2 (dotyka głównego UI — ADR 0007):** feed epok, filtr bytów, deep-link
+  `#kronika:<slug>` (KRONIKA_tryb §10).
+- **S3:** graf wątków (>~15 epok), indeks tematów skitów.
+- **Uwaga techniczna:** `zielone` pozycje z §10 (feed epok, karta epoki,
+  oś czasu, filtr) są **koncepcją opisaną w `docs/KRONIKA_tryb.md` — jeszcze
+  nie są w aplikacji głównej.**
+
 
 ## Zrealizowane w M3 (2026-08-28)
 
@@ -81,6 +107,8 @@
 - **Kontrola żywości adresów źródłowych** — skrypt sesji (narzędzia agenta), NIE
   CI: egress sandboxa jest ograniczony (L3), a linki bywają przenoszone.
   Wymagałby decyzji: martwy link = ostrzeżenie czy błąd walidatora.
+  **Potwierdzony przypadek (2026-08-30):** Theoi „HephaestusWorks”
+  w kartotece `talos-kreta` → 404 („File not found”).
 - **Widok druku (media print) dla warstwy wpisu** — kartoteka na A4 jako PDF;
   dziś warstwa przykrywa okno i nie ma stylów drukowych.
 - **Znacznik „źródło bez adresu” w UI** — pozycje bez `url` (papier) warto
