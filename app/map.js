@@ -10,7 +10,7 @@
  * pinch (2 wskaźniki), dwuklik, przyciski. Pinezki i ich etykiety kompensują
  * skalę widoku, więc mają stały rozmiar w pikselach CSS (ADR 0009).
  */
-import { projektuj, dekodujKraje, siatka, dopasujWidok, ogranicz, K_MIN, K_MAX, SZEROKOSC as SZER, WYSOKOSC as WYS, sciezkaGeoMultiPoligon } from './geo.js?v=c5-4';
+import { projektuj, dekodujKraje, siatka, dopasujWidok, ogranicz, K_MIN, K_MAX, SZEROKOSC as SZER, WYSOKOSC as WYS, sciezkaGeoMultiPoligon } from './geo.js?v=c5-5';
 
 const NS = 'http://www.w3.org/2000/svg';
 
@@ -34,12 +34,13 @@ const ODSTEP_PUNKTU = 18;
 /** Maksymalna odległość kliknięcia od punktu POI/historii (px CSS). */
 const PROMIEN_KLIK_PUNKTU = 13;
 /** Górna granica przybliżenia z włączonym podkładem online (2026-08-30).
- *  Właściciel zweryfikował w przeglądarce: 67 OBRÓTÓW KÓŁKA MYSZY — nie 67×.
- *  Każdy obrót (deltaY=100) mnoży widok przez e^0.16 ≈ 1,1735, więc 67 obrotów
- *  daje e^(0,16·67) ≈ 45 252×, a 68. obrót (≈53 104×) i głębiej źródła
- *  pokazują puste bloki. Stąd twarda blokada na 45 252× (po 67. obrocie
- *  kółko nie przybliża już dalej). Offline sufit zostaje 32× (K_MAX). */
-const K_MAX_ONLINE = Math.round(Math.exp(0.0016 * 100 * 67));
+ *  Pierwotna głębokość ze specyfikacji źródeł: docelowe serwisy kafelków
+ *  sięgają z ≈ 19, więc 2^19 = 524 288× to rozdzielczość kafelków
+ *  „piksel w piksel" przy typowym oknie. Twarda blokada wg liczby obrotów
+ *  kółka została WYCOFANA (decyzja właściciela 2026-08-30): różne rejony
+ *  świata mają różny maksymalny zoom, więc limit wyznacza specyfikacja
+ *  źródeł, nie długość scrolla. Offline sufit zostaje 32× (K_MAX). */
+const K_MAX_ONLINE = 2 ** 19;
 
 /** Warstwy szczegółowości (ADR 0020): progi zoomu dla danych tematycznych. */
 export const PROGI_WARSTW = {

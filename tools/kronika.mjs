@@ -465,6 +465,27 @@ function getEmoji(slug) {
   return EMOJI_BYTU[slug] || '✨';
 }
 
+/** Nazwy prezentacyjne kultur (kanon niesie tylko slugi tagów — te czytelne
+ *  formy służą wykresom i tytułom; 11 kultur z kartoteki). */
+export const NAZWY_KULTUR = {
+  'grecja': 'Grecja',
+  'indie': 'Indie',
+  'joruba': 'Joruba',
+  'irlandia': 'Irlandia',
+  'szkocja-polnocna': 'Szkocja Północna',
+  'albania': 'Albania',
+  'niemcy': 'Niemcy',
+  'anglia': 'Anglia',
+  'polska': 'Polska',
+  'japonia': 'Japonia',
+  'man': 'Wyspa Man',
+};
+
+/** Czytelna nazwa kultury (fallback: slug). */
+export function nazwaKultury(slug) {
+  return NAZWY_KULTUR[slug] || slug || 'Inna';
+}
+
 /** Pre-kalkulacja uproszczonych ścieżek kontynentów dla szybkiego SVG */
 let cachedLandD = null;
 async function pobierzSciezkeLadow() {
@@ -533,7 +554,7 @@ export function generujMapeSVG({
         x: Math.round(x),
         y: Math.round(y),
         jestUczestnikiem,
-        zasieg: mapaZasiegu.get(m.slug) || 0.3,
+        zasieg: mapaZasiegu.get(m.slug)?.wielkosc ?? 0.3,
         emoji: getEmoji(m.slug),
       });
     }
@@ -856,7 +877,8 @@ export function wykresPaliwaSVG(epoki, { szer = 880, wysokosc = 300 } = {}) {
   </div>`;
 }
 
-/** W5 — słupki dominacji kultur/kultów (per epoka i na końcu Tomu). */
+/** W5 — słupki dominacji kultur/kultów (per epoka i na końcu Tomu).
+ *  `dopisek` (opcjonalny) to dodatkowy tekst obok wartości, np. „7 bytów”. */
 export function slupkiDominacjiSVG(wiersze, { szer = 640, wysokosc = null } = {}) {
   const rows = (wiersze || []).filter((d) => Number.isFinite(d.wielkosc) && d.wielkosc > 0);
   if (!rows.length) return `<p class="muted">Brak dominacji do pokazania.</p>`;
@@ -892,19 +914,52 @@ export function slupkiDominacjiSVG(wiersze, { szer = 640, wysokosc = null } = {}
         dy: 13,
         anchor: 'start',
       });
+      const dopisek = d.dopisek ? ` · ${esc(d.dopisek)}` : '';
       return `
       <g class="dom-wiersz" transform="translate(0,${yy.toFixed(1)})">
         <circle class="dom-kropka" cx="${lewo - 112}" cy="14" r="4" />
         ${etykieta}
         <rect class="dom-tor" x="${lewo}" y="4" width="${szerBar}" height="20" rx="5" />
         <rect class="dom-bar" x="${lewo}" y="4" width="${Math.round(d.wielkosc * szerBar)}" height="20" rx="5">
-          <title>${esc(d.etykieta)}: ${pct(d.wielkosc)}${delta === null ? '' : ` (${cls === 'up' ? '+' : ''}${delta} pp)`}</title>
+          <title>${esc(d.etykieta)}: ${pct(d.wielkosc)}${delta === null ? '' : ` (${cls === 'up' ? '+' : ''}${delta} pp)`}${dopisek}</title>
         </rect>
-        <text class="dom-delta ${cls}" x="${lewo + szerBar + 10}" y="18">${pct(d.wielkosc)}${delta === null ? '' : ` · ${delta > 0 ? '+' : ''}${delta} pp`}</text>
+        <text class="dom-delta ${cls}" x="${lewo + szerBar + 10}" y="18">${pct(d.wielkosc)}${delta === null ? '' : ` · ${delta > 0 ? '+' : ''}${delta} pp`}${dopisek}</text>
       </g>`;
     })
     .join('');
   return `<svg class="chart dom-chart" viewBox="0 0 ${szer} ${h}" role="img" aria-label="Słupki dominacji">${wierszeSvg}</svg>`;
+}
+
+/** W5 (Tom) — agregat dominacji na koniec Tomu: tylko kultury OBECNE w Tomie,
+ *  po jednym słupku na kulturę (suma głosu jej bytów), sortowane malejąco.
+ *  `podsumowanie.epoki[].uczestnicy` wyznacza byty, które naprawdę grały. */
+export function dominacjeKulturTomu(podsumowanie) {
+  const s = podsumowanie || {};
+  const obecne = new Set();
+  for (const e of s.epoki || []) {
+    for (const u of e.uczestnicy || []) {
+      if (u && u.slug) obecne.add(u.slug);
+    }
+  }
+  const glos = new Map(); // kultura -> { suma, byty }
+  for (const d of s.stanPo?.dominacje || []) {
+    if (!obecne.has(d.kult)) continue; // byt nie obecny w tym Tomie — pomiń
+    const k = d.kultura || 'inna';
+    const cel = glos.get(k) || { suma: 0, byty: 0 };
+    cel.suma += Number(d.wielkosc) || 0;
+    cel.byty += 1;
+    glos.set(k, cel);
+  }
+  const sumaCalkowita = [...glos.values()].reduce((a, g) => a + g.suma, 0) || 1;
+  return [...glos.entries()]
+    .map(([kultura, g]) => ({
+      kultura,
+      etykieta: nazwaKultury(kultura),
+      wielkosc: g.suma / sumaCalkowita,
+      dopisek: `${g.byty} ${g.byty === 1 ? 'byt' : g.byty < 5 ? 'byty' : 'bytów'}`,
+      suma: g.suma,
+    }))
+    .sort((a, b) => b.suma - a.suma);
 }
 
 /** W6 — diagram relacji: węzły na elipsie, łuki wg kierunku relacji. */
@@ -2612,27 +2667,10 @@ export function generujRaportTomuHTML(podsumowanie, indeks, landD = '', manifest
   const wykresOsi = wykresOsiSVG(s.epoki);
   const heatmap = heatmapZasiegowSVG(s.epoki, Object.fromEntries(nazwy));
   const paliwo = wykresPaliwaSVG(s.epoki);
-  // Dominacje na koniec Tomu: grupowane wg kultur, ranking od najsilniejszego
-  // (recenzja właściciela 2026-08-30 — wcześniej płaska lista bez porządku).
-  const kultury = new Map();
-  for (const d of s.stanPo.dominacje || []) {
-    const k = d.kultura || 'inna';
-    const lista = kultury.get(k) || [];
-    lista.push(d);
-    kultury.set(k, lista);
-  }
-  const dominacjeFinal = slupkiDominacjiSVG(
-    [...kultury.entries()]
-      .map(([kultura, lista]) => ({
-        kultura,
-        suma: lista.reduce((a, d) => a + (Number(d.wielkosc) || 0), 0),
-        lista: [...lista].sort((a, b) => (Number(b.wielkosc) || 0) - (Number(a.wielkosc) || 0)),
-      }))
-      .sort((a, b) => b.suma - a.suma)
-      .flatMap(({ kultura, lista }) =>
-        lista.map((d) => ({ grupa: kultura, etykieta: nazwy.get(d.kult) || d.kult, wielkosc: d.wielkosc }))
-      )
-  );
+  // Dominacje na koniec Tomu: tylko kultury OBECNE w Tomie, agregowane po
+  // kulturach (jeden słupek na kulturę = suma głosu jej bytów), ranking od
+  // najsilniejszego (recenzja właściciela 2026-08-30).
+  const dominacjeFinal = slupkiDominacjiSVG(dominacjeKulturTomu(s));
   const osWatkow = osWatkowSVG(s.epoki);
   const grafEpok = grafEpokSVG(s.epoki);
   const spisTomow = (tomy || []).length > 1
@@ -2786,7 +2824,7 @@ ${mapaSvg}
     </div>
     <div class="card">
       <h2>Dominacje na koniec Tomu</h2>
-      <div class="card-sub">Kultury i kulty, których głos jest dziś najsilniejszy w archiwum.</div>
+      <div class="card-sub">Kultury obecne w tym Tomie — łączny głos ich bytów (agregat, od najsilniejszej).</div>
       ${dominacjeFinal}
     </div>
   </div>

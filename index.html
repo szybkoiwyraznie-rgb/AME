@@ -17,8 +17,8 @@
   <!-- Cache-busting: przy zmianie app/*.js lub app/styles.css podnieś wersję
        w ?v= (np. c5-1 → c4-2). Ta sama wersja musi być w importach modułów,
        inaczej przeglądarka poda stare pliki (typowy objaw „mapa bez zmian”). -->
-  <link rel="stylesheet" href="app/styles.css?v=c5-4">
-  <script type="module" src="app/app.js?v=c5-4"></script>
+  <link rel="stylesheet" href="app/styles.css?v=c5-5">
+  <script type="module" src="app/app.js?v=c5-5"></script>
 </head>
 <body>
   <div id="baner" class="baner" hidden></div>
@@ -70,7 +70,7 @@
           <option value="osm">OpenStreetMap</option>
           <option value="esri-satelita">Esri — satelita</option>
         </select>
-        <p class="uwaga-panelu">Wszystkie warstwy są domyślnie wyłączone; włączasz je ręcznie. Podkłady online pobierają kafelki z sieci (atrybucje w <code>docs/ASSETS.md</code> i pod mapą). Z podkładem online kółko przybliża do <strong>×45 252</strong> (67 obrotów — dalej źródła pokazują puste bloki); bez podkładu do ×32.</p>
+        <p class="uwaga-panelu">Wszystkie warstwy są domyślnie wyłączone; włączasz je ręcznie. Podkłady online pobierają kafelki z sieci (atrybucje w <code>docs/ASSETS.md</code> i pod mapą). Z podkładem online kółko przybliża do technicznego limitu źródeł — <strong>×524 288</strong> (kafelki z≈19; przy wyższych zoomach źródło kończy kafelki w danym regionie, a blokada nie zależy od liczby obrotów); bez podkładu do ×32.</p>
       </div>
     </div>
     <aside id="panel" class="panel" aria-label="Kartoteka manifestacji"></aside>

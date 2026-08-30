@@ -27,6 +27,8 @@ import {
   lamaczTekstu,
   tekstWieloliniowy,
   KRONIKA_CSS,
+  dominacjeKulturTomu,
+  generujMapeSVG,
   generujSpisTomowHTML,
   generujRaportHTML,
   generujRaportTomuHTML,
@@ -407,19 +409,60 @@ test('W9: macierz zasięgów ma skalę kolorów, wartości w komórkach i legend
   assert.ok(kolory.length >= 4, `różne kolory komórek: ${kolory.length}`);
 });
 
-test('W5: dominacje Tomu — grupowanie kulturami i ranking (recenzja A)', () => {
-  const rows = [
-    { grupa: 'grecja', etykieta: 'Kentaur', wielkosc: 0.4 },
-    { grupa: 'grecja', etykieta: 'Talos', wielkosc: 0.2 },
-    { grupa: 'germania', etykieta: 'Barbarossa', wielkosc: 0.3 },
-  ];
-  const d = slupkiDominacjiSVG(rows);
-  assert.equal((d.match(/class="dom-grupa"/g) ?? []).length, 2, 'nagłówek na każdą kulturę');
-  assert.match(d, /class="dom-grupa-etykieta"/);
-  assert.ok(d.indexOf('Kentaur') < d.indexOf('Talos'), 'ranking wewnątrz kultury zachowany');
-  // łamanie etykiet w pierwszej kolumnie
-  const dluga = slupkiDominacjiSVG([{ etykieta: 'Barbarossa z Kyffhäuser i jego towarzysze', wielkosc: 0.4 }]);
-  assert.match(dluga, /<tspan/);
+test('W5: dominacje Tomu — agregat po kulturach obecnych w Tomie (recenzja B)', () => {
+  const podsumowanie = {
+    epoki: [
+      { slug: 'epoka-1', uczestnicy: [{ slug: 'egungun', nazwa: 'Egungun' }, { slug: 'balor', nazwa: 'Balor' }] },
+      { slug: 'epoka-2', uczestnicy: [{ slug: 'kentaur-pelion', nazwa: 'Kentaur z Pelionu' }] },
+    ],
+    stanPo: {
+      dominacje: [
+        { kultura: 'joruba', kult: 'egungun', wielkosc: 0.5 },
+        { kultura: 'irlandia', kult: 'balor', wielkosc: 0.3 },
+        { kultura: 'grecja', kult: 'kentaur-pelion', wielkosc: 0.2 },
+        // byt z kartoteki, ale NIE grał w tym Tomie — musi wypaść z wykresu
+        { kultura: 'indie', kult: 'indra', wielkosc: 0.9 },
+      ],
+    },
+  };
+  const wiersze = dominacjeKulturTomu(podsumowanie);
+  assert.deepEqual(wiersze.map((w) => w.kultura), ['joruba', 'irlandia', 'grecja'], 'tylko kultury obecne, ranking malejąco');
+  assert.ok(!wiersze.some((w) => w.kultura === 'indie'), 'kultura spoza Tomu pominięta');
+  assert.equal(wiersze[0].etykieta, 'Joruba', 'czytelna nazwa kultury');
+  assert.equal(wiersze[1].dopisek, '1 byt');
+  assert.ok(Math.abs(wiersze.reduce((a, w) => a + w.wielkosc, 0) - 1) < 1e-9, 'udziały sumują się do 1');
+  // dwa byty tej samej kultury — jeden słupek z sumą
+  const dwa = dominacjeKulturTomu({
+    epoki: [{ slug: 'e', uczestnicy: [{ slug: 'pandora' }, { slug: 'talos-kreta' }] }],
+    stanPo: {
+      dominacje: [
+        { kultura: 'grecja', kult: 'pandora', wielkosc: 0.2 },
+        { kultura: 'grecja', kult: 'talos-kreta', wielkosc: 0.3 },
+      ],
+    },
+  });
+  assert.equal(dwa.length, 1, 'jeden słupek na kulturę');
+  assert.equal(dwa[0].dopisek, '2 byty');
+  assert.equal(dwa[0].suma, 0.5);
+  // łamanie etykiet w pierwszej kolumnie + dopisek w delcie
+  const d = slupkiDominacjiSVG([{ etykieta: 'Szkocja Północna', wielkosc: 0.4, dopisek: '1 byt' }]);
+  assert.match(d, /<tspan/);
+  assert.match(d, /· 1 byt/);
+});
+
+test('mapa SVG bytów: halo liczbowe, title bez NaN', () => {
+  const svg = generujMapeSVG({
+    manifestacje: [
+      { slug: 'balor', nazwa: 'Balor z Tory Island', kraj: 'Irlandia', lat: 55.26, lon: -8.2 },
+      { slug: 'egungun', nazwa: 'Egungun', kraj: 'Nigeria', lat: 7.5, lon: 4.5 },
+    ],
+    uczestnicySlugi: ['balor', 'egungun'],
+    zasiegi: [{ slug: 'balor', wielkosc: 0.5 }],
+    viewBox: '0 0 1000 500',
+  });
+  assert.ok(!svg.includes('NaN'), 'tytuł halo i promień są liczbowe (był bug: NaN%% / r="NaN")');
+  assert.ok(!svg.includes('NaN%%'));
+  assert.match(svg, /r="84"/, 'halo = 24 + 0,5·120');
 });
 
 test('KRONIKA_CSS: minimalna czcionka 12px — żadna mniejsza (recenzja A)', () => {

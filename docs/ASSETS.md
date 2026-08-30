@@ -19,10 +19,12 @@ nie wnosiły czytelnej informacji); usunięte też ich pliki i narzędzia
 (`tools/warstwy-lasy-pmtiles.py`, `tools/pmtiles.py`).
 Podkład **Esri „świat fizyczny”** (`esri-teren`) również usunięty po recenzji
 (A2) — nie wnosił informacji ponad OpenTopoMap/OSM; zostają OpenTopoMap, OSM
-i Esri World Imagery. Zoom online zablokowany na **×45 252** — tyle daje
-**67 obrotów kółka** myszy (każdy ×e^0.16 ≈ 1,1735); 68. obrót (≈×53 104)
-i głębiej to już puste bloki. Wartość w kodzie: `K_MAX_ONLINE =
-Math.round(Math.exp(0.0016·100·67))`.
+i Esri World Imagery. Zoom online sięga **technicznego maksimum źródeł**:
+docelowe serwisy kafelków mają z≈19, więc `K_MAX_ONLINE = 2**19 =
+524288×` (rozdzielczość kafelków „piksel w piksel” przy typowym oknie).
+Wcześniejsza blokada wg **67 obrotów kółka** (×45 252) została wycofana
+decyzją właściciela 2026-08-30 — różne rejony świata mają różny maksymalny
+zoom, więc o limicie decyduje specyfikacja źródeł, nie długość scrolla.
 
 ### Podkłady online (opcjonalne, włączane ręcznie, bez klucza)
 

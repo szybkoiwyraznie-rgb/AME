@@ -1643,3 +1643,24 @@ granat→bursztyn z wartościami % w komórkach i legendą; (c) dominacje
 Tomu grupowane wg kultur i rankowane (kultura → kulty od najsilniejszego);
 (d) minimalna czcionka projektu **12px** (`KRONIKA_CSS` + `app/styles.css`).
 Brama: `npm test` 189/189, `npm run check` zielone.
+### Czwarta recenzja właściciela — zoom techniczny + agregat kultur Tomu (2026-08-30, PR #10)
+
+- **A.** Wycofana blokada zoomu online wg **67 obrotów kółka** (×45 252):
+  właściciel zauważył, że różne rejony świata mają różny maksymalny zoom,
+  więc limit wraca do **technicznego maksimum ze specyfikacji źródeł** —
+  kafelki docelowych serwisów sięgają z≈19, czyli `K_MAX_ONLINE = 2**19 =
+  524288×` (pierwotna głębokość z 0141cba). Informacja w panelu mapy
+  poprawiona na ×524 288; test sufiksu porównuje z `2 ** 19`.
+- **B.** „Dominacje na koniec Tomu”: wymienia tylko **kultury obecne w tym
+  Tomie** (uczestnicy Epok), a nie całą kartotekę (w Tomie I: 8 z 11 kultur
+  — poza albania, japonia, Wyspa Man), i jest **agregatem po kulturach**:
+  jeden słupek na kulturę = łączny głos jej bytów (udział % + liczba bytów),
+  ranking od najsilniejszej. Wcześniej była szczegółowa lista bytów
+  z całej kartoteki. Nowa funkcja `dominacjeKulturTomu` + czytelne nazwy
+  kultur (`NAZWY_KULTUR`).
+- **C.** Przy okazji naprawiony stary bug mapy SVG: `NaN%%` w tytule halo
+  i `r="NaN"` (promień brał obiekt zamiast `wielkosc`; 15 wystąpień
+  w `docs/kronika-*.html`).
+
+Brama: `npm test` **190/190**, `npm run check` zielone; strony Kroniki
+przebudowane.
