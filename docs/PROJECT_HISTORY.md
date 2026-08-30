@@ -1561,20 +1561,22 @@ z `iskra`/`pytanie`, filtr bytów, `data-link="kronika:<slug>"`), deep-linki
 walidowane (odwołanie do samego siebie = błąd) i rysowane jako graf.
 
 **Mapa (M1–M3):** warstwy offline **domyślnie wyłączone** —
-lasy (WWF Ecoregions 2017, biomy 1–6, PMTiles→GeoJSON+DP), szczyty (NE 10m
-elevation+regions points), urban (NE 10m, `area_sqkm ≥ 50`), morza (NE 10m
-marine polys, etykiety), miejsca historyczne (Pleiades 4.1, precise),
-hipsometria (NE HYP 50m→Web Mercator 2160² jpg); podkłady online bez klucza
-(OpenTopoMap/OSM/Esri physical/imager) wybierane ręcznie z atrybucją pod mapą.
+szczyty/POI (NE 10m elevation+regions points), miejsca historyczne
+(Pleiades 4.1, precise), hipsometria (NE HYP 50m→Web Mercator 2160² jpg),
+rzeki/jeziora/miasta; podkłady online bez klucza
+(OpenTopoMap/OSM/Esri physical/imager) wybierane ręcznie z atrybucją pod mapą,
+a przy włączonym podkładzie — głębsze przybliżenie (zgłoszenie C).
+Warstwy „lasy” (WWF), „urban” i „morza” zostały wdrożone i **usunięte po
+recenzji właściciela (2026-08-30, zgłoszenie A)** — razem z nimi
+`tools/warstwy-lasy-pmtiles.py` i `tools/pmtiles.py`.
 Narzędzia: `tools/warstwy-mapy.mjs` (+`--check`),
-`tools/warstwy-lasy-pmtiles.py` + `tools/pmtiles.py`,
 `tools/warstwy-hipsometria.py`, `tools/pobierz-zrodla-warstw.sh`
 (zasoby 315 MB w `assets/map/vendor/`, gitignorowane).
 
-**Brama:** `npm test` 176/176, `npm run check` zielone, `node
---test test/mapa-szczegoly.test.js` 10/10, `test/kronika.test.js` 17/17.
-`docs/ASSETS.md` — licencje (CC BY 4.0 Dinerstein 2017, CC BY 3.0 Pleiades,
-public domain NE) + polityki podkładów online.
+**Brama:** `npm test` 179/179, `npm run check` zielone, `node
+--test test/mapa-szczegoly.test.js` 12/12, `test/kronika.test.js` 17/17.
+`docs/ASSETS.md` — licencje (CC BY 3.0 Pleiades, public domain NE,
+CC BY 4.0 Dinerstein 2017 — historycznie) + polityki podkładów online.
 
 ### Pętla Jakości — C1/C3/C2 (2026-08-30, kontynuacja)
 
@@ -1586,3 +1588,26 @@ powiązania z knechtem z Koptos i psami Yamy; C3 — SKIT „PIERWSZY”
 puli seedów = 37/63 — wartość drukowana przez `kronika.mjs --seed`, po e1
 oś 35/65), meta.poprzednik = epoka-6 — pierwsze realne odwołanie S3 w
 grafie epok). Brama: 176/176, check zielone.
+
+### Recenzja właściciela — zgłoszenia A/B/C (2026-08-30)
+
+Po obejrzeniu mapy na żywo właściciel zgłosił trzy poprawki; wszystkie
+wdrożone w tej samej sesji:
+
+- **A. Usunięte warstwy** „lasy”, „obszary zurbanizowane” i „morza i oceany”
+  — bez sensu, nic sensownego nie widać. Usunięte z panelu, `map.js`,
+  `app.js`, CSS, `tools/warstwy-mapy.mjs`, `tools/pobierz-zrodla-warstw.sh`
+  oraz z repo (`las.json`, `urban.json`, `morza.json`,
+  `tools/warstwy-lasy-pmtiles.py`, `tools/pmtiles.py`).
+- **B. POI/szczyty i miejsca historyczne** — interakcja jak u miast:
+  kursor **strzałka** (nie łapka) nad punktem, nazwa **on-press** i znika
+  **on-release** (pływająca tabliczka `etykieta-punktu`, pole trafienia
+  `r=13`, bez `<title>` na hover); przeciągnięcie i wyłączenie warstwy
+  chowają tabliczkę.
+- **C. Głębsze przybliżenie przy podkładzie online** — do tej pory sufit
+  `K_MAX=32×`; teraz z włączonym podkładem (dowolnym z czterech) scroll
+  sięga `K_MAX_ONLINE=524288×` (rozdzielczość kafelków z≈19), a po
+  wyłączeniu podkładu widok wraca do 32×. Precyzyjniejsze wymiary kafelków
+  przy wysokim zoomie (toPrecision zamiast toFixed(1)).
+
+Brama: `npm test` **179/179**, `npm run check` zielone.

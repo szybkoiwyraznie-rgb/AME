@@ -1,7 +1,7 @@
 /**
  * app/app.js — bootstrap AME: ładuje indeks, mapę świata, spina UI.
  */
-import { stworzMape, PROGI_WARSTW, PODKLADY_ONLINE } from './map.js?v=c5-1';
+import { stworzMape, PROGI_WARSTW, PODKLADY_ONLINE } from './map.js?v=c5-2';
 import { zaladujIndeks, zaladujWpis, zaladujSkit, dopasowania, wylosujSlug } from './data.js?v=c5-1';
 import {
   htmlWpisu,
@@ -23,7 +23,7 @@ import {
   KLUCZ_MOTYWU,
   akcjeZZapytania,
 } from './ui.js?v=c5-1';
-import { SZEROKOSC, WYSOKOSC } from './geo.js?v=c5-1';
+import { SZEROKOSC, WYSOKOSC } from './geo.js?v=c5-2';
 
 const $ = (sel) => document.querySelector(sel);
 
@@ -39,14 +39,12 @@ const stan = {
   // Wszystkie warstwy mapy są domyślnie WYŁĄCZONE (decyzja właściciela 2026-08-30).
   warstwy: {
     rzeki: false, jeziora: false, miasta: false, poi: false,
-    lasy: false, urban: false, morza: false, historia: false,
-    hipsometria: false, podklad: null,
+    historia: false, hipsometria: false, podklad: null,
   },
   kronika: null, // podsumowanie Kroniki (summary.json) — ładowane raz przy otwarciu feedu
   zaladowane: {
     rzeki: false, jeziora: false, miasta: false, poi: false,
-    lasy: false, urban: false, morza: false, historia: false,
-    hipsometria: false,
+    historia: false, hipsometria: false,
   },
   panelWarstw: false,
 };
@@ -57,9 +55,6 @@ const WARSTWY_MAPY = {
   jeziora: { plik: 'lakes-2km5.json', prog: PROGI_WARSTW.woda, rysuj: 'ustawJeziora' },
   miasta: { plik: 'miasta.json', prog: PROGI_WARSTW.miastaWielkie, rysuj: 'ustawMiasta' },
   poi: { plik: 'szczyty.json', prog: PROGI_WARSTW.poi, rysuj: 'ustawSzczyty' },
-  lasy: { plik: 'las.json', prog: PROGI_WARSTW.lasy, rysuj: 'ustawLasy' },
-  urban: { plik: 'urban.json', prog: PROGI_WARSTW.urban, rysuj: 'ustawUrban' },
-  morza: { plik: 'morza.json', prog: PROGI_WARSTW.morza, rysuj: 'ustawMorza' },
   historia: { plik: 'miejsca-historyczne.json', prog: PROGI_WARSTW.historia, rysuj: 'ustawHistorie' },
   hipsometria: { plik: 'hipsometria.jpg', prog: 1, rysuj: 'ustawHipsometrie', raster: true },
 };

@@ -8,10 +8,8 @@
 #  - Natural Earth 10m/50m wektor  — mirror nvkelso/natural-earth-vector
 #  - raster hipsometrii            — mirror nvkelso/natural-earth-raster (git sparse)
 #  - Pleiades 4.1 (CC BY 3.0)      — tarball isawnyu/pleiades.datasets (codeload)
-#  - biomes.pmtiles (WWF Ecoregions 2017, CC BY 4.0, Dinerstein et al. 2017)
-#    NIE JEST w tym skrypcie: pochodzi z mapy interaktywnej ecoregions.world i
-#    bywa niedostępny programowo — jeśli go brak, pobierz ręcznie i wrzuć do
-#    assets/map/vendor/ (albo zostaw: las.json jest już wyprowadzony w repo).
+# Warstwy „lasy/urban/morza” usunięte decyzją właściciela 2026-08-30 (A);
+# sekcje WWF PMTiles i NE urban/marine już nie są potrzebne.
 set -u
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 DEST="$ROOT/assets/map/vendor"
@@ -56,10 +54,7 @@ gh() {
 NE="nvkelso/natural-earth-vector/contents/geojson"
 gh "$NE/ne_10m_geography_regions_elevation_points.geojson" "$DEST/ne_10m_geography_regions_elevation_points.geojson"
 gh "$NE/ne_10m_geography_regions_points.geojson" "$DEST/ne_10m_geography_regions_points.geojson"
-gh "$NE/ne_10m_urban_areas.geojson" "$DEST/ne_10m_urban_areas.geojson"
-gh "$NE/ne_10m_geography_marine_polys.geojson" "$DEST/ne_10m_geography_marine_polys.geojson"
 gh "$NE/ne_50m_geography_regions_elevation_points.geojson" "$DEST/ne_50m_geography_regions_elevation_points.geojson"
-gh "$NE/ne_50m_urban_areas.geojson" "$DEST/ne_50m_urban_areas.geojson"
 
 # --- Raster hipsometrii (public domain) — wire przez git (raw jest zablokowane) ----
 if [ ! -s "$DEST/HYP_50M_SR_W.tif" ]; then
@@ -96,9 +91,5 @@ if [ ! -s "$DEST/pleiades/places.csv" ]; then
 fi
 [ -s "$DEST/pleiades/places.csv" ] || fail "pleiades/places.csv"
 
-# --- WWF Ecoregions 2017 (las.json/PMTiles) — patrz komentarz na górze ----
-if [ -s "$DEST/biomes.pmtiles" ]; then skip "biomes.pmtiles"
-else fail "biomes.pmtiles (pobierz ręcznie z ecoregions.world, CC BY 4.0)"
-fi
 
 echo "Gotowe: $(du -sh "$DEST" 2>/dev/null | cut -f1)"

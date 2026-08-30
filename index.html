@@ -17,8 +17,8 @@
   <!-- Cache-busting: przy zmianie app/*.js lub app/styles.css podnieś wersję
        w ?v= (np. c5-1 → c4-2). Ta sama wersja musi być w importach modułów,
        inaczej przeglądarka poda stare pliki (typowy objaw „mapa bez zmian”). -->
-  <link rel="stylesheet" href="app/styles.css?v=c5-1">
-  <script type="module" src="app/app.js?v=c5-1"></script>
+  <link rel="stylesheet" href="app/styles.css?v=c5-2">
+  <script type="module" src="app/app.js?v=c5-2"></script>
 </head>
 <body>
   <div id="baner" class="baner" hidden></div>
@@ -49,9 +49,9 @@
         <button id="zoom-in" class="przycisk-kolo" aria-label="Przybliż">＋</button>
         <button id="zoom-out" class="przycisk-kolo" aria-label="Oddal">−</button>
         <button id="zoom-reset" class="przycisk-kolo" aria-label="Reset widoku">⟲</button>
-        <button id="przycisk-warstwy" class="przycisk-kolo" aria-pressed="false" title="Warstwy mapy: woda, miasta, środowisko, historia, podkłady" aria-label="Warstwy mapy">🗺</button>
+        <button id="przycisk-warstwy" class="przycisk-kolo" aria-pressed="false" title="Warstwy mapy: woda, miasta, POI, historia, hipsometria, podkłady" aria-label="Warstwy mapy">🗺</button>
       </div>
-      <p class="podpowiedz">przeciągnij · kółko = zoom · dwuklik = przybliż · przytrzymaj miasto = nazwa · pinch na telefonie</p>
+      <p class="podpowiedz">przeciągnij · kółko = zoom · dwuklik = przybliż · przytrzymaj punkt lub miasto = nazwa · pinch na telefonie</p>
       <p id="atrybucja-podkladu" class="atrybucja-mapy" hidden></p>
       <div id="warstwy-panel" class="warstwy-panel" hidden>
         <div class="naglowek-panelu">Warstwy mapy</div>
@@ -60,10 +60,6 @@
         <label><input id="warstwa-jeziora" type="checkbox"> Jeziora</label>
         <label><input id="warstwa-miasta" type="checkbox"> Miasta</label>
         <label><input id="warstwa-poi" type="checkbox" title="Szczyty i pasma (Natural Earth)"> POI / szczyty</label>
-        <div class="naglowek-grupy">Środowisko</div>
-        <label><input id="warstwa-lasy" type="checkbox" title="Kompleksy leśne — biomy WWF Ecoregions 2017"> Lasy</label>
-        <label><input id="warstwa-urban" type="checkbox" title="Obszary zurbanizowane (Natural Earth)"> Obszary zurbanizowane</label>
-        <label><input id="warstwa-morza" type="checkbox" title="Nazwy mórz i oceanów (Natural Earth)"> Morza i oceany</label>
         <label><input id="warstwa-hipsometria" type="checkbox" title="Rzeźba terenu i batymetria (Natural Earth 50m)"> Hipsometria</label>
         <div class="naglowek-grupy">Świat starożytny</div>
         <label><input id="warstwa-historia" type="checkbox" title="Miejsca starożytne — Pleiades (CC BY 3.0)"> Miejsca historyczne</label>

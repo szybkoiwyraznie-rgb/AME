@@ -381,9 +381,11 @@ zmianie, niezależnie od „polerowania”.
       LOD treści (`woda: 4`, miasta `4/7/10`), asynchroniczne `fetch` w `app.js`,
       panel `#przycisk-warstwy`, style CSS dla obu motywów, assety
       `rivers-2km5.json`, `lakes-2km5.json`, `miasta.json`, testy przed i po.
-- [x] **Obecny zakres:** rzeki + jeziora + miasta. Drogi, szczyty, lasy
-      i wysokość n.p.m. wymagają źródła offline — opisane jako plan
-      w `docs/ASSETS.md` i ADR 0020.
+- [x] **Obecny zakres:** rzeki + jeziora + miasta (+ M1–M3 z 2026-08-30:
+      szczyty/POI, miejsca historyczne, hipsometria, podkłady online).
+      Drogi i wysokość n.p.m. w wektorze wymagają źródła offline — opisane
+      jako plan w `docs/ASSETS.md` i ADR 0020. Warstwy „lasy/urban/morza”
+      zrecenzowane i usunięte (2026-08-30).
 - [ ] Drogi, POI/szczyty, kompleksy leśne i kolorowa wysokość n.p.m.
       (po znalezieniu wiarygodnego źródła danych offline).
 

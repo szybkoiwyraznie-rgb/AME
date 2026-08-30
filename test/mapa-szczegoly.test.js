@@ -283,64 +283,109 @@ test('assets: warstwy 2km5 dekodują się do ścieżek SVG, miasta mają dane', 
   }
 });
 
-/* ---- M1–M3: nowe warstwy (lasy, urban, morza, POI, historia, hipsometria, podkłady online) ---- */
+/* ---- M1–M3: POI, miejsca historyczne, hipsometria, podkłady online ----
+ * Warstwy „lasy/urban/morza” usunięte decyzją właściciela 2026-08-30 (A). */
 
-const FEAT = (b) => ({
-  type: 'Feature',
-  properties: { b },
-  geometry: { type: 'MultiPolygon', coordinates: [[[[0, 0], [5, 0], [5, 5], [0, 5], [0, 0]]]] },
-});
-
-test('mapa: lasy/urban/morza/historia/POI — domyślnie OFF, włączalne, progi LOD', () => {
+test('mapa: POI/historia — domyślnie OFF, włączalne, progi LOD, etykieta punktu (B)', () => {
   const { kontener } = zasciel();
   const mapa = stworzMape(kontener, {});
-  mapa.ustawLasy({ features: [FEAT(1)] });
-  mapa.ustawUrban({ features: [FEAT(1)] });
-  mapa.ustawMorza({ features: [{ type: 'Feature', properties: { n: 'Morze Śródziemne' }, geometry: { type: 'Point', coordinates: [10, 35] } }] });
   mapa.ustawSzczyty({ features: [{ type: 'Feature', properties: { n: 'Rysy', e: 2499 }, geometry: { type: 'Point', coordinates: [20.1, 49.18] } }] });
   mapa.ustawHistorie({ features: [{ type: 'Feature', properties: { n: 'Rzym' }, geometry: { type: 'Point', coordinates: [12.5, 41.9] } }] });
   mapa.ustawHipsometrie('assets/map/hipsometria.jpg');
 
-  const lasy = znajdzElement(mapa.svg, 'lasy');
-  const urban = znajdzElement(mapa.svg, 'urban');
-  const morza = znajdzElement(mapa.svg, 'morza');
   const poi = znajdzElement(mapa.svg, 'poi');
   const historia = znajdzElement(mapa.svg, 'historia');
   const hipso = znajdzElement(mapa.svg, 'hipsometria');
-  assert.equal(lasy.getAttribute('display'), 'none', 'domyślnie OFF');
-  assert.equal(urban.getAttribute('display'), 'none');
-  assert.equal(morza.getAttribute('display'), 'none');
-  assert.equal(poi.getAttribute('display'), 'none');
-  assert.equal(historia.getAttribute('display'), 'none');
+  const etykietaPunktu = znajdzElement(mapa.svg, 'etykieta-punktu');
+  assert.equal(poi.getAttribute('display'), 'none', 'POI domyślnie OFF');
+  assert.equal(historia.getAttribute('display'), 'none', 'historia domyślnie OFF');
+  assert.ok(etykietaPunktu, 'pływająca etykieta punktu w drzewie SVG');
+  assert.ok(!etykietaPunktu.czyMaKlase('widoczna'), 'etykieta ukryta przed wciśnięciem');
 
-  const las = znajdzElement(lasy, 'las');
-  assert.ok(las, 'las narysowany z FeatureCollection');
-  assert.equal(las.getAttribute('data-b'), '1');
+  // punkt POI: kropka, pole trafienia, aria-label i bez <title> (B)
+  const punkt = znajdzElement(poi, 'punkt');
+  assert.ok(punkt, 'punkt POI narysowany z FeatureCollection');
+  const kropka = punkt.dzieci.find((d) => d.czyMaKlase('kropka'));
+  const trafienie = punkt.dzieci.find((d) => d.czyMaKlase('trafienie'));
+  assert.ok(kropka, 'punkt POI ma kropkę');
+  assert.ok(trafienie, 'punkt POI ma przezroczyste pole trafienia');
+  assert.equal(trafienie.getAttribute('r'), '13', 'pole trafienia = PROMIEN_KLIK_PUNKTU');
+  assert.equal(punkt.getAttribute('aria-label'), 'Rysy · 2499 m n.p.m.');
+  assert.ok(!punkt.dzieci.some((d) => d.nazwa === 'title'), 'bez <title> — nazwa nie na najechanie');
+
   const obraz = znajdzElement(hipso, 'hipsometria-obraz');
   assert.ok(obraz, 'raster hipsometrii podpięty');
   assert.equal(obraz.getAttribute('href'), 'assets/map/hipsometria.jpg');
 
-  // włączenie + progi
-  mapa.przelaczWidocznoscWarstwy('lasy', true);
-  mapa.przelaczWidocznoscWarstwy('urban', true);
-  mapa.przelaczWidocznoscWarstwy('morza', true);
+  // włączenie + progi LOD
+  mapa.przelaczWidocznoscWarstwy('poi', true);
   mapa.przelaczWidocznoscWarstwy('historia', true);
   mapa.przelaczWidocznoscWarstwy('hipsometria', true);
   assert.equal(hipso.getAttribute('display'), 'inherit', 'hipsometria od razu');
-  assert.equal(lasy.getAttribute('display'), 'none', 'lasy dopiero od k>=3');
-  assert.equal(urban.getAttribute('display'), 'none', 'urban dopiero od k>=4');
-  assert.equal(morza.getAttribute('display'), 'none', 'morza dopiero od k>=2');
+  assert.equal(poi.getAttribute('display'), 'none', 'POI dopiero od k>=8');
   assert.equal(historia.getAttribute('display'), 'none', 'historia dopiero od k>=6');
 
-  mapa.zoomDoPunktu({ x: 800, y: 320 }, 4);
-  assert.equal(morza.getAttribute('display'), 'inherit', 'k>=2');
-  assert.equal(lasy.getAttribute('display'), 'inherit', 'k>=3');
-  assert.equal(urban.getAttribute('display'), 'inherit', 'k>=4');
-  assert.equal(historia.getAttribute('display'), 'none', 'k<6');
+  mapa.zoomDoPunktu({ x: 800, y: 320 }, 10);
+  assert.equal(poi.getAttribute('display'), 'inherit', 'k>=8');
+  assert.equal(historia.getAttribute('display'), 'inherit', 'k>=6');
+});
 
-  // punkty stałego rozmiaru ekranowego (kompensacja skali, jak miasta)
-  const morze = znajdzElement(morza, 'morze');
-  assert.ok(morze.getAttribute('transform').includes('scale('), 'etykieta morza kompensowana');
+test('mapa: POI i miejsca historyczne — nazwa on-press, znika on-release (B)', () => {
+  const { kontener } = zasciel();
+  const mapa = stworzMape(kontener, {});
+  mapa.svg.getScreenCTM = () => ({ inverse: () => ({ a: 1, b: 0, c: 0, d: 1, e: 0, f: 0 }) });
+  globalThis.DOMPoint = class {
+    constructor(x, y) { this.x = x; this.y = y; }
+    matrixTransform(m) { return { x: m.a * this.x + m.c * this.y + m.e, y: m.b * this.x + m.d * this.y + m.f }; }
+  };
+
+  mapa.ustawSzczyty({ features: [{ type: 'Feature', properties: { n: 'Rysy', e: 2499 }, geometry: { type: 'Point', coordinates: [20.1, 49.18] } }] });
+  mapa.ustawHistorie({ features: [{ type: 'Feature', properties: { n: 'Rzym' }, geometry: { type: 'Point', coordinates: [12.5, 41.9] } }] });
+  mapa.przelaczWidocznoscWarstwy('poi', true);
+  mapa.przelaczWidocznoscWarstwy('historia', true);
+  mapa.zoomDoPunktu({ x: 800, y: 320 }, 10);
+  const [wx, wy] = projektuj(49.18, 20.1);
+  const px = mapa.widok.x + wx * mapa.skala;
+  const py = mapa.widok.y + wy * mapa.skala;
+  const etykieta = znajdzElement(mapa.svg, 'etykieta-punktu');
+  assert.ok(!etykieta.czyMaKlase('widoczna'), 'ukryta przed wciśnięciem');
+
+  mapa.svg.sluchacze.pointerdown[0]({ pointerId: 1, target: { closest: () => null }, clientX: px, clientY: py });
+  assert.ok(etykieta.czyMaKlase('widoczna'), 'wciśnięcie nad POI pokazuje tabliczkę');
+  const tekst = etykieta.dzieci.find((d) => d.nazwa === 'text');
+  assert.equal(tekst?.textContent, 'Rysy · 2499 m n.p.m.');
+  mapa.svg.sluchacze.pointerup[0]({ pointerId: 1 });
+  assert.ok(!etykieta.czyMaKlase('widoczna'), 'puszczenie chowa tabliczkę');
+
+  // miejsce historyczne — analogicznie
+  const [hx, hy] = projektuj(41.9, 12.5);
+  const hpx = mapa.widok.x + hx * mapa.skala;
+  const hpy = mapa.widok.y + hy * mapa.skala;
+  mapa.svg.sluchacze.pointerdown[0]({ pointerId: 2, target: { closest: () => null }, clientX: hpx, clientY: hpy });
+  assert.ok(etykieta.czyMaKlase('widoczna'), 'punkt historyczny też pokazuje nazwę');
+  assert.equal(etykieta.dzieci.find((d) => d.nazwa === 'text')?.textContent, 'Rzym');
+  mapa.svg.sluchacze.pointerup[0]({ pointerId: 2 });
+  assert.ok(!etykieta.czyMaKlase('widoczna'), 'po puszczeniu znika');
+
+  // przeciągnięcie chowa, wyłączenie warstwy chowa otwartą tabliczkę
+  mapa.svg.sluchacze.pointerdown[0]({ pointerId: 3, target: { closest: () => null }, clientX: px, clientY: py });
+  assert.ok(etykieta.czyMaKlase('widoczna'), 'ponowne wciśnięcie pokazuje');
+  mapa.svg.sluchacze.pointermove[0]({ pointerId: 3, clientX: px + 20, clientY: py + 10 });
+  assert.ok(!etykieta.czyMaKlase('widoczna'), 'przeciągnięcie chowa tabliczkę');
+  mapa.svg.sluchacze.pointerup[0]({ pointerId: 3 });
+
+  // po przeciągnięciu świat się przesunął — licz współrzędne z aktualnego widoku
+  const [wx2, wy2] = projektuj(49.18, 20.1);
+  const px2 = mapa.widok.x + wx2 * mapa.skala;
+  const py2 = mapa.widok.y + wy2 * mapa.skala;
+  mapa.svg.sluchacze.pointerdown[0]({ pointerId: 4, target: { closest: () => null }, clientX: px2, clientY: py2 });
+  assert.ok(etykieta.czyMaKlase('widoczna'), 'znowu widać po wciśnięciu');
+  mapa.przelaczWidocznoscWarstwy('poi', false);
+  assert.ok(!etykieta.czyMaKlase('widoczna'), 'wyłączona warstwa chowa otwartą tabliczkę');
+  mapa.svg.sluchacze.pointerup[0]({ pointerId: 4 });
+
+  delete globalThis.DOMPoint;
+  delete mapa.svg.getScreenCTM;
 });
 
 test('mapa: podkłady online — wyłączone domyślnie; wybór klucza rysuje kafelki', () => {
@@ -367,33 +412,47 @@ test('mapa: podkłady online — wyłączone domyślnie; wybór klucza rysuje ka
   assert.ok(!mapa.svg.czyMaKlase('z-podklad-online'), 'po wyłączeniu klasy znikają');
 });
 
-test('assets: nowe warstwy M1–M3 dekodują się do ścieżek i punktów', async () => {
-  const [las, urban, morza, szczyty, historia] = await Promise.all([
-    readFile(new URL('../assets/map/las.json', import.meta.url), 'utf8'),
-    readFile(new URL('../assets/map/urban.json', import.meta.url), 'utf8'),
-    readFile(new URL('../assets/map/morza.json', import.meta.url), 'utf8'),
+test('mapa: głębsze przybliżenie tylko z podkładem online (C)', () => {
+  const { kontener } = zasciel();
+  const mapa = stworzMape(kontener, {});
+  // offline: 32× to twardy sufit
+  mapa.zoomDoPunktu({ x: 800, y: 320 }, 1e9);
+  assert.equal(mapa.widok.k, 32, 'offline sufit K_MAX');
+
+  // włączony podkład: scroll idzie znacznie głębiej
+  mapa.przelaczWidocznoscWarstwy('podklad', 'opentopo');
+  mapa.zoomDoPunktu({ x: 800, y: 320 }, 2048);
+  assert.ok(mapa.widok.k > 32, `k=${mapa.widok.k} — przekroczono K_MAX`);
+  assert.ok(mapa.widok.k > 1000, `k=${mapa.widok.k}`);
+
+  // kafelki wciąż rysowane dla tego powiększenia (z>0, bez NaN)
+  const podklad = znajdzElement(mapa.svg, 'podklad-online');
+  const kafelek = znajdzElement(podklad, 'kafelek');
+  assert.ok(kafelek, 'kafelki przy głębokim zoomie');
+  assert.ok(Number(kafelek.getAttribute('width')) > 0);
+
+  // wyłączenie podkładu wraca do sufiksu offline
+  mapa.przelaczWidocznoscWarstwy('podklad', null);
+  assert.equal(mapa.widok.k, 32, 'po wyłączeniu podkładu sufit wraca do 32×');
+});
+
+test('assets: nowe warstwy M1–M3 dekodują się do punktów (POI, historia)', async () => {
+  const [szczyty, historia] = await Promise.all([
     readFile(new URL('../assets/map/szczyty.json', import.meta.url), 'utf8'),
     readFile(new URL('../assets/map/miejsca-historyczne.json', import.meta.url), 'utf8'),
   ]);
-  const parsowane = [las, urban, morza, szczyty, historia].map((t) => JSON.parse(t));
-  for (const d of parsowane) assert.equal(d.type, 'FeatureCollection');
-  const lasD = JSON.parse(las);
-  const urbanD = JSON.parse(urban);
-  assert.equal(lasD.features[0].geometry.type, 'MultiPolygon');
-  assert.ok(Number.isFinite(lasD.features[0].properties.b), 'biom zachowany');
-  const dLas = sciezkaGeoMultiPoligon(lasD.features[0].geometry.coordinates);
-  const duza = urbanD.features.reduce((a, b) => (sciezkaGeoMultiPoligon(b.geometry.coordinates).length > sciezkaGeoMultiPoligon(a.geometry.coordinates).length ? b : a), urbanD.features[0]);
-  const dUrban = sciezkaGeoMultiPoligon(duza.geometry.coordinates);
-  assert.ok(dLas.length > 100 && !dLas.includes('NaN'));
-  assert.ok(dUrban.length > 100 && !dUrban.includes('NaN'));
-  for (const d of [JSON.parse(morza), JSON.parse(szczyty), JSON.parse(historia)]) {
+  for (const d of [JSON.parse(szczyty), JSON.parse(historia)]) {
+    assert.equal(d.type, 'FeatureCollection');
     assert.equal(d.features[0].geometry.type, 'Point');
     const [lon, lat] = d.features[0].geometry.coordinates;
     assert.ok(Number.isFinite(lon) && Number.isFinite(lat));
     const [wx, wy] = projektuj(lat, lon);
     assert.ok(Number.isFinite(wx) && Number.isFinite(wy));
   }
-  assert.ok(JSON.parse(morza).features.length >= 5, 'kilkanaście etykiet mórz');
   assert.ok(JSON.parse(szczyty).features.length >= 20, 'szczyty z NE');
   assert.ok(JSON.parse(historia).features.length >= 100, 'miejsca z Pleiades');
+  // A: warstwy usunięte decyzją właściciela nie mają już plików
+  for (const nazwa of ['las.json', 'urban.json', 'morza.json']) {
+    await assert.rejects(readFile(new URL(`../assets/map/${nazwa}`, import.meta.url), 'utf8'), `brak ${nazwa}`);
+  }
 });

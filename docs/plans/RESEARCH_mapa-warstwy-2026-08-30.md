@@ -5,6 +5,10 @@
 > warstwy opcjonalnej mapy) → POI? kolorowe wypełnienie wg wysokości?
 > kompleksy leśne? jakieś historyczne warstwy?”
 > Wynik: rekomendacje + tabele źródeł. **Bez wdrażania** — decyzja właściciela.
+> **Aktualizacja 2026-08-30 (po wdrożeniu i recenzji):** zewnętrze
+> warstwy „lasy” (WWF), „urban” i „morza” zostały **usunięte** (zgłoszenie A);
+> zostają POI/szczyty, miejsca historyczne i hipsometria (B/C — patrz
+> `docs/PROJECT_HISTORY.md`).
 
 ## 0. Stan obecny
 

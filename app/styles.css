@@ -30,11 +30,6 @@ html[data-motyw='ciemny'] {
   --miasto-obrys: #0d1015;
   --poi: #b4543c;
   --poi-obrys: #0d1015;
-  --las: #2f5d3a;
-  --las-obrys: #3f7a4c;
-  --urban: #6c7284;
-  --urban-obrys: #8a90a2;
-  --morze: #5f88a5;
   --historia: #c9a86a;
   --historia-obrys: #0d1015;
   --pinezka-obrys: #0d1015;
@@ -72,11 +67,6 @@ html[data-motyw='jasny'] {
   --miasto-obrys: #fdf9ee;
   --poi: #96331c;
   --poi-obrys: #fdf9ee;
-  --las: #4a7d52;
-  --las-obrys: #3a6a42;
-  --urban: #9aa1ad;
-  --urban-obrys: #7b8290;
-  --morze: #46708f;
   --historia: #7d5a15;
   --historia-obrys: #fdf9ee;
   --pinezka-obrys: #fdf9ee;
@@ -278,40 +268,22 @@ html[data-motyw='jasny'] .baner code { background: #ffffff77; }
   stroke: none;
   pointer-events: all;
 }
+/* B (2026-08-30): POI i miejsca historyczne zachowują się jak miasta —
+ * kursor strzałka (nie łapka) i nazwa tylko podczas przytrzymania. */
 .warstwy-szczegolow .poi .punkt {
   fill: var(--poi);
   stroke: var(--poi-obrys);
   stroke-width: 1;
+  cursor: default;
 }
-
-/* Warstwy środowiska i historii (M1–M3): pod niebieskim lądem lasy są półprzezroczyste,
- * obszary miejskie delikatnie kreskowane, a morza — kursywne etykiety. */
-.warstwy-szczegolow .lasy .las {
-  fill: var(--las);
-  stroke: var(--las-obrys);
-  stroke-width: 0.4;
-  opacity: 0.75;
-  vector-effect: non-scaling-stroke;
+.warstwy-szczegolow .poi .trafienie,
+.warstwy-szczegolow .historia .trafienie {
+  fill: transparent;
+  stroke: none;
+  pointer-events: all;
 }
-.warstwy-szczegolow .urban .urban-obszar {
-  fill: var(--urban);
-  stroke: var(--urban-obrys);
-  stroke-width: 0.3;
-  vector-effect: non-scaling-stroke;
-}
-.warstwy-szczegolow .morza {
-  pointer-events: none;
-}
-.warstwy-szczegolow .morza .nazwa-morza {
-  fill: var(--morze);
-  font-family: var(--serif);
-  font-style: italic;
-  font-size: 26px;
-  letter-spacing: 0.08em;
-  text-anchor: middle;
-  dominant-baseline: middle;
-  opacity: 0.85;
-  user-select: none;
+.warstwy-szczegolow .historia .punkt {
+  cursor: default;
 }
 .warstwy-szczegolow .historia .punkt .kropka {
   fill: var(--historia);
@@ -400,6 +372,27 @@ html[data-motyw='jasny'] .baner code { background: #ffffff77; }
   dominant-baseline: central;
 }
 .mapa-svg .etykieta-miasta .tlo-etykiety {
+  fill: var(--badge-tlo);
+  stroke: var(--akcent);
+  stroke-width: 1.2;
+}
+
+/* Etykieta punktu POI/historii (B): wygląda identycznie jak tabliczka miasta,
+ * bo to ta sama interakcja — wciśnięcie pokazuje, puszczenie chowa. */
+.mapa-svg .etykieta-punktu {
+  display: none;
+  pointer-events: none;
+}
+.mapa-svg .etykieta-punktu.widoczna { display: block; }
+.mapa-svg .etykieta-punktu text {
+  font-family: var(--serif);
+  font-size: 19px;
+  line-height: 1.2;
+  fill: var(--tekst);
+  text-anchor: middle;
+  dominant-baseline: central;
+}
+.mapa-svg .etykieta-punktu .tlo-etykiety {
   fill: var(--badge-tlo);
   stroke: var(--akcent);
   stroke-width: 1.2;

@@ -8,9 +8,10 @@
  *   node tools/warstwy-mapy.mjs          # zapis do assets/map/
  *   node tools/warstwy-mapy.mjs --check  # weryfikacja (używane przez npm run check)
  *
- * Warstwy: lasy (WWF Ecoregions 2017, biomy 1–6), szczyty (NE 10m),
- * obszary zurbanizowane (NE 10m), morza (NE 10m marine), miejsca historyczne
- * (Pleiades 4.1). Raster hipsometrii: tools/warstwy-hipsometria.py.
+ * Warstwy: szczyty/POI (NE 10m), miejsca historyczne (Pleiades 4.1).
+ * Raster hipsometrii: tools/warstwy-hipsometria.py.
+ * Warstwy „lasy”, „urban” i „morza” zostały usunięte decyzją właściciela
+ * 2026-08-30 (zgłoszenie A — bez sensu na tej mapie).
  * Licencje i atrybucje: docs/ASSETS.md.
  */
 import { readFile, writeFile, readdir, stat, mkdir } from 'node:fs/promises';
@@ -119,28 +120,6 @@ function punkt(id, n, lat, lon, dodatkowe = {}) {
 
 /* ---- Warstwy ---- */
 
-/** Lasy: biomowe kompleksy leśne 1–6 (RESOLVE Ecoregions 2017 przez PMTiles). */
-async function warstwaLasy() {
-  const d = await czytajJson('lasy-z2.geojson');
-  const features = [];
-  for (const f of d.features ?? []) {
-    const biome = Number(f.properties?.biome);
-    const multi = doMulti(f.geometry);
-    if (!multi || !(biome >= 1 && biome <= 6)) continue;
-    const uproszczone = uproscMulti(multi, 0.08);
-    if (!uproszczone) continue;
-    features.push({
-      type: 'Feature',
-      properties: { b: biome },
-      geometry: {
-        type: 'MultiPolygon',
-        coordinates: uproszczone.map((rings) => rings.map((r) => r.map(([x, y]) => [zaokr(x), zaokr(y)]))),
-      },
-    });
-  }
-  return { type: 'FeatureCollection', features };
-}
-
 /** Szczyty i pasma: NE 10m geography regions (elevation points + named points). */
 async function warstwaSzczyty() {
   const zrodla = [
@@ -158,47 +137,6 @@ async function warstwaSzczyty() {
       const e = p.elevation != null && p.elevation !== '' ? Number(p.elevation) : undefined;
       features.push(punkt(p.region ?? p.name ?? '', p.name_pl || p.name || '', lat, lon, zElevacja ? { e } : {}));
     }
-  }
-  return { type: 'FeatureCollection', features };
-}
-
-/** Obszary zurbanizowane (NE 10m urban areas), uproszczone; pomijamy drobnice < 50 km². */
-async function warstwaUrban() {
-  const d = await czytajJson('ne_10m_urban_areas.geojson');
-  const features = [];
-  for (const f of d.features ?? []) {
-    const km2 = Math.round(Number(f.properties?.area_sqkm) || 0);
-    if (km2 < 50) continue;
-    const multi = doMulti(f.geometry);
-    if (!multi) continue;
-    const uproszczone = uproscMulti(multi, 0.015);
-    if (!uproszczone) continue;
-    features.push({
-      type: 'Feature',
-      properties: { km2 },
-      geometry: { type: 'MultiPolygon', coordinates: uproszczone.map((rings) => rings.map((r) => r.map(([x, y]) => [zaokr(x), zaokr(y)])) ) },
-    });
-  }
-  return { type: 'FeatureCollection', features };
-}
-
-/** Morza i oceany: etykiety (NE 10m marine polys). */
-async function warstwaMorza() {
-  const d = await czytajJson('ne_10m_geography_marine_polys.geojson');
-  const features = [];
-  for (const f of d.features ?? []) {
-    const p = f.properties ?? {};
-    const nazwa = p.name_pl || p.name || p.name_en || '';
-    if (!nazwa || Number(p.scalerank) > 5) continue;
-    const multi = doMulti(f.geometry);
-    if (!multi) continue;
-    let minX = Infinity, minY = Infinity, maxX = -Infinity, maxY = -Infinity;
-    for (const rings of multi) for (const r of rings) for (const [x, y] of r) {
-      if (x < minX) minX = x; if (x > maxX) maxX = x;
-      if (y < minY) minY = y; if (y > maxY) maxY = y;
-    }
-    if (!Number.isFinite(minX)) continue;
-    features.push(punkt(null, nazwa, (minY + maxY) / 2, (minX + maxX) / 2, { k: p.featurecla ?? 'ocean' }));
   }
   return { type: 'FeatureCollection', features };
 }
@@ -240,10 +178,7 @@ async function warstwaHistoria() {
 /* ---- Zapisywanie ---- */
 
 const PLIKI = [
-  ['las.json', warstwaLasy],
   ['szczyty.json', warstwaSzczyty],
-  ['urban.json', warstwaUrban],
-  ['morza.json', warstwaMorza],
   ['miejsca-historyczne.json', warstwaHistoria],
 ];
 
