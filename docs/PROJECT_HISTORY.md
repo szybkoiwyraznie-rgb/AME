@@ -1617,9 +1617,10 @@ Brama: `npm test` **184/184**, `npm run check` zielone.
 Po pierwszym podglądzie na żywo właściciel zgłosił kolejne poprawki —
 wszystkie wdrożone w tej samej sesji:
 
-- **A.** Blokada zoomu online na **67×** (dane kafelków sensowne do 67.,
-  od 68. puste bloki) + usunięty podkład **Esri „świat fizyczny”** jako
-  niewnoszący nic (zostają OpenTopoMap, OSM, Esri World Imagery).
+- **A.** Blokada zoomu online na **×45 252** — 67 **obrotów kółka** myszy
+  (każdy ×e^0.16 ≈ 1,1735; 68. obrót ≈×53 104 i dalej = puste bloki) +
+  usunięty podkład **Esri „świat fizyczny”** jako niewnoszący nic
+  (zostają OpenTopoMap, OSM, Esri World Imagery).
 - **B.** Wyłączenie podkładu po głębokim zoomie **oddala w miejscu** —
   środek okna zostaje na tym samym punkcie świata (wcześniej clamp x/y
   wyrzucał widok na krawędź, „ocean atlantycki”).

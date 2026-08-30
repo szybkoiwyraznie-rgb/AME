@@ -422,9 +422,11 @@ test('mapa: głębsze przybliżenie tylko z podkładem online (C)', () => {
 
   // włączony podkład: scroll idzie znacznie głębiej
   mapa.przelaczWidocznoscWarstwy('podklad', 'opentopo');
-  mapa.zoomDoPunktu({ x: 800, y: 320 }, 2048);
+  mapa.zoomDoPunktu({ x: 800, y: 320 }, 1e9);
+  // 67 obrotów kółka (każdy ×e^0.16) = e^(0,16·67) ≈ 45 252× — taka jest blokada.
+  const oczekiwane = Math.round(Math.exp(0.0016 * 100 * 67));
   assert.ok(mapa.widok.k > 32, `k=${mapa.widok.k} — przekroczono K_MAX`);
-  assert.equal(mapa.widok.k, 67, 'sufit online = K_MAX_ONLINE (67× — A)');
+  assert.equal(mapa.widok.k, oczekiwane, `sufit online = ${oczekiwane}× (67 obrotów kółka — A)`);
 
   // kafelki wciąż rysowane dla tego powiększenia (z>0, bez NaN)
   const podklad = znajdzElement(mapa.svg, 'podklad-online');

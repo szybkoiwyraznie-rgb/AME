@@ -34,10 +34,12 @@ const ODSTEP_PUNKTU = 18;
 /** Maksymalna odległość kliknięcia od punktu POI/historii (px CSS). */
 const PROMIEN_KLIK_PUNKTU = 13;
 /** Górna granica przybliżenia z włączonym podkładem online (2026-08-30).
- *  Właściciel zweryfikował w przeglądarce: kafelki są sensowne do 67×,
- *  a przy 68. przybliżeniu i głębiej źródła pokazują puste bloki — stąd
- *  twarda blokada na 67×. Offline sufit zostaje 32× (K_MAX). */
-const K_MAX_ONLINE = 67;
+ *  Właściciel zweryfikował w przeglądarce: 67 OBRÓTÓW KÓŁKA MYSZY — nie 67×.
+ *  Każdy obrót (deltaY=100) mnoży widok przez e^0.16 ≈ 1,1735, więc 67 obrotów
+ *  daje e^(0,16·67) ≈ 45 252×, a 68. obrót (≈53 104×) i głębiej źródła
+ *  pokazują puste bloki. Stąd twarda blokada na 45 252× (po 67. obrocie
+ *  kółko nie przybliża już dalej). Offline sufit zostaje 32× (K_MAX). */
+const K_MAX_ONLINE = Math.round(Math.exp(0.0016 * 100 * 67));
 
 /** Warstwy szczegółowości (ADR 0020): progi zoomu dla danych tematycznych. */
 export const PROGI_WARSTW = {
