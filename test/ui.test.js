@@ -53,7 +53,13 @@ test('app.js: zapamiętywanie warstw i widoku mapy w localStorage (D)', async ()
   assert.ok(app.includes('zapiszWarstwyMapy') && app.includes('przywrocWarstwyMapy'), 'zapis/odczyt warstw');
   assert.ok(app.includes('zapiszWidokMapy') && app.includes('przywrocWidokMapy'), 'zapis/odczyt widoku');
   assert.ok(app.includes('try {') && app.includes('localStorage.setItem'), 'zapis w try/catch (file://)');
-  assert.ok(app.includes('index.html, "v=c5' ) || app.includes("c5-3"), 'cache-bust podbity');
+  // cache-bust: wersja w index.html musi być taka sama jak w importach app.js/map.js
+  const index = await readFile('index.html', 'utf8');
+  const wersja = /app\/app\.js\?v=([\w-]+)/.exec(index)?.[1];
+  assert.ok(wersja, 'index.html podaje wersję app.js');
+  assert.ok(app.includes(`./map.js?v=${wersja}`) && app.includes(`./ui.js?v=${wersja}`) && app.includes(`./geo.js?v=${wersja}`), `importy app.js zgodne z v=${wersja}`);
+  const mapa = await readFile('app/map.js', 'utf8');
+  assert.ok(mapa.includes(`./geo.js?v=${wersja}`), `import map.js zgodny z v=${wersja}`);
 });
 
 test('esc: znaki HTML uciekają', () => {
