@@ -506,6 +506,18 @@ th {
   display: inline-block;
   white-space: nowrap;
 }
+/* Odnośniki-chip w konwencji brązowego przycisku (recenzja 2026-08-30):
+   link nie może świecić domyślnym niebieskim kolorem przeglądarki. */
+a.chip, .chip.link {
+  color: var(--accent);
+  border-color: var(--accent-light);
+  text-decoration: none;
+  cursor: pointer;
+}
+a.chip:hover, .chip.link:hover {
+  background: var(--accent-glow);
+  color: var(--accent);
+}
 .chip.up { color: var(--up); border-color: rgba(52, 122, 77, 0.4); background: var(--mit-bg); font-weight: 600; }
 .chip.down { color: var(--down); border-color: rgba(168, 61, 41, 0.4); background: #fbeae7; font-weight: 600; }
 .chip.neutral { color: var(--muted); }

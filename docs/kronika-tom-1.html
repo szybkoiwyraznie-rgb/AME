@@ -506,6 +506,18 @@ th {
   display: inline-block;
   white-space: nowrap;
 }
+/* Odnośniki-chip w konwencji brązowego przycisku (recenzja 2026-08-30):
+   link nie może świecić domyślnym niebieskim kolorem przeglądarki. */
+a.chip, .chip.link {
+  color: var(--accent);
+  border-color: var(--accent-light);
+  text-decoration: none;
+  cursor: pointer;
+}
+a.chip:hover, .chip.link:hover {
+  background: var(--accent-glow);
+  color: var(--accent);
+}
 .chip.up { color: var(--up); border-color: rgba(52, 122, 77, 0.4); background: var(--mit-bg); font-weight: 600; }
 .chip.down { color: var(--down); border-color: rgba(168, 61, 41, 0.4); background: #fbeae7; font-weight: 600; }
 .chip.neutral { color: var(--muted); }
@@ -989,31 +1001,31 @@ li { margin: 8px 0; }
 <div class="card">
   <h2>Graf epok</h2>
   <div class="card-sub">Kolejność, odwołania między epokami (poprzednik → kontynuacja) i rozstaje.</div>
-  <svg class="chart graf-chart" viewBox="0 0 880 200" role="img" aria-label="Graf epok z odwołaniami i rozgałęzieniami"><text class="graf-etykieta" x="60.0" y="34.0" text-anchor="middle"><tspan x="60.0">Trzy stoły: przodek,</tspan><tspan x="60.0" dy="13">gospodarz i gość</tspan></text><text class="graf-etykieta" x="186.7" y="34.0" text-anchor="middle"><tspan x="186.7">Nieproszeni goście:</tspan><tspan x="186.7" dy="13">psuj, zaproszony i…</tspan></text><text class="graf-etykieta" x="313.3" y="34.0" text-anchor="middle"><tspan x="313.3">Odźwierni:</tspan><tspan x="313.3" dy="13">zapraszany, otwieran…</tspan></text><text class="graf-etykieta" x="440.0" y="34.0" text-anchor="middle"><tspan x="440.0">Imię na progu: skóra,</tspan><tspan x="440.0" dy="13">kres i pieśń</tspan></text><text class="graf-etykieta" x="566.7" y="34.0" text-anchor="middle"><tspan x="566.7">Zagadka ze spiżu:</tspan><tspan x="566.7" dy="13">rozum, żart i głuchy…</tspan></text><text class="graf-etykieta" x="693.3" y="34.0" text-anchor="middle"><tspan x="693.3">Czwarty stół: kto nie</tspan><tspan x="693.3" dy="13">wie, że bierze</tspan></text><text class="graf-etykieta" x="820.0" y="34.0" text-anchor="middle"><tspan x="820.0">Kolejność: nikt nie</tspan><tspan x="820.0" dy="13">szedł za pierwszym</tspan></text><line class="graf-os" x1="60.0" y1="84" x2="186.7" y2="84" data-od="epoka-1" data-do="epoka-2" /><line class="graf-os" x1="186.7" y1="84" x2="313.3" y2="84" data-od="epoka-2" data-do="epoka-3" /><line class="graf-os" x1="313.3" y1="84" x2="440.0" y2="84" data-od="epoka-3" data-do="epoka-4" /><line class="graf-os" x1="440.0" y1="84" x2="566.7" y2="84" data-od="epoka-4" data-do="epoka-5" /><line class="graf-os" x1="566.7" y1="84" x2="693.3" y2="84" data-od="epoka-5" data-do="epoka-6" /><line class="graf-os" x1="693.3" y1="84" x2="820.0" y2="84" data-od="epoka-6" data-do="epoka-7" /><g class="graf-wezel" transform="translate(60.0,84)">
+  <svg class="chart graf-chart" viewBox="0 0 1100 250" role="img" aria-label="Graf epok z odwołaniami i rozgałęzieniami"><text class="graf-etykieta" x="50.0" y="92.0" text-anchor="middle"><tspan x="50.0">Trzy stoły</tspan></text><text class="graf-etykieta" x="216.7" y="92.0" text-anchor="middle"><tspan x="216.7">Nieproszeni goście</tspan></text><text class="graf-etykieta" x="383.3" y="92.0" text-anchor="middle"><tspan x="383.3">Odźwierni</tspan></text><text class="graf-etykieta" x="550.0" y="92.0" text-anchor="middle"><tspan x="550.0">Imię na progu</tspan></text><text class="graf-etykieta" x="716.7" y="92.0" text-anchor="middle"><tspan x="716.7">Zagadka ze spiżu</tspan></text><text class="graf-etykieta" x="883.3" y="92.0" text-anchor="middle"><tspan x="883.3">Czwarty stół</tspan></text><text class="graf-etykieta" x="1050.0" y="92.0" text-anchor="middle"><tspan x="1050.0">Kolejność</tspan></text><line class="graf-os" x1="50.0" y1="140" x2="216.7" y2="140" data-od="epoka-1" data-do="epoka-2" /><line class="graf-os" x1="216.7" y1="140" x2="383.3" y2="140" data-od="epoka-2" data-do="epoka-3" /><line class="graf-os" x1="383.3" y1="140" x2="550.0" y2="140" data-od="epoka-3" data-do="epoka-4" /><line class="graf-os" x1="550.0" y1="140" x2="716.7" y2="140" data-od="epoka-4" data-do="epoka-5" /><line class="graf-os" x1="716.7" y1="140" x2="883.3" y2="140" data-od="epoka-5" data-do="epoka-6" /><line class="graf-os" x1="883.3" y1="140" x2="1050.0" y2="140" data-od="epoka-6" data-do="epoka-7" /><g class="graf-wezel" transform="translate(50.0,140)">
         <title>epoka-1 — Trzy stoły: przodek, gospodarz i gość</title>
         <circle r="20" />
         <text class="graf-nr" y="6">I</text>
-      </g><g class="graf-wezel" transform="translate(186.7,84)">
+      </g><g class="graf-wezel" transform="translate(216.7,140)">
         <title>epoka-2 — Nieproszeni goście: psuj, zaproszony i zaproszenie</title>
         <circle r="20" />
         <text class="graf-nr" y="6">II</text>
-      </g><g class="graf-wezel" transform="translate(313.3,84)">
+      </g><g class="graf-wezel" transform="translate(383.3,140)">
         <title>epoka-3 — Odźwierni: zapraszany, otwierany i ten, który jest drzwiami</title>
         <circle r="20" />
         <text class="graf-nr" y="6">III</text>
-      </g><g class="graf-wezel" transform="translate(440.0,84)">
+      </g><g class="graf-wezel" transform="translate(550.0,140)">
         <title>epoka-4 — Imię na progu: skóra, kres i pieśń</title>
         <circle r="20" />
         <text class="graf-nr" y="6">IV</text>
-      </g><g class="graf-wezel" transform="translate(566.7,84)">
+      </g><g class="graf-wezel" transform="translate(716.7,140)">
         <title>epoka-5 — Zagadka ze spiżu: rozum, żart i głuchy krok</title>
         <circle r="20" />
         <text class="graf-nr" y="6">V</text>
-      </g><g class="graf-wezel" transform="translate(693.3,84)">
+      </g><g class="graf-wezel" transform="translate(883.3,140)">
         <title>epoka-6 — Czwarty stół: kto nie wie, że bierze</title>
         <circle r="20" />
         <text class="graf-nr" y="6">VI</text>
-      </g><g class="graf-wezel" transform="translate(820.0,84)">
+      </g><g class="graf-wezel" transform="translate(1050.0,140)">
         <title>epoka-7 — Kolejność: nikt nie szedł za pierwszym</title>
         <circle r="20" />
         <text class="graf-nr" y="6">VII</text>

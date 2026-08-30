@@ -1384,12 +1384,14 @@ export function heatmapZasiegowSVG(epoki, nazwy = {}) {
 export function grafEpokSVG(epoki) {
   const epokiLista = epoki || [];
   if (epokiLista.length < 2) return '<p class="muted">Graf epok wymaga co najmniej dwóch epok.</p>';
-  const szer = 880;
-  const wysokosc = 200;
-  const m = { lewo: 60, prawo: 60 };
+  // Szeroki kadr (1100) + krótsze linie etykiet (18 znaków, 2 linie): przy 7
+  // epokach odstęp kolumn ~167 px, więc nazwy się nie zlewają (recenzja 2026-08-30).
+  const szer = 1100;
+  const wysokosc = 250;
+  const m = { lewo: 50, prawo: 50 };
   const szerPlot = szer - m.lewo - m.prawo;
   const x = (i) => m.lewo + (szerPlot * i) / (epokiLista.length - 1);
-  const y = 84;
+  const y = 140;
   const edycja = [];
   const majaOdwolanie = new Set();
   for (let i = 0; i < epokiLista.length - 1; i++) {
@@ -1421,7 +1423,7 @@ export function grafEpokSVG(epoki) {
       const rozgalezienie = e.meta?.rozgalezienie;
       const cls = rozgalezienie ? 'graf-wezel rozgalezienie' : 'graf-wezel';
       const pod = rozgalezienie
-        ? `<g class="graf-galez" transform="translate(${x(i).toFixed(1)},${y + 40})"><path d="M 0 0 L -10 14 L 0 28 L 10 14 Z" /></g>${tekstWieloliniowy(x(i), y + 96, 'graf-galez-opis', rozgalezienie.opis || 'rozstaje', { maxZnakow: 20, maxLinii: 2, dy: 13 })}`
+        ? `<g class="graf-galez" transform="translate(${x(i).toFixed(1)},${y + 36})"><path d="M 0 0 L -10 14 L 0 28 L 10 14 Z" /></g>${tekstWieloliniowy(x(i), y + 80, 'graf-galez-opis', rozgalezienie.opis || 'rozstaje', { maxZnakow: 20, maxLinii: 2, dy: 13 })}`
         : '';
       return `<g class="${cls}" transform="translate(${x(i).toFixed(1)},${y})">
         <title>${esc(e.slug)} — ${esc(e.tytul)}${rozgalezienie ? ' · rozstaje' : ''}</title>
@@ -1430,12 +1432,14 @@ export function grafEpokSVG(epoki) {
       </g>${pod}`;
     })
     .join('');
+  // Krótka forma (część przed „:”, jak w nagłówkach kolumn wątków/macierzy) —
+  // pełny tytuł zostaje w <title> węzła; przy 7 epokach nie ma zlewania.
   const etykiety = epokiLista
     .map((e, i) =>
-      tekstWieloliniowy(x(i), y - 50, 'graf-etykieta', e.tytul, {
-        maxZnakow: 21,
+      tekstWieloliniowy(x(i), y - 48, 'graf-etykieta', String(e.tytul || '').split(':')[0].trim() || e.tytul, {
+        maxZnakow: 18,
         maxLinii: 2,
-        dy: 13,
+        dy: 14,
       })
     )
     .join('');
@@ -2044,6 +2048,18 @@ th {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   display: inline-block;
   white-space: nowrap;
+}
+/* Odnośniki-chip w konwencji brązowego przycisku (recenzja 2026-08-30):
+   link nie może świecić domyślnym niebieskim kolorem przeglądarki. */
+a.chip, .chip.link {
+  color: var(--accent);
+  border-color: var(--accent-light);
+  text-decoration: none;
+  cursor: pointer;
+}
+a.chip:hover, .chip.link:hover {
+  background: var(--accent-glow);
+  color: var(--accent);
 }
 .chip.up { color: var(--up); border-color: rgba(52, 122, 77, 0.4); background: var(--mit-bg); font-weight: 600; }
 .chip.down { color: var(--down); border-color: rgba(168, 61, 41, 0.4); background: #fbeae7; font-weight: 600; }

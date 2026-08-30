@@ -663,3 +663,48 @@ test('S1: raport epoki osadza hero-grafikę z promptem', async () => {
   assert.match(html, /src="\.\.\/assets\/wizualizacje\/kronika-tom-1-epoka-1\.jpg"/);
   assert.match(html, /details class="prompt"/);
 });
+
+test('S1: graf epok — krótkie etykiety nie nachodzą na siebie (recenzja 2026-08-30)', () => {
+  const epoki = [
+    { slug: 'epoka-1', tytul: 'Trzy stoły: przodek, gospodarz i gość' },
+    { slug: 'epoka-2', tytul: 'Nieproszeni goście: psuj, zaproszony i zaproszenie' },
+    { slug: 'epoka-3', tytul: 'Odźwierni: zapraszany, otwierany i ten, który jest drzwiami' },
+    { slug: 'epoka-4', tytul: 'Imię na progu: skóra, kres i pieśń' },
+    { slug: 'epoka-5', tytul: 'Zagadka ze spiżu: rozum, żart i głuchy krok' },
+    { slug: 'epoka-6', tytul: 'Czwarty stół: kto nie wie, że bierze' },
+    { slug: 'epoka-7', tytul: 'Kolejność: nikt nie szedł za pierwszym' },
+  ];
+  const g = grafEpokSVG(epoki);
+  assert.match(g, /viewBox="0 0 1100 250"/, 'szeroki kadr');
+  const etykiety = [...g.matchAll(/<text class="graf-etykieta" x="([\d.]+)"/g)].map((m) => Number(m[1]));
+  assert.equal(etykiety.length, 7);
+  const odstępy = etykiety.slice(1).map((x, i) => x - etykiety[i]);
+  assert.ok(odstępy.every((d) => d >= 160), `odstępy ${odstępy} — etykiety się nie zlewają`);
+  for (const m of g.matchAll(/<text class="graf-etykieta"[^>]*>(.*?)<\/text>/g)) {
+    const czysto = m[1].replace(/<[^>]+>/g, ' ');
+    assert.ok(czysto.trim().length <= 18, `etykieta krótka: „${czysto.trim()}”`);
+    assert.ok((m[1].match(/<tspan/g) ?? []).length <= 2, 'maks. 2 linie');
+  }
+  assert.ok(g.includes('<title>') && g.includes('przodek, gospodarz'), 'pełny tytuł dostępny w tooltipie węzła');
+});
+
+test('Kronika CSS: odnośniki-chip w konwencji brązowego przycisku (recenzja 2026-08-30)', () => {
+  assert.match(KRONIKA_CSS, /a\.chip\s*,\s*\.chip\.link\s*\{[^}]*color:\s*var\(--accent\)/s, 'a.chip ma brązowy kolor');
+  assert.match(KRONIKA_CSS, /a\.chip\s*,\s*\.chip\.link\s*\{[^}]*text-decoration:\s*none/s, 'bez podkreślenia');
+});
+
+test('U4: raport epoki linkuje epoki powiązane jako chipy (nie gołe linki)', async () => {
+  const [tom, epoka3, indeks, kanon] = await Promise.all([
+    wczytaj(PLIK_TOM_1),
+    wczytaj(join(KATALOG_KRONIKA, 'epoka-3.json')),
+    wczytaj(PLIK_INDEKSU),
+    wczytaj(PLIK_KANONU),
+  ]);
+  const wynik = przeliczEpoke({ tom, epoka: epoka3, indeks, kanon, stan: structuredClone(tom.stanStart), watkiPoprzednie: new Map() });
+  wynik.liczbaEpok = 7;
+  wynik.wszystkieManifestacje = indeks.manifestacje;
+  const html = generujRaportHTML(wynik);
+  assert.match(html, /Epoki powiązane:/);
+  assert.match(html, /<a class="chip" href="kronika-epoka-[0-9]+\.html">epoka-[0-9]+<\/a>/, 'chip, nie goły <a>');
+  assert.match(html, /a\.chip/, 'CSS z regułą brązowego przycisku');
+});
