@@ -114,8 +114,7 @@
   Wymagałby decyzji: martwy link = ostrzeżenie czy błąd walidatora.
   **Potwierdzony przypadek (2026-08-30):** Theoi „HephaestusWorks”
   w kartotece `talos-kreta` → 404 („File not found”).
-- **Widok druku (media print) dla warstwy wpisu** — kartoteka na A4 jako PDF;
-  dziś warstwa przykrywa okno i nie ma stylów drukowych.
+- ~~**Widok druku (media print) dla warstwy wpisu**~~ — **WDROŻONE (2026-08-30, PR #12, C2 pętla jakości):** przycisk „🖨 drukuj” w kartotece → `window.print()`; arkusz `@media print` chowa topbar/mapę/listę i pokazuje otwartą kartotekę na białym tle z ciemnym tekstem (cache-bust `c5-8`). Do akceptacji właściciela przed live.
 - **Znacznik „źródło bez adresu” w UI** — pozycje bez `url` (papier) warto
   oznaczać inną kursywą, żeby czytelnik wiedział, czego nie da się kliknąć.
 - **Aspekt motywu w testach** — trzymać kontrakt tokenów (lista zmiennych
@@ -131,5 +130,4 @@
 - **Walidator spójności faktograficznej** — heurystyka ostrzegająca, gdy skit
   przywołuje zwyczaj/nazwę własną nieobecną w kartach uczestników (twarda
   egzekucja wymaga NLP — poza zakresem ADR 0001).
-- **Nagrania/lektor** — odczyt skitu na głos (web speech API, bez zależności)
-  jako opcja przystępności.
+- ~~**Nagrania/lektor**~~ — **WDROŻONE (2026-08-30, PR #12, C2 pętla jakości):** przycisk „🔊 odsłuchaj” w widoku skitu czyta dialog na głos (Web Speech API, głos `pl-PL`, jeśli dostępny), „⏹ stop” przerywa; brak API = przycisk grzecznie się poddaje (cache-bust `c5-9`). Do akceptacji właściciela przed live.

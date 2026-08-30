@@ -1760,3 +1760,32 @@ Brama: `npm test` **191/191**, `npm run check` zielone; indeks 20 wpisów /
 
 Brama po poprawkach: `npm test` 202/202, `npm run build` + `npm run check`
 zielone.
+
+## Sesja 2026-08-30 (gałąź arena/01a0549a-ame) — Pętla Jakości (C1 → C3 → C2)
+
+Po audycie PR #10 (wyżej) bez zaległości i bez zlecenia właściciela — weszła
+Pętla Jakości (ADR 0007), rekurencyjnie do wyczerpania budżetu sesji.
+
+**C1 — treść (wiki; research www obowiązkowy — ADR 0008):**
+- `syama-i-sarvara` — dopisana matka Saramā i dialog z Paṇi (RV 10.108,
+  Griffith 1896) jako 4. źródło; passus o Saramie w `pochodzenie_i_kultura`.
+- `pandora` — dopisana genealogia: córka Pyrrha (z Epimeteuszem) i Deukalion,
+  którzy przeżyli potop i odtworzyli ludzkość (Theoi; Apollodoros 1.46;
+  Hygin „Fabulae” 142).
+
+**C3 — SKITy (unikalny skład, ADR 0013/0019):**
+- „Zapłata za przewóz” — Nessos × Śyāma i Śarvara × Kannon, 248 słów,
+  temat „cena przeprawy”.
+- „Z gliny i spiżu” — Pandora × Talos z Krety × Knecht, 205 słów, temat
+  „ulepieni, nie urodzeni — rzecz, która przekracza instrukcję”.
+
+**C2 — featury (z testami; do akceptacji właściciela przed live):**
+- Widok druku / PDF kartoteki (`@media print` + przycisk „🖨 drukuj” →
+  `window.print()`); cache-bust `c5-7` → `c5-8`.
+- Lektor skitów (Web Speech API): „🔊 odsłuchaj” czyta dialog na głos
+  (głos `pl-PL`, jeśli dostępny), „⏹ stop” przerywa; czysta funkcja
+  `tekstDoLektora()` wyciąga sam dialog (bez `**` i didaskaliów); brak API =
+  przycisk grzecznie się poddaje; cache-bust `c5-8` → `c5-9`.
+
+Brama po każdym commicie: `npm test` **205/205**, `npm run build` + `npm run
+check` zielone (bez zapisu). Featury zweryfikowane live w headless Chromium.
