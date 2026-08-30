@@ -736,6 +736,103 @@ li { margin: 8px 0; }
   text-align: center;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
+
+/* S1 — wizualizacje Kroniki */
+.ramka-epoki { background: var(--card-alt); border: 1px solid var(--line); border-left: 4px solid var(--accent); border-radius: 10px; padding: 18px 20px; margin: 18px 0 24px; }
+.ramka-pytanie { margin: 0 0 10px; font-size: 19px; font-weight: 700; color: var(--fg); }
+.ramka-iskra { margin: 0 0 10px; padding: 0 0 0 14px; border-left: 3px solid var(--accent-light); font-style: italic; color: var(--muted); }
+.ramka-przebieg summary { cursor: pointer; font-size: 13px; color: var(--accent-light); }
+.ramka-przebieg p { margin: 8px 0 0; font-size: 14px; }
+.ramka-rozgalezienie { margin-top: 12px; padding: 10px 12px; background: var(--card); border: 1px dashed var(--accent-light); border-radius: 8px; font-size: 14px; }
+.ramka-rozgalezienie ul { margin: 6px 0 0; padding-left: 20px; }
+
+.chart { width: 100%; height: auto; display: block; }
+.os-grid { stroke: var(--line); stroke-width: 1; }
+.os-grid-label { fill: var(--muted); font-size: 10px; text-anchor: end; }
+.os-area { fill: var(--mit); fill-opacity: 0.12; }
+.os-line { fill: none; stroke: var(--mit); stroke-width: 2.5; stroke-linejoin: round; }
+.os-dot circle { fill: var(--accent); stroke: var(--fg); stroke-width: 1.5; }
+.os-wartosc { fill: var(--fg); font-size: 11px; text-anchor: middle; }
+.os-label { fill: var(--muted); font-size: 12px; }
+
+.zasieg-chip, .zasieg-wiersz text { font-size: 12px; }
+.zasieg-etykieta { fill: var(--fg); font-weight: 600; }
+.zasieg-tor { fill: var(--card-alt); stroke: var(--line); stroke-width: 1; }
+.zasieg-przed { fill: var(--muted); opacity: 0.45; }
+.zasieg-po { fill: var(--accent); }
+.zasieg-po.up { fill: var(--up); }
+.zasieg-po.down { fill: var(--down); }
+.zasieg-delta { fill: var(--muted); font-weight: 700; }
+.zasieg-delta.up { fill: var(--up); }
+.zasieg-delta.down { fill: var(--down); }
+.chart-legenda { fill: var(--muted); font-size: 11px; }
+.leg-przed { fill: var(--muted); }
+.leg-po { fill: var(--accent); }
+
+.wykres-paliwa { display: flex; gap: 10px; align-items: flex-start; flex-wrap: wrap; }
+.paliwo-chart { flex: 1 1 520px; min-width: 0; }
+.paliwo-linia { fill: none; stroke-width: 2.2; stroke-linejoin: round; }
+.paliwo-punkt { stroke: var(--card); stroke-width: 1; }
+.paliwo-os, .paliwo-os-x { fill: var(--muted); font-size: 11px; text-anchor: end; }
+.paliwo-os-x { text-anchor: middle; }
+.paliwo-legenda-box { flex: 0 1 200px; display: flex; flex-direction: column; gap: 4px; font-size: 13px; }
+.paliwo-legenda { display: flex; gap: 8px; align-items: center; color: var(--fg); }
+.paliwo-legenda .kropka { width: 10px; height: 10px; border-radius: 50%; background: var(--l); display: inline-block; }
+.paliwo-legenda b { margin-left: auto; }
+
+.dom-tor { fill: var(--card-alt); stroke: var(--line); stroke-width: 1; }
+.dom-bar { fill: var(--accent); }
+.dom-etykieta { fill: var(--fg); font-size: 12.5px; font-weight: 600; }
+.dom-kropka { fill: var(--accent); }
+.dom-delta { fill: var(--muted); font-size: 12px; }
+.dom-delta.up { fill: var(--up); }
+.dom-delta.down { fill: var(--down); }
+
+.rel-elipsa { fill: none; stroke: var(--line); stroke-dasharray: 4 5; }
+.rel-luk { fill: none; stroke-width: 2.4; }
+.rel-luk.wzmocnienie { stroke: var(--up); }
+.rel-luk.schlodzenie { stroke: var(--down); }
+.rel-luk.neutralna { stroke: var(--muted); stroke-dasharray: 5 4; }
+.rel-wezel circle { fill: var(--card); stroke: var(--accent); stroke-width: 1.6; }
+.rel-emoji { text-anchor: middle; font-size: 26px; }
+.rel-nazwa { text-anchor: middle; font-size: 12.5px; fill: var(--fg); font-weight: 600; }
+.rel-legenda { display: flex; gap: 18px; margin-top: 6px; font-size: 12px; color: var(--muted); }
+.rel-leg.wzmocnienie { border-bottom: 3px solid var(--up); }
+.rel-leg.schlodzenie { border-bottom: 3px solid var(--down); }
+.rel-leg.neutralna { border-bottom: 3px dashed var(--muted); }
+
+.watki-linia { stroke: var(--accent-light); stroke-width: 2; }
+.watki-marker { stroke: var(--card); stroke-width: 2; }
+.watki-marker.otwarty { fill: var(--up); }
+.watki-marker.zamkniety { fill: var(--down); }
+.watki-etykieta { fill: var(--fg); font-size: 12px; }
+.watki-os-x { fill: var(--muted); font-size: 11px; }
+
+.heat-cell { fill: var(--accent); stroke: var(--card); }
+.heat-etykieta { fill: var(--fg); font-size: 12.5px; font-weight: 600; }
+.heat-sum { fill: var(--muted); font-size: 12px; }
+.heat-os-x { fill: var(--muted); font-size: 12px; }
+
+.graf-os { stroke: var(--accent); stroke-width: 2.4; }
+.graf-odwolanie { stroke: var(--accent-light); stroke-width: 1.6; stroke-dasharray: 6 4; }
+.graf-wezel circle { fill: var(--card); stroke: var(--accent); stroke-width: 2; }
+.graf-wezel.rozgalezienie circle { fill: var(--accent-light); }
+.graf-nr { text-anchor: middle; fill: var(--fg); font-size: 13px; font-weight: 700; }
+.graf-etykieta { fill: var(--muted); font-size: 11.5px; }
+.graf-galez path { fill: var(--accent-light); }
+.graf-galez-opis { fill: var(--muted); font-size: 11px; }
+
+.tomy-pasek { display: flex; gap: 8px; flex-wrap: wrap; margin: 0 0 14px; }
+.tomy-pasek .pager-btn.aktywny { background: var(--accent); color: var(--card); }
+.filtr-bytow { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin: 0 0 12px; font-size: 13px; }
+.filtr-bytow select { padding: 4px 8px; font: inherit; font-size: 13px; color: var(--fg); background: var(--card); border: 1px solid var(--line); border-radius: 6px; }
+.epoka-card.podswietlone { outline: 2px solid var(--accent); outline-offset: 2px; }
+.powiazane-epoki { margin: 22px 0 0; font-size: 13.5px; color: var(--muted); }
+.powiazane-epoki .chip { text-decoration: none; }
+.dziennik { width: 100%; border-collapse: collapse; }
+.dziennik th, .dziennik td { padding: 7px 8px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; font-size: 13.5px; }
+.dziennik .num { text-align: right; white-space: nowrap; }
+.tom-karta { max-width: 640px; }
 </style>
 </head>
 <body><div class="wrap">
@@ -751,7 +848,7 @@ li { margin: 8px 0; }
       <a id="przycisk-lista" class="przycisk" href="../index.html#lista" title="Lista wszystkich manifestacji">☰ kartoteka</a>
       <a id="przycisk-skity" class="przycisk" href="../index.html#skity" title="Baza Skitów — rozmowy materializacji">✎ skity</a>
       <a id="przycisk-nowosci" class="przycisk" href="../index.html#nowosci" title="Co nowego — aktualizacje archiwum">✚ nowości</a>
-      <a id="przycisk-kronika" class="przycisk aktywny" href="kronika-tom-1.html" title="Kronika świata AME — tocząca się opowieść epok">📜 kronika</a>
+      <a id="przycisk-kronika" class="przycisk aktywny" href="kronika.html" title="Kronika świata AME — tocząca się opowieść epok">📜 kronika</a>
       <button id="przycisk-motyw" class="przycisk przycisk-motyw" type="button" aria-pressed="false" title="Przełącz tryb ciemny/jasny" onclick="const m = document.documentElement.dataset.motyw === 'jasny' ? 'ciemny' : 'jasny'; document.documentElement.dataset.motyw = m; localStorage.setItem('ame:motyw', m); this.innerHTML = m === 'jasny' ? '☀ jasny' : '☾ ciemny'; this.setAttribute('aria-pressed', String(m === 'jasny'));">☾ motyw</button>
     </div>
   </header>
@@ -770,6 +867,7 @@ li { margin: 8px 0; }
     <span class="badge ok">6 epok zamkniętych</span>
     <span class="badge">Oś stabilna: MIT 27% / RAC 73%</span>
   </div>
+  
   <h1>Kronika trzech stołów</h1>
   <p class="sub">Oficjalna księga Tomu I Kroniki. Zapis starć, układów gościnności i przesunięć granicy między mitem a racjonalizacją.</p>
   
@@ -782,6 +880,37 @@ li { margin: 8px 0; }
       <div class="mit-bar" style="width:27%"></div>
     </div>
   </div>
+</div>
+
+<!-- S3: os czasu epok z odwołaniami i rozgałęzieniami -->
+<div class="card">
+  <h2>Graf epok</h2>
+  <div class="card-sub">Kolejność, odwołania między epokami (poprzednik → kontynuacja) i rozstaje.</div>
+  <svg class="chart graf-chart" viewBox="0 0 880 150" role="img" aria-label="Graf epok z odwołaniami i rozgałęzieniami"><text class="graf-etykieta" x="60.0" y="50.0" text-anchor="middle">Trzy stoły: przodek, go…</text><text class="graf-etykieta" x="212.0" y="50.0" text-anchor="middle">Nieproszeni goście: psu…</text><text class="graf-etykieta" x="364.0" y="50.0" text-anchor="middle">Odźwierni: zapraszany, …</text><text class="graf-etykieta" x="516.0" y="50.0" text-anchor="middle">Imię na progu: skóra, k…</text><text class="graf-etykieta" x="668.0" y="50.0" text-anchor="middle">Zagadka ze spiżu: rozum…</text><text class="graf-etykieta" x="820.0" y="50.0" text-anchor="middle">Czwarty stół: kto nie w…</text><line class="graf-os" x1="60.0" y1="84" x2="212.0" y2="84" data-od="epoka-1" data-do="epoka-2" /><line class="graf-os" x1="212.0" y1="84" x2="364.0" y2="84" data-od="epoka-2" data-do="epoka-3" /><line class="graf-os" x1="364.0" y1="84" x2="516.0" y2="84" data-od="epoka-3" data-do="epoka-4" /><line class="graf-os" x1="516.0" y1="84" x2="668.0" y2="84" data-od="epoka-4" data-do="epoka-5" /><line class="graf-os" x1="668.0" y1="84" x2="820.0" y2="84" data-od="epoka-5" data-do="epoka-6" /><g class="graf-wezel" transform="translate(60.0,84)">
+        <title>epoka-1 — Trzy stoły: przodek, gospodarz i gość</title>
+        <circle r="20" />
+        <text class="graf-nr" y="6">I</text>
+      </g><g class="graf-wezel" transform="translate(212.0,84)">
+        <title>epoka-2 — Nieproszeni goście: psuj, zaproszony i zaproszenie</title>
+        <circle r="20" />
+        <text class="graf-nr" y="6">II</text>
+      </g><g class="graf-wezel" transform="translate(364.0,84)">
+        <title>epoka-3 — Odźwierni: zapraszany, otwierany i ten, który jest drzwiami</title>
+        <circle r="20" />
+        <text class="graf-nr" y="6">III</text>
+      </g><g class="graf-wezel" transform="translate(516.0,84)">
+        <title>epoka-4 — Imię na progu: skóra, kres i pieśń</title>
+        <circle r="20" />
+        <text class="graf-nr" y="6">IV</text>
+      </g><g class="graf-wezel" transform="translate(668.0,84)">
+        <title>epoka-5 — Zagadka ze spiżu: rozum, żart i głuchy krok</title>
+        <circle r="20" />
+        <text class="graf-nr" y="6">V</text>
+      </g><g class="graf-wezel" transform="translate(820.0,84)">
+        <title>epoka-6 — Czwarty stół: kto nie wie, że bierze</title>
+        <circle r="20" />
+        <text class="graf-nr" y="6">VI</text>
+      </g></svg>
 </div>
 
 <!-- GLOBALNA MAPA TOMU I -->
@@ -830,211 +959,212 @@ li { margin: 8px 0; }
       <!-- Łuki interakcji między uczestnikami -->
       <g class="arcs">
         
-        <path class="arc-glow" d="M 1718 1134 Q 1814.5 1135.9522504920576 1911 1199" />
-        <path class="arc-line" d="M 1718 1134 Q 1814.5 1135.9522504920576 1911 1199" />
-      
-        <path class="arc-glow" d="M 1718 1134 Q 1778.5 1367.5 1839 1721" />
-        <path class="arc-line" d="M 1718 1134 Q 1778.5 1367.5 1839 1721" />
-      
-        <path class="arc-glow" d="M 1718 1134 Q 1873.5 1202 2029 1390" />
-        <path class="arc-line" d="M 1718 1134 Q 1873.5 1202 2029 1390" />
-      
-        <path class="arc-glow" d="M 1718 1134 Q 2161.5 1264.5 2605 1515" />
-        <path class="arc-line" d="M 1718 1134 Q 2161.5 1264.5 2605 1515" />
-      
-        <path class="arc-glow" d="M 1718 1134 Q 1874.5 1193.1998086737806 2031 1370" />
-        <path class="arc-line" d="M 1718 1134 Q 1874.5 1193.1998086737806 2031 1370" />
-      
-        <path class="arc-glow" d="M 1718 1134 Q 1756.5 1138.8128017277256 1795 1169" />
-        <path class="arc-line" d="M 1718 1134 Q 1756.5 1138.8128017277256 1795 1169" />
-      
-        <path class="arc-glow" d="M 1718 1134 Q 1847 1108.5886584656864 1976 1161" />
-        <path class="arc-line" d="M 1718 1134 Q 1847 1108.5886584656864 1976 1161" />
-      
-        <path class="arc-glow" d="M 1718 1134 Q 1877.5 1201.5 2037 1389" />
-        <path class="arc-line" d="M 1718 1134 Q 1877.5 1201.5 2037 1389" />
-      
-        <path class="arc-glow" d="M 1718 1134 Q 1737 1087.0526153489561 1756 1064" />
-        <path class="arc-line" d="M 1718 1134 Q 1737 1087.0526153489561 1756 1064" />
-      
-        <path class="arc-glow" d="M 1718 1134 Q 1875.5 1199.5 2033 1385" />
-        <path class="arc-line" d="M 1718 1134 Q 1875.5 1199.5 2033 1385" />
-      
-        <path class="arc-glow" d="M 1718 1134 Q 1885 1218 2052 1422" />
-        <path class="arc-line" d="M 1718 1134 Q 1885 1218 2052 1422" />
-      
-        <path class="arc-glow" d="M 1911 1199 Q 1875 1400 1839 1721" />
-        <path class="arc-line" d="M 1911 1199 Q 1875 1400 1839 1721" />
-      
-        <path class="arc-glow" d="M 1911 1199 Q 1970 1260.8234131776987 2029 1390" />
-        <path class="arc-line" d="M 1911 1199 Q 1970 1260.8234131776987 2029 1390" />
-      
-        <path class="arc-glow" d="M 1911 1199 Q 2258 1297 2605 1515" />
-        <path class="arc-line" d="M 1911 1199 Q 2258 1297 2605 1515" />
-      
-        <path class="arc-glow" d="M 1911 1199 Q 1971 1253.1643573546035 2031 1370" />
-        <path class="arc-line" d="M 1911 1199 Q 1971 1253.1643573546035 2031 1370" />
-      
-        <path class="arc-glow" d="M 1911 1199 Q 1853 1166.0275210390998 1795 1169" />
-        <path class="arc-line" d="M 1911 1199 Q 1853 1166.0275210390998 1795 1169" />
-      
-        <path class="arc-glow" d="M 1911 1199 Q 1943.5 1168.7060857095514 1976 1161" />
-        <path class="arc-line" d="M 1911 1199 Q 1943.5 1168.7060857095514 1976 1161" />
-      
-        <path class="arc-glow" d="M 1911 1199 Q 1974 1259.8026316802009 2037 1389" />
-        <path class="arc-line" d="M 1911 1199 Q 1974 1259.8026316802009 2037 1389" />
-      
-        <path class="arc-glow" d="M 1911 1199 Q 1833.5 1100.6677928133583 1756 1064" />
-        <path class="arc-line" d="M 1911 1199 Q 1833.5 1100.6677928133583 1756 1064" />
-      
-        <path class="arc-glow" d="M 1911 1199 Q 1972 1258.6338494878416 2033 1385" />
-        <path class="arc-line" d="M 1911 1199 Q 1972 1258.6338494878416 2033 1385" />
-      
-        <path class="arc-glow" d="M 1911 1199 Q 1981.5 1270.924439359625 2052 1422" />
-        <path class="arc-line" d="M 1911 1199 Q 1981.5 1270.924439359625 2052 1422" />
-      
-        <path class="arc-glow" d="M 1839 1721 Q 1934 1498.2516594126957 2029 1390" />
-        <path class="arc-line" d="M 1839 1721 Q 1934 1498.2516594126957 2029 1390" />
-      
-        <path class="arc-glow" d="M 1839 1721 Q 2222 1558 2605 1515" />
-        <path class="arc-line" d="M 1839 1721 Q 2222 1558 2605 1515" />
-      
-        <path class="arc-glow" d="M 1839 1721 Q 1935 1485.5 2031 1370" />
-        <path class="arc-line" d="M 1839 1721 Q 1935 1485.5 2031 1370" />
-      
-        <path class="arc-glow" d="M 1839 1721 Q 1817 1385 1795 1169" />
-        <path class="arc-line" d="M 1839 1721 Q 1817 1385 1795 1169" />
-      
-        <path class="arc-glow" d="M 1839 1721 Q 1907.5 1381 1976 1161" />
-        <path class="arc-line" d="M 1839 1721 Q 1907.5 1381 1976 1161" />
-      
-        <path class="arc-glow" d="M 1839 1721 Q 1938 1497.0161229305938 2037 1389" />
-        <path class="arc-line" d="M 1839 1721 Q 1938 1497.0161229305938 2037 1389" />
-      
-        <path class="arc-glow" d="M 1839 1721 Q 1797.5 1332.5 1756 1064" />
-        <path class="arc-line" d="M 1839 1721 Q 1797.5 1332.5 1756 1064" />
-      
-        <path class="arc-glow" d="M 1839 1721 Q 1936 1494.8023196338547 2033 1385" />
-        <path class="arc-line" d="M 1839 1721 Q 1936 1494.8023196338547 2033 1385" />
-      
-        <path class="arc-glow" d="M 1839 1721 Q 1945.5 1516.4334493544402 2052 1422" />
-        <path class="arc-line" d="M 1839 1721 Q 1945.5 1516.4334493544402 2052 1422" />
-      
-        <path class="arc-glow" d="M 2029 1390 Q 2317 1392.5 2605 1515" />
-        <path class="arc-line" d="M 2029 1390 Q 2317 1392.5 2605 1515" />
-      
-        <path class="arc-glow" d="M 2029 1390 Q 2030 1376.9850373136637 2031 1370" />
-        <path class="arc-line" d="M 2029 1390 Q 2030 1376.9850373136637 2031 1370" />
-      
-        <path class="arc-glow" d="M 2029 1390 Q 1912 1231.220268227754 1795 1169" />
-        <path class="arc-line" d="M 2029 1390 Q 1912 1231.220268227754 1795 1169" />
-      
-        <path class="arc-glow" d="M 2029 1390 Q 2002.5 1240.2420221793705 1976 1161" />
-        <path class="arc-line" d="M 2029 1390 Q 2002.5 1240.2420221793705 1976 1161" />
-      
-        <path class="arc-glow" d="M 2029 1390 Q 2033 1388.2906613377552 2037 1389" />
-        <path class="arc-line" d="M 2029 1390 Q 2033 1388.2906613377552 2037 1389" />
-      
-        <path class="arc-glow" d="M 2029 1390 Q 1892.5 1167 1756 1064" />
-        <path class="arc-line" d="M 2029 1390 Q 1892.5 1167 1756 1064" />
-      
-        <path class="arc-glow" d="M 2029 1390 Q 2031 1386.539531364385 2033 1385" />
-        <path class="arc-line" d="M 2029 1390 Q 2031 1386.539531364385 2033 1385" />
-      
-        <path class="arc-glow" d="M 2029 1390 Q 2040.5 1400.0887818514286 2052 1422" />
-        <path class="arc-line" d="M 2029 1390 Q 2040.5 1400.0887818514286 2052 1422" />
-      
-        <path class="arc-glow" d="M 2605 1515 Q 2318 1382.5 2031 1370" />
-        <path class="arc-line" d="M 2605 1515 Q 2318 1382.5 2031 1370" />
-      
-        <path class="arc-glow" d="M 2605 1515 Q 2200 1282 1795 1169" />
-        <path class="arc-line" d="M 2605 1515 Q 2200 1282 1795 1169" />
-      
-        <path class="arc-glow" d="M 2605 1515 Q 2290.5 1278 1976 1161" />
-        <path class="arc-line" d="M 2605 1515 Q 2290.5 1278 1976 1161" />
-      
-        <path class="arc-glow" d="M 2605 1515 Q 2321 1392 2037 1389" />
-        <path class="arc-line" d="M 2605 1515 Q 2321 1392 2037 1389" />
-      
-        <path class="arc-glow" d="M 2605 1515 Q 2180.5 1229.5 1756 1064" />
-        <path class="arc-line" d="M 2605 1515 Q 2180.5 1229.5 1756 1064" />
-      
-        <path class="arc-glow" d="M 2605 1515 Q 2319 1390 2033 1385" />
-        <path class="arc-line" d="M 2605 1515 Q 2319 1390 2033 1385" />
-      
-        <path class="arc-glow" d="M 2605 1515 Q 2328.5 1408.5 2052 1422" />
-        <path class="arc-line" d="M 2605 1515 Q 2328.5 1408.5 2052 1422" />
-      
-        <path class="arc-glow" d="M 2031 1370 Q 1913 1223.0007258121161 1795 1169" />
-        <path class="arc-line" d="M 2031 1370 Q 1913 1223.0007258121161 1795 1169" />
-      
-        <path class="arc-glow" d="M 2031 1370 Q 2003.5 1233.082643537759 1976 1161" />
-        <path class="arc-line" d="M 2031 1370 Q 2003.5 1233.082643537759 1976 1161" />
-      
-        <path class="arc-glow" d="M 2031 1370 Q 2034 1376.5112711732243 2037 1389" />
-        <path class="arc-line" d="M 2031 1370 Q 2034 1376.5112711732243 2037 1389" />
-      
-        <path class="arc-glow" d="M 2031 1370 Q 1893.5 1157 1756 1064" />
-        <path class="arc-line" d="M 2031 1370 Q 1893.5 1157 1756 1064" />
-      
-        <path class="arc-glow" d="M 2031 1370 Q 2032 1375.2300881074368 2033 1385" />
-        <path class="arc-line" d="M 2031 1370 Q 2032 1375.2300881074368 2033 1385" />
-      
-        <path class="arc-glow" d="M 2031 1370 Q 2041.5 1387.587955064314 2052 1422" />
-        <path class="arc-line" d="M 2031 1370 Q 2041.5 1387.587955064314 2052 1422" />
-      
-        <path class="arc-glow" d="M 1795 1169 Q 1885.5 1137.8234936020099 1976 1161" />
-        <path class="arc-line" d="M 1795 1169 Q 1885.5 1137.8234936020099 1976 1161" />
-      
-        <path class="arc-glow" d="M 1795 1169 Q 1916 1229.941973133849 2037 1389" />
-        <path class="arc-line" d="M 1795 1169 Q 1916 1229.941973133849 2037 1389" />
-      
-        <path class="arc-glow" d="M 1795 1169 Q 1775.5 1099.698660767665 1756 1064" />
-        <path class="arc-line" d="M 1795 1169 Q 1775.5 1099.698660767665 1756 1064" />
-      
-        <path class="arc-glow" d="M 1795 1169 Q 1914 1228.7895239600355 2033 1385" />
-        <path class="arc-line" d="M 1795 1169 Q 1914 1228.7895239600355 2033 1385" />
-      
-        <path class="arc-glow" d="M 1795 1169 Q 1923.5 1241.4046674841536 2052 1422" />
-        <path class="arc-line" d="M 1795 1169 Q 1923.5 1241.4046674841536 2052 1422" />
-      
-        <path class="arc-glow" d="M 1976 1161 Q 2006.5 1239.5971399460439 2037 1389" />
-        <path class="arc-line" d="M 1976 1161 Q 2006.5 1239.5971399460439 2037 1389" />
-      
-        <path class="arc-glow" d="M 1976 1161 Q 1866 1076.4347466389047 1756 1064" />
-        <path class="arc-line" d="M 1976 1161 Q 1866 1076.4347466389047 1756 1064" />
-      
-        <path class="arc-glow" d="M 1976 1161 Q 2004.5 1238.3292270060213 2033 1385" />
-        <path class="arc-line" d="M 1976 1161 Q 2004.5 1238.3292270060213 2033 1385" />
-      
-        <path class="arc-glow" d="M 1976 1161 Q 2014 1250.723996027075 2052 1422" />
-        <path class="arc-line" d="M 1976 1161 Q 2014 1250.723996027075 2052 1422" />
-      
-        <path class="arc-glow" d="M 2037 1389 Q 1896.5 1166.5 1756 1064" />
-        <path class="arc-line" d="M 2037 1389 Q 1896.5 1166.5 1756 1064" />
-      
-        <path class="arc-glow" d="M 2037 1389 Q 2035 1386.151471862576 2033 1385" />
-        <path class="arc-line" d="M 2037 1389 Q 2035 1386.151471862576 2033 1385" />
-      
-        <path class="arc-glow" d="M 2037 1389 Q 2044.5 1400.0626293118823 2052 1422" />
-        <path class="arc-line" d="M 2037 1389 Q 2044.5 1400.0626293118823 2052 1422" />
-      
-        <path class="arc-glow" d="M 1756 1064 Q 1894.5 1164.5 2033 1385" />
-        <path class="arc-line" d="M 1756 1064 Q 1894.5 1164.5 2033 1385" />
-      
-        <path class="arc-glow" d="M 1756 1064 Q 1904 1183 2052 1422" />
-        <path class="arc-line" d="M 1756 1064 Q 1904 1183 2052 1422" />
-      
-        <path class="arc-glow" d="M 2033 1385 Q 2042.5 1397.2610096970743 2052 1422" />
-        <path class="arc-line" d="M 2033 1385 Q 2042.5 1397.2610096970743 2052 1422" />
-      
+          <path class="arc-glow" d="M 1718 1134 Q 1814.5 1135.9522504920576 1911 1199" />
+          <path class="arc-line" d="M 1718 1134 Q 1814.5 1135.9522504920576 1911 1199" />
+        
+          <path class="arc-glow" d="M 1718 1134 Q 1778.5 1367.5 1839 1721" />
+          <path class="arc-line" d="M 1718 1134 Q 1778.5 1367.5 1839 1721" />
+        
+          <path class="arc-glow" d="M 1718 1134 Q 1873.5 1202 2029 1390" />
+          <path class="arc-line" d="M 1718 1134 Q 1873.5 1202 2029 1390" />
+        
+          <path class="arc-glow" d="M 1718 1134 Q 2161.5 1264.5 2605 1515" />
+          <path class="arc-line" d="M 1718 1134 Q 2161.5 1264.5 2605 1515" />
+        
+          <path class="arc-glow" d="M 1718 1134 Q 1874.5 1193.1998086737806 2031 1370" />
+          <path class="arc-line" d="M 1718 1134 Q 1874.5 1193.1998086737806 2031 1370" />
+        
+          <path class="arc-glow" d="M 1718 1134 Q 1756.5 1138.8128017277256 1795 1169" />
+          <path class="arc-line" d="M 1718 1134 Q 1756.5 1138.8128017277256 1795 1169" />
+        
+          <path class="arc-glow" d="M 1718 1134 Q 1847 1108.5886584656864 1976 1161" />
+          <path class="arc-line" d="M 1718 1134 Q 1847 1108.5886584656864 1976 1161" />
+        
+          <path class="arc-glow" d="M 1718 1134 Q 1877.5 1201.5 2037 1389" />
+          <path class="arc-line" d="M 1718 1134 Q 1877.5 1201.5 2037 1389" />
+        
+          <path class="arc-glow" d="M 1718 1134 Q 1737 1087.0526153489561 1756 1064" />
+          <path class="arc-line" d="M 1718 1134 Q 1737 1087.0526153489561 1756 1064" />
+        
+          <path class="arc-glow" d="M 1718 1134 Q 1875.5 1199.5 2033 1385" />
+          <path class="arc-line" d="M 1718 1134 Q 1875.5 1199.5 2033 1385" />
+        
+          <path class="arc-glow" d="M 1718 1134 Q 1885 1218 2052 1422" />
+          <path class="arc-line" d="M 1718 1134 Q 1885 1218 2052 1422" />
+        
+          <path class="arc-glow" d="M 1911 1199 Q 1875 1400 1839 1721" />
+          <path class="arc-line" d="M 1911 1199 Q 1875 1400 1839 1721" />
+        
+          <path class="arc-glow" d="M 1911 1199 Q 1970 1260.8234131776987 2029 1390" />
+          <path class="arc-line" d="M 1911 1199 Q 1970 1260.8234131776987 2029 1390" />
+        
+          <path class="arc-glow" d="M 1911 1199 Q 2258 1297 2605 1515" />
+          <path class="arc-line" d="M 1911 1199 Q 2258 1297 2605 1515" />
+        
+          <path class="arc-glow" d="M 1911 1199 Q 1971 1253.1643573546035 2031 1370" />
+          <path class="arc-line" d="M 1911 1199 Q 1971 1253.1643573546035 2031 1370" />
+        
+          <path class="arc-glow" d="M 1911 1199 Q 1853 1166.0275210390998 1795 1169" />
+          <path class="arc-line" d="M 1911 1199 Q 1853 1166.0275210390998 1795 1169" />
+        
+          <path class="arc-glow" d="M 1911 1199 Q 1943.5 1168.7060857095514 1976 1161" />
+          <path class="arc-line" d="M 1911 1199 Q 1943.5 1168.7060857095514 1976 1161" />
+        
+          <path class="arc-glow" d="M 1911 1199 Q 1974 1259.8026316802009 2037 1389" />
+          <path class="arc-line" d="M 1911 1199 Q 1974 1259.8026316802009 2037 1389" />
+        
+          <path class="arc-glow" d="M 1911 1199 Q 1833.5 1100.6677928133583 1756 1064" />
+          <path class="arc-line" d="M 1911 1199 Q 1833.5 1100.6677928133583 1756 1064" />
+        
+          <path class="arc-glow" d="M 1911 1199 Q 1972 1258.6338494878416 2033 1385" />
+          <path class="arc-line" d="M 1911 1199 Q 1972 1258.6338494878416 2033 1385" />
+        
+          <path class="arc-glow" d="M 1911 1199 Q 1981.5 1270.924439359625 2052 1422" />
+          <path class="arc-line" d="M 1911 1199 Q 1981.5 1270.924439359625 2052 1422" />
+        
+          <path class="arc-glow" d="M 1839 1721 Q 1934 1498.2516594126957 2029 1390" />
+          <path class="arc-line" d="M 1839 1721 Q 1934 1498.2516594126957 2029 1390" />
+        
+          <path class="arc-glow" d="M 1839 1721 Q 2222 1558 2605 1515" />
+          <path class="arc-line" d="M 1839 1721 Q 2222 1558 2605 1515" />
+        
+          <path class="arc-glow" d="M 1839 1721 Q 1935 1485.5 2031 1370" />
+          <path class="arc-line" d="M 1839 1721 Q 1935 1485.5 2031 1370" />
+        
+          <path class="arc-glow" d="M 1839 1721 Q 1817 1385 1795 1169" />
+          <path class="arc-line" d="M 1839 1721 Q 1817 1385 1795 1169" />
+        
+          <path class="arc-glow" d="M 1839 1721 Q 1907.5 1381 1976 1161" />
+          <path class="arc-line" d="M 1839 1721 Q 1907.5 1381 1976 1161" />
+        
+          <path class="arc-glow" d="M 1839 1721 Q 1938 1497.0161229305938 2037 1389" />
+          <path class="arc-line" d="M 1839 1721 Q 1938 1497.0161229305938 2037 1389" />
+        
+          <path class="arc-glow" d="M 1839 1721 Q 1797.5 1332.5 1756 1064" />
+          <path class="arc-line" d="M 1839 1721 Q 1797.5 1332.5 1756 1064" />
+        
+          <path class="arc-glow" d="M 1839 1721 Q 1936 1494.8023196338547 2033 1385" />
+          <path class="arc-line" d="M 1839 1721 Q 1936 1494.8023196338547 2033 1385" />
+        
+          <path class="arc-glow" d="M 1839 1721 Q 1945.5 1516.4334493544402 2052 1422" />
+          <path class="arc-line" d="M 1839 1721 Q 1945.5 1516.4334493544402 2052 1422" />
+        
+          <path class="arc-glow" d="M 2029 1390 Q 2317 1392.5 2605 1515" />
+          <path class="arc-line" d="M 2029 1390 Q 2317 1392.5 2605 1515" />
+        
+          <path class="arc-glow" d="M 2029 1390 Q 2030 1376.9850373136637 2031 1370" />
+          <path class="arc-line" d="M 2029 1390 Q 2030 1376.9850373136637 2031 1370" />
+        
+          <path class="arc-glow" d="M 2029 1390 Q 1912 1231.220268227754 1795 1169" />
+          <path class="arc-line" d="M 2029 1390 Q 1912 1231.220268227754 1795 1169" />
+        
+          <path class="arc-glow" d="M 2029 1390 Q 2002.5 1240.2420221793705 1976 1161" />
+          <path class="arc-line" d="M 2029 1390 Q 2002.5 1240.2420221793705 1976 1161" />
+        
+          <path class="arc-glow" d="M 2029 1390 Q 2033 1388.2906613377552 2037 1389" />
+          <path class="arc-line" d="M 2029 1390 Q 2033 1388.2906613377552 2037 1389" />
+        
+          <path class="arc-glow" d="M 2029 1390 Q 1892.5 1167 1756 1064" />
+          <path class="arc-line" d="M 2029 1390 Q 1892.5 1167 1756 1064" />
+        
+          <path class="arc-glow" d="M 2029 1390 Q 2031 1386.539531364385 2033 1385" />
+          <path class="arc-line" d="M 2029 1390 Q 2031 1386.539531364385 2033 1385" />
+        
+          <path class="arc-glow" d="M 2029 1390 Q 2040.5 1400.0887818514286 2052 1422" />
+          <path class="arc-line" d="M 2029 1390 Q 2040.5 1400.0887818514286 2052 1422" />
+        
+          <path class="arc-glow" d="M 2605 1515 Q 2318 1382.5 2031 1370" />
+          <path class="arc-line" d="M 2605 1515 Q 2318 1382.5 2031 1370" />
+        
+          <path class="arc-glow" d="M 2605 1515 Q 2200 1282 1795 1169" />
+          <path class="arc-line" d="M 2605 1515 Q 2200 1282 1795 1169" />
+        
+          <path class="arc-glow" d="M 2605 1515 Q 2290.5 1278 1976 1161" />
+          <path class="arc-line" d="M 2605 1515 Q 2290.5 1278 1976 1161" />
+        
+          <path class="arc-glow" d="M 2605 1515 Q 2321 1392 2037 1389" />
+          <path class="arc-line" d="M 2605 1515 Q 2321 1392 2037 1389" />
+        
+          <path class="arc-glow" d="M 2605 1515 Q 2180.5 1229.5 1756 1064" />
+          <path class="arc-line" d="M 2605 1515 Q 2180.5 1229.5 1756 1064" />
+        
+          <path class="arc-glow" d="M 2605 1515 Q 2319 1390 2033 1385" />
+          <path class="arc-line" d="M 2605 1515 Q 2319 1390 2033 1385" />
+        
+          <path class="arc-glow" d="M 2605 1515 Q 2328.5 1408.5 2052 1422" />
+          <path class="arc-line" d="M 2605 1515 Q 2328.5 1408.5 2052 1422" />
+        
+          <path class="arc-glow" d="M 2031 1370 Q 1913 1223.0007258121161 1795 1169" />
+          <path class="arc-line" d="M 2031 1370 Q 1913 1223.0007258121161 1795 1169" />
+        
+          <path class="arc-glow" d="M 2031 1370 Q 2003.5 1233.082643537759 1976 1161" />
+          <path class="arc-line" d="M 2031 1370 Q 2003.5 1233.082643537759 1976 1161" />
+        
+          <path class="arc-glow" d="M 2031 1370 Q 2034 1376.5112711732243 2037 1389" />
+          <path class="arc-line" d="M 2031 1370 Q 2034 1376.5112711732243 2037 1389" />
+        
+          <path class="arc-glow" d="M 2031 1370 Q 1893.5 1157 1756 1064" />
+          <path class="arc-line" d="M 2031 1370 Q 1893.5 1157 1756 1064" />
+        
+          <path class="arc-glow" d="M 2031 1370 Q 2032 1375.2300881074368 2033 1385" />
+          <path class="arc-line" d="M 2031 1370 Q 2032 1375.2300881074368 2033 1385" />
+        
+          <path class="arc-glow" d="M 2031 1370 Q 2041.5 1387.587955064314 2052 1422" />
+          <path class="arc-line" d="M 2031 1370 Q 2041.5 1387.587955064314 2052 1422" />
+        
+          <path class="arc-glow" d="M 1795 1169 Q 1885.5 1137.8234936020099 1976 1161" />
+          <path class="arc-line" d="M 1795 1169 Q 1885.5 1137.8234936020099 1976 1161" />
+        
+          <path class="arc-glow" d="M 1795 1169 Q 1916 1229.941973133849 2037 1389" />
+          <path class="arc-line" d="M 1795 1169 Q 1916 1229.941973133849 2037 1389" />
+        
+          <path class="arc-glow" d="M 1795 1169 Q 1775.5 1099.698660767665 1756 1064" />
+          <path class="arc-line" d="M 1795 1169 Q 1775.5 1099.698660767665 1756 1064" />
+        
+          <path class="arc-glow" d="M 1795 1169 Q 1914 1228.7895239600355 2033 1385" />
+          <path class="arc-line" d="M 1795 1169 Q 1914 1228.7895239600355 2033 1385" />
+        
+          <path class="arc-glow" d="M 1795 1169 Q 1923.5 1241.4046674841536 2052 1422" />
+          <path class="arc-line" d="M 1795 1169 Q 1923.5 1241.4046674841536 2052 1422" />
+        
+          <path class="arc-glow" d="M 1976 1161 Q 2006.5 1239.5971399460439 2037 1389" />
+          <path class="arc-line" d="M 1976 1161 Q 2006.5 1239.5971399460439 2037 1389" />
+        
+          <path class="arc-glow" d="M 1976 1161 Q 1866 1076.4347466389047 1756 1064" />
+          <path class="arc-line" d="M 1976 1161 Q 1866 1076.4347466389047 1756 1064" />
+        
+          <path class="arc-glow" d="M 1976 1161 Q 2004.5 1238.3292270060213 2033 1385" />
+          <path class="arc-line" d="M 1976 1161 Q 2004.5 1238.3292270060213 2033 1385" />
+        
+          <path class="arc-glow" d="M 1976 1161 Q 2014 1250.723996027075 2052 1422" />
+          <path class="arc-line" d="M 1976 1161 Q 2014 1250.723996027075 2052 1422" />
+        
+          <path class="arc-glow" d="M 2037 1389 Q 1896.5 1166.5 1756 1064" />
+          <path class="arc-line" d="M 2037 1389 Q 1896.5 1166.5 1756 1064" />
+        
+          <path class="arc-glow" d="M 2037 1389 Q 2035 1386.151471862576 2033 1385" />
+          <path class="arc-line" d="M 2037 1389 Q 2035 1386.151471862576 2033 1385" />
+        
+          <path class="arc-glow" d="M 2037 1389 Q 2044.5 1400.0626293118823 2052 1422" />
+          <path class="arc-line" d="M 2037 1389 Q 2044.5 1400.0626293118823 2052 1422" />
+        
+          <path class="arc-glow" d="M 1756 1064 Q 1894.5 1164.5 2033 1385" />
+          <path class="arc-line" d="M 1756 1064 Q 1894.5 1164.5 2033 1385" />
+        
+          <path class="arc-glow" d="M 1756 1064 Q 1904 1183 2052 1422" />
+          <path class="arc-line" d="M 1756 1064 Q 1904 1183 2052 1422" />
+        
+          <path class="arc-glow" d="M 2033 1385 Q 2042.5 1397.2610096970743 2052 1422" />
+          <path class="arc-line" d="M 2033 1385 Q 2042.5 1397.2610096970743 2052 1422" />
+        
       </g>
       
       <!-- Węzły i halos bytów -->
       <g class="nodes">
         
       <g class="node active" data-slug="balor" transform="translate(1718,1134)">
-        <circle class="halo" r="84" />
+        <title>Balor z Tory Island — zasięg NaN%%</title>
+        <circle class="halo" r="NaN" />
         <a href="#balor" class="otworz-kartoteke" data-slug="balor" title="Balor z Tory Island (Irlandia (hrabstwo Donegal)) — otwórz kartotekę">
           <circle class="pin-bg" r="15" />
           <text class="pin-icon" dy="4">👁️</text>
@@ -1042,7 +1172,8 @@ li { margin: 8px 0; }
         </a>
       </g>
       <g class="node active" data-slug="barbarossa-kyffhaeuser" transform="translate(1911,1199)">
-        <circle class="halo" r="75" />
+        <title>Barbarossa w Kyffhäuserze — zasięg NaN%%</title>
+        <circle class="halo" r="NaN" />
         <a href="#barbarossa-kyffhaeuser" class="otworz-kartoteke" data-slug="barbarossa-kyffhaeuser" title="Barbarossa w Kyffhäuserze (Niemcy (Turyngia / Saksonia-Anhalt, Kyffhäuserkreis)) — otwórz kartotekę">
           <circle class="pin-bg" r="15" />
           <text class="pin-icon" dy="4">👑</text>
@@ -1050,7 +1181,8 @@ li { margin: 8px 0; }
         </a>
       </g>
       <g class="node active" data-slug="egungun" transform="translate(1839,1721)">
-        <circle class="halo" r="90" />
+        <title>Egungun — zasięg NaN%%</title>
+        <circle class="halo" r="NaN" />
         <a href="#egungun" class="otworz-kartoteke" data-slug="egungun" title="Egungun (Nigeria) — otwórz kartotekę">
           <circle class="pin-bg" r="15" />
           <text class="pin-icon" dy="4">🎭</text>
@@ -1058,7 +1190,8 @@ li { margin: 8px 0; }
         </a>
       </g>
       <g class="node active" data-slug="empusa-korynt" transform="translate(2029,1390)">
-        <circle class="halo" r="84" />
+        <title>Empusa z Koryntu — zasięg NaN%%</title>
+        <circle class="halo" r="NaN" />
         <a href="#empusa-korynt" class="otworz-kartoteke" data-slug="empusa-korynt" title="Empusa z Koryntu (Grecja) — otwórz kartotekę">
           <circle class="pin-bg" r="15" />
           <text class="pin-icon" dy="4">🕷️</text>
@@ -1066,7 +1199,8 @@ li { margin: 8px 0; }
         </a>
       </g>
       <g class="node active" data-slug="indra" transform="translate(2605,1515)">
-        <circle class="halo" r="65" />
+        <title>Indra — władca gromu — zasięg NaN%%</title>
+        <circle class="halo" r="NaN" />
         <a href="#indra" class="otworz-kartoteke" data-slug="indra" title="Indra — władca gromu (Indie (Uttar Pradesh, powiat Sitapur)) — otwórz kartotekę">
           <circle class="pin-bg" r="15" />
           <text class="pin-icon" dy="4">🌩️</text>
@@ -1074,7 +1208,8 @@ li { margin: 8px 0; }
         </a>
       </g>
       <g class="node active" data-slug="kentaur-pelion" transform="translate(2031,1370)">
-        <circle class="halo" r="72" />
+        <title>Kentaur z Pelionu — zasięg NaN%%</title>
+        <circle class="halo" r="NaN" />
         <a href="#kentaur-pelion" class="otworz-kartoteke" data-slug="kentaur-pelion" title="Kentaur z Pelionu (Grecja) — otwórz kartotekę">
           <circle class="pin-bg" r="15" />
           <text class="pin-icon" dy="4">🐎</text>
@@ -1082,7 +1217,8 @@ li { margin: 8px 0; }
         </a>
       </g>
       <g class="node active" data-slug="lincoln-imp" transform="translate(1795,1169)">
-        <circle class="halo" r="73" />
+        <title>Imp z Lincoln — zasięg NaN%%</title>
+        <circle class="halo" r="NaN" />
         <a href="#lincoln-imp" class="otworz-kartoteke" data-slug="lincoln-imp" title="Imp z Lincoln (Anglia (Wielka Brytania)) — otwórz kartotekę">
           <circle class="pin-bg" r="15" />
           <text class="pin-icon" dy="4">😈</text>
@@ -1090,7 +1226,8 @@ li { margin: 8px 0; }
         </a>
       </g>
       <g class="node active" data-slug="morowa-panna" transform="translate(1976,1161)">
-        <circle class="halo" r="53" />
+        <title>Morowa Panna — zaraza w białej szacie z czerwoną chustą — zasięg NaN%%</title>
+        <circle class="halo" r="NaN" />
         <a href="#morowa-panna" class="otworz-kartoteke" data-slug="morowa-panna" title="Morowa Panna — zaraza w białej szacie z czerwoną chustą (Polska) — otwórz kartotekę">
           <circle class="pin-bg" r="15" />
           <text class="pin-icon" dy="4">🧣</text>
@@ -1098,7 +1235,8 @@ li { margin: 8px 0; }
         </a>
       </g>
       <g class="node active" data-slug="pandora" transform="translate(2037,1389)">
-        <circle class="halo" r="62" />
+        <title>Pandora — pierwsza kobieta i pithos, w którym została nadzieja — zasięg NaN%%</title>
+        <circle class="halo" r="NaN" />
         <a href="#pandora" class="otworz-kartoteke" data-slug="pandora" title="Pandora — pierwsza kobieta i pithos, w którym została nadzieja (Grecja) — otwórz kartotekę">
           <circle class="pin-bg" r="15" />
           <text class="pin-icon" dy="4">🏺</text>
@@ -1106,7 +1244,8 @@ li { margin: 8px 0; }
         </a>
       </g>
       <g class="node active" data-slug="selkie-sule-skerry" transform="translate(1756,1064)">
-        <circle class="halo" r="81" />
+        <title>Wielki Selkie z Sule Skerry — zasięg NaN%%</title>
+        <circle class="halo" r="NaN" />
         <a href="#selkie-sule-skerry" class="otworz-kartoteke" data-slug="selkie-sule-skerry" title="Wielki Selkie z Sule Skerry (Szkocja (Wielka Brytania)) — otwórz kartotekę">
           <circle class="pin-bg" r="15" />
           <text class="pin-icon" dy="4">🦭</text>
@@ -1114,7 +1253,8 @@ li { margin: 8px 0; }
         </a>
       </g>
       <g class="node active" data-slug="sfinks-teby" transform="translate(2033,1385)">
-        <circle class="halo" r="70" />
+        <title>Sfinks — strażniczka Tebańskich Wrót — zasięg NaN%%</title>
+        <circle class="halo" r="NaN" />
         <a href="#sfinks-teby" class="otworz-kartoteke" data-slug="sfinks-teby" title="Sfinks — strażniczka Tebańskich Wrót (Grecja (Beocja)) — otwórz kartotekę">
           <circle class="pin-bg" r="15" />
           <text class="pin-icon" dy="4">🦁</text>
@@ -1122,7 +1262,8 @@ li { margin: 8px 0; }
         </a>
       </g>
       <g class="node active" data-slug="talos-kreta" transform="translate(2052,1422)">
-        <circle class="halo" r="64" />
+        <title>Talos — spiżowy strażnik Krety — zasięg NaN%%</title>
+        <circle class="halo" r="NaN" />
         <a href="#talos-kreta" class="otworz-kartoteke" data-slug="talos-kreta" title="Talos — spiżowy strażnik Krety (Grecja (Kreta)) — otwórz kartotekę">
           <circle class="pin-bg" r="15" />
           <text class="pin-icon" dy="4">🗿</text>
@@ -1133,14 +1274,495 @@ li { margin: 8px 0; }
     </svg>
   </div>
 
+<!-- S1: wykresy Tomu -->
+<div class="grid">
+  <div class="col">
+    <div class="card">
+      <h2>Dryf osi świata</h2>
+      <div class="card-sub">Jak przez epoki przesuwała się granica między mitem a racjonalizacją.</div>
+      
+  <svg class="chart os-chart" viewBox="0 0 880 210" role="img" aria-label="Wykres osi mit/racjonalizacja po epokach">
+    <line class="os-grid" x1="46" x2="860" y1="170.0" y2="170.0" /><text class="os-grid-label" x="38" y="174.0">20%</text><line class="os-grid" x1="46" x2="860" y1="132.5" y2="132.5" /><text class="os-grid-label" x="38" y="136.5">25%</text><line class="os-grid" x1="46" x2="860" y1="95.0" y2="95.0" /><text class="os-grid-label" x="38" y="99.0">30%</text><line class="os-grid" x1="46" x2="860" y1="57.5" y2="57.5" /><text class="os-grid-label" x="38" y="61.5">35%</text><line class="os-grid" x1="46" x2="860" y1="20.0" y2="20.0" /><text class="os-grid-label" x="38" y="24.0">40%</text>
+    <path class="os-area" d="M 46.0,65.0 L 208.8,80.0 L 371.6,95.0 L 534.4,102.5 L 697.2,110.0 L 860.0,117.5 L 860.0,170.0 L 46.0,170.0 Z" />
+    <path class="os-line" d="M 46.0,65.0 L 208.8,80.0 L 371.6,95.0 L 534.4,102.5 L 697.2,110.0 L 860.0,117.5" />
+    <g class="os-dot" transform="translate(46.0,65.0)">
+        <title>epoka-1 — Trzy stoły: przodek, gospodarz i gość: mit 34.0%</title>
+        <text class="os-wartosc" x="0" y="-10">34.0%</text>
+        <circle r="5" />
+      </g>
+      <text class="os-label" x="46.0" y="196.0" text-anchor="middle">I</text><g class="os-dot" transform="translate(208.8,80.0)">
+        <title>epoka-2 — Nieproszeni goście: psuj, zaproszony i zaproszenie: mit 32.0%</title>
+        <text class="os-wartosc" x="0" y="-10">32.0%</text>
+        <circle r="5" />
+      </g>
+      <text class="os-label" x="208.8" y="196.0" text-anchor="middle">II</text><g class="os-dot" transform="translate(371.6,95.0)">
+        <title>epoka-3 — Odźwierni: zapraszany, otwierany i ten, który jest drzwiami: mit 30.0%</title>
+        <text class="os-wartosc" x="0" y="-10">30.0%</text>
+        <circle r="5" />
+      </g>
+      <text class="os-label" x="371.6" y="196.0" text-anchor="middle">III</text><g class="os-dot" transform="translate(534.4,102.5)">
+        <title>epoka-4 — Imię na progu: skóra, kres i pieśń: mit 29.0%</title>
+        <text class="os-wartosc" x="0" y="-10">29.0%</text>
+        <circle r="5" />
+      </g>
+      <text class="os-label" x="534.4" y="196.0" text-anchor="middle">IV</text><g class="os-dot" transform="translate(697.2,110.0)">
+        <title>epoka-5 — Zagadka ze spiżu: rozum, żart i głuchy krok: mit 28.0%</title>
+        <text class="os-wartosc" x="0" y="-10">28.0%</text>
+        <circle r="5" />
+      </g>
+      <text class="os-label" x="697.2" y="196.0" text-anchor="middle">V</text><g class="os-dot" transform="translate(860.0,117.5)">
+        <title>epoka-6 — Czwarty stół: kto nie wie, że bierze: mit 27.0%</title>
+        <text class="os-wartosc" x="0" y="-10">27.0%</text>
+        <circle r="5" />
+      </g>
+      <text class="os-label" x="860.0" y="196.0" text-anchor="middle">VI</text>
+  </svg>
+    </div>
+    <div class="card">
+      <h2>Kto spalał pamięć</h2>
+      <div class="card-sub">Paliwo każdego uczestnika na koniec kolejnych epok.</div>
+      
+  <div class="wykres-paliwa">
+    <svg class="chart paliwo-chart" viewBox="0 0 880 300" role="img" aria-label="Wykres paliwa uczestników po epokach">
+      <text class="paliwo-os" x="38" y="252.0">0</text><text class="paliwo-os" x="38" y="134.1">15</text><text class="paliwo-os" x="38" y="24.0">29</text><text class="paliwo-os-x" x="46.0" y="270.0" text-anchor="middle">I</text><text class="paliwo-os-x" x="174.8" y="270.0" text-anchor="middle">II</text><text class="paliwo-os-x" x="303.6" y="270.0" text-anchor="middle">III</text><text class="paliwo-os-x" x="432.4" y="270.0" text-anchor="middle">IV</text><text class="paliwo-os-x" x="561.2" y="270.0" text-anchor="middle">V</text><text class="paliwo-os-x" x="690.0" y="270.0" text-anchor="middle">VI</text>
+      <polyline class="paliwo-linia" points="46.0,67.2 174.8,67.2 303.6,43.6 432.4,20.0 561.2,20.0 690.0,20.0" style="stroke:hsl(0, 45%, 55%)" />
+        <circle class="paliwo-punkt" cx="46.0" cy="67.2" r="3.5" style="fill:hsl(0, 45%, 55%)"><title>egungun · epoka-1: 23</title></circle><circle class="paliwo-punkt" cx="174.8" cy="67.2" r="3.5" style="fill:hsl(0, 45%, 55%)"><title>egungun · epoka-2: 23</title></circle><circle class="paliwo-punkt" cx="303.6" cy="43.6" r="3.5" style="fill:hsl(0, 45%, 55%)"><title>egungun · epoka-3: 26</title></circle><circle class="paliwo-punkt" cx="432.4" cy="20.0" r="3.5" style="fill:hsl(0, 45%, 55%)"><title>egungun · epoka-4: 29</title></circle><circle class="paliwo-punkt" cx="561.2" cy="20.0" r="3.5" style="fill:hsl(0, 45%, 55%)"><title>egungun · epoka-5: 29</title></circle><circle class="paliwo-punkt" cx="690.0" cy="20.0" r="3.5" style="fill:hsl(0, 45%, 55%)"><title>egungun · epoka-6: 29</title></circle><polyline class="paliwo-linia" points="46.0,130.1 174.8,130.1 303.6,130.1 432.4,130.1 561.2,130.1 690.0,130.1" style="stroke:hsl(138, 45%, 55%)" />
+        <circle class="paliwo-punkt" cx="46.0" cy="130.1" r="3.5" style="fill:hsl(138, 45%, 55%)"><title>barbarossa-kyffhaeuser · epoka-1: 15</title></circle><circle class="paliwo-punkt" cx="174.8" cy="130.1" r="3.5" style="fill:hsl(138, 45%, 55%)"><title>barbarossa-kyffhaeuser · epoka-2: 15</title></circle><circle class="paliwo-punkt" cx="303.6" cy="130.1" r="3.5" style="fill:hsl(138, 45%, 55%)"><title>barbarossa-kyffhaeuser · epoka-3: 15</title></circle><circle class="paliwo-punkt" cx="432.4" cy="130.1" r="3.5" style="fill:hsl(138, 45%, 55%)"><title>barbarossa-kyffhaeuser · epoka-4: 15</title></circle><circle class="paliwo-punkt" cx="561.2" cy="130.1" r="3.5" style="fill:hsl(138, 45%, 55%)"><title>barbarossa-kyffhaeuser · epoka-5: 15</title></circle><circle class="paliwo-punkt" cx="690.0" cy="130.1" r="3.5" style="fill:hsl(138, 45%, 55%)"><title>barbarossa-kyffhaeuser · epoka-6: 15</title></circle><polyline class="paliwo-linia" points="46.0,122.2 174.8,137.9 303.6,137.9 432.4,137.9 561.2,137.9 690.0,137.9" style="stroke:hsl(275, 45%, 55%)" />
+        <circle class="paliwo-punkt" cx="46.0" cy="122.2" r="3.5" style="fill:hsl(275, 45%, 55%)"><title>kentaur-pelion · epoka-1: 16</title></circle><circle class="paliwo-punkt" cx="174.8" cy="137.9" r="3.5" style="fill:hsl(275, 45%, 55%)"><title>kentaur-pelion · epoka-2: 14</title></circle><circle class="paliwo-punkt" cx="303.6" cy="137.9" r="3.5" style="fill:hsl(275, 45%, 55%)"><title>kentaur-pelion · epoka-3: 14</title></circle><circle class="paliwo-punkt" cx="432.4" cy="137.9" r="3.5" style="fill:hsl(275, 45%, 55%)"><title>kentaur-pelion · epoka-4: 14</title></circle><circle class="paliwo-punkt" cx="561.2" cy="137.9" r="3.5" style="fill:hsl(275, 45%, 55%)"><title>kentaur-pelion · epoka-5: 14</title></circle><circle class="paliwo-punkt" cx="690.0" cy="137.9" r="3.5" style="fill:hsl(275, 45%, 55%)"><title>kentaur-pelion · epoka-6: 14</title></circle><polyline class="paliwo-linia" points="174.8,169.4 303.6,169.4 432.4,169.4 561.2,153.7 690.0,153.7" style="stroke:hsl(53, 45%, 55%)" />
+        <circle class="paliwo-punkt" cx="174.8" cy="169.4" r="3.5" style="fill:hsl(53, 45%, 55%)"><title>lincoln-imp · epoka-2: 10</title></circle><circle class="paliwo-punkt" cx="303.6" cy="169.4" r="3.5" style="fill:hsl(53, 45%, 55%)"><title>lincoln-imp · epoka-3: 10</title></circle><circle class="paliwo-punkt" cx="432.4" cy="169.4" r="3.5" style="fill:hsl(53, 45%, 55%)"><title>lincoln-imp · epoka-4: 10</title></circle><circle class="paliwo-punkt" cx="561.2" cy="153.7" r="3.5" style="fill:hsl(53, 45%, 55%)"><title>lincoln-imp · epoka-5: 12</title></circle><circle class="paliwo-punkt" cx="690.0" cy="153.7" r="3.5" style="fill:hsl(53, 45%, 55%)"><title>lincoln-imp · epoka-6: 12</title></circle><polyline class="paliwo-linia" points="174.8,82.9 303.6,98.6 432.4,98.6 561.2,98.6 690.0,106.5" style="stroke:hsl(190, 45%, 55%)" />
+        <circle class="paliwo-punkt" cx="174.8" cy="82.9" r="3.5" style="fill:hsl(190, 45%, 55%)"><title>empusa-korynt · epoka-2: 21</title></circle><circle class="paliwo-punkt" cx="303.6" cy="98.6" r="3.5" style="fill:hsl(190, 45%, 55%)"><title>empusa-korynt · epoka-3: 19</title></circle><circle class="paliwo-punkt" cx="432.4" cy="98.6" r="3.5" style="fill:hsl(190, 45%, 55%)"><title>empusa-korynt · epoka-4: 19</title></circle><circle class="paliwo-punkt" cx="561.2" cy="98.6" r="3.5" style="fill:hsl(190, 45%, 55%)"><title>empusa-korynt · epoka-5: 19</title></circle><circle class="paliwo-punkt" cx="690.0" cy="106.5" r="3.5" style="fill:hsl(190, 45%, 55%)"><title>empusa-korynt · epoka-6: 18</title></circle><polyline class="paliwo-linia" points="303.6,98.6 432.4,98.6 561.2,98.6 690.0,98.6" style="stroke:hsl(328, 45%, 55%)" />
+        <circle class="paliwo-punkt" cx="303.6" cy="98.6" r="3.5" style="fill:hsl(328, 45%, 55%)"><title>balor · epoka-3: 19</title></circle><circle class="paliwo-punkt" cx="432.4" cy="98.6" r="3.5" style="fill:hsl(328, 45%, 55%)"><title>balor · epoka-4: 19</title></circle><circle class="paliwo-punkt" cx="561.2" cy="98.6" r="3.5" style="fill:hsl(328, 45%, 55%)"><title>balor · epoka-5: 19</title></circle><circle class="paliwo-punkt" cx="690.0" cy="98.6" r="3.5" style="fill:hsl(328, 45%, 55%)"><title>balor · epoka-6: 19</title></circle><polyline class="paliwo-linia" points="432.4,75.0 561.2,75.0 690.0,75.0" style="stroke:hsl(105, 45%, 55%)" />
+        <circle class="paliwo-punkt" cx="432.4" cy="75.0" r="3.5" style="fill:hsl(105, 45%, 55%)"><title>selkie-sule-skerry · epoka-4: 22</title></circle><circle class="paliwo-punkt" cx="561.2" cy="75.0" r="3.5" style="fill:hsl(105, 45%, 55%)"><title>selkie-sule-skerry · epoka-5: 22</title></circle><circle class="paliwo-punkt" cx="690.0" cy="75.0" r="3.5" style="fill:hsl(105, 45%, 55%)"><title>selkie-sule-skerry · epoka-6: 22</title></circle><polyline class="paliwo-linia" points="432.4,161.5 561.2,161.5 690.0,161.5" style="stroke:hsl(243, 45%, 55%)" />
+        <circle class="paliwo-punkt" cx="432.4" cy="161.5" r="3.5" style="fill:hsl(243, 45%, 55%)"><title>indra · epoka-4: 11</title></circle><circle class="paliwo-punkt" cx="561.2" cy="161.5" r="3.5" style="fill:hsl(243, 45%, 55%)"><title>indra · epoka-5: 11</title></circle><circle class="paliwo-punkt" cx="690.0" cy="161.5" r="3.5" style="fill:hsl(243, 45%, 55%)"><title>indra · epoka-6: 11</title></circle><polyline class="paliwo-linia" points="561.2,90.8 690.0,90.8" style="stroke:hsl(20, 45%, 55%)" />
+        <circle class="paliwo-punkt" cx="561.2" cy="90.8" r="3.5" style="fill:hsl(20, 45%, 55%)"><title>sfinks-teby · epoka-5: 20</title></circle><circle class="paliwo-punkt" cx="690.0" cy="90.8" r="3.5" style="fill:hsl(20, 45%, 55%)"><title>sfinks-teby · epoka-6: 20</title></circle><polyline class="paliwo-linia" points="561.2,122.2 690.0,122.2" style="stroke:hsl(158, 45%, 55%)" />
+        <circle class="paliwo-punkt" cx="561.2" cy="122.2" r="3.5" style="fill:hsl(158, 45%, 55%)"><title>talos-kreta · epoka-5: 16</title></circle><circle class="paliwo-punkt" cx="690.0" cy="122.2" r="3.5" style="fill:hsl(158, 45%, 55%)"><title>talos-kreta · epoka-6: 16</title></circle>
+    </svg>
+    <div class="paliwo-legenda-box"><div class="paliwo-legenda" style="--l:hsl(0, 45%, 55%)"><span class="kropka"></span> egungun <b>29</b></div><div class="paliwo-legenda" style="--l:hsl(138, 45%, 55%)"><span class="kropka"></span> barbarossa-kyffhaeuser <b>15</b></div><div class="paliwo-legenda" style="--l:hsl(275, 45%, 55%)"><span class="kropka"></span> kentaur-pelion <b>14</b></div><div class="paliwo-legenda" style="--l:hsl(53, 45%, 55%)"><span class="kropka"></span> lincoln-imp <b>12</b></div><div class="paliwo-legenda" style="--l:hsl(190, 45%, 55%)"><span class="kropka"></span> empusa-korynt <b>18</b></div><div class="paliwo-legenda" style="--l:hsl(328, 45%, 55%)"><span class="kropka"></span> balor <b>19</b></div><div class="paliwo-legenda" style="--l:hsl(105, 45%, 55%)"><span class="kropka"></span> selkie-sule-skerry <b>22</b></div><div class="paliwo-legenda" style="--l:hsl(243, 45%, 55%)"><span class="kropka"></span> indra <b>11</b></div><div class="paliwo-legenda" style="--l:hsl(20, 45%, 55%)"><span class="kropka"></span> sfinks-teby <b>20</b></div><div class="paliwo-legenda" style="--l:hsl(158, 45%, 55%)"><span class="kropka"></span> talos-kreta <b>16</b></div><div class="paliwo-legenda" style="--l:hsl(295, 45%, 55%)"><span class="kropka"></span> pandora <b>15</b></div><div class="paliwo-legenda" style="--l:hsl(73, 45%, 55%)"><span class="kropka"></span> morowa-panna <b>9</b></div></div>
+  </div>
+    </div>
+    <div class="card">
+      <h2>Oś czasu wątków</h2>
+      <div class="card-sub">Wątek otwarty (●) i zamknięty (●) na przestrzeni Tomu; linia = ciągłość.</div>
+      <svg class="chart watki-chart" viewBox="0 0 880 390" role="img" aria-label="Oś czasu wątków fabularnych"><text class="watki-os-x" x="210.0" y="18" text-anchor="middle">I · Trzy stoły: przod…</text><text class="watki-os-x" x="338.0" y="18" text-anchor="middle">II · Nieproszeni gości…</text><text class="watki-os-x" x="466.0" y="18" text-anchor="middle">III · Odźwierni: zapras…</text><text class="watki-os-x" x="594.0" y="18" text-anchor="middle">IV · Imię na progu: sk…</text><text class="watki-os-x" x="722.0" y="18" text-anchor="middle">V · Zagadka ze spiżu:…</text><text class="watki-os-x" x="850.0" y="18" text-anchor="middle">VI · Czwarty stół: kto…</text><line class="watki-linia" x1="210.0" y1="30.0" x2="338.0" y2="30.0" /><line class="watki-linia" x1="338.0" y1="30.0" x2="466.0" y2="30.0" /><line class="watki-linia" x1="466.0" y1="30.0" x2="594.0" y2="30.0" /><line class="watki-linia" x1="594.0" y1="30.0" x2="722.0" y2="30.0" /><line class="watki-linia" x1="722.0" y1="30.0" x2="850.0" y2="30.0" /><circle class="watki-marker otwarty" cx="210.0" cy="30.0" r="7">
+          <title>czwarty-stol · epoka-1: otwarty</title>
+        </circle><circle class="watki-marker otwarty" cx="338.0" cy="30.0" r="7">
+          <title>czwarty-stol · epoka-2: otwarty</title>
+        </circle><circle class="watki-marker otwarty" cx="466.0" cy="30.0" r="7">
+          <title>czwarty-stol · epoka-3: otwarty</title>
+        </circle><circle class="watki-marker otwarty" cx="594.0" cy="30.0" r="7">
+          <title>czwarty-stol · epoka-4: otwarty</title>
+        </circle><circle class="watki-marker otwarty" cx="722.0" cy="30.0" r="7">
+          <title>czwarty-stol · epoka-5: otwarty</title>
+        </circle><circle class="watki-marker zamkniety" cx="850.0" cy="30.0" r="7">
+          <title>czwarty-stol · epoka-6: zamkniety</title>
+        </circle><text class="watki-etykieta" x="198" y="35.0" text-anchor="end">czwarty-stol</text><circle class="watki-marker zamkniety" cx="210.0" cy="66.0" r="7">
+          <title>wino-w-uczcie · epoka-1: zamkniety</title>
+        </circle><text class="watki-etykieta" x="198" y="71.0" text-anchor="end">wino-w-uczcie</text><line class="watki-linia" x1="210.0" y1="102.0" x2="338.0" y2="102.0" /><line class="watki-linia" x1="338.0" y1="102.0" x2="466.0" y2="102.0" /><line class="watki-linia" x1="466.0" y1="102.0" x2="594.0" y2="102.0" /><line class="watki-linia" x1="594.0" y1="102.0" x2="722.0" y2="102.0" /><line class="watki-linia" x1="722.0" y1="102.0" x2="850.0" y2="102.0" /><circle class="watki-marker otwarty" cx="210.0" cy="102.0" r="7">
+          <title>warunek-barbarossy · epoka-1: otwarty</title>
+        </circle><circle class="watki-marker otwarty" cx="338.0" cy="102.0" r="7">
+          <title>warunek-barbarossy · epoka-2: otwarty</title>
+        </circle><circle class="watki-marker otwarty" cx="466.0" cy="102.0" r="7">
+          <title>warunek-barbarossy · epoka-3: otwarty</title>
+        </circle><circle class="watki-marker otwarty" cx="594.0" cy="102.0" r="7">
+          <title>warunek-barbarossy · epoka-4: otwarty</title>
+        </circle><circle class="watki-marker otwarty" cx="722.0" cy="102.0" r="7">
+          <title>warunek-barbarossy · epoka-5: otwarty</title>
+        </circle><circle class="watki-marker otwarty" cx="850.0" cy="102.0" r="7">
+          <title>warunek-barbarossy · epoka-6: otwarty</title>
+        </circle><text class="watki-etykieta" x="198" y="107.0" text-anchor="end">warunek-barbarossy</text><line class="watki-linia" x1="338.0" y1="138.0" x2="466.0" y2="138.0" /><circle class="watki-marker otwarty" cx="338.0" cy="138.0" r="7">
+          <title>odzwierni · epoka-2: otwarty</title>
+        </circle><circle class="watki-marker zamkniety" cx="466.0" cy="138.0" r="7">
+          <title>odzwierni · epoka-3: zamkniety</title>
+        </circle><text class="watki-etykieta" x="198" y="143.0" text-anchor="end">odzwierni</text><line class="watki-linia" x1="338.0" y1="174.0" x2="466.0" y2="174.0" /><line class="watki-linia" x1="466.0" y1="174.0" x2="594.0" y2="174.0" /><line class="watki-linia" x1="594.0" y1="174.0" x2="722.0" y2="174.0" /><line class="watki-linia" x1="722.0" y1="174.0" x2="850.0" y2="174.0" /><circle class="watki-marker otwarty" cx="338.0" cy="174.0" r="7">
+          <title>wedrowny-dom-empusy · epoka-2: otwarty</title>
+        </circle><circle class="watki-marker otwarty" cx="466.0" cy="174.0" r="7">
+          <title>wedrowny-dom-empusy · epoka-3: otwarty</title>
+        </circle><circle class="watki-marker otwarty" cx="594.0" cy="174.0" r="7">
+          <title>wedrowny-dom-empusy · epoka-4: otwarty</title>
+        </circle><circle class="watki-marker otwarty" cx="722.0" cy="174.0" r="7">
+          <title>wedrowny-dom-empusy · epoka-5: otwarty</title>
+        </circle><circle class="watki-marker otwarty" cx="850.0" cy="174.0" r="7">
+          <title>wedrowny-dom-empusy · epoka-6: otwarty</title>
+        </circle><text class="watki-etykieta" x="198" y="179.0" text-anchor="end">wedrowny-dom-empusy</text><circle class="watki-marker zamkniety" cx="338.0" cy="210.0" r="7">
+          <title>pogrzeb-zamiast-wesela · epoka-2: zamkniety</title>
+        </circle><text class="watki-etykieta" x="198" y="215.0" text-anchor="end">pogrzeb-zamiast-wesela</text><line class="watki-linia" x1="466.0" y1="246.0" x2="594.0" y2="246.0" /><circle class="watki-marker otwarty" cx="466.0" cy="246.0" r="7">
+          <title>imie-na-progu · epoka-3: otwarty</title>
+        </circle><circle class="watki-marker zamkniety" cx="594.0" cy="246.0" r="7">
+          <title>imie-na-progu · epoka-4: zamkniety</title>
+        </circle><text class="watki-etykieta" x="198" y="251.0" text-anchor="end">imie-na-progu</text><line class="watki-linia" x1="594.0" y1="282.0" x2="722.0" y2="282.0" /><line class="watki-linia" x1="722.0" y1="282.0" x2="850.0" y2="282.0" /><circle class="watki-marker otwarty" cx="594.0" cy="282.0" r="7">
+          <title>kres-indry · epoka-4: otwarty</title>
+        </circle><circle class="watki-marker otwarty" cx="722.0" cy="282.0" r="7">
+          <title>kres-indry · epoka-5: otwarty</title>
+        </circle><circle class="watki-marker otwarty" cx="850.0" cy="282.0" r="7">
+          <title>kres-indry · epoka-6: otwarty</title>
+        </circle><text class="watki-etykieta" x="198" y="287.0" text-anchor="end">kres-indry</text><circle class="watki-marker zamkniety" cx="722.0" cy="318.0" r="7">
+          <title>zagadka-ze-spizu · epoka-5: zamkniety</title>
+        </circle><text class="watki-etykieta" x="198" y="323.0" text-anchor="end">zagadka-ze-spizu</text><circle class="watki-marker otwarty" cx="850.0" cy="354.0" r="7">
+          <title>niewinny-bierca · epoka-6: otwarty</title>
+        </circle><text class="watki-etykieta" x="198" y="359.0" text-anchor="end">niewinny-bierca</text></svg>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card">
+      <h2>Macierz zasięgów</h2>
+      <div class="card-sub">Jak daleko sięgał wpływ każdego bytu po kolejnych epokach (średnia po prawej).</div>
+      <svg class="chart heat-chart" viewBox="0 0 762 472" role="img" aria-label="Macierz zasięgów bytów po epokach"><text class="heat-os-x" x="236.0" y="26" text-anchor="middle">I</text><text class="heat-os-x" x="328.0" y="26" text-anchor="middle">II</text><text class="heat-os-x" x="420.0" y="26" text-anchor="middle">III</text><text class="heat-os-x" x="512.0" y="26" text-anchor="middle">IV</text><text class="heat-os-x" x="604.0" y="26" text-anchor="middle">V</text><text class="heat-os-x" x="696.0" y="26" text-anchor="middle">VI</text><rect class="heat-cell" x="193" y="67" width="86" height="28" rx="4" style="fill-opacity:0.55">
+            <title>Egungun · epoka-1: 52%</title>
+          </rect><rect class="heat-cell" x="285" y="67" width="86" height="28" rx="4" style="fill-opacity:0.55">
+            <title>Egungun · epoka-2: 52%</title>
+          </rect><rect class="heat-cell" x="377" y="67" width="86" height="28" rx="4" style="fill-opacity:0.57">
+            <title>Egungun · epoka-3: 54%</title>
+          </rect><rect class="heat-cell" x="469" y="67" width="86" height="28" rx="4" style="fill-opacity:0.58">
+            <title>Egungun · epoka-4: 55%</title>
+          </rect><rect class="heat-cell" x="561" y="67" width="86" height="28" rx="4" style="fill-opacity:0.58">
+            <title>Egungun · epoka-5: 55%</title>
+          </rect><rect class="heat-cell" x="653" y="67" width="86" height="28" rx="4" style="fill-opacity:0.58">
+            <title>Egungun · epoka-6: 55%</title>
+          </rect><text class="heat-etykieta" x="178" y="86.0" text-anchor="end">🎭 Egungun</text>
+        <text class="heat-sum" x="752" y="86.0">54%</text><rect class="heat-cell" x="193" y="101" width="86" height="28" rx="4" style="fill-opacity:0.53">
+            <title>Balor z Tory Island · epoka-1: 50%</title>
+          </rect><rect class="heat-cell" x="285" y="101" width="86" height="28" rx="4" style="fill-opacity:0.53">
+            <title>Balor z Tory Island · epoka-2: 50%</title>
+          </rect><rect class="heat-cell" x="377" y="101" width="86" height="28" rx="4" style="fill-opacity:0.53">
+            <title>Balor z Tory Island · epoka-3: 50%</title>
+          </rect><rect class="heat-cell" x="469" y="101" width="86" height="28" rx="4" style="fill-opacity:0.53">
+            <title>Balor z Tory Island · epoka-4: 50%</title>
+          </rect><rect class="heat-cell" x="561" y="101" width="86" height="28" rx="4" style="fill-opacity:0.53">
+            <title>Balor z Tory Island · epoka-5: 50%</title>
+          </rect><rect class="heat-cell" x="653" y="101" width="86" height="28" rx="4" style="fill-opacity:0.53">
+            <title>Balor z Tory Island · epoka-6: 50%</title>
+          </rect><text class="heat-etykieta" x="178" y="120.0" text-anchor="end">👁️ Balor z Tory Island</text>
+        <text class="heat-sum" x="752" y="120.0">50%</text><rect class="heat-cell" x="193" y="135" width="86" height="28" rx="4" style="fill-opacity:0.51">
+            <title>Empusa z Koryntu · epoka-1: 48%</title>
+          </rect><rect class="heat-cell" x="285" y="135" width="86" height="28" rx="4" style="fill-opacity:0.53">
+            <title>Empusa z Koryntu · epoka-2: 50%</title>
+          </rect><rect class="heat-cell" x="377" y="135" width="86" height="28" rx="4" style="fill-opacity:0.53">
+            <title>Empusa z Koryntu · epoka-3: 50%</title>
+          </rect><rect class="heat-cell" x="469" y="135" width="86" height="28" rx="4" style="fill-opacity:0.53">
+            <title>Empusa z Koryntu · epoka-4: 50%</title>
+          </rect><rect class="heat-cell" x="561" y="135" width="86" height="28" rx="4" style="fill-opacity:0.53">
+            <title>Empusa z Koryntu · epoka-5: 50%</title>
+          </rect><rect class="heat-cell" x="653" y="135" width="86" height="28" rx="4" style="fill-opacity:0.53">
+            <title>Empusa z Koryntu · epoka-6: 50%</title>
+          </rect><text class="heat-etykieta" x="178" y="154.0" text-anchor="end">🕷️ Empusa z Koryntu</text>
+        <text class="heat-sum" x="752" y="154.0">49%</text><rect class="heat-cell" x="193" y="169" width="86" height="28" rx="4" style="fill-opacity:0.52">
+            <title>Wielki Selkie z Sule Skerry · epoka-1: 49%</title>
+          </rect><rect class="heat-cell" x="285" y="169" width="86" height="28" rx="4" style="fill-opacity:0.52">
+            <title>Wielki Selkie z Sule Skerry · epoka-2: 49%</title>
+          </rect><rect class="heat-cell" x="377" y="169" width="86" height="28" rx="4" style="fill-opacity:0.52">
+            <title>Wielki Selkie z Sule Skerry · epoka-3: 49%</title>
+          </rect><rect class="heat-cell" x="469" y="169" width="86" height="28" rx="4" style="fill-opacity:0.51">
+            <title>Wielki Selkie z Sule Skerry · epoka-4: 48%</title>
+          </rect><rect class="heat-cell" x="561" y="169" width="86" height="28" rx="4" style="fill-opacity:0.51">
+            <title>Wielki Selkie z Sule Skerry · epoka-5: 48%</title>
+          </rect><rect class="heat-cell" x="653" y="169" width="86" height="28" rx="4" style="fill-opacity:0.51">
+            <title>Wielki Selkie z Sule Skerry · epoka-6: 48%</title>
+          </rect><text class="heat-etykieta" x="178" y="188.0" text-anchor="end">🦭 Wielki Selkie z Sule Skerry</text>
+        <text class="heat-sum" x="752" y="188.0">48%</text><rect class="heat-cell" x="193" y="203" width="86" height="28" rx="4" style="fill-opacity:0.46">
+            <title>Barbarossa w Kyffhäuserze · epoka-1: 43%</title>
+          </rect><rect class="heat-cell" x="285" y="203" width="86" height="28" rx="4" style="fill-opacity:0.46">
+            <title>Barbarossa w Kyffhäuserze · epoka-2: 43%</title>
+          </rect><rect class="heat-cell" x="377" y="203" width="86" height="28" rx="4" style="fill-opacity:0.46">
+            <title>Barbarossa w Kyffhäuserze · epoka-3: 43%</title>
+          </rect><rect class="heat-cell" x="469" y="203" width="86" height="28" rx="4" style="fill-opacity:0.46">
+            <title>Barbarossa w Kyffhäuserze · epoka-4: 43%</title>
+          </rect><rect class="heat-cell" x="561" y="203" width="86" height="28" rx="4" style="fill-opacity:0.46">
+            <title>Barbarossa w Kyffhäuserze · epoka-5: 43%</title>
+          </rect><rect class="heat-cell" x="653" y="203" width="86" height="28" rx="4" style="fill-opacity:0.46">
+            <title>Barbarossa w Kyffhäuserze · epoka-6: 43%</title>
+          </rect><text class="heat-etykieta" x="178" y="222.0" text-anchor="end">👑 Barbarossa w Kyffhäuserze</text>
+        <text class="heat-sum" x="752" y="222.0">43%</text><rect class="heat-cell" x="193" y="237" width="86" height="28" rx="4" style="fill-opacity:0.45">
+            <title>Kentaur z Pelionu · epoka-1: 42%</title>
+          </rect><rect class="heat-cell" x="285" y="237" width="86" height="28" rx="4" style="fill-opacity:0.44">
+            <title>Kentaur z Pelionu · epoka-2: 40%</title>
+          </rect><rect class="heat-cell" x="377" y="237" width="86" height="28" rx="4" style="fill-opacity:0.44">
+            <title>Kentaur z Pelionu · epoka-3: 40%</title>
+          </rect><rect class="heat-cell" x="469" y="237" width="86" height="28" rx="4" style="fill-opacity:0.44">
+            <title>Kentaur z Pelionu · epoka-4: 40%</title>
+          </rect><rect class="heat-cell" x="561" y="237" width="86" height="28" rx="4" style="fill-opacity:0.44">
+            <title>Kentaur z Pelionu · epoka-5: 40%</title>
+          </rect><rect class="heat-cell" x="653" y="237" width="86" height="28" rx="4" style="fill-opacity:0.44">
+            <title>Kentaur z Pelionu · epoka-6: 40%</title>
+          </rect><text class="heat-etykieta" x="178" y="256.0" text-anchor="end">🐎 Kentaur z Pelionu</text>
+        <text class="heat-sum" x="752" y="256.0">40%</text><rect class="heat-cell" x="193" y="271" width="86" height="28" rx="4" style="fill-opacity:0.43">
+            <title>Imp z Lincoln · epoka-1: 39%</title>
+          </rect><rect class="heat-cell" x="285" y="271" width="86" height="28" rx="4" style="fill-opacity:0.43">
+            <title>Imp z Lincoln · epoka-2: 39%</title>
+          </rect><rect class="heat-cell" x="377" y="271" width="86" height="28" rx="4" style="fill-opacity:0.43">
+            <title>Imp z Lincoln · epoka-3: 39%</title>
+          </rect><rect class="heat-cell" x="469" y="271" width="86" height="28" rx="4" style="fill-opacity:0.43">
+            <title>Imp z Lincoln · epoka-4: 39%</title>
+          </rect><rect class="heat-cell" x="561" y="271" width="86" height="28" rx="4" style="fill-opacity:0.44">
+            <title>Imp z Lincoln · epoka-5: 41%</title>
+          </rect><rect class="heat-cell" x="653" y="271" width="86" height="28" rx="4" style="fill-opacity:0.44">
+            <title>Imp z Lincoln · epoka-6: 41%</title>
+          </rect><text class="heat-etykieta" x="178" y="290.0" text-anchor="end">😈 Imp z Lincoln</text>
+        <text class="heat-sum" x="752" y="290.0">40%</text><rect class="heat-cell" x="193" y="305" width="86" height="28" rx="4" style="fill-opacity:0.43">
+            <title>Sfinks — strażniczka Tebańskich Wrót · epoka-1: 39%</title>
+          </rect><rect class="heat-cell" x="285" y="305" width="86" height="28" rx="4" style="fill-opacity:0.43">
+            <title>Sfinks — strażniczka Tebańskich Wrót · epoka-2: 39%</title>
+          </rect><rect class="heat-cell" x="377" y="305" width="86" height="28" rx="4" style="fill-opacity:0.43">
+            <title>Sfinks — strażniczka Tebańskich Wrót · epoka-3: 39%</title>
+          </rect><rect class="heat-cell" x="469" y="305" width="86" height="28" rx="4" style="fill-opacity:0.43">
+            <title>Sfinks — strażniczka Tebańskich Wrót · epoka-4: 39%</title>
+          </rect><rect class="heat-cell" x="561" y="305" width="86" height="28" rx="4" style="fill-opacity:0.42">
+            <title>Sfinks — strażniczka Tebańskich Wrót · epoka-5: 38%</title>
+          </rect><rect class="heat-cell" x="653" y="305" width="86" height="28" rx="4" style="fill-opacity:0.42">
+            <title>Sfinks — strażniczka Tebańskich Wrót · epoka-6: 38%</title>
+          </rect><text class="heat-etykieta" x="178" y="324.0" text-anchor="end">🦁 Sfinks — strażniczka Tebańskich Wrót</text>
+        <text class="heat-sum" x="752" y="324.0">39%</text><rect class="heat-cell" x="193" y="339" width="86" height="28" rx="4" style="fill-opacity:0.39">
+            <title>Indra — władca gromu · epoka-1: 36%</title>
+          </rect><rect class="heat-cell" x="285" y="339" width="86" height="28" rx="4" style="fill-opacity:0.39">
+            <title>Indra — władca gromu · epoka-2: 36%</title>
+          </rect><rect class="heat-cell" x="377" y="339" width="86" height="28" rx="4" style="fill-opacity:0.39">
+            <title>Indra — władca gromu · epoka-3: 36%</title>
+          </rect><rect class="heat-cell" x="469" y="339" width="86" height="28" rx="4" style="fill-opacity:0.38">
+            <title>Indra — władca gromu · epoka-4: 35%</title>
+          </rect><rect class="heat-cell" x="561" y="339" width="86" height="28" rx="4" style="fill-opacity:0.38">
+            <title>Indra — władca gromu · epoka-5: 35%</title>
+          </rect><rect class="heat-cell" x="653" y="339" width="86" height="28" rx="4" style="fill-opacity:0.38">
+            <title>Indra — władca gromu · epoka-6: 35%</title>
+          </rect><text class="heat-etykieta" x="178" y="358.0" text-anchor="end">🌩️ Indra — władca gromu</text>
+        <text class="heat-sum" x="752" y="358.0">35%</text><rect class="heat-cell" x="193" y="373" width="86" height="28" rx="4" style="fill-opacity:0.38">
+            <title>Talos — spiżowy strażnik Krety · epoka-1: 34%</title>
+          </rect><rect class="heat-cell" x="285" y="373" width="86" height="28" rx="4" style="fill-opacity:0.38">
+            <title>Talos — spiżowy strażnik Krety · epoka-2: 34%</title>
+          </rect><rect class="heat-cell" x="377" y="373" width="86" height="28" rx="4" style="fill-opacity:0.38">
+            <title>Talos — spiżowy strażnik Krety · epoka-3: 34%</title>
+          </rect><rect class="heat-cell" x="469" y="373" width="86" height="28" rx="4" style="fill-opacity:0.38">
+            <title>Talos — spiżowy strażnik Krety · epoka-4: 34%</title>
+          </rect><rect class="heat-cell" x="561" y="373" width="86" height="28" rx="4" style="fill-opacity:0.38">
+            <title>Talos — spiżowy strażnik Krety · epoka-5: 34%</title>
+          </rect><rect class="heat-cell" x="653" y="373" width="86" height="28" rx="4" style="fill-opacity:0.38">
+            <title>Talos — spiżowy strażnik Krety · epoka-6: 34%</title>
+          </rect><text class="heat-etykieta" x="178" y="392.0" text-anchor="end">🗿 Talos — spiżowy strażnik Krety</text>
+        <text class="heat-sum" x="752" y="392.0">34%</text><rect class="heat-cell" x="193" y="407" width="86" height="28" rx="4" style="fill-opacity:0.35">
+            <title>Pandora — pierwsza kobieta i pithos, w którym została nadzieja · epoka-1: 31%</title>
+          </rect><rect class="heat-cell" x="285" y="407" width="86" height="28" rx="4" style="fill-opacity:0.35">
+            <title>Pandora — pierwsza kobieta i pithos, w którym została nadzieja · epoka-2: 31%</title>
+          </rect><rect class="heat-cell" x="377" y="407" width="86" height="28" rx="4" style="fill-opacity:0.35">
+            <title>Pandora — pierwsza kobieta i pithos, w którym została nadzieja · epoka-3: 31%</title>
+          </rect><rect class="heat-cell" x="469" y="407" width="86" height="28" rx="4" style="fill-opacity:0.35">
+            <title>Pandora — pierwsza kobieta i pithos, w którym została nadzieja · epoka-4: 31%</title>
+          </rect><rect class="heat-cell" x="561" y="407" width="86" height="28" rx="4" style="fill-opacity:0.35">
+            <title>Pandora — pierwsza kobieta i pithos, w którym została nadzieja · epoka-5: 31%</title>
+          </rect><rect class="heat-cell" x="653" y="407" width="86" height="28" rx="4" style="fill-opacity:0.36">
+            <title>Pandora — pierwsza kobieta i pithos, w którym została nadzieja · epoka-6: 32%</title>
+          </rect><text class="heat-etykieta" x="178" y="426.0" text-anchor="end">🏺 Pandora — pierwsza kobieta i pithos, w którym została nadzieja</text>
+        <text class="heat-sum" x="752" y="426.0">31%</text><rect class="heat-cell" x="193" y="441" width="86" height="28" rx="4" style="fill-opacity:0.30">
+            <title>Morowa Panna — zaraza w białej szacie z czerwoną chustą · epoka-1: 26%</title>
+          </rect><rect class="heat-cell" x="285" y="441" width="86" height="28" rx="4" style="fill-opacity:0.30">
+            <title>Morowa Panna — zaraza w białej szacie z czerwoną chustą · epoka-2: 26%</title>
+          </rect><rect class="heat-cell" x="377" y="441" width="86" height="28" rx="4" style="fill-opacity:0.30">
+            <title>Morowa Panna — zaraza w białej szacie z czerwoną chustą · epoka-3: 26%</title>
+          </rect><rect class="heat-cell" x="469" y="441" width="86" height="28" rx="4" style="fill-opacity:0.30">
+            <title>Morowa Panna — zaraza w białej szacie z czerwoną chustą · epoka-4: 26%</title>
+          </rect><rect class="heat-cell" x="561" y="441" width="86" height="28" rx="4" style="fill-opacity:0.30">
+            <title>Morowa Panna — zaraza w białej szacie z czerwoną chustą · epoka-5: 26%</title>
+          </rect><rect class="heat-cell" x="653" y="441" width="86" height="28" rx="4" style="fill-opacity:0.29">
+            <title>Morowa Panna — zaraza w białej szacie z czerwoną chustą · epoka-6: 24%</title>
+          </rect><text class="heat-etykieta" x="178" y="460.0" text-anchor="end">🧣 Morowa Panna — zaraza w białej szacie z czerwoną chustą</text>
+        <text class="heat-sum" x="752" y="460.0">26%</text>
+    <text class="heat-os-x" x="752.0" y="26">śr.</text>
+  </svg>
+    </div>
+    <div class="card">
+      <h2>Dominacje na koniec Tomu</h2>
+      <div class="card-sub">Kultury i kulty, których głos jest dziś najsilniejszy w archiwum.</div>
+      <svg class="chart dom-chart" viewBox="0 0 640 824" role="img" aria-label="Słupki dominacji">
+      <g class="dom-wiersz" transform="translate(0,22)">
+        <circle class="dom-kropka" cx="82" cy="14" r="4" />
+        <text class="dom-etykieta" x="96" y="19">indie · agni</text>
+        <rect class="dom-tor" x="168" y="4" width="362" height="20" rx="5" />
+        <rect class="dom-bar" x="168" y="4" width="115" height="20" rx="5">
+          <title>indie · agni: 32%</title>
+        </rect>
+        <text class="dom-delta neutral" x="540" y="18">32%</text>
+      </g>
+      <g class="dom-wiersz" transform="translate(0,61.7)">
+        <circle class="dom-kropka" cx="82" cy="14" r="4" />
+        <text class="dom-etykieta" x="96" y="19">irlandia · balor</text>
+        <rect class="dom-tor" x="168" y="4" width="362" height="20" rx="5" />
+        <rect class="dom-bar" x="168" y="4" width="181" height="20" rx="5">
+          <title>irlandia · balor: 50%</title>
+        </rect>
+        <text class="dom-delta neutral" x="540" y="18">50%</text>
+      </g>
+      <g class="dom-wiersz" transform="translate(0,101.4)">
+        <circle class="dom-kropka" cx="82" cy="14" r="4" />
+        <text class="dom-etykieta" x="96" y="19">niemcy · barbarossa-kyffhaeuser</text>
+        <rect class="dom-tor" x="168" y="4" width="362" height="20" rx="5" />
+        <rect class="dom-bar" x="168" y="4" width="155" height="20" rx="5">
+          <title>niemcy · barbarossa-kyffhaeuser: 43%</title>
+        </rect>
+        <text class="dom-delta neutral" x="540" y="18">43%</text>
+      </g>
+      <g class="dom-wiersz" transform="translate(0,141.10000000000002)">
+        <circle class="dom-kropka" cx="82" cy="14" r="4" />
+        <text class="dom-etykieta" x="96" y="19">man · ben-varrey</text>
+        <rect class="dom-tor" x="168" y="4" width="362" height="20" rx="5" />
+        <rect class="dom-bar" x="168" y="4" width="98" height="20" rx="5">
+          <title>man · ben-varrey: 27%</title>
+        </rect>
+        <text class="dom-delta neutral" x="540" y="18">27%</text>
+      </g>
+      <g class="dom-wiersz" transform="translate(0,180.8)">
+        <circle class="dom-kropka" cx="82" cy="14" r="4" />
+        <text class="dom-etykieta" x="96" y="19">albania · drangue-shala</text>
+        <rect class="dom-tor" x="168" y="4" width="362" height="20" rx="5" />
+        <rect class="dom-bar" x="168" y="4" width="168" height="20" rx="5">
+          <title>albania · drangue-shala: 46%</title>
+        </rect>
+        <text class="dom-delta neutral" x="540" y="18">46%</text>
+      </g>
+      <g class="dom-wiersz" transform="translate(0,220.5)">
+        <circle class="dom-kropka" cx="82" cy="14" r="4" />
+        <text class="dom-etykieta" x="96" y="19">joruba · egungun</text>
+        <rect class="dom-tor" x="168" y="4" width="362" height="20" rx="5" />
+        <rect class="dom-bar" x="168" y="4" width="198" height="20" rx="5">
+          <title>joruba · egungun: 55%</title>
+        </rect>
+        <text class="dom-delta neutral" x="540" y="18">55%</text>
+      </g>
+      <g class="dom-wiersz" transform="translate(0,260.20000000000005)">
+        <circle class="dom-kropka" cx="82" cy="14" r="4" />
+        <text class="dom-etykieta" x="96" y="19">grecja · empusa-korynt</text>
+        <rect class="dom-tor" x="168" y="4" width="362" height="20" rx="5" />
+        <rect class="dom-bar" x="168" y="4" width="181" height="20" rx="5">
+          <title>grecja · empusa-korynt: 50%</title>
+        </rect>
+        <text class="dom-delta neutral" x="540" y="18">50%</text>
+      </g>
+      <g class="dom-wiersz" transform="translate(0,299.90000000000003)">
+        <circle class="dom-kropka" cx="82" cy="14" r="4" />
+        <text class="dom-etykieta" x="96" y="19">indie · indra</text>
+        <rect class="dom-tor" x="168" y="4" width="362" height="20" rx="5" />
+        <rect class="dom-bar" x="168" y="4" width="125" height="20" rx="5">
+          <title>indie · indra: 35%</title>
+        </rect>
+        <text class="dom-delta neutral" x="540" y="18">35%</text>
+      </g>
+      <g class="dom-wiersz" transform="translate(0,339.6)">
+        <circle class="dom-kropka" cx="82" cy="14" r="4" />
+        <text class="dom-etykieta" x="96" y="19">japonia · kannon-hase</text>
+        <rect class="dom-tor" x="168" y="4" width="362" height="20" rx="5" />
+        <rect class="dom-bar" x="168" y="4" width="115" height="20" rx="5">
+          <title>japonia · kannon-hase: 32%</title>
+        </rect>
+        <text class="dom-delta neutral" x="540" y="18">32%</text>
+      </g>
+      <g class="dom-wiersz" transform="translate(0,379.3)">
+        <circle class="dom-kropka" cx="82" cy="14" r="4" />
+        <text class="dom-etykieta" x="96" y="19">grecja · kentaur-pelion</text>
+        <rect class="dom-tor" x="168" y="4" width="362" height="20" rx="5" />
+        <rect class="dom-bar" x="168" y="4" width="144" height="20" rx="5">
+          <title>grecja · kentaur-pelion: 40%</title>
+        </rect>
+        <text class="dom-delta neutral" x="540" y="18">40%</text>
+      </g>
+      <g class="dom-wiersz" transform="translate(0,419)">
+        <circle class="dom-kropka" cx="82" cy="14" r="4" />
+        <text class="dom-etykieta" x="96" y="19">grecja · knecht-z-koptos</text>
+        <rect class="dom-tor" x="168" y="4" width="362" height="20" rx="5" />
+        <rect class="dom-bar" x="168" y="4" width="84" height="20" rx="5">
+          <title>grecja · knecht-z-koptos: 23%</title>
+        </rect>
+        <text class="dom-delta neutral" x="540" y="18">23%</text>
+      </g>
+      <g class="dom-wiersz" transform="translate(0,458.70000000000005)">
+        <circle class="dom-kropka" cx="82" cy="14" r="4" />
+        <text class="dom-etykieta" x="96" y="19">anglia · lincoln-imp</text>
+        <rect class="dom-tor" x="168" y="4" width="362" height="20" rx="5" />
+        <rect class="dom-bar" x="168" y="4" width="147" height="20" rx="5">
+          <title>anglia · lincoln-imp: 41%</title>
+        </rect>
+        <text class="dom-delta neutral" x="540" y="18">41%</text>
+      </g>
+      <g class="dom-wiersz" transform="translate(0,498.40000000000003)">
+        <circle class="dom-kropka" cx="82" cy="14" r="4" />
+        <text class="dom-etykieta" x="96" y="19">polska · morowa-panna</text>
+        <rect class="dom-tor" x="168" y="4" width="362" height="20" rx="5" />
+        <rect class="dom-bar" x="168" y="4" width="88" height="20" rx="5">
+          <title>polska · morowa-panna: 24%</title>
+        </rect>
+        <text class="dom-delta neutral" x="540" y="18">24%</text>
+      </g>
+      <g class="dom-wiersz" transform="translate(0,538.1)">
+        <circle class="dom-kropka" cx="82" cy="14" r="4" />
+        <text class="dom-etykieta" x="96" y="19">grecja · nessos</text>
+        <rect class="dom-tor" x="168" y="4" width="362" height="20" rx="5" />
+        <rect class="dom-bar" x="168" y="4" width="119" height="20" rx="5">
+          <title>grecja · nessos: 33%</title>
+        </rect>
+        <text class="dom-delta neutral" x="540" y="18">33%</text>
+      </g>
+      <g class="dom-wiersz" transform="translate(0,577.8000000000001)">
+        <circle class="dom-kropka" cx="82" cy="14" r="4" />
+        <text class="dom-etykieta" x="96" y="19">grecja · pandora</text>
+        <rect class="dom-tor" x="168" y="4" width="362" height="20" rx="5" />
+        <rect class="dom-bar" x="168" y="4" width="114" height="20" rx="5">
+          <title>grecja · pandora: 32%</title>
+        </rect>
+        <text class="dom-delta neutral" x="540" y="18">32%</text>
+      </g>
+      <g class="dom-wiersz" transform="translate(0,617.5)">
+        <circle class="dom-kropka" cx="82" cy="14" r="4" />
+        <text class="dom-etykieta" x="96" y="19">grecja · protostates</text>
+        <rect class="dom-tor" x="168" y="4" width="362" height="20" rx="5" />
+        <rect class="dom-bar" x="168" y="4" width="67" height="20" rx="5">
+          <title>grecja · protostates: 19%</title>
+        </rect>
+        <text class="dom-delta neutral" x="540" y="18">19%</text>
+      </g>
+      <g class="dom-wiersz" transform="translate(0,657.2)">
+        <circle class="dom-kropka" cx="82" cy="14" r="4" />
+        <text class="dom-etykieta" x="96" y="19">szkocja-polnocna · selkie-sule-skerry</text>
+        <rect class="dom-tor" x="168" y="4" width="362" height="20" rx="5" />
+        <rect class="dom-bar" x="168" y="4" width="173" height="20" rx="5">
+          <title>szkocja-polnocna · selkie-sule-skerry: 48%</title>
+        </rect>
+        <text class="dom-delta neutral" x="540" y="18">48%</text>
+      </g>
+      <g class="dom-wiersz" transform="translate(0,696.9000000000001)">
+        <circle class="dom-kropka" cx="82" cy="14" r="4" />
+        <text class="dom-etykieta" x="96" y="19">grecja · sfinks-teby</text>
+        <rect class="dom-tor" x="168" y="4" width="362" height="20" rx="5" />
+        <rect class="dom-bar" x="168" y="4" width="138" height="20" rx="5">
+          <title>grecja · sfinks-teby: 38%</title>
+        </rect>
+        <text class="dom-delta neutral" x="540" y="18">38%</text>
+      </g>
+      <g class="dom-wiersz" transform="translate(0,736.6)">
+        <circle class="dom-kropka" cx="82" cy="14" r="4" />
+        <text class="dom-etykieta" x="96" y="19">indie · syama-i-sarvara</text>
+        <rect class="dom-tor" x="168" y="4" width="362" height="20" rx="5" />
+        <rect class="dom-bar" x="168" y="4" width="71" height="20" rx="5">
+          <title>indie · syama-i-sarvara: 20%</title>
+        </rect>
+        <text class="dom-delta neutral" x="540" y="18">20%</text>
+      </g>
+      <g class="dom-wiersz" transform="translate(0,776.3000000000001)">
+        <circle class="dom-kropka" cx="82" cy="14" r="4" />
+        <text class="dom-etykieta" x="96" y="19">grecja · talos-kreta</text>
+        <rect class="dom-tor" x="168" y="4" width="362" height="20" rx="5" />
+        <rect class="dom-bar" x="168" y="4" width="122" height="20" rx="5">
+          <title>grecja · talos-kreta: 34%</title>
+        </rect>
+        <text class="dom-delta neutral" x="540" y="18">34%</text>
+      </g></svg>
+    </div>
+  </div>
+</div>
+
 <div class="grid">
   <div class="col">
     <!-- CHRONOLOGIA EPOK -->
     <div class="card">
       <h2>Chronologia epok</h2>
       <div class="card-sub">Raporty kolejnych spotkań bytów i ich skutki dla świata.</div>
+      <div class="filtr-bytow"><label for="filtr-bytow">Filtr epok wg bytu:</label> <select id="filtr-bytow"><option value="">— wszystkie —</option></select> <span id="kronika-filtr-info" class="muted"></span></div>
       
-      <a class="epoka-card" href="kronika-epoka-1.html">
+      <a class="epoka-card" id="kronika-epoka-1" data-byt="egungun barbarossa-kyffhaeuser kentaur-pelion" data-slug="epoka-1" href="kronika-epoka-1.html">
         <div class="epoka-nr">Epoka<br>I</div>
         <div>
           <div class="epoka-ttl">Trzy stoły: przodek, gospodarz i gość <span class="chip up">OK</span></div>
@@ -1149,7 +1771,7 @@ li { margin: 8px 0; }
         </div>
         <div class="epoka-go">Raport ↗</div>
       </a>
-      <a class="epoka-card" href="kronika-epoka-2.html">
+      <a class="epoka-card" id="kronika-epoka-2" data-byt="lincoln-imp kentaur-pelion empusa-korynt" data-slug="epoka-2" href="kronika-epoka-2.html">
         <div class="epoka-nr">Epoka<br>II</div>
         <div>
           <div class="epoka-ttl">Nieproszeni goście: psuj, zaproszony i zaproszenie <span class="chip up">OK</span></div>
@@ -1158,7 +1780,7 @@ li { margin: 8px 0; }
         </div>
         <div class="epoka-go">Raport ↗</div>
       </a>
-      <a class="epoka-card" href="kronika-epoka-3.html">
+      <a class="epoka-card" id="kronika-epoka-3" data-byt="egungun balor empusa-korynt" data-slug="epoka-3" href="kronika-epoka-3.html">
         <div class="epoka-nr">Epoka<br>III</div>
         <div>
           <div class="epoka-ttl">Odźwierni: zapraszany, otwierany i ten, który jest drzwiami <span class="chip up">OK</span></div>
@@ -1167,7 +1789,7 @@ li { margin: 8px 0; }
         </div>
         <div class="epoka-go">Raport ↗</div>
       </a>
-      <a class="epoka-card" href="kronika-epoka-4.html">
+      <a class="epoka-card" id="kronika-epoka-4" data-byt="egungun selkie-sule-skerry indra" data-slug="epoka-4" href="kronika-epoka-4.html">
         <div class="epoka-nr">Epoka<br>IV</div>
         <div>
           <div class="epoka-ttl">Imię na progu: skóra, kres i pieśń <span class="chip up">OK</span></div>
@@ -1176,7 +1798,7 @@ li { margin: 8px 0; }
         </div>
         <div class="epoka-go">Raport ↗</div>
       </a>
-      <a class="epoka-card" href="kronika-epoka-5.html">
+      <a class="epoka-card" id="kronika-epoka-5" data-byt="sfinks-teby talos-kreta lincoln-imp" data-slug="epoka-5" href="kronika-epoka-5.html">
         <div class="epoka-nr">Epoka<br>V</div>
         <div>
           <div class="epoka-ttl">Zagadka ze spiżu: rozum, żart i głuchy krok <span class="chip up">OK</span></div>
@@ -1185,7 +1807,7 @@ li { margin: 8px 0; }
         </div>
         <div class="epoka-go">Raport ↗</div>
       </a>
-      <a class="epoka-card" href="kronika-epoka-6.html">
+      <a class="epoka-card" id="kronika-epoka-6" data-byt="pandora morowa-panna empusa-korynt" data-slug="epoka-6" href="kronika-epoka-6.html">
         <div class="epoka-nr">Epoka<br>VI</div>
         <div>
           <div class="epoka-ttl">Czwarty stół: kto nie wie, że bierze <span class="chip up">OK</span></div>
@@ -1307,6 +1929,33 @@ li { margin: 8px 0; }
 
 </div>
 
+<script>
+(() => {
+  const byty = ["balor","barbarossa-kyffhaeuser","egungun","empusa-korynt","indra","kentaur-pelion","lincoln-imp","morowa-panna","pandora","selkie-sule-skerry","sfinks-teby","talos-kreta"];
+  const select = document.getElementById('filtr-bytow');
+  if (select) {
+    select.insertAdjacentHTML('beforeend', byty.map((s) => '<option value="' + s + '">' + s + '</option>').join(''));
+    select.addEventListener('change', () => {
+      const v = select.value;
+      document.querySelectorAll('.epoka-card').forEach((c) => {
+        const pasuje = !v || (c.getAttribute('data-byt') || '').includes(v);
+        c.style.display = pasuje ? '' : 'none';
+      });
+      const info = document.getElementById('kronika-filtr-info');
+      if (info) info.textContent = v ? 'Filtr: tylko epoki z bytem „' + v + '”' : '';
+    });
+  }
+  const fragment = decodeURIComponent(location.hash.replace(/^#/, ''));
+  const m = /^kronika:(.+)$/.exec(fragment);
+  if (m) {
+    const cel = document.getElementById('kronika-' + m[1]) || document.querySelector('[data-slug="' + m[1] + '"]');
+    if (cel) {
+      cel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      cel.classList.add('podswietlone');
+    }
+  }
+})();
+</script>
 
 <div id="panel-kartoteki" class="panel" role="dialog" aria-modal="true" tabindex="-1">
   <div class="warstwa-wpisu">

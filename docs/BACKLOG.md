@@ -29,7 +29,8 @@
   właściciela przed live.
 - **Warstwa kręgów kulturowych**: otoczki/halo grupujące wpisy jednej tradycji
   (słowiańska, algonkińska, nordycka…) — wymaga tagu-kręgu jako konwencji.
-- **Mapa tematyczna — rozszerzenia (ADR 0020, M14) — ROZPOZNANE (2026-08-30):**
+- ~~**Mapa tematyczna — rozszerzenia (ADR 0020, M14)**~~ — **WDROŻONE (2026-08-30, PR #10):** M1 lasy/WWF + hipsometria raster, M2 szczyty/POI + urban + morza, M3 Pleiades (miejsca historyczne) + podkłady online (opentopo/osm/esri, bez klucza, ręcznie włączane). Wszystkie warstwy domyślnie **wyłączone** (100% offline bez zgody na sieć).
+- **Mapa tematyczna — dalsze kierunki (po M3):** GeoNames szczyty (CC BY 4.0) i DARE/AWMC drogi rzymskie (CC BY-SA 3.0) — wete na rzecz NE/Pleiades w M3; katalog źródeł w `docs/ASSETS.md`.
   drogi główne, POI typu szczyty, kompleksy leśne i kolorowa wysokość n.p.m.
   Research (patrz `docs/plans/RESEARCH_mapa-warstwy-2026-08-30.md`)
   znalazł realne źródła offline: **Natural Earth 10m physical** —
@@ -75,18 +76,21 @@
 
 - **Analiza:** `docs/plans/ANALIZA_kronika-rozwoj-2026-08-30.md` (co
   niewidoczne w raportach, S1–S3, D1–D3).
-- **S1 (bezpieczne, generator-only, czeka na „tak”):** W1 ramka epoki
-  (`iskra`/`pytanie`/`przebieg` — dziś giną w summary), W2 wykres osi mit/rac
-  po epokach, W3 słupki zasięgów przed→po, W4 linie paliwa, W5 słupki
+- ~~**S1**~~ — **WDROŻONE (2026-08-30, PR #10):** W1 ramka epoki
+  (`iskra`/`pytanie`/`przebieg` — w summary i raporcie), W2 wykres osi
+  mit/rac, W3 słupki zasięgów przed→po, W4 linie paliwa, W5 słupki
   dominacji, W6 diagram relacji (łuki), W7 oś czasu wątków, W8 „dziennik
-  zmiany” (jedna tabela), W9 heatmap byt×epoka, W10 łuki na mapie epoki
-  (adaptacja „widoku rozmowy na mapie”).
-- **S2 (dotyka głównego UI — ADR 0007):** feed epok, filtr bytów, deep-link
-  `#kronika:<slug>` (KRONIKA_tryb §10).
-- **S3:** graf wątków (>~15 epok), indeks tematów skitów.
+  zmiany”, W9 heatmap byt×epoka, W10 łuki relacji na mapie epoki.
+- ~~**S2**~~ — **WDROŻONE (2026-08-30, PR #10):** feed epok w aplikacji
+  głównej (przycisk „📜 kronika” + `#kroniki`), filtr bytów na stronie
+  Tomu i w feedzie, deep-link `#kronika:<slug>`. (Karty multimedialne —
+  S2-propozycja w ANALIZIE — wciąż do decyzji właściciela.)
+- ~~**S3**~~ — **WDROŻONE (2026-08-30, PR #10):** graf epok z odwołaniami
+  `meta.poprzednik`/`meta.kontynuacja` + rozgałęzienia, `docs/kronika.html`
+  (spis Tomów) i obsługa wielu Tomów w generatorze. Indeks tematów skitów —
+  zostaje w kolejce.
 - **Uwaga techniczna:** `zielone` pozycje z §10 (feed epok, karta epoki,
-  oś czasu, filtr) są **koncepcją opisaną w `docs/KRONIKA_tryb.md` — jeszcze
-  nie są w aplikacji głównej.**
+  oś czasu, filtr) są teraz **w aplikacji głównej i na stronach Kroniki.**
 
 
 ## Zrealizowane w M3 (2026-08-28)

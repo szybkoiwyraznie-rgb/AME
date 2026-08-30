@@ -736,6 +736,103 @@ li { margin: 8px 0; }
   text-align: center;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
+
+/* S1 — wizualizacje Kroniki */
+.ramka-epoki { background: var(--card-alt); border: 1px solid var(--line); border-left: 4px solid var(--accent); border-radius: 10px; padding: 18px 20px; margin: 18px 0 24px; }
+.ramka-pytanie { margin: 0 0 10px; font-size: 19px; font-weight: 700; color: var(--fg); }
+.ramka-iskra { margin: 0 0 10px; padding: 0 0 0 14px; border-left: 3px solid var(--accent-light); font-style: italic; color: var(--muted); }
+.ramka-przebieg summary { cursor: pointer; font-size: 13px; color: var(--accent-light); }
+.ramka-przebieg p { margin: 8px 0 0; font-size: 14px; }
+.ramka-rozgalezienie { margin-top: 12px; padding: 10px 12px; background: var(--card); border: 1px dashed var(--accent-light); border-radius: 8px; font-size: 14px; }
+.ramka-rozgalezienie ul { margin: 6px 0 0; padding-left: 20px; }
+
+.chart { width: 100%; height: auto; display: block; }
+.os-grid { stroke: var(--line); stroke-width: 1; }
+.os-grid-label { fill: var(--muted); font-size: 10px; text-anchor: end; }
+.os-area { fill: var(--mit); fill-opacity: 0.12; }
+.os-line { fill: none; stroke: var(--mit); stroke-width: 2.5; stroke-linejoin: round; }
+.os-dot circle { fill: var(--accent); stroke: var(--fg); stroke-width: 1.5; }
+.os-wartosc { fill: var(--fg); font-size: 11px; text-anchor: middle; }
+.os-label { fill: var(--muted); font-size: 12px; }
+
+.zasieg-chip, .zasieg-wiersz text { font-size: 12px; }
+.zasieg-etykieta { fill: var(--fg); font-weight: 600; }
+.zasieg-tor { fill: var(--card-alt); stroke: var(--line); stroke-width: 1; }
+.zasieg-przed { fill: var(--muted); opacity: 0.45; }
+.zasieg-po { fill: var(--accent); }
+.zasieg-po.up { fill: var(--up); }
+.zasieg-po.down { fill: var(--down); }
+.zasieg-delta { fill: var(--muted); font-weight: 700; }
+.zasieg-delta.up { fill: var(--up); }
+.zasieg-delta.down { fill: var(--down); }
+.chart-legenda { fill: var(--muted); font-size: 11px; }
+.leg-przed { fill: var(--muted); }
+.leg-po { fill: var(--accent); }
+
+.wykres-paliwa { display: flex; gap: 10px; align-items: flex-start; flex-wrap: wrap; }
+.paliwo-chart { flex: 1 1 520px; min-width: 0; }
+.paliwo-linia { fill: none; stroke-width: 2.2; stroke-linejoin: round; }
+.paliwo-punkt { stroke: var(--card); stroke-width: 1; }
+.paliwo-os, .paliwo-os-x { fill: var(--muted); font-size: 11px; text-anchor: end; }
+.paliwo-os-x { text-anchor: middle; }
+.paliwo-legenda-box { flex: 0 1 200px; display: flex; flex-direction: column; gap: 4px; font-size: 13px; }
+.paliwo-legenda { display: flex; gap: 8px; align-items: center; color: var(--fg); }
+.paliwo-legenda .kropka { width: 10px; height: 10px; border-radius: 50%; background: var(--l); display: inline-block; }
+.paliwo-legenda b { margin-left: auto; }
+
+.dom-tor { fill: var(--card-alt); stroke: var(--line); stroke-width: 1; }
+.dom-bar { fill: var(--accent); }
+.dom-etykieta { fill: var(--fg); font-size: 12.5px; font-weight: 600; }
+.dom-kropka { fill: var(--accent); }
+.dom-delta { fill: var(--muted); font-size: 12px; }
+.dom-delta.up { fill: var(--up); }
+.dom-delta.down { fill: var(--down); }
+
+.rel-elipsa { fill: none; stroke: var(--line); stroke-dasharray: 4 5; }
+.rel-luk { fill: none; stroke-width: 2.4; }
+.rel-luk.wzmocnienie { stroke: var(--up); }
+.rel-luk.schlodzenie { stroke: var(--down); }
+.rel-luk.neutralna { stroke: var(--muted); stroke-dasharray: 5 4; }
+.rel-wezel circle { fill: var(--card); stroke: var(--accent); stroke-width: 1.6; }
+.rel-emoji { text-anchor: middle; font-size: 26px; }
+.rel-nazwa { text-anchor: middle; font-size: 12.5px; fill: var(--fg); font-weight: 600; }
+.rel-legenda { display: flex; gap: 18px; margin-top: 6px; font-size: 12px; color: var(--muted); }
+.rel-leg.wzmocnienie { border-bottom: 3px solid var(--up); }
+.rel-leg.schlodzenie { border-bottom: 3px solid var(--down); }
+.rel-leg.neutralna { border-bottom: 3px dashed var(--muted); }
+
+.watki-linia { stroke: var(--accent-light); stroke-width: 2; }
+.watki-marker { stroke: var(--card); stroke-width: 2; }
+.watki-marker.otwarty { fill: var(--up); }
+.watki-marker.zamkniety { fill: var(--down); }
+.watki-etykieta { fill: var(--fg); font-size: 12px; }
+.watki-os-x { fill: var(--muted); font-size: 11px; }
+
+.heat-cell { fill: var(--accent); stroke: var(--card); }
+.heat-etykieta { fill: var(--fg); font-size: 12.5px; font-weight: 600; }
+.heat-sum { fill: var(--muted); font-size: 12px; }
+.heat-os-x { fill: var(--muted); font-size: 12px; }
+
+.graf-os { stroke: var(--accent); stroke-width: 2.4; }
+.graf-odwolanie { stroke: var(--accent-light); stroke-width: 1.6; stroke-dasharray: 6 4; }
+.graf-wezel circle { fill: var(--card); stroke: var(--accent); stroke-width: 2; }
+.graf-wezel.rozgalezienie circle { fill: var(--accent-light); }
+.graf-nr { text-anchor: middle; fill: var(--fg); font-size: 13px; font-weight: 700; }
+.graf-etykieta { fill: var(--muted); font-size: 11.5px; }
+.graf-galez path { fill: var(--accent-light); }
+.graf-galez-opis { fill: var(--muted); font-size: 11px; }
+
+.tomy-pasek { display: flex; gap: 8px; flex-wrap: wrap; margin: 0 0 14px; }
+.tomy-pasek .pager-btn.aktywny { background: var(--accent); color: var(--card); }
+.filtr-bytow { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin: 0 0 12px; font-size: 13px; }
+.filtr-bytow select { padding: 4px 8px; font: inherit; font-size: 13px; color: var(--fg); background: var(--card); border: 1px solid var(--line); border-radius: 6px; }
+.epoka-card.podswietlone { outline: 2px solid var(--accent); outline-offset: 2px; }
+.powiazane-epoki { margin: 22px 0 0; font-size: 13.5px; color: var(--muted); }
+.powiazane-epoki .chip { text-decoration: none; }
+.dziennik { width: 100%; border-collapse: collapse; }
+.dziennik th, .dziennik td { padding: 7px 8px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; font-size: 13.5px; }
+.dziennik .num { text-align: right; white-space: nowrap; }
+.tom-karta { max-width: 640px; }
 </style>
 </head>
 <body><div class="wrap">
@@ -751,7 +848,7 @@ li { margin: 8px 0; }
       <a id="przycisk-lista" class="przycisk" href="../index.html#lista" title="Lista wszystkich manifestacji">☰ kartoteka</a>
       <a id="przycisk-skity" class="przycisk" href="../index.html#skity" title="Baza Skitów — rozmowy materializacji">✎ skity</a>
       <a id="przycisk-nowosci" class="przycisk" href="../index.html#nowosci" title="Co nowego — aktualizacje archiwum">✚ nowości</a>
-      <a id="przycisk-kronika" class="przycisk " href="kronika-tom-1.html" title="Kronika świata AME — tocząca się opowieść epok">📜 kronika</a>
+      <a id="przycisk-kronika" class="przycisk " href="kronika.html" title="Kronika świata AME — tocząca się opowieść epok">📜 kronika</a>
       <button id="przycisk-motyw" class="przycisk przycisk-motyw" type="button" aria-pressed="false" title="Przełącz tryb ciemny/jasny" onclick="const m = document.documentElement.dataset.motyw === 'jasny' ? 'ciemny' : 'jasny'; document.documentElement.dataset.motyw = m; localStorage.setItem('ame:motyw', m); this.innerHTML = m === 'jasny' ? '☀ jasny' : '☾ ciemny'; this.setAttribute('aria-pressed', String(m === 'jasny'));">☾ motyw</button>
     </div>
   </header>
@@ -784,6 +881,14 @@ li { margin: 8px 0; }
     </div>
   </div>
 </div>
+
+
+  <section class="ramka-epoki" id="ramka-epoki">
+    <p class="ramka-pytanie">Kto naprawdę stoi w drzwiach — ten, kto wchodzi, ten, kto otwiera, czy ten, kto jest miejscem?</p>
+    <blockquote class="ramka-iskra">„Przed wspólnym progiem stanęli: przodek, którego wpuszcza pieśń; olbrzym, którego otwiera czterech; i dom, który sam jest zaproszeniem i znika, gdy padnie imię.”</blockquote>
+    <details class="ramka-przebieg"><summary>Przebieg</summary><p>Pełny tekst rozmowy: data/skity/odzwierni.json (uczestnicy zgodni z epoką).</p></details>
+    
+  </section>
 
 <!-- MAPA WEKTOROWA EPOKI -->
 
@@ -831,22 +936,23 @@ li { margin: 8px 0; }
       <!-- Łuki interakcji między uczestnikami -->
       <g class="arcs">
         
-        <path class="arc-glow" d="M 1718 1134 Q 1778.5 1367.5 1839 1721" />
-        <path class="arc-line" d="M 1718 1134 Q 1778.5 1367.5 1839 1721" />
-      
-        <path class="arc-glow" d="M 1718 1134 Q 1873.5 1202 2029 1390" />
-        <path class="arc-line" d="M 1718 1134 Q 1873.5 1202 2029 1390" />
-      
-        <path class="arc-glow" d="M 1839 1721 Q 1934 1498.2516594126957 2029 1390" />
-        <path class="arc-line" d="M 1839 1721 Q 1934 1498.2516594126957 2029 1390" />
-      
+        <path class="rel-arc wzmocnienie" d="M 1839 1721 Q 1778.5 1357.5 1718 1134" data-od="egungun" data-do="balor" data-kierunek="wzmocnienie">
+          <title>egungun → balor: wzmocnienie — Przodek i olbrzym spotykają się w tym samym obrazie kogoś, kto nie pyta o zgodę — choć jeden przez pieśń, drugi przez powiekę.</title>
+        </path>
+        <path class="rel-arc schlodzenie" d="M 2029 1390 Q 1873.5 1192 1718 1134" data-od="empusa-korynt" data-do="balor" data-kierunek="schłodzenie">
+          <title>empusa-korynt → balor: schłodzenie — Empusa pozbawia Balora wyłączności na nieuchronność: jej próg znika po imieniu, jego po podniesieniu powieki.</title>
+        </path>
+        <path class="rel-arc wzmocnienie" d="M 1839 1721 Q 1934 1485.5 2029 1390" data-od="egungun" data-do="empusa-korynt" data-kierunek="wzmocnienie">
+          <title>egungun → empusa-korynt: wzmocnienie — Egungun nazywa Empusę progiem, a nie gościem — przez co spina ją z własną rolą: jedno wpuszcza przez pieśń, drugie przez bycie miejscem.</title>
+        </path>
       </g>
       
       <!-- Węzły i halos bytów -->
       <g class="nodes">
         
       <g class="node active" data-slug="balor" transform="translate(1718,1134)">
-        <circle class="halo" r="84" />
+        <title>Balor z Tory Island — zasięg NaN%% (przed 50%, 0 pp)</title>
+        <circle class="halo" r="NaN" />
         <a href="#balor" class="otworz-kartoteke" data-slug="balor" title="Balor z Tory Island (Irlandia (hrabstwo Donegal)) — otwórz kartotekę">
           <circle class="pin-bg" r="15" />
           <text class="pin-icon" dy="4">👁️</text>
@@ -854,7 +960,8 @@ li { margin: 8px 0; }
         </a>
       </g>
       <g class="node active" data-slug="egungun" transform="translate(1839,1721)">
-        <circle class="halo" r="89" />
+        <title>Egungun — zasięg NaN%% (przed 52%, +2 pp)</title>
+        <circle class="halo" r="NaN" />
         <a href="#egungun" class="otworz-kartoteke" data-slug="egungun" title="Egungun (Nigeria) — otwórz kartotekę">
           <circle class="pin-bg" r="15" />
           <text class="pin-icon" dy="4">🎭</text>
@@ -862,7 +969,8 @@ li { margin: 8px 0; }
         </a>
       </g>
       <g class="node active" data-slug="empusa-korynt" transform="translate(2029,1390)">
-        <circle class="halo" r="84" />
+        <title>Empusa z Koryntu — zasięg NaN%% (przed 50%, 0 pp)</title>
+        <circle class="halo" r="NaN" />
         <a href="#empusa-korynt" class="otworz-kartoteke" data-slug="empusa-korynt" title="Empusa z Koryntu (Grecja) — otwórz kartotekę">
           <circle class="pin-bg" r="15" />
           <text class="pin-icon" dy="4">🕷️</text>
@@ -875,6 +983,35 @@ li { margin: 8px 0; }
 
 <div class="grid">
   <div class="col">
+    <!-- W8: DZIENNIK ZMIANY -->
+    <div class="card">
+      <h2>Dziennik zmiany</h2>
+      <div class="card-sub">Jedna tabela: zasoby, zasięgi, dominacje i pozycje po epoce.</div>
+      
+  <table class="dziennik">
+    <thead><tr><th>Byt</th><th class="num">Paliwo</th><th class="num">Zasięg</th><th>Dominacja</th><th>Pozycja</th></tr></thead>
+    <tbody><tr class="dziennik-wiersz" data-byt="balor">
+        <td><strong>👁️ <a href="#balor" class="otworz-kartoteke" data-slug="balor" style="color:inherit;text-decoration:none">Balor z Tory Island</a></strong> <span class="muted">[balor]</span></td>
+        <td class="num">21 → <b>19</b> <span class="chip down">-2</span></td>
+        <td class="num">50% → <b>50%</b> <span class="chip neutral">0 pp</span></td>
+        <td><em>irlandia</em> <span class="muted">(balor)</span> <span class="chip neutral">0 pp</span></td>
+        <td><em>odporny</em><br><span class="muted">Powieka pozostaje nieodwrócona; olbrzym nie zostaje pokonany, tylko przestaje być wyjątkiem.</span></td>
+      </tr><tr class="dziennik-wiersz" data-byt="egungun">
+        <td><strong>🎭 <a href="#egungun" class="otworz-kartoteke" data-slug="egungun" style="color:inherit;text-decoration:none">Egungun</a></strong> <span class="muted">[egungun]</span></td>
+        <td class="num">23 → <b>26</b> <span class="chip up">+3</span></td>
+        <td class="num">52% → <b>54%</b> <span class="chip up">+2 pp</span></td>
+        <td><em>joruba</em> <span class="muted">(egungun)</span> <span class="chip up">+2 pp</span></td>
+        <td><em>wzmocniony</em><br><span class="muted">Pieśń zostaje uznana za miłe drzwi; kult przodków rośnie o 2 pp.</span></td>
+      </tr><tr class="dziennik-wiersz" data-byt="empusa-korynt">
+        <td><strong>🕷️ <a href="#empusa-korynt" class="otworz-kartoteke" data-slug="empusa-korynt" style="color:inherit;text-decoration:none">Empusa z Koryntu</a></strong> <span class="muted">[empusa-korynt]</span></td>
+        <td class="num">21 → <b>19</b> <span class="chip down">-2</span></td>
+        <td class="num">50% → <b>50%</b> <span class="chip neutral">0 pp</span></td>
+        <td><em>grecja</em> <span class="muted">(empusa-korynt)</span> <span class="chip neutral">0 pp</span></td>
+        <td><em>odporny</em><br><span class="muted">Empusa zostaje nienazwana — i dzięki temu zostaje w legendzie, choć świat już wie, jak ją rozproszyć.</span></td>
+      </tr></tbody>
+  </table>
+    </div>
+
     <!-- UCZESTNICY -->
     <div class="card">
       <h2>Uczestnicy epoki</h2>
@@ -1042,6 +1179,43 @@ li { margin: 8px 0; }
     <div class="card">
       <h2>Konsekwencje dla świata</h2>
       <div class="card-sub">Przesunięcia wierzeń i zasięgów kulturowych w wyniku epoki.</div>
+      <svg class="chart zasieg-chart" viewBox="0 0 700 164" role="img" aria-label="Wykres zasięgów przed i po epoce">
+    <text class="chart-legenda" x="158" y="12"><tspan class="leg-przed">▬ przed</tspan> <tspan class="leg-po">▬ po</tspan></text>
+    
+      <g class="zasieg-wiersz" transform="translate(0,16)">
+        <text class="zasieg-etykieta" x="148" y="26" text-anchor="end">Egungun</text>
+        <rect class="zasieg-tor" x="158" y="8" width="452" height="10" rx="4" />
+        <rect class="zasieg-przed" x="158" y="8" width="234" height="10" rx="4">
+          <title>egungun: przed 52%</title>
+        </rect>
+        <rect class="zasieg-po up" x="158" y="24" width="243" height="10" rx="4">
+          <title>egungun: po 54% · Rozdzielenie mechanizmów wzmacnia kult przodków: pieśń zostaje uznana za jedyne miłe drzwi między światami.</title>
+        </rect>
+        <text class="zasieg-delta up" x="620" y="33">+2 pp</text>
+      </g>
+      <g class="zasieg-wiersz" transform="translate(0,62)">
+        <text class="zasieg-etykieta" x="148" y="26" text-anchor="end">Balor z Tory Island</text>
+        <rect class="zasieg-tor" x="158" y="8" width="452" height="10" rx="4" />
+        <rect class="zasieg-przed" x="158" y="8" width="226" height="10" rx="4">
+          <title>balor: przed 50%</title>
+        </rect>
+        <rect class="zasieg-po neutral" x="158" y="24" width="226" height="10" rx="4">
+          <title>balor: po 50% · Balor nie zyskuje i nie traci: jego powieka pozostaje nieodwrócona, ale przestaje być jedynym drzwiami, o których ludzie szepczą.</title>
+        </rect>
+        <text class="zasieg-delta neutral" x="620" y="33">0 pp</text>
+      </g>
+      <g class="zasieg-wiersz" transform="translate(0,108)">
+        <text class="zasieg-etykieta" x="148" y="26" text-anchor="end">Empusa z Koryntu</text>
+        <rect class="zasieg-tor" x="158" y="8" width="452" height="10" rx="4" />
+        <rect class="zasieg-przed" x="158" y="8" width="224" height="10" rx="4">
+          <title>empusa-korynt: przed 50%</title>
+        </rect>
+        <rect class="zasieg-po neutral" x="158" y="24" width="224" height="10" rx="4">
+          <title>empusa-korynt: po 50% · Empusa zostaje nienazwana: świat wie, że padnięcie imienia ją rozwiązuje, więc opowiada o niej ostrożnie — na granicy mitu.</title>
+        </rect>
+        <text class="zasieg-delta neutral" x="620" y="33">0 pp</text>
+      </g>
+  </svg>
       <ul><li><strong><a href="#egungun" class="otworz-kartoteke" data-slug="egungun" style="color:inherit">egungun</a></strong> — 52% → 54%
         <span class="chip up">+2 pp</span><br>
         <span class="muted">Rozdzielenie mechanizmów wzmacnia kult przodków: pieśń zostaje uznana za jedyne miłe drzwi między światami.</span></li><li><strong><a href="#balor" class="otworz-kartoteke" data-slug="balor" style="color:inherit">balor</a></strong> — 50% → 50%
@@ -1049,6 +1223,73 @@ li { margin: 8px 0; }
         <span class="muted">Balor nie zyskuje i nie traci: jego powieka pozostaje nieodwrócona, ale przestaje być jedynym drzwiami, o których ludzie szepczą.</span></li><li><strong><a href="#empusa-korynt" class="otworz-kartoteke" data-slug="empusa-korynt" style="color:inherit">empusa-korynt</a></strong> — 50% → 50%
         <span class="chip neutral">0 pp</span><br>
         <span class="muted">Empusa zostaje nienazwana: świat wie, że padnięcie imienia ją rozwiązuje, więc opowiada o niej ostrożnie — na granicy mitu.</span></li></ul>
+    </div>
+
+    <!-- W6: DIAGRAM RELACJI -->
+    <div class="card">
+      <h2>Relacje między bytami</h2>
+      <div class="card-sub">Kto kogo wzmocnił, a kogo odsunął — i co świat z tego zapamiętał.</div>
+      <svg class="chart rel-chart" viewBox="0 0 720 460" role="img" aria-label="Diagram relacji między uczestnikami epoki">
+    <path class="rel-elipsa" d="M 60 210 A 300 150 0 1 1 659.9 210 A 300 150 0 1 1 60 210" />
+    <path class="rel-luk wzmocnienie" d="M 360.0 60.0 Q 546.2 107.5 619.8 285.0">
+        <title>egungun → balor: wzmocnienie · Przodek i olbrzym spotykają się w tym samym obrazie kogoś, kto nie pyta o zgodę — choć jeden przez pieśń, drugi przez powiekę.</title>
+      </path><path class="rel-luk schlodzenie" d="M 100.2 285.0 Q 360.0 195.0 619.8 285.0">
+        <title>empusa-korynt → balor: schłodzenie · Empusa pozbawia Balora wyłączności na nieuchronność: jej próg znika po imieniu, jego po podniesieniu powieki.</title>
+      </path><path class="rel-luk wzmocnienie" d="M 360.0 60.0 Q 286.3 237.5 100.2 285.0">
+        <title>egungun → empusa-korynt: wzmocnienie · Egungun nazywa Empusę progiem, a nie gościem — przez co spina ją z własną rolą: jedno wpuszcza przez pieśń, drugie przez bycie miejscem.</title>
+      </path>
+    <g class="rel-wezel" transform="translate(360.0,60.0)">
+        <title>Egungun</title>
+        <circle r="34" />
+        <text class="rel-emoji" y="8">🎭</text>
+        <text class="rel-nazwa" y="58">Egungun</text>
+      </g><g class="rel-wezel" transform="translate(619.8,285.0)">
+        <title>Balor z Tory Island</title>
+        <circle r="34" />
+        <text class="rel-emoji" y="8">👁️</text>
+        <text class="rel-nazwa" y="58">Balor z Tory Island</text>
+      </g><g class="rel-wezel" transform="translate(100.2,285.0)">
+        <title>Empusa z Koryntu</title>
+        <circle r="34" />
+        <text class="rel-emoji" y="8">🕷️</text>
+        <text class="rel-nazwa" y="58">Empusa z Koryntu</text>
+      </g>
+  </svg>
+  <div class="rel-legenda"><span class="rel-leg wzmocnienie">— wzmocnienie</span><span class="rel-leg schlodzenie">— schłodzenie</span><span class="rel-leg neutralna">— neutralne</span></div>
+    </div>
+
+    <!-- W5: DOMINACJE -->
+    <div class="card">
+      <h2>Dominacje kultur</h2>
+      <div class="card-sub">Kultury i kulty, których głos w tej epoce zyskał lub stracił na znaczeniu.</div>
+      <svg class="chart dom-chart" viewBox="0 0 640 144" role="img" aria-label="Słupki dominacji">
+      <g class="dom-wiersz" transform="translate(0,22)">
+        <circle class="dom-kropka" cx="82" cy="14" r="4" />
+        <text class="dom-etykieta" x="96" y="19">joruba · egungun</text>
+        <rect class="dom-tor" x="168" y="4" width="362" height="20" rx="5" />
+        <rect class="dom-bar" x="168" y="4" width="195" height="20" rx="5">
+          <title>joruba · egungun: 54% (+2 pp)</title>
+        </rect>
+        <text class="dom-delta up" x="540" y="18">54% · +2 pp</text>
+      </g>
+      <g class="dom-wiersz" transform="translate(0,60)">
+        <circle class="dom-kropka" cx="82" cy="14" r="4" />
+        <text class="dom-etykieta" x="96" y="19">irlandia · balor</text>
+        <rect class="dom-tor" x="168" y="4" width="362" height="20" rx="5" />
+        <rect class="dom-bar" x="168" y="4" width="181" height="20" rx="5">
+          <title>irlandia · balor: 50% (0 pp)</title>
+        </rect>
+        <text class="dom-delta neutral" x="540" y="18">50% · 0 pp</text>
+      </g>
+      <g class="dom-wiersz" transform="translate(0,98)">
+        <circle class="dom-kropka" cx="82" cy="14" r="4" />
+        <text class="dom-etykieta" x="96" y="19">grecja · empusa-korynt</text>
+        <rect class="dom-tor" x="168" y="4" width="362" height="20" rx="5" />
+        <rect class="dom-bar" x="168" y="4" width="180" height="20" rx="5">
+          <title>grecja · empusa-korynt: 50% (0 pp)</title>
+        </rect>
+        <text class="dom-delta neutral" x="540" y="18">50% · 0 pp</text>
+      </g></svg>
     </div>
 
     <!-- POZYCJE I STATUSY -->
@@ -1085,6 +1326,8 @@ li { margin: 8px 0; }
   <a class="pager-btn" href="kronika-tom-1.html">📜 Spis Tomu I</a>
   <a class="pager-btn" href="kronika-epoka-4.html">Następna epoka →</a>
 </div>
+
+<div class="powiazane-epoki"><b>Epoki powiązane:</b> <a class="chip" href="kronika-epoka-2.html">epoka-2</a> <a class="chip" href="kronika-epoka-4.html">epoka-4</a></div>
 
 <div class="foot">
   Archiwum Manifestacji Eterycznych · Kronika Tomu I · Rekordy zsynchronizowane

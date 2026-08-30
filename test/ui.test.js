@@ -2,7 +2,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
-import { htmlWpisu, htmlWarstwyWpisu, linkDoZrodla, htmlListy, htmlTagow, htmlDialogu, htmlSkitu, htmlBazySkitow, htmlNowosci, esc, nastepnyMotyw, motywPoczatkowy, etykietaMotywu, MOTYWY, KLUCZ_MOTYWU, akcjeZZapytania } from '../app/ui.js';
+import { htmlWpisu, htmlWarstwyWpisu, linkDoZrodla, htmlListy, htmlTagow, htmlDialogu, htmlSkitu, htmlBazySkitow, htmlNowosci, htmlKronik, esc, nastepnyMotyw, motywPoczatkowy, etykietaMotywu, MOTYWY, KLUCZ_MOTYWU, akcjeZZapytania } from '../app/ui.js';
 
 async function dane(plik = 'egungun') {
   const wpis = JSON.parse(await readFile(`data/manifestations/${plik}.json`, 'utf8'));
@@ -445,4 +445,31 @@ test('wersja protokołu jest jedna: stopka aplikacji = PROTOKÓŁ = README (F2)'
     .map((m) => m[1])
     .filter((v) => v !== wersja);
   assert.deepEqual(stare, [], `aplikacja i README nie mogą cytować starszej wersji (v${wersja} obowiązuje)`);
+});
+
+test('U3: feed Kroniki renderuje karty epok z ramą narracji i filtrem', () => {
+  const html = htmlKronik({
+    epoki: [
+      {
+        slug: 'epoka-1',
+        tytul: 'Trzy stoły',
+        stanPo: { os: { mit: 34, racjonalizacja: 66 } },
+        pytanie: 'Co wolno wziąć gościowi?',
+        iskra: 'Przyjdź, zanim siądą.',
+        konsekwencje: { zasieg: [{ slug: 'egungun', przed: 0.488, po: 0.518, opis: '' }] },
+        uczestnicy: [{ slug: 'egungun', nazwa: 'Egungun' }],
+      },
+    ],
+  });
+  assert.match(html, /kronika-filtr/);
+  assert.match(html, /Trzy stoły/);
+  assert.match(html, /Co wolno wziąć gościowi/);
+  assert.match(html, /data-link="kronika:epoka-1"/);
+  assert.match(html, /\+3 pp/);
+  assert.match(html, /docs\/kronika\.html/);
+});
+
+test('U3: pusty feed pokazuje komunikat', () => {
+  const html = htmlKronik({ epoki: [] });
+  assert.match(html, /pusto/);
 });

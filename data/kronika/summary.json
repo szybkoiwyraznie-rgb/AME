@@ -7,6 +7,14 @@
       "slug": "epoka-1",
       "tytul": "Trzy stoły: przodek, gospodarz i gość",
       "skit": "trzy-stoly",
+      "iskra": "W gospodzie, w której ściany pamiętają trzy porządki, zasiedli: przodek, który przychodzi, żeby dać; gospodarz, który płaci, żeby gość sobie poszedł; i gość, który wziął sam, bo nie znał miary.",
+      "pytanie": "Co wolno wziąć gościowi, gdy gospodarz tylko płaci, a przodek przychodzi, żeby dać?",
+      "przebieg": "Pełny tekst rozmowy: data/skity/trzy-stoly.json (uczestnicy zgodni z epoką).",
+      "meta": {
+        "utworzono": "2026-08-29",
+        "autor": "agent Areny — pierwsza epoka Tomu I",
+        "wersja": 1
+      },
       "walidacja": true,
       "bledy": [],
       "uczestnicy": [
@@ -367,6 +375,15 @@
       "slug": "epoka-2",
       "tytul": "Nieproszeni goście: psuj, zaproszony i zaproszenie",
       "skit": "nieproszeni-goscie",
+      "iskra": "Trzej psuja uroczystości porównują, jak wchodzą: kościelny psuj, zaproszony gość, który sięgnął sam, i dom, który sam jest zaproszeniem.",
+      "pytanie": "Jeśli każdy ma swojego odźwiernego — anioła, halę albo jedno trzeźwe słowo — to co naprawdę zatrzymuje, a nie tylko wypędza?",
+      "przebieg": "Pełny tekst rozmowy: data/skity/nieproszeni-goscie.json (uczestnicy zgodni z epoką).",
+      "meta": {
+        "utworzono": "2026-08-29",
+        "autor": "agent Areny — druga epoka Tomu I (ciągłość stanPo)",
+        "wersja": 1,
+        "uwagi": "Kentaur startuje z salda 14 z Epoki I; Empusa i Imp wchodzą z paliwa pasywnego."
+      },
       "walidacja": true,
       "bledy": [],
       "uczestnicy": [
@@ -739,6 +756,14 @@
       "slug": "epoka-3",
       "tytul": "Odźwierni: zapraszany, otwierany i ten, który jest drzwiami",
       "skit": "odzwierni",
+      "iskra": "Przed wspólnym progiem stanęli: przodek, którego wpuszcza pieśń; olbrzym, którego otwiera czterech; i dom, który sam jest zaproszeniem i znika, gdy padnie imię.",
+      "pytanie": "Kto naprawdę stoi w drzwiach — ten, kto wchodzi, ten, kto otwiera, czy ten, kto jest miejscem?",
+      "przebieg": "Pełny tekst rozmowy: data/skity/odzwierni.json (uczestnicy zgodni z epoką).",
+      "meta": {
+        "utworzono": "2026-08-29 10:40",
+        "autor": "agent Areny — trzecia epoka Tomu I (wątek odźwierni)",
+        "wersja": 1
+      },
       "walidacja": true,
       "bledy": [],
       "uczestnicy": [
@@ -1125,6 +1150,14 @@
       "slug": "epoka-4",
       "tytul": "Imię na progu: skóra, kres i pieśń",
       "skit": "imie-na-progu",
+      "iskra": "Przetestowano jedno słowo, które miało otwierać wszystkie drzwi. Okazało się, że skóra otwiera morze, kres otwiera warunek, a pieśń — tylko serce. Trzy progi, jedno pytanie.",
+      "pytanie": "Czy istnieje jedno słowo otwierające każdy próg — czy każde drzwi mają własne imię?",
+      "przebieg": "Pełny tekst rozmowy: data/skity/imie-na-progu.json (uczestnicy zgodni z epoką).",
+      "meta": {
+        "utworzono": "2026-08-29 11:10",
+        "autor": "agent Areny — czwarta epoka Tomu I (wątek imię na progu)",
+        "wersja": 1
+      },
       "walidacja": true,
       "bledy": [],
       "uczestnicy": [
@@ -1513,6 +1546,14 @@
       "slug": "epoka-5",
       "tytul": "Zagadka ze spiżu: rozum, żart i głuchy krok",
       "skit": "zagadka-ze-spizu",
+      "iskra": "Sfinks z Teb próbuje zatrzymać wędrowców na rozstaju klasyczną zagadką o porach życia. Talos odpowiada miarowym rzutem głazu, a Lincoln Imp obraca powagę pytania w żart. Trzy różne odpowiedzi na jedno pytanie o naturę bytu.",
+      "pytanie": "Czy powaga pytania o byt może przetrwać zderzenie z bezdusznym automatem i złośliwym śmiechem?",
+      "przebieg": "Pełny tekst rozmowy: data/skity/zagadka-ze-spizu.json (uczestnicy zgodni z epoką).",
+      "meta": {
+        "utworzono": "2026-08-29 11:35",
+        "autor": "agent Areny — piąta epoka Tomu I (wątek zagadka ze spiżu)",
+        "wersja": 1
+      },
       "walidacja": true,
       "bledy": [],
       "uczestnicy": [
@@ -1903,6 +1944,14 @@
       "slug": "epoka-6",
       "tytul": "Czwarty stół: kto nie wie, że bierze",
       "skit": "czwarty-stol",
+      "iskra": "Po pięciu epokach gospodyni nakrywa czwarty stół w gospodzie z Epoki I. Podchodzą do niego: dar, który zajrzał pod własną pokrywę; pytanie, które zna jedną odpowiedź; i zaproszenie, które zjada gości.",
+      "pytanie": "Czy ten, kto bierze, nie wiedząc, że bierze, jest gościem czy złodziejem?",
+      "przebieg": "Pełny tekst rozmowy: data/skity/czwarty-stol.json (uczestnicy zgodni z epoką).",
+      "meta": {
+        "utworzono": "2026-08-30 02:05",
+        "autor": "agent Areny — szósta epoka Tomu I (wątek czwarty stół)",
+        "wersja": 1
+      },
       "walidacja": true,
       "bledy": [],
       "uczestnicy": [

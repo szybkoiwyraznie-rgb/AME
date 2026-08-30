@@ -10,7 +10,7 @@
  * pinch (2 wskaźniki), dwuklik, przyciski. Pinezki i ich etykiety kompensują
  * skalę widoku, więc mają stały rozmiar w pikselach CSS (ADR 0009).
  */
-import { projektuj, dekodujKraje, siatka, dopasujWidok, ogranicz, K_MIN, K_MAX, SZEROKOSC as SZER, WYSOKOSC as WYS, sciezkaGeoMultiPoligon } from './geo.js?v=c4-1';
+import { projektuj, dekodujKraje, siatka, dopasujWidok, ogranicz, K_MIN, K_MAX, SZEROKOSC as SZER, WYSOKOSC as WYS, sciezkaGeoMultiPoligon } from './geo.js?v=c5-1';
 
 const NS = 'http://www.w3.org/2000/svg';
 
@@ -37,9 +37,60 @@ export const PROGI_WARSTW = {
   miastaSrednie: 7,
   miastaDrobne: 10,
   poi: 8,
+  lasy: 3,
+  urban: 4,
+  morza: 2,
+  historia: 6,
 };
-/** Czy warstwa jest włączona użytkownikowi (domyślnie wszystkie dostępne). */
-const WIDOCZNE_WARSTWY = { rzeki: true, jeziora: true, miasta: true, poi: false };
+/**
+ * Czy warstwa jest włączona (przełączniki panelu). WSZYSTKIE warstwy są
+ * opcjonalne i domyślnie WYŁĄCZONE (decyzja właściciela 2026-08-30);
+ * `podklad` to aktywny podkład online (klucz z PODKLADY_ONLINE albo null).
+ */
+const WIDOCZNE_WARSTWY = {
+  rzeki: false,
+  jeziora: false,
+  miasta: false,
+  poi: false,
+  lasy: false,
+  urban: false,
+  morza: false,
+  historia: false,
+  hipsometria: false,
+  podklad: null,
+};
+
+/** Podkłady online — tylko darmowe i bez klucza API (polityki: docs/ASSETS.md). */
+export const PODKLADY_ONLINE = {
+  opentopo: {
+    etykieta: 'OpenTopoMap',
+    atrybucja: '© OpenStreetMap contributors · © OpenTopoMap (CC-BY-SA)',
+    url: (z, x, y, s) => `https://${s}.tile.opentopomap.org/${z}/${x}/${y}.png`,
+    subdomeny: ['a', 'b', 'c'],
+    maxZoom: 17,
+  },
+  osm: {
+    etykieta: 'OpenStreetMap',
+    atrybucja: '© OpenStreetMap contributors (ODbL)',
+    url: (z, x, y) => `https://tile.openstreetmap.org/${z}/${x}/${y}.png`,
+    subdomeny: [''],
+    maxZoom: 19,
+  },
+  'esri-teren': {
+    etykieta: 'Esri World Physical Map',
+    atrybucja: 'Powered by Esri · © Esri, © OpenStreetMap contributors',
+    url: (z, x, y) => `https://server.arcgisonline.com/ArcGIS/rest/services/World_Physical_Map/MapServer/tile/${z}/${y}/${x}`,
+    subdomeny: [''],
+    maxZoom: 16,
+  },
+  'esri-satelita': {
+    etykieta: 'Esri World Imagery',
+    atrybucja: 'Powered by Esri · © Esri, Maxar, Earthstar Geographics',
+    url: (z, x, y) => `https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/${z}/${y}/${x}`,
+    subdomeny: [''],
+    maxZoom: 19,
+  },
+};
 
 function el(nazwa, atrybuty = {}, rodzic = null) {
   const e = document.createElementNS(NS, nazwa);
@@ -83,14 +134,27 @@ export function stworzMape(kontener, { przyZmianieZaznaczenia, przyZmianieWidoku
   // Kontrakt pilnuje `test/mapa-css.test.js` (F1 z audytu PR #2).
   const grupaSwiata = el('g', { class: 'swiat' }, svg);
   el('path', { d: siatka(30), class: 'siatka' }, grupaSwiata);
+  // Podkład online (kafelki rastrowe) i hipsometria — pod krajami.
+  const grupaPodklad = el('g', { class: 'podklad-online', display: 'none' }, grupaSwiata);
+  const grupaHipso = el('g', { class: 'hipsometria', display: 'none' }, grupaSwiata);
   const grupaKrajow = el('g', { class: 'kraje' }, grupaSwiata);
   // Warstwy szczegółowości (ADR 0020): woda rysowana nad lądem, miasta i POI
   // w osobnych grupach punktowych — wszystkie w układzie świata.
   const grupaWarstw = el('g', { class: 'warstwy-szczegolow' }, grupaSwiata);
   const grupaRzek = el('g', { class: 'rzeki', display: 'none' }, grupaWarstw);
   const grupaJezior = el('g', { class: 'jeziora', display: 'none' }, grupaWarstw);
+  const grupaLasy = el('g', { class: 'lasy', display: 'none' }, grupaWarstw);
+  const grupaUrban = el('g', { class: 'urban', display: 'none' }, grupaWarstw);
+  const grupaMorza = el('g', { class: 'morza', display: 'none' }, grupaWarstw);
   const grupaMiast = el('g', { class: 'miasta', display: 'none' }, grupaWarstw);
   const grupaPOI = el('g', { class: 'poi', display: 'none' }, grupaWarstw);
+  const grupaHistoria = el('g', { class: 'historia', display: 'none' }, grupaWarstw);
+  let obrazHipso = null; // <image> hipsometrii
+  let sciezkiUrban = null; // jedne <path> ze scalonymi poligonami miejskimi
+  let szczytyDane = []; // [{g, wx, wy}] — kompensacja rozmiaru ekranowego
+  let morzaDane = []; // [{g, wx, wy}]
+  let historiaDane = []; // [{g, wx, wy}]
+  let ostatniaSkalaPunktow = null;
   // Miasta dzielimy na rangi, żeby przy zmianie zoomu sterować liczbą punktów
   // bez przebudowywania drzewa (ADR 0020 — LOD treści, nie tylko geometrii).
   const grupyMiast = {
@@ -436,6 +500,160 @@ export function stworzMape(kontener, { przyZmianieZaznaczenia, przyZmianieWidoku
     ustawWode(grupaJezior, geo);
   }
 
+  /** Kompleksy leśne: poligony biomów (WWF Ecoregions, biomy 1–6). */
+  function ustawLasy(dane) {
+    grupaLasy.innerHTML = '';
+    for (const f of dane?.features ?? []) {
+      const coords = f.geometry?.coordinates ?? [];
+      if (f.geometry?.type !== 'MultiPolygon') continue;
+      el('path', {
+        d: sciezkaGeoMultiPoligon(coords),
+        class: 'las',
+        'data-b': String(f.properties?.b ?? ''),
+        'fill-rule': 'evenodd',
+      }, grupaLasy);
+    }
+    odswiezWidocznoscWarstw();
+  }
+
+  /** Obszary zurbanizowane: jeden scalony path (lekki DOM). */
+  function ustawUrban(dane) {
+    grupaUrban.innerHTML = '';
+    const d = [];
+    for (const f of dane?.features ?? []) {
+      if (f.geometry?.type !== 'MultiPolygon') continue;
+      d.push(sciezkaGeoMultiPoligon(f.geometry.coordinates));
+    }
+    if (!d.length) return;
+    sciezkiUrban = el('path', { d: d.join(''), class: 'urban-obszar', 'fill-rule': 'evenodd' }, grupaUrban);
+    odswiezWidocznoscWarstw();
+  }
+
+  /** Etykiety mórz i oceanów (punkty z NE marine polys). */
+  function ustawMorza(dane) {
+    grupaMorza.innerHTML = '';
+    morzaDane = [];
+    for (const f of dane?.features ?? []) {
+      const c = f.geometry?.coordinates ?? [];
+      const lat = c[1];
+      const lon = c[0];
+      if (!Number.isFinite(lat) || !Number.isFinite(lon)) continue;
+      const [wx, wy] = projektuj(lat, lon);
+      const g = el('g', { class: 'morze' }, grupaMorza);
+      const t = el('text', { class: 'nazwa-morza' }, g);
+      t.textContent = f.properties?.n ?? '';
+      morzaDane.push({ g, wx, wy });
+    }
+    odswiezWidocznoscWarstw();
+  }
+
+  /** Punkty POI — szczyty i pasma (NE geography regions points). */
+  function ustawSzczyty(punkty) {
+    grupaPOI.innerHTML = '';
+    szczytyDane = [];
+    for (const f of punkty?.features ?? []) {
+      const p = f.properties ?? {};
+      const c = f.geometry?.coordinates ?? [];
+      const lat = c[1];
+      const lon = c[0];
+      if (!Number.isFinite(lat) || !Number.isFinite(lon)) continue;
+      const [wx, wy] = projektuj(lat, lon);
+      const g = el('g', { class: 'punkt', transform: `translate(${wx.toFixed(1)} ${wy.toFixed(1)})` }, grupaPOI);
+      el('circle', { r: 5, class: 'kropka' }, g);
+      const t = el('title', {}, g);
+      t.textContent = `${p.n ?? ''}${p.e ? ` · ${p.e} m n.p.m.` : ''}`;
+      szczytyDane.push({ g, wx, wy });
+    }
+    odswiezWidocznoscWarstw();
+  }
+
+  /** Warstwa historyczna — starożytne miejsca (Pleiades, CC BY 3.0). */
+  function ustawHistorie(punkty) {
+    grupaHistoria.innerHTML = '';
+    historiaDane = [];
+    for (const f of punkty?.features ?? []) {
+      const p = f.properties ?? {};
+      const c = f.geometry?.coordinates ?? [];
+      const lat = c[1];
+      const lon = c[0];
+      if (!Number.isFinite(lat) || !Number.isFinite(lon)) continue;
+      const [wx, wy] = projektuj(lat, lon);
+      const g = el('g', { class: 'punkt historii', transform: `translate(${wx.toFixed(1)} ${wy.toFixed(1)})` }, grupaHistoria);
+      el('circle', { r: 3.5, class: 'kropka' }, g);
+      const t = el('title', {}, g);
+      t.textContent = p.n ?? '';
+      historiaDane.push({ g, wx, wy });
+    }
+    odswiezWidocznoscWarstw();
+  }
+
+  /** Raster hipsometrii (Web Mercator, 3600×3600 j.u.) pod krajami. */
+  function ustawHipsometrie(url) {
+    if (obrazHipso) return;
+    obrazHipso = el('image', {
+      href: url,
+      x: 0,
+      y: 0,
+      width: SZER,
+      height: WYS,
+      preserveAspectRatio: 'none',
+      class: 'hipsometria-obraz',
+    }, grupaHipso);
+  }
+
+  /* ---- Podkład online: kafelki Web Mercator (tylko darmowe, bez klucza) ---- */
+
+  let ostatniaSiatkaKafelkow = '';
+
+  /** Kafelek świata dla zoomu `z` (px × 2^z na cały → jednostki świata). */
+  function rozmiarKafelka(z) {
+    return SZER / 2 ** z;
+  }
+
+  function rysujPodkladOnline() {
+    const klucz = WIDOCZNE_WARSTWY.podklad;
+    const def = klucz && PODKLADY_ONLINE[klucz];
+    if (!def) {
+      grupaPodklad.setAttribute('display', 'none');
+      grupaPodklad.innerHTML = '';
+      ostatniaSiatkaKafelkow = '';
+      return;
+    }
+    grupaPodklad.setAttribute('display', 'inherit');
+    // skala: ile px ekranu przypada na jednostkę świata; dobierz z tak, by
+    // piksel kafelka ≈ piksel ekranu (potem zaokrąglenie w dół = siatka rzadsza).
+    const z = Math.max(0, Math.min(def.maxZoom ?? 18, Math.round(Math.log2((skala * SZER) / 256))));
+    const size = rozmiarKafelka(z);
+    // widoczny prostokąt świata: viewBox (px) → j.u. świata
+    const wx0 = (0 - widok.x) / skala;
+    const wy0 = (0 - widok.y) / skala;
+    const wx1 = (rozmiar.szerokosc - widok.x) / skala;
+    const wy1 = (rozmiar.wysokosc - widok.y) / skala;
+    const tx0 = Math.max(0, Math.floor(wx0 / size));
+    const ty0 = Math.max(0, Math.floor(wy0 / size));
+    const tx1 = Math.min(2 ** z - 1, Math.floor(wx1 / size));
+    const ty1 = Math.min(2 ** z - 1, Math.floor(wy1 / size));
+    const sygnatura = `${klucz}|${z}|${tx0}:${ty0}-${tx1}:${ty1}`;
+    if (sygnatura === ostatniaSiatkaKafelkow) return;
+    ostatniaSiatkaKafelkow = sygnatura;
+    grupaPodklad.innerHTML = '';
+    const f = document.createDocumentFragment();
+    for (let tx = tx0; tx <= tx1; tx++) {
+      for (let ty = ty0; ty <= ty1; ty++) {
+        const s = def.subdomeny[(tx + ty) % Math.max(1, def.subdomeny.length)];
+        el('image', {
+          href: def.url(z, tx, ty, s),
+          x: (tx * size).toFixed(1),
+          y: (ty * size).toFixed(1),
+          width: size.toFixed(1),
+          height: size.toFixed(1),
+          class: 'kafelek',
+        }, f);
+      }
+    }
+    grupaPodklad.appendChild(f);
+  }
+
   const formatujPopulacje = (p) => (p >= 1_000_000 ? `${(p / 1_000_000).toFixed(1)} mln` : `${(p / 1_000).toFixed(0)} tys.`);
 
   /** Ustawia transform etykiety miasta (stały rozmiar ekranowy, jak badge). */
@@ -540,16 +758,41 @@ export function stworzMape(kontener, { przyZmianieZaznaczenia, przyZmianieWidoku
   /** Widoczność wszystkich warstw szczegółów — wywoływane z `zastosuj`. */
   function odswiezWidocznoscWarstw() {
     const k = widok.k;
+    // Pod rastrem/kaflami kraje stają się półprzezroczyste (style w styles.css).
+    svg.classList.toggle('z-hipsometria', !!WIDOCZNE_WARSTWY.hipsometria);
+    svg.classList.toggle('z-podklad-online', !!WIDOCZNE_WARSTWY.podklad);
+    grupaHipso.setAttribute('display', WIDOCZNE_WARSTWY.hipsometria ? 'inherit' : 'none');
     grupaRzek.setAttribute('display', WIDOCZNE_WARSTWY.rzeki && k >= PROGI_WARSTW.woda ? 'inherit' : 'none');
     grupaJezior.setAttribute('display', WIDOCZNE_WARSTWY.jeziora && k >= PROGI_WARSTW.woda ? 'inherit' : 'none');
+    grupaLasy.setAttribute('display', WIDOCZNE_WARSTWY.lasy && k >= PROGI_WARSTW.lasy ? 'inherit' : 'none');
+    grupaUrban.setAttribute('display', WIDOCZNE_WARSTWY.urban && k >= PROGI_WARSTW.urban ? 'inherit' : 'none');
+    grupaMorza.setAttribute('display', WIDOCZNE_WARSTWY.morza && k >= PROGI_WARSTW.morza ? 'inherit' : 'none');
     grupaMiast.setAttribute('display', WIDOCZNE_WARSTWY.miasta && k >= PROGI_WARSTW.miastaWielkie ? 'inherit' : 'none');
     grupaPOI.setAttribute('display', WIDOCZNE_WARSTWY.poi && k >= PROGI_WARSTW.poi ? 'inherit' : 'none');
+    grupaHistoria.setAttribute('display', WIDOCZNE_WARSTWY.historia && k >= PROGI_WARSTW.historia ? 'inherit' : 'none');
     odswiezMiasta();
+    ustawTransformyPunktow();
+    rysujPodkladOnline();
   }
 
-  /** Włącza/wyłącza warstwę bez przebudowywania danych (switch w UI). */
+  /** Punkty stałego rozmiaru ekranowego (POI, morza, historia) — tylko przy zmianie skali. */
+  function ustawTransformyPunktow() {
+    if (Math.abs(skala - ostatniaSkalaPunktow) <= 1e-9) return;
+    ostatniaSkalaPunktow = skala;
+    const komp = 1 / skala;
+    for (const zbior of [szczytyDane, morzaDane, historiaDane]) {
+      for (const p of zbior) p.g.setAttribute('transform', `translate(${p.wx} ${p.wy}) scale(${komp})`);
+    }
+  }
+
+  /** Włącza/wyłącza warstwę bez przebudowywania danych (switch w UI).
+   *  `podklad` przyjmuje klucz z PODKLADY_ONLINE (lub false/null = wyłączony). */
   function przelaczWidocznoscWarstwy(klucz, widoczny) {
-    if (klucz in WIDOCZNE_WARSTWY) WIDOCZNE_WARSTWY[klucz] = !!widoczny;
+    if (klucz === 'podklad') {
+      WIDOCZNE_WARSTWY.podklad = widoczny && PODKLADY_ONLINE[widoczny] ? widoczny : null;
+    } else if (klucz in WIDOCZNE_WARSTWY) {
+      WIDOCZNE_WARSTWY[klucz] = !!widoczny;
+    }
     odswiezWidocznoscWarstw();
   }
 
@@ -586,8 +829,15 @@ export function stworzMape(kontener, { przyZmianieZaznaczenia, przyZmianieWidoku
     ustawPolaczenia,
     ustawRzeki,
     ustawJeziora,
+    ustawLasy,
+    ustawUrban,
+    ustawMorza,
+    ustawSzczyty,
+    ustawHistorie,
+    ustawHipsometrie,
     ustawMiasta,
     przelaczWidocznoscWarstwy,
+    PODKLADY_ONLINE,
     zaznacz,
     podswietl,
     przelaczLuki,

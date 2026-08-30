@@ -736,6 +736,103 @@ li { margin: 8px 0; }
   text-align: center;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
+
+/* S1 — wizualizacje Kroniki */
+.ramka-epoki { background: var(--card-alt); border: 1px solid var(--line); border-left: 4px solid var(--accent); border-radius: 10px; padding: 18px 20px; margin: 18px 0 24px; }
+.ramka-pytanie { margin: 0 0 10px; font-size: 19px; font-weight: 700; color: var(--fg); }
+.ramka-iskra { margin: 0 0 10px; padding: 0 0 0 14px; border-left: 3px solid var(--accent-light); font-style: italic; color: var(--muted); }
+.ramka-przebieg summary { cursor: pointer; font-size: 13px; color: var(--accent-light); }
+.ramka-przebieg p { margin: 8px 0 0; font-size: 14px; }
+.ramka-rozgalezienie { margin-top: 12px; padding: 10px 12px; background: var(--card); border: 1px dashed var(--accent-light); border-radius: 8px; font-size: 14px; }
+.ramka-rozgalezienie ul { margin: 6px 0 0; padding-left: 20px; }
+
+.chart { width: 100%; height: auto; display: block; }
+.os-grid { stroke: var(--line); stroke-width: 1; }
+.os-grid-label { fill: var(--muted); font-size: 10px; text-anchor: end; }
+.os-area { fill: var(--mit); fill-opacity: 0.12; }
+.os-line { fill: none; stroke: var(--mit); stroke-width: 2.5; stroke-linejoin: round; }
+.os-dot circle { fill: var(--accent); stroke: var(--fg); stroke-width: 1.5; }
+.os-wartosc { fill: var(--fg); font-size: 11px; text-anchor: middle; }
+.os-label { fill: var(--muted); font-size: 12px; }
+
+.zasieg-chip, .zasieg-wiersz text { font-size: 12px; }
+.zasieg-etykieta { fill: var(--fg); font-weight: 600; }
+.zasieg-tor { fill: var(--card-alt); stroke: var(--line); stroke-width: 1; }
+.zasieg-przed { fill: var(--muted); opacity: 0.45; }
+.zasieg-po { fill: var(--accent); }
+.zasieg-po.up { fill: var(--up); }
+.zasieg-po.down { fill: var(--down); }
+.zasieg-delta { fill: var(--muted); font-weight: 700; }
+.zasieg-delta.up { fill: var(--up); }
+.zasieg-delta.down { fill: var(--down); }
+.chart-legenda { fill: var(--muted); font-size: 11px; }
+.leg-przed { fill: var(--muted); }
+.leg-po { fill: var(--accent); }
+
+.wykres-paliwa { display: flex; gap: 10px; align-items: flex-start; flex-wrap: wrap; }
+.paliwo-chart { flex: 1 1 520px; min-width: 0; }
+.paliwo-linia { fill: none; stroke-width: 2.2; stroke-linejoin: round; }
+.paliwo-punkt { stroke: var(--card); stroke-width: 1; }
+.paliwo-os, .paliwo-os-x { fill: var(--muted); font-size: 11px; text-anchor: end; }
+.paliwo-os-x { text-anchor: middle; }
+.paliwo-legenda-box { flex: 0 1 200px; display: flex; flex-direction: column; gap: 4px; font-size: 13px; }
+.paliwo-legenda { display: flex; gap: 8px; align-items: center; color: var(--fg); }
+.paliwo-legenda .kropka { width: 10px; height: 10px; border-radius: 50%; background: var(--l); display: inline-block; }
+.paliwo-legenda b { margin-left: auto; }
+
+.dom-tor { fill: var(--card-alt); stroke: var(--line); stroke-width: 1; }
+.dom-bar { fill: var(--accent); }
+.dom-etykieta { fill: var(--fg); font-size: 12.5px; font-weight: 600; }
+.dom-kropka { fill: var(--accent); }
+.dom-delta { fill: var(--muted); font-size: 12px; }
+.dom-delta.up { fill: var(--up); }
+.dom-delta.down { fill: var(--down); }
+
+.rel-elipsa { fill: none; stroke: var(--line); stroke-dasharray: 4 5; }
+.rel-luk { fill: none; stroke-width: 2.4; }
+.rel-luk.wzmocnienie { stroke: var(--up); }
+.rel-luk.schlodzenie { stroke: var(--down); }
+.rel-luk.neutralna { stroke: var(--muted); stroke-dasharray: 5 4; }
+.rel-wezel circle { fill: var(--card); stroke: var(--accent); stroke-width: 1.6; }
+.rel-emoji { text-anchor: middle; font-size: 26px; }
+.rel-nazwa { text-anchor: middle; font-size: 12.5px; fill: var(--fg); font-weight: 600; }
+.rel-legenda { display: flex; gap: 18px; margin-top: 6px; font-size: 12px; color: var(--muted); }
+.rel-leg.wzmocnienie { border-bottom: 3px solid var(--up); }
+.rel-leg.schlodzenie { border-bottom: 3px solid var(--down); }
+.rel-leg.neutralna { border-bottom: 3px dashed var(--muted); }
+
+.watki-linia { stroke: var(--accent-light); stroke-width: 2; }
+.watki-marker { stroke: var(--card); stroke-width: 2; }
+.watki-marker.otwarty { fill: var(--up); }
+.watki-marker.zamkniety { fill: var(--down); }
+.watki-etykieta { fill: var(--fg); font-size: 12px; }
+.watki-os-x { fill: var(--muted); font-size: 11px; }
+
+.heat-cell { fill: var(--accent); stroke: var(--card); }
+.heat-etykieta { fill: var(--fg); font-size: 12.5px; font-weight: 600; }
+.heat-sum { fill: var(--muted); font-size: 12px; }
+.heat-os-x { fill: var(--muted); font-size: 12px; }
+
+.graf-os { stroke: var(--accent); stroke-width: 2.4; }
+.graf-odwolanie { stroke: var(--accent-light); stroke-width: 1.6; stroke-dasharray: 6 4; }
+.graf-wezel circle { fill: var(--card); stroke: var(--accent); stroke-width: 2; }
+.graf-wezel.rozgalezienie circle { fill: var(--accent-light); }
+.graf-nr { text-anchor: middle; fill: var(--fg); font-size: 13px; font-weight: 700; }
+.graf-etykieta { fill: var(--muted); font-size: 11.5px; }
+.graf-galez path { fill: var(--accent-light); }
+.graf-galez-opis { fill: var(--muted); font-size: 11px; }
+
+.tomy-pasek { display: flex; gap: 8px; flex-wrap: wrap; margin: 0 0 14px; }
+.tomy-pasek .pager-btn.aktywny { background: var(--accent); color: var(--card); }
+.filtr-bytow { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin: 0 0 12px; font-size: 13px; }
+.filtr-bytow select { padding: 4px 8px; font: inherit; font-size: 13px; color: var(--fg); background: var(--card); border: 1px solid var(--line); border-radius: 6px; }
+.epoka-card.podswietlone { outline: 2px solid var(--accent); outline-offset: 2px; }
+.powiazane-epoki { margin: 22px 0 0; font-size: 13.5px; color: var(--muted); }
+.powiazane-epoki .chip { text-decoration: none; }
+.dziennik { width: 100%; border-collapse: collapse; }
+.dziennik th, .dziennik td { padding: 7px 8px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; font-size: 13.5px; }
+.dziennik .num { text-align: right; white-space: nowrap; }
+.tom-karta { max-width: 640px; }
 </style>
 </head>
 <body><div class="wrap">
@@ -751,7 +848,7 @@ li { margin: 8px 0; }
       <a id="przycisk-lista" class="przycisk" href="../index.html#lista" title="Lista wszystkich manifestacji">☰ kartoteka</a>
       <a id="przycisk-skity" class="przycisk" href="../index.html#skity" title="Baza Skitów — rozmowy materializacji">✎ skity</a>
       <a id="przycisk-nowosci" class="przycisk" href="../index.html#nowosci" title="Co nowego — aktualizacje archiwum">✚ nowości</a>
-      <a id="przycisk-kronika" class="przycisk " href="kronika-tom-1.html" title="Kronika świata AME — tocząca się opowieść epok">📜 kronika</a>
+      <a id="przycisk-kronika" class="przycisk " href="kronika.html" title="Kronika świata AME — tocząca się opowieść epok">📜 kronika</a>
       <button id="przycisk-motyw" class="przycisk przycisk-motyw" type="button" aria-pressed="false" title="Przełącz tryb ciemny/jasny" onclick="const m = document.documentElement.dataset.motyw === 'jasny' ? 'ciemny' : 'jasny'; document.documentElement.dataset.motyw = m; localStorage.setItem('ame:motyw', m); this.innerHTML = m === 'jasny' ? '☀ jasny' : '☾ ciemny'; this.setAttribute('aria-pressed', String(m === 'jasny'));">☾ motyw</button>
     </div>
   </header>
@@ -784,6 +881,14 @@ li { margin: 8px 0; }
     </div>
   </div>
 </div>
+
+
+  <section class="ramka-epoki" id="ramka-epoki">
+    <p class="ramka-pytanie">Czy powaga pytania o byt może przetrwać zderzenie z bezdusznym automatem i złośliwym śmiechem?</p>
+    <blockquote class="ramka-iskra">„Sfinks z Teb próbuje zatrzymać wędrowców na rozstaju klasyczną zagadką o porach życia. Talos odpowiada miarowym rzutem głazu, a Lincoln Imp obraca powagę pytania w żart. Trzy różne odpowiedzi na jedno pytanie o naturę bytu.”</blockquote>
+    <details class="ramka-przebieg"><summary>Przebieg</summary><p>Pełny tekst rozmowy: data/skity/zagadka-ze-spizu.json (uczestnicy zgodni z epoką).</p></details>
+    
+  </section>
 
 <!-- MAPA WEKTOROWA EPOKI -->
 
@@ -831,22 +936,23 @@ li { margin: 8px 0; }
       <!-- Łuki interakcji między uczestnikami -->
       <g class="arcs">
         
-        <path class="arc-glow" d="M 1795 1169 Q 1914 1228.7895239600355 2033 1385" />
-        <path class="arc-line" d="M 1795 1169 Q 1914 1228.7895239600355 2033 1385" />
-      
-        <path class="arc-glow" d="M 1795 1169 Q 1923.5 1241.4046674841536 2052 1422" />
-        <path class="arc-line" d="M 1795 1169 Q 1923.5 1241.4046674841536 2052 1422" />
-      
-        <path class="arc-glow" d="M 2033 1385 Q 2042.5 1397.2610096970743 2052 1422" />
-        <path class="arc-line" d="M 2033 1385 Q 2042.5 1397.2610096970743 2052 1422" />
-      
+        <path class="rel-arc schlodzenie" d="M 1795 1169 Q 1914 1212.7193652800472 2033 1385" data-od="lincoln-imp" data-do="sfinks-teby" data-kierunek="schłodzenie">
+          <title>lincoln-imp → sfinks-teby: schłodzenie — Sfinks uważa Impa za bezczelnego intruza, który niszczy sakralność zagadki.</title>
+        </path>
+        <path class="rel-arc schlodzenie" d="M 2033 1385 Q 2042.5 1395.1813462627658 2052 1422" data-od="sfinks-teby" data-do="talos-kreta" data-kierunek="schłodzenie">
+          <title>sfinks-teby → talos-kreta: schłodzenie — Dwa greckie potwory nie znajdują wspólnego języka — jeden żyje słowem, drugi mechanizmem.</title>
+        </path>
+        <path class="rel-arc wzmocnienie" d="M 1795 1169 Q 1923.5 1225.5 2052 1422" data-od="lincoln-imp" data-do="talos-kreta" data-kierunek="wzmocnienie">
+          <title>lincoln-imp → talos-kreta: wzmocnienie — Imp traktuje Talosa jako doskonałą zasłonę przed powagą świata.</title>
+        </path>
       </g>
       
       <!-- Węzły i halos bytów -->
       <g class="nodes">
         
       <g class="node active" data-slug="lincoln-imp" transform="translate(1795,1169)">
-        <circle class="halo" r="73" />
+        <title>Imp z Lincoln — zasięg NaN%% (przed 39%, +2 pp)</title>
+        <circle class="halo" r="NaN" />
         <a href="#lincoln-imp" class="otworz-kartoteke" data-slug="lincoln-imp" title="Imp z Lincoln (Anglia (Wielka Brytania)) — otwórz kartotekę">
           <circle class="pin-bg" r="15" />
           <text class="pin-icon" dy="4">😈</text>
@@ -854,7 +960,8 @@ li { margin: 8px 0; }
         </a>
       </g>
       <g class="node active" data-slug="sfinks-teby" transform="translate(2033,1385)">
-        <circle class="halo" r="70" />
+        <title>Sfinks — strażniczka Tebańskich Wrót — zasięg NaN%% (przed 39%, -1 pp)</title>
+        <circle class="halo" r="NaN" />
         <a href="#sfinks-teby" class="otworz-kartoteke" data-slug="sfinks-teby" title="Sfinks — strażniczka Tebańskich Wrót (Grecja (Beocja)) — otwórz kartotekę">
           <circle class="pin-bg" r="15" />
           <text class="pin-icon" dy="4">🦁</text>
@@ -862,7 +969,8 @@ li { margin: 8px 0; }
         </a>
       </g>
       <g class="node active" data-slug="talos-kreta" transform="translate(2052,1422)">
-        <circle class="halo" r="64" />
+        <title>Talos — spiżowy strażnik Krety — zasięg NaN%% (przed 34%, -1 pp)</title>
+        <circle class="halo" r="NaN" />
         <a href="#talos-kreta" class="otworz-kartoteke" data-slug="talos-kreta" title="Talos — spiżowy strażnik Krety (Grecja (Kreta)) — otwórz kartotekę">
           <circle class="pin-bg" r="15" />
           <text class="pin-icon" dy="4">🗿</text>
@@ -875,6 +983,35 @@ li { margin: 8px 0; }
 
 <div class="grid">
   <div class="col">
+    <!-- W8: DZIENNIK ZMIANY -->
+    <div class="card">
+      <h2>Dziennik zmiany</h2>
+      <div class="card-sub">Jedna tabela: zasoby, zasięgi, dominacje i pozycje po epoce.</div>
+      
+  <table class="dziennik">
+    <thead><tr><th>Byt</th><th class="num">Paliwo</th><th class="num">Zasięg</th><th>Dominacja</th><th>Pozycja</th></tr></thead>
+    <tbody><tr class="dziennik-wiersz" data-byt="lincoln-imp">
+        <td><strong>😈 <a href="#lincoln-imp" class="otworz-kartoteke" data-slug="lincoln-imp" style="color:inherit;text-decoration:none">Imp z Lincoln</a></strong> <span class="muted">[lincoln-imp]</span></td>
+        <td class="num">10 → <b>12</b> <span class="chip up">+2</span></td>
+        <td class="num">39% → <b>41%</b> <span class="chip up">+2 pp</span></td>
+        <td><em>anglia</em> <span class="muted">(lincoln-imp)</span> <span class="chip up">+2 pp</span></td>
+        <td><em>wzmocniony</em><br><span class="muted">Przekształca powagę w żart i rozszerza zasięg gotyckiej figlarności.</span></td>
+      </tr><tr class="dziennik-wiersz" data-byt="sfinks-teby">
+        <td><strong>🦁 <a href="#sfinks-teby" class="otworz-kartoteke" data-slug="sfinks-teby" style="color:inherit;text-decoration:none">Sfinks — strażniczka Tebańskich Wrót</a></strong> <span class="muted">[sfinks-teby]</span></td>
+        <td class="num">22 → <b>20</b> <span class="chip down">-2</span></td>
+        <td class="num">39% → <b>38%</b> <span class="chip down">-1 pp</span></td>
+        <td><em>grecja</em> <span class="muted">(sfinks-teby)</span> <span class="chip down">-1 pp</span></td>
+        <td><em>zraniony</em><br><span class="muted">Zagadka traci aurę nieuchronności.</span></td>
+      </tr><tr class="dziennik-wiersz" data-byt="talos-kreta">
+        <td><strong>🗿 <a href="#talos-kreta" class="otworz-kartoteke" data-slug="talos-kreta" style="color:inherit;text-decoration:none">Talos — spiżowy strażnik Krety</a></strong> <span class="muted">[talos-kreta]</span></td>
+        <td class="num">18 → <b>16</b> <span class="chip down">-2</span></td>
+        <td class="num">34% → <b>34%</b> <span class="chip down">-1 pp</span></td>
+        <td><em>grecja</em> <span class="muted">(talos-kreta)</span> <span class="chip neutral">0 pp</span></td>
+        <td><em>odporny</em><br><span class="muted">Nie ulega zagadce, trwa na posterunku.</span></td>
+      </tr></tbody>
+  </table>
+    </div>
+
     <!-- UCZESTNICY -->
     <div class="card">
       <h2>Uczestnicy epoki</h2>
@@ -1034,6 +1171,43 @@ li { margin: 8px 0; }
     <div class="card">
       <h2>Konsekwencje dla świata</h2>
       <div class="card-sub">Przesunięcia wierzeń i zasięgów kulturowych w wyniku epoki.</div>
+      <svg class="chart zasieg-chart" viewBox="0 0 700 164" role="img" aria-label="Wykres zasięgów przed i po epoce">
+    <text class="chart-legenda" x="158" y="12"><tspan class="leg-przed">▬ przed</tspan> <tspan class="leg-po">▬ po</tspan></text>
+    
+      <g class="zasieg-wiersz" transform="translate(0,16)">
+        <text class="zasieg-etykieta" x="148" y="26" text-anchor="end">Imp z Lincoln</text>
+        <rect class="zasieg-tor" x="158" y="8" width="452" height="10" rx="4" />
+        <rect class="zasieg-przed" x="158" y="8" width="177" height="10" rx="4">
+          <title>lincoln-imp: przed 39%</title>
+        </rect>
+        <rect class="zasieg-po up" x="158" y="24" width="184" height="10" rx="4">
+          <title>lincoln-imp: po 41% · Śmiech i drwina zyskują przewagę nad dawną trwogą; chochlik rośnie w siłę.</title>
+        </rect>
+        <text class="zasieg-delta up" x="620" y="33">+2 pp</text>
+      </g>
+      <g class="zasieg-wiersz" transform="translate(0,62)">
+        <text class="zasieg-etykieta" x="148" y="26" text-anchor="end">Sfinks — strażniczka Tebańskich Wrót</text>
+        <rect class="zasieg-tor" x="158" y="8" width="452" height="10" rx="4" />
+        <rect class="zasieg-przed" x="158" y="8" width="177" height="10" rx="4">
+          <title>sfinks-teby: przed 39%</title>
+        </rect>
+        <rect class="zasieg-po down" x="158" y="24" width="172" height="10" rx="4">
+          <title>sfinks-teby: po 38% · Święta groza zagadki słabnie, gdy okazuje się podatna na wyśmianie.</title>
+        </rect>
+        <text class="zasieg-delta down" x="620" y="33">-1 pp</text>
+      </g>
+      <g class="zasieg-wiersz" transform="translate(0,108)">
+        <text class="zasieg-etykieta" x="148" y="26" text-anchor="end">Talos — spiżowy strażnik Krety</text>
+        <rect class="zasieg-tor" x="158" y="8" width="452" height="10" rx="4" />
+        <rect class="zasieg-przed" x="158" y="8" width="155" height="10" rx="4">
+          <title>talos-kreta: przed 34%</title>
+        </rect>
+        <rect class="zasieg-po down" x="158" y="24" width="152" height="10" rx="4">
+          <title>talos-kreta: po 34% · Spiżowy olbrzym pozostaje tylko maszyną strzegącą pustego brzegu.</title>
+        </rect>
+        <text class="zasieg-delta down" x="620" y="33">-1 pp</text>
+      </g>
+  </svg>
       <ul><li><strong><a href="#lincoln-imp" class="otworz-kartoteke" data-slug="lincoln-imp" style="color:inherit">lincoln-imp</a></strong> — 39% → 41%
         <span class="chip up">+2 pp</span><br>
         <span class="muted">Śmiech i drwina zyskują przewagę nad dawną trwogą; chochlik rośnie w siłę.</span></li><li><strong><a href="#sfinks-teby" class="otworz-kartoteke" data-slug="sfinks-teby" style="color:inherit">sfinks-teby</a></strong> — 39% → 38%
@@ -1041,6 +1215,73 @@ li { margin: 8px 0; }
         <span class="muted">Święta groza zagadki słabnie, gdy okazuje się podatna na wyśmianie.</span></li><li><strong><a href="#talos-kreta" class="otworz-kartoteke" data-slug="talos-kreta" style="color:inherit">talos-kreta</a></strong> — 34% → 34%
         <span class="chip down">-1 pp</span><br>
         <span class="muted">Spiżowy olbrzym pozostaje tylko maszyną strzegącą pustego brzegu.</span></li></ul>
+    </div>
+
+    <!-- W6: DIAGRAM RELACJI -->
+    <div class="card">
+      <h2>Relacje między bytami</h2>
+      <div class="card-sub">Kto kogo wzmocnił, a kogo odsunął — i co świat z tego zapamiętał.</div>
+      <svg class="chart rel-chart" viewBox="0 0 720 460" role="img" aria-label="Diagram relacji między uczestnikami epoki">
+    <path class="rel-elipsa" d="M 60 210 A 300 150 0 1 1 659.9 210 A 300 150 0 1 1 60 210" />
+    <path class="rel-luk schlodzenie" d="M 360.0 60.0 Q 546.2 107.5 619.8 285.0">
+        <title>lincoln-imp → sfinks-teby: schłodzenie · Sfinks uważa Impa za bezczelnego intruza, który niszczy sakralność zagadki.</title>
+      </path><path class="rel-luk schlodzenie" d="M 619.8 285.0 Q 360.0 375.0 100.2 285.0">
+        <title>sfinks-teby → talos-kreta: schłodzenie · Dwa greckie potwory nie znajdują wspólnego języka — jeden żyje słowem, drugi mechanizmem.</title>
+      </path><path class="rel-luk wzmocnienie" d="M 360.0 60.0 Q 286.3 237.5 100.2 285.0">
+        <title>lincoln-imp → talos-kreta: wzmocnienie · Imp traktuje Talosa jako doskonałą zasłonę przed powagą świata.</title>
+      </path>
+    <g class="rel-wezel" transform="translate(360.0,60.0)">
+        <title>Imp z Lincoln</title>
+        <circle r="34" />
+        <text class="rel-emoji" y="8">😈</text>
+        <text class="rel-nazwa" y="58">Imp z Lincoln</text>
+      </g><g class="rel-wezel" transform="translate(619.8,285.0)">
+        <title>Sfinks — strażniczka Tebańskich Wrót</title>
+        <circle r="34" />
+        <text class="rel-emoji" y="8">🦁</text>
+        <text class="rel-nazwa" y="58">Sfinks — strażniczka Tebańskich Wrót</text>
+      </g><g class="rel-wezel" transform="translate(100.2,285.0)">
+        <title>Talos — spiżowy strażnik Krety</title>
+        <circle r="34" />
+        <text class="rel-emoji" y="8">🗿</text>
+        <text class="rel-nazwa" y="58">Talos — spiżowy strażnik Krety</text>
+      </g>
+  </svg>
+  <div class="rel-legenda"><span class="rel-leg wzmocnienie">— wzmocnienie</span><span class="rel-leg schlodzenie">— schłodzenie</span><span class="rel-leg neutralna">— neutralne</span></div>
+    </div>
+
+    <!-- W5: DOMINACJE -->
+    <div class="card">
+      <h2>Dominacje kultur</h2>
+      <div class="card-sub">Kultury i kulty, których głos w tej epoce zyskał lub stracił na znaczeniu.</div>
+      <svg class="chart dom-chart" viewBox="0 0 640 144" role="img" aria-label="Słupki dominacji">
+      <g class="dom-wiersz" transform="translate(0,22)">
+        <circle class="dom-kropka" cx="82" cy="14" r="4" />
+        <text class="dom-etykieta" x="96" y="19">anglia · lincoln-imp</text>
+        <rect class="dom-tor" x="168" y="4" width="362" height="20" rx="5" />
+        <rect class="dom-bar" x="168" y="4" width="147" height="20" rx="5">
+          <title>anglia · lincoln-imp: 41% (+2 pp)</title>
+        </rect>
+        <text class="dom-delta up" x="540" y="18">41% · +2 pp</text>
+      </g>
+      <g class="dom-wiersz" transform="translate(0,60)">
+        <circle class="dom-kropka" cx="82" cy="14" r="4" />
+        <text class="dom-etykieta" x="96" y="19">grecja · sfinks-teby</text>
+        <rect class="dom-tor" x="168" y="4" width="362" height="20" rx="5" />
+        <rect class="dom-bar" x="168" y="4" width="138" height="20" rx="5">
+          <title>grecja · sfinks-teby: 38% (-1 pp)</title>
+        </rect>
+        <text class="dom-delta down" x="540" y="18">38% · -1 pp</text>
+      </g>
+      <g class="dom-wiersz" transform="translate(0,98)">
+        <circle class="dom-kropka" cx="82" cy="14" r="4" />
+        <text class="dom-etykieta" x="96" y="19">grecja · talos-kreta</text>
+        <rect class="dom-tor" x="168" y="4" width="362" height="20" rx="5" />
+        <rect class="dom-bar" x="168" y="4" width="122" height="20" rx="5">
+          <title>grecja · talos-kreta: 34% (0 pp)</title>
+        </rect>
+        <text class="dom-delta neutral" x="540" y="18">34% · 0 pp</text>
+      </g></svg>
     </div>
 
     <!-- POZYCJE I STATUSY -->
@@ -1077,6 +1318,8 @@ li { margin: 8px 0; }
   <a class="pager-btn" href="kronika-tom-1.html">📜 Spis Tomu I</a>
   <a class="pager-btn" href="kronika-epoka-6.html">Następna epoka →</a>
 </div>
+
+<div class="powiazane-epoki"><b>Epoki powiązane:</b> <a class="chip" href="kronika-epoka-4.html">epoka-4</a> <a class="chip" href="kronika-epoka-6.html">epoka-6</a></div>
 
 <div class="foot">
   Archiwum Manifestacji Eterycznych · Kronika Tomu I · Rekordy zsynchronizowane

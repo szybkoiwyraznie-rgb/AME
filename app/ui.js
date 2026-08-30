@@ -404,6 +404,61 @@ export function htmlSkitowWpisu(slugi, indeks) {
 }
 
 /** Feed „Co nowego": najnowsze na górze, każda pozacja linkuje do treści. */
+/** Feed Kroniki (U3): karty epok z ramy narracji (pytanie/iskra) i linkiem do raportu. */
+export function htmlKronik(podsumowanie, indeks = {}) {
+  if (!podsumowanie?.epoki?.length) return '<p class="pusto">Kronika jest jeszcze pusta — uruchom npm run build.</p>';
+  const opcje = new Set();
+  for (const e of podsumowanie.epoki) for (const u of e.uczestnicy ?? []) opcje.add(u.slug);
+  const karty = podsumowanie.epoki
+    .map((e) => {
+      const ikony = (e.uczestnicy ?? []).map((u) => `<span class="kronika-ikona" title="${esc(u.nazwa ?? u.slug)}">${emojiBytu(u.slug)}</span>`).join(' ');
+      const delty = (e.konsekwencje?.zasieg ?? [])
+        .map((z) => {
+          const d = Math.round((z.po - z.przed) * 100);
+          return `<span class="chip ${d > 0 ? 'up' : d < 0 ? 'down' : 'neutral'}">${esc(z.slug)} ${d > 0 ? '+' : ''}${d} pp</span>`;
+        })
+        .join(' ');
+      return `
+      <article class="kronika-karta" data-byt="${(e.uczestnicy ?? []).map((u) => esc(u.slug)).join(' ')}" data-slug="${esc(e.slug)}">
+        <header>
+          <span class="kronika-nr">${esc(e.slug)}</span>
+          <h3>${esc(e.tytul)}</h3>
+          <span class="kronika-os">MIT ${e.stanPo?.os?.mit ?? 0}% <span class="muted">/ RAC ${e.stanPo?.os?.racjonalizacja ?? 0}%</span></span>
+        </header>
+        ${e.pytanie ? `<p class="kronika-pytanie">${esc(e.pytanie)}</p>` : ''}
+        ${e.iskra ? `<blockquote class="kronika-iskra">„${esc(e.iskra)}”</blockquote>` : ''}
+        ${delty ? `<div class="kronika-delty">${delty}</div>` : ''}
+        <footer>
+          <span class="kronika-ikony">${ikony}</span>
+          <button class="przycisk przycisk-maly" data-link="kronika:${esc(e.slug)}">Raport epoki ↗</button>
+        </footer>
+      </article>`;
+    })
+    .join('');
+  return `
+  <p class="naprowadzenie">Tocząca się opowieść świata AME — epoki, rozmowy i przesunięcia granicy między mitem a racjonalizacją. Wybierz byt, żeby przefiltrować epoki, w których grał.</p>
+  <div class="filtr-kronika">
+    <label for="kronika-filtr">Filtruj wg bytu</label>
+    <select id="kronika-filtr">
+      <option value="">— wszystkie —</option>
+      ${[...opcje].sort().map((s) => `<option value="${esc(s)}">${esc(s)}</option>`).join('')}
+    </select>
+  </div>
+  <div class="kronika-lista">${karty}</div>
+  <p class="naprowadzenie"><a class="link-zewnetrzny" href="docs/kronika.html">Otwórz stronę Kroniki (Tomy i raporty) ↗</a></p>`;
+}
+
+/** Symbol bytu z kartoteki (spójny z mapą; fallback: pierwsza litera emoji-zestawu). */
+function emojiBytu(slug) {
+  const EMOJI = {
+    agni: '🔥', balor: '👁️', 'barbarossa-kyffhaeuser': '👑', 'ben-varrey': '🧜‍♀️', 'drangue-shala': '⚡',
+    egungun: '🎭', 'empusa-korynt': '🕷️', indra: '🌩️', 'kannon-hase': '🕊️', 'kentaur-pelion': '🐎',
+    'lincoln-imp': '😈', nessos: '🏹', 'selkie-sule-skerry': '🦭', 'sfinks-teby': '🦁', 'talos-kreta': '🗿',
+    'knecht-z-koptos': '🪵', pandora: '🏺', protostates: '🛡️', 'syama-i-sarvara': '🐕', 'morowa-panna': '🧣',
+  };
+  return EMOJI[slug] || '✨';
+}
+
 export function htmlNowosci(indeks) {
   const wpisy = indeks.aktualizacje ?? [];
   if (!wpisy.length) return '<p class="pusto">Brak zmian w archiwum.</p>';

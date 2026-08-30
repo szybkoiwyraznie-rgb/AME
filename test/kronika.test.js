@@ -15,6 +15,18 @@ import {
   PLIK_INDEKSU,
   PLIK_KANONU,
   KATALOG_KRONIKA,
+  wykresOsiSVG,
+  wykresZasiegowSVG,
+  slupkiDominacjiSVG,
+  diagramRelacjiSVG,
+  osWatkowSVG,
+  dziennikZmianyHTML,
+  heatmapZasiegowSVG,
+  grafEpokSVG,
+  generujSpisTomowHTML,
+  generujRaportHTML,
+  generujRaportTomuHTML,
+  ramkaEpokiHTML,
 } from '../tools/kronika.mjs';
 
 async function wczytaj(path) {
@@ -277,4 +289,144 @@ test('podsumowanie zawiera epoki, ocenę narratora i raport mapuje się do pliku
   assert.equal(podsumowanie.epoki[0].narrator.ocena.length, 2);
   assert.ok(podsumowanie.stanPo.dominacje.length >= 5);
   assert.match(plikRaportu('epoka-1'), /docs\/kronika-epoka-1\.html$/);
+});
+/* ---- S1: wizualizacje Kroniki (W1–W10) ---- */
+
+test('S1: summary epok niesie ramę narracji (iskra/pytanie/przebieg/meta)', async () => {
+  const [tom, epoka1, epoka2, indeks, kanon] = await Promise.all([
+    wczytaj(PLIK_TOM_1),
+    wczytaj(PLIK_EPOKA_1),
+    wczytaj(join(KATALOG_KRONIKA, 'epoka-2.json')),
+    wczytaj(PLIK_INDEKSU),
+    wczytaj(PLIK_KANONU),
+  ]);
+  const podsumowanie = zbudujPodsumowanieTomu({ tom, epoki: [epoka1, epoka2], indeks, kanon });
+  const e1 = podsumowanie.epoki[0];
+  assert.ok(e1.iskra.length > 20, 'iskra w summary');
+  assert.ok(e1.pytanie.length > 10, 'pytanie w summary');
+  assert.ok(e1.przebieg.includes('Pełny tekst rozmowy'), 'przebieg w summary');
+  assert.ok(e1.meta && e1.meta.autor, 'meta w summary');
+});
+
+test('S1: wykres osi rysuje linię mit% i punkty epok (bez NaN, deterministycznie)', () => {
+  const epoki = [
+    { slug: 'epoka-1', tytul: 'A', stanPo: { os: { mit: 0.34 } } },
+    { slug: 'epoka-2', tytul: 'B', stanPo: { os: { mit: 0.32 } } },
+    { slug: 'epoka-3', tytul: 'C', stanPo: { os: { mit: 0.3 } } },
+  ];
+  const a = wykresOsiSVG(epoki);
+  const b = wykresOsiSVG(epoki);
+  assert.equal(a, b, 'deterministyczne');
+  assert.match(a, /class="os-line"/);
+  assert.match(a, /class="os-dot"/);
+  assert.ok(!a.includes('NaN'));
+  assert.equal((a.match(/os-dot/g) ?? []).length, 3);
+});
+
+test('S1: W3/W5/W6/W7/W9 i graf epok nie zawracają NaN i mają klasy', () => {
+  const relacje = [{ od: 'egungun', do: 'barbarossa-kyffhaeuser', kierunek: 'wzmocnienie', opis: 'razem' }];
+  const uczestnicy = [{ slug: 'egungun', nazwa: 'Egungun' }, { slug: 'barbarossa-kyffhaeuser', nazwa: 'Barbarossa' }, { slug: 'kentaur-pelion', nazwa: 'Kentaur' }];
+  const epoki = [
+    { slug: 'epoka-1', tytul: 'A', uczestnicy, konsekwencje: { watki: [{ id: 'w1', stan: 'otwarty' }] }, stanPo: { paliwo: { egungun: 23 }, zasieg: [{ slug: 'egungun', wielkosc: 0.5 }] } },
+    { slug: 'epoka-2', tytul: 'B', uczestnicy, konsekwencje: { watki: [{ id: 'w1', stan: 'zamkniety' }] }, stanPo: { paliwo: { egungun: 24 }, zasieg: [{ slug: 'egungun', wielkosc: 0.6 }] } },
+  ];
+  const z = wykresZasiegowSVG([{ slug: 'egungun', nazwa: 'Egungun', przed: 0.2, po: 0.5, opis: 'rośnie' }]);
+  const d = slupkiDominacjiSVG([{ etykieta: 'joruba · egungun', wielkosc: 0.5, delta: 0.1 }]);
+  const r = diagramRelacjiSVG(relacje, uczestnicy);
+  const w = osWatkowSVG(epoki);
+  const h = heatmapZasiegowSVG(epoki, { egungun: 'Egungun' });
+  const g = grafEpokSVG(epoki);
+  for (const [nazwa, html] of Object.entries({ z, d, r, w, h, g })) {
+    assert.ok(!html.includes('NaN'), `${nazwa}: bez NaN`);
+    assert.match(html, /class="/, `${nazwa}: ma klasy`);
+  }
+  assert.match(z, /zasieg-po/);
+  assert.match(r, /rel-luk wzmocnienie/);
+  assert.match(g, /graf-os/);
+});
+
+test('S1: dziennik zmiany to tabela z paliwem, zasięgiem, dominacją i pozycją', () => {
+  const e = {
+    uczestnicy: [{ slug: 'egungun', nazwa: 'Egungun', saldoPrzed: 20, saldoPo: 23 }],
+    konsekwencje: {
+      zasieg: [{ slug: 'egungun', przed: 0.4, po: 0.5 }],
+      dominacje: [{ kultura: 'joruba', kult: 'egungun', delta: 0.1 }],
+      pozycje: [{ slug: 'egungun', status: 'wzmocniony', opis: 'przodek u stołu' }],
+    },
+  };
+  const html = dziennikZmianyHTML(e, { egungun: 'Egungun' });
+  assert.match(html, /class="dziennik"/);
+  assert.match(html, /20 → <b>23<\/b>/);
+  assert.match(html, /\+10 pp/);
+  assert.match(html, /wzmocniony/);
+  assert.ok(!html.includes('NaN'));
+});
+
+test('S1: raport epoki zawiera ramkę, dziennik, wykresy i łuki relacji; Tom — wykresy i filtr', async () => {
+  const [tom, epoki, indeks, kanon] = await Promise.all([
+    wczytaj(PLIK_TOM_1),
+    Promise.all([1, 2, 3, 4, 5, 6].map((n) => wczytaj(join(KATALOG_KRONIKA, `epoka-${n}.json`)))),
+    wczytaj(PLIK_INDEKSU),
+    wczytaj(PLIK_KANONU),
+  ]);
+  const podsumowanie = zbudujPodsumowanieTomu({ tom, epoki, indeks, kanon });
+  const e = podsumowanie.epoki[0];
+  const raport = generujRaportHTML({
+    tom: podsumowanie.tom,
+    tytulTomu: podsumowanie.tytulTomu,
+    slug: e.slug,
+    tytulEpoki: e.tytul,
+    skit: e.skit,
+    iskra: e.iskra,
+    pytanie: e.pytanie,
+    przebieg: e.przebieg,
+    meta: e.meta,
+    skitTekst: 'Tekst rozmowy.',
+    uczestnicy: e.uczestnicy,
+    stanPo: e.stanPo,
+    konsekwencje: e.konsekwencje,
+    narrator: e.narrator,
+    wszystkieManifestacje: indeks.manifestacje,
+    landD: '',
+    manifestacjePelne: {},
+    indeks,
+    liczbaEpok: podsumowanie.epoki.length,
+  });
+  assert.match(raport, /class="ramka-epoki"/);
+  assert.match(raport, /class="dziennik"/);
+  assert.match(raport, /class="chart zasieg-chart"/);
+  assert.match(raport, /class="chart rel-chart"/);
+  assert.match(raport, /rel-arc wzmocnienie|rel-arc schlodzenie|rel-arc neutralna/);
+  assert.match(raport, /Epoki powiązane/);
+
+  const tomRaport = generujRaportTomuHTML(podsumowanie, indeks, '', {}, [{ slug: 'tom-1', tytul: 'Kronika trzech stołów', plik: 'kronika-tom-1.html' }]);
+  assert.match(tomRaport, /class="chart os-chart"/);
+  assert.match(tomRaport, /class="chart heat-chart"/);
+  assert.match(tomRaport, /wykres-paliwa/);
+  assert.match(tomRaport, /class="chart watki-chart"/);
+  assert.match(tomRaport, /class="chart graf-chart"/);
+  assert.match(tomRaport, /id="filtr-bytow"/);
+  assert.match(tomRaport, /kronika-filtr-info/);
+  assert.match(tomRaport, /generujSkryptFiltraTomy|byty = \[/);
+});
+
+test('S3: spis Tomów generuje stronę z kartami', () => {
+  const html = generujSpisTomowHTML([
+    { slug: 'tom-1', nr: 1, tytul: 'Kronika trzech stołów', opis: 'Pierwszy Tom', plik: 'kronika-tom-1.html', epoki: 6 },
+  ]);
+  assert.match(html, /Spis Tomów/);
+  assert.match(html, /Kronika trzech stołów/);
+  assert.match(html, /6 epok/);
+});
+
+test('U4: epoka nie może być własnym poprzednikiem/kontynuacją', async () => {
+  const [tom, epoka1, indeks, kanon] = await Promise.all([
+    wczytaj(PLIK_TOM_1),
+    wczytaj(PLIK_EPOKA_1),
+    wczytaj(PLIK_INDEKSU),
+    wczytaj(PLIK_KANONU),
+  ]);
+  const zepsuta = { ...epoka1, meta: { ...(epoka1.meta || {}), poprzednik: 'epoka-1' } };
+  const wynik = przeliczEpoke({ tom, epoka: zepsuta, indeks, kanon, stan: structuredClone(tom.stanStart), watkiPoprzednie: new Map() });
+  assert.ok(wynik.bledy.some((b) => /własnym poprzednikiem/.test(b)));
 });

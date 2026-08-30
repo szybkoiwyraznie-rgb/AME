@@ -1536,3 +1536,42 @@ Pleiades (CC BY 3.0) + DARE (CC BY-SA 3.0). Online (opcjonalne, wymaga
 decyzji o ADR 0001/0003): OSM tiles, OpenTopoMap, Esri basemaps,
 CARTO (free 5M req/mc, klucz). Rekomendacja etapów M1→M2→M3.
 BACKLOG zaktualizowany (sekcja Kronika, wpis M14, martwy link Theoi).
+
+### Kronika S1–S3 + mapa M1–M3 (2026-08-30, PR #10)
+
+**Zlecenie:** Kronika S1–S3 (wizualizacje W1–W10, feed/filtr/deep-linki
+U1–U3, odwołania U4, multi-Tom + rozgałęzienia) oraz mapa M1–M3 (warstwy
+offline + online bez klucza, wszystkie domyślnie wyłączone, atrybucje).
+
+**Kronika (S1):** czyste funkcje SVG/HTML w `tools/kronika.mjs` —
+`ramkaEpokiHTML` (W1), `wykresOsiSVG` (W2; mit% normalizowany 0–1/0–100,
+dynamiczna skala), `wykresZasiegowSVG` (W3), `wykresPaliwaSVG` (W4),
+`slupkiDominacjiSVG` (W5), `diagramRelacjiSVG` (W6 — łuki
+wzmocnienie/schłodzenie/neutralna), `osWatkowSVG` (W7), `dziennikZmianyHTML`
+(W8), `heatmapZasiegowSVG` (W9), `grafEpokSVG` (S3) i `generujSpisTomowHTML`.
+Raport epoki: ramka + dziennik + wykresy zasięgów/dominacji + diagram relacji
++ łuki na mapie (W10) + „Epoki powiązane” (U4). Raport Tomu: oś, heatmap,
+paliwo, dominacje końcowe, oś wątków, graf epok, pasek Tomów, filtr bytów.
+
+**Kronika (S2/S3):** feed „📜 kronika” w aplikacji (`#kroniki`, karty epok
+z `iskra`/`pytanie`, filtr bytów, `data-link="kronika:<slug>"`), deep-linki
+`#kronika:<slug>` z aplikacji i na stronie Tomu (przewinięcie + halo),
+`docs/kronika.html` (spis Tomów), generator obsługuje wiele Tomów
+(`wczytajTomy`, `summary-<slug>.json`), `meta.poprzednik`/`kontynuacja`
+walidowane (odwołanie do samego siebie = błąd) i rysowane jako graf.
+
+**Mapa (M1–M3):** warstwy offline **domyślnie wyłączone** —
+lasy (WWF Ecoregions 2017, biomy 1–6, PMTiles→GeoJSON+DP), szczyty (NE 10m
+elevation+regions points), urban (NE 10m, `area_sqkm ≥ 50`), morza (NE 10m
+marine polys, etykiety), miejsca historyczne (Pleiades 4.1, precise),
+hipsometria (NE HYP 50m→Web Mercator 2160² jpg); podkłady online bez klucza
+(OpenTopoMap/OSM/Esri physical/imager) wybierane ręcznie z atrybucją pod mapą.
+Narzędzia: `tools/warstwy-mapy.mjs` (+`--check`),
+`tools/warstwy-lasy-pmtiles.py` + `tools/pmtiles.py`,
+`tools/warstwy-hipsometria.py`, `tools/pobierz-zrodla-warstw.sh`
+(zasoby 315 MB w `assets/map/vendor/`, gitignorowane).
+
+**Brama:** `npm test` 176/176, `npm run check` zielone, `node
+--test test/mapa-szczegoly.test.js` 10/10, `test/kronika.test.js` 17/17.
+`docs/ASSETS.md` — licencje (CC BY 4.0 Dinerstein 2017, CC BY 3.0 Pleiades,
+public domain NE) + polityki podkładów online.
