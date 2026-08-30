@@ -120,6 +120,20 @@ export function tagZFragmantu(fragment) {
   return tag ? tag : null;
 }
 
+/**
+ * Zamówienia z parametrów zapytania dla startu aplikacji (PR #9):
+ * `?q=…` ustawia wyszukiwanie, `?action=wylosuj|powiazania` wykonuje akcję.
+ * Nieznane parametry są ignorowane — aplikacja startuje normalnie.
+ * Zwraca `{ action, q }`: action ∈ {'wylosuj','powiazania',null}, q — string albo null.
+ */
+export function akcjeZZapytania(zapytanie) {
+  const p = new URLSearchParams(String(zapytanie ?? ''));
+  const akcja = p.get('action');
+  const action = akcja === 'wylosuj' || akcja === 'powiazania' ? akcja : null;
+  const q = (p.get('q') ?? '').trim();
+  return { action, q: q || null };
+}
+
 /** Przycisk kopiujący adres bieżącego widoku (kartoteka albo skit/feed). */
 export function przyciskKopiowania(cel) {
   if (!cel) return '';
@@ -133,9 +147,9 @@ export function przyciskKopiowania(cel) {
  * (zlecenie właściciela 2026-08-28).
  */
 export function htmlStopki(meta) {
-  // Stopka pokazuje wyłącznie DATY (bez godziny) — meta może nieść porę
-  // (ADR 0017, v1.5), ale w karcie liczy się dzień utworzenia i ostatniej
-  // zmiany. Godzina żyje w feedzie „Co nowego”, nie w stopce (PROTOKÓŁ §8.1).
+  // Stopka pokazuje daty utworzenia i ostatniej modyfikacji razem z godziną,
+  // jeśli meta ją niesie (ADR 0017, v1.5; PROTOKÓŁ §8.1 — „wyłącznie daty”).
+  // Autorzy i opisy zmian zostają w JSON-ie i w feedzie „Co nowego”.
   const formatujDate = (d) => String(d).replace('T', ' ').trim();
   const daty = (meta?.modyfikacje ?? []).map((m) => m?.data).filter(Boolean).map(formatujDate).sort((a, b) => (a > b) - (a < b));
   const ostatnia = daty[daty.length - 1];
@@ -180,8 +194,10 @@ function chipyTagow(w, indeks) {
     .join('');
 }
 
-/** Pełny wpis kartoteki (sekcje I–VI wg protokołu MFM v1.4). */
-export function htmlWpisu(w, indeks) {
+/** Pełny wpis kartoteki (sekcje I–VI wg protokołu MFM v1.4). `kronika` to
+ *  podsumowanie Tomu (summary.json) — jeśli podane, wpis dostaje sekcję
+ *  „Tomy i Epoki” (E, 2026-08-30) z linkami do raportów. */
+export function htmlWpisu(w, indeks, kronika = null) {
   const rekord = indeks.manifestacje.find((m) => m.slug === w.slug) ?? {};
   const alt = (w.nazwy_alternatywne ?? []).length ? `<p class="alt">znany też jako: ${esc(w.nazwy_alternatywne.join(', '))}</p>` : '';
   const naglowek = `
@@ -193,20 +209,6 @@ export function htmlWpisu(w, indeks) {
       <p class="pochodzenie">${esc(w.pochodzenie_i_kultura)}</p>
       <div class="chipy">${chipyTagow(w, indeks)}</div>
     </header>`;
-
-  const tabela = `
-    <table class="tabela-translacji">
-      <thead><tr><th>Element karty</th><th>Translacja na byt</th></tr></thead>
-      <tbody>${(w.rezonans.tabela ?? [])
-        .map((r) => `<tr><td>${esc(r.element)}</td><td>${esc(r.translacja)}</td></tr>`)
-        .join('')}</tbody>
-    </table>`;
-
-  const V = sekcja(
-    'V',
-    'Rezonans i tożsamość',
-    `<p>${esc(w.rezonans.klucz_przywolania)}</p>${tabela}`
-  );
 
   const II = sekcja(
     'II',
@@ -260,11 +262,11 @@ export function htmlWpisu(w, indeks) {
   const backlinki = (rekord.backlinki ?? [])
     .map((s) => `<button class="chip link wzmianka" data-slug="${esc(s)}">${esc(nazwaSluga(s, indeks))}</button>`)
     .join(' ');
-  const VI = htmlSkitowWpisu(rekord.skity, indeks);
+  const V = htmlSkitowWpisu(rekord.skity, indeks);
   const wiki =
     powiazania || backlinki
       ? sekcja(
-          '∞',
+          'VII',
           'Powiązania',
           `${powiazania ? `<ul class="powiazania">${powiazania}</ul>` : ''}${
             backlinki ? `<p class="wzmiankowane">wzmiankowany przez: ${backlinki}</p>` : ''
@@ -272,10 +274,12 @@ export function htmlWpisu(w, indeks) {
         )
       : '';
 
+  const tomyIEpoki = htmlTomyIEpoki(w.slug, kronika);
   const meta = htmlStopki(w.meta);
 
-  // Sekcje I–V w kolejności numeracji (PROTOKÓŁ §4.1, v1.3): numer = pozycja.
-  return `<div class="wpis">${naglowek}${I}${II}${III}${IV}${V}${VI}${wiki}${meta}</div>`;
+  // Sekcje I–VII w kolejności numeracji (PROTOKÓŁ §4.1, MFM v1.8):
+  // numer = pozycja; V = SKITy, VI = Tomy i Epoki, VII = Powiązania.
+  return `<div class="wpis">${naglowek}${I}${II}${III}${IV}${V}${tomyIEpoki}${wiki}${meta}</div>`;
 }
 
 /**
@@ -314,6 +318,26 @@ export function htmlListy(indeks, widoczne /* Set|null */) {
       </li>`
     )
     .join('')}</ul>`;
+}
+
+/**
+ * Strona tagu (F2, C2 2026-08-30): nagłówek z kategorią, opisem i licznikiem
+ * + lista manifestacji z tym tagiem (klik → kartoteka). Adresowalna przez
+ * `#tag:<slug>`; współpracuje z filtrem mapy (zastosujTag).
+ */
+export function htmlStronyTagu(indeks, tag) {
+  const dane = indeks?.tagi?.[tag];
+  if (!dane) return '<p class="pusto">Nieznany tag.</p>';
+  const kat = (indeks.kanon?.kategorie || []).find((k) => k.id === dane.kategoria);
+  const nazwa = kat?.nazwa || dane.kategoria || 'Tagi';
+  const opis = dane.opis || kat?.opis || '';
+  const ile = dane.wpisy.length;
+  return `
+    <p class="naprowadzenie"><strong class="tag-nazwa">${esc(tag)}</strong> — ${esc(nazwa)} · ${
+      ile === 1 ? '1 manifestacja' : `${ile} manifestacji`
+    }${opis ? ` · ${esc(opis)}` : ''}</p>
+    ${htmlListy(indeks, new Set(dane.wpisy))}
+  `;
 }
 
 /* ---- SKITy i feed „Co nowego" (ADR 0013/0014) ---------------------------- */
@@ -374,7 +398,7 @@ export function htmlBazySkitow(indeks) {
     .join('')}</ul>`;
 }
 
-/** Sekcja VI wpisu: skity, w których materializacja zabiera głos. */
+/** Sekcja V wpisu (MFM v1.8): skity, w których materializacja zabiera głos. */
 export function htmlSkitowWpisu(slugi, indeks) {
   if (!slugi?.length) return '';
   const pola = slugi
@@ -386,10 +410,86 @@ export function htmlSkitowWpisu(slugi, indeks) {
     )
     .join('');
   if (!pola) return '';
-  return sekcja('VI', 'SKITy', `<ul class="powiazania skity-wpisu">${pola}</ul>`);
+  return sekcja('V', 'SKITy', `<ul class="powiazania skity-wpisu">${pola}</ul>`);
 }
 
 /** Feed „Co nowego": najnowsze na górze, każda pozacja linkuje do treści. */
+/** Feed Kroniki (U3): karty epok z ramy narracji (pytanie/iskra) i linkiem do raportu. */
+export function htmlKronik(podsumowanie, indeks = {}) {
+  if (!podsumowanie?.epoki?.length) return '<p class="pusto">Kronika jest jeszcze pusta — uruchom npm run build.</p>';
+  const opcje = new Set();
+  for (const e of podsumowanie.epoki) for (const u of e.uczestnicy ?? []) opcje.add(u.slug);
+  const karty = podsumowanie.epoki
+    .map((e) => {
+      const ikony = (e.uczestnicy ?? []).map((u) => `<span class="kronika-ikona" title="${esc(u.nazwa ?? u.slug)}">${emojiBytu(u.slug)}</span>`).join(' ');
+      const delty = (e.konsekwencje?.zasieg ?? [])
+        .map((z) => {
+          const d = Math.round((z.po - z.przed) * 100);
+          return `<span class="chip ${d > 0 ? 'up' : d < 0 ? 'down' : 'neutral'}">${esc(z.slug)} ${d > 0 ? '+' : ''}${d} pp</span>`;
+        })
+        .join(' ');
+      return `
+      <article class="kronika-karta" data-byt="${(e.uczestnicy ?? []).map((u) => esc(u.slug)).join(' ')}" data-slug="${esc(e.slug)}">
+        <header>
+          <span class="kronika-nr">${esc(e.slug)}</span>
+          <h3>${esc(e.tytul)}</h3>
+          <span class="kronika-os">MIT ${e.stanPo?.os?.mit ?? 0}% <span class="muted">/ RAC ${e.stanPo?.os?.racjonalizacja ?? 0}%</span></span>
+        </header>
+        ${e.pytanie ? `<p class="kronika-pytanie">${esc(e.pytanie)}</p>` : ''}
+        ${e.iskra ? `<blockquote class="kronika-iskra">„${esc(e.iskra)}”</blockquote>` : ''}
+        ${delty ? `<div class="kronika-delty">${delty}</div>` : ''}
+        <footer>
+          <span class="kronika-ikony">${ikony}</span>
+          <button class="przycisk przycisk-maly" data-link="kronika:${esc(e.slug)}">Raport epoki ↗</button>
+        </footer>
+      </article>`;
+    })
+    .join('');
+  return `
+  <p class="naprowadzenie">Tocząca się opowieść świata AME — epoki, rozmowy i przesunięcia granicy między mitem a racjonalizacją. Wybierz byt, żeby przefiltrować epoki, w których grał.</p>
+  <div class="filtr-kronika">
+    <label for="kronika-filtr">Filtruj wg bytu</label>
+    <select id="kronika-filtr">
+      <option value="">— wszystkie —</option>
+      ${[...opcje].sort().map((s) => `<option value="${esc(s)}">${esc(s)}</option>`).join('')}
+    </select>
+  </div>
+  <div class="kronika-lista">${karty}</div>
+  <p class="naprowadzenie"><a class="link-zewnetrzny" href="docs/kronika.html">Otwórz stronę Kroniki (Tomy i raporty) ↗</a></p>`;
+}
+
+/** Sekcja „Tomy i Epoki” w karcie bytu (E, 2026-08-30): linki do raportu Tomu
+ *  i do stron Epok, w których byt występuje. Puste, gdy brak danych lub byt
+ *  nigdzie nie występuje. */
+export function htmlTomyIEpoki(slug, kronika) {
+  const epoki = (kronika?.epoki ?? []).filter((e) => (e.uczestnicy ?? []).some((u) => u.slug === slug));
+  if (!epoki.length) return '';
+  const tomSlug = kronika?.tom || 'tom-1';
+  const tytulTomu = kronika?.tytulTomu || tomSlug;
+  const chipsy = epoki
+    .map((e) => `<a class="chip link" href="docs/kronika-${esc(e.slug)}.html" title="${esc(e.tytul ?? '')}">${esc(e.slug)}${e.tytul ? ` · ${esc(e.tytul)}` : ''}</a>`)
+    .join('');
+  const slowo = epoki.length === 1 ? 'epoce' : 'epokach';
+  // odnośnik do Tomu w tej samej konwencji „brązowego przycisku” co epoki
+  // (recenzja właściciela 2026-08-30: niebieski link zewnętrzny był odstępstwem).
+  return sekcja(
+    'VI',
+    'Tomy i Epoki',
+    `<p class="maly">Występuje w ${epoki.length} ${slowo} Tomu <a class="chip link" href="docs/kronika-${esc(tomSlug)}.html" title="Raport Tomu">${esc(tytulTomu)} ↗</a>:</p><div class="chipy">${chipsy}</div>`
+  );
+}
+
+/** Symbol bytu z kartoteki (spójny z mapą; fallback: pierwsza litera emoji-zestawu). */
+function emojiBytu(slug) {
+  const EMOJI = {
+    agni: '🔥', balor: '👁️', 'barbarossa-kyffhaeuser': '👑', 'ben-varrey': '🧜‍♀️', 'drangue-shala': '⚡',
+    egungun: '🎭', 'empusa-korynt': '🕷️', indra: '🌩️', 'kannon-hase': '🕊️', 'kentaur-pelion': '🐎',
+    'lincoln-imp': '😈', nessos: '🏹', 'selkie-sule-skerry': '🦭', 'sfinks-teby': '🦁', 'talos-kreta': '🗿',
+    'knecht-z-koptos': '🪵', pandora: '🏺', protostates: '🛡️', 'syama-i-sarvara': '🐕', 'morowa-panna': '🧣',
+  };
+  return EMOJI[slug] || '✨';
+}
+
 export function htmlNowosci(indeks) {
   const wpisy = indeks.aktualizacje ?? [];
   if (!wpisy.length) return '<p class="pusto">Brak zmian w archiwum.</p>';

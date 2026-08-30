@@ -50,23 +50,22 @@ docs/                       — protokół, ADR, plany, handoffy (patrz AGENTS.m
    `prefers-color-scheme` → ciemny) i ustawia `html[data-motyw]`, pobiera
    `data/index.json` → rysuje pinezki; kliknięcie dociąga
    `data/manifestations/<slug>.json` do pełnoekranowej warstwy wpisu.
-5. Baza Skitów i feed: skróty `skity[]`, `manifestacje[].skity` (sekcja VI) i
+5. Baza Skitów i feed: skróty `skity[]`, `manifestacje[].skity` (sekcja V) i
    `aktualizacje[]` („Co nowego") są w indeksie — pełny tekst skitu dociągany
    jest przy otwarciu (`data.js: zaladujSkit`). Nikt nie przepisuje list ręcznie.
 
 ## Schemat wpisu (skrót; pełna walidacja w tools/rebuild-index.mjs)
 
 Kolejność sekcji w prezentacji i w plikach JSON: `wizualizacja` → `natura` →
-`dokumentacja` → `trofea` → `rezonans` (PROTOKÓŁ §4.1); walidacja i indeks są
-niezależne od porządku kluczy.
+`dokumentacja` → `trofea` (PROTOKÓŁ §4.1; v1.8 — bez `rezonans`); walidacja
+i indeks są niezależne od porządku kluczy. Sekcje V–VII (SKITy, Tomy i Epoki,
+Powiązania) są wyliczane, nie zapisywane w wpisie.
 
 ```
 slug, nazwa, nazwy_alternatywne[]
 karta: { nazwa, wydanie?, rok? }
 lokalizacja: { miejscowosc, kraj, lat, lon }        # lat [-90..90], lon [-180..180]
 pochodzenie_i_kultura: string
-rezonans: { klucz_przywolania: string,
-            tabela: [{ element, translacja } ≥ 5 wierszy: Nazwa/Mechanika/Ilustracja/Flavor/Lore ] }
 natura: { wyglad_i_aura, charakter_i_motywacje, zdolnosci,
           slabosci_i_metody_pokonania, preferencje }  # polskie teksty
 dokumentacja: [{ typ, pozycja, url? }]               # prawdziwe źródła; ≥1 url http(s) na wpis
@@ -88,7 +87,7 @@ meta: { utworzono, autor?, modyfikacje: [] }
 
 Plik `data/index.json` (wersja 3) dokłada do tego: `kanon.kategorie[]`,
 `tagi{tag:{kategoria,opis,wpisy}}`, `skity[]` (skróty: slug,
-tytul, imiona, slow, data), `manifestacje[].skity` (sekcja VI) i `aktualizacje[]`
+tytul, imiona, slow, data), `manifestacje[].skity` (sekcja V) i `aktualizacje[]`
 (feed „Co nowego»). Sort feedu liczy chronologię zdarzeń: data malejąco
 (porównanie po znakach — format `RRRR-MM-DD` albo `RRRR-MM-DD GG:MM`, ADR 0017:
 dzień z godziną wygrywa z dniem bez godziny, wśród godzin kolejność
@@ -196,7 +195,8 @@ dzieje się w przeglądarce na życzenie — determinizm indeksu (ADR 0002) niet
 - Zakaz dependency runtime; nowe assety zewnętrzne → `docs/ASSETS.md`.
 - Kolory wyłącznie przez tokeni CSS z `:root` / `html[data-motyw='jasny']`
   (barvy mapy też) — inaczej drugi motyw będzie nieczytelny (ADR 0010).
-- Numeracja sekcji wpisu **jest** ich kolejnością (PROTOKÓŁ §4.1, v1.3):
-  I Wizualizacja → II Charakterystyka i natura → III Dokumentacja → IV Trofea →
-  V Rezonans i tożsamość → VI SKITy. Przed v1.3 numer był przypisany do treści
-  (Wizualizacja = IV); przy starych zapisach stosuj mapę z PROTOKÓŁ §4.5.
+- Numeracja sekcji wpisu **jest** ich kolejnością (PROTOKÓŁ §4.1, v1.3;
+  układ v1.8): I Wizualizacja → II Charakterystyka i natura → III Dokumentacja →
+  IV Trofea → V SKITy → VI Tomy i Epoki → VII Powiązania. Przed v1.3 numer był
+  przypisany do treści; v1.8 usunęła sekcję „Rezonans i tożsamość” (ADR 0022);
+  przy starych zapisach stosuj mapy z PROTOKÓŁ §4.1.

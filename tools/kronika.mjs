@@ -337,6 +337,13 @@ export function przeliczEpoke({ tom, epoka, indeks, kanon, stan, watkiPoprzednie
     }
   }
 
+  const powiazane = [];
+  if (epoka.meta?.poprzednik) powiazane.push(epoka.meta.poprzednik);
+  if (epoka.meta?.kontynuacja) powiazane.push(epoka.meta.kontynuacja);
+  if (powiazane.some((slug) => slug === epoka.slug)) {
+    blad(bledy, `meta: epoka nie może być własnym poprzednikiem/kontynuacją („${epoka.slug}”)`);
+  }
+
   return {
     ok: bledy.length === 0,
     bledy,
@@ -345,6 +352,13 @@ export function przeliczEpoke({ tom, epoka, indeks, kanon, stan, watkiPoprzednie
     konsekwencje: konsekwencjeWyliczone,
     narrator: epoka.narrator || null,
     skit: skit ? skit.slug : null,
+    iskra: epoka.iskra || '',
+    pytanie: epoka.pytanie || '',
+    przebieg: epoka.przebieg || '',
+    meta: epoka.meta || null,
+    slug: epoka.slug,
+    tytul: epoka.tytul || '',
+    grafika: epoka.grafika || null,
   };
 }
 
@@ -356,7 +370,7 @@ export function przeliczTom({ tom, epoki, indeks, kanon }) {
   const bledy = [];
   for (const epoka of epoki) {
     const w = przeliczEpoke({ tom, epoka, indeks, kanon, stan, watkiPoprzednie });
-    wyniki.push({ ...w, slug: epoka.slug, tytul: epoka.tytul });
+    wyniki.push(w);
     if (!w.ok) {
       for (const b of w.bledy) blad(bledy, `${epoka.slug}: ${b}`);
     } else {
@@ -383,12 +397,17 @@ export function zbudujPodsumowanieTomu({ tom, epoki, indeks, kanon }) {
       slug: w.slug,
       tytul: w.tytul,
       skit: w.skit,
+      iskra: w.iskra,
+      pytanie: w.pytanie,
+      przebieg: w.przebieg,
+      meta: w.meta || null,
       walidacja: w.ok,
       bledy: w.bledy,
       uczestnicy: w.uczestnicy,
       stanPo: w.stanPo,
       konsekwencje: w.konsekwencje,
       narrator: w.narrator,
+      grafika: w.grafika,
     })),
     stanPo: wynikTomu.stan,
     walidacja: wynikTomu.ok,
@@ -401,6 +420,11 @@ export function zbudujPodsumowanieTomu({ tom, epoki, indeks, kanon }) {
       utworzono: '2026-08-29',
     },
   };
+}
+
+const RZYMSKIE = ['I','II','III','IV','V','VI','VII','VIII','IX','X','XI','XII'];
+function rzymskie(n) {
+  return RZYMSKIE[(n || 1) - 1] || String(n);
 }
 
 function esc(s) {
@@ -432,10 +456,36 @@ const EMOJI_BYTU = {
   'selkie-sule-skerry': '🦭',
   'sfinks-teby': '🦁',
   'talos-kreta': '🗿',
+  'knecht-z-koptos': '🪵',
+  'pandora': '🏺',
+  'protostates': '🛡️',
+  'syama-i-sarvara': '🐕',
+  'morowa-panna': '🧣',
 };
 
 function getEmoji(slug) {
   return EMOJI_BYTU[slug] || '✨';
+}
+
+/** Nazwy prezentacyjne kultur (kanon niesie tylko slugi tagów — te czytelne
+ *  formy służą wykresom i tytułom; 11 kultur z kartoteki). */
+export const NAZWY_KULTUR = {
+  'grecja': 'Grecja',
+  'indie': 'Indie',
+  'joruba': 'Joruba',
+  'irlandia': 'Irlandia',
+  'szkocja-polnocna': 'Szkocja Północna',
+  'albania': 'Albania',
+  'niemcy': 'Niemcy',
+  'anglia': 'Anglia',
+  'polska': 'Polska',
+  'japonia': 'Japonia',
+  'man': 'Wyspa Man',
+};
+
+/** Czytelna nazwa kultury (fallback: slug). */
+export function nazwaKultury(slug) {
+  return NAZWY_KULTUR[slug] || slug || 'Inna';
 }
 
 /** Pre-kalkulacja uproszczonych ścieżek kontynentów dla szybkiego SVG */
@@ -484,10 +534,11 @@ export function generujMapeSVG({
   viewBox = null,
   tytul = 'Geografia epoki',
   tylkoUczestnicy = false,
+  relacje = [], // [{od, do, kierunek, opis}] — łuki ukierunkowane zamiast kompletnych par
 }) {
   const uczestnicySet = new Set(uczestnicySlugi);
   const mapaBytow = new Map((manifestacje || []).map((m) => [m.slug, m]));
-  const mapaZasiegu = new Map((zasiegi || []).map((z) => [z.slug, z.wielkosc ?? z.po ?? 0.3]));
+  const mapaZasiegu = new Map((zasiegi || []).map((z) => [z.slug, { ...z, wielkosc: z.wielkosc ?? z.po ?? 0.3 }]));
 
   // Punkty uczestników lub wszystkich bytów
   const punkty = [];
@@ -505,7 +556,7 @@ export function generujMapeSVG({
         x: Math.round(x),
         y: Math.round(y),
         jestUczestnikiem,
-        zasieg: mapaZasiegu.get(m.slug) || 0.3,
+        zasieg: mapaZasiegu.get(m.slug)?.wielkosc ?? 0.3,
         emoji: getEmoji(m.slug),
       });
     }
@@ -534,19 +585,35 @@ export function generujMapeSVG({
     }
   }
 
-  // Linie łączące uczestników
+  // Linie łączące uczestników: komplet par albo (W10) ukierunkowane relacje
   const lukiSvg = [];
   const uPunkty = punkty.filter((p) => p.jestUczestnikiem);
-  for (let i = 0; i < uPunkty.length; i++) {
-    for (let j = i + 1; j < uPunkty.length; j++) {
-      const p1 = uPunkty[i];
-      const p2 = uPunkty[j];
+  const mapaPunktow = new Map(uPunkty.map((p) => [p.slug, p]));
+  if (relacje.length > 0) {
+    for (const r of relacje) {
+      const p1 = mapaPunktow.get(r.od);
+      const p2 = mapaPunktow.get(r.do);
+      if (!p1 || !p2) continue;
       const midX = (p1.x + p2.x) / 2;
-      const midY = (p1.y + p2.y) / 2 - Math.min(60, Math.hypot(p2.x - p1.x, p2.y - p1.y) * 0.15);
+      const midY = (p1.y + p2.y) / 2 - Math.min(70, Math.hypot(p2.x - p1.x, p2.y - p1.y) * 0.2);
+      const cls = r.kierunek === 'wzmocnienie' ? 'rel-arc wzmocnienie' : r.kierunek === 'schlodzenie' || r.kierunek === 'schłodzenie' ? 'rel-arc schlodzenie' : 'rel-arc neutralna';
       lukiSvg.push(`
-        <path class="arc-glow" d="M ${p1.x} ${p1.y} Q ${midX} ${midY} ${p2.x} ${p2.y}" />
-        <path class="arc-line" d="M ${p1.x} ${p1.y} Q ${midX} ${midY} ${p2.x} ${p2.y}" />
-      `);
+        <path class="${cls}" d="M ${p1.x} ${p1.y} Q ${midX} ${midY} ${p2.x} ${p2.y}" data-od="${esc(r.od)}" data-do="${esc(r.do)}" data-kierunek="${esc(r.kierunek)}">
+          <title>${esc(r.od)} → ${esc(r.do)}: ${esc(r.kierunek)}${r.opis ? ` — ${esc(r.opis)}` : ''}</title>
+        </path>`);
+    }
+  } else {
+    for (let i = 0; i < uPunkty.length; i++) {
+      for (let j = i + 1; j < uPunkty.length; j++) {
+        const p1 = uPunkty[i];
+        const p2 = uPunkty[j];
+        const midX = (p1.x + p2.x) / 2;
+        const midY = (p1.y + p2.y) / 2 - Math.min(60, Math.hypot(p2.x - p1.x, p2.y - p1.y) * 0.15);
+        lukiSvg.push(`
+          <path class="arc-glow" d="M ${p1.x} ${p1.y} Q ${midX} ${midY} ${p2.x} ${p2.y}" />
+          <path class="arc-line" d="M ${p1.x} ${p1.y} Q ${midX} ${midY} ${p2.x} ${p2.y}" />
+        `);
+      }
     }
   }
 
@@ -556,13 +623,17 @@ export function generujMapeSVG({
     .map((p) => {
       const rHalo = Math.round(24 + p.zasieg * 120);
       const cls = p.jestUczestnikiem ? 'node active' : 'node passive';
+      const zDane = mapaZasiegu.get(p.slug) || {};
+      const deltaZasiegu = Number.isFinite(zDane.przed) && Number.isFinite(zDane.po) ? Math.round((zDane.po - zDane.przed) * 100) : null;
+      const tytulHalo = `${p.nazwa} — zasięg ${pct(p.zasieg)}%${deltaZasiegu === null ? '' : ` (przed ${pct(zDane.przed)}, ${deltaZasiegu > 0 ? '+' : ''}${deltaZasiegu} pp)`}`;
       return `
       <g class="${cls}" data-slug="${esc(p.slug)}" transform="translate(${p.x},${p.y})">
+        <title>${esc(tytulHalo)}</title>
         <circle class="halo" r="${rHalo}" />
         <a href="#${esc(p.slug)}" class="otworz-kartoteke" data-slug="${esc(p.slug)}" title="${esc(p.nazwa)} (${esc(p.kraj)}) — otwórz kartotekę">
-          <circle class="pin-bg" r="${p.jestUczestnikiem ? 15 : 10}" />
-          <text class="pin-icon" dy="${p.jestUczestnikiem ? '4' : '3'}">${p.emoji}</text>
-          <text class="pin-label" x="${p.jestUczestnikiem ? 18 : 14}" y="4">${esc(p.nazwa.split('—')[0].trim())}</text>
+          <circle class="pin-bg" r="${p.jestUczestnikiem ? 20 : 13}" />
+          <text class="pin-icon" dy="${p.jestUczestnikiem ? 7 : 5}">${p.emoji}</text>
+          <text class="pin-label" x="${p.jestUczestnikiem ? 24 : 17}" y="5">${esc(p.nazwa.split('—')[0].trim())}</text>
         </a>
       </g>`;
     })
@@ -623,6 +694,790 @@ export function generujMapeSVG({
   </div>`;
 }
 
+/* ======================================================================
+ * Wizualizacje Kroniki (S1, W1–W10 — czyste, deterministyczne funkcje SVG)
+ * ====================================================================== */
+
+/** Nazwa bytu z mapy uczestników wszystkich epok albo fallback slug. */
+function nazwaBytu(nazwy, slug) {
+  return nazwy?.get?.(slug) || slug;
+}
+
+/** W1 — ramka epoki: pytanie (lead), iskra (cytat), przebieg (rozwijany). */
+export function ramkaEpokiHTML(e) {
+  const rozgalezienie = e.meta?.rozgalezienie;
+  return `
+  <section class="ramka-epoki" id="ramka-epoki">
+    ${e.pytanie ? `<p class="ramka-pytanie">${esc(e.pytanie)}</p>` : ''}
+    ${e.iskra ? `<blockquote class="ramka-iskra">„${esc(e.iskra)}”</blockquote>` : ''}
+    ${e.przebieg ? `<details class="ramka-przebieg"><summary>Przebieg</summary><p>${esc(e.przebieg)}</p></details>` : ''}
+    ${
+      rozgalezienie
+        ? `<div class="ramka-rozgalezienie"><b>Rozstaje: </b>${esc(rozgalezienie.opis || '')}
+            <ul>${(rozgalezienie.sciezki || []).map((s) => `<li>${esc(s.tytul || '')} — ${esc(s.opis || '')}</li>`).join('')}</ul>
+          </div>`
+        : ''
+    }
+  </section>`;
+}
+
+/** W2 — wykres osi MIT/RACJONALIZACJA po epokach (SVG, bez zależności). */
+export function wykresOsiSVG(epoki, { szer = 560, wysokosc = 210 } = {}) {
+  // os.mit: 0-1 (ułamek) albo 0-100 (procenty) — unormuj do procentów.
+  const dane = (epoki || []).map((e) => {
+    const mit = Number(e.stanPo?.os?.mit ?? 0);
+    return { slug: e.slug, tytul: e.tytul, mit: mit > 1 ? mit : mit * 100 };
+  });
+  if (dane.length < 2) return `<p class="muted">Wykres osi wymaga co najmniej dwóch epok.</p>`;
+  const minMit = Math.min(...dane.map((d) => d.mit));
+  const maxMit = Math.max(...dane.map((d) => d.mit));
+  const ymin = Math.max(0, Math.floor((minMit - 3) / 5) * 5);
+  const ymax = Math.min(100, Math.ceil((maxMit + 3) / 5) * 5);
+  const m = { gora: 20, dol: 40, lewo: 46, prawo: 20 };
+  const szerPlot = szer - m.lewo - m.prawo;
+  const wysPlot = wysokosc - m.gora - m.dol;
+  const x = (i) => m.lewo + (dane.length === 1 ? szerPlot / 2 : (szerPlot * i) / (dane.length - 1));
+  const y = (v) => m.gora + wysPlot * (1 - (v - ymin) / Math.max(1, ymax - ymin));
+  const punkty = dane.map((d, i) => `${x(i).toFixed(1)},${y(d.mit).toFixed(1)}`);
+  const linia = `M ${punkty.join(' L ')}`;
+  const obszar = `${linia} L ${x(dane.length - 1).toFixed(1)},${(m.gora + wysPlot).toFixed(1)} L ${x(0).toFixed(1)},${(m.gora + wysPlot).toFixed(1)} Z`;
+  const kroki = [];
+  for (let v = ymin; v <= ymax; v += 5) kroki.push(v);
+  const siatka = kroki
+    .map((v) => `<line class="os-grid" x1="${m.lewo}" x2="${szer - m.prawo}" y1="${y(v).toFixed(1)}" y2="${y(v).toFixed(1)}" /><text class="os-grid-label" x="${m.lewo - 8}" y="${(y(v) + 4).toFixed(1)}">${v}%</text>`)
+    .join('');
+  const punktySvg = dane
+    .map((d, i) => {
+      const nr = rzymskie(i + 1);
+      return `<g class="os-dot" transform="translate(${x(i).toFixed(1)},${y(d.mit).toFixed(1)})">
+        <title>${esc(d.slug)} — ${esc(d.tytul)}: mit ${d.mit.toFixed(1)}%</title>
+        <text class="os-wartosc" x="0" y="-10">${d.mit.toFixed(1)}%</text>
+        <circle r="5" />
+      </g>
+      <text class="os-label" x="${x(i).toFixed(1)}" y="${(wysokosc - 14).toFixed(1)}" text-anchor="middle">${nr}</text>`;
+    })
+    .join('');
+  return `
+  <svg class="chart os-chart" viewBox="0 0 ${szer} ${wysokosc}" role="img" aria-label="Wykres osi mit/racjonalizacja po epokach">
+    ${siatka}
+    <path class="os-area" d="${obszar}" />
+    <path class="os-line" d="${linia}" />
+    ${punktySvg}
+  </svg>`;
+}
+
+/** Dzieli tekst SVG na linie po słowach — SVG samo nie zawija, przez co
+ *  nazwy epok i bytów były ucinane (recenzja właściciela 2026-08-30). */
+export function lamaczTekstu(tekst, maxZnakow = 22, maxLinii = 2) {
+  const slowa = String(tekst ?? '').trim().split(/\s+/).filter(Boolean);
+  if (!slowa.length) return [''];
+  const linie = [];
+  let biezaca = '';
+  for (const s of slowa) {
+    const proba = biezaca ? `${biezaca} ${s}` : s;
+    if (proba.length <= maxZnakow || !biezaca) biezaca = proba;
+    else {
+      linie.push(biezaca);
+      biezaca = s;
+    }
+  }
+  if (biezaca) linie.push(biezaca);
+  if (linie.length <= maxLinii) return linie;
+  const koniec = [...linie.slice(0, maxLinii)];
+  let ostatnia = koniec[maxLinii - 1];
+  while (ostatnia.length > maxZnakow - 1) ostatnia = ostatnia.slice(0, -1);
+  koniec[maxLinii - 1] = ostatnia.replace(/\s+$/, '') + '…';
+  return koniec;
+}
+
+/** `<text>` z wieloma liniami `<tspan>` — czytelne nazwy zamiast poucinanych. */
+export function tekstWieloliniowy(x, y, klasa, tekst, { maxZnakow = 22, maxLinii = 2, dy = 13, anchor = 'middle' } = {}) {
+  const linie = lamaczTekstu(tekst, maxZnakow, maxLinii);
+  const tspany = linie
+    .map((l, i) => `<tspan x="${Number(x).toFixed(1)}"${i ? ` dy="${dy}"` : ''}>${esc(l)}</tspan>`)
+    .join('');
+  return `<text class="${klasa}" x="${Number(x).toFixed(1)}" y="${Number(y).toFixed(1)}" text-anchor="${anchor}">${tspany}</text>`;
+}
+
+/** W3 — słupki zasięgów przed→po (każdy wiersz: pasek przed i po, delta). */
+export function wykresZasiegowSVG(wiersze, { szer = 560 } = {}) {
+  const nazwy = new Map((wiersze || []).map((z) => [z.slug, z.nazwa]).filter(([, n]) => n));
+  const rows = (wiersze || []).filter((z) => Number.isFinite(z.przed) || Number.isFinite(z.po));
+  if (!rows.length) return `<p class="muted">Brak danych o zasięgach.</p>`;
+  const wysWiersza = 50;
+  const gora = 16;
+  const wysokosc = gora + rows.length * wysWiersza + 10;
+  const lewo = 186;
+  const prawo = 92;
+  const szerBar = szer - lewo - prawo;
+  const bar = (v) => `${Math.round(Math.max(0, Math.min(1, v)) * szerBar)}`;
+  const wierszeSvg = rows
+    .map((z, i) => {
+      const yy = gora + i * wysWiersza;
+      const przed = Number(z.przed) || 0;
+      const po = Number(z.po) || 0;
+      const delta = Math.round((po - przed) * 100);
+      const cls = delta > 0 ? 'up' : delta < 0 ? 'down' : 'neutral';
+      const deltaks = `${delta > 0 ? '+' : ''}${delta} pp`;
+      const etykieta = tekstWieloliniowy(lewo - 14, 30, 'zasieg-etykieta', nazwaBytu(nazwy, z.slug), {
+        maxZnakow: 20,
+        maxLinii: 2,
+        dy: 15,
+        anchor: 'end',
+      });
+      return `
+      <g class="zasieg-wiersz" transform="translate(0,${yy})">
+        ${etykieta}
+        <rect class="zasieg-tor" x="${lewo}" y="8" width="${szerBar}" height="10" rx="4" />
+        <rect class="zasieg-przed" x="${lewo}" y="8" width="${bar(przed)}" height="10" rx="4">
+          <title>${esc(z.slug)}: przed ${pct(przed)}</title>
+        </rect>
+        <rect class="zasieg-po ${cls}" x="${lewo}" y="24" width="${bar(po)}" height="10" rx="4">
+          <title>${esc(z.slug)}: po ${pct(po)} · ${esc(z.opis || '')}</title>
+        </rect>
+        <text class="zasieg-delta ${cls}" x="${lewo + szerBar + 10}" y="33">${deltaks}</text>
+      </g>`;
+    })
+    .join('');
+  return `<svg class="chart zasieg-chart" viewBox="0 0 ${szer} ${wysokosc}" role="img" aria-label="Wykres zasięgów przed i po epoce">
+    <text class="chart-legenda" x="${lewo}" y="12"><tspan class="leg-przed">▬ przed</tspan> <tspan class="leg-po">▬ po</tspan></text>
+    ${wierszeSvg}
+  </svg>`;
+}
+
+/** W4 — linie paliwa per uczestnik w całym Tomie. */
+export function wykresPaliwaSVG(epoki, { szer = 880, wysokosc = 300 } = {}) {
+  const epokiLista = epoki || [];
+  if (epokiLista.length < 2) return `<p class="muted">Wykres paliwa wymaga co najmniej dwóch epok.</p>`;
+  const slugi = [];
+  for (const e of epokiLista) {
+    for (const u of e.uczestnicy || []) if (!slugi.includes(u.slug)) slugi.push(u.slug);
+  }
+  const m = { gora: 20, dol: 52, lewo: 46, prawo: 190 };
+  const szerPlot = szer - m.lewo - m.prawo;
+  const wysPlot = wysokosc - m.gora - m.dol;
+  const x = (i) => m.lewo + (szerPlot * i) / (epokiLista.length - 1);
+  const maxV = Math.max(24, ...slugi.map((s) => Math.max(0, ...epokiLista.map((e) => e.stanPo?.paliwo?.[s] ?? 0))));
+  const y = (v) => m.gora + wysPlot * (1 - v / maxV);
+  const kolor = (i) => `hsl(${Math.round(i * 137.508) % 360}, 45%, 55%)`;
+  const linie = slugi
+    .map((s, i) => {
+      const pts = epokiLista
+        .map((e, j) => (e.stanPo?.paliwo?.[s] !== undefined ? `${x(j).toFixed(1)},${y(e.stanPo.paliwo[s]).toFixed(1)}` : null))
+        .filter(Boolean);
+      if (pts.length < 2) return '';
+      return `<polyline class="paliwo-linia" points="${pts.join(' ')}" style="stroke:${kolor(i)}" />
+        ${epokiLista.map((e, j) => (e.stanPo?.paliwo?.[s] !== undefined ? `<circle class="paliwo-punkt" cx="${x(j).toFixed(1)}" cy="${y(e.stanPo.paliwo[s]).toFixed(1)}" r="3.5" style="fill:${kolor(i)}"><title>${esc(s)} · ${esc(e.slug)}: ${e.stanPo.paliwo[s]}</title></circle>` : '')).join('')}`;
+    })
+    .join('');
+  const osY = [0, Math.round(maxV / 2), maxV].map((v) => `<text class="paliwo-os" x="${m.lewo - 8}" y="${(y(v) + 4).toFixed(1)}">${v}</text>`).join('');
+  const osX = epokiLista.map((e, i) => `<text class="paliwo-os-x" x="${x(i).toFixed(1)}" y="${(wysokosc - 30).toFixed(1)}" text-anchor="middle">${rzymskie(i + 1)}</text>`).join('');
+  const legenda = slugi
+    .map((s, i) => `<div class="paliwo-legenda" style="--l:${kolor(i)}"><span class="kropka"></span> ${esc(s)} <b>${epokiLista[epokiLista.length - 1].stanPo?.paliwo?.[s] ?? '—'}</b></div>`)
+    .join('');
+  return `
+  <div class="wykres-paliwa">
+    <svg class="chart paliwo-chart" viewBox="0 0 ${szer} ${wysokosc}" role="img" aria-label="Wykres paliwa uczestników po epokach">
+      ${osY}${osX}
+      ${linie}
+    </svg>
+    <div class="paliwo-legenda-box">${legenda}</div>
+  </div>`;
+}
+
+/** Hero epoki: kluczowe ujęcie (pregenerowana grafika) z podpisem i promptem. */
+export function heroEpokiHTML(grafika) {
+  if (!grafika?.obraz) return '';
+  const src = grafika.obraz.startsWith('assets/') ? `../${grafika.obraz}` : grafika.obraz;
+  return `
+    <figure class="hero-grafika">
+      <img src="${esc(src)}" alt="${esc(grafika.podpis || 'Kronika — kluczowe ujęcie epoki')}" loading="eager">
+      <figcaption>
+        <strong>${esc(grafika.podpis || '')}</strong>
+        <span class="muted">kluczowe ujęcie epoki — ${esc(grafika.styl || 'hiperrealistyczna kinowa fotografia')}</span>
+        ${grafika.prompt ? `<details class="prompt"><summary>Prompt wizualizacji</summary><pre>${esc(grafika.prompt)}</pre></details>` : ''}
+      </figcaption>
+    </figure>`;
+}
+
+/** W5 — słupki dominacji kultur/kultów (per epoka i na końcu Tomu).
+ *  `dopisek` (opcjonalny) to dodatkowy tekst obok wartości, np. „7 bytów”. */
+export function slupkiDominacjiSVG(wiersze, { szer = 560, wysokosc = null } = {}) {
+  const rows = (wiersze || []).filter((d) => Number.isFinite(d.wielkosc) && d.wielkosc > 0);
+  if (!rows.length) return `<p class="muted">Brak dominacji do pokazania.</p>`;
+  // `grupa` (np. kultura) wstawia nagłówek; kolejność wierszy = ranking.
+  const pozycje = [];
+  let ostatniaGrupa = null;
+  for (const d of rows) {
+    if (d.grupa && d.grupa !== ostatniaGrupa) {
+      ostatniaGrupa = d.grupa;
+      pozycje.push({ typ: 'grupa', etykieta: d.grupa });
+    }
+    pozycje.push({ typ: 'wiersz', ...d });
+  }
+  const h = wysokosc || pozycje.length * 44 + 24;
+  const lewo = 216;
+  const prawo = 112;
+  const szerBar = szer - lewo - prawo;
+  const wierszeSvg = pozycje
+    .map((d, i) => {
+      const yy = 22 + i * ((h - 30) / pozycje.length);
+      if (d.typ === 'grupa') {
+        return `
+      <g class="dom-grupa" transform="translate(0,${yy.toFixed(1)})">
+        <text class="dom-grupa-etykieta" x="${lewo - 104}" y="16">${esc(d.etykieta)}</text>
+        <line class="dom-grupa-linia" x1="${lewo}" y1="9" x2="${szer - prawo}" y2="9" />
+      </g>`;
+      }
+      const delta = d.delta !== undefined && d.delta !== null ? Math.round(Number(d.delta) * 100) : null;
+      const cls = delta === null ? 'neutral' : delta > 0 ? 'up' : delta < 0 ? 'down' : 'neutral';
+      const etykieta = tekstWieloliniowy(lewo - 104, 14, 'dom-etykieta', d.etykieta, {
+        maxZnakow: 20,
+        maxLinii: 2,
+        dy: 15,
+        anchor: 'start',
+      });
+      const dopisek = d.dopisek ? ` · ${esc(d.dopisek)}` : '';
+      return `
+      <g class="dom-wiersz" transform="translate(0,${yy.toFixed(1)})">
+        <circle class="dom-kropka" cx="${lewo - 118}" cy="14" r="4" />
+        ${etykieta}
+        <rect class="dom-tor" x="${lewo}" y="4" width="${szerBar}" height="20" rx="5" />
+        <rect class="dom-bar" x="${lewo}" y="4" width="${Math.round(d.wielkosc * szerBar)}" height="20" rx="5">
+          <title>${esc(d.etykieta)}: ${pct(d.wielkosc)}${delta === null ? '' : ` (${cls === 'up' ? '+' : ''}${delta} pp)`}${dopisek}</title>
+        </rect>
+        <text class="dom-delta ${cls}" x="${lewo + szerBar + 10}" y="18">${pct(d.wielkosc)}${delta === null ? '' : ` · ${delta > 0 ? '+' : ''}${delta} pp`}${dopisek}</text>
+      </g>`;
+    })
+    .join('');
+  return `<svg class="chart dom-chart" viewBox="0 0 ${szer} ${h}" role="img" aria-label="Słupki dominacji">${wierszeSvg}</svg>`;
+}
+
+/** W5 (Tom) — agregat dominacji na koniec Tomu: tylko kultury OBECNE w Tomie,
+ *  po jednym słupku na kulturę (suma głosu jej bytów), sortowane malejąco.
+ *  `podsumowanie.epoki[].uczestnicy` wyznacza byty, które naprawdę grały. */
+export function dominacjeKulturTomu(podsumowanie) {
+  const s = podsumowanie || {};
+  const obecne = new Set();
+  for (const e of s.epoki || []) {
+    for (const u of e.uczestnicy || []) {
+      if (u && u.slug) obecne.add(u.slug);
+    }
+  }
+  const glos = new Map(); // kultura -> { suma, byty }
+  for (const d of s.stanPo?.dominacje || []) {
+    if (!obecne.has(d.kult)) continue; // byt nie obecny w tym Tomie — pomiń
+    const k = d.kultura || 'inna';
+    const cel = glos.get(k) || { suma: 0, byty: 0 };
+    cel.suma += Number(d.wielkosc) || 0;
+    cel.byty += 1;
+    glos.set(k, cel);
+  }
+  const sumaCalkowita = [...glos.values()].reduce((a, g) => a + g.suma, 0) || 1;
+  return [...glos.entries()]
+    .map(([kultura, g]) => ({
+      kultura,
+      etykieta: nazwaKultury(kultura),
+      wielkosc: g.suma / sumaCalkowita,
+      dopisek: `${g.byty} ${g.byty === 1 ? 'byt' : g.byty < 5 ? 'byty' : 'bytów'}`,
+      suma: g.suma,
+    }))
+    .sort((a, b) => b.suma - a.suma);
+}
+
+/* ---- Silnik Kronikarza: samonapędzająca fabuła (R1–R5, 2026-08-30) --------
+ * Maszyna prowadzi fabułę (kto, gdzie, o co, z jakim skutkiem), agent pisze
+ * prozę, właściciel zatwierdza kanon. Budżet i stanie świata brane z summary.
+ */
+
+/** Byty związane z OTWARTYMI wątkami (R1) — z pola `byty` wątku. */
+export function bytyOtwartychWatkow(podsumowanie) {
+  const ostatnia = (podsumowanie?.epoki || []).at(-1);
+  const set = new Set();
+  for (const w of ostatnia?.konsekwencje?.watki || []) {
+    if (w.stan === 'otwarty') for (const s of w.byty || []) set.add(s);
+  }
+  return set;
+}
+
+/** Byty biorące udział w ostatnich `n` epokach (zmęczenie, R3/R4). */
+export function bytyOstatnichEpok(podsumowanie, n = 2) {
+  const set = new Set();
+  for (const e of (podsumowanie?.epoki || []).slice(-n)) {
+    for (const u of e.uczestnicy || []) set.add(u.slug);
+  }
+  return set;
+}
+
+/** Agenda Tomu — co „wisi” po ostatniej epoce. Sprzęga Kronikę z Pętlą
+ *  Jakości: to, co tu wisi, jest kandydatem na C1 (pogłębienie) i C3 (SKIT). */
+export function agendaTomu(podsumowanie, indeks) {
+  const ostatnia = (podsumowanie?.epoki || []).at(-1);
+  const paliwo = podsumowanie?.stanPo?.paliwo || {};
+  const watki = (ostatnia?.konsekwencje?.watki || [])
+    .filter((w) => w.stan === 'otwarty')
+    .map((w) => ({
+      id: w.id,
+      opis: w.opis || '',
+      byty: w.byty || [],
+    }));
+  const slabi = Object.entries(paliwo)
+    .filter(([, p]) => Number(p) < 12)
+    .sort((a, b) => a[1] - b[1])
+    .map(([slug, p]) => ({ slug, paliwo: p }));
+  const kultury = new Map();
+  for (const e of (podsumowanie?.epoki || []).slice(-3)) {
+    for (const d of e.konsekwencje?.dominacje || []) {
+      if ((d.delta || 0) !== 0) kultury.set(d.kultura, (kultury.get(d.kultura) || 0) + 1);
+    }
+  }
+  const ciche = [...kultury.entries()]
+    .filter(([, glosy]) => glosy === 0)
+    .map(([kultura]) => ({ kultura, nazwa: nazwaKultury(kultura) }));
+  return { watki, slabi, ciche, ostatnia: ostatnia?.slug || null };
+}
+
+/**
+ * Proponuje następną epokę: ranking 3-osobowych składów wg R1–R5.
+ * Deterministyczna (brak RNG) — ten sam stan zawsze daje tę samą listę.
+ */
+export function proponujEpoke(podsumowanie, indeks, { limit = 3 } = {}) {
+  if (!podsumowanie?.stanPo || !indeks?.manifestacje) return [];
+  const katalog = indeks.manifestacje;
+  const slugi = katalog.map((m) => m.slug);
+  const ostatnia = (podsumowanie.epoki || []).at(-1);
+  const poprzedni = new Set((ostatnia?.uczestnicy || []).map((u) => u.slug));
+  const wwatki = bytyOtwartychWatkow(podsumowanie);
+  const ostatnie2 = bytyOstatnichEpok(podsumowanie, 2);
+  const paliwo = podsumowanie.stanPo.paliwo || {};
+  const zasieg = new Map((podsumowanie.stanPo.zasieg || []).map((z) => [z.slug, z.wielkosc]));
+  const relacje = (ostatnia?.konsekwencje?.relacje || []).flatMap((r) => [r.od, r.do]);
+  const skitySlugi = new Set(
+    (indeks.skity || []).map((s) =>
+      [...new Set((s.uczestnicy || []).map((u) => (typeof u === 'string' ? u : u.slug)))].sort().join('|')
+    )
+  );
+  const powiazania = new Map(katalog.map((m) => [m.slug, new Set((m.powiazania || []).map((p) => (typeof p === 'string' ? p : p.slug)))]));
+
+  /** Waga bytu (R1 wątek, R2 zasięg, R5 relacja; kara za świeżość R3). */
+  const waga = (s) => {
+    let w = 0;
+    if (wwatki.has(s)) w += 3;
+    if (relacje.includes(s)) w += 2;
+    if ((zasieg.get(s) || 0) >= 0.4) w += 1;
+    if ((paliwo[s] || 0) >= 15) w += 1;
+    if (poprzedni.has(s)) w -= 1.5; // R3: nie za często
+    if (!ostatnie2.has(s)) w += 0.5; // R4: oddech — świeży byt z kartoteki
+    return w;
+  };
+
+  const kandydaci = [];
+  const top = [...slugi].sort((a, b) => waga(b) - waga(a)).slice(0, 12);
+  for (let i = 0; i < top.length; i++) {
+    for (let j = i + 1; j < top.length; j++) {
+      for (let k = j + 1; k < top.length; k++) {
+        const sklad = [top[i], top[j], top[k]];
+        const klucz = [...sklad].sort().join('|');
+        if (skitySlugi.has(klucz)) continue; // skład już gral
+        const zPoprzedniej = sklad.filter((s) => poprzedni.has(s)).length;
+        if (zPoprzedniej > 1) continue; // R3: max 1 powtórka
+        const swiezy = sklad.filter((s) => !ostatnie2.has(s));
+        if (swiezy.length < 1) continue; // R4: min 1 nowy
+        if (sklad.some((s) => (paliwo[s] ?? 0) < 8)) continue; // bramka paliwa
+        // R5: co najmniej jedna para w relacji/powiązaniu
+        const polaczeni = [];
+        for (let a = 0; a < 3; a++) {
+          for (let b = a + 1; b < 3; b++) {
+            const x = sklad[a], y = sklad[b];
+            if (powiazania.get(x)?.has(y) || relacje.includes(x) && relacje.includes(y)) polaczeni.push(`${x}↔${y}`);
+          }
+        }
+        if (!polaczeni.length) continue;
+        const wynik = waga(sklad[0]) + waga(sklad[1]) + waga(sklad[2]) + polaczeni.length * 0.5 + swiezy.length * 0.5;
+        kandydaci.push({ sklad, wynik, polaczeni, swiezy: swiezy.length, powody: [] });
+      }
+    }
+  }
+
+  kandydaci.sort((a, b) => b.wynik - a.wynik);
+  const wyniki = [];
+  const widziane = new Set();
+  const wybraneSkłady = []; // różnorodność dróg: max 1 wspólny byt z wcześniejszymi
+  for (const k of kandydaci) {
+    const klucz = [...k.sklad].sort().join('|');
+    if (widziane.has(klucz)) continue;
+    if (
+      wybraneSkłady.length &&
+      wybraneSkłady.some(
+        (w) => k.sklad.filter((s) => w.includes(s)).length > 1
+      )
+    ) {
+      continue;
+    }
+    widziane.add(klucz);
+    wybraneSkłady.push(k.sklad);
+    const powody = [];
+    for (const s of k.sklad) {
+      if (wwatki.has(s)) powody.push('R1: otwarty wątek');
+      if (relacje.includes(s)) powody.push('R5: niedomknięta relacja');
+      if (!ostatnie2.has(s)) powody.push('R4: oddech — nowy w Tomie');
+      if ((zasieg.get(s) || 0) >= 0.4) powody.push('R2: silny zasięg');
+    }
+    const nazwy = Object.fromEntries(katalog.map((m) => [m.slug, m.nazwa]));
+    const watkiPowiazane = [...new Set(
+      (k.sklad || []).filter((s) => wwatki.has(s)).map((s) => s)
+    )];
+    wyniki.push({
+      sklad: k.sklad.map((slug) => ({ slug, nazwa: nazwy[slug] || slug })),
+      wynik: Math.round(k.wynik * 10) / 10,
+      powody: [...new Set(powody)].slice(0, 5),
+      polaczeni: k.polaczeni,
+      watki: watkiPowiazane.length,
+    });
+    if (wyniki.length >= limit) break;
+  }
+  return wyniki;
+}
+
+/** W6 — diagram relacji: węzły na elipsie, łuki wg kierunku relacji. */
+export function diagramRelacjiSVG(relacje, uczestnicy) {
+  const rel = (relacje || []).filter((r) => r.od && r.do);
+  if (!rel.length) return `<p class="muted">Brak odnotowanych relacji w tej epoce.</p>`;
+  const osoby = uczestnicy || [];
+  const byty = [...new Set([...rel.flatMap((r) => [r.od, r.do]), ...osoby.map((u) => u.slug)])];
+  const nazwy = new Map(osoby.map((u) => [u.slug, u.nazwa]));
+  const cx = 280;
+  const cy = 200;
+  const rx = 236;
+  const ry = 132;
+  const poz = (slug, i) => {
+    const kat = (-Math.PI / 2) + (2 * Math.PI * i) / Math.max(1, byty.length);
+    return { x: cx + rx * Math.cos(kat), y: cy + ry * Math.sin(kat), kat };
+  };
+  const punkty = new Map(byty.map((s, i) => [s, poz(s, i)]));
+  const luki = rel
+    .map((r) => {
+      const p1 = punkty.get(r.od);
+      const p2 = punkty.get(r.do);
+      if (!p1 || !p2) return '';
+      const midX = (p1.x + p2.x) / 2;
+      const midY = (p1.y + p2.y) / 2;
+      const dx = p2.x - p1.x;
+      const dy = p2.y - p1.y;
+      const d = Math.hypot(dx, dy) || 1;
+      const off = Math.min(80, d * 0.25);
+      const wx = midX + (dy / d) * off;
+      const wy = midY - (dx / d) * off;
+      const cls = r.kierunek === 'wzmocnienie' ? 'wzmocnienie' : r.kierunek === 'schlodzenie' || r.kierunek === 'schłodzenie' ? 'schlodzenie' : 'neutralna';
+      return `<path class="rel-luk ${cls}" d="M ${p1.x.toFixed(1)} ${p1.y.toFixed(1)} Q ${wx.toFixed(1)} ${wy.toFixed(1)} ${p2.x.toFixed(1)} ${p2.y.toFixed(1)}">
+        <title>${esc(r.od)} → ${esc(r.do)}: ${esc(r.kierunek)} · ${esc(r.opis || '')}</title>
+      </path>`;
+    })
+    .join('');
+  const wezly = [...punkty.entries()]
+    .map(([slug, p]) => {
+      const nazwa = nazwy.get(slug) || slug;
+      const etykieta = tekstWieloliniowy(0, 56, 'rel-nazwa', nazwa, {
+        maxZnakow: 18,
+        maxLinii: 2,
+        dy: 15,
+      });
+      return `<g class="rel-wezel" transform="translate(${p.x.toFixed(1)},${p.y.toFixed(1)})">
+        <title>${esc(nazwa)}</title>
+        <circle r="34" />
+        <text class="rel-emoji" y="8">${getEmoji(slug)}</text>
+        ${etykieta}
+      </g>`;
+    })
+    .join('');
+  return `<svg class="chart rel-chart" viewBox="0 0 560 400" role="img" aria-label="Diagram relacji między uczestnikami epoki">
+    <path class="rel-elipsa" d="M ${cx - rx} ${cy} A ${rx} ${ry} 0 1 1 ${cx + rx - 0.1} ${cy} A ${rx} ${ry} 0 1 1 ${cx - rx} ${cy}" />
+    ${luki}
+    ${wezly}
+  </svg>
+  <div class="rel-legenda"><span class="rel-leg wzmocnienie">— wzmocnienie</span><span class="rel-leg schlodzenie">— schłodzenie</span><span class="rel-leg neutralna">— neutralne</span></div>`;
+}
+
+/** W7 — oś czasu wątków: wiersz = wątek, kolumna = epoka. */
+export function osWatkowSVG(epoki) {
+  const epokiLista = epoki || [];
+  const kolejnosc = [];
+  for (const e of epokiLista) {
+    for (const w of e.konsekwencje?.watki || []) if (!kolejnosc.includes(w.id)) kolejnosc.push(w.id);
+  }
+  if (kolejnosc.length === 0) return `<p class="muted">Brak wątków do narysowania.</p>`;
+  const szer = 880;
+  const wysWiersza = 40;
+  const wysokosc = 64 + kolejnosc.length * wysWiersza;
+  const m = { lewo: 228, prawo: 30 };
+  const szerPlot = szer - m.lewo - m.prawo;
+  const x = (i) => m.lewo + (szerPlot * i) / Math.max(1, epokiLista.length - 1);
+  const y = (i) => 60 + i * wysWiersza;
+  const wystapienia = new Map();
+  for (const w of kolejnosc) {
+    const wyst = [];
+    for (let i = 0; i < epokiLista.length; i++) {
+      const w2 = (epokiLista[i].konsekwencje?.watki || []).find((x) => x.id === w);
+      if (w2) wyst.push({ i, stan: w2.stan });
+    }
+    wystapienia.set(w, wyst);
+  }
+  const linie = [...wystapienia.entries()]
+    .map(([w, wyst], wi) => {
+      const seg = [];
+      for (let k = 0; k < wyst.length - 1; k++) {
+        if (wyst[k + 1].i === wyst[k].i + 1) {
+          seg.push(`<line class="watki-linia" x1="${x(wyst[k].i).toFixed(1)}" y1="${y(wi).toFixed(1)}" x2="${x(wyst[k + 1].i).toFixed(1)}" y2="${y(wi).toFixed(1)}" />`);
+        }
+      }
+      const markery = wyst
+        .map((wst) => `<circle class="watki-marker ${wst.stan === 'otwarty' ? 'otwarty' : 'zamkniety'}" cx="${x(wst.i).toFixed(1)}" cy="${y(wi).toFixed(1)}" r="7">
+          <title>${esc(w)} · ${esc(epokiLista[wst.i].slug)}: ${esc(wst.stan)}</title>
+        </circle>`)
+        .join('');
+      const etykietaWatku = tekstWieloliniowy(m.lewo - 12, y(wi) + 5, 'watki-etykieta', w, {
+        maxZnakow: 24,
+        maxLinii: 2,
+        dy: 13,
+        anchor: 'end',
+      });
+      return `${seg.join('')}${markery}${etykietaWatku}`;
+    })
+    .join('');
+  const osX = epokiLista
+    .map(
+      (e, i) =>
+        tekstWieloliniowy(
+          x(i),
+          22,
+          'watki-os-x',
+          `${rzymskie(i + 1)} · ${String(e.tytul || '').split(':')[0].trim() || e.tytul}`,
+          { maxZnakow: 14, maxLinii: 2, dy: 13 }
+        )
+    )
+    .join('');
+  return `<svg class="chart watki-chart" viewBox="0 0 ${szer} ${wysokosc}" role="img" aria-label="Oś czasu wątków fabularnych">${osX}${linie}</svg>`;
+}
+
+/** W8 — „Dziennik zmiany”: jedna tabela epoki (paliwo, zasięg, dominacja, pozycja). */
+export function dziennikZmianyHTML(e, nazwy = {}) {
+  const slugi = new Set([
+    ...(e.uczestnicy || []).map((u) => u.slug),
+    ...(e.konsekwencje?.zasieg || []).map((z) => z.slug),
+    ...(e.konsekwencje?.pozycje || []).map((p) => p.slug),
+    ...(e.konsekwencje?.dominacje || []).map((d) => d.kult),
+  ]);
+  const paliwo = new Map((e.uczestnicy || []).map((u) => [u.slug, u]));
+  const zasieg = new Map((e.konsekwencje?.zasieg || []).map((z) => [z.slug, z]));
+  const pozycja = new Map((e.konsekwencje?.pozycje || []).map((p) => [p.slug, p]));
+  const dominacja = new Map((e.konsekwencje?.dominacje || []).map((d) => [d.kult, d]));
+  const wiersze = [...slugi]
+    .sort()
+    .map((slug) => {
+      const u = paliwo.get(slug);
+      const z = zasieg.get(slug);
+      const p = pozycja.get(slug);
+      const d = dominacja.get(slug);
+      const nazwa = nazwy[slug] || u?.nazwa || slug;
+      const deltaPaliwa = u ? u.saldoPo - u.saldoPrzed : null;
+      const deltaZasiegu = z && Number.isFinite(z.przed) && Number.isFinite(z.po) ? Math.round((z.po - z.przed) * 100) : null;
+      const chip = (delta, jednostka = '') => {
+        if (delta === null) return '<span class="muted">—</span>';
+        const cls = delta > 0 ? 'up' : delta < 0 ? 'down' : 'neutral';
+        return `<span class="chip ${cls}">${delta > 0 ? '+' : ''}${delta}${jednostka}</span>`;
+      };
+      return `<tr class="dziennik-wiersz" data-byt="${esc(slug)}">
+        <td><strong>${getEmoji(slug)} <a href="#${esc(slug)}" class="otworz-kartoteke" data-slug="${esc(slug)}" style="color:inherit;text-decoration:none">${esc(nazwa)}</a></strong> <span class="muted">[${esc(slug)}]</span></td>
+        <td class="num">${u ? `${u.saldoPrzed} → <b>${u.saldoPo}</b>` : '—'} ${chip(deltaPaliwa)}</td>
+        <td class="num">${z ? `${pct(z.przed)} → <b>${pct(z.po)}</b>` : '—'} ${chip(deltaZasiegu, ' pp')}</td>
+        <td>${d ? `<em>${esc(d.kultura)}</em> <span class="muted">(${esc(d.kult)})</span> ${chip(d.delta !== undefined ? Math.round(Number(d.delta) * 100) : null, ' pp')}` : '—'}</td>
+        <td>${p ? `<em>${esc(p.status)}</em><br><span class="muted">${esc(p.opis || '')}</span>` : '—'}</td>
+      </tr>`;
+    })
+    .join('');
+  if (!wiersze) return '<p class="muted">Brak zmian do zapisania w tej epoce.</p>';
+  return `
+  <table class="dziennik">
+    <thead><tr><th>Byt</th><th class="num">Paliwo</th><th class="num">Zasięg</th><th>Dominacja</th><th>Pozycja</th></tr></thead>
+    <tbody>${wiersze}</tbody>
+  </table>`;
+}
+
+/** Kolor komórki macierzy zasięgów: interpolacja granat→bursztyn po
+ *  t = (w − 0,10) / 0,40 (zakres zasięgów 10–50%). Wcześniej wszystkie
+ *  komórki miały ten sam kolor i różniły się tylko delikatną przezroczystością
+ *  — wyglądały jak jednolita plansza (recenzja właściciela 2026-08-30). */
+const ZASIEG_KOL_MIN = [58, 74, 100];
+const ZASIEG_KOL_MAX = [216, 140, 82];
+export function kolorZasiegu(w) {
+  const t = Math.max(0, Math.min(1, ((Number(w) || 0) - 0.1) / 0.4));
+  const [r, g, b] = ZASIEG_KOL_MIN.map((c, i) => Math.round(c + (ZASIEG_KOL_MAX[i] - c) * t));
+  return { rgb: `rgb(${r},${g},${b})`, jasnosc: 0.2126 * r + 0.7152 * g + 0.0722 * b };
+}
+
+/** W9 — heatmap zasięgów: wiersz = byt, kolumna = epoka. */
+export function heatmapZasiegowSVG(epoki, nazwy = {}) {
+  const epokiLista = epoki || [];
+  if (!epokiLista.length) return '<p class="muted">Brak epok do macierzy zasięgów.</p>';
+  const slugi = [];
+  for (const e of epokiLista) for (const u of e.uczestnicy || []) if (!slugi.includes(u.slug)) slugi.push(u.slug);
+  const suma = (s) => epokiLista.reduce((acc, e) => acc + ((e.stanPo?.zasieg || []).find((z) => z.slug === s)?.wielkosc ?? 0), 0);
+  slugi.sort((a, b) => suma(b) - suma(a));
+  const szerKom = 104;
+  const wysWiersza = 44;
+  const lewo = 246;
+  const szer = lewo + epokiLista.length * szerKom + 48;
+  const wysokosc = 76 + slugi.length * wysWiersza;
+  const komorki = slugi
+    .map((s, i) => {
+      const yy = 76 + i * wysWiersza;
+      const cells = epokiLista
+        .map((e, j) => {
+          const z = (e.stanPo?.zasieg || []).find((x) => x.slug === s);
+          const w = z?.wielkosc ?? 0;
+          const { rgb, jasnosc } = kolorZasiegu(w);
+          const kolorTekstu = jasnosc > 150 ? '#151a24' : '#f4ecdc';
+          const cx = lewo + j * szerKom + szerKom / 2;
+          return `<g class="heat-cell-g">
+            <rect class="heat-cell" x="${lewo + j * szerKom + 3}" y="${yy + 3}" width="${szerKom - 6}" height="${wysWiersza - 6}" rx="4" style="fill:${rgb}">
+              <title>${esc(nazwy[s] || s)} · ${esc(e.slug)}: ${pct(w)}</title>
+            </rect>
+            <text class="heat-liczba" x="${cx}" y="${yy + wysWiersza / 2 + 4}" style="fill:${kolorTekstu}">${Math.round(w * 100)}%</text>
+          </g>`;
+        })
+        .join('');
+      const total = epokiLista.length ? Math.round((suma(s) / epokiLista.length) * 100) : 0;
+      const etykieta = tekstWieloliniowy(lewo - 12, yy + wysWiersza / 2 + 2, 'heat-etykieta', `${getEmoji(s)} ${nazwy[s] || s}`, {
+        maxZnakow: 18,
+        maxLinii: 2,
+        dy: 15,
+        anchor: 'end',
+      });
+      return `${cells}${etykieta}
+        <text class="heat-sum" x="${lewo + epokiLista.length * szerKom + 12}" y="${yy + wysWiersza / 2 + 5}">${total}%</text>`;
+    })
+    .join('');
+  const naglowek = epokiLista
+    .map((e, j) =>
+      tekstWieloliniowy(lewo + j * szerKom + szerKom / 2, 26, 'heat-os-x', `${rzymskie(j + 1)} · ${String(e.tytul || '').split(':')[0].trim() || e.tytul}`, {
+        maxZnakow: 13,
+        maxLinii: 2,
+        dy: 13,
+      })
+    )
+    .join('');
+  const progi = [0.1, 0.2, 0.3, 0.4, 0.5];
+  const legenda = `<div class="chart-legenda heat-legenda"><span>zasięg bytu na koniec epoki:</span>${progi
+    .map((w) => {
+      const { rgb, jasnosc } = kolorZasiegu(w);
+      const kolorTekstu = jasnosc > 150 ? '#151a24' : '#f4ecdc';
+      return `<span class="heat-leg-kolor" style="background:${rgb};color:${kolorTekstu}">${Math.round(w * 100)}%</span>`;
+    })
+    .join('')}</div>`;
+  return `<svg class="chart heat-chart" viewBox="0 0 ${szer} ${wysokosc}" role="img" aria-label="Macierz zasięgów bytów po epokach">${naglowek}${komorki}
+    <text class="heat-os-x" x="${lewo + epokiLista.length * szerKom + 12}" y="26">śr.</text>
+  </svg>
+  ${legenda}`;
+}
+
+/** S3 — graf epok: oś czasu, odwołania poprzednik/kontynuacja, rozgałęzienia. */
+export function grafEpokSVG(epoki) {
+  const epokiLista = epoki || [];
+  if (epokiLista.length < 2) return '<p class="muted">Graf epok wymaga co najmniej dwóch epok.</p>';
+  // Szeroki kadr (1100) + krótsze linie etykiet (18 znaków, 2 linie): przy 7
+  // epokach odstęp kolumn ~167 px, więc nazwy się nie zlewają (recenzja 2026-08-30).
+  const szer = 1100;
+  const wysokosc = 250;
+  const m = { lewo: 50, prawo: 50 };
+  const szerPlot = szer - m.lewo - m.prawo;
+  const x = (i) => m.lewo + (szerPlot * i) / (epokiLista.length - 1);
+  const y = 140;
+  const edycja = [];
+  const majaOdwolanie = new Set();
+  for (let i = 0; i < epokiLista.length - 1; i++) {
+    const e = epokiLista[i];
+    if (!majaOdwolanie.has(e.slug) && (e.meta?.kontynuacja || epokiLista[i + 1].slug)) {
+      majaOdwolanie.add(e.slug);
+      edycja.push(`<line class="graf-os" x1="${x(i).toFixed(1)}" y1="${y}" x2="${x(i + 1).toFixed(1)}" y2="${y}" data-od="${esc(e.slug)}" data-do="${esc(epokiLista[i + 1].slug)}" />`);
+    }
+  }
+  for (const e of epokiLista) {
+    if (e.meta?.poprzednik && !majaOdwolanie.has(e.meta.poprzednik)) {
+      const i = epokiLista.findIndex((x) => x.slug === e.meta.poprzednik);
+      const j = epokiLista.findIndex((x) => x.slug === e.slug);
+      if (i > -1 && j > -1) {
+        majaOdwolanie.add(e.meta.poprzednik);
+        edycja.push(`<line class="graf-odwolanie" x1="${x(i).toFixed(1)}" y1="${y}" x2="${x(j).toFixed(1)}" y2="${y}" data-od="${esc(e.meta.poprzednik)}" data-do="${esc(e.slug)}" />`);
+      }
+    }
+    if (e.meta?.kontynuacja) {
+      const j = epokiLista.findIndex((x) => x.slug === e.meta.kontynuacja);
+      if (j > -1 && j !== epokiLista.findIndex((x) => x.slug === e.slug) && !majaOdwolanie.has(e.slug) ) {
+        majaOdwolanie.add(e.slug);
+        edycja.push(`<line class="graf-odwolanie" x1="${x(epokiLista.findIndex((x) => x.slug === e.slug)).toFixed(1)}" y1="${(y - 24).toFixed(1)}" x2="${x(j).toFixed(1)}" y2="${(y - 24).toFixed(1)}" data-od="${esc(e.slug)}" data-do="${esc(e.meta.kontynuacja)}" />`);
+      }
+    }
+  }
+  const wezly = epokiLista
+    .map((e, i) => {
+      const rozgalezienie = e.meta?.rozgalezienie;
+      const cls = rozgalezienie ? 'graf-wezel rozgalezienie' : 'graf-wezel';
+      const pod = rozgalezienie
+        ? `<g class="graf-galez" transform="translate(${x(i).toFixed(1)},${y + 36})"><path d="M 0 0 L -10 14 L 0 28 L 10 14 Z" /></g>${tekstWieloliniowy(x(i), y + 80, 'graf-galez-opis', rozgalezienie.opis || 'rozstaje', { maxZnakow: 20, maxLinii: 2, dy: 13 })}`
+        : '';
+      return `<g class="${cls}" transform="translate(${x(i).toFixed(1)},${y})">
+        <title>${esc(e.slug)} — ${esc(e.tytul)}${rozgalezienie ? ' · rozstaje' : ''}</title>
+        <circle r="20" />
+        <text class="graf-nr" y="6">${rzymskie(i + 1)}</text>
+      </g>${pod}`;
+    })
+    .join('');
+  // Krótka forma (część przed „:”, jak w nagłówkach kolumn wątków/macierzy) —
+  // pełny tytuł zostaje w <title> węzła; przy 7 epokach nie ma zlewania.
+  const etykiety = epokiLista
+    .map((e, i) =>
+      tekstWieloliniowy(x(i), y - 48, 'graf-etykieta', String(e.tytul || '').split(':')[0].trim() || e.tytul, {
+        maxZnakow: 18,
+        maxLinii: 2,
+        dy: 14,
+      })
+    )
+    .join('');
+  return `<svg class="chart graf-chart" viewBox="0 0 ${szer} ${wysokosc}" role="img" aria-label="Graf epok z odwołaniami i rozgałęzieniami">${etykiety}${edycja.join('')}${wezly}</svg>`;
+}
+
+/** Skrypt U1+U2 na stronie Tomu: filtr bytów i deep-linki #kronika:<slug>. */
+export function generujSkryptFiltraTomy(slugi) {
+  const lista = JSON.stringify(slugi);
+  return `<script>
+(() => {
+  const byty = ${lista};
+  const select = document.getElementById('filtr-bytow');
+  if (select) {
+    select.insertAdjacentHTML('beforeend', byty.map((s) => '<option value="' + s + '">' + s + '</option>').join(''));
+    select.addEventListener('change', () => {
+      const v = select.value;
+      document.querySelectorAll('.epoka-card').forEach((c) => {
+        const pasuje = !v || (c.getAttribute('data-byt') || '').includes(v);
+        c.style.display = pasuje ? '' : 'none';
+      });
+      const info = document.getElementById('kronika-filtr-info');
+      if (info) info.textContent = v ? 'Filtr: tylko epoki z bytem „' + v + '”' : '';
+    });
+  }
+  const fragment = decodeURIComponent(location.hash.replace(/^#/, ''));
+  const m = /^kronika:(.+)$/.exec(fragment);
+  if (m) {
+    const cel = document.getElementById('kronika-' + m[1]) || document.querySelector('[data-slug="' + m[1] + '"]');
+    if (cel) {
+      cel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      cel.classList.add('podswietlone');
+    }
+  }
+})();
+</script>`;
+}
+
 /**
  * Formatuje tekst SKITu w elegancki, pełny zapis dialogu.
  */
@@ -676,8 +1531,8 @@ export function generujTopbarHTML(aktywny = 'kronika') {
       <a id="przycisk-lista" class="przycisk" href="../index.html#lista" title="Lista wszystkich manifestacji">☰ kartoteka</a>
       <a id="przycisk-skity" class="przycisk" href="../index.html#skity" title="Baza Skitów — rozmowy materializacji">✎ skity</a>
       <a id="przycisk-nowosci" class="przycisk" href="../index.html#nowosci" title="Co nowego — aktualizacje archiwum">✚ nowości</a>
-      <a id="przycisk-kronika" class="przycisk ${aktywny === 'tom-1' ? 'aktywny' : ''}" href="kronika-tom-1.html" title="Kronika świata AME — tocząca się opowieść epok">📜 kronika</a>
-      <button id="przycisk-motyw" class="przycisk przycisk-motyw" type="button" aria-pressed="false" title="Przełącz tryb ciemny/jasny" onclick="const m = document.documentElement.dataset.motyw === 'jasny' ? 'ciemny' : 'jasny'; document.documentElement.dataset.motyw = m; localStorage.setItem('ame:motyw', m); this.innerHTML = m === 'jasny' ? '☀ jasny' : '☾ ciemny';">☾ motyw</button>
+      <a id="przycisk-kronika" class="przycisk ${aktywny === 'tom-1' ? 'aktywny' : ''}" href="kronika.html" title="Kronika świata AME — tocząca się opowieść epok">📜 kronika</a>
+      <button id="przycisk-motyw" class="przycisk przycisk-motyw" type="button" aria-pressed="false" title="Przełącz tryb ciemny/jasny" onclick="const m = document.documentElement.dataset.motyw === 'jasny' ? 'ciemny' : 'jasny'; document.documentElement.dataset.motyw = m; localStorage.setItem('ame:motyw', m); this.innerHTML = m === 'jasny' ? '☀ jasny' : '☾ ciemny'; this.setAttribute('aria-pressed', String(m === 'jasny'));">☾ motyw</button>
     </div>
   </header>
   <script>
@@ -685,13 +1540,14 @@ export function generujTopbarHTML(aktywny = 'kronika') {
       const m = localStorage.getItem('ame:motyw') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'ciemny' : 'jasny');
       document.documentElement.dataset.motyw = m;
       const btn = document.getElementById('przycisk-motyw');
-      if (btn) btn.innerHTML = m === 'jasny' ? '☀ jasny' : '☾ ciemny';
+      if (btn) { btn.innerHTML = m === 'jasny' ? '☀ jasny' : '☾ ciemny'; btn.setAttribute('aria-pressed', String(m === 'jasny')); }
     })();
   </script>`;
 }
 
 /** Wspólne style CSS dla wszystkich stron Kroniki */
-const KRONIKA_CSS = `
+/** Arkusz Kroniki — minimalna czytelna czcionka projektu: 12px. */
+export const KRONIKA_CSS = `
 :root {
   --bg: #f5f0e6;
   --bg-subtle: #ede7db;
@@ -753,7 +1609,7 @@ html[data-motyw="ciemny"] {
 .tytul { display: flex; align-items: baseline; gap: 10px; white-space: nowrap; }
 .tytul h1 { margin: 0; font-family: inherit; font-size: 22px; letter-spacing: 0.12em; color: var(--accent); }
 .tytul h1 a { text-decoration: none; color: inherit; }
-.tytul p { margin: 0; font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted); }
+.tytul p { margin: 0; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted); }
 #szukaj {
   flex: 1; min-width: 120px; max-width: 520px; padding: 8px 14px;
   border-radius: 999px; border: 1px solid var(--line);
@@ -783,6 +1639,49 @@ html[data-motyw="ciemny"] {
   padding: 24px 28px;
   margin-bottom: 24px;
   box-shadow: 0 4px 16px rgba(0,0,0,0.03);
+}
+/* Key-art epoki (Kronika, 2026-08-30): hiperrealistyczna kinowa fotografia 21:9 */
+.hero-grafika {
+  margin: 18px 0 0;
+}
+.hero-grafika img {
+  width: 100%;
+  aspect-ratio: 21 / 9;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  display: block;
+  background: var(--card-alt);
+}
+.hero-grafika figcaption {
+  color: var(--muted);
+  font-size: 13px;
+  margin-top: 8px;
+  line-height: 1.5;
+}
+.hero-grafika figcaption .styl {
+  font-style: italic;
+}
+.hero-grafika details {
+  margin-top: 6px;
+  font-size: 12px;
+}
+.hero-grafika details summary {
+  cursor: pointer;
+  color: var(--accent);
+  font-weight: 600;
+}
+.hero-grafika details pre {
+  white-space: pre-wrap;
+  overflow-x: auto;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: var(--code);
+  border: 1px solid var(--line);
+  margin: 6px 0 0;
+  font-size: 12px;
+  max-height: 260px;
+  overflow-y: auto;
 }
 .hero h1 {
   margin: 8px 0 8px;
@@ -870,7 +1769,7 @@ html[data-motyw="ciemny"] {
   padding: 10px 18px;
   background: var(--card-alt);
   border-bottom: 1px solid var(--line);
-  font-size: 12.5px;
+  font-size: 13.5px;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 .map-title {
@@ -931,18 +1830,18 @@ html[data-motyw="ciemny"] {
   stroke: #fff;
 }
 .kronika-map .pin-icon {
-  font-size: 13px;
+  font-size: 20px;
   text-anchor: middle;
   dominant-baseline: central;
 }
 .kronika-map .pin-label {
-  font-size: 13px;
+  font-size: 19px;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-weight: 600;
   fill: #1d1916;
   paint-order: stroke;
   stroke: #fffdf8;
-  stroke-width: 3.5px;
+  stroke-width: 4.5px;
   stroke-linecap: round;
   stroke-linejoin: round;
 }
@@ -965,6 +1864,10 @@ html[data-motyw="ciemny"] {
   flex-direction: column;
   gap: 24px;
 }
+/* Wykres szeroki: rozpięty na obie kolumny gridu (Kronika, 2026-08-30). */
+.kart-szeroka {
+  grid-column: 1 / -1;
+}
 @media(max-width: 860px) {
   .grid { grid-template-columns: 1fr; }
 }
@@ -984,7 +1887,7 @@ html[data-motyw="ciemny"] {
 }
 .card-sub {
   color: var(--muted);
-  font-size: 13px;
+  font-size: 14px;
   margin: -6px 0 14px;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
@@ -1146,6 +2049,18 @@ th {
   display: inline-block;
   white-space: nowrap;
 }
+/* Odnośniki-chip w konwencji brązowego przycisku (recenzja 2026-08-30):
+   link nie może świecić domyślnym niebieskim kolorem przeglądarki. */
+a.chip, .chip.link {
+  color: var(--accent);
+  border-color: var(--accent-light);
+  text-decoration: none;
+  cursor: pointer;
+}
+a.chip:hover, .chip.link:hover {
+  background: var(--accent-glow);
+  color: var(--accent);
+}
 .chip.up { color: var(--up); border-color: rgba(52, 122, 77, 0.4); background: var(--mit-bg); font-weight: 600; }
 .chip.down { color: var(--down); border-color: rgba(168, 61, 41, 0.4); background: #fbeae7; font-weight: 600; }
 .chip.neutral { color: var(--muted); }
@@ -1153,7 +2068,7 @@ th {
 /* EPOKA CARDS (TOM) */
 .epoka-card {
   display: grid;
-  grid-template-columns: 60px 1fr auto;
+  grid-template-columns: 60px 96px 1fr auto;
   gap: 14px;
   align-items: center;
   border: 1px solid var(--line);
@@ -1164,6 +2079,14 @@ th {
   text-decoration: none;
   margin-bottom: 12px;
   transition: all .15s ease;
+}
+.epoka-mini {
+  width: 96px;
+  aspect-ratio: 21 / 9;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px solid var(--line);
+  background: var(--card-alt);
 }
 .epoka-card:hover {
   border-color: var(--accent);
@@ -1206,7 +2129,7 @@ th {
 /* LISTS & HELPERS */
 ul { margin: 0; padding-left: 20px; }
 li { margin: 8px 0; }
-.muted { color: var(--muted); font-size: 12.5px; }
+.muted { color: var(--muted); font-size: 13.5px; }
 
 /* PAGER */
 .epoka-pager {
@@ -1232,6 +2155,49 @@ li { margin: 8px 0; }
 .pager-btn:hover {
   background: var(--code);
   border-color: var(--accent);
+}
+
+/* ROZSTAJE — drogi dalej (silnik Kronikarza, 2026-08-30) */
+.rozstaje-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 12px;
+  margin-top: 14px;
+}
+.rozstaje-karta {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 14px 16px;
+  background: var(--card-alt);
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  gap: 12px;
+  align-items: start;
+  transition: all .15s ease;
+}
+.rozstaje-karta:hover {
+  border-color: var(--accent);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.04);
+}
+.rozstaje-nr {
+  font-weight: 700;
+  color: var(--accent);
+  font-size: 14px;
+  text-align: center;
+  border-right: 1px solid var(--line);
+  padding-right: 10px;
+  padding-top: 4px;
+}
+.rozstaje-sklad {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 8px;
+}
+.rozstaje-powody {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
 }
 
 /* MODAL KARTOTEKI */
@@ -1370,7 +2336,7 @@ li { margin: 8px 0; }
   display: block;
 }
 .natura dt, .trofea dt {
-  font-size: 11.5px;
+  font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: var(--accent);
@@ -1401,7 +2367,7 @@ li { margin: 8px 0; }
 }
 .tabela-translacji th {
   background: var(--code);
-  font-size: 11.5px;
+  font-size: 12px;
 }
 .meta-wpisu {
   margin-top: 28px;
@@ -1423,6 +2389,108 @@ li { margin: 8px 0; }
   text-align: center;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
+
+/* S1 — wizualizacje Kroniki */
+.ramka-epoki { background: var(--card-alt); border: 1px solid var(--line); border-left: 4px solid var(--accent); border-radius: 10px; padding: 18px 20px; margin: 18px 0 24px; }
+.ramka-pytanie { margin: 0 0 10px; font-size: 19px; font-weight: 700; color: var(--fg); }
+.ramka-iskra { margin: 0 0 10px; padding: 0 0 0 14px; border-left: 3px solid var(--accent-light); font-style: italic; color: var(--muted); }
+.ramka-przebieg summary { cursor: pointer; font-size: 13px; color: var(--accent-light); }
+.ramka-przebieg p { margin: 8px 0 0; font-size: 14px; }
+.ramka-rozgalezienie { margin-top: 12px; padding: 10px 12px; background: var(--card); border: 1px dashed var(--accent-light); border-radius: 8px; font-size: 14px; }
+.ramka-rozgalezienie ul { margin: 6px 0 0; padding-left: 20px; }
+
+.chart { width: 100%; height: auto; display: block; }
+.os-grid { stroke: var(--line); stroke-width: 1; }
+.os-grid-label { fill: var(--muted); font-size: 14.5px; text-anchor: end; }
+.os-area { fill: var(--mit); fill-opacity: 0.12; }
+.os-line { fill: none; stroke: var(--mit); stroke-width: 2.5; stroke-linejoin: round; }
+.os-dot circle { fill: var(--accent); stroke: var(--fg); stroke-width: 1.5; }
+.os-wartosc { fill: var(--fg); font-size: 14.5px; text-anchor: middle; }
+.os-label { fill: var(--muted); font-size: 14.5px; }
+
+.zasieg-chip, .zasieg-wiersz text { font-size: 14.5px; }
+.zasieg-etykieta { fill: var(--fg); font-weight: 600; }
+.zasieg-tor { fill: var(--card-alt); stroke: var(--line); stroke-width: 1; }
+.zasieg-przed { fill: var(--muted); opacity: 0.45; }
+.zasieg-po { fill: var(--accent); }
+.zasieg-po.up { fill: var(--up); }
+.zasieg-po.down { fill: var(--down); }
+.zasieg-delta { fill: var(--muted); font-weight: 700; }
+.zasieg-delta.up { fill: var(--up); }
+.zasieg-delta.down { fill: var(--down); }
+.chart-legenda { fill: var(--muted); font-size: 13.5px; }
+.leg-przed { fill: var(--muted); }
+.leg-po { fill: var(--accent); }
+
+.wykres-paliwa { display: flex; gap: 10px; align-items: flex-start; flex-wrap: wrap; }
+.paliwo-chart { flex: 1 1 340px; min-width: 0; }
+.paliwo-linia { fill: none; stroke-width: 2.2; stroke-linejoin: round; }
+.paliwo-punkt { stroke: var(--card); stroke-width: 1; }
+.paliwo-os, .paliwo-os-x { fill: var(--muted); font-size: 14px; text-anchor: end; }
+.paliwo-os-x { text-anchor: middle; }
+.paliwo-legenda-box { flex: 1 1 190px; min-width: 0; display: flex; flex-direction: column; gap: 4px; font-size: 14px; }
+.paliwo-legenda { display: flex; gap: 8px; align-items: center; color: var(--fg); }
+.paliwo-legenda .kropka { width: 10px; height: 10px; border-radius: 50%; background: var(--l); display: inline-block; }
+.paliwo-legenda b { margin-left: auto; }
+
+.dom-grupa-etykieta { fill: var(--accent); font-size: 13.5px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+.dom-grupa-linia { stroke: var(--accent); stroke-width: 1.4; stroke-dasharray: 3 3; }
+.dom-tor { fill: var(--card-alt); stroke: var(--line); stroke-width: 1; }
+.dom-bar { fill: var(--accent); }
+.dom-etykieta { fill: var(--fg); font-size: 14.5px; font-weight: 600; }
+.dom-kropka { fill: var(--accent); }
+.dom-delta { fill: var(--muted); font-size: 14px; }
+.dom-delta.up { fill: var(--up); }
+.dom-delta.down { fill: var(--down); }
+
+.rel-elipsa { fill: none; stroke: var(--line); stroke-dasharray: 4 5; }
+.rel-luk { fill: none; stroke-width: 2.4; }
+.rel-luk.wzmocnienie { stroke: var(--up); }
+.rel-luk.schlodzenie { stroke: var(--down); }
+.rel-luk.neutralna { stroke: var(--muted); stroke-dasharray: 5 4; }
+.rel-wezel circle { fill: var(--card); stroke: var(--accent); stroke-width: 1.6; }
+.rel-emoji { text-anchor: middle; font-size: 24px; }
+.rel-nazwa { text-anchor: middle; font-size: 14.5px; fill: var(--fg); font-weight: 600; }
+.rel-legenda { display: flex; gap: 18px; margin-top: 6px; font-size: 13.5px; color: var(--muted); }
+.rel-leg.wzmocnienie { border-bottom: 3px solid var(--up); }
+.rel-leg.schlodzenie { border-bottom: 3px solid var(--down); }
+.rel-leg.neutralna { border-bottom: 3px dashed var(--muted); }
+
+.watki-linia { stroke: var(--accent-light); stroke-width: 2; }
+.watki-marker { stroke: var(--card); stroke-width: 2; }
+.watki-marker.otwarty { fill: var(--up); }
+.watki-marker.zamkniety { fill: var(--down); }
+.watki-etykieta { fill: var(--fg); font-size: 14px; }
+.watki-os-x { fill: var(--muted); font-size: 14px; }
+
+.heat-cell { stroke: var(--card); stroke-width: 1; }
+.heat-liczba { font-size: 14px; font-weight: 700; text-anchor: middle; dominant-baseline: middle; }
+.heat-legenda { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; margin-top: 6px; }
+.heat-leg-kolor { padding: 2px 9px; border-radius: 999px; font-weight: 600; }
+.heat-etykieta { fill: var(--fg); font-size: 14.5px; font-weight: 600; }
+.heat-sum { fill: var(--muted); font-size: 14px; }
+.heat-os-x { fill: var(--muted); font-size: 14px; }
+
+.graf-os { stroke: var(--accent); stroke-width: 2.4; }
+.graf-odwolanie { stroke: var(--accent-light); stroke-width: 1.6; stroke-dasharray: 6 4; }
+.graf-wezel circle { fill: var(--card); stroke: var(--accent); stroke-width: 2; }
+.graf-wezel.rozgalezienie circle { fill: var(--accent-light); }
+.graf-nr { text-anchor: middle; fill: var(--fg); font-size: 15px; font-weight: 700; }
+.graf-etykieta { fill: var(--muted); font-size: 14px; }
+.graf-galez path { fill: var(--accent-light); }
+.graf-galez-opis { fill: var(--muted); font-size: 13.5px; }
+
+.tomy-pasek { display: flex; gap: 8px; flex-wrap: wrap; margin: 0 0 14px; }
+.tomy-pasek .pager-btn.aktywny { background: var(--accent); color: var(--card); }
+.filtr-bytow { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin: 0 0 12px; font-size: 13px; }
+.filtr-bytow select { padding: 4px 8px; font: inherit; font-size: 13px; color: var(--fg); background: var(--card); border: 1px solid var(--line); border-radius: 6px; }
+.epoka-card.podswietlone { outline: 2px solid var(--accent); outline-offset: 2px; }
+.powiazane-epoki { margin: 22px 0 0; font-size: 13.5px; color: var(--muted); }
+.powiazane-epoki .chip { text-decoration: none; }
+.dziennik { width: 100%; border-collapse: collapse; }
+.dziennik th, .dziennik td { padding: 7px 8px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; font-size: 14px; }
+.dziennik .num { text-align: right; white-space: nowrap; }
+.tom-karta { max-width: 640px; }
 `;
 
 function generujSkryptKartoteki(manifestacjePelne, indeks) {
@@ -1479,14 +2547,8 @@ function generujSkryptKartoteki(manifestacjePelne, indeks) {
       '<div class="chipy">' + tagiHtml + '</div>' +
       '</header>';
 
-    const tabela = '<table class="tabela-translacji">' +
-      '<thead><tr><th>Element karty</th><th>Translacja na byt</th></tr></thead>' +
-      '<tbody>' + ((w.rezonans && w.rezonans.tabela) || []).map(function(r) {
-        return '<tr><td>' + esc(r.element) + '</td><td>' + esc(r.translacja) + '</td></tr>';
-      }).join('') + '</tbody></table>';
-
-    const sekcjaV = '<section class="sekcja"><h3><span class="numer">V.</span> Rezonans i tożsamość</h3>' +
-      '<p>' + esc((w.rezonans && w.rezonans.klucz_przywolania) || '') + '</p>' + tabela + '</section>';
+    // v1.8 (2026-08-30): sekcja „Rezonans i tożsamość” usunięta z protokołu —
+    // kartoteka pokazuje I–IV (Wizualizacja → Trofea).
 
     const sekcjaII = '<section class="sekcja"><h3><span class="numer">II.</span> Charakterystyka i natura</h3>' +
       '<dl class="natura">' +
@@ -1541,7 +2603,7 @@ function generujSkryptKartoteki(manifestacjePelne, indeks) {
 
     const metaHtml = w.meta ? '<div class="meta-wpisu">Protokół MFM v' + esc(w.meta.wersja_protokolu || '1.4') + ' · Rejestracja: ' + esc(w.meta.utworzono || '') + ' · Hash: ' + esc(w.meta.kod_weryfikacyjny || '') + '</div>' : '';
 
-    return '<div class="wpis">' + naglowek + sekcjaI + sekcjaII + sekcjaIII + sekcjaIV + sekcjaV + metaHtml + '</div>';
+    return '<div class="wpis">' + naglowek + sekcjaI + sekcjaII + sekcjaIII + sekcjaIV + metaHtml + '</div>';
   }
 
   function otworz(slug) {
@@ -1676,6 +2738,7 @@ export function generujRaportHTML(dane) {
     manifestacje: dane.wszystkieManifestacje || [],
     uczestnicySlugi,
     zasiegi: dane.konsekwencje.zasieg || [],
+    relacje: dane.konsekwencje.relacje || [],
     landD: dane.landD || '',
     tytul: `Teatr działań: ${dane.tytulEpoki}`,
     tylkoUczestnicy: true,
@@ -1684,10 +2747,49 @@ export function generujRaportHTML(dane) {
   // Dialog SKITu
   const dialogHtml = formatujDialogHTML(dane.skitTekst);
 
+  // Grafika: hero epoki (pregenerowane kluczowe ujęcie)
+  const hero = heroEpokiHTML(dane.grafika);
+
+  // S1: W1 ramka, W8 dziennik, W3 zasięgi, W5 dominacje, W6 relacje
+  const nazwyEpoki = new Map(dane.uczestnicy.map((u) => [u.slug, u.nazwa]));
+  const ramka = ramkaEpokiHTML({ pytanie: dane.pytanie, iskra: dane.iskra, przebieg: dane.przebieg, meta: dane.meta });
+  const dziennik = dziennikZmianyHTML(
+    {
+      uczestnicy: dane.uczestnicy,
+      konsekwencje: dane.konsekwencje,
+    },
+    Object.fromEntries(nazwyEpoki)
+  );
+  const wykresZasiegow = wykresZasiegowSVG(
+    (dane.konsekwencje.zasieg || []).map((z) => ({ ...z, nazwa: nazwyEpoki.get(z.slug) || z.slug }))
+  );
+  const wykresDominacji = slupkiDominacjiSVG(
+    (dane.konsekwencje.dominacje || []).map((d) => ({
+      etykieta: `${nazwaKultury(d.kultura)} · ${nazwyEpoki.get(d.kult) || d.kult}`,
+      wielkosc: Number.isFinite(d.po) ? d.po : d.wielkosc,
+      delta: d.delta,
+    }))
+  );
+  const diagram = diagramRelacjiSVG(dane.konsekwencje.relacje || [], dane.uczestnicy);
+
   // Nawigacja między epokami
   const epokaNr = parseInt(dane.slug.replace('epoka-', ''), 10) || 1;
+  const liczbaEpok = dane.liczbaEpok || 5;
   const prevEpoka = epokaNr > 1 ? `kronika-epoka-${epokaNr - 1}.html` : null;
-  const nextEpoka = epokaNr < 5 ? `kronika-epoka-${epokaNr + 1}.html` : null;
+  const nextEpoka = epokaNr < liczbaEpok ? `kronika-epoka-${epokaNr + 1}.html` : null;
+
+  // U4: powiązane epoki (meta.poprzednik / meta.kontynuacja + naturalni sąsiedzi)
+  const powiazaneSet = new Set();
+  if (dane.meta?.poprzednik) powiazaneSet.add(dane.meta.poprzednik);
+  if (dane.meta?.kontynuacja) powiazaneSet.add(dane.meta.kontynuacja);
+  if (prevEpoka) powiazaneSet.add(`epoka-${epokaNr - 1}`);
+  if (nextEpoka) powiazaneSet.add(`epoka-${epokaNr + 1}`);
+  const powiazaneHtml = powiazaneSet.size
+    ? `<div class="powiazane-epoki"><b>Epoki powiązane:</b> ${[...powiazaneSet]
+        .sort()
+        .map((slug) => `<a class="chip" href="kronika-${esc(slug)}.html">${esc(slug)}</a>`)
+        .join(' ')}</div>`
+    : '';
 
   return `<!doctype html>
 <html lang="pl">
@@ -1721,11 +2823,22 @@ ${generujTopbarHTML('kronika')}
   </div>
 </div>
 
+${hero}
+
+${ramka}
+
 <!-- MAPA WEKTOROWA EPOKI -->
 ${mapaSvg}
 
 <div class="grid">
   <div class="col">
+    <!-- W8: DZIENNIK ZMIANY -->
+    <div class="card">
+      <h2>Dziennik zmiany</h2>
+      <div class="card-sub">Jedna tabela: zasoby, zasięgi, dominacje i pozycje po epoce.</div>
+      ${dziennik}
+    </div>
+
     <!-- UCZESTNICY -->
     <div class="card">
       <h2>Uczestnicy epoki</h2>
@@ -1770,7 +2883,22 @@ ${mapaSvg}
     <div class="card">
       <h2>Konsekwencje dla świata</h2>
       <div class="card-sub">Przesunięcia wierzeń i zasięgów kulturowych w wyniku epoki.</div>
+      ${wykresZasiegow}
       <ul>${zasieg}</ul>
+    </div>
+
+    <!-- W6: DIAGRAM RELACJI -->
+    <div class="card">
+      <h2>Relacje między bytami</h2>
+      <div class="card-sub">Kto kogo wzmocnił, a kogo odsunął — i co świat z tego zapamiętał.</div>
+      ${diagram}
+    </div>
+
+    <!-- W5: DOMINACJE -->
+    <div class="card">
+      <h2>Dominacje kultur</h2>
+      <div class="card-sub">Kultury i kulty, których głos w tej epoce zyskał lub stracił na znaczeniu.</div>
+      ${wykresDominacji}
     </div>
 
     <!-- POZYCJE I STATUSY -->
@@ -1802,6 +2930,8 @@ ${mapaSvg}
   ${nextEpoka ? `<a class="pager-btn" href="${nextEpoka}">Następna epoka →</a>` : `<span></span>`}
 </div>
 
+${powiazaneHtml}
+
 <div class="foot">
   Archiwum Manifestacji Eterycznych · Kronika Tomu I · Rekordy zsynchronizowane
 </div>
@@ -1815,7 +2945,7 @@ ${generujSkryptKartoteki(dane.manifestacjePelne, dane.indeks)}
 }
 
 /** Raport strony głównej Tomu — generowany z summary, nie mockup. */
-export function generujRaportTomuHTML(podsumowanie, indeks, landD = '', manifestacjePelne = {}) {
+export function generujRaportTomuHTML(podsumowanie, indeks, landD = '', manifestacjePelne = {}, tomy = []) {
   const s = podsumowanie;
   const mit = s.stanPo.os.mit;
   const rac = s.stanPo.os.racjonalizacja;
@@ -1828,12 +2958,27 @@ export function generujRaportTomuHTML(podsumowanie, indeks, landD = '', manifest
     for (const u of e.uczestnicy || []) nazwy.set(u.slug, u.nazwa);
   }
 
+  // S1: wykresy Tomu (W2, W9, W4, W5, W7 + graf epok S3)
+  const wykresOsi = wykresOsiSVG(s.epoki);
+  const heatmap = heatmapZasiegowSVG(s.epoki, Object.fromEntries(nazwy));
+  const paliwo = wykresPaliwaSVG(s.epoki);
+  // Dominacje na koniec Tomu: tylko kultury OBECNE w Tomie, agregowane po
+  // kulturach (jeden słupek na kulturę = suma głosu jej bytów), ranking od
+  // najsilniejszego (recenzja właściciela 2026-08-30).
+  const dominacjeFinal = slupkiDominacjiSVG(dominacjeKulturTomu(s));
+  const osWatkow = osWatkowSVG(s.epoki);
+  const grafEpok = grafEpokSVG(s.epoki);
+  const spisTomow = (tomy || []).length > 1
+    ? `<nav class="tomy-pasek">${(tomy || []).map((t) => `<a class="pager-btn ${t.slug === s.tom ? 'aktywny' : ''}" href="${esc(t.plik)}">${esc(t.tytul)}</a>`).join('')}</nav>`
+    : '';
+  const filtrBytow = `<div class="filtr-bytow"><label for="filtr-bytow">Filtr epok wg bytu:</label> <select id="filtr-bytow"><option value="">— wszystkie —</option></select> <span id="kronika-filtr-info" class="muted"></span></div>`;
+
   const manifestacje = indeks?.manifestacje || [];
 
   // Karty poszczególnych epok
   const kartyEpok = s.epoki
     .map((e) => {
-      const nrRzymski = e.slug.replace('epoka-1', 'I').replace('epoka-2', 'II').replace('epoka-3', 'III').replace('epoka-4', 'IV').replace('epoka-5', 'V');
+      const nrRzymski = rzymskie(parseInt(e.slug.replace('epoka-', ''), 10) || 1);
       const delty = (e.konsekwencje.zasieg || [])
         .map((z) => {
           const d = Math.round((z.po - z.przed) * 100);
@@ -1843,10 +2988,14 @@ export function generujRaportTomuHTML(podsumowanie, indeks, landD = '', manifest
         .join(' ');
 
       const uczestnicyIkony = (e.uczestnicy || []).map((u) => getEmoji(u.slug)).join(' ');
+      const miniatura = e.grafika?.obraz
+        ? `<img class="epoka-mini" src="../${esc(e.grafika.obraz)}" alt="${esc(e.grafika.podpis || e.tytul)}" loading="lazy">`
+        : '';
 
       return `
-      <a class="epoka-card" href="kronika-${e.slug}.html">
+      <a class="epoka-card" id="kronika-${esc(e.slug)}" data-byt="${(e.uczestnicy || []).map((u) => u.slug).join(' ')}" data-slug="${esc(e.slug)}" href="kronika-${e.slug}.html">
         <div class="epoka-nr">Epoka<br>${nrRzymski}</div>
+        ${miniatura}
         <div>
           <div class="epoka-ttl">${esc(e.tytul)} <span class="chip ${e.walidacja ? 'up' : 'down'}">${e.walidacja ? 'OK' : 'Błąd'}</span></div>
           <div class="epoka-meta">Uczestnicy: ${uczestnicyIkony} · Oś: MIT ${e.stanPo.os.mit}% / RAC ${e.stanPo.os.racjonalizacja}%</div>
@@ -1904,6 +3053,35 @@ export function generujRaportTomuHTML(podsumowanie, indeks, landD = '', manifest
     tylkoUczestnicy: true,
   });
 
+  const slugiFiltra = [...nazwy.keys()].sort();
+
+  // ROZSTAJE (2026-08-30): silnik Kronikarza proponuje drogi dalej — ranking
+  // składów wg R1–R5. Są to PROPOZYCJE (kandydaci na kolejną epokę), nie kanon
+  // — zatwierdza je właściciel; każda droga otwiera inne rozwinięcie.
+  const propozycje = proponujEpoke(s, indeks, { limit: 4 });
+  const kartyRozstajow = propozycje
+    .map((p, i) => {
+      const sklad = p.sklad.map((u) => `${getEmoji(u.slug)} ${esc(u.nazwa)}`).join(' · ');
+      const powody = p.powody.map((r) => `<span class="chip">${esc(r)}</span>`).join(' ');
+      return `
+      <div class="rozstaje-karta">
+        <div class="rozstaje-nr">Droga ${'ABCD'[i] || i + 1}</div>
+        <div>
+          <div class="rozstaje-sklad">${sklad}</div>
+          <div class="rozstaje-powody">${powody}</div>
+        </div>
+      </div>`;
+    })
+    .join('');
+  const rozstaje = propozycje.length
+    ? `
+    <div class="card rozstaje">
+      <h2>Rozstaje — drogi dalej</h2>
+      <div class="card-sub">Silnik Kronikarza (reguły R1–R5) wyznacza kandydatów na kolejną epokę. To propozycje czekające na spisanie — kanon zatwierdza właściciel; każda droga otwiera inne rozwinięcie.</div>
+      <div class="rozstaje-grid">${kartyRozstajow}</div>
+      <div class="muted" style="margin-top:10px">Punktacja wg R1 (otwarty wątek), R2 (zasięg), R3 (zmęczenie — max 1 powtórka), R4 (oddech — min 1 nowy byt), R5 (niedomknięte relacje).</div>
+    </div>`
+    : '';
   return `<!doctype html>
 <html lang="pl">
 <head>
@@ -1918,9 +3096,10 @@ ${generujTopbarHTML('tom-1')}
 <div class="hero">
   <div class="badges">
     <span class="badge tom">Tom I</span>
-    <span class="badge ok">5 epok zamkniętych</span>
+    <span class="badge ok">${s.epoki.length} epok zamkniętych</span>
     <span class="badge">Oś stabilna: MIT ${mit}% / RAC ${rac}%</span>
   </div>
+  ${spisTomow}
   <h1>${esc(s.tytulTomu)}</h1>
   <p class="sub">Oficjalna księga Tomu I Kroniki. Zapis starć, układów gościnności i przesunięć granicy między mitem a racjonalizacją.</p>
   
@@ -1935,8 +3114,52 @@ ${generujTopbarHTML('tom-1')}
   </div>
 </div>
 
+<!-- S3: os czasu epok z odwołaniami i rozgałęzieniami -->
+<div class="card">
+  <h2>Graf epok</h2>
+  <div class="card-sub">Kolejność, odwołania między epokami (poprzednik → kontynuacja) i rozstaje.</div>
+  ${grafEpok}
+</div>
+
 <!-- GLOBALNA MAPA TOMU I -->
 ${mapaSvg}
+
+<!-- S1: wykresy Tomu — szerokie (paliwo, wątki, macierz) na całą szerokość,
+     wąskie (oś świata, dominacje końcowe) w kolumnach — czytelne czcionki. -->
+<div class="card">
+  <h2>Kto spalał pamięć</h2>
+  <div class="card-sub">Paliwo każdego uczestnika na koniec kolejnych epok.</div>
+  ${paliwo}
+</div>
+
+<div class="card">
+  <h2>Oś czasu wątków</h2>
+  <div class="card-sub">Wątek otwarty (●) i zamknięty (●) na przestrzeni Tomu; linia = ciągłość.</div>
+  ${osWatkow}
+</div>
+
+<div class="grid">
+  <div class="col">
+    <div class="card">
+      <h2>Dryf osi świata</h2>
+      <div class="card-sub">Jak przez epoki przesuwała się granica między mitem a racjonalizacją.</div>
+      ${wykresOsi}
+    </div>
+  </div>
+  <div class="col">
+    <div class="card">
+      <h2>Dominacje na koniec Tomu</h2>
+      <div class="card-sub">Kultury obecne w tym Tomie — łączny głos ich bytów (agregat, od najsilniejszej).</div>
+      ${dominacjeFinal}
+    </div>
+  </div>
+</div>
+
+<div class="card kart-szeroka">
+  <h2>Macierz zasięgów</h2>
+  <div class="card-sub">Jak daleko sięgał wpływ każdego bytu po kolejnych epokach (średnia po prawej).</div>
+  ${heatmap}
+</div>
 
 <div class="grid">
   <div class="col">
@@ -1944,6 +3167,7 @@ ${mapaSvg}
     <div class="card">
       <h2>Chronologia epok</h2>
       <div class="card-sub">Raporty kolejnych spotkań bytów i ich skutki dla świata.</div>
+      ${filtrBytow}
       ${kartyEpok}
     </div>
 
@@ -1968,7 +3192,7 @@ ${mapaSvg}
     <!-- BYTY I PALIWO -->
     <div class="card">
       <h2>Uczestnicy i stan pamięci</h2>
-      <div class="card-sub">Paliwo zgromadzone w archiwum oraz zasięg wpływów po 5 epokach.</div>
+      <div class="card-sub">Paliwo zgromadzone w archiwum oraz zasięg wpływów po ${s.epoki.length} epokach.</div>
       <ul>${byty}</ul>
     </div>
 
@@ -1992,12 +3216,16 @@ ${mapaSvg}
   </div>
 </div>
 
+<!-- ROZSTAJE: drogi dalej (silnik Kronikarza, R1–R5) -->
+${rozstaje}
+
 <div class="foot">
   Archiwum Manifestacji Eterycznych · Tom I: Kronika Trzech Stołów · System zsynchronizowany
 </div>
 
 </div>
 
+${generujSkryptFiltraTomy(slugiFiltra)}
 ${generujSkryptKartoteki(manifestacjePelne, indeks)}
 
 </body></html>
@@ -2006,6 +3234,54 @@ ${generujSkryptKartoteki(manifestacjePelne, indeks)}
 
 async function wczytajJson(path) {
   return JSON.parse(await readFile(path, 'utf8'));
+}
+
+/** Spis wszystkich Tomów Kroniki (S3 — multi-Tom). */
+export function generujSpisTomowHTML(tomy = []) {
+  const karty = (tomy || [])
+    .map(
+      (t) => `<a class="epoka-card tom-karta" href="${esc(t.plik)}">
+        <div class="epoka-nr">Tom<br>${rzymskie(t.nr || 1)}</div>
+        <div>
+          <div class="epoka-ttl">${esc(t.tytul)} <span class="chip up">${t.epoki || 0} epok</span></div>
+          <div class="epoka-meta">${esc(t.opis || '')}</div>
+        </div>
+        <div class="epoka-go">Księga ↗</div>
+      </a>`
+    )
+    .join('');
+  return `<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Kronika — spis Tomów</title>
+<style>${KRONIKA_CSS}</style>
+</head>
+<body><div class="wrap">
+${generujTopbarHTML('kronika')}
+<div class="hero">
+  <div class="badges">
+    <span class="badge tom">Kronika</span>
+    <span class="badge ok">${tomy.length} ${tomy.length === 1 ? 'Tom' : 'Tomy'}</span>
+  </div>
+  <h1>Kronika świata AME</h1>
+  <p class="sub">Oficjalne księgi kolejnych Tomów: epoki, rozmowy i przesunięcia granicy między mitem a racjonalizacją.</p>
+</div>
+<div class="grid"><div class="col"><div class="card">
+  <h2>Spis Tomów</h2>
+  <div class="card-sub">Wybierz księgę — każda zawiera raporty epok i wykresy całego Tomu.</div>
+  ${karty || '<p class="muted">Najpierw uruchom generator: npm run build.</p>'}
+</div></div></div>
+<div class="foot">Archiwum Manifestacji Eterycznych · Kronika świata AME</div>
+</div>
+</body></html>
+`;
+}
+
+async function wczytajTomy() {
+  const pliki = (await readdir(KATALOG_KRONIKA)).filter((f) => /^tom-\d+\.json$/.test(f)).sort();
+  return Promise.all(pliki.map((f) => wczytajJson(join(KATALOG_KRONIKA, f))));
 }
 
 async function wczytajEpoki() {
@@ -2087,89 +3363,138 @@ async function main() {
     // ignore
   }
 
-  const podsumowanie = zbudujPodsumowanieTomu({ tom, epoki, indeks, kanon });
-  const raportTomu = generujRaportTomuHTML(podsumowanie, indeks, landD, manifestacjePelne);
-  const raporty = podsumowanie.epoki.map((e) => {
-    const skitInfo = skityMap.get(e.skit) || { tekst: '', tytul: '' };
-    return {
-      slug: e.slug,
-      html: generujRaportHTML({
-        tom: podsumowanie.tom,
-        tytulTomu: podsumowanie.tytulTomu,
+  const tomy = await wczytajTomy();
+  const listaTomow = tomy.map((t) => ({
+    slug: t.slug,
+    nr: Number((t.slug.match(/\d+/) || [1])[0]) || 1,
+    tytul: t.tytul,
+    opis: t.opis || '',
+    plik: `kronika-${t.slug}.html`,
+    epoki: epoki.filter((e) => e.tom === t.slug).length,
+  }));
+  const spisTomow = generujSpisTomowHTML(listaTomow);
+  const wygenerowane = [['docs/kronika.html', spisTomow]];
+
+  let walidacjaGlobalna = true;
+  const bledyGlobalne = [];
+
+  for (const tomL of tomy) {
+    const epokiTomu = epoki.filter((e) => e.tom === tomL.slug);
+    if (!epokiTomu.length) continue;
+    const podsumowanie = zbudujPodsumowanieTomu({ tom: tomL, epoki: epokiTomu, indeks, kanon });
+    const raportTomu = generujRaportTomuHTML(podsumowanie, indeks, landD, manifestacjePelne, listaTomow);
+    const raporty = podsumowanie.epoki.map((e) => {
+      const skitInfo = skityMap.get(e.skit) || { tekst: '', tytul: '' };
+      return {
         slug: e.slug,
-        tytulEpoki: e.tytul,
-        skit: e.skit,
-        skitTekst: skitInfo.tekst,
-        skitTytul: skitInfo.tytul,
-        uczestnicy: e.uczestnicy,
-        stanPo: e.stanPo,
-        konsekwencje: e.konsekwencje,
-        narrator: e.narrator,
-        wszystkieManifestacje: indeks.manifestacje || [],
-        landD,
-        manifestacjePelne,
-        indeks,
-      }),
-    };
-  });
+        html: generujRaportHTML({
+          tom: podsumowanie.tom,
+          tytulTomu: podsumowanie.tytulTomu,
+          slug: e.slug,
+          tytulEpoki: e.tytul,
+          skit: e.skit,
+          iskra: e.iskra,
+          pytanie: e.pytanie,
+          przebieg: e.przebieg,
+          meta: e.meta,
+          skitTekst: skitInfo.tekst,
+          skitTytul: skitInfo.tytul,
+          uczestnicy: e.uczestnicy,
+          stanPo: e.stanPo,
+          konsekwencje: e.konsekwencje,
+          narrator: e.narrator,
+          grafika: e.grafika,
+          wszystkieManifestacje: indeks.manifestacje || [],
+          landD,
+          manifestacjePelne,
+          indeks,
+          liczbaEpok: podsumowanie.epoki.length,
+        }),
+      };
+    });
+
+    if (!podsumowanie.walidacja) {
+      walidacjaGlobalna = false;
+      for (const b of podsumowanie.bledy) bledyGlobalne.push(`[${tomL.slug}] ${b}`);
+    }
+
+    if (check) {
+      const plikPodsumowaniaT = tomL.slug === 'tom-1' ? PLIK_PODSUMOWANIA : join(KATALOG_KRONIKA, `summary-${tomL.slug}.json`);
+      const istniejacy = await readFile(plikPodsumowaniaT, 'utf8').catch(() => null);
+      const oczekiwany = JSON.stringify(podsumowanie, null, 2) + '\n';
+      if (!istniejacy) {
+        console.error(`Kronika: brak ${plikPodsumowaniaT} — uruchom npm run kronika.`);
+        process.exit(1);
+      }
+      if (istniejacy !== oczekiwany) {
+        console.error(`Kronika: ${plikPodsumowaniaT} jest nieaktualny — uruchom npm run kronika.`);
+        process.exit(1);
+      }
+      for (const r of raporty) {
+        const istniejacyRaport = await readFile(plikRaportu(r.slug), 'utf8').catch(() => null);
+        if (!istniejacyRaport) {
+          console.error(`Kronika: brak docs/kronika-${r.slug}.html — uruchom npm run kronika.`);
+          process.exit(1);
+        }
+        if (istniejacyRaport !== r.html) {
+          console.error(`Kronika: docs/kronika-${r.slug}.html jest nieaktualny — uruchom npm run kronika.`);
+          process.exit(1);
+        }
+      }
+      const istniejacyTom = await readFile(`docs/kronika-${tomL.slug}.html`, 'utf8').catch(() => null);
+      if (!istniejacyTom) {
+        console.error(`Kronika: brak docs/kronika-${tomL.slug}.html — uruchom npm run kronika.`);
+        process.exit(1);
+      }
+      if (istniejacyTom !== raportTomu) {
+        console.error(`Kronika: docs/kronika-${tomL.slug}.html jest nieaktualny — uruchom npm run kronika.`);
+        process.exit(1);
+      }
+    } else {
+      const plikPodsumowaniaT = tomL.slug === 'tom-1' ? PLIK_PODSUMOWANIA : join(KATALOG_KRONIKA, `summary-${tomL.slug}.json`);
+      wygenerowane.push([plikPodsumowaniaT, JSON.stringify(podsumowanie, null, 2) + '\n']);
+      wygenerowane.push([`docs/kronika-${tomL.slug}.html`, raportTomu]);
+      for (const r of raporty) wygenerowane.push([plikRaportu(r.slug), r.html]);
+    }
+
+    console.log(`Kronika OK (${tomL.slug}): ${podsumowanie.tytulTomu}`);
+    console.log(`  osy: MIT ${podsumowanie.stanPo.os.mit} / RACJONALIZACJA ${podsumowanie.stanPo.os.racjonalizacja} (razem ${podsumowanie.stanPo.os.mit + podsumowanie.stanPo.os.racjonalizacja})`);
+    for (const e of podsumowanie.epoki) {
+      console.log(`  ${e.slug}: ${e.tytul}  →  mit ${e.stanPo.os.mit} / rac ${e.stanPo.os.racjonalizacja}`);
+      for (const u of e.uczestnicy) {
+        console.log(
+          `      ${String(u.slug).padEnd(28)} ${String(u.saldoPrzed).padStart(4)} -> koszt ${String(
+            u.kosztUdzialu + u.kosztKlucza + u.boost
+          ).padStart(3)} (+${u.zwrot}) -> ${String(u.saldoPo).padStart(4)}`
+        );
+      }
+    }
+  }
 
   if (check) {
-    const istniejacy = await readFile(PLIK_PODSUMOWANIA, 'utf8').catch(() => null);
-    const oczekiwany = JSON.stringify(podsumowanie, null, 2) + '\n';
-    if (!istniejacy) {
-      console.error('Kronika: brak data/kronika/summary.json — uruchom npm run kronika.');
+    const istniejacySpis = await readFile(join(ROOT, 'docs', 'kronika.html'), 'utf8').catch(() => null);
+    if (!istniejacySpis) {
+      console.error('Kronika: brak docs/kronika.html — uruchom npm run kronika.');
       process.exit(1);
     }
-    if (istniejacy !== oczekiwany) {
-      console.error('Kronika: summary.json jest nieaktualny — uruchom npm run kronika.');
-      process.exit(1);
-    }
-    for (const r of raporty) {
-      const istniejacyRaport = await readFile(plikRaportu(r.slug), 'utf8').catch(() => null);
-      if (!istniejacyRaport) {
-        console.error(`Kronika: brak docs/kronika-${r.slug}.html — uruchom npm run kronika.`);
-        process.exit(1);
-      }
-      if (istniejacyRaport !== r.html) {
-        console.error(`Kronika: docs/kronika-${r.slug}.html jest nieaktualny — uruchom npm run kronika.`);
-        process.exit(1);
-      }
-    }
-    const istniejacyTom = await readFile(PLIK_RAPORTU_TOMU, 'utf8').catch(() => null);
-    if (!istniejacyTom) {
-      console.error('Kronika: brak docs/kronika-tom-1.html — uruchom npm run kronika.');
-      process.exit(1);
-    }
-    if (istniejacyTom !== raportTomu) {
-      console.error('Kronika: docs/kronika-tom-1.html jest nieaktualny — uruchom npm run kronika.');
+    if (istniejacySpis !== spisTomow) {
+      console.error('Kronika: docs/kronika.html jest nieaktualny — uruchom npm run kronika.');
       process.exit(1);
     }
   } else {
-    await Promise.all([
-      writeFile(PLIK_PODSUMOWANIA, JSON.stringify(podsumowanie, null, 2) + '\n'),
-      writeFile(PLIK_RAPORTU_TOMU, raportTomu),
-      ...raporty.map((r) => writeFile(plikRaportu(r.slug), r.html)),
-    ]);
+    await Promise.all(
+      wygenerowane.map(([sciezka, tresc]) =>
+        writeFile(sciezka.startsWith('docs/') ? join(ROOT, sciezka) : sciezka, tresc)
+      )
+    );
   }
 
-  if (!podsumowanie.walidacja) {
+  if (!walidacjaGlobalna) {
     console.error('Kronika: walidacja NIEPRZESZŁA');
-    for (const b of podsumowanie.bledy) console.error('  -', b);
+    for (const b of bledyGlobalne) console.error('  -', b);
     process.exit(1);
   }
 
-  console.log(`Kronika OK: ${podsumowanie.tytulTomu}`);
-  console.log(`  osy: MIT ${podsumowanie.stanPo.os.mit} / RACJONALIZACJA ${podsumowanie.stanPo.os.racjonalizacja} (razem ${podsumowanie.stanPo.os.mit + podsumowanie.stanPo.os.racjonalizacja})`);
-  for (const e of podsumowanie.epoki) {
-    console.log(`  ${e.slug}: ${e.tytul}  →  mit ${e.stanPo.os.mit} / rac ${e.stanPo.os.racjonalizacja}`);
-    for (const u of e.uczestnicy) {
-      console.log(
-        `      ${String(u.slug).padEnd(28)} ${String(u.saldoPrzed).padStart(4)} -> koszt ${String(
-          u.kosztUdzialu + u.kosztKlucza + u.boost
-        ).padStart(3)} (+${u.zwrot}) -> ${String(u.saldoPo).padStart(4)}`
-      );
-    }
-  }
   if (check) console.log('  (tryb --check, bez zapisu)');
 }
 

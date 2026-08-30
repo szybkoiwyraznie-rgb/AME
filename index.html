@@ -15,10 +15,10 @@
     } catch (e) { /* brak dostępu do pamięci — zostaje domyślny ciemny */ }
   </script>
   <!-- Cache-busting: przy zmianie app/*.js lub app/styles.css podnieś wersję
-       w ?v= (np. c4-1 → c4-2). Ta sama wersja musi być w importach modułów,
+       w ?v= (np. c5-1 → c4-2). Ta sama wersja musi być w importach modułów,
        inaczej przeglądarka poda stare pliki (typowy objaw „mapa bez zmian”). -->
-  <link rel="stylesheet" href="app/styles.css?v=c4-1">
-  <script type="module" src="app/app.js?v=c4-1"></script>
+  <link rel="stylesheet" href="app/styles.css?v=c5-7">
+  <script type="module" src="app/app.js?v=c5-7"></script>
 </head>
 <body>
   <div id="baner" class="baner" hidden></div>
@@ -35,7 +35,7 @@
       <button id="przycisk-lista" class="przycisk" title="Lista wszystkich manifestacji">☰ kartoteka</button>
       <button id="przycisk-skity" class="przycisk" aria-pressed="false" title="Baza Skitów — rozmowy materializacji">✎ skity</button>
       <button id="przycisk-nowosci" class="przycisk" aria-pressed="false" title="Co nowego — aktualizacje archiwum">✚ nowości</button>
-      <a id="przycisk-kronika" class="przycisk" href="docs/kronika-tom-1.html" title="Kronika świata AME — tocząca się opowieść epok">📜 kronika</a>
+      <button id="przycisk-kronika" class="przycisk" type="button" aria-pressed="false" title="Kronika świata AME — tocząca się opowieść epok">📜 kronika</button>
       <button id="przycisk-motyw" class="przycisk przycisk-motyw" type="button" aria-pressed="false" title="Przełącz tryb ciemny/jasny">☾ motyw</button>
     </div>
   </header>
@@ -49,16 +49,28 @@
         <button id="zoom-in" class="przycisk-kolo" aria-label="Przybliż">＋</button>
         <button id="zoom-out" class="przycisk-kolo" aria-label="Oddal">−</button>
         <button id="zoom-reset" class="przycisk-kolo" aria-label="Reset widoku">⟲</button>
-        <button id="przycisk-warstwy" class="przycisk-kolo" aria-pressed="false" title="Warstwy szczegółów: woda, miasta, punkty" aria-label="Warstwy szczegółów">🗺</button>
+        <button id="przycisk-warstwy" class="przycisk-kolo" aria-pressed="false" title="Warstwy mapy: woda, miasta, POI, historia, hipsometria, podkłady" aria-label="Warstwy mapy">🗺</button>
       </div>
-      <p class="podpowiedz">przeciągnij · kółko = zoom · dwuklik = przybliż · przytrzymaj miasto = nazwa · pinch na telefonie</p>
+      <p class="podpowiedz">przeciągnij · kółko = zoom · dwuklik = przybliż · przytrzymaj punkt lub miasto = nazwa · pinch na telefonie</p>
+      <p id="atrybucja-podkladu" class="atrybucja-mapy" hidden></p>
       <div id="warstwy-panel" class="warstwy-panel" hidden>
-        <div class="naglowek-panelu">Warstwy szczegółów</div>
-        <label><input id="warstwa-rzeki" type="checkbox" checked> Rzeki</label>
-        <label><input id="warstwa-jeziora" type="checkbox" checked> Jeziora</label>
-        <label><input id="warstwa-miasta" type="checkbox" checked> Miasta</label>
-        <label><input id="warstwa-poi" type="checkbox" disabled title="Warstwa wymaga danych o szczytach — do uzupełnienia w kolejnej iteracji"> POI / szczyty (wkrótce)</label>
-        <p class="uwaga-panelu">Drogi, kompleksy leśne i wysokość n.p.m. wymagają źródeł spoza dostępnych offline danych — plan na kolejną iterację.</p>
+        <div class="naglowek-panelu">Warstwy mapy</div>
+        <div class="naglowek-grupy">Szczegóły</div>
+        <label><input id="warstwa-rzeki" type="checkbox"> Rzeki</label>
+        <label><input id="warstwa-jeziora" type="checkbox"> Jeziora</label>
+        <label><input id="warstwa-miasta" type="checkbox"> Miasta</label>
+        <label><input id="warstwa-poi" type="checkbox" title="Szczyty i pasma (Natural Earth)"> Szczyty</label>
+        <label><input id="warstwa-hipsometria" type="checkbox" title="Rzeźba terenu i batymetria (Natural Earth 50m)"> Hipsometria</label>
+        <div class="naglowek-grupy">Świat starożytny</div>
+        <label><input id="warstwa-historia" type="checkbox" title="Miejsca starożytne — Pleiades (CC BY 3.0)"> Miejsca historyczne</label>
+        <div class="naglowek-grupy">Podkład online</div>
+        <select id="warstwa-podklad" aria-label="Podkład online — wymaga połączenia z siecią">
+          <option value="">Wyłączony (100% offline)</option>
+          <option value="opentopo">OpenTopoMap</option>
+          <option value="osm">OpenStreetMap</option>
+          <option value="esri-satelita">Esri — satelita</option>
+        </select>
+        <p class="uwaga-panelu">Wszystkie warstwy są domyślnie wyłączone; włączasz je ręcznie. Podkłady online pobierają kafelki z sieci (atrybucje w <code>docs/ASSETS.md</code> i pod mapą). Z podkładem online kółko przybliża do technicznego limitu źródeł — <strong>×524 288</strong> (kafelki z≈19; przy wyższych zoomach źródło kończy kafelki w danym regionie, a blokada nie zależy od liczby obrotów); bez podkładu do ×32.</p>
       </div>
     </div>
     <aside id="panel" class="panel" aria-label="Kartoteka manifestacji"></aside>
@@ -70,7 +82,7 @@
   <footer class="dol">
     <span id="status"></span>
     <span class="separator">·</span>
-    <span>protokół MFM v1.7</span>
+    <span>protokół MFM v1.8</span>
   </footer>
 </body>
 </html>

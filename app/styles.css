@@ -30,6 +30,8 @@ html[data-motyw='ciemny'] {
   --miasto-obrys: #0d1015;
   --poi: #b4543c;
   --poi-obrys: #0d1015;
+  --historia: #c9a86a;
+  --historia-obrys: #0d1015;
   --pinezka-obrys: #0d1015;
   --pinezka-srodek: #f2e6cf;
   --badge-tlo: #141922f2;
@@ -65,6 +67,8 @@ html[data-motyw='jasny'] {
   --miasto-obrys: #fdf9ee;
   --poi: #96331c;
   --poi-obrys: #fdf9ee;
+  --historia: #7d5a15;
+  --historia-obrys: #fdf9ee;
   --pinezka-obrys: #fdf9ee;
   --pinezka-srodek: #fdf9ee;
   --badge-tlo: #fffdf6f2;
@@ -121,7 +125,7 @@ html[data-motyw='jasny'] .baner code { background: #ffffff77; }
   letter-spacing: 0.12em;
   color: var(--akcent);
 }
-.tytul p { margin: 0; font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--tekst-dim); }
+.tytul p { margin: 0; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--tekst-dim); }
 
 #szukaj {
   flex: 1;
@@ -174,7 +178,7 @@ html[data-motyw='jasny'] .baner code { background: #ffffff77; }
 .tagi-grupa { display: flex; align-items: baseline; gap: 8px; min-width: 0; }
 .tagi-grupa + .tagi-grupa { padding-left: 18px; border-left: 1px solid var(--linia); }
 .tagi-nazwa {
-  font-size: 10px;
+  font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 0.16em;
   color: var(--tekst-dim);
@@ -192,10 +196,11 @@ html[data-motyw='jasny'] .baner code { background: #ffffff77; }
   cursor: pointer;
 }
 .chip:hover { border-color: var(--akcent); }
+a.chip { display: inline-block; text-decoration: none; }
 .chip.aktywny { background: var(--akcent); color: var(--akcent-tekst); }
-.chip .licznik { opacity: 0.6; font-size: 10px; }
+.chip .licznik { opacity: 0.6; font-size: 12px; }
 .chip.tag .kategoria-tagu {
-  font-size: 9px;
+  font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 0.12em;
   opacity: 0.65;
@@ -226,6 +231,13 @@ html[data-motyw='jasny'] .baner code { background: #ffffff77; }
   vector-effect: non-scaling-stroke;
 }
 .kraj:hover { fill: var(--lad-hover); }
+/* Gdy pod krajami leży raster hipsometrii albo kafelki online, wypełnienie
+ * kraju znika (zostaje obrys), żeby podłoże było widoczne (map.js przełącza
+ * klasy z-hipsometria / z-podklad-online na .mapa-svg). */
+.mapa-svg.z-hipsometria .kraj { fill-opacity: 0; }
+.mapa-svg.z-podklad-online .kraj { fill-opacity: 0.06; }
+.mapa-svg.z-hipsometria .ocean { fill-opacity: 0; }
+.mapa-svg.z-hipsometria .siatka, .mapa-svg.z-podklad-online .siatka { opacity: 0.35; }
 
 /* Warstwy szczegółowości (ADR 0020). Woda rysowana nad lądem; miasta i POI to
  * punkty o stałym rozmiarze ekranowym (kompensacja skali w map.js). */
@@ -257,10 +269,37 @@ html[data-motyw='jasny'] .baner code { background: #ffffff77; }
   stroke: none;
   pointer-events: all;
 }
+/* B (2026-08-30): POI i miejsca historyczne zachowują się jak miasta —
+ * kursor strzałka (nie łapka) i nazwa tylko podczas przytrzymania. */
 .warstwy-szczegolow .poi .punkt {
   fill: var(--poi);
   stroke: var(--poi-obrys);
   stroke-width: 1;
+  cursor: default;
+}
+.warstwy-szczegolow .poi .trafienie,
+.warstwy-szczegolow .historia .trafienie {
+  fill: transparent;
+  stroke: none;
+  pointer-events: all;
+}
+.warstwy-szczegolow .historia .punkt {
+  cursor: default;
+}
+.warstwy-szczegolow .historia .punkt .kropka {
+  fill: var(--historia);
+  stroke: var(--historia-obrys);
+  stroke-width: 0.6;
+}
+/* Hipsometria i podkłady online leżą POD krajami (map.js); kraj zachowuje
+ * przezroczyste wnętrze, więc widać pod nimi relief albo kafelki mapy. */
+.hipsometria-obraz {
+  opacity: 0.9;
+  image-rendering: auto;
+}
+.podklad-online .kafelek {
+  opacity: 0.95;
+  image-rendering: auto;
 }
 
 .luk {
@@ -339,6 +378,27 @@ html[data-motyw='jasny'] .baner code { background: #ffffff77; }
   stroke-width: 1.2;
 }
 
+/* Etykieta punktu POI/historii (B): wygląda identycznie jak tabliczka miasta,
+ * bo to ta sama interakcja — wciśnięcie pokazuje, puszczenie chowa. */
+.mapa-svg .etykieta-punktu {
+  display: none;
+  pointer-events: none;
+}
+.mapa-svg .etykieta-punktu.widoczna { display: block; }
+.mapa-svg .etykieta-punktu text {
+  font-family: var(--serif);
+  font-size: 19px;
+  line-height: 1.2;
+  fill: var(--tekst);
+  text-anchor: middle;
+  dominant-baseline: central;
+}
+.mapa-svg .etykieta-punktu .tlo-etykiety {
+  fill: var(--badge-tlo);
+  stroke: var(--akcent);
+  stroke-width: 1.2;
+}
+
 .podpowiedz {
   position: absolute;
   left: 14px;
@@ -349,6 +409,25 @@ html[data-motyw='jasny'] .baner code { background: #ffffff77; }
   pointer-events: none;
   user-select: none;
 }
+/* Atrybucja podkładu online — wymagana przez OSM/OpenTopoMap/Esri (M5). */
+.atrybucja-mapy {
+  position: absolute;
+  left: 14px;
+  bottom: 18px;
+  margin: 0;
+  max-width: 60%;
+  padding: 3px 8px;
+  font-size: 12px;
+  color: var(--tekst-dim);
+  background: var(--kolo-tlo);
+  border: 1px solid var(--linia);
+  border-radius: 6px;
+  pointer-events: none;
+  user-select: none;
+  z-index: 20;
+}
+.atrybucja-mapy[hidden] { display: none; }
+
 .warstwy-panel {
   position: absolute;
   right: 14px;
@@ -379,10 +458,27 @@ html[data-motyw='jasny'] .baner code { background: #ffffff77; }
   letter-spacing: 0.06em;
   color: var(--akcent);
 }
+.warstwy-panel .naglowek-grupy {
+  margin-top: 2px;
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--tekst-dim);
+}
+.warstwy-panel select {
+  max-width: 240px;
+  padding: 4px 6px;
+  font: inherit;
+  font-size: 12px;
+  color: var(--tekst);
+  background: var(--tlo-2);
+  border: 1px solid var(--linia);
+  border-radius: 6px;
+}
 .warstwy-panel .uwaga-panelu {
   margin: 0;
   max-width: 240px;
-  font-size: 11px;
+  font-size: 12px;
   line-height: 1.35;
   color: var(--tekst-dim);
 }
@@ -418,7 +514,7 @@ html[data-motyw='jasny'] .baner code { background: #ffffff77; }
   left: 14px;
   bottom: 14px;
   margin: 0;
-  font-size: 11px;
+  font-size: 12px;
   color: var(--tekst-dim);
   letter-spacing: 0.04em;
   z-index: 10;
@@ -521,11 +617,11 @@ html[data-motyw='jasny'] .baner code { background: #ffffff77; }
 
 .tabela-translacji { width: 100%; border-collapse: collapse; font-size: 14.5px; margin-top: 12px; }
 .tabela-translacji th, .tabela-translacji td { text-align: left; vertical-align: top; padding: 6px 8px; border: 1px solid var(--linia); }
-.tabela-translacji th { font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--tekst-dim); background: var(--tlo-3); }
+.tabela-translacji th { font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--tekst-dim); background: var(--tlo-3); }
 .tabela-translacji td:first-child { white-space: nowrap; color: var(--akcent); font-family: var(--serif); }
 
 .natura dt, .trofea dt {
-  font-size: 11px;
+  font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 0.12em;
   color: var(--akcent);
@@ -564,7 +660,7 @@ html[data-motyw='jasny'] .baner code { background: #ffffff77; }
   color: var(--tekst-dim);
   font-size: 13px;
 }
-.brak-wizualizacji .maly { font-size: 11px; opacity: 0.7; }
+.brak-wizualizacji .maly { font-size: 12px; opacity: 0.7; }
 
 .prompt { margin-top: 12px; font-size: 13.5px; }
 .prompt summary { cursor: pointer; color: var(--tekst-dim); }
@@ -588,7 +684,7 @@ html[data-motyw='jasny'] .baner code { background: #ffffff77; }
   margin-top: 26px;
   padding-top: 10px;
   border-top: 1px solid var(--linia);
-  font-size: 11px;
+  font-size: 12px;
   color: var(--tekst-dim);
 }
 
@@ -644,7 +740,7 @@ div.warstwa.otwarta { display: block; animation: warstwa-wnika 0.2s ease-out; }
   color: var(--tekst);
 }
 .skit-uczestnicy { margin: 0 0 6px; font-size: 13px; color: var(--tekst-dim); display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
-.skit-uczestnicy span { text-transform: uppercase; letter-spacing: 0.14em; font-size: 11px; }
+.skit-uczestnicy span { text-transform: uppercase; letter-spacing: 0.14em; font-size: 12px; }
 .skit-tekst { font-size: 16.5px; }
 .wypowiedz {
   margin: 0 0 15px;
@@ -683,7 +779,7 @@ div.warstwa.otwarta { display: block; animation: warstwa-wnika 0.2s ease-out; }
 }
 .nowosci-lista time { font-size: 12px; color: var(--tekst-dim); letter-spacing: 0.08em; }
 .nowosci-lista .badge-typ {
-  font-size: 11px;
+  font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: var(--akcent-2);
@@ -702,6 +798,43 @@ div.warstwa.otwarta { display: block; animation: warstwa-wnika 0.2s ease-out; }
 }
 .nowosci-lista .tytul:hover { color: var(--akcent); }
 .nowosci-lista .opis { margin: 2px 0 0; font-size: 13px; color: var(--tekst-dim); line-height: 1.5; }
+
+/* ---- Feed Kroniki (U3) ---- */
+.filtr-kronika { display: flex; align-items: center; gap: 8px; margin: 0 0 16px; font-size: 13px; color: var(--tekst-dim); }
+.filtr-kronika select {
+  padding: 5px 8px;
+  font: inherit;
+  font-size: 13px;
+  color: var(--tekst);
+  background: var(--tlo-2);
+  border: 1px solid var(--linia);
+  border-radius: 6px;
+}
+.kronika-lista { display: flex; flex-direction: column; gap: 14px; }
+.kronika-karta {
+  border: 1px solid var(--linia);
+  border-left: 3px solid var(--akcent);
+  border-radius: 10px;
+  padding: 14px 18px;
+  background: var(--tlo);
+}
+.kronika-karta header { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+.kronika-karta .kronika-nr {
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--akcent);
+}
+.kronika-karta h3 { font-family: var(--serif); font-size: 20px; margin: 0; color: var(--tekst); }
+.kronika-karta .kronika-os { margin-left: auto; font-size: 12.5px; color: var(--tekst-dim); }
+.kronika-pytanie { margin: 10px 0 4px; font-size: 15px; font-weight: 700; color: var(--tekst); }
+.kronika-iskra { margin: 4px 0 10px; padding-left: 12px; border-left: 3px solid var(--akcent); font-style: italic; color: var(--tekst-dim); font-size: 14px; }
+.kronika-delty { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 10px; }
+.kronika-karta footer { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.kronika-ikony { display: flex; gap: 4px; }
+.kronika-ikona { font-size: 20px; }
+.przycisk-maly { font-size: 12.5px; padding: 5px 10px; }
+.kronika-karta[hidden] { display: none; }
 
 /* ---- Lista (kartoteka) ---- */
 .lista {
@@ -752,7 +885,7 @@ div.warstwa.otwarta { display: block; animation: warstwa-wnika 0.2s ease-out; }
   gap: 10px;
   padding: 6px 16px;
   border-top: 1px solid var(--linia);
-  font-size: 11px;
+  font-size: 12px;
   letter-spacing: 0.06em;
   color: var(--tekst-dim);
   background: var(--tlo-2);

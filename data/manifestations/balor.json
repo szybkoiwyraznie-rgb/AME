@@ -26,10 +26,10 @@
   },
   "natura": {
     "wyglad_i_aura": "Olbrzym z jednym okiem pośrodku czoła — nie potwór z bajki, lecz bronią obsługiwaną przez ekipę: powieka jest tak ciężka i tak zatruta, że czterech wojowników podnosi ją za pierścień (Cath Maige Tuired). Ten sam tekst mówi, że jad wszedł w oko z oparów mikstury, którą druidzi jego ojca warzyli, gdy Balor był chłopcem — dlatego przed bytem idzie zapach siarki, przypalonej wełny i zioła, a za otwartym okiem idzie linia prosta: trawy więdną, kamienie pękają, pola wysychają; stąd ludowa i naukowa lektura Balora jako personifikacji palącego słońca i suszy. Ciało ma tak wielkie, że kiedy padnie na pobojowisku, przygniata dwudziestu siedmiu własnych zbrojnych.",
-    "charakter_i_motywacje": "Tyrant, który liczy na uniknięcie losu przez administrację: pobiera od Irlandii to, co uznaje za swoje, buduje warownię Rath Breisi dla Bresa, porywa krowę obfitości Glas Gaibhnenn i zamyka jedyną córkę (Eithne/Ethlinn) w wieży na Tor Mór, żeby nie doczekać wnuka. Nie jest szalony — jest ostrożny do granicy śmieszności, bo każdy środek zapobiegawczy (wieża bez mężczyzn, topienie noworodków) jest właśnie tym, co przepowiednię wykonuje. W przeddzień bitwy słucha wszystkiego oprócz ostrzeżenia Cethlenn — z tradycji, nie z samej narracji Cath Maige Tuired, w której jej imienia brak w spisie Fomorów (tytuł „żona Balora” ustala dopiero Ogygia z 1685 r.). Wychodzi na pole, na którym zginie, ponieważ nie umie odwołać zdania wypowiedzianego nad nim. Cała jego polityka to jedna ucieczka przed proroctwem: druidzi, którzy zatruli mu oko, przepowiedzieli też, że zabije go własny wnuk, więc zamknął córkę Ethniu w wieży Tor Mór na Tory Island z dwunastoma niewiastami, którym nie wolno było wspomnieć, że istnieją mężczyźni. Cian mac Cainte dostał się tam mimo to (z pomocą druidki Biróg), a z trojga wnuków Balor kazał utopić wszystkich — ocalał jeden, Lugh. Klęskę potwierdza krajobraz: głowa Balora miała wypalić w ziemi dół, który wypełnił się wodą jako Loch na Súl („jezioro oka”) w hrabstwie Sligo.",
+    "charakter_i_motywacje": "Tyran, który liczy na uniknięcie losu przez administrację: pobiera od Irlandii to, co uznaje za swoje, buduje warownię Rath Breisi dla Bresa, porywa krowę obfitości Glas Gaibhnenn i zamyka jedyną córkę (Eithne/Ethlinn) w wieży na Tor Mór, żeby nie doczekać wnuka. Nie jest szalony — jest ostrożny do granicy śmieszności, bo każdy środek zapobiegawczy (wieża bez mężczyzn, topienie noworodków) jest właśnie tym, co przepowiednię wykonuje. W przeddzień bitwy słucha wszystkiego oprócz ostrzeżenia Cethlenn — z tradycji, nie z samej narracji Cath Maige Tuired, w której jej imienia brak w spisie Fomorów (tytuł „żona Balora” ustala dopiero Ogygia z 1685 r.). Wychodzi na pole, na którym zginie, ponieważ nie umie odwołać zdania wypowiedzianego nad nim. Cała jego polityka to jedna ucieczka przed proroctwem: druidzi, którzy zatruli mu oko, przepowiedzieli też, że zabije go własny wnuk, więc zamknął córkę Ethniu w wieży Tor Mór na Tory Island z dwunastoma niewiastami, którym nie wolno było wspomnieć, że istnieją mężczyźni. Cian mac Cainte dostał się tam mimo to (z pomocą druidki Biróg), a z trojga wnuków Balor kazał utopić wszystkich — ocalał jeden, Lugh. Klęskę potwierdza krajobraz: głowa Balora miała wypalić w ziemi dół, który wypełnił się wodą jako Loch na Súl („jezioro oka”) w hrabstwie Sligo.",
     "zdolnosci": "samo spojrzenie: otwarcie powieki mnoży siłę nielicznych tak, że garść wojowników przytłacza armię; jadowite pole rażenia wzdłuż linii wzroku — kto patrzy na oko, ginie; kalectwo przyrody w promieniu spojrzenia: susza, wypalone pola, bezruch plonów; w wariantach ludowych przedmiot wzmacniający moc (szkło, kolec) i rytuał otwierania powieki hakami. Ograniczenie wpisane w ciało: oko nie jest szybkie. Trzeba ludzi, trzeba uchwytu, trzeba chwili, zanim powieka wstanie.",
     "slabosci_i_metody_pokonania": "Przepowiednia o wnuku jest jednocześnie instrukcją zabicia: Lugh nie zasłania się przed okiem, tylko trafia w nie w momencie otwierania. Cath Maige Tuired: kamień z procy (cloch as a tábaill) wchodzi w ślepinę, wychodzi z tyłu czaszki, a wzrok bez właściciela zwraca się przeciw Fomorom stojącym za plecami Balora; potem obcięcie głowy, która kruszy skałę. Metodą obronną w przekazach jest dezorganizacja obsługi oka, nie tarcza: zerwać pierścień, zanim powieka wstanie; nie stać w linii spojrzenia; odebrać krowę, bo bez niej susza ma kontrahenta. Trofeum po Balorze pozostaje przekleństwem dla zbierającego.",
-    "preferencje": "Lubi: hołd i rachunek, zamkniętą wieżę, dym ziołowych wywarów, poranek z wiatrem od morza (wtedy nikt nie patrzy), krowy, których mleko się nie kończy. Nielubi: liczenia własnych wnuków, dnia bez chmury, kogokolwiek stojącego za linią jego oka i wszelkich słów wypowiedzianych przy nim — bo każde z nich potem się wykonuje."
+    "preferencje": "Lubi: hołd i rachunek, zamkniętą wieżę, dym ziołowych wywarów, poranek z wiatrem od morza (wtedy nikt nie patrzy), krowy, których mleko się nie kończy. Nie lubi: liczenia własnych wnuków, dnia bez chmury, kogokolwiek stojącego za linią jego oka i wszelkich słów wypowiedzianych przy nim — bo każde z nich potem się wykonuje."
   },
   "dokumentacja": [
     {
@@ -72,31 +72,6 @@
     "pierwotne": "kamień z procy, który przebił oko na wylot — w logice przekazu nie relikwia, lecz dowód, że moment otwarcia był momentem zamknięcia",
     "wtorne": "Loch na Súl („jezioro oka”) w hrabstwie Sligo oraz skała pod Mizen Head, którą miał skruszyć ciężar odciętej głowy — Carn Uí Néit, „kurhan wnuka Néita”"
   },
-  "rezonans": {
-    "klucz_przywolania": "„Weftblade Enhancer” to karta z nazwą wziętą z warsztatu tkackiego: weft to wątek, a enhancer — to, co go dobija i wzmacnia dwa inne wątki (+1/+1 na dwa cele). Balor jest we własnym micie właśnie takim wzmacniaczem: jego oko nie tnie, tylko mnoży siłę swoich — otwarcie powieki dawało garstce Fomorów władzę nad armią, a ciało, gdy padło, przygniotło dwudziestu siedmiu z nich. „Warp {2}{W}” z wygnaniem na końcu następnej tury i możliwym powrotem z wygnania w późniejszej turze to kalendarz tego bytu: znika za morze, wraca w wyznaczonym terminie, a wszystko, co zostało w międzyczasie wypowiedziane — przepowiednia o wnuku — cierpliwie czeka na swoją turę. Flavor karty (lud, który patrzył, jak wschodzą Eldrazi i padają Fomorianie, i już nigdy nie spojrzy) jest o tym, że Balor jest bytem samego patrzenia: kto patrzy na jego oko, ten kończy, a kto je otwiera, ten pracuje dla niego.",
-    "tabela": [
-      {
-        "element": "Nazwa",
-        "translacja": "Imię bota znaczy tyle, co „lśniący” albo „uderzający”: hipotetyczne *Boleros „the flashing one”, przydomki Balor Béimnech (uderzający), Balor Balcbéimnech (mocno uderzający), Balor Birugderc (przeszywający okiem). To nazwa narzędzia, nie osoby — i pasuje do karty podwójnie, bo jej nazwa też jest narzędziem warsztatu. Moc Balora nie jest ciosem, tylko rytmicznym dobijaniem: jedno otwarcie powieki wykonuje całą robotę za jego wojowników."
-      },
-      {
-        "element": "Mechanika",
-        "translacja": "„When this creature enters, put a +1/+1 counter on each of up to two target creatures” → wejście Balora w świat ludzi zawsze kogoś wzmacniało: jego wojowników (garść przy otwartym oku przytłacza armię — przekaz Cath Maige Tuired) oraz tych, którym służył jako czempion i budowniczy (warownia Rath Breisi dla Bresa). „Warp {2}{W}” (wygnanie na końcu następnej tury i powrót z wygnania) → cała strategia Fomorian na wyspie jest opóźniona i wygnana: topienie dzieci, wieża dla córki, powrót wnuka w dokładnie wyznaczonej turze."
-      },
-      {
-        "element": "Ilustracja",
-        "translacja": "Artysta: Nathaniel Himawan. Kompozycji obrazu nie opisujemy — nie zgadujemy (docs/WORKFLOW.md §3). Sama karta mówi dość: koszt {5}{W} przy ciele 3/4 to machina ciężka i wolna, a typ „Drix Artificer” każe czytać Balora jako rzemiosło wojenne z obsługą — oko jest urządzeniem, które potrzebuje czterech ludzi, pierścienia i chwili, żeby zostało otwarte."
-      },
-      {
-        "element": "Flavor text",
-        "translacja": "„His people watched the Eldrazi rise and the Fomori fall. Never will they watch again.” — jako dokument terenowy: kamień z procy wszedł w otwierane właśnie oko i wyszedł z tyłu czaszki, a wzrok zabił dwudziestu siedmiu Fomorów stojących za Balorem. „Nigdy więcej nie spojrzą” jest w tej historii zdaniem technicznym, nie poetyckim: kto był obsługą oka, ten zginął od oka."
-      },
-      {
-        "element": "Lore/Tło",
-        "translacja": "Edge of Eternities opowiada o przybyszach z międzyprzestrzeni i o tym, że samo przyglądanie się katastrofie jest formą winy. U nas: Tory Island jest w Lebor Gabála Érenn najpierw twierdzą Fomorów (wieża Conanda), a potem siedzibą Balora; wyspa nosi do dziś Dún Bhalair i Tor Mór. Trzeba jednak znać proporcje: folklorystyka (O’Donovan 1856, później H. Morris) ostrzega, że „monopol” Tory na Balora jest w dużej mierze skutkiem druku z XIX w. — przekazy o nim krążyły także w Farney, w Monaghan i nad Gweedore Loch."
-      }
-    ]
-  },
   "tagi": [
     "irlandia",
     "olbrzym",
@@ -128,6 +103,14 @@
       {
         "data": "2026-08-28 22:05",
         "opis": "Dopisano oś proroctwa: druidzi, którzy zatruli oko Balora, przepowiedzieli mu śmierć z ręki wnuka, więc uwięził córkę Ethniu w wieży Tor Mór na Tory Island; z utopionych trojaczków ocalał Lugh, a klęskę upamiętnia jezioro Loch na Súl w Sligo. Dodano źródło oraz obustronne powiązania z Barbarossą (warunek, który sam się spełnia) i drangue (rozstrzygający rzut kamieniem, niebo jako pole bitwy)."
+      },
+      {
+        "data": "2026-08-29 21:36",
+        "opis": "Korekta językowa sekcji II: składnia pierwszego zdania wyglądu i aury."
+      },
+      {
+        "data": "2026-08-30 00:38",
+        "opis": "Audyt Kartoteki: poprawki językowe i doprecyzowanie zdań (odmiana, literówki, spójność z mitem)."
       }
     ]
   }

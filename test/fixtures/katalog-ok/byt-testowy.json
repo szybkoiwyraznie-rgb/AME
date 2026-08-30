@@ -16,31 +16,6 @@
     "lon": 23.85
   },
   "pochodzenie_i_kultura": "folklor testowy",
-  "rezonans": {
-    "klucz_przywolania": "Testowy klucz przywołania.",
-    "tabela": [
-      {
-        "element": "Nazwa",
-        "translacja": "t"
-      },
-      {
-        "element": "Mechanika",
-        "translacja": "t"
-      },
-      {
-        "element": "Ilustracja",
-        "translacja": "t"
-      },
-      {
-        "element": "Flavor text",
-        "translacja": "t"
-      },
-      {
-        "element": "Lore/Tło",
-        "translacja": "t"
-      }
-    ]
-  },
   "natura": {
     "wyglad_i_aura": "o",
     "charakter_i_motywacje": "o",

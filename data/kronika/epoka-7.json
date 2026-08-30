@@ -1,0 +1,203 @@
+{
+  "slug": "epoka-7",
+  "tom": "tom-1",
+  "skit": "pierwszy",
+  "tytul": "Kolejność: nikt nie szedł za pierwszym",
+  "iskra": "Mgła z wąwozu pod Termopilami wyszła w świat szukać rozkazu, który by ją rozwiązał; w Koptos tłuczek z dzbarem stanął na progu cudzego domu; w Waranasi dwa czterookie psy zawyły, bo po drodze przodków szedł ktoś, kto nie był umarły.",
+  "pytanie": "Czy ten, kto stoi pierwszy, jest panem — czy tylko pierwszym, za którym nikt nie idzie?",
+  "uczestnicy": [
+    {
+      "slug": "protostates",
+      "rola": "Pierwszy, którego nikt nie dogania",
+      "kosztUdzialu": 2,
+      "kosztKlucza": 0,
+      "boost": 0,
+      "zwrot": 3,
+      "watkiNaruszone": 1
+    },
+    {
+      "slug": "knecht-z-koptos",
+      "rola": "Rzecz, która nie znała słowa końca",
+      "kosztUdzialu": 2,
+      "kosztKlucza": 0,
+      "boost": 0,
+      "zwrot": 2,
+      "watkiNaruszone": 1
+    },
+    {
+      "slug": "syama-i-sarvara",
+      "rola": "Dwoje oczu jednej drogi",
+      "kosztUdzialu": 2,
+      "kosztKlucza": 0,
+      "boost": 0,
+      "zwrot": 1,
+      "watkiNaruszone": 1
+    }
+  ],
+  "przebieg": "Pełny tekst rozmowy: data/skity/pierwszy.json (uczestnicy zgodni z epoką).",
+  "narrator": {
+    "ocena": [
+      {
+        "kto": "syama-i-sarvara",
+        "kogo": "protostates",
+        "stopien": 2,
+        "kontekst": "przejście obok pierwszego",
+        "komentarz": "Psy nie próbują fantomu pokonać — pokazują mu, że jego front trzyma się tylko pamięci, a nie drogi: on zatrzymuje żywych, a umarłych nie zatrzymywał nigdy."
+      },
+      {
+        "kto": "protostates",
+        "kogo": "knecht-z-koptos",
+        "stopien": 1,
+        "kontekst": "nakaz stania",
+        "komentarz": "Protostates próbuje zatrzymać tłuczek swoim rozkazem, ale knecht słucha wyłącznie słowa końca; pierwszy w szeregu po raz pierwszy odkrywa, że jego front nie znaczy nic dla kogoś, kto niesie wodę."
+      },
+      {
+        "kto": "knecht-z-koptos",
+        "kogo": "syama-i-sarvara",
+        "stopien": 1,
+        "kontekst": "dzban zostawiony przy progu",
+        "komentarz": "Tłuczek nie rozumie drogi przodków, ale zostawia wodę komuś pierwszemu w linii — dar bez adresata, który psy przyjmują jak rzecz, nie jak rozkaz."
+      }
+    ],
+    "podsumowanie": "Trzy porządki pierwszego spotykają się w jednym przejściu: front, który zatrzymuje żywych; rozkaz, który nosi wodę; i droga, która prowadzi umarłych. Żaden nie wie, kto jest pierwszy — a rozwiązanie przychodzi z boku: pierwszy istnieje tylko dopóki ktoś idzie za nim, a woda zostaje na progu, bo nikt nie wypowiedział słowa końca."
+  },
+  "konsekwencje": {
+    "os": {
+      "mit": -1,
+      "racjonalizacja": 1,
+      "opis": "Kolejność przestaje być święta: ludzie zaczynają widzieć rozkaz jako umowę, a nie ład świata — pieśń o pierwszym w szeregu coraz częściej kończy się pytaniem, kto pierwszy, a nie „stań”."
+    },
+    "relacje": [
+      {
+        "od": "protostates",
+        "do": "knecht-z-koptos",
+        "kierunek": "wzmocnienie",
+        "opis": "Tłuczek staje przy progu i zostawia wodę — fantom dostaje kogoś obok pierwszej linii, choć nie na swój rozkaz; cień rośnie, bo jego pozycja zostaje opowiedziana komuś, kto nie umie się cofnąć."
+      },
+      {
+        "od": "syama-i-sarvara",
+        "do": "protostates",
+        "kierunek": "schlodzenie",
+        "opis": "Psy przechodzą mimo i mówią wprost: kto już nie oddycha, tego pierwszy i tak nie zatrzyma — front traci jedyną rzecz, na której stał, czyli strach przed przejściem."
+      },
+      {
+        "od": "knecht-z-koptos",
+        "do": "syama-i-sarvara",
+        "kierunek": "neutralna",
+        "opis": "Woda zostaje na progu drogi przodków — dar bez adresata; psy przyjmują go jak rzecz, którą niesie się dalej, nie jak rozkaz, który trzeba wykonać."
+      }
+    ],
+    "zasieg": [
+      {
+        "slug": "protostates",
+        "delta": 0.012,
+        "opis": "Pieśń o pierwszym z pierwszego szeregu obiega wąwozy: fantom rośnie u tych, którzy pamiętają, że ktoś stał pierwszy — nawet gdy nikt już nie idzie."
+      },
+      {
+        "slug": "knecht-z-koptos",
+        "delta": 0.01,
+        "opis": "Opowieść o tłuczku, który pierwszy zostawił wodę przy progu, uczy słuchaczy kończyć rozkazy słowem — Koptos zaczyna zamykać drzwi po zmroku."
+      },
+      {
+        "slug": "syama-i-sarvara",
+        "delta": 0.005,
+        "opis": "Droga przodków zyskuje nowe podanie: woda zostawiona przez pierwszego — pielgrzymi w Waranasi zaczynają stawiać dzbany u bramy."
+      }
+    ],
+    "dominacje": [
+      {
+        "kultura": "grecja",
+        "kult": "protostates",
+        "delta": 0.012
+      },
+      {
+        "kultura": "grecja",
+        "kult": "knecht-z-koptos",
+        "delta": 0.01
+      },
+      {
+        "kultura": "indie",
+        "kult": "syama-i-sarvara",
+        "delta": 0.005
+      }
+    ],
+    "pozycje": [
+      {
+        "slug": "protostates",
+        "status": "wzmocniony",
+        "opis": "Stoi dalej, ale teraz wie, po co stoi: dopóki ktoś idzie za nim — inaczej pozostaje tylko cieniem bez frontu."
+      },
+      {
+        "slug": "knecht-z-koptos",
+        "status": "przemieniony",
+        "opis": "Zostawia dzban i słowo końca przestaje być jedynym wyjściem: rzecz, która niosła wodę, po raz pierwszy sama wybiera, gdzie ją postawić."
+      },
+      {
+        "slug": "syama-i-sarvara",
+        "status": "odporny",
+        "opis": "Przechodzą przez każdy front, bo droga przodków nie zna pierwszeństwa — żadna tarcza i żaden rozkaz ich nie zatrzyma."
+      }
+    ],
+    "watki": [
+      {
+        "id": "wedrowny-dom-empusy",
+        "stan": "otwarty",
+        "opis": "Czy słowo-poznanie straci moc, gdy pojawi się ktoś, kto mówi „nie słyszę rozkazu”?",
+        "byty": [
+          "empusa-korynt"
+        ]
+      },
+      {
+        "id": "warunek-barbarossy",
+        "stan": "otwarty",
+        "opis": "Dlaczego cesarz woli płacić, żeby gość wchodził — i czy dawny dług da się oddać komuś innemu?",
+        "byty": [
+          "barbarossa-kyffhaeuser",
+          "kentaur-pelion",
+          "egungun"
+        ]
+      },
+      {
+        "id": "kres-indry",
+        "stan": "otwarty",
+        "opis": "Czy kres można oddać, czy tylko przekroczyć — i co zostaje z pierwszego, gdy nikt nie idzie za nim?",
+        "byty": [
+          "indra"
+        ]
+      },
+      {
+        "id": "niewinny-bierca",
+        "stan": "otwarty",
+        "opis": "Czy ten, kto bierze, nie wiedząc, że bierze, jest gościem czy złodziejem — a woda zostawiona na progu to dar czy dług?",
+        "byty": [
+          "kentaur-pelion",
+          "pandora",
+          "empusa-korynt"
+        ]
+      },
+      {
+        "id": "pierwszy-w-linii",
+        "stan": "otwarty",
+        "opis": "Nowy: czy pierwszy w linii jest panem, czy tylko pierwszym narzędziem porządku — i kto wypowiada słowo końca?",
+        "byty": [
+          "protostates",
+          "knecht-z-koptos",
+          "syama-i-sarvara"
+        ]
+      }
+    ]
+  },
+  "meta": {
+    "utworzono": "2026-08-30 10:30",
+    "autor": "agent Areny — Pętla Jakości C2 (Epoka VII Kroniki)",
+    "wersja": 1,
+    "poprzednik": "epoka-6",
+    "uwagi": "Pierwsza epoka z odwołaniem meta.poprzednik (S3 graf epok); wątek czwarty-stol pozostaje zamknięty, otwarty nowy: pierwszy-w-linii."
+  },
+  "grafika": {
+    "obraz": "assets/wizualizacje/kronika-tom-1-epoka-7.jpg",
+    "podpis": "Kolejność: nikt nie szedł za pierwszym",
+    "prompt": "Hyperrealistic cinematic photograph, ultra-wide 21:9 anamorphic frame. Narrow mountain gorge at first light: a silent warrior in a plumed Corinthian helmet, crimson tunic and bronze greaves, his face an empty dark void beneath the helm (Protostates); approaching a small wooden pestle in linen rags with a knot for a head, carrying a brass water jar (Knecht); from the left two enormous dogs, one coal-black and one brown-spotted, each with a second pair of eyes above the normal ones (Syama and Sarvara). Cold mist, wet stones, a single trail. Mood of three orders of 'first' meeting at a crossing. 35mm anamorphic f/1.8, shallow depth of field, creamy bokeh, dramatic lighting, hyper-realistic textures, 70mm film stock. No text, no letters, no inscriptions, no modern objects.",
+    "styl": "hiperrealistyczna kinowa fotografia (21:9, 70mm, anamorfika)"
+  }
+}

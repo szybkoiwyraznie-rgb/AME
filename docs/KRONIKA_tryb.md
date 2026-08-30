@@ -802,3 +802,13 @@ delta, ciągłości wątków i oś zamkniętą.
    deterministycznie (15 bytów); test pilnuje spójności `tom-1.json`.
 4. Kolejna epoka może iść w stronę otwartego wątku `kres-indry`,
    `czwarty-stol` albo `warunek-barbarossy`, gdy właściciel potwierdzi temat.
+
+---
+
+## 21.9 Analiza rozwoju i pomysły (2026-08-30)
+
+Pełna analiza tego, co renderują raporty Epok/Tomu, a co ginie w danych
+(`iskra`, `pytanie`, `przebieg`, `relacje`, `dominacje`, trend osi i paliwa):
+`docs/plans/ANALIZA_kronika-rozwoj-2026-08-30.md`. Propozycje S1 (wykresy
+i tabele w szablonach — generator-only), S2 (feed/filtr/deep-link),
+S3 (graf wątków). Status: **propozycje — do decyzji właściciela.**

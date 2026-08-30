@@ -65,31 +65,6 @@
     "pierwotne": "odłamek miedzi z jej nogi — zostaje na gościńcu po zniknięciu reszty; nikt go tam nie nosił, a kowal rozpoznaje w nim metal odlewany, nie kuty",
     "wtórne": "gałka czosnku zebrana z rozstajnego ołtarza Hekaty — nie amulet: kwit za spokojną noc, który trzeba zjeść przed świtem, żeby rachunek był zapłacony"
   },
-  "rezonans": {
-    "klucz_przywolania": "„Illusory Demon” to {1}{U}{B}, Demon Illusion 4/3 z lataniem, który ma jedną regułę życia: „When you cast a spell, sacrifice this creature.” Empusa działa dokładnie tak — istnieje dopóty, dopóki cała twoja uwaga gra jej scenę. Wesele jest zaklęciem rzuconym raz na całe życie: dopóki nic nowego nie wybucha w twoim świecie, złoto jest złotem, a oblubienica oblubienicą. Pierwszy nowy akt — pytanie Apolloniosa, obelga towarzyszów, własne wątpliwości — ląduje, jak na stacku w rulingu karty, NAD czarem wesela i najpierw to on się wykonuje: demon jest ofiarą, zanim gość zdąży dokończyć gest. 4/3: potęga pozoru (4), kruchość istoty (3). Latanie: przychodzi drogą nocną, znad ziemi, jak wszystko, co jest tylko światłem.",
-    "tabela": [
-      {
-        "element": "Nazwa",
-        "translacja": "Illusory Demon mówi wprost, kim jest: demonem zrobionym z iluzji — dokładnie jak Suda, która nazywa empusę „phantasma daimonios”. Przekłady karty trzymają kategorię: włoski „Demone Irreale” (irrealny), rosyjski „Prizrachny demon” (przywidzenie), japoński „gen’ei no akuma” (demon-zjawa). Nazwa nie opisuje wyglądu, tylko mechanikę istnienia: coś, co jest pokazywane, nie dane."
-      },
-      {
-        "element": "Mechanika",
-        "translacja": "„When you cast a spell, sacrifice this creature” to reguła koryńska zapisana na karcie: empusa tuczy Menipposa dopóty, dopóki nie zacznie się niczego innego — a wtedy sam akt (wypowiedź, obelga, pytanie) wykłada ją jak ruling z 2009-05-01: zdolność wchodzi na czar i wykonuje się przed nim. „Flying” to droga nocna i przyjście bez drzwi. 4/3 — pozór daje siłę cztery, istota ma trzy. Dobra cena za bycie, które kończy się pierwszym cudzym słowem."
-      },
-      {
-        "element": "Ilustracja",
-        "translacja": "Artysta: Nils Hamm (druk ARB #21). Kompozycji obrazu nie opisujemy — nie zgadujemy (docs/WORKFLOW.md §3). Istotne jest to, co o karcie mówią dane: demon bez sceny bitwy, w secie, którego każda karta jest mieszaniną dwóch światów — jak empusa, która nigdy nie jest tylko kobietą ani tylko bestią."
-      },
-      {
-        "element": "Flavor text",
-        "translacja": "„In the Maelstrom, a trick of the light can feast on human flesh.” — to jest definicja empusy, zapisana po angielsku dwanaście wieków po Filostracie: złudzenie światła, które żywi się ludzkim ciałem. Menippos był właśnie ofiarą triku światła; Apollonios jedynie przerwał rzutnię."
-      },
-      {
-        "element": "Lore/Tło",
-        "translacja": "Alara Reborn (2009) to set narodzony z Maelstromu — surowego, pomieszania światów, w którym rzeczy powstają z mieszaniny, nie z porządku. Empusa należy do tej samej rodziny: jest zjawą ułożoną z cudzych pragnień, kategorii i światła. A że w ARB każda karta ma więcej niż jeden kolor, demon-iluzja jest kwintesencją setu: nic w nim nie jest jednolite — także jego istnienie."
-      }
-    ]
-  },
   "tagi": [
     "grecja",
     "fantom",
@@ -108,6 +83,10 @@
     {
       "slug": "sfinks-teby",
       "opis": "Empusa i Sfinks to kobieco-potworne istoty zesłane przez bogów, by nękać konkretny region — korynckie drogi i tebańską drogę. Obie żywią się ludźmi, którzy wpadają w ich pułapkę, i obie da się pokonać tylko wtedy, gdy odbierze się im ich przewagę: jedną płonącą nogę, drugiej pewność zagadki."
+    },
+    {
+      "slug": "pandora",
+      "opis": "Obie są gośćmi, których lepiej nie przyjmować: Empusa sama jest zaproszeniem — pałac, srebra, uczta — a Pandora jest darem z zakazem. Przy obu wystarczy jedno słowo, żeby rozpruć całość: nazwać potwór po imieniu (Filostrat IV.21–25) albo nie otwierać pokrywy (Hezjod 42–105). Różnica: Empusę zrywa trzeźwa obelga, Pandorę — sama ciekawość; obie znikają w momencie, gdy ktoś powie właściwą rzecz w złym momencie."
     }
   ],
   "meta": {
@@ -117,6 +96,14 @@
       {
         "data": "2026-08-28 19:40",
         "opis": "Dopisano literackie drugie życie sceny korynckiej: przez „Anatomię melancholii” Roberta Burtona (1621) trafiła ona do poematu „Lamia” Johna Keatsa (1820) i do goetheańskiej „Oblubienicy z Koryntu”, a jądro pozostaje to samo — rozpoznanie zjawy przez rozum rozwiewa i ją, i szczęście, które na niej stało. Trzy nowe źródła z adresami (Filostrat IV.25 na Livius, Burton na Project Gutenberg, Keats w Poetry Foundation)."
+      },
+      {
+        "data": "2026-08-29 21:36",
+        "opis": "Korekty językowe sekcji II („którzy wpadają”, „precz gna obelga”) oraz powiązania ze Sfinksem."
+      },
+      {
+        "data": "2026-08-30 01:35",
+        "opis": "Pogłębienie sieci powiązań (C1): cztery nowe pary połączeń między bytami, oparte na źródłach już odnotowanych w kartotekach (Hezjod „Prace i dnie” 60–68, pseudo-Apollodoros „Biblioteka” 1.9.26, Filostrat IV.21–25, Lukian „Filopseudes” 34–36, Herodot 7.104, lasmgiel.pl/„Zaraza nadchodzi i odchodzi”)."
       }
     ]
   }

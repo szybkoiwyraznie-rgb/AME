@@ -142,27 +142,50 @@
       {
         "id": "odzwierni",
         "stan": "zamkniety",
-        "opis": "Wątek przymknięty: pieśń, powieka i imię to trzy różne progi, nie jeden wspólny odźwierny."
+        "opis": "Wątek przymknięty: pieśń, powieka i imię to trzy różne progi, nie jeden wspólny odźwierny.",
+        "byty": [
+          "egungun",
+          "balor",
+          "empusa-korynt"
+        ]
       },
       {
         "id": "czwarty-stol",
         "stan": "otwarty",
-        "opis": "Czwarty stół z Epoki I wciąż czeka: gość, który wziął sam, czy przodek, który umie wybaczyć."
+        "opis": "Czwarty stół z Epoki I wciąż czeka: gość, który wziął sam, czy przodek, który umie wybaczyć.",
+        "byty": [
+          "pandora",
+          "empusa-korynt",
+          "morowa-panna"
+        ]
       },
       {
         "id": "warunek-barbarossy",
         "stan": "otwarty",
-        "opis": "Dlaczego cesarz woli płacić, żeby gość wyszedł, zamiast przyjąć go przy stole?"
+        "opis": "Dlaczego cesarz woli płacić, żeby gość wyszedł, zamiast przyjąć go przy stole?",
+        "byty": [
+          "barbarossa-kyffhaeuser",
+          "kentaur-pelion",
+          "egungun"
+        ]
       },
       {
         "id": "wedrowny-dom-empusy",
         "stan": "otwarty",
-        "opis": "Czy ludzie nauczą się wypowiadać słowo-poznanie w porę, czy samo słowo stanie się rytuałem, który chybia?"
+        "opis": "Czy ludzie nauczą się wypowiadać słowo-poznanie w porę, czy samo słowo stanie się rytuałem, który chybia?",
+        "byty": [
+          "empusa-korynt"
+        ]
       },
       {
         "id": "imie-na-progu",
         "stan": "otwarty",
-        "opis": "Nowy: czy istnieje jedno słowo, które rozwiązuje każdy próg — czy każde drzwi mają własne imię?"
+        "opis": "Nowy: czy istnieje jedno słowo, które rozwiązuje każdy próg — czy każde drzwi mają własne imię?",
+        "byty": [
+          "egungun",
+          "selkie-sule-skerry",
+          "indra"
+        ]
       }
     ]
   },
@@ -170,5 +193,11 @@
     "utworzono": "2026-08-29 10:40",
     "autor": "agent Areny — trzecia epoka Tomu I (wątek odźwierni)",
     "wersja": 1
+  },
+  "grafika": {
+    "obraz": "assets/wizualizacje/kronika-tom-1-epoka-3.jpg",
+    "podpis": "Odźwierni: zapraszany, otwierany i ten, który jest drzwiami",
+    "prompt": "Hyperrealistic cinematic photograph, ultra-wide 21:9 anamorphic frame. Night before a colossal megalithic doorway whose threshold glows with embers: a tall figure in layered ceremonial fabrics with cowrie shells and mirrors, arms raised (Egungun); in the center an immense giant with a single eye in the middle of his forehead, heavy eyelid held open by a leather ring, four tiny warriors kneeling (Balor); the dark stone doorway itself is the third presence. Torchlight, ash in the wind, starry sky. Mood of three kinds of gate and a question about who is the door. 35mm anamorphic f/1.8, shallow depth of field, creamy bokeh, dramatic rim lighting, hyper-realistic textures, 70mm film stock. No text, no letters, no inscriptions, no modern objects.",
+    "styl": "hiperrealistyczna kinowa fotografia (21:9, 70mm, anamorfika)"
   }
 }

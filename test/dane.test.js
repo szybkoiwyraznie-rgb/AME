@@ -102,7 +102,7 @@ test('indeks v3: tagi z kategorią i opisem, pasma w kolejności kanonu', async 
     assert.ok(meta.opis.length > 12, `${tag}: brak opisu w indeksie`);
   }
   const ile = Object.fromEntries(indeks.kanon.kategorie.map((k) => [k.id, k.ile]));
-  assert.equal(ile.kultura, 10, 'dziesięć kultur źródłowych w kartotece');
+  assert.equal(ile.kultura, 11, 'jedenaście kultur źródłowych w kartotece');
 });
 
 test('przepis CI jest wklejalny: YAML bez znaczników HTML i z wymaganymi kluczami (L9)', async () => {
@@ -153,8 +153,6 @@ test('polska proza wpisów i skitów nie zawiera pisma japońskich/chińskich an
     for (const pole of pola) sprawdź(`${w.slug}.${pole}`, w[pole]);
     for (const [pole, wartosc] of Object.entries(w.natura ?? {})) sprawdź(`${w.slug}.natura.${pole}`, wartosc);
     for (const [pole, wartosc] of Object.entries(w.trofea ?? {})) sprawdź(`${w.slug}.trofea.${pole}`, wartosc);
-    sprawdź(`${w.slug}.rezonans.klucz_przywolania`, w.rezonans?.klucz_przywolania);
-    (w.rezonans?.tabela ?? []).forEach((r, i) => sprawdź(`${w.slug}.rezonans.tabela[${i}]`, r?.translacja));
     (w.dokumentacja ?? []).forEach((r, i) => sprawdź(`${w.slug}.dokumentacja[${i}]`, r?.pozycja));
     (w.powiazania ?? []).forEach((r, i) => sprawdź(`${w.slug}.powiazania[${i}]`, r?.opis));
   }

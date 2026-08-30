@@ -1,7 +1,7 @@
 # ROADMAP — Archiwum Manifestacji Eterycznych
 
-> Plan faz; status aktualizowany na końcu każdej sesji (ostatnio: 2026-08-28,
-> M15 + dwie Pętle Jakości). Szczegóły bieżącego zadania żyją w
+> Plan faz; status aktualizowany na końcu każdej sesji (ostatnio: 2026-08-29,
+> sesja po PR #9: audyt + Pętla Jakości C1→C3→C2). Szczegóły bieżącego zadania żyją w
 > `docs/plans/PLAN_*.md`.
 > Nowe pomysły → `docs/BACKLOG.md`.
 
@@ -141,7 +141,8 @@ zmianie, niezależnie od „polerowania”.
 - [x] **A4/A5** pinezka większa + pole trafienia, badge nazwy 19 px z pleckami.
 - [x] **B1** kolejność sekcji jako standard: UI, przykłady, manual (ADR 0011);
       uściślenie właściciela (2026-08-28): numeracja idzie za kolejnością —
-      I Wizualizacja … V Rezonans, od v1.3 protokołu (ADR 0012).
+      I Wizualizacja … V SKITy (od v1.8 bez „Rezonansu” — ADR 0022),
+      układu v1.3-1.7 pilnował ADR 0012.
 - [x] **B2** kartoteka jako pełnoekranowa warstwa, wizualizacja na całą
       szerokość opisu (ADR 0010).
 - [x] **B3** `dokumentacja[].url` w schemacie i walidatorze, linki w UI,
@@ -156,8 +157,9 @@ zmianie, niezależnie od „polerowania”.
 
 - [x] **SKITy** (ADR 0013, PROTOKÓŁ §8): format danych `data/skity/`,
       walidator (2–4 uczestników, unikalny skład, 60–300 słów, zakaz żargonu
-      gry), indeks v2, Baza Skitów w UI (przycisk „✎ skity"), sekcja VI pod
-      kartą bytu, deep-link `#skit:<slug>`; pierwszy SKIT „PŁÓTNO I KAMIEŃ".
+      gry), indeks v2, Baza Skitów w UI (przycisk „✎ skity"), sekcja V pod
+      kartą bytu (od v1.8; wcześniej VI), deep-link `#skit:<slug>`; pierwszy
+      SKIT „PŁÓTNO I KAMIEŃ".
 - [x] **C3 w Pętli Jakości** (nad C2): dopisywanie SKITa o nowym składzie.
 - [x] **„Co nowego"** (ADR 0014): feed `aktualizacje[]` liczony z `meta`
       (powstania i zmiany wpisów oraz skitów), najnowsze na górze, przycisk
@@ -173,7 +175,7 @@ zmianie, niezależnie od „polerowania”.
       spojrzenie), selkie → egungun (władza w rzeczy okrywającej ciało); backlinki
       z indeksu.
 - [x] C3: SKIT „ZNAK I LICZBA” (unikalny skład balor + selkie-sule-skerry, 248
-      słów) → sekcja VI obu kart i pozycja w feedzie.
+      słów) → sekcja V obu kart (od v1.8) i pozycja w feedzie.
 - [x] Stan bramy: `.github/workflows/ci.yml` na `main` naprawiony przez
       właściciela (PR #3) i włączony do gałęzi sesji merge’em; w repo została receptura + test
       „przepis CI jest wklejalny” pilnują formy (L9, L12).
@@ -381,9 +383,11 @@ zmianie, niezależnie od „polerowania”.
       LOD treści (`woda: 4`, miasta `4/7/10`), asynchroniczne `fetch` w `app.js`,
       panel `#przycisk-warstwy`, style CSS dla obu motywów, assety
       `rivers-2km5.json`, `lakes-2km5.json`, `miasta.json`, testy przed i po.
-- [x] **Obecny zakres:** rzeki + jeziora + miasta. Drogi, szczyty, lasy
-      i wysokość n.p.m. wymagają źródła offline — opisane jako plan
-      w `docs/ASSETS.md` i ADR 0020.
+- [x] **Obecny zakres:** rzeki + jeziora + miasta (+ M1–M3 z 2026-08-30:
+      szczyty/POI, miejsca historyczne, hipsometria, podkłady online).
+      Drogi i wysokość n.p.m. w wektorze wymagają źródła offline — opisane
+      jako plan w `docs/ASSETS.md` i ADR 0020. Warstwy „lasy/urban/morza”
+      zrecenzowane i usunięte (2026-08-30).
 - [ ] Drogi, POI/szczyty, kompleksy leśne i kolorowa wysokość n.p.m.
       (po znalezieniu wiarygodnego źródła danych offline).
 
@@ -399,7 +403,8 @@ zmianie, niezależnie od „polerowania”.
       niej na mapie (M7, PR #6; do akceptacji właściciela przed live).
 - [x] Czytelny kanon tagów i ich prezentacja (ADR 0016): słownik w danych,
       limity kategorii w walidatorze, pasek w pasmach z licznikami i opisami.
-- [ ] Strona tagu (filtr + lista wpisów), eksport PDF kartoteki (media print).
+- [x] Strona tagu — filtr mapy + lista wpisów (C2 pętla 2026-08-30, PR #10).
+- [ ] Eksport PDF kartoteki (media print).
 
 ## F3 — Publikacja
 
@@ -559,3 +564,27 @@ Pętla jakości wokół Kroniki + dalsza implementacja:
       `pointerenter/pointerleave`.
 - [x] Czytelnia Kronik na osobnym porcie (katalog `docs`, `/` = dokument),
       mapa działa dalej na porcie głównym aplikacji.
+
+## Pętla Jakości — sesja 2026-08-29 (po scaleniu PR #9) — ✅ PR #10
+
+- [x] **Audyt B** PR #9 (nawigacja + daty w stopkach + buildTime) i rzut oka na
+      PR #8: zieloność bramy, zgodność z ADR, znalezione defekty (patrz niżej).
+- [x] **Naprawa audytowa:** backfill `meta.modyfikacje` po PR #8 (17 skitów +
+      14 wpisów zmienionych bez wpisu w meta — feed „Co nowego” ich nie
+      pokazywał); nieaktualny komentarz w `app/ui.js` doprowadzony do stanu.
+- [x] **C1** `agni`: trzy poziomy obecności (ziemia/błyskawica/słońce), siedem
+      języków obrzędowych i imiona (Pāvaka, Havyavāhana, Dhumaketu), świadek
+      saptapadi; źródła 3 → 6 (Rigweda 1.1 Griffith, Wikipedia, Agni Purana).
+- [x] **C1** `sfinks-teby`: wariant Pausaniasza (nieślubna córka Lajosa i
+      wyrocznia Kadmosa; piratka z Anthedonu), zagadka od Muz (Apollodor 3.5.8);
+      źródła 3 → 4 (Pauzaniasz 9.26.2, Perseus).
+- [x] **C3** SKIT „DZIEŃ WOLNEGO” (`data/skity/dzien-wolnego.json`) — trio
+      Agni × Ben-Varrey × Kannon (unikalny skład, 269 słów, rejestr lekki v1.6);
+      trzy byty bez żadnego skitu dostały debiut.
+- [x] **C2** obsługa parametrów zapytania w aplikacji: `?q=`, `?action=wylosuj`,
+      `?action=powiazania` (czysta `akcjeZZapytania` w `app/ui.js` + testy +
+      wpięcie w `start()`); naprawia martwe linki z paska Kroniki (PR #9).
+      Dodatkowo `aria-pressed` przycisku motywu w `tools/kronika.mjs`.
+- [x] Weryfikacja: `npm test` **164/164**, `npm run build` + `npm run check`
+      zielone; sprawdzenie na żywo w headless Chromium (filtr, powiązania,
+      losowanie — wszystkie akcje z Kroniki działają).

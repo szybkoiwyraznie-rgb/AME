@@ -121,3 +121,30 @@ test('C4: nad miastem kursor to strzałka, nie łapka, a pole trafienia łapie w
   );
   assert.ok(trafienie, 'brak reguły pointer-events: all dla pola trafienia miasta');
 });
+
+test('B: POI i miejsca historyczne — kursor strzałka, pole trafienia jak miasta', async () => {
+  const [, css] = await Promise.all([readFile(MAPA, 'utf8'), readFile(STYLE, 'utf8')]);
+  const reguly = regulyCss(css);
+  for (const warstwa of ['poi', 'historia']) {
+    const punkt = reguly.find(
+      ({ selektor, cialo }) =>
+        selektor.includes('warstwy-szczegolow') &&
+        selektor.includes(`.${warstwa} .punkt`) &&
+        /cursor\s*:\s*default/.test(cialo)
+    );
+    assert.ok(punkt, `brak reguły cursor: default dla .warstwy-szczegolow .${warstwa} .punkt`);
+    const trafienie = reguly.find(
+      ({ selektor, cialo }) =>
+        selektor.includes('warstwy-szczegolow') &&
+        selektor.includes(`.${warstwa} .trafienie`) &&
+        /pointer-events\s*:\s*all/.test(cialo)
+    );
+    assert.ok(trafienie, `brak reguły pointer-events: all dla pola trafienia .${warstwa}`);
+  }
+});
+
+test('minimalna czcionka aplikacji: 12px — żadna mniejsza (recenzja właściciela)', async () => {
+  const css = await readFile(STYLE, 'utf8');
+  const male = css.match(/font-size:\s*(?:9|10|11|11\.5)px/g) || [];
+  assert.deepEqual(male, [], `mniejsze niż 12px: ${male.join(', ')}`);
+});

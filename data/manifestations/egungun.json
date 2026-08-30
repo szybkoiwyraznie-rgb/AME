@@ -29,7 +29,7 @@
     "charakter_i_motywacje": "Egungun to nie kostium, lecz powracający przodek: błogosławi dzieci, rozsądza spory w rodzie, ostrzega przed upadkiem obyczajów i ściga winnych. Wchodzi w interakcje z ludźmi, bo śmierć nie zrywa przynależności do linii — ìdílé trwa po obu stronach granicy światów (ayé i ọ̀run). Jest żywym sumieniem społeczności: wymusza na żywych standardy moralne minionych pokoleń, a swoją obecnością potwierdza, że kontrakt pokoleń nie wygasł.",
     "zdolnosci": "Opętanie naczynia — ciało maskarona staje się miejscem, w którym przebywa duch przodka (płótna kryją też „lekarstwa”, substancje ochronne i przedmioty przywołujące ducha); mowa zza zasłony innym, nieludzkim, wysokim i nosowym głosem; błogosławieństwo płótnem (dotyk głów dzieci i wiernych); sąd i kara — egungun goni i chłoszcze przewinionych (bicz albo kije nosi obsługa); pośrednictwo między ayé a ọ̀run — uzdrawianie sporów rodu; w dawnych czasach rozpoznawanie czarownic i egzekwowanie porządku moralnego i prawnego wspólnoty; pełna konspiracja tożsamości — kto odsłoni twarz naczynia, łamie fundamentalne tabu.",
     "slabosci_i_metody_pokonania": "Egungun nie jest przeciwnikiem do zabicia — jest przodkiem do uhonorowania. Skuteczne „metody konfrontacji” są rytualne: ofiary (koguty, kozy, gołębie — krew wylewana na płótna dla utrzymania ich mocy) i modlitwy w sanktuarium przodków; oríkì — pochwalne pieśni genealogiczne śpiewane przez kobiety, które przywołują przodka po imieniu i które duch przyjmuje jako należną cześć; interwencja Alapini i starszyzny stowarzyszenia maskarady (na czele stoi Alagba/Alagbaa); kapłanka kultu (Iya Agan, przewodniczki procesji Iyamokun) jako pośredniczka; bezwzględne przestrzeganie tabu dystansu i tajemnicy przez niewtajemniczonych. Gdy maskaron wymknie się spod kontroli, równowagę przywraca ofiara i rytualna interwencja starszyzny — siła fizyczna jest bezradna, bo nie walczy się z własnym przodkiem.",
-    "preferencje": "Lubi: rytm bàtá i dùndún, oríkì przodków, ofiary w sanktuariach, śpiewające tłumy i festiwalowe pochody przez miasto (w Òyó — sierpniowy festiwal Odún Egúngún zakończony na dziedzińcu pałacu królewskiego przez Obę, czyli Aláàfin). Ceni tkaninę i strojność: nagość Jorubowie równają z niemowlęctwem, szaleństwem lub brakiem odpowiedzialności, a bogaty strój znaczy moc i prestiż rodu. Nielubi: braku czci, złamanych przysiąg i waśni w rodzie, naruszenia tabu przez niewtajemniczonych (zwłaszcza próby rozpoznania człowieka pod płótnem), profanacji płócien i domów masek (ilé egúngún)."
+    "preferencje": "Lubi: rytm bàtá i dùndún, oríkì przodków, ofiary w sanktuariach, śpiewające tłumy i festiwalowe pochody przez miasto (w Òyó — sierpniowy festiwal Odún Egúngún zakończony na dziedzińcu pałacu królewskiego przez Obę, czyli Aláàfin). Ceni tkaninę i strojność: nagość Jorubowie równają z niemowlęctwem, szaleństwem lub brakiem odpowiedzialności, a bogaty strój znaczy moc i prestiż rodu. Nie lubi: braku czci, złamanych przysiąg i waśni w rodzie, naruszenia tabu przez niewtajemniczonych (zwłaszcza próby rozpoznania człowieka pod płótnem), profanacji płócien i domów masek (ilé egúngún)."
   },
   "dokumentacja": [
     {
@@ -67,31 +67,6 @@
     "pierwotne": "Kosmyk płótna z wiru egúngún (relikwia — przechowywana w sanktuarium rodu, nie w prywatnej kolekcji)",
     "wtorne": "Kauria zhaftowana na płótnach maskarady"
   },
-  "rezonans": {
-    "klucz_przywolania": "Krumar Initiate to żyjący NOWICJUSZ kultu przodków: zapłaciwszy własną siłą życiową (Pay X life), przywołuje ducha, który materializuje się obok niego jako biały Duch (token X/X), albo sam wzrasta w mocy. To dokładna struktura egúngún: wybrany członek rodu zostaje wtajemniczony i staje się naczyniem, przez które przodek — ara ọ̀run, „mieszkaniec nieba” — powraca do świata żywych w cielesnej, zamaskowanej postaci. Flavor karty (głosy duchów rodu witające nowego „sprout of our Kin-Tree”) brzmi jak zapis inicjacyjnego objawienia w kulcie egúngún.",
-    "tabela": [
-      {
-        "element": "Nazwa",
-        "translacja": "„Initiate” = nowicjusz przyjmowany do grona wtajemniczonych — w kulcie egúngún tylko wybrane osoby z konkretnych rodów przechodzą inicjację do stowarzyszenia maskarady. „Krumar” to w lore Tarkiru sieroty z wrogich klanów przyswojone przez rody Abzan jako „bond-kin” — przyjęcie kogoś do linii rodowej; u Jorubów linia (ìdílé) również liczy się bardziej niż krew: przynależność do rodu decyduje o dostępie do przodków."
-      },
-      {
-        "element": "Mechanika",
-        "translacja": "{X}{B}, {T}, Pay X life: endures X → inicjant płaci własną życiową siłą, by przodek się objawił: token X/X white Spirit to ara ọ̀run przybierający cielesną postać, a alternatywa (+1/+1 counters) to wzmocnienie samego naczynia przez moc przodka. „Activate only as a sorcery” → rytuał wymaga czasu i oprawy, nie wykonuje się go „w biegu”. Human Cleric → żyjący kapłan-inicjant, nie sam duch."
-      },
-      {
-        "element": "Ilustracja",
-        "translacja": "Artysta: Josu Solano; watermark rodu Abzan — podpis rodowy, nie jednostkowy: kult egúngún jest własnością rodów i ich domów masek (ilé egúngún), nigdy osoby prywatnej. (Kompozycji obrazu nie opisujemy — nie zgadujemy.)"
-      },
-      {
-        "element": "Flavor text",
-        "translacja": "„Welcome, newest sprout of our Kin-Tree” — duchy zmarłych rodu witają żyjącego nowicjusza w linii. Jorubskie źródła oddają ten sam stan: przodkowie są „odejści, lecz nie umarli” („departed but not deceased”, Drewal–Pemberton 1989) i wracają do społeczności, którą znali; inicjacja jest przyjęciem do tego dialogu obu światów."
-      },
-      {
-        "element": "Lore/Tło",
-        "translacja": "Na Tarkirze rody Abzan czczą duchy przodków skupione wokół Drzewa Krewnych, a „spirit speakers” przywołują je rytualnie; w naszym świecie odpowiednikiem jest rodowy kult egúngún Jorubów z Oyo — coroczny festiwal (w Òyó w sierpniu), kapłan Alapini przywołujący duchy przodków, chóry kobiet śpiewające oríkì i domy masek przechowujące płócienne kostiumy."
-      }
-    ]
-  },
   "tagi": [
     "joruba",
     "duch-przodkow",
@@ -128,6 +103,14 @@
       {
         "data": "2026-08-28 16:20",
         "opis": "Rozbudowa opisu: skąd bierze się „moce ukryte” w nazwie, jak narastają warstwy płócien pokolenie po pokoleniu (najstarsze przy ciele, pierwsza warstwa jak całun grzebalny), nieludzki głos zza zasłony, wir tańca jako przejście między światami oraz role Alagby, kapłanki i śpiewaczek oríkì. Dopisano trzy źródła z adresami (Bolaji Campbell „Fabric of Immortality”, Wikipedia, Muzeum Snite) i powiązania z selkie, empusą oraz Barbarossą."
+      },
+      {
+        "data": "2026-08-29 21:36",
+        "opis": "Korekta językowa sekcji V: formy czasownika w tabeli klucza przywołania."
+      },
+      {
+        "data": "2026-08-30 00:38",
+        "opis": "Audyt Kartoteki: poprawki językowe i doprecyzowanie zdań (odmiana, literówki, spójność z mitem)."
       }
     ]
   }

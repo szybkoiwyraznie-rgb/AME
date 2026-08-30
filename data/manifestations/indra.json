@@ -28,7 +28,7 @@
     "wyglad_i_aura": "Potężny wojownik z jaśniejącą, spiżowo-brązową skórą, czarnymi długimi włosami i złotą koroną; ciało pokryte tysiącem oczu — pamiątką po klątwie Gautamy, która zamieniła się w znak wszechwidzącego władcy. Jedną ręką dzierży wadżrę, drugą łuk z tęczy. Obecność poznaje się po ozonie i zapachu deszczu na gorącym kamieniu, po nagłym grzmocie, kiedy nadciąga burza, i po tym, że rzeki nagle zaczynają płynąć pełne.",
     "charakter_i_motywacje": "Dumny, żądny uciech władca nieba: pije somę, ucztuje, wysyła apsary do ascetów, którzy urosną w siłę, i nie cofa się przed podszywaniem się pod cudzego męża (Ahalya). A zarazem jest obrońcą porządku — to on rozcina chmury, uwalnia wody i zabija Vṛtrę. Motywacją jest tron: chce rządzić Swargą, być czczonym, nie stracić pierwszeństwa przed ludźmi o większej mocy. Kiedy jego nadużycia go osłabiają, staje się podatny — i wtedy musi prosić o pomoc wyższych bogów albo uciekać przed Brahmahatją, uosobionym grzechem braminobójstwa.",
     "zdolnosci": "Włada piorunem — wadżrą z kości mędrca; wywołuje burze, deszcz i błyskawice; uwalnia rzeki z górskich więzień. Potrafi zmieniać kształt (maja), jeździ na białym słoniu Airavata, dowodzi Marutami (duchami burzy) i wysyła niebiańskie nimfy, by rozpraszały potężnych ascetów. Jego moc nie wyczerpuje się do końca: gdy spojrzy na swój lud, potrafi go poderwać do natarcia, a swoją obecnością odwraca jedno uderzenie z każdego napastnika.",
-    "slabosci_i_metody_pokonania": "Pycha i żądza. Nie może pokonać kogoś chronionego silniejszym błogosławieństwem, chyba że zdobędzie broń nie z metalu ani drewna — wadżrę z kości. Mędrcy przeklinający go są groźniejsi niż demony: po romansie z Ahalyą Gautama pozbawił go męskości albo pokrył tysiącem znaków wstydu; grzech zabicia Vritry (braminobójstwo) wciąż go ściga, więc przed Brahmahatją musi uciekać i oczyścić się. Skuteczna konfrontacja to odebrać mu tron i wadżrę, złamać jego dumę ascetyczną siłą albo wstrzymać deszcz, od którego zależy jego kult.",
+    "slabosci_i_metody_pokonania": "Pycha i żądza. Nie może pokonać kogoś chronionego silniejszym błogosławieństwem, chyba że zdobędzie broń nie z metalu ani drewna — wadżrę z kości. Mędrcy przeklinający go są groźniejsi niż demony: po romansie z Ahalyą Gautama pozbawił go męskości albo pokrył tysiącem znaków wstydu; grzech zabicia Vritry (braminobójstwo) wciąż go ściga, więc przed Brahmahatją musi uciekać i oczyścić się. Skuteczna konfrontacja to odebrać mu tron i wadżrę, złamać jego dumę siłą ascety albo wstrzymać deszcz, od którego zależy jego kult.",
     "preferencje": "Lubi: somę, uczty, złoto, piękne apsary, deszcz, modlitwy wojowników i ofiary; nie lubi: ascetów gromadzących tapas (bo stają się zagrożeniem dla jego tronu), wspomnienia zabójstwa Vritry, wyższych bogów, którzy go upokarzają, i obietnic deszczu, których nie może spełnić."
   },
   "dokumentacja": [
@@ -72,31 +72,6 @@
     "pierwotne": "Wadżra wyrwana z dłoni Indry w chwili, gdy jego duma została złamana i tron opanował ktoś pokorniejszy — złoty piorun z kości, który już nie grzmi, bo nie ma pana",
     "wtorne": "Płaskorzeźba (lub współczesna rzeźba) Indry na Airavata z wadżrą w ręku — świadectwo kultu boga, który wciąż jest czczony, ale już nie jako jedyny władca"
   },
-  "rezonans": {
-    "klucz_przywolania": "Thunderstaff pokazuje sam przedmiot — laskę, która odbija ciosy i napędza atakujących. Ale w naszej tradycji ten sam przedmiot nie istnieje bez żywego pana: wadżra jest wadżrą tylko w dłoni Indry. To on jest materializacją: żywym bogiem, który haruje z mocą niebios, chroni swój lud (odbija jedno uderzenie, dopóki nie zostanie zmuszony do działania) i potrafi poderwać go do ataku (wzmacnia nacierających). Jego jaźń jest wyraźna: duma, żądza, soma, grzech po Vritrze, klątwa Gautamy — wszystko to sprawia, że można go namierzyć, sprowokować i pokonać, a nie tylko schować go do skrzyni jak relikt.",
-    "tabela": [
-      {
-        "element": "Nazwa",
-        "translacja": "„Thunderstaff” to laska gromu — ale w naszym bycie ta laska nie jest osobną rzeczą. Jest atrybutem Indry, a jego imię oznacza „posiadającego siłę” / „potężnego”. Karta nazywa przedmiot, my materializujemy jego pana: żywego boga, który trzyma grom i jest jego źródłem."
-      },
-      {
-        "element": "Mechanika",
-        "translacja": "„As long as this artifact is untapped, if a creature would deal combat damage to you, prevent 1 of that damage” — to bierna osłona Indry: jego obecność odwraca jedno uderzenie z każdego napastnika, dopóki sam nie zdecyduje się ruszyć. „{2}, {T}: Attacking creatures get +1/+0 until end of turn” — gdy bóg burzy obraca wadżrę, jego wojownicy czują przypływ piorunowej siły i idą do natarcia. „Untap” = bóg nigdy nie jest do końca wyczerpany; jego moc odnawia się jak deszcz."
-      },
-      {
-        "element": "Ilustracja",
-        "translacja": "Artysta: Kaja Foglio; karta jest Artifact, czyli pozbawiona twarzy — pokazuje wyłącznie narzędzie. W naszym świecie to spójne z mitologią: Indra bywa przedstawiany bezpośrednio (cztery ramiona, tysiąc oczu, Airavata), ale jego istotę najłatwiej poznać po wadżrze. Sam przedmiot to tylko klucz; byt to władca, który go dzierży."
-      },
-      {
-        "element": "Flavor text",
-        "translacja": "„Jort the Thunder-Mad spent his life perfecting a way to harness the power of the heavens.” W mitologii indyjskiej to Indra jest tym, kto „ujeździł” moc niebios: rozciął chmury i uwolnił wody, powstrzymywane przez Vṛtrę. Nie jest to spokojny rzemieślnik — to furiat, który pije somę i nie znosi, gdy ktoś zagraża jego tronowi, a jednak to dzięki niemu deszcz wraca na ziemię."
-      },
-      {
-        "element": "Lore/Tło",
-        "translacja": "Mirrodin to świat artefaktów, a „Thunderstaff” to niezniszczalny grom. W hinduizmie wadżra jest zarazem diamentem (niezniszczalność) i piorunem (moc), ale jest skuteczna tylko dlatego, że ktoś się jej boi i ktoś ją niesie. Indra to istota, która traci moc, gdy grzeszy, gdy przeklina go asceta albo gdy ktoś odbierze mu wadżrę — dlatego jest bytem, a nie skarbem."
-      }
-    ]
-  },
   "tagi": [
     "indie",
     "heros-burzy",
@@ -128,6 +103,14 @@
       {
         "data": "2026-08-28 22:05",
         "opis": "Zmiana materializacji z przedmiotu (wadżry/broni) na żywego boga gromu: Indra — istota z własną jaźnią, dumą, grzechem braminobójstwa i klątwą Gautamy; wadżra pozostaje jego atrybutem, nie osobnym bytem."
+      },
+      {
+        "data": "2026-08-29 21:36",
+        "opis": "Korekty językowe sekcji II i III: „Nie może pokonać”, nazwa Szali, „dwóch natur”."
+      },
+      {
+        "data": "2026-08-30 00:38",
+        "opis": "Audyt Kartoteki: poprawki językowe i doprecyzowanie zdań (odmiana, literówki, spójność z mitem)."
       }
     ]
   }

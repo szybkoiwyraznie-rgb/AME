@@ -20,8 +20,9 @@
 - **Klastrowanie pinezek**: przy > 50 wpisach mapa zrobi się ciasna; prosty
   grid-clustering w przestrzeni ekranu wystarczy na start.
 - **Miniatury na pinezkach** przy wysokim zoomie (obraz 21:9 małpowany w marker).
-- **Strona tagu**: klik w tag → filtr mapy + lista; słownik tagów w indeksie
-  już to umożliwia.
+- ~~**Strona tagu**~~ — **WDROŻONE (2026-08-30, PR #10, C2 pętla jakości):** klik
+  w tag → filtr mapy + warstwa `#tag:<slug>` z kategorią, opisem i listą
+  manifestacji (klik → kartoteka), adresowalna i z przyciskiem „kopiuj link”.
 - ~~**Tryb „wylosuj manifestację”**~~ — zrealizowane w M7 (PR #6, C2): przycisk
   „🎲 wylosuj” losuje z widocznej puli (filtr/tag zawężają), pomija ostatni los
   i przelatuje do bytu na mapie; `wylosujSlug` deterministyczna przy
@@ -29,13 +30,23 @@
   właściciela przed live.
 - **Warstwa kręgów kulturowych**: otoczki/halo grupujące wpisy jednej tradycji
   (słowiańska, algonkińska, nordycka…) — wymaga tagu-kręgu jako konwencji.
-- **Mapa tematyczna — rozszerzenia (ADR 0020, M14):** drogi główne, POI typu
-  szczyty, kompleksy leśne i kolorowa wysokość n.p.m. Badanie wykazało brak
-  gotowych, offlineowych pakietów (`earth-roads-*`, `earth-peaks-*`,
-  `earth-forests-*`, `earth-relief-*` — E404; `@freetiler/nasa-bluemarble`
-  to raster bez DEM). Wymaga znalezienia wiarygodnego źródła danych
-  (np. dedykowany dataset Natural Earth/OSM/GeoNames) z licencją możliwą do
-  vendoringu.
+- ~~**Mapa tematyczna — rozszerzenia (ADR 0020, M14)**~~ — **WDROŻONE (2026-08-30, PR #10):** M1 hipsometria raster, M2 szczyty/POI (NE 10m), M3 Pleiades (miejsca historyczne) + podkłady online (opentopo/osm/esri World Imagery, bez klucza, ręcznie włączane). Wszystkie warstwy domyślnie **wyłączone** (100% offline bez zgody na sieć). **Zmiany po recenzji (2026-08-30):** warstwy „lasy” (WWF), „urban” i „morza” **usunięte** (A), Esri „świat fizyczny” **usunięty** (A2), zoom online do technicznego maksimum źródeł ×524 288 (kafelki z≈19; blokada wg 67 obrotów kółka wycofana po uwadze, że różne rejony mają różny maksymalny zoom — A); POI/miejsca historyczne — nazwa on-press (B) i przy wyłączeniu podkładu widok oddala się w miejscu (B2); warstwa nazwana „Szczyty” (C); zapamiętywanie warstw i widoku w localStorage (D); sekcja „Tomy i Epoki” w karcie bytu (E).
+- **Mapa tematyczna — dalsze kierunki (po M3):** GeoNames szczyty (CC BY 4.0) i DARE/AWMC drogi rzymskie (CC BY-SA 3.0) — wete na rzecz NE/Pleiades w M3; katalog źródeł w `docs/ASSETS.md`.
+  drogi główne, POI typu szczyty, kompleksy leśne i kolorowa wysokość n.p.m.
+  Research (patrz `docs/plans/RESEARCH_mapa-warstwy-2026-08-30.md`)
+  znalazł realne źródła offline: **Natural Earth 10m physical** —
+  `geography_regions_elevation` (poligony hipsometryczne = kolorowe
+  wypełnienie wg wysokości, public domain), `geography_regions_points`
+  (nazwane szczyty), `urban_areas`, `glaciated_areas`, `marine_polys`;
+  **GeoNames** (szczyty, CC BY 4.0, atrybucja); **WWF Ecoregions 2017**
+  (biomy leśne = „kompleksy leśne”, CC BY 4.0, 150 MB → wyciąg + simpl.);
+  **OSM/Overpass** `landuse=forest` (ODbL, jednorazowy vendor);
+  **Pleiades** (miejsca antyczne, CC BY 3.0) i **DARE/AWMC** (drogi rzymskie,
+  CC BY-SA). **Pakiety `earth-roads|peaks|forests|relief-*` — nadal E404.**
+  Warstwy online (opcjonalne, wymagają zgody na ADR 0001/0003 + atrybucja):
+  OSM tiles, OpenTopoMap, Esri static basemaps, CARTO (free 5M req/mc,
+  klucz API). **Rekomendacja: M1 = NE 10m (public domain, ~<3 MB),**
+  M2 = GeoNames + lasy, M3 = historyczne Pleiades/DARE.
 - **Oś czasu manifestacji**: sortowanie po epoce pierwszego odnotowania;
   wymaga pola `data_pierwszego_odnotowania` w schemacie (migracja indeksu).
 - **Wersja EN wpisów**: pole `nazwa_en` / dwujęzyczne sekcje — dopiero po
@@ -62,6 +73,26 @@
   (jak w projekcie mtg) — gdy dokumenty urosną.
 - **Lint stylu wpisów**: prosta heurystyka „zakaz terminologii growej w
   sekcji II” (lista słów: haste, trample, mana…).
+## Kronika — propozycje rozwoju wizualizacji (2026-08-30)
+
+- **Analiza:** `docs/plans/ANALIZA_kronika-rozwoj-2026-08-30.md` (co
+  niewidoczne w raportach, S1–S3, D1–D3).
+- ~~**S1**~~ — **WDROŻONE (2026-08-30, PR #10):** W1 ramka epoki
+  (`iskra`/`pytanie`/`przebieg` — w summary i raporcie), W2 wykres osi
+  mit/rac, W3 słupki zasięgów przed→po, W4 linie paliwa, W5 słupki
+  dominacji, W6 diagram relacji (łuki), W7 oś czasu wątków, W8 „dziennik
+  zmiany”, W9 heatmap byt×epoka, W10 łuki relacji na mapie epoki.
+- ~~**S2**~~ — **WDROŻONE (2026-08-30, PR #10):** feed epok w aplikacji
+  głównej (przycisk „📜 kronika” + `#kroniki`), filtr bytów na stronie
+  Tomu i w feedzie, deep-link `#kronika:<slug>`. (Karty multimedialne —
+  S2-propozycja w ANALIZIE — wciąż do decyzji właściciela.)
+- ~~**S3**~~ — **WDROŻONE (2026-08-30, PR #10):** graf epok z odwołaniami
+  `meta.poprzednik`/`meta.kontynuacja` + rozgałęzienia, `docs/kronika.html`
+  (spis Tomów) i obsługa wielu Tomów w generatorze. Indeks tematów skitów —
+  zostaje w kolejce.
+- **Uwaga techniczna:** `zielone` pozycje z §10 (feed epok, karta epoki,
+  oś czasu, filtr) są teraz **w aplikacji głównej i na stronach Kroniki.**
+
 
 ## Zrealizowane w M3 (2026-08-28)
 
@@ -81,6 +112,8 @@
 - **Kontrola żywości adresów źródłowych** — skrypt sesji (narzędzia agenta), NIE
   CI: egress sandboxa jest ograniczony (L3), a linki bywają przenoszone.
   Wymagałby decyzji: martwy link = ostrzeżenie czy błąd walidatora.
+  **Potwierdzony przypadek (2026-08-30):** Theoi „HephaestusWorks”
+  w kartotece `talos-kreta` → 404 („File not found”).
 - **Widok druku (media print) dla warstwy wpisu** — kartoteka na A4 jako PDF;
   dziś warstwa przykrywa okno i nie ma stylów drukowych.
 - **Znacznik „źródło bez adresu” w UI** — pozycje bez `url` (papier) warto

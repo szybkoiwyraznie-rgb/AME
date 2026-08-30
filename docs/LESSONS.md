@@ -198,3 +198,19 @@ hit-testem (pętla po okręgu wokół głowy + `elementFromPoint(...).closest('.
 z założeń. Do tego: klik w pinezkę otwiera pełnoekranową kartotekę (ADR 0010) —
 zanim ruszysz mapę w teście, zamknij warstwę (`Escape`), a zoom rob kółkiem
 do kursora, nie przyciskami (te celują w środek okna i wypychają pinezkę z kadru).
+
+
+## L16 (2026-08-29, AME) — nawigacja generowana w narzędziu może wołać kontrakt, którego aplikacja nie ma
+
+**Objaw:** nowy pasek Kroniki (`tools/kronika.mjs`, `generujTopbarHTML`) linkował
+`../index.html?q=…`, `?action=wylosuj`, `?action=powiazania`; po kliknięciu
+otwierała się mapa bez wyszukiwania i bez akcji. `npm test` 163/163 zielone,
+bo czyste funkcje i DOM strony głównej nie znają parametrów zapytania.
+**Przyczyna:** dwie oddzielne statyczne strony (dokumenty w `docs/` i aplikacja
+`index.html`) łączy pasek generowany przez NARZĘDZIE; nikt nie zdefiniował
+kontraktu adresów po stronie aplikacji, więc linki były wizualnie aktywne,
+a funkcjonalnie martwe. Testy jednostkowe nie symulują przejścia między stronami.
+**Reguła:** (1) gdy narzędzie generuje linki do aplikacji, kontrakt adresów
+(`?q=`, `?action=…`, `#…`) definiuj w czystej funkcji aplikacji i testuj ją,
+a (2) audyt poprzedniego PR sprawdzaj też NA ŻYWO przejście po linkach
+między stronami (headless: klik/kod w `?q=` → stan aplikacji), nie tylko diff.

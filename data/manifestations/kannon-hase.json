@@ -14,12 +14,12 @@
     "rok": 2025
   },
   "lokalizacja": {
-    "miejscowosc": "Hasedera (Kamakura, prefektura Kanagawa) — czwarta stacja Kamakurańskiej pielgrzymki 33 Kannon, świątynia na zboczu wzgórza nad zatoką; stąd widać, jak wybawicielka schodzi między ludzi",
+    "miejscowosc": "Hasedera (Kamakura, prefektura Kanagawa) — czwarta stacja trasy Bandō Sanjūsankasho (33 Kannon w Kantō) i kamakurańskiej pielgrzymki Kannon; świątynia na zboczu góry Kamakura nad zatoką, z 9,18-metrowym posągiem Jūichimen Kannon (jedenastogłowej) w głównej hali",
     "kraj": "Japonia (region Kanto)",
     "lat": 35.31,
     "lon": 139.54
   },
-  "pochodzenie_i_kultura": "Japoński buddyzm ludowy: Kannon (Kanzeon Bosatsu) to Kannon, bodhisattwa miłosierdzia i „słyszący modlitwy świata”, wywodząca się z indyjskiego Avalokiteshvary. W Japonii czczona jako opiekunka, wybawicielka i patronka pielgrzymek: 33 świątynie Kamakury i 33 Kannon na trasie Saigoku to miejsca, w których ludzie proszą ją o ratunek i uzdrowienie. Jedna kultura, jeden wątek.",
+  "pochodzenie_i_kultura": "Japoński buddyzm ludowy: Kannon (Kanzeon Bosatsu) to bodhisattwa miłosierdzia i „słysząca modlitwy świata”, wywodząca się z indyjskiego Avalokiteśvary. Hasedera w Kamakurze jest czwartą stacją trasy Bandō Sanjūsankasho (33 Kannon w regionie Kantō, ponad 1300 km, wzorowanej na Saigoku) oraz kamakurańskiej pielgrzymki Kannon; trasa Saigoku to odrębny obwód w Kansai — jego wyjściową Hase-derą jest świątynia w Narze, nie w Kamakurze. Jedna kultura, jeden byt: Kannon z Hasedery.",
   "wizualizacja": {
     "prompt": "Style: A wide-angle full-body cinematic photograph. The central objects/persons of the photo are visible from head to toe, standing centrally in the frame. No parts of the body are cropped.\n\nA serene Japanese goddess of mercy with eleven soft faces and many slender arms, dressed in flowing white and pale gold robes, standing on a stone terrace above a dense hillside pilgrimage path; in one hand she holds a lotus, another gestures open, raised toward three small travelers emerging from a shadowy stairway; behind her a tall wooden temple hall with red lanterns and a distant bay; cool dawn light, drifting incense, wet stone and cherry petals in the breeze.\n\nCaptured with a 35mm anamorphic lens at f/1.8. Shallow depth of field with a heavy, creamy bokeh background. Environmental portraiture. Dramatic cinematic lighting, sharp focus on the character, hyper-realistic textures of clothing and skin. Shot on 70mm film stock, ultra-wide 21:9 aspect ratio. --ar 21:9",
     "obraz": "assets/wizualizacje/kannon-hase.jpg"
@@ -49,38 +49,23 @@
     },
     {
       "typ": "przewodnik pielgrzymkowy",
-      "pozycja": "Henro, „The Saigoku Kannon Pilgrimage” — 1300-letnia, tysiąckilometrowa trasa przez 33 świątynie Kannon na zachodzie Japonii; wędrówka jako dążenie do uzdrowienia cierpienia; Kannon opisana jako Bodhisattwa Współczucia i Uzdrowienia",
+      "pozycja": "Henro, „The Saigoku Kannon Pilgrimage” — rozróżnienie tras: Saigoku (Kansai, 33 świątynie, Hase-dera w Narze jako 8. stacja) to INNY obwód niż Bandō Sanjūsankasho i kamakurańska pielgrzymka Kannon, do których należy Hasedera z Kamakury",
       "url": "https://www.henro.org/saigoku-kannon-pilgrimage"
+    },
+    {
+      "typ": "encyklopedia",
+      "pozycja": "Wikipedia, „Hase-dera (Kamakura)” — legenda mnicha Tokudō (721): z jednego drzewa kamforowego dwa posągi Kannon; drugi puszczony na morze wypłynął na plaży Nagai (półwysep Miura) w 736 r.; 11 głów (11 faz dążenia do oświecenia), 9,18 m, złocenia, największy drewniany posąg Kannon w Japonii; świątynia pierwotnie Tendai, dziś Jōdo-shū; 4. stacja Bandō Sanjūsankasho i Kamakura Kannon Pilgrimage; tysiące posążków Jizō po 1945 r.",
+      "url": "https://en.wikipedia.org/wiki/Hase-dera_(Kamakura)"
+    },
+    {
+      "typ": "encyklopedia",
+      "pozycja": "Wikipedia, „Bandō Sanjūsankasho” — trasa 33 świątyń Kannon w regionie Kantō (ponad 1300 km), wzorowana na Saigoku; 33 = 33 formy Avalokiteśvary; jedną z ponad 70 tras 33 Kannon w Japonii; pielgrzymi w bieli, słomiane kapelusze, księga nōkyō-chō z pieczęciami shuin",
+      "url": "https://en.wikipedia.org/wiki/Band%C5%8D_Sanj%C5%ABsankasho"
     }
   ],
   "trofea": {
     "pierwotne": "Lotosowy wieniec z podnóża Hasedery, który Kannon ofiarowuje wybawionym — symbol, że ratunek jest darem, nie okupem.",
     "wtorne": "Mały posążek Kamakura Kannon z kłodą, na którym zapisane są intencje modlitewne pątników — dokument, że byt ten istnieje w ludzkich wezwaniach i nie zanika."
-  },
-  "rezonans": {
-    "klucz_przywolania": "Aerith Rescue Mission to karta, która ratuje bohaterów i podnosi ich do walki: wybiera między windą (natychmiastowe uratowanie, sprzyjające heroi) a 59 schodami (zmęczenie przeciwnika, otępienie). Kannon dokładnie tak działa: schodzi z góry, wysyła ratunek, a gdy trzeba, „zamraża” zło, zamiast je zabić. „Take the Elevator” tworzy trzech Hero-ów — trzy wcielenia wybawionych; „Take 59 Flights of Stairs” obezwładnia trzy istoty i zostawia je otumanione, jak zło oślepione światłem. To manifestacja, która niesie wybawienie, a nie zwycięstwo przez przemoc.",
-    "tabela": [
-      {
-        "element": "Nazwa",
-        "translacja": "„Aerith Rescue Mission” — misja ratunkowa bohaterki, która leczy i prowadzi do wyjścia. Kannon jest dokładnie taką misją ratunkową: „kannon” znaczy „słyszący znajdujący się wzywający”; bodhisattwa słyszy wołanie świata i wyrusza na pomoc. „Rescue” to jej cecha, nie rola, którą przyjmuje — schodzi z Hasedery."
-      },
-      {
-        "element": "Mechanika",
-        "translacja": "„Choose one — Take the Elevator: create three Hero tokens; Take 59 Flights of Stairs: tap up to three creatures, stun one.” — to dwa sposoby wybawienia: szybki (winda) i męczący (schody). Kannon pomaga naraz wielu i w różnym tempie; jednych podnosi (heroes), a innych ogłusza (tap/stun), bo najlepszy ratunek to taki, który powstrzyma zło, nie wymagając jego zabicia."
-      },
-      {
-        "element": "Ilustracja",
-        "translacja": "Artysta Hokuyuu; postać w białej szacie w otoczeniu kwiatów i magii — klasyczne wyobrażenie Kannon jako białorobej, miłosiernej bogini z 33 formami. Jej wielość zaznacza, że ma wiele rąk i twarzy, a kwiaty podkreślają uzdrowienie i odrodzenie."
-      },
-      {
-        "element": "Flavor text",
-        "translacja": "(brak flavoru w tej karcie) — brak cytatu sprawia, że wskazówka jest czysto mechaniczna: ratunek, a nie walka. Kannon też nie ma „flavoru” — jest niepunktowaną, niewypowiedzianą odpowiedzią na wołanie; daje się poznać dopiero przez efekt."
-      },
-      {
-        "element": "Lore/Tło",
-        "translacja": "Świat Final Fantasy to gra o bohaterach, którzy wchodzą w głąb siebie i ratują się nawzajem; Kannon w folklorze buddyjskim pełni rolę tej niewidzialnej siły, która prowadzi. „Aerith” w grze jest uzdrowicielką i posiada moc Cetry, a w tradycji na wschodzie „słysząca łzy” jest tą, która obniża się do ludzi i niesie im ukojenie."
-      }
-    ]
   },
   "tagi": [
     "japonia",
@@ -101,6 +86,10 @@
     {
       "slug": "agni",
       "opis": "Spotkanie żywiołu oczyszczenia ze współczuciem: wedyjski ogień ofiarny Agniego wypala cierpienie i rozprasza koszmary nocy, podczas gdy Kannon z Hasedery zstępuje na wezwanie cierpiących, by gasić płomienie piekielne i wyprowadzać istoty z matni."
+    },
+    {
+      "slug": "syama-i-sarvara",
+      "opis": "Dwa byty zarządzające drogą dusz: czterookie psy Yamy, Śyāma i Śarvara, wiodą zmarłych przez noc do krainy przodków (Rigweda 10.14.10–12), a Kannon — jako Avalokiteśvara — słyszy krzyki istot w każdej dziedzinie cierpienia i wyciąga je stamtąd, przyjmując potrzebny kształt (Lotus Sutra, rozdz. 25; 33 formy). Różnica: psy pilnują, by nikt nie zboczył z drogi, Kannon pozwala ją zakończyć wcześniej niż sąd."
     }
   ],
   "meta": {
@@ -110,6 +99,14 @@
       {
         "data": "2026-08-29 01:25",
         "opis": "Nowa materializacja: Kannon — bodhisattwa miłosierdzia z Hasedery, wybawicielka z pielgrzymki 33 Kannon, na podstawie karty „Aerith Rescue Mission” (FIN #5)."
+      },
+      {
+        "data": "2026-08-29 21:36",
+        "opis": "Dopisane powiązanie z Agnim (ogień oczyszczenia i współczucie Kannon); korekta językowa powiązania z Selkie („człowiekiem”)."
+      },
+      {
+        "data": "2026-08-30 13:18",
+        "opis": "Pętla Jakości (C1, drugi obieg): korekta tras — Hasedera (Kamakura) to 4. stacja Bandō Sanjūsankasho i kamakurańskiej pielgrzymki Kannon, NIE Saigoku (Saigoku = Kansai, Hase-dera w Narze); źródła: Wikipedia „Hase-dera (Kamakura)” i „Bandō Sanjūsankasho” (legenda Tokudō 721, 11 głów, 9,18 m, plaża Nagai 736); nowe powiązanie z Śyāmą i Śarvarą (droga dusz)."
       }
     ]
   }

@@ -1,8 +1,8 @@
 {
   "wersja": 3,
-  "buildTime": "2026-08-29T20:07:56.027Z",
-  "liczba": 15,
-  "liczbaSkitow": 18,
+  "buildTime": "2026-08-30T13:18:17.528Z",
+  "liczba": 20,
+  "liczbaSkitow": 22,
   "kanon": {
     "kategorie": [
       {
@@ -12,7 +12,7 @@
         "min": 1,
         "max": 1,
         "opis": "Jedna tradycja, z której byt pochodzi (PROTOKÓŁ §2: zakaz mieszanek synkretycznych)",
-        "ile": 10
+        "ile": 11
       },
       {
         "id": "typ",
@@ -86,6 +86,13 @@
         "drangue-shala"
       ]
     },
+    "polska": {
+      "kategoria": "kultura",
+      "opis": "Folklor słowiański ziem polskich: personifikacje zarazy i śmierci, demony moru i obrzędy ich odprawiania",
+      "wpisy": [
+        "morowa-panna"
+      ]
+    },
     "duch-przodkow": {
       "kategoria": "typ",
       "opis": "Przodek przywoływany przez wspólnotę i wracający w rytuale",
@@ -144,7 +151,10 @@
         "balor",
         "barbarossa-kyffhaeuser",
         "indra",
+        "knecht-z-koptos",
         "lincoln-imp",
+        "morowa-panna",
+        "pandora",
         "selkie-sule-skerry",
         "sfinks-teby",
         "talos-kreta"
@@ -155,7 +165,8 @@
       "opis": "Istnienie zależne od tego, że wspólnota wymawia imię",
       "wpisy": [
         "barbarossa-kyffhaeuser",
-        "egungun"
+        "egungun",
+        "protostates"
       ]
     },
     "przemiana": {
@@ -165,6 +176,7 @@
         "ben-varrey",
         "egungun",
         "empusa-korynt",
+        "knecht-z-koptos",
         "selkie-sule-skerry"
       ]
     },
@@ -205,7 +217,8 @@
       "wpisy": [
         "empusa-korynt",
         "nessos",
-        "selkie-sule-skerry"
+        "selkie-sule-skerry",
+        "syama-i-sarvara"
       ]
     },
     "skrzydlata-postac": {
@@ -222,7 +235,10 @@
       "wpisy": [
         "empusa-korynt",
         "kentaur-pelion",
+        "knecht-z-koptos",
         "nessos",
+        "pandora",
+        "protostates",
         "sfinks-teby",
         "talos-kreta"
       ]
@@ -232,14 +248,18 @@
       "opis": "Religia i mitologia indyjska: wedyjska i puraniczna (hinduizm)",
       "wpisy": [
         "agni",
-        "indra"
+        "indra",
+        "syama-i-sarvara"
       ]
     },
     "fantom": {
       "kategoria": "typ",
       "opis": "Byt zbudowany z pozoru zmysłowego: trwa, dopóki trwa uwaga, którą się karmi",
       "wpisy": [
-        "empusa-korynt"
+        "empusa-korynt",
+        "morowa-panna",
+        "protostates",
+        "syama-i-sarvara"
       ]
     },
     "kentaur": {
@@ -255,7 +275,8 @@
       "opis": "Krótki napad podwójnej siły przed wyczerpaniem: liczy się w uderzeniach, nie w godzinach",
       "wpisy": [
         "kentaur-pelion",
-        "nessos"
+        "nessos",
+        "protostates"
       ]
     },
     "man": {
@@ -276,6 +297,8 @@
       "kategoria": "typ",
       "opis": "Żywy automat: istota odlana lub zbudowana, poruszana płynem/duchem, nie zrodzona",
       "wpisy": [
+        "knecht-z-koptos",
+        "pandora",
         "talos-kreta"
       ]
     },
@@ -311,6 +334,7 @@
       "kategoria": "motyw",
       "opis": "Straż granicy: byt pilnuje jednego terytorium, przejścia albo bramy",
       "wpisy": [
+        "syama-i-sarvara",
         "talos-kreta"
       ]
     },
@@ -318,13 +342,16 @@
       "kategoria": "motyw",
       "opis": "Prowadzenie przez niebezpieczną drogę: byt zna szlak, którego nikt inny nie zna",
       "wpisy": [
-        "ben-varrey"
+        "ben-varrey",
+        "syama-i-sarvara"
       ]
     },
     "zagadka": {
       "kategoria": "motyw",
       "opis": "Bramą jest pytanie: wejście tylko dla tego, kto potrafi otworzyć zagadkę",
       "wpisy": [
+        "morowa-panna",
+        "pandora",
         "sfinks-teby"
       ]
     },
@@ -380,7 +407,14 @@
         "Jātaveda",
         "Vaiśvānara",
         "Hotar",
-        "Pan Południowego Wschodu"
+        "Pan Południowego Wschodu",
+        "Pāvaka",
+        "Havyavāhana",
+        "Saptajihvā",
+        "Vahni",
+        "Hutāśana",
+        "Anala",
+        "Dhumaketu"
       ],
       "karta": "Wrap in Flames",
       "miejscowosc": "Waranasi (Kashi), ghaty nad Gangesem — miejsce wieczystego ognia ofiarnego, w którym Agni przyjmuje obiaty i wypala cierpienie",
@@ -403,10 +437,13 @@
       "backlinki": [
         "barbarossa-kyffhaeuser",
         "indra",
-        "kannon-hase"
+        "kannon-hase",
+        "syama-i-sarvara"
       ],
       "obraz": "assets/wizualizacje/agni.jpg",
-      "skity": []
+      "skity": [
+        "dzien-wolnego"
+      ]
     },
     {
       "slug": "balor",
@@ -529,7 +566,9 @@
         "selkie-sule-skerry"
       ],
       "obraz": "assets/wizualizacje/ben-varrey.jpg",
-      "skity": []
+      "skity": [
+        "dzien-wolnego"
+      ]
     },
     {
       "slug": "drangue-shala",
@@ -563,7 +602,8 @@
         "ben-varrey",
         "indra",
         "kentaur-pelion",
-        "lincoln-imp"
+        "lincoln-imp",
+        "protostates"
       ],
       "obraz": "assets/wizualizacje/drangue-shala.jpg",
       "skity": [
@@ -641,18 +681,21 @@
       ],
       "powiazania": [
         "egungun",
+        "pandora",
         "selkie-sule-skerry",
         "sfinks-teby"
       ],
       "backlinki": [
         "egungun",
         "kentaur-pelion",
+        "morowa-panna",
         "nessos",
         "selkie-sule-skerry",
         "sfinks-teby"
       ],
       "obraz": "assets/wizualizacje/empusa-korynt.jpg",
       "skity": [
+        "czwarty-stol",
         "dwa-zepsute-wesela",
         "dwie-skory",
         "komu-wolno-patrzec",
@@ -711,7 +754,7 @@
         "Pani z Hase"
       ],
       "karta": "Aerith Rescue Mission",
-      "miejscowosc": "Hasedera (Kamakura, prefektura Kanagawa) — czwarta stacja Kamakurańskiej pielgrzymki 33 Kannon, świątynia na zboczu wzgórza nad zatoką; stąd widać, jak wybawicielka schodzi między ludzi",
+      "miejscowosc": "Hasedera (Kamakura, prefektura Kanagawa) — czwarta stacja trasy Bandō Sanjūsankasho (33 Kannon w Kantō) i kamakurańskiej pielgrzymki Kannon; świątynia na zboczu góry Kamakura nad zatoką, z 9,18-metrowym posągiem Jūichimen Kannon (jedenastogłowej) w głównej hali",
       "kraj": "Japonia (region Kanto)",
       "lat": 35.31,
       "lon": 139.54,
@@ -725,15 +768,19 @@
       "powiazania": [
         "agni",
         "egungun",
-        "selkie-sule-skerry"
+        "selkie-sule-skerry",
+        "syama-i-sarvara"
       ],
       "backlinki": [
         "agni",
         "egungun",
-        "selkie-sule-skerry"
+        "selkie-sule-skerry",
+        "syama-i-sarvara"
       ],
       "obraz": "assets/wizualizacje/kannon-hase.jpg",
-      "skity": []
+      "skity": [
+        "dzien-wolnego"
+      ]
     },
     {
       "slug": "kentaur-pelion",
@@ -764,6 +811,7 @@
       "backlinki": [
         "indra",
         "nessos",
+        "protostates",
         "selkie-sule-skerry",
         "sfinks-teby",
         "talos-kreta"
@@ -775,6 +823,42 @@
         "dwie-skory",
         "nieproszeni-goscie",
         "trzy-stoly"
+      ]
+    },
+    {
+      "slug": "knecht-z-koptos",
+      "nazwa": "Knecht z Koptos — ożywiony tłuczek, który nie zna słowa końca",
+      "nazwy_alternatywne": [
+        "Tłuczek Pankratesa",
+        "Knecht",
+        "Sługa trzech sylab",
+        "Niosący wodę"
+      ],
+      "karta": "Apprentice Wizard",
+      "miejscowosc": "Koptos nad Nilem (Górny Egipt) — w opowieści Eukratesa to tu ożywiony tłuczek nosi wodę i zalewa dom; motyw wędrował z Grecji przez Rzym do Niemiec, gdzie ballada Goethego nadała mu drugie życie",
+      "kraj": "Egipt (tradycja grecka)",
+      "lat": 26,
+      "lon": 32.81,
+      "tagi": [
+        "automat",
+        "grecja",
+        "przemiana",
+        "warunek"
+      ],
+      "powiazania": [
+        "pandora",
+        "protostates",
+        "sfinks-teby",
+        "talos-kreta"
+      ],
+      "backlinki": [
+        "pandora",
+        "protostates",
+        "talos-kreta"
+      ],
+      "obraz": "assets/wizualizacje/knecht-z-koptos.jpg",
+      "skity": [
+        "pierwszy"
       ]
     },
     {
@@ -817,6 +901,42 @@
       ]
     },
     {
+      "slug": "morowa-panna",
+      "nazwa": "Morowa Panna — zaraza w białej szacie z czerwoną chustą",
+      "nazwy_alternatywne": [
+        "Morowa Dziewica",
+        "Niewiasta Morowa",
+        "Dżuma",
+        "Morowica",
+        "Marzanna (kukła odprawiana na wiosnę)"
+      ],
+      "karta": "Infectious Horror",
+      "miejscowosc": "Chojnice (Pomorze) i wsie ziem polskich — legenda o morowej dziewicy, która weszła do miasta zamkniętego jak trumna; wierzenie notowane także w tradycji ruskiej (stanie na mogiłach i powiewanie chustą) i litewskiej (koścista ręka z chustą przez okno)",
+      "kraj": "Polska",
+      "lat": 53.6954,
+      "lon": 17.557,
+      "tagi": [
+        "fantom",
+        "polska",
+        "warunek",
+        "zagadka"
+      ],
+      "powiazania": [
+        "empusa-korynt",
+        "pandora",
+        "sfinks-teby"
+      ],
+      "backlinki": [
+        "pandora",
+        "protostates"
+      ],
+      "obraz": "assets/wizualizacje/morowa-panna.jpg",
+      "skity": [
+        "czwarty-stol",
+        "prezent-z-defektem"
+      ]
+    },
+    {
       "slug": "nessos",
       "nazwa": "Nessos",
       "nazwy_alternatywne": [
@@ -839,19 +959,98 @@
         "ben-varrey",
         "empusa-korynt",
         "kentaur-pelion",
+        "pandora",
         "selkie-sule-skerry",
         "talos-kreta"
       ],
       "backlinki": [
         "ben-varrey",
         "kentaur-pelion",
+        "pandora",
         "selkie-sule-skerry",
         "talos-kreta"
       ],
       "obraz": "assets/wizualizacje/nessos.jpg",
       "skity": [
         "cena-znaku",
-        "dwa-grzbiety"
+        "dwa-grzbiety",
+        "prezent-z-defektem"
+      ]
+    },
+    {
+      "slug": "pandora",
+      "nazwa": "Pandora — pierwsza kobieta i pithos, w którym została nadzieja",
+      "nazwy_alternatywne": [
+        "Anesidora",
+        "Pandôra",
+        "Pierwsza Niewiasta",
+        "Wszystkichdarowana"
+      ],
+      "karta": "Panic Spellbomb",
+      "miejscowosc": "Ateny — Akropol: płaskorzeźba narodzin Pandory na podstawie posągu Ateny Partenos, opisana przez Pauzaniasza; mit spisany w Beocji przez Hezjoda („Prace i dnie” i „Teogonia”)",
+      "kraj": "Grecja",
+      "lat": 37.9715,
+      "lon": 23.7267,
+      "tagi": [
+        "automat",
+        "grecja",
+        "warunek",
+        "zagadka"
+      ],
+      "powiazania": [
+        "knecht-z-koptos",
+        "morowa-panna",
+        "nessos",
+        "talos-kreta"
+      ],
+      "backlinki": [
+        "empusa-korynt",
+        "knecht-z-koptos",
+        "morowa-panna",
+        "nessos",
+        "talos-kreta"
+      ],
+      "obraz": "assets/wizualizacje/pandora.jpg",
+      "skity": [
+        "czwarty-stol",
+        "prezent-z-defektem"
+      ]
+    },
+    {
+      "slug": "protostates",
+      "nazwa": "Protostates — fantom pierwszego szeregu",
+      "nazwy_alternatywne": [
+        "Prōtostatēs",
+        "Pierwszy z szeregu",
+        "Ten, który stoi",
+        "Fantom hoplity"
+      ],
+      "karta": "Akroan Sergeant",
+      "miejscowosc": "Termopile — wąwóz między górami Kallidromos a Zatoką Maliacką; przy tym przejściu Kserkses pyta Demaratosa o odwagę greckich wojowników, a fantom pierwszego szeregu staje tam, gdzie pierwsza linia nigdy nie ustąpiła",
+      "kraj": "Grecja (Ftiotyda)",
+      "lat": 38.7967,
+      "lon": 22.5367,
+      "tagi": [
+        "fantom",
+        "furia",
+        "grecja",
+        "pamiec"
+      ],
+      "powiazania": [
+        "drangue-shala",
+        "kentaur-pelion",
+        "knecht-z-koptos",
+        "morowa-panna",
+        "sfinks-teby",
+        "syama-i-sarvara"
+      ],
+      "backlinki": [
+        "knecht-z-koptos",
+        "syama-i-sarvara"
+      ],
+      "obraz": "assets/wizualizacje/protostates.jpg",
+      "skity": [
+        "pierwszy"
       ]
     },
     {
@@ -909,7 +1108,9 @@
         "Sphinx",
         "Sfinks tebański",
         "Córka Echidny i Tyfona",
-        "Mścicielka Teb"
+        "Mścicielka Teb",
+        "Phix (Φίξ — nazwa beocka)",
+        "Córka Lajosa (wariant Pauzaniasza)"
       ],
       "karta": "Jwar Isle Avenger",
       "miejscowosc": "Góra Fikion (Phikion), na zachodzie za Tebami (Teba, Beocja) — miejsce, w którym Sfinks czatowała na podróżnych, blokując drogę do miasta",
@@ -932,11 +1133,51 @@
       "backlinki": [
         "empusa-korynt",
         "kentaur-pelion",
+        "knecht-z-koptos",
+        "morowa-panna",
+        "protostates",
+        "syama-i-sarvara",
         "talos-kreta"
       ],
       "obraz": "assets/wizualizacje/sfinks-teby.jpg",
       "skity": [
         "zagadka-ze-spizu"
+      ]
+    },
+    {
+      "slug": "syama-i-sarvara",
+      "nazwa": "Śyāma i Śarvara — czterookie psy Yamy, strażnicy drogi przodków",
+      "nazwy_alternatywne": [
+        "Śyāma i Śabala",
+        "Sarameya (potomkowie Saramy)",
+        "Mithūdṛśā",
+        "psy strzegące ścieżki"
+      ],
+      "karta": "Trade Route Envoy",
+      "miejscowosc": "Waranasi (Kashi) — miasto przekroczenia nad Gangesem, wedle legendy Manikarnika wolne od władzy Yamy; przy tej samej drodze, na południe, psy strzegą ścieżki przodków (pitṛ-yāna) biegnącej ku siedzibie Yamy",
+      "kraj": "Indie (Uttar Pradesh)",
+      "lat": 25.3176,
+      "lon": 82.9739,
+      "tagi": [
+        "fantom",
+        "indie",
+        "obrona",
+        "postac-zwierzeca",
+        "przewodnik"
+      ],
+      "powiazania": [
+        "agni",
+        "kannon-hase",
+        "protostates",
+        "sfinks-teby"
+      ],
+      "backlinki": [
+        "kannon-hase",
+        "protostates"
+      ],
+      "obraz": "assets/wizualizacje/syama-i-sarvara.jpg",
+      "skity": [
+        "pierwszy"
       ]
     },
     {
@@ -964,12 +1205,16 @@
       "powiazania": [
         "balor",
         "kentaur-pelion",
+        "knecht-z-koptos",
         "nessos",
+        "pandora",
         "sfinks-teby"
       ],
       "backlinki": [
         "kentaur-pelion",
+        "knecht-z-koptos",
         "nessos",
+        "pandora",
         "sfinks-teby"
       ],
       "obraz": "assets/wizualizacje/talos-kreta.jpg",
@@ -997,6 +1242,23 @@
       "data": "2026-08-28 23:59"
     },
     {
+      "slug": "czwarty-stol",
+      "tytul": "CZWARTY STÓŁ",
+      "temat": "kto siada przy stole, którego nikt nie nakrył: dar z zakazem, pytanie z jedną odpowiedzią i zaproszenie, które zjada gości",
+      "uczestnicy": [
+        "empusa-korynt",
+        "morowa-panna",
+        "pandora"
+      ],
+      "imiona": [
+        "Pandora",
+        "Morowa Panna",
+        "Empusa"
+      ],
+      "slow": 300,
+      "data": "2026-08-30 01:57"
+    },
+    {
       "slug": "dwa-grzbiety",
       "tytul": "DWA GRZBIETY",
       "temat": "dwie natury i porządek",
@@ -1010,7 +1272,7 @@
         "Chejron",
         "Indra"
       ],
-      "slow": 262,
+      "slow": 264,
       "data": "2026-08-28 21:45"
     },
     {
@@ -1044,8 +1306,25 @@
         "Selkie z Sule Skerry",
         "Empusa"
       ],
-      "slow": 238,
+      "slow": 241,
       "data": "2026-08-28 20:00"
+    },
+    {
+      "slug": "dzien-wolnego",
+      "tytul": "DZIEŃ WOLNEGO",
+      "temat": "urlop od wzywania: kto ma przerwę, gdy wszyscy wołają",
+      "uczestnicy": [
+        "agni",
+        "ben-varrey",
+        "kannon-hase"
+      ],
+      "imiona": [
+        "Agni",
+        "Ben-Varrey",
+        "Kannon"
+      ],
+      "slow": 269,
+      "data": "2026-08-29 21:41"
     },
     {
       "slug": "godzina-otwarcia",
@@ -1127,7 +1406,7 @@
         "Empusa",
         "Imp z Lincoln"
       ],
-      "slow": 286,
+      "slow": 285,
       "data": "2026-08-28 23:58"
     },
     {
@@ -1159,7 +1438,7 @@
         "Kentaur z Pelionu",
         "Empusa"
       ],
-      "slow": 289,
+      "slow": 287,
       "data": "2026-08-28 21:30"
     },
     {
@@ -1176,8 +1455,25 @@
         "Balor",
         "Empusa"
       ],
-      "slow": 253,
+      "slow": 255,
       "data": "2026-08-29 10:20"
+    },
+    {
+      "slug": "pierwszy",
+      "tytul": "PIERWSZY",
+      "temat": "kto jest pierwszy w linii — człowiek, rzecz czy pies; i co zostaje, gdy pierwszy stoi, a nikt nie idzie za nim",
+      "uczestnicy": [
+        "knecht-z-koptos",
+        "protostates",
+        "syama-i-sarvara"
+      ],
+      "imiona": [
+        "Protostates",
+        "Knecht",
+        "Śyāma i Śarvara"
+      ],
+      "slow": 229,
+      "data": "2026-08-30 10:20"
     },
     {
       "slug": "plotno-i-kamien",
@@ -1195,6 +1491,23 @@
       "data": "2026-08-28"
     },
     {
+      "slug": "prezent-z-defektem",
+      "tytul": "PREZENT Z DEFEKTEM",
+      "temat": "trzy dary, które miały chronić, a zrobiły szkodę — i kto ponosi winę",
+      "uczestnicy": [
+        "morowa-panna",
+        "nessos",
+        "pandora"
+      ],
+      "imiona": [
+        "Nessos",
+        "Pandora",
+        "Morowa Panna"
+      ],
+      "slow": 288,
+      "data": "2026-08-30 13:30"
+    },
+    {
       "slug": "trzy-stoly",
       "tytul": "TRZY STOŁY",
       "temat": "gościnność ponad granicą śmierci i czasu: wzywanie zmarłych, zapłata za spokój, gość, który wziął sam",
@@ -1208,7 +1521,7 @@
         "Barbarossa",
         "Kentaur z Pelionu"
       ],
-      "slow": 258,
+      "slow": 261,
       "data": "2026-08-28 23:35"
     },
     {
@@ -1225,7 +1538,7 @@
         "Balor",
         "Drangue"
       ],
-      "slow": 264,
+      "slow": 266,
       "data": "2026-08-28 22:25"
     },
     {
@@ -1242,7 +1555,7 @@
         "Talos z Krety",
         "Lincoln Imp"
       ],
-      "slow": 274,
+      "slow": 276,
       "data": "2026-08-29 11:30"
     },
     {
@@ -1259,7 +1572,7 @@
         "Drangue",
         "Barbarossa"
       ],
-      "slow": 263,
+      "slow": 255,
       "data": "2026-08-28 22:30"
     },
     {
@@ -1274,11 +1587,819 @@
         "Balor",
         "Selkie z Sule Skerry"
       ],
-      "slow": 285,
+      "slow": 283,
       "data": "2026-08-28"
     }
   ],
   "aktualizacje": [
+    {
+      "data": "2026-08-30 13:30",
+      "typ": "skit",
+      "akcja": "nowy",
+      "slug": "prezent-z-defektem",
+      "tytul": "PREZENT Z DEFEKTEM",
+      "opis": "SKIT — skład: Nessos, Pandora, Morowa Panna"
+    },
+    {
+      "data": "2026-08-30 13:18",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "kannon-hase",
+      "tytul": "Kannon — miłosierna wybawicielka",
+      "opis": "Pętla Jakości (C1, drugi obieg): korekta tras — Hasedera (Kamakura) to 4. stacja Bandō Sanjūsankasho i kamakurańskiej pielgrzymki Kannon, NIE Saigoku (Saigoku = Kansai, Hase-dera w Narze); źródła: Wikipedia „Hase-dera (Kamakura)” i „Bandō Sanjūsankasho” (legenda Tokudō 721, 11 głów, 9,18 m, plaża Nagai 736); nowe powiązanie z Śyāmą i Śarvarą (droga dusz)."
+    },
+    {
+      "data": "2026-08-30 13:11",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "pandora",
+      "tytul": "Pandora — pierwsza kobieta i pithos, w którym została nadzieja",
+      "opis": "Pętla Jakości (C1): powiązanie z Nessosem (dar-zguba) na podstawie źródeł pierwotnych (Apollodoros 2.151, Diodor 4.36.3, Owidiusz IX)."
+    },
+    {
+      "data": "2026-08-30 13:11",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "nessos",
+      "tytul": "Nessos",
+      "opis": "Pętla Jakości (C1): źródła pierwotne mitu — Pseudo-Apollodoros „Biblioteka” 2.151/2.157 (via Theoi, przeł. Aldrich), Diodor „Biblioteka historyczna” 4.36.3/4.38.1 (przeł. Oldfather), Owidiusz „Metamorfozy” IX.98–210 (Perseus); doprecyzowany wariant przepisu na „napój miłosny” (nasienie+krew / oliwa+krew+grot) i nowe powiązanie z Pandorą (dar-zguba)."
+    },
+    {
+      "data": "2026-08-30 10:20",
+      "typ": "skit",
+      "akcja": "zmiana",
+      "slug": "pierwszy",
+      "tytul": "PIERWSZY",
+      "opis": "Nowy SKIT: Protostates × Knecht z Koptos × Śyāma i Śarvara — rozmowa o tym, kto jest pierwszy w linii, gdy rozkaz się kończy, a droga przodków nie zna frontu."
+    },
+    {
+      "data": "2026-08-30 10:20",
+      "typ": "skit",
+      "akcja": "nowy",
+      "slug": "pierwszy",
+      "tytul": "PIERWSZY",
+      "opis": "SKIT — skład: Protostates, Knecht, Śyāma i Śarvara"
+    },
+    {
+      "data": "2026-08-30 10:05",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "knecht-z-koptos",
+      "tytul": "Knecht z Koptos — ożywiony tłuczek, który nie zna słowa końca",
+      "opis": "Pętla Jakości C1: powiązanie z protostatesem — dwa porządki trwające na rozkazie i pamięci."
+    },
+    {
+      "data": "2026-08-30 10:05",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "protostates",
+      "tytul": "Protostates — fantom pierwszego szeregu",
+      "opis": "Pętla Jakości C1: pogłębiony Protostates — 2 nowe źródła (Tukidydes 5.66–70 — pierwszy szereg 448 ludzi; Herodot VII, 226 — Dienekes „w cieniu”) + nowe powiązania z knechtem z Koptos i psami Yamy."
+    },
+    {
+      "data": "2026-08-30 10:05",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "syama-i-sarvara",
+      "tytul": "Śyāma i Śarvara — czterookie psy Yamy, strażnicy drogi przodków",
+      "opis": "Pętla Jakości C1: powiązanie z protostatesem — dwie strony jednego progu (przejście dla żywych i droga przodków)."
+    },
+    {
+      "data": "2026-08-30 01:57",
+      "typ": "skit",
+      "akcja": "zmiana",
+      "slug": "czwarty-stol",
+      "tytul": "CZWARTY STÓŁ",
+      "opis": "Nowy SKIT: trzy gościnie przy czwartym stole z Epoki I — rozmowa o tym, kto bierze, a kto tylko patrzy, lekko i bez patosu."
+    },
+    {
+      "data": "2026-08-30 01:57",
+      "typ": "skit",
+      "akcja": "nowy",
+      "slug": "czwarty-stol",
+      "tytul": "CZWARTY STÓŁ",
+      "opis": "SKIT — skład: Pandora, Morowa Panna, Empusa"
+    },
+    {
+      "data": "2026-08-30 01:35",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "protostates",
+      "tytul": "Protostates — fantom pierwszego szeregu",
+      "opis": "Pogłębienie sieci powiązań (C1): cztery nowe pary połączeń między bytami, oparte na źródłach już odnotowanych w kartotekach (Hezjod „Prace i dnie” 60–68, pseudo-Apollodoros „Biblioteka” 1.9.26, Filostrat IV.21–25, Lukian „Filopseudes” 34–36, Herodot 7.104, lasmgiel.pl/„Zaraza nadchodzi i odchodzi”)."
+    },
+    {
+      "data": "2026-08-30 01:35",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "talos-kreta",
+      "tytul": "Talos — spiżowy strażnik Krety",
+      "opis": "Pogłębienie sieci powiązań (C1): cztery nowe pary połączeń między bytami, oparte na źródłach już odnotowanych w kartotekach (Hezjod „Prace i dnie” 60–68, pseudo-Apollodoros „Biblioteka” 1.9.26, Filostrat IV.21–25, Lukian „Filopseudes” 34–36, Herodot 7.104, lasmgiel.pl/„Zaraza nadchodzi i odchodzi”)."
+    },
+    {
+      "data": "2026-08-30 01:35",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "empusa-korynt",
+      "tytul": "Empusa z Koryntu",
+      "opis": "Pogłębienie sieci powiązań (C1): cztery nowe pary połączeń między bytami, oparte na źródłach już odnotowanych w kartotekach (Hezjod „Prace i dnie” 60–68, pseudo-Apollodoros „Biblioteka” 1.9.26, Filostrat IV.21–25, Lukian „Filopseudes” 34–36, Herodot 7.104, lasmgiel.pl/„Zaraza nadchodzi i odchodzi”)."
+    },
+    {
+      "data": "2026-08-30 00:40",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "knecht-z-koptos",
+      "tytul": "Knecht z Koptos — ożywiony tłuczek, który nie zna słowa końca",
+      "opis": "Audyt Kartoteki: poprawka literówek („słój” zamiast „słaj”) w powiązaniach i kluczu."
+    },
+    {
+      "data": "2026-08-30 00:40",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "pandora",
+      "tytul": "Pandora — pierwsza kobieta i pithos, w którym została nadzieja",
+      "opis": "Audyt Kartoteki: poprawka literówek („słój” zamiast „słaj”) w powiązaniach i kluczu."
+    },
+    {
+      "data": "2026-08-30 00:40",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "morowa-panna",
+      "tytul": "Morowa Panna — zaraza w białej szacie z czerwoną chustą",
+      "opis": "Audyt Kartoteki: poprawka literówek („słój” zamiast „słaj”) w powiązaniach i kluczu."
+    },
+    {
+      "data": "2026-08-30 00:38",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "agni",
+      "tytul": "Agni — bóg ognia ofiarnego",
+      "opis": "Audyt Kartoteki: poprawki językowe i doprecyzowanie zdań (odmiana, literówki, spójność z mitem)."
+    },
+    {
+      "data": "2026-08-30 00:38",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "egungun",
+      "tytul": "Egungun",
+      "opis": "Audyt Kartoteki: poprawki językowe i doprecyzowanie zdań (odmiana, literówki, spójność z mitem)."
+    },
+    {
+      "data": "2026-08-30 00:38",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "kentaur-pelion",
+      "tytul": "Kentaur z Pelionu",
+      "opis": "Audyt Kartoteki: poprawki językowe i doprecyzowanie zdań (odmiana, literówki, spójność z mitem)."
+    },
+    {
+      "data": "2026-08-30 00:38",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "lincoln-imp",
+      "tytul": "Imp z Lincoln",
+      "opis": "Audyt Kartoteki: poprawki językowe i doprecyzowanie zdań (odmiana, literówki, spójność z mitem)."
+    },
+    {
+      "data": "2026-08-30 00:38",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "selkie-sule-skerry",
+      "tytul": "Wielki Selkie z Sule Skerry",
+      "opis": "Audyt Kartoteki: poprawki językowe i doprecyzowanie zdań (odmiana, literówki, spójność z mitem)."
+    },
+    {
+      "data": "2026-08-30 00:38",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "sfinks-teby",
+      "tytul": "Sfinks — strażniczka Tebańskich Wrót",
+      "opis": "Audyt Kartoteki: poprawki językowe i doprecyzowanie zdań (odmiana, literówki, spójność z mitem)."
+    },
+    {
+      "data": "2026-08-30 00:38",
+      "typ": "skit",
+      "akcja": "zmiana",
+      "slug": "kalendarz-powrotow",
+      "tytul": "KALENDARZ POWROTÓW",
+      "opis": "Korekta: Selkie z Sule Skerry jest bytem męskim (ojciec z ballady) — przywrócone formy męskie; zachowane poprawki redakcyjne z tej sesji (focza skóra, trojaczki, spójne fakty)."
+    },
+    {
+      "data": "2026-08-30 00:38",
+      "typ": "skit",
+      "akcja": "zmiana",
+      "slug": "znak-i-liczba",
+      "tytul": "ZNAK I LICZBA",
+      "opis": "Korekta: Selkie z Sule Skerry jest bytem męskim (ojciec z ballady) — przywrócone formy męskie; zachowane poprawki redakcyjne z tej sesji (focza skóra, trojaczki, spójne fakty)."
+    },
+    {
+      "data": "2026-08-30 00:38",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "balor",
+      "tytul": "Balor z Tory Island",
+      "opis": "Audyt Kartoteki: poprawki językowe i doprecyzowanie zdań (odmiana, literówki, spójność z mitem)."
+    },
+    {
+      "data": "2026-08-30 00:38",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "ben-varrey",
+      "tytul": "Ben-Varrey — syrena z Wyspy Man",
+      "opis": "Audyt Kartoteki: poprawki językowe i doprecyzowanie zdań (odmiana, literówki, spójność z mitem)."
+    },
+    {
+      "data": "2026-08-30 00:38",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "drangue-shala",
+      "tytul": "Drangue z doliny Shali",
+      "opis": "Audyt Kartoteki: poprawki językowe i doprecyzowanie zdań (odmiana, literówki, spójność z mitem)."
+    },
+    {
+      "data": "2026-08-30 00:38",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "indra",
+      "tytul": "Indra — władca gromu",
+      "opis": "Audyt Kartoteki: poprawki językowe i doprecyzowanie zdań (odmiana, literówki, spójność z mitem)."
+    },
+    {
+      "data": "2026-08-30 00:38",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "knecht-z-koptos",
+      "tytul": "Knecht z Koptos — ożywiony tłuczek, który nie zna słowa końca",
+      "opis": "Audyt Kartoteki: poprawki językowe i doprecyzowanie zdań (odmiana, literówki, spójność z mitem)."
+    },
+    {
+      "data": "2026-08-30 00:38",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "pandora",
+      "tytul": "Pandora — pierwsza kobieta i pithos, w którym została nadzieja",
+      "opis": "Audyt Kartoteki: poprawki językowe i doprecyzowanie zdań (odmiana, literówki, spójność z mitem)."
+    },
+    {
+      "data": "2026-08-30 00:38",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "protostates",
+      "tytul": "Protostates — fantom pierwszego szeregu",
+      "opis": "Audyt Kartoteki: poprawki językowe i doprecyzowanie zdań (odmiana, literówki, spójność z mitem)."
+    },
+    {
+      "data": "2026-08-30 00:38",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "syama-i-sarvara",
+      "tytul": "Śyāma i Śarvara — czterookie psy Yamy, strażnicy drogi przodków",
+      "opis": "Audyt Kartoteki: poprawki językowe i doprecyzowanie zdań (odmiana, literówki, spójność z mitem)."
+    },
+    {
+      "data": "2026-08-30 00:38",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "talos-kreta",
+      "tytul": "Talos — spiżowy strażnik Krety",
+      "opis": "Audyt Kartoteki: poprawki językowe i doprecyzowanie zdań (odmiana, literówki, spójność z mitem)."
+    },
+    {
+      "data": "2026-08-30 00:38",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "barbarossa-kyffhaeuser",
+      "tytul": "Barbarossa w Kyffhäuserze",
+      "opis": "Audyt Kartoteki: poprawki językowe i doprecyzowanie zdań (odmiana, literówki, spójność z mitem)."
+    },
+    {
+      "data": "2026-08-30 00:35",
+      "typ": "skit",
+      "akcja": "zmiana",
+      "slug": "dwa-grzbiety",
+      "tytul": "DWA GRZBIETY",
+      "opis": "Redakcja: poprawki językowe (odmiana, literówki), sprostowanie faktów do Kartoteki i rozluźnienie zbyt górnolotnych fragmentów."
+    },
+    {
+      "data": "2026-08-30 00:35",
+      "typ": "skit",
+      "akcja": "zmiana",
+      "slug": "dwa-zepsute-wesela",
+      "tytul": "DWA ZEPSUTE WESELA",
+      "opis": "Redakcja: poprawki językowe (odmiana, literówki), sprostowanie faktów do Kartoteki i rozluźnienie zbyt górnolotnych fragmentów."
+    },
+    {
+      "data": "2026-08-30 00:35",
+      "typ": "skit",
+      "akcja": "zmiana",
+      "slug": "dwie-skory",
+      "tytul": "DWIE SKÓRY",
+      "opis": "Redakcja: poprawki językowe (odmiana, literówki), sprostowanie faktów do Kartoteki i rozluźnienie zbyt górnolotnych fragmentów."
+    },
+    {
+      "data": "2026-08-30 00:35",
+      "typ": "skit",
+      "akcja": "zmiana",
+      "slug": "godzina-otwarcia",
+      "tytul": "GODZINA OTWARCIA",
+      "opis": "Redakcja: poprawki językowe (odmiana, literówki), sprostowanie faktów do Kartoteki i rozluźnienie zbyt górnolotnych fragmentów."
+    },
+    {
+      "data": "2026-08-30 00:35",
+      "typ": "skit",
+      "akcja": "zmiana",
+      "slug": "hold-oraz-swiatlo",
+      "tytul": "HOŁD ORAZ ŚWIATŁO",
+      "opis": "Redakcja: poprawki językowe (odmiana, literówki), sprostowanie faktów do Kartoteki i rozluźnienie zbyt górnolotnych fragmentów."
+    },
+    {
+      "data": "2026-08-30 00:35",
+      "typ": "skit",
+      "akcja": "zmiana",
+      "slug": "imie-na-progu",
+      "tytul": "IMIĘ NA PROGU",
+      "opis": "Redakcja: poprawki językowe (odmiana, literówki), sprostowanie faktów do Kartoteki i rozluźnienie zbyt górnolotnych fragmentów."
+    },
+    {
+      "data": "2026-08-30 00:35",
+      "typ": "skit",
+      "akcja": "zmiana",
+      "slug": "kalendarz-powrotow",
+      "tytul": "KALENDARZ POWROTÓW",
+      "opis": "Redakcja: poprawki językowe (odmiana, literówki), sprostowanie faktów do Kartoteki i rozluźnienie zbyt górnolotnych fragmentów."
+    },
+    {
+      "data": "2026-08-30 00:35",
+      "typ": "skit",
+      "akcja": "zmiana",
+      "slug": "komu-wolno-patrzec",
+      "tytul": "KOMU WOLNO PATRZEĆ",
+      "opis": "Redakcja: poprawki językowe (odmiana, literówki), sprostowanie faktów do Kartoteki i rozluźnienie zbyt górnolotnych fragmentów."
+    },
+    {
+      "data": "2026-08-30 00:35",
+      "typ": "skit",
+      "akcja": "zmiana",
+      "slug": "kurz-i-piora",
+      "tytul": "KURZ I PIÓRA",
+      "opis": "Redakcja: poprawki językowe (odmiana, literówki), sprostowanie faktów do Kartoteki i rozluźnienie zbyt górnolotnych fragmentów."
+    },
+    {
+      "data": "2026-08-30 00:35",
+      "typ": "skit",
+      "akcja": "zmiana",
+      "slug": "nieproszeni-goscie",
+      "tytul": "NIEPROSZENI GOŚCIE",
+      "opis": "Redakcja: poprawki językowe (odmiana, literówki), sprostowanie faktów do Kartoteki i rozluźnienie zbyt górnolotnych fragmentów."
+    },
+    {
+      "data": "2026-08-30 00:35",
+      "typ": "skit",
+      "akcja": "zmiana",
+      "slug": "odzwierni",
+      "tytul": "ODŹWIERNI",
+      "opis": "Redakcja: poprawki językowe (odmiana, literówki), sprostowanie faktów do Kartoteki i rozluźnienie zbyt górnolotnych fragmentów."
+    },
+    {
+      "data": "2026-08-30 00:35",
+      "typ": "skit",
+      "akcja": "zmiana",
+      "slug": "plotno-i-kamien",
+      "tytul": "PŁÓTNO I KAMIEŃ",
+      "opis": "Redakcja: poprawki językowe (odmiana, literówki), sprostowanie faktów do Kartoteki i rozluźnienie zbyt górnolotnych fragmentów."
+    },
+    {
+      "data": "2026-08-30 00:35",
+      "typ": "skit",
+      "akcja": "zmiana",
+      "slug": "trzy-stoly",
+      "tytul": "TRZY STOŁY",
+      "opis": "Redakcja: poprawki językowe (odmiana, literówki), sprostowanie faktów do Kartoteki i rozluźnienie zbyt górnolotnych fragmentów."
+    },
+    {
+      "data": "2026-08-30 00:35",
+      "typ": "skit",
+      "akcja": "zmiana",
+      "slug": "trzy-zegary",
+      "tytul": "TRZY ZEGARY",
+      "opis": "Redakcja: poprawki językowe (odmiana, literówki), sprostowanie faktów do Kartoteki i rozluźnienie zbyt górnolotnych fragmentów."
+    },
+    {
+      "data": "2026-08-30 00:35",
+      "typ": "skit",
+      "akcja": "zmiana",
+      "slug": "znak-burzy",
+      "tytul": "ZNAK BURZY",
+      "opis": "Redakcja: poprawki językowe (odmiana, literówki), sprostowanie faktów do Kartoteki i rozluźnienie zbyt górnolotnych fragmentów."
+    },
+    {
+      "data": "2026-08-30 00:35",
+      "typ": "skit",
+      "akcja": "zmiana",
+      "slug": "znak-i-liczba",
+      "tytul": "ZNAK I LICZBA",
+      "opis": "Redakcja: poprawki językowe (odmiana, literówki), sprostowanie faktów do Kartoteki i rozluźnienie zbyt górnolotnych fragmentów."
+    },
+    {
+      "data": "2026-08-30 00:35",
+      "typ": "skit",
+      "akcja": "zmiana",
+      "slug": "zagadka-ze-spizu",
+      "tytul": "ZAGADKA ZE SPIŻU",
+      "opis": "Redakcja: poprawki językowe (odmiana, literówki), sprostowanie faktów do Kartoteki i rozluźnienie zbyt górnolotnych fragmentów."
+    },
+    {
+      "data": "2026-08-30 00:20",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "knecht-z-koptos",
+      "tytul": "Knecht z Koptos — ożywiony tłuczek, który nie zna słowa końca",
+      "opis": "Dodana wizualizacja 21:9 w knecht-z-koptos.jpg — powstała z ramowego promptu wpisu i pokazuje byt w jego naturalnym otoczeniu."
+    },
+    {
+      "data": "2026-08-30 00:20",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "morowa-panna",
+      "tytul": "Morowa Panna — zaraza w białej szacie z czerwoną chustą",
+      "opis": "Dodana wizualizacja 21:9 w morowa-panna.jpg — powstała z ramowego promptu wpisu i pokazuje byt w jego naturalnym otoczeniu."
+    },
+    {
+      "data": "2026-08-30 00:20",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "pandora",
+      "tytul": "Pandora — pierwsza kobieta i pithos, w którym została nadzieja",
+      "opis": "Dodana wizualizacja 21:9 w pandora.jpg — powstała z ramowego promptu wpisu i pokazuje byt w jego naturalnym otoczeniu."
+    },
+    {
+      "data": "2026-08-30 00:20",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "protostates",
+      "tytul": "Protostates — fantom pierwszego szeregu",
+      "opis": "Dodana wizualizacja 21:9 w protostates.jpg — powstała z ramowego promptu wpisu i pokazuje byt w jego naturalnym otoczeniu."
+    },
+    {
+      "data": "2026-08-30 00:20",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "syama-i-sarvara",
+      "tytul": "Śyāma i Śarvara — czterookie psy Yamy, strażnicy drogi przodków",
+      "opis": "Dodana wizualizacja 21:9 w syama-i-sarvara.jpg — powstała z ramowego promptu wpisu i pokazuje byt w jego naturalnym otoczeniu."
+    },
+    {
+      "data": "2026-08-30 00:09",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "knecht-z-koptos",
+      "tytul": "Knecht z Koptos — ożywiony tłuczek, który nie zna słowa końca",
+      "opis": "Nowa materializacja: knecht z Koptos — ożywiony tłuczek z „Filopseudesa” Lukiana, na podstawie karty „Apprentice Wizard” (2XM #40)."
+    },
+    {
+      "data": "2026-08-30 00:09",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "morowa-panna",
+      "tytul": "Morowa Panna — zaraza w białej szacie z czerwoną chustą",
+      "opis": "Nowa materializacja: Morowa Panna — słowiańska personifikacja zarazy z czerwoną chustą, na podstawie karty „Infectious Horror” (CON #47); do kanonu dopisany tag kulturowy „polska”."
+    },
+    {
+      "data": "2026-08-30 00:09",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "pandora",
+      "tytul": "Pandora — pierwsza kobieta i pithos, w którym została nadzieja",
+      "opis": "Nowa materializacja: Pandora — pierwsza kobieta z „Prac i dni” Hezjoda i jej pithos, na podstawie karty „Panic Spellbomb” (SOM #191)."
+    },
+    {
+      "data": "2026-08-30 00:09",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "protostates",
+      "tytul": "Protostates — fantom pierwszego szeregu",
+      "opis": "Nowa materializacja: Protostates — fantom pierwszego szeregu z etosu greckiej falangi, na podstawie karty „Akroan Sergeant” (ORI #130)."
+    },
+    {
+      "data": "2026-08-30 00:09",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "syama-i-sarvara",
+      "tytul": "Śyāma i Śarvara — czterookie psy Yamy, strażnicy drogi przodków",
+      "opis": "Nowa materializacja: Śyāma i Śarvara — czterookie psy Yamy z Rigwedy 10.14, na podstawie karty „Trade Route Envoy” (TDM #163)."
+    },
+    {
+      "data": "2026-08-30 00:09",
+      "typ": "manifestacja",
+      "akcja": "nowa",
+      "slug": "knecht-z-koptos",
+      "tytul": "Knecht z Koptos — ożywiony tłuczek, który nie zna słowa końca",
+      "opis": "wpis w kartotece — materializacja karty „Apprentice Wizard”"
+    },
+    {
+      "data": "2026-08-30 00:09",
+      "typ": "manifestacja",
+      "akcja": "nowa",
+      "slug": "morowa-panna",
+      "tytul": "Morowa Panna — zaraza w białej szacie z czerwoną chustą",
+      "opis": "wpis w kartotece — materializacja karty „Infectious Horror”"
+    },
+    {
+      "data": "2026-08-30 00:09",
+      "typ": "manifestacja",
+      "akcja": "nowa",
+      "slug": "pandora",
+      "tytul": "Pandora — pierwsza kobieta i pithos, w którym została nadzieja",
+      "opis": "wpis w kartotece — materializacja karty „Panic Spellbomb”"
+    },
+    {
+      "data": "2026-08-30 00:09",
+      "typ": "manifestacja",
+      "akcja": "nowa",
+      "slug": "protostates",
+      "tytul": "Protostates — fantom pierwszego szeregu",
+      "opis": "wpis w kartotece — materializacja karty „Akroan Sergeant”"
+    },
+    {
+      "data": "2026-08-30 00:09",
+      "typ": "manifestacja",
+      "akcja": "nowa",
+      "slug": "syama-i-sarvara",
+      "tytul": "Śyāma i Śarvara — czterookie psy Yamy, strażnicy drogi przodków",
+      "opis": "wpis w kartotece — materializacja karty „Trade Route Envoy”"
+    },
+    {
+      "data": "2026-08-29 21:41",
+      "typ": "skit",
+      "akcja": "nowy",
+      "slug": "dzien-wolnego",
+      "tytul": "DZIEŃ WOLNEGO",
+      "opis": "SKIT — skład: Agni, Ben-Varrey, Kannon"
+    },
+    {
+      "data": "2026-08-29 21:40",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "agni",
+      "tytul": "Agni — bóg ognia ofiarnego",
+      "opis": "Pogłębienie karty (C1): trzy poziomy obecności Agniego (ziemia, błyskawica, słońce), siedem języków obrzędowych i imiona (Pāvaka, Havyavāhana, Dhumaketu…), rola świadka saptapadi; dodane źródła: Rigweda 1.1 (Griffith), Wikipedia, Agni Purana."
+    },
+    {
+      "data": "2026-08-29 21:40",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "sfinks-teby",
+      "tytul": "Sfinks — strażniczka Tebańskich Wrót",
+      "opis": "Pogłębienie karty (C1): wariant Pausaniasza (nieślubna córka Lajosa i wyrocznia Kadmosa; wersja racjonalizująca — piratka z Anthedonu), pochodzenie zagadki od Muz (Apollodor 3.5.8) i szczegóły rozwiązania; dodane źródło pierwotne (Pauzaniasz 9.26.2, Perseus)."
+    },
+    {
+      "data": "2026-08-29 21:36",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "egungun",
+      "tytul": "Egungun",
+      "opis": "Korekta językowa sekcji V: formy czasownika w tabeli klucza przywołania."
+    },
+    {
+      "data": "2026-08-29 21:36",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "kentaur-pelion",
+      "tytul": "Kentaur z Pelionu",
+      "opis": "Korekty językowe sekcji II i IV: składnia opisu wyglądu i trofeum wtórnego („dobili”)."
+    },
+    {
+      "data": "2026-08-29 21:36",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "lincoln-imp",
+      "tytul": "Imp z Lincoln",
+      "opis": "Korekty językowe sekcji II–V: „nieproszony”, „filaru”, „Skamieniały”, „dyplomatyczne wyzwiska”."
+    },
+    {
+      "data": "2026-08-29 21:36",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "selkie-sule-skerry",
+      "tytul": "Wielki Selkie z Sule Skerry",
+      "opis": "Korekty językowe powiązań z Nessosem i Ben-Varrey: „Selkie”, „foczą skórę”."
+    },
+    {
+      "data": "2026-08-29 21:36",
+      "typ": "skit",
+      "akcja": "zmiana",
+      "slug": "dwa-grzbiety",
+      "tytul": "DWA GRZBIETY",
+      "opis": "Przeredagowanie dialogu: rozbudowane didaskalia i żywsza, lżejsza mowa (rejestr §8.3 pkt 3); skład uczestników i fakty pozostały bez zmian."
+    },
+    {
+      "data": "2026-08-29 21:36",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "agni",
+      "tytul": "Agni — bóg ognia ofiarnego",
+      "opis": "Dopisane powiązania z Egúngún (dwa uświęcone kanały komunikacji: przodkowie w szatach i Agni jako usta bogów) oraz z Kannon z Hasedery (ogień oczyszczenia i współczucie, które gasi płomienie piekielne)."
+    },
+    {
+      "data": "2026-08-29 21:36",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "balor",
+      "tytul": "Balor z Tory Island",
+      "opis": "Korekta językowa sekcji II: składnia pierwszego zdania wyglądu i aury."
+    },
+    {
+      "data": "2026-08-29 21:36",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "ben-varrey",
+      "tytul": "Ben-Varrey — syrena z Wyspy Man",
+      "opis": "Dopisane powiązania z Balorem (sąsiedztwo wód Morza Irlandzkiego i tabu imienia na morzu) oraz z Drangue (przeciwstawne stany pogody: mgła i sztorm wobec rozpraszania nawałnic); korekta językowa („uszanuje”)."
+    },
+    {
+      "data": "2026-08-29 21:36",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "drangue-shala",
+      "tytul": "Drangue z doliny Shali",
+      "opis": "Korekta językowa sekcji IV: opis trofeum wtórnego."
+    },
+    {
+      "data": "2026-08-29 21:36",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "empusa-korynt",
+      "tytul": "Empusa z Koryntu",
+      "opis": "Korekty językowe sekcji II („którzy wpadają”, „precz gna obelga”) oraz powiązania ze Sfinksem."
+    },
+    {
+      "data": "2026-08-29 21:36",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "indra",
+      "tytul": "Indra — władca gromu",
+      "opis": "Korekty językowe sekcji II i III: „Nie może pokonać”, nazwa Szali, „dwóch natur”."
+    },
+    {
+      "data": "2026-08-29 21:36",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "kannon-hase",
+      "tytul": "Kannon — miłosierna wybawicielka",
+      "opis": "Dopisane powiązanie z Agnim (ogień oczyszczenia i współczucie Kannon); korekta językowa powiązania z Selkie („człowiekiem”)."
+    },
+    {
+      "data": "2026-08-29 21:36",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "sfinks-teby",
+      "tytul": "Sfinks — strażniczka Tebańskich Wrót",
+      "opis": "Dopisane powiązania z Talosem (dwa greckie mechanizmy zaporowe: głaz i zagadka) oraz z Balorem (groza spojrzenia na granicy terytorium); korekty językowe."
+    },
+    {
+      "data": "2026-08-29 21:36",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "talos-kreta",
+      "tytul": "Talos — spiżowy strażnik Krety",
+      "opis": "Dopisane powiązania ze Sfinksem (bastiony nieprzekraczalnej granicy) i z Balorem (kolosy o jednym słabym punkcie konstrukcji)."
+    },
+    {
+      "data": "2026-08-29 21:36",
+      "typ": "skit",
+      "akcja": "zmiana",
+      "slug": "cena-znaku",
+      "tytul": "CENA ZNAKU",
+      "opis": "Przeredagowanie dialogu: rozbudowane didaskalia i żywsza, lżejsza mowa (rejestr §8.3 pkt 3); skład uczestników i fakty pozostały bez zmian."
+    },
+    {
+      "data": "2026-08-29 21:36",
+      "typ": "skit",
+      "akcja": "zmiana",
+      "slug": "dwa-zepsute-wesela",
+      "tytul": "DWA ZEPSUTE WESELA",
+      "opis": "Przeredagowanie dialogu: rozbudowane didaskalia i żywsza, lżejsza mowa (rejestr §8.3 pkt 3); skład uczestników i fakty pozostały bez zmian."
+    },
+    {
+      "data": "2026-08-29 21:36",
+      "typ": "skit",
+      "akcja": "zmiana",
+      "slug": "dwie-skory",
+      "tytul": "DWIE SKÓRY",
+      "opis": "Przeredagowanie dialogu: rozbudowane didaskalia i żywsza, lżejsza mowa (rejestr §8.3 pkt 3); skład uczestników i fakty pozostały bez zmian."
+    },
+    {
+      "data": "2026-08-29 21:36",
+      "typ": "skit",
+      "akcja": "zmiana",
+      "slug": "godzina-otwarcia",
+      "tytul": "GODZINA OTWARCIA",
+      "opis": "Przeredagowanie dialogu: rozbudowane didaskalia i żywsza, lżejsza mowa (rejestr §8.3 pkt 3); skład uczestników i fakty pozostały bez zmian."
+    },
+    {
+      "data": "2026-08-29 21:36",
+      "typ": "skit",
+      "akcja": "zmiana",
+      "slug": "hold-oraz-swiatlo",
+      "tytul": "HOŁD ORAZ ŚWIATŁO",
+      "opis": "Przeredagowanie dialogu: rozbudowane didaskalia i żywsza, lżejsza mowa (rejestr §8.3 pkt 3); skład uczestników i fakty pozostały bez zmian."
+    },
+    {
+      "data": "2026-08-29 21:36",
+      "typ": "skit",
+      "akcja": "zmiana",
+      "slug": "imie-na-progu",
+      "tytul": "IMIĘ NA PROGU",
+      "opis": "Przeredagowanie dialogu: rozbudowane didaskalia i żywsza, lżejsza mowa (rejestr §8.3 pkt 3); skład uczestników i fakty pozostały bez zmian."
+    },
+    {
+      "data": "2026-08-29 21:36",
+      "typ": "skit",
+      "akcja": "zmiana",
+      "slug": "kalendarz-powrotow",
+      "tytul": "KALENDARZ POWROTÓW",
+      "opis": "Przeredagowanie dialogu: rozbudowane didaskalia i żywsza, lżejsza mowa (rejestr §8.3 pkt 3); skład uczestników i fakty pozostały bez zmian."
+    },
+    {
+      "data": "2026-08-29 21:36",
+      "typ": "skit",
+      "akcja": "zmiana",
+      "slug": "komu-wolno-patrzec",
+      "tytul": "KOMU WOLNO PATRZEĆ",
+      "opis": "Przeredagowanie dialogu: rozbudowane didaskalia i żywsza, lżejsza mowa (rejestr §8.3 pkt 3); skład uczestników i fakty pozostały bez zmian."
+    },
+    {
+      "data": "2026-08-29 21:36",
+      "typ": "skit",
+      "akcja": "zmiana",
+      "slug": "kurz-i-piora",
+      "tytul": "KURZ I PIÓRA",
+      "opis": "Przeredagowanie dialogu: rozbudowane didaskalia i żywsza, lżejsza mowa (rejestr §8.3 pkt 3); skład uczestników i fakty pozostały bez zmian."
+    },
+    {
+      "data": "2026-08-29 21:36",
+      "typ": "skit",
+      "akcja": "zmiana",
+      "slug": "nieproszeni-goscie",
+      "tytul": "NIEPROSZENI GOŚCIE",
+      "opis": "Przeredagowanie dialogu: rozbudowane didaskalia i żywsza, lżejsza mowa (rejestr §8.3 pkt 3); skład uczestników i fakty pozostały bez zmian."
+    },
+    {
+      "data": "2026-08-29 21:36",
+      "typ": "skit",
+      "akcja": "zmiana",
+      "slug": "odzwierni",
+      "tytul": "ODŹWIERNI",
+      "opis": "Przeredagowanie dialogu: rozbudowane didaskalia i żywsza, lżejsza mowa (rejestr §8.3 pkt 3); skład uczestników i fakty pozostały bez zmian."
+    },
+    {
+      "data": "2026-08-29 21:36",
+      "typ": "skit",
+      "akcja": "zmiana",
+      "slug": "plotno-i-kamien",
+      "tytul": "PŁÓTNO I KAMIEŃ",
+      "opis": "Przeredagowanie dialogu: rozbudowane didaskalia i żywsza, lżejsza mowa (rejestr §8.3 pkt 3); skład uczestników i fakty pozostały bez zmian."
+    },
+    {
+      "data": "2026-08-29 21:36",
+      "typ": "skit",
+      "akcja": "zmiana",
+      "slug": "trzy-stoly",
+      "tytul": "TRZY STOŁY",
+      "opis": "Przeredagowanie dialogu: rozbudowane didaskalia i żywsza, lżejsza mowa (rejestr §8.3 pkt 3); skład uczestników i fakty pozostały bez zmian."
+    },
+    {
+      "data": "2026-08-29 21:36",
+      "typ": "skit",
+      "akcja": "zmiana",
+      "slug": "trzy-zegary",
+      "tytul": "TRZY ZEGARY",
+      "opis": "Przeredagowanie dialogu: rozbudowane didaskalia i żywsza, lżejsza mowa (rejestr §8.3 pkt 3); skład uczestników i fakty pozostały bez zmian."
+    },
+    {
+      "data": "2026-08-29 21:36",
+      "typ": "skit",
+      "akcja": "zmiana",
+      "slug": "znak-burzy",
+      "tytul": "ZNAK BURZY",
+      "opis": "Przeredagowanie dialogu: rozbudowane didaskalia i żywsza, lżejsza mowa (rejestr §8.3 pkt 3); skład uczestników i fakty pozostały bez zmian."
+    },
+    {
+      "data": "2026-08-29 21:36",
+      "typ": "skit",
+      "akcja": "zmiana",
+      "slug": "znak-i-liczba",
+      "tytul": "ZNAK I LICZBA",
+      "opis": "Przeredagowanie dialogu: rozbudowane didaskalia i żywsza, lżejsza mowa (rejestr §8.3 pkt 3); skład uczestników i fakty pozostały bez zmian."
+    },
+    {
+      "data": "2026-08-29 21:36",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "nessos",
+      "tytul": "Nessos",
+      "opis": "Korekta językowa powiązania z Selkie: „zwodzą człowieka przez zaufanie”."
+    },
     {
       "data": "2026-08-29 11:30",
       "typ": "skit",

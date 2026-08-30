@@ -7,16 +7,6 @@ export function wpisWzorzec(nadpisania = {}) {
     karta: { nazwa: 'Grizzly Bears', wydanie: 'Alpha', rok: 1993 },
     lokalizacja: { miejscowosc: 'Białowieża', kraj: 'Polska', lat: 52.7, lon: 23.85 },
     pochodzenie_i_kultura: 'folklor testowy',
-    rezonans: {
-      klucz_przywolania: 'Testowy klucz przywołania wyjaśniający korelację karty z bytem.',
-      tabela: [
-        { element: 'Nazwa', translacja: 'test' },
-        { element: 'Mechanika', translacja: 'test' },
-        { element: 'Ilustracja', translacja: 'test' },
-        { element: 'Flavor text', translacja: 'test' },
-        { element: 'Lore/Tło', translacja: 'test' },
-      ],
-    },
     natura: {
       wyglad_i_aura: 'opis',
       charakter_i_motywacje: 'opis',

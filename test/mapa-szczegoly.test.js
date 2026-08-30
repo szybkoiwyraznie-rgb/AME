@@ -51,7 +51,10 @@ function stworzElement(nazwa) {
 }
 
 function zasciel() {
-  globalThis.document = { createElementNS: (_ns, nazwa) => stworzElement(nazwa) };
+  globalThis.document = {
+    createElementNS: (_ns, nazwa) => stworzElement(nazwa),
+    createDocumentFragment: () => stworzElement('fragment'),
+  };
   const kontener = { appendChild: (d) => d, getBoundingClientRect: () => ({ width: 1600, height: 640 }) };
   return { kontener };
 }
@@ -78,18 +81,25 @@ test('geo.js: sciezkaGeoMultiPoligon czyta [lon, lat] i domyka pierścienie', ()
   assert.equal((d.match(/M/g) ?? []).length, 1, 'jeden kwadrat = jedna podścieżka');
 });
 
-test('mapa: rzeki i jeziora ukryte przy k=1, widoczne od PROGI_WARSTW.woda', () => {
+test('mapa: WSZYSTKIE warstwy domyślnie wyłączone — rzeki/jeziora czekają na przełącznik', () => {
   const { kontener } = zasciel();
   const mapa = stworzMape(kontener, {});
   mapa.ustawRzeki({ geometries: [POZIOM_WODY] });
   mapa.ustawJeziora({ geometries: [POZIOM_WODY] });
   const rzeki = znajdzElement(mapa.svg, 'rzeki');
   const jeziora = znajdzElement(mapa.svg, 'jeziora');
-  assert.equal(rzeki.getAttribute('display'), 'none', 'przy całym świecie rzek nie widać');
-  assert.equal(jeziora.getAttribute('display'), 'none');
+  const miasta = znajdzElement(mapa.svg, 'miasta');
+  assert.equal(rzeki.getAttribute('display'), 'none', 'rzeki domyślnie OFF');
+  assert.equal(jeziora.getAttribute('display'), 'none', 'jeziora domyślnie OFF');
+  assert.equal(miasta.getAttribute('display'), 'none', 'miasta domyślnie OFF');
 
+  // sam zoom NIE włącza warstwy — dopiero przełącznik
   mapa.zoomDoPunktu({ x: 800, y: 320 }, 5);
   assert.ok(mapa.widok.k >= PROGI_WARSTW.woda, `k=${mapa.widok.k}`);
+  assert.equal(rzeki.getAttribute('display'), 'none');
+
+  mapa.przelaczWidocznoscWarstwy('rzeki', true);
+  mapa.przelaczWidocznoscWarstwy('jeziora', true);
   assert.equal(rzeki.getAttribute('display'), 'inherit');
   assert.equal(jeziora.getAttribute('display'), 'inherit');
 });
@@ -102,6 +112,7 @@ test('mapa: miasta dzielone na rangi i kompensowane do rozmiaru ekranowego', () 
     { n: 'Średnie', lat: 0.5, lon: 0.5, p: 600_000 },
     { n: 'Drobne', lat: 1, lon: 1, p: 120_000 },
   ]);
+  mapa.przelaczWidocznoscWarstwy('miasta', true); // domyślnie OFF (decyzja 2026-08-30)
   const grupaMiast = znajdzElement(mapa.svg, 'miasta');
   const wielkie = znajdzElement(grupaMiast, 'miasta-wielkie');
   const srednie = znajdzElement(grupaMiast, 'miasta-srednie');
@@ -157,6 +168,7 @@ test('mapa: przytrzymanie wciśniętego przycisku nad miastem pokazuje etykietę
     { n: 'Warszawa', lat: 52.23, lon: 21.01, p: 1_700_000 },
     { n: 'Gdańsk', lat: 54.35, lon: 18.65, p: 470_000 },
   ]);
+  mapa.przelaczWidocznoscWarstwy('miasta', true); // domyślnie OFF
   mapa.zoomDoPunktu({ x: 800, y: 320 }, 4);
   const [wx, wy] = projektuj(52.23, 21.01);
   const px = mapa.widok.x + wx * mapa.skala;
@@ -204,6 +216,7 @@ test('mapa: nazwa miasta tylko podczas przytrzymania — hover jej nie pokazuje 
     matrixTransform(m) { return { x: m.a * this.x + m.c * this.y + m.e, y: m.b * this.x + m.d * this.y + m.f }; }
   };
   mapa.ustawMiasta([{ n: 'Kraków', lat: 50.06, lon: 19.94, p: 1_200_000 }]);
+  mapa.przelaczWidocznoscWarstwy('miasta', true); // domyślnie OFF
   mapa.zoomDoPunktu({ x: 800, y: 320 }, 4);
   const [wx, wy] = projektuj(50.06, 19.94);
   const px = mapa.widok.x + wx * mapa.skala;
@@ -240,6 +253,7 @@ test('mapa: przycisk przelaczWidocznoscWarstwy nie psuje warstw wodnych', () => 
   const mapa = stworzMape(kontener, {});
   mapa.ustawRzeki({ geometries: [POZIOM_WODY] });
   const rzeki = znajdzElement(mapa.svg, 'rzeki');
+  mapa.przelaczWidocznoscWarstwy('rzeki', true); // domyślnie OFF
   mapa.zoomDoPunktu({ x: 800, y: 320 }, 5);
   assert.equal(rzeki.getAttribute('display'), 'inherit');
   mapa.przelaczWidocznoscWarstwy('rzeki', false);
@@ -266,5 +280,228 @@ test('assets: warstwy 2km5 dekodują się do ścieżek SVG, miasta mają dane', 
   assert.ok(mi.length > 1000, `miasta=${mi.length}`);
   for (const m of mi.slice(0, 5)) {
     assert.ok(m.n && Number.isFinite(m.lat) && Number.isFinite(m.lon), JSON.stringify(m));
+  }
+});
+
+/* ---- M1–M3: POI, miejsca historyczne, hipsometria, podkłady online ----
+ * Warstwy „lasy/urban/morza” usunięte decyzją właściciela 2026-08-30 (A). */
+
+test('mapa: POI/historia — domyślnie OFF, włączalne, progi LOD, etykieta punktu (B)', () => {
+  const { kontener } = zasciel();
+  const mapa = stworzMape(kontener, {});
+  mapa.ustawSzczyty({ features: [{ type: 'Feature', properties: { n: 'Rysy', e: 2499 }, geometry: { type: 'Point', coordinates: [20.1, 49.18] } }] });
+  mapa.ustawHistorie({ features: [{ type: 'Feature', properties: { n: 'Rzym' }, geometry: { type: 'Point', coordinates: [12.5, 41.9] } }] });
+  mapa.ustawHipsometrie('assets/map/hipsometria.jpg');
+
+  const poi = znajdzElement(mapa.svg, 'poi');
+  const historia = znajdzElement(mapa.svg, 'historia');
+  const hipso = znajdzElement(mapa.svg, 'hipsometria');
+  const etykietaPunktu = znajdzElement(mapa.svg, 'etykieta-punktu');
+  assert.equal(poi.getAttribute('display'), 'none', 'POI domyślnie OFF');
+  assert.equal(historia.getAttribute('display'), 'none', 'historia domyślnie OFF');
+  assert.ok(etykietaPunktu, 'pływająca etykieta punktu w drzewie SVG');
+  assert.ok(!etykietaPunktu.czyMaKlase('widoczna'), 'etykieta ukryta przed wciśnięciem');
+
+  // punkt POI: kropka, pole trafienia, aria-label i bez <title> (B)
+  const punkt = znajdzElement(poi, 'punkt');
+  assert.ok(punkt, 'punkt POI narysowany z FeatureCollection');
+  const kropka = punkt.dzieci.find((d) => d.czyMaKlase('kropka'));
+  const trafienie = punkt.dzieci.find((d) => d.czyMaKlase('trafienie'));
+  assert.ok(kropka, 'punkt POI ma kropkę');
+  assert.ok(trafienie, 'punkt POI ma przezroczyste pole trafienia');
+  assert.equal(trafienie.getAttribute('r'), '13', 'pole trafienia = PROMIEN_KLIK_PUNKTU');
+  assert.equal(punkt.getAttribute('aria-label'), 'Rysy · 2499 m n.p.m.');
+  assert.ok(!punkt.dzieci.some((d) => d.nazwa === 'title'), 'bez <title> — nazwa nie na najechanie');
+
+  const obraz = znajdzElement(hipso, 'hipsometria-obraz');
+  assert.ok(obraz, 'raster hipsometrii podpięty');
+  assert.equal(obraz.getAttribute('href'), 'assets/map/hipsometria.jpg');
+
+  // włączenie + progi LOD
+  mapa.przelaczWidocznoscWarstwy('poi', true);
+  mapa.przelaczWidocznoscWarstwy('historia', true);
+  mapa.przelaczWidocznoscWarstwy('hipsometria', true);
+  assert.equal(hipso.getAttribute('display'), 'inherit', 'hipsometria od razu');
+  assert.equal(poi.getAttribute('display'), 'none', 'POI dopiero od k>=8');
+  assert.equal(historia.getAttribute('display'), 'none', 'historia dopiero od k>=6');
+
+  mapa.zoomDoPunktu({ x: 800, y: 320 }, 10);
+  assert.equal(poi.getAttribute('display'), 'inherit', 'k>=8');
+  assert.equal(historia.getAttribute('display'), 'inherit', 'k>=6');
+});
+
+test('mapa: POI i miejsca historyczne — nazwa on-press, znika on-release (B)', () => {
+  const { kontener } = zasciel();
+  const mapa = stworzMape(kontener, {});
+  mapa.svg.getScreenCTM = () => ({ inverse: () => ({ a: 1, b: 0, c: 0, d: 1, e: 0, f: 0 }) });
+  globalThis.DOMPoint = class {
+    constructor(x, y) { this.x = x; this.y = y; }
+    matrixTransform(m) { return { x: m.a * this.x + m.c * this.y + m.e, y: m.b * this.x + m.d * this.y + m.f }; }
+  };
+
+  mapa.ustawSzczyty({ features: [{ type: 'Feature', properties: { n: 'Rysy', e: 2499 }, geometry: { type: 'Point', coordinates: [20.1, 49.18] } }] });
+  mapa.ustawHistorie({ features: [{ type: 'Feature', properties: { n: 'Rzym' }, geometry: { type: 'Point', coordinates: [12.5, 41.9] } }] });
+  mapa.przelaczWidocznoscWarstwy('poi', true);
+  mapa.przelaczWidocznoscWarstwy('historia', true);
+  mapa.zoomDoPunktu({ x: 800, y: 320 }, 10);
+  const [wx, wy] = projektuj(49.18, 20.1);
+  const px = mapa.widok.x + wx * mapa.skala;
+  const py = mapa.widok.y + wy * mapa.skala;
+  const etykieta = znajdzElement(mapa.svg, 'etykieta-punktu');
+  assert.ok(!etykieta.czyMaKlase('widoczna'), 'ukryta przed wciśnięciem');
+
+  mapa.svg.sluchacze.pointerdown[0]({ pointerId: 1, target: { closest: () => null }, clientX: px, clientY: py });
+  assert.ok(etykieta.czyMaKlase('widoczna'), 'wciśnięcie nad POI pokazuje tabliczkę');
+  const tekst = etykieta.dzieci.find((d) => d.nazwa === 'text');
+  assert.equal(tekst?.textContent, 'Rysy · 2499 m n.p.m.');
+  mapa.svg.sluchacze.pointerup[0]({ pointerId: 1 });
+  assert.ok(!etykieta.czyMaKlase('widoczna'), 'puszczenie chowa tabliczkę');
+
+  // miejsce historyczne — analogicznie
+  const [hx, hy] = projektuj(41.9, 12.5);
+  const hpx = mapa.widok.x + hx * mapa.skala;
+  const hpy = mapa.widok.y + hy * mapa.skala;
+  mapa.svg.sluchacze.pointerdown[0]({ pointerId: 2, target: { closest: () => null }, clientX: hpx, clientY: hpy });
+  assert.ok(etykieta.czyMaKlase('widoczna'), 'punkt historyczny też pokazuje nazwę');
+  assert.equal(etykieta.dzieci.find((d) => d.nazwa === 'text')?.textContent, 'Rzym');
+  mapa.svg.sluchacze.pointerup[0]({ pointerId: 2 });
+  assert.ok(!etykieta.czyMaKlase('widoczna'), 'po puszczeniu znika');
+
+  // przeciągnięcie chowa, wyłączenie warstwy chowa otwartą tabliczkę
+  mapa.svg.sluchacze.pointerdown[0]({ pointerId: 3, target: { closest: () => null }, clientX: px, clientY: py });
+  assert.ok(etykieta.czyMaKlase('widoczna'), 'ponowne wciśnięcie pokazuje');
+  mapa.svg.sluchacze.pointermove[0]({ pointerId: 3, clientX: px + 20, clientY: py + 10 });
+  assert.ok(!etykieta.czyMaKlase('widoczna'), 'przeciągnięcie chowa tabliczkę');
+  mapa.svg.sluchacze.pointerup[0]({ pointerId: 3 });
+
+  // po przeciągnięciu świat się przesunął — licz współrzędne z aktualnego widoku
+  const [wx2, wy2] = projektuj(49.18, 20.1);
+  const px2 = mapa.widok.x + wx2 * mapa.skala;
+  const py2 = mapa.widok.y + wy2 * mapa.skala;
+  mapa.svg.sluchacze.pointerdown[0]({ pointerId: 4, target: { closest: () => null }, clientX: px2, clientY: py2 });
+  assert.ok(etykieta.czyMaKlase('widoczna'), 'znowu widać po wciśnięciu');
+  mapa.przelaczWidocznoscWarstwy('poi', false);
+  assert.ok(!etykieta.czyMaKlase('widoczna'), 'wyłączona warstwa chowa otwartą tabliczkę');
+  mapa.svg.sluchacze.pointerup[0]({ pointerId: 4 });
+
+  delete globalThis.DOMPoint;
+  delete mapa.svg.getScreenCTM;
+});
+
+test('mapa: podkłady online — wyłączone domyślnie; wybór klucza rysuje kafelki', () => {
+  const { kontener } = zasciel();
+  const mapa = stworzMape(kontener, {});
+  assert.equal(mapa.PODKLADY_ONLINE.opentopo.etykieta, 'OpenTopoMap');
+  assert.equal(mapa.PODKLADY_ONLINE['esri-satelita'].etykieta, 'Esri World Imagery');
+  assert.ok(Object.keys(mapa.PODKLADY_ONLINE).length === 3, 'trzy darmowe podkłady bez klucza');
+  assert.ok(!('esri-teren' in mapa.PODKLADY_ONLINE), 'Esri „świat fizyczny” usunięty (A2)');
+
+  const podklad = znajdzElement(mapa.svg, 'podklad-online');
+  assert.equal(podklad.getAttribute('display'), 'none', 'domyślnie OFF');
+
+  mapa.przelaczWidocznoscWarstwy('podklad', 'opentopo');
+  assert.equal(podklad.getAttribute('display'), 'inherit');
+  assert.ok(mapa.svg.czyMaKlase('z-podklad-online'), 'kraje półprzezroczyste pod podkładem');
+  const kafelek = znajdzElement(podklad, 'kafelek');
+  assert.ok(kafelek, 'kafelki wstawione do grupy');
+  assert.equal(kafelek.nazwa, 'image');
+  assert.match(String(kafelek.getAttribute('href')), /tile\.opentopomap\.org/);
+  assert.ok(Number(kafelek.getAttribute('width')) > 0, 'kafelek ma rozmiar');
+
+  mapa.przelaczWidocznoscWarstwy('podklad', null);
+  assert.equal(podklad.getAttribute('display'), 'none');
+  assert.ok(!mapa.svg.czyMaKlase('z-podklad-online'), 'po wyłączeniu klasy znikają');
+});
+
+test('mapa: głębsze przybliżenie tylko z podkładem online (C)', () => {
+  const { kontener } = zasciel();
+  const mapa = stworzMape(kontener, {});
+  // offline: 32× to twardy sufit
+  mapa.zoomDoPunktu({ x: 800, y: 320 }, 1e9);
+  assert.equal(mapa.widok.k, 32, 'offline sufit K_MAX');
+
+  // włączony podkład: scroll idzie znacznie głębiej
+  mapa.przelaczWidocznoscWarstwy('podklad', 'opentopo');
+  mapa.zoomDoPunktu({ x: 800, y: 320 }, 1e9);
+  // Techniczny sufit wg specyfikacji źródeł: kafelki z≈19 → 2^19 = 524 288×.
+  const oczekiwane = 2 ** 19;
+  assert.ok(mapa.widok.k > 32, `k=${mapa.widok.k} — przekroczono K_MAX`);
+  assert.equal(mapa.widok.k, oczekiwane, `sufit online = ${oczekiwane}× (kafelki z≈19 — C)`);
+
+  // kafelki wciąż rysowane dla tego powiększenia (z>0, bez NaN)
+  const podklad = znajdzElement(mapa.svg, 'podklad-online');
+  const kafelek = znajdzElement(podklad, 'kafelek');
+  assert.ok(kafelek, 'kafelki przy głębokim zoomie');
+  assert.ok(Number(kafelek.getAttribute('width')) > 0);
+
+  // wyłączenie podkładu wraca do sufiksu offline
+  mapa.przelaczWidocznoscWarstwy('podklad', null);
+  assert.equal(mapa.widok.k, 32, 'po wyłączeniu podkładu sufit wraca do 32×');
+});
+
+test('mapa: wyłączenie podkładu oddala w miejscu, nie skacze na krawędź świata (B)', () => {
+  const { kontener } = zasciel();
+  const mapa = stworzMape(kontener, {});
+  // wycentruj na Europie przy maksymalnym zoomie online
+  mapa.przelaczWidocznoscWarstwy('podklad', 'opentopo');
+  const [wx, wy] = projektuj(52.23, 21.01);
+  mapa.ustawWidok(wx, wy, 67);
+  const srodekPrzed = {
+    wx: (1600 / 2 - mapa.widok.x) / mapa.skala,
+    wy: (640 / 2 - mapa.widok.y) / mapa.skala,
+  };
+  assert.ok(Math.abs(srodekPrzed.wx - wx) < 1e-6 && Math.abs(srodekPrzed.wy - wy) < 1e-6, 'widok wycentrowany na punkcie');
+
+  mapa.przelaczWidocznoscWarstwy('podklad', null);
+  assert.equal(mapa.widok.k, 32, 'po wyłączeniu podkładu k wraca do 32×');
+  const srodekPo = {
+    wx: (1600 / 2 - mapa.widok.x) / mapa.skala,
+    wy: (640 / 2 - mapa.widok.y) / mapa.skala,
+  };
+  assert.ok(
+    Math.abs(srodekPo.wx - wx) < 1e-6 && Math.abs(srodekPo.wy - wy) < 1e-6,
+    `środek po wyłączeniu (${srodekPo.wx.toFixed(3)}, ${srodekPo.wy.toFixed(3)}) ≠ przed (${wx.toFixed(3)}, ${wy.toFixed(3)})`
+  );
+});
+
+test('mapa: ustawWidok przywraca środek świata i powiększenie (D)', () => {
+  const { kontener } = zasciel();
+  const mapa = stworzMape(kontener, {});
+  const [wx, wy] = projektuj(50.06, 19.94);
+  mapa.ustawWidok(wx, wy, 12);
+  assert.equal(mapa.widok.k, 12);
+  const srodek = {
+    wx: (1600 / 2 - mapa.widok.x) / mapa.skala,
+    wy: (640 / 2 - mapa.widok.y) / mapa.skala,
+  };
+  assert.ok(Math.abs(srodek.wx - wx) < 1e-6 && Math.abs(srodek.wy - wy) < 1e-6, 'środek na zadanym punkcie świata');
+  // przywraca też callback zoomu z punktem środka (do zapisu localStorage)
+  let widokZKallbacku = null;
+  const { kontener: k2 } = zasciel();
+  const m2 = stworzMape(k2, { przyZmianieWidoku: (k, info) => { widokZKallbacku = { k, ...info }; } });
+  m2.ustawWidok(wx, wy, 9);
+  assert.equal(widokZKallbacku.k, 9);
+  assert.ok(widokZKallbacku.srodek, 'callback niesie środek świata');
+  assert.ok(Math.abs(widokZKallbacku.srodek.wx - wx) < 1e-6 && Math.abs(widokZKallbacku.srodek.wy - wy) < 1e-6);
+});
+
+test('assets: nowe warstwy M1–M3 dekodują się do punktów (POI, historia)', async () => {
+  const [szczyty, historia] = await Promise.all([
+    readFile(new URL('../assets/map/szczyty.json', import.meta.url), 'utf8'),
+    readFile(new URL('../assets/map/miejsca-historyczne.json', import.meta.url), 'utf8'),
+  ]);
+  for (const d of [JSON.parse(szczyty), JSON.parse(historia)]) {
+    assert.equal(d.type, 'FeatureCollection');
+    assert.equal(d.features[0].geometry.type, 'Point');
+    const [lon, lat] = d.features[0].geometry.coordinates;
+    assert.ok(Number.isFinite(lon) && Number.isFinite(lat));
+    const [wx, wy] = projektuj(lat, lon);
+    assert.ok(Number.isFinite(wx) && Number.isFinite(wy));
+  }
+  assert.ok(JSON.parse(szczyty).features.length >= 20, 'szczyty z NE');
+  assert.ok(JSON.parse(historia).features.length >= 100, 'miejsca z Pleiades');
+  // A: warstwy usunięte decyzją właściciela nie mają już plików
+  for (const nazwa of ['las.json', 'urban.json', 'morza.json']) {
+    await assert.rejects(readFile(new URL(`../assets/map/${nazwa}`, import.meta.url), 'utf8'), `brak ${nazwa}`);
   }
 });

@@ -1,0 +1,1000 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Kronika — spis Tomów</title>
+<style>
+:root {
+  --bg: #f5f0e6;
+  --bg-subtle: #ede7db;
+  --fg: #1d1916;
+  --muted: #696257;
+  --line: #dbd2c0;
+  --card: #fffefb;
+  --card-alt: #f8f4ec;
+  --accent: #7a4a22;
+  --accent-light: #9c6232;
+  --accent-glow: rgba(122, 74, 34, 0.15);
+  --mit: #347a4d;
+  --mit-bg: #e5efe8;
+  --rac: #435b8e;
+  --rac-bg: #e5ebf7;
+  --up: #347a4d;
+  --down: #a83d29;
+  --code: #efe9dc;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font: 16px/1.65 Georgia, "Times New Roman", serif;
+  -webkit-font-smoothing: antialiased;
+}
+.wrap {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 24px 20px 80px;
+}
+/* TOPBAR */
+html[data-motyw="ciemny"] {
+  --bg: #0d1015;
+  --bg-subtle: #141922;
+  --fg: #d8d2c4;
+  --muted: #8b877c;
+  --line: #2a3140;
+  --card: #1b2230;
+  --card-alt: #232c3c;
+  --accent: #c9a86a;
+  --accent-light: #e0ca9a;
+  --accent-glow: rgba(201, 168, 106, 0.15);
+  --mit: #5ab57a;
+  --mit-bg: #22382c;
+  --rac: #6ea3c2;
+  --rac-bg: #23344a;
+  --code: #161b24;
+}
+
+/* Zastąpione klasy .topbar z głównego menu */
+.gora {
+  display: flex; align-items: center; gap: 14px; padding: 10px 16px;
+  background: var(--bg-subtle); border-bottom: 1px solid var(--line);
+  margin: -24px -20px 40px -20px;
+  flex-wrap: wrap;
+}
+.tytul { display: flex; align-items: baseline; gap: 10px; white-space: nowrap; }
+.tytul h1 { margin: 0; font-family: inherit; font-size: 22px; letter-spacing: 0.12em; color: var(--accent); }
+.tytul h1 a { text-decoration: none; color: inherit; }
+.tytul p { margin: 0; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted); }
+#szukaj {
+  flex: 1; min-width: 120px; max-width: 520px; padding: 8px 14px;
+  border-radius: 999px; border: 1px solid var(--line);
+  background: var(--card); color: var(--fg); font-size: 14px;
+}
+.akcje { display: flex; gap: 8px; flex-wrap: wrap; }
+.przycisk {
+  display: inline-flex; align-items: center; justify-content: center;
+  padding: 7px 12px; border-radius: 8px; border: 1px solid var(--line);
+  background: var(--card); color: var(--fg); font-size: 13px;
+  cursor: pointer; text-decoration: none;
+}
+.przycisk:hover { background: var(--card-alt); border-color: var(--accent-light); }
+.przycisk.aktywny { border-color: var(--accent); color: var(--accent); }
+
+@media (max-width: 900px) {
+  .gora { flex-wrap: wrap; margin: -20px -20px 20px -20px; }
+  #szukaj { order: 3; flex-basis: 100%; max-width: none; }
+  .tytul p { display: none; }
+}
+
+/* HERO */
+.hero {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 24px 28px;
+  margin-bottom: 24px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.03);
+}
+/* Key-art epoki (Kronika, 2026-08-30): hiperrealistyczna kinowa fotografia 21:9 */
+.hero-grafika {
+  margin: 18px 0 0;
+}
+.hero-grafika img {
+  width: 100%;
+  aspect-ratio: 21 / 9;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  display: block;
+  background: var(--card-alt);
+}
+.hero-grafika figcaption {
+  color: var(--muted);
+  font-size: 13px;
+  margin-top: 8px;
+  line-height: 1.5;
+}
+.hero-grafika figcaption .styl {
+  font-style: italic;
+}
+.hero-grafika details {
+  margin-top: 6px;
+  font-size: 12px;
+}
+.hero-grafika details summary {
+  cursor: pointer;
+  color: var(--accent);
+  font-weight: 600;
+}
+.hero-grafika details pre {
+  white-space: pre-wrap;
+  overflow-x: auto;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: var(--code);
+  border: 1px solid var(--line);
+  margin: 6px 0 0;
+  font-size: 12px;
+  max-height: 260px;
+  overflow-y: auto;
+}
+.hero h1 {
+  margin: 8px 0 8px;
+  font-size: 30px;
+  line-height: 1.25;
+  color: var(--fg);
+}
+.hero .sub {
+  color: var(--muted);
+  font-size: 15px;
+  margin: 0 0 16px;
+  max-width: 840px;
+}
+.badges {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.badge {
+  font-size: 12px;
+  padding: 3px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: var(--code);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: var(--muted);
+}
+.badge.tom {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+  font-weight: 600;
+}
+.badge.ok {
+  color: var(--mit);
+  border-color: rgba(52, 122, 77, 0.4);
+  background: var(--mit-bg);
+  font-weight: 600;
+}
+
+/* GAUGE */
+.gauge-wrap {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px dashed var(--line);
+}
+.gauge-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12.5px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+.gauge-header .g-mit { color: var(--mit); }
+.gauge-header .g-rac { color: var(--rac); }
+.gauge {
+  position: relative;
+  height: 16px;
+  border-radius: 999px;
+  background: #dbe3f0;
+  border: 1px solid var(--line);
+  overflow: hidden;
+}
+.gauge .mit-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #2d6b43, #438f5d);
+  transition: width .4s ease;
+}
+
+/* MAP CONTAINER */
+.map-container {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  overflow: hidden;
+  margin-bottom: 24px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.03);
+}
+.map-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 18px;
+  background: var(--card-alt);
+  border-bottom: 1px solid var(--line);
+  font-size: 13.5px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+.map-title {
+  font-weight: 600;
+  color: var(--accent);
+}
+.map-hint {
+  color: var(--muted);
+}
+.kronika-map {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 460px;
+  background: #ede7db;
+}
+.kronika-map .land {
+  fill: #ded6c4;
+  stroke: #c5bba7;
+  stroke-width: 1;
+}
+.kronika-map .arc-glow {
+  fill: none;
+  stroke: #c27c3a;
+  stroke-width: 5;
+  stroke-opacity: 0.35;
+}
+.kronika-map .arc-line {
+  fill: none;
+  stroke: #8d4f1f;
+  stroke-width: 2;
+  stroke-dasharray: 6,4;
+}
+.kronika-map .node {
+  cursor: pointer;
+}
+.kronika-map .node .halo {
+  fill: url(#grad-passive);
+  pointer-events: none;
+}
+.kronika-map .node.active .halo {
+  fill: url(#grad-active);
+  animation: pulse-halo 3s infinite ease-in-out;
+}
+@keyframes pulse-halo {
+  0%, 100% { opacity: 0.7; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.08); }
+}
+.kronika-map .pin-bg {
+  fill: #fffdf8;
+  stroke: #7a4a22;
+  stroke-width: 2;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.15));
+  transition: r .2s ease;
+}
+.kronika-map .node.active .pin-bg {
+  fill: #7a4a22;
+  stroke: #fff;
+}
+.kronika-map .pin-icon {
+  font-size: 20px;
+  text-anchor: middle;
+  dominant-baseline: central;
+}
+.kronika-map .pin-label {
+  font-size: 19px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-weight: 600;
+  fill: #1d1916;
+  paint-order: stroke;
+  stroke: #fffdf8;
+  stroke-width: 4.5px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.kronika-map .node:hover .pin-bg {
+  stroke-width: 3;
+}
+.kronika-map .node:hover .pin-label {
+  fill: var(--accent);
+}
+
+/* GRID & CARDS */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+.col {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+/* Wykres szeroki: rozpięty na obie kolumny gridu (Kronika, 2026-08-30). */
+.kart-szeroka {
+  grid-column: 1 / -1;
+}
+@media(max-width: 860px) {
+  .grid { grid-template-columns: 1fr; }
+}
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 20px 22px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+}
+.card h2 {
+  margin: 0 0 12px;
+  font-size: 19px;
+  border-left: 4px solid var(--accent);
+  padding-left: 10px;
+  color: var(--fg);
+}
+.card-sub {
+  color: var(--muted);
+  font-size: 14px;
+  margin: -6px 0 14px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* PARTICIPANTS LIST */
+.participants-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+.part-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  background: var(--card-alt);
+  text-decoration: none;
+  color: inherit;
+  transition: all .15s ease;
+}
+
+.part-card:hover {
+  border-color: var(--accent);
+  background: #fff;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.04);
+}
+.part-avatar {
+  font-size: 24px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg);
+  border-radius: 8px;
+  border: 1px solid var(--line);
+}
+.part-info {
+  flex: 1;
+}
+.part-name {
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--fg);
+}
+.part-meta {
+  font-size: 12px;
+  color: var(--muted);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+.part-fuel {
+  font-size: 12.5px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-weight: 600;
+  color: var(--accent);
+  text-align: right;
+}
+
+/* DIALOG SKIT */
+.skit-dialog {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.speech-row {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+.speaker-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 700;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+.speech-content {
+  flex: 1;
+}
+.speaker-name {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 2px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+.speech-didaskalia {
+  font-size: 13px;
+  font-style: italic;
+  color: var(--muted);
+  margin-bottom: 4px;
+}
+.speech-bubble {
+  background: var(--card-alt);
+  border: 1px solid var(--line);
+  border-radius: 8px 12px 12px 12px;
+  padding: 10px 14px;
+  font-size: 15px;
+  line-height: 1.55;
+}
+.verdict-box {
+  background: #fdfaf3;
+  border: 1px solid #d9c7a5;
+  border-left: 4px solid #b87930;
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin-top: 16px;
+  font-size: 14.5px;
+  line-height: 1.6;
+}
+.verdict-box b {
+  color: #824f18;
+  font-size: 12.5px;
+  letter-spacing: 0.5px;
+}
+
+/* TABLES */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+th, td {
+  padding: 8px 10px;
+  text-align: left;
+  border-bottom: 1px solid var(--line);
+}
+th {
+  font-size: 12px;
+  color: var(--muted);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.num {
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* CHIPS */
+.chip {
+  border: 1px solid var(--line);
+  background: var(--code);
+  border-radius: 999px;
+  padding: 2px 9px;
+  font-size: 12px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  display: inline-block;
+  white-space: nowrap;
+}
+/* Odnośniki-chip w konwencji brązowego przycisku (recenzja 2026-08-30):
+   link nie może świecić domyślnym niebieskim kolorem przeglądarki. */
+a.chip, .chip.link {
+  color: var(--accent);
+  border-color: var(--accent-light);
+  text-decoration: none;
+  cursor: pointer;
+}
+a.chip:hover, .chip.link:hover {
+  background: var(--accent-glow);
+  color: var(--accent);
+}
+.chip.up { color: var(--up); border-color: rgba(52, 122, 77, 0.4); background: var(--mit-bg); font-weight: 600; }
+.chip.down { color: var(--down); border-color: rgba(168, 61, 41, 0.4); background: #fbeae7; font-weight: 600; }
+.chip.neutral { color: var(--muted); }
+
+/* EPOKA CARDS (TOM) */
+.epoka-card {
+  display: grid;
+  grid-template-columns: 60px 96px 1fr auto;
+  gap: 14px;
+  align-items: center;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 14px 16px;
+  background: var(--card);
+  color: inherit;
+  text-decoration: none;
+  margin-bottom: 12px;
+  transition: all .15s ease;
+}
+.epoka-mini {
+  width: 96px;
+  aspect-ratio: 21 / 9;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px solid var(--line);
+  background: var(--card-alt);
+}
+.epoka-card:hover {
+  border-color: var(--accent);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.04);
+  transform: translateY(-1px);
+}
+.epoka-nr {
+  font-weight: 700;
+  color: var(--accent);
+  font-size: 16px;
+  text-align: center;
+  border-right: 1px solid var(--line);
+  padding-right: 10px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+.epoka-ttl {
+  font-weight: 700;
+  font-size: 16px;
+  margin-bottom: 3px;
+}
+.epoka-meta {
+  font-size: 12.5px;
+  color: var(--muted);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+.epoka-delta {
+  font-size: 12px;
+  margin-top: 6px;
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.epoka-go {
+  font-size: 13px;
+  color: var(--accent);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-weight: 600;
+}
+
+/* LISTS & HELPERS */
+ul { margin: 0; padding-left: 20px; }
+li { margin: 8px 0; }
+.muted { color: var(--muted); font-size: 13.5px; }
+
+/* PAGER */
+.epoka-pager {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0;
+  margin-top: 24px;
+  border-top: 1px solid var(--line);
+}
+.pager-btn {
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 14px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  background: var(--card);
+  transition: all .15s ease;
+}
+.pager-btn:hover {
+  background: var(--code);
+  border-color: var(--accent);
+}
+
+/* ROZSTAJE — drogi dalej (silnik Kronikarza, 2026-08-30) */
+.rozstaje-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 12px;
+  margin-top: 14px;
+}
+.rozstaje-karta {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 14px 16px;
+  background: var(--card-alt);
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  gap: 12px;
+  align-items: start;
+  transition: all .15s ease;
+}
+.rozstaje-karta:hover {
+  border-color: var(--accent);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.04);
+}
+.rozstaje-nr {
+  font-weight: 700;
+  color: var(--accent);
+  font-size: 14px;
+  text-align: center;
+  border-right: 1px solid var(--line);
+  padding-right: 10px;
+  padding-top: 4px;
+}
+.rozstaje-sklad {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 8px;
+}
+.rozstaje-powody {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+/* MODAL KARTOTEKI */
+.panel {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: none;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  background: rgba(26, 23, 20, 0.78);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 36px 16px 64px;
+}
+.panel.otwarty {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  animation: modal-fade-in 0.2s ease-out;
+}
+@keyframes modal-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.warstwa-wpisu {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  max-width: 880px;
+  width: 100%;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+  position: relative;
+  overflow: hidden;
+  animation: modal-slide-up 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+}
+@keyframes modal-slide-up {
+  from { transform: translateY(24px) scale(0.98); }
+  to { transform: translateY(0) scale(1); }
+}
+.akcje-kartoteki {
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  background: rgba(255, 254, 251, 0.94);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+  z-index: 20;
+}
+.tytul-modal-top {
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+.zamknij {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  background: var(--card-alt);
+  color: var(--fg);
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all .15s ease;
+}
+.zamknij:hover {
+  background: #fbeae7;
+  color: var(--down);
+  border-color: var(--down);
+}
+.wpis {
+  padding: 24px 28px 48px;
+}
+.naglowek-wpisu h2 {
+  font-size: 30px;
+  color: var(--accent);
+  margin: 4px 0 6px;
+}
+.karta-inspiracja {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  margin: 0;
+}
+.lokalizacja, .pochodzenie {
+  font-size: 13.5px;
+  color: var(--muted);
+  margin: 4px 0;
+}
+.alt {
+  font-style: italic;
+  color: var(--muted);
+  font-size: 13.5px;
+  margin: 2px 0 8px;
+}
+.chipy {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 10px 0;
+}
+.sekcja {
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+.sekcja h3 {
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  margin: 0 0 12px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+.sekcja .numer {
+  color: var(--accent);
+  font-weight: 700;
+}
+.wpis img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  display: block;
+}
+.natura dt, .trofea dt {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  margin-top: 12px;
+  font-weight: 700;
+}
+.natura dd, .trofea dd {
+  margin: 3px 0 0;
+  font-size: 14.5px;
+  line-height: 1.55;
+}
+.dokumentacja {
+  padding-left: 18px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+.tabela-translacji {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13.5px;
+  margin-top: 12px;
+}
+.tabela-translacji th, .tabela-translacji td {
+  padding: 8px 10px;
+  border: 1px solid var(--line);
+  text-align: left;
+}
+.tabela-translacji th {
+  background: var(--code);
+  font-size: 12px;
+}
+.meta-wpisu {
+  margin-top: 28px;
+  font-size: 12px;
+  color: var(--muted);
+  border-top: 1px dashed var(--line);
+  padding-top: 12px;
+  text-align: right;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* FOOTER */
+.foot {
+  margin-top: 36px;
+  font-size: 12.5px;
+  color: var(--muted);
+  border-top: 1px solid var(--line);
+  padding-top: 16px;
+  text-align: center;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* S1 — wizualizacje Kroniki */
+.ramka-epoki { background: var(--card-alt); border: 1px solid var(--line); border-left: 4px solid var(--accent); border-radius: 10px; padding: 18px 20px; margin: 18px 0 24px; }
+.ramka-pytanie { margin: 0 0 10px; font-size: 19px; font-weight: 700; color: var(--fg); }
+.ramka-iskra { margin: 0 0 10px; padding: 0 0 0 14px; border-left: 3px solid var(--accent-light); font-style: italic; color: var(--muted); }
+.ramka-przebieg summary { cursor: pointer; font-size: 13px; color: var(--accent-light); }
+.ramka-przebieg p { margin: 8px 0 0; font-size: 14px; }
+.ramka-rozgalezienie { margin-top: 12px; padding: 10px 12px; background: var(--card); border: 1px dashed var(--accent-light); border-radius: 8px; font-size: 14px; }
+.ramka-rozgalezienie ul { margin: 6px 0 0; padding-left: 20px; }
+
+.chart { width: 100%; height: auto; display: block; }
+.os-grid { stroke: var(--line); stroke-width: 1; }
+.os-grid-label { fill: var(--muted); font-size: 14.5px; text-anchor: end; }
+.os-area { fill: var(--mit); fill-opacity: 0.12; }
+.os-line { fill: none; stroke: var(--mit); stroke-width: 2.5; stroke-linejoin: round; }
+.os-dot circle { fill: var(--accent); stroke: var(--fg); stroke-width: 1.5; }
+.os-wartosc { fill: var(--fg); font-size: 14.5px; text-anchor: middle; }
+.os-label { fill: var(--muted); font-size: 14.5px; }
+
+.zasieg-chip, .zasieg-wiersz text { font-size: 14.5px; }
+.zasieg-etykieta { fill: var(--fg); font-weight: 600; }
+.zasieg-tor { fill: var(--card-alt); stroke: var(--line); stroke-width: 1; }
+.zasieg-przed { fill: var(--muted); opacity: 0.45; }
+.zasieg-po { fill: var(--accent); }
+.zasieg-po.up { fill: var(--up); }
+.zasieg-po.down { fill: var(--down); }
+.zasieg-delta { fill: var(--muted); font-weight: 700; }
+.zasieg-delta.up { fill: var(--up); }
+.zasieg-delta.down { fill: var(--down); }
+.chart-legenda { fill: var(--muted); font-size: 13.5px; }
+.leg-przed { fill: var(--muted); }
+.leg-po { fill: var(--accent); }
+
+.wykres-paliwa { display: flex; gap: 10px; align-items: flex-start; flex-wrap: wrap; }
+.paliwo-chart { flex: 1 1 340px; min-width: 0; }
+.paliwo-linia { fill: none; stroke-width: 2.2; stroke-linejoin: round; }
+.paliwo-punkt { stroke: var(--card); stroke-width: 1; }
+.paliwo-os, .paliwo-os-x { fill: var(--muted); font-size: 14px; text-anchor: end; }
+.paliwo-os-x { text-anchor: middle; }
+.paliwo-legenda-box { flex: 1 1 190px; min-width: 0; display: flex; flex-direction: column; gap: 4px; font-size: 14px; }
+.paliwo-legenda { display: flex; gap: 8px; align-items: center; color: var(--fg); }
+.paliwo-legenda .kropka { width: 10px; height: 10px; border-radius: 50%; background: var(--l); display: inline-block; }
+.paliwo-legenda b { margin-left: auto; }
+
+.dom-grupa-etykieta { fill: var(--accent); font-size: 13.5px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+.dom-grupa-linia { stroke: var(--accent); stroke-width: 1.4; stroke-dasharray: 3 3; }
+.dom-tor { fill: var(--card-alt); stroke: var(--line); stroke-width: 1; }
+.dom-bar { fill: var(--accent); }
+.dom-etykieta { fill: var(--fg); font-size: 14.5px; font-weight: 600; }
+.dom-kropka { fill: var(--accent); }
+.dom-delta { fill: var(--muted); font-size: 14px; }
+.dom-delta.up { fill: var(--up); }
+.dom-delta.down { fill: var(--down); }
+
+.rel-elipsa { fill: none; stroke: var(--line); stroke-dasharray: 4 5; }
+.rel-luk { fill: none; stroke-width: 2.4; }
+.rel-luk.wzmocnienie { stroke: var(--up); }
+.rel-luk.schlodzenie { stroke: var(--down); }
+.rel-luk.neutralna { stroke: var(--muted); stroke-dasharray: 5 4; }
+.rel-wezel circle { fill: var(--card); stroke: var(--accent); stroke-width: 1.6; }
+.rel-emoji { text-anchor: middle; font-size: 24px; }
+.rel-nazwa { text-anchor: middle; font-size: 14.5px; fill: var(--fg); font-weight: 600; }
+.rel-legenda { display: flex; gap: 18px; margin-top: 6px; font-size: 13.5px; color: var(--muted); }
+.rel-leg.wzmocnienie { border-bottom: 3px solid var(--up); }
+.rel-leg.schlodzenie { border-bottom: 3px solid var(--down); }
+.rel-leg.neutralna { border-bottom: 3px dashed var(--muted); }
+
+.watki-linia { stroke: var(--accent-light); stroke-width: 2; }
+.watki-marker { stroke: var(--card); stroke-width: 2; }
+.watki-marker.otwarty { fill: var(--up); }
+.watki-marker.zamkniety { fill: var(--down); }
+.watki-etykieta { fill: var(--fg); font-size: 14px; }
+.watki-os-x { fill: var(--muted); font-size: 14px; }
+
+.heat-cell { stroke: var(--card); stroke-width: 1; }
+.heat-liczba { font-size: 14px; font-weight: 700; text-anchor: middle; dominant-baseline: middle; }
+.heat-legenda { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; margin-top: 6px; }
+.heat-leg-kolor { padding: 2px 9px; border-radius: 999px; font-weight: 600; }
+.heat-etykieta { fill: var(--fg); font-size: 14.5px; font-weight: 600; }
+.heat-sum { fill: var(--muted); font-size: 14px; }
+.heat-os-x { fill: var(--muted); font-size: 14px; }
+
+.graf-os { stroke: var(--accent); stroke-width: 2.4; }
+.graf-odwolanie { stroke: var(--accent-light); stroke-width: 1.6; stroke-dasharray: 6 4; }
+.graf-wezel circle { fill: var(--card); stroke: var(--accent); stroke-width: 2; }
+.graf-wezel.rozgalezienie circle { fill: var(--accent-light); }
+.graf-nr { text-anchor: middle; fill: var(--fg); font-size: 15px; font-weight: 700; }
+.graf-etykieta { fill: var(--muted); font-size: 14px; }
+.graf-galez path { fill: var(--accent-light); }
+.graf-galez-opis { fill: var(--muted); font-size: 13.5px; }
+
+.tomy-pasek { display: flex; gap: 8px; flex-wrap: wrap; margin: 0 0 14px; }
+.tomy-pasek .pager-btn.aktywny { background: var(--accent); color: var(--card); }
+.filtr-bytow { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin: 0 0 12px; font-size: 13px; }
+.filtr-bytow select { padding: 4px 8px; font: inherit; font-size: 13px; color: var(--fg); background: var(--card); border: 1px solid var(--line); border-radius: 6px; }
+.epoka-card.podswietlone { outline: 2px solid var(--accent); outline-offset: 2px; }
+.powiazane-epoki { margin: 22px 0 0; font-size: 13.5px; color: var(--muted); }
+.powiazane-epoki .chip { text-decoration: none; }
+.dziennik { width: 100%; border-collapse: collapse; }
+.dziennik th, .dziennik td { padding: 7px 8px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; font-size: 14px; }
+.dziennik .num { text-align: right; white-space: nowrap; }
+.tom-karta { max-width: 640px; }
+</style>
+</head>
+<body><div class="wrap">
+  <header class="gora">
+    <div class="tytul">
+      <h1><a href="../index.html" style="text-decoration:none;color:inherit">AME</a></h1>
+      <p>Archiwum Manifestacji Eterycznych</p>
+    </div>
+    <input id="szukaj" type="search" placeholder="Szukaj: nazwa, karta, tag, kraj…" autocomplete="off" aria-label="Szukaj manifestacji" onkeypress="if(event.key === 'Enter') window.location.href='../index.html?q='+encodeURIComponent(this.value)">
+    <div class="akcje">
+      <a id="przycisk-los" class="przycisk" href="../index.html?action=wylosuj" title="Wylosuj manifestację i przeleć do niej na mapie">🎲 wylosuj</a>
+      <a id="przycisk-luki" class="przycisk" href="../index.html?action=powiazania" title="Pokaż powiązania na mapie">∞ powiązania</a>
+      <a id="przycisk-lista" class="przycisk" href="../index.html#lista" title="Lista wszystkich manifestacji">☰ kartoteka</a>
+      <a id="przycisk-skity" class="przycisk" href="../index.html#skity" title="Baza Skitów — rozmowy materializacji">✎ skity</a>
+      <a id="przycisk-nowosci" class="przycisk" href="../index.html#nowosci" title="Co nowego — aktualizacje archiwum">✚ nowości</a>
+      <a id="przycisk-kronika" class="przycisk " href="kronika.html" title="Kronika świata AME — tocząca się opowieść epok">📜 kronika</a>
+      <button id="przycisk-motyw" class="przycisk przycisk-motyw" type="button" aria-pressed="false" title="Przełącz tryb ciemny/jasny" onclick="const m = document.documentElement.dataset.motyw === 'jasny' ? 'ciemny' : 'jasny'; document.documentElement.dataset.motyw = m; localStorage.setItem('ame:motyw', m); this.innerHTML = m === 'jasny' ? '☀ jasny' : '☾ ciemny'; this.setAttribute('aria-pressed', String(m === 'jasny'));">☾ motyw</button>
+    </div>
+  </header>
+  <script>
+    (function() {
+      const m = localStorage.getItem('ame:motyw') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'ciemny' : 'jasny');
+      document.documentElement.dataset.motyw = m;
+      const btn = document.getElementById('przycisk-motyw');
+      if (btn) { btn.innerHTML = m === 'jasny' ? '☀ jasny' : '☾ ciemny'; btn.setAttribute('aria-pressed', String(m === 'jasny')); }
+    })();
+  </script>
+<div class="hero">
+  <div class="badges">
+    <span class="badge tom">Kronika</span>
+    <span class="badge ok">1 Tom</span>
+  </div>
+  <h1>Kronika świata AME</h1>
+  <p class="sub">Oficjalne księgi kolejnych Tomów: epoki, rozmowy i przesunięcia granicy między mitem a racjonalizacją.</p>
+</div>
+<div class="grid"><div class="col"><div class="card">
+  <h2>Spis Tomów</h2>
+  <div class="card-sub">Wybierz księgę — każda zawiera raporty epok i wykresy całego Tomu.</div>
+  <a class="epoka-card tom-karta" href="kronika-tom-1.html">
+        <div class="epoka-nr">Tom<br>I</div>
+        <div>
+          <div class="epoka-ttl">Kronika trzech stołów <span class="chip up">7 epok</span></div>
+          <div class="epoka-meta"></div>
+        </div>
+        <div class="epoka-go">Księga ↗</div>
+      </a>
+</div></div></div>
+<div class="foot">Archiwum Manifestacji Eterycznych · Kronika świata AME</div>
+</div>
+</body></html>

@@ -129,27 +129,49 @@
       {
         "id": "czwarty-stol",
         "stan": "otwarty",
-        "opis": "(z Epoki I) Kto siada przy czwartym stole: gość, który wziął sam, czy przodek, który umie wybaczyć?"
+        "opis": "(z Epoki I) Kto siada przy czwartym stole: gość, który wziął sam, czy przodek, który umie wybaczyć?",
+        "byty": [
+          "pandora",
+          "empusa-korynt",
+          "morowa-panna"
+        ]
       },
       {
         "id": "warunek-barbarossy",
         "stan": "otwarty",
-        "opis": "(z Epoki I) Dlaczego cesarz woli płacić, żeby gość wyszedł, zamiast przyjąć go przy stole?"
+        "opis": "(z Epoki I) Dlaczego cesarz woli płacić, żeby gość wyszedł, zamiast przyjąć go przy stole?",
+        "byty": [
+          "barbarossa-kyffhaeuser",
+          "kentaur-pelion",
+          "egungun"
+        ]
       },
       {
         "id": "odzwierni",
         "stan": "otwarty",
-        "opis": "Czy istnieje wspólny odźwierny dla wszystkich bytów — czy każde ma tylko własny próg?"
+        "opis": "Czy istnieje wspólny odźwierny dla wszystkich bytów — czy każde ma tylko własny próg?",
+        "byty": [
+          "egungun",
+          "balor",
+          "empusa-korynt"
+        ]
       },
       {
         "id": "wedrowny-dom-empusy",
         "stan": "otwarty",
-        "opis": "Czy ludzie nauczą się wypowiadać słowo-poznanie, zanim Empusa zdąży zaprosić, czy samo słowo też stanie się rytuałem?"
+        "opis": "Czy ludzie nauczą się wypowiadać słowo-poznanie, zanim Empusa zdąży zaprosić, czy samo słowo też stanie się rytuałem?",
+        "byty": [
+          "empusa-korynt"
+        ]
       },
       {
         "id": "pogrzeb-zamiast-wesela",
         "stan": "zamkniety",
-        "opis": "Żart Ima domyka wątek kentaura przy ucztach: po nim zostaje pogrzeb, nie wesela."
+        "opis": "Żart Ima domyka wątek kentaura przy ucztach: po nim zostaje pogrzeb, nie wesela.",
+        "byty": [
+          "empusa-korynt",
+          "kentaur-pelion"
+        ]
       }
     ]
   },
@@ -158,5 +180,11 @@
     "autor": "agent Areny — druga epoka Tomu I (ciągłość stanPo)",
     "wersja": 1,
     "uwagi": "Kentaur startuje z salda 14 z Epoki I; Empusa i Imp wchodzą z paliwa pasywnego."
+  },
+  "grafika": {
+    "obraz": "assets/wizualizacje/kronika-tom-1-epoka-2.jpg",
+    "podpis": "Nieproszeni goście: psuj, zaproszony i zaproszenie",
+    "prompt": "Hyperrealistic cinematic photograph, ultra-wide 21:9 anamorphic frame. Gothic cathedral nave at dusk, Angel Choir arcades: high on a stone pillar a small hairy imp with cow ears, cloven hooves and a toothy grin clings head-down; in the aisle a centaur with dark horse body and bare human torso looks up; to the side a richly dressed stranger in a long gown and veil, seen from behind in shadow. Shafts of pale cold light, drifting dust, candles on a distant altar. Mood of trespass and a ruined celebration, strictly dignified. 35mm anamorphic f/1.8, shallow depth of field, creamy bokeh, dramatic lighting, hyper-realistic textures, 70mm film stock. No text, no letters, no inscriptions, no modern objects.",
+    "styl": "hiperrealistyczna kinowa fotografia (21:9, 70mm, anamorfika)"
   }
 }

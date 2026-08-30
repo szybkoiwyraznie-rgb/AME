@@ -27,7 +27,7 @@
   "natura": {
     "wyglad_i_aura": "Ogromny mężczyzna odlany z ciemnego brązu: gładka, wypolerowana skóra z odpryskami, szwy na piersi i ramionach jak po formie odlewniczej, nieruchome szerokie stopy. Wokół niego unosi się zapach spalonego metalu, rozgrzanego kamienia i słonej wody; chód słychać jako głuchy, miarowy łoskot, jakby ktoś przesuwał po skałach wielki kocioł. Wokół jego kostki żarzy się cienka złota linia — żyła, którą płynie płyn nieśmiertelnych.",
     "charakter_i_motywacje": "Talos nie jest zły ani dobry: jest urządzeniem granicy. Jego jedynym celem jest, by nikt nie wylądował na Krecie bez pozwolenia — dlatego obrzuca głazami każdą zbliżającą się łódź. Nie kusi go władza, nie ma przyjaciół, nie zna strachu; działa, dopóki płynie ichor, i gaśnie, gdy go zabraknie. To sprawia, że można go oszukać, ale nie przekupić — z nim rozmawia się tylko przez mechanizm: albo odetniesz mu żyłę, albo stoi.",
-    "zdolnosci": "Obiega całą wyspę trzy razy dziennie, więc każde wybrzeże jest pod jego okiem; dźwiga i ciska głazy wielkości woza, potrafi objąć obcego i przycisnąć go do rozżarzonej piersi. Jego jedyna prawdziwa moc to nieprzenikalność: poza jednym punktem w kostce nie ma się gdzie wbić ostrza. Widzi również to, co niewidzialne dla ludzi — zbliżającą się łódź rozpoznaje po zapachu smoły i po śladzie fal na długo przed świtem.",
+    "zdolnosci": "Obiega całą wyspę trzy razy dziennie, więc każde wybrzeże jest pod jego okiem; dźwiga i ciska głazy wielkości wozu, potrafi objąć obcego i przycisnąć go do rozżarzonej piersi. Jego jedyna prawdziwa moc to nieprzenikalność: poza jednym punktem w kostce nie ma się gdzie wbić ostrza. Widzi również to, co niewidzialne dla ludzi — zbliżającą się łódź rozpoznaje po zapachu smoły i po śladzie fal na długo przed świtem.",
     "slabosci_i_metody_pokonania": "Jedyny punkt otwarcia to żyła w kostce, zamknięta gwoździem albo cienką błoną. Kto wyjmie gwóźdź, nie zabija — po prostu zatrzymuje, bo ichor wypływa jak roztopiony ołów i automat sztywnieje. Skuteczne są też oszustwo i hipnoza: Medea potrafiła odwrócić jego uwagę lub zmanić go obietnicą nieśmiertelności, a Poeas w innej wersji trafił go strzałą w kostkę. Nie zadziała na niego czar raniący zwykłe ciało — brąz nie krwawi.",
     "preferencje": "Lubi: cichą, spokojną wyspę bez obcych łodzi, poranne słońce odbijające się od brązu, słoną mgłę. Nie lubi: przecinających wody żagli, hałasu narzędzi, ognia przy samej wodzie — i własnych wspomnień, których nie ma, a które przez noc wracają jak cisza po wielkim upadku."
   },
@@ -57,31 +57,6 @@
     "pierwotne": "Spiżowy gwóźdź z kostki Talosa — ostatnie uszczelnienie żyły, po którego wyjęciu automat zamilkł. To dowód, że maszyna granicy nie miała słabości w sercu ani w mieczu, tylko w jednej, precyzyjnie dobranej śrubie.",
     "wtorne": "Odłamany kawałek brązowej łydki z widocznym szwem odlewniczym — pamiątka po bycie, który był kiedyś narzędziem, a nie istotą."
   },
-  "rezonans": {
-    "klucz_przywolania": "Dreams of Steel and Oil to karta o śnie metalu i ropy: ciemna, jednostronna magia, która sięga do pamięci (ręki) i do grobu (cmentarza), wybiera tam jeden przedmiot i jedną istotę i wyrzuca je poza świat. W naszej tradycji takim bytem jest Talos: spiżowy olbrzym, którego wnętrze wypełnia płyn nieśmiertelnych — coś jak ropa, tylko że zamiast paliwa daje życie. Karta nie materializuje broni ani smoka; materializuje koszmar maszyny, która jest zbyt dobrze zrobiona i zbyt długo czeka.",
-    "tabela": [
-      {
-        "element": "Nazwa",
-        "translacja": "„Dreams of Steel and Oil” — sen ze stali i oleju. Talos jest dokładnie takim snem: zbudowany ze stali (spiżu / brązu) i wypełniony oleistym płynem — ichorem, który wypływa jak roztopiony ołów. To nie człowiek, tylko odlew, który śni, że jest człowiekiem, i napędza go płyn zamiast krwi."
-      },
-      {
-        "element": "Mechanika",
-        "translacja": "„Target opponent reveals their hand. You choose an artifact or creature card from it, then choose an artifact or creature card from their graveyard. Exile the chosen cards.” — wybór z ręki (pamięci/planu) i z grobu (przeszłości) to wyjęcie dwóch śrub, które trzymają Talosa w świecie. W mitologii wystarczy wyjąć gwóźdź w kostce i istota znika; magia karty sięga jeszcze głębiej — wyjmuje byt z jego własnej historii."
-      },
-      {
-        "element": "Ilustracja",
-        "translacja": "Artysta Jeremy Wilson; scena oddaje koszmar przetworzonych maszyn — metalu, który jęczy i porusza się jak żywy. Talos na starożytnej Krecie jest prototypem takiej wyobraźni: odlana postać, która obchodzi wyspę i nie śpi; jego metal „pamięta” formę, w której go odlano."
-      },
-      {
-        "element": "Flavor text",
-        "translacja": "„Mishra's nightmares of Phyrexia rang with screams of agony and groans of twisted metal.” — karta nie o smoku, tylko o metalu, który cierpi. Talos też nie ma duszy, ale jego upadek Apolloniusz opisuje jak powalenie drzewa: cisza, wstrząs brzegu, rozkołysane morze — to groza i litość jednocześnie, a nie triumf."
-      },
-      {
-        "element": "Lore/Tło",
-        "translacja": "Świat The Brothers' War to wojna dwóch wynalazców i maszyn, które zyskują własną wolę. W Grecji to samo napięcie oddaje mit o automatonie Hefajstosa: technika, która zaczyna służyć granicy i nie pyta o litość. Talos nie jest „dobrym robotem” ani „złym robotem” — jest doskonałym narzędziem, które trzeba było zatrzymać."
-      }
-    ]
-  },
   "tagi": [
     "grecja",
     "automat",
@@ -92,7 +67,7 @@
   "powiazania": [
     {
       "slug": "nessos",
-      "opis": "Obaj są greckimi strażnikami terytorium, których pokonuje się nie siłą, lecz otwarciem jednego punktu: Nessos pilnuje przeprawy przez Euenos i ginie od strzały Heraklesa, a Talos pilnuje brzegów Krety i upada, gdy z kostki wypada gwóźdź zamykający żyłę. Mają też wspólny los — najlepiej bronią, gdy nikt nie zna ich słabego miejsca."
+      "opis": "Obaj są greckimi strażnikami terytorium, których pokonuje się nie siłą, lecz otwarciem jednego punktu: Nessos pilnuje przeprawy przez Euenos i ginie od strzały Heraklesa, a Talos pilnuje brzegów Krety i upada, gdy z kostki wypada gwóźdź zamykający żyłę. Mają też wspólny los: obaj bronią się najlepiej, dopóki nikt nie zna ich słabego miejsca."
     },
     {
       "slug": "kentaur-pelion",
@@ -105,6 +80,14 @@
     {
       "slug": "balor",
       "opis": "Pancerne kolosy o pojedynczym, śmiertelnym słabym punkcie w konstrukcji: Balor jest nietykalny dopóki nie zostanie podniesiona powieka niszczycielskiego oka (którą przeszywa pocisk Luga), a Talos jest nieprzenikniony dopóki spiżowy gwóźdź pieczętuje żyłę ichoru w kostce. Obaj reprezentują surową siłę archaiczną niszczącą całe armie jednym zjawiskiem."
+    },
+    {
+      "slug": "knecht-z-koptos",
+      "opis": "Oba są narzędziami, które powstały, żeby służyć bez pytania o cel: Talos odlany z brązu (w wariancie pseudo-Apollodorosa dar Hefajstosa dla Minosa) trzy razy dziennie obiega Kretę, a ożywiony tłuczek Pankratesa nosi wodę, aż dom stanie po dach. Obaj mają jeden punkt zamknięcia — gwóźdź w kostce albo słowo końca — i obaj nie znają granicy służby. Różnica: jeden strzeże, drugi posługuje."
+    },
+    {
+      "slug": "pandora",
+      "opis": "Oboje wyszli z warsztatu Hefajstosa: Pandora została ulepiona z gliny i wody (Hezjod, „Prace i dnie” 60–68), a Talos — w wariancie pseudo-Apollodorosa (1.9.26) — jest darem Hefajstosa dla Minosa. Oba są darami z jednym słabym punktem: pokrywa, której nie wolno otworzyć, i gwóźdź, którego nie wolno wyjąć. Póki dar pozostaje nienaruszony, świat jest bezpieczny; gdy ktoś go ruszy, płaci za to wszyscy."
     }
   ],
   "meta": {
@@ -114,6 +97,18 @@
       {
         "data": "2026-08-29 01:10",
         "opis": "Nowa materializacja: Talos — spiżowy automat z Krety na podstawie karty „Dreams of Steel and Oil” (BRO #92)."
+      },
+      {
+        "data": "2026-08-29 21:36",
+        "opis": "Dopisane powiązania ze Sfinksem (bastiony nieprzekraczalnej granicy) i z Balorem (kolosy o jednym słabym punkcie konstrukcji)."
+      },
+      {
+        "data": "2026-08-30 00:38",
+        "opis": "Audyt Kartoteki: poprawki językowe i doprecyzowanie zdań (odmiana, literówki, spójność z mitem)."
+      },
+      {
+        "data": "2026-08-30 01:35",
+        "opis": "Pogłębienie sieci powiązań (C1): cztery nowe pary połączeń między bytami, oparte na źródłach już odnotowanych w kartotekach (Hezjod „Prace i dnie” 60–68, pseudo-Apollodoros „Biblioteka” 1.9.26, Filostrat IV.21–25, Lukian „Filopseudes” 34–36, Herodot 7.104, lasmgiel.pl/„Zaraza nadchodzi i odchodzi”)."
       }
     ]
   }

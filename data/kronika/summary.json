@@ -7,6 +7,14 @@
       "slug": "epoka-1",
       "tytul": "Trzy stoły: przodek, gospodarz i gość",
       "skit": "trzy-stoly",
+      "iskra": "W gospodzie, w której ściany pamiętają trzy porządki, zasiedli: przodek, który przychodzi, żeby dać; gospodarz, który płaci, żeby gość sobie poszedł; i gość, który wziął sam, bo nie znał miary.",
+      "pytanie": "Co wolno wziąć gościowi, gdy gospodarz tylko płaci, a przodek przychodzi, żeby dać?",
+      "przebieg": "Pełny tekst rozmowy: data/skity/trzy-stoly.json (uczestnicy zgodni z epoką).",
+      "meta": {
+        "utworzono": "2026-08-29",
+        "autor": "agent Areny — pierwsza epoka Tomu I",
+        "wersja": 1
+      },
       "walidacja": true,
       "bledy": [],
       "uczestnicy": [
@@ -38,24 +46,24 @@
           "slug": "kentaur-pelion",
           "nazwa": "Kentaur z Pelionu",
           "rola": "Gość, który wziął",
-          "pasywne": 16,
-          "saldoPrzed": 16,
+          "pasywne": 18,
+          "saldoPrzed": 18,
           "kosztUdzialu": 2,
           "kosztKlucza": 0,
           "boost": 0,
           "zwrot": 0,
-          "saldoPo": 14
+          "saldoPo": 16
         }
       ],
       "stanPo": {
         "os": {
-          "mit": 36,
-          "racjonalizacja": 64
+          "mit": 35,
+          "racjonalizacja": 65
         },
         "zasieg": [
           {
             "slug": "agni",
-            "wielkosc": 0.27
+            "wielkosc": 0.318
           },
           {
             "slug": "balor",
@@ -67,11 +75,11 @@
           },
           {
             "slug": "ben-varrey",
-            "wielkosc": 0.245
+            "wielkosc": 0.27
           },
           {
             "slug": "drangue-shala",
-            "wielkosc": 0.439
+            "wielkosc": 0.464
           },
           {
             "slug": "egungun",
@@ -79,7 +87,7 @@
           },
           {
             "slug": "empusa-korynt",
-            "wielkosc": 0.427
+            "wielkosc": 0.476
           },
           {
             "slug": "indra",
@@ -87,19 +95,35 @@
           },
           {
             "slug": "kannon-hase",
-            "wielkosc": 0.27
+            "wielkosc": 0.318
           },
           {
             "slug": "kentaur-pelion",
-            "wielkosc": 0.395
+            "wielkosc": 0.419
+          },
+          {
+            "slug": "knecht-z-koptos",
+            "wielkosc": 0.282
           },
           {
             "slug": "lincoln-imp",
             "wielkosc": 0.391
           },
           {
+            "slug": "morowa-panna",
+            "wielkosc": 0.282
+          },
+          {
             "slug": "nessos",
-            "wielkosc": 0.33
+            "wielkosc": 0.379
+          },
+          {
+            "slug": "pandora",
+            "wielkosc": 0.355
+          },
+          {
+            "slug": "protostates",
+            "wielkosc": 0.258
           },
           {
             "slug": "selkie-sule-skerry",
@@ -107,18 +131,22 @@
           },
           {
             "slug": "sfinks-teby",
-            "wielkosc": 0.294
+            "wielkosc": 0.391
+          },
+          {
+            "slug": "syama-i-sarvara",
+            "wielkosc": 0.27
           },
           {
             "slug": "talos-kreta",
-            "wielkosc": 0.294
+            "wielkosc": 0.342
           }
         ],
         "dominacje": [
           {
             "kultura": "indie",
             "kult": "agni",
-            "wielkosc": 0.27
+            "wielkosc": 0.318
           },
           {
             "kultura": "irlandia",
@@ -133,12 +161,12 @@
           {
             "kultura": "man",
             "kult": "ben-varrey",
-            "wielkosc": 0.245
+            "wielkosc": 0.27
           },
           {
             "kultura": "albania",
             "kult": "drangue-shala",
-            "wielkosc": 0.439
+            "wielkosc": 0.464
           },
           {
             "kultura": "joruba",
@@ -148,7 +176,7 @@
           {
             "kultura": "grecja",
             "kult": "empusa-korynt",
-            "wielkosc": 0.427
+            "wielkosc": 0.476
           },
           {
             "kultura": "indie",
@@ -158,12 +186,17 @@
           {
             "kultura": "japonia",
             "kult": "kannon-hase",
-            "wielkosc": 0.27
+            "wielkosc": 0.318
           },
           {
             "kultura": "grecja",
             "kult": "kentaur-pelion",
-            "wielkosc": 0.395
+            "wielkosc": 0.419
+          },
+          {
+            "kultura": "grecja",
+            "kult": "knecht-z-koptos",
+            "wielkosc": 0.282
           },
           {
             "kultura": "anglia",
@@ -171,9 +204,24 @@
             "wielkosc": 0.391
           },
           {
+            "kultura": "polska",
+            "kult": "morowa-panna",
+            "wielkosc": 0.282
+          },
+          {
             "kultura": "grecja",
             "kult": "nessos",
-            "wielkosc": 0.33
+            "wielkosc": 0.379
+          },
+          {
+            "kultura": "grecja",
+            "kult": "pandora",
+            "wielkosc": 0.355
+          },
+          {
+            "kultura": "grecja",
+            "kult": "protostates",
+            "wielkosc": 0.258
           },
           {
             "kultura": "szkocja-polnocna",
@@ -183,18 +231,23 @@
           {
             "kultura": "grecja",
             "kult": "sfinks-teby",
-            "wielkosc": 0.294
+            "wielkosc": 0.391
+          },
+          {
+            "kultura": "indie",
+            "kult": "syama-i-sarvara",
+            "wielkosc": 0.27
           },
           {
             "kultura": "grecja",
             "kult": "talos-kreta",
-            "wielkosc": 0.294
+            "wielkosc": 0.342
           }
         ],
         "paliwo": {
           "egungun": 23,
           "barbarossa-kyffhaeuser": 15,
-          "kentaur-pelion": 14
+          "kentaur-pelion": 16
         }
       },
       "konsekwencje": {
@@ -234,8 +287,8 @@
           },
           {
             "slug": "kentaur-pelion",
-            "przed": 0.415,
-            "po": 0.395,
+            "przed": 0.439,
+            "po": 0.419,
             "delta": -0.02,
             "opis": "Legenda o kentaúrze uroczystym słabnie — ludzie na ucztach zaczynają próbować wino i patrzeć na drugą połowę gościa."
           }
@@ -258,8 +311,8 @@
           {
             "kultura": "grecja",
             "kult": "kentaur-pelion",
-            "przed": 0.415,
-            "po": 0.395,
+            "przed": 0.439,
+            "po": 0.419,
             "delta": -0.02
           }
         ],
@@ -284,17 +337,32 @@
           {
             "id": "czwarty-stol",
             "stan": "otwarty",
-            "opis": "Kto siada przy czwartym stole: gość, który wziął sam, czy przodek, który umie wybaczyć?"
+            "opis": "Kto siada przy czwartym stole: gość, który wziął sam, czy przodek, który umie wybaczyć?",
+            "byty": [
+              "pandora",
+              "empusa-korynt",
+              "morowa-panna"
+            ]
           },
           {
             "id": "wino-w-uczcie",
             "stan": "zamkniety",
-            "opis": "Związek kentaura z winem i porządkiem Lapitów zostaje wyjaśniony; słabnie strach przed ucztą."
+            "opis": "Związek kentaura z winem i porządkiem Lapitów zostaje wyjaśniony; słabnie strach przed ucztą.",
+            "byty": [
+              "egungun",
+              "kentaur-pelion",
+              "barbarossa-kyffhaeuser"
+            ]
           },
           {
             "id": "warunek-barbarossy",
             "stan": "otwarty",
-            "opis": "Dlaczego cesarz woli płacić, żeby gość wyszedł, zamiast przyjąć go przy stole?"
+            "opis": "Dlaczego cesarz woli płacić, żeby gość wyszedł, zamiast przyjąć go przy stole?",
+            "byty": [
+              "barbarossa-kyffhaeuser",
+              "kentaur-pelion",
+              "egungun"
+            ]
           }
         ]
       },
@@ -316,12 +384,27 @@
           }
         ],
         "podsumowanie": "Żaden z uczestników nie wykorzystał wprost słabości rywala; rozmowa sprawiła jednak, że granica między prawem gościnności a zuchwałością została na nowo nazwana."
+      },
+      "grafika": {
+        "obraz": "assets/wizualizacje/kronika-tom-1-epoka-1.jpg",
+        "podpis": "Trzy stoły: przodek, gospodarz i gość",
+        "prompt": "Hyperrealistic cinematic photograph, ultra-wide 21:9 anamorphic frame. Ancient smoky tavern hall at night: a figure entirely wrapped in towering layered fabrics of silk and velvet stitched with cowrie shells, beads and mirrors (Yoruba ancestor spirit) at the first table; a sleeping emperor with a flaming red beard growing through a round stone table, head on his hand (Barbarossa) at the second; a centaur with a man's torso and full horse body at the third. Warm torchlight, palm-oil smoke, dried herbs, clay cups. Mood of an uneasy feast about hospitality and audacity. 35mm anamorphic f/1.8, shallow depth of field, creamy bokeh, dramatic chiaroscuro, hyper-realistic textures, 70mm film stock. No text, no letters, no inscriptions, no modern objects.",
+        "styl": "hiperrealistyczna kinowa fotografia (21:9, 70mm, anamorfika)"
       }
     },
     {
       "slug": "epoka-2",
       "tytul": "Nieproszeni goście: psuj, zaproszony i zaproszenie",
       "skit": "nieproszeni-goscie",
+      "iskra": "Trzej psuja uroczystości porównują, jak wchodzą: kościelny psuj, zaproszony gość, który sięgnął sam, i dom, który sam jest zaproszeniem.",
+      "pytanie": "Jeśli każdy ma swojego odźwiernego — anioła, halę albo jedno trzeźwe słowo — to co naprawdę zatrzymuje, a nie tylko wypędza?",
+      "przebieg": "Pełny tekst rozmowy: data/skity/nieproszeni-goscie.json (uczestnicy zgodni z epoką).",
+      "meta": {
+        "utworzono": "2026-08-29",
+        "autor": "agent Areny — druga epoka Tomu I (ciągłość stanPo)",
+        "wersja": 1,
+        "uwagi": "Kentaur startuje z salda 14 z Epoki I; Empusa i Imp wchodzą z paliwa pasywnego."
+      },
       "walidacja": true,
       "bledy": [],
       "uczestnicy": [
@@ -341,36 +424,36 @@
           "slug": "kentaur-pelion",
           "nazwa": "Kentaur z Pelionu",
           "rola": "Zaproszony, który wziął",
-          "pasywne": 16,
-          "saldoPrzed": 14,
+          "pasywne": 18,
+          "saldoPrzed": 16,
           "kosztUdzialu": 2,
           "kosztKlucza": 0,
           "boost": 0,
           "zwrot": 0,
-          "saldoPo": 12
+          "saldoPo": 14
         },
         {
           "slug": "empusa-korynt",
           "nazwa": "Empusa z Koryntu",
           "rola": "Dom, który jest zaproszeniem",
-          "pasywne": 17,
-          "saldoPrzed": 17,
+          "pasywne": 19,
+          "saldoPrzed": 19,
           "kosztUdzialu": 2,
           "kosztKlucza": 0,
           "boost": 0,
           "zwrot": 4,
-          "saldoPo": 19
+          "saldoPo": 21
         }
       ],
       "stanPo": {
         "os": {
-          "mit": 34,
-          "racjonalizacja": 66
+          "mit": 33,
+          "racjonalizacja": 67
         },
         "zasieg": [
           {
             "slug": "agni",
-            "wielkosc": 0.27
+            "wielkosc": 0.318
           },
           {
             "slug": "balor",
@@ -382,11 +465,11 @@
           },
           {
             "slug": "ben-varrey",
-            "wielkosc": 0.245
+            "wielkosc": 0.27
           },
           {
             "slug": "drangue-shala",
-            "wielkosc": 0.439
+            "wielkosc": 0.464
           },
           {
             "slug": "egungun",
@@ -394,7 +477,7 @@
           },
           {
             "slug": "empusa-korynt",
-            "wielkosc": 0.447
+            "wielkosc": 0.496
           },
           {
             "slug": "indra",
@@ -402,19 +485,35 @@
           },
           {
             "slug": "kannon-hase",
-            "wielkosc": 0.27
+            "wielkosc": 0.318
           },
           {
             "slug": "kentaur-pelion",
-            "wielkosc": 0.375
+            "wielkosc": 0.399
+          },
+          {
+            "slug": "knecht-z-koptos",
+            "wielkosc": 0.282
           },
           {
             "slug": "lincoln-imp",
             "wielkosc": 0.391
           },
           {
+            "slug": "morowa-panna",
+            "wielkosc": 0.282
+          },
+          {
             "slug": "nessos",
-            "wielkosc": 0.33
+            "wielkosc": 0.379
+          },
+          {
+            "slug": "pandora",
+            "wielkosc": 0.355
+          },
+          {
+            "slug": "protostates",
+            "wielkosc": 0.258
           },
           {
             "slug": "selkie-sule-skerry",
@@ -422,18 +521,22 @@
           },
           {
             "slug": "sfinks-teby",
-            "wielkosc": 0.294
+            "wielkosc": 0.391
+          },
+          {
+            "slug": "syama-i-sarvara",
+            "wielkosc": 0.27
           },
           {
             "slug": "talos-kreta",
-            "wielkosc": 0.294
+            "wielkosc": 0.342
           }
         ],
         "dominacje": [
           {
             "kultura": "indie",
             "kult": "agni",
-            "wielkosc": 0.27
+            "wielkosc": 0.318
           },
           {
             "kultura": "irlandia",
@@ -448,12 +551,12 @@
           {
             "kultura": "man",
             "kult": "ben-varrey",
-            "wielkosc": 0.245
+            "wielkosc": 0.27
           },
           {
             "kultura": "albania",
             "kult": "drangue-shala",
-            "wielkosc": 0.439
+            "wielkosc": 0.464
           },
           {
             "kultura": "joruba",
@@ -463,7 +566,7 @@
           {
             "kultura": "grecja",
             "kult": "empusa-korynt",
-            "wielkosc": 0.447
+            "wielkosc": 0.496
           },
           {
             "kultura": "indie",
@@ -473,12 +576,17 @@
           {
             "kultura": "japonia",
             "kult": "kannon-hase",
-            "wielkosc": 0.27
+            "wielkosc": 0.318
           },
           {
             "kultura": "grecja",
             "kult": "kentaur-pelion",
-            "wielkosc": 0.375
+            "wielkosc": 0.399
+          },
+          {
+            "kultura": "grecja",
+            "kult": "knecht-z-koptos",
+            "wielkosc": 0.282
           },
           {
             "kultura": "anglia",
@@ -486,9 +594,24 @@
             "wielkosc": 0.391
           },
           {
+            "kultura": "polska",
+            "kult": "morowa-panna",
+            "wielkosc": 0.282
+          },
+          {
             "kultura": "grecja",
             "kult": "nessos",
-            "wielkosc": 0.33
+            "wielkosc": 0.379
+          },
+          {
+            "kultura": "grecja",
+            "kult": "pandora",
+            "wielkosc": 0.355
+          },
+          {
+            "kultura": "grecja",
+            "kult": "protostates",
+            "wielkosc": 0.258
           },
           {
             "kultura": "szkocja-polnocna",
@@ -498,20 +621,25 @@
           {
             "kultura": "grecja",
             "kult": "sfinks-teby",
-            "wielkosc": 0.294
+            "wielkosc": 0.391
+          },
+          {
+            "kultura": "indie",
+            "kult": "syama-i-sarvara",
+            "wielkosc": 0.27
           },
           {
             "kultura": "grecja",
             "kult": "talos-kreta",
-            "wielkosc": 0.294
+            "wielkosc": 0.342
           }
         ],
         "paliwo": {
           "egungun": 23,
           "barbarossa-kyffhaeuser": 15,
-          "kentaur-pelion": 12,
+          "kentaur-pelion": 14,
           "lincoln-imp": 10,
-          "empusa-korynt": 19
+          "empusa-korynt": 21
         }
       },
       "konsekwencje": {
@@ -544,15 +672,15 @@
           },
           {
             "slug": "kentaur-pelion",
-            "przed": 0.395,
-            "po": 0.375,
+            "przed": 0.419,
+            "po": 0.399,
             "delta": -0.02,
             "opis": "Żart o „pogrzebie zamiast wesela” domyka wątek kentaura na ucztach: jego legenda słabnie jeszcze o 2 pp."
           },
           {
             "slug": "empusa-korynt",
-            "przed": 0.427,
-            "po": 0.447,
+            "przed": 0.476,
+            "po": 0.496,
             "delta": 0.02,
             "opis": "Świat zaczyna sprawdzać domy jednym trzeźwym słowem; sam rytuał rozpoznania zamienia Empusę w znaną przestrogę i podsyca jej legendę."
           }
@@ -568,15 +696,15 @@
           {
             "kultura": "grecja",
             "kult": "kentaur-pelion",
-            "przed": 0.395,
-            "po": 0.375,
+            "przed": 0.419,
+            "po": 0.399,
             "delta": -0.02
           },
           {
             "kultura": "grecja",
             "kult": "empusa-korynt",
-            "przed": 0.427,
-            "po": 0.447,
+            "przed": 0.476,
+            "po": 0.496,
             "delta": 0.02
           }
         ],
@@ -601,27 +729,49 @@
           {
             "id": "czwarty-stol",
             "stan": "otwarty",
-            "opis": "(z Epoki I) Kto siada przy czwartym stole: gość, który wziął sam, czy przodek, który umie wybaczyć?"
+            "opis": "(z Epoki I) Kto siada przy czwartym stole: gość, który wziął sam, czy przodek, który umie wybaczyć?",
+            "byty": [
+              "pandora",
+              "empusa-korynt",
+              "morowa-panna"
+            ]
           },
           {
             "id": "warunek-barbarossy",
             "stan": "otwarty",
-            "opis": "(z Epoki I) Dlaczego cesarz woli płacić, żeby gość wyszedł, zamiast przyjąć go przy stole?"
+            "opis": "(z Epoki I) Dlaczego cesarz woli płacić, żeby gość wyszedł, zamiast przyjąć go przy stole?",
+            "byty": [
+              "barbarossa-kyffhaeuser",
+              "kentaur-pelion",
+              "egungun"
+            ]
           },
           {
             "id": "odzwierni",
             "stan": "otwarty",
-            "opis": "Czy istnieje wspólny odźwierny dla wszystkich bytów — czy każde ma tylko własny próg?"
+            "opis": "Czy istnieje wspólny odźwierny dla wszystkich bytów — czy każde ma tylko własny próg?",
+            "byty": [
+              "egungun",
+              "balor",
+              "empusa-korynt"
+            ]
           },
           {
             "id": "wedrowny-dom-empusy",
             "stan": "otwarty",
-            "opis": "Czy ludzie nauczą się wypowiadać słowo-poznanie, zanim Empusa zdąży zaprosić, czy samo słowo też stanie się rytuałem?"
+            "opis": "Czy ludzie nauczą się wypowiadać słowo-poznanie, zanim Empusa zdąży zaprosić, czy samo słowo też stanie się rytuałem?",
+            "byty": [
+              "empusa-korynt"
+            ]
           },
           {
             "id": "pogrzeb-zamiast-wesela",
             "stan": "zamkniety",
-            "opis": "Żart Ima domyka wątek kentaura przy ucztach: po nim zostaje pogrzeb, nie wesela."
+            "opis": "Żart Ima domyka wątek kentaura przy ucztach: po nim zostaje pogrzeb, nie wesela.",
+            "byty": [
+              "empusa-korynt",
+              "kentaur-pelion"
+            ]
           }
         ]
       },
@@ -643,12 +793,26 @@
           }
         ],
         "podsumowanie": "Towarzystwo nie zabija żadnego bytu — po prostu nazywa ich odźwiernych. Świat zyskuje jedno gotowe rozpoznanie: wesele psuje się łatwo, trudniej wejść tak, żeby nikt nie zawołał odźwiernego."
+      },
+      "grafika": {
+        "obraz": "assets/wizualizacje/kronika-tom-1-epoka-2.jpg",
+        "podpis": "Nieproszeni goście: psuj, zaproszony i zaproszenie",
+        "prompt": "Hyperrealistic cinematic photograph, ultra-wide 21:9 anamorphic frame. Gothic cathedral nave at dusk, Angel Choir arcades: high on a stone pillar a small hairy imp with cow ears, cloven hooves and a toothy grin clings head-down; in the aisle a centaur with dark horse body and bare human torso looks up; to the side a richly dressed stranger in a long gown and veil, seen from behind in shadow. Shafts of pale cold light, drifting dust, candles on a distant altar. Mood of trespass and a ruined celebration, strictly dignified. 35mm anamorphic f/1.8, shallow depth of field, creamy bokeh, dramatic lighting, hyper-realistic textures, 70mm film stock. No text, no letters, no inscriptions, no modern objects.",
+        "styl": "hiperrealistyczna kinowa fotografia (21:9, 70mm, anamorfika)"
       }
     },
     {
       "slug": "epoka-3",
       "tytul": "Odźwierni: zapraszany, otwierany i ten, który jest drzwiami",
       "skit": "odzwierni",
+      "iskra": "Przed wspólnym progiem stanęli: przodek, którego wpuszcza pieśń; olbrzym, którego otwiera czterech; i dom, który sam jest zaproszeniem i znika, gdy padnie imię.",
+      "pytanie": "Kto naprawdę stoi w drzwiach — ten, kto wchodzi, ten, kto otwiera, czy ten, kto jest miejscem?",
+      "przebieg": "Pełny tekst rozmowy: data/skity/odzwierni.json (uczestnicy zgodni z epoką).",
+      "meta": {
+        "utworzono": "2026-08-29 10:40",
+        "autor": "agent Areny — trzecia epoka Tomu I (wątek odźwierni)",
+        "wersja": 1
+      },
       "walidacja": true,
       "bledy": [],
       "uczestnicy": [
@@ -680,24 +844,24 @@
           "slug": "empusa-korynt",
           "nazwa": "Empusa z Koryntu",
           "rola": "Dom, który jest progiem",
-          "pasywne": 17,
-          "saldoPrzed": 19,
+          "pasywne": 19,
+          "saldoPrzed": 21,
           "kosztUdzialu": 2,
           "kosztKlucza": 0,
           "boost": 0,
           "zwrot": 0,
-          "saldoPo": 17
+          "saldoPo": 19
         }
       ],
       "stanPo": {
         "os": {
-          "mit": 32,
-          "racjonalizacja": 68
+          "mit": 31,
+          "racjonalizacja": 69
         },
         "zasieg": [
           {
             "slug": "agni",
-            "wielkosc": 0.27
+            "wielkosc": 0.318
           },
           {
             "slug": "balor",
@@ -709,11 +873,11 @@
           },
           {
             "slug": "ben-varrey",
-            "wielkosc": 0.245
+            "wielkosc": 0.27
           },
           {
             "slug": "drangue-shala",
-            "wielkosc": 0.439
+            "wielkosc": 0.464
           },
           {
             "slug": "egungun",
@@ -721,7 +885,7 @@
           },
           {
             "slug": "empusa-korynt",
-            "wielkosc": 0.447
+            "wielkosc": 0.496
           },
           {
             "slug": "indra",
@@ -729,19 +893,35 @@
           },
           {
             "slug": "kannon-hase",
-            "wielkosc": 0.27
+            "wielkosc": 0.318
           },
           {
             "slug": "kentaur-pelion",
-            "wielkosc": 0.375
+            "wielkosc": 0.399
+          },
+          {
+            "slug": "knecht-z-koptos",
+            "wielkosc": 0.282
           },
           {
             "slug": "lincoln-imp",
             "wielkosc": 0.391
           },
           {
+            "slug": "morowa-panna",
+            "wielkosc": 0.282
+          },
+          {
             "slug": "nessos",
-            "wielkosc": 0.33
+            "wielkosc": 0.379
+          },
+          {
+            "slug": "pandora",
+            "wielkosc": 0.355
+          },
+          {
+            "slug": "protostates",
+            "wielkosc": 0.258
           },
           {
             "slug": "selkie-sule-skerry",
@@ -749,18 +929,22 @@
           },
           {
             "slug": "sfinks-teby",
-            "wielkosc": 0.294
+            "wielkosc": 0.391
+          },
+          {
+            "slug": "syama-i-sarvara",
+            "wielkosc": 0.27
           },
           {
             "slug": "talos-kreta",
-            "wielkosc": 0.294
+            "wielkosc": 0.342
           }
         ],
         "dominacje": [
           {
             "kultura": "indie",
             "kult": "agni",
-            "wielkosc": 0.27
+            "wielkosc": 0.318
           },
           {
             "kultura": "irlandia",
@@ -775,12 +959,12 @@
           {
             "kultura": "man",
             "kult": "ben-varrey",
-            "wielkosc": 0.245
+            "wielkosc": 0.27
           },
           {
             "kultura": "albania",
             "kult": "drangue-shala",
-            "wielkosc": 0.439
+            "wielkosc": 0.464
           },
           {
             "kultura": "joruba",
@@ -790,7 +974,7 @@
           {
             "kultura": "grecja",
             "kult": "empusa-korynt",
-            "wielkosc": 0.447
+            "wielkosc": 0.496
           },
           {
             "kultura": "indie",
@@ -800,12 +984,17 @@
           {
             "kultura": "japonia",
             "kult": "kannon-hase",
-            "wielkosc": 0.27
+            "wielkosc": 0.318
           },
           {
             "kultura": "grecja",
             "kult": "kentaur-pelion",
-            "wielkosc": 0.375
+            "wielkosc": 0.399
+          },
+          {
+            "kultura": "grecja",
+            "kult": "knecht-z-koptos",
+            "wielkosc": 0.282
           },
           {
             "kultura": "anglia",
@@ -813,9 +1002,24 @@
             "wielkosc": 0.391
           },
           {
+            "kultura": "polska",
+            "kult": "morowa-panna",
+            "wielkosc": 0.282
+          },
+          {
             "kultura": "grecja",
             "kult": "nessos",
-            "wielkosc": 0.33
+            "wielkosc": 0.379
+          },
+          {
+            "kultura": "grecja",
+            "kult": "pandora",
+            "wielkosc": 0.355
+          },
+          {
+            "kultura": "grecja",
+            "kult": "protostates",
+            "wielkosc": 0.258
           },
           {
             "kultura": "szkocja-polnocna",
@@ -825,20 +1029,25 @@
           {
             "kultura": "grecja",
             "kult": "sfinks-teby",
-            "wielkosc": 0.294
+            "wielkosc": 0.391
+          },
+          {
+            "kultura": "indie",
+            "kult": "syama-i-sarvara",
+            "wielkosc": 0.27
           },
           {
             "kultura": "grecja",
             "kult": "talos-kreta",
-            "wielkosc": 0.294
+            "wielkosc": 0.342
           }
         ],
         "paliwo": {
           "egungun": 26,
           "barbarossa-kyffhaeuser": 15,
-          "kentaur-pelion": 12,
+          "kentaur-pelion": 14,
           "lincoln-imp": 10,
-          "empusa-korynt": 17,
+          "empusa-korynt": 19,
           "balor": 19
         }
       },
@@ -885,8 +1094,8 @@
           },
           {
             "slug": "empusa-korynt",
-            "przed": 0.447,
-            "po": 0.447,
+            "przed": 0.496,
+            "po": 0.496,
             "delta": 0,
             "opis": "Empusa zostaje nienazwana: świat wie, że padnięcie imienia ją rozwiązuje, więc opowiada o niej ostrożnie — na granicy mitu."
           }
@@ -909,8 +1118,8 @@
           {
             "kultura": "grecja",
             "kult": "empusa-korynt",
-            "przed": 0.447,
-            "po": 0.447,
+            "przed": 0.496,
+            "po": 0.496,
             "delta": 0
           }
         ],
@@ -935,27 +1144,50 @@
           {
             "id": "odzwierni",
             "stan": "zamkniety",
-            "opis": "Wątek przymknięty: pieśń, powieka i imię to trzy różne progi, nie jeden wspólny odźwierny."
+            "opis": "Wątek przymknięty: pieśń, powieka i imię to trzy różne progi, nie jeden wspólny odźwierny.",
+            "byty": [
+              "egungun",
+              "balor",
+              "empusa-korynt"
+            ]
           },
           {
             "id": "czwarty-stol",
             "stan": "otwarty",
-            "opis": "Czwarty stół z Epoki I wciąż czeka: gość, który wziął sam, czy przodek, który umie wybaczyć."
+            "opis": "Czwarty stół z Epoki I wciąż czeka: gość, który wziął sam, czy przodek, który umie wybaczyć.",
+            "byty": [
+              "pandora",
+              "empusa-korynt",
+              "morowa-panna"
+            ]
           },
           {
             "id": "warunek-barbarossy",
             "stan": "otwarty",
-            "opis": "Dlaczego cesarz woli płacić, żeby gość wyszedł, zamiast przyjąć go przy stole?"
+            "opis": "Dlaczego cesarz woli płacić, żeby gość wyszedł, zamiast przyjąć go przy stole?",
+            "byty": [
+              "barbarossa-kyffhaeuser",
+              "kentaur-pelion",
+              "egungun"
+            ]
           },
           {
             "id": "wedrowny-dom-empusy",
             "stan": "otwarty",
-            "opis": "Czy ludzie nauczą się wypowiadać słowo-poznanie w porę, czy samo słowo stanie się rytuałem, który chybia?"
+            "opis": "Czy ludzie nauczą się wypowiadać słowo-poznanie w porę, czy samo słowo stanie się rytuałem, który chybia?",
+            "byty": [
+              "empusa-korynt"
+            ]
           },
           {
             "id": "imie-na-progu",
             "stan": "otwarty",
-            "opis": "Nowy: czy istnieje jedno słowo, które rozwiązuje każdy próg — czy każde drzwi mają własne imię?"
+            "opis": "Nowy: czy istnieje jedno słowo, które rozwiązuje każdy próg — czy każde drzwi mają własne imię?",
+            "byty": [
+              "egungun",
+              "selkie-sule-skerry",
+              "indra"
+            ]
           }
         ]
       },
@@ -984,12 +1216,26 @@
           }
         ],
         "podsumowanie": "Rozmowa nie likwiduje żadnego progu — pokazuje, że każdy ma inny. Pieśń zaprasza, powieka otwiera, imię rozwiązuje. Świat rozumie trzy mechanizmy naraz, ale żaden z bytów nie traci pola: Balor zostaje nieodwrócony, Empusa zostaje nienazwana, Egungun zostaje w pieśni."
+      },
+      "grafika": {
+        "obraz": "assets/wizualizacje/kronika-tom-1-epoka-3.jpg",
+        "podpis": "Odźwierni: zapraszany, otwierany i ten, który jest drzwiami",
+        "prompt": "Hyperrealistic cinematic photograph, ultra-wide 21:9 anamorphic frame. Night before a colossal megalithic doorway whose threshold glows with embers: a tall figure in layered ceremonial fabrics with cowrie shells and mirrors, arms raised (Egungun); in the center an immense giant with a single eye in the middle of his forehead, heavy eyelid held open by a leather ring, four tiny warriors kneeling (Balor); the dark stone doorway itself is the third presence. Torchlight, ash in the wind, starry sky. Mood of three kinds of gate and a question about who is the door. 35mm anamorphic f/1.8, shallow depth of field, creamy bokeh, dramatic rim lighting, hyper-realistic textures, 70mm film stock. No text, no letters, no inscriptions, no modern objects.",
+        "styl": "hiperrealistyczna kinowa fotografia (21:9, 70mm, anamorfika)"
       }
     },
     {
       "slug": "epoka-4",
       "tytul": "Imię na progu: skóra, kres i pieśń",
       "skit": "imie-na-progu",
+      "iskra": "Przetestowano jedno słowo, które miało otwierać wszystkie drzwi. Okazało się, że skóra otwiera morze, kres otwiera warunek, a pieśń — tylko serce. Trzy progi, jedno pytanie.",
+      "pytanie": "Czy istnieje jedno słowo otwierające każdy próg — czy każde drzwi mają własne imię?",
+      "przebieg": "Pełny tekst rozmowy: data/skity/imie-na-progu.json (uczestnicy zgodni z epoką).",
+      "meta": {
+        "utworzono": "2026-08-29 11:10",
+        "autor": "agent Areny — czwarta epoka Tomu I (wątek imię na progu)",
+        "wersja": 1
+      },
       "walidacja": true,
       "bledy": [],
       "uczestnicy": [
@@ -1032,13 +1278,13 @@
       ],
       "stanPo": {
         "os": {
-          "mit": 31,
-          "racjonalizacja": 69
+          "mit": 30,
+          "racjonalizacja": 70
         },
         "zasieg": [
           {
             "slug": "agni",
-            "wielkosc": 0.27
+            "wielkosc": 0.318
           },
           {
             "slug": "balor",
@@ -1050,11 +1296,11 @@
           },
           {
             "slug": "ben-varrey",
-            "wielkosc": 0.245
+            "wielkosc": 0.27
           },
           {
             "slug": "drangue-shala",
-            "wielkosc": 0.439
+            "wielkosc": 0.464
           },
           {
             "slug": "egungun",
@@ -1062,7 +1308,7 @@
           },
           {
             "slug": "empusa-korynt",
-            "wielkosc": 0.447
+            "wielkosc": 0.496
           },
           {
             "slug": "indra",
@@ -1070,19 +1316,35 @@
           },
           {
             "slug": "kannon-hase",
-            "wielkosc": 0.27
+            "wielkosc": 0.318
           },
           {
             "slug": "kentaur-pelion",
-            "wielkosc": 0.375
+            "wielkosc": 0.399
+          },
+          {
+            "slug": "knecht-z-koptos",
+            "wielkosc": 0.282
           },
           {
             "slug": "lincoln-imp",
             "wielkosc": 0.391
           },
           {
+            "slug": "morowa-panna",
+            "wielkosc": 0.282
+          },
+          {
             "slug": "nessos",
-            "wielkosc": 0.33
+            "wielkosc": 0.379
+          },
+          {
+            "slug": "pandora",
+            "wielkosc": 0.355
+          },
+          {
+            "slug": "protostates",
+            "wielkosc": 0.258
           },
           {
             "slug": "selkie-sule-skerry",
@@ -1090,18 +1352,22 @@
           },
           {
             "slug": "sfinks-teby",
-            "wielkosc": 0.294
+            "wielkosc": 0.391
+          },
+          {
+            "slug": "syama-i-sarvara",
+            "wielkosc": 0.27
           },
           {
             "slug": "talos-kreta",
-            "wielkosc": 0.294
+            "wielkosc": 0.342
           }
         ],
         "dominacje": [
           {
             "kultura": "indie",
             "kult": "agni",
-            "wielkosc": 0.27
+            "wielkosc": 0.318
           },
           {
             "kultura": "irlandia",
@@ -1116,12 +1382,12 @@
           {
             "kultura": "man",
             "kult": "ben-varrey",
-            "wielkosc": 0.245
+            "wielkosc": 0.27
           },
           {
             "kultura": "albania",
             "kult": "drangue-shala",
-            "wielkosc": 0.439
+            "wielkosc": 0.464
           },
           {
             "kultura": "joruba",
@@ -1131,7 +1397,7 @@
           {
             "kultura": "grecja",
             "kult": "empusa-korynt",
-            "wielkosc": 0.447
+            "wielkosc": 0.496
           },
           {
             "kultura": "indie",
@@ -1141,12 +1407,17 @@
           {
             "kultura": "japonia",
             "kult": "kannon-hase",
-            "wielkosc": 0.27
+            "wielkosc": 0.318
           },
           {
             "kultura": "grecja",
             "kult": "kentaur-pelion",
-            "wielkosc": 0.375
+            "wielkosc": 0.399
+          },
+          {
+            "kultura": "grecja",
+            "kult": "knecht-z-koptos",
+            "wielkosc": 0.282
           },
           {
             "kultura": "anglia",
@@ -1154,9 +1425,24 @@
             "wielkosc": 0.391
           },
           {
+            "kultura": "polska",
+            "kult": "morowa-panna",
+            "wielkosc": 0.282
+          },
+          {
             "kultura": "grecja",
             "kult": "nessos",
-            "wielkosc": 0.33
+            "wielkosc": 0.379
+          },
+          {
+            "kultura": "grecja",
+            "kult": "pandora",
+            "wielkosc": 0.355
+          },
+          {
+            "kultura": "grecja",
+            "kult": "protostates",
+            "wielkosc": 0.258
           },
           {
             "kultura": "szkocja-polnocna",
@@ -1166,20 +1452,25 @@
           {
             "kultura": "grecja",
             "kult": "sfinks-teby",
-            "wielkosc": 0.294
+            "wielkosc": 0.391
+          },
+          {
+            "kultura": "indie",
+            "kult": "syama-i-sarvara",
+            "wielkosc": 0.27
           },
           {
             "kultura": "grecja",
             "kult": "talos-kreta",
-            "wielkosc": 0.294
+            "wielkosc": 0.342
           }
         ],
         "paliwo": {
           "egungun": 29,
           "barbarossa-kyffhaeuser": 15,
-          "kentaur-pelion": 12,
+          "kentaur-pelion": 14,
           "lincoln-imp": 10,
-          "empusa-korynt": 17,
+          "empusa-korynt": 19,
           "balor": 19,
           "selkie-sule-skerry": 22,
           "indra": 11
@@ -1278,27 +1569,48 @@
           {
             "id": "imie-na-progu",
             "stan": "zamkniety",
-            "opis": "Wątek domknięty: nie ma jednego słowa na wszystkie drzwi — skóra, kres i pieśń to trzy różne progi."
+            "opis": "Wątek domknięty: nie ma jednego słowa na wszystkie drzwi — skóra, kres i pieśń to trzy różne progi.",
+            "byty": [
+              "egungun",
+              "selkie-sule-skerry",
+              "indra"
+            ]
           },
           {
             "id": "czwarty-stol",
             "stan": "otwarty",
-            "opis": "Czwarty stół z Epoki I wciąż czeka: gość, który wziął sam, czy przodek, który umie wybaczyć."
+            "opis": "Czwarty stół z Epoki I wciąż czeka: gość, który wziął sam, czy przodek, który umie wybaczyć.",
+            "byty": [
+              "pandora",
+              "empusa-korynt",
+              "morowa-panna"
+            ]
           },
           {
             "id": "warunek-barbarossy",
             "stan": "otwarty",
-            "opis": "Dlaczego cesarz woli płacić, żeby gość wyszedł, zamiast przyjąć go przy stole?"
+            "opis": "Dlaczego cesarz woli płacić, żeby gość wyszedł, zamiast przyjąć go przy stole?",
+            "byty": [
+              "barbarossa-kyffhaeuser",
+              "kentaur-pelion",
+              "egungun"
+            ]
           },
           {
             "id": "wedrowny-dom-empusy",
             "stan": "otwarty",
-            "opis": "Czy ludzie nauczą się wypowiadać słowo-poznanie w porę, czy samo słowo stanie się rytuałem, który chybia?"
+            "opis": "Czy ludzie nauczą się wypowiadać słowo-poznanie w porę, czy samo słowo stanie się rytuałem, który chybia?",
+            "byty": [
+              "empusa-korynt"
+            ]
           },
           {
             "id": "kres-indry",
             "stan": "otwarty",
-            "opis": "Czy kres można oddać, czy tylko przekroczyć? Co znaczy wybrać własną granicę, gdy świat przestaje ją respektować?"
+            "opis": "Czy kres można oddać, czy tylko przekroczyć? Co znaczy wybrać własną granicę, gdy świat przestaje ją respektować?",
+            "byty": [
+              "indra"
+            ]
           }
         ]
       },
@@ -1327,12 +1639,26 @@
           }
         ],
         "podsumowanie": "Rozmowa nie znajduje jednego słowa — i właśnie to odkrywa: próg bytu nie jest jeden, a każde z nich wymaga innego klucza. Świat przestaje szukać imienia uniwersalnego i zaczyna rozumieć, że tożsamość bytu jest granicą, nie kodem."
+      },
+      "grafika": {
+        "obraz": "assets/wizualizacje/kronika-tom-1-epoka-4.jpg",
+        "podpis": "Imię na progu: skóra, kres i pieśń",
+        "prompt": "Hyperrealistic cinematic photograph, ultra-wide 21:9 anamorphic frame. A lone ancient stone gate on a stormy sea shore at twilight: an ancestor spirit in layered patterned fabrics with mirrors (Egungun); a heavy half-transformed selkie woman draped in a grey seal skin, oil and seawater dripping (Selkie); a powerful warrior with gleaming bronze skin, golden crown, body patterned with a thousand eyes, holding a thunderbolt staff and a rainbow bow (Indra). Wet rocks, foam, violet dusk, dark open arch. Mood of one word that should open every door but does not. 35mm anamorphic f/1.8, shallow depth of field, creamy bokeh, dramatic lighting, hyper-realistic textures, 70mm film stock. No text, no letters, no inscriptions, no modern objects.",
+        "styl": "hiperrealistyczna kinowa fotografia (21:9, 70mm, anamorfika)"
       }
     },
     {
       "slug": "epoka-5",
       "tytul": "Zagadka ze spiżu: rozum, żart i głuchy krok",
       "skit": "zagadka-ze-spizu",
+      "iskra": "Sfinks z Teb próbuje zatrzymać wędrowców na rozstaju klasyczną zagadką o porach życia. Talos odpowiada miarowym rzutem głazu, a Lincoln Imp obraca powagę pytania w żart. Trzy różne odpowiedzi na jedno pytanie o naturę bytu.",
+      "pytanie": "Czy powaga pytania o byt może przetrwać zderzenie z bezdusznym automatem i złośliwym śmiechem?",
+      "przebieg": "Pełny tekst rozmowy: data/skity/zagadka-ze-spizu.json (uczestnicy zgodni z epoką).",
+      "meta": {
+        "utworzono": "2026-08-29 11:35",
+        "autor": "agent Areny — piąta epoka Tomu I (wątek zagadka ze spiżu)",
+        "wersja": 1
+      },
       "walidacja": true,
       "bledy": [],
       "uczestnicy": [
@@ -1340,25 +1666,25 @@
           "slug": "sfinks-teby",
           "nazwa": "Sfinks — strażniczka Tebańskich Wrót",
           "rola": "Strażniczka zagadki i lęku",
-          "pasywne": 14,
-          "saldoPrzed": 14,
+          "pasywne": 22,
+          "saldoPrzed": 22,
           "kosztUdzialu": 2,
           "kosztKlucza": 0,
           "boost": 0,
           "zwrot": 0,
-          "saldoPo": 12
+          "saldoPo": 20
         },
         {
           "slug": "talos-kreta",
           "nazwa": "Talos — spiżowy strażnik Krety",
           "rola": "Spiżowy obrońca brzegu",
-          "pasywne": 14,
-          "saldoPrzed": 14,
+          "pasywne": 18,
+          "saldoPrzed": 18,
           "kosztUdzialu": 2,
           "kosztKlucza": 0,
           "boost": 0,
           "zwrot": 0,
-          "saldoPo": 12
+          "saldoPo": 16
         },
         {
           "slug": "lincoln-imp",
@@ -1375,13 +1701,13 @@
       ],
       "stanPo": {
         "os": {
-          "mit": 30,
-          "racjonalizacja": 70
+          "mit": 29,
+          "racjonalizacja": 71
         },
         "zasieg": [
           {
             "slug": "agni",
-            "wielkosc": 0.27
+            "wielkosc": 0.318
           },
           {
             "slug": "balor",
@@ -1393,11 +1719,11 @@
           },
           {
             "slug": "ben-varrey",
-            "wielkosc": 0.245
+            "wielkosc": 0.27
           },
           {
             "slug": "drangue-shala",
-            "wielkosc": 0.439
+            "wielkosc": 0.464
           },
           {
             "slug": "egungun",
@@ -1405,7 +1731,7 @@
           },
           {
             "slug": "empusa-korynt",
-            "wielkosc": 0.447
+            "wielkosc": 0.496
           },
           {
             "slug": "indra",
@@ -1413,19 +1739,35 @@
           },
           {
             "slug": "kannon-hase",
-            "wielkosc": 0.27
+            "wielkosc": 0.318
           },
           {
             "slug": "kentaur-pelion",
-            "wielkosc": 0.375
+            "wielkosc": 0.399
+          },
+          {
+            "slug": "knecht-z-koptos",
+            "wielkosc": 0.282
           },
           {
             "slug": "lincoln-imp",
             "wielkosc": 0.406
           },
           {
+            "slug": "morowa-panna",
+            "wielkosc": 0.282
+          },
+          {
             "slug": "nessos",
-            "wielkosc": 0.33
+            "wielkosc": 0.379
+          },
+          {
+            "slug": "pandora",
+            "wielkosc": 0.355
+          },
+          {
+            "slug": "protostates",
+            "wielkosc": 0.258
           },
           {
             "slug": "selkie-sule-skerry",
@@ -1433,18 +1775,22 @@
           },
           {
             "slug": "sfinks-teby",
-            "wielkosc": 0.284
+            "wielkosc": 0.381
+          },
+          {
+            "slug": "syama-i-sarvara",
+            "wielkosc": 0.27
           },
           {
             "slug": "talos-kreta",
-            "wielkosc": 0.289
+            "wielkosc": 0.337
           }
         ],
         "dominacje": [
           {
             "kultura": "indie",
             "kult": "agni",
-            "wielkosc": 0.27
+            "wielkosc": 0.318
           },
           {
             "kultura": "irlandia",
@@ -1459,12 +1805,12 @@
           {
             "kultura": "man",
             "kult": "ben-varrey",
-            "wielkosc": 0.245
+            "wielkosc": 0.27
           },
           {
             "kultura": "albania",
             "kult": "drangue-shala",
-            "wielkosc": 0.439
+            "wielkosc": 0.464
           },
           {
             "kultura": "joruba",
@@ -1474,7 +1820,7 @@
           {
             "kultura": "grecja",
             "kult": "empusa-korynt",
-            "wielkosc": 0.447
+            "wielkosc": 0.496
           },
           {
             "kultura": "indie",
@@ -1484,12 +1830,17 @@
           {
             "kultura": "japonia",
             "kult": "kannon-hase",
-            "wielkosc": 0.27
+            "wielkosc": 0.318
           },
           {
             "kultura": "grecja",
             "kult": "kentaur-pelion",
-            "wielkosc": 0.375
+            "wielkosc": 0.399
+          },
+          {
+            "kultura": "grecja",
+            "kult": "knecht-z-koptos",
+            "wielkosc": 0.282
           },
           {
             "kultura": "anglia",
@@ -1497,9 +1848,24 @@
             "wielkosc": 0.406
           },
           {
+            "kultura": "polska",
+            "kult": "morowa-panna",
+            "wielkosc": 0.282
+          },
+          {
             "kultura": "grecja",
             "kult": "nessos",
-            "wielkosc": 0.33
+            "wielkosc": 0.379
+          },
+          {
+            "kultura": "grecja",
+            "kult": "pandora",
+            "wielkosc": 0.355
+          },
+          {
+            "kultura": "grecja",
+            "kult": "protostates",
+            "wielkosc": 0.258
           },
           {
             "kultura": "szkocja-polnocna",
@@ -1509,25 +1875,30 @@
           {
             "kultura": "grecja",
             "kult": "sfinks-teby",
-            "wielkosc": 0.284
+            "wielkosc": 0.381
+          },
+          {
+            "kultura": "indie",
+            "kult": "syama-i-sarvara",
+            "wielkosc": 0.27
           },
           {
             "kultura": "grecja",
             "kult": "talos-kreta",
-            "wielkosc": 0.289
+            "wielkosc": 0.337
           }
         ],
         "paliwo": {
           "egungun": 29,
           "barbarossa-kyffhaeuser": 15,
-          "kentaur-pelion": 12,
+          "kentaur-pelion": 14,
           "lincoln-imp": 12,
-          "empusa-korynt": 17,
+          "empusa-korynt": 19,
           "balor": 19,
           "selkie-sule-skerry": 22,
           "indra": 11,
-          "sfinks-teby": 12,
-          "talos-kreta": 12
+          "sfinks-teby": 20,
+          "talos-kreta": 16
         }
       },
       "konsekwencje": {
@@ -1566,15 +1937,15 @@
           },
           {
             "slug": "sfinks-teby",
-            "przed": 0.294,
-            "po": 0.284,
+            "przed": 0.391,
+            "po": 0.381,
             "delta": -0.01,
             "opis": "Święta groza zagadki słabnie, gdy okazuje się podatna na wyśmianie."
           },
           {
             "slug": "talos-kreta",
-            "przed": 0.294,
-            "po": 0.289,
+            "przed": 0.342,
+            "po": 0.337,
             "delta": -0.005,
             "opis": "Spiżowy olbrzym pozostaje tylko maszyną strzegącą pustego brzegu."
           }
@@ -1590,15 +1961,15 @@
           {
             "kultura": "grecja",
             "kult": "sfinks-teby",
-            "przed": 0.294,
-            "po": 0.284,
+            "przed": 0.391,
+            "po": 0.381,
             "delta": -0.01
           },
           {
             "kultura": "grecja",
             "kult": "talos-kreta",
-            "przed": 0.294,
-            "po": 0.289,
+            "przed": 0.342,
+            "po": 0.337,
             "delta": -0.005
           }
         ],
@@ -1628,22 +1999,38 @@
           {
             "id": "czwarty-stol",
             "stan": "otwarty",
-            "opis": "Czwarty stół z Epoki I wciąż czeka: gość, który wziął sam, czy przodek, który umie wybaczyć."
+            "opis": "Czwarty stół z Epoki I wciąż czeka: gość, który wziął sam, czy przodek, który umie wybaczyć.",
+            "byty": [
+              "pandora",
+              "empusa-korynt",
+              "morowa-panna"
+            ]
           },
           {
             "id": "warunek-barbarossy",
             "stan": "otwarty",
-            "opis": "Dlaczego cesarz woli płacić, żeby gość wyszedł, zamiast przyjąć go przy stole?"
+            "opis": "Dlaczego cesarz woli płacić, żeby gość wyszedł, zamiast przyjąć go przy stole?",
+            "byty": [
+              "barbarossa-kyffhaeuser",
+              "kentaur-pelion",
+              "egungun"
+            ]
           },
           {
             "id": "wedrowny-dom-empusy",
             "stan": "otwarty",
-            "opis": "Czy ludzie nauczą się wypowiadać słowo-poznanie w porę, czy samo słowo stanie się rytuałem, który chybia?"
+            "opis": "Czy ludzie nauczą się wypowiadać słowo-poznanie w porę, czy samo słowo stanie się rytuałem, który chybia?",
+            "byty": [
+              "empusa-korynt"
+            ]
           },
           {
             "id": "kres-indry",
             "stan": "otwarty",
-            "opis": "Czy kres można oddać, czy tylko przekroczyć? Co znaczy wybrać własną granicę, gdy świat przestaje ją respektować?"
+            "opis": "Czy kres można oddać, czy tylko przekroczyć? Co znaczy wybrać własną granicę, gdy świat przestaje ją respektować?",
+            "byty": [
+              "indra"
+            ]
           }
         ]
       },
@@ -1672,18 +2059,883 @@
           }
         ],
         "podsumowanie": "Zagadka Sfinksa traci swą bezwzględną moc, gdy trafia na istotę pozbawioną lęku lub na złośliwy śmiech. Świat antyczny zderza się z gotycką ironią i mechanicznym automatyzmem."
+      },
+      "grafika": {
+        "obraz": "assets/wizualizacje/kronika-tom-1-epoka-5.jpg",
+        "podpis": "Zagadka ze spiżu: rozum, żart i głuchy krok",
+        "prompt": "Hyperrealistic cinematic photograph, ultra-wide 21:9 anamorphic frame. Rocky mountain pass at golden dusk: on a cliff a great winged lion with a calm female face and golden coat (Sphinx); on a Cretan beach a colossal smooth bronze automaton man with seams and a faint golden vein at his ankle, standing in the surf (Talos); perched on a fallen column a small hairy imp with cow ears, laughing (Lincoln Imp). Dry tall grass, dust in light, dramatic sky. Mood of a clash between dread, iron logic and mockery. 35mm anamorphic f/1.8, shallow depth of field, creamy bokeh, dramatic lighting, hyper-realistic textures, 70mm film stock. No text, no letters, no inscriptions, no modern objects.",
+        "styl": "hiperrealistyczna kinowa fotografia (21:9, 70mm, anamorfika)"
+      }
+    },
+    {
+      "slug": "epoka-6",
+      "tytul": "Czwarty stół: kto nie wie, że bierze",
+      "skit": "czwarty-stol",
+      "iskra": "Po pięciu epokach gospodyni nakrywa czwarty stół w gospodzie z Epoki I. Podchodzą do niego: dar, który zajrzał pod własną pokrywę; pytanie, które zna jedną odpowiedź; i zaproszenie, które zjada gości.",
+      "pytanie": "Czy ten, kto bierze, nie wiedząc, że bierze, jest gościem czy złodziejem?",
+      "przebieg": "Pełny tekst rozmowy: data/skity/czwarty-stol.json (uczestnicy zgodni z epoką).",
+      "meta": {
+        "utworzono": "2026-08-30 02:05",
+        "autor": "agent Areny — szósta epoka Tomu I (wątek czwarty stół)",
+        "wersja": 1
+      },
+      "walidacja": true,
+      "bledy": [],
+      "uczestnicy": [
+        {
+          "slug": "pandora",
+          "nazwa": "Pandora — pierwsza kobieta i pithos, w którym została nadzieja",
+          "rola": "Dar, który zajrzał",
+          "pasywne": 17,
+          "saldoPrzed": 17,
+          "kosztUdzialu": 2,
+          "kosztKlucza": 0,
+          "boost": 0,
+          "zwrot": 2,
+          "saldoPo": 17
+        },
+        {
+          "slug": "morowa-panna",
+          "nazwa": "Morowa Panna — zaraza w białej szacie z czerwoną chustą",
+          "rola": "Pytanie z jedną odpowiedzią",
+          "pasywne": 11,
+          "saldoPrzed": 11,
+          "kosztUdzialu": 2,
+          "kosztKlucza": 0,
+          "boost": 0,
+          "zwrot": 0,
+          "saldoPo": 9
+        },
+        {
+          "slug": "empusa-korynt",
+          "nazwa": "Empusa z Koryntu",
+          "rola": "Zaproszenie, które zjada gości",
+          "pasywne": 19,
+          "saldoPrzed": 19,
+          "kosztUdzialu": 2,
+          "kosztKlucza": 0,
+          "boost": 0,
+          "zwrot": 1,
+          "saldoPo": 18
+        }
+      ],
+      "stanPo": {
+        "os": {
+          "mit": 28,
+          "racjonalizacja": 72
+        },
+        "zasieg": [
+          {
+            "slug": "agni",
+            "wielkosc": 0.318
+          },
+          {
+            "slug": "balor",
+            "wielkosc": 0.5
+          },
+          {
+            "slug": "barbarossa-kyffhaeuser",
+            "wielkosc": 0.427
+          },
+          {
+            "slug": "ben-varrey",
+            "wielkosc": 0.27
+          },
+          {
+            "slug": "drangue-shala",
+            "wielkosc": 0.464
+          },
+          {
+            "slug": "egungun",
+            "wielkosc": 0.548
+          },
+          {
+            "slug": "empusa-korynt",
+            "wielkosc": 0.501
+          },
+          {
+            "slug": "indra",
+            "wielkosc": 0.345
+          },
+          {
+            "slug": "kannon-hase",
+            "wielkosc": 0.318
+          },
+          {
+            "slug": "kentaur-pelion",
+            "wielkosc": 0.399
+          },
+          {
+            "slug": "knecht-z-koptos",
+            "wielkosc": 0.282
+          },
+          {
+            "slug": "lincoln-imp",
+            "wielkosc": 0.406
+          },
+          {
+            "slug": "morowa-panna",
+            "wielkosc": 0.267
+          },
+          {
+            "slug": "nessos",
+            "wielkosc": 0.379
+          },
+          {
+            "slug": "pandora",
+            "wielkosc": 0.365
+          },
+          {
+            "slug": "protostates",
+            "wielkosc": 0.258
+          },
+          {
+            "slug": "selkie-sule-skerry",
+            "wielkosc": 0.478
+          },
+          {
+            "slug": "sfinks-teby",
+            "wielkosc": 0.381
+          },
+          {
+            "slug": "syama-i-sarvara",
+            "wielkosc": 0.27
+          },
+          {
+            "slug": "talos-kreta",
+            "wielkosc": 0.337
+          }
+        ],
+        "dominacje": [
+          {
+            "kultura": "indie",
+            "kult": "agni",
+            "wielkosc": 0.318
+          },
+          {
+            "kultura": "irlandia",
+            "kult": "balor",
+            "wielkosc": 0.5
+          },
+          {
+            "kultura": "niemcy",
+            "kult": "barbarossa-kyffhaeuser",
+            "wielkosc": 0.427
+          },
+          {
+            "kultura": "man",
+            "kult": "ben-varrey",
+            "wielkosc": 0.27
+          },
+          {
+            "kultura": "albania",
+            "kult": "drangue-shala",
+            "wielkosc": 0.464
+          },
+          {
+            "kultura": "joruba",
+            "kult": "egungun",
+            "wielkosc": 0.548
+          },
+          {
+            "kultura": "grecja",
+            "kult": "empusa-korynt",
+            "wielkosc": 0.501
+          },
+          {
+            "kultura": "indie",
+            "kult": "indra",
+            "wielkosc": 0.345
+          },
+          {
+            "kultura": "japonia",
+            "kult": "kannon-hase",
+            "wielkosc": 0.318
+          },
+          {
+            "kultura": "grecja",
+            "kult": "kentaur-pelion",
+            "wielkosc": 0.399
+          },
+          {
+            "kultura": "grecja",
+            "kult": "knecht-z-koptos",
+            "wielkosc": 0.282
+          },
+          {
+            "kultura": "anglia",
+            "kult": "lincoln-imp",
+            "wielkosc": 0.406
+          },
+          {
+            "kultura": "polska",
+            "kult": "morowa-panna",
+            "wielkosc": 0.267
+          },
+          {
+            "kultura": "grecja",
+            "kult": "nessos",
+            "wielkosc": 0.379
+          },
+          {
+            "kultura": "grecja",
+            "kult": "pandora",
+            "wielkosc": 0.365
+          },
+          {
+            "kultura": "grecja",
+            "kult": "protostates",
+            "wielkosc": 0.258
+          },
+          {
+            "kultura": "szkocja-polnocna",
+            "kult": "selkie-sule-skerry",
+            "wielkosc": 0.478
+          },
+          {
+            "kultura": "grecja",
+            "kult": "sfinks-teby",
+            "wielkosc": 0.381
+          },
+          {
+            "kultura": "indie",
+            "kult": "syama-i-sarvara",
+            "wielkosc": 0.27
+          },
+          {
+            "kultura": "grecja",
+            "kult": "talos-kreta",
+            "wielkosc": 0.337
+          }
+        ],
+        "paliwo": {
+          "egungun": 29,
+          "barbarossa-kyffhaeuser": 15,
+          "kentaur-pelion": 14,
+          "lincoln-imp": 12,
+          "empusa-korynt": 18,
+          "balor": 19,
+          "selkie-sule-skerry": 22,
+          "indra": 11,
+          "sfinks-teby": 20,
+          "talos-kreta": 16,
+          "pandora": 17,
+          "morowa-panna": 9
+        }
+      },
+      "konsekwencje": {
+        "os": {
+          "mit": -1,
+          "racjonalizacja": 1,
+          "opis": "Rytuał Morowej Panny pęka na szczerej niewiedzy: ludzie zaczynają rozumieć, że pytanie o próg można rozbroić uczciwą odpowiedzią — świat znów rozumie więcej, niż wierzy."
+        },
+        "relacje": [
+          {
+            "od": "pandora",
+            "do": "morowa-panna",
+            "kierunek": "schłodzenie",
+            "opis": "Pandora łamie rytuał nie z przekory, lecz z niewiedzy — Morowa Panna nie może jej ani przepuścić, ani zamknąć domu."
+          },
+          {
+            "od": "empusa-korynt",
+            "do": "pandora",
+            "kierunek": "wzmocnienie",
+            "opis": "Iluzja Empusy działa na Pandorę najlepiej z możliwych: ta nie umie porównać złota ze światłem, więc pałac stoi, a gospodyni dostaje widza idealnego."
+          },
+          {
+            "od": "morowa-panna",
+            "do": "empusa-korynt",
+            "kierunek": "schłodzenie",
+            "opis": "Obie pracują słowem, ale przepis Morowej Panny i teatr Empusy nie znoszą się wzajemnie — jedna potrzebuje jednej prawdy, druga stu pozorów."
+          }
+        ],
+        "zasieg": [
+          {
+            "slug": "pandora",
+            "przed": 0.355,
+            "po": 0.365,
+            "delta": 0.01,
+            "opis": "Opowieść o darze, który zajrzał do środka, obiega gospody: nadzieja na dnie naczynia zaczyna być widoczna."
+          },
+          {
+            "slug": "morowa-panna",
+            "przed": 0.282,
+            "po": 0.267,
+            "delta": -0.015,
+            "opis": "Ludzie ćwiczą szczerą odpowiedź na jej pytanie; rytuał traci jedną z nóg."
+          },
+          {
+            "slug": "empusa-korynt",
+            "przed": 0.496,
+            "po": 0.501,
+            "delta": 0.005,
+            "opis": "Iluzja zyskuje sojuszniczkę, która nie widzi różnicy — ale tylko dopóki ta nie nauczy się pytać."
+          }
+        ],
+        "dominacje": [
+          {
+            "kultura": "grecja",
+            "kult": "pandora",
+            "przed": 0.355,
+            "po": 0.365,
+            "delta": 0.01
+          },
+          {
+            "kultura": "polska",
+            "kult": "morowa-panna",
+            "przed": 0.282,
+            "po": 0.267,
+            "delta": -0.015
+          },
+          {
+            "kultura": "grecja",
+            "kult": "empusa-korynt",
+            "przed": 0.496,
+            "po": 0.501,
+            "delta": 0.005
+          }
+        ],
+        "pozycje": [
+          {
+            "slug": "pandora",
+            "status": "wzmocniony",
+            "opis": "Jej niewiedza okazuje się kluczem do czwartego stołu — i do naczynia, które wciąż ma zamknięte."
+          },
+          {
+            "slug": "morowa-panna",
+            "status": "zraniony",
+            "opis": "Przepis pęka w zderzeniu ze szczerością; pytanie nadal działa, ale straciło jedną z nóg."
+          },
+          {
+            "slug": "empusa-korynt",
+            "status": "odporny",
+            "opis": "Pałac stoi, bo widz, który nie porównuje, niczego nie psuje — dopóki nie zacznie pytać."
+          }
+        ],
+        "watki": [
+          {
+            "id": "czwarty-stol",
+            "stan": "zamkniety",
+            "opis": "Przy czwartym stole siada ten, kto nie wie, że bierze — w Tomie I zasiada Pandora. Stół przestaje być pytaniem.",
+            "byty": [
+              "pandora",
+              "empusa-korynt",
+              "morowa-panna"
+            ]
+          },
+          {
+            "id": "wedrowny-dom-empusy",
+            "stan": "otwarty",
+            "opis": "Czy słowo-poznanie straci moc, gdy pojawi się ktoś, kto naprawdę nie umie porównać złota ze światłem? I czy taką osobę da się tego nauczyć?",
+            "byty": [
+              "empusa-korynt"
+            ]
+          },
+          {
+            "id": "warunek-barbarossy",
+            "stan": "otwarty",
+            "opis": "Dlaczego cesarz woli płacić, żeby gość wyszedł, zamiast przyjąć go przy stole?",
+            "byty": [
+              "barbarossa-kyffhaeuser",
+              "kentaur-pelion",
+              "egungun"
+            ]
+          },
+          {
+            "id": "kres-indry",
+            "stan": "otwarty",
+            "opis": "Czy kres można oddać, czy tylko przekroczyć? Co znaczy wybrać własną granicę, gdy świat przestaje ją respektować?",
+            "byty": [
+              "indra"
+            ]
+          },
+          {
+            "id": "niewinny-bierca",
+            "stan": "otwarty",
+            "opis": "Czy ten, kto bierze, nie wiedząc, że bierze, jest winny? Pandora zajrzała do naczynia — co się stanie, gdy naprawdę się dowie, co wypuściła?",
+            "byty": [
+              "kentaur-pelion",
+              "pandora",
+              "empusa-korynt"
+            ]
+          }
+        ]
+      },
+      "narrator": {
+        "ocena": [
+          {
+            "kto": "morowa-panna",
+            "kogo": "pandora",
+            "stopien": 1,
+            "kontekst": "próba rytuału progu",
+            "komentarz": "Morowa Panna próbuje przeprowadzić swój test „Czy śpicie?”, ale szczera niewiedza Pandory wybija ją z przepisu — nie jest to jednak atak, tylko zderzenie dwóch porządków słowa."
+          },
+          {
+            "kto": "empusa-korynt",
+            "kogo": "morowa-panna",
+            "stopien": 2,
+            "kontekst": "kpina z jednej odpowiedzi",
+            "komentarz": "Empusa wyśmiewa sztywny rytuał Morowej Panny, pokazując, że jedno pytanie i jedna odpowiedź to najsłabszy możliwy przepis na gościa, który potrafi odpowiedzieć szczerze."
+          },
+          {
+            "kto": "pandora",
+            "kogo": "empusa-korynt",
+            "stopien": 1,
+            "kontekst": "niewinne pytanie",
+            "komentarz": "Pandora pyta o zawartość każdej rzeczy — Empusa drży, bo jej pałac też ma „środek”, którego nie wolno otwierać, a pytanie pada czysto i bez złośliwości."
+          }
+        ],
+        "podsumowanie": "Trzy porządki brania spotykają się przy pustym stole: dar z zakazem, przepis z jedną odpowiedzią i iluzja, która zjada gości. Żaden nie potrafi rozstrzygnąć pytania, a rozwiązanie przychodzi z zaskoczenia — siada ten, kto bierze, bo nie wie, że bierze."
+      },
+      "grafika": {
+        "obraz": "assets/wizualizacje/kronika-tom-1-epoka-6.jpg",
+        "podpis": "Czwarty stół: kto nie wie, że bierze",
+        "prompt": "Hyperrealistic cinematic photograph, ultra-wide 21:9 anamorphic frame. Ancient smoky tavern hall by candlelight, a long empty wooden table set for a fourth guest: a noble young woman in a silver gown, embroidered veil and golden crown beside a large terracotta jar (Pandora); an unnaturally tall gaunt pale woman in a white burial shroud holding a small red cloth (Morowa Panna); at the far end a beautiful stranger whose form shimmers like a mirage, half-dissolving (Empusa). Hollow chairs, dust, moths around flames. Mood of three ways of taking and an empty place. 35mm anamorphic f/1.8, shallow depth of field, creamy bokeh, dramatic chiaroscuro, hyper-realistic textures, 70mm film stock. No text, no letters, no inscriptions, no modern objects.",
+        "styl": "hiperrealistyczna kinowa fotografia (21:9, 70mm, anamorfika)"
+      }
+    },
+    {
+      "slug": "epoka-7",
+      "tytul": "Kolejność: nikt nie szedł za pierwszym",
+      "skit": "pierwszy",
+      "iskra": "Mgła z wąwozu pod Termopilami wyszła w świat szukać rozkazu, który by ją rozwiązał; w Koptos tłuczek z dzbarem stanął na progu cudzego domu; w Waranasi dwa czterookie psy zawyły, bo po drodze przodków szedł ktoś, kto nie był umarły.",
+      "pytanie": "Czy ten, kto stoi pierwszy, jest panem — czy tylko pierwszym, za którym nikt nie idzie?",
+      "przebieg": "Pełny tekst rozmowy: data/skity/pierwszy.json (uczestnicy zgodni z epoką).",
+      "meta": {
+        "utworzono": "2026-08-30 10:30",
+        "autor": "agent Areny — Pętla Jakości C2 (Epoka VII Kroniki)",
+        "wersja": 1,
+        "poprzednik": "epoka-6",
+        "uwagi": "Pierwsza epoka z odwołaniem meta.poprzednik (S3 graf epok); wątek czwarty-stol pozostaje zamknięty, otwarty nowy: pierwszy-w-linii."
+      },
+      "walidacja": true,
+      "bledy": [],
+      "uczestnicy": [
+        {
+          "slug": "protostates",
+          "nazwa": "Protostates — fantom pierwszego szeregu",
+          "rola": "Pierwszy, którego nikt nie dogania",
+          "pasywne": 11,
+          "saldoPrzed": 11,
+          "kosztUdzialu": 2,
+          "kosztKlucza": 0,
+          "boost": 0,
+          "zwrot": 3,
+          "saldoPo": 12
+        },
+        {
+          "slug": "knecht-z-koptos",
+          "nazwa": "Knecht z Koptos — ożywiony tłuczek, który nie zna słowa końca",
+          "rola": "Rzecz, która nie znała słowa końca",
+          "pasywne": 13,
+          "saldoPrzed": 13,
+          "kosztUdzialu": 2,
+          "kosztKlucza": 0,
+          "boost": 0,
+          "zwrot": 2,
+          "saldoPo": 13
+        },
+        {
+          "slug": "syama-i-sarvara",
+          "nazwa": "Śyāma i Śarvara — czterookie psy Yamy, strażnicy drogi przodków",
+          "rola": "Dwoje oczu jednej drogi",
+          "pasywne": 12,
+          "saldoPrzed": 12,
+          "kosztUdzialu": 2,
+          "kosztKlucza": 0,
+          "boost": 0,
+          "zwrot": 1,
+          "saldoPo": 11
+        }
+      ],
+      "stanPo": {
+        "os": {
+          "mit": 27,
+          "racjonalizacja": 73
+        },
+        "zasieg": [
+          {
+            "slug": "agni",
+            "wielkosc": 0.318
+          },
+          {
+            "slug": "balor",
+            "wielkosc": 0.5
+          },
+          {
+            "slug": "barbarossa-kyffhaeuser",
+            "wielkosc": 0.427
+          },
+          {
+            "slug": "ben-varrey",
+            "wielkosc": 0.27
+          },
+          {
+            "slug": "drangue-shala",
+            "wielkosc": 0.464
+          },
+          {
+            "slug": "egungun",
+            "wielkosc": 0.548
+          },
+          {
+            "slug": "empusa-korynt",
+            "wielkosc": 0.501
+          },
+          {
+            "slug": "indra",
+            "wielkosc": 0.345
+          },
+          {
+            "slug": "kannon-hase",
+            "wielkosc": 0.318
+          },
+          {
+            "slug": "kentaur-pelion",
+            "wielkosc": 0.399
+          },
+          {
+            "slug": "knecht-z-koptos",
+            "wielkosc": 0.292
+          },
+          {
+            "slug": "lincoln-imp",
+            "wielkosc": 0.406
+          },
+          {
+            "slug": "morowa-panna",
+            "wielkosc": 0.267
+          },
+          {
+            "slug": "nessos",
+            "wielkosc": 0.379
+          },
+          {
+            "slug": "pandora",
+            "wielkosc": 0.365
+          },
+          {
+            "slug": "protostates",
+            "wielkosc": 0.27
+          },
+          {
+            "slug": "selkie-sule-skerry",
+            "wielkosc": 0.478
+          },
+          {
+            "slug": "sfinks-teby",
+            "wielkosc": 0.381
+          },
+          {
+            "slug": "syama-i-sarvara",
+            "wielkosc": 0.275
+          },
+          {
+            "slug": "talos-kreta",
+            "wielkosc": 0.337
+          }
+        ],
+        "dominacje": [
+          {
+            "kultura": "indie",
+            "kult": "agni",
+            "wielkosc": 0.318
+          },
+          {
+            "kultura": "irlandia",
+            "kult": "balor",
+            "wielkosc": 0.5
+          },
+          {
+            "kultura": "niemcy",
+            "kult": "barbarossa-kyffhaeuser",
+            "wielkosc": 0.427
+          },
+          {
+            "kultura": "man",
+            "kult": "ben-varrey",
+            "wielkosc": 0.27
+          },
+          {
+            "kultura": "albania",
+            "kult": "drangue-shala",
+            "wielkosc": 0.464
+          },
+          {
+            "kultura": "joruba",
+            "kult": "egungun",
+            "wielkosc": 0.548
+          },
+          {
+            "kultura": "grecja",
+            "kult": "empusa-korynt",
+            "wielkosc": 0.501
+          },
+          {
+            "kultura": "indie",
+            "kult": "indra",
+            "wielkosc": 0.345
+          },
+          {
+            "kultura": "japonia",
+            "kult": "kannon-hase",
+            "wielkosc": 0.318
+          },
+          {
+            "kultura": "grecja",
+            "kult": "kentaur-pelion",
+            "wielkosc": 0.399
+          },
+          {
+            "kultura": "grecja",
+            "kult": "knecht-z-koptos",
+            "wielkosc": 0.292
+          },
+          {
+            "kultura": "anglia",
+            "kult": "lincoln-imp",
+            "wielkosc": 0.406
+          },
+          {
+            "kultura": "polska",
+            "kult": "morowa-panna",
+            "wielkosc": 0.267
+          },
+          {
+            "kultura": "grecja",
+            "kult": "nessos",
+            "wielkosc": 0.379
+          },
+          {
+            "kultura": "grecja",
+            "kult": "pandora",
+            "wielkosc": 0.365
+          },
+          {
+            "kultura": "grecja",
+            "kult": "protostates",
+            "wielkosc": 0.27
+          },
+          {
+            "kultura": "szkocja-polnocna",
+            "kult": "selkie-sule-skerry",
+            "wielkosc": 0.478
+          },
+          {
+            "kultura": "grecja",
+            "kult": "sfinks-teby",
+            "wielkosc": 0.381
+          },
+          {
+            "kultura": "indie",
+            "kult": "syama-i-sarvara",
+            "wielkosc": 0.275
+          },
+          {
+            "kultura": "grecja",
+            "kult": "talos-kreta",
+            "wielkosc": 0.337
+          }
+        ],
+        "paliwo": {
+          "egungun": 29,
+          "barbarossa-kyffhaeuser": 15,
+          "kentaur-pelion": 14,
+          "lincoln-imp": 12,
+          "empusa-korynt": 18,
+          "balor": 19,
+          "selkie-sule-skerry": 22,
+          "indra": 11,
+          "sfinks-teby": 20,
+          "talos-kreta": 16,
+          "pandora": 17,
+          "morowa-panna": 9,
+          "protostates": 12,
+          "knecht-z-koptos": 13,
+          "syama-i-sarvara": 11
+        }
+      },
+      "konsekwencje": {
+        "os": {
+          "mit": -1,
+          "racjonalizacja": 1,
+          "opis": "Kolejność przestaje być święta: ludzie zaczynają widzieć rozkaz jako umowę, a nie ład świata — pieśń o pierwszym w szeregu coraz częściej kończy się pytaniem, kto pierwszy, a nie „stań”."
+        },
+        "relacje": [
+          {
+            "od": "protostates",
+            "do": "knecht-z-koptos",
+            "kierunek": "wzmocnienie",
+            "opis": "Tłuczek staje przy progu i zostawia wodę — fantom dostaje kogoś obok pierwszej linii, choć nie na swój rozkaz; cień rośnie, bo jego pozycja zostaje opowiedziana komuś, kto nie umie się cofnąć."
+          },
+          {
+            "od": "syama-i-sarvara",
+            "do": "protostates",
+            "kierunek": "schlodzenie",
+            "opis": "Psy przechodzą mimo i mówią wprost: kto już nie oddycha, tego pierwszy i tak nie zatrzyma — front traci jedyną rzecz, na której stał, czyli strach przed przejściem."
+          },
+          {
+            "od": "knecht-z-koptos",
+            "do": "syama-i-sarvara",
+            "kierunek": "neutralna",
+            "opis": "Woda zostaje na progu drogi przodków — dar bez adresata; psy przyjmują go jak rzecz, którą niesie się dalej, nie jak rozkaz, który trzeba wykonać."
+          }
+        ],
+        "zasieg": [
+          {
+            "slug": "protostates",
+            "przed": 0.258,
+            "po": 0.27,
+            "delta": 0.012,
+            "opis": "Pieśń o pierwszym z pierwszego szeregu obiega wąwozy: fantom rośnie u tych, którzy pamiętają, że ktoś stał pierwszy — nawet gdy nikt już nie idzie."
+          },
+          {
+            "slug": "knecht-z-koptos",
+            "przed": 0.282,
+            "po": 0.292,
+            "delta": 0.01,
+            "opis": "Opowieść o tłuczku, który pierwszy zostawił wodę przy progu, uczy słuchaczy kończyć rozkazy słowem — Koptos zaczyna zamykać drzwi po zmroku."
+          },
+          {
+            "slug": "syama-i-sarvara",
+            "przed": 0.27,
+            "po": 0.275,
+            "delta": 0.005,
+            "opis": "Droga przodków zyskuje nowe podanie: woda zostawiona przez pierwszego — pielgrzymi w Waranasi zaczynają stawiać dzbany u bramy."
+          }
+        ],
+        "dominacje": [
+          {
+            "kultura": "grecja",
+            "kult": "protostates",
+            "przed": 0.258,
+            "po": 0.27,
+            "delta": 0.012
+          },
+          {
+            "kultura": "grecja",
+            "kult": "knecht-z-koptos",
+            "przed": 0.282,
+            "po": 0.292,
+            "delta": 0.01
+          },
+          {
+            "kultura": "indie",
+            "kult": "syama-i-sarvara",
+            "przed": 0.27,
+            "po": 0.275,
+            "delta": 0.005
+          }
+        ],
+        "pozycje": [
+          {
+            "slug": "protostates",
+            "status": "wzmocniony",
+            "opis": "Stoi dalej, ale teraz wie, po co stoi: dopóki ktoś idzie za nim — inaczej pozostaje tylko cieniem bez frontu."
+          },
+          {
+            "slug": "knecht-z-koptos",
+            "status": "przemieniony",
+            "opis": "Zostawia dzban i słowo końca przestaje być jedynym wyjściem: rzecz, która niosła wodę, po raz pierwszy sama wybiera, gdzie ją postawić."
+          },
+          {
+            "slug": "syama-i-sarvara",
+            "status": "odporny",
+            "opis": "Przechodzą przez każdy front, bo droga przodków nie zna pierwszeństwa — żadna tarcza i żaden rozkaz ich nie zatrzyma."
+          }
+        ],
+        "watki": [
+          {
+            "id": "wedrowny-dom-empusy",
+            "stan": "otwarty",
+            "opis": "Czy słowo-poznanie straci moc, gdy pojawi się ktoś, kto mówi „nie słyszę rozkazu”?",
+            "byty": [
+              "empusa-korynt"
+            ]
+          },
+          {
+            "id": "warunek-barbarossy",
+            "stan": "otwarty",
+            "opis": "Dlaczego cesarz woli płacić, żeby gość wchodził — i czy dawny dług da się oddać komuś innemu?",
+            "byty": [
+              "barbarossa-kyffhaeuser",
+              "kentaur-pelion",
+              "egungun"
+            ]
+          },
+          {
+            "id": "kres-indry",
+            "stan": "otwarty",
+            "opis": "Czy kres można oddać, czy tylko przekroczyć — i co zostaje z pierwszego, gdy nikt nie idzie za nim?",
+            "byty": [
+              "indra"
+            ]
+          },
+          {
+            "id": "niewinny-bierca",
+            "stan": "otwarty",
+            "opis": "Czy ten, kto bierze, nie wiedząc, że bierze, jest gościem czy złodziejem — a woda zostawiona na progu to dar czy dług?",
+            "byty": [
+              "kentaur-pelion",
+              "pandora",
+              "empusa-korynt"
+            ]
+          },
+          {
+            "id": "pierwszy-w-linii",
+            "stan": "otwarty",
+            "opis": "Nowy: czy pierwszy w linii jest panem, czy tylko pierwszym narzędziem porządku — i kto wypowiada słowo końca?",
+            "byty": [
+              "protostates",
+              "knecht-z-koptos",
+              "syama-i-sarvara"
+            ]
+          }
+        ]
+      },
+      "narrator": {
+        "ocena": [
+          {
+            "kto": "syama-i-sarvara",
+            "kogo": "protostates",
+            "stopien": 2,
+            "kontekst": "przejście obok pierwszego",
+            "komentarz": "Psy nie próbują fantomu pokonać — pokazują mu, że jego front trzyma się tylko pamięci, a nie drogi: on zatrzymuje żywych, a umarłych nie zatrzymywał nigdy."
+          },
+          {
+            "kto": "protostates",
+            "kogo": "knecht-z-koptos",
+            "stopien": 1,
+            "kontekst": "nakaz stania",
+            "komentarz": "Protostates próbuje zatrzymać tłuczek swoim rozkazem, ale knecht słucha wyłącznie słowa końca; pierwszy w szeregu po raz pierwszy odkrywa, że jego front nie znaczy nic dla kogoś, kto niesie wodę."
+          },
+          {
+            "kto": "knecht-z-koptos",
+            "kogo": "syama-i-sarvara",
+            "stopien": 1,
+            "kontekst": "dzban zostawiony przy progu",
+            "komentarz": "Tłuczek nie rozumie drogi przodków, ale zostawia wodę komuś pierwszemu w linii — dar bez adresata, który psy przyjmują jak rzecz, nie jak rozkaz."
+          }
+        ],
+        "podsumowanie": "Trzy porządki pierwszego spotykają się w jednym przejściu: front, który zatrzymuje żywych; rozkaz, który nosi wodę; i droga, która prowadzi umarłych. Żaden nie wie, kto jest pierwszy — a rozwiązanie przychodzi z boku: pierwszy istnieje tylko dopóki ktoś idzie za nim, a woda zostaje na progu, bo nikt nie wypowiedział słowa końca."
+      },
+      "grafika": {
+        "obraz": "assets/wizualizacje/kronika-tom-1-epoka-7.jpg",
+        "podpis": "Kolejność: nikt nie szedł za pierwszym",
+        "prompt": "Hyperrealistic cinematic photograph, ultra-wide 21:9 anamorphic frame. Narrow mountain gorge at first light: a silent warrior in a plumed Corinthian helmet, crimson tunic and bronze greaves, his face an empty dark void beneath the helm (Protostates); approaching a small wooden pestle in linen rags with a knot for a head, carrying a brass water jar (Knecht); from the left two enormous dogs, one coal-black and one brown-spotted, each with a second pair of eyes above the normal ones (Syama and Sarvara). Cold mist, wet stones, a single trail. Mood of three orders of 'first' meeting at a crossing. 35mm anamorphic f/1.8, shallow depth of field, creamy bokeh, dramatic lighting, hyper-realistic textures, 70mm film stock. No text, no letters, no inscriptions, no modern objects.",
+        "styl": "hiperrealistyczna kinowa fotografia (21:9, 70mm, anamorfika)"
       }
     }
   ],
   "stanPo": {
     "os": {
-      "mit": 30,
-      "racjonalizacja": 70
+      "mit": 27,
+      "racjonalizacja": 73
     },
     "zasieg": [
       {
         "slug": "agni",
-        "wielkosc": 0.27
+        "wielkosc": 0.318
       },
       {
         "slug": "balor",
@@ -1695,11 +2947,11 @@
       },
       {
         "slug": "ben-varrey",
-        "wielkosc": 0.245
+        "wielkosc": 0.27
       },
       {
         "slug": "drangue-shala",
-        "wielkosc": 0.439
+        "wielkosc": 0.464
       },
       {
         "slug": "egungun",
@@ -1707,7 +2959,7 @@
       },
       {
         "slug": "empusa-korynt",
-        "wielkosc": 0.447
+        "wielkosc": 0.501
       },
       {
         "slug": "indra",
@@ -1715,19 +2967,35 @@
       },
       {
         "slug": "kannon-hase",
-        "wielkosc": 0.27
+        "wielkosc": 0.318
       },
       {
         "slug": "kentaur-pelion",
-        "wielkosc": 0.375
+        "wielkosc": 0.399
+      },
+      {
+        "slug": "knecht-z-koptos",
+        "wielkosc": 0.292
       },
       {
         "slug": "lincoln-imp",
         "wielkosc": 0.406
       },
       {
+        "slug": "morowa-panna",
+        "wielkosc": 0.267
+      },
+      {
         "slug": "nessos",
-        "wielkosc": 0.33
+        "wielkosc": 0.379
+      },
+      {
+        "slug": "pandora",
+        "wielkosc": 0.365
+      },
+      {
+        "slug": "protostates",
+        "wielkosc": 0.27
       },
       {
         "slug": "selkie-sule-skerry",
@@ -1735,18 +3003,22 @@
       },
       {
         "slug": "sfinks-teby",
-        "wielkosc": 0.284
+        "wielkosc": 0.381
+      },
+      {
+        "slug": "syama-i-sarvara",
+        "wielkosc": 0.275
       },
       {
         "slug": "talos-kreta",
-        "wielkosc": 0.289
+        "wielkosc": 0.337
       }
     ],
     "dominacje": [
       {
         "kultura": "indie",
         "kult": "agni",
-        "wielkosc": 0.27
+        "wielkosc": 0.318
       },
       {
         "kultura": "irlandia",
@@ -1761,12 +3033,12 @@
       {
         "kultura": "man",
         "kult": "ben-varrey",
-        "wielkosc": 0.245
+        "wielkosc": 0.27
       },
       {
         "kultura": "albania",
         "kult": "drangue-shala",
-        "wielkosc": 0.439
+        "wielkosc": 0.464
       },
       {
         "kultura": "joruba",
@@ -1776,7 +3048,7 @@
       {
         "kultura": "grecja",
         "kult": "empusa-korynt",
-        "wielkosc": 0.447
+        "wielkosc": 0.501
       },
       {
         "kultura": "indie",
@@ -1786,12 +3058,17 @@
       {
         "kultura": "japonia",
         "kult": "kannon-hase",
-        "wielkosc": 0.27
+        "wielkosc": 0.318
       },
       {
         "kultura": "grecja",
         "kult": "kentaur-pelion",
-        "wielkosc": 0.375
+        "wielkosc": 0.399
+      },
+      {
+        "kultura": "grecja",
+        "kult": "knecht-z-koptos",
+        "wielkosc": 0.292
       },
       {
         "kultura": "anglia",
@@ -1799,9 +3076,24 @@
         "wielkosc": 0.406
       },
       {
+        "kultura": "polska",
+        "kult": "morowa-panna",
+        "wielkosc": 0.267
+      },
+      {
         "kultura": "grecja",
         "kult": "nessos",
-        "wielkosc": 0.33
+        "wielkosc": 0.379
+      },
+      {
+        "kultura": "grecja",
+        "kult": "pandora",
+        "wielkosc": 0.365
+      },
+      {
+        "kultura": "grecja",
+        "kult": "protostates",
+        "wielkosc": 0.27
       },
       {
         "kultura": "szkocja-polnocna",
@@ -1811,25 +3103,35 @@
       {
         "kultura": "grecja",
         "kult": "sfinks-teby",
-        "wielkosc": 0.284
+        "wielkosc": 0.381
+      },
+      {
+        "kultura": "indie",
+        "kult": "syama-i-sarvara",
+        "wielkosc": 0.275
       },
       {
         "kultura": "grecja",
         "kult": "talos-kreta",
-        "wielkosc": 0.289
+        "wielkosc": 0.337
       }
     ],
     "paliwo": {
       "egungun": 29,
       "barbarossa-kyffhaeuser": 15,
-      "kentaur-pelion": 12,
+      "kentaur-pelion": 14,
       "lincoln-imp": 12,
-      "empusa-korynt": 17,
+      "empusa-korynt": 18,
       "balor": 19,
       "selkie-sule-skerry": 22,
       "indra": 11,
-      "sfinks-teby": 12,
-      "talos-kreta": 12
+      "sfinks-teby": 20,
+      "talos-kreta": 16,
+      "pandora": 17,
+      "morowa-panna": 9,
+      "protostates": 12,
+      "knecht-z-koptos": 13,
+      "syama-i-sarvara": 11
     }
   },
   "walidacja": true,

@@ -27,7 +27,7 @@
     "charakter_i_motywacje": "Nie porywa i nie błaga: przychodzi po swoje i płaci. Oznajmia matce, że weźmie syna, kładzie jej na kolanach mieszek złota („tak thee up thy nourris-fee” — zapłata dla karmicielki) i podaje warunki jak notariusz: rok i dzień (w innych wersjach siedem lat) chowu, letni dzień „gdy słońce grzeje każdy kamień”, naukę pływania w pianie — a potem przepowiada własną śmierć: że kobieta pojmie strzelca, a pierwsza jego strzała zabije i syna, i selkiego. U niego gniew nie wybucha; on po prostu wykonuje ustalony porządek, nawet gdy ten porządek go zabija.",
     "zdolnosci": "przemiana przez zdjęcie skóry (w wodzie foka, na lądzie człowiek); wchodzenie do izby przez noc, bez otwierania drzwi — „then ane arose at her bed-fit”; wiążące znaki i liczby: złoty łańcuch na szyi dziecka, mieszciec złota i mieszciec srebrnej monety, odliczony czas karmienia; przepowiednia wypowiedziana tak dokładnie, że się spełnia — w wersji orkadzkiej strzelec przynosi z powrotem złoty łańcuch i dopiero on mówi matce, kogo zabiła. W przekazach nowszych (nagranie Tobar an Dualchais, Alex Linklater) ta sama istota przyjmuje ludzki kształt na tyle wiarygodnie, że wyjeżdża na studia do Edynburga. Każda skóra jest jedna i nie do zastąpienia, więc nie da się oszukać bytu nowym futrem; w Shetlandzie wierzono, że selkies wabią ludzi do wody w przesilenie letnie i że nikt, kto poszedł, nie wraca na suchy ląd; ludzie strapieni chodzą na brzeg i „ronią siedem łez” — po czym selkie przychodzi, zrzuca skórę i szuka miłości poza małżeństwem (Motyw przywołania przez łzy jest tym, co czyni ten byt namierzalnym).",
     "slabosci_i_metody_pokonania": "Skóra jest całym jego statusem prawnym: kto ją chowa, ten trzyma selkiego przy sobie, kto ją zwróci albo ukradnie — ten go uwalnia albo gubi. W wersji z Deerness mąż zamyka skórę w skrzyni morskiej (sea-kist) i chowa klucz, a żona sama mówi, że „lepiej trzymać jej selkie dni z dala od pamięci”; kiedy mimo to skórę znajdzie — najczęściej z pomocą dziecka, które widziało, gdzie ją schowano — odchodzi natychmiast, zostawiając rozrzucone ubrania. Bezpośrednia konfrontacja jest w balladzie opisana co do godziny i narzędzia: letni dzień, słońce na nagrzanych skałach, brzeg skerry, strzelec i pierwsza oddana przez niego strzała; cena trafia w świadka: „her tender heart did brak in three”. Metoda przywołania najbliższa tradycji: siedem łez na brzegu i milczenie; metoda obrony: nie brać futra, nie płacić jego złotem i nie pytać o imię dziecka z łańcuchem.",
-    "preferencje": "Lubi: lato i pełne słońce na kamieniach, pianę przy brzegu, kruszec w koferzach, porządek słowa danego i odebranego, dzieci uczone pływania, noc, kiedy nikt nie patrzy. Nielubi: majańskiego poranku „he’ll gae oot on a May mornin”, strzelb, czuwania na brzegu i ludzi, którzy chcą zobaczyć skórę. W Shetlandzie uważano, że to selkies wabią ludzi do wody w przesilenie letnie — i że ten, kto poszedł, nie wraca: dlatego jego gościnność jest zawsze ceną za czyjąś ciekawość."
+    "preferencje": "Lubi: lato i pełne słońce na kamieniach, pianę przy brzegu, kruszec w koferzach, porządek słowa danego i odebranego, dzieci uczone pływania, noc, kiedy nikt nie patrzy. Nie lubi: majańskiego poranku „he’ll gae oot on a May mornin”, strzelb, czuwania na brzegu i ludzi, którzy chcą zobaczyć skórę. W Shetlandzie uważano, że to selkies wabią ludzi do wody w przesilenie letnie — i że ten, kto poszedł, nie wraca: dlatego jego gościnność jest zawsze ceną za czyjąś ciekawość."
   },
   "dokumentacja": [
     {
@@ -65,31 +65,6 @@
     "pierwotne": "złoty łańcuch znad skerry — znak, po którym matka poznała syna, a potem poznała to, kogo zabił strzelec",
     "wtorne": "drugi mieszciec: srebrna moneta karmicielna (nouris-fee), którą na Orkadach kładzie się na progu, spłacając dług zaciągnięty u morza"
   },
-  "rezonans": {
-    "klucz_przywolania": "„Kulrath Mystic” to 2/4 w niebieskim, który nigdy nie atakuje pierwszy: rośnie o +2/+0 i zyskuje czujność dopiero wtedy, gdy ktoś obok wypowie wielkie słowo (czar o wartości 4 lub więcej), a efekt gaśnie wraz z końcem tury. To dokładny rytm ballady o selkim: istota nie ma własnego impetu, dopóki nie wypowiedziano warunku, terminu i ceny; gdy zostanie wypowiedziany, jej siła jest widoczna przez jeden dzień i zawsze łączy się z czuwaniem. Flavor karty — różnica między namiętnością a złością to tylko to, kto panuje — w orkadzkiej tradycji jest zdaniem opisowym, nie metaforą: władza nad selkim leży w jego skórze i w wymówionym na głos terminie. Dlatego ta karta otwiera byt, a nie temat: materializacją jest sam Wielki Selkie, który przychodzi po syna.",
-    "tabela": [
-      {
-        "element": "Nazwa",
-        "translacja": "„Mystic” nie znaczy tu „wieszcz”, tylko tyle, kto zna i wyznacza warunki — i tak właśnie działa selkie z ballady: wchodzi do izby, mówi, gdzie mieszka („my dwelling is in Sule Skerry”), podaje termin, płaci, przepowiada strzelca. „Kulrath” brzmi jak nazwa miejsca — i to jest zgodne z tradycją, bo selkie przedstawia się przez swoją skałę, nie przez imię."
-      },
-      {
-        "element": "Mechanika",
-        "translacja": "„Whenever you cast a spell with mana value 4 or greater, this creature gets +2/+0 and gains vigilance until end of turn” → moc bytu zapala się na jedną turę od wielkiego aktu mowy (kontrakt, naznaczenie złotem, wypowiedzenie przyszłości) i gaśnie nazajutrz. +2/+0, nie +2/+2: uderza mocniej, ale nie staje się trwalszy — selkie w każdej wersji ballady płaci za to samo co jego syn. Vigilance = czuwanie na brzegu, którego nie wolno mu opuścić nawet w chwili ataku."
-      },
-      {
-        "element": "Ilustracja",
-        "translacja": "Artysta: Jason A. Engle. Kompozycji obrazu nie opisujemy — nie zgadujemy (docs/WORKFLOW.md §3). Rejestr karty jest jednoznaczny bez patrzenia na nią: typ „Elemental Wizard” to żywioł z umową, nie bestia, a tytuły wydania w innych językach („Mística de Kulrath”, „Kulrath-Mystikerin”) mówią o kobiecie-obcokrajowczyni, co pasuje do selkiego obcego na lądzie i u siebie w wodzie."
-      },
-      {
-        "element": "Flavor text",
-        "translacja": "„The difference between passion and anger is nothing more than who is in control.” — jako dokument terenowy: w folklorze foczych ludzi kontrola jest przedmiotem. Skóra schowana = selkie zostanie mężem; skóra zwrócona albo skradziona = selkie odejdzie w tę samą stronę, w którą poszedł selkie z ballady — po syna. Nic tu nie wybucha; wygrywa ten, kto trzyma warunek."
-      },
-      {
-        "element": "Lore/Tło",
-        "translacja": "Lorwyn Eclipsed (2026) jest powrotem na plan, na którym noc i dzień walczą o władzę, a istoty zmieniają naturę zależnie od tego, która z nich nadeszła. U nas ten sam podział jest fizyczny i brzegowy: „I am a man upon the land, I am a silkie in the sea, and when I’m far frae every strand, my dwelling is in Sule Skerry” — jeden byt, dwie przynależności, krawędź wody jako granica jurysdykcji."
-      }
-    ]
-  },
   "tagi": [
     "szkocja-polnocna",
     "selkie",
@@ -116,7 +91,7 @@
     },
     {
       "slug": "nessos",
-      "opis": "Selkie z Sule Skerry i Nessos to dwie strony tej samej granicy: on zabiera na dół w toń, on zabiera w poprzek rzeki. Oboje korzystają z naiwności człowieka, który wierzy, że można bezpiecznie powierzyć się istocie wody — a konsekwencja takiego zaufania jest w obu podaniach nieodwracalna."
+      "opis": "Selkie z Sule Skerry i Nessos to dwie strony tej samej granicy: jeden zabiera na dół, w toń, drugi — w poprzek rzeki. Oboje korzystają z naiwności człowieka, który wierzy, że można bezpiecznie powierzyć się istocie wody — a konsekwencja takiego zaufania jest w obu podaniach nieodwracalna."
     },
     {
       "slug": "ben-varrey",
@@ -138,6 +113,14 @@
       {
         "data": "2026-08-28 23:15",
         "opis": "Uporządkowano Dokumentację (usunięto powtórzone źródło) i dopisano, że ballada bywa częścią epickiego cyklu „Lady Odivere”, a jej pentatoniczną melodię spisał Otto Andersson od Johna Sinclaira z Flotty. Domknięto sieć powiązań: selkie odsyła teraz także do empusy (przemiana przez okrycie, z odwrotnym rachunkiem) i do kentaura (dwa ciała noszone naprzemiennie albo naraz)."
+      },
+      {
+        "data": "2026-08-29 21:36",
+        "opis": "Korekty językowe powiązań z Nessosem i Ben-Varrey: „Selkie”, „foczą skórę”."
+      },
+      {
+        "data": "2026-08-30 00:38",
+        "opis": "Audyt Kartoteki: poprawki językowe i doprecyzowanie zdań (odmiana, literówki, spójność z mitem)."
       }
     ]
   }

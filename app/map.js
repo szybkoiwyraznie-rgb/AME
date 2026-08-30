@@ -10,7 +10,7 @@
  * pinch (2 wskaźniki), dwuklik, przyciski. Pinezki i ich etykiety kompensują
  * skalę widoku, więc mają stały rozmiar w pikselach CSS (ADR 0009).
  */
-import { projektuj, dekodujKraje, siatka, dopasujWidok, ogranicz, K_MIN, K_MAX, SZEROKOSC as SZER, WYSOKOSC as WYS, sciezkaGeoMultiPoligon } from './geo.js?v=c4-1';
+import { projektuj, dekodujKraje, siatka, dopasujWidok, ogranicz, K_MIN, K_MAX, SZEROKOSC as SZER, WYSOKOSC as WYS, sciezkaGeoMultiPoligon } from './geo.js?v=c5-7';
 
 const NS = 'http://www.w3.org/2000/svg';
 
@@ -29,6 +29,18 @@ const ODSTEP_BADGE = 30;
 const ODSTEP_MIASTA = 22;
 /** Maksymalna odległość kliknięcia od kropki miasta, która pokazuje etykietę (px CSS). */
 const PROMIEN_KLIK_MIASTA = 16;
+/** Odległość dolnej krawędzi etykiety punktu (POI/historia) od kropki (px CSS). */
+const ODSTEP_PUNKTU = 18;
+/** Maksymalna odległość kliknięcia od punktu POI/historii (px CSS). */
+const PROMIEN_KLIK_PUNKTU = 13;
+/** Górna granica przybliżenia z włączonym podkładem online (2026-08-30).
+ *  Pierwotna głębokość ze specyfikacji źródeł: docelowe serwisy kafelków
+ *  sięgają z ≈ 19, więc 2^19 = 524 288× to rozdzielczość kafelków
+ *  „piksel w piksel" przy typowym oknie. Twarda blokada wg liczby obrotów
+ *  kółka została WYCOFANA (decyzja właściciela 2026-08-30): różne rejony
+ *  świata mają różny maksymalny zoom, więc limit wyznacza specyfikacja
+ *  źródeł, nie długość scrolla. Offline sufit zostaje 32× (K_MAX). */
+const K_MAX_ONLINE = 2 ** 19;
 
 /** Warstwy szczegółowości (ADR 0020): progi zoomu dla danych tematycznych. */
 export const PROGI_WARSTW = {
@@ -37,9 +49,53 @@ export const PROGI_WARSTW = {
   miastaSrednie: 7,
   miastaDrobne: 10,
   poi: 8,
+  historia: 6,
 };
-/** Czy warstwa jest włączona użytkownikowi (domyślnie wszystkie dostępne). */
-const WIDOCZNE_WARSTWY = { rzeki: true, jeziora: true, miasta: true, poi: false };
+/**
+ * Czy warstwa jest włączona (przełączniki panelu). WSZYSTKIE warstwy są
+ * opcjonalne i domyślnie WYŁĄCZONE (decyzja właściciela 2026-08-30);
+ * `podklad` to aktywny podkład online (klucz z PODKLADY_ONLINE albo null).
+ */
+const WIDOCZNE_WARSTWY = {
+  rzeki: false,
+  jeziora: false,
+  miasta: false,
+  poi: false,
+  historia: false,
+  hipsometria: false,
+  podklad: null,
+};
+
+/** Górna granica przybliżenia (zgłoszenie C): offline 32×, z podkładem
+ *  online znacznie głębiej — do rozdzielczości kafelków źródła. */
+function maksymalneK() {
+  return WIDOCZNE_WARSTWY.podklad ? K_MAX_ONLINE : K_MAX;
+}
+
+/** Podkłady online — tylko darmowe i bez klucza API (polityki: docs/ASSETS.md). */
+export const PODKLADY_ONLINE = {
+  opentopo: {
+    etykieta: 'OpenTopoMap',
+    atrybucja: '© OpenStreetMap contributors · © OpenTopoMap (CC-BY-SA)',
+    url: (z, x, y, s) => `https://${s}.tile.opentopomap.org/${z}/${x}/${y}.png`,
+    subdomeny: ['a', 'b', 'c'],
+    maxZoom: 17,
+  },
+  osm: {
+    etykieta: 'OpenStreetMap',
+    atrybucja: '© OpenStreetMap contributors (ODbL)',
+    url: (z, x, y) => `https://tile.openstreetmap.org/${z}/${x}/${y}.png`,
+    subdomeny: [''],
+    maxZoom: 19,
+  },
+  'esri-satelita': {
+    etykieta: 'Esri World Imagery',
+    atrybucja: 'Powered by Esri · © Esri, Maxar, Earthstar Geographics',
+    url: (z, x, y) => `https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/${z}/${y}/${x}`,
+    subdomeny: [''],
+    maxZoom: 19,
+  },
+};
 
 function el(nazwa, atrybuty = {}, rodzic = null) {
   const e = document.createElementNS(NS, nazwa);
@@ -83,6 +139,9 @@ export function stworzMape(kontener, { przyZmianieZaznaczenia, przyZmianieWidoku
   // Kontrakt pilnuje `test/mapa-css.test.js` (F1 z audytu PR #2).
   const grupaSwiata = el('g', { class: 'swiat' }, svg);
   el('path', { d: siatka(30), class: 'siatka' }, grupaSwiata);
+  // Podkład online (kafelki rastrowe) i hipsometria — pod krajami.
+  const grupaPodklad = el('g', { class: 'podklad-online', display: 'none' }, grupaSwiata);
+  const grupaHipso = el('g', { class: 'hipsometria', display: 'none' }, grupaSwiata);
   const grupaKrajow = el('g', { class: 'kraje' }, grupaSwiata);
   // Warstwy szczegółowości (ADR 0020): woda rysowana nad lądem, miasta i POI
   // w osobnych grupach punktowych — wszystkie w układzie świata.
@@ -91,6 +150,12 @@ export function stworzMape(kontener, { przyZmianieZaznaczenia, przyZmianieWidoku
   const grupaJezior = el('g', { class: 'jeziora', display: 'none' }, grupaWarstw);
   const grupaMiast = el('g', { class: 'miasta', display: 'none' }, grupaWarstw);
   const grupaPOI = el('g', { class: 'poi', display: 'none' }, grupaWarstw);
+  const grupaHistoria = el('g', { class: 'historia', display: 'none' }, grupaWarstw);
+  let obrazHipso = null; // <image> hipsometrii
+  // Punkty stałego rozmiaru ekranowego (kompensacja skali): POI i historia.
+  let szczytyDane = []; // [{g, grupa, wx, wy, nazwa, opis}]
+  let historiaDane = []; // [{g, grupa, wx, wy, nazwa, opis}]
+  let ostatniaSkalaPunktow = null;
   // Miasta dzielimy na rangi, żeby przy zmianie zoomu sterować liczbą punktów
   // bez przebudowywania drzewa (ADR 0020 — LOD treści, nie tylko geometrii).
   const grupyMiast = {
@@ -108,6 +173,9 @@ export function stworzMape(kontener, { przyZmianieZaznaczenia, przyZmianieWidoku
   // C2: pływająca etykieta miasta (klik) — poza grupaPinezek, w stałym
   // rozmiarze ekranowym dzięki odwrotnej skali (jak badge pinezki).
   const etykietaMiasta = el('g', { class: 'etykieta-miasta' }, grupaSwiata);
+  // B (2026-08-30): ta sama tabliczka dla POI i miejsc historycznych — nazwa
+  // tylko podczas przytrzymania, identycznie jak u miast (C4).
+  const etykietaPunktu = el('g', { class: 'etykieta-punktu' }, grupaSwiata);
 
   const rozmiar = { szerokosc: 0, wysokosc: 0 };
   const widok = { x: 0, y: 0, k: 1 };
@@ -120,6 +188,7 @@ export function stworzMape(kontener, { przyZmianieZaznaczenia, przyZmianieWidoku
   let miastaDane = []; // [{g, wx, wy, nazwa, populacja, tier}]
   let ostatnieSkala = null; // do pomijania przebudowy transformów punktów przy samym panu
   let aktywneMiasto = null; // miasto pokazane po kliknięciu
+  let aktywnyPunkt = null; // punkt POI/historii pokazany podczas przytrzymania
   let czyPrzesunieto = false; // pan/pinch nie może być mylony z kliknięciem w miasto
 
   /** Punkt zdarzenia klienta → współrzędne viewBoxu (= piksele kontenera). */
@@ -131,7 +200,7 @@ export function stworzMape(kontener, { przyZmianieZaznaczenia, przyZmianieWidoku
   }
 
   function dopusc() {
-    const d = dopasujWidok(rozmiar, widok, { min: K_MIN, max: K_MAX });
+    const d = dopasujWidok(rozmiar, widok, { min: K_MIN, max: maksymalneK() });
     widok.x = d.x;
     widok.y = d.y;
     widok.k = d.k;
@@ -147,7 +216,7 @@ export function stworzMape(kontener, { przyZmianieZaznaczenia, przyZmianieWidoku
 
     let srodek = null;
     if (rozmiar.szerokosc > 0 && rozmiar.wysokosc > 0) {
-      const stare = dopasujWidok(rozmiar, widok, { min: K_MIN, max: K_MAX });
+      const stare = dopasujWidok(rozmiar, widok, { min: K_MIN, max: maksymalneK() });
       srodek = {
         wx: (rozmiar.szerokosc / 2 - stare.x) / stare.s,
         wy: (rozmiar.wysokosc / 2 - stare.y) / stare.s,
@@ -157,7 +226,7 @@ export function stworzMape(kontener, { przyZmianieZaznaczenia, przyZmianieWidoku
     rozmiar.wysokosc = wysokosc;
     svg.setAttribute('viewBox', `0 0 ${szerokosc} ${wysokosc}`);
     if (srodek) {
-      const d = dopasujWidok(rozmiar, widok, { min: K_MIN, max: K_MAX });
+      const d = dopasujWidok(rozmiar, widok, { min: K_MIN, max: maksymalneK() });
       widok.x = szerokosc / 2 - srodek.wx * d.s;
       widok.y = wysokosc / 2 - srodek.wy * d.s;
     }
@@ -179,13 +248,22 @@ export function stworzMape(kontener, { przyZmianieZaznaczenia, przyZmianieWidoku
     // klasy `przyblizona` usunięty; etykieta żyje na najechanie/fokus/wybranie.
     odswiezWidocznoscWarstw();
     przelozEtykieteMiasta();
-    przyZmianieWidoku?.(widok.k, { skala: skala });
+    przelozEtykietePunktu();
+    // D (2026-08-30): do zapisu widoku w localStorage app.js potrzebuje punktu
+    // świata pod środkiem okna (niezależnego od rozmiaru okna) i powiększenia.
+    const srodek = skala > 0
+      ? {
+          wx: (rozmiar.szerokosc / 2 - widok.x) / skala,
+          wy: (rozmiar.wysokosc / 2 - widok.y) / skala,
+        }
+      : null;
+    przyZmianieWidoku?.(widok.k, { skala: skala, srodek });
   }
 
   /** Zoom w punkt p (współrzędne viewBoxu) o czynnik f. */
   function zoomDoPunktu(p, f, animuj = false) {
-    const przed = dopasujWidok(rozmiar, widok, { min: K_MIN, max: K_MAX });
-    const noweK = ogranicz(przed.k * f, K_MIN, K_MAX);
+    const przed = dopasujWidok(rozmiar, widok, { min: K_MIN, max: maksymalneK() });
+    const noweK = ogranicz(przed.k * f, K_MIN, maksymalneK());
     const r = noweK / przed.k;
     widok.k = noweK;
     widok.x = p.x - (p.x - przed.x) * r;
@@ -196,7 +274,16 @@ export function stworzMape(kontener, { przyZmianieZaznaczenia, przyZmianieWidoku
   function wysrodkuj(lat, lon, k = null, animuj = true) {
     if (k !== null) widok.k = k;
     const [wx, wy] = projektuj(lat, lon);
-    const d = dopasujWidok(rozmiar, widok, { min: K_MIN, max: K_MAX });
+    const d = dopasujWidok(rozmiar, widok, { min: K_MIN, max: maksymalneK() });
+    widok.x = rozmiar.szerokosc / 2 - wx * d.s;
+    widok.y = rozmiar.wysokosc / 2 - wy * d.s;
+    zastosuj(animuj);
+  }
+
+  /** Przywraca widok z zapisu (D): wycentruj na punkcie świata (wx, wy) przy k. */
+  function ustawWidok(wx, wy, k = null, animuj = false) {
+    if (k !== null) widok.k = k;
+    const d = dopasujWidok(rozmiar, widok, { min: K_MIN, max: maksymalneK() });
     widok.x = rozmiar.szerokosc / 2 - wx * d.s;
     widok.y = rozmiar.wysokosc / 2 - wy * d.s;
     zastosuj(animuj);
@@ -219,8 +306,15 @@ export function stworzMape(kontener, { przyZmianieZaznaczenia, przyZmianieWidoku
   svg.addEventListener('pointerdown', (e) => {
     if (e.target.closest('.pinezka')) return; // kliknięcia pinezki nie przesuwają mapy
     czyPrzesunieto = false;
-    const miasto = miastoPodKlikiem(naSvg(e));
-    if (miasto) pokazEtykieteMiasta(miasto); // C4: nazwa tylko podczas przytrzymania
+    const p0 = naSvg(e);
+    const miasto = miastoPodKlikiem(p0);
+    if (miasto) {
+      pokazEtykieteMiasta(miasto); // C4: nazwa tylko podczas przytrzymania
+      ukryjEtykietePunktu();
+    } else {
+      const punkt = punktPodKlikiem(p0); // B: POI/historia jak miasta
+      if (punkt) pokazEtykietePunktu(punkt);
+    }
     svg.setPointerCapture(e.pointerId);
     wskazniki.set(e.pointerId, { x: e.clientX, y: e.clientY });
     if (wskazniki.size === 2) {
@@ -237,6 +331,7 @@ export function stworzMape(kontener, { przyZmianieZaznaczenia, przyZmianieWidoku
     if (Math.hypot(e.clientX - poprzedni.x, e.clientY - poprzedni.y) > 4) {
       czyPrzesunieto = true;
       ukryjEtykieteMiasta();
+      ukryjEtykietePunktu();
     }
 
     if (wskazniki.size === 1) {
@@ -263,6 +358,7 @@ export function stworzMape(kontener, { przyZmianieZaznaczenia, przyZmianieWidoku
     if (wskazniki.size < 2) stanSzczypca = null;
     if (wskazniki.size === 0) svg.classList.remove('zlapano');
     ukryjEtykieteMiasta(); // C4: puszczenie przycisku zawsze chowa tabliczkę miasta
+    ukryjEtykietePunktu(); // B: analogicznie dla POI i miejsc historycznych
   };
   svg.addEventListener('pointerup', koniecWskaznika);
   svg.addEventListener('pointercancel', koniecWskaznika);
@@ -436,6 +532,121 @@ export function stworzMape(kontener, { przyZmianieZaznaczenia, przyZmianieWidoku
     ustawWode(grupaJezior, geo);
   }
 
+  /** Punkty POI — szczyty i pasma (NE geography regions points). */
+  function ustawSzczyty(punkty) {
+    grupaPOI.innerHTML = '';
+    szczytyDane = [];
+    for (const f of punkty?.features ?? []) {
+      const p = f.properties ?? {};
+      const c = f.geometry?.coordinates ?? [];
+      const lat = c[1];
+      const lon = c[0];
+      if (!Number.isFinite(lat) || !Number.isFinite(lon)) continue;
+      const [wx, wy] = projektuj(lat, lon);
+      const nazwa = p.n ?? '';
+      const opis = `${nazwa}${p.e ? ` · ${p.e} m n.p.m.` : ''}`;
+      const g = el('g', { class: 'punkt', 'aria-label': opis }, grupaPOI);
+      el('circle', { r: 5, class: 'kropka' }, g);
+      // B: pole trafienia — kursor strzałka i wygodne wciśnięcie (jak miasta).
+      el('circle', { class: 'trafienie', r: String(PROMIEN_KLIK_PUNKTU) }, g);
+      szczytyDane.push({ g, grupa: grupaPOI, wx, wy, nazwa, opis });
+    }
+    if (aktywnyPunkt && !szczytyDane.some((d) => d.wx === aktywnyPunkt.wx && d.wy === aktywnyPunkt.wy)) ukryjEtykietePunktu();
+    odswiezWidocznoscWarstw();
+  }
+
+  /** Warstwa historyczna — starożytne miejsca (Pleiades, CC BY 3.0). */
+  function ustawHistorie(punkty) {
+    grupaHistoria.innerHTML = '';
+    historiaDane = [];
+    for (const f of punkty?.features ?? []) {
+      const p = f.properties ?? {};
+      const c = f.geometry?.coordinates ?? [];
+      const lat = c[1];
+      const lon = c[0];
+      if (!Number.isFinite(lat) || !Number.isFinite(lon)) continue;
+      const [wx, wy] = projektuj(lat, lon);
+      const nazwa = p.n ?? '';
+      const g = el('g', { class: 'punkt', 'aria-label': nazwa }, grupaHistoria);
+      el('circle', { r: 3.5, class: 'kropka' }, g);
+      // B: pole trafienia jak u miast (kursor strzałka, on-press nazwa).
+      el('circle', { class: 'trafienie', r: String(PROMIEN_KLIK_PUNKTU) }, g);
+      historiaDane.push({ g, grupa: grupaHistoria, wx, wy, nazwa, opis: nazwa });
+    }
+    if (aktywnyPunkt && !historiaDane.some((d) => d.wx === aktywnyPunkt.wx && d.wy === aktywnyPunkt.wy)) ukryjEtykietePunktu();
+    odswiezWidocznoscWarstw();
+  }
+
+  /** Raster hipsometrii (Web Mercator, 3600×3600 j.u.) pod krajami. */
+  function ustawHipsometrie(url) {
+    if (obrazHipso) return;
+    obrazHipso = el('image', {
+      href: url,
+      x: 0,
+      y: 0,
+      width: SZER,
+      height: WYS,
+      preserveAspectRatio: 'none',
+      class: 'hipsometria-obraz',
+    }, grupaHipso);
+  }
+
+  /* ---- Podkład online: kafelki Web Mercator (tylko darmowe, bez klucza) ---- */
+
+  let ostatniaSiatkaKafelkow = '';
+
+  /** Kafelek świata dla zoomu `z` (px × 2^z na cały → jednostki świata). */
+  function rozmiarKafelka(z) {
+    return SZER / 2 ** z;
+  }
+
+  function rysujPodkladOnline() {
+    const klucz = WIDOCZNE_WARSTWY.podklad;
+    const def = klucz && PODKLADY_ONLINE[klucz];
+    if (!def) {
+      grupaPodklad.setAttribute('display', 'none');
+      grupaPodklad.innerHTML = '';
+      ostatniaSiatkaKafelkow = '';
+      return;
+    }
+    grupaPodklad.setAttribute('display', 'inherit');
+    // skala: ile px ekranu przypada na jednostkę świata; dobierz z tak, by
+    // piksel kafelka ≈ piksel ekranu (potem zaokrąglenie w dół = siatka rzadsza).
+    const z = Math.max(0, Math.min(def.maxZoom ?? 18, Math.round(Math.log2((skala * SZER) / 256))));
+    const size = rozmiarKafelka(z);
+    // widoczny prostokąt świata: viewBox (px) → j.u. świata
+    const wx0 = (0 - widok.x) / skala;
+    const wy0 = (0 - widok.y) / skala;
+    const wx1 = (rozmiar.szerokosc - widok.x) / skala;
+    const wy1 = (rozmiar.wysokosc - widok.y) / skala;
+    const tx0 = Math.max(0, Math.floor(wx0 / size));
+    const ty0 = Math.max(0, Math.floor(wy0 / size));
+    const tx1 = Math.min(2 ** z - 1, Math.floor(wx1 / size));
+    const ty1 = Math.min(2 ** z - 1, Math.floor(wy1 / size));
+    const sygnatura = `${klucz}|${z}|${tx0}:${ty0}-${tx1}:${ty1}`;
+    if (sygnatura === ostatniaSiatkaKafelkow) return;
+    ostatniaSiatkaKafelkow = sygnatura;
+    grupaPodklad.innerHTML = '';
+    const f = document.createDocumentFragment();
+    // Przy wysokich zoomach rozmiar kafelka (j.u. świata) jest ułamkiem —
+    // zwykłe toFixed(1) zaokrągla go do 0 i kafelki nakładają się na siebie.
+    const fmt = (v) => String(Number(v.toPrecision(8)));
+    for (let tx = tx0; tx <= tx1; tx++) {
+      for (let ty = ty0; ty <= ty1; ty++) {
+        const sub = def.subdomeny[(tx + ty) % Math.max(1, def.subdomeny.length)];
+        el('image', {
+          href: def.url(z, tx, ty, sub),
+          x: fmt(tx * size),
+          y: fmt(ty * size),
+          width: fmt(size),
+          height: fmt(size),
+          class: 'kafelek',
+        }, f);
+      }
+    }
+    grupaPodklad.appendChild(f);
+  }
+
   const formatujPopulacje = (p) => (p >= 1_000_000 ? `${(p / 1_000_000).toFixed(1)} mln` : `${(p / 1_000).toFixed(0)} tys.`);
 
   /** Ustawia transform etykiety miasta (stały rozmiar ekranowy, jak badge). */
@@ -468,6 +679,36 @@ export function stworzMape(kontener, { przyZmianieZaznaczenia, przyZmianieWidoku
     etykietaMiasta.classList.add('widoczna');
   }
 
+  /** Ustawia transform etykiety punktu (stały rozmiar ekranowy, jak miasta). */
+  function przelozEtykietePunktu() {
+    if (!aktywnyPunkt) return;
+    const komp = 1 / skala;
+    etykietaPunktu.setAttribute('transform', `translate(${aktywnyPunkt.wx} ${aktywnyPunkt.wy}) scale(${komp})`);
+  }
+
+  function ukryjEtykietePunktu() {
+    aktywnyPunkt = null;
+    etykietaPunktu.classList.remove('widoczna');
+    etykietaPunktu.innerHTML = '';
+  }
+
+  function pokazEtykietePunktu(d) {
+    if (!d) return ukryjEtykietePunktu();
+    aktywnyPunkt = d;
+    etykietaPunktu.innerHTML = '';
+    const tlo = el('rect', { class: 'tlo-etykiety', rx: 8 }, etykietaPunktu);
+    const tekst = el('text', {}, etykietaPunktu);
+    tekst.textContent = d.opis ?? d.nazwa ?? '';
+    const { szer, wys } = wymiaryEtykiety(tekst.textContent, tekst);
+    tlo.setAttribute('x', (-szer / 2).toFixed(1));
+    tlo.setAttribute('y', (-ODSTEP_PUNKTU - wys).toFixed(1));
+    tlo.setAttribute('width', String(szer));
+    tlo.setAttribute('height', String(wys));
+    tekst.setAttribute('y', (-ODSTEP_PUNKTU - wys / 2).toFixed(1));
+    przelozEtykietePunktu();
+    etykietaPunktu.classList.add('widoczna');
+  }
+
   /** Najbliższe widoczne miasto w promieniu kliknięcia (px ekranu). */
   function miastoPodKlikiem(p) {
     let najlepsze = null;
@@ -480,6 +721,25 @@ export function stworzMape(kontener, { przyZmianieZaznaczenia, przyZmianieWidoku
       if (d2 <= najlepszyDystans) {
         najlepszyDystans = d2;
         najlepsze = m;
+      }
+    }
+    return najlepsze;
+  }
+
+  /** Najbliższy widoczny punkt POI/historii w promieniu kliknięcia (px ekranu). */
+  function punktPodKlikiem(p) {
+    let najlepsze = null;
+    let najlepszyDystans = PROMIEN_KLIK_PUNKTU ** 2;
+    for (const zbior of [szczytyDane, historiaDane]) {
+      for (const d of zbior) {
+        if (d.grupa.getAttribute('display') === 'none') continue;
+        const sx = widok.x + d.wx * skala;
+        const sy = widok.y + d.wy * skala;
+        const d2 = (sx - p.x) ** 2 + (sy - p.y) ** 2;
+        if (d2 <= najlepszyDystans) {
+          najlepszyDystans = d2;
+          najlepsze = d;
+        }
       }
     }
     return najlepsze;
@@ -540,17 +800,54 @@ export function stworzMape(kontener, { przyZmianieZaznaczenia, przyZmianieWidoku
   /** Widoczność wszystkich warstw szczegółów — wywoływane z `zastosuj`. */
   function odswiezWidocznoscWarstw() {
     const k = widok.k;
+    // Pod rastrem/kaflami kraje stają się półprzezroczyste (style w styles.css).
+    svg.classList.toggle('z-hipsometria', !!WIDOCZNE_WARSTWY.hipsometria);
+    svg.classList.toggle('z-podklad-online', !!WIDOCZNE_WARSTWY.podklad);
+    grupaHipso.setAttribute('display', WIDOCZNE_WARSTWY.hipsometria ? 'inherit' : 'none');
     grupaRzek.setAttribute('display', WIDOCZNE_WARSTWY.rzeki && k >= PROGI_WARSTW.woda ? 'inherit' : 'none');
     grupaJezior.setAttribute('display', WIDOCZNE_WARSTWY.jeziora && k >= PROGI_WARSTW.woda ? 'inherit' : 'none');
     grupaMiast.setAttribute('display', WIDOCZNE_WARSTWY.miasta && k >= PROGI_WARSTW.miastaWielkie ? 'inherit' : 'none');
     grupaPOI.setAttribute('display', WIDOCZNE_WARSTWY.poi && k >= PROGI_WARSTW.poi ? 'inherit' : 'none');
+    grupaHistoria.setAttribute('display', WIDOCZNE_WARSTWY.historia && k >= PROGI_WARSTW.historia ? 'inherit' : 'none');
+    if (aktywnyPunkt && aktywnyPunkt.grupa.getAttribute('display') === 'none') ukryjEtykietePunktu();
     odswiezMiasta();
+    ustawTransformyPunktow();
+    rysujPodkladOnline();
   }
 
-  /** Włącza/wyłącza warstwę bez przebudowywania danych (switch w UI). */
+  /** Punkty stałego rozmiaru ekranowego (POI, historia) — tylko przy zmianie skali. */
+  function ustawTransformyPunktow() {
+    if (Math.abs(skala - ostatniaSkalaPunktow) <= 1e-9) return;
+    ostatniaSkalaPunktow = skala;
+    const komp = 1 / skala;
+    for (const zbior of [szczytyDane, historiaDane]) {
+      for (const p of zbior) p.g.setAttribute('transform', `translate(${p.wx} ${p.wy}) scale(${komp})`);
+    }
+  }
+
+  /** Włącza/wyłącza warstwę bez przebudowywania danych (switch w UI).
+   *  `podklad` przyjmuje klucz z PODKLADY_ONLINE (lub false/null = wyłączony). */
   function przelaczWidocznoscWarstwy(klucz, widoczny) {
-    if (klucz in WIDOCZNE_WARSTWY) WIDOCZNE_WARSTWY[klucz] = !!widoczny;
-    odswiezWidocznoscWarstw();
+    if (klucz === 'podklad') {
+      WIDOCZNE_WARSTWY.podklad = widoczny && PODKLADY_ONLINE[widoczny] ? widoczny : null;
+    } else if (klucz in WIDOCZNE_WARSTWY) {
+      WIDOCZNE_WARSTWY[klucz] = !!widoczny;
+    }
+    // C+B: zmiana podkładu zmienia sufit przybliżenia. Przy WYŁĄCZANIU oddalamy
+    // w miejscu (środek okna zostaje na tym samym punkcie świata) — sam clamp
+    // x/y zostawiał widok na krawędzi świata („skok na ocean atlantycki”).
+    if (klucz === 'podklad') {
+      const noweMax = maksymalneK();
+      if (widok.k > noweMax && skala > 0 && !WIDOCZNE_WARSTWY.podklad) {
+        const wx = (rozmiar.szerokosc / 2 - widok.x) / skala;
+        const wy = (rozmiar.wysokosc / 2 - widok.y) / skala;
+        widok.k = noweMax;
+        const d = dopasujWidok(rozmiar, widok, { min: K_MIN, max: noweMax });
+        widok.x = rozmiar.szerokosc / 2 - wx * d.s;
+        widok.y = rozmiar.wysokosc / 2 - wy * d.s;
+      }
+      zastosuj();
+    } else odswiezWidocznoscWarstw();
   }
 
   /* ---- Kraje (asynchronicznie, po załadowaniu TopoJSON) ---- */
@@ -586,12 +883,17 @@ export function stworzMape(kontener, { przyZmianieZaznaczenia, przyZmianieWidoku
     ustawPolaczenia,
     ustawRzeki,
     ustawJeziora,
+    ustawSzczyty,
+    ustawHistorie,
+    ustawHipsometrie,
     ustawMiasta,
     przelaczWidocznoscWarstwy,
+    PODKLADY_ONLINE,
     zaznacz,
     podswietl,
     przelaczLuki,
     wysrodkuj,
+    ustawWidok,
     reset,
     zoomDoPunktu,
     odswiezRozmiar,

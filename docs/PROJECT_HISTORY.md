@@ -1328,3 +1328,406 @@ Pociągnięty wątek i zautomatyzowany raport.
   krok); ADR 0021 (pkt 9–10, epoki, build); ROADMAP/PROJECT_HISTORY.
 - Testy: `test/kronika.test.js` 10 testów, łącznie **163/163**; build/check
   zielone.
+
+
+## Audyt PR #8/#9 + backfill meta (2026-08-29, sesja po scaleniu PR #9)
+
+Sesja na gałęzi `arena/01a04f70-ame` (PR #10). Baza przed pracą: `npm test`
+163/163, `npm run build` + `npm run check` zielone. Audyt wg ADR 0004 —
+PR #9 plik po pliku, PR #8 rzut oka (oba scalone 2026-08-29 bez handoffu).
+
+### PR #9 — „uniwersalna nawigacja i daty w stopkach (buildTime)” (15 plików, +636/−380)
+
+- stopki w `app/ui.js` zachowują godzinę z `meta` (zgodne z ADR 0017;
+  PROTOKÓŁ §8.1 mówi „wyłącznie daty”, godzina jest częścią daty);
+- `tools/rebuild-index.mjs`: `buildTime` w indeksie — przebudowa zachowuje
+  dotychczasowy czas, nowy powstaje tylko przy różnicy funkcjonalnej,
+  `--check` porównuje bez `buildTime`; testy z `fixedTime` (ADR 0002 OK);
+- `replace_topbar.cjs` — jednorazowy skrypt zamiany paska w
+  `tools/kronika.mjs`; odtwarzalny, ale niepodpięty do npm (uwaga: kandydat
+  do przeniesienia do `tools/` albo usunięcia w następnej sesji).
+
+**Znaleziony problem 1 (naprawiony w tej sesji):** nowy pasek Kroniki linkuje
+`../index.html?q=…`, `?action=wylosuj`, `?action=powiazania`, a aplikacja
+główna czyta wyłącznie hash — z Kroniki nie działały wyszukiwanie, losowanie
+i warstwa powiązań (linki otwierały mapę bez akcji). Naprawa: obsługa
+parametrów zapytania w `app.js` + czysta funkcja w `ui.js` + testy (C2).
+
+**Znaleziony problem 2 (naprawiony):** nieaktualny komentarz w `app/ui.js`
+twierdził, że stopka obcina godzinę — doprowadzony do stanu faktycznego.
+
+### PR #8 — „C1 wzbogacenie relacji + C3 Skit + C2 Epoka V” (57 plików, +9844/−1495)
+
+- nowe powiązania z opisami ≥12 słów (ADR 0019/0006), nowy SKIT
+  `zagadka-ze-spizu` (unikalny skład), Epoka V, automatyczne raporty,
+  wymiana wizualizacji (≤ 2 MB), link do Kroniki w nagłówku — zgodnie z ADR.
+
+**Znaleziony problem 3 (naprawiony — backfill):** PR #8 przeredagował treść
+17 istniejących SKITów i 14 wpisów kartoteki (korekty językowe + 8 nowych
+powiązań), ale w `meta.modyfikacje` nie trafił ani jeden wpis — feed
+„Co nowego” nie pokazał tych zmian (naruszenie PROTOKÓŁ §9 / ADR 0014).
+Dopisywane teraz wpisy `meta.modyfikacje` z datą `2026-08-29 21:36` opisują
+te zmiany retrospektywnie, czytelnie dla czytelnika archiwum.
+
+
+## Pętla Jakości C1→C3→C2 po audycie (2026-08-29, PR #10)
+
+Po audycie PR #8/#9 (opis wyżej) i naprawach audytowych pętla poszła
+klasycznie: C1 (treść z researchu) → C3 (SKIT) → C2 (featura z testami).
+
+- **C1** — `agni` (źródła 3 → 6): trzy poziomy obecności, siedem języków
+  obrzędowych (sapta jihvā) i imiona (Pāvaka, Havyavāhana, Hutāśana,
+  Dhumaketu), rola świadka saptapadi (Wikipedia, Rigweda 1.1 Griffith na
+  sacred-texts, Agni Purana w Wisdom Library).
+  `sfinks-teby` (źródła 3 → 4): wariant Pausaniasza 9.26.2 — Sfinks jako
+  nieślubna córka Lajosa testująca braci wyrocznią Kadmosa z Delf oraz wersja
+  racjonalizująca (piratka z Anthedonu); zagadka od Muz (Apollodor 3.5.8),
+  rozwiązanie „człowiek” (Perseus Digital Library).
+- **C3** — SKIT „DZIEŃ WOLNEGO” (`dzien-wolnego`, 269 słów): Agni ×
+  Ben-Varrey × Kannon — pierwszy skit dla trzech bytów bez żadnego udziału;
+  unikalny skład (walidator), rejestr lekki (v1.6), temat „przerwa od
+  wzywania”. Każdy z uczestników po raz pierwszy w Bazie Skitów.
+- **C2** — parametry zapytania dla aplikacji głównej: `?q=` (wyszukiwanie),
+  `?action=wylosuj`, `?action=powiazania` — czysta `akcjeZZapytania()` +
+  7 asercji, wpięcie w `start()`, `aria-pressed` przycisku motywu w pasku
+  Kroniki. To domknięcie linków z PR #9 (wcześniej martwe — patrz audyt).
+- **Weryfikacja:** `npm test` 164/164, `npm run check` OK; headless Chromium:
+  `?q=sfinks` → filtr 1 manifestacji, `?action=powiazania` → przycisk aktywny,
+  `?action=wylosuj` → otwarta kartoteka; pasek Kroniki prowadzi do działających
+  adresów. Lekcja L16.
+- **Stan:** indeks 15 wpisów / **19 skitów** / 43 tagi / feed z nowymi
+  pozycjami; buildTime 2026-08-29 21:41 UTC.
+
+## Materializacja 5 kart MtG (2026-08-29/30) — PR #11
+
+Właściciel zlecił pełną materializację pięciu kart do Manifestacji Eterycznych.
+Nowa gałąź `mtg/materializacja-5-kart` (baza: `main`), PR otwarty przed
+kodowaniem (ADR 0004). PR #10 (Pętla Jakości, 6 commitów) pozostał nietknięty.
+
+### Audyt poprzedniego scalonego PR (#9 — uniwersalna nawigacja i daty w stopkach)
+
+Wynik audytu (plik po pliku, `git diff 101c75d^..101c75d`) — do odnotowania:
+
+1. `app/app.js` czyta z indeksu wyłącznie hash `buildTime` — zgodne z kontraktem
+   L16 (determinizm, brak czasu z zegara builda); nawigacja spójna z ADR 0001.
+2. `replace_topbar.cjs` (jednorazowy patch `tools/kronika.mjs`) pozostał
+   **niepodpięty** — defekt otwarty na przyszłą sesję (plik nieszkodliwy).
+3. Nieaktualny komentarz w stopce — naprawiony w ramach audytu.
+4. `tools/rebuild-index.mjs --check` wykonuje `JSON.parse` bez `try/catch`,
+   a `test/dane.test.js` re-używa `buildTime` — drobne uchybienia jakościowe,
+   odnotowane jako defekty otwarte (nie blokują tej sesji).
+
+### Pięć nowych wpisów (dane wyłącznie ze Scryfall, ADR 0008)
+
+| Wpis | Karta | Byt | Źródła kluczowe |
+|---|---|---|---|
+| `knecht-z-koptos` | Apprentice Wizard (2XM #40) | ożywiony tłuczek Pankratesa | Lukian „Filopseudes”, Goethe „Der Zauberlehrling” (1797/1798) |
+| `pandora` | Panic Spellbomb (SOM #191) | pierwsza kobieta i jej pithos | Hezjod „Prace i dnie” 42–105, Theoi, Britannica |
+| `syama-i-sarvara` | Trade Route Envoy (TDM #163) | czterookie psy Yamy | Rigweda 10.14 (Griffith), liter. wedyjska |
+| `protostates` | Akroan Sergeant (ORI #130) | fantom pierwszego szeregu | Herodot 7.104, LSJ (πρωτοστάτης), Plutarch |
+| `morowa-panna` | Infectious Horror (CON #47) | słowiańska personifikacja zarazy | opracowania demonologii moru (lasmgiel, KUL, UWM) |
+
+Każdy wpis: sekcje I–V wg PROTOKÓŁ v1.7 — pełne (wizualizacja 21:9,
+natura, dokumentacja z adresami, trofea, rezonans z tabelą translacji), tagi
+wyłącznie z kanonu, `meta` z godziną zapisu. Wizualizacje: `obraz: null`
+(placeholder „wizualizacja nieodtworzona” — zgodne z §5).
+
+### Kanon tagów
+
+- Dodany tag kulturowy **`polska`** (folklor słowiański ziem polskich:
+  personifikacje zarazy i śmierci, demony moru) — w tym samym commicie co wpis
+  (PROTOKÓŁ §6.1); kultura to kategoria z potencjałem kolejnych wpisów, nie
+  etykieta jednorazowa.
+- Stan: **44 tagi** (10→11 kultur), 20 wpisów, 18 SKITów, 5 epok Kroniki.
+
+### Brama i commit
+
+- `npm run build` + `npm test` **163/163** zielone; `npm run check` zielone.
+- Snapshoty w `test/kronika.test.js` i `test/dane.test.js` zaktualizowane do
+  rozszerzonej sieci powiązań i 11. kultury (testy te pilnują wyliczonych
+  wartości, więc po przyroście sieci wymagają nowych oczekiwań — zmiana
+  mechaniczna, zweryfikowana wynikiem narzędzia).
+- Commit `9aecf1a` (5 wpisów + kanon + indeks + Kronika + testy), wypchnięty.
+ (docs: dziennik sesji — materializacja 5 kart MtG + audyt PR #9 i handoff)
+
+
+### Wizualizacje 21:9 (2026-08-30)
+
+Na pytanie właściciela o ilustracje: pięć obrazów wygenerowanych z ramowych
+promptów wpisów i zapisanych jako `assets/wizualizacje/<slug>.jpg`
+(1915×821 = 21:9, 209–276 KB, ≤ 2 MB) — `knecht-z-koptos`, `pandora`,
+`syama-i-sarvara`, `protostates`, `morowa-panna`. Pola
+`wizualizacja.obraz` podpięte, `meta.modyfikacje` z godziną zapisu, indeks
+przebudowany (`npm run build`), brama 163/163.
+ (feat: wizualizacje 21:9 pięciu nowych materializacji + podpięcie obrazów we wpisach)
+
+### Przeniesienie materializacji do PR #10 (2026-08-30)
+
+Na polecenie właściciela cztery commity materializacji (pierwotnie gałąź
+`mtg/materializacja-5-kart`, PR #11) przeniesiono do gałęzi
+`arena/01a04f70-ame` — PR #10 — aby sesja po zamknięciu PR #11 nie straciła
+dostępu do GitHub i aby po resecie sandboxa można było odtworzyć pracę ze
+znanej gałęzi. Mapowanie commitów: `de71db7→fe68821`,
+`9aecf1a→a72b45a`, `9ad8e7f→b620a50`, `2b3fe74→81f910c`. Indeks i Kronika
+przebudowane z połączonych danych (`npm run build`), brama **164/164**.
+PR #11 zamknięty, gałąź `mtg/materializacja-5-kart` usunięta.
+
+### Redakcja SKITów i audyt Kartoteki (2026-08-30) — zlecenia B i C
+
+Właściciel: „PRZYŁÓŻ SIĘ DO NICH!” — B: przeczytać każdy SKIT i poprawić
+język (B1), logikę i hermetyczność (B2), dodać humor tam, gdzie nadęte
+(B3); C: audyt wszystkich Kart Bytów (B1+B2).
+
+**B — 17/19 SKITów zredagowane** (`37924bd`). Bez zmian: `cena-znaku`
+i `dzien-wolnego` (czytały się dobrze). Najważniejsze poprawki: forma
+żeńska/męska po ustaleniu płci Selkiego (męski — ojciec z ballady),
+„foczą skórę” zamiast „faksy/fiasko”, „czterej chłopi”, „Z twojego
+pucharu”, „w sekundzie”, „z łoskotem”, „wozem”, „balii”, „zadyma”;
+fakty do Kartoteki (krater Tezeusza zamiast głazu, trojaczki Balora
+zamiast trzech chłopców, danina w bydle i dzieciach zamiast złotego
+łańcucha); rozluźnienie końcówek („znak-burzy”, „trzy-zegary” — koniec
+z „philosophy”; „zagadka-ze-spizu” — koniec z wulgaryzmem).
+Wszystkie SKITy ≤ 300 słów.
+
+**C — 16/20 kart poprawionych** (`c193fc1`); reszta bez uwag
+(agni — 1 literówka, ben-varrey, egungun, empusa-korynt, kannon-hase,
+morowa-panna, nessos, protostates, sfinks-teby, syama-i-sarvara,
+talos-kreta, pandora, knecht-z-koptos, lincoln-imp, drangue-shala,
+indra, balor, barbarossa, kentaur-pelion, selkie). Najważniejsze:
+„Nielubi”→“Nie lubi”, „słaja”→“słoja” (5 miejsc), „czarną kitą”,
+„Pauzaniasz”/„Lajos”, „Imię bytu”, „pomszczenie”, doprecyzowanie
+powiązań (sfinks→kentaur nie myli bytu z Chejronem; selkie→nessos
+„jeden/drugi”), zdanie drangue o obietnicach (kto płaci własną siłą).
+Każda zmiana z `meta.modyfikacje` + godziną. Brama: 164/164,
+build/check zielone.
+
+### Pętla Jakości → Epoka VI + analiza Kroniki + research mapy (2026-08-30)
+
+**Pętla Jakości (zlecenie: „kolejna Epoka Kroniki w C2”):**
+- C1 — 4 nowe pary powiązań na źródłach z kartotek (talos→knecht,
+  talos→pandora, empusa→pandora, protostates→morowa-panna); seed
+  przeliczony, osie epok +1/+1/… (e1 34,…), snapshoty zaktualizowane.
+- C3 — SKIT „CZWARTY STÓŁ” (Pandora × Morowa Panna × Empusa, 300 słów,
+  unikalny skład, ton lekki); domyka wątek czwartego stołu z Epoki I.
+- C2 — **Epoka VI „Czwarty stół: kto nie wie, że bierze”** (os 27/73,
+  wątek `czwarty-stol` zamknięty, nowy `niewinny-bierca`, zasięg
+  pandora +0.01 / empusa +0.005 / morowa −0.015). Narzędzie:
+  nawigacja i numery rzymskie liczone z liczby epok (nie sztywne „<5”),
+  badge „N epok”, emoji 5 nowych bytów; czytelnia + link Epoki VI;
+  testy 6 epok. Brama 164/164, check OK.
+- **Uwaga techniczna:** sandbox odtworzył lokalne `.git` jako świeży klon
+  (HEAD na `main`), a cała praca sesji została w drzewie jako zmiany —
+  odtworzone przez fetch + reset na `arena/01a04f70-ame`; praca
+  zrekomitowana jako `b1fcec6` (zawiera C1+C3+C2 tej tury).
+
+**Analiza trybu Kroniki** (`docs/plans/ANALIZA_kronika-rozwoj-2026-08-30.md`):
+co renderują raporty, a co ginie w danych (`iskra`, `pytanie`, `przebieg`,
+`relacje`, `dominacje`, trend osi/paliwa); 10 propozycji S1 (wykresy
+i tabele w szablonach — generator-only, bez zmian ADR), S2 (feed/filtr/
+deep-link w aplikacji — ADR 0007), S3 (graf wątków >~15 epok); źródła
+pomysłów z BACKLOG i KRONIKA_tryb §10/P8; pytania D1–D3 do właściciela.
+
+**Research mapy głównej** (`docs/plans/RESEARCH_mapa-warstwy-2026-08-30.md`):
+offline — NE 10m `geography_regions_elevation` (poligony hipsometryczne,
+public domain), `geography_regions_points` (szczyty), `urban_areas`,
+`marine_polys`; GeoNames szczyty CC BY 4.0; WWF Ecoregions 2017
+(CC BY 4.0) / OSM–Overpass (ODbL) jako „kompleksy leśne”; historyczne —
+Pleiades (CC BY 3.0) + DARE (CC BY-SA 3.0). Online (opcjonalne, wymaga
+decyzji o ADR 0001/0003): OSM tiles, OpenTopoMap, Esri basemaps,
+CARTO (free 5M req/mc, klucz). Rekomendacja etapów M1→M2→M3.
+BACKLOG zaktualizowany (sekcja Kronika, wpis M14, martwy link Theoi).
+
+### Kronika S1–S3 + mapa M1–M3 (2026-08-30, PR #10)
+
+**Zlecenie:** Kronika S1–S3 (wizualizacje W1–W10, feed/filtr/deep-linki
+U1–U3, odwołania U4, multi-Tom + rozgałęzienia) oraz mapa M1–M3 (warstwy
+offline + online bez klucza, wszystkie domyślnie wyłączone, atrybucje).
+
+**Kronika (S1):** czyste funkcje SVG/HTML w `tools/kronika.mjs` —
+`ramkaEpokiHTML` (W1), `wykresOsiSVG` (W2; mit% normalizowany 0–1/0–100,
+dynamiczna skala), `wykresZasiegowSVG` (W3), `wykresPaliwaSVG` (W4),
+`slupkiDominacjiSVG` (W5), `diagramRelacjiSVG` (W6 — łuki
+wzmocnienie/schłodzenie/neutralna), `osWatkowSVG` (W7), `dziennikZmianyHTML`
+(W8), `heatmapZasiegowSVG` (W9), `grafEpokSVG` (S3) i `generujSpisTomowHTML`.
+Raport epoki: ramka + dziennik + wykresy zasięgów/dominacji + diagram relacji
++ łuki na mapie (W10) + „Epoki powiązane” (U4). Raport Tomu: oś, heatmap,
+paliwo, dominacje końcowe, oś wątków, graf epok, pasek Tomów, filtr bytów.
+
+**Kronika (S2/S3):** feed „📜 kronika” w aplikacji (`#kroniki`, karty epok
+z `iskra`/`pytanie`, filtr bytów, `data-link="kronika:<slug>"`), deep-linki
+`#kronika:<slug>` z aplikacji i na stronie Tomu (przewinięcie + halo),
+`docs/kronika.html` (spis Tomów), generator obsługuje wiele Tomów
+(`wczytajTomy`, `summary-<slug>.json`), `meta.poprzednik`/`kontynuacja`
+walidowane (odwołanie do samego siebie = błąd) i rysowane jako graf.
+
+**Mapa (M1–M3):** warstwy offline **domyślnie wyłączone** —
+szczyty/POI (NE 10m elevation+regions points), miejsca historyczne
+(Pleiades 4.1, precise), hipsometria (NE HYP 50m→Web Mercator 2160² jpg),
+rzeki/jeziora/miasta; podkłady online bez klucza
+(OpenTopoMap/OSM/Esri physical/imager) wybierane ręcznie z atrybucją pod mapą,
+a przy włączonym podkładzie — głębsze przybliżenie (zgłoszenie C).
+Warstwy „lasy” (WWF), „urban” i „morza” zostały wdrożone i **usunięte po
+recenzji właściciela (2026-08-30, zgłoszenie A)** — razem z nimi
+`tools/warstwy-lasy-pmtiles.py` i `tools/pmtiles.py`.
+Narzędzia: `tools/warstwy-mapy.mjs` (+`--check`),
+`tools/warstwy-hipsometria.py`, `tools/pobierz-zrodla-warstw.sh`
+(zasoby 315 MB w `assets/map/vendor/`, gitignorowane).
+
+**Brama:** `npm test` 179/179, `npm run check` zielone, `node
+--test test/mapa-szczegoly.test.js` 12/12, `test/kronika.test.js` 17/17.
+`docs/ASSETS.md` — licencje (CC BY 3.0 Pleiades, public domain NE,
+CC BY 4.0 Dinerstein 2017 — historycznie) + polityki podkładów online.
+
+### Pętla Jakości — C1/C3/C2 (2026-08-30, kontynuacja)
+
+Po wdrożeniu S1–S3 i M1–M3: C1 — protostates pogłębiony (Tukidydes 5.66–70
+— pierwszy szereg 448 ludzi; Herodot VII, 226 — Dienekes „w cieniu”) +
+powiązania z knechtem z Koptos i psami Yamy; C3 — SKIT „PIERWSZY”
+(Protostates × Knecht × Śyāma i Śarvara, 154 słowa); C2 — **Epoka VII
+„Kolejność: nikt nie szedł za pierwszym”** (oś **27/73** po epoce; stanStart
+puli seedów = 37/63 — wartość drukowana przez `kronika.mjs --seed`, po e1
+oś 35/65), meta.poprzednik = epoka-6 — pierwsze realne odwołanie S3 w
+grafie epok). Brama: 176/176, check zielone.
+
+### Recenzja właściciela — zgłoszenia A/B/C (2026-08-30)
+
+Po obejrzeniu mapy na żywo właściciel zgłosił trzy poprawki; wszystkie
+wdrożone w tej samej sesji:
+
+- **A. Usunięte warstwy** „lasy”, „obszary zurbanizowane” i „morza i oceany”
+  — bez sensu, nic sensownego nie widać. Usunięte z panelu, `map.js`,
+  `app.js`, CSS, `tools/warstwy-mapy.mjs`, `tools/pobierz-zrodla-warstw.sh`
+  oraz z repo (`las.json`, `urban.json`, `morza.json`,
+  `tools/warstwy-lasy-pmtiles.py`, `tools/pmtiles.py`).
+- **B. POI/szczyty i miejsca historyczne** — interakcja jak u miast:
+  kursor **strzałka** (nie łapka) nad punktem, nazwa **on-press** i znika
+  **on-release** (pływająca tabliczka `etykieta-punktu`, pole trafienia
+  `r=13`, bez `<title>` na hover); przeciągnięcie i wyłączenie warstwy
+  chowają tabliczkę.
+- **C. Głębsze przybliżenie przy podkładzie online** — do tej pory sufit
+  `K_MAX=32×`; teraz z włączonym podkładem (dowolnym z czterech) scroll
+  sięga `K_MAX_ONLINE=524288×` (rozdzielczość kafelków z≈19), a po
+  wyłączeniu podkładu widok wraca do 32×. Precyzyjniejsze wymiary kafelków
+  przy wysokim zoomie (toPrecision zamiast toFixed(1)).
+
+Brama: `npm test` **184/184**, `npm run check` zielone.
+
+### Druga recenzja właściciela — zgłoszenia A–E (2026-08-30, PR #10)
+
+Po pierwszym podglądzie na żywo właściciel zgłosił kolejne poprawki —
+wszystkie wdrożone w tej samej sesji:
+
+- **A.** Blokada zoomu online na **×45 252** — 67 **obrotów kółka** myszy
+  (każdy ×e^0.16 ≈ 1,1735; 68. obrót ≈×53 104 i dalej = puste bloki) +
+  usunięty podkład **Esri „świat fizyczny”** jako niewnoszący nic
+  (zostają OpenTopoMap, OSM, Esri World Imagery).
+- **B.** Wyłączenie podkładu po głębokim zoomie **oddala w miejscu** —
+  środek okna zostaje na tym samym punkcie świata (wcześniej clamp x/y
+  wyrzucał widok na krawędź, „ocean atlantycki”).
+- **C.** Warstwa „POI / szczyty” → **„Szczyty”**.
+- **D.** `localStorage`: ostatnio wybrane warstwy (`ame:mapa:warstwy`)
+  i ostatni widok — środek świata + powiększenie (`ame:mapa:widok`,
+  debounce 400 ms, `mapa.ustawWidok` przy starcie).
+- **E.** Karta bytu: sekcja **„Tomy i Epoki”** z linkami do stron Tomu
+  i Epok z udziałem bytu (dane z `summary.json`, ładowane raz).
+
+Brama: `npm test` **184/184** (mapa 14/14, UI 42/42), `npm run check` zielone.
+
+### Trzecia recenzja właściciela — widoki Kroniki (2026-08-30, PR #10)
+
+Po obejrzeniu raportów Tomu i Epok: (a) nazwy epok/bytów w wykresach
+łamały się przez ucinanie — dodany `lamaczTekstu`/`tekstWieloliniowy`
+(SVG `<tspan>`), użyte w grafie epok, macierzy zasięgów, dominacjach
+i osi wątków; (b) macierz zasięgów miała jednolity kolor — teraz skala
+granat→bursztyn z wartościami % w komórkach i legendą; (c) dominacje
+Tomu grupowane wg kultur i rankowane (kultura → kulty od najsilniejszego);
+(d) minimalna czcionka projektu **12px** (`KRONIKA_CSS` + `app/styles.css`).
+Brama: `npm test` 189/189, `npm run check` zielone.
+### Czwarta recenzja właściciela — zoom techniczny + agregat kultur Tomu (2026-08-30, PR #10)
+
+- **A.** Wycofana blokada zoomu online wg **67 obrotów kółka** (×45 252):
+  właściciel zauważył, że różne rejony świata mają różny maksymalny zoom,
+  więc limit wraca do **technicznego maksimum ze specyfikacji źródeł** —
+  kafelki docelowych serwisów sięgają z≈19, czyli `K_MAX_ONLINE = 2**19 =
+  524288×` (pierwotna głębokość z 0141cba). Informacja w panelu mapy
+  poprawiona na ×524 288; test sufiksu porównuje z `2 ** 19`.
+- **B.** „Dominacje na koniec Tomu”: wymienia tylko **kultury obecne w tym
+  Tomie** (uczestnicy Epok), a nie całą kartotekę (w Tomie I: 8 z 11 kultur
+  — poza albania, japonia, Wyspa Man), i jest **agregatem po kulturach**:
+  jeden słupek na kulturę = łączny głos jej bytów (udział % + liczba bytów),
+  ranking od najsilniejszej. Wcześniej była szczegółowa lista bytów
+  z całej kartoteki. Nowa funkcja `dominacjeKulturTomu` + czytelne nazwy
+  kultur (`NAZWY_KULTUR`).
+- **C.** Przy okazji naprawiony stary bug mapy SVG: `NaN%%` w tytule halo
+  i `r="NaN"` (promień brał obiekt zamiast `wielkosc`; 15 wystąpień
+  w `docs/kronika-*.html`).
+
+Brama: `npm test` **190/190**, `npm run check` zielone; strony Kroniki
+przebudowane.
+### Pętla Jakości (ADR 0007) — audyt PR #10 + C1 → C3 → C2 (2026-08-30, PR #10)
+
+Po zakończonych recenzjach właściciel zlecił pętlę jakości (ADR 0007).
+
+**Audyt PR #10 (main..HEAD: 92 pliki, 28 A / 64 M, +14 655/−872):** M1–M3
+i Kronika S1–S3 zgodne z ADR 0001/0003/0009/0016–0018/0020; `geo.js`
+nietknięty; cache-bust `c5-5` spójny (test blokuje); brak pozostałości po
+usuniętych warstwach i debug logów w app/; `npm run build` deterministyczny
+(tree bez zmian); składnia modułów OK; testy 190/190, check zielone.
+Bez zaległości → pętla.
+
+**C1 — `nessos`** (d25721d): źródła pierwotne mitu — Pseudo-Apollodoros
+„Biblioteka” 2.151/2.157 (nasienie + krew jako „napój miłosny”),
+Diodor 4.36.3/4.38.1 (wariant z oliwą i grotem strzały, słoik, Kenaion),
+Owidiusz „Metamorfozy” IX.98–210; wariant przepisu w `natura.zdolnosci`;
+powiązanie nessos ↔ pandora (dar-zguba — Hezjod „Prace i dnie” 60–68).
+Sieć: pandora w Epocze VI 15→17, zasięg 0.316→0.34.
+
+**C3 — SKIT „Prezent z defektem”** (7718132): Nessos × Pandora × Morowa
+Panna, 276 słów, unikalny skład, lekki rejestr v1.6 (trzy „dawczynie/dawcy
+zguby” przy brodzie; fakty z kartotek — przepis Nessosa, słój Pandory,
+próg i chusta Morowej Panny, kukła na wiosnę).
+Sieć: zasięgi w Epocze VI 0.34→0.365 i 0.243→0.267 (skity podbijają
+obecność).
+
+**C2 — strona tagu (F2)** (f852578): `#tag:<slug>` — warstwa z kategorią
+z kanonu, opisem tagu, licznikiem i pełną listą manifestacji (klik →
+kartoteka); filtr mapy i pasek zostają; otwierana z paska, karty bytu
+i deep-linku; ponowny klik czyści filtr. `htmlStronyTagu` w ui.js,
+test; cache-bust `v=c5-6`. **Do akceptacji właściciela przed live.**
+
+**C1 (drugi obieg) — `kannon-hase`** (f7af6f9): korekta tras — Hasedera
+(Kamakura) to 4. stacja Bandō Sanjūsankasho i kamakurańskiej pielgrzymki
+Kannon, **nie** Saigoku (Kansai; Hase-dera w Narze = 8. stacja); legenda
+Tokudō (721, dwa posągi z kamforowca, plaża Nagai 736), 11 głów, 9,18 m,
+Jōdo-shū; powiązanie kannon-hase ↔ syama-i-sarvara (droga dusz; Rigweda
+10.14.10–12, Lotus Sutra 25).
+Sieć: syama w Epocze VII 10/9→12/11, zasięg 0.25→0.275.
+
+Brama: `npm test` **191/191**, `npm run check` zielone; indeks 20 wpisów /
+22 SKITy / 44 tagi; build deterministyczny.
+
+## Protokół MFM v1.8 — usunięcie sekcji „Rezonans” + zakaz mechaniki MtG w lore (2026-08-30)
+
+**Zlecenie właściciela (recenzja kartoteki):**
+- przebicie czwartej ściany w sekcji III *Knechta z Koptos* — dokumentacja
+  bytu cytowała mechanikę karty MtG (Scryfall: koszt many, typ, flavor,
+  printy) jako „źródło wiedzy o manifestacji”; podobne wpisy „baza kart”
+  znaleziono w morowa-panna, pandora, protostates, syama-i-sarvara;
+- usunięcie całej sekcji V („Rezonans i tożsamość”) z instrukcji
+  materializacji i ze wszystkich 20 materializacji (tam też tłumaczono
+  mechaniki karty: Mechanika/Ilustracja/Flavor/Lore MTG);
+- renumercja: VI SKITy → V, „Tomy i Epoki” (litera K) → VI, „Powiązania”
+  (symbol ∞) → VII;
+- odnośnik do Tomu w sekcji „Tomy i Epoki” jak brązowy przycisk
+  (`chip link`), nie niebieski link.
+
+**Wykonanie:**
+- ADR 0022; protokół MFM v1.8 w `docs/PROTOKOL.md` (§4.1–§4.7),
+  `README.md`, `index.html` (stopka), `AGENTS.md`, `docs/ARCHITECTURE.md`,
+  `docs/WORKFLOW.md`, `docs/ROADMAP.md`;
+- renderer `app/ui.js` + kartoteka osadzona `tools/kronika.mjs` — sekcje
+  I–IV, V SKITy, VI Tomy i Epoki, VII Powiązania; Tom jako chip;
+- migracja danych: `rezonans` usunięty z 20 wpisów, pozycje „baza kart”
+  usunięte z 5 wpisów (zostają źródła kulturowe, np. Lukian, Goethe,
+  Roczniki KUL); walidator odrzuca typ „baza kart” i nie wymaga `rezonans`;
+- cache-bust `c5-6` → `c5-7`; testy 199/199, build + check zielone.

@@ -1,0 +1,98 @@
+{
+  "slug": "morowa-panna",
+  "nazwa": "Morowa Panna — zaraza w białej szacie z czerwoną chustą",
+  "nazwy_alternatywne": [
+    "Morowa Dziewica",
+    "Niewiasta Morowa",
+    "Dżuma",
+    "Morowica",
+    "Marzanna (kukła odprawiana na wiosnę)"
+  ],
+  "karta": {
+    "nazwa": "Infectious Horror",
+    "wydanie": "Conflux (CON) #47",
+    "rok": 2009
+  },
+  "lokalizacja": {
+    "miejscowosc": "Chojnice (Pomorze) i wsie ziem polskich — legenda o morowej dziewicy, która weszła do miasta zamkniętego jak trumna; wierzenie notowane także w tradycji ruskiej (stanie na mogiłach i powiewanie chustą) i litewskiej (koścista ręka z chustą przez okno)",
+    "kraj": "Polska",
+    "lat": 53.6954,
+    "lon": 17.557
+  },
+  "pochodzenie_i_kultura": "Folklor słowiański (krąg polsko-rusko-litewski, ujęty tu przez tradycję ziem polskich): personifikacja zarazy — nienaturalnie wysoka, wychudła niewiasta w białym pogrzebowym całunie albo brudnej płachcie, z czerwoną lub zakrwawioną chustą; zjawia się nocą, prowadzi z domownikami rozmowę i jedną odpowiedzią przesądza o losie domu, a na wiosnę bywa odprawiana jako kukła. Jedna tradycja, jeden byt — mór; nie mieszam jej z aniołem śmierci ani z greckimi Kerami.",
+  "wizualizacja": {
+    "prompt": "Style: A wide-angle full-body cinematic photograph. The central objects/persons of the photo are visible from head to toe, standing centrally in the frame. No parts of the body are cropped.\n\nAn unnaturally tall, gaunt woman in a soiled white burial shroud standing at a half-open cottage doorway at night, one skeletal hand reaching through the gap holding a blood-red cloth; behind her a narrow village lane and the dark mass of an old town wall, low fog rolling over the threshold, a single candle flame guttering inside the house; cold moonlight, muted white and deep red against blue-black shadows, wet cobblestones, utterly silent air.\n\nCaptured with a 35mm anamorphic lens at f/1.8. Shallow depth of field with a heavy, creamy bokeh background. Environmental portraiture. Dramatic cinematic lighting, sharp focus on the character, hyper-realistic textures of clothing and skin. Shot on 70mm film stock, ultra-wide 21:9 aspect ratio. --ar 21:9",
+    "obraz": "assets/wizualizacje/morowa-panna.jpg"
+  },
+  "natura": {
+    "wyglad_i_aura": "Nienaturalnie wysoka, wychudła i blada kobieta w białym, pogrzebowym całunie albo w wielkiej brudnej płachcie, z czerwoną — nierzadko zakrwawioną — chustą w dłoni. W tradycji ukraińskiej staje na mogiłach i powiewa chustą, dmuchając na osady morowym powietrzem; w podaniach litewskich wsuwa kościstą rękę z chustą przez uchylone drzwi albo okno. Twarzy nie widać; powietrze wokół niej gęstnieje jak przed gradem, a zapach bywa słodkawy, jak z piwnicy, w której leżał umarły.",
+    "charakter_i_motywacje": "To nie bestia z lasu — to urzędniczka progu. Nie poluje z głodu, lecz przychodzi po rozliczenie i — co najgorsze — potrafi rozmawiać. Przeprowadza krótki wywiad: pyta „Czy śpicie?”, a kto odpowie „Śpimy”, ten słyszy „Śpijcież na wieki” i jego dom zostaje przeznaczony na zgubę. Kto jednak odpowie, że „nic nie robimy, tylko Boga chwalimy”, dostaje „Chwalcież go na wieki” — i w tym domu zaraza nie panuje. Jej motywacją jest dokończenie rytuału; zabija wtedy, gdy ludzie sami otworzą jej drzwi słowem.",
+    "zdolnosci": "Nosi w sobie mór: wystarczy powiew chusty albo krok przez próg, by we wsi zaczęły się gorączki i dżuma. Nie potrzebuje drzwi — wchodzi z powietrzem, a miasto zamknięte jak trumna nie jest dla niej przeszkodą (legenda chojnicka). Najgroźniejsza jest jej zdolność rozmowy: pyta, czeka i zapisuje odpowiedź, a wypowiedziane słowo pełni rolę wyroku.",
+    "slabosci_i_metody_pokonania": "Nie walczy się z nią bronią, lecz słowem i porządkiem: właściwa odpowiedź na jej pytanie — że się nie śpi, tylko chwali Boga — zamyka dom. Znane są też zabiegi odprawiania: zaklęcia każą chorobie „odejść na bagna, na bory, na lasy, na suche korzenie”, a na wiosnę wspólnota wynosi i topi kukłę — Marzannę, zwaną też Moreną — reprezentującą morową dziewicę. Kto rozpozna zjawę i nazwie ją po imieniu, ten zdejmuje jej władzę nad progiem.",
+    "preferencje": "Lubi: noc, śpiące domy, uchylone okna, przeklinanie na progu, puste drogi i ciszę po pierwszym zgonie. Nie lubi: odpowiedzi „chwalimy Boga”, rzek między wsiami, ognia, soli na progu i wiosny, gdy wynoszą ją z wsi."
+  },
+  "dokumentacja": [
+    {
+      "typ": "opracowanie",
+      "pozycja": "lasmgiel.pl, „Morowa Dziewica. Jak słowiańska wieś walczyła z demonem zarazy?” — postać nienaturalnie wysokiej, wychudłej kobiety w białym całunie; czerwona lub skrwawiona chustka jako główny atrybut; tradycja ukraińska (stanie na mogiłach, dmuchanie morowego powietrza) i litewska (koścista ręka z chustą przez okno); dialog „Czy śpicie?” — „Śpijcież na wieki!” i właściwa odpowiedź „Nic nie robimy, tylko Boga chwalimy”",
+      "url": "https://lasmgiel.pl/wsuwala-reke-z-czerwona-chusta-przez-okno-kim-byla-morowa-panna-w-wierzeniach-slowian"
+    },
+    {
+      "typ": "opracowanie regionalne",
+      "pozycja": "naszeszlaki.pl, „Morowa Dziewica – słowiański demon choroby i śmierci” — legenda chojnicka: miasto zamknięte jak trumna, morowa dziewica wchodząca z powietrzem, zapach śmierci jak najdroższe perfumy, kobieta w białym sukle, której dotyk nie dożywający świtu",
+      "url": "https://www.naszeszlaki.pl/archives/37230"
+    },
+    {
+      "typ": "artykuł naukowy",
+      "pozycja": "„Zaraza nadchodzi i odchodzi (wyobrażenia zarazy w…” , Roczniki Humanistyczne KUL — materializowanie choroby (chusta, korale), animizacja i personifikacja jako niewiasta morowa i panna morowa; słownikowe powiązania (morowa dziewica, morowa panna, morowica); Marzanna jako „śmiercicha” i „dziewica moru”; zaraza „od rzeki do rzeki”",
+      "url": "https://ojs.tnkul.pl/index.php/rh/article/download/16988/16062/"
+    },
+    {
+      "typ": "artykuł naukowy",
+      "pozycja": "„Demony moru w ujęciu Kazimierza Władysława Wójcickiego” (czasopisma.uwm.edu.pl) — demony moru przedstawiane wyłącznie jako niewiasty (Cicha, Dżuma, Powietrze, morawica), groteskowy wizerunek z „Dżumy”, obrzęd topienia kukły Marzanny reprezentującej morową dziewicę",
+      "url": "https://czasopisma.uwm.edu.pl/index.php/pl/article/download/2662/2037/3944"
+    }
+  ],
+  "trofea": {
+    "pierwotne": "Czerwona chusta — znaleziona na progu po nocy, w której nikt nie odpowiedział; zwinięta z wapnem i solą, żeby mór nie wrócił do tego domu.",
+    "wtorne": "Kukła Marzanny — słomiana panna, którą wspólnota wyniosła i utopiła; dowód, że zarazę da się odprawić, jeśli pamięta się właściwą odpowiedź i porę roku."
+  },
+  "tagi": [
+    "polska",
+    "fantom",
+    "warunek",
+    "zagadka"
+  ],
+  "powiazania": [
+    {
+      "slug": "pandora",
+      "opis": "Pandora wypuściła z pithosu „niezliczone plagi, które wędrują wśród ludzi”, a morowa panna jest tym morowaniem w ludzkiej postaci — nieszczęściem, które przeszło ze słoja na wiejskie progi. Obie działają przez jedną czynność: Pandora zdejmuje pokrywę, morowa panna otwiera usta; obie dają się powstrzymać jedynie w porę — pokrywą albo właściwym słowem."
+    },
+    {
+      "slug": "empusa-korynt",
+      "opis": "Empusa z Koryntu i morowa panna to zjawy progowe, które przychodzą do ludzi nocą i działają przez pozór: empusa przybiera kształt panny młodej, morowa panna — postaci w bieli. Różnica jest w cenie: z empusą płaci się ciałem, z morową panną — odpowiedzią; obie pokonuje się nazwaniem i rytuałem, nie bronią."
+    },
+    {
+      "slug": "sfinks-teby",
+      "opis": "Sfinks pyta i przepuszcza za właściwą odpowiedź, morowa panna pyta i zabija za złą. Obie są więc bramą w języku: jedno pytanie dzieli przejście od zguby, a słowo — „Edyp” albo „tylko Boga chwalimy” — jest jedyną bronią, która ma znaczenie na tym progu."
+    }
+  ],
+  "meta": {
+    "utworzono": "2026-08-30 00:09",
+    "autor": "sesja arena 2026-08-29/30",
+    "modyfikacje": [
+      {
+        "data": "2026-08-30 00:09",
+        "opis": "Nowa materializacja: Morowa Panna — słowiańska personifikacja zarazy z czerwoną chustą, na podstawie karty „Infectious Horror” (CON #47); do kanonu dopisany tag kulturowy „polska”."
+      },
+      {
+        "data": "2026-08-30 00:20",
+        "opis": "Dodana wizualizacja 21:9 w morowa-panna.jpg — powstała z ramowego promptu wpisu i pokazuje byt w jego naturalnym otoczeniu."
+      },
+      {
+        "data": "2026-08-30 00:40",
+        "opis": "Audyt Kartoteki: poprawka literówek („słój” zamiast „słaj”) w powiązaniach i kluczu."
+      }
+    ]
+  }
+}

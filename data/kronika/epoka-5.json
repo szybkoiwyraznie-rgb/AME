@@ -95,7 +95,7 @@
       },
       {
         "slug": "sfinks-teby",
-        "delta": -0.010,
+        "delta": -0.01,
         "opis": "Święta groza zagadki słabnie, gdy okazuje się podatna na wyśmianie."
       },
       {
@@ -105,9 +105,21 @@
       }
     ],
     "dominacje": [
-      { "kultura": "anglia", "kult": "lincoln-imp", "delta": 0.015 },
-      { "kultura": "grecja", "kult": "sfinks-teby", "delta": -0.010 },
-      { "kultura": "grecja", "kult": "talos-kreta", "delta": -0.005 }
+      {
+        "kultura": "anglia",
+        "kult": "lincoln-imp",
+        "delta": 0.015
+      },
+      {
+        "kultura": "grecja",
+        "kult": "sfinks-teby",
+        "delta": -0.01
+      },
+      {
+        "kultura": "grecja",
+        "kult": "talos-kreta",
+        "delta": -0.005
+      }
     ],
     "pozycje": [
       {
@@ -135,22 +147,38 @@
       {
         "id": "czwarty-stol",
         "stan": "otwarty",
-        "opis": "Czwarty stół z Epoki I wciąż czeka: gość, który wziął sam, czy przodek, który umie wybaczyć."
+        "opis": "Czwarty stół z Epoki I wciąż czeka: gość, który wziął sam, czy przodek, który umie wybaczyć.",
+        "byty": [
+          "pandora",
+          "empusa-korynt",
+          "morowa-panna"
+        ]
       },
       {
         "id": "warunek-barbarossy",
         "stan": "otwarty",
-        "opis": "Dlaczego cesarz woli płacić, żeby gość wyszedł, zamiast przyjąć go przy stole?"
+        "opis": "Dlaczego cesarz woli płacić, żeby gość wyszedł, zamiast przyjąć go przy stole?",
+        "byty": [
+          "barbarossa-kyffhaeuser",
+          "kentaur-pelion",
+          "egungun"
+        ]
       },
       {
         "id": "wedrowny-dom-empusy",
         "stan": "otwarty",
-        "opis": "Czy ludzie nauczą się wypowiadać słowo-poznanie w porę, czy samo słowo stanie się rytuałem, który chybia?"
+        "opis": "Czy ludzie nauczą się wypowiadać słowo-poznanie w porę, czy samo słowo stanie się rytuałem, który chybia?",
+        "byty": [
+          "empusa-korynt"
+        ]
       },
       {
         "id": "kres-indry",
         "stan": "otwarty",
-        "opis": "Czy kres można oddać, czy tylko przekroczyć? Co znaczy wybrać własną granicę, gdy świat przestaje ją respektować?"
+        "opis": "Czy kres można oddać, czy tylko przekroczyć? Co znaczy wybrać własną granicę, gdy świat przestaje ją respektować?",
+        "byty": [
+          "indra"
+        ]
       }
     ]
   },
@@ -158,5 +186,11 @@
     "utworzono": "2026-08-29 11:35",
     "autor": "agent Areny — piąta epoka Tomu I (wątek zagadka ze spiżu)",
     "wersja": 1
+  },
+  "grafika": {
+    "obraz": "assets/wizualizacje/kronika-tom-1-epoka-5.jpg",
+    "podpis": "Zagadka ze spiżu: rozum, żart i głuchy krok",
+    "prompt": "Hyperrealistic cinematic photograph, ultra-wide 21:9 anamorphic frame. Rocky mountain pass at golden dusk: on a cliff a great winged lion with a calm female face and golden coat (Sphinx); on a Cretan beach a colossal smooth bronze automaton man with seams and a faint golden vein at his ankle, standing in the surf (Talos); perched on a fallen column a small hairy imp with cow ears, laughing (Lincoln Imp). Dry tall grass, dust in light, dramatic sky. Mood of a clash between dread, iron logic and mockery. 35mm anamorphic f/1.8, shallow depth of field, creamy bokeh, dramatic lighting, hyper-realistic textures, 70mm film stock. No text, no letters, no inscriptions, no modern objects.",
+    "styl": "hiperrealistyczna kinowa fotografia (21:9, 70mm, anamorfika)"
   }
 }

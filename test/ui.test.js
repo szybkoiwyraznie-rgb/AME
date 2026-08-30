@@ -2,13 +2,69 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
-import { htmlWpisu, htmlWarstwyWpisu, linkDoZrodla, htmlListy, htmlTagow, htmlDialogu, htmlSkitu, htmlBazySkitow, htmlNowosci, esc, nastepnyMotyw, motywPoczatkowy, etykietaMotywu, MOTYWY, KLUCZ_MOTYWU } from '../app/ui.js';
+import { htmlWpisu, htmlWarstwyWpisu, linkDoZrodla, htmlListy, htmlStronyTagu, htmlTagow, htmlDialogu, htmlSkitu, htmlBazySkitow, htmlNowosci, htmlKronik, htmlTomyIEpoki, esc, nastepnyMotyw, motywPoczatkowy, etykietaMotywu, MOTYWY, KLUCZ_MOTYWU, akcjeZZapytania } from '../app/ui.js';
 
 async function dane(plik = 'egungun') {
   const wpis = JSON.parse(await readFile(`data/manifestations/${plik}.json`, 'utf8'));
   const indeks = JSON.parse(await readFile('data/index.json', 'utf8'));
   return { wpis, indeks };
 }
+
+test('Tomy i Epoki: sekcja linkuje Tom i Epoki z udziałem bytu (E)', () => {
+  const kronika = {
+    tom: 'tom-1',
+    tytulTomu: 'Kronika trzech stołów',
+    epoki: [
+      { slug: 'epoka-1', tytul: 'Trzy stoły: przodek, gospodarz i gość', uczestnicy: [{ slug: 'egungun' }, { slug: 'kentaur-pelion' }] },
+      { slug: 'epoka-2', tytul: 'Nieproszeni goście', uczestnicy: [{ slug: 'lincoln-imp' }] },
+      { slug: 'epoka-3', tytul: 'Odźwierni', uczestnicy: [{ slug: 'egungun' }, { slug: 'balor' }] },
+    ],
+  };
+  const html = htmlTomyIEpoki('egungun', kronika);
+  assert.match(html, /<span class="numer">VI<\/span> Tomy i Epoki/, 'sekcja VI (v1.8)');
+  assert.match(html, /href="docs\/kronika-tom-1\.html"/, 'link do Tomu');
+  // odnośnik do Tomu w konwencji „brązowego przycisku” jak epoki (recenzja 2026-08-30)
+  assert.match(html, /<a class="chip link" href="docs\/kronika-tom-1\.html"/, 'Tom jako chip, nie niebieski link');
+  assert.ok(!html.includes('link-zewnetrzny'), 'brak niebieskiego linku zewnętrznego do Tomu');
+  assert.match(html, /href="docs\/kronika-epoka-1\.html"/, 'link do epoki 1');
+  assert.match(html, /href="docs\/kronika-epoka-3\.html"/, 'link do epoki 3');
+  assert.ok(!html.includes('epoka-2'), 'epoka bez bytu nie jest linkowana');
+  assert.match(html, /2 epokach/);
+  assert.equal(htmlTomyIEpoki('nessos', kronika), '', 'byt spoza Kroniki — brak sekcji');
+  assert.equal(htmlTomyIEpoki('egungun', null), '', 'brak danych — brak sekcji');
+});
+
+test('htmlWpisu: sekcja Tomy i Epoki tylko z podsumowaniem Kroniki (E)', async () => {
+  const { wpis, indeks } = await dane();
+  assert.ok(!htmlWpisu(wpis, indeks).includes('Tomy i Epoki'), 'bez kroniki sekcji nie ma');
+  const zKronika = htmlWpisu(wpis, indeks, {
+    tom: 'tom-1',
+    tytulTomu: 'Kronika trzech stołów',
+    epoki: [{ slug: 'epoka-1', tytul: 'Trzy stoły', uczestnicy: [{ slug: wpis.slug }] }],
+  });
+  assert.ok(zKronika.includes('Tomy i Epoki'), 'z kroniką sekcja jest');
+  assert.match(zKronika, /<span class="numer">VI<\/span> Tomy i Epoki/, 'numeracja v1.8');
+  assert.match(zKronika, /href="docs\/kronika-epoka-1\.html"/);
+  // sekcja idzie po SKITach (V), przed Powiązaniami (VII)
+  assert.ok(zKronika.indexOf('Tomy i Epoki') > zKronika.indexOf('SKITy'));
+  assert.ok(zKronika.indexOf('Tomy i Epoki') < zKronika.indexOf('Powiązania'));
+});
+
+test('app.js: zapamiętywanie warstw i widoku mapy w localStorage (D)', async () => {
+  const app = await readFile('app/app.js', 'utf8');
+  assert.ok(app.includes("'ame:mapa:warstwy'"), 'klucz warstw');
+  assert.ok(app.includes("'ame:mapa:widok'"), 'klucz widoku');
+  assert.ok(app.includes('zapiszWarstwyMapy') && app.includes('przywrocWarstwyMapy'), 'zapis/odczyt warstw');
+  assert.ok(app.includes('zapiszWidokMapy') && app.includes('przywrocWidokMapy'), 'zapis/odczyt widoku');
+  assert.ok(app.includes('try {') && app.includes('localStorage.setItem'), 'zapis w try/catch (file://)');
+  // cache-bust: wersja w index.html musi być taka sama jak w importach app.js/map.js
+  const index = await readFile('index.html', 'utf8');
+  const wersja = /app\/app\.js\?v=([\w-]+)/.exec(index)?.[1];
+  assert.ok(wersja, 'index.html podaje wersję app.js');
+  assert.ok(app.includes(`./map.js?v=${wersja}`) && app.includes(`./ui.js?v=${wersja}`) && app.includes(`./geo.js?v=${wersja}`), `importy app.js zgodne z v=${wersja}`);
+  const mapa = await readFile('app/map.js', 'utf8');
+  assert.ok(mapa.includes(`./geo.js?v=${wersja}`), `import map.js zgodny z v=${wersja}`);
+});
 
 test('esc: znaki HTML uciekają', () => {
   assert.equal(esc('<script>&"\''), '&lt;script&gt;&amp;&quot;&#39;');
@@ -18,17 +74,20 @@ test('htmlWpisu: komplet sekcji protokołu I–V (egungun)', async () => {
   const { wpis, indeks } = await dane();
   const html = htmlWpisu(wpis, indeks);
   for (const fraza of [
-    'Rezonans i tożsamość',
     'Charakterystyka i natura',
     'Dokumentacja (The Source Stack)',
     'Wizualizacja',
     'Trofea i dowody eliminacji',
+    'SKITy',
     '--ar 21:9',
     'inspiracja kartą',
     'Krumar Initiate',
   ]) {
     assert.ok(html.includes(fraza), `brak: ${fraza}`);
   }
+  // v1.8 (ADR 0022): sekcja „Rezonans i tożsamość” usunięta z protokołu
+  assert.ok(!html.includes('Rezonans i tożsamość'), 'brak sekcji V „Rezonans”');
+  assert.ok(!html.includes('tabela-translacji'), 'brak tabeli translacji karty');
   assert.ok(!html.includes('<script'), 'treść wpisu nigdy jako HTML');
 });
 
@@ -74,6 +133,22 @@ test('htmlListy i htmlTagow: rekordy z indeksu, licznik tagów', async () => {
   assert.ok(!htmlListy(indeks, new Set(['egungun'])).includes('Imp z Lincoln</span>'));
 });
 
+test('htmlStronyTagu: strona tagu z kategorią, opisem i listą wpisów (F2/C2)', async () => {
+  const { indeks } = await dane();
+  const strona = htmlStronyTagu(indeks, 'grecja');
+  assert.ok(strona.includes('Kultura źródłowa'), 'nazwa kategorii z kanonu');
+  assert.ok(/1 manifestacja|\d+ manifestacji/.test(strona), 'licznik wpisów');
+  assert.ok(strona.includes('Egungun') === false && !strona.includes('Imp z Lincoln'), 'lista zawężona do tagu');
+  const wpisy = (indeks.tagi['grecja'] || {}).wpisy || [];
+  assert.ok(wpisy.length > 0, 'tag kultura ma wpisy w indeksie');
+  const tylkoGreckie = htmlStronyTagu(indeks, 'grecja');
+  for (const slug of wpisy) {
+    const m = indeks.manifestacje.find((x) => x.slug === slug);
+    assert.ok(tylkoGreckie.includes(m.nazwa), `wpis ${slug} na stronie tagu`);
+  }
+  assert.ok(htmlStronyTagu(indeks, 'nie-ma-takiego').includes('Nieznany tag'), 'nieznany tag');
+});
+
 /* ---- Motyw jasny/ciemny (A2) ---- */
 
 test('nastepnyMotyw: przełącznik wraca do ciemnego', () => {
@@ -115,24 +190,26 @@ test('index.html: przełącznik w prawym górnym rogu + strażnik przed błyskie
 
 const naNumerze = (html, numer) => html.search(new RegExp(`<span class="numer">${numer}</span>`));
 
-test('htmlWpisu: numeracja sekcji = kolejność, I Wizualizacja … V Rezonans (B1 + v1.3)', async () => {
+test('htmlWpisu: numeracja sekcji = kolejność I–IV … V SKITy (B1 + v1.8)', async () => {
   const { wpis, indeks } = await dane();
   const html = htmlWpisu(wpis, indeks);
   const pozycje = ['I', 'II', 'III', 'IV', 'V'].map((n) => naNumerze(html, n));
   assert.ok(pozycje.every((p) => p > 0), 'każda sekcja ma numer w nagłówku');
   assert.deepEqual([...pozycje].sort((a, b) => a - b), pozycje, `numery muszą iść w kolejności rosnącej: ${pozycje}`);
-  // mapa numerów na treść wg PROTOKÓŁ §4.1 (v1.3)
+  // mapa numerów na treść wg PROTOKÓŁ §4.1 (v1.8, ADR 0022)
   assert.match(html, /<span class="numer">I<\/span> Wizualizacja/);
   assert.match(html, /<span class="numer">II<\/span> Charakterystyka i natura/);
   assert.match(html, /<span class="numer">III<\/span> Dokumentacja \(The Source Stack\)/);
   assert.match(html, /<span class="numer">IV<\/span> Trofea i dowody eliminacji/);
-  assert.match(html, /<span class="numer">V<\/span> Rezonans i tożsamość/);
+  assert.match(html, /<span class="numer">V<\/span> SKITy/);
+  assert.ok(!html.includes('Rezonans i tożsamość'), 'sekcja V „Rezonans” usunięta (v1.8)');
 });
 
-test('htmlWpisu: powiązania i meta zostają na końcu (B1: reszta bez zmian)', async () => {
+test('htmlWpisu: powiązania (VII) i meta zostają na końcu (B1: reszta bez zmian)', async () => {
   const { wpis, indeks } = await dane('lincoln-imp');
   const html = htmlWpisu(wpis, indeks);
   assert.ok(naNumerze(html, 'V') < html.indexOf('Powiązania'), 'sekcje przed wiki');
+  assert.match(html, /<span class="numer">VII<\/span> Powiązania/, 'powiązania = VII (v1.8)');
   assert.ok(html.indexOf('Powiązania') < html.indexOf('meta-wpisu'), 'potem powiązania, na końcu meta');
 });
 
@@ -183,7 +260,7 @@ test('kontrakt identyfikatorów: każdy selektor app.js istnieje w index.html lu
   assert.deepEqual(braki, [], `app.js woła elementy, których nie ma w markupie: ${braki.join(', ')}`);
 });
 
-/* ---- SKITy w UI: dialog, widok, baza, sekcja VI, feed (ADR 0013/0014) ---- */
+/* ---- SKITy w UI: dialog, widok, baza, sekcja V, feed (ADR 0013/0014) ---- */
 
 test('htmlDialogu: repliki, didaskalia i safety po escapowaniu', () => {
   const html = htmlDialogu(
@@ -238,14 +315,14 @@ test('htmlBazySkitow: wiersze z data-skit, najnowsze na górze, stan pusty', asy
   assert.ok(kolejnosc.indexOf('NOWY') < kolejnosc.indexOf('STARY'), 'najnowsze na górze');
 });
 
-test('sekcja VI wpisu wylicza skity z indeksu (nie z pliku wpisu)', async () => {
+test('sekcja V wpisu wylicza skity z indeksu (nie z pliku wpisu)', async () => {
   const { wpis, indeks } = await dane();
   const html = htmlWpisu(wpis, indeks);
-  assert.match(html, /<span class="numer">VI<\/span> SKITy/);
+  assert.match(html, /<span class="numer">V<\/span> SKITy/);
   assert.ok(html.includes('data-skit="plotno-i-kamien"'), 'link do skitu pod kartą');
   const bez = { ...wpis, dokumentacja: wpis.dokumentacja };
   const indeksBez = { ...indeks, manifestacje: indeks.manifestacje.map((m) => ({ ...m, skity: [] })) };
-  assert.ok(!htmlWpisu(bez, indeksBez).includes('SKITy'), 'brak skitów = brak sekcji VI');
+  assert.ok(!htmlWpisu(bez, indeksBez).includes('SKITy'), 'brak skitów = brak sekcji V');
 });
 
 test('htmlNowosci: feed z linkami do treści i bezwzględnym escapowaniem', async () => {
@@ -271,7 +348,7 @@ test('htmlNowosci: feed z linkami do treści i bezwzględnym escapowaniem', asyn
   assert.match(htmlNowosci({ ...indeks, aktualizacje: [] }), /Brak zmian w archiwum/);
 });
 
-test('indeks repo: feed i sekcja VI spójne z danymi (bez ręki)', async () => {
+test('indeks repo: feed i sekcja V spójne z danymi (bez ręki)', async () => {
   const { indeks } = await dane();
   assert.equal(indeks.wersja, 3);
   assert.ok(indeks.aktualizacje.length >= 5, `feed ma ${indeks.aktualizacje.length} pozycji`);
@@ -301,11 +378,11 @@ test('htmlStopki: data utworzenia i data ostatniej modyfikacji, nic więcej', as
   );
 });
 
-test('karta bytu: brak notatek roboczych w stopce i w sekcji VI', async () => {
+test('karta bytu: brak notatek roboczych w stopce i w sekcji V', async () => {
   const { wpis, indeks } = await dane();
   const html = htmlWpisu(wpis, indeks);
   assert.ok(!/sesja arena|sesja M\d|PROTOKÓŁ §\d|C1|C3/.test(html), 'stopka i sekcje nie cytują wewnętrznych oznaczeń sesji');
-  assert.ok(!html.includes('pisze je kolejna sesja'), 'sekcja VI bez zdania roboczego');
+  assert.ok(!html.includes('pisze je kolejna sesja'), 'sekcja V bez zdania roboczego');
   assert.match(html, /<footer class="meta-wpisu">utworzono \d{4}-\d{2}-\d{2}(?: \d{2}:\d{2})?(?: · zmieniono \d{4}-\d{2}-\d{2}(?: \d{2}:\d{2})?)?<\/footer>/);
   const { indeks: i2 } = await dane('lincoln-imp');
   const wpis2 = JSON.parse(await readFile('data/manifestations/lincoln-imp.json', 'utf8'));
@@ -332,6 +409,16 @@ test('linkWidoku: baza + adres widoku, bez reszty z bieżącego adresu', async (
   assert.equal(linkWidoku('http://x/AME/index.html#nowosci', 'skit:znak-i-liczba'), 'http://x/AME/index.html#skit:znak-i-liczba');
   assert.equal(linkWidoku('https://example.github.io/AME/', 'balor'), 'https://example.github.io/AME/#balor');
   assert.equal(linkWidoku('', ''), '#', 'brak bazy nie produkuje undefined');
+});
+
+test('akcjeZZapytania: ?q i ?action z Kroniki (PR #9); nieznane parametry ignorowane', () => {
+  assert.deepEqual(akcjeZZapytania(''), { action: null, q: null });
+  assert.deepEqual(akcjeZZapytania(null), { action: null, q: null });
+  assert.deepEqual(akcjeZZapytania('?q=sfinks'), { action: null, q: 'sfinks' });
+  assert.deepEqual(akcjeZZapytania('?action=wylosuj'), { action: 'wylosuj', q: null });
+  assert.deepEqual(akcjeZZapytania('?action=powiazania&q=ogon'), { action: 'powiazania', q: 'ogon' });
+  assert.deepEqual(akcjeZZapytania('?action=nieznana&q=%20%20'), { action: null, q: null });
+  assert.deepEqual(akcjeZZapytania('?q=%20Imp%20z%20Lincoln%20'), { action: null, q: 'Imp z Lincoln' });
 });
 
 test('tagZFragmantu: czyta #tag:…, odrzuca resztę', async () => {
@@ -435,4 +522,31 @@ test('wersja protokołu jest jedna: stopka aplikacji = PROTOKÓŁ = README (F2)'
     .map((m) => m[1])
     .filter((v) => v !== wersja);
   assert.deepEqual(stare, [], `aplikacja i README nie mogą cytować starszej wersji (v${wersja} obowiązuje)`);
+});
+
+test('U3: feed Kroniki renderuje karty epok z ramą narracji i filtrem', () => {
+  const html = htmlKronik({
+    epoki: [
+      {
+        slug: 'epoka-1',
+        tytul: 'Trzy stoły',
+        stanPo: { os: { mit: 34, racjonalizacja: 66 } },
+        pytanie: 'Co wolno wziąć gościowi?',
+        iskra: 'Przyjdź, zanim siądą.',
+        konsekwencje: { zasieg: [{ slug: 'egungun', przed: 0.488, po: 0.518, opis: '' }] },
+        uczestnicy: [{ slug: 'egungun', nazwa: 'Egungun' }],
+      },
+    ],
+  });
+  assert.match(html, /kronika-filtr/);
+  assert.match(html, /Trzy stoły/);
+  assert.match(html, /Co wolno wziąć gościowi/);
+  assert.match(html, /data-link="kronika:epoka-1"/);
+  assert.match(html, /\+3 pp/);
+  assert.match(html, /docs\/kronika\.html/);
+});
+
+test('U3: pusty feed pokazuje komunikat', () => {
+  const html = htmlKronik({ epoki: [] });
+  assert.match(html, /pusto/);
 });

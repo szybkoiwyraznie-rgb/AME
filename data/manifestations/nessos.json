@@ -25,7 +25,7 @@
   "natura": {
     "wyglad_i_aura": "Pół człowiek, pół koń: od pasa w górę męski tors, broda, zmierzwione włosy, czasem wieniec lub nagie plecy, a od pasa w dół potężne, muskularne ciało rumaka z kopytami i ogonem. W sztuce starożytnej kentaurowie mają płaskie rysy, nastroszone brody i coś bestialskiego w twarzy. Nessos dodatkowo unosi zapach rzeki, potu i błota; w chwili namiętności jego aura robi się ciężka i gorąca, jak przed burzą w dolinie.",
     "charakter_i_motywacje": "Cwany i pożądliwy przewoźnik. Zna wartość wygody i ufności — oferuje pomoc, żeby mieć ofiarę pod ręką. Nie jest głupi: wie, że Herakles może go zabić łukiem, ale mimo to podejmuje ryzyko, bo żądza i duma zasłaniają mu rachunek. Po śmierci zamienia się w mściwego ducha: ostatnią rzeczą, jaką robi, jest kłamstwo, które odbiera życie temu, kto go pokonał.",
-    "zdolnosci": "Siła centaura i szybkość konia; umie przenosić na grzbiecie ludzi przez rzekę, chodzić po dnie i przebijać się przez nurty, które dla człowieka są nie do przejścia. Jego krew po zmieszaniu z jadem hydry staje się trucizną, która nie zabija od razu, lecz dopieka, aż ofiara woła o śmierć. Ma też podwójny grzbiet — człowieczy i koński — więc może zaatakować jedną połową ciała, podczas gdy druga odwróci się od napastnika.",
+    "zdolnosci": "Siła centaura i szybkość konia; umie przenosić na grzbiecie ludzi przez rzekę, chodzić po dnie i przebijać się przez nurty, które dla człowieka są nie do przejścia. Jego krew po zmieszaniu z jadem hydry staje się trucizną, która nie zabija od razu, lecz dopieka, aż ofiara woła o śmierć. Przepis na „napój miłosny” zostawiony Dejanirze ma warianty: u Apollodora to nasienie zmieszane z krwią z rany, u Diodora nasienie z oliwą i krwią z grotu strzały — wspólny jest słoik, który Dejanira przechowuje latami. Ma też podwójny grzbiet — człowieczy i koński — więc może zaatakować jedną połową ciała, podczas gdy druga odwróci się od napastnika.",
     "slabosci_i_metody_pokonania": "Nie jest nieśmiertelny ani niezawodny. Herakles zabił go strzałą zatrutą krwią hydry, wystrzeloną z przeciwległego brzegu w chwili, gdy Nessos odpływał z Deianirą. Najskuteczniejsza metoda to nie dać się zaskoczyć i uderzyć z dystansu: łuk, włócznia albo oszczep, zanim centaur znajdzie się blisko. Można też wykorzystać jego chciwość — zapłacić za przewóz i pozwolić, by sam wszedł w pułapkę brodu.",
     "preferencje": "Lubi: młode kobiety na grzbiecie, wysoką zapłatę, rzekę i okazję do nadużycia zaufania; nie lubi: Heraklesa, krótkiego łuku z zatrutą strzałą i sytuacji, w której ktoś z przeciwległego brzegu ma go w celowniku — wtedy jego pewność siebie zamienia się w panikę."
   },
@@ -54,36 +54,26 @@
       "typ": "opracowanie historyczne rzeki",
       "pozycja": "ToposText, „Euenos R. (Aitolia)” — identyfikacja starożytnej rzeki Euenos z dzisiejszym Évinos/Fidaris w Aitoloakarnanii, współrzędne 38.376, 21.552; źródło topograficzne dla lokalizacji przewozu Nessosa",
       "url": "https://topostext.org/place/384216WEve"
+    },
+    {
+      "typ": "przekład klasyczny online",
+      "pozycja": "Pseudo-Apollodoros, „Biblioteka” 2.151 i 2.157 (przeł. R. Aldrich) — umierający Nessos każe Dejanirze zmieszać nasienie wylane na ziemię z krwią z rany po strzale („napój miłosny”); Dejanira skrapia nim szatę, a jad hydry zaczyna gotować ciało Heraklesa",
+      "url": "https://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0021%3Atext%3DLibrary%3Abook%3D2%3Achapter%3D7%3Asection%3D6"
+    },
+    {
+      "typ": "przekład klasyczny online",
+      "pozycja": "Diodor Sycylijczyk, „Biblioteka historyczna” 4.36.3 i 4.38.1 (przeł. C. H. Oldfather) — wariant przepisu: nasienie, oliwa i krew z grotu strzały zamknięte w słoiku; nasączona koszula zabija Heraklesa na Kenaionie",
+      "url": "https://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A2008.01.0540%3Abook%3D4%3Achapter%3D36"
+    },
+    {
+      "typ": "przekład klasyczny online",
+      "pozycja": "Owidiusz, „Metamorfozy” IX.98–210 (Perseus) — poetycka wersja: przeprawa przez Euenos, próba gwałtu, strzała Heraklesa, podstęp umierającego Nessosa i chiton, który trawi herosa",
+      "url": "https://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.02.0028%3Abook%3D9%3Acard%3D98"
     }
   ],
   "trofea": {
     "pierwotne": "Kość z kopytowego stawu Nessosa z nacięciem od zatrutej strzały — dowód, że kentaur został pokonany z dystansu, zanim zdążył dobiec",
     "wtorne": "Współczesna fotografia brodu na Évinos, w miejscu, gdzie według tradycji Nessos przewoził podróżnych"
-  },
-  "rezonans": {
-    "klucz_przywolania": "Savage Surge to natychmiastowy przypływ dzikiej siły: cel dostaje +2/+2 i zostaje odblokowany — może uderzyć raz jeszcze, a nawet wtedy, gdy wydawało się, że jest obrócony plecami. Flavorowa wymiana — „I thought its back was turned! / A centaur has two backs!” — to niemal definicja Nessosa: kentaur o dwóch grzbietach, człowieczym i końskim, który atakuje z połowy ciała odwróconej od wroga. W micie dokładnie tak dzieje się na rzece: Herakles widzi Deianirę na grzbiecie Nessosa, ten oddala się z nią, a jego człowiecza połowa jest zwrócona w inną stronę — Herakles strzela w plecy, a kentaur pada z zatrutą strzałą w piersi.",
-    "tabela": [
-      {
-        "element": "Nazwa",
-        "translacja": "„Savage Surge” to „dziki przypływ” — dokładnie to, czym jest Nessos: nagły, gwałtowny, niczym nieusprawiedliwiony wybuch kentaurejskiej żądzy i siły, który wymyka się spod kontroli i kończy katastrofą."
-      },
-      {
-        "element": "Mechanika",
-        "translacja": "„Target creature gets +2/+2 until end of turn. Untap that creature.” — wzmocnienie i odblokowanie to dwie cechy Nessosa: potworna siła końska + kentaurejska zdolność do ruchu, nawet gdy wydaje się zajęty czymś innym. „Untap” znaczy: ta istota może zrobić coś, czego nie powinna, mimo że była już zużyta."
-      },
-      {
-        "element": "Ilustracja",
-        "translacja": "Artysta: Jasper Sandner. Klimat karty jest grecki, z centaurem i zieloną naturą — bezpośrednie nawiązanie do Therosu i do kentaurów, których najbardziej znanym w mitologii jest Nessos: pół człowiek, pół koń, na rzece."
-      },
-      {
-        "element": "Flavor text",
-        "translacja": "„I thought its back was turned! / A centaur has two backs!” — to w istocie komentarz do anatomii kentaurejskiej i do zdrady z zaskoczenia. Nessos ma dwa grzbiety: człowieczy zwrócony w jedną stronę i koński w drugą; gdy jego ludzkie plecy są odwrócone od Heraklesa, końska połowa nadal niesie Deianirę w stronę ucieczki — i to właśnie wtedy pada strzała."
-      },
-      {
-        "element": "Lore/Tło",
-        "translacja": "Theros to świat wzorowany na mitologii greckiej, a Savage Surge wpisuje się w ten sam krąg co historia heraklesowa: kentaur, który bierze na grzbiet kobietę i próbuje ją uwieźć, zostaje zabity strzałą z przeciwległego brzegu — a jego trująca krew, jako „napój miłości”, ostatecznie zabija herosa. To dokładna oś fabularna Nessosa."
-      }
-    ]
   },
   "tagi": [
     "grecja",
@@ -111,11 +101,24 @@
     {
       "slug": "ben-varrey",
       "opis": "Obaj są przewodnikami wodnymi, którzy znają żywioł lepiej niż ludzie: Nessos jako przewoźnik przez rzekę zna prądy i brody, a Ben-Varrey zna każdy kanał i kryjówkę wzdłuż manxkiego wybrzeża. Różni ich cena — kentaur żąda opłaty, syrena przyjmuje dar i częściej ochrania."
+    },
+    {
+      "slug": "pandora",
+      "opis": "Oba dary miały zapewnić miłość lub porządek, a przyniosły zgubę: Hezjodowa Pandora („Prace i dnie” 60–68) to pierwsza kobieta ulepiona przez Hefajstosa, z zamkniętym pithosem, z którego wychodzą plagi; Nessos (Apollodoros, „Biblioteka” 2.151; Diodor 4.36.3; Owidiusz „Metamorfozy” IX) umierając zostawia Dejanirze przepis na napój z własnej krwi i nasienia — po latach skropiona nim szata zabija Heraklesa. W obu wypadkach ofiara przyjmuje od kogoś moc, która miała ją chronić, i płaci za to całym światem."
     }
   ],
   "meta": {
     "utworzono": "2026-08-28 21:40",
     "autor": "sesja arena 2026-08-28",
-    "modyfikacje": []
+    "modyfikacje": [
+      {
+        "data": "2026-08-29 21:36",
+        "opis": "Korekta językowa powiązania z Selkie: „zwodzą człowieka przez zaufanie”."
+      },
+      {
+        "data": "2026-08-30 13:11",
+        "opis": "Pętla Jakości (C1): źródła pierwotne mitu — Pseudo-Apollodoros „Biblioteka” 2.151/2.157 (via Theoi, przeł. Aldrich), Diodor „Biblioteka historyczna” 4.36.3/4.38.1 (przeł. Oldfather), Owidiusz „Metamorfozy” IX.98–210 (Perseus); doprecyzowany wariant przepisu na „napój miłosny” (nasienie+krew / oliwa+krew+grot) i nowe powiązanie z Pandorą (dar-zguba)."
+      }
+    ]
   }
 }

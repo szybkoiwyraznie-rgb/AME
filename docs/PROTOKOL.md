@@ -5,19 +5,22 @@
 > aplikacja + kartoteka. Protokół opisuje, jak powstaje i co zawiera pojedynczy
 > wpis („kartotka manifestacji”).
 >
-> Status: **obowiązujący** (v1.7 od 2026-08-28; v1.6, v1.5, v1.4, v1.3 i v1.2 — 2026-08-28; v1.1 — 2026-08-27).
+> Status: **obowiązujący** (v1.8 od 2026-08-30; v1.7 — 2026-08-28; v1.6, v1.5, v1.4, v1.3 i v1.2 — 2026-08-28; v1.1 — 2026-08-27).
 > Zmiany protokołu wymagają ADR.
 > v1.1 (ADR 0005): rama promptu 21:9. v1.2 (ADR 0011): obowiązująca kolejność
 > prezentacji sekcji oraz adres www jako część źródła. **v1.3 (ADR 0012):
-> **v1.4 (ADR 0015): limit długości SKITa 250 → 300 słów.** W v1.3 (ADR 0012)
 > numeracja sekcji idzie za kolejnością (I = Wizualizacja … V = Rezonans) i
-> dochodzi sekcja VI „SKITy”** (Baza Skitów, ADR 0013). **v1.5 (ADR 0017):
+> dochodzi sekcja VI „SKITy”** (Baza Skitów, ADR 0013). **v1.4 (ADR 0015):
+> limit długości SKITa 250 → 300 słów.** **v1.5 (ADR 0017):
 > data w meta może nieść godzinę — `RRRR-MM-DD` albo `RRRR-MM-DD GG:MM` —
 > a feed „Co nowego” podaje datę i godzinę zdarzenia.** **v1.6 (ADR 0018):
 > ton SKITów — obok rozmów poważnych pełnoprawnym rejestrem jest luz:
 > humor, codzienność, rozmowa „przy ognisku”.** **v1.7 (ADR 0019): SKITy
 > 3–4-osobowe są składem preferowanym (min. 2 zostaje), a opis powiązania
 > musi być zdaniem uzasadniającym związek — nie jednym słowem ani samym linkiem.**
+> **v1.8 (ADR 0022, 2026-08-30): sekcja „Rezonans i tożsamość” usunięta
+> (zakaz przekładania mechaniki MtG na opisy bytów); sekcje numerowane na
+> nowo: V SKITy, VI Tomy i Epoki, VII Powiązania.**
 
 ## 1. Filozofia systemu
 
@@ -69,21 +72,29 @@ PEŁNY WPIS MFM (data/manifestations/<slug>.json)
 
 ## 4. Struktura wpisu
 
-### 4.1 Numeracja = kolejność prezentacji (od v1.3)
+### 4.1 Numeracja = kolejność prezentacji (od v1.3, układ od v1.8)
 
 ```
 I   Wizualizacja            II  Charakterystyka i natura   III Dokumentacja
-IV  Trofea i dowody         V   Rezonans i tożsamość       VI SKITy
+IV  Trofea i dowody         V   SKITy                      VI Tomy i Epoki
+VII Powiązania
 ```
 
 Sekcje układamy i numerujemy w tej kolejności — **numer rzymski to pozycja w
 wpisie**, a nie tylko etykieta treści. Obowiązuje wszędzie: w kartotece
-(`app/ui.js`), w plikach wpisów (`data/manifestations/`), w tym dokumencie i w
-instrukcji `docs/WORKFLOW.md`. Po sekcji VI następują elementy bez numeru:
-powiązania (warstwa wiki) i meta.
+(`app/ui.js`), w tym dokumencie i w instrukcji `docs/WORKFLOW.md`. Sekcje
+V–VII nie są pisane w pliku wpisu: `SKITy` wylicza indeks (ADR 0013),
+`Tomy i Epoki` wylicza podsumowanie Kroniki (`summary.json`), a `Powiązania`
+to pole `powiazania` + backlinki z indeksu. Meta (data, autor) zostaje na
+końcu, bez numeru.
 
 > Przeliczenie historyczne (dla wpisów, ADR-ów i notatek sprzed v1.3):
 > IV→I, II→II, III→III, V→IV, I→V (stara numeracja była przypisana do treści).
+>
+> Przeliczenie v1.7 → v1.8 (2026-08-30): sekcja „Rezonans i tożsamość”
+> (dawna V) **usunięta** — pole `rezonans` nie istnieje w materializacjach;
+> dawne VI SKITy → V; „Tomy i Epoki” (niegdyś litera K) → VI; „Powiązania”
+> (niegdyś symbol ∞) → VII.
 
 ### 4.2 Nagłówek wpisu
 
@@ -155,17 +166,31 @@ Każda pozycja ma postać `{ typ, pozycja, url? }` (pole `dokumentacja`), przy c
 | II Charakterystyka i natura | `natura` |
 | III Dokumentacja | `dokumentacja` (pozycje z `url`) |
 | IV Trofea | `trofea` |
-| V Rezonans i tożsamość | `rezonans` (+ `karta`, `lokalizacja`, `pochodzenie_i_kultura`) |
-| VI SKITy | **brak pola** — wyliczane z bazy skitów (ADR 0013); autor skitu wskazuje uczestników, wpis ich nie duplikuje |
+| V SKITy | **brak pola** — wyliczane z bazy skitów (ADR 0013); autor skitu wskazuje uczestników, wpis ich nie duplikuje |
+| VI Tomy i Epoki | **brak pola** — wyliczane z podsumowania Kroniki (`data/kronika/summary.json`) |
+| VII Powiązania | `powiazania` (`{slug, opis}`) + backlinki wyliczane z indeksu |
 
-### 4.5 Sekcja VI — SKITy
+### 4.5 Sekcja V — SKITy
 
 SKIT to fragment prozy (dialog materializacji) z **Bazy Skitów**
-(`data/skity/`, ADR 0013). Sekcja VI wpisu nie jest pisana w pliku wpisu:
+(`data/skity/`, ADR 0013). Sekcja V wpisu nie jest pisana w pliku wpisu:
 indeks podpowiada wszystkie skity, w których dana manifestacja występuje, a
 aplikacja linkuje je pod kartoteką. Zasady pisania skitów (dramatis personae,
 limit 300 słów, unikalność zestawu uczestników, zakaz terminologii growej)
 reguluje §8.
+
+### 4.6 Sekcja VI — Tomy i Epoki
+
+Sekcja linkuje Tom Kroniki, w którym manifestacja występuje, oraz raporty
+epok z jej udziałem (wyliczane z `summary.json`; patrz `docs/KRONIKA_tryb.md`).
+Odnośnik do Tomu używa tej samej konwencji „brązowego przycisku” co pozostałe
+odnośniki (epoki, skity, byty).
+
+### 4.7 Sekcja VII — Powiązania
+
+Warstwa wiki (ADR 0006): `powiazania` to pary `{slug, opis}` — opis musi być
+zdaniem uzasadniającym związek (ADR 0019); backlinki („wzmiankowany przez”)
+wylicza indeks.
 
 ## 5. Rama promptu wizualizacji (v1.1 — obowiązuje od 2026-08-27)
 
@@ -194,8 +219,6 @@ Captured with a 35mm anamorphic lens at f/1.8. Shallow depth of field with a hea
 
 Wygenerowany obraz zapisujemy jako `assets/wizualizacje/<slug>.jpg`
 (JPEG, proporcje 21:9, ≤ 2 MB) i wskazujemy w polu `wizualizacja.obraz`.
-Dopóki obrazu nie ma, aplikacja pokazuje miejsce złożenia („wizualizacja
-nieodtworzona”) razem z gotowym do skopiowania promptem.
 
 ## 6. Forma zapisu technicznego
 
@@ -287,7 +310,7 @@ z humorem (ADR 0018, patrz §8.3 pkt 3).
 * plik `data/skity/<slug>.json` — **Baza Skitów**; wpisy kartoteki NIE
   zawierają tekstu skitu;
 * indeks (`npm run build`) wylicza: `skity[]` (skróty), `manifestacje[].skity`
-  (sekcja VI pod kartą bytu) i pozycje feedu „Co nowego";
+  (sekcja V pod kartą bytu) i pozycje feedu „Co nowego";
 * aplikacja: przycisk **✎ skity** (Baza Skitów), widok pojedynczego skitu oraz
   sekcja **VI SKITy** w karcie materializacji; deep-link `#skit:<slug>`.
 
@@ -353,7 +376,7 @@ Po C1 (treść wpisów) i przed C2 (featury): **wybierz materializacje tak, aby 
 zestaw nie miał jeszcze swojego SKITa — domyślnie 3 lub 4 (ADR 0019), duet tylko
 gdy temat go wymaga**, napisz SKIT wg §8.2–§8.3,
 dopisz plik do Bazy Skitów, uruchom `npm run build` + `npm test` i zacommituj.
-Sekcja VI kart materializacji oraz feed „Co nowego" podlinkują się same — z
+Sekcja V kart materializacji oraz feed „Co nowego" podlinkują się same — z
 indeksu.
 
 ## 9. Dziennik zmian (feed „Co nowego")
