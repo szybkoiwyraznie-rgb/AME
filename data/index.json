@@ -1,8 +1,8 @@
 {
   "wersja": 3,
-  "buildTime": "2026-08-30T22:03:31.338Z",
+  "buildTime": "2026-08-30T22:06:37.488Z",
   "liczba": 20,
-  "liczbaSkitow": 23,
+  "liczbaSkitow": 24,
   "kanon": {
     "kategorie": [
       {
@@ -859,7 +859,8 @@
       ],
       "obraz": "assets/wizualizacje/knecht-z-koptos.jpg",
       "skity": [
-        "pierwszy"
+        "pierwszy",
+        "z-gliny-i-spizu"
       ]
     },
     {
@@ -1015,7 +1016,8 @@
       "obraz": "assets/wizualizacje/pandora.jpg",
       "skity": [
         "czwarty-stol",
-        "prezent-z-defektem"
+        "prezent-z-defektem",
+        "z-gliny-i-spizu"
       ]
     },
     {
@@ -1222,6 +1224,7 @@
       ],
       "obraz": "assets/wizualizacje/talos-kreta.jpg",
       "skity": [
+        "z-gliny-i-spizu",
         "zagadka-ze-spizu"
       ]
     }
@@ -1545,6 +1548,23 @@
       "data": "2026-08-28 22:25"
     },
     {
+      "slug": "z-gliny-i-spizu",
+      "tytul": "Z GLINY I SPIŻU",
+      "temat": "być ulepionym, nie urodzonym — o ręce twórcy, jednym rozkazie i chwili, gdy rzecz przekracza instrukcję",
+      "uczestnicy": [
+        "knecht-z-koptos",
+        "pandora",
+        "talos-kreta"
+      ],
+      "imiona": [
+        "Pandora",
+        "Talos z Krety",
+        "Knecht"
+      ],
+      "slow": 205,
+      "data": "2026-08-30 22:06"
+    },
+    {
       "slug": "zagadka-ze-spizu",
       "tytul": "ZAGADKA ZE SPIŻU",
       "temat": "co zrobić ze strażnikiem, który nie potrafi pomyśleć, i z takim, który myśli za dużo — trzy odpowiedzi na jedno pytanie",
@@ -1612,6 +1632,14 @@
     }
   ],
   "aktualizacje": [
+    {
+      "data": "2026-08-30 22:06",
+      "typ": "skit",
+      "akcja": "nowy",
+      "slug": "z-gliny-i-spizu",
+      "tytul": "Z GLINY I SPIŻU",
+      "opis": "SKIT — skład: Pandora, Talos z Krety, Knecht"
+    },
     {
       "data": "2026-08-30 21:57",
       "typ": "manifestacja",

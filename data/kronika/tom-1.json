@@ -52,7 +52,7 @@
       },
       {
         "slug": "knecht-z-koptos",
-        "wielkosc": 0.282
+        "wielkosc": 0.306
       },
       {
         "slug": "lincoln-imp",
@@ -68,7 +68,7 @@
       },
       {
         "slug": "pandora",
-        "wielkosc": 0.355
+        "wielkosc": 0.379
       },
       {
         "slug": "protostates",
@@ -88,7 +88,7 @@
       },
       {
         "slug": "talos-kreta",
-        "wielkosc": 0.342
+        "wielkosc": 0.367
       }
     ],
     "dominacje": [
@@ -145,7 +145,7 @@
       {
         "kultura": "grecja",
         "kult": "knecht-z-koptos",
-        "wielkosc": 0.282
+        "wielkosc": 0.306
       },
       {
         "kultura": "anglia",
@@ -165,7 +165,7 @@
       {
         "kultura": "grecja",
         "kult": "pandora",
-        "wielkosc": 0.355
+        "wielkosc": 0.379
       },
       {
         "kultura": "grecja",
@@ -190,7 +190,7 @@
       {
         "kultura": "grecja",
         "kult": "talos-kreta",
-        "wielkosc": 0.342
+        "wielkosc": 0.367
       }
     ]
   },
