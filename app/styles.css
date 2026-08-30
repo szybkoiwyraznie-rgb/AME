@@ -911,6 +911,10 @@ div.warstwa.otwarta { display: block; animation: warstwa-wnika 0.2s ease-out; }
  * jako zwykły dokument na białym tle (tokeny nadpisane pod druk — niezależnie
  * od motywu tekst zostaje ciemny na jasnym). */
 @media print {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
   .gora,
   #tagi,
   #mapa,

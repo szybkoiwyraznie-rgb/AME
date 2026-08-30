@@ -518,6 +518,7 @@ test('kartoteka ma przycisk druku; app.js woła window.print(); arkusz ma @media
   assert.match(css, /\.gora,\s*\n?\s*#tagi,[\s\S]*display:\s*none/, 'topbar i tagi ukryte w druku');
   assert.match(css, /\.panel\.otwarty\s*\{[\s\S]*position:\s*static/, 'otwarta kartoteka układa się w dokumencie');
   assert.match(css, /:root,[\s\S]*html\[data-motyw='ciemny'\][\s\S]*--tekst:\s*#1a1a1a/, 'tokeny nadpisane pod druk (ciemny tekst na jasnym tle)');
+  assert.match(css, /@media print\s*\{[\s\S]*transition:\s*none/, 'przejścia i animacje wyłączone w druku');
 });
 
 test('wersja protokołu jest jedna: stopka aplikacji = PROTOKÓŁ = README (F2)', async () => {
