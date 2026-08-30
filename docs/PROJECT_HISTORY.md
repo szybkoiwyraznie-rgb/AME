@@ -1664,3 +1664,44 @@ Brama: `npm test` 189/189, `npm run check` zielone.
 
 Brama: `npm test` **190/190**, `npm run check` zielone; strony Kroniki
 przebudowane.
+### Pętla Jakości (ADR 0007) — audyt PR #10 + C1 → C3 → C2 (2026-08-30, PR #10)
+
+Po zakończonych recenzjach właściciel zlecił pętlę jakości (ADR 0007).
+
+**Audyt PR #10 (main..HEAD: 92 pliki, 28 A / 64 M, +14 655/−872):** M1–M3
+i Kronika S1–S3 zgodne z ADR 0001/0003/0009/0016–0018/0020; `geo.js`
+nietknięty; cache-bust `c5-5` spójny (test blokuje); brak pozostałości po
+usuniętych warstwach i debug logów w app/; `npm run build` deterministyczny
+(tree bez zmian); składnia modułów OK; testy 190/190, check zielone.
+Bez zaległości → pętla.
+
+**C1 — `nessos`** (d25721d): źródła pierwotne mitu — Pseudo-Apollodoros
+„Biblioteka” 2.151/2.157 (nasienie + krew jako „napój miłosny”),
+Diodor 4.36.3/4.38.1 (wariant z oliwą i grotem strzały, słoik, Kenaion),
+Owidiusz „Metamorfozy” IX.98–210; wariant przepisu w `natura.zdolnosci`;
+powiązanie nessos ↔ pandora (dar-zguba — Hezjod „Prace i dnie” 60–68).
+Sieć: pandora w Epocze VI 15→17, zasięg 0.316→0.34.
+
+**C3 — SKIT „Prezent z defektem”** (7718132): Nessos × Pandora × Morowa
+Panna, 276 słów, unikalny skład, lekki rejestr v1.6 (trzy „dawczynie/dawcy
+zguby” przy brodzie; fakty z kartotek — przepis Nessosa, słój Pandory,
+próg i chusta Morowej Panny, kukła na wiosnę).
+Sieć: zasięgi w Epocze VI 0.34→0.365 i 0.243→0.267 (skity podbijają
+obecność).
+
+**C2 — strona tagu (F2)** (f852578): `#tag:<slug>` — warstwa z kategorią
+z kanonu, opisem tagu, licznikiem i pełną listą manifestacji (klik →
+kartoteka); filtr mapy i pasek zostają; otwierana z paska, karty bytu
+i deep-linku; ponowny klik czyści filtr. `htmlStronyTagu` w ui.js,
+test; cache-bust `v=c5-6`. **Do akceptacji właściciela przed live.**
+
+**C1 (drugi obieg) — `kannon-hase`** (f7af6f9): korekta tras — Hasedera
+(Kamakura) to 4. stacja Bandō Sanjūsankasho i kamakurańskiej pielgrzymki
+Kannon, **nie** Saigoku (Kansai; Hase-dera w Narze = 8. stacja); legenda
+Tokudō (721, dwa posągi z kamforowca, plaża Nagai 736), 11 głów, 9,18 m,
+Jōdo-shū; powiązanie kannon-hase ↔ syama-i-sarvara (droga dusz; Rigweda
+10.14.10–12, Lotus Sutra 25).
+Sieć: syama w Epocze VII 10/9→12/11, zasięg 0.25→0.275.
+
+Brama: `npm test` **191/191**, `npm run check` zielone; indeks 20 wpisów /
+22 SKITy / 44 tagi; build deterministyczny.

@@ -20,8 +20,9 @@
 - **Klastrowanie pinezek**: przy > 50 wpisach mapa zrobi się ciasna; prosty
   grid-clustering w przestrzeni ekranu wystarczy na start.
 - **Miniatury na pinezkach** przy wysokim zoomie (obraz 21:9 małpowany w marker).
-- **Strona tagu**: klik w tag → filtr mapy + lista; słownik tagów w indeksie
-  już to umożliwia.
+- ~~**Strona tagu**~~ — **WDROŻONE (2026-08-30, PR #10, C2 pętla jakości):** klik
+  w tag → filtr mapy + warstwa `#tag:<slug>` z kategorią, opisem i listą
+  manifestacji (klik → kartoteka), adresowalna i z przyciskiem „kopiuj link”.
 - ~~**Tryb „wylosuj manifestację”**~~ — zrealizowane w M7 (PR #6, C2): przycisk
   „🎲 wylosuj” losuje z widocznej puli (filtr/tag zawężają), pomija ostatni los
   i przelatuje do bytu na mapie; `wylosujSlug` deterministyczna przy

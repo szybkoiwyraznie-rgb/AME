@@ -401,7 +401,8 @@ zmianie, niezależnie od „polerowania”.
       niej na mapie (M7, PR #6; do akceptacji właściciela przed live).
 - [x] Czytelny kanon tagów i ich prezentacja (ADR 0016): słownik w danych,
       limity kategorii w walidatorze, pasek w pasmach z licznikami i opisami.
-- [ ] Strona tagu (filtr + lista wpisów), eksport PDF kartoteki (media print).
+- [x] Strona tagu — filtr mapy + lista wpisów (C2 pętla 2026-08-30, PR #10).
+- [ ] Eksport PDF kartoteki (media print).
 
 ## F3 — Publikacja
 
