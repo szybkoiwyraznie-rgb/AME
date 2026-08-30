@@ -105,9 +105,21 @@
       }
     ],
     "dominacje": [
-      { "kultura": "grecja", "kult": "protostates", "delta": 0.012 },
-      { "kultura": "grecja", "kult": "knecht-z-koptos", "delta": 0.01 },
-      { "kultura": "indie", "kult": "syama-i-sarvara", "delta": 0.005 }
+      {
+        "kultura": "grecja",
+        "kult": "protostates",
+        "delta": 0.012
+      },
+      {
+        "kultura": "grecja",
+        "kult": "knecht-z-koptos",
+        "delta": 0.01
+      },
+      {
+        "kultura": "indie",
+        "kult": "syama-i-sarvara",
+        "delta": 0.005
+      }
     ],
     "pozycje": [
       {
@@ -130,27 +142,48 @@
       {
         "id": "wedrowny-dom-empusy",
         "stan": "otwarty",
-        "opis": "Czy słowo-poznanie straci moc, gdy pojawi się ktoś, kto mówi „nie słyszę rozkazu”?"
+        "opis": "Czy słowo-poznanie straci moc, gdy pojawi się ktoś, kto mówi „nie słyszę rozkazu”?",
+        "byty": [
+          "empusa-korynt"
+        ]
       },
       {
         "id": "warunek-barbarossy",
         "stan": "otwarty",
-        "opis": "Dlaczego cesarz woli płacić, żeby gość wchodził — i czy dawny dług da się oddać komuś innemu?"
+        "opis": "Dlaczego cesarz woli płacić, żeby gość wchodził — i czy dawny dług da się oddać komuś innemu?",
+        "byty": [
+          "barbarossa-kyffhaeuser",
+          "kentaur-pelion",
+          "egungun"
+        ]
       },
       {
         "id": "kres-indry",
         "stan": "otwarty",
-        "opis": "Czy kres można oddać, czy tylko przekroczyć — i co zostaje z pierwszego, gdy nikt nie idzie za nim?"
+        "opis": "Czy kres można oddać, czy tylko przekroczyć — i co zostaje z pierwszego, gdy nikt nie idzie za nim?",
+        "byty": [
+          "indra"
+        ]
       },
       {
         "id": "niewinny-bierca",
         "stan": "otwarty",
-        "opis": "Czy ten, kto bierze, nie wiedząc, że bierze, jest gościem czy złodziejem — a woda zostawiona na progu to dar czy dług?"
+        "opis": "Czy ten, kto bierze, nie wiedząc, że bierze, jest gościem czy złodziejem — a woda zostawiona na progu to dar czy dług?",
+        "byty": [
+          "kentaur-pelion",
+          "pandora",
+          "empusa-korynt"
+        ]
       },
       {
         "id": "pierwszy-w-linii",
         "stan": "otwarty",
-        "opis": "Nowy: czy pierwszy w linii jest panem, czy tylko pierwszym narzędziem porządku — i kto wypowiada słowo końca?"
+        "opis": "Nowy: czy pierwszy w linii jest panem, czy tylko pierwszym narzędziem porządku — i kto wypowiada słowo końca?",
+        "byty": [
+          "protostates",
+          "knecht-z-koptos",
+          "syama-i-sarvara"
+        ]
       }
     ]
   },
@@ -160,5 +193,11 @@
     "wersja": 1,
     "poprzednik": "epoka-6",
     "uwagi": "Pierwsza epoka z odwołaniem meta.poprzednik (S3 graf epok); wątek czwarty-stol pozostaje zamknięty, otwarty nowy: pierwszy-w-linii."
+  },
+  "grafika": {
+    "obraz": "assets/wizualizacje/kronika-tom-1-epoka-7.jpg",
+    "podpis": "Kolejność: nikt nie szedł za pierwszym",
+    "prompt": "Hyperrealistic cinematic photograph, ultra-wide 21:9 anamorphic frame. Narrow mountain gorge at first light: a silent warrior in a plumed Corinthian helmet, crimson tunic and bronze greaves, his face an empty dark void beneath the helm (Protostates); approaching a small wooden pestle in linen rags with a knot for a head, carrying a brass water jar (Knecht); from the left two enormous dogs, one coal-black and one brown-spotted, each with a second pair of eyes above the normal ones (Syama and Sarvara). Cold mist, wet stones, a single trail. Mood of three orders of 'first' meeting at a crossing. 35mm anamorphic f/1.8, shallow depth of field, creamy bokeh, dramatic lighting, hyper-realistic textures, 70mm film stock. No text, no letters, no inscriptions, no modern objects.",
+    "styl": "hiperrealistyczna kinowa fotografia (21:9, 70mm, anamorfika)"
   }
 }

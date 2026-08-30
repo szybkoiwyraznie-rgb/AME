@@ -97,6 +97,49 @@ html[data-motyw="ciemny"] {
   margin-bottom: 24px;
   box-shadow: 0 4px 16px rgba(0,0,0,0.03);
 }
+/* Key-art epoki (Kronika, 2026-08-30): hiperrealistyczna kinowa fotografia 21:9 */
+.hero-grafika {
+  margin: 18px 0 0;
+}
+.hero-grafika img {
+  width: 100%;
+  aspect-ratio: 21 / 9;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  display: block;
+  background: var(--card-alt);
+}
+.hero-grafika figcaption {
+  color: var(--muted);
+  font-size: 13px;
+  margin-top: 8px;
+  line-height: 1.5;
+}
+.hero-grafika figcaption .styl {
+  font-style: italic;
+}
+.hero-grafika details {
+  margin-top: 6px;
+  font-size: 12px;
+}
+.hero-grafika details summary {
+  cursor: pointer;
+  color: var(--accent);
+  font-weight: 600;
+}
+.hero-grafika details pre {
+  white-space: pre-wrap;
+  overflow-x: auto;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: var(--code);
+  border: 1px solid var(--line);
+  margin: 6px 0 0;
+  font-size: 12px;
+  max-height: 260px;
+  overflow-y: auto;
+}
 .hero h1 {
   margin: 8px 0 8px;
   font-size: 30px;
@@ -466,7 +509,7 @@ th {
 /* EPOKA CARDS (TOM) */
 .epoka-card {
   display: grid;
-  grid-template-columns: 60px 1fr auto;
+  grid-template-columns: 60px 96px 1fr auto;
   gap: 14px;
   align-items: center;
   border: 1px solid var(--line);
@@ -477,6 +520,14 @@ th {
   text-decoration: none;
   margin-bottom: 12px;
   transition: all .15s ease;
+}
+.epoka-mini {
+  width: 96px;
+  aspect-ratio: 21 / 9;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px solid var(--line);
+  background: var(--card-alt);
 }
 .epoka-card:hover {
   border-color: var(--accent);
@@ -545,6 +596,49 @@ li { margin: 8px 0; }
 .pager-btn:hover {
   background: var(--code);
   border-color: var(--accent);
+}
+
+/* ROZSTAJE — drogi dalej (silnik Kronikarza, 2026-08-30) */
+.rozstaje-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 12px;
+  margin-top: 14px;
+}
+.rozstaje-karta {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 14px 16px;
+  background: var(--card-alt);
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  gap: 12px;
+  align-items: start;
+  transition: all .15s ease;
+}
+.rozstaje-karta:hover {
+  border-color: var(--accent);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.04);
+}
+.rozstaje-nr {
+  font-weight: 700;
+  color: var(--accent);
+  font-size: 14px;
+  text-align: center;
+  border-right: 1px solid var(--line);
+  padding-right: 10px;
+  padding-top: 4px;
+}
+.rozstaje-sklad {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 8px;
+}
+.rozstaje-powody {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
 }
 
 /* MODAL KARTOTEKI */
@@ -2211,6 +2305,7 @@ li { margin: 8px 0; }
       
       <a class="epoka-card" id="kronika-epoka-1" data-byt="egungun barbarossa-kyffhaeuser kentaur-pelion" data-slug="epoka-1" href="kronika-epoka-1.html">
         <div class="epoka-nr">Epoka<br>I</div>
+        <img class="epoka-mini" src="../assets/wizualizacje/kronika-tom-1-epoka-1.jpg" alt="Trzy stoły: przodek, gospodarz i gość" loading="lazy">
         <div>
           <div class="epoka-ttl">Trzy stoły: przodek, gospodarz i gość <span class="chip up">OK</span></div>
           <div class="epoka-meta">Uczestnicy: 🎭 👑 🐎 · Oś: MIT 35% / RAC 65%</div>
@@ -2220,6 +2315,7 @@ li { margin: 8px 0; }
       </a>
       <a class="epoka-card" id="kronika-epoka-2" data-byt="lincoln-imp kentaur-pelion empusa-korynt" data-slug="epoka-2" href="kronika-epoka-2.html">
         <div class="epoka-nr">Epoka<br>II</div>
+        <img class="epoka-mini" src="../assets/wizualizacje/kronika-tom-1-epoka-2.jpg" alt="Nieproszeni goście: psuj, zaproszony i zaproszenie" loading="lazy">
         <div>
           <div class="epoka-ttl">Nieproszeni goście: psuj, zaproszony i zaproszenie <span class="chip up">OK</span></div>
           <div class="epoka-meta">Uczestnicy: 😈 🐎 🕷️ · Oś: MIT 33% / RAC 67%</div>
@@ -2229,6 +2325,7 @@ li { margin: 8px 0; }
       </a>
       <a class="epoka-card" id="kronika-epoka-3" data-byt="egungun balor empusa-korynt" data-slug="epoka-3" href="kronika-epoka-3.html">
         <div class="epoka-nr">Epoka<br>III</div>
+        <img class="epoka-mini" src="../assets/wizualizacje/kronika-tom-1-epoka-3.jpg" alt="Odźwierni: zapraszany, otwierany i ten, który jest drzwiami" loading="lazy">
         <div>
           <div class="epoka-ttl">Odźwierni: zapraszany, otwierany i ten, który jest drzwiami <span class="chip up">OK</span></div>
           <div class="epoka-meta">Uczestnicy: 🎭 👁️ 🕷️ · Oś: MIT 31% / RAC 69%</div>
@@ -2238,6 +2335,7 @@ li { margin: 8px 0; }
       </a>
       <a class="epoka-card" id="kronika-epoka-4" data-byt="egungun selkie-sule-skerry indra" data-slug="epoka-4" href="kronika-epoka-4.html">
         <div class="epoka-nr">Epoka<br>IV</div>
+        <img class="epoka-mini" src="../assets/wizualizacje/kronika-tom-1-epoka-4.jpg" alt="Imię na progu: skóra, kres i pieśń" loading="lazy">
         <div>
           <div class="epoka-ttl">Imię na progu: skóra, kres i pieśń <span class="chip up">OK</span></div>
           <div class="epoka-meta">Uczestnicy: 🎭 🦭 🌩️ · Oś: MIT 30% / RAC 70%</div>
@@ -2247,6 +2345,7 @@ li { margin: 8px 0; }
       </a>
       <a class="epoka-card" id="kronika-epoka-5" data-byt="sfinks-teby talos-kreta lincoln-imp" data-slug="epoka-5" href="kronika-epoka-5.html">
         <div class="epoka-nr">Epoka<br>V</div>
+        <img class="epoka-mini" src="../assets/wizualizacje/kronika-tom-1-epoka-5.jpg" alt="Zagadka ze spiżu: rozum, żart i głuchy krok" loading="lazy">
         <div>
           <div class="epoka-ttl">Zagadka ze spiżu: rozum, żart i głuchy krok <span class="chip up">OK</span></div>
           <div class="epoka-meta">Uczestnicy: 🦁 🗿 😈 · Oś: MIT 29% / RAC 71%</div>
@@ -2256,6 +2355,7 @@ li { margin: 8px 0; }
       </a>
       <a class="epoka-card" id="kronika-epoka-6" data-byt="pandora morowa-panna empusa-korynt" data-slug="epoka-6" href="kronika-epoka-6.html">
         <div class="epoka-nr">Epoka<br>VI</div>
+        <img class="epoka-mini" src="../assets/wizualizacje/kronika-tom-1-epoka-6.jpg" alt="Czwarty stół: kto nie wie, że bierze" loading="lazy">
         <div>
           <div class="epoka-ttl">Czwarty stół: kto nie wie, że bierze <span class="chip up">OK</span></div>
           <div class="epoka-meta">Uczestnicy: 🏺 🧣 🕷️ · Oś: MIT 28% / RAC 72%</div>
@@ -2265,6 +2365,7 @@ li { margin: 8px 0; }
       </a>
       <a class="epoka-card" id="kronika-epoka-7" data-byt="protostates knecht-z-koptos syama-i-sarvara" data-slug="epoka-7" href="kronika-epoka-7.html">
         <div class="epoka-nr">Epoka<br>VII</div>
+        <img class="epoka-mini" src="../assets/wizualizacje/kronika-tom-1-epoka-7.jpg" alt="Kolejność: nikt nie szedł za pierwszym" loading="lazy">
         <div>
           <div class="epoka-ttl">Kolejność: nikt nie szedł za pierwszym <span class="chip up">OK</span></div>
           <div class="epoka-meta">Uczestnicy: 🛡️ 🪵 🐕 · Oś: MIT 27% / RAC 73%</div>
@@ -2391,6 +2492,43 @@ li { margin: 8px 0; }
     </div>
   </div>
 </div>
+
+<!-- ROZSTAJE: drogi dalej (silnik Kronikarza, R1–R5) -->
+
+    <div class="card rozstaje">
+      <h2>Rozstaje — drogi dalej</h2>
+      <div class="card-sub">Silnik Kronikarza (reguły R1–R5) wyznacza kandydatów na kolejną epokę. To propozycje czekające na spisanie — kanon zatwierdza właściciel; każda droga otwiera inne rozwinięcie.</div>
+      <div class="rozstaje-grid">
+      <div class="rozstaje-karta">
+        <div class="rozstaje-nr">Droga A</div>
+        <div>
+          <div class="rozstaje-sklad">👑 Barbarossa w Kyffhäuserze · 🎭 Egungun · 🕷️ Empusa z Koryntu</div>
+          <div class="rozstaje-powody"><span class="chip">R1: otwarty wątek</span> <span class="chip">R4: oddech — nowy w Tomie</span> <span class="chip">R2: silny zasięg</span></div>
+        </div>
+      </div>
+      <div class="rozstaje-karta">
+        <div class="rozstaje-nr">Droga B</div>
+        <div>
+          <div class="rozstaje-sklad">👑 Barbarossa w Kyffhäuserze · 🌩️ Indra — władca gromu · 🐎 Kentaur z Pelionu</div>
+          <div class="rozstaje-powody"><span class="chip">R1: otwarty wątek</span> <span class="chip">R4: oddech — nowy w Tomie</span> <span class="chip">R2: silny zasięg</span></div>
+        </div>
+      </div>
+      <div class="rozstaje-karta">
+        <div class="rozstaje-nr">Droga C</div>
+        <div>
+          <div class="rozstaje-sklad">👑 Barbarossa w Kyffhäuserze · 🏺 Pandora — pierwsza kobieta i pithos, w którym została nadzieja · 🪵 Knecht z Koptos — ożywiony tłuczek, który nie zna słowa końca</div>
+          <div class="rozstaje-powody"><span class="chip">R1: otwarty wątek</span> <span class="chip">R4: oddech — nowy w Tomie</span> <span class="chip">R2: silny zasięg</span> <span class="chip">R5: niedomknięta relacja</span></div>
+        </div>
+      </div>
+      <div class="rozstaje-karta">
+        <div class="rozstaje-nr">Droga D</div>
+        <div>
+          <div class="rozstaje-sklad">🎭 Egungun · 🐎 Kentaur z Pelionu · 🦭 Wielki Selkie z Sule Skerry</div>
+          <div class="rozstaje-powody"><span class="chip">R1: otwarty wątek</span> <span class="chip">R4: oddech — nowy w Tomie</span> <span class="chip">R2: silny zasięg</span></div>
+        </div>
+      </div></div>
+      <div class="muted" style="margin-top:10px">Punktacja wg R1 (otwarty wątek), R2 (zasięg), R3 (zmęczenie — max 1 powtórka), R4 (oddech — min 1 nowy byt), R5 (niedomknięte relacje).</div>
+    </div>
 
 <div class="foot">
   Archiwum Manifestacji Eterycznych · Tom I: Kronika Trzech Stołów · System zsynchronizowany

@@ -90,24 +90,36 @@
     "zasieg": [
       {
         "slug": "egungun",
-        "delta": 0.010,
+        "delta": 0.01,
         "opis": "Pieśń zostaje uznana za jeden z trzech równoważnych progów — kult przodków rośnie delikatnie, ale nie dominuje."
       },
       {
         "slug": "selkie-sule-skerry",
-        "delta": -0.010,
+        "delta": -0.01,
         "opis": "Świat uczy się nazywać skórę i w ten sposób lekko traci strach przed Selkie; jej legenda kurczy się o 1 pp."
       },
       {
         "slug": "indra",
-        "delta": -0.010,
+        "delta": -0.01,
         "opis": "Kres Indry przestaje być świętym rozkazem — świat częściej pyta, czy nie da się go ominąć; zasięg spada o 1 pp."
       }
     ],
     "dominacje": [
-      { "kultura": "joruba", "kult": "egungun", "delta": 0.010 },
-      { "kultura": "szkocja-polnocna", "kult": "selkie-sule-skerry", "delta": -0.010 },
-      { "kultura": "indie", "kult": "indra", "delta": -0.010 }
+      {
+        "kultura": "joruba",
+        "kult": "egungun",
+        "delta": 0.01
+      },
+      {
+        "kultura": "szkocja-polnocna",
+        "kult": "selkie-sule-skerry",
+        "delta": -0.01
+      },
+      {
+        "kultura": "indie",
+        "kult": "indra",
+        "delta": -0.01
+      }
     ],
     "pozycje": [
       {
@@ -130,27 +142,48 @@
       {
         "id": "imie-na-progu",
         "stan": "zamkniety",
-        "opis": "Wątek domknięty: nie ma jednego słowa na wszystkie drzwi — skóra, kres i pieśń to trzy różne progi."
+        "opis": "Wątek domknięty: nie ma jednego słowa na wszystkie drzwi — skóra, kres i pieśń to trzy różne progi.",
+        "byty": [
+          "egungun",
+          "selkie-sule-skerry",
+          "indra"
+        ]
       },
       {
         "id": "czwarty-stol",
         "stan": "otwarty",
-        "opis": "Czwarty stół z Epoki I wciąż czeka: gość, który wziął sam, czy przodek, który umie wybaczyć."
+        "opis": "Czwarty stół z Epoki I wciąż czeka: gość, który wziął sam, czy przodek, który umie wybaczyć.",
+        "byty": [
+          "pandora",
+          "empusa-korynt",
+          "morowa-panna"
+        ]
       },
       {
         "id": "warunek-barbarossy",
         "stan": "otwarty",
-        "opis": "Dlaczego cesarz woli płacić, żeby gość wyszedł, zamiast przyjąć go przy stole?"
+        "opis": "Dlaczego cesarz woli płacić, żeby gość wyszedł, zamiast przyjąć go przy stole?",
+        "byty": [
+          "barbarossa-kyffhaeuser",
+          "kentaur-pelion",
+          "egungun"
+        ]
       },
       {
         "id": "wedrowny-dom-empusy",
         "stan": "otwarty",
-        "opis": "Czy ludzie nauczą się wypowiadać słowo-poznanie w porę, czy samo słowo stanie się rytuałem, który chybia?"
+        "opis": "Czy ludzie nauczą się wypowiadać słowo-poznanie w porę, czy samo słowo stanie się rytuałem, który chybia?",
+        "byty": [
+          "empusa-korynt"
+        ]
       },
       {
         "id": "kres-indry",
         "stan": "otwarty",
-        "opis": "Czy kres można oddać, czy tylko przekroczyć? Co znaczy wybrać własną granicę, gdy świat przestaje ją respektować?"
+        "opis": "Czy kres można oddać, czy tylko przekroczyć? Co znaczy wybrać własną granicę, gdy świat przestaje ją respektować?",
+        "byty": [
+          "indra"
+        ]
       }
     ]
   },
@@ -158,5 +191,11 @@
     "utworzono": "2026-08-29 11:10",
     "autor": "agent Areny — czwarta epoka Tomu I (wątek imię na progu)",
     "wersja": 1
+  },
+  "grafika": {
+    "obraz": "assets/wizualizacje/kronika-tom-1-epoka-4.jpg",
+    "podpis": "Imię na progu: skóra, kres i pieśń",
+    "prompt": "Hyperrealistic cinematic photograph, ultra-wide 21:9 anamorphic frame. A lone ancient stone gate on a stormy sea shore at twilight: an ancestor spirit in layered patterned fabrics with mirrors (Egungun); a heavy half-transformed selkie woman draped in a grey seal skin, oil and seawater dripping (Selkie); a powerful warrior with gleaming bronze skin, golden crown, body patterned with a thousand eyes, holding a thunderbolt staff and a rainbow bow (Indra). Wet rocks, foam, violet dusk, dark open arch. Mood of one word that should open every door but does not. 35mm anamorphic f/1.8, shallow depth of field, creamy bokeh, dramatic lighting, hyper-realistic textures, 70mm film stock. No text, no letters, no inscriptions, no modern objects.",
+    "styl": "hiperrealistyczna kinowa fotografia (21:9, 70mm, anamorfika)"
   }
 }

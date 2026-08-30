@@ -337,17 +337,32 @@
           {
             "id": "czwarty-stol",
             "stan": "otwarty",
-            "opis": "Kto siada przy czwartym stole: gość, który wziął sam, czy przodek, który umie wybaczyć?"
+            "opis": "Kto siada przy czwartym stole: gość, który wziął sam, czy przodek, który umie wybaczyć?",
+            "byty": [
+              "pandora",
+              "empusa-korynt",
+              "morowa-panna"
+            ]
           },
           {
             "id": "wino-w-uczcie",
             "stan": "zamkniety",
-            "opis": "Związek kentaura z winem i porządkiem Lapitów zostaje wyjaśniony; słabnie strach przed ucztą."
+            "opis": "Związek kentaura z winem i porządkiem Lapitów zostaje wyjaśniony; słabnie strach przed ucztą.",
+            "byty": [
+              "egungun",
+              "kentaur-pelion",
+              "barbarossa-kyffhaeuser"
+            ]
           },
           {
             "id": "warunek-barbarossy",
             "stan": "otwarty",
-            "opis": "Dlaczego cesarz woli płacić, żeby gość wyszedł, zamiast przyjąć go przy stole?"
+            "opis": "Dlaczego cesarz woli płacić, żeby gość wyszedł, zamiast przyjąć go przy stole?",
+            "byty": [
+              "barbarossa-kyffhaeuser",
+              "kentaur-pelion",
+              "egungun"
+            ]
           }
         ]
       },
@@ -369,6 +384,12 @@
           }
         ],
         "podsumowanie": "Żaden z uczestników nie wykorzystał wprost słabości rywala; rozmowa sprawiła jednak, że granica między prawem gościnności a zuchwałością została na nowo nazwana."
+      },
+      "grafika": {
+        "obraz": "assets/wizualizacje/kronika-tom-1-epoka-1.jpg",
+        "podpis": "Trzy stoły: przodek, gospodarz i gość",
+        "prompt": "Hyperrealistic cinematic photograph, ultra-wide 21:9 anamorphic frame. Ancient smoky tavern hall at night: a figure entirely wrapped in towering layered fabrics of silk and velvet stitched with cowrie shells, beads and mirrors (Yoruba ancestor spirit) at the first table; a sleeping emperor with a flaming red beard growing through a round stone table, head on his hand (Barbarossa) at the second; a centaur with a man's torso and full horse body at the third. Warm torchlight, palm-oil smoke, dried herbs, clay cups. Mood of an uneasy feast about hospitality and audacity. 35mm anamorphic f/1.8, shallow depth of field, creamy bokeh, dramatic chiaroscuro, hyper-realistic textures, 70mm film stock. No text, no letters, no inscriptions, no modern objects.",
+        "styl": "hiperrealistyczna kinowa fotografia (21:9, 70mm, anamorfika)"
       }
     },
     {
@@ -708,27 +729,49 @@
           {
             "id": "czwarty-stol",
             "stan": "otwarty",
-            "opis": "(z Epoki I) Kto siada przy czwartym stole: gość, który wziął sam, czy przodek, który umie wybaczyć?"
+            "opis": "(z Epoki I) Kto siada przy czwartym stole: gość, który wziął sam, czy przodek, który umie wybaczyć?",
+            "byty": [
+              "pandora",
+              "empusa-korynt",
+              "morowa-panna"
+            ]
           },
           {
             "id": "warunek-barbarossy",
             "stan": "otwarty",
-            "opis": "(z Epoki I) Dlaczego cesarz woli płacić, żeby gość wyszedł, zamiast przyjąć go przy stole?"
+            "opis": "(z Epoki I) Dlaczego cesarz woli płacić, żeby gość wyszedł, zamiast przyjąć go przy stole?",
+            "byty": [
+              "barbarossa-kyffhaeuser",
+              "kentaur-pelion",
+              "egungun"
+            ]
           },
           {
             "id": "odzwierni",
             "stan": "otwarty",
-            "opis": "Czy istnieje wspólny odźwierny dla wszystkich bytów — czy każde ma tylko własny próg?"
+            "opis": "Czy istnieje wspólny odźwierny dla wszystkich bytów — czy każde ma tylko własny próg?",
+            "byty": [
+              "egungun",
+              "balor",
+              "empusa-korynt"
+            ]
           },
           {
             "id": "wedrowny-dom-empusy",
             "stan": "otwarty",
-            "opis": "Czy ludzie nauczą się wypowiadać słowo-poznanie, zanim Empusa zdąży zaprosić, czy samo słowo też stanie się rytuałem?"
+            "opis": "Czy ludzie nauczą się wypowiadać słowo-poznanie, zanim Empusa zdąży zaprosić, czy samo słowo też stanie się rytuałem?",
+            "byty": [
+              "empusa-korynt"
+            ]
           },
           {
             "id": "pogrzeb-zamiast-wesela",
             "stan": "zamkniety",
-            "opis": "Żart Ima domyka wątek kentaura przy ucztach: po nim zostaje pogrzeb, nie wesela."
+            "opis": "Żart Ima domyka wątek kentaura przy ucztach: po nim zostaje pogrzeb, nie wesela.",
+            "byty": [
+              "empusa-korynt",
+              "kentaur-pelion"
+            ]
           }
         ]
       },
@@ -750,6 +793,12 @@
           }
         ],
         "podsumowanie": "Towarzystwo nie zabija żadnego bytu — po prostu nazywa ich odźwiernych. Świat zyskuje jedno gotowe rozpoznanie: wesele psuje się łatwo, trudniej wejść tak, żeby nikt nie zawołał odźwiernego."
+      },
+      "grafika": {
+        "obraz": "assets/wizualizacje/kronika-tom-1-epoka-2.jpg",
+        "podpis": "Nieproszeni goście: psuj, zaproszony i zaproszenie",
+        "prompt": "Hyperrealistic cinematic photograph, ultra-wide 21:9 anamorphic frame. Gothic cathedral nave at dusk, Angel Choir arcades: high on a stone pillar a small hairy imp with cow ears, cloven hooves and a toothy grin clings head-down; in the aisle a centaur with dark horse body and bare human torso looks up; to the side a richly dressed stranger in a long gown and veil, seen from behind in shadow. Shafts of pale cold light, drifting dust, candles on a distant altar. Mood of trespass and a ruined celebration, strictly dignified. 35mm anamorphic f/1.8, shallow depth of field, creamy bokeh, dramatic lighting, hyper-realistic textures, 70mm film stock. No text, no letters, no inscriptions, no modern objects.",
+        "styl": "hiperrealistyczna kinowa fotografia (21:9, 70mm, anamorfika)"
       }
     },
     {
@@ -1095,27 +1144,50 @@
           {
             "id": "odzwierni",
             "stan": "zamkniety",
-            "opis": "Wątek przymknięty: pieśń, powieka i imię to trzy różne progi, nie jeden wspólny odźwierny."
+            "opis": "Wątek przymknięty: pieśń, powieka i imię to trzy różne progi, nie jeden wspólny odźwierny.",
+            "byty": [
+              "egungun",
+              "balor",
+              "empusa-korynt"
+            ]
           },
           {
             "id": "czwarty-stol",
             "stan": "otwarty",
-            "opis": "Czwarty stół z Epoki I wciąż czeka: gość, który wziął sam, czy przodek, który umie wybaczyć."
+            "opis": "Czwarty stół z Epoki I wciąż czeka: gość, który wziął sam, czy przodek, który umie wybaczyć.",
+            "byty": [
+              "pandora",
+              "empusa-korynt",
+              "morowa-panna"
+            ]
           },
           {
             "id": "warunek-barbarossy",
             "stan": "otwarty",
-            "opis": "Dlaczego cesarz woli płacić, żeby gość wyszedł, zamiast przyjąć go przy stole?"
+            "opis": "Dlaczego cesarz woli płacić, żeby gość wyszedł, zamiast przyjąć go przy stole?",
+            "byty": [
+              "barbarossa-kyffhaeuser",
+              "kentaur-pelion",
+              "egungun"
+            ]
           },
           {
             "id": "wedrowny-dom-empusy",
             "stan": "otwarty",
-            "opis": "Czy ludzie nauczą się wypowiadać słowo-poznanie w porę, czy samo słowo stanie się rytuałem, który chybia?"
+            "opis": "Czy ludzie nauczą się wypowiadać słowo-poznanie w porę, czy samo słowo stanie się rytuałem, który chybia?",
+            "byty": [
+              "empusa-korynt"
+            ]
           },
           {
             "id": "imie-na-progu",
             "stan": "otwarty",
-            "opis": "Nowy: czy istnieje jedno słowo, które rozwiązuje każdy próg — czy każde drzwi mają własne imię?"
+            "opis": "Nowy: czy istnieje jedno słowo, które rozwiązuje każdy próg — czy każde drzwi mają własne imię?",
+            "byty": [
+              "egungun",
+              "selkie-sule-skerry",
+              "indra"
+            ]
           }
         ]
       },
@@ -1144,6 +1216,12 @@
           }
         ],
         "podsumowanie": "Rozmowa nie likwiduje żadnego progu — pokazuje, że każdy ma inny. Pieśń zaprasza, powieka otwiera, imię rozwiązuje. Świat rozumie trzy mechanizmy naraz, ale żaden z bytów nie traci pola: Balor zostaje nieodwrócony, Empusa zostaje nienazwana, Egungun zostaje w pieśni."
+      },
+      "grafika": {
+        "obraz": "assets/wizualizacje/kronika-tom-1-epoka-3.jpg",
+        "podpis": "Odźwierni: zapraszany, otwierany i ten, który jest drzwiami",
+        "prompt": "Hyperrealistic cinematic photograph, ultra-wide 21:9 anamorphic frame. Night before a colossal megalithic doorway whose threshold glows with embers: a tall figure in layered ceremonial fabrics with cowrie shells and mirrors, arms raised (Egungun); in the center an immense giant with a single eye in the middle of his forehead, heavy eyelid held open by a leather ring, four tiny warriors kneeling (Balor); the dark stone doorway itself is the third presence. Torchlight, ash in the wind, starry sky. Mood of three kinds of gate and a question about who is the door. 35mm anamorphic f/1.8, shallow depth of field, creamy bokeh, dramatic rim lighting, hyper-realistic textures, 70mm film stock. No text, no letters, no inscriptions, no modern objects.",
+        "styl": "hiperrealistyczna kinowa fotografia (21:9, 70mm, anamorfika)"
       }
     },
     {
@@ -1491,27 +1569,48 @@
           {
             "id": "imie-na-progu",
             "stan": "zamkniety",
-            "opis": "Wątek domknięty: nie ma jednego słowa na wszystkie drzwi — skóra, kres i pieśń to trzy różne progi."
+            "opis": "Wątek domknięty: nie ma jednego słowa na wszystkie drzwi — skóra, kres i pieśń to trzy różne progi.",
+            "byty": [
+              "egungun",
+              "selkie-sule-skerry",
+              "indra"
+            ]
           },
           {
             "id": "czwarty-stol",
             "stan": "otwarty",
-            "opis": "Czwarty stół z Epoki I wciąż czeka: gość, który wziął sam, czy przodek, który umie wybaczyć."
+            "opis": "Czwarty stół z Epoki I wciąż czeka: gość, który wziął sam, czy przodek, który umie wybaczyć.",
+            "byty": [
+              "pandora",
+              "empusa-korynt",
+              "morowa-panna"
+            ]
           },
           {
             "id": "warunek-barbarossy",
             "stan": "otwarty",
-            "opis": "Dlaczego cesarz woli płacić, żeby gość wyszedł, zamiast przyjąć go przy stole?"
+            "opis": "Dlaczego cesarz woli płacić, żeby gość wyszedł, zamiast przyjąć go przy stole?",
+            "byty": [
+              "barbarossa-kyffhaeuser",
+              "kentaur-pelion",
+              "egungun"
+            ]
           },
           {
             "id": "wedrowny-dom-empusy",
             "stan": "otwarty",
-            "opis": "Czy ludzie nauczą się wypowiadać słowo-poznanie w porę, czy samo słowo stanie się rytuałem, który chybia?"
+            "opis": "Czy ludzie nauczą się wypowiadać słowo-poznanie w porę, czy samo słowo stanie się rytuałem, który chybia?",
+            "byty": [
+              "empusa-korynt"
+            ]
           },
           {
             "id": "kres-indry",
             "stan": "otwarty",
-            "opis": "Czy kres można oddać, czy tylko przekroczyć? Co znaczy wybrać własną granicę, gdy świat przestaje ją respektować?"
+            "opis": "Czy kres można oddać, czy tylko przekroczyć? Co znaczy wybrać własną granicę, gdy świat przestaje ją respektować?",
+            "byty": [
+              "indra"
+            ]
           }
         ]
       },
@@ -1540,6 +1639,12 @@
           }
         ],
         "podsumowanie": "Rozmowa nie znajduje jednego słowa — i właśnie to odkrywa: próg bytu nie jest jeden, a każde z nich wymaga innego klucza. Świat przestaje szukać imienia uniwersalnego i zaczyna rozumieć, że tożsamość bytu jest granicą, nie kodem."
+      },
+      "grafika": {
+        "obraz": "assets/wizualizacje/kronika-tom-1-epoka-4.jpg",
+        "podpis": "Imię na progu: skóra, kres i pieśń",
+        "prompt": "Hyperrealistic cinematic photograph, ultra-wide 21:9 anamorphic frame. A lone ancient stone gate on a stormy sea shore at twilight: an ancestor spirit in layered patterned fabrics with mirrors (Egungun); a heavy half-transformed selkie woman draped in a grey seal skin, oil and seawater dripping (Selkie); a powerful warrior with gleaming bronze skin, golden crown, body patterned with a thousand eyes, holding a thunderbolt staff and a rainbow bow (Indra). Wet rocks, foam, violet dusk, dark open arch. Mood of one word that should open every door but does not. 35mm anamorphic f/1.8, shallow depth of field, creamy bokeh, dramatic lighting, hyper-realistic textures, 70mm film stock. No text, no letters, no inscriptions, no modern objects.",
+        "styl": "hiperrealistyczna kinowa fotografia (21:9, 70mm, anamorfika)"
       }
     },
     {
@@ -1894,22 +1999,38 @@
           {
             "id": "czwarty-stol",
             "stan": "otwarty",
-            "opis": "Czwarty stół z Epoki I wciąż czeka: gość, który wziął sam, czy przodek, który umie wybaczyć."
+            "opis": "Czwarty stół z Epoki I wciąż czeka: gość, który wziął sam, czy przodek, który umie wybaczyć.",
+            "byty": [
+              "pandora",
+              "empusa-korynt",
+              "morowa-panna"
+            ]
           },
           {
             "id": "warunek-barbarossy",
             "stan": "otwarty",
-            "opis": "Dlaczego cesarz woli płacić, żeby gość wyszedł, zamiast przyjąć go przy stole?"
+            "opis": "Dlaczego cesarz woli płacić, żeby gość wyszedł, zamiast przyjąć go przy stole?",
+            "byty": [
+              "barbarossa-kyffhaeuser",
+              "kentaur-pelion",
+              "egungun"
+            ]
           },
           {
             "id": "wedrowny-dom-empusy",
             "stan": "otwarty",
-            "opis": "Czy ludzie nauczą się wypowiadać słowo-poznanie w porę, czy samo słowo stanie się rytuałem, który chybia?"
+            "opis": "Czy ludzie nauczą się wypowiadać słowo-poznanie w porę, czy samo słowo stanie się rytuałem, który chybia?",
+            "byty": [
+              "empusa-korynt"
+            ]
           },
           {
             "id": "kres-indry",
             "stan": "otwarty",
-            "opis": "Czy kres można oddać, czy tylko przekroczyć? Co znaczy wybrać własną granicę, gdy świat przestaje ją respektować?"
+            "opis": "Czy kres można oddać, czy tylko przekroczyć? Co znaczy wybrać własną granicę, gdy świat przestaje ją respektować?",
+            "byty": [
+              "indra"
+            ]
           }
         ]
       },
@@ -1938,6 +2059,12 @@
           }
         ],
         "podsumowanie": "Zagadka Sfinksa traci swą bezwzględną moc, gdy trafia na istotę pozbawioną lęku lub na złośliwy śmiech. Świat antyczny zderza się z gotycką ironią i mechanicznym automatyzmem."
+      },
+      "grafika": {
+        "obraz": "assets/wizualizacje/kronika-tom-1-epoka-5.jpg",
+        "podpis": "Zagadka ze spiżu: rozum, żart i głuchy krok",
+        "prompt": "Hyperrealistic cinematic photograph, ultra-wide 21:9 anamorphic frame. Rocky mountain pass at golden dusk: on a cliff a great winged lion with a calm female face and golden coat (Sphinx); on a Cretan beach a colossal smooth bronze automaton man with seams and a faint golden vein at his ankle, standing in the surf (Talos); perched on a fallen column a small hairy imp with cow ears, laughing (Lincoln Imp). Dry tall grass, dust in light, dramatic sky. Mood of a clash between dread, iron logic and mockery. 35mm anamorphic f/1.8, shallow depth of field, creamy bokeh, dramatic lighting, hyper-realistic textures, 70mm film stock. No text, no letters, no inscriptions, no modern objects.",
+        "styl": "hiperrealistyczna kinowa fotografia (21:9, 70mm, anamorfika)"
       }
     },
     {
@@ -2289,27 +2416,48 @@
           {
             "id": "czwarty-stol",
             "stan": "zamkniety",
-            "opis": "Przy czwartym stole siada ten, kto nie wie, że bierze — w Tomie I zasiada Pandora. Stół przestaje być pytaniem."
+            "opis": "Przy czwartym stole siada ten, kto nie wie, że bierze — w Tomie I zasiada Pandora. Stół przestaje być pytaniem.",
+            "byty": [
+              "pandora",
+              "empusa-korynt",
+              "morowa-panna"
+            ]
           },
           {
             "id": "wedrowny-dom-empusy",
             "stan": "otwarty",
-            "opis": "Czy słowo-poznanie straci moc, gdy pojawi się ktoś, kto naprawdę nie umie porównać złota ze światłem? I czy taką osobę da się tego nauczyć?"
+            "opis": "Czy słowo-poznanie straci moc, gdy pojawi się ktoś, kto naprawdę nie umie porównać złota ze światłem? I czy taką osobę da się tego nauczyć?",
+            "byty": [
+              "empusa-korynt"
+            ]
           },
           {
             "id": "warunek-barbarossy",
             "stan": "otwarty",
-            "opis": "Dlaczego cesarz woli płacić, żeby gość wyszedł, zamiast przyjąć go przy stole?"
+            "opis": "Dlaczego cesarz woli płacić, żeby gość wyszedł, zamiast przyjąć go przy stole?",
+            "byty": [
+              "barbarossa-kyffhaeuser",
+              "kentaur-pelion",
+              "egungun"
+            ]
           },
           {
             "id": "kres-indry",
             "stan": "otwarty",
-            "opis": "Czy kres można oddać, czy tylko przekroczyć? Co znaczy wybrać własną granicę, gdy świat przestaje ją respektować?"
+            "opis": "Czy kres można oddać, czy tylko przekroczyć? Co znaczy wybrać własną granicę, gdy świat przestaje ją respektować?",
+            "byty": [
+              "indra"
+            ]
           },
           {
             "id": "niewinny-bierca",
             "stan": "otwarty",
-            "opis": "Czy ten, kto bierze, nie wiedząc, że bierze, jest winny? Pandora zajrzała do naczynia — co się stanie, gdy naprawdę się dowie, co wypuściła?"
+            "opis": "Czy ten, kto bierze, nie wiedząc, że bierze, jest winny? Pandora zajrzała do naczynia — co się stanie, gdy naprawdę się dowie, co wypuściła?",
+            "byty": [
+              "kentaur-pelion",
+              "pandora",
+              "empusa-korynt"
+            ]
           }
         ]
       },
@@ -2338,6 +2486,12 @@
           }
         ],
         "podsumowanie": "Trzy porządki brania spotykają się przy pustym stole: dar z zakazem, przepis z jedną odpowiedzią i iluzja, która zjada gości. Żaden nie potrafi rozstrzygnąć pytania, a rozwiązanie przychodzi z zaskoczenia — siada ten, kto bierze, bo nie wie, że bierze."
+      },
+      "grafika": {
+        "obraz": "assets/wizualizacje/kronika-tom-1-epoka-6.jpg",
+        "podpis": "Czwarty stół: kto nie wie, że bierze",
+        "prompt": "Hyperrealistic cinematic photograph, ultra-wide 21:9 anamorphic frame. Ancient smoky tavern hall by candlelight, a long empty wooden table set for a fourth guest: a noble young woman in a silver gown, embroidered veil and golden crown beside a large terracotta jar (Pandora); an unnaturally tall gaunt pale woman in a white burial shroud holding a small red cloth (Morowa Panna); at the far end a beautiful stranger whose form shimmers like a mirage, half-dissolving (Empusa). Hollow chairs, dust, moths around flames. Mood of three ways of taking and an empty place. 35mm anamorphic f/1.8, shallow depth of field, creamy bokeh, dramatic chiaroscuro, hyper-realistic textures, 70mm film stock. No text, no letters, no inscriptions, no modern objects.",
+        "styl": "hiperrealistyczna kinowa fotografia (21:9, 70mm, anamorfika)"
       }
     },
     {
@@ -2694,27 +2848,48 @@
           {
             "id": "wedrowny-dom-empusy",
             "stan": "otwarty",
-            "opis": "Czy słowo-poznanie straci moc, gdy pojawi się ktoś, kto mówi „nie słyszę rozkazu”?"
+            "opis": "Czy słowo-poznanie straci moc, gdy pojawi się ktoś, kto mówi „nie słyszę rozkazu”?",
+            "byty": [
+              "empusa-korynt"
+            ]
           },
           {
             "id": "warunek-barbarossy",
             "stan": "otwarty",
-            "opis": "Dlaczego cesarz woli płacić, żeby gość wchodził — i czy dawny dług da się oddać komuś innemu?"
+            "opis": "Dlaczego cesarz woli płacić, żeby gość wchodził — i czy dawny dług da się oddać komuś innemu?",
+            "byty": [
+              "barbarossa-kyffhaeuser",
+              "kentaur-pelion",
+              "egungun"
+            ]
           },
           {
             "id": "kres-indry",
             "stan": "otwarty",
-            "opis": "Czy kres można oddać, czy tylko przekroczyć — i co zostaje z pierwszego, gdy nikt nie idzie za nim?"
+            "opis": "Czy kres można oddać, czy tylko przekroczyć — i co zostaje z pierwszego, gdy nikt nie idzie za nim?",
+            "byty": [
+              "indra"
+            ]
           },
           {
             "id": "niewinny-bierca",
             "stan": "otwarty",
-            "opis": "Czy ten, kto bierze, nie wiedząc, że bierze, jest gościem czy złodziejem — a woda zostawiona na progu to dar czy dług?"
+            "opis": "Czy ten, kto bierze, nie wiedząc, że bierze, jest gościem czy złodziejem — a woda zostawiona na progu to dar czy dług?",
+            "byty": [
+              "kentaur-pelion",
+              "pandora",
+              "empusa-korynt"
+            ]
           },
           {
             "id": "pierwszy-w-linii",
             "stan": "otwarty",
-            "opis": "Nowy: czy pierwszy w linii jest panem, czy tylko pierwszym narzędziem porządku — i kto wypowiada słowo końca?"
+            "opis": "Nowy: czy pierwszy w linii jest panem, czy tylko pierwszym narzędziem porządku — i kto wypowiada słowo końca?",
+            "byty": [
+              "protostates",
+              "knecht-z-koptos",
+              "syama-i-sarvara"
+            ]
           }
         ]
       },
@@ -2743,6 +2918,12 @@
           }
         ],
         "podsumowanie": "Trzy porządki pierwszego spotykają się w jednym przejściu: front, który zatrzymuje żywych; rozkaz, który nosi wodę; i droga, która prowadzi umarłych. Żaden nie wie, kto jest pierwszy — a rozwiązanie przychodzi z boku: pierwszy istnieje tylko dopóki ktoś idzie za nim, a woda zostaje na progu, bo nikt nie wypowiedział słowa końca."
+      },
+      "grafika": {
+        "obraz": "assets/wizualizacje/kronika-tom-1-epoka-7.jpg",
+        "podpis": "Kolejność: nikt nie szedł za pierwszym",
+        "prompt": "Hyperrealistic cinematic photograph, ultra-wide 21:9 anamorphic frame. Narrow mountain gorge at first light: a silent warrior in a plumed Corinthian helmet, crimson tunic and bronze greaves, his face an empty dark void beneath the helm (Protostates); approaching a small wooden pestle in linen rags with a knot for a head, carrying a brass water jar (Knecht); from the left two enormous dogs, one coal-black and one brown-spotted, each with a second pair of eyes above the normal ones (Syama and Sarvara). Cold mist, wet stones, a single trail. Mood of three orders of 'first' meeting at a crossing. 35mm anamorphic f/1.8, shallow depth of field, creamy bokeh, dramatic lighting, hyper-realistic textures, 70mm film stock. No text, no letters, no inscriptions, no modern objects.",
+        "styl": "hiperrealistyczna kinowa fotografia (21:9, 70mm, anamorfika)"
       }
     }
   ],

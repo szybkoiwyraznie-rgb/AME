@@ -129,17 +129,32 @@
       {
         "id": "czwarty-stol",
         "stan": "otwarty",
-        "opis": "Kto siada przy czwartym stole: gość, który wziął sam, czy przodek, który umie wybaczyć?"
+        "opis": "Kto siada przy czwartym stole: gość, który wziął sam, czy przodek, który umie wybaczyć?",
+        "byty": [
+          "pandora",
+          "empusa-korynt",
+          "morowa-panna"
+        ]
       },
       {
         "id": "wino-w-uczcie",
         "stan": "zamkniety",
-        "opis": "Związek kentaura z winem i porządkiem Lapitów zostaje wyjaśniony; słabnie strach przed ucztą."
+        "opis": "Związek kentaura z winem i porządkiem Lapitów zostaje wyjaśniony; słabnie strach przed ucztą.",
+        "byty": [
+          "egungun",
+          "kentaur-pelion",
+          "barbarossa-kyffhaeuser"
+        ]
       },
       {
         "id": "warunek-barbarossy",
         "stan": "otwarty",
-        "opis": "Dlaczego cesarz woli płacić, żeby gość wyszedł, zamiast przyjąć go przy stole?"
+        "opis": "Dlaczego cesarz woli płacić, żeby gość wyszedł, zamiast przyjąć go przy stole?",
+        "byty": [
+          "barbarossa-kyffhaeuser",
+          "kentaur-pelion",
+          "egungun"
+        ]
       }
     ]
   },
@@ -147,5 +162,11 @@
     "utworzono": "2026-08-29",
     "autor": "agent Areny — pierwsza epoka Tomu I",
     "wersja": 1
+  },
+  "grafika": {
+    "obraz": "assets/wizualizacje/kronika-tom-1-epoka-1.jpg",
+    "podpis": "Trzy stoły: przodek, gospodarz i gość",
+    "prompt": "Hyperrealistic cinematic photograph, ultra-wide 21:9 anamorphic frame. Ancient smoky tavern hall at night: a figure entirely wrapped in towering layered fabrics of silk and velvet stitched with cowrie shells, beads and mirrors (Yoruba ancestor spirit) at the first table; a sleeping emperor with a flaming red beard growing through a round stone table, head on his hand (Barbarossa) at the second; a centaur with a man's torso and full horse body at the third. Warm torchlight, palm-oil smoke, dried herbs, clay cups. Mood of an uneasy feast about hospitality and audacity. 35mm anamorphic f/1.8, shallow depth of field, creamy bokeh, dramatic chiaroscuro, hyper-realistic textures, 70mm film stock. No text, no letters, no inscriptions, no modern objects.",
+    "styl": "hiperrealistyczna kinowa fotografia (21:9, 70mm, anamorfika)"
   }
 }

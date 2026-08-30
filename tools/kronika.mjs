@@ -358,6 +358,7 @@ export function przeliczEpoke({ tom, epoka, indeks, kanon, stan, watkiPoprzednie
     meta: epoka.meta || null,
     slug: epoka.slug,
     tytul: epoka.tytul || '',
+    grafika: epoka.grafika || null,
   };
 }
 
@@ -406,6 +407,7 @@ export function zbudujPodsumowanieTomu({ tom, epoki, indeks, kanon }) {
       stanPo: w.stanPo,
       konsekwencje: w.konsekwencje,
       narrator: w.narrator,
+      grafika: w.grafika,
     })),
     stanPo: wynikTomu.stan,
     walidacja: wynikTomu.ok,
@@ -877,6 +879,21 @@ export function wykresPaliwaSVG(epoki, { szer = 880, wysokosc = 300 } = {}) {
   </div>`;
 }
 
+/** Hero epoki: kluczowe ujęcie (pregenerowana grafika) z podpisem i promptem. */
+export function heroEpokiHTML(grafika) {
+  if (!grafika?.obraz) return '';
+  const src = grafika.obraz.startsWith('assets/') ? `../${grafika.obraz}` : grafika.obraz;
+  return `
+    <figure class="hero-grafika">
+      <img src="${esc(src)}" alt="${esc(grafika.podpis || 'Kronika — kluczowe ujęcie epoki')}" loading="eager">
+      <figcaption>
+        <strong>${esc(grafika.podpis || '')}</strong>
+        <span class="muted">kluczowe ujęcie epoki — ${esc(grafika.styl || 'hiperrealistyczna kinowa fotografia')}</span>
+        ${grafika.prompt ? `<details class="prompt"><summary>Prompt wizualizacji</summary><pre>${esc(grafika.prompt)}</pre></details>` : ''}
+      </figcaption>
+    </figure>`;
+}
+
 /** W5 — słupki dominacji kultur/kultów (per epoka i na końcu Tomu).
  *  `dopisek` (opcjonalny) to dodatkowy tekst obok wartości, np. „7 bytów”. */
 export function slupkiDominacjiSVG(wiersze, { szer = 640, wysokosc = null } = {}) {
@@ -960,6 +977,160 @@ export function dominacjeKulturTomu(podsumowanie) {
       suma: g.suma,
     }))
     .sort((a, b) => b.suma - a.suma);
+}
+
+/* ---- Silnik Kronikarza: samonapędzająca fabuła (R1–R5, 2026-08-30) --------
+ * Maszyna prowadzi fabułę (kto, gdzie, o co, z jakim skutkiem), agent pisze
+ * prozę, właściciel zatwierdza kanon. Budżet i stanie świata brane z summary.
+ */
+
+/** Byty związane z OTWARTYMI wątkami (R1) — z pola `byty` wątku. */
+export function bytyOtwartychWatkow(podsumowanie) {
+  const ostatnia = (podsumowanie?.epoki || []).at(-1);
+  const set = new Set();
+  for (const w of ostatnia?.konsekwencje?.watki || []) {
+    if (w.stan === 'otwarty') for (const s of w.byty || []) set.add(s);
+  }
+  return set;
+}
+
+/** Byty biorące udział w ostatnich `n` epokach (zmęczenie, R3/R4). */
+export function bytyOstatnichEpok(podsumowanie, n = 2) {
+  const set = new Set();
+  for (const e of (podsumowanie?.epoki || []).slice(-n)) {
+    for (const u of e.uczestnicy || []) set.add(u.slug);
+  }
+  return set;
+}
+
+/** Agenda Tomu — co „wisi” po ostatniej epoce. Sprzęga Kronikę z Pętlą
+ *  Jakości: to, co tu wisi, jest kandydatem na C1 (pogłębienie) i C3 (SKIT). */
+export function agendaTomu(podsumowanie, indeks) {
+  const ostatnia = (podsumowanie?.epoki || []).at(-1);
+  const paliwo = podsumowanie?.stanPo?.paliwo || {};
+  const watki = (ostatnia?.konsekwencje?.watki || [])
+    .filter((w) => w.stan === 'otwarty')
+    .map((w) => ({
+      id: w.id,
+      opis: w.opis || '',
+      byty: w.byty || [],
+    }));
+  const slabi = Object.entries(paliwo)
+    .filter(([, p]) => Number(p) < 12)
+    .sort((a, b) => a[1] - b[1])
+    .map(([slug, p]) => ({ slug, paliwo: p }));
+  const kultury = new Map();
+  for (const e of (podsumowanie?.epoki || []).slice(-3)) {
+    for (const d of e.konsekwencje?.dominacje || []) {
+      if ((d.delta || 0) !== 0) kultury.set(d.kultura, (kultury.get(d.kultura) || 0) + 1);
+    }
+  }
+  const ciche = [...kultury.entries()]
+    .filter(([, glosy]) => glosy === 0)
+    .map(([kultura]) => ({ kultura, nazwa: nazwaKultury(kultura) }));
+  return { watki, slabi, ciche, ostatnia: ostatnia?.slug || null };
+}
+
+/**
+ * Proponuje następną epokę: ranking 3-osobowych składów wg R1–R5.
+ * Deterministyczna (brak RNG) — ten sam stan zawsze daje tę samą listę.
+ */
+export function proponujEpoke(podsumowanie, indeks, { limit = 3 } = {}) {
+  if (!podsumowanie?.stanPo || !indeks?.manifestacje) return [];
+  const katalog = indeks.manifestacje;
+  const slugi = katalog.map((m) => m.slug);
+  const ostatnia = (podsumowanie.epoki || []).at(-1);
+  const poprzedni = new Set((ostatnia?.uczestnicy || []).map((u) => u.slug));
+  const wwatki = bytyOtwartychWatkow(podsumowanie);
+  const ostatnie2 = bytyOstatnichEpok(podsumowanie, 2);
+  const paliwo = podsumowanie.stanPo.paliwo || {};
+  const zasieg = new Map((podsumowanie.stanPo.zasieg || []).map((z) => [z.slug, z.wielkosc]));
+  const relacje = (ostatnia?.konsekwencje?.relacje || []).flatMap((r) => [r.od, r.do]);
+  const skitySlugi = new Set(
+    (indeks.skity || []).map((s) =>
+      [...new Set((s.uczestnicy || []).map((u) => (typeof u === 'string' ? u : u.slug)))].sort().join('|')
+    )
+  );
+  const powiazania = new Map(katalog.map((m) => [m.slug, new Set((m.powiazania || []).map((p) => (typeof p === 'string' ? p : p.slug)))]));
+
+  /** Waga bytu (R1 wątek, R2 zasięg, R5 relacja; kara za świeżość R3). */
+  const waga = (s) => {
+    let w = 0;
+    if (wwatki.has(s)) w += 3;
+    if (relacje.includes(s)) w += 2;
+    if ((zasieg.get(s) || 0) >= 0.4) w += 1;
+    if ((paliwo[s] || 0) >= 15) w += 1;
+    if (poprzedni.has(s)) w -= 1.5; // R3: nie za często
+    if (!ostatnie2.has(s)) w += 0.5; // R4: oddech — świeży byt z kartoteki
+    return w;
+  };
+
+  const kandydaci = [];
+  const top = [...slugi].sort((a, b) => waga(b) - waga(a)).slice(0, 12);
+  for (let i = 0; i < top.length; i++) {
+    for (let j = i + 1; j < top.length; j++) {
+      for (let k = j + 1; k < top.length; k++) {
+        const sklad = [top[i], top[j], top[k]];
+        const klucz = [...sklad].sort().join('|');
+        if (skitySlugi.has(klucz)) continue; // skład już gral
+        const zPoprzedniej = sklad.filter((s) => poprzedni.has(s)).length;
+        if (zPoprzedniej > 1) continue; // R3: max 1 powtórka
+        const swiezy = sklad.filter((s) => !ostatnie2.has(s));
+        if (swiezy.length < 1) continue; // R4: min 1 nowy
+        if (sklad.some((s) => (paliwo[s] ?? 0) < 8)) continue; // bramka paliwa
+        // R5: co najmniej jedna para w relacji/powiązaniu
+        const polaczeni = [];
+        for (let a = 0; a < 3; a++) {
+          for (let b = a + 1; b < 3; b++) {
+            const x = sklad[a], y = sklad[b];
+            if (powiazania.get(x)?.has(y) || relacje.includes(x) && relacje.includes(y)) polaczeni.push(`${x}↔${y}`);
+          }
+        }
+        if (!polaczeni.length) continue;
+        const wynik = waga(sklad[0]) + waga(sklad[1]) + waga(sklad[2]) + polaczeni.length * 0.5 + swiezy.length * 0.5;
+        kandydaci.push({ sklad, wynik, polaczeni, swiezy: swiezy.length, powody: [] });
+      }
+    }
+  }
+
+  kandydaci.sort((a, b) => b.wynik - a.wynik);
+  const wyniki = [];
+  const widziane = new Set();
+  const wybraneSkłady = []; // różnorodność dróg: max 1 wspólny byt z wcześniejszymi
+  for (const k of kandydaci) {
+    const klucz = [...k.sklad].sort().join('|');
+    if (widziane.has(klucz)) continue;
+    if (
+      wybraneSkłady.length &&
+      wybraneSkłady.some(
+        (w) => k.sklad.filter((s) => w.includes(s)).length > 1
+      )
+    ) {
+      continue;
+    }
+    widziane.add(klucz);
+    wybraneSkłady.push(k.sklad);
+    const powody = [];
+    for (const s of k.sklad) {
+      if (wwatki.has(s)) powody.push('R1: otwarty wątek');
+      if (relacje.includes(s)) powody.push('R5: niedomknięta relacja');
+      if (!ostatnie2.has(s)) powody.push('R4: oddech — nowy w Tomie');
+      if ((zasieg.get(s) || 0) >= 0.4) powody.push('R2: silny zasięg');
+    }
+    const nazwy = Object.fromEntries(katalog.map((m) => [m.slug, m.nazwa]));
+    const watkiPowiazane = [...new Set(
+      (k.sklad || []).filter((s) => wwatki.has(s)).map((s) => s)
+    )];
+    wyniki.push({
+      sklad: k.sklad.map((slug) => ({ slug, nazwa: nazwy[slug] || slug })),
+      wynik: Math.round(k.wynik * 10) / 10,
+      powody: [...new Set(powody)].slice(0, 5),
+      polaczeni: k.polaczeni,
+      watki: watkiPowiazane.length,
+    });
+    if (wyniki.length >= limit) break;
+  }
+  return wyniki;
 }
 
 /** W6 — diagram relacji: węzły na elipsie, łuki wg kierunku relacji. */
@@ -1454,6 +1625,49 @@ html[data-motyw="ciemny"] {
   margin-bottom: 24px;
   box-shadow: 0 4px 16px rgba(0,0,0,0.03);
 }
+/* Key-art epoki (Kronika, 2026-08-30): hiperrealistyczna kinowa fotografia 21:9 */
+.hero-grafika {
+  margin: 18px 0 0;
+}
+.hero-grafika img {
+  width: 100%;
+  aspect-ratio: 21 / 9;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  display: block;
+  background: var(--card-alt);
+}
+.hero-grafika figcaption {
+  color: var(--muted);
+  font-size: 13px;
+  margin-top: 8px;
+  line-height: 1.5;
+}
+.hero-grafika figcaption .styl {
+  font-style: italic;
+}
+.hero-grafika details {
+  margin-top: 6px;
+  font-size: 12px;
+}
+.hero-grafika details summary {
+  cursor: pointer;
+  color: var(--accent);
+  font-weight: 600;
+}
+.hero-grafika details pre {
+  white-space: pre-wrap;
+  overflow-x: auto;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: var(--code);
+  border: 1px solid var(--line);
+  margin: 6px 0 0;
+  font-size: 12px;
+  max-height: 260px;
+  overflow-y: auto;
+}
 .hero h1 {
   margin: 8px 0 8px;
   font-size: 30px;
@@ -1823,7 +2037,7 @@ th {
 /* EPOKA CARDS (TOM) */
 .epoka-card {
   display: grid;
-  grid-template-columns: 60px 1fr auto;
+  grid-template-columns: 60px 96px 1fr auto;
   gap: 14px;
   align-items: center;
   border: 1px solid var(--line);
@@ -1834,6 +2048,14 @@ th {
   text-decoration: none;
   margin-bottom: 12px;
   transition: all .15s ease;
+}
+.epoka-mini {
+  width: 96px;
+  aspect-ratio: 21 / 9;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px solid var(--line);
+  background: var(--card-alt);
 }
 .epoka-card:hover {
   border-color: var(--accent);
@@ -1902,6 +2124,49 @@ li { margin: 8px 0; }
 .pager-btn:hover {
   background: var(--code);
   border-color: var(--accent);
+}
+
+/* ROZSTAJE — drogi dalej (silnik Kronikarza, 2026-08-30) */
+.rozstaje-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 12px;
+  margin-top: 14px;
+}
+.rozstaje-karta {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 14px 16px;
+  background: var(--card-alt);
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  gap: 12px;
+  align-items: start;
+  transition: all .15s ease;
+}
+.rozstaje-karta:hover {
+  border-color: var(--accent);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.04);
+}
+.rozstaje-nr {
+  font-weight: 700;
+  color: var(--accent);
+  font-size: 14px;
+  text-align: center;
+  border-right: 1px solid var(--line);
+  padding-right: 10px;
+  padding-top: 4px;
+}
+.rozstaje-sklad {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 8px;
+}
+.rozstaje-powody {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
 }
 
 /* MODAL KARTOTEKI */
@@ -2457,6 +2722,9 @@ export function generujRaportHTML(dane) {
   // Dialog SKITu
   const dialogHtml = formatujDialogHTML(dane.skitTekst);
 
+  // Grafika: hero epoki (pregenerowane kluczowe ujęcie)
+  const hero = heroEpokiHTML(dane.grafika);
+
   // S1: W1 ramka, W8 dziennik, W3 zasięgi, W5 dominacje, W6 relacje
   const nazwyEpoki = new Map(dane.uczestnicy.map((u) => [u.slug, u.nazwa]));
   const ramka = ramkaEpokiHTML({ pytanie: dane.pytanie, iskra: dane.iskra, przebieg: dane.przebieg, meta: dane.meta });
@@ -2529,6 +2797,8 @@ ${generujTopbarHTML('kronika')}
     </div>
   </div>
 </div>
+
+${hero}
 
 ${ramka}
 
@@ -2693,10 +2963,14 @@ export function generujRaportTomuHTML(podsumowanie, indeks, landD = '', manifest
         .join(' ');
 
       const uczestnicyIkony = (e.uczestnicy || []).map((u) => getEmoji(u.slug)).join(' ');
+      const miniatura = e.grafika?.obraz
+        ? `<img class="epoka-mini" src="../${esc(e.grafika.obraz)}" alt="${esc(e.grafika.podpis || e.tytul)}" loading="lazy">`
+        : '';
 
       return `
       <a class="epoka-card" id="kronika-${esc(e.slug)}" data-byt="${(e.uczestnicy || []).map((u) => u.slug).join(' ')}" data-slug="${esc(e.slug)}" href="kronika-${e.slug}.html">
         <div class="epoka-nr">Epoka<br>${nrRzymski}</div>
+        ${miniatura}
         <div>
           <div class="epoka-ttl">${esc(e.tytul)} <span class="chip ${e.walidacja ? 'up' : 'down'}">${e.walidacja ? 'OK' : 'Błąd'}</span></div>
           <div class="epoka-meta">Uczestnicy: ${uczestnicyIkony} · Oś: MIT ${e.stanPo.os.mit}% / RAC ${e.stanPo.os.racjonalizacja}%</div>
@@ -2755,6 +3029,34 @@ export function generujRaportTomuHTML(podsumowanie, indeks, landD = '', manifest
   });
 
   const slugiFiltra = [...nazwy.keys()].sort();
+
+  // ROZSTAJE (2026-08-30): silnik Kronikarza proponuje drogi dalej — ranking
+  // składów wg R1–R5. Są to PROPOZYCJE (kandydaci na kolejną epokę), nie kanon
+  // — zatwierdza je właściciel; każda droga otwiera inne rozwinięcie.
+  const propozycje = proponujEpoke(s, indeks, { limit: 4 });
+  const kartyRozstajow = propozycje
+    .map((p, i) => {
+      const sklad = p.sklad.map((u) => `${getEmoji(u.slug)} ${esc(u.nazwa)}`).join(' · ');
+      const powody = p.powody.map((r) => `<span class="chip">${esc(r)}</span>`).join(' ');
+      return `
+      <div class="rozstaje-karta">
+        <div class="rozstaje-nr">Droga ${'ABCD'[i] || i + 1}</div>
+        <div>
+          <div class="rozstaje-sklad">${sklad}</div>
+          <div class="rozstaje-powody">${powody}</div>
+        </div>
+      </div>`;
+    })
+    .join('');
+  const rozstaje = propozycje.length
+    ? `
+    <div class="card rozstaje">
+      <h2>Rozstaje — drogi dalej</h2>
+      <div class="card-sub">Silnik Kronikarza (reguły R1–R5) wyznacza kandydatów na kolejną epokę. To propozycje czekające na spisanie — kanon zatwierdza właściciel; każda droga otwiera inne rozwinięcie.</div>
+      <div class="rozstaje-grid">${kartyRozstajow}</div>
+      <div class="muted" style="margin-top:10px">Punktacja wg R1 (otwarty wątek), R2 (zasięg), R3 (zmęczenie — max 1 powtórka), R4 (oddech — min 1 nowy byt), R5 (niedomknięte relacje).</div>
+    </div>`
+    : '';
   return `<!doctype html>
 <html lang="pl">
 <head>
@@ -2884,6 +3186,9 @@ ${mapaSvg}
     </div>
   </div>
 </div>
+
+<!-- ROZSTAJE: drogi dalej (silnik Kronikarza, R1–R5) -->
+${rozstaje}
 
 <div class="foot">
   Archiwum Manifestacji Eterycznych · Tom I: Kronika Trzech Stołów · System zsynchronizowany
@@ -3069,6 +3374,7 @@ async function main() {
           stanPo: e.stanPo,
           konsekwencje: e.konsekwencje,
           narrator: e.narrator,
+          grafika: e.grafika,
           wszystkieManifestacje: indeks.manifestacje || [],
           landD,
           manifestacjePelne,

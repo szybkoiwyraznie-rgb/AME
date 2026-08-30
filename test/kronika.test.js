@@ -13,6 +13,7 @@ import {
   PLIK_TOM_1,
   PLIK_EPOKA_1,
   PLIK_INDEKSU,
+  PLIK_PODSUMOWANIA,
   PLIK_KANONU,
   KATALOG_KRONIKA,
   wykresOsiSVG,
@@ -33,6 +34,10 @@ import {
   generujRaportHTML,
   generujRaportTomuHTML,
   ramkaEpokiHTML,
+  heroEpokiHTML,
+  bytyOtwartychWatkow,
+  agendaTomu,
+  proponujEpoke,
 } from '../tools/kronika.mjs';
 
 async function wczytaj(path) {
@@ -556,4 +561,105 @@ test('U4: epoka nie może być własnym poprzednikiem/kontynuacją', async () =>
   const zepsuta = { ...epoka1, meta: { ...(epoka1.meta || {}), poprzednik: 'epoka-1' } };
   const wynik = przeliczEpoke({ tom, epoka: zepsuta, indeks, kanon, stan: structuredClone(tom.stanStart), watkiPoprzednie: new Map() });
   assert.ok(wynik.bledy.some((b) => /własnym poprzednikiem/.test(b)));
+});
+
+/* ---- Silnik Kronikarza (2026-08-30): hero grafik, R1–R5, rozstaje ---- */
+
+test('heroEpokiHTML: figcaption, podpis, styl i prompt w details (bez XSS)', () => {
+  const html = heroEpokiHTML({
+    obraz: 'assets/wizualizacje/kronika-tom-1-epoka-1.jpg',
+    podpis: 'Trzy stoły <script>',
+    prompt: 'kinowy kadr <b>',
+    styl: 'hiperrealistyczna kinowa fotografia',
+  });
+  assert.match(html, /class="hero-grafika"/);
+  assert.match(html, /src="\.\.\/assets\/wizualizacje\/kronika-tom-1-epoka-1\.jpg"/);
+  assert.match(html, /details class="prompt"/);
+  assert.match(html, /Trzy stoły &lt;script&gt;/);
+  assert.doesNotMatch(html, /<script>/);
+  assert.match(html, /figcaption/);
+});
+
+test('heroEpokiHTML: pusty obiekt nie generuje figure', () => {
+  assert.equal(heroEpokiHTML(null), '');
+  assert.equal(heroEpokiHTML({}), '');
+});
+
+test('R1: bytyOtwartychWatkow zbiera slugi z otwartych wątków ostatniej epoki', async () => {
+  const podsumowanie = await wczytaj(PLIK_PODSUMOWANIA);
+  const byty = bytyOtwartychWatkow(podsumowanie);
+  assert.ok(byty.size > 0);
+  assert.ok(byty.has('empusa-korynt'));
+  assert.ok(byty.has('barbarossa-kyffhaeuser'));
+  assert.ok(byty.has('protostates'));
+  // wątki zamknięte nie wliczają się
+});
+
+test('R1–R5: proponujEpoke zwraca deterministyczny ranking zróżnicowanych składów', async () => {
+  const [indeks, podsumowanie] = await Promise.all([
+    wczytaj(PLIK_INDEKSU),
+    wczytaj(PLIK_PODSUMOWANIA),
+  ]);
+  const a = proponujEpoke(podsumowanie, indeks, { limit: 4 });
+  const b = proponujEpoke(podsumowanie, indeks, { limit: 4 });
+  assert.equal(JSON.stringify(a), JSON.stringify(b), 'determinizm');
+  assert.ok(a.length >= 1 && a.length <= 4);
+  for (const p of a) {
+    assert.equal(p.sklad.length, 3);
+    // R3: max 1 byt z poprzedniej epoki
+    const poprzedni = new Set((podsumowanie.epoki.at(-1).uczestnicy || []).map((u) => u.slug));
+    const powtorki = p.sklad.filter((u) => poprzedni.has(u.slug)).length;
+    assert.ok(powtorki <= 1, `R3: ${p.sklad.map((u) => u.slug).join(',')} ma ${powtorki} powtórek`);
+    // R4: min 1 byt spoza ostatnich 2 epok
+    const ostatnie2 = new Set(
+      podsumowanie.epoki.slice(-2).flatMap((e) => (e.uczestnicy || []).map((u) => u.slug))
+    );
+    assert.ok(p.sklad.some((u) => !ostatnie2.has(u.slug)), 'R4: brak świeżego bytu');
+    assert.ok(p.wynik > 0);
+  }
+  // różnorodność dróg: max 1 wspólny byt między dwiema drogami
+  for (let i = 0; i < a.length; i++) {
+    for (let j = i + 1; j < a.length; j++) {
+      const wspolne = a[i].sklad.filter((u) => a[j].sklad.some((v) => v.slug === u.slug)).length;
+      assert.ok(wspolne <= 1, `drogi ${i}/${j} mają ${wspolne} wspólnych bytów`);
+    }
+  }
+});
+
+test('agendaTomu: otwarte wątki, słabe paliwo i ciche kultury', async () => {
+  const [indeks, podsumowanie] = await Promise.all([
+    wczytaj(PLIK_INDEKSU),
+    wczytaj(PLIK_PODSUMOWANIA),
+  ]);
+  const a = agendaTomu(podsumowanie, indeks);
+  assert.ok(Array.isArray(a.watki) && a.watki.length > 0);
+  assert.ok(a.watki.every((w) => w.id && Array.isArray(w.byty)));
+  assert.ok(Array.isArray(a.slabi));
+  assert.equal(a.ostatnia, 'epoka-7');
+});
+
+test('S1: raport Tomu zawiera miniatury epok i rozstaje silnika', async () => {
+  const [indeks, podsumowanie] = await Promise.all([
+    wczytaj(PLIK_INDEKSU),
+    wczytaj(PLIK_PODSUMOWANIA),
+  ]);
+  const html = generujRaportTomuHTML(podsumowanie, indeks);
+  assert.match(html, /epoka-mini/);
+  assert.match(html, /Rozstaje — drogi dalej/);
+  assert.match(html, /Droga A/);
+  assert.match(html, /R1: otwarty wątek/);
+});
+
+test('S1: raport epoki osadza hero-grafikę z promptem', async () => {
+  const [tom, epoka1, indeks, kanon] = await Promise.all([
+    wczytaj(PLIK_TOM_1),
+    wczytaj(PLIK_EPOKA_1),
+    wczytaj(PLIK_INDEKSU),
+    wczytaj(PLIK_KANONU),
+  ]);
+  const wynik = przeliczEpoke({ tom, epoka: epoka1, indeks, kanon, stan: structuredClone(tom.stanStart), watkiPoprzednie: new Map() });
+  const html = generujRaportHTML(wynik, { manifestacje: indeks.manifestacje });
+  assert.match(html, /class="hero-grafika"/);
+  assert.match(html, /src="\.\.\/assets\/wizualizacje\/kronika-tom-1-epoka-1\.jpg"/);
+  assert.match(html, /details class="prompt"/);
 });

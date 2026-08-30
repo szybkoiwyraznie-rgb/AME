@@ -97,6 +97,49 @@ html[data-motyw="ciemny"] {
   margin-bottom: 24px;
   box-shadow: 0 4px 16px rgba(0,0,0,0.03);
 }
+/* Key-art epoki (Kronika, 2026-08-30): hiperrealistyczna kinowa fotografia 21:9 */
+.hero-grafika {
+  margin: 18px 0 0;
+}
+.hero-grafika img {
+  width: 100%;
+  aspect-ratio: 21 / 9;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  display: block;
+  background: var(--card-alt);
+}
+.hero-grafika figcaption {
+  color: var(--muted);
+  font-size: 13px;
+  margin-top: 8px;
+  line-height: 1.5;
+}
+.hero-grafika figcaption .styl {
+  font-style: italic;
+}
+.hero-grafika details {
+  margin-top: 6px;
+  font-size: 12px;
+}
+.hero-grafika details summary {
+  cursor: pointer;
+  color: var(--accent);
+  font-weight: 600;
+}
+.hero-grafika details pre {
+  white-space: pre-wrap;
+  overflow-x: auto;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: var(--code);
+  border: 1px solid var(--line);
+  margin: 6px 0 0;
+  font-size: 12px;
+  max-height: 260px;
+  overflow-y: auto;
+}
 .hero h1 {
   margin: 8px 0 8px;
   font-size: 30px;
@@ -466,7 +509,7 @@ th {
 /* EPOKA CARDS (TOM) */
 .epoka-card {
   display: grid;
-  grid-template-columns: 60px 1fr auto;
+  grid-template-columns: 60px 96px 1fr auto;
   gap: 14px;
   align-items: center;
   border: 1px solid var(--line);
@@ -477,6 +520,14 @@ th {
   text-decoration: none;
   margin-bottom: 12px;
   transition: all .15s ease;
+}
+.epoka-mini {
+  width: 96px;
+  aspect-ratio: 21 / 9;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px solid var(--line);
+  background: var(--card-alt);
 }
 .epoka-card:hover {
   border-color: var(--accent);
@@ -545,6 +596,49 @@ li { margin: 8px 0; }
 .pager-btn:hover {
   background: var(--code);
   border-color: var(--accent);
+}
+
+/* ROZSTAJE — drogi dalej (silnik Kronikarza, 2026-08-30) */
+.rozstaje-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 12px;
+  margin-top: 14px;
+}
+.rozstaje-karta {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 14px 16px;
+  background: var(--card-alt);
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  gap: 12px;
+  align-items: start;
+  transition: all .15s ease;
+}
+.rozstaje-karta:hover {
+  border-color: var(--accent);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.04);
+}
+.rozstaje-nr {
+  font-weight: 700;
+  color: var(--accent);
+  font-size: 14px;
+  text-align: center;
+  border-right: 1px solid var(--line);
+  padding-right: 10px;
+  padding-top: 4px;
+}
+.rozstaje-sklad {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 8px;
+}
+.rozstaje-powody {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
 }
 
 /* MODAL KARTOTEKI */
@@ -886,6 +980,16 @@ li { margin: 8px 0; }
     </div>
   </div>
 </div>
+
+
+    <figure class="hero-grafika">
+      <img src="../assets/wizualizacje/kronika-tom-1-epoka-1.jpg" alt="Trzy stoły: przodek, gospodarz i gość" loading="eager">
+      <figcaption>
+        <strong>Trzy stoły: przodek, gospodarz i gość</strong>
+        <span class="muted">kluczowe ujęcie epoki — hiperrealistyczna kinowa fotografia (21:9, 70mm, anamorfika)</span>
+        <details class="prompt"><summary>Prompt wizualizacji</summary><pre>Hyperrealistic cinematic photograph, ultra-wide 21:9 anamorphic frame. Ancient smoky tavern hall at night: a figure entirely wrapped in towering layered fabrics of silk and velvet stitched with cowrie shells, beads and mirrors (Yoruba ancestor spirit) at the first table; a sleeping emperor with a flaming red beard growing through a round stone table, head on his hand (Barbarossa) at the second; a centaur with a man's torso and full horse body at the third. Warm torchlight, palm-oil smoke, dried herbs, clay cups. Mood of an uneasy feast about hospitality and audacity. 35mm anamorphic f/1.8, shallow depth of field, creamy bokeh, dramatic chiaroscuro, hyper-realistic textures, 70mm film stock. No text, no letters, no inscriptions, no modern objects.</pre></details>
+      </figcaption>
+    </figure>
 
 
   <section class="ramka-epoki" id="ramka-epoki">
