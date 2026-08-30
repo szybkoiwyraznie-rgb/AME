@@ -2,7 +2,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
-import { htmlWpisu, htmlWarstwyWpisu, linkDoZrodla, htmlListy, htmlStronyTagu, htmlTagow, htmlDialogu, htmlSkitu, htmlBazySkitow, htmlNowosci, htmlKronik, htmlTomyIEpoki, esc, nastepnyMotyw, motywPoczatkowy, etykietaMotywu, MOTYWY, KLUCZ_MOTYWU, akcjeZZapytania } from '../app/ui.js';
+import { htmlWpisu, htmlWarstwyWpisu, linkDoZrodla, htmlListy, htmlStronyTagu, htmlTagow, htmlDialogu, htmlSkitu, htmlBazySkitow, htmlNowosci, htmlKronik, htmlTomyIEpoki, esc, nastepnyMotyw, motywPoczatkowy, etykietaMotywu, MOTYWY, KLUCZ_MOTYWU, akcjeZZapytania, tekstDoLektora } from '../app/ui.js';
 
 async function dane(plik = 'egungun') {
   const wpis = JSON.parse(await readFile(`data/manifestations/${plik}.json`, 'utf8'));
@@ -280,6 +280,26 @@ test('htmlDialogu: repliki, didaskalia i safety po escapowaniu', () => {
 test('htmlDialogu: pusty tekst nie produkuje paragrafów', () => {
   assert.equal(htmlDialogu(''), '');
   assert.equal(htmlDialogu(undefined), '');
+});
+
+test('tekstDoLektora: czyści markdown i didaskalia do czystego dialogu (lektor)', () => {
+  const tekst = `**Nessos:** [Stoi w brodzie.] Przewiozę na grzbiecie.
+
+**Śyāma i Śarvara:** My nie bierzemy [wskazuje psy] opłaty.`;
+  const mowa = tekstDoLektora(tekst);
+  assert.ok(mowa.startsWith('Nessos. Przewiozę na grzbiecie.'), 'mówca + kwestia, bez gwiazdek i didaskaliów');
+  assert.ok(mowa.includes('Śyāma i Śarvara. My nie bierzemy opłaty.'), 'didaskalia w środku usunięte, imię zachowane');
+  assert.ok(!mowa.includes('**') && !mowa.includes('[') && !mowa.includes(']'), 'brak markdownu i nawiasów');
+  assert.equal(tekstDoLektora(''), '');
+  assert.equal(tekstDoLektora(undefined), '');
+});
+
+test('htmlSkitu: przycisk lektora (data-lektor) obecny, nie psuje escapingu', async () => {
+  const { indeks } = await dane();
+  const skit = JSON.parse(await readFile('data/skity/plotno-i-kamien.json', 'utf8'));
+  const html = htmlSkitu(skit, indeks);
+  assert.match(html, /<button class="chip lektor"[^>]*data-lektor[^>]*>🔊 odsłuchaj<\/button>/, 'przycisk lektora');
+  assert.ok(!html.includes('<script>'), 'escaping nietknięty');
 });
 
 test('htmlSkitu: nagłówek „SKIT: …”, uczestnicy linkują do kart, meta widoczna', async () => {

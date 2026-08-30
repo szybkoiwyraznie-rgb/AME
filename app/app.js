@@ -1,7 +1,7 @@
 /**
  * app/app.js — bootstrap AME: ładuje indeks, mapę świata, spina UI.
  */
-import { stworzMape, PROGI_WARSTW, PODKLADY_ONLINE } from './map.js?v=c5-8';
+import { stworzMape, PROGI_WARSTW, PODKLADY_ONLINE } from './map.js?v=c5-9';
 import { zaladujIndeks, zaladujWpis, zaladujSkit, dopasowania, wylosujSlug } from './data.js?v=c5-1';
 import {
   htmlWpisu,
@@ -23,14 +23,16 @@ import {
   etykietaMotywu,
   KLUCZ_MOTYWU,
   akcjeZZapytania,
-} from './ui.js?v=c5-8';
-import { SZEROKOSC, WYSOKOSC } from './geo.js?v=c5-8';
+  tekstDoLektora,
+} from './ui.js?v=c5-9';
+import { SZEROKOSC, WYSOKOSC } from './geo.js?v=c5-9';
 
 const $ = (sel) => document.querySelector(sel);
 
 const stan = {
   indeks: null,
   wpis: null, // aktualnie otwarty wpis (pełny JSON)
+  skit: null, // aktualnie otwarty SKIT (pełny JSON) — źródło tekstu lektora
   filtr: null, // Set<slug> | null
   aktywnyTag: null,
   luki: false,
@@ -277,6 +279,33 @@ function kopiujLink(cel, przycisk) {
   navigator.clipboard.writeText(adres).then(() => pokaz(true), () => pokaz(false));
 }
 
+/* Lektor skitu (Web Speech API, C2): „🔊 odsłuchaj” czyta dialog na głos,
+ * „⏹ stop” przerywa. Bez API albo bez tekstu — przycisk grzecznie się poddaje
+ * (etykieta „🔇 niedostępne”), nic nie rzuca. Głos pl-PL, jeśli przeglądarka ma. */
+function przelaczLektora(przycisk) {
+  const synth = window.speechSynthesis;
+  if (!synth || !window.SpeechSynthesisUtterance || !stan.skit?.tekst) {
+    przycisk.textContent = '🔇 niedostępne';
+    return;
+  }
+  if (synth.speaking) {
+    synth.cancel(); // onend przywróci etykietę
+    return;
+  }
+  const wypowiedz = new SpeechSynthesisUtterance(tekstDoLektora(stan.skit.tekst));
+  wypowiedz.lang = 'pl-PL';
+  const glosy = synth.getVoices?.() ?? [];
+  const pl = glosy.find((g) => g.lang?.toLowerCase().startsWith('pl'));
+  if (pl) wypowiedz.voice = pl;
+  wypowiedz.onend = wypowiedz.onerror = () => {
+    przycisk.textContent = '🔊 odsłuchaj';
+    przycisk.setAttribute('aria-pressed', 'false');
+  };
+  przycisk.textContent = '⏹ stop';
+  przycisk.setAttribute('aria-pressed', 'true');
+  synth.speak(wypowiedz);
+}
+
 
 function szkicWarstwy(tytul, trescHtml, { wroc = null, kopia = null } = {}) {
   return `<div class="warstwa-tresc">
@@ -294,6 +323,8 @@ function szkicWarstwy(tytul, trescHtml, { wroc = null, kopia = null } = {}) {
 
 function zamknijWarstwe() {
   stan.warstwa = null;
+  stan.skit = null;
+  window.speechSynthesis?.cancel?.(); // lektor nie czyta po zamknięciu widoku
   const warstwa = $('#warstwa');
   warstwa.classList.remove('otwarta');
   warstwa.innerHTML = '';
@@ -385,6 +416,7 @@ async function otworzSkit(slug, { zBazy = true } = {}) {
   warstwaTrybPrzycisku('#przycisk-nowosci', false);
   try {
     const skit = await zaladujSkit(slug);
+    stan.skit = skit;
     warstwa.innerHTML = szkicWarstwy('Baza Skitów', htmlSkitu(skit, stan.indeks), {
       wroc: zBazy ? 'skity' : null,
       kopia: `skit:${slug}`,
@@ -581,6 +613,8 @@ function podepnijZdarzenia() {
 
   $('#warstwa').addEventListener('click', (e) => {
     if (e.target.closest('#zamknij-warstwe')) return zamknijWarstwe();
+    const lektor = e.target.closest('[data-lektor]');
+    if (lektor) return przelaczLektora(lektor);
     // Jeden closest() z listą atrybutów: wygoda dla użytkownika = trafienie w
     // najbliższy element, nie w jego kontekst (chip uczestnika siedzi w <article data-skit>).
     const kopia = e.target.closest('[data-kopia]');

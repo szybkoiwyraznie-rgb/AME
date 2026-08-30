@@ -211,6 +211,8 @@ a.chip { display: inline-block; text-decoration: none; }
 .chip.kopiuj { margin-top: 8px; }
 .chip.link { border-color: var(--akcent); color: var(--akcent); }
 .chip.link.wzmianka { border-style: dashed; }
+.chip.lektor { margin: 8px 0 0; }
+.chip.lektor[aria-pressed='true'] { background: var(--akcent); color: var(--akcent-tekst); border-color: var(--akcent); }
 
 /* ---- Mapa + panel ---- */
 .tresc { flex: 1; display: flex; min-height: 0; position: relative; }

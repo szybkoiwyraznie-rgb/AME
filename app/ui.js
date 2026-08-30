@@ -376,6 +376,25 @@ export function htmlDialogu(tekst) {
     .join('');
 }
 
+/**
+ * Treść SKITa → czysty tekst do lektora (Web Speech API).
+ * Usuwa znaczniki mówcy (`**Imię:**`), didaskalia `[…],` i białe znaki —
+ * zostaje sam dialog: „Nessos. Przewiozę na grzbiecie…”. Czysta funkcja:
+ * działa bez DOM, testowana jednostkowo.
+ */
+export function tekstDoLektora(tekst) {
+  const wiersze = String(tekst ?? '').split(/\n+/).map((l) => l.trim()).filter(Boolean);
+  const czesci = [];
+  for (const linia of wiersze) {
+    const m = linia.match(/^\*\*([^*\n]{1,40}):\*\*\s*([\s\S]*)$/);
+    const mowca = m ? m[1].trim() : '';
+    const reszta = (m ? m[2] : linia).replace(/\[[^\]\n]{1,400}\]/g, ' ').replace(/\s+/g, ' ').trim();
+    if (mowca) czesci.push(`${mowca}.`);
+    if (reszta) czesci.push(reszta);
+  }
+  return czesci.join(' ').trim();
+}
+
 /** Widok jednego SKITa (z pełnego pliku) wraz z listą uczestników. */
 export function htmlSkitu(s, indeks) {
   const uczestnicy = (s.uczestnicy ?? [])
@@ -385,6 +404,7 @@ export function htmlSkitu(s, indeks) {
   return `<article class="skit" data-skit="${esc(s.slug)}">
     ${naglowekSkitu(s.tytul)}
     <p class="skit-uczestnicy"><span>Uczestnicy:</span> ${uczestnicy}</p>
+    <button class="chip lektor" type="button" data-lektor title="Odsłuchaj skit na głos (Web Speech API)">🔊 odsłuchaj</button>
     <div class="skit-tekst">${htmlDialogu(s.tekst)}</div>
     ${meta}
   </article>`;
