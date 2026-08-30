@@ -1,6 +1,6 @@
 {
   "wersja": 3,
-  "buildTime": "2026-08-30T13:18:17.528Z",
+  "buildTime": "2026-08-30T21:50:09.124Z",
   "liczba": 20,
   "liczbaSkitow": 22,
   "kanon": {
@@ -1592,6 +1592,14 @@
     }
   ],
   "aktualizacje": [
+    {
+      "data": "2026-08-30 21:47",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "syama-i-sarvara",
+      "tytul": "Śyāma i Śarvara — czterookie psy Yamy, strażnicy drogi przodków",
+      "opis": "Pętla Jakości (C1): dopisana matka psów — Saramā, suka Indry z Rigwedy 10.108 (przekroczenie Rasā, odmowa łapówki Paṇich) oraz nowe źródło pierwotne."
+    },
     {
       "data": "2026-08-30 13:30",
       "typ": "skit",

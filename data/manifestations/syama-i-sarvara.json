@@ -18,7 +18,7 @@
     "lat": 25.3176,
     "lon": 82.9739
   },
-  "pochodzenie_i_kultura": "Religia wedyjska Indii: Rigweda 10.14 (hymn pogrzebowy do Yamy, przeł. R. T. H. Griffith, 1896) nazywa je „potomstwem Saramy, brązowymi, czterookimi”, „stróżami drogi” i „wysłannikami Yamy, wędrującymi wśród ludzi”; tradycja późniejsza (Atharwaweda, za „Encyclopedia of Indo-European Culture” J. P. Mallory'ego i D. Q. Adamsa) czyni z nich wysłanników wyszukujących umierających, a w przekazach klasycznych (Monier-Williams, Tilak) rozróżnia cętkowaną Śarvarę i ciemną Śyāmę. Jedna droga, jeden pan, jedno plemię.",
+  "pochodzenie_i_kultura": "Religia wedyjska Indii: Rigweda 10.14 (hymn pogrzebowy do Yamy, przeł. R. T. H. Griffith, 1896) nazywa je „potomstwem Saramy, brązowymi, czterookimi”, „stróżami drogi” i „wysłannikami Yamy, wędrującymi wśród ludzi”; tradycja późniejsza (Atharwaweda, za „Encyclopedia of Indo-European Culture” J. P. Mallory'ego i D. Q. Adamsa) czyni z nich wysłanników wyszukujących umierających, a w przekazach klasycznych (Monier-Williams, Tilak) rozróżnia cętkowaną Śarvarę i ciemną Śyāmę. Ich matką jest Saramā — suka Indry, która w Rigwedzie 10.108 przekroczyła wody Rasā, odnalazła krowy skradzione przez Paṇich i odrzuciła ich ofertę (krowy i „siostrzeństwo”); po matce psy mają bezwzględność wobec łapówek. Jedna droga, jeden pan, jedno plemię.",
   "wizualizacja": {
     "prompt": "Style: A wide-angle full-body cinematic photograph. The central objects/persons of the photo are visible from head to toe, standing centrally in the frame. No parts of the body are cropped.\n\nTwo large hounds standing side by side on a narrow dirt road at moonless midnight, one dark as new charcoal, the other brindled with pale patches; each head carrying a second small pair of eyes set above the ordinary ones, all four watching the road; the road runs between flooded rice fields and a line of cremation pyres, smoke rising to a starry sky, distant temple silhouettes, the Ganges glinting behind, cold blue silver light, damp earth and drifting mist.\n\nCaptured with a 35mm anamorphic lens at f/1.8. Shallow depth of field with a heavy, creamy bokeh background. Environmental portraiture. Dramatic cinematic lighting, sharp focus on the character, hyper-realistic textures of clothing and skin. Shot on 70mm film stock, ultra-wide 21:9 aspect ratio. --ar 21:9",
     "obraz": "assets/wizualizacje/syama-i-sarvara.jpg"
@@ -35,6 +35,11 @@
       "typ": "tekst źródłowy",
       "pozycja": "Rigweda 10.14 (przeł. R. T. H. Griffith, 1896; Internet Sacred Text Archive), w. 10–12 — „Run and outspeed the two dogs, Saramā’s offspring, brindled, four-eyed, upon thy happy pathway”; „those two dogs of thine, Yama, the watchers, four-eyed, who look on men and guard the pathway”; „Dark-hued, insatiate, with distended nostrils, Yama’s two envoys roam among the People”",
       "url": "https://www.sacred-texts.com/hin/rigveda/rv10014.htm"
+    },
+    {
+      "typ": "tekst źródłowy",
+      "pozycja": "Rigweda 10.108 (przeł. R. T. H. Griffith, 1896; Internet Sacred Text Archive), „Saramā. Paṇis.” — dialog suki Indry z Paṇimi: Saramā jako posłanka przekracza wody Rasā, znajduje skradzione krowy i odrzuca ofertę Paṇich („będziesz naszą siostrą”, w. 9), odpowiadając „nie znam ni braterstwa, ni siostrzeństwa” (w. 10); matka Sāramejów — psów Yamy",
+      "url": "https://www.sacred-texts.com/hin/rigveda/rv10108.htm"
     },
     {
       "typ": "encyklopedia",
@@ -95,6 +100,10 @@
       {
         "data": "2026-08-30 10:05",
         "opis": "Pętla Jakości C1: powiązanie z protostatesem — dwie strony jednego progu (przejście dla żywych i droga przodków)."
+      },
+      {
+        "data": "2026-08-30 21:47",
+        "opis": "Pętla Jakości (C1): dopisana matka psów — Saramā, suka Indry z Rigwedy 10.108 (przekroczenie Rasā, odmowa łapówki Paṇich) oraz nowe źródło pierwotne."
       }
     ]
   }
