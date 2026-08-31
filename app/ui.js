@@ -140,6 +140,11 @@ export function przyciskKopiowania(cel) {
   return `<button class="chip kopiuj-link" type="button" data-kopia="${esc(cel)}" title="Kopiuj adres tego widoku">⧉ kopiuj link</button>`;
 }
 
+/** Przycisk druku / zapisu PDF kartoteki (widok druku, media print). */
+export function przyciskDruku() {
+  return `<button class="chip drukuj" type="button" data-druk title="Drukuj / zapisz jako PDF">🖨 drukuj</button>`;
+}
+
 /**
  * Stopka wpisu i skitu: wyłącznie data utworzenia oraz data ostatniej
  * modyfikacji. Autor i opisy zmian zostają w pliku JSON oraz w feedzie
@@ -194,7 +199,7 @@ function chipyTagow(w, indeks) {
     .join('');
 }
 
-/** Pełny wpis kartoteki (sekcje I–VI wg protokołu MFM v1.4). `kronika` to
+/** Pełny wpis kartoteki (sekcje I–VII wg protokołu MFM v1.8). `kronika` to
  *  podsumowanie Tomu (summary.json) — jeśli podane, wpis dostaje sekcję
  *  „Tomy i Epoki” (E, 2026-08-30) z linkami do raportów. */
 export function htmlWpisu(w, indeks, kronika = null) {
@@ -291,6 +296,7 @@ export function htmlWarstwyWpisu(trescHtml, { slug = '', nazwa = '' } = {}) {
   return `<div class="warstwa-wpisu" role="dialog" aria-modal="true" tabindex="-1" aria-label="Kartoteka: ${esc(nazwa || slug)}">
   <div class="akcje-kartoteki">
     ${przyciskKopiowania(slug)}
+    ${przyciskDruku()}
     <button class="zamknij" id="zamknij-wpis" type="button" aria-label="Zamknij kartotekę">✕</button>
   </div>
   ${trescHtml}
@@ -370,6 +376,25 @@ export function htmlDialogu(tekst) {
     .join('');
 }
 
+/**
+ * Treść SKITa → czysty tekst do lektora (Web Speech API).
+ * Usuwa znaczniki mówcy (`**Imię:**`), didaskalia `[…],` i białe znaki —
+ * zostaje sam dialog: „Nessos. Przewiozę na grzbiecie…”. Czysta funkcja:
+ * działa bez DOM, testowana jednostkowo.
+ */
+export function tekstDoLektora(tekst) {
+  const wiersze = String(tekst ?? '').split(/\n+/).map((l) => l.trim()).filter(Boolean);
+  const czesci = [];
+  for (const linia of wiersze) {
+    const m = linia.match(/^\*\*([^*\n]{1,40}):\*\*\s*([\s\S]*)$/);
+    const mowca = m ? m[1].trim() : '';
+    const reszta = (m ? m[2] : linia).replace(/\[[^\]\n]{1,400}\]/g, ' ').replace(/\s+/g, ' ').trim();
+    if (mowca) czesci.push(`${mowca}.`);
+    if (reszta) czesci.push(reszta);
+  }
+  return czesci.join(' ').trim();
+}
+
 /** Widok jednego SKITa (z pełnego pliku) wraz z listą uczestników. */
 export function htmlSkitu(s, indeks) {
   const uczestnicy = (s.uczestnicy ?? [])
@@ -379,6 +404,7 @@ export function htmlSkitu(s, indeks) {
   return `<article class="skit" data-skit="${esc(s.slug)}">
     ${naglowekSkitu(s.tytul)}
     <p class="skit-uczestnicy"><span>Uczestnicy:</span> ${uczestnicy}</p>
+    <button class="chip lektor" type="button" data-lektor title="Odsłuchaj skit na głos (Web Speech API)">🔊 odsłuchaj</button>
     <div class="skit-tekst">${htmlDialogu(s.tekst)}</div>
     ${meta}
   </article>`;

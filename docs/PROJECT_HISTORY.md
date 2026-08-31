@@ -1731,3 +1731,61 @@ Brama: `npm test` **191/191**, `npm run check` zielone; indeks 20 wpisów /
   usunięte z 5 wpisów (zostają źródła kulturowe, np. Lukian, Goethe,
   Roczniki KUL); walidator odrzuca typ „baza kart” i nie wymaga `rezonans`;
 - cache-bust `c5-6` → `c5-7`; testy 199/199, build + check zielone.
+
+## Sesja 2026-08-30 (gałąź arena/01a0549a-ame) — audyt PR #10 i dokończenie migracji v1.8
+
+**Audyt poprzedniego scalonego PR (#10, `4d5c2bb` „Kronika S1–S3 + mapa M1–M3”):**
+- Brama zielona: `npm test` **202/202**, `npm run build` + `npm run check`
+  zgodne (bez zapisu); CI na `main` zielone (run 33336894382). Indeks:
+  **20 wpisów / 22 SKITy / 44 tagi**; build deterministyczny, bez fałszywych
+  diffów.
+- Migracja v1.8 (ADR 0022) w danych: pole `rezonans` nieobecne w żadnym z 20
+  wpisów, `karta` = `{nazwa, wydanie, rok}` (bez mechaniki w lore); Kronika
+  7 epok + `summary.json` spójne; warstwy mapy domyślnie wyłączone, podkłady
+  online (3×) za przełącznikiem.
+- Zgodność z ADR 0001/0003/0009/0016–0020: `geo.js` nietknięty, `map.js`
+  patche chirurgiczne, cache-bust spójny, brak pozostałości po usuniętych
+  warstwach (lasy/urban/morza).
+
+**Znalezione usterki — niedokończona migracja v1.8 (naprawione w tej sesji):**
+1. `docs/PROTOKOL.md` §4.3 wciąż zawierał „#### V. REZONANS I TOŻSAMOŚĆ” z
+   tabelą „Klucz Przywołania” (sekcja usunięta przez ADR 0022) — sprzeczne
+   z §4.1/§4.4; zastąpione opisem danych nagłówkowych (`karta`,
+   `pochodzenie_i_kultura`, `lokalizacja`) bez numeru sekcji.
+2. `docs/PROTOKOL.md` §5 — zdublowany nagłówek ramy promptu 21:9.
+3. `AGENTS.md`, `docs/WORKFLOW.md`, `docs/BACKLOG.md` — martwe odwołania do
+   „sekcji/tabeli Klucz Przywołania”.
+4. `app/ui.js` — nieaktualny komentarz JSDoc („sekcje I–VI … v1.4” →
+   „I–VII … v1.8”).
+
+Brama po poprawkach: `npm test` 202/202, `npm run build` + `npm run check`
+zielone.
+
+## Sesja 2026-08-30 (gałąź arena/01a0549a-ame) — Pętla Jakości (C1 → C3 → C2)
+
+Po audycie PR #10 (wyżej) bez zaległości i bez zlecenia właściciela — weszła
+Pętla Jakości (ADR 0007), rekurencyjnie do wyczerpania budżetu sesji.
+
+**C1 — treść (wiki; research www obowiązkowy — ADR 0008):**
+- `syama-i-sarvara` — dopisana matka Saramā i dialog z Paṇi (RV 10.108,
+  Griffith 1896) jako 4. źródło; passus o Saramie w `pochodzenie_i_kultura`.
+- `pandora` — dopisana genealogia: córka Pyrrha (z Epimeteuszem) i Deukalion,
+  którzy przeżyli potop i odtworzyli ludzkość (Theoi; Apollodoros 1.46;
+  Hygin „Fabulae” 142).
+
+**C3 — SKITy (unikalny skład, ADR 0013/0019):**
+- „Zapłata za przewóz” — Nessos × Śyāma i Śarvara × Kannon, 248 słów,
+  temat „cena przeprawy”.
+- „Z gliny i spiżu” — Pandora × Talos z Krety × Knecht, 205 słów, temat
+  „ulepieni, nie urodzeni — rzecz, która przekracza instrukcję”.
+
+**C2 — featury (z testami; do akceptacji właściciela przed live):**
+- Widok druku / PDF kartoteki (`@media print` + przycisk „🖨 drukuj” →
+  `window.print()`); cache-bust `c5-7` → `c5-8`.
+- Lektor skitów (Web Speech API): „🔊 odsłuchaj” czyta dialog na głos
+  (głos `pl-PL`, jeśli dostępny), „⏹ stop” przerywa; czysta funkcja
+  `tekstDoLektora()` wyciąga sam dialog (bez `**` i didaskaliów); brak API =
+  przycisk grzecznie się poddaje; cache-bust `c5-8` → `c5-9`.
+
+Brama po każdym commicie: `npm test` **205/205**, `npm run build` + `npm run
+check` zielone (bez zapisu). Featury zweryfikowane live w headless Chromium.

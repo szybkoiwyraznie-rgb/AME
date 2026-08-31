@@ -2,7 +2,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
-import { htmlWpisu, htmlWarstwyWpisu, linkDoZrodla, htmlListy, htmlStronyTagu, htmlTagow, htmlDialogu, htmlSkitu, htmlBazySkitow, htmlNowosci, htmlKronik, htmlTomyIEpoki, esc, nastepnyMotyw, motywPoczatkowy, etykietaMotywu, MOTYWY, KLUCZ_MOTYWU, akcjeZZapytania } from '../app/ui.js';
+import { htmlWpisu, htmlWarstwyWpisu, linkDoZrodla, htmlListy, htmlStronyTagu, htmlTagow, htmlDialogu, htmlSkitu, htmlBazySkitow, htmlNowosci, htmlKronik, htmlTomyIEpoki, esc, nastepnyMotyw, motywPoczatkowy, etykietaMotywu, MOTYWY, KLUCZ_MOTYWU, akcjeZZapytania, tekstDoLektora } from '../app/ui.js';
 
 async function dane(plik = 'egungun') {
   const wpis = JSON.parse(await readFile(`data/manifestations/${plik}.json`, 'utf8'));
@@ -282,6 +282,26 @@ test('htmlDialogu: pusty tekst nie produkuje paragrafów', () => {
   assert.equal(htmlDialogu(undefined), '');
 });
 
+test('tekstDoLektora: czyści markdown i didaskalia do czystego dialogu (lektor)', () => {
+  const tekst = `**Nessos:** [Stoi w brodzie.] Przewiozę na grzbiecie.
+
+**Śyāma i Śarvara:** My nie bierzemy [wskazuje psy] opłaty.`;
+  const mowa = tekstDoLektora(tekst);
+  assert.ok(mowa.startsWith('Nessos. Przewiozę na grzbiecie.'), 'mówca + kwestia, bez gwiazdek i didaskaliów');
+  assert.ok(mowa.includes('Śyāma i Śarvara. My nie bierzemy opłaty.'), 'didaskalia w środku usunięte, imię zachowane');
+  assert.ok(!mowa.includes('**') && !mowa.includes('[') && !mowa.includes(']'), 'brak markdownu i nawiasów');
+  assert.equal(tekstDoLektora(''), '');
+  assert.equal(tekstDoLektora(undefined), '');
+});
+
+test('htmlSkitu: przycisk lektora (data-lektor) obecny, nie psuje escapingu', async () => {
+  const { indeks } = await dane();
+  const skit = JSON.parse(await readFile('data/skity/plotno-i-kamien.json', 'utf8'));
+  const html = htmlSkitu(skit, indeks);
+  assert.match(html, /<button class="chip lektor"[^>]*data-lektor[^>]*>🔊 odsłuchaj<\/button>/, 'przycisk lektora');
+  assert.ok(!html.includes('<script>'), 'escaping nietknięty');
+});
+
 test('htmlSkitu: nagłówek „SKIT: …”, uczestnicy linkują do kart, meta widoczna', async () => {
   const { indeks } = await dane();
   const skit = JSON.parse(await readFile('data/skity/plotno-i-kamien.json', 'utf8'));
@@ -506,6 +526,19 @@ test('kopiowanie linku jest w każdym z trzech widoków warstwy i w karcie', asy
   assert.match(app, /szkicWarstwy\('Baza Skitów[^\n]*kopia: 'skity'/, 'baza skitów');
   assert.match(app, /\{ kopia: 'nowosci' \}/, 'feed „Co nowego”');
   assert.equal((app.match(/data-kopia/g) ?? []).length >= 1, true, 'obsługa [data-kopia] w handlerach');
+});
+
+test('kartoteka ma przycisk druku; app.js woła window.print(); arkusz ma @media print (C2)', async () => {
+  const { htmlWarstwyWpisu } = await import('../app/ui.js');
+  const app = await readFile('app/app.js', 'utf8');
+  const css = await readFile('app/styles.css', 'utf8');
+  assert.match(htmlWarstwyWpisu('<x></x>', { slug: 'egungun', nazwa: 'Egungun' }), /data-druk/, 'przycisk druku w warstwie kartoteki');
+  assert.ok(app.includes('[data-druk]') && app.includes('window.print()'), 'klik [data-druk] → window.print()');
+  assert.match(css, /@media print/, 'arkusz ma blok @media print');
+  assert.match(css, /\.gora,\s*\n?\s*#tagi,[\s\S]*display:\s*none/, 'topbar i tagi ukryte w druku');
+  assert.match(css, /\.panel\.otwarty\s*\{[\s\S]*position:\s*static/, 'otwarta kartoteka układa się w dokumencie');
+  assert.match(css, /:root,[\s\S]*html\[data-motyw='ciemny'\][\s\S]*--tekst:\s*#1a1a1a/, 'tokeny nadpisane pod druk (ciemny tekst na jasnym tle)');
+  assert.match(css, /@media print\s*\{[\s\S]*transition:\s*none/, 'przejścia i animacje wyłączone w druku');
 });
 
 test('wersja protokołu jest jedna: stopka aplikacji = PROTOKÓŁ = README (F2)', async () => {

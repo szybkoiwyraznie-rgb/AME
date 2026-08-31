@@ -1,8 +1,8 @@
 {
   "wersja": 3,
-  "buildTime": "2026-08-30T13:18:17.528Z",
+  "buildTime": "2026-08-30T22:06:37.488Z",
   "liczba": 20,
-  "liczbaSkitow": 22,
+  "liczbaSkitow": 24,
   "kanon": {
     "kategorie": [
       {
@@ -779,7 +779,8 @@
       ],
       "obraz": "assets/wizualizacje/kannon-hase.jpg",
       "skity": [
-        "dzien-wolnego"
+        "dzien-wolnego",
+        "zaplata-za-przewoz"
       ]
     },
     {
@@ -858,7 +859,8 @@
       ],
       "obraz": "assets/wizualizacje/knecht-z-koptos.jpg",
       "skity": [
-        "pierwszy"
+        "pierwszy",
+        "z-gliny-i-spizu"
       ]
     },
     {
@@ -974,7 +976,8 @@
       "skity": [
         "cena-znaku",
         "dwa-grzbiety",
-        "prezent-z-defektem"
+        "prezent-z-defektem",
+        "zaplata-za-przewoz"
       ]
     },
     {
@@ -1013,7 +1016,8 @@
       "obraz": "assets/wizualizacje/pandora.jpg",
       "skity": [
         "czwarty-stol",
-        "prezent-z-defektem"
+        "prezent-z-defektem",
+        "z-gliny-i-spizu"
       ]
     },
     {
@@ -1177,7 +1181,8 @@
       ],
       "obraz": "assets/wizualizacje/syama-i-sarvara.jpg",
       "skity": [
-        "pierwszy"
+        "pierwszy",
+        "zaplata-za-przewoz"
       ]
     },
     {
@@ -1219,6 +1224,7 @@
       ],
       "obraz": "assets/wizualizacje/talos-kreta.jpg",
       "skity": [
+        "z-gliny-i-spizu",
         "zagadka-ze-spizu"
       ]
     }
@@ -1542,6 +1548,23 @@
       "data": "2026-08-28 22:25"
     },
     {
+      "slug": "z-gliny-i-spizu",
+      "tytul": "Z GLINY I SPIŻU",
+      "temat": "być ulepionym, nie urodzonym — o ręce twórcy, jednym rozkazie i chwili, gdy rzecz przekracza instrukcję",
+      "uczestnicy": [
+        "knecht-z-koptos",
+        "pandora",
+        "talos-kreta"
+      ],
+      "imiona": [
+        "Pandora",
+        "Talos z Krety",
+        "Knecht"
+      ],
+      "slow": 205,
+      "data": "2026-08-30 22:06"
+    },
+    {
       "slug": "zagadka-ze-spizu",
       "tytul": "ZAGADKA ZE SPIŻU",
       "temat": "co zrobić ze strażnikiem, który nie potrafi pomyśleć, i z takim, który myśli za dużo — trzy odpowiedzi na jedno pytanie",
@@ -1557,6 +1580,23 @@
       ],
       "slow": 276,
       "data": "2026-08-29 11:30"
+    },
+    {
+      "slug": "zaplata-za-przewoz",
+      "tytul": "ZAPŁATA ZA PRZEWÓZ",
+      "temat": "cena przeprawy — opłata przewoźnika, obowiązek strażników i łaska wybawicielki",
+      "uczestnicy": [
+        "kannon-hase",
+        "nessos",
+        "syama-i-sarvara"
+      ],
+      "imiona": [
+        "Nessos",
+        "Śyāma i Śarvara",
+        "Kannon"
+      ],
+      "slow": 248,
+      "data": "2026-08-30 21:47"
     },
     {
       "slug": "znak-burzy",
@@ -1592,6 +1632,38 @@
     }
   ],
   "aktualizacje": [
+    {
+      "data": "2026-08-30 22:06",
+      "typ": "skit",
+      "akcja": "nowy",
+      "slug": "z-gliny-i-spizu",
+      "tytul": "Z GLINY I SPIŻU",
+      "opis": "SKIT — skład: Pandora, Talos z Krety, Knecht"
+    },
+    {
+      "data": "2026-08-30 21:57",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "pandora",
+      "tytul": "Pandora — pierwsza kobieta i pithos, w którym została nadzieja",
+      "opis": "Pętla Jakości (C1): dopisana genealogia Pandory — córka Pyrrha i Deukalion, którzy przeżyli potop i odtworzyli ludzkość (Theoi; Apollodoros 1.46, Hygin „Fabulae” 142)."
+    },
+    {
+      "data": "2026-08-30 21:47",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "syama-i-sarvara",
+      "tytul": "Śyāma i Śarvara — czterookie psy Yamy, strażnicy drogi przodków",
+      "opis": "Pętla Jakości (C1): dopisana matka psów — Saramā, suka Indry z Rigwedy 10.108 (przekroczenie Rasā, odmowa łapówki Paṇich) oraz nowe źródło pierwotne."
+    },
+    {
+      "data": "2026-08-30 21:47",
+      "typ": "skit",
+      "akcja": "nowy",
+      "slug": "zaplata-za-przewoz",
+      "tytul": "ZAPŁATA ZA PRZEWÓZ",
+      "opis": "SKIT — skład: Nessos, Śyāma i Śarvara, Kannon"
+    },
     {
       "data": "2026-08-30 13:30",
       "typ": "skit",

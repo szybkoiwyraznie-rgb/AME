@@ -140,23 +140,19 @@ Każda pozycja ma postać `{ typ, pozycja, url? }` (pole `dokumentacja`), przy c
 * Trofeum Pierwotne
 * Trofeum Wtórne (opcjonalne)
 
-#### V. REZONANS I TOŻSAMOŚĆ
-* **Klucz Przywołania:** analiza, jak nazwa, ilustracja, mechanika i flavor
-  karty korelują z danym bytem — w formie tabeli translacji:
+#### Nagłówek — dane identyfikacyjne (bez numeru sekcji)
 
-  | Element karty | Translacja na byt |
-  |---|---|
-  | **Nazwa** | jak nazwa naprowadza na tożsamość manifestacji |
-  | **Mechanika** | które zdolności karty odpowiadają mocom bytu |
-  | **Ilustracja** | co na obrazie wskazuje na folklor/region |
-  | **Flavor text** | interpretacja cytatu jako „dokumentu terenowego” |
-  | **Lore/Tło** | kontekst ze świata MTG przełożony na nasz świat |
+Obok sekcji I–IV wpis niesie **dane nagłówkowe** (nie są numerowane, ADR 0022):
 
-* **Pochodzenie i Kultura** (np. mitologia Inuitów, folklor słowiański,
-  współczesne legendy miejskie Japonii).
-* **Lokalizacja geograficzna:** precyzyjne miejsce, gdzie wierzenie powstało
-  lub gdzie odnotowano aktywność bytu — z podaniem regionu i współrzędnych
-  dziesiętnych.
+* **Karta inspiracji** (`karta`): nazwa, wydanie i rok karty MtG — to warstwa
+  meta-projektu (nagłówek „inspiracja kartą: …”). Nazwa, mechanika, ilustracja,
+  flavor i lore karty naprowadzają agenta na byt w trakcie analizy, ale **nie
+  wchodzą do treści wpisu** (zakaz przekładania mechaniki MtG na in-lore opisy).
+* **Pochodzenie i Kultura** (`pochodzenie_i_kultura`): np. mitologia Inuitów,
+  folklor słowiański, współczesne legendy miejskie Japonii.
+* **Lokalizacja geograficzna** (`lokalizacja`): precyzyjne miejsce, gdzie
+  wierzenie powstało lub gdzie odnotowano aktywność bytu — z podaniem regionu
+  i współrzędnych dziesiętnych (`lat`, `lon`).
 
 ### 4.4 Słowniczek: sekcja ↔ pole w JSON
 
@@ -191,8 +187,6 @@ odnośniki (epoki, skity, byty).
 Warstwa wiki (ADR 0006): `powiazania` to pary `{slug, opis}` — opis musi być
 zdaniem uzasadniającym związek (ADR 0019); backlinki („wzmiankowany przez”)
 wylicza indeks.
-
-## 5. Rama promptu wizualizacji (v1.1 — obowiązuje od 2026-08-27)
 
 ## 5. Rama promptu wizualizacji (v1.1 — obowiązuje od 2026-08-27)
 

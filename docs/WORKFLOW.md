@@ -38,7 +38,8 @@ właściciela).
 - Zakaz odtwarzania brzmienia karty z pamięci modelu.
 
 ### 3. Analiza translacji
-Rozbierz kartę na elementy tabeli „Klucz Przywołania” (PROTOKÓŁ §4 I):
+Rozbierz kartę na elementy translacji (analiza robocza — jej wynik nie
+wchodzi do wpisu, ADR 0022):
 Nazwa → etymologia/skojarzenia; Mechanika → zdolności bytu; Ilustracja →
 wskazówki kulturowe (opisuj tylko to, co potwierdzisz — nie zgaduj treści
 grafiki, której nie widzisz; możesz się oprzeć na typie kreatury,

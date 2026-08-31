@@ -1,8 +1,8 @@
 # ROADMAP — Archiwum Manifestacji Eterycznych
 
-> Plan faz; status aktualizowany na końcu każdej sesji (ostatnio: 2026-08-29,
-> sesja po PR #9: audyt + Pętla Jakości C1→C3→C2). Szczegóły bieżącego zadania żyją w
-> `docs/plans/PLAN_*.md`.
+> Plan faz; status aktualizowany na końcu każdej sesji (ostatnio: 2026-08-30,
+> sesja PR #12: audyt PR #10 + dokończenie migracji v1.8 + Pętla Jakości
+> C1→C3→C2 ×2). Szczegóły bieżącego zadania żyją w `docs/plans/PLAN_*.md`.
 > Nowe pomysły → `docs/BACKLOG.md`.
 
 ## F0 — Fundament (SESJA 2026-08-27) — ✅ UKOŃCZONA
@@ -588,3 +588,25 @@ Pętla jakości wokół Kroniki + dalsza implementacja:
 - [x] Weryfikacja: `npm test` **164/164**, `npm run build` + `npm run check`
       zielone; sprawdzenie na żywo w headless Chromium (filtr, powiązania,
       losowanie — wszystkie akcje z Kroniki działają).
+
+
+## Sesja 2026-08-30 (PR #12) — audyt PR #10 + Pętla Jakości (C1 → C3 → C2 ×2)
+
+- [x] **Audyt B** PR #10 („Kronika S1–S3 + mapa M1–M3”): brama zielona,
+      zgodność z ADR; znalezione 4 usterki niedokończonej migracji v1.8
+      (ADR 0022) — naprawione (commit `ad2bd75`): §4.3 PROTOKOL, zdublowany
+      §5, martwe odwołania do „Klucza Przywołania” w AGENTS/WORKFLOW/BACKLOG,
+      nieaktualny JSDoc w `app/ui.js`.
+- [x] **C1** `syama-i-sarvara`: matka Saramā i dialog z Paṇi (RV 10.108,
+      Griffith 1896) jako 4. źródło; passus o Saramie w `pochodzenie_i_kultura`.
+- [x] **C1** `pandora`: genealogia — córka Pyrrha i Deukalion, którzy przeżyli
+      potop i odtworzyli ludzkość (Theoi; Apollodoros 1.46; Hygin 142).
+- [x] **C3** SKIT „ZAPŁATA ZA PRZEWÓZ” (`zaplata-za-przewoz.json`) — Nessos ×
+      Śyāma i Śarvara × Kannon (unikalny skład, 248 słów).
+- [x] **C3** SKIT „Z GLINY I SPIŻU” (`z-gliny-i-spizu.json`) — Pandora × Talos
+      z Krety × Knecht (unikalny skład „automatów”, 205 słów).
+- [x] **C2** widok druku/PDF kartoteki (`@media print` + „🖨 drukuj”).
+- [x] **C2** lektor skitów (Web Speech API): „🔊 odsłuchaj” / „⏹ stop”,
+      czysta `tekstDoLektora()`, cache-bust `c5-9`.
+- [x] Weryfikacja: `npm test` **205/205**, `npm run build` + `npm run check`
+      zielone; live w headless Chromium (przycisk druku, @media print, lektor).

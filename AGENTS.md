@@ -105,8 +105,9 @@ Ponadto:
   synkretycznych („Dziki Gon + Santa Compaña + Perchten” w jednym wpisie).
   Byt musi być jednostką: da się go namierzyć, skonfrontować, pokonać.
 - **Karta MtG jest kluczem, nie tematem.** Wpis opisuje byt z naszego świata;
-  karta (nazwa, mechanika, ilustracja, flavor, lore) służy do identyfikacji i
-  uzasadnienia wyboru w sekcji „Klucz Przywołania”.
+  karta (nazwa, mechanika, ilustracja, flavor, lore) służy do identyfikacji
+  bytu i uzasadnienia wyboru; do wpisu trafia wyłącznie byt — mechanika karty
+  nie wchodzi do lore (pole `karta` w nagłówku to metadane, ADR 0022).
 - **Źródła są prawdziwe i weryfikowalne.** Zakaz wymyślania tytułów, autorów,
   lat. Jeśli źródła nie da się potwierdzić — nie wpisuj go. Każde źródło
   podpisujemy adresem (`dokumentacja[].url`, pełny `http(s)`) — co najmniej
