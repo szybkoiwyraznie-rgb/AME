@@ -1,8 +1,8 @@
 {
   "wersja": 3,
-  "buildTime": "2026-09-04T19:40:37.116Z",
+  "buildTime": "2026-09-04T19:50:15.960Z",
   "liczba": 21,
-  "liczbaSkitow": 41,
+  "liczbaSkitow": 42,
   "kanon": {
     "kategorie": [
       {
@@ -568,6 +568,7 @@
       },
       "skity": [
         "cena-znaku",
+        "goscina-za-zloto",
         "kalendarz-powrotow",
         "slowo-stopu",
         "trzy-stoly",
@@ -715,6 +716,7 @@
         "wtorne": "Kauria zhaftowana na płótnach maskarady"
       },
       "skity": [
+        "goscina-za-zloto",
         "hold-oraz-swiatlo",
         "imie-na-progu",
         "kalendarz-powrotow",
@@ -766,6 +768,7 @@
         "czwarty-stol",
         "dwa-zepsute-wesela",
         "dwie-skory",
+        "goscina-za-zloto",
         "komu-wolno-patrzec",
         "nieproszeni-goscie",
         "odzwierni"
@@ -1567,6 +1570,23 @@
       "data": "2026-08-28 15:35"
     },
     {
+      "slug": "goscina-za-zloto",
+      "tytul": "GOŚCINA ZA ZŁOTO",
+      "temat": "ile kosztuje gościna, gdy gospodarz śpi od stuleci, a dom gościa zbudowany jest ze światła",
+      "uczestnicy": [
+        "barbarossa-kyffhaeuser",
+        "egungun",
+        "empusa-korynt"
+      ],
+      "imiona": [
+        "Empusa",
+        "Barbarossa",
+        "Egungun"
+      ],
+      "slow": 239,
+      "data": "2026-09-04 19:50"
+    },
+    {
       "slug": "hold-oraz-swiatlo",
       "tytul": "HOŁD ORAZ ŚWIATŁO",
       "temat": "trzy modele opłaty za święte miejsce: podatek, zaproszenie i grosz turysty",
@@ -2150,6 +2170,22 @@
       "slug": "knecht-z-koptos",
       "tytul": "Knecht z Koptos — ożywiony tłuczek, który nie zna słowa końca",
       "opis": "Dopisany muzyczny rozdział wędrówki tłuczka: scherzo Paula Dukasa z 1897 roku i sekwencja „Fantazji” Disneya, z nową pozycją dokumentacji."
+    },
+    {
+      "data": "2026-09-04 19:50",
+      "typ": "skit",
+      "akcja": "zmiana",
+      "slug": "goscina-za-zloto",
+      "tytul": "GOŚCINA ZA ZŁOTO",
+      "opis": "Nowy SKIT: Empusa × Barbarossa × Egungun — gospodyni ze światła stawia stół w górze, a śpiący cesarz płaci za gościnę złotem, które jako jedyne nie znika o świcie."
+    },
+    {
+      "data": "2026-09-04 19:50",
+      "typ": "skit",
+      "akcja": "nowy",
+      "slug": "goscina-za-zloto",
+      "tytul": "GOŚCINA ZA ZŁOTO",
+      "opis": "SKIT — skład: Empusa, Barbarossa, Egungun"
     },
     {
       "data": "2026-09-04 19:30",

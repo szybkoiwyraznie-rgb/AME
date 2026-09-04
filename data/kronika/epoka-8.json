@@ -1,0 +1,197 @@
+{
+  "slug": "epoka-8",
+  "tom": "tom-1",
+  "skit": "goscina-za-zloto",
+  "tytul": "Gościna za złoto: dom, który nie był gospodarzem",
+  "iskra": "Empusa, której wędrowny dom nigdzie nie wytrzymał dłużej niż do pierwszego wymówionego imienia, stawia stół w jedynym miejscu, gdzie nikt nie patrzy trzeźwo: w śnie cesarza pod Kyffhäuser. Tym razem to nie ona płaci za wejście — to gospodarz płaci jej.",
+  "pytanie": "Czy dom zbudowany ze światła wytrwa w górze, w której płaci się złotem — i kim staje się zdobycz, gdy gospodarz nazywa ją gościem?",
+  "uczestnicy": [
+    {
+      "slug": "empusa-korynt",
+      "rola": "Gospodyni ze światła",
+      "kosztUdzialu": 2,
+      "zwrot": 2
+    },
+    {
+      "slug": "barbarossa-kyffhaeuser",
+      "rola": "Gospodarz, który płaci ze snu",
+      "kosztUdzialu": 2,
+      "zwrot": 3
+    },
+    {
+      "slug": "egungun",
+      "rola": "Przodek, który przychodzi po daninę",
+      "kosztUdzialu": 2,
+      "zwrot": 1
+    }
+  ],
+  "narrator": {
+    "ocena": [
+      {
+        "kto": "barbarossa-kyffhaeuser",
+        "kogo": "empusa-korynt",
+        "stopien": 3,
+        "komentarz": "Nie nazwał jej fantomem — nazwał ją gościem i zapłacił. Jedyna demaskacja, która nie niszczy: nadanie imienia, które można zatrzymać."
+      },
+      {
+        "kto": "empusa-korynt",
+        "kogo": "barbarossa-kyffhaeuser",
+        "stopien": 2,
+        "komentarz": "Po raz pierwszy jej scena nie pękła od słowa z zewnątrz, tylko od gestu w środku: złoto, które nie jest światłem, okazało się cięższe niż cała jej uczta."
+      },
+      {
+        "kto": "egungun",
+        "kogo": "barbarossa-kyffhaeuser",
+        "stopien": 2,
+        "komentarz": "Przodek rozpoznał przodka. Kto płaci za gościnę wbrew własnemu snu, ten jeszcze nie śpi na próżno."
+      }
+    ],
+    "podsumowanie": "Epoka odwraca mechanikę wcześniejszych rozpraw z iluzją. W Koryncie wystarczyło nazwać rzecz po imieniu, żeby dom Empusy zniknął; w Kyffhäuser nikt nie demaskuje — cesarz płaci złotem, które jako jedyne nie znika o świcie, i tym samym wciąga gospodynię w ekonomię długu zamiast apetytu. Wątek wędrownego domu zamyka się: słowo-poznanie traci monopol, bo jest drugie słowo, silniejsze od rozkazu — zaproszenie. Warunek Barbarossy pogłębia się: skoro cesarz płaci gościom ze swojego snu, to jego przebudzenie nie jest już tylko sprawą tarczy i suchego drzewa, lecz rachunku, który ktoś kiedyś przyjdzie wyrównać."
+  },
+  "konsekwencje": {
+    "os": {
+      "mit": 1,
+      "racjonalizacja": -1
+    },
+    "relacje": [
+      {
+        "typ": "wzmocnienie",
+        "skad": "barbarossa-kyffhaeuser",
+        "dokad": "empusa-korynt",
+        "opis": "Cesarz płaci fantomowi za gościnę i nie demaskuje jej domu — dług śpiącego wobec świata żywych zyskuje adresata, który przyszedł po coś innego."
+      },
+      {
+        "typ": "neutralna",
+        "skad": "egungun",
+        "dokad": "empusa-korynt",
+        "opis": "Przodek nie gnije Empusy ani jej nie ściga: uznaje, że w górze obowiązuje rachunek gospodarza, i ogranicza się do wyjaśnienia, czemu złoto zostaje, a światło mija."
+      },
+      {
+        "typ": "wzmocnienie",
+        "skad": "egungun",
+        "dokad": "barbarossa-kyffhaeuser",
+        "opis": "Egungun przychodzi po daninę do śpiącego przodka i dostaje potwierdzenie, że kontrakt pokoleń działa nawet we śnie — cesarz wciąż płaci, więc wciąż należy do linii."
+      }
+    ],
+    "zasieg": [
+      {
+        "slug": "barbarossa-kyffhaeuser",
+        "delta": 0.012,
+        "opis": "Gospodarz, który płaci ze snu: legenda Kyffhäuser zyskuje scenę, w której warunek przebudzenia ma już rachunek i adresata."
+      },
+      {
+        "slug": "empusa-korynt",
+        "delta": 0.01,
+        "opis": "Pierwsza gościna, której nie zdemaskowano: dom ze światła nie wytrzymał złota, ale gospodyni wyszła z imieniem gościa, nie z hańbą."
+      },
+      {
+        "slug": "egungun",
+        "delta": 0.005,
+        "opis": "Przodek przyjął daninę od przodka innego narodu — kult egúngún wykroczył poza własną linię bez zerwania z nią."
+      }
+    ],
+    "dominacje": [
+      {
+        "kultura": "niemcy",
+        "kult": "barbarossa-kyffhaeuser",
+        "delta": 0.012
+      },
+      {
+        "kultura": "grecja",
+        "kult": "empusa-korynt",
+        "delta": 0.01
+      },
+      {
+        "kultura": "joruba",
+        "kult": "egungun",
+        "delta": 0.005
+      }
+    ],
+    "pozycje": [
+      {
+        "slug": "barbarossa-kyffhaeuser",
+        "status": "wzmocniony",
+        "opis": "Jego złoto okazało się jedyną rzeczą w górze cięższą niż sen — dług śpiącego przestał być pasywny."
+      },
+      {
+        "slug": "empusa-korynt",
+        "status": "przemieniony",
+        "opis": "Po raz pierwszy nie zniknęła z hańbą: wyszła z góry jako gość, któremu zapłacono, z nową zasadą — nie wszędzie gospodarzem jest ten, kto stawia stół."
+      },
+      {
+        "slug": "egungun",
+        "status": "odporny",
+        "opis": "Nie dał się wciągnąć w scenę fantoma ani w sen cesarza; ograniczył się do roli tego, który rozlicza."
+      }
+    ],
+    "watki": [
+      {
+        "id": "gosc-ktoremu-zaplacono",
+        "stan": "otwarty",
+        "byty": [
+          "empusa-korynt",
+          "barbarossa-kyffhaeuser"
+        ],
+        "pytanie": "Gość, któremu zapłacono, nie jest zdobyczą — więc czym jest gość, który pewnego dnia przyjdzie odebrać zapłatę z powrotem?"
+      },
+      {
+        "id": "pierwszy-w-linii",
+        "stan": "otwarty",
+        "byty": [
+          "protostates",
+          "knecht-z-koptos",
+          "syama-i-sarvara"
+        ],
+        "pytanie": "Co się stanie z linią, gdy pierwszy przestanie stać, a nikt nie uzna, że ktoś go zastąpił?"
+      },
+      {
+        "id": "niewinny-bierca",
+        "stan": "otwarty",
+        "byty": [
+          "kentaur-pelion",
+          "pandora",
+          "empusa-korynt"
+        ],
+        "pytanie": "Kiedy biernik dowie się, że bierze — i co wtedy zrobi z tym, co już wziął?"
+      },
+      {
+        "id": "warunek-barbarossy",
+        "stan": "otwarty",
+        "byty": [
+          "barbarossa-kyffhaeuser",
+          "kentaur-pelion",
+          "egungun"
+        ],
+        "pytanie": "Czy dług śpiącego cesarza da się spłacić gościną — czy rachunek, który zapłacił ze snu, przyjdzie kiedyś wyrównać na jawie?"
+      },
+      {
+        "id": "kres-indry",
+        "stan": "otwarty",
+        "byty": [
+          "indra"
+        ],
+        "pytanie": "Kto zapisze kres Indry: ten, kto go zdetronizuje, czy ten, który przestaje się bać jego gromu?"
+      },
+      {
+        "id": "wedrowny-dom-empusy",
+        "stan": "zamkniety",
+        "byty": [
+          "empusa-korynt"
+        ],
+        "pytanie": "Dom ze światła nie wytrzymał gospodarza, który płaci złotem: słowo-poznanie straciło monopol, bo jest drugie słowo — zaproszenie. Wędrówka domu skończyła się w górze, która umie gościć."
+      }
+    ]
+  },
+  "grafika": {
+    "podpis": "W komnacie pod Kyffhäuser stół zastawiony światłem napotyka worek złota, które jako jedyne nie znika o świcie.",
+    "styl": "Hyperrealistyczne zdjęcie filmowe, ultrapanorama 21:9.",
+    "prompt": "Hyperrealistic cinematic photograph, ultra-wide 21:9 anamorphic frame. In a vaulted stone chamber deep inside a mountain, a long banquet table glows faintly with unreal light — silver dishes, a roast peacock, a translucent wine cup — while opposite it stands a heavy leather sack spilling real, cold gold coins across the flagstones. Behind the table a slender Phoenician woman in a richly dyed gown, one copper leg glinting below the hem, carefully folds a shimmering tablecloth that flickers at its edges. At the head of the chamber an ancient red-bearded emperor sleeps half-upright in his chair, crown askew, eyes closed, one hand still resting on an open purse; a small dwarf beside him holds the sack's mouth open. In the doorway stands a towering masquerade figure of layered, swaying cloth strips with no visible feet, watching the table like a judge. Warm honey candlelight from the illusion side, cold blue mountain-dark from the doorway, the gold coins casting the only true shadows in the room. No text, no letters, no inscriptions, no modern objects."
+  },
+  "meta": {
+    "utworzono": "2026-09-04 19:55",
+    "autor": "agent Areny — Pętla Jakości C6 (Epoka VIII)",
+    "wersja": 1,
+    "poprzednik": "epoka-7",
+    "uwagi": "Wątek „wedrowny dom Empusy” domknięty sceną gościny; otwarty nowy wątek „gość, któremu zapłacono”. Grafika epoki (kronika-tom-1-epoka-8.jpg) czeka na wygenerowanie poza sandboxem."
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "slug": "goscina-za-zloto",
+  "tytul": "GOŚCINA ZA ZŁOTO",
+  "temat": "ile kosztuje gościna, gdy gospodarz śpi od stuleci, a dom gościa zbudowany jest ze światła",
+  "uczestnicy": [
+    {
+      "imie": "Empusa",
+      "slug": "empusa-korynt"
+    },
+    {
+      "imie": "Barbarossa",
+      "slug": "barbarossa-kyffhaeuser"
+    },
+    {
+      "imie": "Egungun",
+      "slug": "egungun"
+    }
+  ],
+  "tekst": "**Empusa:** [W komnacie pod górą ustawia stół: obrus, srebra, pieczony paw. Wszystko lekko świeci.] Proszę bardzo. Wesele, bankiet, kolacja po przebudzeniu — u mnie pełny zakres. Zapiszę: cesarz, jeden, śpiący.\n\n**Barbarossa:** [Zza brody, nie otwierając oczu.] Stół stoi. Gość przyszedł — to się płaci. Karzełku, worek.\n\n**Empusa:** Nie trzeba płacić, ja tu jestem gospodarzem. Ja stawiam.\n\n**Egungun:** [Stoi w progu; warstwy płócien poruszają się same, choć nie ma przeciągu.] W tym domu gospodarzem jest ten, kto śpi od stuleci. A przodek nie jada u fantoma. Przodek przyjmuje daninę.\n\n**Empusa:** [Podsuwa półmisek.] To niech przodek skosztuje. Wino, paw, srebro. Wszystko prawdziwe.\n\n**Barbarossa:** [Karzełek stawia na stole worek; złoto brzęczy ciężko, jak kamienie.] U mnie złoto jest prawdziwe. Spróbuj nim zapłacić za światło.\n\n**Empusa:** [Dotyka monety; moneta jest zimna i zostaje.] To… nie znika. [Patrzy na swój obrus; obrus miga.] Dlaczego ono zostaje, a moje miga?\n\n**Egungun:** Bo jego jest z ziemi i z długu. Twoje jest z apetytu. Apetyt mija, dług zostaje.\n\n**Empusa:** [Zdejmuje obrus ostrożnie, jak żałobnik firankę.] To ja chyba zmienię lokalizację. W Koryncie nikt mi nie płacił złotem za mój własny stół.\n\n**Barbarossa:** [Półgębkiem, wciąż śpiąc.] Zostań. Gość, któremu zapłacono, nie jest zdobyczą. Jest gościem. A o gościa w górze trudniej niż o wojnę.\n\n**Egungun:** [Do Empusy.] Słyszysz? Dostałaś imię gościa. To jedyna nazwa, która tu działa dłużej niż do świtu.\n\n**Empusa:** [Siada; z nogi miedzianej zdejmuje pantofelek.] No dobrze. Ale pawia zabieram. On był z dekoracji.",
+  "meta": {
+    "utworzono": "2026-09-04 19:50",
+    "autor": "agent Areny — Pętla Jakości C6 (Epoka VIII Kroniki)",
+    "modyfikacje": [
+      {
+        "data": "2026-09-04 19:50",
+        "opis": "Nowy SKIT: Empusa × Barbarossa × Egungun — gospodyni ze światła stawia stół w górze, a śpiący cesarz płaci za gościnę złotem, które jako jedyne nie znika o świcie."
+      }
+    ]
+  }
+}

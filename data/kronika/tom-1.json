@@ -20,7 +20,7 @@
       },
       {
         "slug": "barbarossa-kyffhaeuser",
-        "wielkosc": 0.426
+        "wielkosc": 0.447
       },
       {
         "slug": "ben-varrey",
@@ -32,11 +32,11 @@
       },
       {
         "slug": "egungun",
-        "wielkosc": 0.479
+        "wielkosc": 0.5
       },
       {
         "slug": "empusa-korynt",
-        "wielkosc": 0.426
+        "wielkosc": 0.447
       },
       {
         "slug": "indra",
@@ -109,7 +109,7 @@
       {
         "kultura": "niemcy",
         "kult": "barbarossa-kyffhaeuser",
-        "wielkosc": 0.426
+        "wielkosc": 0.447
       },
       {
         "kultura": "man",
@@ -124,12 +124,12 @@
       {
         "kultura": "joruba",
         "kult": "egungun",
-        "wielkosc": 0.479
+        "wielkosc": 0.5
       },
       {
         "kultura": "grecja",
         "kult": "empusa-korynt",
-        "wielkosc": 0.426
+        "wielkosc": 0.447
       },
       {
         "kultura": "indie",
