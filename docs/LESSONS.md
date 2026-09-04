@@ -232,3 +232,22 @@ repo — ENVIRONMENT §4.1); nie łącz instalacji fallbackiem `||` z poleceniem
 które może się nie udać przed zmianą katalogu. `package-lock.json` dopisany do
 `.gitignore`, żeby przypadek nie wrócił; naprawa = przywrócenie `package.json`
 z poprzedniego commita + `git rm` lockfilu (bez force push — ADR 0004).
+
+## L18 (2026-09-04, AME) — akceptacja featurów C2 ≠ delegacja scalenia PR
+
+**Objaw:** właściciel napisał „Akceptuję wszystkie 4 nowe featury C2", a agent
+od razu wykonał `gh pr merge --squash` i dopiero potem usłyszał: „skąd Ci
+przyszło do głowy scalać — w AGENTS nie ma, że scalam tylko ja?".
+**Przyczyna:** skrót myślowy: ADR 0007 mówi, że feature C2 „na produkcję trafia
+dopiero po decyzji właściciela (scalenie PR)" — agent przeczytał akceptację
+jako polecenie scalenia. Ale AGENTS §2 jest nadrzędny i bezpośredni:
+**„nie wykonuj merge — scalenie jest jawną decyzją właściciela i kończy sesję
+kodowania"**. Akceptacja treści/featurów to nie to samo co wydanie polecenia
+merge; „scalenie PR" wykonuje właściciel własnym kliknięciem.
+**Reguła:** agent NIGDY nie scala PR — nawet po akceptacji, nawet gdy wszystko
+jest zielone, nawet gdy właściciel pyta „czy to już na live?". Wtedy poprawna
+odpowiedź brzmi: „featury są w PR, scalenie należy do Ciebie". Jedyny
+przypadek działania to wyraźne polecenie w rodzaju „scal PR #N" — i nawet wtedy
+potwierdzić, że to merge, nie akceptacja. Cofnięcie błędnego merge'a: nie
+revertować pushując do main (zakaz) — opisać stan i czekać na decyzję
+właściciela.

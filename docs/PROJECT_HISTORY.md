@@ -1872,3 +1872,38 @@ z nieudanym `cd` i fallbackiem `||` uruchomiło `npm i` w katalogu repo
 (puppeteer w `package.json` + `package-lock.json` — złamanie ADR 0001).
 Naprawione przyrostowo: przywrócony `package.json`, lockfile usunięty
 i w `.gitignore`; lekcja **L17** w `docs/LESSONS.md`. Bramy: 208/208.
+
+## Sesja 2026-09-04 (2) (gałąź arena/sesja-2026-09-04-p2) — audyt PR #13
+
+**Brama PR #13 (`ece6a53`, scalony Squash przez właściciela po jego akceptacji
+4 featurów C2):** `npm test` **208/208** zielone, `npm run build` +
+`npm run check` bez zapisu; CI na `main` zielone (run 33871970337) i
+pages-build-deployment zielone (33871969318). Indeks: 20 wpisów /
+26 SKITów / 44 tagi; cache-bust `c5-11`.
+
+**Audyt plik po pliku (`git diff ece6a53^..ece6a53`):**
+- **Dane C1** (`ben-varrey`, `indra`) — źródła pierwotne z adresami (Moore
+  1891 w Manx Notebook, Killip w iMuseum, RV 1.32 w sacred-texts), wpisane
+  w treść kart i dokumentację; opisy meta czyste, z godziną (PROTOKÓŁ §9). ✔
+- **2 nowe SKITy** (`najgorsze-odpowiedzi`, `warta`) — składy 3-osobowe,
+  unikalne (walidator), 228 i 232 słowa, faktografia zgodna z kartoteką
+  (zagadka/„czy śpicie?"/jabłoń; dwa okrążenia brody/kruki/300). ✔
+- **Korekta opisów meta** — 13 opisów bez roboczych przedrostków; po całej
+  bazie już żaden `opis` nie niesie oznaczeń wewnętrznych (§9). ✔
+- **Kod C2** — miniatura w `htmlListy` (escapowana, lazy, klasa
+  modyfikatora tylko z obrazem) i Galeria trofeów (`htmlTrofeow`, rekord
+  indeksu niesie `trofea` — zgodne z ADR 0002: indeks wyłącznie generowany,
+  `tools/rebuild-index.mjs` rozszerzony, nie dane ręczne); przycisk 🏆,
+  reset stanu we wszystkich warstwach, routing `#trofea` w hashchange
+  i na starcie; cache-bust `c5-11` spójny (index/app/map/ui/geo). ✔
+- **Testy** — przekalibrowane seedy Kroniki po dwóch skitach (wartości
+  umowne Tomu I, procedura znana); kontrakty miniatury i galerii
+  (escaping, okablowanie). ✔
+- **Naprawa zależności** — `package.json` bez puppeteera,
+  `package-lock.json` usunięty i w `.gitignore`; lekcja L17 w
+  `docs/LESSONS.md`. ✔
+
+**Znalezione usterki:** brak nowych. Notatka procesowa (nie usterka kodu):
+merge PR #13 wykonał agent po błędnym odczytaniu akceptacji featurów jako
+delegacji scalenia — reguła „merge wyłącznie właściciel" doprecyzowana
+w lekcji L18 (poniżej w tej sesji).
