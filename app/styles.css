@@ -320,7 +320,14 @@ a.chip { display: inline-block; text-decoration: none; }
   stroke: var(--akcent-2);
   stroke-opacity: 0.85;
   stroke-width: 2.4;
-  stroke-dasharray: 2 4;
+  /* pathLength=1 na łuku → kreskowanie w ułamkach długości; impuls
+   * „przebiega” rozmowę od pierwszego rozmówcy do ostatniego. */
+  stroke-dasharray: 0.14 0.86;
+  animation: przebieg-rozmowy 2.8s linear infinite;
+}
+@keyframes przebieg-rozmowy {
+  from { stroke-dashoffset: 1; }
+  to { stroke-dashoffset: 0; }
 }
 
 /* Pinezka (A5): głowa ø26 px + przezroczyste pole trafienia ø52 px; rozmiar
@@ -556,6 +563,7 @@ a.chip { display: inline-block; text-decoration: none; }
 }
 @media (prefers-reduced-motion: reduce) {
   .panel.otwarty { animation: none; }
+  .luk.rozmowy { animation: none; stroke-dasharray: 0.04 0.05; }
 }
 .warstwa-wpisu { min-height: 100%; outline: none; }
 .warstwa-wpisu:focus-visible { outline: 2px solid var(--akcent); outline-offset: -2px; }

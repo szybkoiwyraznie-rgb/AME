@@ -10,7 +10,7 @@
  * pinch (2 wskaźniki), dwuklik, przyciski. Pinezki i ich etykiety kompensują
  * skalę widoku, więc mają stały rozmiar w pikselach CSS (ADR 0009).
  */
-import { projektuj, dekodujKraje, siatka, dopasujWidok, ogranicz, K_MIN, K_MAX, SZEROKOSC as SZER, WYSOKOSC as WYS, sciezkaGeoMultiPoligon } from './geo.js?v=c5-13';
+import { projektuj, dekodujKraje, siatka, dopasujWidok, ogranicz, K_MIN, K_MAX, SZEROKOSC as SZER, WYSOKOSC as WYS, sciezkaGeoMultiPoligon } from './geo.js?v=c5-14';
 
 const NS = 'http://www.w3.org/2000/svg';
 
@@ -494,7 +494,9 @@ export function stworzMape(kontener, { przyZmianieZaznaczenia, przyZmianieWidoku
       const len = Math.hypot(dx, dy) || 1;
       const cx = mx - (dy / len) * len * 0.18;
       const cy = my + (dx / len) * len * 0.18;
-      el('path', { d: `M${pa.wx} ${pa.wy} Q${cx} ${cy} ${pb.wx} ${pb.wy}`, class: 'luk rozmowy' }, warstwaRozmowy);
+      // pathLength=1 normalizuje jednostki kreskowania, żeby animacja
+      // „przebiegnięcia” w CSS nie zależała od długości łuku.
+      el('path', { d: `M${pa.wx} ${pa.wy} Q${cx} ${cy} ${pb.wx} ${pb.wy}`, class: 'luk rozmowy', pathLength: 1 }, warstwaRozmowy);
     }
     warstwaRozmowy.setAttribute('display', warstwaRozmowy.dzieci?.length ?? warstwaRozmowy.childElementCount ? 'inherit' : 'none');
   }

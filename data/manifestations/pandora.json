@@ -24,8 +24,8 @@
     "obraz": "assets/wizualizacje/pandora.jpg"
   },
   "natura": {
-    "wyglad_i_aura": "Młoda kobieta o ciemnych włosach, w srebrnej szacie, z haftowanym welonem i złotą koroną — dokładnie tak, jak odziewa ją Atena, a wieńczą Hory w „Pracach i dniach”. Przy niej wielki gliniany słój z pokrywą, pachnący ziemią i miodem; wokół niej cisza, która robi się gęsta w chwili, gdy pokrywa drży. Nie ma w niej grozy — jest uważne, ciekawe spojrzenie istoty, która dopiero co została stworzona i jeszcze nie wie, czym jest zło.",
-    "charakter_i_motywacje": "Pandora nie jest zła: jest ciekawością wcieloną. Hezjod nazywa ją „pięknym złem”, potem „nieodpartą siecią”, a jej wnętrze wypełniają „kłamliwe słowa” od Hermesa; jednocześnie to pierwsza kobieta, która niczego nie wie o świecie. Gdy dostaje słój, wie jedno: nie wolno go otwierać. Właśnie to — jak w każdej opowieści o zakazie — czyni otwarcie niemal pewnym. Nie poluje, nie kusi; ona tylko znosi dar i patrzy, a potem robi to, czego nie powinna.",
+    "wyglad_i_aura": "Młoda kobieta o ciemnych włosach, w srebrnej szacie, z haftowanym welonem i złotą koroną — dokładnie tak, jak odziewa ją Atena, a wieńczą Hory w „Pracach i dniach”. Korona nie jest dziełem jubilera: wykuł ją sam Hefajstos „na przysługę Zeusowi” i wyciosał na niej stworzenia lądu i morza „podobne do żywych, obdarzone głosem”, tak że z bliska słychać z niej cichy szmer, jakby cały świat zamknięty w złocie. Przy niej wielki gliniany słój z pokrywą, pachnący ziemią i miodem; wokół niej cisza, która robi się gęsta w chwili, gdy pokrywa drży. Nie ma w niej grozy — jest uważne, ciekawe spojrzenie istoty, która dopiero co została stworzona i jeszcze nie wie, czym jest zło.",
+    "charakter_i_motywacje": "Pandora nie jest zła: jest ciekawością wcieloną. Hezjod nazywa ją „pięknym złem”, potem „nieodpartą siecią”, a jej wnętrze wypełniają „kłamliwe słowa” od Hermesa; jednocześnie to pierwsza kobieta, która niczego nie wie o świecie. Gdy dostaje słój, wie jedno: nie wolno go otwierać. Właśnie to — jak w każdej opowieści o zakazie — czyni otwarcie niemal pewnym. Nie poluje, nie kusi; ona tylko znosi dar i patrzy, a potem robi to, czego nie powinna. Ma też drugie oblicze, starsze niż słój: w „Teogonii” Hezjod nie zna jej imienia i nie zna naczynia — tam sama istota jest karą, „czystą podstępnością, której człowiek nie zdoła przemóc”, pokazaną bogom i ludziom w pełnej ozdobie; z niej pochodzi „rodzaj kobiet i niewieście plemię”, porównane przez poetę do trutni, które w ulu jedzą pracę pszczół. Kto spotka Pandorę bez słoja, nie szuka pokrywy — ma do czynienia z wersją mitu, w której dar jest samą istotą.",
     "zdolnosci": "Nosi w sobie wszystko, co bogowie zamknęli: zarazy, choroby, trudy, starość, wojny — i w jednej chwili potrafi to wypuścić, a wtedy nikt wokół nie może się bronić, bo zło nie nadchodzi z jednej strony. Jej ciało jest z gliny, jak słój: ulepione, nie urodzone, więc nie zabija się jej jak człowieka — można tylko zamknąć pokrywę. Po otwarciu zostaje jej jedna rzecz, którą da się jeszcze wydobyć z naczynia: Elpis.",
     "slabosci_i_metody_pokonania": "Jedyna skuteczna metoda to nie otwierać — trzymać pokrywę. Kto znalazł się w domu, gdzie słój już otwarto, nie zamknie nieszczęść z powrotem; może tylko pamiętać, że na dnie została nadzieja, i to jest jedyny „zysk” z tej katastrofy. Równie ważne jest rozpoznanie wariantu: w tradycji Teognisa z Megary słój zawierał nie zło, lecz dobra, które uciekły ludziom — dlatego przed spotkaniem z Pandorą trzeba wiedzieć, z którą wersją słoja ma się do czynienia.",
     "preferencje": "Lubi: dary, wesela, nowe domy, pył na dnie naczynia, złoto i pytania o to, co w środku. Nie lubi: zamkniętych pokryw, zakazów, Epimeteusza, który rozumie wszystko dopiero po fakcie, i ludzi, którzy dopytują, co zostało."
@@ -45,6 +45,16 @@
       "typ": "encyklopedia",
       "pozycja": "Encyclopaedia Britannica, „Pandora” — pierwsza kobieta; słój (później nazywany „puszką”) zawierał wszelkie nieszczęścia i zło; po otwarciu zło rozeszło się po ziemi, a nadzieja została pod zamkniętą pokrywą; w wariancie późniejszym w naczyniu były błogosławieństwa utracone przez ciekawość",
       "url": "https://www.britannica.com/topic/Pandora-Greek-mythology"
+    },
+    {
+      "typ": "tekst źródłowy",
+      "pozycja": "Hezjod, „Teogonia” (przeł. H. G. Evelyn-White, 1914; Theoi Classical Texts Library), w. 570–602 — wariant bez słoja i bez imienia: Hefajstos lepi z ziemi „podobiznę wstydliwej dziewczyny”, Atena odziewa ją w srebrzyste szaty i haftowany welon; „a crown of gold which the very famous Limping God made himself… On it was much curious work… creatures which the land and sea rear up… like living beings with voices”; bogowie i ludzie ogarnęci zdumieniem widzą „sheer guile, not to be withstood by men”; „For from her is the race of women and female kind: of her is the deadly race and tribe of women”, porównanych do trutni jedzących pracę pszczół",
+      "url": "https://www.theoi.com/Text/HesiodTheogony.html"
+    },
+    {
+      "typ": "tekst źródłowy",
+      "pozycja": "Pauzaniasz, „Opis Grecji” 1.24.7 (przeł. W. H. S. Jones, H. A. Ormerod, 1918; Perseus Digital Library) — posąg Ateny Partenos na Akropolu: „On the pedestal is the birth of Pandora in relief. Hesiod and others have sung how this Pandora was the first woman; before Pandora was born there was as yet no womankind”",
+      "url": "https://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0160%3Abook%3D1%3Achapter%3D24%3Asection%3D7"
     }
   ],
   "trofea": {
@@ -102,6 +112,10 @@
       {
         "data": "2026-08-30 21:57",
         "opis": "Dopisana genealogia Pandory — córka Pyrrha i Deukalion, którzy przeżyli potop i odtworzyli ludzkość (Theoi; Apollodoros 1.46, Hygin „Fabulae” 142)."
+      },
+      {
+        "data": "2026-09-04 15:39",
+        "opis": "Pogłębienie z natury bytu: drugie oblicze Pandory z „Teogonii” (wariant bez słoja — kara jest sama istota, „rodzaj kobiet” i porównanie do trutni) oraz złota korona kuta przez Hefajstosa ze stworzeniami lądu i morza; dwa nowe źródła pierwotne: „Teogonia” w. 570–602 i Pauzaniasz 1.24.7 o płaskorzeźbie narodzin Pandory na podstawie Partenos."
       }
     ]
   }

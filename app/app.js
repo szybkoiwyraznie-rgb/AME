@@ -1,7 +1,7 @@
 /**
  * app/app.js — bootstrap AME: ładuje indeks, mapę świata, spina UI.
  */
-import { stworzMape, PROGI_WARSTW, PODKLADY_ONLINE } from './map.js?v=c5-13';
+import { stworzMape, PROGI_WARSTW, PODKLADY_ONLINE } from './map.js?v=c5-14';
 import { zaladujIndeks, zaladujWpis, zaladujSkit, dopasowania, wylosujSlug } from './data.js?v=c5-1';
 import {
   htmlWpisu,
@@ -26,8 +26,8 @@ import {
   tekstDoLektora,
   htmlTrofeow,
   paryRozmowySkitu,
-} from './ui.js?v=c5-13';
-import { SZEROKOSC, WYSOKOSC } from './geo.js?v=c5-13';
+} from './ui.js?v=c5-14';
+import { SZEROKOSC, WYSOKOSC } from './geo.js?v=c5-14';
 
 const $ = (sel) => document.querySelector(sel);
 
@@ -725,6 +725,15 @@ function podepnijZdarzenia() {
   });
 }
 
+function sledzPreferencjeSystemu() {
+  if (typeof matchMedia !== 'function') return;
+  const pytajnik = matchMedia('(prefers-color-scheme: light)');
+  pytajnik.addEventListener?.('change', (e) => {
+    // podążamy za systemem tylko dopóki użytkownik sam nie wybrał motywu
+    if (!czytajMotyw()) zastosujMotyw(motywPoczatkowy({ woliJasny: e.matches }));
+  });
+}
+
 async function start() {
   zastosujMotyw(
     motywPoczatkowy({
@@ -732,6 +741,7 @@ async function start() {
       woliJasny: typeof matchMedia === 'function' && matchMedia('(prefers-color-scheme: light)').matches,
     })
   );
+  sledzPreferencjeSystemu();
   if (location.protocol === 'file:') {
     $('#baner').innerHTML = `Otwarto plik przez <code>file://</code> — przeglądarka blokuje wczytywanie danych.
       Uruchom lokalny serwer: <code>python3 -m http.server 8000</code> i otwórz <code>http://localhost:8000</code>.

@@ -1,8 +1,8 @@
 {
   "wersja": 3,
-  "buildTime": "2026-09-04T15:29:18.316Z",
+  "buildTime": "2026-09-04T16:29:03.616Z",
   "liczba": 20,
-  "liczbaSkitow": 30,
+  "liczbaSkitow": 34,
   "kanon": {
     "kategorie": [
       {
@@ -447,6 +447,7 @@
       },
       "skity": [
         "dzien-wolnego",
+        "ostatnia-droga",
         "poslaniec-i-straznicy",
         "warta"
       ]
@@ -542,6 +543,7 @@
       "skity": [
         "cena-znaku",
         "kalendarz-powrotow",
+        "slowo-stopu",
         "trzy-stoly",
         "trzy-zegary",
         "warta",
@@ -587,6 +589,7 @@
       },
       "skity": [
         "dzien-wolnego",
+        "linia-brzegu",
         "najgorsze-odpowiedzi",
         "pod-dachem"
       ]
@@ -824,6 +827,7 @@
       },
       "skity": [
         "dzien-wolnego",
+        "linia-brzegu",
         "pogoda-na-jutro",
         "zaplata-za-przewoz"
       ]
@@ -915,6 +919,7 @@
         "pierwszy",
         "pod-dachem",
         "pogoda-na-jutro",
+        "slowo-stopu",
         "z-gliny-i-spizu"
       ]
     },
@@ -1000,6 +1005,7 @@
       "skity": [
         "czwarty-stol",
         "najgorsze-odpowiedzi",
+        "ostatnia-droga",
         "pracownicy-progu",
         "prezent-z-defektem"
       ]
@@ -1046,6 +1052,7 @@
       "skity": [
         "cena-znaku",
         "dwa-grzbiety",
+        "linia-brzegu",
         "prezent-z-defektem",
         "zaplata-za-przewoz"
       ]
@@ -1090,6 +1097,7 @@
       },
       "skity": [
         "czwarty-stol",
+        "pierwsza-zmiana",
         "prezent-z-defektem",
         "z-gliny-i-spizu"
       ]
@@ -1132,6 +1140,7 @@
         "wtorne": "Czarny kita z hełmu — pęk końskiego włosia, który pozostaje we mgle po zniknięciu fantomu, jako znak, że „albo z tym, albo na tym” wciąż obowiązuje."
       },
       "skity": [
+        "pierwsza-zmiana",
         "pierwszy",
         "pracownicy-progu",
         "warta"
@@ -1185,6 +1194,7 @@
         "dwie-skory",
         "imie-na-progu",
         "kalendarz-powrotow",
+        "linia-brzegu",
         "pogoda-na-jutro",
         "znak-i-liczba"
       ]
@@ -1235,6 +1245,7 @@
       },
       "skity": [
         "najgorsze-odpowiedzi",
+        "pierwsza-zmiana",
         "poslaniec-i-straznicy",
         "zagadka-ze-spizu"
       ]
@@ -1276,6 +1287,7 @@
         "wtorne": "Kamyk z ghatu Manikarnika — z miejsca, gdzie Yama nie ma władzy; noszony przy drodze przypomina, którą ścieżkę wybrać."
       },
       "skity": [
+        "ostatnia-droga",
         "pierwszy",
         "poslaniec-i-straznicy",
         "zaplata-za-przewoz"
@@ -1325,7 +1337,9 @@
         "wtorne": "Odłamany kawałek brązowej łydki z widocznym szwem odlewniczym — pamiątka po bycie, który był kiedyś narzędziem, a nie istotą."
       },
       "skity": [
+        "pierwsza-zmiana",
         "poslaniec-i-straznicy",
+        "slowo-stopu",
         "z-gliny-i-spizu",
         "zagadka-ze-spizu"
       ]
@@ -1533,6 +1547,25 @@
       "data": "2026-08-28 15:35"
     },
     {
+      "slug": "linia-brzegu",
+      "tytul": "LINIA BRZEGU",
+      "temat": "kogo woda oddaje, a kogo zatrzymuje — i za jaką opłatą",
+      "uczestnicy": [
+        "ben-varrey",
+        "kannon-hase",
+        "nessos",
+        "selkie-sule-skerry"
+      ],
+      "imiona": [
+        "Ben-Varrey",
+        "Nessos",
+        "Wielki Selkie",
+        "Kannon"
+      ],
+      "slow": 253,
+      "data": "2026-09-04 16:25"
+    },
+    {
       "slug": "najgorsze-odpowiedzi",
       "tytul": "NAJGORSZE ODPOWIEDZI",
       "temat": "żale służbowe na progu — każda z nich zadaje ludziom pytania i zbiera najgorsze odpowiedzi",
@@ -1582,6 +1615,42 @@
       ],
       "slow": 255,
       "data": "2026-08-29 10:20"
+    },
+    {
+      "slug": "ostatnia-droga",
+      "tytul": "OSTATNIA DROGA",
+      "temat": "kto idzie z tobą na ostatnią drogę — i kto czeka przy niej w bieli",
+      "uczestnicy": [
+        "agni",
+        "morowa-panna",
+        "syama-i-sarvara"
+      ],
+      "imiona": [
+        "Agni",
+        "Morowa Panna",
+        "Śyāma i Śarvara"
+      ],
+      "slow": 251,
+      "data": "2026-09-04 16:10"
+    },
+    {
+      "slug": "pierwsza-zmiana",
+      "tytul": "PIERWSZA ZMIANA",
+      "temat": "instrukcja obsługi bytu, której nikt nie dodał do umowy",
+      "uczestnicy": [
+        "pandora",
+        "protostates",
+        "sfinks-teby",
+        "talos-kreta"
+      ],
+      "imiona": [
+        "Pandora",
+        "Sfinks",
+        "Talos",
+        "Protostates"
+      ],
+      "slow": 201,
+      "data": "2026-09-04 15:45"
     },
     {
       "slug": "pierwszy",
@@ -1703,6 +1772,23 @@
       ],
       "slow": 288,
       "data": "2026-08-30 13:30"
+    },
+    {
+      "slug": "slowo-stopu",
+      "tytul": "SŁOWO STOPU",
+      "temat": "kto ma jak zrobiony wyłącznik — i dlaczego nikt nie pomyślał o użytkowniku",
+      "uczestnicy": [
+        "barbarossa-kyffhaeuser",
+        "knecht-z-koptos",
+        "talos-kreta"
+      ],
+      "imiona": [
+        "Barbarossa z Kyffhäuseru",
+        "Knecht z Koptos",
+        "Talos"
+      ],
+      "slow": 280,
+      "data": "2026-09-04 16:35"
     },
     {
       "slug": "trzy-stoly",
@@ -1841,12 +1927,76 @@
   ],
   "aktualizacje": [
     {
+      "data": "2026-09-04 16:35",
+      "typ": "skit",
+      "akcja": "nowy",
+      "slug": "slowo-stopu",
+      "tytul": "SŁOWO STOPU",
+      "opis": "SKIT — skład: Barbarossa z Kyffhäuseru, Knecht z Koptos, Talos"
+    },
+    {
+      "data": "2026-09-04 16:25",
+      "typ": "skit",
+      "akcja": "nowy",
+      "slug": "linia-brzegu",
+      "tytul": "LINIA BRZEGU",
+      "opis": "SKIT — skład: Ben-Varrey, Nessos, Wielki Selkie, Kannon"
+    },
+    {
+      "data": "2026-09-04 16:24",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "barbarossa-kyffhaeuser",
+      "tytul": "Barbarossa w Kyffhäuserze",
+      "opis": "Oryginał Grimmów z 1816 r. (Project Gutenberg #76558): epizod pasterza, któremu wstający cesarz zadaje pytanie o kruki, cytaty po niemiecku i druki, na które powołują się Grimmowie (m.in. Tenzel 1689) — legenda drukowana już w XVII w."
+    },
+    {
+      "data": "2026-09-04 16:10",
+      "typ": "skit",
+      "akcja": "nowy",
+      "slug": "ostatnia-droga",
+      "tytul": "OSTATNIA DROGA",
+      "opis": "SKIT — skład: Agni, Morowa Panna, Śyāma i Śarvara"
+    },
+    {
+      "data": "2026-09-04 16:05",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "talos-kreta",
+      "tytul": "Talos — spiżowy strażnik Krety",
+      "opis": "Pogłębienie: warianty zamknięcia żyły (błona u Apolloniusza, gwóźdź u Apollodorosa) i śmierć z rąk Medei bez wyciągania gwoździa; dwa źródła pierwotne — „Argonautyki\" 4.1638–1688 i hezjodowski spiżowy ród („Prace i dnie\" 141–155)."
+    },
+    {
+      "data": "2026-09-04 16:05",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "kannon-hase",
+      "tytul": "Kannon — miłosierna wybawicielka",
+      "opis": "Pogłębienie charakterystyki i zdolności o rozdział XXV Sutry Lotosu (tłum. Kubo–Yuyama, BDK 2007) — imię jako obietnica, siła wołania w ogniu, na wodzie i wobec ostrzy, przybieranie postaci potrzebnej do zbawienia; dopisana pozycja źródła pierwotnego w dokumentacji"
+    },
+    {
+      "data": "2026-09-04 15:45",
+      "typ": "skit",
+      "akcja": "nowy",
+      "slug": "pierwsza-zmiana",
+      "tytul": "PIERWSZA ZMIANA",
+      "opis": "SKIT — skład: Pandora, Sfinks, Talos, Protostates"
+    },
+    {
       "data": "2026-09-04 15:45",
       "typ": "skit",
       "akcja": "nowy",
       "slug": "poslaniec-i-straznicy",
       "tytul": "POSŁANIEC I STRAŻNICY",
       "opis": "SKIT — skład: Agni, Sfinks, Śyāma i Śarvara, Talos"
+    },
+    {
+      "data": "2026-09-04 15:39",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "pandora",
+      "tytul": "Pandora — pierwsza kobieta i pithos, w którym została nadzieja",
+      "opis": "Pogłębienie z natury bytu: drugie oblicze Pandory z „Teogonii” (wariant bez słoja — kara jest sama istota, „rodzaj kobiet” i porównanie do trutni) oraz złota korona kuta przez Hefajstosa ze stworzeniami lądu i morza; dwa nowe źródła pierwotne: „Teogonia” w. 570–602 i Pauzaniasz 1.24.7 o płaskorzeźbie narodzin Pandory na podstawie Partenos."
     },
     {
       "data": "2026-09-04 15:25",

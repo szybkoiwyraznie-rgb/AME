@@ -73,10 +73,18 @@
 
 ## Infrastruktura
 
-- **Test budżetu dokumentacji**: skrypt pilnujący rozmiaru lektury startowej
-  (jak w projekcie mtg) — gdy dokumenty urosną.
-- **Lint stylu wpisów**: prosta heurystyka „zakaz terminologii growej w
-  sekcji II” (lista słów: haste, trample, mana…).
+- ~~**Test budżetu dokumentacji**~~ — **WDROŻONE (2026-09-04, PR #17, C2 pętli
+  jakości):** `tools/budzet-lektury.mjs` mierzy zbiór lektury startowej §0
+  (AGENTS, PROTOKÓŁ, rejestr + wszystkie ADR-y, LESSONS, ENVIRONMENT) i szacuje
+  tokeny heurystyką 1 tok ≈ 4 znaki; `test/budzet.test.js` pilnuje progu
+  40 tys. tokenów (dziś ~29,5 tys. = 74%) oraz kompletności listy. Do
+  akceptacji właściciela przed live.
+- ~~**Lint stylu wpisów**~~ — **WDROŻONE (2026-09-04, PR #17, C2 pętli
+  jakości):** `tools/lint-stylu.mjs` wykrywa żargon kart (haste, trample,
+  mana, żeton, talia…; granice słów unicode, bez fałszywych trafień typu
+  „mano”) w sekcji II wpisów i dialogach SKITów (PROTOKÓŁ §8.4, ADR 0005);
+  spięty z `npm run check` i testami w `test/lint-stylu.test.js`; cały
+  korpus (20 wpisów, 31 skitów) przechodzi.
 ## Kronika — propozycje rozwoju wizualizacji (2026-08-30)
 
 - **Analiza:** `docs/plans/ANALIZA_kronika-rozwoj-2026-08-30.md` (co
@@ -105,9 +113,10 @@
 
 ## Rozpoznane w sesji M3 (2026-08-28) — po poprawkach z testów
 
-- **Reakcja na zmianę preferencji systemu** — dziś `prefers-color-scheme` liczy
-  się tylko przy braku zapisanego wyboru; można nasłuchiwać `change` i
-  przełączać dopóki użytkownik nie zdecydował samodzielnie.
+- ~~**Reakcja na zmianę preferencji systemu**~~ — **WDROŻONE (2026-09-04, PR
+  #17, C2 pętli jakości):** `sledzPreferencjeSystemu()` w `app/app.js`
+  nasłuchuje `change` na `prefers-color-scheme` i przełącza motyw tylko
+  dopóki użytkownik nie zapisał własnego wyboru w `localStorage`.
 - ~~**Miniatura wizualizacji w wierszu kartoteki i w liście**~~ — **WDROŻONE
   (2026-09-04, PR #13, C2 pętli jakości):** wiersz listy manifestacji z polem
   `obraz` dostaje miniaturę 21:9 (`<img loading="lazy">`, klasa
@@ -119,8 +128,11 @@
 - **Kontrola żywości adresów źródłowych** — skrypt sesji (narzędzia agenta), NIE
   CI: egress sandboxa jest ograniczony (L3), a linki bywają przenoszone.
   Wymagałby decyzji: martwy link = ostrzeżenie czy błąd walidatora.
-  **Potwierdzony przypadek (2026-08-30):** Theoi „HephaestusWorks”
-  w kartotece `talos-kreta` → 404 („File not found”).
+  **Przypadek rozstrzygnięty:** Theoi „HephaestusWorks” w kartotece
+  `talos-kreta` padał z 404 („File not found”) 2026-08-30; przy pogłębianiu
+  wpisu 2026-09-04 strona znów odpowiada 200 i zawiera passus o Talosie
+  (adres zostaje). Lekcja: jednorazowy 404 Theoi bywa przejściowy —
+  przed wymianą linku sprawdzić ponownie po czasie.
 - ~~**Widok druku (media print) dla warstwy wpisu**~~ — **WDROŻONE (2026-08-30, PR #12, C2 pętla jakości):** przycisk „🖨 drukuj” w kartotece → `window.print()`; arkusz `@media print` chowa topbar/mapę/listę i pokazuje otwartą kartotekę na białym tle z ciemnym tekstem (cache-bust `c5-8`). Do akceptacji właściciela przed live.
 - **Znacznik „źródło bez adresu” w UI** — pozycje bez `url` (papier) warto
   oznaczać inną kursywą, żeby czytelnik wiedział, czego nie da się kliknąć.
