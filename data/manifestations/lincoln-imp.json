@@ -17,7 +17,7 @@
     "lat": 53.23,
     "lon": -0.54
   },
-  "pochodzenie_i_kultura": "Angielski folklor kościelny wokół groteski w katedrze Lincoln: rzeźba ima siedzi w Angel Choir, którego budowę zamykano w latach 1250–1280, i to na ten czas się ją datuje. Sama legenda w zapisach jest młodsza: balada „The Ballad of the Wind, the Devil and Lincoln Minster” (1897, autor pseudonimem Arnold Frost, zecera G. T. Hemsley) i drukowana wersja broszury katedralnej z 1904 r. opierają się na motywie starszym o wieki — przysłowiu „looking as the devil over Lincoln” poświadczonym od 1562 r.",
+  "pochodzenie_i_kultura": "Angielski folklor kościelny wokół groteski w katedrze Lincoln: rzeźba ima siedzi w Angel Choir, którego budowę zamykano w latach 1250–1280, i to na ten czas się ją datuje. Sama legenda w zapisach jest młodsza: balada „The Ballad of the Wind, the Devil and Lincoln Minster” (1897, autor pseudonimem Arnold Frost, zecera G. T. Hemsley) i drukowana wersja broszury katedralnej z 1904 r. opierają się na motywie starszym o wieki — przysłowiu „looking as the devil over Lincoln” poświadczonym od 1562 r. Drugie życie ima zaczyna się wraz z jubilerem: James Ward Usher z Lincoln wykupił pod koniec XIX w. wyłączne prawo do wizerunku i rozsławił groteskę jako wisiorek-talisman przynoszący szczęście; sceptycy z „Notes and Queries” (cytowani w folklorystycznym zbiorze hrabstwa z 1908 r.) podejrzewali słusznie, że przesąd „wykonano na zamówienie” — a jednak to on okazał się trwalszy niż niejedna starsza wiara. Dziś imp jest znakiem całego miasta: siedzi na herbie Lincoln City FC (piłkarzy zwa się The Imps, maskotką klubu jest Poacher the Imp), jest odznaką 61. dywizjonu RAF, a zielony imp widnieje w logo rady hrabstwa Lincolnshire; pośrednio narodził się z niego także gibraltarski klub Lincoln Red Imps. W 1899 r. wierną kopię rzeźby wmurowano w Oxfordzie — w Lincoln College, w miejsce uszkodzonej figury, którą tamtejsi antykwariusze (od Thomasa Fullera, „Worthies of England”, 1662) usiłowali uczynić źródłem przysłowia.",
   "wizualizacja": {
     "prompt": "Style: A wide-angle full-body cinematic photograph. The central objects/persons of the photo are visible from head to toe, standing centrally in the frame. No parts of the body are cropped.\n\nA small hairy medieval imp demon with cow ears, cloven hooves, sharp teeth in a wide insolent grin and a barbed tail, crouching on top of a load-bearing stone pillar high inside Lincoln Cathedral's Angel Choir at night, clawed fingers prising a fresh crack in the carved stone, a scorched psalter smouldering on the ledge beside it, cold moonlight falling through stained glass across gothic arches, candle stubs guttering far below on the floor.\n\nCaptured with a 35mm anamorphic lens at f/1.8. Shallow depth of field with a heavy, creamy bokeh background. Environmental portraiture. Dramatic cinematic lighting, sharp focus on the character, hyper-realistic textures of clothing and skin. Shot on 70mm film stock, ultra-wide 21:9 aspect ratio. --ar 21:9",
     "obraz": "assets/wizualizacje/lincoln-imp.jpg"
@@ -59,11 +59,26 @@
       "typ": "folklor (blog tematyczny)",
       "pozycja": "zteve t. evans, „Petrification Myths: Mischief, Mayhem and the Pesky Lincoln Imp” (2017) — anioł wychodzi z hymnału, wersja z Grimsby (drugi imp niszczy kościół św. Jakuba i dostaje lanie), oraz powiedzenie, że wiatr krążący wokół katedry to imp szukający towarzysza",
       "url": "https://ztevetevans.wordpress.com/tag/grimsby/"
+    },
+    {
+      "typ": "tekst źródłowy",
+      "pozycja": "Robert Means Lawrence, „The Magic of the Horseshoe” (Boston–Nowy Jork 1898), rozdz. „The Luck of the Lincoln Imp” (s. 325–326) — pierwsza szeroka publikacja legendy Frosta w Ameryce; pełny skan w Internet Archive",
+      "url": "https://archive.org/details/magicofhorseshoe00lawrrich/page/n351/mode/2up"
+    },
+    {
+      "typ": "tekst źródłowy",
+      "pozycja": "Thomas Fuller, „The History of the Worthies of England” (1662), Lincolnshire, s. 107 — najstarsza dyskusja rodowodu przysłowia: diabeł nad Lincoln College w Oxfordzie to późniejsza „humorystyczna ilustracja”, a pierwowzorem jest katedra w Lincoln; pełny skan w Internet Archive",
+      "url": "https://archive.org/details/historyofworthie02full/page/106/mode/2up"
+    },
+    {
+      "typ": "biografia",
+      "pozycja": "Wikipedia, „James Ward Usher” (1945–1921) — jubiler i kolekcjoner z Lincoln, wyłączne prawo do wizerunku ima na pamiątkach i biżuterii, z którego uczynił talisman szczęścia; fundator Usher Gallery",
+      "url": "https://en.wikipedia.org/wiki/James_Ward_Usher"
     }
   ],
   "trofea": {
     "pierwotne": "Skamieniały imp na filarze w Angel Choir — trofeum na miejscu, nierozdzielne z katedrą",
-    "wtorne": "Oświecona monetą fotografia groteski (współczesna relikwia pątnicza)"
+    "wtorne": "Oświecona monetą fotografia groteski; jubilerski wisiorek z wizerunkiem ima w kolekcji Ushera — talisman szczęścia jako współczesna relikwia pątnicza"
   },
   "tagi": [
     "anglia",
@@ -84,6 +99,10 @@
     {
       "slug": "drangue-shala",
       "opis": "Ten sam zabieg wspólnoty: święty przedmiot wbudowany w budynek i zamieniony w znak tożsamości chroni, dopóki zostaje na miejscu. Groteska ima wmurowana w filar Angel Choir stała się herbem Lincoln, a kamień piorunowy w izbie — własnością rodziny, przed którą kule mijają domowników. W obu przypadkach ochrona jest funkcją tego, że rzecz została tam, gdzie ją osadzono, a nie tego, że ktokolwiek w nią wierzy."
+    },
+    {
+      "slug": "talos-kreta",
+      "opis": "Obaj są uwięzieni w ruchu dookoła tego, co nawiedzają: spiżowy Talos okrąża Kretę trzy razy dziennie i spada, gdy jeden gwóźdź przestaje domykać jego obieg, a imp — jako wiatr — krąży wokół murów katedry, bo szuka skamieniałego bliźniaka, którego nie wypuszcza mu wrócić z powrotem. W obu mitach obrót zastępuje im wolność: można się poruszać, ale nie można odejść."
     }
   ],
   "meta": {
@@ -105,6 +124,10 @@
       {
         "data": "2026-08-30 00:38",
         "opis": "Audyt Kartoteki: poprawki językowe i doprecyzowanie zdań (odmiana, literówki, spójność z mitem)."
+      },
+      {
+        "data": "2026-09-04 15:25",
+        "opis": "Drugie życie ima: od jubilerskiego talizmanu Jamesa Warda Ushera do herbu Lincoln City FC, odznaki 61. dywizjonu RAF i logo rady hrabstwa; kopia z Oxfordu i spór o rodowód przysłowia (Fuller 1662, Lawrence 1898); trzy nowe źródła z adresami i powiązanie z Talosem z Krety (strażnicy uwięzieni w ruchu dookoła)."
       }
     ]
   }

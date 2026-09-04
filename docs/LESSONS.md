@@ -251,3 +251,19 @@ przypadek działania to wyraźne polecenie w rodzaju „scal PR #N" — i nawet 
 potwierdzić, że to merge, nie akceptacja. Cofnięcie błędnego merge'a: nie
 revertować pushując do main (zakaz) — opisać stan i czekać na decyzję
 właściciela.
+
+## L19 (2026-09-04, AME) — `npm test | grep` w łańcuchu && maskuje czerwony test
+
+**Objaw:** łańcuch `npm test 2>&1 | grep -E '^# (pass|fail)' && npm run build &&
+git commit && git push` wykonał się „do końca" przy wyniku `# pass 212 / # fail 1` —
+commit i push poszły z czerwonym testem (brama jakości złamana na własne życzenie).
+**Przyczyna:** exit code potoku to exit code OSTATNIEGO polecenia — `grep` znalazł
+dopasowania i zwrócił 0, zjadając niezerowy kod `npm test`. Wzorzec „odfiltruj
+wynik grep-em" jest wygodny do czytania logu, ale niszczy bramę.
+**Reguła:** w łańcuchu warunkowym testy uruchamiaj BEZ potoku
+(`npm test >/tmp/t.log 2>&1 && ...`), a log oglądaj osobno; albo najpierw
+`npm test` (samodzielna komenda, patrzysz na exit code), dopiero potem
+build+commit+push. To samo dotyczy każdej bramy jakości: nigdy nie podłączaj
+jej wyjścia do grep/sed wewnątrz łańcucha `&&`, który kończy się commitem.
+Pokrewne: L1 (pushuj natychmiast — niepchnięty commit ginie przy resecie
+sandboxa; zdarzyło się to tej samej sesji).

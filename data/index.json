@@ -1,8 +1,8 @@
 {
   "wersja": 3,
-  "buildTime": "2026-09-04T13:39:57.643Z",
+  "buildTime": "2026-09-04T15:29:18.316Z",
   "liczba": 20,
-  "liczbaSkitow": 29,
+  "liczbaSkitow": 30,
   "kanon": {
     "kategorie": [
       {
@@ -447,6 +447,7 @@
       },
       "skity": [
         "dzien-wolnego",
+        "poslaniec-i-straznicy",
         "warta"
       ]
     },
@@ -940,7 +941,8 @@
       "powiazania": [
         "balor",
         "drangue-shala",
-        "egungun"
+        "egungun",
+        "talos-kreta"
       ],
       "backlinki": [
         "balor",
@@ -949,7 +951,7 @@
       "obraz": "assets/wizualizacje/lincoln-imp.jpg",
       "trofea": {
         "pierwotne": "Skamieniały imp na filarze w Angel Choir — trofeum na miejscu, nierozdzielne z katedrą",
-        "wtorne": "Oświecona monetą fotografia groteski (współczesna relikwia pątnicza)"
+        "wtorne": "Oświecona monetą fotografia groteski; jubilerski wisiorek z wizerunkiem ima w kolekcji Ushera — talisman szczęścia jako współczesna relikwia pątnicza"
       },
       "skity": [
         "hold-oraz-swiatlo",
@@ -1233,6 +1235,7 @@
       },
       "skity": [
         "najgorsze-odpowiedzi",
+        "poslaniec-i-straznicy",
         "zagadka-ze-spizu"
       ]
     },
@@ -1274,6 +1277,7 @@
       },
       "skity": [
         "pierwszy",
+        "poslaniec-i-straznicy",
         "zaplata-za-przewoz"
       ]
     },
@@ -1310,6 +1314,7 @@
       "backlinki": [
         "kentaur-pelion",
         "knecht-z-koptos",
+        "lincoln-imp",
         "nessos",
         "pandora",
         "sfinks-teby"
@@ -1320,6 +1325,7 @@
         "wtorne": "Odłamany kawałek brązowej łydki z widocznym szwem odlewniczym — pamiątka po bycie, który był kiedyś narzędziem, a nie istotą."
       },
       "skity": [
+        "poslaniec-i-straznicy",
         "z-gliny-i-spizu",
         "zagadka-ze-spizu"
       ]
@@ -1646,6 +1652,25 @@
       "data": "2026-09-04 14:00"
     },
     {
+      "slug": "poslaniec-i-straznicy",
+      "tytul": "POSŁANIEC I STRAŻNICY",
+      "temat": "kurier i trzech celników: kto sprawdza zagadką, kto węchem, kto głazem — i dlaczego na przesyłkę czekają wszyscy, a na posłańca nikt",
+      "uczestnicy": [
+        "agni",
+        "sfinks-teby",
+        "syama-i-sarvara",
+        "talos-kreta"
+      ],
+      "imiona": [
+        "Agni",
+        "Sfinks",
+        "Śyāma i Śarvara",
+        "Talos"
+      ],
+      "slow": 298,
+      "data": "2026-09-04 15:45"
+    },
+    {
       "slug": "pracownicy-progu",
       "tytul": "PRACOWNICY PROGU",
       "temat": "status w pracy: pierwszy szereg zna swoje pytanie, urzędniczka progu — swoje, a kto pyta o pogodę?",
@@ -1815,6 +1840,22 @@
     }
   ],
   "aktualizacje": [
+    {
+      "data": "2026-09-04 15:45",
+      "typ": "skit",
+      "akcja": "nowy",
+      "slug": "poslaniec-i-straznicy",
+      "tytul": "POSŁANIEC I STRAŻNICY",
+      "opis": "SKIT — skład: Agni, Sfinks, Śyāma i Śarvara, Talos"
+    },
+    {
+      "data": "2026-09-04 15:25",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "lincoln-imp",
+      "tytul": "Imp z Lincoln",
+      "opis": "Drugie życie ima: od jubilerskiego talizmanu Jamesa Warda Ushera do herbu Lincoln City FC, odznaki 61. dywizjonu RAF i logo rady hrabstwa; kopia z Oxfordu i spór o rodowód przysłowia (Fuller 1662, Lawrence 1898); trzy nowe źródła z adresami i powiązanie z Talosem z Krety (strażnicy uwięzieni w ruchu dookoła)."
+    },
     {
       "data": "2026-09-04 14:45",
       "typ": "manifestacja",
