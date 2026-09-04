@@ -19,19 +19,24 @@
     "lat": 53.6954,
     "lon": 17.557
   },
-  "pochodzenie_i_kultura": "Folklor słowiański (krąg polsko-rusko-litewski, ujęty tu przez tradycję ziem polskich): personifikacja zarazy — nienaturalnie wysoka, wychudła niewiasta w białym pogrzebowym całunie albo brudnej płachcie, z czerwoną lub zakrwawioną chustą; zjawia się nocą, prowadzi z domownikami rozmowę i jedną odpowiedzią przesądza o losie domu, a na wiosnę bywa odprawiana jako kukła. Jedna tradycja, jeden byt — mór; nie mieszam jej z aniołem śmierci ani z greckimi Kerami.",
+  "pochodzenie_i_kultura": "Folklor słowiański (krąg polsko-rusko-litewski, ujęty tu przez tradycję ziem polskich): personifikacja zarazy — nienaturalnie wysoka, wychudła niewiasta w białym pogrzebowym całunie albo brudnej płachcie, z czerwoną lub zakrwawioną chustą; zjawia się nocą, prowadzi z domownikami rozmowę i jedną odpowiedzią przesądza o losie domu, a na wiosnę bywa odprawiana jako kukła. Adam Mickiewicz, cytowany przez Wójcickiego („Klechdy starożytne”, 1837), podaje litewską balladę: morowa dziewica wchodzi do wsi, wsuwa rękę przez okno i powiewa czerwoną chustką, rozsiewając śmierć po domach, a mieszkańcy zamykają się warownie; Wójcicki dopowiada współczesne mu opowieści Hucułów znad Prutu o cholerze obnoszonej w postaci niewiasty po siołach i miastach. Jedna tradycja, jeden byt — mór; nie mieszam jej z aniołem śmierci ani z greckimi Kerami.",
   "wizualizacja": {
     "prompt": "Style: A wide-angle full-body cinematic photograph. The central objects/persons of the photo are visible from head to toe, standing centrally in the frame. No parts of the body are cropped.\n\nAn unnaturally tall, gaunt woman in a soiled white burial shroud standing at a half-open cottage doorway at night, one skeletal hand reaching through the gap holding a blood-red cloth; behind her a narrow village lane and the dark mass of an old town wall, low fog rolling over the threshold, a single candle flame guttering inside the house; cold moonlight, muted white and deep red against blue-black shadows, wet cobblestones, utterly silent air.\n\nCaptured with a 35mm anamorphic lens at f/1.8. Shallow depth of field with a heavy, creamy bokeh background. Environmental portraiture. Dramatic cinematic lighting, sharp focus on the character, hyper-realistic textures of clothing and skin. Shot on 70mm film stock, ultra-wide 21:9 aspect ratio. --ar 21:9",
     "obraz": "assets/wizualizacje/morowa-panna.jpg"
   },
   "natura": {
-    "wyglad_i_aura": "Nienaturalnie wysoka, wychudła i blada kobieta w białym, pogrzebowym całunie albo w wielkiej brudnej płachcie, z czerwoną — nierzadko zakrwawioną — chustą w dłoni. W tradycji ukraińskiej staje na mogiłach i powiewa chustą, dmuchając na osady morowym powietrzem; w podaniach litewskich wsuwa kościstą rękę z chustą przez uchylone drzwi albo okno. Twarzy nie widać; powietrze wokół niej gęstnieje jak przed gradem, a zapach bywa słodkawy, jak z piwnicy, w której leżał umarły.",
+    "wyglad_i_aura": "Nienaturalnie wysoka, wychudła niewiasta: w białym pogrzebowym całunie albo brudnej płachcie, z czerwoną lub zakrwawioną chustą — litewska ballada (za Wójcickim, 1837) każe jej wsuwać rękę przez okno i powiewać tą chustką, rozsiewając śmierć po domach. Obecność poznaje się po zapachu stęchlizny i chłodnej ziemi, po nagłej ciszy, w której nawet psy nie szczekają, i po chłodzie na progu, choć noc jest letnia.",
     "charakter_i_motywacje": "To nie bestia z lasu — to urzędniczka progu. Nie poluje z głodu, lecz przychodzi po rozliczenie i — co najgorsze — potrafi rozmawiać. Przeprowadza krótki wywiad: pyta „Czy śpicie?”, a kto odpowie „Śpimy”, ten słyszy „Śpijcież na wieki” i jego dom zostaje przeznaczony na zgubę. Kto jednak odpowie, że „nic nie robimy, tylko Boga chwalimy”, dostaje „Chwalcież go na wieki” — i w tym domu zaraza nie panuje. Jej motywacją jest dokończenie rytuału; zabija wtedy, gdy ludzie sami otworzą jej drzwi słowem.",
     "zdolnosci": "Nosi w sobie mór: wystarczy powiew chusty albo krok przez próg, by we wsi zaczęły się gorączki i dżuma. Nie potrzebuje drzwi — wchodzi z powietrzem, a miasto zamknięte jak trumna nie jest dla niej przeszkodą (legenda chojnicka). Najgroźniejsza jest jej zdolność rozmowy: pyta, czeka i zapisuje odpowiedź, a wypowiedziane słowo pełni rolę wyroku.",
     "slabosci_i_metody_pokonania": "Nie walczy się z nią bronią, lecz słowem i porządkiem: właściwa odpowiedź na jej pytanie — że się nie śpi, tylko chwali Boga — zamyka dom. Znane są też zabiegi odprawiania: zaklęcia każą chorobie „odejść na bagna, na bory, na lasy, na suche korzenie”, a na wiosnę wspólnota wynosi i topi kukłę — Marzannę, zwaną też Moreną — reprezentującą morową dziewicę. Kto rozpozna zjawę i nazwie ją po imieniu, ten zdejmuje jej władzę nad progiem.",
     "preferencje": "Lubi: noc, śpiące domy, uchylone okna, przeklinanie na progu, puste drogi i ciszę po pierwszym zgonie. Nie lubi: odpowiedzi „chwalimy Boga”, rzek między wsiami, ognia, soli na progu i wiosny, gdy wynoszą ją z wsi."
   },
   "dokumentacja": [
+    {
+      "typ": "tekst źródłowy (XIX w.)",
+      "pozycja": "Kazimierz Władysław Wójcicki, „Klechdy, starożytne podania i powieści ludowe” (1837; skan w Wikiźródłach), rozdział o powietrzu — cytat z Adama Mickiewicza: litewska ballada o morowej dziewicy wsuwającej rękę z czerwoną chustką przez okno i rozsiewającej śmierć; mieszkańcy zamykają się warownie; szlachcic z szablą z imieniem Jezus i Maria ucina straszydłu rękę; relacje górali ruskich (Hucułów) znad Prutu o cholerze obnoszonej w postaci niewiasty po siołach i miastach; serbska Kuga i powietrzna niewiasta na wozie o dwóch kolach ze starych polskich klechd",
+      "url": "https://pl.wikisource.org/wiki/Strona:Kazimierz_W%C5%82adys%C5%82aw_W%C3%B3jcicki_-_Klechdy_staro%C5%BCytne_podania_i_powie%C5%9Bci_ludowe.pdf/178"
+    },
     {
       "typ": "opracowanie",
       "pozycja": "lasmgiel.pl, „Morowa Dziewica. Jak słowiańska wieś walczyła z demonem zarazy?” — postać nienaturalnie wysokiej, wychudłej kobiety w białym całunie; czerwona lub skrwawiona chustka jako główny atrybut; tradycja ukraińska (stanie na mogiłach, dmuchanie morowego powietrza) i litewska (koścista ręka z chustą przez okno); dialog „Czy śpicie?” — „Śpijcież na wieki!” i właściwa odpowiedź „Nic nie robimy, tylko Boga chwalimy”",
@@ -92,6 +97,10 @@
       {
         "data": "2026-08-30 00:40",
         "opis": "Audyt Kartoteki: poprawka literówek („słój” zamiast „słaj”) w powiązaniach i kluczu."
+      },
+      {
+        "data": "2026-09-04 13:05",
+        "opis": "Dopisane źródło pierwotne z XIX wieku — Wójcicki „Klechdy starożytne” (1837): litewska ballada o ręce z czerwoną chustką wsuwanej przez okno i opowieści Hucułów o cholerze obnoszonej w postaci niewiasty; ballada wpleciona w wygląd i aurę bytu."
       }
     ]
   }

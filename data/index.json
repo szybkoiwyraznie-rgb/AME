@@ -1,6 +1,6 @@
 {
   "wersja": 3,
-  "buildTime": "2026-09-04T12:09:21.539Z",
+  "buildTime": "2026-09-04T12:59:43.195Z",
   "liczba": 20,
   "liczbaSkitow": 26,
   "kanon": {
@@ -1752,6 +1752,14 @@
     }
   ],
   "aktualizacje": [
+    {
+      "data": "2026-09-04 13:05",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "morowa-panna",
+      "tytul": "Morowa Panna — zaraza w białej szacie z czerwoną chustą",
+      "opis": "Dopisane źródło pierwotne z XIX wieku — Wójcicki „Klechdy starożytne” (1837): litewska ballada o ręce z czerwoną chustką wsuwanej przez okno i opowieści Hucułów o cholerze obnoszonej w postaci niewiasty; ballada wpleciona w wygląd i aurę bytu."
+    },
     {
       "data": "2026-09-04 12:50",
       "typ": "skit",
