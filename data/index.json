@@ -1,6 +1,6 @@
 {
   "wersja": 3,
-  "buildTime": "2026-09-04T16:29:03.616Z",
+  "buildTime": "2026-09-04T16:43:58.469Z",
   "liczba": 20,
   "liczbaSkitow": 34,
   "kanon": {
@@ -1926,6 +1926,14 @@
     }
   ],
   "aktualizacje": [
+    {
+      "data": "2026-09-04 16:50",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "kentaur-pelion",
+      "tytul": "Kentaur z Pelionu",
+      "opis": "Pogłębienie warstwą homerycką: Iliada 1.262–268 (Nestor i plemię „mountain-dwelling centaurs” — jeszcze bez końskiej anatomii) i 2.738–744 (wygnanie z Pelionu do Aityków) oraz Odyseja 21.295–304 (Eurytion i wino — najstarszy zapis katalizatora kentauromachii, „from hence the feud arose between the centaurs and mankind”); dwa źródła pierwotne w dokumentacji."
+    },
     {
       "data": "2026-09-04 16:35",
       "typ": "skit",
