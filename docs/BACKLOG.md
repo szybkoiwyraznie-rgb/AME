@@ -73,8 +73,12 @@
 
 ## Infrastruktura
 
-- **Test budżetu dokumentacji**: skrypt pilnujący rozmiaru lektury startowej
-  (jak w projekcie mtg) — gdy dokumenty urosną.
+- ~~**Test budżetu dokumentacji**~~ — **WDROŻONE (2026-09-04, PR #17, C2 pętli
+  jakości):** `tools/budzet-lektury.mjs` mierzy zbiór lektury startowej §0
+  (AGENTS, PROTOKÓŁ, rejestr + wszystkie ADR-y, LESSONS, ENVIRONMENT) i szacuje
+  tokeny heurystyką 1 tok ≈ 4 znaki; `test/budzet.test.js` pilnuje progu
+  40 tys. tokenów (dziś ~29,5 tys. = 74%) oraz kompletności listy. Do
+  akceptacji właściciela przed live.
 - **Lint stylu wpisów**: prosta heurystyka „zakaz terminologii growej w
   sekcji II” (lista słów: haste, trample, mana…).
 ## Kronika — propozycje rozwoju wizualizacji (2026-08-30)
