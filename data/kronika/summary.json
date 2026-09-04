@@ -3142,5 +3142,15 @@
     "wykorzystanieSlabosci": "ocena narratora (stopień 0–3), nie koszt",
     "osZamknieta": "mit + racjonalizacja = 100; delty sumują się do 0",
     "utworzono": "2026-08-29"
-  }
+  },
+  "tomy": [
+    {
+      "slug": "tom-1",
+      "nr": 1,
+      "tytul": "Kronika trzech stołów",
+      "opis": "",
+      "plik": "kronika-tom-1.html",
+      "epoki": 7
+    }
+  ]
 }

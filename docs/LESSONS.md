@@ -305,3 +305,25 @@ natychmiast przełącz się na właściwą i dopiero commituj. Auto-sesja na
 starcie sprząta sieroty: otwarty PR `session/*-auto` z `mergeable=false`
 rozwiązuje (rebase względem main → testy → scalenie), a wartościowe commity
 bez PR wciąga cherry-pickiem na swoją gałąź. Nic nie zostaje wiszące.
+
+
+## L22 (2026-09-04, AME) — API Node w kodzie przeglądarki: pusta warstwa, testy zielone
+
+**Objaw:** kliknięcie „✎ skity" otwierało pustą, pełnoekranową stronę.
+W konsoli przeglądarki: `ReferenceError: Buffer is not defined` —
+`htmlBazySkitow()` (app/ui.js) kodowało `data-temat` przez Node'owy
+`Buffer.from(...)`, a `otworzBazeSkitow()` dodawało klasę `.otwarta`
+PRZED budowaniem treści, więc wyjątek zostawiał otwartą, pustą warstwę
+zasłaniającą całą aplikację.
+**Przyczyna:** `app/` to moduły ES współdzielone przez przeglądarkę
+i testy Node. Testy przechodziły, bo Node ma `Buffer` globalnie —
+przeglądarka nie. Podobnie goły `atob()` na tekście UTF-8 (tematy SKIT-ów
+z diakrytykami) dawał mojibake w filtrze wyszukiwania.
+**Reguła:** w `app/` wolno używać wyłącznie API wspólnych dla
+przeglądarki i Node (`TextEncoder`/`TextDecoder`, `btoa`/`atob`,
+`fetch`, `URL`). Do base64 tekstu UTF-8 służą `doB64utf8`/`zB64utf8`
+z `app/ui.js`. Testy parzystości: wywołaj renderer po
+`delete globalThis.Buffer` (precedens: test „parzystość z przeglądarką"
+w `test/ui.test.js`). Przy debugowaniu „pustej strony" w warstwie
+najpierw sprawdź konsolę przeglądarki — wyjątek w builderze treści
+po `.classList.add('otwarta')` daje dokładnie ten obraz.

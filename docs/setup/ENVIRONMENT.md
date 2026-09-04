@@ -55,7 +55,9 @@ pushuj od razu; przed długimi operacjami upewnij się, że praca jest wypchnię
 - **`gh pr edit` bywa odrzucane** błędem GraphQL; obejście:
   `gh api -X PATCH repos/<owner>/<repo>/pulls/<nr> -f title=… -F body=@plik`.
 - **Komunikaty commitów pisz do pliku poza repozytorium**
-  (np. `/home/user/msg.txt`), nigdy w katalogu repo.
+  (np. `/home/user/msg.txt`), nigdy w katalogu repo. Backticki i `$(...)`
+  w `git commit -m "…"` wykonują podstawienie komend bash i zjadają słowa
+  z komunikatu (potwierdzone 2026-09-04) — używaj `git commit -F plik`.
 - Pracuj wyłącznie na gałęzi sesji; nigdy nie pushuj do `main`; nigdy
   `--force` (ADR 0004).
 - **CI: działa od PR #3 (2026-08-28), ale i tak nie jest nasza sprawa.**
