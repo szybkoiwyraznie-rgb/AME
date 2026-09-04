@@ -1,8 +1,8 @@
 {
   "wersja": 3,
-  "buildTime": "2026-09-04T13:09:01.579Z",
+  "buildTime": "2026-09-04T13:30:35.202Z",
   "liczba": 20,
-  "liczbaSkitow": 28,
+  "liczbaSkitow": 29,
   "kanon": {
     "kategorie": [
       {
@@ -635,6 +635,7 @@
         "godzina-otwarcia",
         "kurz-i-piora",
         "pogoda-na-jutro",
+        "pracownicy-progu",
         "trzy-zegary",
         "znak-burzy"
       ]
@@ -997,6 +998,7 @@
       "skity": [
         "czwarty-stol",
         "najgorsze-odpowiedzi",
+        "pracownicy-progu",
         "prezent-z-defektem"
       ]
     },
@@ -1129,6 +1131,7 @@
       },
       "skity": [
         "pierwszy",
+        "pracownicy-progu",
         "warta"
       ]
     },
@@ -1643,6 +1646,23 @@
       "data": "2026-09-04 14:00"
     },
     {
+      "slug": "pracownicy-progu",
+      "tytul": "PRACOWNICY PROGU",
+      "temat": "status w pracy: pierwszy szereg zna swoje pytanie, urzędniczka progu — swoje, a kto pyta o pogodę?",
+      "uczestnicy": [
+        "drangue-shala",
+        "morowa-panna",
+        "protostates"
+      ],
+      "imiona": [
+        "Protostates",
+        "Morowa Panna",
+        "Drangue"
+      ],
+      "slow": 297,
+      "data": "2026-09-04 14:30"
+    },
+    {
       "slug": "prezent-z-defektem",
       "tytul": "PREZENT Z DEFEKTEM",
       "temat": "trzy dary, które miały chronić, a zrobiły szkodę — i kto ponosi winę",
@@ -1795,6 +1815,22 @@
     }
   ],
   "aktualizacje": [
+    {
+      "data": "2026-09-04 14:45",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "kentaur-pelion",
+      "tytul": "Kentaur z Pelionu",
+      "opis": "Dopisana Pindar Pythia 2 jako źródło pierwotne genealogii — Kentauros z Iksiona i Nephele łączy się z klaczami magnetyckimi u stóp Pelionu („like the mother below, the father above”); w tej samej odzie Chejron dostaje od Apolla niemowlę Asklepiosa."
+    },
+    {
+      "data": "2026-09-04 14:30",
+      "typ": "skit",
+      "akcja": "nowy",
+      "slug": "pracownicy-progu",
+      "tytul": "PRACOWNICY PROGU",
+      "opis": "SKIT — skład: Protostates, Morowa Panna, Drangue"
+    },
     {
       "data": "2026-09-04 14:00",
       "typ": "skit",
