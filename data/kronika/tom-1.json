@@ -6,8 +6,8 @@
   "status": "otwarta",
   "stanStart": {
     "os": {
-      "mit": 39,
-      "racjonalizacja": 61
+      "mit": 40,
+      "racjonalizacja": 60
     },
     "zasieg": [
       {
@@ -20,7 +20,7 @@
       },
       {
         "slug": "barbarossa-kyffhaeuser",
-        "wielkosc": 0.422
+        "wielkosc": 0.444
       },
       {
         "slug": "ben-varrey",
@@ -52,7 +52,7 @@
       },
       {
         "slug": "knecht-z-koptos",
-        "wielkosc": 0.333
+        "wielkosc": 0.356
       },
       {
         "slug": "lincoln-imp",
@@ -88,7 +88,7 @@
       },
       {
         "slug": "talos-kreta",
-        "wielkosc": 0.411
+        "wielkosc": 0.433
       }
     ],
     "dominacje": [
@@ -105,7 +105,7 @@
       {
         "kultura": "niemcy",
         "kult": "barbarossa-kyffhaeuser",
-        "wielkosc": 0.422
+        "wielkosc": 0.444
       },
       {
         "kultura": "man",
@@ -145,7 +145,7 @@
       {
         "kultura": "grecja",
         "kult": "knecht-z-koptos",
-        "wielkosc": 0.333
+        "wielkosc": 0.356
       },
       {
         "kultura": "anglia",
@@ -190,7 +190,7 @@
       {
         "kultura": "grecja",
         "kult": "talos-kreta",
-        "wielkosc": 0.411
+        "wielkosc": 0.433
       }
     ]
   },

@@ -1,8 +1,8 @@
 {
   "wersja": 3,
-  "buildTime": "2026-09-04T16:25:34.852Z",
+  "buildTime": "2026-09-04T16:29:03.616Z",
   "liczba": 20,
-  "liczbaSkitow": 33,
+  "liczbaSkitow": 34,
   "kanon": {
     "kategorie": [
       {
@@ -543,6 +543,7 @@
       "skity": [
         "cena-znaku",
         "kalendarz-powrotow",
+        "slowo-stopu",
         "trzy-stoly",
         "trzy-zegary",
         "warta",
@@ -918,6 +919,7 @@
         "pierwszy",
         "pod-dachem",
         "pogoda-na-jutro",
+        "slowo-stopu",
         "z-gliny-i-spizu"
       ]
     },
@@ -1337,6 +1339,7 @@
       "skity": [
         "pierwsza-zmiana",
         "poslaniec-i-straznicy",
+        "slowo-stopu",
         "z-gliny-i-spizu",
         "zagadka-ze-spizu"
       ]
@@ -1771,6 +1774,23 @@
       "data": "2026-08-30 13:30"
     },
     {
+      "slug": "slowo-stopu",
+      "tytul": "SŁOWO STOPU",
+      "temat": "kto ma jak zrobiony wyłącznik — i dlaczego nikt nie pomyślał o użytkowniku",
+      "uczestnicy": [
+        "barbarossa-kyffhaeuser",
+        "knecht-z-koptos",
+        "talos-kreta"
+      ],
+      "imiona": [
+        "Barbarossa z Kyffhäuseru",
+        "Knecht z Koptos",
+        "Talos"
+      ],
+      "slow": 280,
+      "data": "2026-09-04 16:35"
+    },
+    {
       "slug": "trzy-stoly",
       "tytul": "TRZY STOŁY",
       "temat": "gościnność ponad granicą śmierci i czasu: wzywanie zmarłych, zapłata za spokój, gość, który wziął sam",
@@ -1906,6 +1926,14 @@
     }
   ],
   "aktualizacje": [
+    {
+      "data": "2026-09-04 16:35",
+      "typ": "skit",
+      "akcja": "nowy",
+      "slug": "slowo-stopu",
+      "tytul": "SŁOWO STOPU",
+      "opis": "SKIT — skład: Barbarossa z Kyffhäuseru, Knecht z Koptos, Talos"
+    },
     {
       "data": "2026-09-04 16:25",
       "typ": "skit",
