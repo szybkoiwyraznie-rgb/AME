@@ -1,7 +1,7 @@
 /** Testy „wylosuj manifestację” (tryb ekspedycji) — czysta funkcja data.js. */
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { wylosujSlug } from '../app/data.js';
+import { wylosujSlug, slugDnia } from '../app/data.js';
 
 test('wylosujSlug: pusta pula → null', () => {
   assert.equal(wylosujSlug([]), null);
@@ -37,4 +37,42 @@ test('wylosujSlug: odfiltrowuje wartości puste/niełańcuchowe', () => {
   const wynik = new Set();
   for (const r of [0, 0.49, 0.5, 0.99]) wynik.add(wylosujSlug(pula, { los: () => r }));
   assert.deepEqual([...wynik].sort(), ['x', 'y'], 'losowane są tylko poprawne slugi');
+});
+
+test('slugDnia: pusta pula → null', () => {
+  assert.equal(slugDnia([], '2026-09-04'), null);
+  assert.equal(slugDnia(null, '2026-09-04'), null);
+});
+
+test('slugDnia: ta sama data → ten sam slug (determinizm dnia)', () => {
+  const pula = ['wendigo', 'zmora', 'indra', 'barbarossa'];
+  const pierwszy = slugDnia(pula, '2026-09-04');
+  assert.equal(slugDnia(pula, '2026-09-04'), pierwszy);
+  assert.ok(pula.includes(pierwszy), 'wybór zawsze pochodzi z puli');
+});
+
+test('slugDnia: złoczony wynik — algorytm nie dryfuje', () => {
+  assert.equal(slugDnia(['a', 'b', 'c', 'd'], '2026-09-04'), 'a');
+  assert.equal(slugDnia(['a', 'b', 'c', 'd'], '2026-09-05'), 'd');
+});
+
+test('slugDnia: wybory dla roku dat zawsze mieszczą się w puli i trafiają w każdy slug', () => {
+  const pula = ['wendigo', 'zmora', 'indra', 'barbarossa', 'talos-kreta'];
+  const trafione = new Set();
+  const d = new Date(2026, 0, 1);
+  for (let i = 0; i < 366; i++) {
+    const iso = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+    const slug = slugDnia(pula, iso);
+    assert.ok(pula.includes(slug), `poza pulą: ${slug}`);
+    trafione.add(slug);
+    d.setDate(d.getDate() + 1);
+  }
+  assert.equal(trafione.size, pula.length, 'rok dat rozkłada się na całą pulę');
+});
+
+test('slugDnia: odfiltrowuje wartości puste/niełańcuchowe', () => {
+  const pula = ['', null, 'x', 42, undefined, 'y'];
+  for (const iso of ['2026-01-01', '2026-06-15', '2026-12-31']) {
+    assert.ok(['x', 'y'].includes(slugDnia(pula, iso)));
+  }
 });

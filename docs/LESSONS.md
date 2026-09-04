@@ -267,3 +267,22 @@ build+commit+push. To samo dotyczy każdej bramy jakości: nigdy nie podłączaj
 jej wyjścia do grep/sed wewnątrz łańcucha `&&`, który kończy się commitem.
 Pokrewne: L1 (pushuj natychmiast — niepchnięty commit ginie przy resecie
 sandboxa; zdarzyło się to tej samej sesji).
+
+## L20 (2026-09-04, AME) — nowy SKIT przesuwa zasięgi kroniki: przekalibruj test
+
+**Objaw:** dodanie SKIT-u (commit C3) poszło na zielonym `npm test`… który
+okazał się maskowany potokiem (L19); po porządnym odpaleniu test
+`Tom I: epoki przechodzą sekwencyjnie` padał na twardych asercjach zasięgu
+(`0.346 !== 0.323` dla indry).
+**Przyczyna:** wzór kroniki `obecnosc = 2*backlinki + tagi + 2*skity +
+min(3,powiazania)`, a `zasieg = 0.10 + 0.40*(obecnosc/max)` — każdy nowy SKIT
+zwiększa `obecnosc` uczestników i zmienia znormalizowane zasięgi.
+`test/kronika.test.js` trzyma te wartości zaszyte na sztywno (jak paliwo
+pasywne), więc każda zmiana sieci SKIT-ów wymaga ich przekalibracji; sam
+`npm run build` (z `--seed`) przebudowuje `data/kronika/*.json`, ale testu
+nie rusza.
+**Reguła:** po dodaniu/usunięciu SKIT-a albo zmianie backlinków policz
+aktualne zasięgi (`zbudujPodsumowanieTomu` na świeżym indeksie) i uaktualnij
+asercje w `test/kronika.test.js` w TYM SAMYM kroku — precedens:
+„przekalibracja osi i zasięgów" w PR #19. I pilnuj L19: brama testowa bez
+potoku.

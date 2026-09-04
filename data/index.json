@@ -1,8 +1,8 @@
 {
   "wersja": 3,
-  "buildTime": "2026-09-04T16:29:03.616Z",
+  "buildTime": "2026-09-04T16:47:24.404Z",
   "liczba": 20,
-  "liczbaSkitow": 34,
+  "liczbaSkitow": 35,
   "kanon": {
     "kategorie": [
       {
@@ -780,6 +780,7 @@
         "wtorne": "Płaskorzeźba (lub współczesna rzeźba) Indry na Airavata z wadżrą w ręku — świadectwo kultu boga, który wciąż jest czczony, ale już nie jako jedyny władca"
       },
       "skity": [
+        "biuro-reklamacji",
         "cena-znaku",
         "dwa-grzbiety",
         "imie-na-progu",
@@ -826,6 +827,7 @@
         "wtorne": "Mały posążek Kamakura Kannon z kłodą, na którym zapisane są intencje modlitewne pątników — dokument, że byt ten istnieje w ludzkich wezwaniach i nie zanika."
       },
       "skity": [
+        "biuro-reklamacji",
         "dzien-wolnego",
         "linia-brzegu",
         "pogoda-na-jutro",
@@ -1096,6 +1098,7 @@
         "wtorne": "Odrzucony wieniec ślubny — pamiątka, że Pandory nie pokonuje się siłą: ślubny dar i zakaz trzeba oddać albo zostawić zamknięte."
       },
       "skity": [
+        "biuro-reklamacji",
         "czwarty-stol",
         "pierwsza-zmiana",
         "prezent-z-defektem",
@@ -1140,6 +1143,7 @@
         "wtorne": "Czarny kita z hełmu — pęk końskiego włosia, który pozostaje we mgle po zniknięciu fantomu, jako znak, że „albo z tym, albo na tym” wciąż obowiązuje."
       },
       "skity": [
+        "biuro-reklamacji",
         "pierwsza-zmiana",
         "pierwszy",
         "pracownicy-progu",
@@ -1346,6 +1350,25 @@
     }
   ],
   "skity": [
+    {
+      "slug": "biuro-reklamacji",
+      "tytul": "BIURO REKLAMACJI",
+      "temat": "co bytu zrobić z zażaleniem — i które rzeczy w ogóle nie podlegają zwrotowi",
+      "uczestnicy": [
+        "indra",
+        "kannon-hase",
+        "pandora",
+        "protostates"
+      ],
+      "imiona": [
+        "Pandora",
+        "Indra",
+        "Kannon",
+        "Protostates"
+      ],
+      "slow": 257,
+      "data": "2026-09-04 16:52"
+    },
     {
       "slug": "cena-znaku",
       "tytul": "CENA ZNAKU",
@@ -1926,6 +1949,22 @@
     }
   ],
   "aktualizacje": [
+    {
+      "data": "2026-09-04 16:52",
+      "typ": "skit",
+      "akcja": "nowy",
+      "slug": "biuro-reklamacji",
+      "tytul": "BIURO REKLAMACJI",
+      "opis": "SKIT — skład: Pandora, Indra, Kannon, Protostates"
+    },
+    {
+      "data": "2026-09-04 16:42",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "sfinks-teby",
+      "tytul": "Sfinks — strażniczka Tebańskich Wrót",
+      "opis": "Pogłębienie z źródeł pierwotnych: Pseudo-Apollodoros 3.5.8 (wyrocznia-warunek wybawienia, pożeranie po jednym radnym, ostatnia ofiara Hajmon, rzut z akropolu, dokładne brzmienie zagadki w przekładzie Frazera) i Hezjod, „Teogonia” w. 326 (rodowód: ojcem Orthos, nie Tyfon; Sfinks siostrą lwa nemejskiego)."
+    },
     {
       "data": "2026-09-04 16:35",
       "typ": "skit",

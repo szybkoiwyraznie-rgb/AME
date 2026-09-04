@@ -1,8 +1,8 @@
 /**
  * app/app.js — bootstrap AME: ładuje indeks, mapę świata, spina UI.
  */
-import { stworzMape, PROGI_WARSTW, PODKLADY_ONLINE } from './map.js?v=c5-14';
-import { zaladujIndeks, zaladujWpis, zaladujSkit, dopasowania, wylosujSlug } from './data.js?v=c5-1';
+import { stworzMape, PROGI_WARSTW, PODKLADY_ONLINE } from './map.js?v=c5-15';
+import { zaladujIndeks, zaladujWpis, zaladujSkit, dopasowania, wylosujSlug, slugDnia } from './data.js?v=c6-1';
 import {
   htmlWpisu,
   htmlWarstwyWpisu,
@@ -26,8 +26,8 @@ import {
   tekstDoLektora,
   htmlTrofeow,
   paryRozmowySkitu,
-} from './ui.js?v=c5-14';
-import { SZEROKOSC, WYSOKOSC } from './geo.js?v=c5-14';
+} from './ui.js?v=c5-15';
+import { SZEROKOSC, WYSOKOSC } from './geo.js?v=c5-15';
 
 const $ = (sel) => document.querySelector(sel);
 
@@ -500,6 +500,23 @@ function losujManifestacje() {
 }
 
 /**
+ * „Manifestacja dnia”: ten sam wpis dla wszystkich czytelników danego dnia
+ * (deterministyczny `slugDnia` z daty lokalnej, pełna pula kartoteki).
+ * Przelatuje do bytu na mapie i otwiera kartotekę.
+ */
+function manifestacjaDnia() {
+  const pula = stan.indeks.manifestacje.map((m) => m.slug);
+  const d = new Date();
+  const dataISO = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+  const slug = slugDnia(pula, dataISO);
+  if (!slug) return;
+  stan.ostatniLos = slug;
+  if (stan.warstwa) zamknijWarstwe();
+  if ($('#lista').classList.contains('otwarta')) przelaczListe();
+  otworzWpis(slug, { przewin: true });
+}
+
+/**
  * Ładuje dane warstwy (raz) i rysuje je. Warstwy są asynchronicznie
  * dociągane dopiero po włączeniu przełącznika lub wejściu w wymagany zoom
  * (LOD, ADR 0020) — bez sieci ani pobierania dla nieużywanych warstw.
@@ -623,6 +640,7 @@ function podepnijZdarzenia() {
   });
 
   $('#przycisk-los').addEventListener('click', losujManifestacje);
+  $('#przycisk-dnia').addEventListener('click', manifestacjaDnia);
   $('#przycisk-lista').addEventListener('click', przelaczListe);
   $('#przycisk-skity').addEventListener('click', otworzBazeSkitow);
   $('#przycisk-nowosci').addEventListener('click', otworzNowosci);
