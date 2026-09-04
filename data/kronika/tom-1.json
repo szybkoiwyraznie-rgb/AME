@@ -6,13 +6,13 @@
   "status": "otwarta",
   "stanStart": {
     "os": {
-      "mit": 39,
-      "racjonalizacja": 61
+      "mit": 40,
+      "racjonalizacja": 60
     },
     "zasieg": [
       {
         "slug": "agni",
-        "wielkosc": 0.335
+        "wielkosc": 0.359
       },
       {
         "slug": "balor",
@@ -80,22 +80,22 @@
       },
       {
         "slug": "sfinks-teby",
-        "wielkosc": 0.406
+        "wielkosc": 0.429
       },
       {
         "slug": "syama-i-sarvara",
-        "wielkosc": 0.288
+        "wielkosc": 0.312
       },
       {
         "slug": "talos-kreta",
-        "wielkosc": 0.382
+        "wielkosc": 0.406
       }
     ],
     "dominacje": [
       {
         "kultura": "indie",
         "kult": "agni",
-        "wielkosc": 0.335
+        "wielkosc": 0.359
       },
       {
         "kultura": "irlandia",
@@ -180,17 +180,17 @@
       {
         "kultura": "grecja",
         "kult": "sfinks-teby",
-        "wielkosc": 0.406
+        "wielkosc": 0.429
       },
       {
         "kultura": "indie",
         "kult": "syama-i-sarvara",
-        "wielkosc": 0.288
+        "wielkosc": 0.312
       },
       {
         "kultura": "grecja",
         "kult": "talos-kreta",
-        "wielkosc": 0.382
+        "wielkosc": 0.406
       }
     ]
   },

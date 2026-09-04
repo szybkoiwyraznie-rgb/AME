@@ -57,13 +57,13 @@
       ],
       "stanPo": {
         "os": {
-          "mit": 37,
-          "racjonalizacja": 63
+          "mit": 38,
+          "racjonalizacja": 62
         },
         "zasieg": [
           {
             "slug": "agni",
-            "wielkosc": 0.335
+            "wielkosc": 0.359
           },
           {
             "slug": "balor",
@@ -131,22 +131,22 @@
           },
           {
             "slug": "sfinks-teby",
-            "wielkosc": 0.406
+            "wielkosc": 0.429
           },
           {
             "slug": "syama-i-sarvara",
-            "wielkosc": 0.288
+            "wielkosc": 0.312
           },
           {
             "slug": "talos-kreta",
-            "wielkosc": 0.382
+            "wielkosc": 0.406
           }
         ],
         "dominacje": [
           {
             "kultura": "indie",
             "kult": "agni",
-            "wielkosc": 0.335
+            "wielkosc": 0.359
           },
           {
             "kultura": "irlandia",
@@ -231,17 +231,17 @@
           {
             "kultura": "grecja",
             "kult": "sfinks-teby",
-            "wielkosc": 0.406
+            "wielkosc": 0.429
           },
           {
             "kultura": "indie",
             "kult": "syama-i-sarvara",
-            "wielkosc": 0.288
+            "wielkosc": 0.312
           },
           {
             "kultura": "grecja",
             "kult": "talos-kreta",
-            "wielkosc": 0.382
+            "wielkosc": 0.406
           }
         ],
         "paliwo": {
@@ -447,13 +447,13 @@
       ],
       "stanPo": {
         "os": {
-          "mit": 35,
-          "racjonalizacja": 65
+          "mit": 36,
+          "racjonalizacja": 64
         },
         "zasieg": [
           {
             "slug": "agni",
-            "wielkosc": 0.335
+            "wielkosc": 0.359
           },
           {
             "slug": "balor",
@@ -521,22 +521,22 @@
           },
           {
             "slug": "sfinks-teby",
-            "wielkosc": 0.406
+            "wielkosc": 0.429
           },
           {
             "slug": "syama-i-sarvara",
-            "wielkosc": 0.288
+            "wielkosc": 0.312
           },
           {
             "slug": "talos-kreta",
-            "wielkosc": 0.382
+            "wielkosc": 0.406
           }
         ],
         "dominacje": [
           {
             "kultura": "indie",
             "kult": "agni",
-            "wielkosc": 0.335
+            "wielkosc": 0.359
           },
           {
             "kultura": "irlandia",
@@ -621,17 +621,17 @@
           {
             "kultura": "grecja",
             "kult": "sfinks-teby",
-            "wielkosc": 0.406
+            "wielkosc": 0.429
           },
           {
             "kultura": "indie",
             "kult": "syama-i-sarvara",
-            "wielkosc": 0.288
+            "wielkosc": 0.312
           },
           {
             "kultura": "grecja",
             "kult": "talos-kreta",
-            "wielkosc": 0.382
+            "wielkosc": 0.406
           }
         ],
         "paliwo": {
@@ -855,13 +855,13 @@
       ],
       "stanPo": {
         "os": {
-          "mit": 33,
-          "racjonalizacja": 67
+          "mit": 34,
+          "racjonalizacja": 66
         },
         "zasieg": [
           {
             "slug": "agni",
-            "wielkosc": 0.335
+            "wielkosc": 0.359
           },
           {
             "slug": "balor",
@@ -929,22 +929,22 @@
           },
           {
             "slug": "sfinks-teby",
-            "wielkosc": 0.406
+            "wielkosc": 0.429
           },
           {
             "slug": "syama-i-sarvara",
-            "wielkosc": 0.288
+            "wielkosc": 0.312
           },
           {
             "slug": "talos-kreta",
-            "wielkosc": 0.382
+            "wielkosc": 0.406
           }
         ],
         "dominacje": [
           {
             "kultura": "indie",
             "kult": "agni",
-            "wielkosc": 0.335
+            "wielkosc": 0.359
           },
           {
             "kultura": "irlandia",
@@ -1029,17 +1029,17 @@
           {
             "kultura": "grecja",
             "kult": "sfinks-teby",
-            "wielkosc": 0.406
+            "wielkosc": 0.429
           },
           {
             "kultura": "indie",
             "kult": "syama-i-sarvara",
-            "wielkosc": 0.288
+            "wielkosc": 0.312
           },
           {
             "kultura": "grecja",
             "kult": "talos-kreta",
-            "wielkosc": 0.382
+            "wielkosc": 0.406
           }
         ],
         "paliwo": {
@@ -1278,13 +1278,13 @@
       ],
       "stanPo": {
         "os": {
-          "mit": 32,
-          "racjonalizacja": 68
+          "mit": 33,
+          "racjonalizacja": 67
         },
         "zasieg": [
           {
             "slug": "agni",
-            "wielkosc": 0.335
+            "wielkosc": 0.359
           },
           {
             "slug": "balor",
@@ -1352,22 +1352,22 @@
           },
           {
             "slug": "sfinks-teby",
-            "wielkosc": 0.406
+            "wielkosc": 0.429
           },
           {
             "slug": "syama-i-sarvara",
-            "wielkosc": 0.288
+            "wielkosc": 0.312
           },
           {
             "slug": "talos-kreta",
-            "wielkosc": 0.382
+            "wielkosc": 0.406
           }
         ],
         "dominacje": [
           {
             "kultura": "indie",
             "kult": "agni",
-            "wielkosc": 0.335
+            "wielkosc": 0.359
           },
           {
             "kultura": "irlandia",
@@ -1452,17 +1452,17 @@
           {
             "kultura": "grecja",
             "kult": "sfinks-teby",
-            "wielkosc": 0.406
+            "wielkosc": 0.429
           },
           {
             "kultura": "indie",
             "kult": "syama-i-sarvara",
-            "wielkosc": 0.288
+            "wielkosc": 0.312
           },
           {
             "kultura": "grecja",
             "kult": "talos-kreta",
-            "wielkosc": 0.382
+            "wielkosc": 0.406
           }
         ],
         "paliwo": {
@@ -1701,13 +1701,13 @@
       ],
       "stanPo": {
         "os": {
-          "mit": 31,
-          "racjonalizacja": 69
+          "mit": 32,
+          "racjonalizacja": 68
         },
         "zasieg": [
           {
             "slug": "agni",
-            "wielkosc": 0.335
+            "wielkosc": 0.359
           },
           {
             "slug": "balor",
@@ -1775,22 +1775,22 @@
           },
           {
             "slug": "sfinks-teby",
-            "wielkosc": 0.396
+            "wielkosc": 0.419
           },
           {
             "slug": "syama-i-sarvara",
-            "wielkosc": 0.288
+            "wielkosc": 0.312
           },
           {
             "slug": "talos-kreta",
-            "wielkosc": 0.377
+            "wielkosc": 0.401
           }
         ],
         "dominacje": [
           {
             "kultura": "indie",
             "kult": "agni",
-            "wielkosc": 0.335
+            "wielkosc": 0.359
           },
           {
             "kultura": "irlandia",
@@ -1875,17 +1875,17 @@
           {
             "kultura": "grecja",
             "kult": "sfinks-teby",
-            "wielkosc": 0.396
+            "wielkosc": 0.419
           },
           {
             "kultura": "indie",
             "kult": "syama-i-sarvara",
-            "wielkosc": 0.288
+            "wielkosc": 0.312
           },
           {
             "kultura": "grecja",
             "kult": "talos-kreta",
-            "wielkosc": 0.377
+            "wielkosc": 0.401
           }
         ],
         "paliwo": {
@@ -1937,15 +1937,15 @@
           },
           {
             "slug": "sfinks-teby",
-            "przed": 0.406,
-            "po": 0.396,
+            "przed": 0.429,
+            "po": 0.419,
             "delta": -0.01,
             "opis": "Święta groza zagadki słabnie, gdy okazuje się podatna na wyśmianie."
           },
           {
             "slug": "talos-kreta",
-            "przed": 0.382,
-            "po": 0.377,
+            "przed": 0.406,
+            "po": 0.401,
             "delta": -0.005,
             "opis": "Spiżowy olbrzym pozostaje tylko maszyną strzegącą pustego brzegu."
           }
@@ -1961,15 +1961,15 @@
           {
             "kultura": "grecja",
             "kult": "sfinks-teby",
-            "przed": 0.406,
-            "po": 0.396,
+            "przed": 0.429,
+            "po": 0.419,
             "delta": -0.01
           },
           {
             "kultura": "grecja",
             "kult": "talos-kreta",
-            "przed": 0.382,
-            "po": 0.377,
+            "przed": 0.406,
+            "po": 0.401,
             "delta": -0.005
           }
         ],
@@ -2121,13 +2121,13 @@
       ],
       "stanPo": {
         "os": {
-          "mit": 30,
-          "racjonalizacja": 70
+          "mit": 31,
+          "racjonalizacja": 69
         },
         "zasieg": [
           {
             "slug": "agni",
-            "wielkosc": 0.335
+            "wielkosc": 0.359
           },
           {
             "slug": "balor",
@@ -2195,22 +2195,22 @@
           },
           {
             "slug": "sfinks-teby",
-            "wielkosc": 0.396
+            "wielkosc": 0.419
           },
           {
             "slug": "syama-i-sarvara",
-            "wielkosc": 0.288
+            "wielkosc": 0.312
           },
           {
             "slug": "talos-kreta",
-            "wielkosc": 0.377
+            "wielkosc": 0.401
           }
         ],
         "dominacje": [
           {
             "kultura": "indie",
             "kult": "agni",
-            "wielkosc": 0.335
+            "wielkosc": 0.359
           },
           {
             "kultura": "irlandia",
@@ -2295,17 +2295,17 @@
           {
             "kultura": "grecja",
             "kult": "sfinks-teby",
-            "wielkosc": 0.396
+            "wielkosc": 0.419
           },
           {
             "kultura": "indie",
             "kult": "syama-i-sarvara",
-            "wielkosc": 0.288
+            "wielkosc": 0.312
           },
           {
             "kultura": "grecja",
             "kult": "talos-kreta",
-            "wielkosc": 0.377
+            "wielkosc": 0.401
           }
         ],
         "paliwo": {
@@ -2550,13 +2550,13 @@
       ],
       "stanPo": {
         "os": {
-          "mit": 29,
-          "racjonalizacja": 71
+          "mit": 30,
+          "racjonalizacja": 70
         },
         "zasieg": [
           {
             "slug": "agni",
-            "wielkosc": 0.335
+            "wielkosc": 0.359
           },
           {
             "slug": "balor",
@@ -2624,22 +2624,22 @@
           },
           {
             "slug": "sfinks-teby",
-            "wielkosc": 0.396
+            "wielkosc": 0.419
           },
           {
             "slug": "syama-i-sarvara",
-            "wielkosc": 0.293
+            "wielkosc": 0.317
           },
           {
             "slug": "talos-kreta",
-            "wielkosc": 0.377
+            "wielkosc": 0.401
           }
         ],
         "dominacje": [
           {
             "kultura": "indie",
             "kult": "agni",
-            "wielkosc": 0.335
+            "wielkosc": 0.359
           },
           {
             "kultura": "irlandia",
@@ -2724,17 +2724,17 @@
           {
             "kultura": "grecja",
             "kult": "sfinks-teby",
-            "wielkosc": 0.396
+            "wielkosc": 0.419
           },
           {
             "kultura": "indie",
             "kult": "syama-i-sarvara",
-            "wielkosc": 0.293
+            "wielkosc": 0.317
           },
           {
             "kultura": "grecja",
             "kult": "talos-kreta",
-            "wielkosc": 0.377
+            "wielkosc": 0.401
           }
         ],
         "paliwo": {
@@ -2798,8 +2798,8 @@
           },
           {
             "slug": "syama-i-sarvara",
-            "przed": 0.288,
-            "po": 0.293,
+            "przed": 0.312,
+            "po": 0.317,
             "delta": 0.005,
             "opis": "Droga przodków zyskuje nowe podanie: woda zostawiona przez pierwszego — pielgrzymi w Waranasi zaczynają stawiać dzbany u bramy."
           }
@@ -2822,8 +2822,8 @@
           {
             "kultura": "indie",
             "kult": "syama-i-sarvara",
-            "przed": 0.288,
-            "po": 0.293,
+            "przed": 0.312,
+            "po": 0.317,
             "delta": 0.005
           }
         ],
@@ -2929,13 +2929,13 @@
   ],
   "stanPo": {
     "os": {
-      "mit": 29,
-      "racjonalizacja": 71
+      "mit": 30,
+      "racjonalizacja": 70
     },
     "zasieg": [
       {
         "slug": "agni",
-        "wielkosc": 0.335
+        "wielkosc": 0.359
       },
       {
         "slug": "balor",
@@ -3003,22 +3003,22 @@
       },
       {
         "slug": "sfinks-teby",
-        "wielkosc": 0.396
+        "wielkosc": 0.419
       },
       {
         "slug": "syama-i-sarvara",
-        "wielkosc": 0.293
+        "wielkosc": 0.317
       },
       {
         "slug": "talos-kreta",
-        "wielkosc": 0.377
+        "wielkosc": 0.401
       }
     ],
     "dominacje": [
       {
         "kultura": "indie",
         "kult": "agni",
-        "wielkosc": 0.335
+        "wielkosc": 0.359
       },
       {
         "kultura": "irlandia",
@@ -3103,17 +3103,17 @@
       {
         "kultura": "grecja",
         "kult": "sfinks-teby",
-        "wielkosc": 0.396
+        "wielkosc": 0.419
       },
       {
         "kultura": "indie",
         "kult": "syama-i-sarvara",
-        "wielkosc": 0.293
+        "wielkosc": 0.317
       },
       {
         "kultura": "grecja",
         "kult": "talos-kreta",
-        "wielkosc": 0.377
+        "wielkosc": 0.401
       }
     ],
     "paliwo": {

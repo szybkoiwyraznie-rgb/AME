@@ -1,8 +1,8 @@
 {
   "wersja": 3,
-  "buildTime": "2026-09-04T15:17:18.776Z",
+  "buildTime": "2026-09-04T15:29:18.316Z",
   "liczba": 20,
-  "liczbaSkitow": 29,
+  "liczbaSkitow": 30,
   "kanon": {
     "kategorie": [
       {
@@ -447,6 +447,7 @@
       },
       "skity": [
         "dzien-wolnego",
+        "poslaniec-i-straznicy",
         "warta"
       ]
     },
@@ -1234,6 +1235,7 @@
       },
       "skity": [
         "najgorsze-odpowiedzi",
+        "poslaniec-i-straznicy",
         "zagadka-ze-spizu"
       ]
     },
@@ -1275,6 +1277,7 @@
       },
       "skity": [
         "pierwszy",
+        "poslaniec-i-straznicy",
         "zaplata-za-przewoz"
       ]
     },
@@ -1322,6 +1325,7 @@
         "wtorne": "Odłamany kawałek brązowej łydki z widocznym szwem odlewniczym — pamiątka po bycie, który był kiedyś narzędziem, a nie istotą."
       },
       "skity": [
+        "poslaniec-i-straznicy",
         "z-gliny-i-spizu",
         "zagadka-ze-spizu"
       ]
@@ -1648,6 +1652,25 @@
       "data": "2026-09-04 14:00"
     },
     {
+      "slug": "poslaniec-i-straznicy",
+      "tytul": "POSŁANIEC I STRAŻNICY",
+      "temat": "kurier i trzech celników: kto sprawdza zagadką, kto węchem, kto głazem — i dlaczego na przesyłkę czekają wszyscy, a na posłańca nikt",
+      "uczestnicy": [
+        "agni",
+        "sfinks-teby",
+        "syama-i-sarvara",
+        "talos-kreta"
+      ],
+      "imiona": [
+        "Agni",
+        "Sfinks",
+        "Śyāma i Śarvara",
+        "Talos"
+      ],
+      "slow": 298,
+      "data": "2026-09-04 15:45"
+    },
+    {
       "slug": "pracownicy-progu",
       "tytul": "PRACOWNICY PROGU",
       "temat": "status w pracy: pierwszy szereg zna swoje pytanie, urzędniczka progu — swoje, a kto pyta o pogodę?",
@@ -1817,6 +1840,14 @@
     }
   ],
   "aktualizacje": [
+    {
+      "data": "2026-09-04 15:45",
+      "typ": "skit",
+      "akcja": "nowy",
+      "slug": "poslaniec-i-straznicy",
+      "tytul": "POSŁANIEC I STRAŻNICY",
+      "opis": "SKIT — skład: Agni, Sfinks, Śyāma i Śarvara, Talos"
+    },
     {
       "data": "2026-09-04 15:25",
       "typ": "manifestacja",
