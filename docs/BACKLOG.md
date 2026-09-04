@@ -79,8 +79,12 @@
   tokeny heurystyką 1 tok ≈ 4 znaki; `test/budzet.test.js` pilnuje progu
   40 tys. tokenów (dziś ~29,5 tys. = 74%) oraz kompletności listy. Do
   akceptacji właściciela przed live.
-- **Lint stylu wpisów**: prosta heurystyka „zakaz terminologii growej w
-  sekcji II” (lista słów: haste, trample, mana…).
+- ~~**Lint stylu wpisów**~~ — **WDROŻONE (2026-09-04, PR #17, C2 pętli
+  jakości):** `tools/lint-stylu.mjs` wykrywa żargon kart (haste, trample,
+  mana, żeton, talia…; granice słów unicode, bez fałszywych trafień typu
+  „mano”) w sekcji II wpisów i dialogach SKITów (PROTOKÓŁ §8.4, ADR 0005);
+  spięty z `npm run check` i testami w `test/lint-stylu.test.js`; cały
+  korpus (20 wpisów, 31 skitów) przechodzi.
 ## Kronika — propozycje rozwoju wizualizacji (2026-08-30)
 
 - **Analiza:** `docs/plans/ANALIZA_kronika-rozwoj-2026-08-30.md` (co
