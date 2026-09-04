@@ -283,3 +283,12 @@ test('podpowiedzSkladySkitow: liczy duety vs składy ≥3 i zachęca, gdy duetó
   assert.equal(rownowaga.zacheta, null, 'gdy składów ≥3 nie mniej niż duetów — bez zachęty');
   assert.equal(podpowiedzSkladySkitow([]).zacheta, null, 'pusta baza — bez zachęty');
 });
+
+test('skit meta.modyfikacje: opis bez oznaczeń wewnętrznych (PROTOKÓŁ §9)', () => {
+  const s = skitWzorzec();
+  s.meta.modyfikacje = [{ data: '2026-09-04', opis: 'C3: nowy skit sesji.' }];
+  assert.ok(walidujSkit(s, SLUGI_WPISOW).some((e) => e.includes('oznaczenie wewnętrzne')));
+  const ok = skitWzorzec();
+  ok.meta.modyfikacje = [{ data: '2026-09-04', opis: 'Przeredagowanie dialogu: mocniejsza puenta.' }];
+  assert.deepEqual(walidujSkit(ok, SLUGI_WPISOW), []);
+});

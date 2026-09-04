@@ -134,10 +134,12 @@
   dobierało niepowtarzalne tematy, nie tylko składy.
 - **Widok „rozmowy” na mapie** — animowany łuk łączący uczestników skitu przy
   jego otwarciu (dziś sekcja VI linkuje tylko do kart).
-- **Walidator opisów `meta.modyfikacje`** — twardy zakaz oznaczeń
-  wewnętrznych (`C1`, `C2`, `M3`, `Pętla Jakości`, `PROTOKÓŁ §`) w polu
-  `opis` (PROTOKÓŁ §9); w 2026-09-04 audyt znalazł 13 takich opisów
-  (korekta w PR #13), więc reguła bez walidatora wraca.
+- ~~**Walidator opisów `meta.modyfikacje`**~~ — **WDROŻONE (2026-09-04,
+  PR #14, C2 pętli jakości):** `bladOpisuMeta` w `tools/rebuild-index.mjs`
+  odrzuca oznaczenia wewnętrzne (`C1`/`C2`/`C3`, `M<n>`, `B<n>`,
+  „Pętla Jakości", „PROTOKÓŁ") w `meta.modyfikacje[].opis` wpisów i skitów;
+  cała baza przechodzi (0 fałszywych trafień), testy kontraktowe w
+  `test/schema.test.js` i `test/skit.test.js`.
 - **Walidator spójności faktograficznej** — heurystyka ostrzegająca, gdy skit
   przywołuje zwyczaj/nazwę własną nieobecną w kartach uczestników (twarda
   egzekucja wymaga NLP — poza zakresem ADR 0001).

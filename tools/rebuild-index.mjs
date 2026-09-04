@@ -68,6 +68,17 @@ const RE_DATA = /^\d{4}-\d{2}-\d{2}(?: ([01]\d|2[0-3]):[0-5]\d)?$/;
 
 const jestStr = (v) => typeof v === 'string' && v.trim().length > 0;
 
+/** Wewnętrzne oznaczenia sesji zakazane w `meta.modyfikacje[].opis`
+ * (PROTOKÓŁ §9: opis to zdanie o treści dla czytelnika feedu „Co nowego”,
+ * nie notatka robocza — bez „M3”, „B1”, „C1”, „PROTOKÓŁ §”). */
+const RE_OZNACZENIA_WEWNETRZNE = /\b(?:C[123]|M\d+|B\d+)\b|Pętla Jakości|PROTOKÓŁ/i;
+
+/** Sprawdza opis modyfikacji pod kątem oznaczeń wewnętrznych (§9). */
+export function bladOpisuMeta(opis) {
+  if (!jestStr(opis)) return null;
+  return RE_OZNACZENIA_WEWNETRZNE.test(opis) ? opis : null;
+}
+
 /** Waliduje jeden wpis; zwraca listę błędów (pusta = OK). */
 export function walidujWpis(w) {
   const e = [];
@@ -157,6 +168,9 @@ export function walidujWpis(w) {
     if (!jestStr(mod?.data) || !RE_DATA.test(mod.data) || !jestStr(mod?.opis)) {
       blad('meta.modyfikacje: każdy wpis wymaga {data (RRRR-MM-DD albo RRRR-MM-DD GG:MM), opis}');
       break;
+    }
+    if (bladOpisuMeta(mod.opis)) {
+      blad(`meta.modyfikacje: opis zawiera oznaczenie wewnętrzne sesji („${mod.opis.slice(0, 40)}…”) — opis piszemy dla czytelnika feedu, bez kodów C1/M3/PROTOKÓŁ (PROTOKÓŁ §9)`);
     }
   }
 
@@ -298,6 +312,9 @@ export function walidujSkit(s, slugiManifestacji = new Set()) {
     if (!jestStr(mod?.data) || !RE_DATA.test(mod.data) || !jestStr(mod?.opis)) {
       blad('meta.modyfikacje: każdy wpis wymaga {data (RRRR-MM-DD albo RRRR-MM-DD GG:MM), opis}');
       break;
+    }
+    if (bladOpisuMeta(mod.opis)) {
+      blad(`meta.modyfikacje: opis zawiera oznaczenie wewnętrzne sesji („${mod.opis.slice(0, 40)}…”) — opis piszemy dla czytelnika feedu, bez kodów C1/M3/PROTOKÓŁ (PROTOKÓŁ §9)`);
     }
   }
 
