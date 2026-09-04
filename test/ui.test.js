@@ -2,7 +2,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
-import { htmlWpisu, htmlWarstwyWpisu, linkDoZrodla, htmlListy, htmlStronyTagu, htmlTagow, htmlDialogu, htmlSkitu, htmlBazySkitow, htmlNowosci, htmlKronik, htmlTomyIEpoki, esc, nastepnyMotyw, motywPoczatkowy, etykietaMotywu, MOTYWY, KLUCZ_MOTYWU, akcjeZZapytania, tekstDoLektora, htmlTrofeow } from '../app/ui.js';
+import { htmlWpisu, htmlWarstwyWpisu, linkDoZrodla, htmlListy, htmlStronyTagu, htmlTagow, htmlDialogu, htmlSkitu, htmlBazySkitow, htmlNowosci, htmlKronik, htmlTomyIEpoki, esc, nastepnyMotyw, motywPoczatkowy, etykietaMotywu, MOTYWY, KLUCZ_MOTYWU, akcjeZZapytania, tekstDoLektora, htmlTrofeow, paryRozmowySkitu } from '../app/ui.js';
 
 async function dane(plik = 'egungun') {
   const wpis = JSON.parse(await readFile(`data/manifestations/${plik}.json`, 'utf8'));
@@ -622,4 +622,16 @@ test('U3: feed Kroniki renderuje karty epok z ramą narracji i filtrem', () => {
 test('U3: pusty feed pokazuje komunikat', () => {
   const html = htmlKronik({ epoki: [] });
   assert.match(html, /pusto/);
+});
+
+test('paryRozmowySkitu: pełne spójne pary składu, bez duplikatów i self-linków (C2)', () => {
+  const trio = paryRozmowySkitu([{ imie: 'A', slug: 'a' }, { imie: 'B', slug: 'b' }, { imie: 'C', slug: 'c' }]);
+  assert.deepEqual(trio, [{ a: 'a', b: 'b' }, { a: 'a', b: 'c' }, { a: 'b', b: 'c' }], 'trójka = 3 pary');
+  const czworka = paryRozmowySkitu([{ slug: 'a' }, { slug: 'b' }, { slug: 'c' }, { slug: 'd' }]);
+  assert.equal(czworka.length, 6, 'czwórka = 6 par');
+  assert.deepEqual(paryRozmowySkitu([{ slug: 'a' }, { slug: 'a' }, { slug: 'b' }]), [{ a: 'a', b: 'b' }], 'duplikat uczestnika nie mnoży par');
+  assert.deepEqual(paryRozmowySkitu([{ slug: 'a' }]), [], 'samotnik bez pary');
+  assert.deepEqual(paryRozmowySkitu([]), []);
+  assert.deepEqual(paryRozmowySkitu(undefined), []);
+  assert.deepEqual(paryRozmowySkitu([{ imie: 'Bez sluga' }]), [], 'uczestnik bez sluga pomijany');
 });

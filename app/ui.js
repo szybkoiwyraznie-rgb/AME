@@ -140,6 +140,18 @@ export function przyciskKopiowania(cel) {
   return `<button class="chip kopiuj-link" type="button" data-kopia="${esc(cel)}" title="Kopiuj adres tego widoku">⧉ kopiuj link</button>`;
 }
 
+/** Pary slugów uczestników skitu do narysowania „rozmowy” na mapie (C2,
+ *  2026-09-04): pełne spójne pary ze składu, bez duplikatów i self-linków.
+ *  Czysta funkcja — testowana bez DOM. */
+export function paryRozmowySkitu(uczestnicy) {
+  const slugi = [...new Set((uczestnicy ?? []).map((u) => u?.slug).filter(Boolean))];
+  const pary = [];
+  for (let i = 0; i < slugi.length; i++) {
+    for (let j = i + 1; j < slugi.length; j++) pary.push({ a: slugi[i], b: slugi[j] });
+  }
+  return pary;
+}
+
 /** Przycisk druku / zapisu PDF kartoteki (widok druku, media print). */
 export function przyciskDruku() {
   return `<button class="chip drukuj" type="button" data-druk title="Drukuj / zapisz jako PDF">🖨 drukuj</button>`;

@@ -132,8 +132,12 @@
 - **Indeks tematów skitów** — przy >10 skitach warto dodać pole `temat` do
   słownika w indeksie (typu „filozofia”, „żałoba”, „jadło”), żeby C3 łatwiej
   dobierało niepowtarzalne tematy, nie tylko składy.
-- **Widok „rozmowy” na mapie** — animowany łuk łączący uczestników skitu przy
-  jego otwarciu (dziś sekcja VI linkuje tylko do kart).
+- ~~**Widok „rozmowy” na mapie**~~ — **WDROŻONE (2026-09-04, PR #14, C2
+  pętli jakości):** otwarcie skitu rysuje łuki między pinezkami uczestników
+  (osobna warstwa `.rozmowa` nad łukami powiązań; czysta `paryRozmowySkitu`
+  liczy pełne spójne pary; zamknięcie warstwy czyści mapę). Bez animacji —
+  statyczne łuki; animowane „przebiegnięcie” rozmowy zostaje pomysłem
+  (cache-bust `c5-12`). Do akceptacji właściciela przed live.
 - ~~**Walidator opisów `meta.modyfikacje`**~~ — **WDROŻONE (2026-09-04,
   PR #14, C2 pętli jakości):** `bladOpisuMeta` w `tools/rebuild-index.mjs`
   odrzuca oznaczenia wewnętrzne (`C1`/`C2`/`C3`, `M<n>`, `B<n>`,
