@@ -3418,10 +3418,15 @@ async function main() {
       for (const b of podsumowanie.bledy) bledyGlobalne.push(`[${tomL.slug}] ${b}`);
     }
 
+    // Spis Tomów doklejany do summary: warstwa Kroniki w aplikacji otwiera
+    // się najpierw listą Kronik (recenzja właściciela 2026-09-04), a aplikacja
+    // nie umie listować katalogu data/kronika/ (ADR 0002).
+    const podsumowanieZTomami = { ...podsumowanie, tomy: listaTomow };
+
     if (check) {
       const plikPodsumowaniaT = tomL.slug === 'tom-1' ? PLIK_PODSUMOWANIA : join(KATALOG_KRONIKA, `summary-${tomL.slug}.json`);
       const istniejacy = await readFile(plikPodsumowaniaT, 'utf8').catch(() => null);
-      const oczekiwany = JSON.stringify(podsumowanie, null, 2) + '\n';
+      const oczekiwany = JSON.stringify(podsumowanieZTomami, null, 2) + '\n';
       if (!istniejacy) {
         console.error(`Kronika: brak ${plikPodsumowaniaT} — uruchom npm run kronika.`);
         process.exit(1);
@@ -3452,7 +3457,7 @@ async function main() {
       }
     } else {
       const plikPodsumowaniaT = tomL.slug === 'tom-1' ? PLIK_PODSUMOWANIA : join(KATALOG_KRONIKA, `summary-${tomL.slug}.json`);
-      wygenerowane.push([plikPodsumowaniaT, JSON.stringify(podsumowanie, null, 2) + '\n']);
+      wygenerowane.push([plikPodsumowaniaT, JSON.stringify(podsumowanieZTomami, null, 2) + '\n']);
       wygenerowane.push([`docs/kronika-${tomL.slug}.html`, raportTomu]);
       for (const r of raporty) wygenerowane.push([plikRaportu(r.slug), r.html]);
     }

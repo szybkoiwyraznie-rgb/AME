@@ -2,7 +2,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
-import { htmlWpisu, htmlWarstwyWpisu, linkDoZrodla, htmlListy, htmlStronyTagu, htmlTagow, htmlDialogu, htmlSkitu, htmlBazySkitow, htmlNowosci, htmlKronik, htmlTomyIEpoki, esc, nastepnyMotyw, motywPoczatkowy, etykietaMotywu, MOTYWY, KLUCZ_MOTYWU, akcjeZZapytania, tekstDoLektora, htmlTrofeow, paryRozmowySkitu, doB64utf8, zB64utf8 } from '../app/ui.js';
+import { htmlWpisu, htmlWarstwyWpisu, linkDoZrodla, htmlListy, htmlStronyTagu, htmlTagow, htmlDialogu, htmlSkitu, htmlBazySkitow, htmlNowosci, htmlKronik, htmlTomyIEpoki, esc, rzymskie, nastepnyMotyw, motywPoczatkowy, etykietaMotywu, MOTYWY, KLUCZ_MOTYWU, akcjeZZapytania, tekstDoLektora, htmlTrofeow, paryRozmowySkitu, doB64utf8, zB64utf8 } from '../app/ui.js';
 
 async function dane(plik = 'egungun') {
   const wpis = JSON.parse(await readFile(`data/manifestations/${plik}.json`, 'utf8'));
@@ -668,6 +668,59 @@ test('U3: feed Kroniki renderuje karty epok z ramą narracji i filtrem', () => {
 test('U3: pusty feed pokazuje komunikat', () => {
   const html = htmlKronik({ epoki: [] });
   assert.match(html, /pusto/);
+});
+
+test('U3: warstwa Kroniki otwiera się listą Kronik (Tomów), nie listą Epok', () => {
+  // Recenzja właściciela 2026-09-04: link „kronika" otwierał od razu listę
+  // Epok; oczekiwane: najpierw lista Kronik, dopiero po wyborze Tomu epoki.
+  const podsumowanie = {
+    tom: 'tom-1',
+    tytulTomu: 'Kronika trzech stołów',
+    tomy: [{ slug: 'tom-1', nr: 1, tytul: 'Kronika trzech stołów', opis: 'Pierwsza księga.', plik: 'kronika-tom-1.html', epoki: 7 }],
+    epoki: [
+      {
+        slug: 'epoka-1',
+        tytul: 'Trzy stoły',
+        stanPo: { os: { mit: 34, racjonalizacja: 66 } },
+        konsekwencje: { zasieg: [] },
+        uczestnicy: [{ slug: 'egungun', nazwa: 'Egungun' }],
+      },
+    ],
+  };
+  const lista = htmlKronik(podsumowanie);
+  assert.match(lista, /data-tom="tom-1"/, 'karta Tomu z wyborem księgi');
+  assert.match(lista, /Kronika trzech stołów/);
+  assert.match(lista, /Tom I/, 'numer Tomu rzymski');
+  assert.match(lista, /7 epok/);
+  assert.match(lista, /href="docs\/kronika-tom-1\.html"/, 'odnośnik do raportu Tomu');
+  assert.ok(!lista.includes('kronika-filtr'), 'filtr epok nie należy do listy Kronik');
+  assert.ok(!lista.includes('data-link="kronika:epoka-1"'), 'epoki nie widać przed wyborem Tomu');
+
+  const epokiTomu = htmlKronik(podsumowanie, {}, { tom: 'tom-1' });
+  assert.match(epokiTomu, /data-link="kronika:epoka-1"/, 'po wyborze Tomu — karty epok');
+  assert.match(epokiTomu, /kronika-filtr/, 'filtr bytów na poziomie epok');
+});
+
+test('U3: summary bez spisu Tomów (stary format) otwiera od razu epoki', () => {
+  const html = htmlKronik({
+    epoki: [
+      {
+        slug: 'epoka-1',
+        tytul: 'Trzy stoły',
+        stanPo: { os: { mit: 34, racjonalizacja: 66 } },
+        konsekwencje: { zasieg: [] },
+        uczestnicy: [{ slug: 'egungun', nazwa: 'Egungun' }],
+      },
+    ],
+  });
+  assert.match(html, /data-link="kronika:epoka-1"/, 'kompatybilność wstecz: brak tomy → lista epok');
+});
+
+test('rzymskie: numery Tomów', () => {
+  assert.equal(rzymskie(1), 'I');
+  assert.equal(rzymskie(4), 'IV');
+  assert.equal(rzymskie(9), 'IX');
+  assert.equal(rzymskie(14), 'XIV');
 });
 
 test('paryRozmowySkitu: pełne spójne pary składu, bez duplikatów i self-linków (C2)', () => {

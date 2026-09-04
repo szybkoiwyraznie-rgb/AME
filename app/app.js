@@ -1,7 +1,7 @@
 /**
  * app/app.js — bootstrap AME: ładuje indeks, mapę świata, spina UI.
  */
-import { stworzMape, PROGI_WARSTW, PODKLADY_ONLINE } from './map.js?v=c5-16';
+import { stworzMape, PROGI_WARSTW, PODKLADY_ONLINE } from './map.js?v=c5-17';
 import { zaladujIndeks, zaladujWpis, zaladujSkit, dopasowania, wylosujSlug, slugDnia } from './data.js?v=c6-1';
 import {
   htmlWpisu,
@@ -27,8 +27,8 @@ import {
   htmlTrofeow,
   paryRozmowySkitu,
   zB64utf8,
-} from './ui.js?v=c5-16';
-import { SZEROKOSC, WYSOKOSC } from './geo.js?v=c5-16';
+} from './ui.js?v=c5-17';
+import { SZEROKOSC, WYSOKOSC } from './geo.js?v=c5-17';
 
 const $ = (sel) => document.querySelector(sel);
 
@@ -317,7 +317,7 @@ function szkicWarstwy(tytul, trescHtml, { wroc = null, kopia = null } = {}) {
       <h2>${esc(tytul)}</h2>
       <div class="akcje-warstwy">
         ${kopia ? `<button class="chip kopiuj-link" type="button" data-kopia="${esc(kopia)}" title="Kopiuj adres tego widoku">⧉ kopiuj link</button>` : ''}
-        ${wroc ? `<button class="chip" type="button" data-wroc="${esc(wroc)}">← ${esc(wroc === 'skity' ? 'Baza skitów' : 'wróć')}</button>` : ''}
+        ${wroc ? `<button class="chip" type="button" data-wroc="${esc(wroc)}">← ${esc(wroc === 'skity' ? 'Baza skitów' : wroc === 'kroniki' ? 'Kroniki' : 'wróć')}</button>` : ''}
         <button class="zamknij" id="zamknij-warstwe" type="button" aria-label="Zamknij">✕</button>
       </div>
     </header>
@@ -406,19 +406,32 @@ function otworzTrofea() {
   if (location.hash !== '#trofea') history.replaceState(null, '', '#trofea');
 }
 
-/** Feed Kroniki (U3): wczytywane raz, karty epok z ramą narracji i filtra bytów (U1). */
-async function zaladujKronike() {
+/** Feed Kroniki (U3): wczytywane raz, karty epok z ramą narracji i filtra bytów (U1).
+ *  `tom` ≠ null dociąga summary wybranego Tomu (`summary-<tom>.json` pisze
+ *  build Kroniki); bez argumentu — główne summary (pierwszy Tom). */
+async function zaladujKronike(tom = null) {
   if (!stan.kronika) {
     const r = await fetch(new URL('data/kronika/summary.json', document.baseURI));
     if (!r.ok) throw new Error(`HTTP ${r.status}`);
     stan.kronika = await r.json();
   }
-  return stan.kronika;
+  // Build pisze summary-<tom>.json dopiero od drugiego Tomu — główna księga
+  // żyje w summary.json, więc jej nie dociągamy pod drugą nazwą.
+  if (!tom || tom === stan.kronika?.tom) return stan.kronika;
+  stan.kronikaTomow ??= {};
+  if (!stan.kronikaTomow[tom]) {
+    const r = await fetch(new URL(`data/kronika/summary-${encodeURIComponent(tom)}.json`, document.baseURI));
+    if (!r.ok) throw new Error(`HTTP ${r.status}`);
+    stan.kronikaTomow[tom] = await r.json();
+  }
+  return stan.kronikaTomow[tom];
 }
 
-async function otworzKronike() {
-  if (stan.warstwa?.tryb === 'kroniki') return zamknijWarstwe();
-  stan.warstwa = { tryb: 'kroniki' };
+/** Warstwa Kroniki: bez `tom` — lista Kronik (spis Tomów z summary); po wyborze
+ *  Tomu (`data-tom`) — epoki tej księgi. Przycisk w topbarze działa jak toggle. */
+async function otworzKronike(tom = null, { przelacz = false } = {}) {
+  if (przelacz && stan.warstwa?.tryb === 'kroniki') return zamknijWarstwe();
+  stan.warstwa = { tryb: 'kroniki', tom };
   const warstwa = $('#warstwa');
   warstwa.classList.add('otwarta');
   warstwa.innerHTML = szkicWarstwy('Kronika świata AME', '<p class="ladowanie">Wczytywanie Kroniki…</p>', { kopia: 'kroniki' });
@@ -427,8 +440,9 @@ async function otworzKronike() {
   warstwaTrybPrzycisku('#przycisk-nowosci', false);
   warstwaTrybPrzycisku('#przycisk-trofea', false);
   try {
-    await zaladujKronike();
-    warstwa.innerHTML = szkicWarstwy('Kronika świata AME', htmlKronik(stan.kronika, stan.indeks), { kopia: 'kroniki' });
+    const kronika = await zaladujKronike(tom);
+    const tytul = tom ? `Kronika — ${kronika?.tytulTomu ?? tom}` : 'Kronika świata AME';
+    warstwa.innerHTML = szkicWarstwy(tytul, htmlKronik(kronika, stan.indeks, { tom }), { kopia: 'kroniki', wroc: tom ? 'kroniki' : null });
     const filtr = warstwa.querySelector('#kronika-filtr');
     if (filtr) {
       filtr.addEventListener('change', (e) => {
@@ -646,7 +660,7 @@ function podepnijZdarzenia() {
   $('#przycisk-skity').addEventListener('click', otworzBazeSkitow);
   $('#przycisk-nowosci').addEventListener('click', otworzNowosci);
   $('#przycisk-trofea').addEventListener('click', otworzTrofea);
-  $('#przycisk-kronika').addEventListener('click', otworzKronike);
+  $('#przycisk-kronika').addEventListener('click', () => otworzKronike(null, { przelacz: true }));
   $('#przycisk-warstwy').addEventListener('click', przelaczPanelWarstw);
   for (const klucz of Object.keys(WARSTWY_MAPY)) {
     const el = document.querySelector(`#warstwa-${klucz}`);
@@ -678,11 +692,14 @@ function podepnijZdarzenia() {
     // najbliższy element, nie w jego kontekst (chip uczestnika siedzi w <article data-skit>).
     const kopia = e.target.closest('[data-kopia]');
     if (kopia) return kopiujLink(kopia.dataset.kopia, kopia);
-    const cel = e.target.closest('[data-wroc], [data-link], [data-slug], [data-skit]');
+    const cel = e.target.closest('[data-wroc], [data-link], [data-slug], [data-skit], [data-tom]');
     if (!cel) return;
     if (cel.hasAttribute('data-wroc')) {
-      return cel.dataset.wroc === 'skity' ? otworzBazeSkitow() : zamknijWarstwe();
+      if (cel.dataset.wroc === 'skity') return otworzBazeSkitow();
+      if (cel.dataset.wroc === 'kroniki') return otworzKronike();
+      return zamknijWarstwe();
     }
+    if (cel.hasAttribute('data-tom')) return otworzKronike(cel.dataset.tom);
     if (cel.hasAttribute('data-link')) return przejdijDo(cel.dataset.link);
     if (cel.hasAttribute('data-slug')) return otworzWpis(cel.dataset.slug, { przewin: true });
     return otworzSkit(cel.dataset.skit);

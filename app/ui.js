@@ -487,9 +487,36 @@ export function htmlSkitowWpisu(slugi, indeks) {
 }
 
 /** Feed „Co nowego": najnowsze na górze, każda pozacja linkuje do treści. */
-/** Feed Kroniki (U3): karty epok z ramy narracji (pytanie/iskra) i linkiem do raportu. */
-export function htmlKronik(podsumowanie, indeks = {}) {
+/** Feed Kroniki (U3): karty epok z ramy narracji (pytanie/iskra) i linkiem do raportu.
+ *  Gdy summary niesie spis `tomy` i nie wybrano Tomu, najpierw renderuje listę
+ *  Kronik (recenzja właściciela 2026-09-04: link „kronika" ma otwierać najpierw
+ *  listę Kronik, nie listę Epok); wybór Tomu (`data-tom`) pokazuje jego epoki. */
+export function htmlKronik(podsumowanie, indeks = {}, { tom = null } = {}) {
   if (!podsumowanie?.epoki?.length) return '<p class="pusto">Kronika jest jeszcze pusta — uruchom npm run build.</p>';
+  const tomy = podsumowanie?.tomy ?? [];
+  if (!tom && tomy.length > 0) {
+    const kartyTomow = tomy
+      .map(
+        (t) => `
+      <article class="kronika-karta kronika-tom">
+        <header>
+          <span class="kronika-nr">Tom ${rzymskie(t.nr ?? 1)}</span>
+          <h3>${esc(t.tytul ?? t.slug)}</h3>
+          <span class="kronika-os">${t.epoki ?? 0} epok</span>
+        </header>
+        ${t.opis ? `<p class="kronika-pytanie">${esc(t.opis)}</p>` : ''}
+        <footer>
+          <button class="przycisk przycisk-maly" data-tom="${esc(t.slug)}">Epoki Tomu ↗</button>
+          <a class="chip link" href="docs/${esc(t.plik ?? `kronika-${t.slug}.html`)}">Raport Tomu ↗</a>
+        </footer>
+      </article>`
+      )
+      .join('');
+    return `
+  <p class="naprowadzenie">Tocząca się opowieść świata AME spisana w księgach (Tomach). Wybierz Kronikę, żeby zobaczyć jej epoki, rozmowy i przesunięcia granicy między mitem a racjonalizacją.</p>
+  <div class="kronika-lista">${kartyTomow}</div>
+  <p class="naprowadzenie"><a class="link-zewnetrzny" href="docs/kronika.html">Otwórz stronę Kroniki (Tomy i raporty) ↗</a></p>`;
+  }
   const opcje = new Set();
   for (const e of podsumowanie.epoki) for (const u of e.uczestnicy ?? []) opcje.add(u.slug);
   const karty = podsumowanie.epoki
@@ -550,6 +577,15 @@ export function htmlTomyIEpoki(slug, kronika) {
     'Tomy i Epoki',
     `<p class="maly">Występuje w ${epoki.length} ${slowo} Tomu <a class="chip link" href="docs/kronika-${esc(tomSlug)}.html" title="Raport Tomu">${esc(tytulTomu)} ↗</a>:</p><div class="chipy">${chipsy}</div>`
   );
+}
+
+/** Numeracja rzymska dla numerów Tomów (I, II, III…). */
+export function rzymskie(n) {
+  const N = [[1000, 'M'], [900, 'CM'], [500, 'D'], [400, 'CD'], [100, 'C'], [90, 'XC'], [50, 'L'], [40, 'XL'], [10, 'X'], [9, 'IX'], [5, 'V'], [4, 'IV'], [1, 'I']];
+  let x = Math.max(1, Math.floor(Number(n) || 1));
+  let wynik = '';
+  for (const [v, s] of N) while (x >= v) { wynik += s; x -= v; }
+  return wynik;
 }
 
 /** Symbol bytu z kartoteki (spójny z mapą; fallback: pierwsza litera emoji-zestawu). */
