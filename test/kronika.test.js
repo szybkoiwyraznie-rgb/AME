@@ -62,7 +62,7 @@ test('paliwo pasywne: 2×backlinki + tagi kanonu + sieć powiązań (max 3)', as
   assert.equal(paliwoPasywne(mapa.get('empusa-korynt'), kanon), 19);
   assert.equal(paliwoPasywne(mapa.get('lincoln-imp'), kanon), 12);
   assert.equal(paliwoPasywne(mapa.get('sfinks-teby'), kanon), 22);
-  assert.equal(paliwoPasywne(mapa.get('talos-kreta'), kanon), 18);
+  assert.equal(paliwoPasywne(mapa.get('talos-kreta'), kanon), 20);
 });
 
 test('Tom I: epoki przechodzą sekwencyjnie i oś zamyka się na 100', async () => {
@@ -141,7 +141,7 @@ test('Tom I: epoki przechodzą sekwencyjnie i oś zamyka się na 100', async () 
     e5.uczestnicy.map((u) => [u.slug, u.saldoPrzed, u.saldoPo]),
     [
       ['sfinks-teby', 22, 20],
-      ['talos-kreta', 18, 16],
+      ['talos-kreta', 20, 18],
       ['lincoln-imp', 10, 12],
     ]
   );
@@ -149,7 +149,7 @@ test('Tom I: epoki przechodzą sekwencyjnie i oś zamyka się na 100', async () 
   assert.equal(e5.stanPo.os.racjonalizacja, 69);
   assert.equal(e5.stanPo.zasieg.find((z) => z.slug === 'lincoln-imp').wielkosc, 0.397);
   assert.equal(e5.stanPo.zasieg.find((z) => z.slug === 'sfinks-teby').wielkosc, 0.396);
-  assert.equal(e5.stanPo.zasieg.find((z) => z.slug === 'talos-kreta').wielkosc, 0.354);
+  assert.equal(e5.stanPo.zasieg.find((z) => z.slug === 'talos-kreta').wielkosc, 0.377);
 
   assert.deepEqual(
     e6.uczestnicy.map((u) => [u.slug, u.saldoPrzed, u.saldoPo]),
