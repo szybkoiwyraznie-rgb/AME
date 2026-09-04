@@ -1,6 +1,6 @@
 {
   "wersja": 3,
-  "buildTime": "2026-09-04T16:59:32.864Z",
+  "buildTime": "2026-09-04T17:17:34.734Z",
   "liczba": 20,
   "liczbaSkitow": 36,
   "kanon": {
@@ -1972,6 +1972,14 @@
     }
   ],
   "aktualizacje": [
+    {
+      "data": "2026-09-04 17:16",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "balor",
+      "tytul": "Balor z Tory Island",
+      "opis": "Dopisano warstwę źródła pierwotnego: według edycji Gray (Cath Maige Tuired, 1982) oko Balora otwierano wyłącznie na polu bitwy, na którym wcześniej z jego ręki padli Núadu i Macha, a ostatnim jego rozkazem było „Lift up my eyelid, lad”; w dokumentacji tekst CELT/UCC oraz ludową redakcję Lady Gregory (1904)."
+    },
     {
       "data": "2026-09-04 16:52",
       "typ": "skit",
