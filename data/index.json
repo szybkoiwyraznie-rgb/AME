@@ -1,8 +1,8 @@
 {
   "wersja": 3,
-  "buildTime": "2026-09-04T15:52:34.121Z",
+  "buildTime": "2026-09-04T15:55:22.546Z",
   "liczba": 20,
-  "liczbaSkitow": 31,
+  "liczbaSkitow": 32,
   "kanon": {
     "kategorie": [
       {
@@ -587,6 +587,7 @@
       },
       "skity": [
         "dzien-wolnego",
+        "linia-brzegu",
         "najgorsze-odpowiedzi",
         "pod-dachem"
       ]
@@ -824,6 +825,7 @@
       },
       "skity": [
         "dzien-wolnego",
+        "linia-brzegu",
         "pogoda-na-jutro",
         "zaplata-za-przewoz"
       ]
@@ -1046,6 +1048,7 @@
       "skity": [
         "cena-znaku",
         "dwa-grzbiety",
+        "linia-brzegu",
         "prezent-z-defektem",
         "zaplata-za-przewoz"
       ]
@@ -1187,6 +1190,7 @@
         "dwie-skory",
         "imie-na-progu",
         "kalendarz-powrotow",
+        "linia-brzegu",
         "pogoda-na-jutro",
         "znak-i-liczba"
       ]
@@ -1537,6 +1541,25 @@
       "data": "2026-08-28 15:35"
     },
     {
+      "slug": "linia-brzegu",
+      "tytul": "LINIA BRZEGU",
+      "temat": "kogo woda oddaje, a kogo zatrzymuje — i za jaką opłatą",
+      "uczestnicy": [
+        "ben-varrey",
+        "kannon-hase",
+        "nessos",
+        "selkie-sule-skerry"
+      ],
+      "imiona": [
+        "Ben-Varrey",
+        "Nessos",
+        "Wielki Selkie",
+        "Kannon"
+      ],
+      "slow": 253,
+      "data": "2026-09-04 16:25"
+    },
+    {
       "slug": "najgorsze-odpowiedzi",
       "tytul": "NAJGORSZE ODPOWIEDZI",
       "temat": "żale służbowe na progu — każda z nich zadaje ludziom pytania i zbiera najgorsze odpowiedzi",
@@ -1863,6 +1886,14 @@
     }
   ],
   "aktualizacje": [
+    {
+      "data": "2026-09-04 16:25",
+      "typ": "skit",
+      "akcja": "nowy",
+      "slug": "linia-brzegu",
+      "tytul": "LINIA BRZEGU",
+      "opis": "SKIT — skład: Ben-Varrey, Nessos, Wielki Selkie, Kannon"
+    },
     {
       "data": "2026-09-04 16:05",
       "typ": "manifestacja",
