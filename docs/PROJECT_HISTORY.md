@@ -2147,3 +2147,29 @@ PR #22 rozliczony wyżej.
 **Stan końcowy sesji:** PR #24 (ta gałąź) czeka na decyzję właściciela.
 `npm test` 234/234, `npm run build` + `npm run check` zielone. Cache-bust
 aplikacji: c5-17.
+
+## Sesja 2026-09-04 (auto 9) (gałąź session/2026-09-04-auto9) — audyt PR #26, auto-scalenie PR #27, Pętla Jakości
+
+**Audyt PR #26 „Add files via upload" (właściciel, scalony 18:50).**
+Jeden plik: `Lista Kart w Kolekcji.txt` (+464) — kolekcja kart właściciela
+(format „Nazwa SET", 463 pozycje), zasób dla kroku C4 Pętli Jakości.
+Brak usterek (dane właściciela, bez ingerencji w kod).
+
+**Audyt PR #27 (session/2026-09-04-auto8) → auto-scalenie (squash `d33936b`).**
+Plik po pliku: (1) `AGENTS.md` §2 — rozszerzenie Pętli Jakości o C4
+(materializacja z kolekcji), C5 (narzędzia fabularne), C6 (rozwój Kroniki)
+zgodnie z decyzją właściciela z 2026-09-04; (2) cherry-pick sieroty z
+auto4b — sortowanie kartoteki (A–Z / ostatnio zmienione / wg kraju):
+`dataZmianySluga` + opcja `sort` w `htmlListy` (app/ui.js), select w
+nagłówku listy (app/app.js), style przez tokeny CSS (app/styles.css),
+2 nowe testy (test/ui.test.js); remisy zawsze po nazwie — determinizm
+(ADR 0002); `dataZmianySluga` czyta wyłącznie feed `aktualizacje` typu
+`manifestacja` (skity nie udają zmiany wpisu — pokryte testem).
+Bramy na gałęzi PR: `npm test` 236/236, `npm run build`, `npm run check`
+zielone. Po scaleniu: `git pull origin main` + ponowne testy 236/236 + build
+— weryfikacja końcowa zielona (warunek d procedury).
+
+**Sprzątanie sierot (L21):** zweryfikowane tipy wszystkich 19 zdalnych
+gałęzi względem `mergedAt` ich PR-ów — żadna nie ma commitów po scaleniu
+(jedyna historyczna sierota, sortowanie kartoteki z auto4b, została
+uratowana przez PR #27 i jest na main). Brak wiszących PR-ów.
