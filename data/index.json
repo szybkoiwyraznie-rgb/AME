@@ -1,6 +1,6 @@
 {
   "wersja": 3,
-  "buildTime": "2026-09-04T16:08:43.897Z",
+  "buildTime": "2026-09-04T16:25:34.852Z",
   "liczba": 20,
   "liczbaSkitow": 33,
   "kanon": {
@@ -1913,6 +1913,14 @@
       "slug": "linia-brzegu",
       "tytul": "LINIA BRZEGU",
       "opis": "SKIT — skład: Ben-Varrey, Nessos, Wielki Selkie, Kannon"
+    },
+    {
+      "data": "2026-09-04 16:24",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "barbarossa-kyffhaeuser",
+      "tytul": "Barbarossa w Kyffhäuserze",
+      "opis": "Oryginał Grimmów z 1816 r. (Project Gutenberg #76558): epizod pasterza, któremu wstający cesarz zadaje pytanie o kruki, cytaty po niemiecku i druki, na które powołują się Grimmowie (m.in. Tenzel 1689) — legenda drukowana już w XVII w."
     },
     {
       "data": "2026-09-04 16:10",
