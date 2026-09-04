@@ -1789,3 +1789,50 @@ Pętla Jakości (ADR 0007), rekurencyjnie do wyczerpania budżetu sesji.
 
 Brama po każdym commicie: `npm test` **205/205**, `npm run build` + `npm run
 check` zielone (bez zapisu). Featury zweryfikowane live w headless Chromium.
+
+## Sesja 2026-09-04 (gałąź arena/sesja-2026-09-04) — audyt PR #12
+
+**Brama PR #12 (`1f72499`, scalony Squash 2026-08-30):** `npm test`
+**205/205** zielone, `npm run build` + `npm run check` bez zapisu
+(deterministyczne); CI na `main` zielone (run 33371686910). Indeks:
+**20 wpisów / 24 SKITy / 44 tagi**; Kronika 7 epok (seed mit 38 / rac 62).
+
+**Audyt plik po pliku (`git diff 1f72499^..1f72499`):**
+- Dokumenty (`AGENTS.md`, `PROTOKOL.md`, `WORKFLOW.md`, `BACKLOG.md`) —
+  dokończenie migracji v1.8: usunięta martwa sekcja „V. REZONANS I TOŻSAMOŚĆ"
+  z tabelą „Klucz Przywołania" i zdublowany nagłówek §5; backlog oznacza
+  wdrożone pozycje. Zgodne z ADR 0022. ✔
+- `app/app.js` — lektor skitów (`przelaczLektora`, `speechSynthesis.cancel()`
+  przy zamykaniu warstwy, głos pl-PL, brak API = grzeczna kapitulacja
+  przycisku) i druk (`[data-druk]` → `window.print()`); delegacja klików
+  zgodna z L10. ✔
+- `app/ui.js` — `przyciskDruku()`, czysta `tekstDoLektora()` (markdown +
+  didaskalia → czysty dialog), przycisk „🔊 odsłuchaj" w widoku skitu;
+  JSDoc zaktualizowany do v1.8. ✔
+- `app/styles.css` — blok `@media print`: topbar/tagi/mapa/lista/warstwy
+  chowane, kartoteka `position: static` na białym, tokeny nadpisane pod druk
+  dla obu motywów. ✔
+- 2 nowe SKITy (`zaplata-za-przewoz`, `z-gliny-i-spizu`) — składy 3-osobowe
+  i unikalne, formy `**Imię:**` z didaskaliami, bez żargonu gry, meta z
+  godziną; faktografia (Saramā i Paṇi) spójna z dopisanym w tej samej sesji
+  C1 wpisu `syama-i-sarvara`. ✔
+- C1: `pandora` (genealogia Pyrrha/Deukalion — Apollodoros 1.46, Hygin 142),
+  `syama-i-sarvara` (matka Saramā, RV 10.108 + 4. źródło z adresem). Meta
+  dopisane z godziną. ✔
+- `test/kronika.test.js` — przekalibrowane seedy osi/zasięgów po dwóch nowych
+  skitach (zapowiedziane w handoffie; wartości umowne Tomu I);
+  `test/ui.test.js` — kontrakty druku i lektora. ✔
+- `data/index.json`, `data/kronika/summary.json`, raporty HTML — wygenerowane
+  narzędziami; `npm run check` przechodzi. ✔
+- Cache-bust `c5-9` spójny między `index.html` a importami (`app.js`,
+  `map.js`, `ui.js`, `geo.js`); `data.js` świadomie na starszym znaczniku
+  (plik niezmieniony). ✔
+
+**Znaleziona usterka (naprawiona w tej sesji):** 8 opisów w
+`meta.modyfikacje` 6 kart (kannon-hase, knecht-z-koptos, nessos, pandora,
+protostates, syama-i-sarvara) zaczynało się od roboczego przedrostka
+„Pętla Jakości (C1):" — PROTOKÓŁ §9 wymaga zdania o treści dla czytelnika,
+bez oznaczeń wewnętrznych (`C1` wprost wymienione jako zakazane). Feed „Co
+nowego" pokazywał te przedrostki publicznie. Korekta redakcyjna opisów
+(treść zdań zachowana, daty zdarzeń nietknięte), odnotowana tu, a nie w
+`meta` kart — masowa korekta formy dziennika, jak migracje schematu.
