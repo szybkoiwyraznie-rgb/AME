@@ -62,7 +62,16 @@ promptu i planów w `docs/plans/`. Żaden inny dokument nie może ich wyłączy�
    sprawdzenie stanu projektu, nie zaraportowanie listy plików.
 3. **Inkrementalne commity.** Każdy samodzielnie zielony krok (`npm test` +
    `npm run build`) to OSOBNY commit, od razu wypchnięty. Zakazany jest jeden
-   wielki commit z całą sesją.
+   wielki commit z całą sesją. **Zakaz osieracania kodu (twardy, L21):**
+   każdy commit ląduje WYŁĄCZNIE na gałęzi, która ma (lub natychmiast
+   dostanie) swój otwarty PR do main. Przed każdym commitem sprawdź
+   `git rev-parse --abbrev-ref HEAD` — jeśli to nie Twoja gałąź sesji
+   (main, detached HEAD, cudza gałąź), natychmiast przełącz się na właściwą
+   i dopiero wtedy commituj. Commit bez PR jest niewidzialny dla audytu
+   i kolejnych sesji — praca przepada po końcu sandboxa. Auto-sesja na
+   starcie sprząta sieroty: wiszący PR `session/*-auto` z konfliktem
+   (`mergeable=false`) ratuje przez rebase względem main → testy → scalenie,
+   a wartościowe commity bez PR wciąga cherry-pickiem na własną gałąź.
 4. **Tylko przyrostowo, nigdy force push.** Praca ląduje jako NOWE commity na
    końcu gałęzi. Przed pushem: `git log --oneline -3` + `git status`, potem
    `git fetch origin <gałąź>` i porównanie `HEAD..FETCH_HEAD`. Odrzucony push
