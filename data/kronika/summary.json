@@ -139,7 +139,7 @@
           },
           {
             "slug": "talos-kreta",
-            "wielkosc": 0.359
+            "wielkosc": 0.382
           }
         ],
         "dominacje": [
@@ -241,7 +241,7 @@
           {
             "kultura": "grecja",
             "kult": "talos-kreta",
-            "wielkosc": 0.359
+            "wielkosc": 0.382
           }
         ],
         "paliwo": {
@@ -529,7 +529,7 @@
           },
           {
             "slug": "talos-kreta",
-            "wielkosc": 0.359
+            "wielkosc": 0.382
           }
         ],
         "dominacje": [
@@ -631,7 +631,7 @@
           {
             "kultura": "grecja",
             "kult": "talos-kreta",
-            "wielkosc": 0.359
+            "wielkosc": 0.382
           }
         ],
         "paliwo": {
@@ -937,7 +937,7 @@
           },
           {
             "slug": "talos-kreta",
-            "wielkosc": 0.359
+            "wielkosc": 0.382
           }
         ],
         "dominacje": [
@@ -1039,7 +1039,7 @@
           {
             "kultura": "grecja",
             "kult": "talos-kreta",
-            "wielkosc": 0.359
+            "wielkosc": 0.382
           }
         ],
         "paliwo": {
@@ -1360,7 +1360,7 @@
           },
           {
             "slug": "talos-kreta",
-            "wielkosc": 0.359
+            "wielkosc": 0.382
           }
         ],
         "dominacje": [
@@ -1462,7 +1462,7 @@
           {
             "kultura": "grecja",
             "kult": "talos-kreta",
-            "wielkosc": 0.359
+            "wielkosc": 0.382
           }
         ],
         "paliwo": {
@@ -1678,13 +1678,13 @@
           "slug": "talos-kreta",
           "nazwa": "Talos — spiżowy strażnik Krety",
           "rola": "Spiżowy obrońca brzegu",
-          "pasywne": 18,
-          "saldoPrzed": 18,
+          "pasywne": 20,
+          "saldoPrzed": 20,
           "kosztUdzialu": 2,
           "kosztKlucza": 0,
           "boost": 0,
           "zwrot": 0,
-          "saldoPo": 16
+          "saldoPo": 18
         },
         {
           "slug": "lincoln-imp",
@@ -1783,7 +1783,7 @@
           },
           {
             "slug": "talos-kreta",
-            "wielkosc": 0.354
+            "wielkosc": 0.377
           }
         ],
         "dominacje": [
@@ -1885,7 +1885,7 @@
           {
             "kultura": "grecja",
             "kult": "talos-kreta",
-            "wielkosc": 0.354
+            "wielkosc": 0.377
           }
         ],
         "paliwo": {
@@ -1898,7 +1898,7 @@
           "selkie-sule-skerry": 22,
           "indra": 11,
           "sfinks-teby": 20,
-          "talos-kreta": 16
+          "talos-kreta": 18
         }
       },
       "konsekwencje": {
@@ -1944,8 +1944,8 @@
           },
           {
             "slug": "talos-kreta",
-            "przed": 0.359,
-            "po": 0.354,
+            "przed": 0.382,
+            "po": 0.377,
             "delta": -0.005,
             "opis": "Spiżowy olbrzym pozostaje tylko maszyną strzegącą pustego brzegu."
           }
@@ -1968,8 +1968,8 @@
           {
             "kultura": "grecja",
             "kult": "talos-kreta",
-            "przed": 0.359,
-            "po": 0.354,
+            "przed": 0.382,
+            "po": 0.377,
             "delta": -0.005
           }
         ],
@@ -2203,7 +2203,7 @@
           },
           {
             "slug": "talos-kreta",
-            "wielkosc": 0.354
+            "wielkosc": 0.377
           }
         ],
         "dominacje": [
@@ -2305,7 +2305,7 @@
           {
             "kultura": "grecja",
             "kult": "talos-kreta",
-            "wielkosc": 0.354
+            "wielkosc": 0.377
           }
         ],
         "paliwo": {
@@ -2318,7 +2318,7 @@
           "selkie-sule-skerry": 22,
           "indra": 11,
           "sfinks-teby": 20,
-          "talos-kreta": 16,
+          "talos-kreta": 18,
           "pandora": 17,
           "morowa-panna": 9
         }
@@ -2632,7 +2632,7 @@
           },
           {
             "slug": "talos-kreta",
-            "wielkosc": 0.354
+            "wielkosc": 0.377
           }
         ],
         "dominacje": [
@@ -2734,7 +2734,7 @@
           {
             "kultura": "grecja",
             "kult": "talos-kreta",
-            "wielkosc": 0.354
+            "wielkosc": 0.377
           }
         ],
         "paliwo": {
@@ -2747,7 +2747,7 @@
           "selkie-sule-skerry": 22,
           "indra": 11,
           "sfinks-teby": 20,
-          "talos-kreta": 16,
+          "talos-kreta": 18,
           "pandora": 17,
           "morowa-panna": 9,
           "protostates": 12,
@@ -3011,7 +3011,7 @@
       },
       {
         "slug": "talos-kreta",
-        "wielkosc": 0.354
+        "wielkosc": 0.377
       }
     ],
     "dominacje": [
@@ -3113,7 +3113,7 @@
       {
         "kultura": "grecja",
         "kult": "talos-kreta",
-        "wielkosc": 0.354
+        "wielkosc": 0.377
       }
     ],
     "paliwo": {
@@ -3126,7 +3126,7 @@
       "selkie-sule-skerry": 22,
       "indra": 11,
       "sfinks-teby": 20,
-      "talos-kreta": 16,
+      "talos-kreta": 18,
       "pandora": 17,
       "morowa-panna": 9,
       "protostates": 12,
