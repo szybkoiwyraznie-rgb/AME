@@ -1,8 +1,8 @@
 {
   "wersja": 3,
-  "buildTime": "2026-09-04T16:43:58.469Z",
+  "buildTime": "2026-09-04T16:51:18.773Z",
   "liczba": 20,
-  "liczbaSkitow": 34,
+  "liczbaSkitow": 35,
   "kanon": {
     "kategorie": [
       {
@@ -448,6 +448,7 @@
       "skity": [
         "dzien-wolnego",
         "ostatnia-droga",
+        "porcje",
         "poslaniec-i-straznicy",
         "warta"
       ]
@@ -591,7 +592,8 @@
         "dzien-wolnego",
         "linia-brzegu",
         "najgorsze-odpowiedzi",
-        "pod-dachem"
+        "pod-dachem",
+        "porcje"
       ]
     },
     {
@@ -829,6 +831,7 @@
         "dzien-wolnego",
         "linia-brzegu",
         "pogoda-na-jutro",
+        "porcje",
         "zaplata-za-przewoz"
       ]
     },
@@ -1289,6 +1292,7 @@
       "skity": [
         "ostatnia-droga",
         "pierwszy",
+        "porcje",
         "poslaniec-i-straznicy",
         "zaplata-za-przewoz"
       ]
@@ -1721,6 +1725,25 @@
       "data": "2026-09-04 14:00"
     },
     {
+      "slug": "porcje",
+      "tytul": "PORCJE",
+      "temat": "kto dostaje swoją porcję od ludzi: ogień zjada wszystko, morska dziewica chce jabłko, bodhisattwa słucha zamiast jeść, a psy z drogi nie przyjmą nawet okruszka",
+      "uczestnicy": [
+        "agni",
+        "ben-varrey",
+        "kannon-hase",
+        "syama-i-sarvara"
+      ],
+      "imiona": [
+        "Agni",
+        "Ben-Varrey",
+        "Kannon",
+        "Śyāma i Śarvara"
+      ],
+      "slow": 300,
+      "data": "2026-09-04 16:49"
+    },
+    {
       "slug": "poslaniec-i-straznicy",
       "tytul": "POSŁANIEC I STRAŻNICY",
       "temat": "kurier i trzech celników: kto sprawdza zagadką, kto węchem, kto głazem — i dlaczego na przesyłkę czekają wszyscy, a na posłańca nikt",
@@ -1933,6 +1956,14 @@
       "slug": "kentaur-pelion",
       "tytul": "Kentaur z Pelionu",
       "opis": "Pogłębienie warstwą homerycką: Iliada 1.262–268 (Nestor i plemię „mountain-dwelling centaurs” — jeszcze bez końskiej anatomii) i 2.738–744 (wygnanie z Pelionu do Aityków) oraz Odyseja 21.295–304 (Eurytion i wino — najstarszy zapis katalizatora kentauromachii, „from hence the feud arose between the centaurs and mankind”); dwa źródła pierwotne w dokumentacji."
+    },
+    {
+      "data": "2026-09-04 16:49",
+      "typ": "skit",
+      "akcja": "nowy",
+      "slug": "porcje",
+      "tytul": "PORCJE",
+      "opis": "SKIT — skład: Agni, Ben-Varrey, Kannon, Śyāma i Śarvara"
     },
     {
       "data": "2026-09-04 16:35",

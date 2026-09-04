@@ -12,7 +12,7 @@
     "zasieg": [
       {
         "slug": "agni",
-        "wielkosc": 0.367
+        "wielkosc": 0.389
       },
       {
         "slug": "balor",
@@ -24,7 +24,7 @@
       },
       {
         "slug": "ben-varrey",
-        "wielkosc": 0.322
+        "wielkosc": 0.344
       },
       {
         "slug": "drangue-shala",
@@ -44,7 +44,7 @@
       },
       {
         "slug": "kannon-hase",
-        "wielkosc": 0.367
+        "wielkosc": 0.389
       },
       {
         "slug": "kentaur-pelion",
@@ -84,7 +84,7 @@
       },
       {
         "slug": "syama-i-sarvara",
-        "wielkosc": 0.322
+        "wielkosc": 0.344
       },
       {
         "slug": "talos-kreta",
@@ -95,7 +95,7 @@
       {
         "kultura": "indie",
         "kult": "agni",
-        "wielkosc": 0.367
+        "wielkosc": 0.389
       },
       {
         "kultura": "irlandia",
@@ -110,7 +110,7 @@
       {
         "kultura": "man",
         "kult": "ben-varrey",
-        "wielkosc": 0.322
+        "wielkosc": 0.344
       },
       {
         "kultura": "albania",
@@ -135,7 +135,7 @@
       {
         "kultura": "japonia",
         "kult": "kannon-hase",
-        "wielkosc": 0.367
+        "wielkosc": 0.389
       },
       {
         "kultura": "grecja",
@@ -185,7 +185,7 @@
       {
         "kultura": "indie",
         "kult": "syama-i-sarvara",
-        "wielkosc": 0.322
+        "wielkosc": 0.344
       },
       {
         "kultura": "grecja",
