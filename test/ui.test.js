@@ -530,6 +530,17 @@ test('kopiowanie linku jest podpięte w obu warstwach (handlerzy widzą data-kop
   assert.ok(/data-kopia/.test(warstwa) && /kopiujLink\(/.test(warstwa), 'warstwa skitów/feedu: to samo');
 });
 
+test('reakcja na zmianę preferencji systemu — tylko bez zapisu użytkownika', async () => {
+  const app = await readFile('app/app.js', 'utf8');
+  assert.ok(/addEventListener\?\.\('change'/.test(app), 'nasłuch na zmianę prefers-color-scheme');
+  const nasluch = app.indexOf("addEventListener?.('change'");
+  const wolanie = app.indexOf('sledzPreferencjeSystemu();');
+  assert.ok(wolanie > nasluch, 'start() podpina nasłuch po zdefiniowaniu funkcji');
+  const cialo = app.slice(app.indexOf('function sledzPreferencjeSystemu'), app.indexOf('async function start'));
+  assert.ok(/czytajMotyw\(\)/.test(cialo), 'zapis użytkownika wygrywa — bez zapisu podążamy za systemem');
+  assert.ok(/motywPoczatkowy\(\{ woliJasny: e\.matches \}\)/.test(cialo), 'zmiana systemowa przełącza motyw');
+});
+
 /* ---- Prezentacja kanonu tagów (ADR 0016) ---- */
 
 test('pasek tagów: każde pasmo ma podpis kategorii z opisem w title', async () => {

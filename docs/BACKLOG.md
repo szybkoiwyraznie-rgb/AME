@@ -113,9 +113,10 @@
 
 ## Rozpoznane w sesji M3 (2026-08-28) — po poprawkach z testów
 
-- **Reakcja na zmianę preferencji systemu** — dziś `prefers-color-scheme` liczy
-  się tylko przy braku zapisanego wyboru; można nasłuchiwać `change` i
-  przełączać dopóki użytkownik nie zdecydował samodzielnie.
+- ~~**Reakcja na zmianę preferencji systemu**~~ — **WDROŻONE (2026-09-04, PR
+  #17, C2 pętli jakości):** `sledzPreferencjeSystemu()` w `app/app.js`
+  nasłuchuje `change` na `prefers-color-scheme` i przełącza motyw tylko
+  dopóki użytkownik nie zapisał własnego wyboru w `localStorage`.
 - ~~**Miniatura wizualizacji w wierszu kartoteki i w liście**~~ — **WDROŻONE
   (2026-09-04, PR #13, C2 pętli jakości):** wiersz listy manifestacji z polem
   `obraz` dostaje miniaturę 21:9 (`<img loading="lazy">`, klasa
