@@ -1,6 +1,6 @@
 {
   "wersja": 3,
-  "buildTime": "2026-09-04T15:55:22.546Z",
+  "buildTime": "2026-09-04T16:05:35.521Z",
   "liczba": 20,
   "liczbaSkitow": 32,
   "kanon": {
@@ -1901,6 +1901,14 @@
       "slug": "talos-kreta",
       "tytul": "Talos — spiżowy strażnik Krety",
       "opis": "Pogłębienie: warianty zamknięcia żyły (błona u Apolloniusza, gwóźdź u Apollodorosa) i śmierć z rąk Medei bez wyciągania gwoździa; dwa źródła pierwotne — „Argonautyki\" 4.1638–1688 i hezjodowski spiżowy ród („Prace i dnie\" 141–155)."
+    },
+    {
+      "data": "2026-09-04 16:05",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "kannon-hase",
+      "tytul": "Kannon — miłosierna wybawicielka",
+      "opis": "Pogłębienie charakterystyki i zdolności o rozdział XXV Sutry Lotosu (tłum. Kubo–Yuyama, BDK 2007) — imię jako obietnica, siła wołania w ogniu, na wodzie i wobec ostrzy, przybieranie postaci potrzebnej do zbawienia; dopisana pozycja źródła pierwotnego w dokumentacji"
     },
     {
       "data": "2026-09-04 15:45",
