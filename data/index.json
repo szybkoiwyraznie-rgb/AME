@@ -1,8 +1,8 @@
 {
   "wersja": 3,
-  "buildTime": "2026-09-04T12:01:55.857Z",
+  "buildTime": "2026-09-04T12:05:15.151Z",
   "liczba": 20,
-  "liczbaSkitow": 25,
+  "liczbaSkitow": 26,
   "kanon": {
     "kategorie": [
       {
@@ -442,7 +442,8 @@
       ],
       "obraz": "assets/wizualizacje/agni.jpg",
       "skity": [
-        "dzien-wolnego"
+        "dzien-wolnego",
+        "warta"
       ]
     },
     {
@@ -530,6 +531,7 @@
         "kalendarz-powrotow",
         "trzy-stoly",
         "trzy-zegary",
+        "warta",
         "znak-burzy"
       ]
     },
@@ -1056,7 +1058,8 @@
       ],
       "obraz": "assets/wizualizacje/protostates.jpg",
       "skity": [
-        "pierwszy"
+        "pierwszy",
+        "warta"
       ]
     },
     {
@@ -1568,6 +1571,23 @@
       "data": "2026-08-28 22:25"
     },
     {
+      "slug": "warta",
+      "tytul": "WARTA",
+      "temat": "kto naprawdę czuwa — pierwszy szereg, cesarz śpiący na warcie i ogień, którego nikt nie gasi",
+      "uczestnicy": [
+        "agni",
+        "barbarossa-kyffhaeuser",
+        "protostates"
+      ],
+      "imiona": [
+        "Protostates",
+        "Barbarossa",
+        "Agni"
+      ],
+      "slow": 232,
+      "data": "2026-09-04 12:50"
+    },
+    {
       "slug": "z-gliny-i-spizu",
       "tytul": "Z GLINY I SPIŻU",
       "temat": "być ulepionym, nie urodzonym — o ręce twórcy, jednym rozkazie i chwili, gdy rzecz przekracza instrukcję",
@@ -1652,6 +1672,14 @@
     }
   ],
   "aktualizacje": [
+    {
+      "data": "2026-09-04 12:50",
+      "typ": "skit",
+      "akcja": "nowy",
+      "slug": "warta",
+      "tytul": "WARTA",
+      "opis": "SKIT — skład: Protostates, Barbarossa, Agni"
+    },
     {
       "data": "2026-09-04 12:35",
       "typ": "manifestacja",
