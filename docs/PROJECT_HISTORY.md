@@ -1836,3 +1836,39 @@ bez oznaczeń wewnętrznych (`C1` wprost wymienione jako zakazane). Feed „Co
 nowego" pokazywał te przedrostki publicznie. Korekta redakcyjna opisów
 (treść zdań zachowana, daty zdarzeń nietknięte), odnotowana tu, a nie w
 `meta` kart — masowa korekta formy dziennika, jak migracje schematu.
+
+## Sesja 2026-09-04 (gałąź arena/sesja-2026-09-04) — Pętla Jakości, dwa obiegi
+
+Po audycie PR #12 (wyżej) bez zaległości i bez zlecenia właściciela — Pętla
+Jakości (ADR 0007), dwa pełne obiegi C1 → C3 → C2.
+
+**C1 — treść (research www, ADR 0008):**
+- `ben-varrey` — źródło pierwotne A. W. Moore „The Folk-Lore of the Isle of
+  Man" (1891, rozdz. 4): imię Ben-varry jako „kobieta morza", tradycja o mgle
+  karzącej wyspę po odrzuceniu, dary korala i pereł; zbiór Kathleen Killip
+  „Saint Bridget's Night" (rekord biblioteki Manx National Heritage).
+- `indra` — źródło pierwotne Rigweda 1.32 (Griffith): zabójstwo Vṛtry,
+  wadżra kuta przez Tvaṣṭara (warstwa wedyjska) wobec kości Dadhichiego
+  (warstwa puraniczna), soma z trzech czar przed walką.
+
+**C3 — SKITy (składy unikalne, 3-osobowe):**
+- „Najgorsze odpowiedzi" (Sfinks × Morowa Panna × Ben-Varrey, 228 słów,
+  ton luźny — żale służbowe bytów zadających ludziom pytania);
+- „Warta" (Protostates × Barbarossa × Agni, 232 słowa — trzy sposoby
+  czuwania: pierwszy szereg, sen cesarza, ogień, którego nikt nie gasi).
+- Oba skity zmieniły seed Kroniki — przekalibrowane umowne wartości w
+  `test/kronika.test.js` (procedura z poprzedniego handoffa).
+
+**C2 — featury (do akceptacji właściciela przed live):**
+- miniatura wizualizacji 21:9 w wierszu listy manifestacji (`loading="lazy"`,
+  wiersz bez obrazu bez zmian; weryfikacja live: 20/20 miniatur 96×41 px);
+- Galeria trofeów: przycisk „🏆 trofea" → warstwa z dowodami eliminacji
+  wszystkich kart (rekord indeksu niesie `trofea` — bez dociągania pełnych
+  wpisów), deep-link `#trofea`, klik w byt otwiera jego kartotekę
+  (weryfikacja live: klik w Balora → karta, toggle, konsola czysta).
+
+**Incydent i naprawa:** przy instalacji narzędzi weryfikacji live polecenie
+z nieudanym `cd` i fallbackiem `||` uruchomiło `npm i` w katalogu repo
+(puppeteer w `package.json` + `package-lock.json` — złamanie ADR 0001).
+Naprawione przyrostowo: przywrócony `package.json`, lockfile usunięty
+i w `.gitignore`; lekcja **L17** w `docs/LESSONS.md`. Bramy: 208/208.

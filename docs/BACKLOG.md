@@ -134,6 +134,10 @@
   dobierało niepowtarzalne tematy, nie tylko składy.
 - **Widok „rozmowy” na mapie** — animowany łuk łączący uczestników skitu przy
   jego otwarciu (dziś sekcja VI linkuje tylko do kart).
+- **Walidator opisów `meta.modyfikacje`** — twardy zakaz oznaczeń
+  wewnętrznych (`C1`, `C2`, `M3`, `Pętla Jakości`, `PROTOKÓŁ §`) w polu
+  `opis` (PROTOKÓŁ §9); w 2026-09-04 audyt znalazł 13 takich opisów
+  (korekta w PR #13), więc reguła bez walidatora wraca.
 - **Walidator spójności faktograficznej** — heurystyka ostrzegająca, gdy skit
   przywołuje zwyczaj/nazwę własną nieobecną w kartach uczestników (twarda
   egzekucja wymaga NLP — poza zakresem ADR 0001).
