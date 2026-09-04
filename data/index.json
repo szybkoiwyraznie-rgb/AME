@@ -1,6 +1,6 @@
 {
   "wersja": 3,
-  "buildTime": "2026-09-04T13:01:31.293Z",
+  "buildTime": "2026-09-04T13:06:02.999Z",
   "liczba": 20,
   "liczbaSkitow": 27,
   "kanon": {
@@ -1772,6 +1772,14 @@
     }
   ],
   "aktualizacje": [
+    {
+      "data": "2026-09-04 13:45",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "drangue-shala",
+      "tytul": "Drangue z doliny Shali",
+      "opis": "Doprecyzowane warunki śmierci drangue — nieśmiertelność z pojedynczej koniunkcji gwiazd przy urodzeniu (śmierć przy jej powtórzeniu) i wariant z Rugovy: byt ginie, gdy zobaczy go ktoś obcy albo gdy jego stan wyjdzie na jaw; źródło w dokumentacji."
+    },
     {
       "data": "2026-09-04 13:20",
       "typ": "skit",
