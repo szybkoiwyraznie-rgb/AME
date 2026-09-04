@@ -1,8 +1,8 @@
 {
   "wersja": 3,
-  "buildTime": "2026-09-04T15:40:05.027Z",
+  "buildTime": "2026-09-04T15:44:29.394Z",
   "liczba": 20,
-  "liczbaSkitow": 30,
+  "liczbaSkitow": 31,
   "kanon": {
     "kategorie": [
       {
@@ -1090,6 +1090,7 @@
       },
       "skity": [
         "czwarty-stol",
+        "pierwsza-zmiana",
         "prezent-z-defektem",
         "z-gliny-i-spizu"
       ]
@@ -1132,6 +1133,7 @@
         "wtorne": "Czarny kita z hełmu — pęk końskiego włosia, który pozostaje we mgle po zniknięciu fantomu, jako znak, że „albo z tym, albo na tym” wciąż obowiązuje."
       },
       "skity": [
+        "pierwsza-zmiana",
         "pierwszy",
         "pracownicy-progu",
         "warta"
@@ -1235,6 +1237,7 @@
       },
       "skity": [
         "najgorsze-odpowiedzi",
+        "pierwsza-zmiana",
         "poslaniec-i-straznicy",
         "zagadka-ze-spizu"
       ]
@@ -1325,6 +1328,7 @@
         "wtorne": "Odłamany kawałek brązowej łydki z widocznym szwem odlewniczym — pamiątka po bycie, który był kiedyś narzędziem, a nie istotą."
       },
       "skity": [
+        "pierwsza-zmiana",
         "poslaniec-i-straznicy",
         "z-gliny-i-spizu",
         "zagadka-ze-spizu"
@@ -1584,6 +1588,25 @@
       "data": "2026-08-29 10:20"
     },
     {
+      "slug": "pierwsza-zmiana",
+      "tytul": "PIERWSZA ZMIANA",
+      "temat": "instrukcja obsługi bytu, której nikt nie dodał do umowy",
+      "uczestnicy": [
+        "pandora",
+        "protostates",
+        "sfinks-teby",
+        "talos-kreta"
+      ],
+      "imiona": [
+        "Pandora",
+        "Sfinks",
+        "Talos",
+        "Protostates"
+      ],
+      "slow": 201,
+      "data": "2026-09-04 15:45"
+    },
+    {
       "slug": "pierwszy",
       "tytul": "PIERWSZY",
       "temat": "kto jest pierwszy w linii — człowiek, rzecz czy pies; i co zostaje, gdy pierwszy stoi, a nikt nie idzie za nim",
@@ -1840,6 +1863,14 @@
     }
   ],
   "aktualizacje": [
+    {
+      "data": "2026-09-04 15:45",
+      "typ": "skit",
+      "akcja": "nowy",
+      "slug": "pierwsza-zmiana",
+      "tytul": "PIERWSZA ZMIANA",
+      "opis": "SKIT — skład: Pandora, Sfinks, Talos, Protostates"
+    },
     {
       "data": "2026-09-04 15:45",
       "typ": "skit",

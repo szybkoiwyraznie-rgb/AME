@@ -119,11 +119,11 @@
           },
           {
             "slug": "pandora",
-            "wielkosc": 0.371
+            "wielkosc": 0.394
           },
           {
             "slug": "protostates",
-            "wielkosc": 0.3
+            "wielkosc": 0.324
           },
           {
             "slug": "selkie-sule-skerry",
@@ -131,7 +131,7 @@
           },
           {
             "slug": "sfinks-teby",
-            "wielkosc": 0.429
+            "wielkosc": 0.453
           },
           {
             "slug": "syama-i-sarvara",
@@ -139,7 +139,7 @@
           },
           {
             "slug": "talos-kreta",
-            "wielkosc": 0.406
+            "wielkosc": 0.429
           }
         ],
         "dominacje": [
@@ -216,12 +216,12 @@
           {
             "kultura": "grecja",
             "kult": "pandora",
-            "wielkosc": 0.371
+            "wielkosc": 0.394
           },
           {
             "kultura": "grecja",
             "kult": "protostates",
-            "wielkosc": 0.3
+            "wielkosc": 0.324
           },
           {
             "kultura": "szkocja-polnocna",
@@ -231,7 +231,7 @@
           {
             "kultura": "grecja",
             "kult": "sfinks-teby",
-            "wielkosc": 0.429
+            "wielkosc": 0.453
           },
           {
             "kultura": "indie",
@@ -241,7 +241,7 @@
           {
             "kultura": "grecja",
             "kult": "talos-kreta",
-            "wielkosc": 0.406
+            "wielkosc": 0.429
           }
         ],
         "paliwo": {
@@ -509,11 +509,11 @@
           },
           {
             "slug": "pandora",
-            "wielkosc": 0.371
+            "wielkosc": 0.394
           },
           {
             "slug": "protostates",
-            "wielkosc": 0.3
+            "wielkosc": 0.324
           },
           {
             "slug": "selkie-sule-skerry",
@@ -521,7 +521,7 @@
           },
           {
             "slug": "sfinks-teby",
-            "wielkosc": 0.429
+            "wielkosc": 0.453
           },
           {
             "slug": "syama-i-sarvara",
@@ -529,7 +529,7 @@
           },
           {
             "slug": "talos-kreta",
-            "wielkosc": 0.406
+            "wielkosc": 0.429
           }
         ],
         "dominacje": [
@@ -606,12 +606,12 @@
           {
             "kultura": "grecja",
             "kult": "pandora",
-            "wielkosc": 0.371
+            "wielkosc": 0.394
           },
           {
             "kultura": "grecja",
             "kult": "protostates",
-            "wielkosc": 0.3
+            "wielkosc": 0.324
           },
           {
             "kultura": "szkocja-polnocna",
@@ -621,7 +621,7 @@
           {
             "kultura": "grecja",
             "kult": "sfinks-teby",
-            "wielkosc": 0.429
+            "wielkosc": 0.453
           },
           {
             "kultura": "indie",
@@ -631,7 +631,7 @@
           {
             "kultura": "grecja",
             "kult": "talos-kreta",
-            "wielkosc": 0.406
+            "wielkosc": 0.429
           }
         ],
         "paliwo": {
@@ -917,11 +917,11 @@
           },
           {
             "slug": "pandora",
-            "wielkosc": 0.371
+            "wielkosc": 0.394
           },
           {
             "slug": "protostates",
-            "wielkosc": 0.3
+            "wielkosc": 0.324
           },
           {
             "slug": "selkie-sule-skerry",
@@ -929,7 +929,7 @@
           },
           {
             "slug": "sfinks-teby",
-            "wielkosc": 0.429
+            "wielkosc": 0.453
           },
           {
             "slug": "syama-i-sarvara",
@@ -937,7 +937,7 @@
           },
           {
             "slug": "talos-kreta",
-            "wielkosc": 0.406
+            "wielkosc": 0.429
           }
         ],
         "dominacje": [
@@ -1014,12 +1014,12 @@
           {
             "kultura": "grecja",
             "kult": "pandora",
-            "wielkosc": 0.371
+            "wielkosc": 0.394
           },
           {
             "kultura": "grecja",
             "kult": "protostates",
-            "wielkosc": 0.3
+            "wielkosc": 0.324
           },
           {
             "kultura": "szkocja-polnocna",
@@ -1029,7 +1029,7 @@
           {
             "kultura": "grecja",
             "kult": "sfinks-teby",
-            "wielkosc": 0.429
+            "wielkosc": 0.453
           },
           {
             "kultura": "indie",
@@ -1039,7 +1039,7 @@
           {
             "kultura": "grecja",
             "kult": "talos-kreta",
-            "wielkosc": 0.406
+            "wielkosc": 0.429
           }
         ],
         "paliwo": {
@@ -1340,11 +1340,11 @@
           },
           {
             "slug": "pandora",
-            "wielkosc": 0.371
+            "wielkosc": 0.394
           },
           {
             "slug": "protostates",
-            "wielkosc": 0.3
+            "wielkosc": 0.324
           },
           {
             "slug": "selkie-sule-skerry",
@@ -1352,7 +1352,7 @@
           },
           {
             "slug": "sfinks-teby",
-            "wielkosc": 0.429
+            "wielkosc": 0.453
           },
           {
             "slug": "syama-i-sarvara",
@@ -1360,7 +1360,7 @@
           },
           {
             "slug": "talos-kreta",
-            "wielkosc": 0.406
+            "wielkosc": 0.429
           }
         ],
         "dominacje": [
@@ -1437,12 +1437,12 @@
           {
             "kultura": "grecja",
             "kult": "pandora",
-            "wielkosc": 0.371
+            "wielkosc": 0.394
           },
           {
             "kultura": "grecja",
             "kult": "protostates",
-            "wielkosc": 0.3
+            "wielkosc": 0.324
           },
           {
             "kultura": "szkocja-polnocna",
@@ -1452,7 +1452,7 @@
           {
             "kultura": "grecja",
             "kult": "sfinks-teby",
-            "wielkosc": 0.429
+            "wielkosc": 0.453
           },
           {
             "kultura": "indie",
@@ -1462,7 +1462,7 @@
           {
             "kultura": "grecja",
             "kult": "talos-kreta",
-            "wielkosc": 0.406
+            "wielkosc": 0.429
           }
         ],
         "paliwo": {
@@ -1763,11 +1763,11 @@
           },
           {
             "slug": "pandora",
-            "wielkosc": 0.371
+            "wielkosc": 0.394
           },
           {
             "slug": "protostates",
-            "wielkosc": 0.3
+            "wielkosc": 0.324
           },
           {
             "slug": "selkie-sule-skerry",
@@ -1775,7 +1775,7 @@
           },
           {
             "slug": "sfinks-teby",
-            "wielkosc": 0.419
+            "wielkosc": 0.443
           },
           {
             "slug": "syama-i-sarvara",
@@ -1783,7 +1783,7 @@
           },
           {
             "slug": "talos-kreta",
-            "wielkosc": 0.401
+            "wielkosc": 0.424
           }
         ],
         "dominacje": [
@@ -1860,12 +1860,12 @@
           {
             "kultura": "grecja",
             "kult": "pandora",
-            "wielkosc": 0.371
+            "wielkosc": 0.394
           },
           {
             "kultura": "grecja",
             "kult": "protostates",
-            "wielkosc": 0.3
+            "wielkosc": 0.324
           },
           {
             "kultura": "szkocja-polnocna",
@@ -1875,7 +1875,7 @@
           {
             "kultura": "grecja",
             "kult": "sfinks-teby",
-            "wielkosc": 0.419
+            "wielkosc": 0.443
           },
           {
             "kultura": "indie",
@@ -1885,7 +1885,7 @@
           {
             "kultura": "grecja",
             "kult": "talos-kreta",
-            "wielkosc": 0.401
+            "wielkosc": 0.424
           }
         ],
         "paliwo": {
@@ -1937,15 +1937,15 @@
           },
           {
             "slug": "sfinks-teby",
-            "przed": 0.429,
-            "po": 0.419,
+            "przed": 0.453,
+            "po": 0.443,
             "delta": -0.01,
             "opis": "Święta groza zagadki słabnie, gdy okazuje się podatna na wyśmianie."
           },
           {
             "slug": "talos-kreta",
-            "przed": 0.406,
-            "po": 0.401,
+            "przed": 0.429,
+            "po": 0.424,
             "delta": -0.005,
             "opis": "Spiżowy olbrzym pozostaje tylko maszyną strzegącą pustego brzegu."
           }
@@ -1961,15 +1961,15 @@
           {
             "kultura": "grecja",
             "kult": "sfinks-teby",
-            "przed": 0.429,
-            "po": 0.419,
+            "przed": 0.453,
+            "po": 0.443,
             "delta": -0.01
           },
           {
             "kultura": "grecja",
             "kult": "talos-kreta",
-            "przed": 0.406,
-            "po": 0.401,
+            "przed": 0.429,
+            "po": 0.424,
             "delta": -0.005
           }
         ],
@@ -2183,11 +2183,11 @@
           },
           {
             "slug": "pandora",
-            "wielkosc": 0.381
+            "wielkosc": 0.404
           },
           {
             "slug": "protostates",
-            "wielkosc": 0.3
+            "wielkosc": 0.324
           },
           {
             "slug": "selkie-sule-skerry",
@@ -2195,7 +2195,7 @@
           },
           {
             "slug": "sfinks-teby",
-            "wielkosc": 0.419
+            "wielkosc": 0.443
           },
           {
             "slug": "syama-i-sarvara",
@@ -2203,7 +2203,7 @@
           },
           {
             "slug": "talos-kreta",
-            "wielkosc": 0.401
+            "wielkosc": 0.424
           }
         ],
         "dominacje": [
@@ -2280,12 +2280,12 @@
           {
             "kultura": "grecja",
             "kult": "pandora",
-            "wielkosc": 0.381
+            "wielkosc": 0.404
           },
           {
             "kultura": "grecja",
             "kult": "protostates",
-            "wielkosc": 0.3
+            "wielkosc": 0.324
           },
           {
             "kultura": "szkocja-polnocna",
@@ -2295,7 +2295,7 @@
           {
             "kultura": "grecja",
             "kult": "sfinks-teby",
-            "wielkosc": 0.419
+            "wielkosc": 0.443
           },
           {
             "kultura": "indie",
@@ -2305,7 +2305,7 @@
           {
             "kultura": "grecja",
             "kult": "talos-kreta",
-            "wielkosc": 0.401
+            "wielkosc": 0.424
           }
         ],
         "paliwo": {
@@ -2352,8 +2352,8 @@
         "zasieg": [
           {
             "slug": "pandora",
-            "przed": 0.371,
-            "po": 0.381,
+            "przed": 0.394,
+            "po": 0.404,
             "delta": 0.01,
             "opis": "Opowieść o darze, który zajrzał do środka, obiega gospody: nadzieja na dnie naczynia zaczyna być widoczna."
           },
@@ -2376,8 +2376,8 @@
           {
             "kultura": "grecja",
             "kult": "pandora",
-            "przed": 0.371,
-            "po": 0.381,
+            "przed": 0.394,
+            "po": 0.404,
             "delta": 0.01
           },
           {
@@ -2612,11 +2612,11 @@
           },
           {
             "slug": "pandora",
-            "wielkosc": 0.381
+            "wielkosc": 0.404
           },
           {
             "slug": "protostates",
-            "wielkosc": 0.312
+            "wielkosc": 0.336
           },
           {
             "slug": "selkie-sule-skerry",
@@ -2624,7 +2624,7 @@
           },
           {
             "slug": "sfinks-teby",
-            "wielkosc": 0.419
+            "wielkosc": 0.443
           },
           {
             "slug": "syama-i-sarvara",
@@ -2632,7 +2632,7 @@
           },
           {
             "slug": "talos-kreta",
-            "wielkosc": 0.401
+            "wielkosc": 0.424
           }
         ],
         "dominacje": [
@@ -2709,12 +2709,12 @@
           {
             "kultura": "grecja",
             "kult": "pandora",
-            "wielkosc": 0.381
+            "wielkosc": 0.404
           },
           {
             "kultura": "grecja",
             "kult": "protostates",
-            "wielkosc": 0.312
+            "wielkosc": 0.336
           },
           {
             "kultura": "szkocja-polnocna",
@@ -2724,7 +2724,7 @@
           {
             "kultura": "grecja",
             "kult": "sfinks-teby",
-            "wielkosc": 0.419
+            "wielkosc": 0.443
           },
           {
             "kultura": "indie",
@@ -2734,7 +2734,7 @@
           {
             "kultura": "grecja",
             "kult": "talos-kreta",
-            "wielkosc": 0.401
+            "wielkosc": 0.424
           }
         ],
         "paliwo": {
@@ -2784,8 +2784,8 @@
         "zasieg": [
           {
             "slug": "protostates",
-            "przed": 0.3,
-            "po": 0.312,
+            "przed": 0.324,
+            "po": 0.336,
             "delta": 0.012,
             "opis": "Pieśń o pierwszym z pierwszego szeregu obiega wąwozy: fantom rośnie u tych, którzy pamiętają, że ktoś stał pierwszy — nawet gdy nikt już nie idzie."
           },
@@ -2808,8 +2808,8 @@
           {
             "kultura": "grecja",
             "kult": "protostates",
-            "przed": 0.3,
-            "po": 0.312,
+            "przed": 0.324,
+            "po": 0.336,
             "delta": 0.012
           },
           {
@@ -2991,11 +2991,11 @@
       },
       {
         "slug": "pandora",
-        "wielkosc": 0.381
+        "wielkosc": 0.404
       },
       {
         "slug": "protostates",
-        "wielkosc": 0.312
+        "wielkosc": 0.336
       },
       {
         "slug": "selkie-sule-skerry",
@@ -3003,7 +3003,7 @@
       },
       {
         "slug": "sfinks-teby",
-        "wielkosc": 0.419
+        "wielkosc": 0.443
       },
       {
         "slug": "syama-i-sarvara",
@@ -3011,7 +3011,7 @@
       },
       {
         "slug": "talos-kreta",
-        "wielkosc": 0.401
+        "wielkosc": 0.424
       }
     ],
     "dominacje": [
@@ -3088,12 +3088,12 @@
       {
         "kultura": "grecja",
         "kult": "pandora",
-        "wielkosc": 0.381
+        "wielkosc": 0.404
       },
       {
         "kultura": "grecja",
         "kult": "protostates",
-        "wielkosc": 0.312
+        "wielkosc": 0.336
       },
       {
         "kultura": "szkocja-polnocna",
@@ -3103,7 +3103,7 @@
       {
         "kultura": "grecja",
         "kult": "sfinks-teby",
-        "wielkosc": 0.419
+        "wielkosc": 0.443
       },
       {
         "kultura": "indie",
@@ -3113,7 +3113,7 @@
       {
         "kultura": "grecja",
         "kult": "talos-kreta",
-        "wielkosc": 0.401
+        "wielkosc": 0.424
       }
     ],
     "paliwo": {
