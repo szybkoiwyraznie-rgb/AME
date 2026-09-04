@@ -62,8 +62,12 @@
 - ~~**Kanon tagów**~~ — zrealizowane w M4 (ADR 0016): kategorie z limitami w
   `data/kanon-tagow.json`, walidator i prezentacja pasmami. Kandydaci dalej
   otwarci: kategoria „pora aktywności” (noc/dzień/sezons) i „język źródła”.
-- **Wzór „Trophy Room”**: galeria trofeów pierwotnych/wtórnych z wpisów
-  (sekcja V) jako osobny widok.
+- ~~**Wzór „Trophy Room”**~~ — **WDROŻONE (2026-09-04, PR #13, C2 pętli
+  jakości):** przycisk „🏆 trofea” w topbarze → warstwa z galerią dowodów
+  eliminacji (pierwotne + wtórne) ze wszystkich kart; rekord indeksu niesie
+  `trofea`, więc widok nie dociąga pełnych wpisów; nazwa bytu otwiera jego
+  kartotekę; deep-link `#trofea` (cache-bust `c5-11`). Do akceptacji
+  właściciela przed live.
 - **Zasady citowania w aplikacji**: sekcja III jako przypisy z linkami
   do repozytoriów cyfrowych (archive.org itp.) — sprawdzać dostępność linków.
 

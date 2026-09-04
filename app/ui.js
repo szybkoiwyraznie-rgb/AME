@@ -429,6 +429,22 @@ export function htmlBazySkitow(indeks) {
     .join('')}</ul>`;
 }
 
+/** Galeria trofeów (C2, 2026-09-04): wszystkie dowody eliminacji z rekordów
+ *  indeksu; nazwa bytu otwiera jego kartotekę (data-slug). */
+export function htmlTrofeow(indeks) {
+  const wpisy = (indeks.manifestacje ?? []).filter((m) => m.trofea?.pierwotne);
+  if (wpisy.length === 0) return '<p class="pusto">Brak trofeów w archiwum.</p>';
+  return `<ul class="trofea-lista">${wpisy
+    .map(
+      (m) => `<li class="trofeum">
+        <h4><button class="chip link" data-slug="${esc(m.slug)}">${esc(m.nazwa)}</button></h4>
+        <p><strong>Trofeum pierwotne:</strong> ${esc(m.trofea.pierwotne)}</p>
+        ${m.trofea.wtorne ? `<p><strong>Trofeum wtórne:</strong> ${esc(m.trofea.wtorne)}</p>` : ''}
+      </li>`
+    )
+    .join('')}</ul>`;
+}
+
 /** Sekcja V wpisu (MFM v1.8): skity, w których materializacja zabiera głos. */
 export function htmlSkitowWpisu(slugi, indeks) {
   if (!slugi?.length) return '';

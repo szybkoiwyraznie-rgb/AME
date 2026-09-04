@@ -731,6 +731,13 @@ div.warstwa.otwarta { display: block; animation: warstwa-wnika 0.2s ease-out; }
 .skit-lista, .nowosci-lista { list-style: none; margin: 0; padding: 0; }
 .skit-lista li { border-bottom: 1px solid var(--linia); }
 .skit-lista .wiersz { padding: 12px 6px; }
+
+/* Galeria trofeów (C2, 2026-09-04): dowody eliminacji ze wszystkich kart. */
+.trofea-lista { list-style: none; padding: 0; margin: 0; }
+.trofeum { border-bottom: 1px solid var(--linia); padding: 10px 6px; }
+.trofeum h4 { margin: 0 0 4px; }
+.trofeum p { margin: 4px 0; }
+.trofeum strong { color: var(--akcent); }
 .skit-lista .nazwa { font-size: 18px; letter-spacing: 0.06em; }
 
 .skit { padding-top: 4px; }

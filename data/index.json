@@ -1,6 +1,6 @@
 {
   "wersja": 3,
-  "buildTime": "2026-09-04T12:05:15.151Z",
+  "buildTime": "2026-09-04T12:09:21.539Z",
   "liczba": 20,
   "liczbaSkitow": 26,
   "kanon": {
@@ -441,6 +441,10 @@
         "syama-i-sarvara"
       ],
       "obraz": "assets/wizualizacje/agni.jpg",
+      "trofea": {
+        "pierwotne": "Żar z gatu w Waranasi w szczelnym naczyniu — ogień, który Agni zostawił jako „gość”, a który przyjmuje obiatę i wypala cierpienie.",
+        "wtorne": "Barani amulet z wizerunkiem Agniego, noszony przez kapłana ognia — symbol tego, że byt może być przyzywany wciąż na nowo, ale tylko na krótko."
+      },
       "skity": [
         "dzien-wolnego",
         "warta"
@@ -483,6 +487,10 @@
         "talos-kreta"
       ],
       "obraz": "assets/wizualizacje/balor.jpg",
+      "trofea": {
+        "pierwotne": "kamień z procy, który przebił oko na wylot — w logice przekazu nie relikwia, lecz dowód, że moment otwarcia był momentem zamknięcia",
+        "wtorne": "Loch na Súl („jezioro oka”) w hrabstwie Sligo oraz skała pod Mizen Head, którą miał skruszyć ciężar odciętej głowy — Carn Uí Néit, „kurhan wnuka Néita”"
+      },
       "skity": [
         "godzina-otwarcia",
         "hold-oraz-swiatlo",
@@ -526,6 +534,10 @@
         "indra"
       ],
       "obraz": "assets/wizualizacje/barbarossa-kyffhaeuser.jpg",
+      "trofea": {
+        "pierwotne": "garść złota z worów po wysypanym zbożu — do pierwszego zejścia z grzbietu (przekaz z 1669 r.)",
+        "wtorne": null
+      },
       "skity": [
         "cena-znaku",
         "kalendarz-powrotow",
@@ -568,6 +580,10 @@
         "selkie-sule-skerry"
       ],
       "obraz": "assets/wizualizacje/ben-varrey.jpg",
+      "trofea": {
+        "pierwotne": "Muszla z Calf Sound, którą Ben-Varrey zostawiła w podzięce za jabłko — przedmiot, który wciąż pachnie słoną wodą i wskazuje najkrótszą drogę do zatoki, gdy ludzie są w potrzebie.",
+        "wtorne": "Gruby warkocz z wodorostów zawiązany na skale w miejscu, gdzie manxka syrena czekała na rybaka — dowód, że ciekawość bytu może być czasem silniejsza niż strach przed suszą na lądzie."
+      },
       "skity": [
         "dzien-wolnego",
         "najgorsze-odpowiedzi"
@@ -609,6 +625,10 @@
         "protostates"
       ],
       "obraz": "assets/wizualizacje/drangue-shala.jpg",
+      "trofea": {
+        "pierwotne": "kamień piorunowy (kokrra e rrufesë) wydobyty z grzędy po nawałnicy — trzymany w izbie, dopóki go nie odda się górze",
+        "wtorne": "spalony na kamieniu strzęp wełny z kurtki, pod którą schowane były skrzydła — znak, że heros stał tuż obok i nie dał się tknąć"
+      },
       "skity": [
         "dwie-skory",
         "godzina-otwarcia",
@@ -654,6 +674,10 @@
         "selkie-sule-skerry"
       ],
       "obraz": "assets/wizualizacje/egungun.jpg",
+      "trofea": {
+        "pierwotne": "Kosmyk płótna z wiru egúngún (relikwia — przechowywana w sanktuarium rodu, nie w prywatnej kolekcji)",
+        "wtorne": "Kauria zhaftowana na płótnach maskarady"
+      },
       "skity": [
         "hold-oraz-swiatlo",
         "imie-na-progu",
@@ -697,6 +721,10 @@
         "sfinks-teby"
       ],
       "obraz": "assets/wizualizacje/empusa-korynt.jpg",
+      "trofea": {
+        "pierwotne": "odłamek miedzi z jej nogi — zostaje na gościńcu po zniknięciu reszty; nikt go tam nie nosił, a kowal rozpoznaje w nim metal odlewany, nie kuty",
+        "wtorne": null
+      },
       "skity": [
         "czwarty-stol",
         "dwa-zepsute-wesela",
@@ -739,6 +767,10 @@
         "drangue-shala"
       ],
       "obraz": "assets/wizualizacje/indra.jpg",
+      "trofea": {
+        "pierwotne": "Wadżra wyrwana z dłoni Indry w chwili, gdy jego duma została złamana i tron opanował ktoś pokorniejszy — złoty piorun z kości, który już nie grzmi, bo nie ma pana",
+        "wtorne": "Płaskorzeźba (lub współczesna rzeźba) Indry na Airavata z wadżrą w ręku — świadectwo kultu boga, który wciąż jest czczony, ale już nie jako jedyny władca"
+      },
       "skity": [
         "cena-znaku",
         "dwa-grzbiety",
@@ -781,6 +813,10 @@
         "syama-i-sarvara"
       ],
       "obraz": "assets/wizualizacje/kannon-hase.jpg",
+      "trofea": {
+        "pierwotne": "Lotosowy wieniec z podnóża Hasedery, który Kannon ofiarowuje wybawionym — symbol, że ratunek jest darem, nie okupem.",
+        "wtorne": "Mały posążek Kamakura Kannon z kłodą, na którym zapisane są intencje modlitewne pątników — dokument, że byt ten istnieje w ludzkich wezwaniach i nie zanika."
+      },
       "skity": [
         "dzien-wolnego",
         "zaplata-za-przewoz"
@@ -821,6 +857,10 @@
         "talos-kreta"
       ],
       "obraz": "assets/wizualizacje/kentaur-pelion.jpg",
+      "trofea": {
+        "pierwotne": "odłamek brzuśca wielkiego krateru, którym Tezeusz powalił Eurytosa — w tej hali wygrywa ten, kto w ręku trzyma najcięższą część uczty",
+        "wtorne": null
+      },
       "skity": [
         "dwa-grzbiety",
         "dwa-zepsute-wesela",
@@ -861,6 +901,10 @@
         "talos-kreta"
       ],
       "obraz": "assets/wizualizacje/knecht-z-koptos.jpg",
+      "trofea": {
+        "pierwotne": "Odcięta połówka ramienia tłuczka — kawałek dębiny z resztkami lnianego łachmana i śladem smoły z dzbana; po wypowiedzeniu słowa końca drewno wraca do martwoty i daje się trzymać w ręku.",
+        "wtorne": "Trzy zapisane sylaby na skrawku papirusu (kopia z notatek Eukratesa) — podpowiedź, jak nie wzywać tego, czego nie umie się zamknąć."
+      },
       "skity": [
         "pierwszy",
         "z-gliny-i-spizu"
@@ -896,6 +940,10 @@
         "drangue-shala"
       ],
       "obraz": "assets/wizualizacje/lincoln-imp.jpg",
+      "trofea": {
+        "pierwotne": "Skamieniały imp na filarze w Angel Choir — trofeum na miejscu, nierozdzielne z katedrą",
+        "wtorne": "Oświecona monetą fotografia groteski (współczesna relikwia pątnicza)"
+      },
       "skity": [
         "hold-oraz-swiatlo",
         "komu-wolno-patrzec",
@@ -936,6 +984,10 @@
         "protostates"
       ],
       "obraz": "assets/wizualizacje/morowa-panna.jpg",
+      "trofea": {
+        "pierwotne": "Czerwona chusta — znaleziona na progu po nocy, w której nikt nie odpowiedział; zwinięta z wapnem i solą, żeby mór nie wrócił do tego domu.",
+        "wtorne": "Kukła Marzanny — słomiana panna, którą wspólnota wyniosła i utopiła; dowód, że zarazę da się odprawić, jeśli pamięta się właściwą odpowiedź i porę roku."
+      },
       "skity": [
         "czwarty-stol",
         "najgorsze-odpowiedzi",
@@ -977,6 +1029,10 @@
         "talos-kreta"
       ],
       "obraz": "assets/wizualizacje/nessos.jpg",
+      "trofea": {
+        "pierwotne": "Kość z kopytowego stawu Nessosa z nacięciem od zatrutej strzały — dowód, że kentaur został pokonany z dystansu, zanim zdążył dobiec",
+        "wtorne": "Współczesna fotografia brodu na Évinos, w miejscu, gdzie według tradycji Nessos przewoził podróżnych"
+      },
       "skity": [
         "cena-znaku",
         "dwa-grzbiety",
@@ -1018,6 +1074,10 @@
         "talos-kreta"
       ],
       "obraz": "assets/wizualizacje/pandora.jpg",
+      "trofea": {
+        "pierwotne": "Pokrywa pithosu — gliniana płyta z odciskiem dłoni, na której od wewnątrz został tylko pył; zamknięta w płótnie nosi w sobie ostatnią rzecz, jaką da się z tej historii wyciągnąć.",
+        "wtorne": "Odrzucony wieniec ślubny — pamiątka, że Pandory nie pokonuje się siłą: ślubny dar i zakaz trzeba oddać albo zostawić zamknięte."
+      },
       "skity": [
         "czwarty-stol",
         "prezent-z-defektem",
@@ -1057,6 +1117,10 @@
         "syama-i-sarvara"
       ],
       "obraz": "assets/wizualizacje/protostates.jpg",
+      "trofea": {
+        "pierwotne": "Tarcza pierwszego szeregu — brązowa, wytarta od krawędzi, z literą wytłoczoną od zewnątrz; ktokolwiek zdejmie ją z kamienia w wąwozie, musi sam stanąć na jej miejscu.",
+        "wtorne": "Czarny kita z hełmu — pęk końskiego włosia, który pozostaje we mgle po zniknięciu fantomu, jako znak, że „albo z tym, albo na tym” wciąż obowiązuje."
+      },
       "skity": [
         "pierwszy",
         "warta"
@@ -1102,6 +1166,10 @@
         "nessos"
       ],
       "obraz": "assets/wizualizacje/selkie-sule-skerry.jpg",
+      "trofea": {
+        "pierwotne": "złoty łańcuch znad skerry — znak, po którym matka poznała syna, a potem poznała to, kogo zabił strzelec",
+        "wtorne": "drugi mieszciec: srebrna moneta karmicielna (nouris-fee), którą na Orkadach kładzie się na progu, spłacając dług zaciągnięty u morza"
+      },
       "skity": [
         "dwie-skory",
         "imie-na-progu",
@@ -1149,6 +1217,10 @@
         "talos-kreta"
       ],
       "obraz": "assets/wizualizacje/sfinks-teby.jpg",
+      "trofea": {
+        "pierwotne": "Skrzydło Sfinksa z góry Fikion, wciąż napięte jak łuk, z jasnym piórem kobiety i płową sierścią lwicy — dowód, że bestia była jednym ciałem o dwóch naturach.",
+        "wtorne": "Odłamek skały z góry, na której Sfinks czekała, z rytym tekstem zagadki — pamiątka, że za murem strachu, który zostawia każda brama, stoi pytanie."
+      },
       "skity": [
         "najgorsze-odpowiedzi",
         "zagadka-ze-spizu"
@@ -1186,6 +1258,10 @@
         "protostates"
       ],
       "obraz": "assets/wizualizacje/syama-i-sarvara.jpg",
+      "trofea": {
+        "pierwotne": "Wiązka sierści dwóch maści — czarnej i łaciatej — zebrana z drogi nad Gangesem; dowód, że kto przeszedł, zostawia po sobie tylko ślad, a psy wracają po następnych.",
+        "wtorne": "Kamyk z ghatu Manikarnika — z miejsca, gdzie Yama nie ma władzy; noszony przy drodze przypomina, którą ścieżkę wybrać."
+      },
       "skity": [
         "pierwszy",
         "zaplata-za-przewoz"
@@ -1229,6 +1305,10 @@
         "sfinks-teby"
       ],
       "obraz": "assets/wizualizacje/talos-kreta.jpg",
+      "trofea": {
+        "pierwotne": "Spiżowy gwóźdź z kostki Talosa — ostatnie uszczelnienie żyły, po którego wyjęciu automat zamilkł. To dowód, że maszyna granicy nie miała słabości w sercu ani w mieczu, tylko w jednej, precyzyjnie dobranej śrubie.",
+        "wtorne": "Odłamany kawałek brązowej łydki z widocznym szwem odlewniczym — pamiątka po bycie, który był kiedyś narzędziem, a nie istotą."
+      },
       "skity": [
         "z-gliny-i-spizu",
         "zagadka-ze-spizu"
