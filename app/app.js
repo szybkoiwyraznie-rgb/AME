@@ -1,7 +1,7 @@
 /**
  * app/app.js — bootstrap AME: ładuje indeks, mapę świata, spina UI.
  */
-import { stworzMape, PROGI_WARSTW, PODKLADY_ONLINE } from './map.js?v=c5-12';
+import { stworzMape, PROGI_WARSTW, PODKLADY_ONLINE } from './map.js?v=c5-13';
 import { zaladujIndeks, zaladujWpis, zaladujSkit, dopasowania, wylosujSlug } from './data.js?v=c5-1';
 import {
   htmlWpisu,
@@ -26,8 +26,8 @@ import {
   tekstDoLektora,
   htmlTrofeow,
   paryRozmowySkitu,
-} from './ui.js?v=c5-12';
-import { SZEROKOSC, WYSOKOSC } from './geo.js?v=c5-12';
+} from './ui.js?v=c5-13';
+import { SZEROKOSC, WYSOKOSC } from './geo.js?v=c5-13';
 
 const $ = (sel) => document.querySelector(sel);
 
@@ -350,6 +350,17 @@ function otworzBazeSkitow() {
   const warstwa = $('#warstwa');
   warstwa.classList.add('otwarta');
   warstwa.innerHTML = szkicWarstwy('Baza Skitów — rozmowy materializacji', htmlBazySkitow(stan.indeks), { kopia: 'skity' });
+  // C2 (2026-09-04): wyszukiwarka bazy — filtruje wiersze po temacie,
+  // tytule i uczestnikach. `data-temat` niesie temat w base64 (§8.1: temat
+  // jest katalogowy, nie renderowany jako tekst) — dekodujemy go tutaj.
+  warstwa.querySelector('#skity-filtr')?.addEventListener('input', (e) => {
+    const fraza = e.target.value.trim().toLowerCase();
+    for (const li of warstwa.querySelectorAll('.skit-lista li')) {
+      const temat = li.dataset.temat ? atob(li.dataset.temat) : '';
+      const haystack = `${temat} ${li.textContent}`.toLowerCase();
+      li.hidden = fraza !== '' && !haystack.includes(fraza);
+    }
+  });
   warstwa.scrollTop = 0;
   warstwaTrybPrzycisku('#przycisk-skity', true);
   warstwaTrybPrzycisku('#przycisk-nowosci', false);

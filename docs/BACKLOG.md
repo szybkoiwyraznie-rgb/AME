@@ -129,9 +129,11 @@
 
 ## SKITy — rozpoznane kierunki dalszej pracy (M3)
 
-- **Indeks tematów skitów** — przy >10 skitach warto dodać pole `temat` do
-  słownika w indeksie (typu „filozofia”, „żałoba”, „jadło”), żeby C3 łatwiej
-  dobierało niepowtarzalne tematy, nie tylko składy.
+- ~~**Indeks tematów skitów**~~ — **WDROŻONE (2026-09-04, PR #14, C2 pętli
+  jakości):** wyszukiwarka w Bazie Skitów (`#skity-filtr`) filtruje wiersze po
+  temacie, tytule i uczestnikach; `temat` pozostaje katalogowe (§8.1 — nie
+  renderowane jako tekst), więc trafia do atrybutu `data-temat` w base64
+  (cache-bust `c5-13`). Do akceptacji właściciela przed live.
 - ~~**Widok „rozmowy” na mapie**~~ — **WDROŻONE (2026-09-04, PR #14, C2
   pętli jakości):** otwarcie skitu rysuje łuki między pinezkami uczestników
   (osobna warstwa `.rozmowa` nad łukami powiązań; czysta `paryRozmowySkitu`

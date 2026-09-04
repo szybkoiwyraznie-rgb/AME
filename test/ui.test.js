@@ -375,6 +375,20 @@ test('htmlBazySkitow: wiersze z data-skit, najnowsze na górze, stan pusty', asy
   assert.ok(kolejnosc.indexOf('NOWY') < kolejnosc.indexOf('STARY'), 'najnowsze na górze');
 });
 
+test('htmlBazySkitow: temat w wierszu + pole wyszukiwania bazy (C2)', async () => {
+  const { indeks } = await dane();
+  const lista = htmlBazySkitow(indeks);
+  assert.match(lista, /id="skity-filtr"/, 'input wyszukiwarki bazy');
+  const zTematem = indeks.skity.find((s) => s.temat);
+  assert.ok(lista.includes(`data-temat="${Buffer.from(zTematem.temat, 'utf8').toString('base64')}"`), 'li nosi data-temat w base64 (katalogowe, nie tekst wiersza)');
+  assert.ok(!lista.includes(zTematem.temat), 'temat NIE jest renderowany wprost (§8.1)');
+  assert.ok(!lista.includes('<script>'), 'escaping nietknięty');
+  const bezTematu = htmlBazySkitow({ ...indeks, skity: [{ slug: 'x', tytul: 'X', imiona: ['A'], slow: 70, data: '2026-01-01' }] });
+  assert.ok(bezTematu.includes('data-temat=""'), 'brak tematu = pusty atrybut');
+  const app = await readFile('app/app.js', 'utf8');
+  assert.ok(app.includes("#skity-filtr"), 'app.js podejmuje filtr bazy');
+});
+
 test('sekcja V wpisu wylicza skity z indeksu (nie z pliku wpisu)', async () => {
   const { wpis, indeks } = await dane();
   const html = htmlWpisu(wpis, indeks);
