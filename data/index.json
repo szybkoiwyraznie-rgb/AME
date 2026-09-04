@@ -1,8 +1,8 @@
 {
   "wersja": 3,
-  "buildTime": "2026-09-04T12:59:43.195Z",
+  "buildTime": "2026-09-04T13:01:31.293Z",
   "liczba": 20,
-  "liczbaSkitow": 26,
+  "liczbaSkitow": 27,
   "kanon": {
     "kategorie": [
       {
@@ -586,7 +586,8 @@
       },
       "skity": [
         "dzien-wolnego",
-        "najgorsze-odpowiedzi"
+        "najgorsze-odpowiedzi",
+        "pod-dachem"
       ]
     },
     {
@@ -684,6 +685,7 @@
         "kalendarz-powrotow",
         "odzwierni",
         "plotno-i-kamien",
+        "pod-dachem",
         "trzy-stoly"
       ]
     },
@@ -907,6 +909,7 @@
       },
       "skity": [
         "pierwszy",
+        "pod-dachem",
         "z-gliny-i-spizu"
       ]
     },
@@ -1600,6 +1603,23 @@
       "data": "2026-08-28"
     },
     {
+      "slug": "pod-dachem",
+      "tytul": "POD DACHEM",
+      "temat": "który dach daje schronienie — dom zalany wodą, stodoła jak wesele i pałac, gdzie budzi się strach",
+      "uczestnicy": [
+        "ben-varrey",
+        "egungun",
+        "knecht-z-koptos"
+      ],
+      "imiona": [
+        "Knecht",
+        "Egungun",
+        "Ben-Varrey"
+      ],
+      "slow": 290,
+      "data": "2026-09-04 13:20"
+    },
+    {
       "slug": "prezent-z-defektem",
       "tytul": "PREZENT Z DEFEKTEM",
       "temat": "trzy dary, które miały chronić, a zrobiły szkodę — i kto ponosi winę",
@@ -1752,6 +1772,14 @@
     }
   ],
   "aktualizacje": [
+    {
+      "data": "2026-09-04 13:20",
+      "typ": "skit",
+      "akcja": "nowy",
+      "slug": "pod-dachem",
+      "tytul": "POD DACHEM",
+      "opis": "SKIT — skład: Knecht, Egungun, Ben-Varrey"
+    },
     {
       "data": "2026-09-04 13:05",
       "typ": "manifestacja",
