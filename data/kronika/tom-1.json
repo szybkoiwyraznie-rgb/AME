@@ -12,7 +12,7 @@
     "zasieg": [
       {
         "slug": "agni",
-        "wielkosc": 0.344
+        "wielkosc": 0.367
       },
       {
         "slug": "balor",
@@ -60,7 +60,7 @@
       },
       {
         "slug": "morowa-panna",
-        "wielkosc": 0.311
+        "wielkosc": 0.333
       },
       {
         "slug": "nessos",
@@ -84,7 +84,7 @@
       },
       {
         "slug": "syama-i-sarvara",
-        "wielkosc": 0.3
+        "wielkosc": 0.322
       },
       {
         "slug": "talos-kreta",
@@ -95,7 +95,7 @@
       {
         "kultura": "indie",
         "kult": "agni",
-        "wielkosc": 0.344
+        "wielkosc": 0.367
       },
       {
         "kultura": "irlandia",
@@ -155,7 +155,7 @@
       {
         "kultura": "polska",
         "kult": "morowa-panna",
-        "wielkosc": 0.311
+        "wielkosc": 0.333
       },
       {
         "kultura": "grecja",
@@ -185,7 +185,7 @@
       {
         "kultura": "indie",
         "kult": "syama-i-sarvara",
-        "wielkosc": 0.3
+        "wielkosc": 0.322
       },
       {
         "kultura": "grecja",

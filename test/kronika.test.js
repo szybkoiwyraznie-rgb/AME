@@ -162,7 +162,7 @@ test('Tom I: epoki przechodzą sekwencyjnie i oś zamyka się na 100', async () 
   assert.equal(e6.stanPo.os.mit, 30);
   assert.equal(e6.stanPo.os.racjonalizacja, 70);
   assert.equal(e6.stanPo.zasieg.find((z) => z.slug === 'pandora').wielkosc, 0.388);
-  assert.equal(e6.stanPo.zasieg.find((z) => z.slug === 'morowa-panna').wielkosc, 0.296);
+  assert.equal(e6.stanPo.zasieg.find((z) => z.slug === 'morowa-panna').wielkosc, 0.318);
   assert.equal(e6.stanPo.zasieg.find((z) => z.slug === 'empusa-korynt').wielkosc, 0.469);
 
   assert.deepEqual(
@@ -178,7 +178,7 @@ test('Tom I: epoki przechodzą sekwencyjnie i oś zamyka się na 100', async () 
   assert.equal(e7.meta.poprzednik, 'epoka-6');
   assert.equal(e7.stanPo.zasieg.find((z) => z.slug === 'protostates').wielkosc, 0.323);
   assert.equal(e7.stanPo.zasieg.find((z) => z.slug === 'knecht-z-koptos').wielkosc, 0.343);
-  assert.equal(e7.stanPo.zasieg.find((z) => z.slug === 'syama-i-sarvara').wielkosc, 0.305);
+  assert.equal(e7.stanPo.zasieg.find((z) => z.slug === 'syama-i-sarvara').wielkosc, 0.327);
   // S3: odwołanie poprzednik widoczne także w grafie epok (bez cyklu)
   assert.ok(e7.konsekwencje.watki.some((w) => w.id === 'pierwszy-w-linii' && w.stan === 'otwarty'));
 });
