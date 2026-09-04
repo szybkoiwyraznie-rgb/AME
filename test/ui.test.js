@@ -2,7 +2,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
-import { htmlWpisu, htmlWarstwyWpisu, linkDoZrodla, htmlListy, htmlStronyTagu, htmlTagow, htmlDialogu, htmlSkitu, htmlBazySkitow, htmlNowosci, htmlKronik, htmlTomyIEpoki, esc, rzymskie, nastepnyMotyw, motywPoczatkowy, etykietaMotywu, MOTYWY, KLUCZ_MOTYWU, akcjeZZapytania, tekstDoLektora, htmlTrofeow, paryRozmowySkitu, doB64utf8, zB64utf8 } from '../app/ui.js';
+import { htmlWpisu, htmlWarstwyWpisu, linkDoZrodla, htmlListy, htmlStronyTagu, htmlTagow, htmlDialogu, htmlSkitu, htmlBazySkitow, htmlNowosci, htmlKronik, htmlTomyIEpoki, esc, rzymskie, nastepnyMotyw, motywPoczatkowy, etykietaMotywu, MOTYWY, KLUCZ_MOTYWU, akcjeZZapytania, tekstDoLektora, htmlTrofeow, paryRozmowySkitu, doB64utf8, zB64utf8, dataZmianySluga } from '../app/ui.js';
 
 async function dane(plik = 'egungun') {
   const wpis = JSON.parse(await readFile(`data/manifestations/${plik}.json`, 'utf8'));
@@ -147,6 +147,51 @@ test('htmlListy: miniatura wizualizacji w wierszu, gdy rekord ma obraz (C2)', ()
   assert.equal((lista.match(/<img class="miniatura"/g) ?? []).length, 1, 'dokładnie jedna miniatura');
   const zlosliwy = htmlListy({ manifestacje: [{ slug: 'x', nazwa: 'X', karta: 'K', miejscowosc: 'M', kraj: 'KR', obraz: 'a" onload="alert(1)' }] }, null);
   assert.ok(!zlosliwy.includes('onload="alert'), 'src miniatury jest escapowany');
+});
+
+test('htmlListy: sortowanie az / zmiana / kraj, remisy deterministyczne (C2)', () => {
+  const indeks = {
+    manifestacje: [
+      { slug: 'zeus', nazwa: 'Zeus', karta: 'K1', miejscowosc: 'Olimp', kraj: 'Grecja' },
+      { slug: 'alrauna', nazwa: 'Alrauna', karta: 'K2', miejscowosc: 'Wittenberg', kraj: 'Niemcy' },
+      { slug: 'baba', nazwa: 'Baba Jaga', karta: 'K3', miejscowosc: 'Lasy', kraj: 'Rosja' },
+      { slug: 'anansi', nazwa: 'Anansi', karta: 'K4', miejscowosc: 'Aszantiland', kraj: 'Ghana' },
+      { slug: 'bez-daty', nazwa: 'Widmo', karta: 'K5', miejscowosc: 'Nigdzie', kraj: 'Rosja' },
+    ],
+    aktualizacje: [
+      { data: '2026-09-01 10:00', typ: 'manifestacja', akcja: 'nowa', slug: 'alrauna', tytul: 'Alrauna', opis: 'x' },
+      { data: '2026-09-03 12:00', typ: 'manifestacja', akcja: 'zmiana', slug: 'zeus', tytul: 'Zeus', opis: 'x' },
+      { data: '2026-09-03 12:00', typ: 'manifestacja', akcja: 'zmiana', slug: 'anansi', tytul: 'Anansi', opis: 'x' },
+      { data: '2026-09-02 08:00', typ: 'skit', akcja: 'nowy', slug: 'alrauna', tytul: 'skit', opis: 'x' },
+    ],
+  };
+  const kolejnosc = (html) => [...html.matchAll(/data-slug="([a-z-]+)"/g)].map((m) => m[1]);
+  assert.deepEqual(kolejnosc(htmlListy(indeks, null)), ['alrauna', 'anansi', 'baba', 'bez-daty', 'zeus'], 'domyślnie A–Z');
+  assert.deepEqual(
+    kolejnosc(htmlListy(indeks, null, { sort: 'zmiana' })),
+    ['anansi', 'zeus', 'alrauna', 'baba', 'bez-daty'],
+    'ostatnio zmienione na górze, remis po nazwie, bez daty na końcu'
+  );
+  assert.deepEqual(
+    kolejnosc(htmlListy(indeks, null, { sort: 'kraj' })),
+    ['anansi', 'zeus', 'alrauna', 'baba', 'bez-daty'],
+    'grupowanie wg kraju, potem nazwa'
+  );
+});
+
+test('dataZmianySluga: maksymalna data z feedu, brak wpisu = null (C2)', () => {
+  const indeks = {
+    aktualizacje: [
+      { data: '2026-08-01 09:00', typ: 'manifestacja', akcja: 'nowa', slug: 'x', tytul: 'X', opis: '' },
+      { data: '2026-09-01 09:00', typ: 'manifestacja', akcja: 'zmiana', slug: 'x', tytul: 'X', opis: '' },
+      { data: '2026-09-05 09:00', typ: 'skit', akcja: 'nowy', slug: 'x', tytul: 'X', opis: '' },
+      { data: '2026-09-04 09:00', typ: 'manifestacja', akcja: 'zmiana', slug: 'y', tytul: 'Y', opis: '' },
+    ],
+  };
+  assert.equal(dataZmianySluga(indeks, 'x'), '2026-09-01 09:00', 'skity nie liczą się do zmiany wpisu');
+  assert.equal(dataZmianySluga(indeks, 'y'), '2026-09-04 09:00');
+  assert.equal(dataZmianySluga(indeks, 'z'), null);
+  assert.equal(dataZmianySluga({}, 'x'), null, 'brak feedu nie wywala funkcji');
 });
 
 test('htmlTrofeow: galeria trofeów z indeksu, linki do kart, escaping (C2)', async () => {

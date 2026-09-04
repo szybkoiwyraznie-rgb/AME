@@ -42,6 +42,7 @@ const stan = {
   motyw: 'ciemny',
   warstwa: null, // { tryb: 'skity' | 'skit' | 'nowosci', slug? }
   ostatniLos: null, // ostatnio wylosowany slug — reroll go pomija (nawet po zamknięciu karty)
+  sortListy: 'az', // sortowanie kartoteki: 'az' | 'zmiana' | 'kraj'
   // Wszystkie warstwy mapy są domyślnie WYŁĄCZONE (decyzja właściciela 2026-08-30).
   warstwy: {
     rzeki: false, jeziora: false, miasta: false, poi: false,
@@ -588,8 +589,18 @@ function przelaczListe() {
   const otwarta = lista.classList.toggle('otwarta');
   if (otwarta) {
     lista.innerHTML = `<div class="lista-tresc">
-        <header><h2>Kartoteka manifestacji</h2><button class="zamknij" id="zamknij-liste" aria-label="Zamknij">✕</button></header>
-        ${htmlListy(stan.indeks, pasujace())}
+        <header>
+          <h2>Kartoteka manifestacji</h2>
+          <label class="sort-listy">Sortuj:
+            <select id="sort-listy" aria-label="Sortowanie kartoteki">
+              <option value="az"${stan.sortListy === 'az' ? ' selected' : ''}>A–Z</option>
+              <option value="zmiana"${stan.sortListy === 'zmiana' ? ' selected' : ''}>ostatnio zmienione</option>
+              <option value="kraj"${stan.sortListy === 'kraj' ? ' selected' : ''}>wg kraju</option>
+            </select>
+          </label>
+          <button class="zamknij" id="zamknij-liste" aria-label="Zamknij">✕</button>
+        </header>
+        <div id="lista-wyniki">${htmlListy(stan.indeks, pasujace(), { sort: stan.sortListy })}</div>
       </div>`;
   }
 }
@@ -652,6 +663,14 @@ function podepnijZdarzenia() {
       przelaczListe();
       otworzWpis(wiersz.dataset.slug);
     }
+  });
+
+  $('#lista').addEventListener('change', (e) => {
+    if (e.target.id !== 'sort-listy') return;
+    stan.sortListy = e.target.value;
+    // #lista-wyniki generuje przelaczListe — stąd dostęp przez kontener, nie globalny selektor.
+    const wyniki = e.target.closest('.lista-tresc')?.querySelector('#lista-wyniki');
+    if (wyniki) wyniki.innerHTML = htmlListy(stan.indeks, pasujace(), { sort: stan.sortListy });
   });
 
   $('#przycisk-los').addEventListener('click', losujManifestacje);
