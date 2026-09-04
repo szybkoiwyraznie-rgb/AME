@@ -1,6 +1,6 @@
 {
   "wersja": 3,
-  "buildTime": "2026-09-04T19:37:29.576Z",
+  "buildTime": "2026-09-04T19:38:32.137Z",
   "liczba": 21,
   "liczbaSkitow": 40,
   "kanon": {
@@ -2111,6 +2111,14 @@
     }
   ],
   "aktualizacje": [
+    {
+      "data": "2026-09-04 19:55",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "knecht-z-koptos",
+      "tytul": "Knecht z Koptos — ożywiony tłuczek, który nie zna słowa końca",
+      "opis": "Dopisany muzyczny rozdział wędrówki tłuczka: scherzo Paula Dukasa z 1897 roku i sekwencja „Fantazji” Disneya, z nową pozycją dokumentacji."
+    },
     {
       "data": "2026-09-04 19:30",
       "typ": "manifestacja",
