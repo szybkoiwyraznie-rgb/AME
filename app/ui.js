@@ -329,13 +329,38 @@ export function nazwaSluga(slug, indeks) {
   return indeks.manifestacje.find((m) => m.slug === slug)?.nazwa ?? slug;
 }
 
+/** Ostatnia data zmiany wpisu wg feedu `aktualizacje` indeksu (typ manifestacja).
+ *  Format `RRRR-MM-DD GG:MM` porównuje się leksykograficznie. */
+export function dataZmianySluga(indeks, slug) {
+  let ostatnia = '';
+  for (const a of indeks.aktualizacje ?? []) {
+    if (a.typ === 'manifestacja' && a.slug === slug && String(a.data) > ostatnia) ostatnia = String(a.data);
+  }
+  return ostatnia || null;
+}
+
 /** Lista manifestacji (wszystkie lub przefiltrowane). Wiersz z polem `obraz`
  *  dostaje miniaturę wizualizacji 21:9 (ładowaną leniwie) — rozpoznanie bytu
- *  po kadrze, nie tylko po nazwie (C2, 2026-09-04). */
-export function htmlListy(indeks, widoczne /* Set|null */) {
-  const pozycje = indeks.manifestacje
-    .filter((m) => widoczne === null || widoczne.has(m.slug))
-    .sort((a, b) => a.nazwa.localeCompare(b.nazwa, 'pl'));
+ *  po kadrze, nie tylko po nazwie (C2, 2026-09-04).
+ *  `opcje.sort`: 'az' (domyślnie, alfabetycznie), 'zmiana' (ostatnio zmienione
+ *  na górze, bez daty na końcu), 'kraj' (wg kraju, potem nazwy). Remisy
+ *  rozstrzyga zawsze nazwa — kolejność deterministyczna (ADR 0002). */
+export function htmlListy(indeks, widoczne /* Set|null */, { sort = 'az' } = {}) {
+  const pozycje = indeks.manifestacje.filter((m) => widoczne === null || widoczne.has(m.slug));
+  if (sort === 'zmiana') {
+    pozycje.sort((a, b) => {
+      const da = dataZmianySluga(indeks, a.slug);
+      const db = dataZmianySluga(indeks, b.slug);
+      if (da === null && db === null) return a.nazwa.localeCompare(b.nazwa, 'pl');
+      if (da === null) return 1;
+      if (db === null) return -1;
+      return db.localeCompare(da) || a.nazwa.localeCompare(b.nazwa, 'pl');
+    });
+  } else if (sort === 'kraj') {
+    pozycje.sort((a, b) => a.kraj.localeCompare(b.kraj, 'pl') || a.nazwa.localeCompare(b.nazwa, 'pl'));
+  } else {
+    pozycje.sort((a, b) => a.nazwa.localeCompare(b.nazwa, 'pl'));
+  }
   if (pozycje.length === 0) return '<p class="pusto">Brak manifestacji spełniających kryterium.</p>';
   return `<ul class="lista-manifestacji">${pozycje
     .map(
