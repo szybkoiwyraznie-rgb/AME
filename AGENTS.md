@@ -75,6 +75,20 @@ Ponadto:
 - **1 sesja = 1 gałąź = 1 PR.** Pracuj wyłącznie na gałęzi sesji, nie pushuj do
   `main`, nie wykonuj merge — scalenie (preferowane *Squash and merge*) jest
   jawną decyzją właściciela i kończy sesję kodowania.
+  **Wyjątek — auto-sesje (decyzja właściciela z 2026-09-04):** PR-y z gałęzi
+  `session/*-auto`, utworzone przez automatyzację, agent MOŻE scalić
+  (*Squash and merge*) wyłącznie gdy spełnione są WSZYSTKIE warunki:
+  (a) PR pochodzi z gałęzi `session/*-auto`,
+  (b) audyt zmian (plik po pliku) nie wykazał usterek względem ADR, protokołu
+      i testów,
+  (c) `npm test`, `npm run build` i `npm run check` przechodzą lokalnie na
+      gałęzi PR-a,
+  (d) po scaleniu wykonuje się `git pull origin main` i powtórnie
+      `npm test && npm run build` jako weryfikacja końcowa.
+  Gdy którykolwiek warunek nie stoi — PR zostaje otwarty, a sesja opisuje
+  powód w komentarzu PR i naprawia usterkę w ramach własnej pracy, jeśli
+  potrafi. Auto-scalenie kończy sesję kodowania tego PR-a; bieżąca sesja
+  pracuje dalej na własnej gałęzi.
 - Pytanie do właściciela wolno zadać wyłącznie gdy praca jest **zablokowana**
   decyzją, której agent nie może podjąć sam (zmiana architektury, sprzeczność
   ADR, nowa granica nienegocjowalna). **Nie pytaj „co robimy?”** — gdy po
