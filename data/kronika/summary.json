@@ -67,7 +67,7 @@
           },
           {
             "slug": "balor",
-            "wielkosc": 0.467
+            "wielkosc": 0.489
           },
           {
             "slug": "barbarossa-kyffhaeuser",
@@ -103,7 +103,7 @@
           },
           {
             "slug": "knecht-z-koptos",
-            "wielkosc": 0.356
+            "wielkosc": 0.378
           },
           {
             "slug": "lincoln-imp",
@@ -131,7 +131,7 @@
           },
           {
             "slug": "sfinks-teby",
-            "wielkosc": 0.433
+            "wielkosc": 0.456
           },
           {
             "slug": "syama-i-sarvara",
@@ -151,7 +151,7 @@
           {
             "kultura": "irlandia",
             "kult": "balor",
-            "wielkosc": 0.467
+            "wielkosc": 0.489
           },
           {
             "kultura": "niemcy",
@@ -196,7 +196,7 @@
           {
             "kultura": "grecja",
             "kult": "knecht-z-koptos",
-            "wielkosc": 0.356
+            "wielkosc": 0.378
           },
           {
             "kultura": "anglia",
@@ -231,7 +231,7 @@
           {
             "kultura": "grecja",
             "kult": "sfinks-teby",
-            "wielkosc": 0.433
+            "wielkosc": 0.456
           },
           {
             "kultura": "indie",
@@ -457,7 +457,7 @@
           },
           {
             "slug": "balor",
-            "wielkosc": 0.467
+            "wielkosc": 0.489
           },
           {
             "slug": "barbarossa-kyffhaeuser",
@@ -493,7 +493,7 @@
           },
           {
             "slug": "knecht-z-koptos",
-            "wielkosc": 0.356
+            "wielkosc": 0.378
           },
           {
             "slug": "lincoln-imp",
@@ -521,7 +521,7 @@
           },
           {
             "slug": "sfinks-teby",
-            "wielkosc": 0.433
+            "wielkosc": 0.456
           },
           {
             "slug": "syama-i-sarvara",
@@ -541,7 +541,7 @@
           {
             "kultura": "irlandia",
             "kult": "balor",
-            "wielkosc": 0.467
+            "wielkosc": 0.489
           },
           {
             "kultura": "niemcy",
@@ -586,7 +586,7 @@
           {
             "kultura": "grecja",
             "kult": "knecht-z-koptos",
-            "wielkosc": 0.356
+            "wielkosc": 0.378
           },
           {
             "kultura": "anglia",
@@ -621,7 +621,7 @@
           {
             "kultura": "grecja",
             "kult": "sfinks-teby",
-            "wielkosc": 0.433
+            "wielkosc": 0.456
           },
           {
             "kultura": "indie",
@@ -865,7 +865,7 @@
           },
           {
             "slug": "balor",
-            "wielkosc": 0.467
+            "wielkosc": 0.489
           },
           {
             "slug": "barbarossa-kyffhaeuser",
@@ -901,7 +901,7 @@
           },
           {
             "slug": "knecht-z-koptos",
-            "wielkosc": 0.356
+            "wielkosc": 0.378
           },
           {
             "slug": "lincoln-imp",
@@ -929,7 +929,7 @@
           },
           {
             "slug": "sfinks-teby",
-            "wielkosc": 0.433
+            "wielkosc": 0.456
           },
           {
             "slug": "syama-i-sarvara",
@@ -949,7 +949,7 @@
           {
             "kultura": "irlandia",
             "kult": "balor",
-            "wielkosc": 0.467
+            "wielkosc": 0.489
           },
           {
             "kultura": "niemcy",
@@ -994,7 +994,7 @@
           {
             "kultura": "grecja",
             "kult": "knecht-z-koptos",
-            "wielkosc": 0.356
+            "wielkosc": 0.378
           },
           {
             "kultura": "anglia",
@@ -1029,7 +1029,7 @@
           {
             "kultura": "grecja",
             "kult": "sfinks-teby",
-            "wielkosc": 0.433
+            "wielkosc": 0.456
           },
           {
             "kultura": "indie",
@@ -1087,8 +1087,8 @@
           },
           {
             "slug": "balor",
-            "przed": 0.467,
-            "po": 0.467,
+            "przed": 0.489,
+            "po": 0.489,
             "delta": 0,
             "opis": "Balor nie zyskuje i nie traci: jego powieka pozostaje nieodwrócona, ale przestaje być jedynym drzwiami, o których ludzie szepczą."
           },
@@ -1111,8 +1111,8 @@
           {
             "kultura": "irlandia",
             "kult": "balor",
-            "przed": 0.467,
-            "po": 0.467,
+            "przed": 0.489,
+            "po": 0.489,
             "delta": 0
           },
           {
@@ -1288,7 +1288,7 @@
           },
           {
             "slug": "balor",
-            "wielkosc": 0.467
+            "wielkosc": 0.489
           },
           {
             "slug": "barbarossa-kyffhaeuser",
@@ -1324,7 +1324,7 @@
           },
           {
             "slug": "knecht-z-koptos",
-            "wielkosc": 0.356
+            "wielkosc": 0.378
           },
           {
             "slug": "lincoln-imp",
@@ -1352,7 +1352,7 @@
           },
           {
             "slug": "sfinks-teby",
-            "wielkosc": 0.433
+            "wielkosc": 0.456
           },
           {
             "slug": "syama-i-sarvara",
@@ -1372,7 +1372,7 @@
           {
             "kultura": "irlandia",
             "kult": "balor",
-            "wielkosc": 0.467
+            "wielkosc": 0.489
           },
           {
             "kultura": "niemcy",
@@ -1417,7 +1417,7 @@
           {
             "kultura": "grecja",
             "kult": "knecht-z-koptos",
-            "wielkosc": 0.356
+            "wielkosc": 0.378
           },
           {
             "kultura": "anglia",
@@ -1452,7 +1452,7 @@
           {
             "kultura": "grecja",
             "kult": "sfinks-teby",
-            "wielkosc": 0.433
+            "wielkosc": 0.456
           },
           {
             "kultura": "indie",
@@ -1711,7 +1711,7 @@
           },
           {
             "slug": "balor",
-            "wielkosc": 0.467
+            "wielkosc": 0.489
           },
           {
             "slug": "barbarossa-kyffhaeuser",
@@ -1747,7 +1747,7 @@
           },
           {
             "slug": "knecht-z-koptos",
-            "wielkosc": 0.356
+            "wielkosc": 0.378
           },
           {
             "slug": "lincoln-imp",
@@ -1775,7 +1775,7 @@
           },
           {
             "slug": "sfinks-teby",
-            "wielkosc": 0.423
+            "wielkosc": 0.446
           },
           {
             "slug": "syama-i-sarvara",
@@ -1795,7 +1795,7 @@
           {
             "kultura": "irlandia",
             "kult": "balor",
-            "wielkosc": 0.467
+            "wielkosc": 0.489
           },
           {
             "kultura": "niemcy",
@@ -1840,7 +1840,7 @@
           {
             "kultura": "grecja",
             "kult": "knecht-z-koptos",
-            "wielkosc": 0.356
+            "wielkosc": 0.378
           },
           {
             "kultura": "anglia",
@@ -1875,7 +1875,7 @@
           {
             "kultura": "grecja",
             "kult": "sfinks-teby",
-            "wielkosc": 0.423
+            "wielkosc": 0.446
           },
           {
             "kultura": "indie",
@@ -1937,8 +1937,8 @@
           },
           {
             "slug": "sfinks-teby",
-            "przed": 0.433,
-            "po": 0.423,
+            "przed": 0.456,
+            "po": 0.446,
             "delta": -0.01,
             "opis": "Święta groza zagadki słabnie, gdy okazuje się podatna na wyśmianie."
           },
@@ -1961,8 +1961,8 @@
           {
             "kultura": "grecja",
             "kult": "sfinks-teby",
-            "przed": 0.433,
-            "po": 0.423,
+            "przed": 0.456,
+            "po": 0.446,
             "delta": -0.01
           },
           {
@@ -2131,7 +2131,7 @@
           },
           {
             "slug": "balor",
-            "wielkosc": 0.467
+            "wielkosc": 0.489
           },
           {
             "slug": "barbarossa-kyffhaeuser",
@@ -2167,7 +2167,7 @@
           },
           {
             "slug": "knecht-z-koptos",
-            "wielkosc": 0.356
+            "wielkosc": 0.378
           },
           {
             "slug": "lincoln-imp",
@@ -2195,7 +2195,7 @@
           },
           {
             "slug": "sfinks-teby",
-            "wielkosc": 0.423
+            "wielkosc": 0.446
           },
           {
             "slug": "syama-i-sarvara",
@@ -2215,7 +2215,7 @@
           {
             "kultura": "irlandia",
             "kult": "balor",
-            "wielkosc": 0.467
+            "wielkosc": 0.489
           },
           {
             "kultura": "niemcy",
@@ -2260,7 +2260,7 @@
           {
             "kultura": "grecja",
             "kult": "knecht-z-koptos",
-            "wielkosc": 0.356
+            "wielkosc": 0.378
           },
           {
             "kultura": "anglia",
@@ -2295,7 +2295,7 @@
           {
             "kultura": "grecja",
             "kult": "sfinks-teby",
-            "wielkosc": 0.423
+            "wielkosc": 0.446
           },
           {
             "kultura": "indie",
@@ -2560,7 +2560,7 @@
           },
           {
             "slug": "balor",
-            "wielkosc": 0.467
+            "wielkosc": 0.489
           },
           {
             "slug": "barbarossa-kyffhaeuser",
@@ -2596,7 +2596,7 @@
           },
           {
             "slug": "knecht-z-koptos",
-            "wielkosc": 0.366
+            "wielkosc": 0.388
           },
           {
             "slug": "lincoln-imp",
@@ -2624,7 +2624,7 @@
           },
           {
             "slug": "sfinks-teby",
-            "wielkosc": 0.423
+            "wielkosc": 0.446
           },
           {
             "slug": "syama-i-sarvara",
@@ -2644,7 +2644,7 @@
           {
             "kultura": "irlandia",
             "kult": "balor",
-            "wielkosc": 0.467
+            "wielkosc": 0.489
           },
           {
             "kultura": "niemcy",
@@ -2689,7 +2689,7 @@
           {
             "kultura": "grecja",
             "kult": "knecht-z-koptos",
-            "wielkosc": 0.366
+            "wielkosc": 0.388
           },
           {
             "kultura": "anglia",
@@ -2724,7 +2724,7 @@
           {
             "kultura": "grecja",
             "kult": "sfinks-teby",
-            "wielkosc": 0.423
+            "wielkosc": 0.446
           },
           {
             "kultura": "indie",
@@ -2791,8 +2791,8 @@
           },
           {
             "slug": "knecht-z-koptos",
-            "przed": 0.356,
-            "po": 0.366,
+            "przed": 0.378,
+            "po": 0.388,
             "delta": 0.01,
             "opis": "Opowieść o tłuczku, który pierwszy zostawił wodę przy progu, uczy słuchaczy kończyć rozkazy słowem — Koptos zaczyna zamykać drzwi po zmroku."
           },
@@ -2815,8 +2815,8 @@
           {
             "kultura": "grecja",
             "kult": "knecht-z-koptos",
-            "przed": 0.356,
-            "po": 0.366,
+            "przed": 0.378,
+            "po": 0.388,
             "delta": 0.01
           },
           {
@@ -2939,7 +2939,7 @@
       },
       {
         "slug": "balor",
-        "wielkosc": 0.467
+        "wielkosc": 0.489
       },
       {
         "slug": "barbarossa-kyffhaeuser",
@@ -2975,7 +2975,7 @@
       },
       {
         "slug": "knecht-z-koptos",
-        "wielkosc": 0.366
+        "wielkosc": 0.388
       },
       {
         "slug": "lincoln-imp",
@@ -3003,7 +3003,7 @@
       },
       {
         "slug": "sfinks-teby",
-        "wielkosc": 0.423
+        "wielkosc": 0.446
       },
       {
         "slug": "syama-i-sarvara",
@@ -3023,7 +3023,7 @@
       {
         "kultura": "irlandia",
         "kult": "balor",
-        "wielkosc": 0.467
+        "wielkosc": 0.489
       },
       {
         "kultura": "niemcy",
@@ -3068,7 +3068,7 @@
       {
         "kultura": "grecja",
         "kult": "knecht-z-koptos",
-        "wielkosc": 0.366
+        "wielkosc": 0.388
       },
       {
         "kultura": "anglia",
@@ -3103,7 +3103,7 @@
       {
         "kultura": "grecja",
         "kult": "sfinks-teby",
-        "wielkosc": 0.423
+        "wielkosc": 0.446
       },
       {
         "kultura": "indie",
