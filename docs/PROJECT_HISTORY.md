@@ -2071,3 +2071,37 @@ API metodą squash (squash commit `9c8c2e9`, 2026-09-04). Po scaleniu
 
 **Wniosek:** brak usterek. Sesja wchodzi w Pętlę Jakości (ADR 0007:
 C1 → C3 → C2).
+
+## Sesja 2026-09-04 (4) (gałąź arena/sesja-2026-09-04-p4) — audyt PR #23 + ratowanie PR #22 + poprawki linków
+
+**Kontekst:** zlecenie właściciela: przejrzeć osierocony PR, rozwiązać
+konflikty z main, uratować co się da; naprawić link „Skity" (pusta strona)
+i link „Kroniki" (otwiera listę Epok zamiast listy Kronik). Uwaga o numerze:
+właściciel wskazał PR #23 jako niescalony, ale w chwili startu sesji PR #23
+jest już scalony (squash `cc4ce18`, 17:35Z); osieroconym, skonfliktowanym
+PR jest **#22** (`session/2026-09-04-auto2`, mergeable: CONFLICTING).
+
+**Audyt PR #23 (plik po pliku, `git diff 9c8c2e9..cc4ce18`):**
+- `data/manifestations/balor.json` — C1: warstwa źródła pierwotnego (oko
+  otwierane tylko na polu bitwy, śmierć Núady i Machy, ostatni rozkaz
+  „Lift up my eyelid, lad", str. 61 wyd. Gray); dwie nowe pozycje
+  dokumentacji z pełnymi adresami — CELT/UCC T300010 (Cath Maige Tuired,
+  wyd. Gray, ITS 52, Kildare 1982) i Gutenberg 14465 (Lady Gregory, Gods
+  and Fighting Men, 1904). Oba adresy zweryfikowane niezależnie w tej sesji
+  (web): istnieją i odpowiadają opisom. `meta.modyfikacje` z godziną, opis
+  bez kodów wewnętrznych (§9). ✔
+- `data/skity/instrukcja-obslugi.json` — C3: skład 3-osobowy unikalny
+  (Balor × Knecht × Sfinks z Teb), każdy zabiera głos, ~267 słów w limicie
+  300 (ADR 0015), ton luźny z humorem (ADR 0018), zero żargonu gry, fakty
+  zgodne z kartoteką (załoga powieki Balora, formuła Knechta, zagadka
+  Sfinksy). ✔
+- `test/kronika.test.js` — przekalibracja zasięgów po nowym SKIT-cie zgodna
+  z L20 (sfinks-teby 0.423→0.446 w epoce 5, knecht-z-koptos 0.366→0.388
+  w epoce 7). ✔
+- `data/index.json`, `data/kronika/*`, `docs/kronika-*.html` — artefakty
+  generowane narzędziami; build na main deterministyczny (bez zapisu). ✔
+
+**Brama na main po scaleniu:** `npm test` 229/229, `npm run build` bez
+zapisu, `npm run check` zielone. ✔
+
+**Wniosek:** brak usterek względem ADR, protokołu i testów.
