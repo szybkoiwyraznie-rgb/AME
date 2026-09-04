@@ -133,6 +133,22 @@ test('htmlListy i htmlTagow: rekordy z indeksu, licznik tagów', async () => {
   assert.ok(!htmlListy(indeks, new Set(['egungun'])).includes('Imp z Lincoln</span>'));
 });
 
+test('htmlListy: miniatura wizualizacji w wierszu, gdy rekord ma obraz (C2)', () => {
+  const indeks = {
+    manifestacje: [
+      { slug: 'z-obrazem', nazwa: 'Byt A', karta: 'Karta A', miejscowosc: 'Miejscowość A', kraj: 'Kraj A', obraz: 'assets/wizualizacje/z-obrazem.jpg' },
+      { slug: 'bez-obrazu', nazwa: 'Byt B', karta: 'Karta B', miejscowosc: 'Miejscowość B', kraj: 'Kraj B' },
+    ],
+  };
+  const lista = htmlListy(indeks, null);
+  assert.match(lista, /<button class="wiersz ma-miniature" data-slug="z-obrazem">/, 'wiersz z obrazem ma klasę modyfikatora');
+  assert.match(lista, /<img class="miniatura" src="assets\/wizualizacje\/z-obrazem\.jpg" alt="" loading="lazy">/, 'miniatura ładowana leniwie');
+  assert.match(lista, /<button class="wiersz" data-slug="bez-obrazu">/, 'wiersz bez obrazu bez modyfikatora');
+  assert.equal((lista.match(/<img class="miniatura"/g) ?? []).length, 1, 'dokładnie jedna miniatura');
+  const zlosliwy = htmlListy({ manifestacje: [{ slug: 'x', nazwa: 'X', karta: 'K', miejscowosc: 'M', kraj: 'KR', obraz: 'a" onload="alert(1)' }] }, null);
+  assert.ok(!zlosliwy.includes('onload="alert'), 'src miniatury jest escapowany');
+});
+
 test('htmlStronyTagu: strona tagu z kategorią, opisem i listą wpisów (F2/C2)', async () => {
   const { indeks } = await dane();
   const strona = htmlStronyTagu(indeks, 'grecja');

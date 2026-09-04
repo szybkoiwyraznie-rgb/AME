@@ -879,6 +879,20 @@ div.warstwa.otwarta { display: block; animation: warstwa-wnika 0.2s ease-out; }
 .wiersz:hover { background: var(--tlo-3); }
 .wiersz .nazwa { font-family: var(--serif); font-size: 17px; }
 .wiersz .opis { font-size: 12px; color: var(--tekst-dim); margin-top: 2px; }
+/* Miniatura wizualizacji w wierszu listy (C2, 2026-09-04): kadr 21:9 po lewej,
+ * tekst w kolumnie obok; brak obrazu = układ jak dotychczas. */
+.wiersz.ma-miniature { flex-direction: row; align-items: center; gap: 10px; }
+.wiersz .miniatura {
+  flex: none;
+  width: 96px;
+  height: auto;
+  aspect-ratio: 21 / 9;
+  object-fit: cover;
+  border: 1px solid var(--linia);
+  border-radius: 4px;
+  background: var(--tlo-2);
+}
+.wiersz .wiersz-tekst { display: flex; flex-direction: column; min-width: 0; }
 .pusto { color: var(--tekst-dim); }
 
 /* ---- Stopka ---- */

@@ -307,7 +307,9 @@ export function nazwaSluga(slug, indeks) {
   return indeks.manifestacje.find((m) => m.slug === slug)?.nazwa ?? slug;
 }
 
-/** Lista manifestacji (wszystkie lub przefiltrowane). */
+/** Lista manifestacji (wszystkie lub przefiltrowane). Wiersz z polem `obraz`
+ *  dostaje miniaturę wizualizacji 21:9 (ładowaną leniwie) — rozpoznanie bytu
+ *  po kadrze, nie tylko po nazwie (C2, 2026-09-04). */
 export function htmlListy(indeks, widoczne /* Set|null */) {
   const pozycje = indeks.manifestacje
     .filter((m) => widoczne === null || widoczne.has(m.slug))
@@ -317,9 +319,12 @@ export function htmlListy(indeks, widoczne /* Set|null */) {
     .map(
       (m) => `
       <li>
-        <button class="wiersz" data-slug="${esc(m.slug)}">
-          <span class="nazwa">${esc(m.nazwa)}</span>
-          <span class="opis">insp. ${esc(m.karta)} · ${esc(m.miejscowosc)}, ${esc(m.kraj)}</span>
+        <button class="wiersz${m.obraz ? ' ma-miniature' : ''}" data-slug="${esc(m.slug)}">
+          ${m.obraz ? `<img class="miniatura" src="${esc(m.obraz)}" alt="" loading="lazy">` : ''}
+          <span class="wiersz-tekst">
+            <span class="nazwa">${esc(m.nazwa)}</span>
+            <span class="opis">insp. ${esc(m.karta)} · ${esc(m.miejscowosc)}, ${esc(m.kraj)}</span>
+          </span>
         </button>
       </li>`
     )

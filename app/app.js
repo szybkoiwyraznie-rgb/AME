@@ -1,7 +1,7 @@
 /**
  * app/app.js — bootstrap AME: ładuje indeks, mapę świata, spina UI.
  */
-import { stworzMape, PROGI_WARSTW, PODKLADY_ONLINE } from './map.js?v=c5-9';
+import { stworzMape, PROGI_WARSTW, PODKLADY_ONLINE } from './map.js?v=c5-10';
 import { zaladujIndeks, zaladujWpis, zaladujSkit, dopasowania, wylosujSlug } from './data.js?v=c5-1';
 import {
   htmlWpisu,
@@ -24,8 +24,8 @@ import {
   KLUCZ_MOTYWU,
   akcjeZZapytania,
   tekstDoLektora,
-} from './ui.js?v=c5-9';
-import { SZEROKOSC, WYSOKOSC } from './geo.js?v=c5-9';
+} from './ui.js?v=c5-10';
+import { SZEROKOSC, WYSOKOSC } from './geo.js?v=c5-10';
 
 const $ = (sel) => document.querySelector(sel);
 

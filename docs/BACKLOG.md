@@ -104,8 +104,11 @@
 - **Reakcja na zmianę preferencji systemu** — dziś `prefers-color-scheme` liczy
   się tylko przy braku zapisanego wyboru; można nasłuchiwać `change` i
   przełączać dopóki użytkownik nie zdecydował samodzielnie.
-- **Miniatura wizualizacji w wierszu kartoteki i w liście** — obraz 21:9 już jest
-  w indeksie (`obraz`), wystarczy `<img loading="lazy">` w `htmlListy`.
+- ~~**Miniatura wizualizacji w wierszu kartoteki i w liście**~~ — **WDROŻONE
+  (2026-09-04, PR #13, C2 pętli jakości):** wiersz listy manifestacji z polem
+  `obraz` dostaje miniaturę 21:9 (`<img loading="lazy">`, klasa
+  `wiersz ma-miniature`, kadr po lewej, tekst w kolumnie); brak obrazu = układ
+  bez zmian (cache-bust `c5-10`). Do akceptacji właściciela przed live.
 - ~~**Kopiuj link do wpisu**~~ — zrealizowane w M4 (C2): `ui.linkWidoku` +
   `ui.przyciskKopiowania`, przycisk „⧉ kopiuj link" w kartotece (obok ✕) i w
   warstwie skitu; test pilnuje, że handlerzy obu warstw obsługują `[data-kopia]`.
