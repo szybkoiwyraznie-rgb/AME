@@ -62,8 +62,12 @@
 - ~~**Kanon tagów**~~ — zrealizowane w M4 (ADR 0016): kategorie z limitami w
   `data/kanon-tagow.json`, walidator i prezentacja pasmami. Kandydaci dalej
   otwarci: kategoria „pora aktywności” (noc/dzień/sezons) i „język źródła”.
-- **Wzór „Trophy Room”**: galeria trofeów pierwotnych/wtórnych z wpisów
-  (sekcja V) jako osobny widok.
+- ~~**Wzór „Trophy Room”**~~ — **WDROŻONE (2026-09-04, PR #13, C2 pętli
+  jakości):** przycisk „🏆 trofea” w topbarze → warstwa z galerią dowodów
+  eliminacji (pierwotne + wtórne) ze wszystkich kart; rekord indeksu niesie
+  `trofea`, więc widok nie dociąga pełnych wpisów; nazwa bytu otwiera jego
+  kartotekę; deep-link `#trofea` (cache-bust `c5-11`). Do akceptacji
+  właściciela przed live.
 - **Zasady citowania w aplikacji**: sekcja III jako przypisy z linkami
   do repozytoriów cyfrowych (archive.org itp.) — sprawdzać dostępność linków.
 
@@ -104,8 +108,11 @@
 - **Reakcja na zmianę preferencji systemu** — dziś `prefers-color-scheme` liczy
   się tylko przy braku zapisanego wyboru; można nasłuchiwać `change` i
   przełączać dopóki użytkownik nie zdecydował samodzielnie.
-- **Miniatura wizualizacji w wierszu kartoteki i w liście** — obraz 21:9 już jest
-  w indeksie (`obraz`), wystarczy `<img loading="lazy">` w `htmlListy`.
+- ~~**Miniatura wizualizacji w wierszu kartoteki i w liście**~~ — **WDROŻONE
+  (2026-09-04, PR #13, C2 pętli jakości):** wiersz listy manifestacji z polem
+  `obraz` dostaje miniaturę 21:9 (`<img loading="lazy">`, klasa
+  `wiersz ma-miniature`, kadr po lewej, tekst w kolumnie); brak obrazu = układ
+  bez zmian (cache-bust `c5-10`). Do akceptacji właściciela przed live.
 - ~~**Kopiuj link do wpisu**~~ — zrealizowane w M4 (C2): `ui.linkWidoku` +
   `ui.przyciskKopiowania`, przycisk „⧉ kopiuj link" w kartotece (obok ✕) i w
   warstwie skitu; test pilnuje, że handlerzy obu warstw obsługują `[data-kopia]`.
@@ -127,6 +134,10 @@
   dobierało niepowtarzalne tematy, nie tylko składy.
 - **Widok „rozmowy” na mapie** — animowany łuk łączący uczestników skitu przy
   jego otwarciu (dziś sekcja VI linkuje tylko do kart).
+- **Walidator opisów `meta.modyfikacje`** — twardy zakaz oznaczeń
+  wewnętrznych (`C1`, `C2`, `M3`, `Pętla Jakości`, `PROTOKÓŁ §`) w polu
+  `opis` (PROTOKÓŁ §9); w 2026-09-04 audyt znalazł 13 takich opisów
+  (korekta w PR #13), więc reguła bez walidatora wraca.
 - **Walidator spójności faktograficznej** — heurystyka ostrzegająca, gdy skit
   przywołuje zwyczaj/nazwę własną nieobecną w kartach uczestników (twarda
   egzekucja wymaga NLP — poza zakresem ADR 0001).

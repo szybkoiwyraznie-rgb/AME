@@ -19,19 +19,29 @@
     "lat": 54.07,
     "lon": -4.75
   },
-  "pochodzenie_i_kultura": "Folklor Wyspy Man (tradycja celtycko-manx): ben-varrey to manxka morska panna, w słownikach (Cregeen, Kelly) zapisana jako „mermaid”, a w języku manx „bean mara” (kobieta morza). Wyspa jest w tradycji miejscem bogatym w opowieści o morskich istotach, powiązanym z bogiem morza Manannánem. Jedna kultura, jeden byt — nie rozmywam go w „syreny ogólnie”, tylko trzymam się wyspiarskiego kręgu.",
+  "pochodzenie_i_kultura": "Folklor Wyspy Man (tradycja celtycko-manx): ben-varrey to manxka morska panna; A. W. Moore („The Folk-Lore of the Isle of Man”, 1891) zapisuje, że nie miała własnego imienia w języku manx — nazywano ją po prostu Ben-varry, „kobieta morza”. Wyspa jest w tradycji miejscem bogatym w opowieści o morskich istotach, powiązanym z bogiem morza Manannánem. Jedna kultura, jeden byt — nie rozmywam go w „syreny ogólnie”, tylko trzymam się wyspiarskiego kręgu.",
   "wizualizacja": {
     "prompt": "Style: A wide-angle full-body cinematic photograph. The central objects/persons of the photo are visible from head to toe, standing centrally in the frame. No parts of the body are cropped.\n\nA slender Manx sea-woman with long sea-green hair streaming over her shoulders, a pale human upper body and a silver-green fish tail that curves onto a wet rock; she sits on a wave-worn boulder at the foot of dark basalt cliffs on the Calf Sound, one hand resting on a coral piece and a small bundle of shiny shells beside her, the other pointing toward a safe passage through the white surf; low evening mist, gulls overhead, a fishing smack in the channel, sea spray catching cold blue light.\n\nCaptured with a 35mm anamorphic lens at f/1.8. Shallow depth of field with a heavy, creamy bokeh background. Environmental portraiture. Dramatic cinematic lighting, sharp focus on the character, hyper-realistic textures of clothing and skin. Shot on 70mm film stock, ultra-wide 21:9 aspect ratio. --ar 21:9",
     "obraz": "assets/wizualizacje/ben-varrey.jpg"
   },
   "natura": {
     "wyglad_i_aura": "Kobieta od pasa w górę o jasnej skórze, długich morskich włosach i uważnych, ciemnych oczach; od pasa w dół gładki, łuskowaty ogon ryby, połyskujący zielenią i srebrem. Siedzi na skałach i czesze włosy grzebieniem, obok niej leżą małe korale, muszle i błyskotki. Obecność poznaje się po nagłej ciszy fal i po tym, że mewy przestają krzyczeć.",
-    "charakter_i_motywacje": "Nie jest okrutna ani do końca łagodna. Potrafi wskazać rybakowi miejsce z ławicą śledzi, za co chce tylko drobiazg — jabłko, różę, kawałek chleba, a czasem towarzystwo. Gdy ktoś ją urazi albo obieca coś i nie dotrzyma, potrafi zatopić sieci albo zwabić go w wir. Jej motywacją jest ciekawość ludzi i tęsknota do lądu, a jednocześnie nieufność wobec tych, którzy chcą ją uwięzić.",
+    "charakter_i_motywacje": "Nie jest okrutna ani do końca łagodna — Moore (1891) opisuje ją jako „czule i łagodnie usposobioną, lecz straszliwą, gdy się rozgniewa”, skłonną zakochiwać się w młodych mężczyznach. Potrafi wskazać rybakowi miejsce z ławicą śledzi, za co chce tylko drobiazg — jabłko, różę, kawałek chleba, a czasem towarzystwo. Gdy ktoś ją urazi albo obieca coś i nie dotrzyma, potrafi zatopić sieci albo zwabić go w wir; Moore zachował tradycję, według której odrzucona ben-varrey pokryła całą wyspę mgłą, tak że statki błądziły po morzu albo rozbijały się o klify, dopóki zaklęcie nie zostało złamane przez rybaków. Jej motywacją jest ciekawość ludzi i tęsknota do lądu, a jednocześnie nieufność wobec tych, którzy chcą ją uwięzić.",
     "zdolnosci": "Zna każdy prąd, każdą rafę i każdą kryjówkę wzdłuż wybrzeża, zarówno nad, jak i pod wodą — przez co potrafi przeprowadzić łódź i człowieka bezpiecznie nawet tam, gdzie nikt lokalny nie płynie. Widzi w mroku i pod powierzchnią, rozumie szept fal, potrafi sprowadzić deszcz, gdy się ją uszanuje, i rozpętać sztorm, gdy się ją zdradzi. Jej głos ma moc zatrzymania — ludzie słuchają go jak lodu.",
     "slabosci_i_metody_pokonania": "Można ją przytrzymać, gdy jest na lądzie, odłączona od morza; wtedy jej moc słabnie. Tradycja mówi, że by ją oddalić od człowieka, trzeba znać imię/używać odmiennego imienia i pewnych ochron — pokarm lub odwrócenie uwagi, gdy wraca do wody. Nie można jej zabić bronią w morzu, ale można ją wyrzucić z jej żywiołu albo zamknąć przed nią powrót, a wtedy traci siłę, jak ryba zostawiona na suchym lądzie.",
     "preferencje": "Lubi: jabłka i róże, korale i perły, czyste pływy, wieczorną mgłę, śpiew rybaków; nie lubi: sztucznych świateł na wodzie, zniewolenia, obietnic, które nie są dotrzymane, i ludzi, którzy jej nie słuchają, gdy prowadzi."
   },
   "dokumentacja": [
+    {
+      "typ": "tekst źródłowy",
+      "pozycja": "A. W. Moore, „The Folk-Lore of the Isle of Man” (1891), rozdz. 4 (pełny tekst w Manx Notebook) — ben-varry „nie miała własnego imienia po manxku”, tylko „Woman of the sea”; „affectionate and gentle disposition, though terrible when angered”; tradycja o syrenie, która w zemście za odrzucenie pokryła całą wyspę mgłą i rozbiła statki o klify, póki rybacy nie złamali zaklęcia; opowieść o pasterzu obdarowywanym koralem, perłami i muszlami, który uciekł w obawie, że syrena pociągnie go do morza",
+      "url": "https://www.isle-of-man.com/manxnotebook/fulltext/folklore/ch04.htm"
+    },
+    {
+      "typ": "zbiór opowieści ludowych",
+      "pozycja": "Kathleen Killip, „Saint Bridget's Night: Stories from the Isle of Man” — opowieść tytułowa zbioru, „The Mermaid and the Apple Tree”: rybak Juan Caine zaskarbia sobie ben varrey koszem jabłek i od tej pory ma szczęście w połowach; sadzi jej własną jabłoń przy ogrodzeniu na skraju przypływu, skąd syrena — jak mówią — w księżycowe noce wciąż zbiera owoce (rekord biblioteki Manx National Heritage, iMuseum)",
+      "url": "https://imuseum.im/search/collections/library/mnh-museum-14677.html"
+    },
     {
       "typ": "portal podróżniczo-kulturowy",
       "pozycja": "National Geographic, „How to spend a weekend on the Isle of Man” — sekcja „Four ways to explore Manx mythology”: Ben Varrey jako manxki odpowiednik mermaid, pół ryby, pół kobiety, wylegująca się na skałach i rzucająca zalotne spojrzenia przechodzącym rybakom; możliwe pochodzenie od obserwacji fok; sąsiedztwo Baie Mooar i Niarbyl",
@@ -97,6 +107,10 @@
       {
         "data": "2026-08-30 00:38",
         "opis": "Audyt Kartoteki: poprawki językowe i doprecyzowanie zdań (odmiana, literówki, spójność z mitem)."
+      },
+      {
+        "data": "2026-09-04 11:55",
+        "opis": "Dopisane źródło pierwotne — A. W. Moore „The Folk-Lore of the Isle of Man” (1891): imię Ben-varry jako „kobieta morza”, usposobienie łagodne, lecz straszliwe w gniewie, tradycja o mgle karzącej całą wyspę — oraz zbiór Kathleen Killip „Saint Bridget's Night” z opowieścią „The Mermaid and the Apple Tree”."
       }
     ]
   }

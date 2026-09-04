@@ -19,7 +19,7 @@
     "lat": 27.35,
     "lon": 80.48
   },
-  "pochodzenie_i_kultura": "Wedyjska i puraniczna tradycja Indii (hinduizm): Indra to bóg gromu, deszczu, burzy i rzek — najczęściej wzywane bóstwo Rigwedy, król nieba (Swarga) i władca dewów. Jego znakiem jest wadżra, piorun wykuty z kręgosłupa mędrca Dadhichiego. Jedna kultura, jeden bóg, jeden wątek: nie mieszamy go z buddyjskim Śakrą (choć ten sam rdzeń), trzymamy się wedyjsko-puranicznego Indry.",
+  "pochodzenie_i_kultura": "Wedyjska i puraniczna tradycja Indii (hinduizm): Indra to bóg gromu, deszczu, burzy i rzek — najczęściej wzywane bóstwo Rigwedy, król nieba (Swarga) i władca dewów. Jego znakiem jest wadżra, piorun wykuty z kręgosłupa mędrca Dadhichiego. Jedna kultura, jeden bóg, jeden wątek: nie mieszamy go z buddyjskim Śakrą (choć ten sam rdzeń), trzymamy się wedyjsko-puranicznego Indry. Rdzeniem jego mitu jest hymn Rigwedy 1.32: Indra zabija węża Vṛtrę wadżrą wykutą przez Tvaṣṭara i uwalnia wody górskich potoków, które „jak ryczące krowy” spływają do oceanu.",
   "wizualizacja": {
     "prompt": "Style: A wide-angle full-body cinematic photograph. The central objects/persons of the photo are visible from head to toe, standing centrally in the frame. No parts of the body are cropped.\n\nA majestic storm god with luminous bronze-brown skin, long dark hair, ornate gold crown and jewelry, muscular body marked by a thousand small eyes, four arms; in his right hand he grips a golden two-pronged thunderbolt staff crackling with blue lightning, in another hand a curved bow, standing heroically atop a rocky mountain summit under a black thunderstorm, a great white elephant partly visible behind him, monsoon rain lashing the valleys below, rivers beginning to flow across cracked dry earth, water glistening on the stone under his hooves.\n\nCaptured with a 35mm anamorphic lens at f/1.8. Shallow depth of field with a heavy, creamy bokeh background. Environmental portraiture. Dramatic cinematic lighting, sharp focus on the character, hyper-realistic textures of clothing and skin. Shot on 70mm film stock, ultra-wide 21:9 aspect ratio. --ar 21:9",
     "obraz": "assets/wizualizacje/indra.jpg"
@@ -27,11 +27,16 @@
   "natura": {
     "wyglad_i_aura": "Potężny wojownik z jaśniejącą, spiżowo-brązową skórą, czarnymi długimi włosami i złotą koroną; ciało pokryte tysiącem oczu — pamiątką po klątwie Gautamy, która zamieniła się w znak wszechwidzącego władcy. Jedną ręką dzierży wadżrę, drugą łuk z tęczy. Obecność poznaje się po ozonie i zapachu deszczu na gorącym kamieniu, po nagłym grzmocie, kiedy nadciąga burza, i po tym, że rzeki nagle zaczynają płynąć pełne.",
     "charakter_i_motywacje": "Dumny, żądny uciech władca nieba: pije somę, ucztuje, wysyła apsary do ascetów, którzy urosną w siłę, i nie cofa się przed podszywaniem się pod cudzego męża (Ahalya). A zarazem jest obrońcą porządku — to on rozcina chmury, uwalnia wody i zabija Vṛtrę. Motywacją jest tron: chce rządzić Swargą, być czczonym, nie stracić pierwszeństwa przed ludźmi o większej mocy. Kiedy jego nadużycia go osłabiają, staje się podatny — i wtedy musi prosić o pomoc wyższych bogów albo uciekać przed Brahmahatją, uosobionym grzechem braminobójstwa.",
-    "zdolnosci": "Włada piorunem — wadżrą z kości mędrca; wywołuje burze, deszcz i błyskawice; uwalnia rzeki z górskich więzień. Potrafi zmieniać kształt (maja), jeździ na białym słoniu Airavata, dowodzi Marutami (duchami burzy) i wysyła niebiańskie nimfy, by rozpraszały potężnych ascetów. Jego moc nie wyczerpuje się do końca: gdy spojrzy na swój lud, potrafi go poderwać do natarcia, a swoją obecnością odwraca jedno uderzenie z każdego napastnika.",
+    "zdolnosci": "Włada piorunem — wadżrą (w hymnie Rigwedy 1.32 kuje ją Tvaṣṭar, tradycja późniejsza czyni ją z kości mędrca Dadhichiego); przed walką z Vṛtrą pije somę z trzech czar (RV 1.32, w. 3); wywołuje burze, deszcz i błyskawice; uwalnia rzeki z górskich więzień. Potrafi zmieniać kształt (maja), jeździ na białym słoniu Airavata, dowodzi Marutami (duchami burzy) i wysyła niebiańskie nimfy, by rozpraszały potężnych ascetów. Jego moc nie wyczerpuje się do końca: gdy spojrzy na swój lud, potrafi go poderwać do natarcia, a swoją obecnością odwraca jedno uderzenie z każdego napastnika.",
     "slabosci_i_metody_pokonania": "Pycha i żądza. Nie może pokonać kogoś chronionego silniejszym błogosławieństwem, chyba że zdobędzie broń nie z metalu ani drewna — wadżrę z kości. Mędrcy przeklinający go są groźniejsi niż demony: po romansie z Ahalyą Gautama pozbawił go męskości albo pokrył tysiącem znaków wstydu; grzech zabicia Vritry (braminobójstwo) wciąż go ściga, więc przed Brahmahatją musi uciekać i oczyścić się. Skuteczna konfrontacja to odebrać mu tron i wadżrę, złamać jego dumę siłą ascety albo wstrzymać deszcz, od którego zależy jego kult.",
     "preferencje": "Lubi: somę, uczty, złoto, piękne apsary, deszcz, modlitwy wojowników i ofiary; nie lubi: ascetów gromadzących tapas (bo stają się zagrożeniem dla jego tronu), wspomnienia zabójstwa Vritry, wyższych bogów, którzy go upokarzają, i obietnic deszczu, których nie może spełnić."
   },
   "dokumentacja": [
+    {
+      "typ": "tekst źródłowy",
+      "pozycja": "Rigweda 1.32 (przeł. R. T. H. Griffith, 1896; Internet Sacred Text Archive), hymn do Indry w 15 zwrotkach — „He slew the Dragon, then disclosed the waters, and cleft the channels of the mountain torrents” (w. 1); „his heavenly bolt of thunder Tvaṣṭar fashioned” (w. 2); „Impetuous as a bull, he chose the Soma and in three sacred beakers drank the juices” (w. 3); „Indra with his own great and deadly thunder smote into pieces Vṛtra, worst of Vṛtras” (w. 5)",
+      "url": "https://sacred-texts.com/hin/rigveda/rv01032.htm"
+    },
     {
       "typ": "leksykon online",
       "pozycja": "Encyclopedia.com (religie Wschodu), „Indra” — przegląd postaci: król Swargi i dewów, bóg pioruna i deszczu; w Rigwedzie najczęściej wzywany; wadżra wykuta przez Tvasztara; Vritrahan; brahmanicide i spadek mocy po zabiciu Vritry; romans z Ahalyą i klątwa Gautamy; porażki z demonami, gdy osłabną go nadużycia",
@@ -111,6 +116,10 @@
       {
         "data": "2026-08-30 00:38",
         "opis": "Audyt Kartoteki: poprawki językowe i doprecyzowanie zdań (odmiana, literówki, spójność z mitem)."
+      },
+      {
+        "data": "2026-09-04 12:35",
+        "opis": "Dopisane źródło pierwotne — Rigweda 1.32 w przekładzie Griffitha: zabójstwo węża Vṛtry, wadżra wykuta przez Tvaṣṭara, soma z trzech czar przed walką i uwolnione wody spływające „jak ryczące krowy”."
       }
     ]
   }

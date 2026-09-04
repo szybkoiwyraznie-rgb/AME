@@ -1,8 +1,8 @@
 {
   "wersja": 3,
-  "buildTime": "2026-08-30T22:06:37.488Z",
+  "buildTime": "2026-09-04T12:09:21.539Z",
   "liczba": 20,
-  "liczbaSkitow": 24,
+  "liczbaSkitow": 26,
   "kanon": {
     "kategorie": [
       {
@@ -441,8 +441,13 @@
         "syama-i-sarvara"
       ],
       "obraz": "assets/wizualizacje/agni.jpg",
+      "trofea": {
+        "pierwotne": "Żar z gatu w Waranasi w szczelnym naczyniu — ogień, który Agni zostawił jako „gość”, a który przyjmuje obiatę i wypala cierpienie.",
+        "wtorne": "Barani amulet z wizerunkiem Agniego, noszony przez kapłana ognia — symbol tego, że byt może być przyzywany wciąż na nowo, ale tylko na krótko."
+      },
       "skity": [
-        "dzien-wolnego"
+        "dzien-wolnego",
+        "warta"
       ]
     },
     {
@@ -482,6 +487,10 @@
         "talos-kreta"
       ],
       "obraz": "assets/wizualizacje/balor.jpg",
+      "trofea": {
+        "pierwotne": "kamień z procy, który przebił oko na wylot — w logice przekazu nie relikwia, lecz dowód, że moment otwarcia był momentem zamknięcia",
+        "wtorne": "Loch na Súl („jezioro oka”) w hrabstwie Sligo oraz skała pod Mizen Head, którą miał skruszyć ciężar odciętej głowy — Carn Uí Néit, „kurhan wnuka Néita”"
+      },
       "skity": [
         "godzina-otwarcia",
         "hold-oraz-swiatlo",
@@ -525,11 +534,16 @@
         "indra"
       ],
       "obraz": "assets/wizualizacje/barbarossa-kyffhaeuser.jpg",
+      "trofea": {
+        "pierwotne": "garść złota z worów po wysypanym zbożu — do pierwszego zejścia z grzbietu (przekaz z 1669 r.)",
+        "wtorne": null
+      },
       "skity": [
         "cena-znaku",
         "kalendarz-powrotow",
         "trzy-stoly",
         "trzy-zegary",
+        "warta",
         "znak-burzy"
       ]
     },
@@ -566,8 +580,13 @@
         "selkie-sule-skerry"
       ],
       "obraz": "assets/wizualizacje/ben-varrey.jpg",
+      "trofea": {
+        "pierwotne": "Muszla z Calf Sound, którą Ben-Varrey zostawiła w podzięce za jabłko — przedmiot, który wciąż pachnie słoną wodą i wskazuje najkrótszą drogę do zatoki, gdy ludzie są w potrzebie.",
+        "wtorne": "Gruby warkocz z wodorostów zawiązany na skale w miejscu, gdzie manxka syrena czekała na rybaka — dowód, że ciekawość bytu może być czasem silniejsza niż strach przed suszą na lądzie."
+      },
       "skity": [
-        "dzien-wolnego"
+        "dzien-wolnego",
+        "najgorsze-odpowiedzi"
       ]
     },
     {
@@ -606,6 +625,10 @@
         "protostates"
       ],
       "obraz": "assets/wizualizacje/drangue-shala.jpg",
+      "trofea": {
+        "pierwotne": "kamień piorunowy (kokrra e rrufesë) wydobyty z grzędy po nawałnicy — trzymany w izbie, dopóki go nie odda się górze",
+        "wtorne": "spalony na kamieniu strzęp wełny z kurtki, pod którą schowane były skrzydła — znak, że heros stał tuż obok i nie dał się tknąć"
+      },
       "skity": [
         "dwie-skory",
         "godzina-otwarcia",
@@ -651,6 +674,10 @@
         "selkie-sule-skerry"
       ],
       "obraz": "assets/wizualizacje/egungun.jpg",
+      "trofea": {
+        "pierwotne": "Kosmyk płótna z wiru egúngún (relikwia — przechowywana w sanktuarium rodu, nie w prywatnej kolekcji)",
+        "wtorne": "Kauria zhaftowana na płótnach maskarady"
+      },
       "skity": [
         "hold-oraz-swiatlo",
         "imie-na-progu",
@@ -694,6 +721,10 @@
         "sfinks-teby"
       ],
       "obraz": "assets/wizualizacje/empusa-korynt.jpg",
+      "trofea": {
+        "pierwotne": "odłamek miedzi z jej nogi — zostaje na gościńcu po zniknięciu reszty; nikt go tam nie nosił, a kowal rozpoznaje w nim metal odlewany, nie kuty",
+        "wtorne": null
+      },
       "skity": [
         "czwarty-stol",
         "dwa-zepsute-wesela",
@@ -736,6 +767,10 @@
         "drangue-shala"
       ],
       "obraz": "assets/wizualizacje/indra.jpg",
+      "trofea": {
+        "pierwotne": "Wadżra wyrwana z dłoni Indry w chwili, gdy jego duma została złamana i tron opanował ktoś pokorniejszy — złoty piorun z kości, który już nie grzmi, bo nie ma pana",
+        "wtorne": "Płaskorzeźba (lub współczesna rzeźba) Indry na Airavata z wadżrą w ręku — świadectwo kultu boga, który wciąż jest czczony, ale już nie jako jedyny władca"
+      },
       "skity": [
         "cena-znaku",
         "dwa-grzbiety",
@@ -778,6 +813,10 @@
         "syama-i-sarvara"
       ],
       "obraz": "assets/wizualizacje/kannon-hase.jpg",
+      "trofea": {
+        "pierwotne": "Lotosowy wieniec z podnóża Hasedery, który Kannon ofiarowuje wybawionym — symbol, że ratunek jest darem, nie okupem.",
+        "wtorne": "Mały posążek Kamakura Kannon z kłodą, na którym zapisane są intencje modlitewne pątników — dokument, że byt ten istnieje w ludzkich wezwaniach i nie zanika."
+      },
       "skity": [
         "dzien-wolnego",
         "zaplata-za-przewoz"
@@ -818,6 +857,10 @@
         "talos-kreta"
       ],
       "obraz": "assets/wizualizacje/kentaur-pelion.jpg",
+      "trofea": {
+        "pierwotne": "odłamek brzuśca wielkiego krateru, którym Tezeusz powalił Eurytosa — w tej hali wygrywa ten, kto w ręku trzyma najcięższą część uczty",
+        "wtorne": null
+      },
       "skity": [
         "dwa-grzbiety",
         "dwa-zepsute-wesela",
@@ -858,6 +901,10 @@
         "talos-kreta"
       ],
       "obraz": "assets/wizualizacje/knecht-z-koptos.jpg",
+      "trofea": {
+        "pierwotne": "Odcięta połówka ramienia tłuczka — kawałek dębiny z resztkami lnianego łachmana i śladem smoły z dzbana; po wypowiedzeniu słowa końca drewno wraca do martwoty i daje się trzymać w ręku.",
+        "wtorne": "Trzy zapisane sylaby na skrawku papirusu (kopia z notatek Eukratesa) — podpowiedź, jak nie wzywać tego, czego nie umie się zamknąć."
+      },
       "skity": [
         "pierwszy",
         "z-gliny-i-spizu"
@@ -893,6 +940,10 @@
         "drangue-shala"
       ],
       "obraz": "assets/wizualizacje/lincoln-imp.jpg",
+      "trofea": {
+        "pierwotne": "Skamieniały imp na filarze w Angel Choir — trofeum na miejscu, nierozdzielne z katedrą",
+        "wtorne": "Oświecona monetą fotografia groteski (współczesna relikwia pątnicza)"
+      },
       "skity": [
         "hold-oraz-swiatlo",
         "komu-wolno-patrzec",
@@ -933,8 +984,13 @@
         "protostates"
       ],
       "obraz": "assets/wizualizacje/morowa-panna.jpg",
+      "trofea": {
+        "pierwotne": "Czerwona chusta — znaleziona na progu po nocy, w której nikt nie odpowiedział; zwinięta z wapnem i solą, żeby mór nie wrócił do tego domu.",
+        "wtorne": "Kukła Marzanny — słomiana panna, którą wspólnota wyniosła i utopiła; dowód, że zarazę da się odprawić, jeśli pamięta się właściwą odpowiedź i porę roku."
+      },
       "skity": [
         "czwarty-stol",
+        "najgorsze-odpowiedzi",
         "prezent-z-defektem"
       ]
     },
@@ -973,6 +1029,10 @@
         "talos-kreta"
       ],
       "obraz": "assets/wizualizacje/nessos.jpg",
+      "trofea": {
+        "pierwotne": "Kość z kopytowego stawu Nessosa z nacięciem od zatrutej strzały — dowód, że kentaur został pokonany z dystansu, zanim zdążył dobiec",
+        "wtorne": "Współczesna fotografia brodu na Évinos, w miejscu, gdzie według tradycji Nessos przewoził podróżnych"
+      },
       "skity": [
         "cena-znaku",
         "dwa-grzbiety",
@@ -1014,6 +1074,10 @@
         "talos-kreta"
       ],
       "obraz": "assets/wizualizacje/pandora.jpg",
+      "trofea": {
+        "pierwotne": "Pokrywa pithosu — gliniana płyta z odciskiem dłoni, na której od wewnątrz został tylko pył; zamknięta w płótnie nosi w sobie ostatnią rzecz, jaką da się z tej historii wyciągnąć.",
+        "wtorne": "Odrzucony wieniec ślubny — pamiątka, że Pandory nie pokonuje się siłą: ślubny dar i zakaz trzeba oddać albo zostawić zamknięte."
+      },
       "skity": [
         "czwarty-stol",
         "prezent-z-defektem",
@@ -1053,8 +1117,13 @@
         "syama-i-sarvara"
       ],
       "obraz": "assets/wizualizacje/protostates.jpg",
+      "trofea": {
+        "pierwotne": "Tarcza pierwszego szeregu — brązowa, wytarta od krawędzi, z literą wytłoczoną od zewnątrz; ktokolwiek zdejmie ją z kamienia w wąwozie, musi sam stanąć na jej miejscu.",
+        "wtorne": "Czarny kita z hełmu — pęk końskiego włosia, który pozostaje we mgle po zniknięciu fantomu, jako znak, że „albo z tym, albo na tym” wciąż obowiązuje."
+      },
       "skity": [
-        "pierwszy"
+        "pierwszy",
+        "warta"
       ]
     },
     {
@@ -1097,6 +1166,10 @@
         "nessos"
       ],
       "obraz": "assets/wizualizacje/selkie-sule-skerry.jpg",
+      "trofea": {
+        "pierwotne": "złoty łańcuch znad skerry — znak, po którym matka poznała syna, a potem poznała to, kogo zabił strzelec",
+        "wtorne": "drugi mieszciec: srebrna moneta karmicielna (nouris-fee), którą na Orkadach kładzie się na progu, spłacając dług zaciągnięty u morza"
+      },
       "skity": [
         "dwie-skory",
         "imie-na-progu",
@@ -1144,7 +1217,12 @@
         "talos-kreta"
       ],
       "obraz": "assets/wizualizacje/sfinks-teby.jpg",
+      "trofea": {
+        "pierwotne": "Skrzydło Sfinksa z góry Fikion, wciąż napięte jak łuk, z jasnym piórem kobiety i płową sierścią lwicy — dowód, że bestia była jednym ciałem o dwóch naturach.",
+        "wtorne": "Odłamek skały z góry, na której Sfinks czekała, z rytym tekstem zagadki — pamiątka, że za murem strachu, który zostawia każda brama, stoi pytanie."
+      },
       "skity": [
+        "najgorsze-odpowiedzi",
         "zagadka-ze-spizu"
       ]
     },
@@ -1180,6 +1258,10 @@
         "protostates"
       ],
       "obraz": "assets/wizualizacje/syama-i-sarvara.jpg",
+      "trofea": {
+        "pierwotne": "Wiązka sierści dwóch maści — czarnej i łaciatej — zebrana z drogi nad Gangesem; dowód, że kto przeszedł, zostawia po sobie tylko ślad, a psy wracają po następnych.",
+        "wtorne": "Kamyk z ghatu Manikarnika — z miejsca, gdzie Yama nie ma władzy; noszony przy drodze przypomina, którą ścieżkę wybrać."
+      },
       "skity": [
         "pierwszy",
         "zaplata-za-przewoz"
@@ -1223,6 +1305,10 @@
         "sfinks-teby"
       ],
       "obraz": "assets/wizualizacje/talos-kreta.jpg",
+      "trofea": {
+        "pierwotne": "Spiżowy gwóźdź z kostki Talosa — ostatnie uszczelnienie żyły, po którego wyjęciu automat zamilkł. To dowód, że maszyna granicy nie miała słabości w sercu ani w mieczu, tylko w jednej, precyzyjnie dobranej śrubie.",
+        "wtorne": "Odłamany kawałek brązowej łydki z widocznym szwem odlewniczym — pamiątka po bycie, który był kiedyś narzędziem, a nie istotą."
+      },
       "skity": [
         "z-gliny-i-spizu",
         "zagadka-ze-spizu"
@@ -1431,6 +1517,23 @@
       "data": "2026-08-28 15:35"
     },
     {
+      "slug": "najgorsze-odpowiedzi",
+      "tytul": "NAJGORSZE ODPOWIEDZI",
+      "temat": "żale służbowe na progu — każda z nich zadaje ludziom pytania i zbiera najgorsze odpowiedzi",
+      "uczestnicy": [
+        "ben-varrey",
+        "morowa-panna",
+        "sfinks-teby"
+      ],
+      "imiona": [
+        "Sfinks",
+        "Morowa Panna",
+        "Ben-Varrey"
+      ],
+      "slow": 228,
+      "data": "2026-09-04 12:05"
+    },
+    {
       "slug": "nieproszeni-goscie",
       "tytul": "NIEPROSZENI GOŚCIE",
       "temat": "trzej psuja uroczystości porównują, jak wchodzą i co ich zatrzymuje (odźwierny każdego z nich)",
@@ -1548,6 +1651,23 @@
       "data": "2026-08-28 22:25"
     },
     {
+      "slug": "warta",
+      "tytul": "WARTA",
+      "temat": "kto naprawdę czuwa — pierwszy szereg, cesarz śpiący na warcie i ogień, którego nikt nie gasi",
+      "uczestnicy": [
+        "agni",
+        "barbarossa-kyffhaeuser",
+        "protostates"
+      ],
+      "imiona": [
+        "Protostates",
+        "Barbarossa",
+        "Agni"
+      ],
+      "slow": 232,
+      "data": "2026-09-04 12:50"
+    },
+    {
       "slug": "z-gliny-i-spizu",
       "tytul": "Z GLINY I SPIŻU",
       "temat": "być ulepionym, nie urodzonym — o ręce twórcy, jednym rozkazie i chwili, gdy rzecz przekracza instrukcję",
@@ -1633,6 +1753,38 @@
   ],
   "aktualizacje": [
     {
+      "data": "2026-09-04 12:50",
+      "typ": "skit",
+      "akcja": "nowy",
+      "slug": "warta",
+      "tytul": "WARTA",
+      "opis": "SKIT — skład: Protostates, Barbarossa, Agni"
+    },
+    {
+      "data": "2026-09-04 12:35",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "indra",
+      "tytul": "Indra — władca gromu",
+      "opis": "Dopisane źródło pierwotne — Rigweda 1.32 w przekładzie Griffitha: zabójstwo węża Vṛtry, wadżra wykuta przez Tvaṣṭara, soma z trzech czar przed walką i uwolnione wody spływające „jak ryczące krowy”."
+    },
+    {
+      "data": "2026-09-04 12:05",
+      "typ": "skit",
+      "akcja": "nowy",
+      "slug": "najgorsze-odpowiedzi",
+      "tytul": "NAJGORSZE ODPOWIEDZI",
+      "opis": "SKIT — skład: Sfinks, Morowa Panna, Ben-Varrey"
+    },
+    {
+      "data": "2026-09-04 11:55",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "ben-varrey",
+      "tytul": "Ben-Varrey — syrena z Wyspy Man",
+      "opis": "Dopisane źródło pierwotne — A. W. Moore „The Folk-Lore of the Isle of Man” (1891): imię Ben-varry jako „kobieta morza”, usposobienie łagodne, lecz straszliwe w gniewie, tradycja o mgle karzącej całą wyspę — oraz zbiór Kathleen Killip „Saint Bridget's Night” z opowieścią „The Mermaid and the Apple Tree”."
+    },
+    {
       "data": "2026-08-30 22:06",
       "typ": "skit",
       "akcja": "nowy",
@@ -1646,7 +1798,7 @@
       "akcja": "zmiana",
       "slug": "pandora",
       "tytul": "Pandora — pierwsza kobieta i pithos, w którym została nadzieja",
-      "opis": "Pętla Jakości (C1): dopisana genealogia Pandory — córka Pyrrha i Deukalion, którzy przeżyli potop i odtworzyli ludzkość (Theoi; Apollodoros 1.46, Hygin „Fabulae” 142)."
+      "opis": "Dopisana genealogia Pandory — córka Pyrrha i Deukalion, którzy przeżyli potop i odtworzyli ludzkość (Theoi; Apollodoros 1.46, Hygin „Fabulae” 142)."
     },
     {
       "data": "2026-08-30 21:47",
@@ -1654,7 +1806,7 @@
       "akcja": "zmiana",
       "slug": "syama-i-sarvara",
       "tytul": "Śyāma i Śarvara — czterookie psy Yamy, strażnicy drogi przodków",
-      "opis": "Pętla Jakości (C1): dopisana matka psów — Saramā, suka Indry z Rigwedy 10.108 (przekroczenie Rasā, odmowa łapówki Paṇich) oraz nowe źródło pierwotne."
+      "opis": "Dopisana matka psów — Saramā, suka Indry z Rigwedy 10.108 (przekroczenie Rasā, odmowa łapówki Paṇich) oraz nowe źródło pierwotne."
     },
     {
       "data": "2026-08-30 21:47",
@@ -1678,7 +1830,7 @@
       "akcja": "zmiana",
       "slug": "kannon-hase",
       "tytul": "Kannon — miłosierna wybawicielka",
-      "opis": "Pętla Jakości (C1, drugi obieg): korekta tras — Hasedera (Kamakura) to 4. stacja Bandō Sanjūsankasho i kamakurańskiej pielgrzymki Kannon, NIE Saigoku (Saigoku = Kansai, Hase-dera w Narze); źródła: Wikipedia „Hase-dera (Kamakura)” i „Bandō Sanjūsankasho” (legenda Tokudō 721, 11 głów, 9,18 m, plaża Nagai 736); nowe powiązanie z Śyāmą i Śarvarą (droga dusz)."
+      "opis": "Korekta tras — Hasedera (Kamakura) to 4. stacja Bandō Sanjūsankasho i kamakurańskiej pielgrzymki Kannon, NIE Saigoku (Saigoku = Kansai, Hase-dera w Narze); źródła: Wikipedia „Hase-dera (Kamakura)” i „Bandō Sanjūsankasho” (legenda Tokudō 721, 11 głów, 9,18 m, plaża Nagai 736); nowe powiązanie z Śyāmą i Śarvarą (droga dusz)."
     },
     {
       "data": "2026-08-30 13:11",
@@ -1686,7 +1838,7 @@
       "akcja": "zmiana",
       "slug": "pandora",
       "tytul": "Pandora — pierwsza kobieta i pithos, w którym została nadzieja",
-      "opis": "Pętla Jakości (C1): powiązanie z Nessosem (dar-zguba) na podstawie źródeł pierwotnych (Apollodoros 2.151, Diodor 4.36.3, Owidiusz IX)."
+      "opis": "Powiązanie z Nessosem (dar-zguba) na podstawie źródeł pierwotnych (Apollodoros 2.151, Diodor 4.36.3, Owidiusz IX)."
     },
     {
       "data": "2026-08-30 13:11",
@@ -1694,7 +1846,7 @@
       "akcja": "zmiana",
       "slug": "nessos",
       "tytul": "Nessos",
-      "opis": "Pętla Jakości (C1): źródła pierwotne mitu — Pseudo-Apollodoros „Biblioteka” 2.151/2.157 (via Theoi, przeł. Aldrich), Diodor „Biblioteka historyczna” 4.36.3/4.38.1 (przeł. Oldfather), Owidiusz „Metamorfozy” IX.98–210 (Perseus); doprecyzowany wariant przepisu na „napój miłosny” (nasienie+krew / oliwa+krew+grot) i nowe powiązanie z Pandorą (dar-zguba)."
+      "opis": "Źródła pierwotne mitu — Pseudo-Apollodoros „Biblioteka” 2.151/2.157 (via Theoi, przeł. Aldrich), Diodor „Biblioteka historyczna” 4.36.3/4.38.1 (przeł. Oldfather), Owidiusz „Metamorfozy” IX.98–210 (Perseus); doprecyzowany wariant przepisu na „napój miłosny” (nasienie+krew / oliwa+krew+grot) i nowe powiązanie z Pandorą (dar-zguba)."
     },
     {
       "data": "2026-08-30 10:20",
@@ -1718,7 +1870,7 @@
       "akcja": "zmiana",
       "slug": "knecht-z-koptos",
       "tytul": "Knecht z Koptos — ożywiony tłuczek, który nie zna słowa końca",
-      "opis": "Pętla Jakości C1: powiązanie z protostatesem — dwa porządki trwające na rozkazie i pamięci."
+      "opis": "Powiązanie z protostatesem — dwa porządki trwające na rozkazie i pamięci."
     },
     {
       "data": "2026-08-30 10:05",
@@ -1726,7 +1878,7 @@
       "akcja": "zmiana",
       "slug": "protostates",
       "tytul": "Protostates — fantom pierwszego szeregu",
-      "opis": "Pętla Jakości C1: pogłębiony Protostates — 2 nowe źródła (Tukidydes 5.66–70 — pierwszy szereg 448 ludzi; Herodot VII, 226 — Dienekes „w cieniu”) + nowe powiązania z knechtem z Koptos i psami Yamy."
+      "opis": "Pogłębienie karty — 2 nowe źródła (Tukidydes 5.66–70 — pierwszy szereg 448 ludzi; Herodot VII, 226 — Dienekes „w cieniu”) + nowe powiązania z knechtem z Koptos i psami Yamy."
     },
     {
       "data": "2026-08-30 10:05",
@@ -1734,7 +1886,7 @@
       "akcja": "zmiana",
       "slug": "syama-i-sarvara",
       "tytul": "Śyāma i Śarvara — czterookie psy Yamy, strażnicy drogi przodków",
-      "opis": "Pętla Jakości C1: powiązanie z protostatesem — dwie strony jednego progu (przejście dla żywych i droga przodków)."
+      "opis": "Powiązanie z protostatesem — dwie strony jednego progu (przejście dla żywych i droga przodków)."
     },
     {
       "data": "2026-08-30 01:57",
@@ -1758,7 +1910,7 @@
       "akcja": "zmiana",
       "slug": "protostates",
       "tytul": "Protostates — fantom pierwszego szeregu",
-      "opis": "Pogłębienie sieci powiązań (C1): cztery nowe pary połączeń między bytami, oparte na źródłach już odnotowanych w kartotekach (Hezjod „Prace i dnie” 60–68, pseudo-Apollodoros „Biblioteka” 1.9.26, Filostrat IV.21–25, Lukian „Filopseudes” 34–36, Herodot 7.104, lasmgiel.pl/„Zaraza nadchodzi i odchodzi”)."
+      "opis": "Pogłębienie sieci powiązań: cztery nowe pary połączeń między bytami, oparte na źródłach już odnotowanych w kartotekach (Hezjod „Prace i dnie” 60–68, pseudo-Apollodoros „Biblioteka” 1.9.26, Filostrat IV.21–25, Lukian „Filopseudes” 34–36, Herodot 7.104, lasmgiel.pl/„Zaraza nadchodzi i odchodzi”)."
     },
     {
       "data": "2026-08-30 01:35",
@@ -1766,7 +1918,7 @@
       "akcja": "zmiana",
       "slug": "talos-kreta",
       "tytul": "Talos — spiżowy strażnik Krety",
-      "opis": "Pogłębienie sieci powiązań (C1): cztery nowe pary połączeń między bytami, oparte na źródłach już odnotowanych w kartotekach (Hezjod „Prace i dnie” 60–68, pseudo-Apollodoros „Biblioteka” 1.9.26, Filostrat IV.21–25, Lukian „Filopseudes” 34–36, Herodot 7.104, lasmgiel.pl/„Zaraza nadchodzi i odchodzi”)."
+      "opis": "Pogłębienie sieci powiązań: cztery nowe pary połączeń między bytami, oparte na źródłach już odnotowanych w kartotekach (Hezjod „Prace i dnie” 60–68, pseudo-Apollodoros „Biblioteka” 1.9.26, Filostrat IV.21–25, Lukian „Filopseudes” 34–36, Herodot 7.104, lasmgiel.pl/„Zaraza nadchodzi i odchodzi”)."
     },
     {
       "data": "2026-08-30 01:35",
@@ -1774,7 +1926,7 @@
       "akcja": "zmiana",
       "slug": "empusa-korynt",
       "tytul": "Empusa z Koryntu",
-      "opis": "Pogłębienie sieci powiązań (C1): cztery nowe pary połączeń między bytami, oparte na źródłach już odnotowanych w kartotekach (Hezjod „Prace i dnie” 60–68, pseudo-Apollodoros „Biblioteka” 1.9.26, Filostrat IV.21–25, Lukian „Filopseudes” 34–36, Herodot 7.104, lasmgiel.pl/„Zaraza nadchodzi i odchodzi”)."
+      "opis": "Pogłębienie sieci powiązań: cztery nowe pary połączeń między bytami, oparte na źródłach już odnotowanych w kartotekach (Hezjod „Prace i dnie” 60–68, pseudo-Apollodoros „Biblioteka” 1.9.26, Filostrat IV.21–25, Lukian „Filopseudes” 34–36, Herodot 7.104, lasmgiel.pl/„Zaraza nadchodzi i odchodzi”)."
     },
     {
       "data": "2026-08-30 00:40",
@@ -2214,7 +2366,7 @@
       "akcja": "zmiana",
       "slug": "agni",
       "tytul": "Agni — bóg ognia ofiarnego",
-      "opis": "Pogłębienie karty (C1): trzy poziomy obecności Agniego (ziemia, błyskawica, słońce), siedem języków obrzędowych i imiona (Pāvaka, Havyavāhana, Dhumaketu…), rola świadka saptapadi; dodane źródła: Rigweda 1.1 (Griffith), Wikipedia, Agni Purana."
+      "opis": "Pogłębienie karty: trzy poziomy obecności Agniego (ziemia, błyskawica, słońce), siedem języków obrzędowych i imiona (Pāvaka, Havyavāhana, Dhumaketu…), rola świadka saptapadi; dodane źródła: Rigweda 1.1 (Griffith), Wikipedia, Agni Purana."
     },
     {
       "data": "2026-08-29 21:40",
@@ -2222,7 +2374,7 @@
       "akcja": "zmiana",
       "slug": "sfinks-teby",
       "tytul": "Sfinks — strażniczka Tebańskich Wrót",
-      "opis": "Pogłębienie karty (C1): wariant Pausaniasza (nieślubna córka Lajosa i wyrocznia Kadmosa; wersja racjonalizująca — piratka z Anthedonu), pochodzenie zagadki od Muz (Apollodor 3.5.8) i szczegóły rozwiązania; dodane źródło pierwotne (Pauzaniasz 9.26.2, Perseus)."
+      "opis": "Pogłębienie karty: wariant Pausaniasza (nieślubna córka Lajosa i wyrocznia Kadmosa; wersja racjonalizująca — piratka z Anthedonu), pochodzenie zagadki od Muz (Apollodor 3.5.8) i szczegóły rozwiązania; dodane źródło pierwotne (Pauzaniasz 9.26.2, Perseus)."
     },
     {
       "data": "2026-08-29 21:36",

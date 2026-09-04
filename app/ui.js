@@ -307,7 +307,9 @@ export function nazwaSluga(slug, indeks) {
   return indeks.manifestacje.find((m) => m.slug === slug)?.nazwa ?? slug;
 }
 
-/** Lista manifestacji (wszystkie lub przefiltrowane). */
+/** Lista manifestacji (wszystkie lub przefiltrowane). Wiersz z polem `obraz`
+ *  dostaje miniaturę wizualizacji 21:9 (ładowaną leniwie) — rozpoznanie bytu
+ *  po kadrze, nie tylko po nazwie (C2, 2026-09-04). */
 export function htmlListy(indeks, widoczne /* Set|null */) {
   const pozycje = indeks.manifestacje
     .filter((m) => widoczne === null || widoczne.has(m.slug))
@@ -317,9 +319,12 @@ export function htmlListy(indeks, widoczne /* Set|null */) {
     .map(
       (m) => `
       <li>
-        <button class="wiersz" data-slug="${esc(m.slug)}">
-          <span class="nazwa">${esc(m.nazwa)}</span>
-          <span class="opis">insp. ${esc(m.karta)} · ${esc(m.miejscowosc)}, ${esc(m.kraj)}</span>
+        <button class="wiersz${m.obraz ? ' ma-miniature' : ''}" data-slug="${esc(m.slug)}">
+          ${m.obraz ? `<img class="miniatura" src="${esc(m.obraz)}" alt="" loading="lazy">` : ''}
+          <span class="wiersz-tekst">
+            <span class="nazwa">${esc(m.nazwa)}</span>
+            <span class="opis">insp. ${esc(m.karta)} · ${esc(m.miejscowosc)}, ${esc(m.kraj)}</span>
+          </span>
         </button>
       </li>`
     )
@@ -420,6 +425,22 @@ export function htmlBazySkitow(indeks) {
         <span class="nazwa">SKIT: ${esc(s.tytul)}</span>
         <span class="opis">skład: ${esc((s.imiona ?? []).join(' × '))} · ${s.slow ?? 0} słów${s.data ? ` · ${esc(s.data)}` : ''}</span>
       </button></li>`
+    )
+    .join('')}</ul>`;
+}
+
+/** Galeria trofeów (C2, 2026-09-04): wszystkie dowody eliminacji z rekordów
+ *  indeksu; nazwa bytu otwiera jego kartotekę (data-slug). */
+export function htmlTrofeow(indeks) {
+  const wpisy = (indeks.manifestacje ?? []).filter((m) => m.trofea?.pierwotne);
+  if (wpisy.length === 0) return '<p class="pusto">Brak trofeów w archiwum.</p>';
+  return `<ul class="trofea-lista">${wpisy
+    .map(
+      (m) => `<li class="trofeum">
+        <h4><button class="chip link" data-slug="${esc(m.slug)}">${esc(m.nazwa)}</button></h4>
+        <p><strong>Trofeum pierwotne:</strong> ${esc(m.trofea.pierwotne)}</p>
+        ${m.trofea.wtorne ? `<p><strong>Trofeum wtórne:</strong> ${esc(m.trofea.wtorne)}</p>` : ''}
+      </li>`
     )
     .join('')}</ul>`;
 }

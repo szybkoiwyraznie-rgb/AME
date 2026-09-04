@@ -1,7 +1,7 @@
 /**
  * app/app.js — bootstrap AME: ładuje indeks, mapę świata, spina UI.
  */
-import { stworzMape, PROGI_WARSTW, PODKLADY_ONLINE } from './map.js?v=c5-9';
+import { stworzMape, PROGI_WARSTW, PODKLADY_ONLINE } from './map.js?v=c5-11';
 import { zaladujIndeks, zaladujWpis, zaladujSkit, dopasowania, wylosujSlug } from './data.js?v=c5-1';
 import {
   htmlWpisu,
@@ -24,8 +24,9 @@ import {
   KLUCZ_MOTYWU,
   akcjeZZapytania,
   tekstDoLektora,
-} from './ui.js?v=c5-9';
-import { SZEROKOSC, WYSOKOSC } from './geo.js?v=c5-9';
+  htmlTrofeow,
+} from './ui.js?v=c5-11';
+import { SZEROKOSC, WYSOKOSC } from './geo.js?v=c5-11';
 
 const $ = (sel) => document.querySelector(sel);
 
@@ -203,6 +204,7 @@ function otworzStroneTagu(tag) {
   warstwa.scrollTop = 0;
   warstwaTrybPrzycisku('#przycisk-skity', false);
   warstwaTrybPrzycisku('#przycisk-nowosci', false);
+  warstwaTrybPrzycisku('#przycisk-trofea', false);
   if (location.hash !== `#tag:${istniejacy}`) history.replaceState(null, '', `#tag:${istniejacy}`);
 }
 
@@ -328,7 +330,7 @@ function zamknijWarstwe() {
   const warstwa = $('#warstwa');
   warstwa.classList.remove('otwarta');
   warstwa.innerHTML = '';
-  for (const id of ['#przycisk-skity', '#przycisk-nowosci']) warstwaTrybPrzycisku(id, false);
+  for (const id of ['#przycisk-skity', '#przycisk-nowosci', '#przycisk-trofea']) warstwaTrybPrzycisku(id, false);
   if (stan.wpis) history.replaceState(null, '', `#${stan.wpis.slug}`);
   else if (location.hash) history.replaceState(null, '', location.pathname + location.search);
 }
@@ -349,6 +351,7 @@ function otworzBazeSkitow() {
   warstwa.scrollTop = 0;
   warstwaTrybPrzycisku('#przycisk-skity', true);
   warstwaTrybPrzycisku('#przycisk-nowosci', false);
+  warstwaTrybPrzycisku('#przycisk-trofea', false);
   if (location.hash !== '#skity') history.replaceState(null, '', '#skity');
 }
 
@@ -366,7 +369,27 @@ function otworzNowosci() {
   warstwa.scrollTop = 0;
   warstwaTrybPrzycisku('#przycisk-nowosci', true);
   warstwaTrybPrzycisku('#przycisk-skity', false);
+  warstwaTrybPrzycisku('#przycisk-trofea', false);
   if (location.hash !== '#nowosci') history.replaceState(null, '', '#nowosci');
+}
+
+/** Galeria trofeów (C2, 2026-09-04): dowody eliminacji ze wszystkich kart,
+ *  liczone z indeksu — bez dociągania pełnych wpisów. Deep-link `#trofea`. */
+function otworzTrofea() {
+  if (stan.warstwa?.tryb === 'trofea') return zamknijWarstwe();
+  stan.warstwa = { tryb: 'trofea' };
+  const warstwa = $('#warstwa');
+  warstwa.classList.add('otwarta');
+  warstwa.innerHTML = szkicWarstwy(
+    'Galeria trofeów',
+    `<p class="naprowadzenie">Dowody eliminacji zebrane ze wszystkich kartotek — klik w nazwę bytu otwiera jego kartę.</p>${htmlTrofeow(stan.indeks)}`,
+    { kopia: 'trofea' }
+  );
+  warstwa.scrollTop = 0;
+  warstwaTrybPrzycisku('#przycisk-trofea', true);
+  warstwaTrybPrzycisku('#przycisk-skity', false);
+  warstwaTrybPrzycisku('#przycisk-nowosci', false);
+  if (location.hash !== '#trofea') history.replaceState(null, '', '#trofea');
 }
 
 /** Feed Kroniki (U3): wczytywane raz, karty epok z ramą narracji i filtra bytów (U1). */
@@ -388,6 +411,7 @@ async function otworzKronike() {
   warstwaTrybPrzycisku('#przycisk-kronika', true);
   warstwaTrybPrzycisku('#przycisk-skity', false);
   warstwaTrybPrzycisku('#przycisk-nowosci', false);
+  warstwaTrybPrzycisku('#przycisk-trofea', false);
   try {
     await zaladujKronike();
     warstwa.innerHTML = szkicWarstwy('Kronika świata AME', htmlKronik(stan.kronika, stan.indeks), { kopia: 'kroniki' });
@@ -414,6 +438,7 @@ async function otworzSkit(slug, { zBazy = true } = {}) {
   warstwa.innerHTML = szkicWarstwy('SKIT', '<p class="ladowanie">Wczytywanie tekstu…</p>', zBazy ? { wroc: 'skity' } : {});
   warstwaTrybPrzycisku('#przycisk-skity', true);
   warstwaTrybPrzycisku('#przycisk-nowosci', false);
+  warstwaTrybPrzycisku('#przycisk-trofea', false);
   try {
     const skit = await zaladujSkit(slug);
     stan.skit = skit;
@@ -587,6 +612,7 @@ function podepnijZdarzenia() {
   $('#przycisk-lista').addEventListener('click', przelaczListe);
   $('#przycisk-skity').addEventListener('click', otworzBazeSkitow);
   $('#przycisk-nowosci').addEventListener('click', otworzNowosci);
+  $('#przycisk-trofea').addEventListener('click', otworzTrofea);
   $('#przycisk-kronika').addEventListener('click', otworzKronike);
   $('#przycisk-warstwy').addEventListener('click', przelaczPanelWarstw);
   for (const klucz of Object.keys(WARSTWY_MAPY)) {
@@ -664,6 +690,7 @@ function podepnijZdarzenia() {
     }
     if (fragment === 'skity') return stan.warstwa?.tryb !== 'skity' ? otworzBazeSkitow() : undefined;
     if (fragment === 'nowosci') return stan.warstwa?.tryb !== 'nowosci' ? otworzNowosci() : undefined;
+    if (fragment === 'trofea') return stan.warstwa?.tryb !== 'trofea' ? otworzTrofea() : undefined;
     if (fragment === 'kroniki') return stan.warstwa?.tryb !== 'kroniki' ? otworzKronike() : undefined;
     if (fragment.startsWith('kronika:')) {
       const slug = fragment.slice(8);
@@ -758,6 +785,7 @@ async function start() {
     if (stan.indeks.skity?.some((s) => s.slug === slug)) otworzSkit(slug);
   } else if (fragment === 'skity') otworzBazeSkitow();
   else if (fragment === 'nowosci') otworzNowosci();
+  else if (fragment === 'trofea') otworzTrofea();
   else if (fragment === 'kroniki') otworzKronike();
   else if (fragment.startsWith('kronika:')) {
     const slug = fragment.slice(8);

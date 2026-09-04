@@ -2,7 +2,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
-import { htmlWpisu, htmlWarstwyWpisu, linkDoZrodla, htmlListy, htmlStronyTagu, htmlTagow, htmlDialogu, htmlSkitu, htmlBazySkitow, htmlNowosci, htmlKronik, htmlTomyIEpoki, esc, nastepnyMotyw, motywPoczatkowy, etykietaMotywu, MOTYWY, KLUCZ_MOTYWU, akcjeZZapytania, tekstDoLektora } from '../app/ui.js';
+import { htmlWpisu, htmlWarstwyWpisu, linkDoZrodla, htmlListy, htmlStronyTagu, htmlTagow, htmlDialogu, htmlSkitu, htmlBazySkitow, htmlNowosci, htmlKronik, htmlTomyIEpoki, esc, nastepnyMotyw, motywPoczatkowy, etykietaMotywu, MOTYWY, KLUCZ_MOTYWU, akcjeZZapytania, tekstDoLektora, htmlTrofeow } from '../app/ui.js';
 
 async function dane(plik = 'egungun') {
   const wpis = JSON.parse(await readFile(`data/manifestations/${plik}.json`, 'utf8'));
@@ -131,6 +131,46 @@ test('htmlListy i htmlTagow: rekordy z indeksu, licznik tagów', async () => {
   assert.ok(poKolei > -1 && poKolei < tagi.indexOf('Typ bytu'), 'pasma w kolejności kanonu');
   assert.ok(htmlListy(indeks, new Set(['egungun'])).includes('Egungun'));
   assert.ok(!htmlListy(indeks, new Set(['egungun'])).includes('Imp z Lincoln</span>'));
+});
+
+test('htmlListy: miniatura wizualizacji w wierszu, gdy rekord ma obraz (C2)', () => {
+  const indeks = {
+    manifestacje: [
+      { slug: 'z-obrazem', nazwa: 'Byt A', karta: 'Karta A', miejscowosc: 'Miejscowość A', kraj: 'Kraj A', obraz: 'assets/wizualizacje/z-obrazem.jpg' },
+      { slug: 'bez-obrazu', nazwa: 'Byt B', karta: 'Karta B', miejscowosc: 'Miejscowość B', kraj: 'Kraj B' },
+    ],
+  };
+  const lista = htmlListy(indeks, null);
+  assert.match(lista, /<button class="wiersz ma-miniature" data-slug="z-obrazem">/, 'wiersz z obrazem ma klasę modyfikatora');
+  assert.match(lista, /<img class="miniatura" src="assets\/wizualizacje\/z-obrazem\.jpg" alt="" loading="lazy">/, 'miniatura ładowana leniwie');
+  assert.match(lista, /<button class="wiersz" data-slug="bez-obrazu">/, 'wiersz bez obrazu bez modyfikatora');
+  assert.equal((lista.match(/<img class="miniatura"/g) ?? []).length, 1, 'dokładnie jedna miniatura');
+  const zlosliwy = htmlListy({ manifestacje: [{ slug: 'x', nazwa: 'X', karta: 'K', miejscowosc: 'M', kraj: 'KR', obraz: 'a" onload="alert(1)' }] }, null);
+  assert.ok(!zlosliwy.includes('onload="alert'), 'src miniatury jest escapowany');
+});
+
+test('htmlTrofeow: galeria trofeów z indeksu, linki do kart, escaping (C2)', async () => {
+  const { indeks } = await dane();
+  const galeria = htmlTrofeow(indeks);
+  const egungun = indeks.manifestacje.find((m) => m.slug === 'egungun');
+  assert.match(galeria, /class="trofea-lista"/, 'lista galerii');
+  assert.ok(galeria.includes(`data-slug="egungun"`), 'nazwa bytu linkuje do kartoteki');
+  assert.ok(galeria.includes(esc(egungun.trofea.pierwotne)), 'treść trofeum pierwotnego z indeksu');
+  assert.ok(galeria.includes('Trofeum pierwotne:'), 'etykieta trofeum pierwotnego');
+  assert.ok(!galeria.includes('<script>'), 'escaping nietknięty');
+  assert.equal(htmlTrofeow({ manifestacje: [] }), '<p class="pusto">Brak trofeów w archiwum.</p>', 'pusta galeria');
+  assert.equal(htmlTrofeow({ manifestacje: [{ slug: 'x', nazwa: 'X' }] }), '<p class="pusto">Brak trofeów w archiwum.</p>', 'rekord bez trofeów pomijany');
+  const zlosliwy = htmlTrofeow({ manifestacje: [{ slug: 'x', nazwa: '<b>X</b>', trofea: { pierwotne: 'p", onerror="x', wtorne: null } }] });
+  assert.ok(!zlosliwy.includes('<b>X</b>'), 'nazwa i treść escapowane');
+});
+
+test('Galeria trofeów w topbarze: przycisk, handler i routing #trofea (C2)', async () => {
+  const html = await readFile('index.html', 'utf8');
+  const app = await readFile('app/app.js', 'utf8');
+  assert.match(html, /id="przycisk-trofea"[^>]*aria-pressed="false"[^>]*>🏆 trofea</, 'przycisk w topbarze');
+  assert.ok(app.includes("$('#przycisk-trofea').addEventListener('click', otworzTrofea)"), 'listener przycisku');
+  assert.ok(app.includes("fragment === 'trofea'"), 'routing deep-linku #trofea (hashchange i start)');
+  assert.ok(app.includes("kopia: 'trofea'"), 'kopiowanie linku do galerii');
 });
 
 test('htmlStronyTagu: strona tagu z kategorią, opisem i listą wpisów (F2/C2)', async () => {

@@ -379,6 +379,9 @@ export function zbudujIndeks(wpisy, skiti = [], kanon = null, buildTime = null) 
     powiazania: (w.powiazania ?? []).map((p) => p.slug).sort((a, b) => a.localeCompare(b, 'pl')),
     backlinki: [],
     obraz: w.wizualizacja?.obraz ?? null,
+    // Galeria trofeów (C2, 2026-09-04): dowody eliminacji w indeksie, żeby
+    // widok „🏆 trofea" nie musiał dociągać wszystkich pełnych wpisów.
+    trofea: { pierwotne: w.trofea?.pierwotne ?? '', wtorne: w.trofea?.wtorne ?? null },
   }));
   const mapa = new Map(rekordy.map((r) => [r.slug, r]));
   for (const r of rekordy) {

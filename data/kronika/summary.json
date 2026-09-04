@@ -57,13 +57,13 @@
       ],
       "stanPo": {
         "os": {
-          "mit": 36,
-          "racjonalizacja": 64
+          "mit": 37,
+          "racjonalizacja": 63
         },
         "zasieg": [
           {
             "slug": "agni",
-            "wielkosc": 0.318
+            "wielkosc": 0.342
           },
           {
             "slug": "balor",
@@ -71,11 +71,11 @@
           },
           {
             "slug": "barbarossa-kyffhaeuser",
-            "wielkosc": 0.427
+            "wielkosc": 0.452
           },
           {
             "slug": "ben-varrey",
-            "wielkosc": 0.27
+            "wielkosc": 0.294
           },
           {
             "slug": "drangue-shala",
@@ -111,7 +111,7 @@
           },
           {
             "slug": "morowa-panna",
-            "wielkosc": 0.282
+            "wielkosc": 0.306
           },
           {
             "slug": "nessos",
@@ -123,7 +123,7 @@
           },
           {
             "slug": "protostates",
-            "wielkosc": 0.258
+            "wielkosc": 0.282
           },
           {
             "slug": "selkie-sule-skerry",
@@ -131,7 +131,7 @@
           },
           {
             "slug": "sfinks-teby",
-            "wielkosc": 0.391
+            "wielkosc": 0.415
           },
           {
             "slug": "syama-i-sarvara",
@@ -146,7 +146,7 @@
           {
             "kultura": "indie",
             "kult": "agni",
-            "wielkosc": 0.318
+            "wielkosc": 0.342
           },
           {
             "kultura": "irlandia",
@@ -156,12 +156,12 @@
           {
             "kultura": "niemcy",
             "kult": "barbarossa-kyffhaeuser",
-            "wielkosc": 0.427
+            "wielkosc": 0.452
           },
           {
             "kultura": "man",
             "kult": "ben-varrey",
-            "wielkosc": 0.27
+            "wielkosc": 0.294
           },
           {
             "kultura": "albania",
@@ -206,7 +206,7 @@
           {
             "kultura": "polska",
             "kult": "morowa-panna",
-            "wielkosc": 0.282
+            "wielkosc": 0.306
           },
           {
             "kultura": "grecja",
@@ -221,7 +221,7 @@
           {
             "kultura": "grecja",
             "kult": "protostates",
-            "wielkosc": 0.258
+            "wielkosc": 0.282
           },
           {
             "kultura": "szkocja-polnocna",
@@ -231,7 +231,7 @@
           {
             "kultura": "grecja",
             "kult": "sfinks-teby",
-            "wielkosc": 0.391
+            "wielkosc": 0.415
           },
           {
             "kultura": "indie",
@@ -280,8 +280,8 @@
           },
           {
             "slug": "barbarossa-kyffhaeuser",
-            "przed": 0.427,
-            "po": 0.427,
+            "przed": 0.452,
+            "po": 0.452,
             "delta": 0,
             "opis": "Cesarz nie zyskuje i nie traci: jego warunek pozostaje nierozstrzygnięty."
           },
@@ -304,8 +304,8 @@
           {
             "kultura": "niemcy",
             "kult": "barbarossa-kyffhaeuser",
-            "przed": 0.427,
-            "po": 0.427,
+            "przed": 0.452,
+            "po": 0.452,
             "delta": 0
           },
           {
@@ -447,13 +447,13 @@
       ],
       "stanPo": {
         "os": {
-          "mit": 34,
-          "racjonalizacja": 66
+          "mit": 35,
+          "racjonalizacja": 65
         },
         "zasieg": [
           {
             "slug": "agni",
-            "wielkosc": 0.318
+            "wielkosc": 0.342
           },
           {
             "slug": "balor",
@@ -461,11 +461,11 @@
           },
           {
             "slug": "barbarossa-kyffhaeuser",
-            "wielkosc": 0.427
+            "wielkosc": 0.452
           },
           {
             "slug": "ben-varrey",
-            "wielkosc": 0.27
+            "wielkosc": 0.294
           },
           {
             "slug": "drangue-shala",
@@ -501,7 +501,7 @@
           },
           {
             "slug": "morowa-panna",
-            "wielkosc": 0.282
+            "wielkosc": 0.306
           },
           {
             "slug": "nessos",
@@ -513,7 +513,7 @@
           },
           {
             "slug": "protostates",
-            "wielkosc": 0.258
+            "wielkosc": 0.282
           },
           {
             "slug": "selkie-sule-skerry",
@@ -521,7 +521,7 @@
           },
           {
             "slug": "sfinks-teby",
-            "wielkosc": 0.391
+            "wielkosc": 0.415
           },
           {
             "slug": "syama-i-sarvara",
@@ -536,7 +536,7 @@
           {
             "kultura": "indie",
             "kult": "agni",
-            "wielkosc": 0.318
+            "wielkosc": 0.342
           },
           {
             "kultura": "irlandia",
@@ -546,12 +546,12 @@
           {
             "kultura": "niemcy",
             "kult": "barbarossa-kyffhaeuser",
-            "wielkosc": 0.427
+            "wielkosc": 0.452
           },
           {
             "kultura": "man",
             "kult": "ben-varrey",
-            "wielkosc": 0.27
+            "wielkosc": 0.294
           },
           {
             "kultura": "albania",
@@ -596,7 +596,7 @@
           {
             "kultura": "polska",
             "kult": "morowa-panna",
-            "wielkosc": 0.282
+            "wielkosc": 0.306
           },
           {
             "kultura": "grecja",
@@ -611,7 +611,7 @@
           {
             "kultura": "grecja",
             "kult": "protostates",
-            "wielkosc": 0.258
+            "wielkosc": 0.282
           },
           {
             "kultura": "szkocja-polnocna",
@@ -621,7 +621,7 @@
           {
             "kultura": "grecja",
             "kult": "sfinks-teby",
-            "wielkosc": 0.391
+            "wielkosc": 0.415
           },
           {
             "kultura": "indie",
@@ -855,13 +855,13 @@
       ],
       "stanPo": {
         "os": {
-          "mit": 32,
-          "racjonalizacja": 68
+          "mit": 33,
+          "racjonalizacja": 67
         },
         "zasieg": [
           {
             "slug": "agni",
-            "wielkosc": 0.318
+            "wielkosc": 0.342
           },
           {
             "slug": "balor",
@@ -869,11 +869,11 @@
           },
           {
             "slug": "barbarossa-kyffhaeuser",
-            "wielkosc": 0.427
+            "wielkosc": 0.452
           },
           {
             "slug": "ben-varrey",
-            "wielkosc": 0.27
+            "wielkosc": 0.294
           },
           {
             "slug": "drangue-shala",
@@ -909,7 +909,7 @@
           },
           {
             "slug": "morowa-panna",
-            "wielkosc": 0.282
+            "wielkosc": 0.306
           },
           {
             "slug": "nessos",
@@ -921,7 +921,7 @@
           },
           {
             "slug": "protostates",
-            "wielkosc": 0.258
+            "wielkosc": 0.282
           },
           {
             "slug": "selkie-sule-skerry",
@@ -929,7 +929,7 @@
           },
           {
             "slug": "sfinks-teby",
-            "wielkosc": 0.391
+            "wielkosc": 0.415
           },
           {
             "slug": "syama-i-sarvara",
@@ -944,7 +944,7 @@
           {
             "kultura": "indie",
             "kult": "agni",
-            "wielkosc": 0.318
+            "wielkosc": 0.342
           },
           {
             "kultura": "irlandia",
@@ -954,12 +954,12 @@
           {
             "kultura": "niemcy",
             "kult": "barbarossa-kyffhaeuser",
-            "wielkosc": 0.427
+            "wielkosc": 0.452
           },
           {
             "kultura": "man",
             "kult": "ben-varrey",
-            "wielkosc": 0.27
+            "wielkosc": 0.294
           },
           {
             "kultura": "albania",
@@ -1004,7 +1004,7 @@
           {
             "kultura": "polska",
             "kult": "morowa-panna",
-            "wielkosc": 0.282
+            "wielkosc": 0.306
           },
           {
             "kultura": "grecja",
@@ -1019,7 +1019,7 @@
           {
             "kultura": "grecja",
             "kult": "protostates",
-            "wielkosc": 0.258
+            "wielkosc": 0.282
           },
           {
             "kultura": "szkocja-polnocna",
@@ -1029,7 +1029,7 @@
           {
             "kultura": "grecja",
             "kult": "sfinks-teby",
-            "wielkosc": 0.391
+            "wielkosc": 0.415
           },
           {
             "kultura": "indie",
@@ -1278,13 +1278,13 @@
       ],
       "stanPo": {
         "os": {
-          "mit": 31,
-          "racjonalizacja": 69
+          "mit": 32,
+          "racjonalizacja": 68
         },
         "zasieg": [
           {
             "slug": "agni",
-            "wielkosc": 0.318
+            "wielkosc": 0.342
           },
           {
             "slug": "balor",
@@ -1292,11 +1292,11 @@
           },
           {
             "slug": "barbarossa-kyffhaeuser",
-            "wielkosc": 0.427
+            "wielkosc": 0.452
           },
           {
             "slug": "ben-varrey",
-            "wielkosc": 0.27
+            "wielkosc": 0.294
           },
           {
             "slug": "drangue-shala",
@@ -1332,7 +1332,7 @@
           },
           {
             "slug": "morowa-panna",
-            "wielkosc": 0.282
+            "wielkosc": 0.306
           },
           {
             "slug": "nessos",
@@ -1344,7 +1344,7 @@
           },
           {
             "slug": "protostates",
-            "wielkosc": 0.258
+            "wielkosc": 0.282
           },
           {
             "slug": "selkie-sule-skerry",
@@ -1352,7 +1352,7 @@
           },
           {
             "slug": "sfinks-teby",
-            "wielkosc": 0.391
+            "wielkosc": 0.415
           },
           {
             "slug": "syama-i-sarvara",
@@ -1367,7 +1367,7 @@
           {
             "kultura": "indie",
             "kult": "agni",
-            "wielkosc": 0.318
+            "wielkosc": 0.342
           },
           {
             "kultura": "irlandia",
@@ -1377,12 +1377,12 @@
           {
             "kultura": "niemcy",
             "kult": "barbarossa-kyffhaeuser",
-            "wielkosc": 0.427
+            "wielkosc": 0.452
           },
           {
             "kultura": "man",
             "kult": "ben-varrey",
-            "wielkosc": 0.27
+            "wielkosc": 0.294
           },
           {
             "kultura": "albania",
@@ -1427,7 +1427,7 @@
           {
             "kultura": "polska",
             "kult": "morowa-panna",
-            "wielkosc": 0.282
+            "wielkosc": 0.306
           },
           {
             "kultura": "grecja",
@@ -1442,7 +1442,7 @@
           {
             "kultura": "grecja",
             "kult": "protostates",
-            "wielkosc": 0.258
+            "wielkosc": 0.282
           },
           {
             "kultura": "szkocja-polnocna",
@@ -1452,7 +1452,7 @@
           {
             "kultura": "grecja",
             "kult": "sfinks-teby",
-            "wielkosc": 0.391
+            "wielkosc": 0.415
           },
           {
             "kultura": "indie",
@@ -1701,13 +1701,13 @@
       ],
       "stanPo": {
         "os": {
-          "mit": 30,
-          "racjonalizacja": 70
+          "mit": 31,
+          "racjonalizacja": 69
         },
         "zasieg": [
           {
             "slug": "agni",
-            "wielkosc": 0.318
+            "wielkosc": 0.342
           },
           {
             "slug": "balor",
@@ -1715,11 +1715,11 @@
           },
           {
             "slug": "barbarossa-kyffhaeuser",
-            "wielkosc": 0.427
+            "wielkosc": 0.452
           },
           {
             "slug": "ben-varrey",
-            "wielkosc": 0.27
+            "wielkosc": 0.294
           },
           {
             "slug": "drangue-shala",
@@ -1755,7 +1755,7 @@
           },
           {
             "slug": "morowa-panna",
-            "wielkosc": 0.282
+            "wielkosc": 0.306
           },
           {
             "slug": "nessos",
@@ -1767,7 +1767,7 @@
           },
           {
             "slug": "protostates",
-            "wielkosc": 0.258
+            "wielkosc": 0.282
           },
           {
             "slug": "selkie-sule-skerry",
@@ -1775,7 +1775,7 @@
           },
           {
             "slug": "sfinks-teby",
-            "wielkosc": 0.381
+            "wielkosc": 0.405
           },
           {
             "slug": "syama-i-sarvara",
@@ -1790,7 +1790,7 @@
           {
             "kultura": "indie",
             "kult": "agni",
-            "wielkosc": 0.318
+            "wielkosc": 0.342
           },
           {
             "kultura": "irlandia",
@@ -1800,12 +1800,12 @@
           {
             "kultura": "niemcy",
             "kult": "barbarossa-kyffhaeuser",
-            "wielkosc": 0.427
+            "wielkosc": 0.452
           },
           {
             "kultura": "man",
             "kult": "ben-varrey",
-            "wielkosc": 0.27
+            "wielkosc": 0.294
           },
           {
             "kultura": "albania",
@@ -1850,7 +1850,7 @@
           {
             "kultura": "polska",
             "kult": "morowa-panna",
-            "wielkosc": 0.282
+            "wielkosc": 0.306
           },
           {
             "kultura": "grecja",
@@ -1865,7 +1865,7 @@
           {
             "kultura": "grecja",
             "kult": "protostates",
-            "wielkosc": 0.258
+            "wielkosc": 0.282
           },
           {
             "kultura": "szkocja-polnocna",
@@ -1875,7 +1875,7 @@
           {
             "kultura": "grecja",
             "kult": "sfinks-teby",
-            "wielkosc": 0.381
+            "wielkosc": 0.405
           },
           {
             "kultura": "indie",
@@ -1937,8 +1937,8 @@
           },
           {
             "slug": "sfinks-teby",
-            "przed": 0.391,
-            "po": 0.381,
+            "przed": 0.415,
+            "po": 0.405,
             "delta": -0.01,
             "opis": "Święta groza zagadki słabnie, gdy okazuje się podatna na wyśmianie."
           },
@@ -1961,8 +1961,8 @@
           {
             "kultura": "grecja",
             "kult": "sfinks-teby",
-            "przed": 0.391,
-            "po": 0.381,
+            "przed": 0.415,
+            "po": 0.405,
             "delta": -0.01
           },
           {
@@ -2121,13 +2121,13 @@
       ],
       "stanPo": {
         "os": {
-          "mit": 29,
-          "racjonalizacja": 71
+          "mit": 30,
+          "racjonalizacja": 70
         },
         "zasieg": [
           {
             "slug": "agni",
-            "wielkosc": 0.318
+            "wielkosc": 0.342
           },
           {
             "slug": "balor",
@@ -2135,11 +2135,11 @@
           },
           {
             "slug": "barbarossa-kyffhaeuser",
-            "wielkosc": 0.427
+            "wielkosc": 0.452
           },
           {
             "slug": "ben-varrey",
-            "wielkosc": 0.27
+            "wielkosc": 0.294
           },
           {
             "slug": "drangue-shala",
@@ -2175,7 +2175,7 @@
           },
           {
             "slug": "morowa-panna",
-            "wielkosc": 0.267
+            "wielkosc": 0.291
           },
           {
             "slug": "nessos",
@@ -2187,7 +2187,7 @@
           },
           {
             "slug": "protostates",
-            "wielkosc": 0.258
+            "wielkosc": 0.282
           },
           {
             "slug": "selkie-sule-skerry",
@@ -2195,7 +2195,7 @@
           },
           {
             "slug": "sfinks-teby",
-            "wielkosc": 0.381
+            "wielkosc": 0.405
           },
           {
             "slug": "syama-i-sarvara",
@@ -2210,7 +2210,7 @@
           {
             "kultura": "indie",
             "kult": "agni",
-            "wielkosc": 0.318
+            "wielkosc": 0.342
           },
           {
             "kultura": "irlandia",
@@ -2220,12 +2220,12 @@
           {
             "kultura": "niemcy",
             "kult": "barbarossa-kyffhaeuser",
-            "wielkosc": 0.427
+            "wielkosc": 0.452
           },
           {
             "kultura": "man",
             "kult": "ben-varrey",
-            "wielkosc": 0.27
+            "wielkosc": 0.294
           },
           {
             "kultura": "albania",
@@ -2270,7 +2270,7 @@
           {
             "kultura": "polska",
             "kult": "morowa-panna",
-            "wielkosc": 0.267
+            "wielkosc": 0.291
           },
           {
             "kultura": "grecja",
@@ -2285,7 +2285,7 @@
           {
             "kultura": "grecja",
             "kult": "protostates",
-            "wielkosc": 0.258
+            "wielkosc": 0.282
           },
           {
             "kultura": "szkocja-polnocna",
@@ -2295,7 +2295,7 @@
           {
             "kultura": "grecja",
             "kult": "sfinks-teby",
-            "wielkosc": 0.381
+            "wielkosc": 0.405
           },
           {
             "kultura": "indie",
@@ -2359,8 +2359,8 @@
           },
           {
             "slug": "morowa-panna",
-            "przed": 0.282,
-            "po": 0.267,
+            "przed": 0.306,
+            "po": 0.291,
             "delta": -0.015,
             "opis": "Ludzie ćwiczą szczerą odpowiedź na jej pytanie; rytuał traci jedną z nóg."
           },
@@ -2383,8 +2383,8 @@
           {
             "kultura": "polska",
             "kult": "morowa-panna",
-            "przed": 0.282,
-            "po": 0.267,
+            "przed": 0.306,
+            "po": 0.291,
             "delta": -0.015
           },
           {
@@ -2550,13 +2550,13 @@
       ],
       "stanPo": {
         "os": {
-          "mit": 28,
-          "racjonalizacja": 72
+          "mit": 29,
+          "racjonalizacja": 71
         },
         "zasieg": [
           {
             "slug": "agni",
-            "wielkosc": 0.318
+            "wielkosc": 0.342
           },
           {
             "slug": "balor",
@@ -2564,11 +2564,11 @@
           },
           {
             "slug": "barbarossa-kyffhaeuser",
-            "wielkosc": 0.427
+            "wielkosc": 0.452
           },
           {
             "slug": "ben-varrey",
-            "wielkosc": 0.27
+            "wielkosc": 0.294
           },
           {
             "slug": "drangue-shala",
@@ -2604,7 +2604,7 @@
           },
           {
             "slug": "morowa-panna",
-            "wielkosc": 0.267
+            "wielkosc": 0.291
           },
           {
             "slug": "nessos",
@@ -2616,7 +2616,7 @@
           },
           {
             "slug": "protostates",
-            "wielkosc": 0.27
+            "wielkosc": 0.294
           },
           {
             "slug": "selkie-sule-skerry",
@@ -2624,7 +2624,7 @@
           },
           {
             "slug": "sfinks-teby",
-            "wielkosc": 0.381
+            "wielkosc": 0.405
           },
           {
             "slug": "syama-i-sarvara",
@@ -2639,7 +2639,7 @@
           {
             "kultura": "indie",
             "kult": "agni",
-            "wielkosc": 0.318
+            "wielkosc": 0.342
           },
           {
             "kultura": "irlandia",
@@ -2649,12 +2649,12 @@
           {
             "kultura": "niemcy",
             "kult": "barbarossa-kyffhaeuser",
-            "wielkosc": 0.427
+            "wielkosc": 0.452
           },
           {
             "kultura": "man",
             "kult": "ben-varrey",
-            "wielkosc": 0.27
+            "wielkosc": 0.294
           },
           {
             "kultura": "albania",
@@ -2699,7 +2699,7 @@
           {
             "kultura": "polska",
             "kult": "morowa-panna",
-            "wielkosc": 0.267
+            "wielkosc": 0.291
           },
           {
             "kultura": "grecja",
@@ -2714,7 +2714,7 @@
           {
             "kultura": "grecja",
             "kult": "protostates",
-            "wielkosc": 0.27
+            "wielkosc": 0.294
           },
           {
             "kultura": "szkocja-polnocna",
@@ -2724,7 +2724,7 @@
           {
             "kultura": "grecja",
             "kult": "sfinks-teby",
-            "wielkosc": 0.381
+            "wielkosc": 0.405
           },
           {
             "kultura": "indie",
@@ -2784,8 +2784,8 @@
         "zasieg": [
           {
             "slug": "protostates",
-            "przed": 0.258,
-            "po": 0.27,
+            "przed": 0.282,
+            "po": 0.294,
             "delta": 0.012,
             "opis": "Pieśń o pierwszym z pierwszego szeregu obiega wąwozy: fantom rośnie u tych, którzy pamiętają, że ktoś stał pierwszy — nawet gdy nikt już nie idzie."
           },
@@ -2808,8 +2808,8 @@
           {
             "kultura": "grecja",
             "kult": "protostates",
-            "przed": 0.258,
-            "po": 0.27,
+            "przed": 0.282,
+            "po": 0.294,
             "delta": 0.012
           },
           {
@@ -2929,13 +2929,13 @@
   ],
   "stanPo": {
     "os": {
-      "mit": 28,
-      "racjonalizacja": 72
+      "mit": 29,
+      "racjonalizacja": 71
     },
     "zasieg": [
       {
         "slug": "agni",
-        "wielkosc": 0.318
+        "wielkosc": 0.342
       },
       {
         "slug": "balor",
@@ -2943,11 +2943,11 @@
       },
       {
         "slug": "barbarossa-kyffhaeuser",
-        "wielkosc": 0.427
+        "wielkosc": 0.452
       },
       {
         "slug": "ben-varrey",
-        "wielkosc": 0.27
+        "wielkosc": 0.294
       },
       {
         "slug": "drangue-shala",
@@ -2983,7 +2983,7 @@
       },
       {
         "slug": "morowa-panna",
-        "wielkosc": 0.267
+        "wielkosc": 0.291
       },
       {
         "slug": "nessos",
@@ -2995,7 +2995,7 @@
       },
       {
         "slug": "protostates",
-        "wielkosc": 0.27
+        "wielkosc": 0.294
       },
       {
         "slug": "selkie-sule-skerry",
@@ -3003,7 +3003,7 @@
       },
       {
         "slug": "sfinks-teby",
-        "wielkosc": 0.381
+        "wielkosc": 0.405
       },
       {
         "slug": "syama-i-sarvara",
@@ -3018,7 +3018,7 @@
       {
         "kultura": "indie",
         "kult": "agni",
-        "wielkosc": 0.318
+        "wielkosc": 0.342
       },
       {
         "kultura": "irlandia",
@@ -3028,12 +3028,12 @@
       {
         "kultura": "niemcy",
         "kult": "barbarossa-kyffhaeuser",
-        "wielkosc": 0.427
+        "wielkosc": 0.452
       },
       {
         "kultura": "man",
         "kult": "ben-varrey",
-        "wielkosc": 0.27
+        "wielkosc": 0.294
       },
       {
         "kultura": "albania",
@@ -3078,7 +3078,7 @@
       {
         "kultura": "polska",
         "kult": "morowa-panna",
-        "wielkosc": 0.267
+        "wielkosc": 0.291
       },
       {
         "kultura": "grecja",
@@ -3093,7 +3093,7 @@
       {
         "kultura": "grecja",
         "kult": "protostates",
-        "wielkosc": 0.27
+        "wielkosc": 0.294
       },
       {
         "kultura": "szkocja-polnocna",
@@ -3103,7 +3103,7 @@
       {
         "kultura": "grecja",
         "kult": "sfinks-teby",
-        "wielkosc": 0.381
+        "wielkosc": 0.405
       },
       {
         "kultura": "indie",

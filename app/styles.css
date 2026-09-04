@@ -731,6 +731,13 @@ div.warstwa.otwarta { display: block; animation: warstwa-wnika 0.2s ease-out; }
 .skit-lista, .nowosci-lista { list-style: none; margin: 0; padding: 0; }
 .skit-lista li { border-bottom: 1px solid var(--linia); }
 .skit-lista .wiersz { padding: 12px 6px; }
+
+/* Galeria trofeów (C2, 2026-09-04): dowody eliminacji ze wszystkich kart. */
+.trofea-lista { list-style: none; padding: 0; margin: 0; }
+.trofeum { border-bottom: 1px solid var(--linia); padding: 10px 6px; }
+.trofeum h4 { margin: 0 0 4px; }
+.trofeum p { margin: 4px 0; }
+.trofeum strong { color: var(--akcent); }
 .skit-lista .nazwa { font-size: 18px; letter-spacing: 0.06em; }
 
 .skit { padding-top: 4px; }
@@ -879,6 +886,20 @@ div.warstwa.otwarta { display: block; animation: warstwa-wnika 0.2s ease-out; }
 .wiersz:hover { background: var(--tlo-3); }
 .wiersz .nazwa { font-family: var(--serif); font-size: 17px; }
 .wiersz .opis { font-size: 12px; color: var(--tekst-dim); margin-top: 2px; }
+/* Miniatura wizualizacji w wierszu listy (C2, 2026-09-04): kadr 21:9 po lewej,
+ * tekst w kolumnie obok; brak obrazu = układ jak dotychczas. */
+.wiersz.ma-miniature { flex-direction: row; align-items: center; gap: 10px; }
+.wiersz .miniatura {
+  flex: none;
+  width: 96px;
+  height: auto;
+  aspect-ratio: 21 / 9;
+  object-fit: cover;
+  border: 1px solid var(--linia);
+  border-radius: 4px;
+  background: var(--tlo-2);
+}
+.wiersz .wiersz-tekst { display: flex; flex-direction: column; min-width: 0; }
 .pusto { color: var(--tekst-dim); }
 
 /* ---- Stopka ---- */
