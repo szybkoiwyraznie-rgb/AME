@@ -17,7 +17,7 @@
     "lat": 38.38,
     "lon": 21.55
   },
-  "pochodzenie_i_kultura": "Grecka mitologia heroiczna, krąg heraklesowy: Nessos to jeden z tesalskich kentaurów, który po wojnie z Lapitami uciekł do rzeki Euenos w Etolii i został przewoźnikiem. Zginął z ręki Heraklesa, gdy próbował porwać i zgwałcić Deianirę podczas przeprawy, a ostatnim podstępem — krwią zatrutą jadem hydry — doprowadził do śmierci samego herosa. To jedna tradycja, jedno miejsce i jedna istota, choć dwie natury: człowiek i koń.",
+  "pochodzenie_i_kultura": "Grecka mitologia heroiczna, krąg heraklesowy: Nessos to jeden z tesalskich kentaurów, który po wojnie z Lapitami uciekł do rzeki Euenos w Etolii i został przewoźnikiem. Zginął z ręki Heraklesa, gdy próbował porwać i zgwałcić Deianirę podczas przeprawy, a ostatnim podstępem — krwią zatrutą jadem hydry — doprowadził do śmierci samego herosa. To jedna tradycja, jedno miejsce i jedna istota, choć dwie natury: człowiek i koń. Najstarszy zachowany wizerunek bytu to szyjka protoattyckiej amfory z końca VII wieku p.n.e. (Narodowe Muzeum Archeologiczne w Atenach): Herakles walczy z kentaurem opisanym inskrypcją NETOS, attycką formą imienia — od tej wazy John D. Beazley nazwał anonimowego pioniera czarnofigurowego malarstwa Malarzem Nessosa. W Piekle Dantego (XII pieśń) Nessos znów pełni rolę przewoźnika: na rozkaz Cheirona prowadzi poetów brzegiem Flegetontu i przenosi Dantego na grzbiecie przez rzekę wrzącej krwi, w której kentaury strzałami trzymają zanurzonych tyranów.",
   "wizualizacja": {
     "prompt": "Style: A wide-angle full-body cinematic photograph. The central objects/persons of the photo are visible from head to toe, standing centrally in the frame. No parts of the body are cropped.\n\nA broad-shouldered centaur with a weathered human torso, thick dark beard and wild mane, and the lower body of a powerful bay horse with glossy black hooves, standing waist-deep in the olive-green Evenus river at golden dusk, two backs visible in one frame — his human back and his equine back — as he turns sharply to face a lone archer standing on the far bank with a raised bow; the water churns around his legs, tall reeds and a wooden ferry pole drift nearby, low warm light raking across the wet skin and leather bridle.\n\nCaptured with a 35mm anamorphic lens at f/1.8. Shallow depth of field with a heavy, creamy bokeh background. Environmental portraiture. Dramatic cinematic lighting, sharp focus on the character, hyper-realistic textures of clothing and skin. Shot on 70mm film stock, ultra-wide 21:9 aspect ratio. --ar 21:9",
     "obraz": "assets/wizualizacje/nessos.jpg"
@@ -69,6 +69,21 @@
       "typ": "przekład klasyczny online",
       "pozycja": "Owidiusz, „Metamorfozy” IX.98–210 (Perseus) — poetycka wersja: przeprawa przez Euenos, próba gwałtu, strzała Heraklesa, podstęp umierającego Nessosa i chiton, który trawi herosa",
       "url": "https://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.02.0028%3Abook%3D9%3Acard%3D98"
+    },
+    {
+      "typ": "przekład klasyczny online",
+      "pozycja": "Higinus, „Fabulae” 31.6 i 33–36 (przeł. Mary Grant, ToposText) — Nessos jako syn Iksjona i Nubes (chmury); Dejanira sama prosi go o przewóz przez Euenos; umierający kentaur, wiedząc o jadzie hydry na strzałach, wręcza jej własną krew jako „love-charm” do skropienia szat męża; kropla krwi spadła na ziemię i zapaliła się w słońcu, zdradzając podstęp",
+      "url": "https://topostext.org/work/206"
+    },
+    {
+      "typ": "dzieło literackie (tekst źródłowy)",
+      "pozycja": "Dante Alighieri, „Boska Komedia”, Piekło XII, w. 55–139 (tekst włoski, Wikisource) — Nessos w siódmym kręgu: „Quelli è Nesso, / che morì per la bella Deianira, / e fé di sé la vendetta elli stesso”; Cheiron każe mu poprowadzić wędrowców i przenieść Dantego na grzbiecie przez brod Flegetontu",
+      "url": "https://it.wikisource.org/wiki/Divina_Commedia/Inferno/Canto_XII"
+    },
+    {
+      "typ": "opracowanie ikonograficzne",
+      "pozycja": "Wikipedia EN, „Nessos Painter” — pionier attyckiego malarstwa czarnofigurowego (koniec VII w. p.n.e.); na amforze nazewniczej w Narodowym Muzeum Archeologicznym w Atenach Herakles walczy z kentaurem opisanym inskrypcją NETOS; nazwa warsztatowa od Johna D. Beazleya, znaleziska głównie z kontekstów funeralnych",
+      "url": "https://en.wikipedia.org/wiki/Nessos_Painter"
     }
   ],
   "trofea": {
@@ -118,6 +133,10 @@
       {
         "data": "2026-08-30 13:11",
         "opis": "Źródła pierwotne mitu — Pseudo-Apollodoros „Biblioteka” 2.151/2.157 (via Theoi, przeł. Aldrich), Diodor „Biblioteka historyczna” 4.36.3/4.38.1 (przeł. Oldfather), Owidiusz „Metamorfozy” IX.98–210 (Perseus); doprecyzowany wariant przepisu na „napój miłosny” (nasienie+krew / oliwa+krew+grot) i nowe powiązanie z Pandorą (dar-zguba)."
+      },
+      {
+        "data": "2026-09-04 19:20",
+        "opis": "Pogłębienie źródłowe: Higinus „Fabulae” (Dejanira sama prosi o przewóz; kropla krwi zapala się w słońcu), Dante „Piekło” XII (Nessos przewoźnikiem nad Flegetontem) i amfora Malarza Nessosa z inskrypcją NETOS — najstarszy wizerunek bytu."
       }
     ]
   }

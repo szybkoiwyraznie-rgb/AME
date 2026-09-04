@@ -1,6 +1,6 @@
 {
   "wersja": 3,
-  "buildTime": "2026-09-04T19:20:16.456Z",
+  "buildTime": "2026-09-04T19:25:44.857Z",
   "liczba": 20,
   "liczbaSkitow": 40,
   "kanon": {
@@ -2052,6 +2052,14 @@
     }
   ],
   "aktualizacje": [
+    {
+      "data": "2026-09-04 19:20",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "nessos",
+      "tytul": "Nessos",
+      "opis": "Pogłębienie źródłowe: Higinus „Fabulae” (Dejanira sama prosi o przewóz; kropla krwi zapala się w słońcu), Dante „Piekło” XII (Nessos przewoźnikiem nad Flegetontem) i amfora Malarza Nessosa z inskrypcją NETOS — najstarszy wizerunek bytu."
+    },
     {
       "data": "2026-09-04 19:15",
       "typ": "skit",
