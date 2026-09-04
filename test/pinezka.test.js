@@ -314,6 +314,7 @@ test('warstwa „rozmowy” skitu (C2): łuki uczestników w osobnej grupie, czy
   const luki = rozmowa.dzieci.filter((d) => d.czyMaKlase('rozmowy'));
   assert.equal(luki.length, 3, 'trzy łuki rozmowy');
   assert.ok(luki.every((l) => l.nazwa === 'path'), 'łuki to ścieżki');
+  assert.ok(luki.every((l) => l.getAttribute('pathLength') === '1'), 'pathLength=1 normalizuje kreskowanie animacji');
   assert.equal(rozmowa.getAttribute('display'), 'inherit', 'warstwa widoczna po pokazaniu');
 
   // nieznany slug nie wysadza renderu — pomijany

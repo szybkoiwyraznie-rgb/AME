@@ -148,3 +148,17 @@ test('minimalna czcionka aplikacji: 12px — żadna mniejsza (recenzja właścic
   const male = css.match(/font-size:\s*(?:9|10|11|11\.5)px/g) || [];
   assert.deepEqual(male, [], `mniejsze niż 12px: ${male.join(', ')}`);
 });
+
+test('łuk rozmowy: animacja przebiegnięcia z normalizacją i uciszeniem przy reduced-motion', async () => {
+  const [mapa, css] = await Promise.all([readFile(MAPA, 'utf8'), readFile(STYLE, 'utf8')]);
+  assert.ok(mapa.includes("class: 'luk rozmowy'") && mapa.includes('pathLength: 1'), 'map.js normalizuje łuk rozmowy (pathLength=1)');
+  const reguly = regulyCss(css);
+  const rozmowy = reguly.filter(({ selektor }) => selektor.includes('.luk.rozmowy'));
+  const animowana = rozmowy.find(({ cialo }) => /animation\s*:\s*przebieg-rozmowy/.test(cialo));
+  assert.ok(animowana, '.luk.rozmowy ma animację przebieg-rozmowy');
+  assert.ok(/stroke-dasharray\s*:\s*0?\.\d+\s+0?\.\d+/.test(animowana.cialo), 'kreskowanie w ułamkach długości (pathLength=1)');
+  assert.ok(css.includes('@keyframes przebieg-rozmowy'), 'klatkowanie przebiegu zdefiniowane');
+  const cicha = rozmowy.find(({ cialo }) => /animation\s*:\s*none/.test(cialo));
+  assert.ok(cicha, 'reduced-motion ucisza animację rozmowy');
+});
+
