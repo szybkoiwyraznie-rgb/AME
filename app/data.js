@@ -50,6 +50,24 @@ export function wylosujSlug(slugi, { pomin = null, los = Math.random } = {}) {
 }
 
 /**
+ * „Manifestacja dnia” — deterministyczny wybór wpisu na dany dzień. Ta sama
+ * data (`RRRR-MM-DD`) daje ten sam slug u wszystkich czytelników; data
+ * wyznacza indeks haszem FNV-1a, więc rozkład po puli jest równomierny.
+ * Pusta pula → `null`.
+ */
+export function slugDnia(slugi, dataISO) {
+  const pula = Array.isArray(slugi) ? slugi.filter((s) => typeof s === 'string' && s) : [];
+  if (pula.length === 0) return null;
+  let h = 0x811c9dc5;
+  for (const znak of String(dataISO ?? '')) {
+    h ^= znak.codePointAt(0);
+    h = Math.imul(h, 0x01000193) >>> 0;
+  }
+  return pula[h % pula.length];
+}
+
+
+/**
  * Zwraca Set<slug> wpisów pasujących do frazy (nazwa, nazwy alternatywne,
  * tagi, kraj, miejscowość, nazwa karty). null = brak filtra (wszystkie).
  */

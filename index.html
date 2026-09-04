@@ -17,8 +17,8 @@
   <!-- Cache-busting: przy zmianie app/*.js lub app/styles.css podnieś wersję
        w ?v= (np. c5-1 → c4-2). Ta sama wersja musi być w importach modułów,
        inaczej przeglądarka poda stare pliki (typowy objaw „mapa bez zmian”). -->
-  <link rel="stylesheet" href="app/styles.css?v=c5-14">
-  <script type="module" src="app/app.js?v=c5-14"></script>
+  <link rel="stylesheet" href="app/styles.css?v=c5-15">
+  <script type="module" src="app/app.js?v=c5-15"></script>
 </head>
 <body>
   <div id="baner" class="baner" hidden></div>
@@ -31,6 +31,7 @@
     <input id="szukaj" type="search" placeholder="Szukaj: nazwa, karta, tag, kraj…" autocomplete="off" aria-label="Szukaj manifestacji">
     <div class="akcje">
       <button id="przycisk-los" class="przycisk" type="button" title="Wylosuj manifestację i przeleć do niej na mapie">🎲 wylosuj</button>
+      <button id="przycisk-dnia" class="przycisk" type="button" title="Manifestacja dnia — ten sam wpis dla wszystkich czytelników dzisiaj">✦ dnia</button>
       <button id="przycisk-luki" class="przycisk" aria-pressed="false" title="Pokaż powiązania na mapie">∞ powiązania</button>
       <button id="przycisk-lista" class="przycisk" title="Lista wszystkich manifestacji">☰ kartoteka</button>
       <button id="przycisk-skity" class="przycisk" aria-pressed="false" title="Baza Skitów — rozmowy materializacji">✎ skity</button>

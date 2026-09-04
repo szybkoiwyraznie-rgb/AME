@@ -98,8 +98,8 @@ test('Tom I: epoki przechodzą sekwencyjnie i oś zamyka się na 100', async () 
       ['kentaur-pelion', 18, 16],
     ]
   );
-  assert.equal(e1.stanPo.os.mit, 38);
-  assert.equal(e1.stanPo.os.racjonalizacja, 62);
+  assert.equal(e1.stanPo.os.mit, 39);
+  assert.equal(e1.stanPo.os.racjonalizacja, 61);
 
   assert.deepEqual(
     e2.uczestnicy.map((u) => [u.slug, u.saldoPrzed, u.saldoPo]),
@@ -109,8 +109,8 @@ test('Tom I: epoki przechodzą sekwencyjnie i oś zamyka się na 100', async () 
       ['empusa-korynt', 19, 21],
     ]
   );
-  assert.equal(e2.stanPo.os.mit, 36);
-  assert.equal(e2.stanPo.os.racjonalizacja, 64);
+  assert.equal(e2.stanPo.os.mit, 37);
+  assert.equal(e2.stanPo.os.racjonalizacja, 63);
 
   assert.deepEqual(
     e3.uczestnicy.map((u) => [u.slug, u.saldoPrzed, u.saldoPo]),
@@ -120,8 +120,8 @@ test('Tom I: epoki przechodzą sekwencyjnie i oś zamyka się na 100', async () 
       ['empusa-korynt', 21, 19],
     ]
   );
-  assert.equal(e3.stanPo.os.mit, 34);
-  assert.equal(e3.stanPo.os.racjonalizacja, 66);
+  assert.equal(e3.stanPo.os.mit, 35);
+  assert.equal(e3.stanPo.os.racjonalizacja, 65);
 
   assert.deepEqual(
     e4.uczestnicy.map((u) => [u.slug, u.saldoPrzed, u.saldoPo]),
@@ -131,11 +131,11 @@ test('Tom I: epoki przechodzą sekwencyjnie i oś zamyka się na 100', async () 
       ['indra', 13, 11],
     ]
   );
-  assert.equal(e4.stanPo.os.mit, 33);
-  assert.equal(e4.stanPo.os.racjonalizacja, 67);
+  assert.equal(e4.stanPo.os.mit, 34);
+  assert.equal(e4.stanPo.os.racjonalizacja, 66);
   assert.equal(e4.stanPo.zasieg.find((z) => z.slug === 'egungun').wielkosc, 0.538);
   assert.equal(e4.stanPo.zasieg.find((z) => z.slug === 'selkie-sule-skerry').wielkosc, 0.49);
-  assert.equal(e4.stanPo.zasieg.find((z) => z.slug === 'indra').wielkosc, 0.323);
+  assert.equal(e4.stanPo.zasieg.find((z) => z.slug === 'indra').wielkosc, 0.346);
 
   assert.deepEqual(
     e5.uczestnicy.map((u) => [u.slug, u.saldoPrzed, u.saldoPo]),
@@ -145,8 +145,8 @@ test('Tom I: epoki przechodzą sekwencyjnie i oś zamyka się na 100', async () 
       ['lincoln-imp', 10, 12],
     ]
   );
-  assert.equal(e5.stanPo.os.mit, 32);
-  assert.equal(e5.stanPo.os.racjonalizacja, 68);
+  assert.equal(e5.stanPo.os.mit, 33);
+  assert.equal(e5.stanPo.os.racjonalizacja, 67);
   assert.equal(e5.stanPo.zasieg.find((z) => z.slug === 'lincoln-imp').wielkosc, 0.382);
   assert.equal(e5.stanPo.zasieg.find((z) => z.slug === 'sfinks-teby').wielkosc, 0.423);
   assert.equal(e5.stanPo.zasieg.find((z) => z.slug === 'talos-kreta').wielkosc, 0.428);
@@ -159,9 +159,9 @@ test('Tom I: epoki przechodzą sekwencyjnie i oś zamyka się na 100', async () 
       ['empusa-korynt', 19, 18],
     ]
   );
-  assert.equal(e6.stanPo.os.mit, 31);
-  assert.equal(e6.stanPo.os.racjonalizacja, 69);
-  assert.equal(e6.stanPo.zasieg.find((z) => z.slug === 'pandora').wielkosc, 0.388);
+  assert.equal(e6.stanPo.os.mit, 32);
+  assert.equal(e6.stanPo.os.racjonalizacja, 68);
+  assert.equal(e6.stanPo.zasieg.find((z) => z.slug === 'pandora').wielkosc, 0.41);
   assert.equal(e6.stanPo.zasieg.find((z) => z.slug === 'morowa-panna').wielkosc, 0.318);
   assert.equal(e6.stanPo.zasieg.find((z) => z.slug === 'empusa-korynt').wielkosc, 0.469);
 
@@ -173,10 +173,10 @@ test('Tom I: epoki przechodzą sekwencyjnie i oś zamyka się na 100', async () 
       ['syama-i-sarvara', 12, 11],
     ]
   );
-  assert.equal(e7.stanPo.os.mit, 30);
-  assert.equal(e7.stanPo.os.racjonalizacja, 70);
+  assert.equal(e7.stanPo.os.mit, 31);
+  assert.equal(e7.stanPo.os.racjonalizacja, 69);
   assert.equal(e7.meta.poprzednik, 'epoka-6');
-  assert.equal(e7.stanPo.zasieg.find((z) => z.slug === 'protostates').wielkosc, 0.323);
+  assert.equal(e7.stanPo.zasieg.find((z) => z.slug === 'protostates').wielkosc, 0.345);
   assert.equal(e7.stanPo.zasieg.find((z) => z.slug === 'knecht-z-koptos').wielkosc, 0.366);
   assert.equal(e7.stanPo.zasieg.find((z) => z.slug === 'syama-i-sarvara').wielkosc, 0.349);
   // S3: odwołanie poprzednik widoczne także w grafie epok (bez cyklu)
