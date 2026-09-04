@@ -286,3 +286,22 @@ aktualne zasięgi (`zbudujPodsumowanieTomu` na świeżym indeksie) i uaktualnij
 asercje w `test/kronika.test.js` w TYM SAMYM kroku — precedens:
 „przekalibracja osi i zasięgów" w PR #19. I pilnuj L19: brama testowa bez
 potoku.
+
+## L21 (2026-09-04, AME) — commit poza PR-em to sierota: kod niewidzialny dla audytu i kolejnych sesji
+
+**Objaw:** po kilku auto-sesjach (cykl cronowy) właściciel znalazł commit,
+który wylądował poza jakimkolwiek PR; równolegle PR #22 (auto2) wisiał
+otwarty z 15 commitami i statusem `mergeable=false` — kolejne sesje jechały
+dalej zamiast go ratować.
+**Przyczyna:** w modelu „1 sesja = 1 gałąź = 1 PR" każdy commit MUSI leżeć na
+gałęzi z otwartym PR do main. Commit gdziekolwiek indziej (main, detached
+HEAD, cudza gałąź) jest osierocony: nie wchodzi w audyt, nie jest widziany
+przez sesje startujące od main, a jego praca przepada po końcu sandboxa.
+Wiszący PR z konfliktem to ten sam błąd jeden rząd wyżej — praca istnieje,
+ale nie da się jej scalić, więc de facto też przepada.
+**Reguła (twarda):** przed KAŻDYM commitem sprawdź
+`git rev-parse --abbrev-ref HEAD` — jeśli to nie gałąź własnej sesji,
+natychmiast przełącz się na właściwą i dopiero commituj. Auto-sesja na
+starcie sprząta sieroty: otwarty PR `session/*-auto` z `mergeable=false`
+rozwiązuje (rebase względem main → testy → scalenie), a wartościowe commity
+bez PR wciąga cherry-pickiem na swoją gałąź. Nic nie zostaje wiszące.
