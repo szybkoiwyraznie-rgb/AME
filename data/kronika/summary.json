@@ -57,8 +57,8 @@
       ],
       "stanPo": {
         "os": {
-          "mit": 36,
-          "racjonalizacja": 64
+          "mit": 37,
+          "racjonalizacja": 63
         },
         "zasieg": [
           {
@@ -79,7 +79,7 @@
           },
           {
             "slug": "drangue-shala",
-            "wielkosc": 0.453
+            "wielkosc": 0.476
           },
           {
             "slug": "egungun",
@@ -95,7 +95,7 @@
           },
           {
             "slug": "kannon-hase",
-            "wielkosc": 0.335
+            "wielkosc": 0.359
           },
           {
             "slug": "kentaur-pelion",
@@ -103,7 +103,7 @@
           },
           {
             "slug": "knecht-z-koptos",
-            "wielkosc": 0.324
+            "wielkosc": 0.347
           },
           {
             "slug": "lincoln-imp",
@@ -127,7 +127,7 @@
           },
           {
             "slug": "selkie-sule-skerry",
-            "wielkosc": 0.476
+            "wielkosc": 0.5
           },
           {
             "slug": "sfinks-teby",
@@ -166,7 +166,7 @@
           {
             "kultura": "albania",
             "kult": "drangue-shala",
-            "wielkosc": 0.453
+            "wielkosc": 0.476
           },
           {
             "kultura": "joruba",
@@ -186,7 +186,7 @@
           {
             "kultura": "japonia",
             "kult": "kannon-hase",
-            "wielkosc": 0.335
+            "wielkosc": 0.359
           },
           {
             "kultura": "grecja",
@@ -196,7 +196,7 @@
           {
             "kultura": "grecja",
             "kult": "knecht-z-koptos",
-            "wielkosc": 0.324
+            "wielkosc": 0.347
           },
           {
             "kultura": "anglia",
@@ -226,7 +226,7 @@
           {
             "kultura": "szkocja-polnocna",
             "kult": "selkie-sule-skerry",
-            "wielkosc": 0.476
+            "wielkosc": 0.5
           },
           {
             "kultura": "grecja",
@@ -447,8 +447,8 @@
       ],
       "stanPo": {
         "os": {
-          "mit": 34,
-          "racjonalizacja": 66
+          "mit": 35,
+          "racjonalizacja": 65
         },
         "zasieg": [
           {
@@ -469,7 +469,7 @@
           },
           {
             "slug": "drangue-shala",
-            "wielkosc": 0.453
+            "wielkosc": 0.476
           },
           {
             "slug": "egungun",
@@ -485,7 +485,7 @@
           },
           {
             "slug": "kannon-hase",
-            "wielkosc": 0.335
+            "wielkosc": 0.359
           },
           {
             "slug": "kentaur-pelion",
@@ -493,7 +493,7 @@
           },
           {
             "slug": "knecht-z-koptos",
-            "wielkosc": 0.324
+            "wielkosc": 0.347
           },
           {
             "slug": "lincoln-imp",
@@ -517,7 +517,7 @@
           },
           {
             "slug": "selkie-sule-skerry",
-            "wielkosc": 0.476
+            "wielkosc": 0.5
           },
           {
             "slug": "sfinks-teby",
@@ -556,7 +556,7 @@
           {
             "kultura": "albania",
             "kult": "drangue-shala",
-            "wielkosc": 0.453
+            "wielkosc": 0.476
           },
           {
             "kultura": "joruba",
@@ -576,7 +576,7 @@
           {
             "kultura": "japonia",
             "kult": "kannon-hase",
-            "wielkosc": 0.335
+            "wielkosc": 0.359
           },
           {
             "kultura": "grecja",
@@ -586,7 +586,7 @@
           {
             "kultura": "grecja",
             "kult": "knecht-z-koptos",
-            "wielkosc": 0.324
+            "wielkosc": 0.347
           },
           {
             "kultura": "anglia",
@@ -616,7 +616,7 @@
           {
             "kultura": "szkocja-polnocna",
             "kult": "selkie-sule-skerry",
-            "wielkosc": 0.476
+            "wielkosc": 0.5
           },
           {
             "kultura": "grecja",
@@ -855,8 +855,8 @@
       ],
       "stanPo": {
         "os": {
-          "mit": 32,
-          "racjonalizacja": 68
+          "mit": 33,
+          "racjonalizacja": 67
         },
         "zasieg": [
           {
@@ -877,7 +877,7 @@
           },
           {
             "slug": "drangue-shala",
-            "wielkosc": 0.453
+            "wielkosc": 0.476
           },
           {
             "slug": "egungun",
@@ -893,7 +893,7 @@
           },
           {
             "slug": "kannon-hase",
-            "wielkosc": 0.335
+            "wielkosc": 0.359
           },
           {
             "slug": "kentaur-pelion",
@@ -901,7 +901,7 @@
           },
           {
             "slug": "knecht-z-koptos",
-            "wielkosc": 0.324
+            "wielkosc": 0.347
           },
           {
             "slug": "lincoln-imp",
@@ -925,7 +925,7 @@
           },
           {
             "slug": "selkie-sule-skerry",
-            "wielkosc": 0.476
+            "wielkosc": 0.5
           },
           {
             "slug": "sfinks-teby",
@@ -964,7 +964,7 @@
           {
             "kultura": "albania",
             "kult": "drangue-shala",
-            "wielkosc": 0.453
+            "wielkosc": 0.476
           },
           {
             "kultura": "joruba",
@@ -984,7 +984,7 @@
           {
             "kultura": "japonia",
             "kult": "kannon-hase",
-            "wielkosc": 0.335
+            "wielkosc": 0.359
           },
           {
             "kultura": "grecja",
@@ -994,7 +994,7 @@
           {
             "kultura": "grecja",
             "kult": "knecht-z-koptos",
-            "wielkosc": 0.324
+            "wielkosc": 0.347
           },
           {
             "kultura": "anglia",
@@ -1024,7 +1024,7 @@
           {
             "kultura": "szkocja-polnocna",
             "kult": "selkie-sule-skerry",
-            "wielkosc": 0.476
+            "wielkosc": 0.5
           },
           {
             "kultura": "grecja",
@@ -1278,8 +1278,8 @@
       ],
       "stanPo": {
         "os": {
-          "mit": 31,
-          "racjonalizacja": 69
+          "mit": 32,
+          "racjonalizacja": 68
         },
         "zasieg": [
           {
@@ -1300,7 +1300,7 @@
           },
           {
             "slug": "drangue-shala",
-            "wielkosc": 0.453
+            "wielkosc": 0.476
           },
           {
             "slug": "egungun",
@@ -1316,7 +1316,7 @@
           },
           {
             "slug": "kannon-hase",
-            "wielkosc": 0.335
+            "wielkosc": 0.359
           },
           {
             "slug": "kentaur-pelion",
@@ -1324,7 +1324,7 @@
           },
           {
             "slug": "knecht-z-koptos",
-            "wielkosc": 0.324
+            "wielkosc": 0.347
           },
           {
             "slug": "lincoln-imp",
@@ -1348,7 +1348,7 @@
           },
           {
             "slug": "selkie-sule-skerry",
-            "wielkosc": 0.466
+            "wielkosc": 0.49
           },
           {
             "slug": "sfinks-teby",
@@ -1387,7 +1387,7 @@
           {
             "kultura": "albania",
             "kult": "drangue-shala",
-            "wielkosc": 0.453
+            "wielkosc": 0.476
           },
           {
             "kultura": "joruba",
@@ -1407,7 +1407,7 @@
           {
             "kultura": "japonia",
             "kult": "kannon-hase",
-            "wielkosc": 0.335
+            "wielkosc": 0.359
           },
           {
             "kultura": "grecja",
@@ -1417,7 +1417,7 @@
           {
             "kultura": "grecja",
             "kult": "knecht-z-koptos",
-            "wielkosc": 0.324
+            "wielkosc": 0.347
           },
           {
             "kultura": "anglia",
@@ -1447,7 +1447,7 @@
           {
             "kultura": "szkocja-polnocna",
             "kult": "selkie-sule-skerry",
-            "wielkosc": 0.466
+            "wielkosc": 0.49
           },
           {
             "kultura": "grecja",
@@ -1512,8 +1512,8 @@
           },
           {
             "slug": "selkie-sule-skerry",
-            "przed": 0.476,
-            "po": 0.466,
+            "przed": 0.5,
+            "po": 0.49,
             "delta": -0.01,
             "opis": "Świat uczy się nazywać skórę i w ten sposób lekko traci strach przed Selkie; jej legenda kurczy się o 1 pp."
           },
@@ -1536,8 +1536,8 @@
           {
             "kultura": "szkocja-polnocna",
             "kult": "selkie-sule-skerry",
-            "przed": 0.476,
-            "po": 0.466,
+            "przed": 0.5,
+            "po": 0.49,
             "delta": -0.01
           },
           {
@@ -1701,8 +1701,8 @@
       ],
       "stanPo": {
         "os": {
-          "mit": 30,
-          "racjonalizacja": 70
+          "mit": 31,
+          "racjonalizacja": 69
         },
         "zasieg": [
           {
@@ -1723,7 +1723,7 @@
           },
           {
             "slug": "drangue-shala",
-            "wielkosc": 0.453
+            "wielkosc": 0.476
           },
           {
             "slug": "egungun",
@@ -1739,7 +1739,7 @@
           },
           {
             "slug": "kannon-hase",
-            "wielkosc": 0.335
+            "wielkosc": 0.359
           },
           {
             "slug": "kentaur-pelion",
@@ -1747,7 +1747,7 @@
           },
           {
             "slug": "knecht-z-koptos",
-            "wielkosc": 0.324
+            "wielkosc": 0.347
           },
           {
             "slug": "lincoln-imp",
@@ -1771,7 +1771,7 @@
           },
           {
             "slug": "selkie-sule-skerry",
-            "wielkosc": 0.466
+            "wielkosc": 0.49
           },
           {
             "slug": "sfinks-teby",
@@ -1810,7 +1810,7 @@
           {
             "kultura": "albania",
             "kult": "drangue-shala",
-            "wielkosc": 0.453
+            "wielkosc": 0.476
           },
           {
             "kultura": "joruba",
@@ -1830,7 +1830,7 @@
           {
             "kultura": "japonia",
             "kult": "kannon-hase",
-            "wielkosc": 0.335
+            "wielkosc": 0.359
           },
           {
             "kultura": "grecja",
@@ -1840,7 +1840,7 @@
           {
             "kultura": "grecja",
             "kult": "knecht-z-koptos",
-            "wielkosc": 0.324
+            "wielkosc": 0.347
           },
           {
             "kultura": "anglia",
@@ -1870,7 +1870,7 @@
           {
             "kultura": "szkocja-polnocna",
             "kult": "selkie-sule-skerry",
-            "wielkosc": 0.466
+            "wielkosc": 0.49
           },
           {
             "kultura": "grecja",
@@ -2121,8 +2121,8 @@
       ],
       "stanPo": {
         "os": {
-          "mit": 29,
-          "racjonalizacja": 71
+          "mit": 30,
+          "racjonalizacja": 70
         },
         "zasieg": [
           {
@@ -2143,7 +2143,7 @@
           },
           {
             "slug": "drangue-shala",
-            "wielkosc": 0.453
+            "wielkosc": 0.476
           },
           {
             "slug": "egungun",
@@ -2159,7 +2159,7 @@
           },
           {
             "slug": "kannon-hase",
-            "wielkosc": 0.335
+            "wielkosc": 0.359
           },
           {
             "slug": "kentaur-pelion",
@@ -2167,7 +2167,7 @@
           },
           {
             "slug": "knecht-z-koptos",
-            "wielkosc": 0.324
+            "wielkosc": 0.347
           },
           {
             "slug": "lincoln-imp",
@@ -2191,7 +2191,7 @@
           },
           {
             "slug": "selkie-sule-skerry",
-            "wielkosc": 0.466
+            "wielkosc": 0.49
           },
           {
             "slug": "sfinks-teby",
@@ -2230,7 +2230,7 @@
           {
             "kultura": "albania",
             "kult": "drangue-shala",
-            "wielkosc": 0.453
+            "wielkosc": 0.476
           },
           {
             "kultura": "joruba",
@@ -2250,7 +2250,7 @@
           {
             "kultura": "japonia",
             "kult": "kannon-hase",
-            "wielkosc": 0.335
+            "wielkosc": 0.359
           },
           {
             "kultura": "grecja",
@@ -2260,7 +2260,7 @@
           {
             "kultura": "grecja",
             "kult": "knecht-z-koptos",
-            "wielkosc": 0.324
+            "wielkosc": 0.347
           },
           {
             "kultura": "anglia",
@@ -2290,7 +2290,7 @@
           {
             "kultura": "szkocja-polnocna",
             "kult": "selkie-sule-skerry",
-            "wielkosc": 0.466
+            "wielkosc": 0.49
           },
           {
             "kultura": "grecja",
@@ -2550,8 +2550,8 @@
       ],
       "stanPo": {
         "os": {
-          "mit": 28,
-          "racjonalizacja": 72
+          "mit": 29,
+          "racjonalizacja": 71
         },
         "zasieg": [
           {
@@ -2572,7 +2572,7 @@
           },
           {
             "slug": "drangue-shala",
-            "wielkosc": 0.453
+            "wielkosc": 0.476
           },
           {
             "slug": "egungun",
@@ -2588,7 +2588,7 @@
           },
           {
             "slug": "kannon-hase",
-            "wielkosc": 0.335
+            "wielkosc": 0.359
           },
           {
             "slug": "kentaur-pelion",
@@ -2596,7 +2596,7 @@
           },
           {
             "slug": "knecht-z-koptos",
-            "wielkosc": 0.334
+            "wielkosc": 0.357
           },
           {
             "slug": "lincoln-imp",
@@ -2620,7 +2620,7 @@
           },
           {
             "slug": "selkie-sule-skerry",
-            "wielkosc": 0.466
+            "wielkosc": 0.49
           },
           {
             "slug": "sfinks-teby",
@@ -2659,7 +2659,7 @@
           {
             "kultura": "albania",
             "kult": "drangue-shala",
-            "wielkosc": 0.453
+            "wielkosc": 0.476
           },
           {
             "kultura": "joruba",
@@ -2679,7 +2679,7 @@
           {
             "kultura": "japonia",
             "kult": "kannon-hase",
-            "wielkosc": 0.335
+            "wielkosc": 0.359
           },
           {
             "kultura": "grecja",
@@ -2689,7 +2689,7 @@
           {
             "kultura": "grecja",
             "kult": "knecht-z-koptos",
-            "wielkosc": 0.334
+            "wielkosc": 0.357
           },
           {
             "kultura": "anglia",
@@ -2719,7 +2719,7 @@
           {
             "kultura": "szkocja-polnocna",
             "kult": "selkie-sule-skerry",
-            "wielkosc": 0.466
+            "wielkosc": 0.49
           },
           {
             "kultura": "grecja",
@@ -2791,8 +2791,8 @@
           },
           {
             "slug": "knecht-z-koptos",
-            "przed": 0.324,
-            "po": 0.334,
+            "przed": 0.347,
+            "po": 0.357,
             "delta": 0.01,
             "opis": "Opowieść o tłuczku, który pierwszy zostawił wodę przy progu, uczy słuchaczy kończyć rozkazy słowem — Koptos zaczyna zamykać drzwi po zmroku."
           },
@@ -2815,8 +2815,8 @@
           {
             "kultura": "grecja",
             "kult": "knecht-z-koptos",
-            "przed": 0.324,
-            "po": 0.334,
+            "przed": 0.347,
+            "po": 0.357,
             "delta": 0.01
           },
           {
@@ -2929,8 +2929,8 @@
   ],
   "stanPo": {
     "os": {
-      "mit": 28,
-      "racjonalizacja": 72
+      "mit": 29,
+      "racjonalizacja": 71
     },
     "zasieg": [
       {
@@ -2951,7 +2951,7 @@
       },
       {
         "slug": "drangue-shala",
-        "wielkosc": 0.453
+        "wielkosc": 0.476
       },
       {
         "slug": "egungun",
@@ -2967,7 +2967,7 @@
       },
       {
         "slug": "kannon-hase",
-        "wielkosc": 0.335
+        "wielkosc": 0.359
       },
       {
         "slug": "kentaur-pelion",
@@ -2975,7 +2975,7 @@
       },
       {
         "slug": "knecht-z-koptos",
-        "wielkosc": 0.334
+        "wielkosc": 0.357
       },
       {
         "slug": "lincoln-imp",
@@ -2999,7 +2999,7 @@
       },
       {
         "slug": "selkie-sule-skerry",
-        "wielkosc": 0.466
+        "wielkosc": 0.49
       },
       {
         "slug": "sfinks-teby",
@@ -3038,7 +3038,7 @@
       {
         "kultura": "albania",
         "kult": "drangue-shala",
-        "wielkosc": 0.453
+        "wielkosc": 0.476
       },
       {
         "kultura": "joruba",
@@ -3058,7 +3058,7 @@
       {
         "kultura": "japonia",
         "kult": "kannon-hase",
-        "wielkosc": 0.335
+        "wielkosc": 0.359
       },
       {
         "kultura": "grecja",
@@ -3068,7 +3068,7 @@
       {
         "kultura": "grecja",
         "kult": "knecht-z-koptos",
-        "wielkosc": 0.334
+        "wielkosc": 0.357
       },
       {
         "kultura": "anglia",
@@ -3098,7 +3098,7 @@
       {
         "kultura": "szkocja-polnocna",
         "kult": "selkie-sule-skerry",
-        "wielkosc": 0.466
+        "wielkosc": 0.49
       },
       {
         "kultura": "grecja",

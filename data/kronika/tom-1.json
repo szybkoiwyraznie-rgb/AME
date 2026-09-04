@@ -6,8 +6,8 @@
   "status": "otwarta",
   "stanStart": {
     "os": {
-      "mit": 38,
-      "racjonalizacja": 62
+      "mit": 39,
+      "racjonalizacja": 61
     },
     "zasieg": [
       {
@@ -28,7 +28,7 @@
       },
       {
         "slug": "drangue-shala",
-        "wielkosc": 0.453
+        "wielkosc": 0.476
       },
       {
         "slug": "egungun",
@@ -44,7 +44,7 @@
       },
       {
         "slug": "kannon-hase",
-        "wielkosc": 0.335
+        "wielkosc": 0.359
       },
       {
         "slug": "kentaur-pelion",
@@ -52,7 +52,7 @@
       },
       {
         "slug": "knecht-z-koptos",
-        "wielkosc": 0.324
+        "wielkosc": 0.347
       },
       {
         "slug": "lincoln-imp",
@@ -76,7 +76,7 @@
       },
       {
         "slug": "selkie-sule-skerry",
-        "wielkosc": 0.476
+        "wielkosc": 0.5
       },
       {
         "slug": "sfinks-teby",
@@ -115,7 +115,7 @@
       {
         "kultura": "albania",
         "kult": "drangue-shala",
-        "wielkosc": 0.453
+        "wielkosc": 0.476
       },
       {
         "kultura": "joruba",
@@ -135,7 +135,7 @@
       {
         "kultura": "japonia",
         "kult": "kannon-hase",
-        "wielkosc": 0.335
+        "wielkosc": 0.359
       },
       {
         "kultura": "grecja",
@@ -145,7 +145,7 @@
       {
         "kultura": "grecja",
         "kult": "knecht-z-koptos",
-        "wielkosc": 0.324
+        "wielkosc": 0.347
       },
       {
         "kultura": "anglia",
@@ -175,7 +175,7 @@
       {
         "kultura": "szkocja-polnocna",
         "kult": "selkie-sule-skerry",
-        "wielkosc": 0.476
+        "wielkosc": 0.5
       },
       {
         "kultura": "grecja",
