@@ -2173,3 +2173,30 @@ zielone. Po scaleniu: `git pull origin main` + ponowne testy 236/236 + build
 gałęzi względem `mergedAt` ich PR-ów — żadna nie ma commitów po scaleniu
 (jedyna historyczna sierota, sortowanie kartoteki z auto4b, została
 uratowana przez PR #27 i jest na main). Brak wiszących PR-ów.
+
+## Sesja 2026-09-04 (auto 12) (gałąź session/2026-09-04-auto12) — audyt i auto-scalenie PR #30, ratunek sieroty C4
+
+**Audyt PR #30 (session/2026-09-04-auto11) → auto-scalenie (squash `2783d80`).**
+Plik po pliku: (1) `data/manifestations/nessos.json` — pogłębienie C1
+(ratunek sieroty z auto9): trzy nowe pozycje dokumentacji z pełnymi URL
+(Higinus „Fabulae” 31.6/33–36 via ToposText, Dante „Piekło” XII via
+Wikisource, „Nessos Painter” via Wikipedia EN), dopisek w
+`pochodzenie_i_kultura` (amfora Malarza Nessosa z inskrypcją NETOS,
+Dante: przewoźnik nad Flegetontem), `meta.modyfikacje` z datą-godziną
+i opisem dla czytelnika (PROTOKÓŁ §9) — zgodne z ADR 0008/0011/0017;
+(2) `data/index.json` — regeneracja (feed „Co nowego” + pozycja zmiany);
+(3) `docs/kronika-*.html` — regeneracja raportów (osadzona kartoteka).
+Brak usterek względem ADR i protokołu. Bramy na gałęzi PR: `npm test`
+236/236, `npm run build`, `npm run check` zielone; PR nie był draftem,
+mergeable. Po scaleniu: `git pull origin main` + ponowne testy 236/236
++ build — weryfikacja końcowa zielona (warunek d procedury auto-scalania).
+Uwaga do rejestru: sesje auto10 i auto11 nie dopisały swoich wpisów do
+niniejszego dziennika — uzupełnione pośrednio niniejszym wpisem audytu.
+
+**Sprzątanie sierot (L21):** przegląd 11 zdalnych gałęzi sesyjnych
+(`session/*-auto*`, `arena/sesja-*`) pod kątem plików nieobecnych na main.
+Na `session/2026-09-04-auto10` znaleziono commit `c511420` (19:31 UTC) —
+wypchnięty 6 minut PO squash-scaleniu jego PR #29 (19:25 UTC), więc nie
+objęty scaleniem: kompletny wpis C4 „Neith z Sais” (Moonlit Meditation,
+EOE #69) + tag `egipt` w kanonie + rekalibracja Kroniki. Wpis wciągnięty
+cherry-pickiem na niniejszą gałąź po weryfikacji (poniżej).
