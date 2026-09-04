@@ -6,13 +6,13 @@
   "status": "otwarta",
   "stanStart": {
     "os": {
-      "mit": 40,
-      "racjonalizacja": 60
+      "mit": 39,
+      "racjonalizacja": 61
     },
     "zasieg": [
       {
         "slug": "agni",
-        "wielkosc": 0.395
+        "wielkosc": 0.416
       },
       {
         "slug": "balor",
@@ -32,7 +32,7 @@
       },
       {
         "slug": "egungun",
-        "wielkosc": 0.458
+        "wielkosc": 0.479
       },
       {
         "slug": "empusa-korynt",
@@ -63,6 +63,10 @@
         "wielkosc": 0.342
       },
       {
+        "slug": "neith-z-sais",
+        "wielkosc": 0.174
+      },
+      {
         "slug": "nessos",
         "wielkosc": 0.384
       },
@@ -80,7 +84,7 @@
       },
       {
         "slug": "sfinks-teby",
-        "wielkosc": 0.437
+        "wielkosc": 0.458
       },
       {
         "slug": "syama-i-sarvara",
@@ -95,7 +99,7 @@
       {
         "kultura": "indie",
         "kult": "agni",
-        "wielkosc": 0.395
+        "wielkosc": 0.416
       },
       {
         "kultura": "irlandia",
@@ -120,7 +124,7 @@
       {
         "kultura": "joruba",
         "kult": "egungun",
-        "wielkosc": 0.458
+        "wielkosc": 0.479
       },
       {
         "kultura": "grecja",
@@ -158,6 +162,11 @@
         "wielkosc": 0.342
       },
       {
+        "kultura": "egipt",
+        "kult": "neith-z-sais",
+        "wielkosc": 0.174
+      },
+      {
         "kultura": "grecja",
         "kult": "nessos",
         "wielkosc": 0.384
@@ -180,7 +189,7 @@
       {
         "kultura": "grecja",
         "kult": "sfinks-teby",
-        "wielkosc": 0.437
+        "wielkosc": 0.458
       },
       {
         "kultura": "indie",

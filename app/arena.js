@@ -35,6 +35,7 @@ export const WAGA_MOTYWU = {
   ratunek: { atak: 1, obrona: 6 },
   uzdrowienie: { atak: 0, obrona: 6 },
   oczyszczenie: { atak: 4, obrona: 3 },
+  tkanie: { atak: 2, obrona: 4 },
 };
 
 /** Kontry motywów: motyw klucza tłumi siłę motywu z listy (mnożnik ataku). */

@@ -255,6 +255,21 @@
       "tag": "plomienna-postac",
       "kategoria": "postac",
       "opis": "Postać z ognia: włosy-płomienie, rozżarzone ciało, aura żaru"
+    },
+    {
+      "tag": "egipt",
+      "kategoria": "kultura",
+      "opis": "Religia i kultura starożytnego Egiptu (Delta i Dolina Nilu)"
+    },
+    {
+      "tag": "bogini-tkaczka",
+      "kategoria": "typ",
+      "opis": "Bogini tkająca byt albo losy; stwórczyni i opiekunka płótna"
+    },
+    {
+      "tag": "tkanie",
+      "kategoria": "motyw",
+      "opis": "Tkanie jako kosmologia: byt, losy i płótno snute przez byt lub wokół niego"
     }
   ]
 }

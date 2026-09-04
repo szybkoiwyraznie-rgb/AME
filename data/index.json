@@ -1,7 +1,7 @@
 {
   "wersja": 3,
-  "buildTime": "2026-09-04T19:25:44.857Z",
-  "liczba": 20,
+  "buildTime": "2026-09-04T19:37:29.576Z",
+  "liczba": 21,
   "liczbaSkitow": 40,
   "kanon": {
     "kategorie": [
@@ -12,7 +12,7 @@
         "min": 1,
         "max": 1,
         "opis": "Jedna tradycja, z której byt pochodzi (PROTOKÓŁ §2: zakaz mieszanek synkretycznych)",
-        "ile": 11
+        "ile": 12
       },
       {
         "id": "typ",
@@ -21,7 +21,7 @@
         "min": 1,
         "max": 1,
         "opis": "Czym byt jest — podstawowy filtr kartoteki",
-        "ile": 13
+        "ile": 14
       },
       {
         "id": "motyw",
@@ -30,7 +30,7 @@
         "min": 1,
         "max": 2,
         "opis": "Co wiąże byty i spoiwa sieci: powiązania w kartotekach i tematy SKITów",
-        "ile": 13
+        "ile": 14
       },
       {
         "id": "postac",
@@ -334,6 +334,7 @@
       "kategoria": "motyw",
       "opis": "Straż granicy: byt pilnuje jednego terytorium, przejścia albo bramy",
       "wpisy": [
+        "neith-z-sais",
         "syama-i-sarvara",
         "talos-kreta"
       ]
@@ -396,6 +397,27 @@
       "wpisy": [
         "agni"
       ]
+    },
+    "egipt": {
+      "kategoria": "kultura",
+      "opis": "Religia i kultura starożytnego Egiptu (Delta i Dolina Nilu)",
+      "wpisy": [
+        "neith-z-sais"
+      ]
+    },
+    "bogini-tkaczka": {
+      "kategoria": "typ",
+      "opis": "Bogini tkająca byt albo losy; stwórczyni i opiekunka płótna",
+      "wpisy": [
+        "neith-z-sais"
+      ]
+    },
+    "tkanie": {
+      "kategoria": "motyw",
+      "opis": "Tkanie jako kosmologia: byt, losy i płótno snute przez byt lub wokół niego",
+      "wpisy": [
+        "neith-z-sais"
+      ]
     }
   },
   "manifestacje": [
@@ -438,6 +460,7 @@
         "barbarossa-kyffhaeuser",
         "indra",
         "kannon-hase",
+        "neith-z-sais",
         "syama-i-sarvara"
       ],
       "obraz": "assets/wizualizacje/agni.jpg",
@@ -683,6 +706,7 @@
         "empusa-korynt",
         "kannon-hase",
         "lincoln-imp",
+        "neith-z-sais",
         "selkie-sule-skerry"
       ],
       "obraz": "assets/wizualizacje/egungun.jpg",
@@ -1024,6 +1048,40 @@
       ]
     },
     {
+      "slug": "neith-z-sais",
+      "nazwa": "Neith z Sais — tkaczka początku",
+      "nazwy_alternatywne": [
+        "Neit",
+        "Nit",
+        "Net",
+        "Atena Saicka (identyfikacja grecka)",
+        "Matka i Ojciec wszystkich rzeczy"
+      ],
+      "karta": "Moonlit Meditation",
+      "miejscowosc": "Sais (obecnie Sa el-Hagar) — miasto w zachodniej Delcie Nilu, główny ośrodek kultu Neith; tu stała świątynia, na której posągu wyryto napis «Jestem wszystkim, co było, jest i będzie»",
+      "kraj": "Egipt (muhafaza al-Gharbijja)",
+      "lat": 30.9647,
+      "lon": 30.7683,
+      "tagi": [
+        "bogini-tkaczka",
+        "egipt",
+        "obrona",
+        "tkanie"
+      ],
+      "powiazania": [
+        "agni",
+        "egungun",
+        "sfinks-teby"
+      ],
+      "backlinki": [],
+      "obraz": null,
+      "trofea": {
+        "pierwotne": "Czółenko tkackie z sali ofiarnej w Sais — nawój nici, która nigdy się nie kończy; dotknięte o świcie w Noc Lamp przestaje się poruszać i można je zabrać, ale kto spróbuje je przeciąć, tnie własny los",
+        "wtorne": "Gliniana miseczka-lampa z Nocy Lamp, z warstwą soli i spłowiałym knotem — wciąż ciepła, choć od święta minęły wieki; dowód, że ktoś dotrwał z płomieniem do świtu"
+      },
+      "skity": []
+    },
+    {
       "slug": "nessos",
       "nazwa": "Nessos",
       "nazwy_alternatywne": [
@@ -1251,6 +1309,7 @@
         "kentaur-pelion",
         "knecht-z-koptos",
         "morowa-panna",
+        "neith-z-sais",
         "protostates",
         "syama-i-sarvara",
         "talos-kreta"
@@ -2052,6 +2111,14 @@
     }
   ],
   "aktualizacje": [
+    {
+      "data": "2026-09-04 19:30",
+      "typ": "manifestacja",
+      "akcja": "nowa",
+      "slug": "neith-z-sais",
+      "tytul": "Neith z Sais — tkaczka początku",
+      "opis": "wpis w kartotece — materializacja karty „Moonlit Meditation”"
+    },
     {
       "data": "2026-09-04 19:20",
       "typ": "manifestacja",
