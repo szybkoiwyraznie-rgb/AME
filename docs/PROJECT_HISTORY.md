@@ -1907,3 +1907,33 @@ pages-build-deployment zielone (33871969318). Indeks: 20 wpisów /
 merge PR #13 wykonał agent po błędnym odczytaniu akceptacji featurów jako
 delegacji scalenia — reguła „merge wyłącznie właściciel" doprecyzowana
 w lekcji L18 (poniżej w tej sesji).
+
+## Sesja 2026-09-04 (2) (gałąź arena/sesja-2026-09-04-p2) — Pętla Jakości, dwa obiegi
+
+Po audycie PR #13 (wyżej, brak usterek) — Pętla Jakości na zlecenie
+właściciela, dwa pełne obiegi C1 → C3 → C2.
+
+**C1 — treść (research www, ADR 0008):**
+- `morowa-panna` — źródło pierwotne XIX w.: Wójcicki „Klechdy starożytne"
+  (1837) z cytatem Mickiewicza (litewska ballada o ręce z czerwoną chustką
+  przez okno) i relacjami Hucułów o cholerze w postaci niewiasty;
+- `drangue-shala` — warunki śmierci: nieśmiertelność z pojedynczej
+  koniunkcji urodzeniowej i wariant z Rugovy (spojrzenie obcego); nowa
+  treść scalona z istniejącą pozycją (walidator odrzucił duplikat URL).
+
+**C3 — SKITy (składy unikalne):**
+- „Pod dachem" (Knecht × Egungun × Ben-Varrey, 290 słów) — dach jako
+  obietnica powrotu;
+- „Pogoda na jutro" (Drangue × Selkie × Knecht × Kannon, 296 słów) —
+  pierwsza czwórka sesji; seedy Kroniki przekalibrowane skryptem po obu.
+
+**C2 — featury (do akceptacji właściciela; scalanie = właściciel, L18):**
+- walidator opisów meta (`bladOpisuMeta`): twardy zakaz oznaczeń
+  wewnętrznych (C1/M3/„Pętla Jakości"/„PROTOKÓŁ") w `meta.modyfikacje[].opis`
+  wpisów i skitów (PROTOKÓŁ §9); cała baza przechodzi, testy kontraktowe;
+- widok „rozmowy" na mapie: łuki między pinezkami uczestników otwartego
+  skitu (warstwa `.rozmowa`, czysta `paryRozmowySkitu`, test atrapy DOM);
+  cache-bust `c5-12`.
+
+**Incydent:** sandbox wyczyścił `~/.narzedzia` (narzędzia headless) w trakcie
+sesji — repo nietknięte; bramy: 212/212.
