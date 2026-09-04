@@ -1937,3 +1937,21 @@ właściciela, dwa pełne obiegi C1 → C3 → C2.
 
 **Incydent:** sandbox wyczyścił `~/.narzedzia` (narzędzia headless) w trakcie
 sesji — repo nietknięte; bramy: 212/212.
+
+## Sesja 2026-09-04 (3) (gałąź arena/sesja-2026-09-04-p2, kontynuacja PR #14) — obieg pętli
+
+Kontynuacja tej samej gałęzi i PR #14 na zlecenie właściciela („kolejna
+Pętla"): audyt PR #14 nie był wymagany (PR wciąż otwarty — nowe kroki
+dokładane do niego).
+
+- **C3** SKIT „Pracownicy progu" (Protostates × Morowa Panna × Drangue,
+  297 słów) — trzech bytów z pracą na progu o pytaniu, odpowiedzi i braku
+  awansu; seedy Kroniki przekalibrowane.
+- **C1** `kentaur-pelion` — Pindar „Pythia 2” (ToposText, przekł. Svarlien)
+  jako źródło pierwotne genealogii: Kentauros z Iksiona i Nephele łączy się
+  z klaczami magnetyckimi u stóp Pelionu („like the mother below, the father
+  above”); w tej samej odzie Apollo oddaje Chejronowi niemowlę Asklepiosa.
+- **C2** wyszukiwarka Bazy Skitów (`#skity-filtr`) — filtruje wiersze po
+  temacie, tytule i uczestnikach; `temat` pozostaje katalogowe (PROTOKÓŁ
+  §8.1), więc trafia do atrybutu `data-temat` w base64 (test §8.1 pilnuje,
+  by temat nie był tekstem wiersza). Cache-bust `c5-13`, 213/213.
