@@ -2105,3 +2105,45 @@ PR jest **#22** (`session/2026-09-04-auto2`, mergeable: CONFLICTING).
 zapisu, `npm run check` zielone. ✔
 
 **Wniosek:** brak usterek względem ADR, protokołu i testów.
+
+**Ratowanie PR #22 (session/2026-09-04-auto2) — wynik: zamknięty bez
+scalenia, gałąź usunięta.** Audyt `git diff main...HEAD` wykazał, że cała
+treść PR #22 jest już na main (wchłonięta przez PR #23 i #21): 4 wpisy
+w bogatszych wersjach, 4 skity bajt w bajt identyczne, epoki Kroniki
+identyczne. Scalenie byłoby regresją (usuwałoby lekcję L20, cofało
+wyrównanie ikon awatarów z PR #21, przywracało stare oczekiwania osi
+Kroniki 37/63 przy danych 39/61). Nie było czego ratować — PR zamknięty
+z komentarzem-audytem (HEAD `42aa6ce` zostaje w historii PR).
+
+**Fix: link „Skity" otwierał pustą stronę (root cause).**
+`htmlBazySkitow()` (app/ui.js) kodowało `data-temat` Node'owym
+`Buffer.from` — w przeglądarce `ReferenceError` przerywał
+`otworzBazeSkitow()` PO dodaniu klasy `.otwarta`: pełnoekranowa pusta
+warstwa. Testy były zielone, bo Node ma `Buffer` globalnie. Naprawa:
+kodek `doB64utf8`/`zB64utf8` na `TextEncoder`+`btoa` (wspólny dla
+przeglądarki i Node), dekodowanie tematu w filtrze bazy przez `zB64utf8`
+(dotychczasowe gołe `atob` mąciło diakrytyki). Regresja w testach:
+render bazy po `delete globalThis.Buffer` + runda kodeku UTF-8.
+Lekcja: L22. Zweryfikowane live na lokalnym serwerze (baza renderuje
+pełną listę 32 skitów).
+
+**Fix: link „Kroniki" otwierał listę Epok zamiast listy Kronik.**
+Warstwa Kroniki otwiera się teraz spisem Kronik (Tomów) — karta „Tom I ·
+Kronika trzech stołów · 7 epok" z przyciskami „Epoki Tomu" (drill-down do
+kart epok z filtrem bytów) i „Raport Tomu ↗" (docs/kronika-tom-1.html);
+powrót chipem „← Kroniki". Dane: build Kroniki dokleja do `summary.json`
+spis `tomy` (aplikacja nie listuje katalogów — ADR 0002); główna księga
+żyje w `summary.json`, kolejne Tomy będą dociągane z `summary-<tom>.json`.
+Summary bez `tomy` (stary format) renderuje epoki od razu (kompatybilność).
+Zweryfikowane live: #kroniki → lista Kronik → epoki → powrót.
+
+**Auto-sesja PR #25 (session/2026-09-04-auto7)** — scalona w tej sesji
+wg procedury auto-scalania (ADR 0004 wyjątek): audyt plik po pliku (tylko
+AGENTS.md §2.3 + LESSONS.md L21, treść zgodna z zasadami), bramy zielone
+na gałęzi PR, po scaleniu `git pull origin main` + testy 229/229 + build.
+Uwaga z PR #25 o „PR #22 czeka na ratunek" jest już nieaktualna —
+PR #22 rozliczony wyżej.
+
+**Stan końcowy sesji:** PR #24 (ta gałąź) czeka na decyzję właściciela.
+`npm test` 234/234, `npm run build` + `npm run check` zielone. Cache-bust
+aplikacji: c5-17.
