@@ -1,8 +1,8 @@
 {
   "wersja": 3,
-  "buildTime": "2026-09-04T19:38:32.137Z",
+  "buildTime": "2026-09-04T19:40:37.116Z",
   "liczba": 21,
-  "liczbaSkitow": 40,
+  "liczbaSkitow": 41,
   "kanon": {
     "kategorie": [
       {
@@ -951,6 +951,7 @@
       },
       "skity": [
         "instrukcja-obslugi",
+        "jedno-pytanie",
         "pierwszy",
         "pod-dachem",
         "pogoda-na-jutro",
@@ -1079,7 +1080,9 @@
         "pierwotne": "Czółenko tkackie z sali ofiarnej w Sais — nawój nici, która nigdy się nie kończy; dotknięte o świcie w Noc Lamp przestaje się poruszać i można je zabrać, ale kto spróbuje je przeciąć, tnie własny los",
         "wtorne": "Gliniana miseczka-lampa z Nocy Lamp, z warstwą soli i spłowiałym knotem — wciąż ciepła, choć od święta minęły wieki; dowód, że ktoś dotrwał z płomieniem do świtu"
       },
-      "skity": []
+      "skity": [
+        "jedno-pytanie"
+      ]
     },
     {
       "slug": "nessos",
@@ -1169,6 +1172,7 @@
       "skity": [
         "biuro-reklamacji",
         "czwarty-stol",
+        "jedno-pytanie",
         "pierwsza-zmiana",
         "prezent-z-defektem",
         "rzeczy-znalezione",
@@ -1321,6 +1325,7 @@
       },
       "skity": [
         "instrukcja-obslugi",
+        "jedno-pytanie",
         "najgorsze-odpowiedzi",
         "pierwsza-zmiana",
         "poslaniec-i-straznicy",
@@ -1628,6 +1633,25 @@
       ],
       "slow": 267,
       "data": "2026-09-04 17:35"
+    },
+    {
+      "slug": "jedno-pytanie",
+      "tytul": "JEDNO PYTANIE",
+      "temat": "cena pytania — cztery byty, u których jedno pytanie, jedno słowo albo jedna zasada decyduje o wszystkim, porównują rachunki",
+      "uczestnicy": [
+        "knecht-z-koptos",
+        "neith-z-sais",
+        "pandora",
+        "sfinks-teby"
+      ],
+      "imiona": [
+        "Neith z Sais",
+        "Pandora",
+        "Sfinks",
+        "Knecht z Koptos"
+      ],
+      "slow": 208,
+      "data": "2026-09-04 20:05"
     },
     {
       "slug": "kalendarz-powrotow",
@@ -2111,6 +2135,14 @@
     }
   ],
   "aktualizacje": [
+    {
+      "data": "2026-09-04 20:05",
+      "typ": "skit",
+      "akcja": "nowy",
+      "slug": "jedno-pytanie",
+      "tytul": "JEDNO PYTANIE",
+      "opis": "SKIT — skład: Neith z Sais, Pandora, Sfinks, Knecht z Koptos"
+    },
     {
       "data": "2026-09-04 19:55",
       "typ": "manifestacja",

@@ -57,8 +57,8 @@
       ],
       "stanPo": {
         "os": {
-          "mit": 37,
-          "racjonalizacja": 63
+          "mit": 38,
+          "racjonalizacja": 62
         },
         "zasieg": [
           {
@@ -103,7 +103,7 @@
           },
           {
             "slug": "knecht-z-koptos",
-            "wielkosc": 0.363
+            "wielkosc": 0.384
           },
           {
             "slug": "lincoln-imp",
@@ -115,7 +115,7 @@
           },
           {
             "slug": "neith-z-sais",
-            "wielkosc": 0.174
+            "wielkosc": 0.195
           },
           {
             "slug": "nessos",
@@ -123,7 +123,7 @@
           },
           {
             "slug": "pandora",
-            "wielkosc": 0.405
+            "wielkosc": 0.426
           },
           {
             "slug": "protostates",
@@ -135,7 +135,7 @@
           },
           {
             "slug": "sfinks-teby",
-            "wielkosc": 0.458
+            "wielkosc": 0.479
           },
           {
             "slug": "syama-i-sarvara",
@@ -200,7 +200,7 @@
           {
             "kultura": "grecja",
             "kult": "knecht-z-koptos",
-            "wielkosc": 0.363
+            "wielkosc": 0.384
           },
           {
             "kultura": "anglia",
@@ -215,7 +215,7 @@
           {
             "kultura": "egipt",
             "kult": "neith-z-sais",
-            "wielkosc": 0.174
+            "wielkosc": 0.195
           },
           {
             "kultura": "grecja",
@@ -225,7 +225,7 @@
           {
             "kultura": "grecja",
             "kult": "pandora",
-            "wielkosc": 0.405
+            "wielkosc": 0.426
           },
           {
             "kultura": "grecja",
@@ -240,7 +240,7 @@
           {
             "kultura": "grecja",
             "kult": "sfinks-teby",
-            "wielkosc": 0.458
+            "wielkosc": 0.479
           },
           {
             "kultura": "indie",
@@ -456,8 +456,8 @@
       ],
       "stanPo": {
         "os": {
-          "mit": 35,
-          "racjonalizacja": 65
+          "mit": 36,
+          "racjonalizacja": 64
         },
         "zasieg": [
           {
@@ -502,7 +502,7 @@
           },
           {
             "slug": "knecht-z-koptos",
-            "wielkosc": 0.363
+            "wielkosc": 0.384
           },
           {
             "slug": "lincoln-imp",
@@ -514,7 +514,7 @@
           },
           {
             "slug": "neith-z-sais",
-            "wielkosc": 0.174
+            "wielkosc": 0.195
           },
           {
             "slug": "nessos",
@@ -522,7 +522,7 @@
           },
           {
             "slug": "pandora",
-            "wielkosc": 0.405
+            "wielkosc": 0.426
           },
           {
             "slug": "protostates",
@@ -534,7 +534,7 @@
           },
           {
             "slug": "sfinks-teby",
-            "wielkosc": 0.458
+            "wielkosc": 0.479
           },
           {
             "slug": "syama-i-sarvara",
@@ -599,7 +599,7 @@
           {
             "kultura": "grecja",
             "kult": "knecht-z-koptos",
-            "wielkosc": 0.363
+            "wielkosc": 0.384
           },
           {
             "kultura": "anglia",
@@ -614,7 +614,7 @@
           {
             "kultura": "egipt",
             "kult": "neith-z-sais",
-            "wielkosc": 0.174
+            "wielkosc": 0.195
           },
           {
             "kultura": "grecja",
@@ -624,7 +624,7 @@
           {
             "kultura": "grecja",
             "kult": "pandora",
-            "wielkosc": 0.405
+            "wielkosc": 0.426
           },
           {
             "kultura": "grecja",
@@ -639,7 +639,7 @@
           {
             "kultura": "grecja",
             "kult": "sfinks-teby",
-            "wielkosc": 0.458
+            "wielkosc": 0.479
           },
           {
             "kultura": "indie",
@@ -873,8 +873,8 @@
       ],
       "stanPo": {
         "os": {
-          "mit": 33,
-          "racjonalizacja": 67
+          "mit": 34,
+          "racjonalizacja": 66
         },
         "zasieg": [
           {
@@ -919,7 +919,7 @@
           },
           {
             "slug": "knecht-z-koptos",
-            "wielkosc": 0.363
+            "wielkosc": 0.384
           },
           {
             "slug": "lincoln-imp",
@@ -931,7 +931,7 @@
           },
           {
             "slug": "neith-z-sais",
-            "wielkosc": 0.174
+            "wielkosc": 0.195
           },
           {
             "slug": "nessos",
@@ -939,7 +939,7 @@
           },
           {
             "slug": "pandora",
-            "wielkosc": 0.405
+            "wielkosc": 0.426
           },
           {
             "slug": "protostates",
@@ -951,7 +951,7 @@
           },
           {
             "slug": "sfinks-teby",
-            "wielkosc": 0.458
+            "wielkosc": 0.479
           },
           {
             "slug": "syama-i-sarvara",
@@ -1016,7 +1016,7 @@
           {
             "kultura": "grecja",
             "kult": "knecht-z-koptos",
-            "wielkosc": 0.363
+            "wielkosc": 0.384
           },
           {
             "kultura": "anglia",
@@ -1031,7 +1031,7 @@
           {
             "kultura": "egipt",
             "kult": "neith-z-sais",
-            "wielkosc": 0.174
+            "wielkosc": 0.195
           },
           {
             "kultura": "grecja",
@@ -1041,7 +1041,7 @@
           {
             "kultura": "grecja",
             "kult": "pandora",
-            "wielkosc": 0.405
+            "wielkosc": 0.426
           },
           {
             "kultura": "grecja",
@@ -1056,7 +1056,7 @@
           {
             "kultura": "grecja",
             "kult": "sfinks-teby",
-            "wielkosc": 0.458
+            "wielkosc": 0.479
           },
           {
             "kultura": "indie",
@@ -1305,8 +1305,8 @@
       ],
       "stanPo": {
         "os": {
-          "mit": 32,
-          "racjonalizacja": 68
+          "mit": 33,
+          "racjonalizacja": 67
         },
         "zasieg": [
           {
@@ -1351,7 +1351,7 @@
           },
           {
             "slug": "knecht-z-koptos",
-            "wielkosc": 0.363
+            "wielkosc": 0.384
           },
           {
             "slug": "lincoln-imp",
@@ -1363,7 +1363,7 @@
           },
           {
             "slug": "neith-z-sais",
-            "wielkosc": 0.174
+            "wielkosc": 0.195
           },
           {
             "slug": "nessos",
@@ -1371,7 +1371,7 @@
           },
           {
             "slug": "pandora",
-            "wielkosc": 0.405
+            "wielkosc": 0.426
           },
           {
             "slug": "protostates",
@@ -1383,7 +1383,7 @@
           },
           {
             "slug": "sfinks-teby",
-            "wielkosc": 0.458
+            "wielkosc": 0.479
           },
           {
             "slug": "syama-i-sarvara",
@@ -1448,7 +1448,7 @@
           {
             "kultura": "grecja",
             "kult": "knecht-z-koptos",
-            "wielkosc": 0.363
+            "wielkosc": 0.384
           },
           {
             "kultura": "anglia",
@@ -1463,7 +1463,7 @@
           {
             "kultura": "egipt",
             "kult": "neith-z-sais",
-            "wielkosc": 0.174
+            "wielkosc": 0.195
           },
           {
             "kultura": "grecja",
@@ -1473,7 +1473,7 @@
           {
             "kultura": "grecja",
             "kult": "pandora",
-            "wielkosc": 0.405
+            "wielkosc": 0.426
           },
           {
             "kultura": "grecja",
@@ -1488,7 +1488,7 @@
           {
             "kultura": "grecja",
             "kult": "sfinks-teby",
-            "wielkosc": 0.458
+            "wielkosc": 0.479
           },
           {
             "kultura": "indie",
@@ -1737,8 +1737,8 @@
       ],
       "stanPo": {
         "os": {
-          "mit": 31,
-          "racjonalizacja": 69
+          "mit": 32,
+          "racjonalizacja": 68
         },
         "zasieg": [
           {
@@ -1783,7 +1783,7 @@
           },
           {
             "slug": "knecht-z-koptos",
-            "wielkosc": 0.363
+            "wielkosc": 0.384
           },
           {
             "slug": "lincoln-imp",
@@ -1795,7 +1795,7 @@
           },
           {
             "slug": "neith-z-sais",
-            "wielkosc": 0.174
+            "wielkosc": 0.195
           },
           {
             "slug": "nessos",
@@ -1803,7 +1803,7 @@
           },
           {
             "slug": "pandora",
-            "wielkosc": 0.405
+            "wielkosc": 0.426
           },
           {
             "slug": "protostates",
@@ -1815,7 +1815,7 @@
           },
           {
             "slug": "sfinks-teby",
-            "wielkosc": 0.448
+            "wielkosc": 0.469
           },
           {
             "slug": "syama-i-sarvara",
@@ -1880,7 +1880,7 @@
           {
             "kultura": "grecja",
             "kult": "knecht-z-koptos",
-            "wielkosc": 0.363
+            "wielkosc": 0.384
           },
           {
             "kultura": "anglia",
@@ -1895,7 +1895,7 @@
           {
             "kultura": "egipt",
             "kult": "neith-z-sais",
-            "wielkosc": 0.174
+            "wielkosc": 0.195
           },
           {
             "kultura": "grecja",
@@ -1905,7 +1905,7 @@
           {
             "kultura": "grecja",
             "kult": "pandora",
-            "wielkosc": 0.405
+            "wielkosc": 0.426
           },
           {
             "kultura": "grecja",
@@ -1920,7 +1920,7 @@
           {
             "kultura": "grecja",
             "kult": "sfinks-teby",
-            "wielkosc": 0.448
+            "wielkosc": 0.469
           },
           {
             "kultura": "indie",
@@ -1982,8 +1982,8 @@
           },
           {
             "slug": "sfinks-teby",
-            "przed": 0.458,
-            "po": 0.448,
+            "przed": 0.479,
+            "po": 0.469,
             "delta": -0.01,
             "opis": "Święta groza zagadki słabnie, gdy okazuje się podatna na wyśmianie."
           },
@@ -2006,8 +2006,8 @@
           {
             "kultura": "grecja",
             "kult": "sfinks-teby",
-            "przed": 0.458,
-            "po": 0.448,
+            "przed": 0.479,
+            "po": 0.469,
             "delta": -0.01
           },
           {
@@ -2166,8 +2166,8 @@
       ],
       "stanPo": {
         "os": {
-          "mit": 30,
-          "racjonalizacja": 70
+          "mit": 31,
+          "racjonalizacja": 69
         },
         "zasieg": [
           {
@@ -2212,7 +2212,7 @@
           },
           {
             "slug": "knecht-z-koptos",
-            "wielkosc": 0.363
+            "wielkosc": 0.384
           },
           {
             "slug": "lincoln-imp",
@@ -2224,7 +2224,7 @@
           },
           {
             "slug": "neith-z-sais",
-            "wielkosc": 0.174
+            "wielkosc": 0.195
           },
           {
             "slug": "nessos",
@@ -2232,7 +2232,7 @@
           },
           {
             "slug": "pandora",
-            "wielkosc": 0.415
+            "wielkosc": 0.436
           },
           {
             "slug": "protostates",
@@ -2244,7 +2244,7 @@
           },
           {
             "slug": "sfinks-teby",
-            "wielkosc": 0.448
+            "wielkosc": 0.469
           },
           {
             "slug": "syama-i-sarvara",
@@ -2309,7 +2309,7 @@
           {
             "kultura": "grecja",
             "kult": "knecht-z-koptos",
-            "wielkosc": 0.363
+            "wielkosc": 0.384
           },
           {
             "kultura": "anglia",
@@ -2324,7 +2324,7 @@
           {
             "kultura": "egipt",
             "kult": "neith-z-sais",
-            "wielkosc": 0.174
+            "wielkosc": 0.195
           },
           {
             "kultura": "grecja",
@@ -2334,7 +2334,7 @@
           {
             "kultura": "grecja",
             "kult": "pandora",
-            "wielkosc": 0.415
+            "wielkosc": 0.436
           },
           {
             "kultura": "grecja",
@@ -2349,7 +2349,7 @@
           {
             "kultura": "grecja",
             "kult": "sfinks-teby",
-            "wielkosc": 0.448
+            "wielkosc": 0.469
           },
           {
             "kultura": "indie",
@@ -2406,8 +2406,8 @@
         "zasieg": [
           {
             "slug": "pandora",
-            "przed": 0.405,
-            "po": 0.415,
+            "przed": 0.426,
+            "po": 0.436,
             "delta": 0.01,
             "opis": "Opowieść o darze, który zajrzał do środka, obiega gospody: nadzieja na dnie naczynia zaczyna być widoczna."
           },
@@ -2430,8 +2430,8 @@
           {
             "kultura": "grecja",
             "kult": "pandora",
-            "przed": 0.405,
-            "po": 0.415,
+            "przed": 0.426,
+            "po": 0.436,
             "delta": 0.01
           },
           {
@@ -2604,8 +2604,8 @@
       ],
       "stanPo": {
         "os": {
-          "mit": 29,
-          "racjonalizacja": 71
+          "mit": 30,
+          "racjonalizacja": 70
         },
         "zasieg": [
           {
@@ -2650,7 +2650,7 @@
           },
           {
             "slug": "knecht-z-koptos",
-            "wielkosc": 0.373
+            "wielkosc": 0.394
           },
           {
             "slug": "lincoln-imp",
@@ -2662,7 +2662,7 @@
           },
           {
             "slug": "neith-z-sais",
-            "wielkosc": 0.174
+            "wielkosc": 0.195
           },
           {
             "slug": "nessos",
@@ -2670,7 +2670,7 @@
           },
           {
             "slug": "pandora",
-            "wielkosc": 0.415
+            "wielkosc": 0.436
           },
           {
             "slug": "protostates",
@@ -2682,7 +2682,7 @@
           },
           {
             "slug": "sfinks-teby",
-            "wielkosc": 0.448
+            "wielkosc": 0.469
           },
           {
             "slug": "syama-i-sarvara",
@@ -2747,7 +2747,7 @@
           {
             "kultura": "grecja",
             "kult": "knecht-z-koptos",
-            "wielkosc": 0.373
+            "wielkosc": 0.394
           },
           {
             "kultura": "anglia",
@@ -2762,7 +2762,7 @@
           {
             "kultura": "egipt",
             "kult": "neith-z-sais",
-            "wielkosc": 0.174
+            "wielkosc": 0.195
           },
           {
             "kultura": "grecja",
@@ -2772,7 +2772,7 @@
           {
             "kultura": "grecja",
             "kult": "pandora",
-            "wielkosc": 0.415
+            "wielkosc": 0.436
           },
           {
             "kultura": "grecja",
@@ -2787,7 +2787,7 @@
           {
             "kultura": "grecja",
             "kult": "sfinks-teby",
-            "wielkosc": 0.448
+            "wielkosc": 0.469
           },
           {
             "kultura": "indie",
@@ -2854,8 +2854,8 @@
           },
           {
             "slug": "knecht-z-koptos",
-            "przed": 0.363,
-            "po": 0.373,
+            "przed": 0.384,
+            "po": 0.394,
             "delta": 0.01,
             "opis": "Opowieść o tłuczku, który pierwszy zostawił wodę przy progu, uczy słuchaczy kończyć rozkazy słowem — Koptos zaczyna zamykać drzwi po zmroku."
           },
@@ -2878,8 +2878,8 @@
           {
             "kultura": "grecja",
             "kult": "knecht-z-koptos",
-            "przed": 0.363,
-            "po": 0.373,
+            "przed": 0.384,
+            "po": 0.394,
             "delta": 0.01
           },
           {
@@ -2992,8 +2992,8 @@
   ],
   "stanPo": {
     "os": {
-      "mit": 29,
-      "racjonalizacja": 71
+      "mit": 30,
+      "racjonalizacja": 70
     },
     "zasieg": [
       {
@@ -3038,7 +3038,7 @@
       },
       {
         "slug": "knecht-z-koptos",
-        "wielkosc": 0.373
+        "wielkosc": 0.394
       },
       {
         "slug": "lincoln-imp",
@@ -3050,7 +3050,7 @@
       },
       {
         "slug": "neith-z-sais",
-        "wielkosc": 0.174
+        "wielkosc": 0.195
       },
       {
         "slug": "nessos",
@@ -3058,7 +3058,7 @@
       },
       {
         "slug": "pandora",
-        "wielkosc": 0.415
+        "wielkosc": 0.436
       },
       {
         "slug": "protostates",
@@ -3070,7 +3070,7 @@
       },
       {
         "slug": "sfinks-teby",
-        "wielkosc": 0.448
+        "wielkosc": 0.469
       },
       {
         "slug": "syama-i-sarvara",
@@ -3135,7 +3135,7 @@
       {
         "kultura": "grecja",
         "kult": "knecht-z-koptos",
-        "wielkosc": 0.373
+        "wielkosc": 0.394
       },
       {
         "kultura": "anglia",
@@ -3150,7 +3150,7 @@
       {
         "kultura": "egipt",
         "kult": "neith-z-sais",
-        "wielkosc": 0.174
+        "wielkosc": 0.195
       },
       {
         "kultura": "grecja",
@@ -3160,7 +3160,7 @@
       {
         "kultura": "grecja",
         "kult": "pandora",
-        "wielkosc": 0.415
+        "wielkosc": 0.436
       },
       {
         "kultura": "grecja",
@@ -3175,7 +3175,7 @@
       {
         "kultura": "grecja",
         "kult": "sfinks-teby",
-        "wielkosc": 0.448
+        "wielkosc": 0.469
       },
       {
         "kultura": "indie",
