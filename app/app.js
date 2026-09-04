@@ -1,7 +1,7 @@
 /**
  * app/app.js — bootstrap AME: ładuje indeks, mapę świata, spina UI.
  */
-import { stworzMape, PROGI_WARSTW, PODKLADY_ONLINE } from './map.js?v=c5-11';
+import { stworzMape, PROGI_WARSTW, PODKLADY_ONLINE } from './map.js?v=c5-12';
 import { zaladujIndeks, zaladujWpis, zaladujSkit, dopasowania, wylosujSlug } from './data.js?v=c5-1';
 import {
   htmlWpisu,
@@ -25,8 +25,9 @@ import {
   akcjeZZapytania,
   tekstDoLektora,
   htmlTrofeow,
-} from './ui.js?v=c5-11';
-import { SZEROKOSC, WYSOKOSC } from './geo.js?v=c5-11';
+  paryRozmowySkitu,
+} from './ui.js?v=c5-12';
+import { SZEROKOSC, WYSOKOSC } from './geo.js?v=c5-12';
 
 const $ = (sel) => document.querySelector(sel);
 
@@ -327,6 +328,7 @@ function zamknijWarstwe() {
   stan.warstwa = null;
   stan.skit = null;
   window.speechSynthesis?.cancel?.(); // lektor nie czyta po zamknięciu widoku
+  mapa.ukryjRozmowe(); // łuki skitu znikają z zamknięciem dialogu
   const warstwa = $('#warstwa');
   warstwa.classList.remove('otwarta');
   warstwa.innerHTML = '';
@@ -442,6 +444,7 @@ async function otworzSkit(slug, { zBazy = true } = {}) {
   try {
     const skit = await zaladujSkit(slug);
     stan.skit = skit;
+    mapa.pokazRozmowe(paryRozmowySkitu(skit.uczestnicy)); // C2: „rozmowa” na mapie
     warstwa.innerHTML = szkicWarstwy('Baza Skitów', htmlSkitu(skit, stan.indeks), {
       wroc: zBazy ? 'skity' : null,
       kopia: `skit:${slug}`,

@@ -154,3 +154,24 @@ test('dokumentacja: url musi być adresem www i musi się pojawić choć raz (B3
   ];
   assert.deepEqual(walidujWpis(czesciowo), [], 'wystarczy jedno źródło z linkiem — reszta może być papierowa');
 });
+
+test('meta.modyfikacje: opis nie może nosić oznaczeń wewnętrznych sesji (PROTOKÓŁ §9, C2 2026-09-04)', () => {
+  const czysty = wpisWzorzec();
+  czysty.meta.modyfikacje = [{ data: '2026-09-04 12:00', opis: 'Dopisane źródło pierwotne z cytatami z hymnu.' }];
+  assert.deepEqual(walidujWpis(czysty), [], 'zdanie o treści przechodzi');
+
+  for (const brudny of [
+    'Pętla Jakości (C1): dopisana matka psów.',
+    'Pogłębienie karty (C1): trzy poziomy obecności.',
+    'Poprawka z M3.',
+    'Zgodnie z PROTOKÓŁ §9.',
+    'Krok C2 sesji.',
+  ]) {
+    const w = wpisWzorzec();
+    w.meta.modyfikacje = [{ data: '2026-09-04', opis: brudny }];
+    assert.ok(
+      walidujWpis(w).some((e) => e.includes('oznaczenie wewnętrzne')),
+      `odrzucono: ${brudny}`
+    );
+  }
+});

@@ -1,8 +1,8 @@
 {
   "wersja": 3,
-  "buildTime": "2026-09-04T12:09:21.539Z",
+  "buildTime": "2026-09-04T13:09:01.579Z",
   "liczba": 20,
-  "liczbaSkitow": 26,
+  "liczbaSkitow": 28,
   "kanon": {
     "kategorie": [
       {
@@ -586,7 +586,8 @@
       },
       "skity": [
         "dzien-wolnego",
-        "najgorsze-odpowiedzi"
+        "najgorsze-odpowiedzi",
+        "pod-dachem"
       ]
     },
     {
@@ -633,6 +634,7 @@
         "dwie-skory",
         "godzina-otwarcia",
         "kurz-i-piora",
+        "pogoda-na-jutro",
         "trzy-zegary",
         "znak-burzy"
       ]
@@ -684,6 +686,7 @@
         "kalendarz-powrotow",
         "odzwierni",
         "plotno-i-kamien",
+        "pod-dachem",
         "trzy-stoly"
       ]
     },
@@ -819,6 +822,7 @@
       },
       "skity": [
         "dzien-wolnego",
+        "pogoda-na-jutro",
         "zaplata-za-przewoz"
       ]
     },
@@ -907,6 +911,8 @@
       },
       "skity": [
         "pierwszy",
+        "pod-dachem",
+        "pogoda-na-jutro",
         "z-gliny-i-spizu"
       ]
     },
@@ -1174,6 +1180,7 @@
         "dwie-skory",
         "imie-na-progu",
         "kalendarz-powrotow",
+        "pogoda-na-jutro",
         "znak-i-liczba"
       ]
     },
@@ -1600,6 +1607,42 @@
       "data": "2026-08-28"
     },
     {
+      "slug": "pod-dachem",
+      "tytul": "POD DACHEM",
+      "temat": "który dach daje schronienie — dom zalany wodą, stodoła jak wesele i pałac, gdzie budzi się strach",
+      "uczestnicy": [
+        "ben-varrey",
+        "egungun",
+        "knecht-z-koptos"
+      ],
+      "imiona": [
+        "Knecht",
+        "Egungun",
+        "Ben-Varrey"
+      ],
+      "slow": 290,
+      "data": "2026-09-04 13:20"
+    },
+    {
+      "slug": "pogoda-na-jutro",
+      "tytul": "POGODA NA JUTRO",
+      "temat": "prognoza przy ognisku — cztery byty dyskutują o jutrzejszej pogodzie i o tym, komu pogoda naprawdę służy",
+      "uczestnicy": [
+        "drangue-shala",
+        "kannon-hase",
+        "knecht-z-koptos",
+        "selkie-sule-skerry"
+      ],
+      "imiona": [
+        "Drangue",
+        "Selkie z Sule Skerry",
+        "Knecht",
+        "Kannon"
+      ],
+      "slow": 296,
+      "data": "2026-09-04 14:00"
+    },
+    {
       "slug": "prezent-z-defektem",
       "tytul": "PREZENT Z DEFEKTEM",
       "temat": "trzy dary, które miały chronić, a zrobiły szkodę — i kto ponosi winę",
@@ -1752,6 +1795,38 @@
     }
   ],
   "aktualizacje": [
+    {
+      "data": "2026-09-04 14:00",
+      "typ": "skit",
+      "akcja": "nowy",
+      "slug": "pogoda-na-jutro",
+      "tytul": "POGODA NA JUTRO",
+      "opis": "SKIT — skład: Drangue, Selkie z Sule Skerry, Knecht, Kannon"
+    },
+    {
+      "data": "2026-09-04 13:45",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "drangue-shala",
+      "tytul": "Drangue z doliny Shali",
+      "opis": "Doprecyzowane warunki śmierci drangue — nieśmiertelność z pojedynczej koniunkcji gwiazd przy urodzeniu (śmierć przy jej powtórzeniu) i wariant z Rugovy: byt ginie, gdy zobaczy go ktoś obcy albo gdy jego stan wyjdzie na jaw; źródło w dokumentacji."
+    },
+    {
+      "data": "2026-09-04 13:20",
+      "typ": "skit",
+      "akcja": "nowy",
+      "slug": "pod-dachem",
+      "tytul": "POD DACHEM",
+      "opis": "SKIT — skład: Knecht, Egungun, Ben-Varrey"
+    },
+    {
+      "data": "2026-09-04 13:05",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "morowa-panna",
+      "tytul": "Morowa Panna — zaraza w białej szacie z czerwoną chustą",
+      "opis": "Dopisane źródło pierwotne z XIX wieku — Wójcicki „Klechdy starożytne” (1837): litewska ballada o ręce z czerwoną chustką wsuwanej przez okno i opowieści Hucułów o cholerze obnoszonej w postaci niewiasty; ballada wpleciona w wygląd i aurę bytu."
+    },
     {
       "data": "2026-09-04 12:50",
       "typ": "skit",

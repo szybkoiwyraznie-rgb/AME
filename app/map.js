@@ -10,7 +10,7 @@
  * pinch (2 wskaźniki), dwuklik, przyciski. Pinezki i ich etykiety kompensują
  * skalę widoku, więc mają stały rozmiar w pikselach CSS (ADR 0009).
  */
-import { projektuj, dekodujKraje, siatka, dopasujWidok, ogranicz, K_MIN, K_MAX, SZEROKOSC as SZER, WYSOKOSC as WYS, sciezkaGeoMultiPoligon } from './geo.js?v=c5-11';
+import { projektuj, dekodujKraje, siatka, dopasujWidok, ogranicz, K_MIN, K_MAX, SZEROKOSC as SZER, WYSOKOSC as WYS, sciezkaGeoMultiPoligon } from './geo.js?v=c5-12';
 
 const NS = 'http://www.w3.org/2000/svg';
 
@@ -164,6 +164,9 @@ export function stworzMape(kontener, { przyZmianieZaznaczenia, przyZmianieWidoku
     drobne: el('g', { class: 'miasta-drobne' }, grupaMiast),
   };
   const warstwaLukow = el('g', { class: 'luki', display: 'none' }, grupaSwiata);
+  // Warstwa „rozmowy” (C2, 2026-09-04): łuki uczestników otwartego skitu —
+  // osobna grupa, żeby nie mieszać z łukami powiązań (toggle ∞).
+  const warstwaRozmowy = el('g', { class: 'rozmowa', display: 'none' }, grupaSwiata);
   const grupaPinezek = el('g', { class: 'pinezki' }, grupaSwiata);
   // A3 (M6): badge'y w osobnej grupie PO grupie pinezek — SVG maluje elementy
   // w kolejności dokumentu, więc etykieta nigdy nie chowa się pod inną pinezką.
@@ -474,6 +477,31 @@ export function stworzMape(kontener, { przyZmianieZaznaczenia, przyZmianieWidoku
       p.el.classList.toggle('powiazana', sasiad);
     }
     odswiezLukiWidocznosc();
+  }
+
+  /** Widok „rozmowy” (C2, 2026-09-04): łuki skitu łączące pinezki uczestników
+   *  w odrębnej warstwie nad łukami powiązań; `pary` = [{a, b}] sluga→sluga. */
+  function pokazRozmowe(pary) {
+    warstwaRozmowy.innerHTML = '';
+    for (const { a, b } of pary ?? []) {
+      const pa = pinezki.get(a);
+      const pb = pinezki.get(b);
+      if (!pa || !pb) continue;
+      const mx = (pa.wx + pb.wx) / 2;
+      const my = (pa.wy + pb.wy) / 2;
+      const dx = pb.wx - pa.wx;
+      const dy = pb.wy - pa.wy;
+      const len = Math.hypot(dx, dy) || 1;
+      const cx = mx - (dy / len) * len * 0.18;
+      const cy = my + (dx / len) * len * 0.18;
+      el('path', { d: `M${pa.wx} ${pa.wy} Q${cx} ${cy} ${pb.wx} ${pb.wy}`, class: 'luk rozmowy' }, warstwaRozmowy);
+    }
+    warstwaRozmowy.setAttribute('display', warstwaRozmowy.dzieci?.length ?? warstwaRozmowy.childElementCount ? 'inherit' : 'none');
+  }
+
+  function ukryjRozmowe() {
+    warstwaRozmowy.innerHTML = '';
+    warstwaRozmowy.setAttribute('display', 'none');
   }
 
   function odswiezLukiWidocznosc() {
@@ -892,6 +920,8 @@ export function stworzMape(kontener, { przyZmianieZaznaczenia, przyZmianieWidoku
     zaznacz,
     podswietl,
     przelaczLuki,
+    pokazRozmowe,
+    ukryjRozmowe,
     wysrodkuj,
     ustawWidok,
     reset,

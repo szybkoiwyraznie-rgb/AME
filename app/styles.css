@@ -314,6 +314,15 @@ a.chip { display: inline-block; text-decoration: none; }
 }
 .luk.aktywny { stroke-opacity: 0.95; stroke: var(--akcent-2); stroke-dasharray: none; stroke-width: 2.2; }
 
+/* Łuk „rozmowy” skitu (C2, 2026-09-04): wyraźniejszy od łuków powiązań —
+ * otwarty dialog ma się czytać z mapy jak spójna sieć rozmówców. */
+.luk.rozmowy {
+  stroke: var(--akcent-2);
+  stroke-opacity: 0.85;
+  stroke-width: 2.4;
+  stroke-dasharray: 2 4;
+}
+
 /* Pinezka (A5): głowa ø26 px + przezroczyste pole trafienia ø52 px; rozmiar
  * jest w pikselach CSS, bo grupa pinezki kompensuje skalę widoku (ADR 0009). */
 .pinezka { cursor: pointer; }

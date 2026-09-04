@@ -297,3 +297,32 @@ test('podgląd powiązań (C2): najechanie zwęża łuki do połączeń pinezki 
   pinSluga('a').sluchacze.blur[0]();
   assert.equal(luki.getAttribute('display'), 'none');
 });
+
+test('warstwa „rozmowy” skitu (C2): łuki uczestników w osobnej grupie, czyszczenie', () => {
+  const { kontener } = zaiscz();
+  const mapa = stworzMape(kontener, {});
+  mapa.ustawPinezki([
+    { slug: 'balor', nazwa: 'Balor', lat: 55.26, lon: -8.22 },
+    { slug: 'selkie-sule-skerry', nazwa: 'Selkie', lat: 59.08, lon: -4.41 },
+    { slug: 'knecht-z-koptos', nazwa: 'Knecht', lat: 26.1, lon: 32.67 },
+  ]);
+  const rozmowa = znajdz(mapa.svg, 'rozmowa');
+  assert.ok(rozmowa, 'grupa .rozmowa w drzewie SVG');
+  assert.equal(rozmowa.getAttribute('display'), 'none', 'domyślnie ukryta');
+
+  mapa.pokazRozmowe([{ a: 'balor', b: 'selkie-sule-skerry' }, { a: 'balor', b: 'knecht-z-koptos' }, { a: 'selkie-sule-skerry', b: 'knecht-z-koptos' }]);
+  const luki = rozmowa.dzieci.filter((d) => d.czyMaKlase('rozmowy'));
+  assert.equal(luki.length, 3, 'trzy łuki rozmowy');
+  assert.ok(luki.every((l) => l.nazwa === 'path'), 'łuki to ścieżki');
+  assert.equal(rozmowa.getAttribute('display'), 'inherit', 'warstwa widoczna po pokazaniu');
+
+  // nieznany slug nie wysadza renderu — pomijany
+  mapa.pokazRozmowe([{ a: 'balor', b: 'nie-ma-go' }]);
+  assert.equal(rozmowa.dzieci.length, 0, 'para bez pinezki pomijana');
+  assert.equal(rozmowa.getAttribute('display'), 'none', 'pusta rozmowa z powrotem ukryta');
+
+  mapa.pokazRozmowe([{ a: 'balor', b: 'selkie-sule-skerry' }]);
+  mapa.ukryjRozmowe();
+  assert.equal(rozmowa.dzieci.length, 0, 'ukrycie czyści warstwę');
+  assert.equal(rozmowa.getAttribute('display'), 'none');
+});

@@ -132,12 +132,18 @@
 - **Indeks tematów skitów** — przy >10 skitach warto dodać pole `temat` do
   słownika w indeksie (typu „filozofia”, „żałoba”, „jadło”), żeby C3 łatwiej
   dobierało niepowtarzalne tematy, nie tylko składy.
-- **Widok „rozmowy” na mapie** — animowany łuk łączący uczestników skitu przy
-  jego otwarciu (dziś sekcja VI linkuje tylko do kart).
-- **Walidator opisów `meta.modyfikacje`** — twardy zakaz oznaczeń
-  wewnętrznych (`C1`, `C2`, `M3`, `Pętla Jakości`, `PROTOKÓŁ §`) w polu
-  `opis` (PROTOKÓŁ §9); w 2026-09-04 audyt znalazł 13 takich opisów
-  (korekta w PR #13), więc reguła bez walidatora wraca.
+- ~~**Widok „rozmowy” na mapie**~~ — **WDROŻONE (2026-09-04, PR #14, C2
+  pętli jakości):** otwarcie skitu rysuje łuki między pinezkami uczestników
+  (osobna warstwa `.rozmowa` nad łukami powiązań; czysta `paryRozmowySkitu`
+  liczy pełne spójne pary; zamknięcie warstwy czyści mapę). Bez animacji —
+  statyczne łuki; animowane „przebiegnięcie” rozmowy zostaje pomysłem
+  (cache-bust `c5-12`). Do akceptacji właściciela przed live.
+- ~~**Walidator opisów `meta.modyfikacje`**~~ — **WDROŻONE (2026-09-04,
+  PR #14, C2 pętli jakości):** `bladOpisuMeta` w `tools/rebuild-index.mjs`
+  odrzuca oznaczenia wewnętrzne (`C1`/`C2`/`C3`, `M<n>`, `B<n>`,
+  „Pętla Jakości", „PROTOKÓŁ") w `meta.modyfikacje[].opis` wpisów i skitów;
+  cała baza przechodzi (0 fałszywych trafień), testy kontraktowe w
+  `test/schema.test.js` i `test/skit.test.js`.
 - **Walidator spójności faktograficznej** — heurystyka ostrzegająca, gdy skit
   przywołuje zwyczaj/nazwę własną nieobecną w kartach uczestników (twarda
   egzekucja wymaga NLP — poza zakresem ADR 0001).
