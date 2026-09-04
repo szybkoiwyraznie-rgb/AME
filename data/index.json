@@ -1,8 +1,8 @@
 {
   "wersja": 3,
-  "buildTime": "2026-09-04T11:52:33.781Z",
+  "buildTime": "2026-09-04T11:54:28.956Z",
   "liczba": 20,
-  "liczbaSkitow": 24,
+  "liczbaSkitow": 25,
   "kanon": {
     "kategorie": [
       {
@@ -567,7 +567,8 @@
       ],
       "obraz": "assets/wizualizacje/ben-varrey.jpg",
       "skity": [
-        "dzien-wolnego"
+        "dzien-wolnego",
+        "najgorsze-odpowiedzi"
       ]
     },
     {
@@ -935,6 +936,7 @@
       "obraz": "assets/wizualizacje/morowa-panna.jpg",
       "skity": [
         "czwarty-stol",
+        "najgorsze-odpowiedzi",
         "prezent-z-defektem"
       ]
     },
@@ -1145,6 +1147,7 @@
       ],
       "obraz": "assets/wizualizacje/sfinks-teby.jpg",
       "skity": [
+        "najgorsze-odpowiedzi",
         "zagadka-ze-spizu"
       ]
     },
@@ -1431,6 +1434,23 @@
       "data": "2026-08-28 15:35"
     },
     {
+      "slug": "najgorsze-odpowiedzi",
+      "tytul": "NAJGORSZE ODPOWIEDZI",
+      "temat": "żale służbowe na progu — każda z nich zadaje ludziom pytania i zbiera najgorsze odpowiedzi",
+      "uczestnicy": [
+        "ben-varrey",
+        "morowa-panna",
+        "sfinks-teby"
+      ],
+      "imiona": [
+        "Sfinks",
+        "Morowa Panna",
+        "Ben-Varrey"
+      ],
+      "slow": 228,
+      "data": "2026-09-04 12:05"
+    },
+    {
       "slug": "nieproszeni-goscie",
       "tytul": "NIEPROSZENI GOŚCIE",
       "temat": "trzej psuja uroczystości porównują, jak wchodzą i co ich zatrzymuje (odźwierny każdego z nich)",
@@ -1632,6 +1652,14 @@
     }
   ],
   "aktualizacje": [
+    {
+      "data": "2026-09-04 12:05",
+      "typ": "skit",
+      "akcja": "nowy",
+      "slug": "najgorsze-odpowiedzi",
+      "tytul": "NAJGORSZE ODPOWIEDZI",
+      "opis": "SKIT — skład: Sfinks, Morowa Panna, Ben-Varrey"
+    },
     {
       "data": "2026-09-04 11:55",
       "typ": "manifestacja",

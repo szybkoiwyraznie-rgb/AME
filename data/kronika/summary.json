@@ -57,8 +57,8 @@
       ],
       "stanPo": {
         "os": {
-          "mit": 36,
-          "racjonalizacja": 64
+          "mit": 37,
+          "racjonalizacja": 63
         },
         "zasieg": [
           {
@@ -75,7 +75,7 @@
           },
           {
             "slug": "ben-varrey",
-            "wielkosc": 0.27
+            "wielkosc": 0.294
           },
           {
             "slug": "drangue-shala",
@@ -111,7 +111,7 @@
           },
           {
             "slug": "morowa-panna",
-            "wielkosc": 0.282
+            "wielkosc": 0.306
           },
           {
             "slug": "nessos",
@@ -131,7 +131,7 @@
           },
           {
             "slug": "sfinks-teby",
-            "wielkosc": 0.391
+            "wielkosc": 0.415
           },
           {
             "slug": "syama-i-sarvara",
@@ -161,7 +161,7 @@
           {
             "kultura": "man",
             "kult": "ben-varrey",
-            "wielkosc": 0.27
+            "wielkosc": 0.294
           },
           {
             "kultura": "albania",
@@ -206,7 +206,7 @@
           {
             "kultura": "polska",
             "kult": "morowa-panna",
-            "wielkosc": 0.282
+            "wielkosc": 0.306
           },
           {
             "kultura": "grecja",
@@ -231,7 +231,7 @@
           {
             "kultura": "grecja",
             "kult": "sfinks-teby",
-            "wielkosc": 0.391
+            "wielkosc": 0.415
           },
           {
             "kultura": "indie",
@@ -447,8 +447,8 @@
       ],
       "stanPo": {
         "os": {
-          "mit": 34,
-          "racjonalizacja": 66
+          "mit": 35,
+          "racjonalizacja": 65
         },
         "zasieg": [
           {
@@ -465,7 +465,7 @@
           },
           {
             "slug": "ben-varrey",
-            "wielkosc": 0.27
+            "wielkosc": 0.294
           },
           {
             "slug": "drangue-shala",
@@ -501,7 +501,7 @@
           },
           {
             "slug": "morowa-panna",
-            "wielkosc": 0.282
+            "wielkosc": 0.306
           },
           {
             "slug": "nessos",
@@ -521,7 +521,7 @@
           },
           {
             "slug": "sfinks-teby",
-            "wielkosc": 0.391
+            "wielkosc": 0.415
           },
           {
             "slug": "syama-i-sarvara",
@@ -551,7 +551,7 @@
           {
             "kultura": "man",
             "kult": "ben-varrey",
-            "wielkosc": 0.27
+            "wielkosc": 0.294
           },
           {
             "kultura": "albania",
@@ -596,7 +596,7 @@
           {
             "kultura": "polska",
             "kult": "morowa-panna",
-            "wielkosc": 0.282
+            "wielkosc": 0.306
           },
           {
             "kultura": "grecja",
@@ -621,7 +621,7 @@
           {
             "kultura": "grecja",
             "kult": "sfinks-teby",
-            "wielkosc": 0.391
+            "wielkosc": 0.415
           },
           {
             "kultura": "indie",
@@ -855,8 +855,8 @@
       ],
       "stanPo": {
         "os": {
-          "mit": 32,
-          "racjonalizacja": 68
+          "mit": 33,
+          "racjonalizacja": 67
         },
         "zasieg": [
           {
@@ -873,7 +873,7 @@
           },
           {
             "slug": "ben-varrey",
-            "wielkosc": 0.27
+            "wielkosc": 0.294
           },
           {
             "slug": "drangue-shala",
@@ -909,7 +909,7 @@
           },
           {
             "slug": "morowa-panna",
-            "wielkosc": 0.282
+            "wielkosc": 0.306
           },
           {
             "slug": "nessos",
@@ -929,7 +929,7 @@
           },
           {
             "slug": "sfinks-teby",
-            "wielkosc": 0.391
+            "wielkosc": 0.415
           },
           {
             "slug": "syama-i-sarvara",
@@ -959,7 +959,7 @@
           {
             "kultura": "man",
             "kult": "ben-varrey",
-            "wielkosc": 0.27
+            "wielkosc": 0.294
           },
           {
             "kultura": "albania",
@@ -1004,7 +1004,7 @@
           {
             "kultura": "polska",
             "kult": "morowa-panna",
-            "wielkosc": 0.282
+            "wielkosc": 0.306
           },
           {
             "kultura": "grecja",
@@ -1029,7 +1029,7 @@
           {
             "kultura": "grecja",
             "kult": "sfinks-teby",
-            "wielkosc": 0.391
+            "wielkosc": 0.415
           },
           {
             "kultura": "indie",
@@ -1278,8 +1278,8 @@
       ],
       "stanPo": {
         "os": {
-          "mit": 31,
-          "racjonalizacja": 69
+          "mit": 32,
+          "racjonalizacja": 68
         },
         "zasieg": [
           {
@@ -1296,7 +1296,7 @@
           },
           {
             "slug": "ben-varrey",
-            "wielkosc": 0.27
+            "wielkosc": 0.294
           },
           {
             "slug": "drangue-shala",
@@ -1332,7 +1332,7 @@
           },
           {
             "slug": "morowa-panna",
-            "wielkosc": 0.282
+            "wielkosc": 0.306
           },
           {
             "slug": "nessos",
@@ -1352,7 +1352,7 @@
           },
           {
             "slug": "sfinks-teby",
-            "wielkosc": 0.391
+            "wielkosc": 0.415
           },
           {
             "slug": "syama-i-sarvara",
@@ -1382,7 +1382,7 @@
           {
             "kultura": "man",
             "kult": "ben-varrey",
-            "wielkosc": 0.27
+            "wielkosc": 0.294
           },
           {
             "kultura": "albania",
@@ -1427,7 +1427,7 @@
           {
             "kultura": "polska",
             "kult": "morowa-panna",
-            "wielkosc": 0.282
+            "wielkosc": 0.306
           },
           {
             "kultura": "grecja",
@@ -1452,7 +1452,7 @@
           {
             "kultura": "grecja",
             "kult": "sfinks-teby",
-            "wielkosc": 0.391
+            "wielkosc": 0.415
           },
           {
             "kultura": "indie",
@@ -1701,8 +1701,8 @@
       ],
       "stanPo": {
         "os": {
-          "mit": 30,
-          "racjonalizacja": 70
+          "mit": 31,
+          "racjonalizacja": 69
         },
         "zasieg": [
           {
@@ -1719,7 +1719,7 @@
           },
           {
             "slug": "ben-varrey",
-            "wielkosc": 0.27
+            "wielkosc": 0.294
           },
           {
             "slug": "drangue-shala",
@@ -1755,7 +1755,7 @@
           },
           {
             "slug": "morowa-panna",
-            "wielkosc": 0.282
+            "wielkosc": 0.306
           },
           {
             "slug": "nessos",
@@ -1775,7 +1775,7 @@
           },
           {
             "slug": "sfinks-teby",
-            "wielkosc": 0.381
+            "wielkosc": 0.405
           },
           {
             "slug": "syama-i-sarvara",
@@ -1805,7 +1805,7 @@
           {
             "kultura": "man",
             "kult": "ben-varrey",
-            "wielkosc": 0.27
+            "wielkosc": 0.294
           },
           {
             "kultura": "albania",
@@ -1850,7 +1850,7 @@
           {
             "kultura": "polska",
             "kult": "morowa-panna",
-            "wielkosc": 0.282
+            "wielkosc": 0.306
           },
           {
             "kultura": "grecja",
@@ -1875,7 +1875,7 @@
           {
             "kultura": "grecja",
             "kult": "sfinks-teby",
-            "wielkosc": 0.381
+            "wielkosc": 0.405
           },
           {
             "kultura": "indie",
@@ -1937,8 +1937,8 @@
           },
           {
             "slug": "sfinks-teby",
-            "przed": 0.391,
-            "po": 0.381,
+            "przed": 0.415,
+            "po": 0.405,
             "delta": -0.01,
             "opis": "Święta groza zagadki słabnie, gdy okazuje się podatna na wyśmianie."
           },
@@ -1961,8 +1961,8 @@
           {
             "kultura": "grecja",
             "kult": "sfinks-teby",
-            "przed": 0.391,
-            "po": 0.381,
+            "przed": 0.415,
+            "po": 0.405,
             "delta": -0.01
           },
           {
@@ -2121,8 +2121,8 @@
       ],
       "stanPo": {
         "os": {
-          "mit": 29,
-          "racjonalizacja": 71
+          "mit": 30,
+          "racjonalizacja": 70
         },
         "zasieg": [
           {
@@ -2139,7 +2139,7 @@
           },
           {
             "slug": "ben-varrey",
-            "wielkosc": 0.27
+            "wielkosc": 0.294
           },
           {
             "slug": "drangue-shala",
@@ -2175,7 +2175,7 @@
           },
           {
             "slug": "morowa-panna",
-            "wielkosc": 0.267
+            "wielkosc": 0.291
           },
           {
             "slug": "nessos",
@@ -2195,7 +2195,7 @@
           },
           {
             "slug": "sfinks-teby",
-            "wielkosc": 0.381
+            "wielkosc": 0.405
           },
           {
             "slug": "syama-i-sarvara",
@@ -2225,7 +2225,7 @@
           {
             "kultura": "man",
             "kult": "ben-varrey",
-            "wielkosc": 0.27
+            "wielkosc": 0.294
           },
           {
             "kultura": "albania",
@@ -2270,7 +2270,7 @@
           {
             "kultura": "polska",
             "kult": "morowa-panna",
-            "wielkosc": 0.267
+            "wielkosc": 0.291
           },
           {
             "kultura": "grecja",
@@ -2295,7 +2295,7 @@
           {
             "kultura": "grecja",
             "kult": "sfinks-teby",
-            "wielkosc": 0.381
+            "wielkosc": 0.405
           },
           {
             "kultura": "indie",
@@ -2359,8 +2359,8 @@
           },
           {
             "slug": "morowa-panna",
-            "przed": 0.282,
-            "po": 0.267,
+            "przed": 0.306,
+            "po": 0.291,
             "delta": -0.015,
             "opis": "Ludzie ćwiczą szczerą odpowiedź na jej pytanie; rytuał traci jedną z nóg."
           },
@@ -2383,8 +2383,8 @@
           {
             "kultura": "polska",
             "kult": "morowa-panna",
-            "przed": 0.282,
-            "po": 0.267,
+            "przed": 0.306,
+            "po": 0.291,
             "delta": -0.015
           },
           {
@@ -2550,8 +2550,8 @@
       ],
       "stanPo": {
         "os": {
-          "mit": 28,
-          "racjonalizacja": 72
+          "mit": 29,
+          "racjonalizacja": 71
         },
         "zasieg": [
           {
@@ -2568,7 +2568,7 @@
           },
           {
             "slug": "ben-varrey",
-            "wielkosc": 0.27
+            "wielkosc": 0.294
           },
           {
             "slug": "drangue-shala",
@@ -2604,7 +2604,7 @@
           },
           {
             "slug": "morowa-panna",
-            "wielkosc": 0.267
+            "wielkosc": 0.291
           },
           {
             "slug": "nessos",
@@ -2624,7 +2624,7 @@
           },
           {
             "slug": "sfinks-teby",
-            "wielkosc": 0.381
+            "wielkosc": 0.405
           },
           {
             "slug": "syama-i-sarvara",
@@ -2654,7 +2654,7 @@
           {
             "kultura": "man",
             "kult": "ben-varrey",
-            "wielkosc": 0.27
+            "wielkosc": 0.294
           },
           {
             "kultura": "albania",
@@ -2699,7 +2699,7 @@
           {
             "kultura": "polska",
             "kult": "morowa-panna",
-            "wielkosc": 0.267
+            "wielkosc": 0.291
           },
           {
             "kultura": "grecja",
@@ -2724,7 +2724,7 @@
           {
             "kultura": "grecja",
             "kult": "sfinks-teby",
-            "wielkosc": 0.381
+            "wielkosc": 0.405
           },
           {
             "kultura": "indie",
@@ -2929,8 +2929,8 @@
   ],
   "stanPo": {
     "os": {
-      "mit": 28,
-      "racjonalizacja": 72
+      "mit": 29,
+      "racjonalizacja": 71
     },
     "zasieg": [
       {
@@ -2947,7 +2947,7 @@
       },
       {
         "slug": "ben-varrey",
-        "wielkosc": 0.27
+        "wielkosc": 0.294
       },
       {
         "slug": "drangue-shala",
@@ -2983,7 +2983,7 @@
       },
       {
         "slug": "morowa-panna",
-        "wielkosc": 0.267
+        "wielkosc": 0.291
       },
       {
         "slug": "nessos",
@@ -3003,7 +3003,7 @@
       },
       {
         "slug": "sfinks-teby",
-        "wielkosc": 0.381
+        "wielkosc": 0.405
       },
       {
         "slug": "syama-i-sarvara",
@@ -3033,7 +3033,7 @@
       {
         "kultura": "man",
         "kult": "ben-varrey",
-        "wielkosc": 0.27
+        "wielkosc": 0.294
       },
       {
         "kultura": "albania",
@@ -3078,7 +3078,7 @@
       {
         "kultura": "polska",
         "kult": "morowa-panna",
-        "wielkosc": 0.267
+        "wielkosc": 0.291
       },
       {
         "kultura": "grecja",
@@ -3103,7 +3103,7 @@
       {
         "kultura": "grecja",
         "kult": "sfinks-teby",
-        "wielkosc": 0.381
+        "wielkosc": 0.405
       },
       {
         "kultura": "indie",

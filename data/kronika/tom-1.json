@@ -6,8 +6,8 @@
   "status": "otwarta",
   "stanStart": {
     "os": {
-      "mit": 38,
-      "racjonalizacja": 62
+      "mit": 39,
+      "racjonalizacja": 61
     },
     "zasieg": [
       {
@@ -24,7 +24,7 @@
       },
       {
         "slug": "ben-varrey",
-        "wielkosc": 0.27
+        "wielkosc": 0.294
       },
       {
         "slug": "drangue-shala",
@@ -60,7 +60,7 @@
       },
       {
         "slug": "morowa-panna",
-        "wielkosc": 0.282
+        "wielkosc": 0.306
       },
       {
         "slug": "nessos",
@@ -80,7 +80,7 @@
       },
       {
         "slug": "sfinks-teby",
-        "wielkosc": 0.391
+        "wielkosc": 0.415
       },
       {
         "slug": "syama-i-sarvara",
@@ -110,7 +110,7 @@
       {
         "kultura": "man",
         "kult": "ben-varrey",
-        "wielkosc": 0.27
+        "wielkosc": 0.294
       },
       {
         "kultura": "albania",
@@ -155,7 +155,7 @@
       {
         "kultura": "polska",
         "kult": "morowa-panna",
-        "wielkosc": 0.282
+        "wielkosc": 0.306
       },
       {
         "kultura": "grecja",
@@ -180,7 +180,7 @@
       {
         "kultura": "grecja",
         "kult": "sfinks-teby",
-        "wielkosc": 0.391
+        "wielkosc": 0.415
       },
       {
         "kultura": "indie",
