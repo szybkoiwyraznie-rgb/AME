@@ -1,6 +1,6 @@
 {
   "wersja": 3,
-  "buildTime": "2026-09-04T11:50:38.157Z",
+  "buildTime": "2026-09-04T11:52:33.781Z",
   "liczba": 20,
   "liczbaSkitow": 24,
   "kanon": {
@@ -1632,6 +1632,14 @@
     }
   ],
   "aktualizacje": [
+    {
+      "data": "2026-09-04 11:55",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "ben-varrey",
+      "tytul": "Ben-Varrey — syrena z Wyspy Man",
+      "opis": "Dopisane źródło pierwotne — A. W. Moore „The Folk-Lore of the Isle of Man” (1891): imię Ben-varry jako „kobieta morza”, usposobienie łagodne, lecz straszliwe w gniewie, tradycja o mgle karzącej całą wyspę — oraz zbiór Kathleen Killip „Saint Bridget's Night” z opowieścią „The Mermaid and the Apple Tree”."
+    },
     {
       "data": "2026-08-30 22:06",
       "typ": "skit",
