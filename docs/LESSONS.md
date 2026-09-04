@@ -214,3 +214,21 @@ a funkcjonalnie martwe. Testy jednostkowe nie symulują przejścia między stron
 (`?q=`, `?action=…`, `#…`) definiuj w czystej funkcji aplikacji i testuj ją,
 a (2) audyt poprzedniego PR sprawdzaj też NA ŻYWO przejście po linkach
 między stronami (headless: klik/kod w `?q=` → stan aplikacji), nie tylko diff.
+
+
+## L17 (2026-09-04, AME) — nieudany `cd` + fallback `||` instaluje pakiety w repo
+
+**Objaw:** w commicie C1 nagle pojawił się `package-lock.json` (622 wstawki),
+a `package.json` zyskał trzy zależności runtime (puppeteer itd.) — złamanie
+ADR 0001 (zero zależności projektu).
+**Przyczyna:** polecenie miało iść do katalogu narzędzi poza repo
+(`cd /home/user && … || npm i puppeteer …`); `cd` się nie powiódł (katalog nie
+istnieje w tym sandboxie), łańcuch `&&` umarł, a fallback po `||` uruchomił
+`npm i` w bieżącym katalogu — czyli w katalogu głównym repozytorium.
+`node_modules/` jest w `.gitignore`, więc widać było tylko `package.json`
+i lockfile, ale to wystarczyło do złamania granicy.
+**Reguła:** przed każdym `npm i` sprawdź `pwd` (narzędzia sesji wyłącznie poza
+repo — ENVIRONMENT §4.1); nie łącz instalacji fallbackiem `||` z poleceniem,
+które może się nie udać przed zmianą katalogu. `package-lock.json` dopisany do
+`.gitignore`, żeby przypadek nie wrócił; naprawa = przywrócenie `package.json`
+z poprzedniego commita + `git rm` lockfilu (bez force push — ADR 0004).

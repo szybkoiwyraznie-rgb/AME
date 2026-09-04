@@ -3,3 +3,4 @@ node_modules/
 .DS_Store
 .msg.txt
 assets/map/vendor/
+package-lock.json
