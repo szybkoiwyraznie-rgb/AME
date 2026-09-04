@@ -14,6 +14,8 @@ import {
   potnijPierscien,
   potnijPierscienie,
   przeciecieAntypoludnika,
+  serializujWidok,
+  parsujWidokMapy,
   SZEROKOSC,
   WYSOKOSC,
   GRANICA_MERCATORA,
@@ -289,3 +291,34 @@ test('dopasujWidok: kontener zero/degenerat nie produkuje NaN', () => {
   assert.equal(bezWidoku.k, 1);
   assert.ok(Number.isFinite(bezWidoku.x));
 });
+
+test('serializujWidok/parsujWidokMapy: roundtrip deep-linku widoku mapy (C2)', () => {
+  const fragment = serializujWidok(3.2, 52.2297, 21.0122);
+  assert.equal(fragment, 'mapa=3.20,52.2297,21.0122');
+  const widok = parsujWidokMapy(fragment);
+  assert.deepEqual(widok, { k: 3.2, lat: 52.2297, lon: 21.0122 });
+  // środek świata z projekcji przeżywa pełny cykl (zaokrąglenie do 4 miejsc)
+  const [wx, wy] = projektuj(41.9, 12.5);
+  const [lat, lon] = odwroc(wx, wy);
+  const zLinku = parsujWidokMapy(serializujWidok(5, lat, lon));
+  assert.ok(Math.abs(zLinku.lat - 41.9) < 1e-4 && Math.abs(zLinku.lon - 12.5) < 1e-4);
+  assert.equal(zLinku.k, 5);
+});
+
+test('parsujWidokMapy: odrzuca usterki formatu i wartości spoza świata', () => {
+  for (const zly of [
+    '', 'mapa=', 'mapa=1,2', 'mapa=1,2,3,4', 'mapa=a,b,c',
+    'mapa=0.5,10,10', // k poniżej dopasowania
+    'mapa=2,91,10', // szerokość poza Web Mercator
+    'mapa=2,10,181', // długość poza światem
+    'mapa=NaN,10,10', 'skit:neith-sais', 'neith-sais', 'trofea',
+  ]) {
+    assert.equal(parsujWidokMapy(zly), null, JSON.stringify(zly));
+  }
+  assert.equal(parsujWidokMapy(null), null);
+  assert.equal(serializujWidok(0.5, 10, 10), null, 'k < 1 nie jest serializowane');
+  assert.equal(serializujWidok(NaN, 10, 10), null);
+  // granice świata są dopuszczalne
+  assert.ok(parsujWidokMapy(`mapa=1.00,${GRANICA_MERCATORA.toFixed(4)},180.0000`));
+});
+

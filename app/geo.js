@@ -110,6 +110,31 @@ export function dopasujWidok(kontener, widok, { min = K_MIN, max = K_MAX } = {})
   };
 }
 
+/* ---- Deep-link widoku mapy (C2): stan mapy w adresie URL ------------------
+ * Format fragmentu: `mapa=<k>,<lat>,<lon>` — powiększenie i środek widoku
+ * w stopniach dziesiętnych (W dodatnia). Adres jest czytelny i stabilny
+ * niezależnie od rozmiaru okna; serializacja zaokrągla (k: 2 miejsca,
+ * współrzędne: 4), parsowanie odrzuca wartości spoza świata.
+ */
+
+/** Widok (k, lat, lon) → fragment adresu `mapa=…`; null przy danych spoza zakresu. */
+export function serializujWidok(k, lat, lon) {
+  if (!Number.isFinite(k) || !Number.isFinite(lat) || !Number.isFinite(lon)) return null;
+  if (k < K_MIN || Math.abs(lat) > GRANICA_MERCATORA || Math.abs(lon) > 180) return null;
+  return `mapa=${k.toFixed(2)},${lat.toFixed(4)},${lon.toFixed(4)}`;
+}
+
+/** Fragment adresu `mapa=…` → { k, lat, lon }; null przy każdej usterce formatu. */
+export function parsujWidokMapy(fragment) {
+  if (typeof fragment !== 'string' || !fragment.startsWith('mapa=')) return null;
+  const czesci = fragment.slice(5).split(',');
+  if (czesci.length !== 3) return null;
+  const [k, lat, lon] = czesci.map(Number);
+  if (!Number.isFinite(k) || !Number.isFinite(lat) || !Number.isFinite(lon)) return null;
+  if (k < K_MIN || Math.abs(lat) > GRANICA_MERCATORA || Math.abs(lon) > 180) return null;
+  return { k, lat, lon };
+}
+
 /* ---- Antypołudnik (±180°) — ADR 0009, LESSONS L7 -------------------------
  * Geometrie Natural Earth (Rosja, Fidżi, Antarktyda) potrafią mieć pierścień,
  * który przechodzi przez antypołudnik: kolejna para punktów ma wtedy skok

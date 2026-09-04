@@ -1,0 +1,8 @@
+Uwagi:
+
+A. W pliku ZIP są dwa identyczne wielkością pliki html kodeksu. Po decyzji o pokazywaniu map w iframe ten podział na dwie gałęzie nie jest już chyba potrzebny i dwa pliki nie są potrzebne.
+B. Wypakowany z zipa plik html nie wyświetla na stronach kart ilustracji FOT i KON, które są na dysku w katalogu ./img/ - to są dokładnie 1FOT.png, 1KON.png oraz 2FOT.png i 2KON.png
+
+B. Prosiłem, żebyś nie używał w opisach sformułowania "Fabuła dostawy" - to brzmi jak "palety w sklepie na zapleczu". Fabuła, bez dopiska "dostawy".
+
+C. Sfinx z Teb ma pinezkę w Grecji!!! Sprawdź wszystkie pinezki czy są poprawnie przypisane - we wszystkich bytach.

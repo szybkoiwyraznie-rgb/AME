@@ -1,8 +1,8 @@
 /**
  * app/app.js — bootstrap AME: ładuje indeks, mapę świata, spina UI.
  */
-import { stworzMape, PROGI_WARSTW, PODKLADY_ONLINE } from './map.js?v=c5-17';
-import { zaladujIndeks, zaladujWpis, zaladujSkit, dopasowania, wylosujSlug, slugDnia } from './data.js?v=c6-1';
+import { stworzMape, PROGI_WARSTW, PODKLADY_ONLINE } from './map.js?v=c6-2';
+import { zaladujIndeks, zaladujWpis, zaladujSkit, dopasowania, wylosujSlug, slugDnia } from './data.js?v=c6-2';
 import {
   htmlWpisu,
   htmlWarstwyWpisu,
@@ -27,8 +27,8 @@ import {
   htmlTrofeow,
   paryRozmowySkitu,
   zB64utf8,
-} from './ui.js?v=c5-17';
-import { SZEROKOSC, WYSOKOSC } from './geo.js?v=c5-17';
+} from './ui.js?v=c6-2';
+import { SZEROKOSC, WYSOKOSC, odwroc, projektuj, serializujWidok, parsujWidokMapy } from './geo.js?v=c6-2';
 
 const $ = (sel) => document.querySelector(sel);
 
@@ -80,6 +80,13 @@ function zapiszWidokMapy(k, srodek) {
       localStorage.setItem(KLUCZ_WIDOKU_MAPY, JSON.stringify({ k, wx: srodek.wx, wy: srodek.wy }));
     } catch {
       /* jak wyżej */
+    }
+    // C2: stan mapy w adresie — fragment `#mapa=k,lat,lon` aktualizujemy tylko
+    // gdy żadna warstwa (kartoteka, tag, skit…) nie zajmuje adresu.
+    if (!location.hash || location.hash.startsWith('#mapa=')) {
+      const [lat, lon] = odwroc(srodek.wx, srodek.wy);
+      const fragment = serializujWidok(k, lat, lon);
+      if (fragment && location.hash !== `#${fragment}`) history.replaceState(null, '', `#${fragment}`);
     }
   }, 400);
 }
@@ -766,6 +773,14 @@ function podepnijZdarzenia() {
       if (slug) window.location.href = `docs/kronika-${slug}.html#kronika:${slug}`;
       return;
     }
+    if (fragment.startsWith('mapa=')) {
+      const widok = parsujWidokMapy(fragment);
+      if (widok) {
+        const [wx, wy] = projektuj(widok.lat, widok.lon);
+        mapa.ustawWidok(wx, wy, widok.k);
+      }
+      return;
+    }
     if (fragment && fragment !== stan.wpis?.slug && stan.indeks.manifestacje.some((m) => m.slug === fragment)) {
       otworzWpis(fragment, { przewin: false });
     } else if (!fragment && stan.wpis) zamknijWpis(false);
@@ -835,6 +850,12 @@ async function start() {
   przywrocWarstwyMapy();
   przywrocWidokMapy();
   const fragment = decodeURIComponent(location.hash.replace(/^#/, ''));
+  // C2: widok z deep-linku `#mapa=…` ma pierwszeństwo przed zapisem localStorage.
+  const widokZLinku = parsujWidokMapy(fragment);
+  if (widokZLinku) {
+    const [wx, wy] = projektuj(widokZLinku.lat, widokZLinku.lon);
+    mapa.ustawWidok(wx, wy, widokZLinku.k);
+  }
   const tagStartu = tagZFragmantu(fragment);
   $('#tagi').innerHTML = htmlTagow(stan.indeks, tagStartu && stan.indeks.tagi[tagStartu] ? tagStartu : null);
   stan.aktywnyTag = tagStartu && stan.indeks.tagi[tagStartu] ? tagStartu : null;

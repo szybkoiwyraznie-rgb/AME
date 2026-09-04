@@ -12,7 +12,7 @@
     "zasieg": [
       {
         "slug": "agni",
-        "wielkosc": 0.395
+        "wielkosc": 0.416
       },
       {
         "slug": "balor",
@@ -20,7 +20,7 @@
       },
       {
         "slug": "barbarossa-kyffhaeuser",
-        "wielkosc": 0.426
+        "wielkosc": 0.447
       },
       {
         "slug": "ben-varrey",
@@ -32,11 +32,11 @@
       },
       {
         "slug": "egungun",
-        "wielkosc": 0.458
+        "wielkosc": 0.5
       },
       {
         "slug": "empusa-korynt",
-        "wielkosc": 0.426
+        "wielkosc": 0.447
       },
       {
         "slug": "indra",
@@ -52,7 +52,7 @@
       },
       {
         "slug": "knecht-z-koptos",
-        "wielkosc": 0.363
+        "wielkosc": 0.384
       },
       {
         "slug": "lincoln-imp",
@@ -63,12 +63,16 @@
         "wielkosc": 0.342
       },
       {
+        "slug": "neith-z-sais",
+        "wielkosc": 0.195
+      },
+      {
         "slug": "nessos",
         "wielkosc": 0.384
       },
       {
         "slug": "pandora",
-        "wielkosc": 0.405
+        "wielkosc": 0.426
       },
       {
         "slug": "protostates",
@@ -80,7 +84,7 @@
       },
       {
         "slug": "sfinks-teby",
-        "wielkosc": 0.437
+        "wielkosc": 0.479
       },
       {
         "slug": "syama-i-sarvara",
@@ -95,7 +99,7 @@
       {
         "kultura": "indie",
         "kult": "agni",
-        "wielkosc": 0.395
+        "wielkosc": 0.416
       },
       {
         "kultura": "irlandia",
@@ -105,7 +109,7 @@
       {
         "kultura": "niemcy",
         "kult": "barbarossa-kyffhaeuser",
-        "wielkosc": 0.426
+        "wielkosc": 0.447
       },
       {
         "kultura": "man",
@@ -120,12 +124,12 @@
       {
         "kultura": "joruba",
         "kult": "egungun",
-        "wielkosc": 0.458
+        "wielkosc": 0.5
       },
       {
         "kultura": "grecja",
         "kult": "empusa-korynt",
-        "wielkosc": 0.426
+        "wielkosc": 0.447
       },
       {
         "kultura": "indie",
@@ -145,7 +149,7 @@
       {
         "kultura": "grecja",
         "kult": "knecht-z-koptos",
-        "wielkosc": 0.363
+        "wielkosc": 0.384
       },
       {
         "kultura": "anglia",
@@ -158,6 +162,11 @@
         "wielkosc": 0.342
       },
       {
+        "kultura": "egipt",
+        "kult": "neith-z-sais",
+        "wielkosc": 0.195
+      },
+      {
         "kultura": "grecja",
         "kult": "nessos",
         "wielkosc": 0.384
@@ -165,7 +174,7 @@
       {
         "kultura": "grecja",
         "kult": "pandora",
-        "wielkosc": 0.405
+        "wielkosc": 0.426
       },
       {
         "kultura": "grecja",
@@ -180,7 +189,7 @@
       {
         "kultura": "grecja",
         "kult": "sfinks-teby",
-        "wielkosc": 0.437
+        "wielkosc": 0.479
       },
       {
         "kultura": "indie",

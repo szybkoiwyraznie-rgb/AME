@@ -1,0 +1,90 @@
+{
+  "slug": "neith-z-sais",
+  "nazwa": "Neith z Sais — tkaczka początku",
+  "nazwy_alternatywne": [
+    "Neit",
+    "Nit",
+    "Net",
+    "Atena Saicka (identyfikacja grecka)",
+    "Matka i Ojciec wszystkich rzeczy"
+  ],
+  "karta": {
+    "nazwa": "Moonlit Meditation",
+    "wydanie": "Edge of Eternities (EOE) #69",
+    "rok": 2025
+  },
+  "lokalizacja": {
+    "miejscowosc": "Sais (obecnie Sa el-Hagar) — miasto w zachodniej Delcie Nilu, główny ośrodek kultu Neith; tu stała świątynia, na której posągu wyryto napis «Jestem wszystkim, co było, jest i będzie»",
+    "kraj": "Egipt (muhafaza al-Gharbijja)",
+    "lat": 30.9647,
+    "lon": 30.7683
+  },
+  "pochodzenie_i_kultura": "Religia starożytnego Egipta (Delta Nilu): Neith to jedna z najstarszych bogiń egipskich, pani Sais, tkaczka i wojowniczka — znakiem jej imienia jest tarcza ze skrzyżowanymi strzałami albo czółenko tkackie. W tradycji z Esny myśli świat w istnienie, od Nowego Państwa zwana „Matką i Ojciechem wszystkich rzeczy”, matką Ra i Apepa. Grecy utożsamiali ją z Ateną (Platon w Timajosie wprost: „Neith, czyli Atena”). Jedna bogini, jedna kultura, jedno miasto: żadnych mieszanek z późniejszą Izydą rzymskich misteriów — trzymamy się Neith z Sais, tej od płótna, łuku i napisu, którego nikt nie odsłonił.",
+  "wizualizacja": {
+    "prompt": "Style: A wide-angle full-body cinematic photograph. The central objects/persons of the photo are visible from head to toe, standing centrally in the frame. No parts of the body are cropped.\n\nA tall serene goddess-woman with dark copper skin wearing the red woven crown of Lower Egypt and a plain white linen dress, in one raised hand a wooden weaving shuttle with unspun thread, in the other a bow with two crossed arrows, standing in the open forecourt of an ancient sandstone temple at night, hundreds of small clay saucer-lamps with floating flames burning in long rows around her bare feet and across the dark square, a long translucent veil streaming from her crown and dissolving into the starry sky, the full moon low over a palm-lined river behind the colonnade.\n\nCaptured with a 35mm anamorphic lens at f/1.8. Shallow depth of field with a heavy, creamy bokeh background. Environmental portraiture. Dramatic cinematic lighting, sharp focus on the character, hyper-realistic textures of clothing and skin. Shot on 70mm film stock, ultra-wide 21:9 aspect ratio. --ar 21:9",
+    "obraz": null
+  },
+  "natura": {
+    "wyglad_i_aura": "Wysoka kobieta o ciemnej, miedzianej skórze, w czerwonej koronie Dolnego Egiptu i prostym lnianym kaftanie; w jednej dłoni czółenko z nicią, w drugiej łuk ze skrzyżowanymi strzałami. Manifestacji towarzyszy zapach gorącego oleju i świeżego płótna, a otoczenie robi się dziwnie spokojne — jakby ktoś przeciągnął przez świat krajkę i wygładził fałdy. Wokół stóp zawsze palą się małe płomienie, nawet bez lamp, a z korony spływa jej zasłona, która nie kończy się w żadnym widzialnym miejscu.",
+    "charakter_i_motywacje": "Opiekuńcza, ale nieprzenikniona. Nie pragnie niczego od śmiertelników — sama myśli świat w istnienie i od początku jest wszystkim, co było, jest i będzie; to my potrzebujemy jej nici, nie odwrotnie. Wchodzi w sprawy ludzi rzadko i uroczyście: rozsądziła spór Horusa z Setem o tron, przyznając królestwo Horusowi, bo jej wyrok kończy kłótnię bogów. Nie cierpi natomiast, gdy ktoś usiłuje zajrzeć jej pod zasłonę — początku nie wolno rozebrać na części.",
+    "zdolnosci": "Tka byt: jednym ruchem czółenka snuje nici, z których składają się istoty, zdarzenia i losy, a nici tej nie da się odciąć nożem, bo nie jest z materii. Otwiera Drogi — prowadzi dusze zmarłych, dlatego to ona dostarcza płótno na bandaże mumii. Jest też wojowniczką pierwszego rzutu: jej skrzyżowane strzały lecą, nim ktoś zdąży złożyć broń. Kto w Noc Lamp postawi przed nią miseczkę z oliwą i solą i wytrwa do świtu, może usłyszeć odpowiedź na jedno pytanie o początek rzeczy — ale nigdy o koniec.",
+    "slabosci_i_metody_pokonania": "Siłą nie da się jej pokonać, bo jest wcześniejsza niż siła. Zasłony nie podniósł żaden śmiertelnik — kto próbuje, traci nie wzrok, lecz pewność własnego imienia. Prawdziwa konfrontacja to cierpliwość: przyjść w Noc Lamp, utrzymać płomień do świtu i nie dotknąć zasłony; wtedy Neith sama schodzi do rozmowy, jak zeszła do rozmowy z kapłanami przy Solonie. Osłabia ją zapomnienie obrzędu — tam, gdzie nikt już nie zapala lamp i nie tka płótna, jej obecność rzadkieje jak nitka bez osnowy. Można ją też związać własną regułą: skoro jej wyrok kończy spory bogów, spór postawiony uczciwie musi rozstrzygnąć.",
+    "preferencje": "Lubi: lampy oliwne płonące od zmierzchu do świtu, świeżo utkane płótno, czółenka z twardego drewna, pytania o początek, ciszę przed świątynią i ofiary w Sais. Nie lubi: rąk sięgających po zasłonę, przerwanych ściegów, pogasłych lamp w Noc Lamp i tych, którzy chcą znać koniec, nie znając początku."
+  },
+  "dokumentacja": [
+    {
+      "typ": "tekst źródłowy",
+      "pozycja": "Plutarch, „O Izydzie i Ozyrysie” 9 (354C), przeł. F. C. Babbitt (Loeb Classical Library), LacusCurtius — napis na posągu Ateny w Sais: „I am all that has been, and is, and shall be, and my robe no mortal has yet uncovered”; bezpośrednio wcześniej Plutarch tłumaczy, że Egipcjanie stawiają sfinksy przed świątyniami jako znak enigmatycznej, zagadkowej mądrości",
+      "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Plutarch/Moralia/Isis_and_Osiris*/A.html"
+    },
+    {
+      "typ": "tekst źródłowy",
+      "pozycja": "Herodot, „Historie” 2.59 i 2.62, przeł. A. D. Godley (Loeb Classical Library), LacusCurtius — zjazd w Sais ku czci Ateny to trzecie co do wielkości święto Egipcjan; w noc ofiary wszyscy zapalają przed domami lampy-miseczki z solą i oliwą z pływającym knotem, które płoną całą noc nie tylko w Sais, lecz w całym Egipcie — tzw. Noc Lamp",
+      "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Herodotus/2a*.html"
+    },
+    {
+      "typ": "tekst źródłowy",
+      "pozycja": "Platon, „Timajos” 21e–22a, przeł. B. Jowett, Project Gutenberg — Sais u wylotu Delty, miasto rodzinne króla Amazisa, pozostaje pod opieką bogini, „której egipskie imię brzmi Neith, a greckie Atena”; tu Solon słucha kapłanów opowiadających o Atlantydzie i słyszy, że Grecy są wiecznymi dziećmi",
+      "url": "https://www.gutenberg.org/files/1572/1572-h/1572-h.htm"
+    },
+    {
+      "typ": "encyklopedia online",
+      "pozycja": "Wikipedia, „Neith” — przegląd ról bogini: związek z tkactwem i produkcją tkanin, przez który stała się opiekunką lnianych bandaży mumii; tytuł „Otwierająca Drogi” łączący wojnę z przewodnictwem dusz; matka Ra i Apepa; od Nowego Państwa „Matka i Ojciec wszystkich rzeczy”; rozsądza spór Horusa z Setem o tron; grecka identyfikacja z Ateną; Noc Lamp obchodzona na jej cześć wedle Herodota",
+      "url": "https://en.wikipedia.org/wiki/Neith"
+    },
+    {
+      "typ": "encyklopedia online",
+      "pozycja": "Wikipedia, „Sa el-Hagar” — identyfikacja starożytnej Sais ze współczesną miejscowością Sa el-Hagar w zachodniej Delcie Nilu (muhafaza al-Gharbijja); współrzędne przybliżone 30,97 N, 30,77 E; w okresie saickim (XXVI dynastia) stolica Egiptu",
+      "url": "https://en.wikipedia.org/wiki/Sa_el-Hagar"
+    }
+  ],
+  "trofea": {
+    "pierwotne": "Czółenko tkackie z sali ofiarnej w Sais — nawój nici, która nigdy się nie kończy; dotknięte o świcie w Noc Lamp przestaje się poruszać i można je zabrać, ale kto spróbuje je przeciąć, tnie własny los",
+    "wtorne": "Gliniana miseczka-lampa z Nocy Lamp, z warstwą soli i spłowiałym knotem — wciąż ciepła, choć od święta minęły wieki; dowód, że ktoś dotrwał z płomieniem do świtu"
+  },
+  "tagi": [
+    "egipt",
+    "bogini-tkaczka",
+    "tkanie",
+    "obrona"
+  ],
+  "powiazania": [
+    {
+      "slug": "sfinks-teby",
+      "opis": "Plutarch stawia te dwa byty obok siebie w jednym oddechu: sfinksy przed egipskimi świątyniami oznaczają zagadkową, ukrytą mądrość, a na posągu Neith w Sais wyryto, że żaden śmiertelnik nie podniósł jej zasłony. Sfinks pyta i zabija za złą odpowiedź, Neith milczy i karze samą ciekawość — obie strzegą wiedzy, której nie wolno po prostu wziąć."
+    },
+    {
+      "slug": "agni",
+      "opis": "Ogień jest drogą do obojga: Agni niesie ofiary z płomienia ku bogom, a Neith czci się w Noc Lamp, gdy cały Egipt zapala miseczki z oliwą i pilnuje płomienia do świtu. On jest żarem, który przemienia ofiarę w dym ku niebu; ona jest światłem, które przez jedną noc trzyma granicę między ciemnością a tym, co utkane."
+    },
+    {
+      "slug": "egungun",
+      "opis": "Neith tka płótno, w które owijano zmarłych, i jako Otwierająca Drogi prowadzi dusze na tamtą stronę, a Egungun jest przodkiem, który wraca do żywych spowity w warstwy tkanin. U obojga materiał zasłania twarz śmierci — i dzięki temu spotkanie z nią staje się możliwe bez utraty rozumu."
+    }
+  ],
+  "meta": {
+    "utworzono": "2026-09-04 19:30",
+    "autor": "sesja arena 2026-09-04",
+    "modyfikacje": []
+  }
+}
