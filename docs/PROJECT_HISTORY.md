@@ -1955,3 +1955,35 @@ dokładane do niego).
   temacie, tytule i uczestnikach; `temat` pozostaje katalogowe (PROTOKÓŁ
   §8.1), więc trafia do atrybutu `data-temat` w base64 (test §8.1 pilnuje,
   by temat nie był tekstem wiersza). Cache-bust `c5-13`, 213/213.
+
+## Sesja 2026-09-04 (auto 2) (gałąź session/2026-09-04-auto2) — audyt PR #16
+
+**Kontekst:** sesja auto (automatyzacja „kontynuuj projekt"). Brak otwartych
+PR-ów na starcie — PR #14, #15 i #16 zostały scalone przez właściciela między
+sesjami. Nie ma więc PR `session/*-auto` do auto-scalenia (wyjątek AGENTS §2
+nie miał zastosowania w tej sesji).
+
+**Brama PR #16 (`c48999d`, scalony Squash 2026-09-04 14:36):** CI na PR
+zielone (run 33884388539), CI + pages na `main` po scaleniu zielone
+(33884710221, 33884709195); lokalnie po `git pull`: `npm test` **213/213**
+zielone, `npm run build` i `npm run check` bez zapisu.
+
+**Audyt plik po pliku (`git diff 3bbedf0..c48999d`):**
+- **`AGENTS.md` (+14)** — jedyny plik; dopisuje do §2 wyjątek od zakazu
+  merge: agent MOŻE scalić (Squash) PR z gałęzi `session/*-auto`, gdy
+  spełnione są warunki (a)–(d): pochodzenie z gałęzi auto, czysty audyt,
+  zielone `npm test`/`build`/`check` lokalnie na gałęzi PR-a, powtórna
+  weryfikacja po scaleniu. Decyzja właściciela z datą (2026-09-04),
+  brzmienie precyzyjne, z akcją dla przypadku niespełnienia warunków
+  (PR zostaje otwarty + komentarz). ✔
+- **Zgodność z ADR i lekcjami:** wyjątek jest wąski (tylko `session/*-auto`)
+  i nie znosi reguły L18 — dla wszystkich pozostałych PR-ów scalanie nadal
+  wyłącznie właściciel; AGENTS §2 jest właściwym nośnikiem reguły nadrzędnej
+  (tabela §5), ADR 0004 pozostaje aktualny. ✔
+- **Łańcuch audytów:** PR #16 deklaruje audyt PR #15; kontrola punktowa
+  PR #15 w tej sesji: SKIT „Pracownicy progu" — skład 3-osobowy unikalny,
+  297 słów (≤300), meta z godziną; reszta diffu (wyszukiwarka Bazy Skitów,
+  C1 kentaur-pelion, regeneracja Kroniki) przechodzi pełną bramę na HEAD. ✔
+
+**Wniosek:** brak usterek, brak zaległości. Sesja wchodzi w Pętlę Jakości
+(ADR 0007: C1 → C3 → C2).
