@@ -26,12 +26,17 @@
   },
   "natura": {
     "wyglad_i_aura": "Piękna, spokojna postać w białych i złotych szatach, z wieloma twarzami i ramionami, która otwiera dłonie ku każdemu, kto woła. Jej aura jest cicha i jasna — jak powietrze po deszczu; wokół rozchodzi się zapach palonego kadzidła, mokrego drewna i kwitnących wiśni. Nie budzi lęku, tylko uspokaja i nakłania do wejścia na schody.",
-    "charakter_i_motywacje": "Kannon nie jest kapryśna ani surowa: jej jedynym celem jest ratować cierpiących, niezależnie od tego, czy proszą słabo, czy mocno. Nie karze, nie wywyższa — schodzi do piekła, do oceanu i na ziemię, żeby wyprowadzić tych, którzy utknęli. Jest wobec siebie bezlitosna, bo nieustannie pamięta o wszystkich, których nie zdołała jeszcze uratować, i dlatego coraz bardziej się rozprasza w poszukiwaniu nowych dróg pomocy.",
-    "zdolnosci": "Słyszy każdy głos i każdą modlitwę w świecie i odpowiada na nie, przyjmując kształt, który jest potrzebny — pojawia się w postaci opiekunki, przewodniczki, matki albo obrońcy. Może uleczyć cierpienie, zdjąć ciężar, otworzyć drogę przez góry, wody i ciemność. Potrafi też powstrzymać zło, nie niszcząc go: trzyma je w miejscu i oślepia, aż straci siłę, a jej wielość rąk oznacza, że może pomóc wielu naraz.",
+    "charakter_i_motywacje": "Kannon nie jest kapryśna ani surowa: jej jedynym celem jest ratować cierpiących, niezależnie od tego, czy proszą słabo, czy mocno. Nie karze, nie wywyższa — schodzi do piekła, do oceanu i na ziemię, żeby wyprowadzić tych, którzy utknęli. Jest wobec siebie bezlitosna, bo nieustannie pamięta o wszystkich, których nie zdołała jeszcze uratować, i dlatego coraz bardziej się rozprasza w poszukiwaniu nowych dróg pomocy. Sama jej nazwa jest obietnicą: w Sutrze Lotosu Budda tłumaczy bodhisattwie Akshayamatiemu, że nazywa się Słyszącą Dźwięki Świata, bo gdy nieskończone rzesze cierpiących istot wymówią jej imię, natychmiast usłyszy ich głosy i uwolni od cierpienia. Nie trzeba jej przekonywać — trzeba tylko zawołać.",
+    "zdolnosci": "Słyszy każdy głos i każdą modlitwę w świecie i odpowiada na nie, przyjmując kształt, który jest potrzebny — Sutra Lotosu wylicza, że naucza w postaci buddy, pratjekabuddy, Brahmę, władcy, bogatego człowieka albo zwyczajnego gospodarza, zależnie od tego, jaką formą da się daną istotę zbawić; stąd tradycja jej 33 form. Tam sam zapisana jest siła jej imienia: kto wymówi je w płomieniach, tego ogień nie spali; kogo niesie wielka woda, ten dzięki imieniu dopłynie do mielizny; pałki i miecze podniesione na wołającego łamią się w kawałki, a więzy pękają, choćby zawołał winowajca; demony, które chcą skrzywdzić recytujących, tracą ich z oczu. Może też powstrzymać zło, nie niszcząc go: trzyma je w miejscu i oślepia, aż straci siłę, a jej wielość rąk oznacza, że może pomóc wielu naraz.",
     "slabosci_i_metody_pokonania": "Nie można z nią walczyć jak z potworem, bo jej moc rośnie z modlitwy; nie ucieka przed przemocą, ale nie można jej też wciągnąć w nienawiść. Najskuteczniejszy sposób, by ją zatrzymać, to przeciąć jej kontakt z wiernymi — zamknąć świątynię, zasłonić jej „słuch świata”. Jednak wtedy ona po prostu odchodzi, bo nie ma w niej pragnienia panowania nad ludźmi. Nie pokona się jej czarem — można tylko oddalić jej pomoc.",
     "preferencje": "Lubi: czyste modlitwy, cierpliwą ufność, pielgrzymów idących z błogosławieństwem, ciszę po deszczu; nie lubi: cierpienia, które ludzie sami zadają sobie, pustych modlitw proszących o zemstę, i zatrzymywania jej w jednym miejscu."
   },
   "dokumentacja": [
+    {
+      "typ": "sutra buddyjska (źródło pierwotne)",
+      "pozycja": "Tsugunari Kubo, Akira Yuyama (tłum.), „The Lotus Sutra” (Taishō vol. 9, no. 262), BDK English Tripiṭaka 13-I, Berkeley 2007, rozdz. XXV „The Gateway to Every Direction [Manifested by Bodhisattva Avalokiteśvara]” — dialog Buddy z Akshayamatim o imieniu Słyszącej Dźwięki Świata, imię gaszące ogień i niosące do mielizny, łamiące ostrza i więzy, oraz przybieranie postaci potrzebnej do zbawienia danej istoty — korzeni tradycji 33 form",
+      "url": "https://www.bdk.or.jp/document/dgtl-dl/dBET_T0262_LotusSutra_2007.pdf"
+    },
     {
       "typ": "słownik buddyzmu japońskiego",
       "pozycja": "Mark Schumacher, „Kannon Bosatsu — Goddess of Mercy, One Who Hears Prayers of the World” — nazwa Kanzeon, pochodzenie od Avalokiteśvary, 33 formy, postać jedenasto-głowa i tysiąc-ręczna, pomoc w trudnościach, pielgrzymki 33 Kannon w Kamakurze i w całej Japonii",
@@ -107,6 +112,10 @@
       {
         "data": "2026-08-30 13:18",
         "opis": "Korekta tras — Hasedera (Kamakura) to 4. stacja Bandō Sanjūsankasho i kamakurańskiej pielgrzymki Kannon, NIE Saigoku (Saigoku = Kansai, Hase-dera w Narze); źródła: Wikipedia „Hase-dera (Kamakura)” i „Bandō Sanjūsankasho” (legenda Tokudō 721, 11 głów, 9,18 m, plaża Nagai 736); nowe powiązanie z Śyāmą i Śarvarą (droga dusz)."
+      },
+      {
+        "data": "2026-09-04 16:05",
+        "opis": "Pogłębienie charakterystyki i zdolności o rozdział XXV Sutry Lotosu (tłum. Kubo–Yuyama, BDK 2007) — imię jako obietnica, siła wołania w ogniu, na wodzie i wobec ostrzy, przybieranie postaci potrzebnej do zbawienia; dopisana pozycja źródła pierwotnego w dokumentacji"
       }
     ]
   }
