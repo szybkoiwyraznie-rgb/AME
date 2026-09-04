@@ -1,0 +1,464 @@
+Dunland Crebain	LTR
+Coralhelm Guide	BFZ
+Nefarious Imp	CLB
+Mystic Sanctuary	ELD
+Academy Journeymage	DOM
+Azorius Justiciar	RTR
+Mindstab	TSP
+Goblin Deathraiders	ALA
+Toll of the Invasion	WAR
+Servant of the Scale	DTK
+Sleep of the Dead	THB
+Merchant's Dockhand	AER
+Soulmender	M20
+Crew Captain	SNC
+Tellah, Great Sage	FIN
+Brawler's Plate	M15
+Selhoff Occultist	ISD
+Lotusguard Disciple	DFT
+Twiddle	8ED
+Jeskai Devotee	TDM
+Pyxis of Pandemonium	THS
+Titan's Strength	ORI
+Lunar Rejection	VOW
+Ember Beast	GTC
+You're Not Alone	FIN
+Carrion Call	SOM
+Fierce Empath	2XM
+Halo Forager	MOM
+Etherium Abomination	ARB
+Howl of the Night Pack	M10
+Liliana's Triumph	WAR
+Brute Force	MM2
+Expunge	USG
+Severed Strands	GRN
+Murder of Crows	ISD
+Kor Sanctifiers	HOP
+Underdark Explorer	CLB
+Piercing Rays	MH2
+Selesnya Charm	RTR
+Divine Offering	MBS
+Raucous Carnival	DSK
+Unstable Frontier	CON
+Dream Twist	ISD
+Deepwood Denizen	MH2
+Divest	2XM
+Illvoi Operative	EOE
+Etherwrought Page	ARB
+Diplomatic Relations	EOE
+Veiled Ascension	MKC
+Mysidian Elder	FIN
+Stall Out	DFT
+Grounded	AVR
+Curate	STX
+Scorpion Sentinel	FIN
+Ainok Tracker	KTK
+Tome Scour	M11
+Security Rhox	SNC
+Dragon Arch	APC
+Bladed Sentinel	MBS
+Rush of Battle	KTK
+Phyrexian Rager	DMU
+Negate	M15
+Nightsnare	ORI
+Holdout Settlement	OGW
+Krotiq Nestguard	TDM
+Gorehorn Minotaurs	MM2
+Garruk's Companion	M11
+Cloudbound Moogle	FIN
+Angelic Benediction	ALA
+Release the Ants	MOR
+Curse of the Pierced Heart	ISD
+Silumgar Butcher	DTK
+Dispeller's Capsule	ALA
+Fortify	TSP
+Krumar Initiate	TDM
+Voice of the Vermin	SNC
+Great Furnace	MRD
+Fleeting Distraction	FDN
+Steelfin Whale	MH2
+Emissary Escort	EOE
+Grave Exchange	AVR
+Fiery Fall	MM2
+Sweet Oblivion	THB
+Glitch Ghost Surveyor	DFT
+Blade-Blizzard Kitsune	NEO
+Mosquito Guard	MOR
+Somberwald Spider	ISD
+Forced Landing	WAR
+Relic Robber	ZNR
+Serra's Embrace	DVD
+Final Parting	DOM
+Flurry of Wings	ARB
+Welder Automaton	AER
+Fledgling Imp	ODY
+Merfolk Mesmerist	M12
+Wrap in Flames	MM2
+Tireless Hauler	MID
+Dire-Strain Brawler	MID
+Spin Out	DFT
+Returned Centaur	ORI
+Sea God's Scorn	THB
+Blazing Torch	ISD
+Trade Route Envoy	TDM
+Courage in Crisis	WAR
+Undead Servant	ORI
+Pilgrim's Eye	GNT
+Breaching Hippocamp	THS
+Bone Splinters	ALA
+Withstand	GPT
+Boros Challenger	GRN
+Kabira Vindicator	ROE
+Palace Familiar	DTK
+Balamb Garden, SeeD Academy	FIN
+Balamb Garden, Airborne	FIN
+Predator's Gambit	AVR
+Ghoulcaller's Bell	ISD
+Talion's Messenger	WOE
+Steel Sabotage	2XM
+Greenwood Sentinel	M20
+Grizzled Outcasts	ISD
+Mournful Zombie	APC
+Awaken the Bear	KTK
+Caves of Chaos Adventurer	CLB
+Dire Fleet Ravager	OTC
+Index	APC
+Homicidal Brute	ISD
+Spectral Prison	AVR
+Stomping Slabs	MOR
+Sifter Wurm	HOU
+Altar of the Goyf	MH2
+Alaborn Trooper	P02
+Cogwork Assembler	AER
+Idyllic Grange	ELD
+Apprentice Wizard	2XM
+Glint-Sleeve Artisan	2XM
+Goldmeadow Nomad	ECL
+Esper Stormblade	ARB
+Floodhound	MH2
+Entrancing Lyre	THB
+Dismal Backwater	M20
+Gloomfang Mauler	MOM
+Cloak of the Bat	CLB
+Tiller of Flesh	MOM
+Inferno Titan	LTC
+Skilled Animator	CMR
+High Stride	BLB
+Feed the Infection	ONE
+Burning-Yard Trainer	ELD
+Seismic Monstrosaur	LCI
+Reclusive Artificer	ORI
+Snarling Wolf	VOW
+Malamet Battle Glyph	LCI
+Armored Skaab	ISD
+Manor Gate	CLB
+Trigon of Corruption	SOM
+Prishe's Wanderings	FIN
+Urza's Mine	2XM
+Mark of the Vampire	M14
+Maritime Guard	M11
+Angel's Feather	M11
+Immersturm Skullcairn	KHM
+Furious Forebear	TDM
+Makeshift Mauler	ISD
+Jwari Shapeshifter	ROE
+Strandwalker	MBS
+Sterling Keykeeper	OTJ
+Horizon Spellbomb	SOM
+Anthem of Champions	FDN
+Goblin Piker	M11
+Barkform Harvester	BLB
+Gray Slaad	CLB
+Trestle Troll	RTR
+Agate Assault	BLB
+Ramroller	ORI
+Descendant of Storms	TDM
+Knight of the Skyward Eye	ALA
+Willbender	DD2
+Dread Warlock	M10
+Cuombajj Witches	CMR
+Reassembling Skeleton	M19
+Feedback	5ED
+Stirring Bard	CLB
+Captain's Call	CMR
+Inspiring Bard	AFR
+Frightful Delusion	ISD
+Lash of the Balrog	LTR
+Hill Giant	7ED
+Angel's Herald	ALA
+Ghost Warden	GPT
+Boulder Salvo	OGW
+Hunter's Blowgun	LCI
+Might of the Masses	2XM
+Roiling Regrowth	ZNR
+Expose to Daylight	RNA
+Feral Invocation	THS
+Fertile Thicket	BFZ
+Akrasan Squire	ALA
+Aerith Rescue Mission	FIN
+Heap Gate	CLB
+Spinewoods Paladin	OTJ
+Kappa Tech-Wrecker	NEO
+Village Rites	M21
+Moonlit Meditation	EOE
+Hysterical Blindness	ISD
+Magic Damper	FIN
+Thieves' Tools	CLB
+Etherium Sculptor	ALA
+Weftblade Enhancer	EOE
+Sarkhan's Rage	DTK
+Wedgelight Rammer	EOE
+Rustvine Cultivator	ONE
+Soulbright Flamekin	MM2
+Plague Reaver	CMR
+Rediscover the Way	TDM
+Forever Young	ELD
+Tumbleweed Rising	OTJ
+Fake Your Own Death	OTJ
+Minotaur Abomination	M14
+Grizzled Leotau	ARB
+Raise the Alarm	CMR
+Farbog Explorer	AVR
+Gila Courser	OTJ
+Guildscorn Ward	GTC
+Curate	BRO
+Blanchwood Prowler	BRO
+Sagittars' Volley	RNA
+Illusory Demon	ARB
+Mysteries of the Deep	WWK
+Jyoti, Moag Ancient	M3C
+Greatsword of Tyr	CLB
+Civilized Scholar	ISD
+Chatter of the Squirrel	2XM
+Guildsworn Prowler	CLB
+Goblin Battle Jester	M13
+Faceless Butcher	TOR
+Revolutionist	MH2
+Chronic Flooding	RTR
+Wormfang Newt	JUD
+Village Bell-Ringer	ISD
+Gond Gate	CLB
+Call the Mountain Chocobo	FIN
+Infectious Horror	CON
+Ainok Artillerist	DTK
+Satyr Wayfinder	M15
+Bone Shredder	MH2
+Invasion of the Giants	KHM
+Trostani Discordant	CLU
+Gather the Townsfolk	DDQ
+Glaring Aegis	M20
+Patron of the Arts	CLB
+Gorger Wurm	ARB
+Puppeteer Clique	SHM
+Pain for All	EOE
+Porcelain Legionnaire	NPH
+Necrosquito	ONE
+Pristine Talisman	NPH
+Enduring Sliver	MH1
+Evangel of Synthesis	BRO
+Wretched Banquet	CON
+Cathartic Reunion	KLD
+Frontline War-Rager	EOE
+Inspiration	8ED
+Simian Simulacrum	BRO
+Assert Perfection	ECL
+Battle-Rattle Shaman	M21
+Consume Spirit	MRD
+Dragonbroods' Relic	TDM
+Fear of Abduction	DSK
+Thistledown Players	BLB
+Deadly Recluse	M10
+Doomed Dissenter	VOW
+Scroll of Avacyn	AVR
+Swooping Protector	SNC
+Caravan Vigil	ISD
+Geological Appraiser	LCI
+Supernatural Stamina	2XM
+Sequestered Stash	KLD
+Midnight Guard	DKA
+Insatiable Appetite	ELD
+Molten Nursery	BFZ
+Goblin Picker	DMU
+Bring Low	KTK
+Forge Devil	DKA
+Unearth	MH1
+Vow of Wildness	CMR
+Chill of the Grave	VOW
+Rage of Purphoros	THS
+Dementia Bat	NPH
+Fear of Burning Alive	DSK
+Cellar Door	ISD
+Dreams of Steel and Oil	BRO
+Benevolent Blessing	CMR
+Curiosity	ISD
+Nightshade Harvester	CMR
+Delta Bloodflies	TDM
+Wishful Merfolk	ELD
+Inspire Awe	THB
+Epic Experiment	OTC
+Warrior's Sword	FIN
+Fireball	JVC
+Giant Spider	M19
+Circle of the Land Druid	CLB
+Hecteyes	FIN
+Your Temple Is Under Attack	CLB
+Survivor of Korlis	BRO
+Cenn's Tactician	MOR
+Scorned Villager	DKA
+Colossodon Yearling	DTK
+Locthwain Paladin	ELD
+Unbreakable Bond	IKO
+Resurrected Cultist	DSK
+Rupture Spire	CON
+Greater Tanuki	NEO
+Thornhide Wolves	M19
+Downwind Ambusher	BLB
+Omenspeaker	THS
+Elgaud Inquisitor	DKA
+Setessan Skirmisher	THB
+Irontread Crusher	AER
+Crawling Chorus	ONE
+Silken Strength	DFT
+Trained Arynx	OTJ
+Prismari Campus	STX
+Ivy Lane Denizen	CMR
+Negate	M20
+Marut	CLB
+Knockout Maneuver	TDM
+Polluted Dead	AVR
+Gurmag Drowner	DTK
+Basilisk Gate	CLB
+Monastery Flock	KTK
+Cacophodon	RIX
+Chained Throatseeker	NPH
+Springbloom Druid	MH1
+Healer of the Glade	M20
+Kazuul's Toll Collector	2XM
+Scion Summoner	OGW
+Scroll Thief	M13
+Ruinous Rampage	EOE
+Banishment Decree	MBS
+Jeskai Windscout	KTK
+Spare from Evil	ISD
+Impact Tremors	DTK
+Zoraline, Cosmos Caller	BLB
+Dawntreader Elk	DKA
+True Conviction	SOM
+Lodestone Needle	LCI
+Guidestone Compass	LCI
+Moonscarred Werewolf	DKA
+Krallenhorde Wantons	ISD
+Stoic Rebuttal	SOM
+Carapace Forger	SOM
+Seer's Lantern	OGW
+Awaken the Sleeper	ONE
+Nature's Embrace	VOW
+Secluded Steppe	DDO
+Skyclave Geopede	ZNR
+Crested Herdcaller	RIX
+Scorch Spitter	M20
+Shiv's Embrace	M11
+Static Net	BRO
+Fathom Fleet Cutthroat	M20
+Vandalize	DTK
+Instant Ramen	FIN
+Exterminator Magmarch	M3C
+Kin-Tree Nurturer	TDM
+Rustwing Falcon	M19
+Ballista Watcher	VOW
+Ballista Wielder	VOW
+Spread the Sickness	MBS
+Shatter	SOM
+Wavecrash Triton	THS
+Highland Game	KTK
+Angel of the Dawn	M19
+Emerald Oryx	M10
+Vanish from Sight	DSK
+Spreading Insurrection	MH2
+Wolfkin Bond	M20
+Warmaker Gunship	EOE
+Tenth District Veteran	RNA
+Force Away	KTK
+Woolly Loxodon	KTK
+Lurking Green Dragon	CLB
+Rakshasa Vizier	KTK
+Leafcrown Dryad	THS
+Hobble	PLS
+Segmented Krotiq	DTK
+Squire's Lightblade	EOE
+Jill, Shiva's Dominant	FIN
+Canonized in Blood	LCI
+Shiva, Warden of Ice	FIN
+Enter the Enigma	DSK
+Turn the Tide	MBS
+Grazing Gladehart	ZEN
+Disa the Restless	M3C
+You're Confronted by Robbers	CLB
+Death-Hood Cobra	2XM
+Terminal Agony	MH2
+Lab Rats	STH
+Ethersworn Shieldmage	CON
+Kor Cartographer	CMR
+Ojutai's Breath	DTK
+Silvanus's Invoker	CLB
+Chittering Rats	DST
+Bomat Bazaar Barge	KLD
+Panic Spellbomb	SOM
+Wooden Stake	ISD
+Thraben Valiant	AVR
+Fuel for the Cause	MBS
+Clawing Torment	NEO
+Quicksilver Fisher	ONE
+Steelclaw Lance	ELD
+Stampeding Elk Herd	DTK
+Frost Lynx	M15
+Contested Game Ball	LCI
+Ettercap	CLB
+Coat with Venom	DTK
+Cherished Hatchling	RIX
+Bedhead Beastie	DSK
+Ruthless Invasion	NPH
+Kishla Village	TDM
+White Mage's Staff	FIN
+Gaelicat	FIN
+Dead Ringers	APC
+Time to Feed	THS
+Shock	AER
+Koilos Roc	BRO
+Razorfoot Griffin	INV
+Mana Cylix	CON
+Creakwood Safewright	ECL
+Jwar Isle Avenger	OGW
+Nanoform Sentinel	EOE
+Manifest Dread	DSK
+Dimir Guildgate	GRN
+Vow of Flight	CMR
+Skinbrand Goblin	GTC
+Typhoid Rats	FRF
+Invasive Species	M15
+Dromoka Warrior	DTK
+Akroan Sergeant	ORI
+Thunderstaff	DST
+Savage Surge	THS
+Kulrath Mystic	ECL
+Loporrit Scout	FIN
+Ulna Alley Shopkeep	SOS
+Vaan, Street Thief	FIN
+Kill Shot	KTK
+Merfolk Falconer	ZNR
+Jolrael, Mwonvuli Recluse	MKC
+Fourth Bridge Prowler	AER
+Leonin Surveyor	DFT
+Cemetery Recruitment	EMN
+Acidic Slime	M3C
+Keep Out	ECL
+Rust-Shield Rampager	BLB
+Glorifier of Suffering	LCI
+Inspiring Captain	SOI
+Ironclad Slayer	EMN
+Óin the Brave	HOB
+Ghirapur Gearcrafter	ORI
+Ichorclaw Myr	SOM
+Sheriff of Safe Passage	OTJ
+Candlegrove Witch	MID
+Rotting Legion	M11
