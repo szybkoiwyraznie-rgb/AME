@@ -6,73 +6,73 @@
   "status": "otwarta",
   "stanStart": {
     "os": {
-      "mit": 41,
-      "racjonalizacja": 59
+      "mit": 40,
+      "racjonalizacja": 60
     },
     "zasieg": [
       {
         "slug": "agni",
-        "wielkosc": 0.389
+        "wielkosc": 0.395
       },
       {
         "slug": "balor",
-        "wielkosc": 0.489
+        "wielkosc": 0.468
       },
       {
         "slug": "barbarossa-kyffhaeuser",
-        "wielkosc": 0.444
+        "wielkosc": 0.426
       },
       {
         "slug": "ben-varrey",
-        "wielkosc": 0.344
+        "wielkosc": 0.332
       },
       {
         "slug": "drangue-shala",
-        "wielkosc": 0.478
+        "wielkosc": 0.479
       },
       {
         "slug": "egungun",
-        "wielkosc": 0.478
+        "wielkosc": 0.458
       },
       {
         "slug": "empusa-korynt",
-        "wielkosc": 0.444
+        "wielkosc": 0.426
       },
       {
         "slug": "indra",
-        "wielkosc": 0.356
+        "wielkosc": 0.363
       },
       {
         "slug": "kannon-hase",
-        "wielkosc": 0.411
+        "wielkosc": 0.395
       },
       {
         "slug": "kentaur-pelion",
-        "wielkosc": 0.411
+        "wielkosc": 0.416
       },
       {
         "slug": "knecht-z-koptos",
-        "wielkosc": 0.378
+        "wielkosc": 0.363
       },
       {
         "slug": "lincoln-imp",
-        "wielkosc": 0.367
+        "wielkosc": 0.374
       },
       {
         "slug": "morowa-panna",
-        "wielkosc": 0.333
+        "wielkosc": 0.342
       },
       {
         "slug": "nessos",
-        "wielkosc": 0.4
+        "wielkosc": 0.384
       },
       {
         "slug": "pandora",
-        "wielkosc": 0.4
+        "wielkosc": 0.405
       },
       {
         "slug": "protostates",
-        "wielkosc": 0.333
+        "wielkosc": 0.321
       },
       {
         "slug": "selkie-sule-skerry",
@@ -80,97 +80,97 @@
       },
       {
         "slug": "sfinks-teby",
-        "wielkosc": 0.456
+        "wielkosc": 0.437
       },
       {
         "slug": "syama-i-sarvara",
-        "wielkosc": 0.344
+        "wielkosc": 0.332
       },
       {
         "slug": "talos-kreta",
-        "wielkosc": 0.433
+        "wielkosc": 0.437
       }
     ],
     "dominacje": [
       {
         "kultura": "indie",
         "kult": "agni",
-        "wielkosc": 0.389
+        "wielkosc": 0.395
       },
       {
         "kultura": "irlandia",
         "kult": "balor",
-        "wielkosc": 0.489
+        "wielkosc": 0.468
       },
       {
         "kultura": "niemcy",
         "kult": "barbarossa-kyffhaeuser",
-        "wielkosc": 0.444
+        "wielkosc": 0.426
       },
       {
         "kultura": "man",
         "kult": "ben-varrey",
-        "wielkosc": 0.344
+        "wielkosc": 0.332
       },
       {
         "kultura": "albania",
         "kult": "drangue-shala",
-        "wielkosc": 0.478
+        "wielkosc": 0.479
       },
       {
         "kultura": "joruba",
         "kult": "egungun",
-        "wielkosc": 0.478
+        "wielkosc": 0.458
       },
       {
         "kultura": "grecja",
         "kult": "empusa-korynt",
-        "wielkosc": 0.444
+        "wielkosc": 0.426
       },
       {
         "kultura": "indie",
         "kult": "indra",
-        "wielkosc": 0.356
+        "wielkosc": 0.363
       },
       {
         "kultura": "japonia",
         "kult": "kannon-hase",
-        "wielkosc": 0.411
+        "wielkosc": 0.395
       },
       {
         "kultura": "grecja",
         "kult": "kentaur-pelion",
-        "wielkosc": 0.411
+        "wielkosc": 0.416
       },
       {
         "kultura": "grecja",
         "kult": "knecht-z-koptos",
-        "wielkosc": 0.378
+        "wielkosc": 0.363
       },
       {
         "kultura": "anglia",
         "kult": "lincoln-imp",
-        "wielkosc": 0.367
+        "wielkosc": 0.374
       },
       {
         "kultura": "polska",
         "kult": "morowa-panna",
-        "wielkosc": 0.333
+        "wielkosc": 0.342
       },
       {
         "kultura": "grecja",
         "kult": "nessos",
-        "wielkosc": 0.4
+        "wielkosc": 0.384
       },
       {
         "kultura": "grecja",
         "kult": "pandora",
-        "wielkosc": 0.4
+        "wielkosc": 0.405
       },
       {
         "kultura": "grecja",
         "kult": "protostates",
-        "wielkosc": 0.333
+        "wielkosc": 0.321
       },
       {
         "kultura": "szkocja-polnocna",
@@ -180,17 +180,17 @@
       {
         "kultura": "grecja",
         "kult": "sfinks-teby",
-        "wielkosc": 0.456
+        "wielkosc": 0.437
       },
       {
         "kultura": "indie",
         "kult": "syama-i-sarvara",
-        "wielkosc": 0.344
+        "wielkosc": 0.332
       },
       {
         "kultura": "grecja",
         "kult": "talos-kreta",
-        "wielkosc": 0.433
+        "wielkosc": 0.437
       }
     ]
   },
