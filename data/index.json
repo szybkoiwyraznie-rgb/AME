@@ -1,6 +1,6 @@
 {
   "wersja": 3,
-  "buildTime": "2026-09-04T15:44:29.394Z",
+  "buildTime": "2026-09-04T15:52:34.121Z",
   "liczba": 20,
   "liczbaSkitow": 31,
   "kanon": {
@@ -1863,6 +1863,14 @@
     }
   ],
   "aktualizacje": [
+    {
+      "data": "2026-09-04 16:05",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "talos-kreta",
+      "tytul": "Talos — spiżowy strażnik Krety",
+      "opis": "Pogłębienie: warianty zamknięcia żyły (błona u Apolloniusza, gwóźdź u Apollodorosa) i śmierć z rąk Medei bez wyciągania gwoździa; dwa źródła pierwotne — „Argonautyki\" 4.1638–1688 i hezjodowski spiżowy ród („Prace i dnie\" 141–155)."
+    },
     {
       "data": "2026-09-04 15:45",
       "typ": "skit",

@@ -127,8 +127,11 @@
 - **Kontrola żywości adresów źródłowych** — skrypt sesji (narzędzia agenta), NIE
   CI: egress sandboxa jest ograniczony (L3), a linki bywają przenoszone.
   Wymagałby decyzji: martwy link = ostrzeżenie czy błąd walidatora.
-  **Potwierdzony przypadek (2026-08-30):** Theoi „HephaestusWorks”
-  w kartotece `talos-kreta` → 404 („File not found”).
+  **Przypadek rozstrzygnięty:** Theoi „HephaestusWorks” w kartotece
+  `talos-kreta` padał z 404 („File not found”) 2026-08-30; przy pogłębianiu
+  wpisu 2026-09-04 strona znów odpowiada 200 i zawiera passus o Talosie
+  (adres zostaje). Lekcja: jednorazowy 404 Theoi bywa przejściowy —
+  przed wymianą linku sprawdzić ponownie po czasie.
 - ~~**Widok druku (media print) dla warstwy wpisu**~~ — **WDROŻONE (2026-08-30, PR #12, C2 pętla jakości):** przycisk „🖨 drukuj” w kartotece → `window.print()`; arkusz `@media print` chowa topbar/mapę/listę i pokazuje otwartą kartotekę na białym tle z ciemnym tekstem (cache-bust `c5-8`). Do akceptacji właściciela przed live.
 - **Znacznik „źródło bez adresu” w UI** — pozycje bez `url` (papier) warto
   oznaczać inną kursywą, żeby czytelnik wiedział, czego nie da się kliknąć.
