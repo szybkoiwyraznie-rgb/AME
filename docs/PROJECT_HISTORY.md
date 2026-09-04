@@ -2027,3 +2027,47 @@ weryfikacja: `npm test` 213/213, `npm run build` bez zapisu. ✔
 przebazowana na scalony main (fast-forward). Sesja wchodzi w Pętlę
 Jakości (ADR 0007: C1 → C3 → C2).
 
+## Sesja 2026-09-04 (auto 6) (gałąź session/2026-09-04-auto6) — audyt i auto-scalenie PR #20
+
+**Kontekst:** sesja auto („kontynuuj projekt"). Na starcie otwarty PR #20
+z gałęzi `session/2026-09-04-auto5` — zastosowanie wyjątku AGENTS §2
+(auto-sesje, decyzja właściciela 2026-09-04).
+
+**Luka w dzienniku:** wpisy sesji auto 4 (PR #19), auto 4b (PR #21) i auto 5
+(PR #20) NIE trafiły do tego rejestru ani do `docs/setup/HANDOFF_*.md` —
+ostatnie trzy sesje pominęły obowiązkowy blok końcowy (AGENTS §2). Stan
+odtwarzalny z PR-ów: #19 (auto 4) — audyt i auto-scalenie #18 + reaktywacja
+prac auto2; #21 (auto 4b) — C2 „manifestacja dnia" + Pętla Jakości po
+wznowieniu; #20 (auto 5) — Pętla Jakości: C1 kentaur-pelion (warstwa
+homerycka) + C3 SKIT „Porcje". Wpis sesji auto 6 odnotowuje lukę, ale nie
+pisze wpisów za inne sesje.
+
+**Audyt PR #20 (plik po pliku, `git diff main...21b15f2`):**
+- `data/manifestations/kentaur-pelion.json` — C1: warstwa homerycka plemienia
+  kentaurów (Il. 1.262–268 Nestor o „mountain-dwelling centaurs", Il.
+  2.738–744 wygnanie z Pelionu do Aityków, Od. 21.295–304 Eurytion i wino —
+  „from hence the feud arose between the centaurs and mankind"); 2 źródła
+  pierwotne z pełnymi adresami http(s) (Theoi, przekł. Murray/Loeb),
+  `meta.modyfikacje` z godziną, opis bez kodów wewnętrznych (§9). ✔
+- `data/skity/porcje.json` — C3: skład 4-osobowy unikalny (Agni, Ben-Varrey,
+  Kannon, Śyāma i Śarvara), każdy zabiera głos, dokładnie 300 słów (limit
+  ADR 0015), zero żargonu gry, ton luźny (ADR 0018), fakty zgodne z kartami
+  (siedem języków Agniego, jabłko Ben-Varrey, nieprzekupność psów Yamy),
+  `meta.utworzono` z godziną. ✔
+- `test/kronika.test.js` + `data/kronika/*` + `docs/kronika-*.html` —
+  przekalibracja po nowym SKIT-cie zgodna z L20 (osie mit/racjonalizacja
+  zamknięte na 100, zasięgi przeliczone); raporty generowane narzędziem. ✔
+- `data/index.json` — regeneracja zgodna ze zmianami; build deterministyczny
+  (brak zmian po `npm run build` na gałęzi PR-a). ✔
+
+**Brama na gałęzi PR-a lokalnie:** `npm test` 229/229, `npm run build` bez
+zapisu, `npm run check` zielone (w tym lint stylu). PR nie był draftem,
+mergeable CLEAN.
+
+**Decyzja:** warunki (a)–(d) spełnione → auto-scalenie PR #20 przez GitHub
+API metodą squash (squash commit `9c8c2e9`, 2026-09-04). Po scaleniu
+`git pull origin main` i weryfikacja końcowa: `npm test` 229/229,
+`npm run build` bez zapisu. ✔ Gałąź auto 6 przebazowana na scalony main.
+
+**Wniosek:** brak usterek. Sesja wchodzi w Pętlę Jakości (ADR 0007:
+C1 → C3 → C2).

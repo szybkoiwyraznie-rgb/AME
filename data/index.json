@@ -1,8 +1,8 @@
 {
   "wersja": 3,
-  "buildTime": "2026-09-04T16:59:32.864Z",
+  "buildTime": "2026-09-04T17:22:58.032Z",
   "liczba": 20,
-  "liczbaSkitow": 36,
+  "liczbaSkitow": 37,
   "kanon": {
     "kategorie": [
       {
@@ -497,6 +497,7 @@
       "skity": [
         "godzina-otwarcia",
         "hold-oraz-swiatlo",
+        "instrukcja-obslugi",
         "komu-wolno-patrzec",
         "odzwierni",
         "trzy-zegary",
@@ -921,6 +922,7 @@
         "wtorne": "Trzy zapisane sylaby na skrawku papirusu (kopia z notatek Eukratesa) — podpowiedź, jak nie wzywać tego, czego nie umie się zamknąć."
       },
       "skity": [
+        "instrukcja-obslugi",
         "pierwszy",
         "pod-dachem",
         "pogoda-na-jutro",
@@ -1251,6 +1253,7 @@
         "wtorne": "Odłamek skały z góry, na której Sfinks czekała, z rytym tekstem zagadki — pamiątka, że za murem strachu, który zostawia każda brama, stoi pytanie."
       },
       "skity": [
+        "instrukcja-obslugi",
         "najgorsze-odpowiedzi",
         "pierwsza-zmiana",
         "poslaniec-i-straznicy",
@@ -1523,6 +1526,23 @@
       ],
       "slow": 260,
       "data": "2026-08-29 11:05"
+    },
+    {
+      "slug": "instrukcja-obslugi",
+      "tytul": "INSTRUKCJA OBSŁUGI",
+      "temat": "kto zgubił się na własnej dokumentacji: jeden rozkaz za dużo, jedno słowo za mało, jedna poprawna odpowiedź",
+      "uczestnicy": [
+        "balor",
+        "knecht-z-koptos",
+        "sfinks-teby"
+      ],
+      "imiona": [
+        "Balor",
+        "Knecht",
+        "Sfinks z Teb"
+      ],
+      "slow": 267,
+      "data": "2026-09-04 17:35"
     },
     {
       "slug": "kalendarz-powrotow",
@@ -1972,6 +1992,22 @@
     }
   ],
   "aktualizacje": [
+    {
+      "data": "2026-09-04 17:35",
+      "typ": "skit",
+      "akcja": "nowy",
+      "slug": "instrukcja-obslugi",
+      "tytul": "INSTRUKCJA OBSŁUGI",
+      "opis": "SKIT — skład: Balor, Knecht, Sfinks z Teb"
+    },
+    {
+      "data": "2026-09-04 17:16",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "balor",
+      "tytul": "Balor z Tory Island",
+      "opis": "Dopisano warstwę źródła pierwotnego: według edycji Gray (Cath Maige Tuired, 1982) oko Balora otwierano wyłącznie na polu bitwy, na którym wcześniej z jego ręki padli Núadu i Macha, a ostatnim jego rozkazem było „Lift up my eyelid, lad”; w dokumentacji tekst CELT/UCC oraz ludową redakcję Lady Gregory (1904)."
+    },
     {
       "data": "2026-09-04 16:52",
       "typ": "skit",
