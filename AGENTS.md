@@ -102,26 +102,30 @@ Ponadto:
   decyzją, której agent nie może podjąć sam (zmiana architektury, sprzeczność
   ADR, nowa granica nienegocjowalna). **Nie pytaj „co robimy?”** — gdy po
   audycie brak zaległości i zlecenia właściciela, sesja wchodzi w **Pętlę
-  Jakości (ADR 0007)**: rekurencyjnie, do wyczerpania budżetu sesji,
-  **C1** (pogłębianie wpisów — zawsze z researchem w www) → **C3** (SKIT do
-  Bazy Skitów: 2–4 materializacje o unikalnym składzie, PROTOKÓŁ §8.4) →
-  **C2** (nowe featury: wymyślić, zakodować z testami, zaprezentować
-  właścicielowi do akceptacji PRZED uruchomieniem live) → **C4**
-  (materializacja z kolekcji: JEDNA losowa karta z pliku
+  Jakości (ADR 0023)**: sekwencję LINIOWĄ, bez zapętlenia —
+  **C4** (materializacja z kolekcji: JEDNA losowa karta z pliku
   `Lista Kart w Kolekcji.txt` — format wiersza: nazwa karty + kod setu —
   której `karta.nazwa` nie występuje jeszcze w żadnym wpisie
   `data/manifestations/*.json`; pełny wpis MFM wg PROTOKOŁU, fetch Scryfall
-  z setu z listy (ADR 0008), research www, testy + build) → **C5**
-  (narzędzia fabularne: rozwój narzędzi wykorzystujących zmaterializowane
-  byty — fabuła, zasoby, grywalizacja, ekonomia, przygody, walka świata
-  z materializacjami — konkretyzowanych z `docs/BACKLOG.md`; własne pomysły
-  najpierw dopisać do backlogu; wdrożenie jak w C2: z testami, prezentacja
-  właścicielowi PRZED uruchomieniem live) → **C6** (rozwój Kroniki: kolejne
-  Epoki i/lub rozgałęzienia i/lub tomy — po każdej zmianie sieci SKIT-ów
-  lub powiązań przekalibracja asercji `test/kronika.test.js` w TYM SAMYM
-  kroku, L20). W liście todo sesji C3 idzie nad C2, a C4–C6 jadą po C2
-  w kolejności wymienienia. Polerowanie dokumentacji NIE jest częścią pętli —
-  wykonuje się je wyłącznie na zlecenie właściciela w sesji.
+  z setu z listy, ADR 0008, research www, testy + build) →
+  **C1** (pogłębianie wpisów — zawsze z researchem w www) →
+  **C3** (SKIT do Bazy Skitów: 2–4 materializacje o unikalnym składzie,
+  PROTOKÓŁ §8.4) →
+  **C6** (rozwój Kroniki: kolejne Epoki i/lub rozgałęzienia i/lub tomy — po
+  każdej zmianie sieci SKIT-ów lub powiązań przekalibracja asercji
+  `test/kronika.test.js` w TYM SAMYM kroku, L20) →
+  **C2+5** (DEVELOPMENT — scalone: nowe featury aplikacji ORAZ grube
+  projekty rozwojowe wykorzystujące zmaterializowane byty — narzędzia
+  fabularne, grywalizacja, ekonomia, zasoby, przygody, walka świata
+  z materializacjami — konkretyzowane z `docs/BACKLOG.md`; własne pomysły
+  najpierw dopisać do backlogu; wymyślić, zakodować z testami).
+  Sesja wykonuje jedno przejście (ile się zmieści w budżecie) i kończy
+  handoffem — kolejny obrót robi następna sesja z cronu.
+  **Nowe elementy AME agent wprowadza na własną odpowiedzialność i scala**
+  (mechanizm auto-scalania powyżej); bramą jakości jest audyt następnej
+  sesji, nie akceptacja właściciela przed live (reguła z ADR 0007
+  zniesiona przez ADR 0023). Polerowanie dokumentacji NIE jest częścią
+  pętli — wykonuje się je wyłącznie na zlecenie właściciela w sesji.
 - **Praca istnieje dopiero po `git push`.** Nowa sesja widzi wyłącznie `main`
   i tekst pierwszego promptu. Commituj i pushuj po każdym zielonym kroku.
 - **Obowiązkowy blok na koniec sesji:** wypisz w czacie instrukcję przekazania
