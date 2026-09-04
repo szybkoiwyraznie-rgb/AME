@@ -1,6 +1,6 @@
 {
   "wersja": 3,
-  "buildTime": "2026-09-04T11:54:28.956Z",
+  "buildTime": "2026-09-04T12:01:55.857Z",
   "liczba": 20,
   "liczbaSkitow": 25,
   "kanon": {
@@ -1652,6 +1652,14 @@
     }
   ],
   "aktualizacje": [
+    {
+      "data": "2026-09-04 12:35",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "indra",
+      "tytul": "Indra — władca gromu",
+      "opis": "Dopisane źródło pierwotne — Rigweda 1.32 w przekładzie Griffitha: zabójstwo węża Vṛtry, wadżra wykuta przez Tvaṣṭara, soma z trzech czar przed walką i uwolnione wody spływające „jak ryczące krowy”."
+    },
     {
       "data": "2026-09-04 12:05",
       "typ": "skit",
