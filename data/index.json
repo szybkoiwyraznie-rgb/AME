@@ -1,8 +1,8 @@
 {
   "wersja": 3,
-  "buildTime": "2026-09-04T16:05:35.521Z",
+  "buildTime": "2026-09-04T16:08:43.897Z",
   "liczba": 20,
-  "liczbaSkitow": 32,
+  "liczbaSkitow": 33,
   "kanon": {
     "kategorie": [
       {
@@ -447,6 +447,7 @@
       },
       "skity": [
         "dzien-wolnego",
+        "ostatnia-droga",
         "poslaniec-i-straznicy",
         "warta"
       ]
@@ -1002,6 +1003,7 @@
       "skity": [
         "czwarty-stol",
         "najgorsze-odpowiedzi",
+        "ostatnia-droga",
         "pracownicy-progu",
         "prezent-z-defektem"
       ]
@@ -1283,6 +1285,7 @@
         "wtorne": "Kamyk z ghatu Manikarnika — z miejsca, gdzie Yama nie ma władzy; noszony przy drodze przypomina, którą ścieżkę wybrać."
       },
       "skity": [
+        "ostatnia-droga",
         "pierwszy",
         "poslaniec-i-straznicy",
         "zaplata-za-przewoz"
@@ -1611,6 +1614,23 @@
       "data": "2026-08-29 10:20"
     },
     {
+      "slug": "ostatnia-droga",
+      "tytul": "OSTATNIA DROGA",
+      "temat": "kto idzie z tobą na ostatnią drogę — i kto czeka przy niej w bieli",
+      "uczestnicy": [
+        "agni",
+        "morowa-panna",
+        "syama-i-sarvara"
+      ],
+      "imiona": [
+        "Agni",
+        "Morowa Panna",
+        "Śyāma i Śarvara"
+      ],
+      "slow": 251,
+      "data": "2026-09-04 16:10"
+    },
+    {
       "slug": "pierwsza-zmiana",
       "tytul": "PIERWSZA ZMIANA",
       "temat": "instrukcja obsługi bytu, której nikt nie dodał do umowy",
@@ -1893,6 +1913,14 @@
       "slug": "linia-brzegu",
       "tytul": "LINIA BRZEGU",
       "opis": "SKIT — skład: Ben-Varrey, Nessos, Wielki Selkie, Kannon"
+    },
+    {
+      "data": "2026-09-04 16:10",
+      "typ": "skit",
+      "akcja": "nowy",
+      "slug": "ostatnia-droga",
+      "tytul": "OSTATNIA DROGA",
+      "opis": "SKIT — skład: Agni, Morowa Panna, Śyāma i Śarvara"
     },
     {
       "data": "2026-09-04 16:05",
