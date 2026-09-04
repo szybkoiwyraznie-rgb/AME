@@ -1987,3 +1987,43 @@ zielone, `npm run build` i `npm run check` bez zapisu.
 
 **Wniosek:** brak usterek, brak zaległości. Sesja wchodzi w Pętlę Jakości
 (ADR 0007: C1 → C3 → C2).
+
+## Sesja 2026-09-04 (auto 3) (gałąź session/2026-09-04-auto3) — audyt i auto-scalenie PR #17
+
+**Kontekst:** sesja auto („kontynuuj projekt"). Na starcie otwarty PR #17
+z gałęzi `session/2026-09-04-auto2` — zastosowanie wyjątku AGENTS §2
+(auto-sesje mogą scalać własne PR-y pod warunkami a–d).
+
+**Audyt PR #17 (plik po pliku, `git diff main...7454890`):**
+- `data/manifestations/lincoln-imp.json` — C1: „drugie życie" ima (James Ward
+  Usher i jubilerski talisman, herb Lincoln City FC, 61. dywizjon RAF, logo
+  rady hrabstwa, kopia w Lincoln College w Oxfordzie, spór o rodowód
+  przysłowia — Fuller 1662, Lawrence 1898); 3 nowe źródła z pełnymi adresami
+  http(s) (Archive.org ×2, Wikipedia), powiązanie `talos-kreta` z opisem
+  2-zdaniowym (≥12 słów, ADR 0019), `meta.modyfikacje` z godziną (ADR 0017). ✔
+- `data/skity/poslaniec-i-straznicy.json` — C3: skład 4-osobowy unikalny
+  (Agni, Sfinks, Śyāma i Śarvara, Talos), każdy zabiera głos, 298 słów
+  (≤300, ADR 0015), zero żargonu gry, fakty zgodne z kartami bytów,
+  `meta.utworzono` z godziną. ✔
+- `data/kronika/*`, `docs/kronika-*.html`, `test/kronika.test.js` —
+  przekalibrowanie seedów po nowym powiązaniu (paliwo talos-kreta 18→20);
+  raporty zgodne z `summary.json` (generowane narzędziem). ✔
+- `docs/LESSONS.md` — L19: potok `| grep` maskuje exit code `npm test`
+  w łańcuchu `&&`; reguła poprawna i poparta realnym incydentem sesji. ✔
+- `docs/PROJECT_HISTORY.md` — własny wpis sesji auto 2 (audyt PR #16). ✔
+- `data/index.json` — regeneracja zgodna ze zmianami (slugi skitów,
+  powiązania, feed); buildTime aktualny. ✔
+
+**Brama na gałęzi PR-a lokalnie:** `npm test` 213/213, `npm run build`
+deterministyczny (brak zmian po buildzie), `npm run check` zielone.
+PR nie jest draftem.
+
+**Decyzja:** wszystkie warunki (a)–(d) wyjątku AGENTS §2 spełnione →
+auto-scalenie PR #17 przez GitHub API metodą squash (squash commit
+`c1df004`, 2026-09-04). Po scaleniu `git pull origin main` i powtórna
+weryfikacja: `npm test` 213/213, `npm run build` bez zapisu. ✔
+
+**Wniosek:** brak usterek, brak zaległości. Gałąź sesji auto 3
+przebazowana na scalony main (fast-forward). Sesja wchodzi w Pętlę
+Jakości (ADR 0007: C1 → C3 → C2).
+
