@@ -1,6 +1,6 @@
 {
   "wersja": 3,
-  "buildTime": "2026-08-30T22:06:37.488Z",
+  "buildTime": "2026-09-04T11:50:38.157Z",
   "liczba": 20,
   "liczbaSkitow": 24,
   "kanon": {
@@ -1646,7 +1646,7 @@
       "akcja": "zmiana",
       "slug": "pandora",
       "tytul": "Pandora — pierwsza kobieta i pithos, w którym została nadzieja",
-      "opis": "Pętla Jakości (C1): dopisana genealogia Pandory — córka Pyrrha i Deukalion, którzy przeżyli potop i odtworzyli ludzkość (Theoi; Apollodoros 1.46, Hygin „Fabulae” 142)."
+      "opis": "Dopisana genealogia Pandory — córka Pyrrha i Deukalion, którzy przeżyli potop i odtworzyli ludzkość (Theoi; Apollodoros 1.46, Hygin „Fabulae” 142)."
     },
     {
       "data": "2026-08-30 21:47",
@@ -1654,7 +1654,7 @@
       "akcja": "zmiana",
       "slug": "syama-i-sarvara",
       "tytul": "Śyāma i Śarvara — czterookie psy Yamy, strażnicy drogi przodków",
-      "opis": "Pętla Jakości (C1): dopisana matka psów — Saramā, suka Indry z Rigwedy 10.108 (przekroczenie Rasā, odmowa łapówki Paṇich) oraz nowe źródło pierwotne."
+      "opis": "Dopisana matka psów — Saramā, suka Indry z Rigwedy 10.108 (przekroczenie Rasā, odmowa łapówki Paṇich) oraz nowe źródło pierwotne."
     },
     {
       "data": "2026-08-30 21:47",
@@ -1678,7 +1678,7 @@
       "akcja": "zmiana",
       "slug": "kannon-hase",
       "tytul": "Kannon — miłosierna wybawicielka",
-      "opis": "Pętla Jakości (C1, drugi obieg): korekta tras — Hasedera (Kamakura) to 4. stacja Bandō Sanjūsankasho i kamakurańskiej pielgrzymki Kannon, NIE Saigoku (Saigoku = Kansai, Hase-dera w Narze); źródła: Wikipedia „Hase-dera (Kamakura)” i „Bandō Sanjūsankasho” (legenda Tokudō 721, 11 głów, 9,18 m, plaża Nagai 736); nowe powiązanie z Śyāmą i Śarvarą (droga dusz)."
+      "opis": "Korekta tras — Hasedera (Kamakura) to 4. stacja Bandō Sanjūsankasho i kamakurańskiej pielgrzymki Kannon, NIE Saigoku (Saigoku = Kansai, Hase-dera w Narze); źródła: Wikipedia „Hase-dera (Kamakura)” i „Bandō Sanjūsankasho” (legenda Tokudō 721, 11 głów, 9,18 m, plaża Nagai 736); nowe powiązanie z Śyāmą i Śarvarą (droga dusz)."
     },
     {
       "data": "2026-08-30 13:11",
@@ -1686,7 +1686,7 @@
       "akcja": "zmiana",
       "slug": "pandora",
       "tytul": "Pandora — pierwsza kobieta i pithos, w którym została nadzieja",
-      "opis": "Pętla Jakości (C1): powiązanie z Nessosem (dar-zguba) na podstawie źródeł pierwotnych (Apollodoros 2.151, Diodor 4.36.3, Owidiusz IX)."
+      "opis": "Powiązanie z Nessosem (dar-zguba) na podstawie źródeł pierwotnych (Apollodoros 2.151, Diodor 4.36.3, Owidiusz IX)."
     },
     {
       "data": "2026-08-30 13:11",
@@ -1694,7 +1694,7 @@
       "akcja": "zmiana",
       "slug": "nessos",
       "tytul": "Nessos",
-      "opis": "Pętla Jakości (C1): źródła pierwotne mitu — Pseudo-Apollodoros „Biblioteka” 2.151/2.157 (via Theoi, przeł. Aldrich), Diodor „Biblioteka historyczna” 4.36.3/4.38.1 (przeł. Oldfather), Owidiusz „Metamorfozy” IX.98–210 (Perseus); doprecyzowany wariant przepisu na „napój miłosny” (nasienie+krew / oliwa+krew+grot) i nowe powiązanie z Pandorą (dar-zguba)."
+      "opis": "Źródła pierwotne mitu — Pseudo-Apollodoros „Biblioteka” 2.151/2.157 (via Theoi, przeł. Aldrich), Diodor „Biblioteka historyczna” 4.36.3/4.38.1 (przeł. Oldfather), Owidiusz „Metamorfozy” IX.98–210 (Perseus); doprecyzowany wariant przepisu na „napój miłosny” (nasienie+krew / oliwa+krew+grot) i nowe powiązanie z Pandorą (dar-zguba)."
     },
     {
       "data": "2026-08-30 10:20",
@@ -1718,7 +1718,7 @@
       "akcja": "zmiana",
       "slug": "knecht-z-koptos",
       "tytul": "Knecht z Koptos — ożywiony tłuczek, który nie zna słowa końca",
-      "opis": "Pętla Jakości C1: powiązanie z protostatesem — dwa porządki trwające na rozkazie i pamięci."
+      "opis": "Powiązanie z protostatesem — dwa porządki trwające na rozkazie i pamięci."
     },
     {
       "data": "2026-08-30 10:05",
@@ -1726,7 +1726,7 @@
       "akcja": "zmiana",
       "slug": "protostates",
       "tytul": "Protostates — fantom pierwszego szeregu",
-      "opis": "Pętla Jakości C1: pogłębiony Protostates — 2 nowe źródła (Tukidydes 5.66–70 — pierwszy szereg 448 ludzi; Herodot VII, 226 — Dienekes „w cieniu”) + nowe powiązania z knechtem z Koptos i psami Yamy."
+      "opis": "Pogłębienie karty — 2 nowe źródła (Tukidydes 5.66–70 — pierwszy szereg 448 ludzi; Herodot VII, 226 — Dienekes „w cieniu”) + nowe powiązania z knechtem z Koptos i psami Yamy."
     },
     {
       "data": "2026-08-30 10:05",
@@ -1734,7 +1734,7 @@
       "akcja": "zmiana",
       "slug": "syama-i-sarvara",
       "tytul": "Śyāma i Śarvara — czterookie psy Yamy, strażnicy drogi przodków",
-      "opis": "Pętla Jakości C1: powiązanie z protostatesem — dwie strony jednego progu (przejście dla żywych i droga przodków)."
+      "opis": "Powiązanie z protostatesem — dwie strony jednego progu (przejście dla żywych i droga przodków)."
     },
     {
       "data": "2026-08-30 01:57",
@@ -1758,7 +1758,7 @@
       "akcja": "zmiana",
       "slug": "protostates",
       "tytul": "Protostates — fantom pierwszego szeregu",
-      "opis": "Pogłębienie sieci powiązań (C1): cztery nowe pary połączeń między bytami, oparte na źródłach już odnotowanych w kartotekach (Hezjod „Prace i dnie” 60–68, pseudo-Apollodoros „Biblioteka” 1.9.26, Filostrat IV.21–25, Lukian „Filopseudes” 34–36, Herodot 7.104, lasmgiel.pl/„Zaraza nadchodzi i odchodzi”)."
+      "opis": "Pogłębienie sieci powiązań: cztery nowe pary połączeń między bytami, oparte na źródłach już odnotowanych w kartotekach (Hezjod „Prace i dnie” 60–68, pseudo-Apollodoros „Biblioteka” 1.9.26, Filostrat IV.21–25, Lukian „Filopseudes” 34–36, Herodot 7.104, lasmgiel.pl/„Zaraza nadchodzi i odchodzi”)."
     },
     {
       "data": "2026-08-30 01:35",
@@ -1766,7 +1766,7 @@
       "akcja": "zmiana",
       "slug": "talos-kreta",
       "tytul": "Talos — spiżowy strażnik Krety",
-      "opis": "Pogłębienie sieci powiązań (C1): cztery nowe pary połączeń między bytami, oparte na źródłach już odnotowanych w kartotekach (Hezjod „Prace i dnie” 60–68, pseudo-Apollodoros „Biblioteka” 1.9.26, Filostrat IV.21–25, Lukian „Filopseudes” 34–36, Herodot 7.104, lasmgiel.pl/„Zaraza nadchodzi i odchodzi”)."
+      "opis": "Pogłębienie sieci powiązań: cztery nowe pary połączeń między bytami, oparte na źródłach już odnotowanych w kartotekach (Hezjod „Prace i dnie” 60–68, pseudo-Apollodoros „Biblioteka” 1.9.26, Filostrat IV.21–25, Lukian „Filopseudes” 34–36, Herodot 7.104, lasmgiel.pl/„Zaraza nadchodzi i odchodzi”)."
     },
     {
       "data": "2026-08-30 01:35",
@@ -1774,7 +1774,7 @@
       "akcja": "zmiana",
       "slug": "empusa-korynt",
       "tytul": "Empusa z Koryntu",
-      "opis": "Pogłębienie sieci powiązań (C1): cztery nowe pary połączeń między bytami, oparte na źródłach już odnotowanych w kartotekach (Hezjod „Prace i dnie” 60–68, pseudo-Apollodoros „Biblioteka” 1.9.26, Filostrat IV.21–25, Lukian „Filopseudes” 34–36, Herodot 7.104, lasmgiel.pl/„Zaraza nadchodzi i odchodzi”)."
+      "opis": "Pogłębienie sieci powiązań: cztery nowe pary połączeń między bytami, oparte na źródłach już odnotowanych w kartotekach (Hezjod „Prace i dnie” 60–68, pseudo-Apollodoros „Biblioteka” 1.9.26, Filostrat IV.21–25, Lukian „Filopseudes” 34–36, Herodot 7.104, lasmgiel.pl/„Zaraza nadchodzi i odchodzi”)."
     },
     {
       "data": "2026-08-30 00:40",
@@ -2214,7 +2214,7 @@
       "akcja": "zmiana",
       "slug": "agni",
       "tytul": "Agni — bóg ognia ofiarnego",
-      "opis": "Pogłębienie karty (C1): trzy poziomy obecności Agniego (ziemia, błyskawica, słońce), siedem języków obrzędowych i imiona (Pāvaka, Havyavāhana, Dhumaketu…), rola świadka saptapadi; dodane źródła: Rigweda 1.1 (Griffith), Wikipedia, Agni Purana."
+      "opis": "Pogłębienie karty: trzy poziomy obecności Agniego (ziemia, błyskawica, słońce), siedem języków obrzędowych i imiona (Pāvaka, Havyavāhana, Dhumaketu…), rola świadka saptapadi; dodane źródła: Rigweda 1.1 (Griffith), Wikipedia, Agni Purana."
     },
     {
       "data": "2026-08-29 21:40",
@@ -2222,7 +2222,7 @@
       "akcja": "zmiana",
       "slug": "sfinks-teby",
       "tytul": "Sfinks — strażniczka Tebańskich Wrót",
-      "opis": "Pogłębienie karty (C1): wariant Pausaniasza (nieślubna córka Lajosa i wyrocznia Kadmosa; wersja racjonalizująca — piratka z Anthedonu), pochodzenie zagadki od Muz (Apollodor 3.5.8) i szczegóły rozwiązania; dodane źródło pierwotne (Pauzaniasz 9.26.2, Perseus)."
+      "opis": "Pogłębienie karty: wariant Pausaniasza (nieślubna córka Lajosa i wyrocznia Kadmosa; wersja racjonalizująca — piratka z Anthedonu), pochodzenie zagadki od Muz (Apollodor 3.5.8) i szczegóły rozwiązania; dodane źródło pierwotne (Pauzaniasz 9.26.2, Perseus)."
     },
     {
       "data": "2026-08-29 21:36",
