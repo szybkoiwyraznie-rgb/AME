@@ -1,6 +1,6 @@
 {
   "wersja": 3,
-  "buildTime": "2026-09-04T15:29:18.316Z",
+  "buildTime": "2026-09-04T15:40:05.027Z",
   "liczba": 20,
   "liczbaSkitow": 30,
   "kanon": {
@@ -1847,6 +1847,14 @@
       "slug": "poslaniec-i-straznicy",
       "tytul": "POSŁANIEC I STRAŻNICY",
       "opis": "SKIT — skład: Agni, Sfinks, Śyāma i Śarvara, Talos"
+    },
+    {
+      "data": "2026-09-04 15:39",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "pandora",
+      "tytul": "Pandora — pierwsza kobieta i pithos, w którym została nadzieja",
+      "opis": "Pogłębienie z natury bytu: drugie oblicze Pandory z „Teogonii” (wariant bez słoja — kara jest sama istota, „rodzaj kobiet” i porównanie do trutni) oraz złota korona kuta przez Hefajstosa ze stworzeniami lądu i morza; dwa nowe źródła pierwotne: „Teogonia” w. 570–602 i Pauzaniasz 1.24.7 o płaskorzeźbie narodzin Pandory na podstawie Partenos."
     },
     {
       "data": "2026-09-04 15:25",
