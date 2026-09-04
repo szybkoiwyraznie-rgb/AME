@@ -1,6 +1,6 @@
 {
   "wersja": 3,
-  "buildTime": "2026-09-04T16:29:03.616Z",
+  "buildTime": "2026-09-04T16:44:46.354Z",
   "liczba": 20,
   "liczbaSkitow": 34,
   "kanon": {
@@ -1926,6 +1926,14 @@
     }
   ],
   "aktualizacje": [
+    {
+      "data": "2026-09-04 16:42",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "sfinks-teby",
+      "tytul": "Sfinks — strażniczka Tebańskich Wrót",
+      "opis": "Pogłębienie z źródeł pierwotnych: Pseudo-Apollodoros 3.5.8 (wyrocznia-warunek wybawienia, pożeranie po jednym radnym, ostatnia ofiara Hajmon, rzut z akropolu, dokładne brzmienie zagadki w przekładzie Frazera) i Hezjod, „Teogonia” w. 326 (rodowód: ojcem Orthos, nie Tyfon; Sfinks siostrą lwa nemejskiego)."
+    },
     {
       "data": "2026-09-04 16:35",
       "typ": "skit",
