@@ -2,7 +2,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
-import { htmlWpisu, htmlWarstwyWpisu, linkDoZrodla, htmlListy, htmlStronyTagu, htmlTagow, htmlDialogu, htmlSkitu, htmlBazySkitow, htmlNowosci, htmlKronik, htmlTomyIEpoki, esc, nastepnyMotyw, motywPoczatkowy, etykietaMotywu, MOTYWY, KLUCZ_MOTYWU, akcjeZZapytania, tekstDoLektora, htmlTrofeow, paryRozmowySkitu } from '../app/ui.js';
+import { htmlWpisu, htmlWarstwyWpisu, linkDoZrodla, htmlListy, htmlStronyTagu, htmlTagow, htmlDialogu, htmlSkitu, htmlBazySkitow, htmlNowosci, htmlKronik, htmlTomyIEpoki, esc, nastepnyMotyw, motywPoczatkowy, etykietaMotywu, MOTYWY, KLUCZ_MOTYWU, akcjeZZapytania, tekstDoLektora, htmlTrofeow, paryRozmowySkitu, doB64utf8, zB64utf8 } from '../app/ui.js';
 
 async function dane(plik = 'egungun') {
   const wpis = JSON.parse(await readFile(`data/manifestations/${plik}.json`, 'utf8'));
@@ -387,6 +387,27 @@ test('htmlBazySkitow: temat w wierszu + pole wyszukiwania bazy (C2)', async () =
   assert.ok(bezTematu.includes('data-temat=""'), 'brak tematu = pusty atrybut');
   const app = await readFile('app/app.js', 'utf8');
   assert.ok(app.includes("#skity-filtr"), 'app.js podejmuje filtr bazy');
+});
+
+test('htmlBazySkitow: działa bez Node’owego Buffer (parzystość z przeglądarką)', async () => {
+  // Regresja 2026-09-04: `Buffer.from` w htmlBazySkitow w przeglądarce rzucał
+  // ReferenceError PO otwarciu warstwy — efekt: pusta strona zamiast bazy.
+  const { indeks } = await dane();
+  const zachowaj = globalThis.Buffer;
+  try {
+    delete globalThis.Buffer;
+    const lista = htmlBazySkitow(indeks);
+    assert.match(lista, /id="skity-filtr"/, 'baza renderuje się bez Buffera');
+    assert.match(lista, /data-temat="[A-Za-z0-9+/=]*"/, 'data-temat to czysty base64');
+  } finally {
+    globalThis.Buffer = zachowaj;
+  }
+});
+
+test('doB64utf8/zB64utf8: pełna runda UTF-8 (polskie znaki, emoji)', () => {
+  const probki = ['zażółć gęślą jaźń', 'kto zgubił się na własnej dokumentacji: rozkaz za dużo 🜏', '', 'plain ascii'];
+  for (const p of probki) assert.equal(zB64utf8(doB64utf8(p)), p, `runda b64: ${p.slice(0, 20)}`);
+  assert.equal(doB64utf8('ż'), Buffer.from('ż', 'utf8').toString('base64'), 'kodowanie zgodne bajtowo z UTF-8');
 });
 
 test('sekcja V wpisu wylicza skity z indeksu (nie z pliku wpisu)', async () => {

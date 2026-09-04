@@ -1,7 +1,7 @@
 /**
  * app/app.js — bootstrap AME: ładuje indeks, mapę świata, spina UI.
  */
-import { stworzMape, PROGI_WARSTW, PODKLADY_ONLINE } from './map.js?v=c5-15';
+import { stworzMape, PROGI_WARSTW, PODKLADY_ONLINE } from './map.js?v=c5-16';
 import { zaladujIndeks, zaladujWpis, zaladujSkit, dopasowania, wylosujSlug, slugDnia } from './data.js?v=c6-1';
 import {
   htmlWpisu,
@@ -26,8 +26,9 @@ import {
   tekstDoLektora,
   htmlTrofeow,
   paryRozmowySkitu,
-} from './ui.js?v=c5-15';
-import { SZEROKOSC, WYSOKOSC } from './geo.js?v=c5-15';
+  zB64utf8,
+} from './ui.js?v=c5-16';
+import { SZEROKOSC, WYSOKOSC } from './geo.js?v=c5-16';
 
 const $ = (sel) => document.querySelector(sel);
 
@@ -356,7 +357,7 @@ function otworzBazeSkitow() {
   warstwa.querySelector('#skity-filtr')?.addEventListener('input', (e) => {
     const fraza = e.target.value.trim().toLowerCase();
     for (const li of warstwa.querySelectorAll('.skit-lista li')) {
-      const temat = li.dataset.temat ? atob(li.dataset.temat) : '';
+      const temat = li.dataset.temat ? zB64utf8(li.dataset.temat) : '';
       const haystack = `${temat} ${li.textContent}`.toLowerCase();
       li.hidden = fraza !== '' && !haystack.includes(fraza);
     }

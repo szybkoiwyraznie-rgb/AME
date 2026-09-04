@@ -60,6 +60,16 @@ export function esc(s) {
   return String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
 }
 
+/* base64 po bajtach UTF-8 — wspólne dla przeglądarki i Node (testy).
+ * Bez `Buffer`: to API Node, w przeglądarce nie istnieje. */
+export function doB64utf8(tekst) {
+  return btoa(String.fromCharCode(...new TextEncoder().encode(String(tekst ?? ''))));
+}
+
+export function zB64utf8(b64) {
+  return new TextDecoder().decode(Uint8Array.from(atob(String(b64 ?? '')), (c) => c.charCodeAt(0)));
+}
+
 /* ---- Motyw (A2): logyka niezależna od DOM, żeby dało się przetestować ---- */
 
 export const MOTYWY = ['ciemny', 'jasny'];
@@ -437,7 +447,7 @@ export function htmlBazySkitow(indeks) {
   const filtrHtml = `<input id="skity-filtr" type="search" placeholder="Szukaj po temacie, tytule, uczestnikach…" aria-label="Filtruj skity">`;
   return `${filtrHtml}<ul class="skit-lista">${skity
     .map(
-      (s) => `<li data-temat="${s.temat ? Buffer.from(s.temat, 'utf8').toString('base64') : ''}"><button class="wiersz" data-skit="${esc(s.slug)}">
+      (s) => `<li data-temat="${s.temat ? doB64utf8(s.temat) : ''}"><button class="wiersz" data-skit="${esc(s.slug)}">
         <span class="nazwa">SKIT: ${esc(s.tytul)}</span>
         <span class="opis">skład: ${esc((s.imiona ?? []).join(' × '))} · ${s.slow ?? 0} słów${s.data ? ` · ${esc(s.data)}` : ''}</span>
       </button></li>`
