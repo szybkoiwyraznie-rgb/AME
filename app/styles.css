@@ -740,6 +740,18 @@ div.warstwa.otwarta { display: block; animation: warstwa-wnika 0.2s ease-out; }
 .skit-lista, .nowosci-lista { list-style: none; margin: 0; padding: 0; }
 .skit-lista li { border-bottom: 1px solid var(--linia); }
 .skit-lista .wiersz { padding: 12px 6px; }
+/* Wyszukiwarka i tematy w Bazie Skitów (C2, 2026-09-04). */
+#skity-filtr {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 8px 10px;
+  margin: 4px 0 10px;
+  background: var(--tlo-2);
+  border: 1px solid var(--linia);
+  border-radius: 6px;
+  color: var(--tekst);
+  font: inherit;
+}
 
 /* Galeria trofeów (C2, 2026-09-04): dowody eliminacji ze wszystkich kart. */
 .trofea-lista { list-style: none; padding: 0; margin: 0; }

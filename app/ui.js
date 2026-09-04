@@ -427,13 +427,17 @@ export function htmlSkitu(s, indeks) {
   </article>`;
 }
 
-/** Baza Skitów: lista wszystkich skitów, najnowsze na górze. */
+/** Baza Skitów: lista wszystkich skitów, najnowsze na górze. `temat` pozostaje
+ *  katalogowe i NIE jest renderowane (PROTOKÓŁ §8.1) — trafia wyłącznie do
+ *  atrybutu `data-temat`, który wspiera wyszukiwarkę bazy (input #skity-filtr
+ *  w app.js) i nie jest zdaniem-wstępem widocznym dla czytelnika. */
 export function htmlBazySkitow(indeks) {
   const skity = [...(indeks.skity ?? [])].sort((a, b) => String(b.data).localeCompare(String(a.data)) || a.slug.localeCompare(b.slug, 'pl'));
   if (skity.length === 0) return '<p class="pusto">Baza skitów jest pusta — pierwszy dopisze następna sesja (PROTOKÓŁ §8).</p>';
-  return `<ul class="skit-lista">${skity
+  const filtrHtml = `<input id="skity-filtr" type="search" placeholder="Szukaj po temacie, tytule, uczestnikach…" aria-label="Filtruj skity">`;
+  return `${filtrHtml}<ul class="skit-lista">${skity
     .map(
-      (s) => `<li><button class="wiersz" data-skit="${esc(s.slug)}">
+      (s) => `<li data-temat="${s.temat ? Buffer.from(s.temat, 'utf8').toString('base64') : ''}"><button class="wiersz" data-skit="${esc(s.slug)}">
         <span class="nazwa">SKIT: ${esc(s.tytul)}</span>
         <span class="opis">skład: ${esc((s.imiona ?? []).join(' × '))} · ${s.slow ?? 0} słów${s.data ? ` · ${esc(s.data)}` : ''}</span>
       </button></li>`
