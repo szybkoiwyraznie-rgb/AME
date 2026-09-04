@@ -109,15 +109,16 @@ Ponadto:
   `data/manifestations/*.json`; pełny wpis MFM wg PROTOKOŁU, fetch Scryfall
   z setu z listy, ADR 0008, research www, testy + build) →
   **C1** (pogłębianie wpisów — zawsze z researchem w www) →
-  **C2** (nowe featury aplikacji: wymyślić, zakodować z testami) →
+  **C3** (SKIT do Bazy Skitów: 2–4 materializacje o unikalnym składzie,
+  PROTOKÓŁ §8.4) →
   **C6** (rozwój Kroniki: kolejne Epoki i/lub rozgałęzienia i/lub tomy — po
   każdej zmianie sieci SKIT-ów lub powiązań przekalibracja asercji
   `test/kronika.test.js` w TYM SAMYM kroku, L20) →
-  **C3+5** (Baza Skitów + narzędzia fabularne — scalone: SKIT-y 2–4
-  materializacje o unikalnym składzie wg PROTOKOŁU §8.4 ORAZ rozwój narzędzi
-  wykorzystujących zmaterializowane byty — fabuła, zasoby, grywalizacja,
-  ekonomia, przygody, walka świata z materializacjami — konkretyzowanych
-  z `docs/BACKLOG.md`; własne pomysły najpierw dopisać do backlogu).
+  **C2+5** (DEVELOPMENT — scalone: nowe featury aplikacji ORAZ grube
+  projekty rozwojowe wykorzystujące zmaterializowane byty — narzędzia
+  fabularne, grywalizacja, ekonomia, zasoby, przygody, walka świata
+  z materializacjami — konkretyzowane z `docs/BACKLOG.md`; własne pomysły
+  najpierw dopisać do backlogu; wymyślić, zakodować z testami).
   Sesja wykonuje jedno przejście (ile się zmieści w budżecie) i kończy
   handoffem — kolejny obrót robi następna sesja z cronu.
   **Nowe elementy AME agent wprowadza na własną odpowiedzialność i scala**
