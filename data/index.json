@@ -1,6 +1,6 @@
 {
   "wersja": 3,
-  "buildTime": "2026-09-05T13:11:34.701Z",
+  "buildTime": "2026-09-05T13:14:38.289Z",
   "liczba": 28,
   "liczbaSkitow": 47,
   "kanon": {
@@ -1308,6 +1308,7 @@
         "barbarossa-kyffhaeuser",
         "cormoran-st-michaels-mount",
         "empusa-korynt",
+        "mangkukulam",
         "selkie-sule-skerry"
       ],
       "backlinki": [],
@@ -1349,7 +1350,9 @@
         "morowa-panna",
         "nessos"
       ],
-      "backlinki": [],
+      "backlinki": [
+        "loup-garou-gevaudan"
+      ],
       "obraz": "assets/wizualizacje/mangkukulam.jpg",
       "trofea": {
         "pierwotne": "Kosz abubut z pokrywą, w środku szmaciana lalka i jedna szpilka wbita w bok — dokładnie tam, gdzie skarżył się chory.",
@@ -2734,6 +2737,14 @@
       "slug": "bazyliszek-warszawski",
       "tytul": "Bazyliszek z Krzywego Koła",
       "opis": "wpis w kartotece — materializacja karty „Coat with Venom”"
+    },
+    {
+      "data": "2026-09-05 18:45",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "loup-garou-gevaudan",
+      "tytul": "Loup-garou z Gévaudan",
+      "opis": "Pogłębienie: warstwa sądowa (postanowienie parlamentu w Dole z 1573 roku i drukowany wyrok na Gilles’a Garniera z 1574), racjonalizacja Jeana de Nynauld z 1615 roku wraz ze składem maści, motyw rany odbitej na człowieku oraz powiązanie z filipińskim praktykiem kulam. Dwa nowe źródła."
     },
     {
       "data": "2026-09-05 18:20",
