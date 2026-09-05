@@ -19,14 +19,14 @@
     "lat": 30.9647,
     "lon": 30.7683
   },
-  "pochodzenie_i_kultura": "Religia starożytnego Egipta (Delta Nilu): Neith to jedna z najstarszych bogiń egipskich, pani Sais, tkaczka i wojowniczka — znakiem jej imienia jest tarcza ze skrzyżowanymi strzałami albo czółenko tkackie. W tradycji z Esny myśli świat w istnienie, od Nowego Państwa zwana „Matką i Ojciechem wszystkich rzeczy”, matką Ra i Apepa. Grecy utożsamiali ją z Ateną (Platon w Timajosie wprost: „Neith, czyli Atena”). Jedna bogini, jedna kultura, jedno miasto: żadnych mieszanek z późniejszą Izydą rzymskich misteriów — trzymamy się Neith z Sais, tej od płótna, łuku i napisu, którego nikt nie odsłonił.",
+  "pochodzenie_i_kultura": "Religia starożytnego Egipta (Delta Nilu): Neith to jedna z najstarszych bogiń egipskich, pani Sais, tkaczka i wojowniczka — znakiem jej imienia jest tarcza ze skrzyżowanymi strzałami albo czółenko tkackie. W tradycji z Esny myśli świat w istnienie, od Nowego Państwa zwana „Matką i Ojciechem wszystkich rzeczy”, matką Ra i Apepa. Grecy utożsamiali ją z Ateną (Platon w Timajosie wprost: „Neith, czyli Atena”). Jedna bogini, jedna kultura, jedno miasto: żadnych mieszanek z późniejszą Izydą rzymskich misteriów — trzymamy się Neith z Sais, tej od płótna, łuku i napisu, którego nikt nie odsłonił. Sais nie jest przy tym miejscem legendarnym: od 1997 roku prowadzi tam badania ekspedycja Egypt Exploration Society i Uniwersytetu w Durham pod kierunkiem Penelope Wilson, w dzisiejszej wsi Sa el-Hagar, która zachowała starą nazwę „Sa”. Ze świątyni Neith nie ocalało nic poza rozrzuconymi blokami — wielki dół po dawnym kamieniołomie i resztka wapiennego muru pozwalają jedynie oszacować, że kompleks dorównywał rozmiarem Karnakowi. Za to badania archeobotaniczne przyniosły coś, czego nie ma w żadnym hymnie: wyjątkowo dużo fragmentów torebek nasiennych lnu z okresu Nowego Państwa, co wskazuje na Sais jako duży ośrodek produkcji surowca dla tkactwa. Bogini płótna miała pod nogami pola lnu — to jedyny punkt, w którym mit i warstwa gleby mówią dokładnie to samo.",
   "wizualizacja": {
     "prompt": "Style: A wide-angle full-body cinematic photograph. The central objects/persons of the photo are visible from head to toe, standing centrally in the frame. No parts of the body are cropped.\n\nA tall serene goddess-woman with dark copper skin wearing the red woven crown of Lower Egypt and a plain white linen dress, in one raised hand a wooden weaving shuttle with unspun thread, in the other a bow with two crossed arrows, standing in the open forecourt of an ancient sandstone temple at night, hundreds of small clay saucer-lamps with floating flames burning in long rows around her bare feet and across the dark square, a long translucent veil streaming from her crown and dissolving into the starry sky, the full moon low over a palm-lined river behind the colonnade.\n\nCaptured with a 35mm anamorphic lens at f/1.8. Shallow depth of field with a heavy, creamy bokeh background. Environmental portraiture. Dramatic cinematic lighting, sharp focus on the character, hyper-realistic textures of clothing and skin. Shot on 70mm film stock, ultra-wide 21:9 aspect ratio. --ar 21:9",
     "obraz": "assets/wizualizacje/neith-z-sais.jpg"
   },
   "natura": {
     "wyglad_i_aura": "Wysoka kobieta o ciemnej, miedzianej skórze, w czerwonej koronie Dolnego Egiptu i prostym lnianym kaftanie; w jednej dłoni czółenko z nicią, w drugiej łuk ze skrzyżowanymi strzałami. Manifestacji towarzyszy zapach gorącego oleju i świeżego płótna, a otoczenie robi się dziwnie spokojne — jakby ktoś przeciągnął przez świat krajkę i wygładził fałdy. Wokół stóp zawsze palą się małe płomienie, nawet bez lamp, a z korony spływa jej zasłona, która nie kończy się w żadnym widzialnym miejscu.",
-    "charakter_i_motywacje": "Opiekuńcza, ale nieprzenikniona. Nie pragnie niczego od śmiertelników — sama myśli świat w istnienie i od początku jest wszystkim, co było, jest i będzie; to my potrzebujemy jej nici, nie odwrotnie. Wchodzi w sprawy ludzi rzadko i uroczyście: rozsądziła spór Horusa z Setem o tron, przyznając królestwo Horusowi, bo jej wyrok kończy kłótnię bogów. Nie cierpi natomiast, gdy ktoś usiłuje zajrzeć jej pod zasłonę — początku nie wolno rozebrać na części.",
+    "charakter_i_motywacje": "Opiekuńcza, ale nieprzenikniona. Nie pragnie niczego od śmiertelników — sama myśli świat w istnienie i od początku jest wszystkim, co było, jest i będzie; to my potrzebujemy jej nici, nie odwrotnie. Wchodzi w sprawy ludzi rzadko i uroczyście: rozsądziła spór Horusa z Setem o tron, przyznając królestwo Horusowi, bo jej wyrok kończy kłótnię bogów. Nie cierpi natomiast, gdy ktoś usiłuje zajrzeć jej pod zasłonę — początku nie wolno rozebrać na części. Scena z Papirusu Chester Beatty I pokazuje, jak wygląda jej wyrok w praktyce. Enneada kłóci się o tron Ozyrysa tak długo, aż Banebdżedet proponuje: nie sądźmy w niewiedzy, napiszmy list do Neith Wielkiej, Matki Boga, i zróbmy to, co odpowie. Odpowiedź jest krótka i bez uprzejmości: oddajcie urząd Ozyrysa jego synowi Horusowi i nie popełniajcie bezprawia, bo wpadnę w taki gniew, że niebo dotknie ziemi. W tym samym liście każe jednak wynagrodzić przegranego — Setowi mają przypaść dobra i dwie córki Ra. Tak wygląda jej sprawiedliwość: rozstrzyga jednym zdaniem, ale nie wypuszcza nikogo z sądu z pustymi rękami.",
     "zdolnosci": "Tka byt: jednym ruchem czółenka snuje nici, z których składają się istoty, zdarzenia i losy, a nici tej nie da się odciąć nożem, bo nie jest z materii. Otwiera Drogi — prowadzi dusze zmarłych, dlatego to ona dostarcza płótno na bandaże mumii. Jest też wojowniczką pierwszego rzutu: jej skrzyżowane strzały lecą, nim ktoś zdąży złożyć broń. Kto w Noc Lamp postawi przed nią miseczkę z oliwą i solą i wytrwa do świtu, może usłyszeć odpowiedź na jedno pytanie o początek rzeczy — ale nigdy o koniec.",
     "slabosci_i_metody_pokonania": "Siłą nie da się jej pokonać, bo jest wcześniejsza niż siła. Zasłony nie podniósł żaden śmiertelnik — kto próbuje, traci nie wzrok, lecz pewność własnego imienia. Prawdziwa konfrontacja to cierpliwość: przyjść w Noc Lamp, utrzymać płomień do świtu i nie dotknąć zasłony; wtedy Neith sama schodzi do rozmowy, jak zeszła do rozmowy z kapłanami przy Solonie. Osłabia ją zapomnienie obrzędu — tam, gdzie nikt już nie zapala lamp i nie tka płótna, jej obecność rzadkieje jak nitka bez osnowy. Można ją też związać własną regułą: skoro jej wyrok kończy spory bogów, spór postawiony uczciwie musi rozstrzygnąć.",
     "preferencje": "Lubi: lampy oliwne płonące od zmierzchu do świtu, świeżo utkane płótno, czółenka z twardego drewna, pytania o początek, ciszę przed świątynią i ofiary w Sais. Nie lubi: rąk sięgających po zasłonę, przerwanych ściegów, pogasłych lamp w Noc Lamp i tych, którzy chcą znać koniec, nie znając początku."
@@ -56,6 +56,21 @@
       "typ": "encyklopedia online",
       "pozycja": "Wikipedia, „Sa el-Hagar” — identyfikacja starożytnej Sais ze współczesną miejscowością Sa el-Hagar w zachodniej Delcie Nilu (muhafaza al-Gharbijja); współrzędne przybliżone 30,97 N, 30,77 E; w okresie saickim (XXVI dynastia) stolica Egiptu",
       "url": "https://en.wikipedia.org/wiki/Sa_el-Hagar"
+    },
+    {
+      "typ": "tekst źródłowy",
+      "pozycja": "„The Contendings of Horus and Seth” (Papirus Chester Beatty I, XX dynastia; przekład w serwisie Ancient Society) — Banebdżedet radzi wysłać list do Neith Wielkiej, Matki Boga, a jej odpowiedź brzmi: oddajcie urząd Ozyrysa Horusowi, bo inaczej wpadnę w gniew tak wielki, że niebo dotknie ziemi; w tym samym liście Neith każe wynagrodzić Seta",
+      "url": "https://www.ancientsociety.com/egypt/the-conflict-of-horus-and-seth/"
+    },
+    {
+      "typ": "raport archeologiczny",
+      "pozycja": "EES/Durham University Expedition to Saïs, „Overview” (Penelope Wilson, badania od 1997) — survey, wiercenia rdzeniowe i magnetometria w Sa el-Hagar: brak zachowanej świątyni Neith, „Great Pit” po kamieniołomie, wapienny mur sugerujący kompleks porównywalny z Karnakiem, przesuwanie się koryta Nilu i pogrzebana wyspa piaskowa (gezira) pod dzisiejszą wsią",
+      "url": "https://sais.webspace.durham.ac.uk/overview/"
+    },
+    {
+      "typ": "materiały konferencyjne",
+      "pozycja": "Eighth International Conference on Delta Survey (Ain Shams University, 2023) — streszczenia prac w Sais: fundamenty wielkiego budynku wapiennego, amulety Neith i innych bóstw wśród zabytków misji egipskiej oraz wynik archeobotaniczny o wyjątkowo licznych fragmentach torebek nasiennych lnu z Nowego Państwa, wskazujący na Sais jako ośrodek produkcji surowego lnu",
+      "url": "https://www.asu.edu.eg/141090/_mediacenter/2023/pdf/c0e1e03461e00bd37811abfa78b89f3c.pdf"
     }
   ],
   "trofea": {
@@ -80,6 +95,10 @@
     {
       "slug": "egungun",
       "opis": "Neith tka płótno, w które owijano zmarłych, i jako Otwierająca Drogi prowadzi dusze na tamtą stronę, a Egungun jest przodkiem, który wraca do żywych spowity w warstwy tkanin. U obojga materiał zasłania twarz śmierci — i dzięki temu spotkanie z nią staje się możliwe bez utraty rozumu."
+    },
+    {
+      "slug": "syama-i-sarvara",
+      "opis": "Oboje obsługują drogę zmarłych z dwóch stron: ona tka i wydaje płótno na bandaże, one prowadzą tego, kto już w to płótno owinięty ruszył."
     }
   ],
   "meta": {
@@ -89,6 +108,10 @@
       {
         "data": "2026-09-05 12:45",
         "opis": "Wizualizacja Neith z Sais została odtworzona i dołączona do opisu bogini tkaczki."
+      },
+      {
+        "data": "2026-09-05 21:35",
+        "opis": "Pogłębienie karty o list Neith z Papirusu Chester Beatty I (wyrok wraz z rekompensatą dla Seta) i o archeologię Sais (ekspedycja EES/Durham, ślady produkcji lnu); nowe powiązanie z psami Yamy."
       }
     ]
   }

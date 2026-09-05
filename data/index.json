@@ -1,6 +1,6 @@
 {
   "wersja": 3,
-  "buildTime": "2026-09-05T11:55:00.687Z",
+  "buildTime": "2026-09-05T11:57:20.049Z",
   "liczba": 25,
   "liczbaSkitow": 45,
   "kanon": {
@@ -1304,7 +1304,8 @@
       "powiazania": [
         "agni",
         "egungun",
-        "sfinks-teby"
+        "sfinks-teby",
+        "syama-i-sarvara"
       ],
       "backlinki": [],
       "obraz": "assets/wizualizacje/neith-z-sais.jpg",
@@ -1597,6 +1598,7 @@
       ],
       "backlinki": [
         "kannon-hase",
+        "neith-z-sais",
         "protostates"
       ],
       "obraz": "assets/wizualizacje/syama-i-sarvara.jpg",
@@ -2443,6 +2445,14 @@
     }
   ],
   "aktualizacje": [
+    {
+      "data": "2026-09-05 21:35",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "neith-z-sais",
+      "tytul": "Neith z Sais — tkaczka początku",
+      "opis": "Pogłębienie karty o list Neith z Papirusu Chester Beatty I (wyrok wraz z rekompensatą dla Seta) i o archeologię Sais (ekspedycja EES/Durham, ślady produkcji lnu); nowe powiązanie z psami Yamy."
+    },
     {
       "data": "2026-09-05 21:10",
       "typ": "manifestacja",

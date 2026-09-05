@@ -156,7 +156,7 @@
           },
           {
             "slug": "syama-i-sarvara",
-            "wielkosc": 0.34
+            "wielkosc": 0.36
           },
           {
             "slug": "talos-kreta",
@@ -282,7 +282,7 @@
           {
             "kultura": "indie",
             "kult": "syama-i-sarvara",
-            "wielkosc": 0.34
+            "wielkosc": 0.36
           },
           {
             "kultura": "grecja",
@@ -592,7 +592,7 @@
           },
           {
             "slug": "syama-i-sarvara",
-            "wielkosc": 0.34
+            "wielkosc": 0.36
           },
           {
             "slug": "talos-kreta",
@@ -718,7 +718,7 @@
           {
             "kultura": "indie",
             "kult": "syama-i-sarvara",
-            "wielkosc": 0.34
+            "wielkosc": 0.36
           },
           {
             "kultura": "grecja",
@@ -1046,7 +1046,7 @@
           },
           {
             "slug": "syama-i-sarvara",
-            "wielkosc": 0.34
+            "wielkosc": 0.36
           },
           {
             "slug": "talos-kreta",
@@ -1172,7 +1172,7 @@
           {
             "kultura": "indie",
             "kult": "syama-i-sarvara",
-            "wielkosc": 0.34
+            "wielkosc": 0.36
           },
           {
             "kultura": "grecja",
@@ -1515,7 +1515,7 @@
           },
           {
             "slug": "syama-i-sarvara",
-            "wielkosc": 0.34
+            "wielkosc": 0.36
           },
           {
             "slug": "talos-kreta",
@@ -1641,7 +1641,7 @@
           {
             "kultura": "indie",
             "kult": "syama-i-sarvara",
-            "wielkosc": 0.34
+            "wielkosc": 0.36
           },
           {
             "kultura": "grecja",
@@ -1984,7 +1984,7 @@
           },
           {
             "slug": "syama-i-sarvara",
-            "wielkosc": 0.34
+            "wielkosc": 0.36
           },
           {
             "slug": "talos-kreta",
@@ -2110,7 +2110,7 @@
           {
             "kultura": "indie",
             "kult": "syama-i-sarvara",
-            "wielkosc": 0.34
+            "wielkosc": 0.36
           },
           {
             "kultura": "grecja",
@@ -2450,7 +2450,7 @@
           },
           {
             "slug": "syama-i-sarvara",
-            "wielkosc": 0.34
+            "wielkosc": 0.36
           },
           {
             "slug": "talos-kreta",
@@ -2576,7 +2576,7 @@
           {
             "kultura": "indie",
             "kult": "syama-i-sarvara",
-            "wielkosc": 0.34
+            "wielkosc": 0.36
           },
           {
             "kultura": "grecja",
@@ -2816,13 +2816,13 @@
           "slug": "syama-i-sarvara",
           "nazwa": "Śyāma i Śarvara — czterookie psy Yamy, strażnicy drogi przodków",
           "rola": "Dwoje oczu jednej drogi",
-          "pasywne": 12,
-          "saldoPrzed": 12,
+          "pasywne": 14,
+          "saldoPrzed": 14,
           "kosztUdzialu": 2,
           "kosztKlucza": 0,
           "boost": 0,
           "zwrot": 1,
-          "saldoPo": 11
+          "saldoPo": 13
         }
       ],
       "stanPo": {
@@ -2925,7 +2925,7 @@
           },
           {
             "slug": "syama-i-sarvara",
-            "wielkosc": 0.345
+            "wielkosc": 0.365
           },
           {
             "slug": "talos-kreta",
@@ -3051,7 +3051,7 @@
           {
             "kultura": "indie",
             "kult": "syama-i-sarvara",
-            "wielkosc": 0.345
+            "wielkosc": 0.365
           },
           {
             "kultura": "grecja",
@@ -3074,7 +3074,7 @@
           "morowa-panna": 15,
           "protostates": 12,
           "knecht-z-koptos": 13,
-          "syama-i-sarvara": 11
+          "syama-i-sarvara": 13
         }
       },
       "konsekwencje": {
@@ -3120,8 +3120,8 @@
           },
           {
             "slug": "syama-i-sarvara",
-            "przed": 0.34,
-            "po": 0.345,
+            "przed": 0.36,
+            "po": 0.365,
             "delta": 0.005,
             "opis": "Droga przodków zyskuje nowe podanie: woda zostawiona przez pierwszego — pielgrzymi w Waranasi zaczynają stawiać dzbany u bramy."
           }
@@ -3144,8 +3144,8 @@
           {
             "kultura": "indie",
             "kult": "syama-i-sarvara",
-            "przed": 0.34,
-            "po": 0.345,
+            "przed": 0.36,
+            "po": 0.365,
             "delta": 0.005
           }
         ],
@@ -3403,7 +3403,7 @@
           },
           {
             "slug": "syama-i-sarvara",
-            "wielkosc": 0.345
+            "wielkosc": 0.365
           },
           {
             "slug": "talos-kreta",
@@ -3529,7 +3529,7 @@
           {
             "kultura": "indie",
             "kult": "syama-i-sarvara",
-            "wielkosc": 0.345
+            "wielkosc": 0.365
           },
           {
             "kultura": "grecja",
@@ -3552,7 +3552,7 @@
           "morowa-panna": 15,
           "protostates": 12,
           "knecht-z-koptos": 13,
-          "syama-i-sarvara": 11
+          "syama-i-sarvara": 13
         }
       },
       "konsekwencje": {
@@ -3885,7 +3885,7 @@
           },
           {
             "slug": "syama-i-sarvara",
-            "wielkosc": 0.345
+            "wielkosc": 0.365
           },
           {
             "slug": "talos-kreta",
@@ -4011,7 +4011,7 @@
           {
             "kultura": "indie",
             "kult": "syama-i-sarvara",
-            "wielkosc": 0.345
+            "wielkosc": 0.365
           },
           {
             "kultura": "grecja",
@@ -4034,7 +4034,7 @@
           "morowa-panna": 15,
           "protostates": 12,
           "knecht-z-koptos": 13,
-          "syama-i-sarvara": 11,
+          "syama-i-sarvara": 13,
           "loup-garou-gevaudan": 8,
           "neith-z-sais": 7
         }
@@ -4391,7 +4391,7 @@
           },
           {
             "slug": "syama-i-sarvara",
-            "wielkosc": 0.345
+            "wielkosc": 0.365
           },
           {
             "slug": "talos-kreta",
@@ -4517,7 +4517,7 @@
           {
             "kultura": "indie",
             "kult": "syama-i-sarvara",
-            "wielkosc": 0.345
+            "wielkosc": 0.365
           },
           {
             "kultura": "grecja",
@@ -4540,7 +4540,7 @@
           "morowa-panna": 15,
           "protostates": 12,
           "knecht-z-koptos": 13,
-          "syama-i-sarvara": 11,
+          "syama-i-sarvara": 13,
           "loup-garou-gevaudan": 9,
           "neith-z-sais": 7,
           "cormoran-st-michaels-mount": 11,
@@ -4909,7 +4909,7 @@
           },
           {
             "slug": "syama-i-sarvara",
-            "wielkosc": 0.345
+            "wielkosc": 0.365
           },
           {
             "slug": "talos-kreta",
@@ -5035,7 +5035,7 @@
           {
             "kultura": "indie",
             "kult": "syama-i-sarvara",
-            "wielkosc": 0.345
+            "wielkosc": 0.365
           },
           {
             "kultura": "grecja",
@@ -5058,7 +5058,7 @@
           "morowa-panna": 15,
           "protostates": 12,
           "knecht-z-koptos": 13,
-          "syama-i-sarvara": 11,
+          "syama-i-sarvara": 13,
           "loup-garou-gevaudan": 10,
           "neith-z-sais": 7,
           "cormoran-st-michaels-mount": 11,
@@ -5356,7 +5356,7 @@
       },
       {
         "slug": "syama-i-sarvara",
-        "wielkosc": 0.345
+        "wielkosc": 0.365
       },
       {
         "slug": "talos-kreta",
@@ -5482,7 +5482,7 @@
       {
         "kultura": "indie",
         "kult": "syama-i-sarvara",
-        "wielkosc": 0.345
+        "wielkosc": 0.365
       },
       {
         "kultura": "grecja",
@@ -5505,7 +5505,7 @@
       "morowa-panna": 15,
       "protostates": 12,
       "knecht-z-koptos": 13,
-      "syama-i-sarvara": 11,
+      "syama-i-sarvara": 13,
       "loup-garou-gevaudan": 10,
       "neith-z-sais": 7,
       "cormoran-st-michaels-mount": 11,
