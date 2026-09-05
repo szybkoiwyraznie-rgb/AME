@@ -1,7 +1,8 @@
 # 0023 — Pętla Jakości liniowa (C4→C1→C3→C6→C2+5) i autonomia wdrożeń
 
 - Data: 2026-09-04
-- Status: zaakceptowany
+- Status: zaakceptowany (zmieniony przez ADR 0025: C6 obejmuje wszystkie
+  elementy fabularne, a pętla jest powtarzana do wyczerpania budżetu sesji)
 - Nadpisuje: 0007 (w zakresie składu pętli i reguły „akceptacja właściciela
   przed live")
 

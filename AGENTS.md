@@ -111,16 +111,30 @@ Ponadto:
   **C1** (pogłębianie wpisów — zawsze z researchem w www) →
   **C3** (SKIT do Bazy Skitów: 2–4 materializacje o unikalnym składzie,
   PROTOKÓŁ §8.4) →
-  **C6** (rozwój Kroniki: kolejne Epoki i/lub rozgałęzienia i/lub tomy — po
-  każdej zmianie sieci SKIT-ów lub powiązań przekalibracja asercji
-  `test/kronika.test.js` w TYM SAMYM kroku, L20) →
+  **C6** (rozwój ELEMENTÓW FABULARNYCH, ADR 0025: Kronika — kolejne Epoki
+  i/lub rozgałęzienia i/lub tomy; SPLOT — kolejne drogi, węzły, zasoby,
+  Fabularna Proza; inne narzędzia fabularne, w tym sprzężenia między nimi.
+  Wybór narzędzia w danym obrocie należy do sesji — kryterium jest przyrost
+  spójności świata. Po każdej zmianie sieci SKIT-ów lub powiązań
+  przekalibracja asercji `test/kronika.test.js` w TYM SAMYM kroku, L20) →
   **C2+5** (DEVELOPMENT — scalone: nowe featury aplikacji ORAZ grube
   projekty rozwojowe wykorzystujące zmaterializowane byty — narzędzia
   fabularne, grywalizacja, ekonomia, zasoby, przygody, walka świata
   z materializacjami — konkretyzowane z `docs/BACKLOG.md`; własne pomysły
   najpierw dopisać do backlogu; wymyślić, zakodować z testami).
-  Sesja wykonuje jedno przejście (ile się zmieści w budżecie) i kończy
-  handoffem — kolejny obrót robi następna sesja z cronu.
+  **Pętla ma sprzężenie zwrotne (ADR 0025): po domknięciu C2+5 sesja wraca
+  na początek i zaczyna KOLEJNY obrót od C4 — i tak aż do wyczerpania budżetu
+  sesji.** Obroty numeruje się w handoffie (obrót 1, obrót 2, …); handoff
+  rozlicza każdy obrót osobno i wymienia, które narzędzie fabularne dostało
+  rozwój w C6. Pętlę przerywa: wyczerpanie budżetu (czas/kontekst), zlecenie
+  właściciela w czacie (ma pierwszeństwo) albo blokada wymagająca decyzji
+  właściciela (wtedy notujesz blokadę i idziesz do następnego kroku).
+  Kroku nie zostawia się w połowie: obrót, którego nie da się domknąć, cofa
+  się do ostatniego zielonego zakresu, a sesja kończy handoffem.
+  W drugim i kolejnym obrocie tej samej sesji: C4 losuje z puli nadal
+  nieużytych kart (bez powtórzeń w sesji), C1 bierze INNY wpis, C3 pilnuje
+  unikalności składu w całej bazie, a C2+5 bierze NOWĄ pozycję z backlogu
+  zamiast poprawiać feature z poprzedniego obrotu.
   **Nowe elementy AME agent wprowadza na własną odpowiedzialność i scala**
   (mechanizm auto-scalania powyżej); bramą jakości jest audyt następnej
   sesji, nie akceptacja właściciela przed live (reguła z ADR 0007
