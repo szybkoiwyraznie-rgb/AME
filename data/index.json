@@ -1,7 +1,7 @@
 {
   "wersja": 3,
-  "buildTime": "2026-09-05T10:59:08.758Z",
-  "liczba": 23,
+  "buildTime": "2026-09-05T11:36:39.389Z",
+  "liczba": 24,
   "liczbaSkitow": 44,
   "kanon": {
     "kategorie": [
@@ -21,7 +21,7 @@
         "min": 1,
         "max": 1,
         "opis": "Czym byt jest — podstawowy filtr kartoteki",
-        "ile": 15
+        "ile": 16
       },
       {
         "id": "motyw",
@@ -30,7 +30,7 @@
         "min": 1,
         "max": 2,
         "opis": "Co wiąże byty i spoiwa sieci: powiązania w kartotekach i tematy SKITów",
-        "ile": 15
+        "ile": 16
       },
       {
         "id": "postac",
@@ -97,6 +97,7 @@
       "kategoria": "kultura",
       "opis": "Folklor słowiański ziem polskich: personifikacje zarazy i śmierci, demony moru i obrzędy ich odprawiania",
       "wpisy": [
+        "bazyliszek-warszawski",
         "morowa-panna"
       ]
     },
@@ -156,6 +157,7 @@
       "opis": "Wzrok jako broń i jako rana bytu",
       "wpisy": [
         "balor",
+        "bazyliszek-warszawski",
         "lincoln-imp"
       ]
     },
@@ -233,6 +235,7 @@
       "kategoria": "postac",
       "opis": "Ciało zwierzęce jako drugi stan tej samej istoty",
       "wpisy": [
+        "bazyliszek-warszawski",
         "empusa-korynt",
         "loup-garou-gevaudan",
         "nessos",
@@ -451,6 +454,20 @@
       "wpisy": [
         "cormoran-st-michaels-mount"
       ]
+    },
+    "krol-wezy": {
+      "kategoria": "typ",
+      "opis": "Gadzi władca z koroną na łbie: zabija wzrokiem i jadem, panuje nad jednym miejscem",
+      "wpisy": [
+        "bazyliszek-warszawski"
+      ]
+    },
+    "jad": {
+      "kategoria": "motyw",
+      "opis": "Trucizna jako broń i jako ślad: zatrute powietrze, zatrute ostrze, zatrute ciało",
+      "wpisy": [
+        "bazyliszek-warszawski"
+      ]
     }
   },
   "manifestacje": [
@@ -539,6 +556,7 @@
       ],
       "backlinki": [
         "barbarossa-kyffhaeuser",
+        "bazyliszek-warszawski",
         "ben-varrey",
         "drangue-shala",
         "lincoln-imp",
@@ -611,6 +629,39 @@
         "warta",
         "znak-burzy"
       ]
+    },
+    {
+      "slug": "bazyliszek-warszawski",
+      "nazwa": "Bazyliszek z Krzywego Koła",
+      "nazwy_alternatywne": [
+        "Bazyliszek warszawski",
+        "Basiliscus Varsoviensis",
+        "Król wężów"
+      ],
+      "karta": "Coat with Venom",
+      "miejscowosc": "ulica Krzywe Koło na Starym Mieście, piwnice spalonej kamienicy między Rynkiem Starego Miasta a Nowomiejską, Warszawa",
+      "kraj": "Polska",
+      "lat": 52.2506,
+      "lon": 21.0119,
+      "tagi": [
+        "jad",
+        "krol-wezy",
+        "polska",
+        "postac-zwierzeca",
+        "zle-oko"
+      ],
+      "powiazania": [
+        "balor",
+        "lincoln-imp",
+        "morowa-panna"
+      ],
+      "backlinki": [],
+      "obraz": "assets/wizualizacje/bazyliszek-warszawski.jpg",
+      "trofea": {
+        "pierwotne": "Zwierciadła ze skórzanego stroju Johanna Faurera — kilkadziesiąt małych luster naszytych od stóp do głów, z których część pękła w piwnicy; to nimi bazyliszek został pokonany własnym wejrzeniem.",
+        "wtorne": "Żelazne osęki (haki ogniowe) z warszawskiego magazynu przeciwpożarowego, którymi wyciągano ciała z piwnicy, zanim ktokolwiek odważył się zejść po schodach."
+      },
+      "skity": []
     },
     {
       "slug": "ben-varrey",
@@ -1063,6 +1114,7 @@
       ],
       "backlinki": [
         "balor",
+        "bazyliszek-warszawski",
         "cormoran-st-michaels-mount",
         "drangue-shala"
       ],
@@ -1146,6 +1198,7 @@
         "sfinks-teby"
       ],
       "backlinki": [
+        "bazyliszek-warszawski",
         "pandora",
         "protostates"
       ],
@@ -2307,6 +2360,22 @@
     }
   ],
   "aktualizacje": [
+    {
+      "data": "2026-09-05 19:05",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "bazyliszek-warszawski",
+      "tytul": "Bazyliszek z Krzywego Koła",
+      "opis": "Nowa karta bytu: bazyliszek ze staromiejskiej piwnicy na Krzywym Kole, z zapisem Zmorskiego z 1852 roku, redakcją Oppmana z 1925 i tropem druku Pinciera z 1605 o wypadku z 1587 roku."
+    },
+    {
+      "data": "2026-09-05 19:05",
+      "typ": "manifestacja",
+      "akcja": "nowa",
+      "slug": "bazyliszek-warszawski",
+      "tytul": "Bazyliszek z Krzywego Koła",
+      "opis": "wpis w kartotece — materializacja karty „Coat with Venom”"
+    },
     {
       "data": "2026-09-05 16:40",
       "typ": "skit",

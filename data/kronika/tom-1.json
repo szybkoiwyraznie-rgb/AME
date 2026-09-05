@@ -6,8 +6,8 @@
   "status": "otwarta",
   "stanStart": {
     "os": {
-      "mit": 38,
-      "racjonalizacja": 62
+      "mit": 37,
+      "racjonalizacja": 63
     },
     "zasieg": [
       {
@@ -16,11 +16,15 @@
       },
       {
         "slug": "balor",
-        "wielkosc": 0.45
+        "wielkosc": 0.47
       },
       {
         "slug": "barbarossa-kyffhaeuser",
         "wielkosc": 0.47
+      },
+      {
+        "slug": "bazyliszek-warszawski",
+        "wielkosc": 0.18
       },
       {
         "slug": "ben-varrey",
@@ -60,7 +64,7 @@
       },
       {
         "slug": "lincoln-imp",
-        "wielkosc": 0.4
+        "wielkosc": 0.42
       },
       {
         "slug": "loup-garou-gevaudan",
@@ -68,7 +72,7 @@
       },
       {
         "slug": "morowa-panna",
-        "wielkosc": 0.33
+        "wielkosc": 0.35
       },
       {
         "slug": "neith-z-sais",
@@ -112,12 +116,17 @@
       {
         "kultura": "irlandia",
         "kult": "balor",
-        "wielkosc": 0.45
+        "wielkosc": 0.47
       },
       {
         "kultura": "niemcy",
         "kult": "barbarossa-kyffhaeuser",
         "wielkosc": 0.47
+      },
+      {
+        "kultura": "polska",
+        "kult": "bazyliszek-warszawski",
+        "wielkosc": 0.18
       },
       {
         "kultura": "man",
@@ -167,7 +176,7 @@
       {
         "kultura": "anglia",
         "kult": "lincoln-imp",
-        "wielkosc": 0.4
+        "wielkosc": 0.42
       },
       {
         "kultura": "francja",
@@ -177,7 +186,7 @@
       {
         "kultura": "polska",
         "kult": "morowa-panna",
-        "wielkosc": 0.33
+        "wielkosc": 0.35
       },
       {
         "kultura": "egipt",

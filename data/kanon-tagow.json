@@ -290,6 +290,16 @@
       "tag": "podstep",
       "kategoria": "motyw",
       "opis": "Rozstrzygnięcie fortelem zamiast siłą: byt zwodzi albo sam zostaje zwiedziony pułapką, pytaniem lub obietnicą"
+    },
+    {
+      "tag": "krol-wezy",
+      "kategoria": "typ",
+      "opis": "Gadzi władca z koroną na łbie: zabija wzrokiem i jadem, panuje nad jednym miejscem"
+    },
+    {
+      "tag": "jad",
+      "kategoria": "motyw",
+      "opis": "Trucizna jako broń i jako ślad: zatrute powietrze, zatrute ostrze, zatrute ciało"
     }
   ]
 }

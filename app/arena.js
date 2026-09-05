@@ -37,6 +37,7 @@ export const WAGA_MOTYWU = {
   oczyszczenie: { atak: 4, obrona: 3 },
   tkanie: { atak: 2, obrona: 4 },
   podstep: { atak: 4, obrona: 2 },
+  jad: { atak: 7, obrona: 0 },
 };
 
 /** Kontry motywów: motyw klucza tłumi siłę motywu z listy (mnożnik ataku). */
@@ -47,6 +48,8 @@ export const KONTRA_MOTYWU = {
   oplaty: ['furia'],
   // fortel obchodzi straż: kto pilnuje bramy, ten nie patrzy pod nogi
   podstep: ['obrona'],
+  // uzdrowienie neutralizuje jad: kto zna odtrutkę, temu trucizna schodzi do rzemiosła
+  uzdrowienie: ['jad'],
 };
 
 const BAZA = { zywotnosc: 40, moc: 8, spryt: 6, rezonans: 10 };
