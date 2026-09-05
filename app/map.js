@@ -10,7 +10,7 @@
  * pinch (2 wskaźniki), dwuklik, przyciski. Pinezki i ich etykiety kompensują
  * skalę widoku, więc mają stały rozmiar w pikselach CSS (ADR 0009).
  */
-import { projektuj, dekodujKraje, siatka, dopasujWidok, ogranicz, K_MIN, K_MAX, SZEROKOSC as SZER, WYSOKOSC as WYS, sciezkaGeoMultiPoligon } from './geo.js?v=c6-9';
+import { projektuj, dekodujKraje, siatka, dopasujWidok, ogranicz, K_MIN, K_MAX, SZEROKOSC as SZER, WYSOKOSC as WYS, sciezkaGeoMultiPoligon } from './geo.js?v=c6-10';
 
 const NS = 'http://www.w3.org/2000/svg';
 
@@ -50,10 +50,15 @@ export const PROGI_WARSTW = {
   miastaDrobne: 10,
   poi: 8,
   historia: 6,
-  // C2+5 (obrót 3): od tego powiększenia głowa pinezki pokazuje miniaturę
-  // wizualizacji bytu zamiast pustego krążka (backlog „Miniatury na pinezkach”).
-  miniatury: 6,
 };
+
+/**
+ * Promień medalionu z wizualizacją bytu (px CSS, stały na ekranie).
+ * Zlecenie właściciela 2026-09-05: miniatura ma się pokazywać dopiero po
+ * najechaniu — jak badge z nazwą — i być dwa razy większa niż głowa pinezki
+ * (13 px), czyli 26 px promienia = 52 px średnicy.
+ */
+export const PROMIEN_MINIATURY = 26;
 /**
  * Czy warstwa jest włączona (przełączniki panelu). WSZYSTKIE warstwy są
  * opcjonalne i domyślnie WYŁĄCZONE (decyzja właściciela 2026-08-30);
@@ -132,6 +137,15 @@ export function stworzMape(kontener, { przyZmianieZaznaczenia, przyZmianieWidoku
   svg.setAttribute('role', 'application');
   svg.setAttribute('aria-label', 'Mapa świata z manifestacjami eterycznymi');
   kontener.appendChild(svg);
+
+  // Maska medalionu miniatury. `clipPathUnits="objectBoundingBox"` liczy się
+  // w ułamkach prostokąta obrazu, więc koło trzyma się kadru niezależnie od
+  // rozmiaru i pozycji pinezki. Wcześniejsza wersja wskazywała clipPath, który
+  // nigdy nie trafił do DOM — odwołanie było puste i miniatura zostawała
+  // kwadratem (zgłoszenie właściciela 2026-09-05).
+  const defs = el('defs', {}, svg);
+  const maska = el('clipPath', { id: 'przyciecie-miniatury', clipPathUnits: 'objectBoundingBox' }, defs);
+  el('circle', { cx: 0.5, cy: 0.5, r: 0.5 }, maska);
 
   // Ocean — bardzo duży prostokąt, by przy przesuwaniu nigdy nie pokazało się tło.
   el('rect', { x: -SZER * 4, y: -WYS * 4, width: SZER * 9, height: WYS * 9, class: 'ocean' }, svg);
@@ -405,21 +419,24 @@ export function stworzMape(kontener, { przyZmianieZaznaczenia, przyZmianieWidoku
       el('circle', { r: 26, class: 'trafienie' }, g); // pole trafienia (A5)
       el('circle', { r: 13, class: 'glowa' }, g);
       el('circle', { r: 4.4, class: 'zrenica' }, g);
-      // Miniatura wizualizacji (backlog, C2+5 obrót 3): przycięta do koła głowy,
-      // z leniwym `href` — plik ładuje się dopiero po przekroczeniu progu zoomu,
-      // więc widok świata nadal startuje bez 25 obrazów w tle.
+      // Medalion z wizualizacją (zlecenie właściciela 2026-09-05): koło o
+      // promieniu PROMIEN_MINIATURY, widoczne tylko na najechaniu/fokusie —
+      // tak jak badge z nazwą. `href` ustawia się leniwie przy pierwszym
+      // najechaniu, więc mapa nadal startuje bez pobierania wszystkich obrazów.
+      const bok = PROMIEN_MINIATURY * 2;
       const miniatura = r.obraz
         ? el('image', {
             class: 'miniatura',
-            x: -13,
-            y: -13,
-            width: 26,
-            height: 26,
+            x: -PROMIEN_MINIATURY,
+            y: -PROMIEN_MINIATURY,
+            width: bok,
+            height: bok,
             preserveAspectRatio: 'xMidYMid slice',
-            'clip-path': 'url(#przyciecie-pinezki)',
+            'clip-path': 'url(#przyciecie-miniatury)',
             'data-obraz': r.obraz,
           }, g)
         : null;
+      if (miniatura) el('circle', { r: PROMIEN_MINIATURY, class: 'miniatura-ramka' }, g);
       el('path', { d: 'M0,10 L-7.5,27 L0,19.5 L7.5,27 Z', class: 'ostrze' }, g);
       const etykieta = el('g', { class: 'etykieta' }, grupaEtykiet); // warstwa nad pinezkami (A3)
       const tlo = el('rect', { class: 'tlo-etykiety', rx: 8 }, etykieta);
@@ -429,22 +446,20 @@ export function stworzMape(kontener, { przyZmianieZaznaczenia, przyZmianieWidoku
       // A1 (M6): etykieta pokazuje się po najechaniu wskaźnikiem i po fokusu
       // klawiatury (pinezka jest fokusowalna, tabindex=0).
       // C2: najechanie/fokus pokazuje badge (A1) i podgląd powiązań pinezki
-      g.addEventListener('pointerenter', () => {
+      const wejscie = () => {
         etykieta.classList.add('widoczna');
+        pokazMiniature(g, miniatura);
         podgladaj(r.slug);
-      });
-      g.addEventListener('pointerleave', () => {
+      };
+      const wyjscie = () => {
         etykieta.classList.remove('widoczna');
+        g.classList.remove('z-miniatura');
         podgladaj(null);
-      });
-      g.addEventListener('focus', () => {
-        etykieta.classList.add('widoczna');
-        podgladaj(r.slug);
-      });
-      g.addEventListener('blur', () => {
-        etykieta.classList.remove('widoczna');
-        podgladaj(null);
-      });
+      };
+      g.addEventListener('pointerenter', wejscie);
+      g.addEventListener('pointerleave', wyjscie);
+      g.addEventListener('focus', wejscie);
+      g.addEventListener('blur', wyjscie);
       g.addEventListener('click', (ev) => {
         ev.stopPropagation();
         ukryjEtykieteMiasta();
@@ -857,7 +872,6 @@ export function stworzMape(kontener, { przyZmianieZaznaczenia, przyZmianieWidoku
     grupaMiast.setAttribute('display', WIDOCZNE_WARSTWY.miasta && k >= PROGI_WARSTW.miastaWielkie ? 'inherit' : 'none');
     grupaPOI.setAttribute('display', WIDOCZNE_WARSTWY.poi && k >= PROGI_WARSTW.poi ? 'inherit' : 'none');
     grupaHistoria.setAttribute('display', WIDOCZNE_WARSTWY.historia && k >= PROGI_WARSTW.historia ? 'inherit' : 'none');
-    odswiezMiniatury(k);
     if (aktywnyPunkt && aktywnyPunkt.grupa.getAttribute('display') === 'none') ukryjEtykietePunktu();
     odswiezMiasta();
     ustawTransformyPunktow();
@@ -865,21 +879,17 @@ export function stworzMape(kontener, { przyZmianieZaznaczenia, przyZmianieWidoku
   }
 
   /**
-   * Miniatury na pinezkach (backlog „Miniatury na pinezkach przy wysokim
-   * zoomie”, C2+5 obrót 3): powyżej progu grupa dostaje klasę, a każdy obraz
-   * — swój `href` (raz, przy pierwszym przekroczeniu progu). Poniżej progu
-   * miniatury znikają stylem, ale pobranych plików już nie zwalniamy.
+   * Medalion z wizualizacją na najechanie/fokus (zlecenie właściciela
+   * 2026-09-05). Plik pobiera się dopiero teraz i tylko raz — pinezka bez
+   * obrazu po prostu nie dostaje klasy, więc nic nie miga.
    */
-  function odswiezMiniatury(k) {
-    const pokaz = k >= PROGI_WARSTW.miniatury;
-    grupaPinezek.classList?.toggle('z-miniaturami', pokaz);
-    if (!pokaz) return;
-    for (const p of pinezki.values()) {
-      const obraz = p.miniatura;
-      if (!obraz || obraz.getAttribute('href')) continue;
+  function pokazMiniature(grupa, obraz) {
+    if (!obraz) return;
+    if (!obraz.getAttribute('href')) {
       const zrodlo = obraz.getAttribute('data-obraz');
       if (zrodlo) obraz.setAttribute('href', zrodlo);
     }
+    grupa.classList?.add('z-miniatura');
   }
 
   /** Punkty stałego rozmiaru ekranowego (POI, historia) — tylko przy zmianie skali. */

@@ -5,7 +5,7 @@
  */
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { szacujSzerokoscTekstu, wymiaryEtykiety, stworzMape, PROGI_WARSTW } from '../app/map.js';
+import { szacujSzerokoscTekstu, wymiaryEtykiety, stworzMape, PROMIEN_MINIATURY } from '../app/map.js';
 import { SZEROKOSC, WYSOKOSC, projektuj } from '../app/geo.js';
 
 function stworzElement(nazwa) {
@@ -328,7 +328,7 @@ test('warstwa „rozmowy” skitu (C2): łuki uczestników w osobnej grupie, czy
   assert.equal(rozmowa.getAttribute('display'), 'none');
 });
 
-test('miniatury (C2+5, obrót 3): obraz przycięty do głowy, href leniwy, próg zoomu', () => {
+test('medalion wizualizacji: koło 2× większe od głowy, tylko na najechanie/fokus', () => {
   const { kontener } = zaiscz();
   const mapa = stworzMape(kontener, {});
   mapa.ustawPinezki([
@@ -339,11 +339,45 @@ test('miniatury (C2+5, obrót 3): obraz przycięty do głowy, href leniwy, próg
   const zObrazem = grupaPinezek.dzieci.find((d) => d.getAttribute('data-slug') === 'glamr');
   const bezObrazu = grupaPinezek.dzieci.find((d) => d.getAttribute('data-slug') === 'bez-obrazu');
   const miniatura = zObrazem.dzieci.find((d) => d.czyMaKlase('miniatura'));
-  assert.ok(miniatura, 'pinezka z obrazem dostaje element miniatury');
-  assert.equal(bezObrazu.dzieci.filter((d) => d.czyMaKlase('miniatura')).length, 0, 'brak obrazu = brak miniatury');
-  assert.equal(Number(miniatura.getAttribute('width')), 26, 'miniatura wypełnia koło głowy (2 × 13)');
-  assert.equal(miniatura.getAttribute('clip-path'), 'url(#przyciecie-pinezki)');
-  assert.equal(miniatura.getAttribute('data-obraz'), 'assets/wizualizacje/glamr.jpg');
-  assert.equal(miniatura.getAttribute('href'), undefined, 'plik nie ładuje się przy pierwszym rysowaniu');
-  assert.ok(PROGI_WARSTW.miniatury >= 4, 'miniatury włączają się dopiero po przybliżeniu');
+  const ramka = zObrazem.dzieci.find((d) => d.czyMaKlase('miniatura-ramka'));
+
+  assert.ok(miniatura, 'pinezka z obrazem dostaje medalion');
+  assert.ok(ramka, 'medalion ma obwódkę');
+  assert.equal(bezObrazu.dzieci.filter((d) => d.czyMaKlase('miniatura')).length, 0, 'brak obrazu = brak medalionu');
+  assert.equal(bezObrazu.dzieci.filter((d) => d.czyMaKlase('miniatura-ramka')).length, 0, 'i bez pustej obwódki');
+
+  assert.equal(PROMIEN_MINIATURY, 26, 'dwukrotność promienia głowy pinezki (13)');
+  assert.equal(Number(miniatura.getAttribute('width')), 52, 'bok kadru = średnica medalionu');
+  assert.equal(Number(miniatura.getAttribute('height')), 52);
+  assert.equal(Number(miniatura.getAttribute('x')), -26, 'kadr wyśrodkowany na pinezce');
+  assert.equal(Number(ramka.getAttribute('r')), 26);
+
+  // Koło, nie kwadrat: maska musi istnieć w DOM, inaczej przeglądarka rysuje
+  // pełny kadr (to był błąd zgłoszony przez właściciela 2026-09-05).
+  assert.equal(miniatura.getAttribute('clip-path'), 'url(#przyciecie-miniatury)');
+  const defs = mapa.svg.dzieci.find((d) => d.nazwa === 'defs');
+  const maska = defs?.dzieci.find((d) => d.getAttribute('id') === 'przyciecie-miniatury');
+  assert.ok(maska, 'clipPath medalionu jest w <defs> mapy');
+  assert.equal(maska.nazwa, 'clipPath');
+  assert.equal(maska.getAttribute('clipPathUnits'), 'objectBoundingBox');
+  const kolo = maska.dzieci[0];
+  assert.equal(kolo.nazwa, 'circle');
+  assert.equal(Number(kolo.getAttribute('r')), 0.5, 'maska to koło wpisane w kadr');
+
+  // Zachowanie: jak badge z nazwą — dopiero na najechaniu, i wtedy ładuje plik.
+  assert.equal(miniatura.getAttribute('href'), undefined, 'plik nie ładuje się przy rysowaniu mapy');
+  assert.equal(zObrazem.czyMaKlase('z-miniatura'), false, 'spoczynek: medalion schowany');
+  zObrazem.sluchacze.pointerenter[0]();
+  assert.equal(zObrazem.czyMaKlase('z-miniatura'), true, 'najechanie pokazuje medalion');
+  assert.equal(miniatura.getAttribute('href'), 'assets/wizualizacje/glamr.jpg', 'obraz dociągany leniwie');
+  zObrazem.sluchacze.pointerleave[0]();
+  assert.equal(zObrazem.czyMaKlase('z-miniatura'), false, 'zjechanie chowa medalion');
+  zObrazem.sluchacze.focus[0]();
+  assert.equal(zObrazem.czyMaKlase('z-miniatura'), true, 'fokus klawiatury działa jak najechanie');
+  zObrazem.sluchacze.blur[0]();
+  assert.equal(zObrazem.czyMaKlase('z-miniatura'), false);
+
+  // Bez obrazu nic się nie włącza — klasa nie pojawia się nawet na najechaniu.
+  bezObrazu.sluchacze.pointerenter[0]();
+  assert.equal(bezObrazu.czyMaKlase('z-miniatura'), false, 'pinezka bez obrazu nie miga pustą obwódką');
 });

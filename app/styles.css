@@ -1101,7 +1101,18 @@ div.warstwa.otwarta { display: block; animation: warstwa-wnika 0.2s ease-out; }
 .splot-drogi { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-bottom: 14px; }
 .splot-wybor.aktywny { background: var(--akcent); color: var(--akcent-tekst); border-color: var(--akcent); }
 
-/* Miniatury wizualizacji na pinezkach przy wysokim zoomie (C2+5, obrót 3) */
-.mapa-svg .pinezki .miniatura { display: none; }
-.mapa-svg .pinezki.z-miniaturami .miniatura { display: block; }
-.mapa-svg .pinezki.z-miniaturami .glowa { stroke-width: 2.5; }
+/* Medalion z wizualizacją bytu: pokazuje się na najechanie/fokus, jak badge
+   z nazwą (zlecenie właściciela 2026-09-05). Koło daje `clipPath`
+   #przyciecie-miniatury w SVG; tutaj tylko widoczność, obwódka i to, żeby
+   obraz nie przechwytywał wskaźnika. */
+.mapa-svg .pinezki .miniatura,
+.mapa-svg .pinezki .miniatura-ramka { display: none; pointer-events: none; }
+.mapa-svg .pinezki .pinezka.z-miniatura .miniatura,
+.mapa-svg .pinezki .pinezka.z-miniatura .miniatura-ramka { display: block; }
+.mapa-svg .pinezki .miniatura-ramka {
+  fill: none;
+  stroke: var(--akcent);
+  stroke-width: 2.5;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.55));
+}
+.mapa-svg .pinezki .pinezka.z-miniatura .glowa { stroke-width: 2.5; }
