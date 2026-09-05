@@ -1,0 +1,124 @@
+{
+  "slug": "dolina-w-ktorej-sie-nie-pasie",
+  "tytul": "Dolina, w której się nie pasie",
+  "cel": "Przeprowadzić stado przez dolinę uznaną za siedzibę olgoj-chorchoja, nie tracąc ani zwierząt, ani samego zakazu — bo zakaz też kogoś chroni.",
+  "miejsce": "Południowe Gobi, na zachód od Dalanzadgadu (Mongolia)",
+  "sklad": [
+    "olgoj-chorchoj",
+    "syama-i-sarvara",
+    "qilin-z-lu"
+  ],
+  "start": {
+    "zasoby": {
+      "pamiec": 10,
+      "przejscie": 4,
+      "dlug": 0,
+      "slad": 0
+    }
+  },
+  "wezly": [
+    {
+      "slug": "co-mowia-starzy",
+      "nazwa": "Co mówią starzy",
+      "typ": "rozpoznanie",
+      "trudnosc": 24,
+      "zdolnosc": "ostrzezenie",
+      "koszt": {
+        "pamiec": 2
+      },
+      "nagroda": {
+        "pamiec": 2,
+        "slad": 1
+      },
+      "porazka": {
+        "dlug": 1
+      },
+      "proza": {
+        "sukces": "Starsi z obozu nie mówią o robaku wprost i nie wymawiają jego nazwy; mówią o dolinie, o czerwcu i o wielbłądzie, który dwa lata temu przystanął i nie chciał iść. Z trzech ostrożnych zdań składa się mapa dokładniejsza niż każde świadectwo naoczne.",
+        "porazka": "Zadano pytanie za bezpośrednio i padła nazwa. Rozmowa się urywa, wskazówki robią się uprzejme i bezużyteczne, a stado ma iść jutro rano tam, gdzie nikt już nic nie doradzi."
+      }
+    },
+    {
+      "slug": "znak-nad-goyo",
+      "nazwa": "Znak nad goyo",
+      "typ": "wróżba",
+      "trudnosc": 30,
+      "zdolnosc": "wrozba",
+      "koszt": {
+        "przejscie": 1
+      },
+      "nagroda": {
+        "przejscie": 1,
+        "pamiec": 1
+      },
+      "porazka": {
+        "pamiec": -2,
+        "slad": 1
+      },
+      "proza": {
+        "sukces": "Cygarowate pędy goyo sterczą z piasku tam, gdzie według pasterzy robak trzyma się najchętniej. Qilin przechodzi przez nie i nie gnie ani jednego źdźbła: znak jest czytelny, choć nikt nie orzeka, co dokładnie znaczy. Stado obchodzi tę kępę i idzie dalej po żwirze.",
+        "porazka": "Znak odczytano na własną korzyść, bo tak było wygodniej i krócej. Stado wchodzi między goyo, a przewodnik zapisuje w pamięci trasę, której nikt później nie zechce powtórzyć."
+      }
+    },
+    {
+      "slug": "przejscie-w-poludnie",
+      "nazwa": "Przejście w południe",
+      "typ": "przejście",
+      "trudnosc": 38,
+      "zdolnosc": "przewodnik",
+      "koszt": {
+        "przejscie": 2,
+        "pamiec": 1
+      },
+      "nagroda": {
+        "przejscie": 1,
+        "slad": 1
+      },
+      "porazka": {
+        "pamiec": -3,
+        "dlug": 1
+      },
+      "koniecPoPorazce": true,
+      "proza": {
+        "sukces": "Dwa psy idą po bokach kolumny i nie pozwalają żadnemu zwierzęciu odbić w piach. Przejście trwa cztery godziny w pełnym słońcu i kończy się bez jednej straty; nikt nie zobaczył niczego, co dałoby się opisać, i właśnie tak wygląda dobrze przeprowadzone stado.",
+        "porazka": "Wielbłąd na skraju kolumny przystaje, robi dwa kroki w bok i pada bez rany. Reszta idzie dalej, a droga zostaje w opowieści jako miejsce, w które od tej pory nie wchodzi nikt — łącznie z tymi, którzy nie wierzą w robaka."
+      }
+    },
+    {
+      "slug": "co-zapisac-na-koniec",
+      "nazwa": "Co zapisać na koniec",
+      "typ": "świadectwo",
+      "trudnosc": 34,
+      "zdolnosc": "warunek",
+      "koszt": {
+        "pamiec": 2,
+        "slad": 1
+      },
+      "nagroda": {
+        "pamiec": 3
+      },
+      "porazka": {
+        "dlug": 1,
+        "slad": 1
+      },
+      "proza": {
+        "sukces": "W sprawozdaniu zapisano to, co widziano: dolinę, porę roku, roślinę i wielbłąda, który przystanął. O robaku ani słowa więcej, niż powiedzieli pasterze. Zakaz zostaje w mocy, bo stoi na obserwacji, a nie na cudzej sensacji.",
+        "porazka": "W sprawozdaniu wylądował robak: czerwony, bezoki, długi na pięć stóp. Wersja rusza w świat, wraca po latach z zewnątrz i wypiera brązowe, łuskowate zwierzę z opowieści miejscowych. Zakaz działa nadal, tylko już nie jest ich."
+      }
+    }
+  ],
+  "proza": {
+    "ukonczona": "Stado przeszło i nikt nie musiał orzekać, czy robak istnieje. Zakaz został tam, gdzie był, oparty na tym, co da się zobaczyć: na porze roku, na roślinie i na zwierzęciu, które nie chce iść dalej. Archiwum zapisuje, że ostrzeżenie bywa wiedzą, nawet jeśli nie ma okazu.",
+    "rozszczepiona": "Połowa obozu mówi, że przeszli, bo obeszli goyo, połowa — że po prostu nie było czego się bać. Obie połowy mają dość racji, żeby nie ustąpić, a w archiwum zostaje ślad i dług: ktoś tę dolinę jeszcze raz zmierzy.",
+    "przerwana": "Została jedna strata i jedna nowa reguła: tamtędy się nie chodzi. Nikt nie zobaczył sprawcy, nikt nie zbadał ciała, a mimo to mapa okolicy zmieniła się na całe pokolenie.",
+    "domyslna": "Droga zostawiła ślad tam, gdzie ostrożność spotkała się z ciekawością."
+  },
+  "grafika": {
+    "obraz": "assets/wizualizacje/splot-dolina-w-ktorej-sie-nie-pasie.jpg",
+    "prompt": "Hyperrealistic cinematic 21:9 photograph at midday in the southern Gobi desert: a line of bactrian camels and a few herders crossing a wide gravel valley between low bare hills, two large dark dogs walking on either side of the column, a calm scaled deer-bodied animal with a single soft horn standing apart on a rise, clumps of cigar-shaped goyo plants pushing out of loose sand in the foreground, one camel halted and turned aside, harsh white sky, dust, no gore, no text, no modern vehicles."
+  },
+  "meta": {
+    "utworzono": "2026-09-06 13:20",
+    "autor": "sesja arena 2026-09-06"
+  }
+}

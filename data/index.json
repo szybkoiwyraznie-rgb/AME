@@ -1,6 +1,6 @@
 {
   "wersja": 3,
-  "buildTime": "2026-09-05T14:48:17.325Z",
+  "buildTime": "2026-09-05T14:50:02.442Z",
   "liczba": 32,
   "liczbaSkitow": 52,
   "kanon": {
@@ -3015,6 +3015,19 @@
     }
   ],
   "drogi": [
+    {
+      "slug": "dolina-w-ktorej-sie-nie-pasie",
+      "tytul": "Dolina, w której się nie pasie",
+      "cel": "Przeprowadzić stado przez dolinę uznaną za siedzibę olgoj-chorchoja, nie tracąc ani zwierząt, ani samego zakazu — bo zakaz też kogoś chroni.",
+      "miejsce": "Południowe Gobi, na zachód od Dalanzadgadu (Mongolia)",
+      "sklad": [
+        "olgoj-chorchoj",
+        "syama-i-sarvara",
+        "qilin-z-lu"
+      ],
+      "wezly": 4,
+      "plik": "data/splot/droga-dolina-w-ktorej-sie-nie-pasie.json"
+    },
     {
       "slug": "kosz-ktorego-nie-otwierano",
       "tytul": "Kosz, którego nie otwierano",
