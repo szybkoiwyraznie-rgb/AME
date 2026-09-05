@@ -42,6 +42,12 @@ model 3b — rozgrywka jako **dane w repo, popychane przez kolejnych agentów
 Areny** + pregenerowane ilustracje (bez kluczy API w runtime). Każdy nowy SKIT
 jest już darmowym prototypem KRONIKI (metoda embodimentu).
 
+## C5 — Splot: fabuła, droga i konflikt bytów (2026-09-05)
+
+Na podstawie kierunków 1–6 i 11 powstał dokument `docs/plans/POMYSL_C5_splot-fabula-zasoby-2026-09-05.md`. Rekomendacja: nie budować turnieju ani klikacza, tylko warstwę **SPLOT**, w której byt wybiera drogę, ponosi koszt, wchodzi w konflikt lub koalicję, a wynik tworzy rozgałęzienie timeline'u. Walka jest jedną z opcji rozstrzygnięcia, obok targu, nazwania, przejścia i długu.
+
+C5 ma zacząć się od jednej deterministycznej drogi i trzech węzłów, bez trwałego stanu kanonicznego w `localStorage`; dopiero wynik zaakceptowany przez runnera może stać się Epoką Kroniki. Zasoby robocze: Pamięć, Przejście, Dług i Ślad.
+
 ## Status: „Arena Rezonansu" (idle battler) — WSTRZYMANA
 
 Pierwotny pomysł walki 1:1 (M8, `docs/plans/POMYSL_arena-rezonansu-idle-battler.md`).
