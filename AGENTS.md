@@ -172,6 +172,14 @@ Ponadto:
   istnieje (ADR 0022). Dotyczy UI, przykładów i manuala.
 - **Współrzędne są prawdziwe** (miejsce powstania wierzenia lub aktywności
   bytu), zapis dziesiętny, W szerokość geograficzna jako dodatnia.
+  **Pinezka musi leżeć w kraju z pola `lokalizacja.kraj`** — pilnuje tego
+  `node tools/audyt-pinezek.mjs` (point-in-polygon na tym samym pliku granic,
+  na którym rysuje się mapa), wpięty w `npm run check` i `test/audyt-pinezek.test.js`.
+  Wyjątek dla wysepki mniejszej niż kreska mapy dopisuje się jawnie do
+  `ODSTEPSTWA` w narzędziu, z uzasadnieniem geograficznym — nie po to, żeby
+  schować pomyłkę. Gdy nazwa bytu może sugerować inny kraj niż jego pinezka
+  (dwa Sfinksy: grecki z Teb Beockich i egipski z Gizy), nazwa i pole
+  `miejscowosc` mają tę różnicę rozstrzygać, zanim zrobi to czytelnik.
 - **Prompt wizualizacji trzyma się RAMY 21:9** z `docs/PROTOKOL.md` §5 (sekcja I).
   Otwarcie i zamknięcie ramy są stałe i walidowane narzędziem
   (`tools/rebuild-index.mjs` odrzuci wpis ze zniekształconą ramą).
