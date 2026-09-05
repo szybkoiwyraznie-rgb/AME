@@ -1,6 +1,6 @@
 {
   "wersja": 3,
-  "buildTime": "2026-09-05T14:42:47.598Z",
+  "buildTime": "2026-09-05T14:47:11.254Z",
   "liczba": 32,
   "liczbaSkitow": 51,
   "kanon": {
@@ -782,7 +782,7 @@
         "Król wężów"
       ],
       "karta": "Coat with Venom",
-      "miejscowosc": "ulica Krzywe Koło na Starym Mieście, piwnice spalonej kamienicy między Rynkiem Starego Miasta a Nowomiejską, Warszawa",
+      "miejscowosc": "Ulica Krzywe Koło na Starym Mieście w Warszawie — wąska uliczka biegnąca łukiem za pierzeją Rynku; w podaniu Zmorskiego bazyliszek wylągł się w sklepach pod pogorzałą kamienicą, a Krzywe Koło paliło się naprawdę w 1607 roku. Zabudowę zburzono w 1944, odbudowano do 1955 według projektów Stanisława Żaryna, a pod numerem 7 mieści się dziś Archiwum Państwowe w Warszawie: pod adresem piwnicy z podania stoi instytucja, której zadaniem jest przechowywanie dowodów",
       "kraj": "Polska",
       "lat": 52.2506,
       "lon": 21.0119,
@@ -796,7 +796,8 @@
       "powiazania": [
         "balor",
         "lincoln-imp",
-        "morowa-panna"
+        "morowa-panna",
+        "olgoj-chorchoj"
       ],
       "backlinki": [
         "glamr-z-thorhallsstadir",
@@ -1664,7 +1665,9 @@
         "qilin-z-lu",
         "yara-ma-yha-who"
       ],
-      "backlinki": [],
+      "backlinki": [
+        "bazyliszek-warszawski"
+      ],
       "obraz": "assets/wizualizacje/olgoj-chorchoj.jpg",
       "trofea": {
         "pierwotne": "Para metalowych szczypiec i ciemne gogle motocyklowe z wyprawy, których nigdy nie użyto — w pudle po nabojach, z kartką: „na prośbę rządu, w razie gdyby”.",
@@ -3032,6 +3035,14 @@
     }
   ],
   "aktualizacje": [
+    {
+      "data": "2026-09-06 12:40",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "bazyliszek-warszawski",
+      "tytul": "Bazyliszek z Krzywego Koła",
+      "opis": "Pogłębienie: nowa warstwa piśmiennicza — „Nowe Ateny” Chmielowskiego (1745) jako najstarszy polski zapis wypadku, z rokiem 1587, miecznikiem, senatorem i skazańcem Janem Pareuszem; nazwana wprost sprzeczność datowania ze Zmorskim (Zygmunt August zmarł w 1572) oraz rozbieżność zawodu gospodarza i nazwiska śmiałka. Do sekcji o pokonaniu dopisany osiemnastowieczny sceptycyzm wobec lustra (Delrio i Kircher u Chmielowskiego: bazyliszek zatruwa powietrze, a jad ma konnaturalny) i ruta w pysku łasicy. Lokalizacja uściślona o pożar Krzywego Koła z 1607 roku, odbudowę Starego Miasta do 1955 według projektów Stanisława Żaryna i dzisiejszą siedzibę Archiwum Państwowego pod numerem 7. Dwa nowe źródła i powiązanie z olgoj-chorchojem."
+    },
     {
       "data": "2026-09-06 12:10",
       "typ": "manifestacja",
