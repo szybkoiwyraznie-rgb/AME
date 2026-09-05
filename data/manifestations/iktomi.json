@@ -1,0 +1,97 @@
+{
+  "slug": "iktomi",
+  "nazwa": "Iktómi — pająk, który zastawia sidło zamiast polować",
+  "nazwy_alternatywne": [
+    "Iktomi",
+    "Ikto",
+    "Iktome",
+    "Inktomi",
+    "Unktomi (warianty dialektalne dakockie)",
+    "Woksape / Ksa („Mądrość” — imię sprzed kary)",
+    "Pająk (dosłowne znaczenie imienia w lakockim)"
+  ],
+  "karta": {
+    "nazwa": "Ettercap",
+    "wydanie": "Commander Legends: Battle for Baldur's Gate (CLB) #231",
+    "rok": 2022
+  },
+  "lokalizacja": {
+    "miejscowosc": "Oniya Oshoka („ziemia oddycha wewnątrz”, dziś Maka Oniye) — naturalne wejście do Wind Cave w Czarnych Wzgórzach, otwór wielkości dłoni, przez który Iktómi wysłał wilka po ludzi i któremu potem odebrał rozmiar, żeby nikt nie wrócił pod ziemię",
+    "kraj": "Stany Zjednoczone (Dakota Południowa, Czarne Wzgórza)",
+    "lat": 43.5564,
+    "lon": -103.4783
+  },
+  "pochodzenie_i_kultura": "Lakota i Dakota (Wielkie Równiny Ameryki Północnej). Iktómi to imię, które w lakockim znaczy po prostu „pająk”; w opowieściach ma jednak postać mężczyzny w zdobionej skórze jelenia, z twarzą pomalowaną na czerwono i żółto i czarnymi obręczami wokół oczu. Zanim był Iktómim, nazywał się Woksape — „Mądrość” — i stracił imię wraz z miejscem wśród duchów, bo pomógł złemu Gnaskinyanowi w podstępie wymierzonym w resztę; Takuškanškan przemienił go w tego, kim jest, i zesłał na powierzchnię ziemi. Jedna kultura, jedno miejsce, jedno imię: to nie jest ogólny „pająk-oszust” z całej Ameryki, tylko postać z cyklu lakockiego, związana z Oniya Oshoka w Czarnych Wzgórzach. Opowieści o nim opowiada się dzieciom nie po to, by go czcić, lecz by pokazać, jak kończy spryt bez wstydu.",
+  "wizualizacja": {
+    "prompt": "Style: A wide-angle full-body cinematic photograph. The central objects/persons of the photo are visible from head to toe, standing centrally in the frame. No parts of the body are cropped.\n\nA lean trickster standing on a short-grass prairie ridge in the Black Hills at dusk: he looks like a Dakota man in fringed brown deerskin leggings, a beaded deerskin jacket and small quilled moccasins, his long black hair parted and wrapped in red bands, his face painted red and yellow with heavy black rings around the eyes; his fingers are too long and too many-jointed, and a fine silk thread trails from each hand into the grass. Behind him a low limestone outcrop with a hand-sized dark hole breathing cold air, dry grass bent by the draft; a knotted blanket bundle at his feet, wolf tracks in the dust, distant bison on the slope, last orange light and rising night.\n\nCaptured with a 35mm anamorphic lens at f/1.8. Shallow depth of field with a heavy, creamy bokeh background. Environmental portraiture. Dramatic cinematic lighting, sharp focus on the character, hyper-realistic textures of clothing and skin. Shot on 70mm film stock, ultra-wide 21:9 aspect ratio. --ar 21:9",
+    "obraz": "assets/wizualizacje/iktomi.jpg"
+  },
+  "natura": {
+    "wyglad_i_aura": "Z daleka: wysoki mężczyzna w brązowych, długo frędzlonych nogawicach ze skóry jelenia, w kurcie gęsto obszytej koralikami, w małych zdobionych mokasynach; włosy rozdzielone pośrodku i owinięte czerwonymi wstęgami, twarz malowana czerwienią i żółcią, wokół oczu grube czarne kręgi. Z bliska nie zgadza się liczba stawów w palcach i to, że wszystko, czego dotknie, zostaje z nim połączone cienką nitką. Ubranie jest w nim najlepsze — Zitkala-Ša pisze o nim wprost, że farba i skóry to najlepsza jego część. Aura: nagła uprzejmość obcego, który wie o tobie o jedno zdanie za dużo.",
+    "charakter_i_motywacje": "Nie chce zabijać ani rządzić; chce, żeby ktoś dał się złapać, i chce mieć z tego widowisko. Woli zastawić sidło, niż zapracować na najmniejszą rzecz uczciwym polowaniem, i śmieje się w głos, gdy prostoduszni wpadają w pułapkę. Samotność jest jego stanem stałym — nie dlatego, że jej szuka, tylko dlatego, że po jednym wieczorze z nim nikt nie chce drugiego. Największą jego robotę opowiada się w Czarnych Wzgórzach: znudzony dręczeniem Anog-Ite, kobiety o dwóch twarzach, wysłał jej wilka Sungmanitu Tanka w głąb Oniya Oshoka z pakunkiem pełnym zdobionej skóry, jagód i suszonego mięsa, żeby wywabić ludzi z Tunkan Tipi, zanim ziemia była na nich gotowa. Wywabił. Potem zmniejszył wejście, żeby nikt nie wrócił.",
+    "zdolnosci": "Zmienia kształt (bywa wilkiem, bywa człowiekiem) i mówi każdym językiem, bo — jak podaje tradycja Oglalów — to on wymyślił mowę, imiona i gry, jeszcze jako Mądrość. Prowadzi ludzi jak marionetki na niewidocznych niciach: nie zmusza, tylko podsuwa jedną rzecz, której ktoś akurat chce. Umie zamknąć drogę powrotną — zmniejszyć przejście, zgubić ścieżkę, odwrócić wejście. Najsilniejszym jego narzędziem jest jednak ciekawość cudza: w opowieści o kaczkach niesie zwykły tobołek suchej trawy i mówi, że to pieśni, a potem każe tańczyć z zamkniętymi oczami — „Istokmus wacipo, tuwayatunwanpi kinhan ista nisasapi kta”: kto ośmieli się otworzyć oczy, na zawsze będzie miał oczy czerwone.",
+    "slabosci_i_metody_pokonania": "Przegrywa własną próżnością i przegrywa ją regularnie — większość opowieści o nim kończy się tym, że jego misterny plan obraca się przeciw niemu, a łup zjada ktoś inny (w opowieści o kaczkach — wilki, gdy on sam tkwi uwięziony w drzewie). Nie znosi, gdy ktoś nie chce oglądać tego, co niesie: sidło działa tylko na tego, kto podejdzie i zapyta. Wystarczy jedno oko otwarte — Skiska, kaczka, która zerknęła mimo zakazu, uratowała połowę stada i zapłaciła za to czerwoną obwódką wokół oka, którą jej potomstwo nosi do dziś. Lakoci mówią też, że jego spojrzenia lepiej nie szukać: nie zaklina się go i nie wzywa po imieniu w obrzędzie, bo do niczego dobrego to nie prowadzi.",
+    "preferencje": "Lubi: cudzą ciekawość, pytania zadane pierwsze, świadków, tobołki, których nikt nie sprawdza, i sytuacje, w których nie musiał niczego ukraść, bo mu podano. Nie lubi: uczciwej roboty, ludzi, którzy mijają go bez słowa, i tego, że gdy raz zamknie przejście, nikt nie chce już z nim rozmawiać."
+  },
+  "dokumentacja": [
+    {
+      "typ": "tekst źródłowy",
+      "pozycja": "Zitkala-Ša (Gertrude Simmons Bonnin), „Old Indian Legends”, Boston 1901 — otwierająca opowieść „Iktomi and the Ducks” (Project Gutenberg, ebook #338): opis stroju i natury bytu („He prefers to spread a snare rather than to earn the smallest thing with honest hunting”), tobołek trawy podany jako „pack of songs”, pieśń w dakockim „Istokmus wacipo, tuwayatunwanpi kinhan ista nisasapi kta” i kaczka Skiska, która otworzyła oko",
+      "url": "https://www.gutenberg.org/cache/epub/338/pg338.txt"
+    },
+    {
+      "typ": "opracowanie instytucji",
+      "pozycja": "„The Lakota Emergence Story”, Wind Cave National Park (National Park Service) — wersja ze społeczności Cheyenne Creek w rezerwacie Pine Ridge, opowiedziana przez Wilmera Mestetha (historyka i duchownego plemiennego) i spisana przez Sinę Bear Eagle: Oniya Oshoka / Maka Oniye jako przejście do Tunkan Tipi, Woksape ukarany za pomoc Gnaskinyanowi i przemieniony przez Takuškanškana w Iktómiego, pakunek Anog-Ite, wilk Sungmanitu Tanka i wywabienie ludzi na powierzchnię przed czasem",
+      "url": "https://www.nps.gov/wica/learn/historyculture/the-lakota-emergence-story.htm"
+    },
+    {
+      "typ": "opracowanie muzealne",
+      "pozycja": "„Lakota Emergence Story”, Aktá Lakota Museum & Cultural Center (St. Joseph's Indian School, Chamberlain, Dakota Południowa) — zwięzła wersja tej samej opowieści: Iktómi i Anog-Ite jako dwa duchy wygnane na powierzchnię, utrata imienia Woksape, kara za pychę wymierzona obojgu przez Takuskanskan",
+      "url": "https://aktalakota.stjo.org/lakota-legends/lakota-emergence-story/"
+    },
+    {
+      "typ": "opracowanie etnograficzne",
+      "pozycja": "„Sioux Legends (Lakota and Dakota Folklore, Myths, and Traditional Stories)”, Native Languages of the Americas — hasło Iktomi/Unktomi/Inktomi: imię znaczy „pająk”, w opowieściach występuje jako mężczyzna, funkcjonuje jako negatywny wzór zachowania, a opowieści o nim idą od żartu po ostrzeżenie przed realnym niebezpieczeństwem",
+      "url": "https://www.native-languages.org/sioux-legends.htm"
+    }
+  ],
+  "trofea": {
+    "pierwotne": "Tobołek z koca, zawiązany na cztery rogi, pełen suchej trawy — dowód, że wystarczyło rozwiązać węzeł, żeby nikt nie zginął.",
+    "wtorne": "Odlew wejścia do Oniya Oshoka wielkości dłoni, przez który idzie zimny przeciąg: miara tego, o ile ktoś zmniejszył drogę powrotną."
+  },
+  "tagi": [
+    "lakota",
+    "trickster",
+    "podstep",
+    "przemiana",
+    "postac-zwierzeca"
+  ],
+  "powiazania": [
+    {
+      "slug": "pandora",
+      "opis": "Dwa dary, które otwiera się dobrowolnie i których nie da się zamknąć: skrzynia w Grecji wypuszcza nieszczęścia na świat, a pakunek Iktómiego z mięsem i zdobioną skórą wywabia ludzi z podziemnego lodgeu, po czym wejście kurczy się do rozmiaru dłoni."
+    },
+    {
+      "slug": "nessos",
+      "opis": "Obaj wygrywają nie siłą, lecz podsuniętym przedmiotem: kentaur oddaje Dejanirze zatrutą krew jako niby-lekarstwo na wierność, a pająk z Czarnych Wzgórz podaje ludziom suszone mięso i mówi, że tak wygląda życie na powierzchni."
+    },
+    {
+      "slug": "empusa-korynt",
+      "opis": "Oboje żerują na tym, że ofiara sama podchodzi bliżej: Empusa przybiera postać pięknej kobiety i wyczekuje przy drodze do Koryntu, a Iktómi niesie tobołek, o którego zawartość ktoś w końcu zapyta pierwszy."
+    },
+    {
+      "slug": "syama-i-sarvara",
+      "opis": "Dwa progi między światami obsługiwane odwrotnie: psy Jamy pilnują drogi zmarłych i przepuszczają tego, kto zna właściwe słowa, a pająk z Oniya Oshoka otwiera przejście podstępem, a potem sam je zwęża, żeby nikt nie wrócił."
+    }
+  ],
+  "meta": {
+    "utworzono": "2026-09-05 16:05",
+    "autor": "sesja arena 2026-09-05",
+    "modyfikacje": [
+      {
+        "data": "2026-09-05 16:05",
+        "opis": "Nowa materializacja: Iktómi — lakocki pająk-oszust znad Oniya Oshoka w Czarnych Wzgórzach, na podstawie karty „Ettercap” (CLB #231). Pierwszy byt Kartoteki z Ameryki Północnej."
+      }
+    ]
+  }
+}

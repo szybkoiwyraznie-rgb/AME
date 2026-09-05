@@ -92,6 +92,11 @@
       "opis": "Folklor kornijski zachodniego Penwith: drolle o olbrzymach, piskach i skałach zatoki Mount's Bay"
     },
     {
+      "tag": "lakota",
+      "kategoria": "kultura",
+      "opis": "Lakota i Dakota — ludy Wielkich Równin Ameryki Północnej; cykl opowieści o Iktómim i emergencji w Czarnych Wzgórzach."
+    },
+    {
       "tag": "man",
       "kategoria": "kultura",
       "opis": "Folklor Wyspy Man (tradycja celtycko-manx, nazwy z języka manx)"
@@ -310,6 +315,11 @@
       "tag": "syrena",
       "kategoria": "typ",
       "opis": "Pół kobieta, pół ryba: morska powabnica i przewodniczka wód"
+    },
+    {
+      "tag": "trickster",
+      "kategoria": "typ",
+      "opis": "Oszust: byt, który rozstrzyga sprawy podstępem i cudzą ciekawością zamiast siłą, i zwykle przegrywa własną próżnością."
     },
     {
       "tag": "wilkolak",

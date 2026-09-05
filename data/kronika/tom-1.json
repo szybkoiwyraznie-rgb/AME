@@ -44,11 +44,15 @@
       },
       {
         "slug": "empusa-korynt",
-        "wielkosc": 0.45
+        "wielkosc": 0.47
       },
       {
         "slug": "glamr-z-thorhallsstadir",
         "wielkosc": 0.2
+      },
+      {
+        "slug": "iktomi",
+        "wielkosc": 0.18
       },
       {
         "slug": "indra",
@@ -84,11 +88,11 @@
       },
       {
         "slug": "nessos",
-        "wielkosc": 0.37
+        "wielkosc": 0.39
       },
       {
         "slug": "pandora",
-        "wielkosc": 0.41
+        "wielkosc": 0.43
       },
       {
         "slug": "protostates",
@@ -104,7 +108,7 @@
       },
       {
         "slug": "syama-i-sarvara",
-        "wielkosc": 0.36
+        "wielkosc": 0.38
       },
       {
         "slug": "talos-kreta",
@@ -159,12 +163,17 @@
       {
         "kultura": "grecja",
         "kult": "empusa-korynt",
-        "wielkosc": 0.45
+        "wielkosc": 0.47
       },
       {
         "kultura": "islandia",
         "kult": "glamr-z-thorhallsstadir",
         "wielkosc": 0.2
+      },
+      {
+        "kultura": "lakota",
+        "kult": "iktomi",
+        "wielkosc": 0.18
       },
       {
         "kultura": "indie",
@@ -209,12 +218,12 @@
       {
         "kultura": "grecja",
         "kult": "nessos",
-        "wielkosc": 0.37
+        "wielkosc": 0.39
       },
       {
         "kultura": "grecja",
         "kult": "pandora",
-        "wielkosc": 0.41
+        "wielkosc": 0.43
       },
       {
         "kultura": "grecja",
@@ -234,7 +243,7 @@
       {
         "kultura": "indie",
         "kult": "syama-i-sarvara",
-        "wielkosc": 0.36
+        "wielkosc": 0.38
       },
       {
         "kultura": "grecja",
