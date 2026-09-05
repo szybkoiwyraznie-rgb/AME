@@ -18,6 +18,13 @@ app/
   ui.js                     — warstwa wpisu (dialog), Baza Skitów, widok skitu,
                               feed „Co nowego", tagi, powiązania, lista, szukanie,
                               logika motywu (wszystko jako funkcje czyste)
+  klastry.js                — grupowanie pinezek w gniazda przy oddaleniu
+  arena.js                  — Arena Rezonansu: statystyki bytu wyprowadzone
+                              z indeksu, spór dwóch wersji świata (RNG wstrzykiwany)
+  liga.js                   — Liga Rezonansu: terminarz round-robin liczony
+                              z kalendarza i tabela sezonu (zero zapisanego stanu)
+  prog.js                   — PRÓG: spotkanie bez walki, klucze i szanse
+  splot.js                  — SPLOT: rozstrzyganie dróg (zasoby, napór świata)
   styles.css                — tokeny palety: motyw ciemny i jasny (bez webfontów)
 assets/
   map/countries-50m.json    — Natural Earth jako TopoJSON (vendoring, PD/ISC)

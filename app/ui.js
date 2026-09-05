@@ -5,6 +5,7 @@
  */
 
 import { statyManifestacji, opisRozstrzygniecia } from './arena.js';
+import { opisSezonu } from './liga.js';
 
 /** Nazwa kategorii tagu (z kanonu); bez kanonu — surowe id. */
 export function nazwaKategorii(indeks, id) {
@@ -622,6 +623,53 @@ export function htmlAreny(indeks, { a, b, wynik = null, profile = null, data = '
     <div class="arena-strony">${karta(a)}${karta(b)}</div>
     ${rozstrzygniecie}
     ${dziennik}
+  </div>`;
+}
+
+/**
+ * Liga Rezonansu (C2+5, obrót 8): tabela sezonu liczonego z kalendarza.
+ * `liga` = wynik `tabelaLigi` z app/liga.js; UI nie liczy nic samo.
+ */
+export function htmlLigi(indeks, liga) {
+  const lista = indeks?.manifestacje ?? [];
+  const nazwa = (slug) => lista.find((m) => m.slug === slug)?.nazwa ?? slug;
+  if (!liga || liga.sezon < 1) return '<p class="pusto">Sezon Ligi Rezonansu jeszcze się nie zaczął.</p>';
+  const nazwy = Object.fromEntries(lista.map((m) => [m.slug, m.nazwa]));
+  const wiersze = liga.tabela
+    .map((w) => `<tr${w.pozycja <= 3 ? ' class="liga-czolo"' : ''}>
+      <td class="liga-pozycja">${w.pozycja}</td>
+      <td><button class="chip link" data-slug="${esc(w.slug)}">${esc(nazwa(w.slug))}</button></td>
+      <td>${w.mecze}</td><td>${w.wygrane}</td><td>${w.remisy}</td><td>${w.przegrane}</td>
+      <td>${w.przewaga > 0 ? '+' : ''}${w.przewaga}</td>
+      <td class="liga-forma" title="Ostatnie kolejki, od najstarszej">${esc(w.forma)}</td>
+      <td class="liga-punkty">${w.punkty}</td>
+    </tr>`)
+    .join('');
+  const mecze = (liga.ostatnia?.mecze ?? [])
+    .map((m) => {
+      const rozstrzygniecie = m.wynik.remis
+        ? 'obie wersje zostają'
+        : `wersję trzyma ${nazwa(m.wynik.zwyciezca)}`;
+      return `<li><button class="chip link" data-slug="${esc(m.a)}">${esc(nazwa(m.a))}</button> — <button class="chip link" data-slug="${esc(m.b)}">${esc(nazwa(m.b))}</button>
+        <span class="opis">${esc(rozstrzygniecie)} · ${m.wynik.rundy} rund</span>
+        <button class="chip" data-liga-spor="${esc(m.a)}|${esc(m.b)}" type="button">⚖ zobacz spór</button></li>`;
+    })
+    .join('');
+  const zapowiedz = (liga.nastepna?.pary ?? [])
+    .map(([a, b]) => `<li>${esc(nazwa(a))} — ${esc(nazwa(b))}</li>`)
+    .join('');
+  return `<div class="liga">
+    <p class="naprowadzenie">Liga nie jest nigdzie zapisana: terminarz wynika z kalendarza, a każdy mecz z ziarna złożonego z sezonu, kolejki i obu imion. Kto otworzy archiwum tego samego dnia, zobaczy tę samą tabelę — także po wyczyszczeniu pamięci przeglądarki.</p>
+    <p class="liga-stan">${esc(opisSezonu(liga, nazwy))}</p>
+    <table class="liga-tabela">
+      <caption>Sezon ${liga.sezon} — stan na ${esc(liga.data)}</caption>
+      <thead><tr><th>#</th><th>Byt</th><th title="Rozegrane starcia">St</th><th>W</th><th>R</th><th>P</th><th title="Bilans wytrzymałości">Bil</th><th>Forma</th><th>Pkt</th></tr></thead>
+      <tbody>${wiersze}</tbody>
+    </table>
+    <h3>Kolejka ${liga.ostatnia?.numer ?? 0}</h3>
+    <ul class="liga-mecze">${mecze || '<li class="pusto">Ta kolejka nie ma rozstrzygnięć.</li>'}</ul>
+    <h3>${liga.nastepna?.nowySezon ? `Sezon ${liga.sezon + 1}, kolejka 1` : `Kolejka ${liga.nastepna?.numer ?? 0}`} — jutro</h3>
+    <ul class="liga-zapowiedz">${zapowiedz}</ul>
   </div>`;
 }
 

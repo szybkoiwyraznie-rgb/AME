@@ -10,8 +10,8 @@
  * pinch (2 wskaźniki), dwuklik, przyciski. Pinezki i ich etykiety kompensują
  * skalę widoku, więc mają stały rozmiar w pikselach CSS (ADR 0009).
  */
-import { projektuj, dekodujKraje, siatka, dopasujWidok, ogranicz, K_MIN, K_MAX, SZEROKOSC as SZER, WYSOKOSC as WYS, sciezkaGeoMultiPoligon } from './geo.js?v=c6-12';
-import { grupujPunkty, podpisKlastra, opisKlastra, czyKlastrowac, PROMIEN_KLASTRA, ZOOM_KLASTRA, PROG_KLASTROWANIA } from './klastry.js?v=c6-12';
+import { projektuj, dekodujKraje, siatka, dopasujWidok, ogranicz, K_MIN, K_MAX, SZEROKOSC as SZER, WYSOKOSC as WYS, sciezkaGeoMultiPoligon } from './geo.js?v=c6-14';
+import { grupujPunkty, podpisKlastra, opisKlastra, czyKlastrowac, PROMIEN_KLASTRA, ZOOM_KLASTRA, PROG_KLASTROWANIA } from './klastry.js?v=c6-14';
 
 const NS = 'http://www.w3.org/2000/svg';
 

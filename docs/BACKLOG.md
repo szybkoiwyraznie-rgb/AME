@@ -18,8 +18,22 @@
   i zero `Math.random` w rdzeniu (ADR 0002, 0003); losowość wstrzykiwana.
   Kalibracja na 28 bytach: średnio 6–7 rund, ~4,5% remisów (test pilnuje
   progu 25%). Projekt: `docs/plans/POMYSL_arena-rezonansu-idle-battler.md`.
-  **Otwarte dalej:** tryb „idle” (liga tocząca się w tle) i turniej Epoki —
-  wymagają decyzji, gdzie zapisywać stan między sesjami.
+  **Domknięte 2026-09-06 (C2+5 obrotu 8): „Liga Rezonansu”** — pytanie „gdzie
+  zapisywać stan między sesjami” zostało rozstrzygnięte odpowiedzią: NIGDZIE.
+  Sezon jest funkcją kalendarza (`app/liga.js`): terminarz to round-robin metodą
+  karuzeli po slugach posortowanych alfabetycznie, jedna kolejka na dobę od
+  `DZIEN_ZERO` = 2026-09-06, a każdy mecz liczy `rozegrajSpor` z ziarnem
+  `liga:<sezon>:<kolejka>:<a>|<b>`. Tabelę na dowolny dzień da się policzyć od
+  zera (31 bytów × 31 kolejek ≈ 465 sporów, poniżej 50 ms), więc dwoje
+  czytelników tego samego dnia widzi identyczne wyniki, a czyszczenie pamięci
+  przeglądarki niczego nie kasuje. Widok `#liga` (przycisk „🏅 liga”): tabela
+  z bilansem wytrzymałości i formą z pięciu kolejek, wyniki ostatniej kolejki
+  (każdy mecz otwiera się w Arenie z tym samym ziarnem) i zapowiedź jutrzejszej.
+  Po ostatniej kolejce rusza kolejny sezon z przestawioną rotacją terminarza.
+  Testy: `test/liga.test.js` (14 przypadków — komplet par, pauza przy
+  nieparzystej liczbie bytów, determinizm, punktacja i wpięcie w aplikację).
+  **Otwarty zostaje turniej Epoki** — pytanie, czy sezon ma zasilać Kronikę
+  (zwycięzca jako uczestnik następnej Epoki), wymaga decyzji właściciela.
 
 - ~~**Deep-linki `#/slug`**~~ — **ZREALIZOWANE wcześniej (M7/C2, potwierdzone
   2026-09-05):** aplikacja obsługuje `#slug`, `#tag:…`, `#skit:…`, `#mapa=…`

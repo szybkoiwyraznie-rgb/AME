@@ -1,8 +1,8 @@
 /**
  * app/app.js — bootstrap AME: ładuje indeks, mapę świata, spina UI.
  */
-import { stworzMape, PROGI_WARSTW, PODKLADY_ONLINE } from './map.js?v=c6-12';
-import { zaladujIndeks, zaladujWpis, zaladujSkit, dopasowania, wylosujSlug, slugDnia } from './data.js?v=c6-12';
+import { stworzMape, PROGI_WARSTW, PODKLADY_ONLINE } from './map.js?v=c6-14';
+import { zaladujIndeks, zaladujWpis, zaladujSkit, dopasowania, wylosujSlug, slugDnia } from './data.js?v=c6-14';
 import {
   htmlWpisu,
   htmlWarstwyWpisu,
@@ -30,11 +30,13 @@ import {
   paryRozmowySkitu,
   zB64utf8,
   htmlAreny,
-} from './ui.js?v=c6-12';
-import { rozegrajDroge } from './splot.js?v=c6-12';
-import { tablicaProgow, kluczeDlaBytu, rozegrajProg } from './prog.js?v=c6-13';
-import { profileKartoteki, rozegrajSpor, paraDnia, haszTekstu, generatorZZiarna } from './arena.js?v=c6-12';
-import { SZEROKOSC, WYSOKOSC, odwroc, projektuj, serializujWidok, parsujWidokMapy } from './geo.js?v=c6-12';
+  htmlLigi,
+} from './ui.js?v=c6-14';
+import { rozegrajDroge } from './splot.js?v=c6-14';
+import { tablicaProgow, kluczeDlaBytu, rozegrajProg } from './prog.js?v=c6-14';
+import { profileKartoteki, rozegrajSpor, paraDnia, haszTekstu, generatorZZiarna } from './arena.js?v=c6-14';
+import { tabelaLigi } from './liga.js?v=c6-14';
+import { SZEROKOSC, WYSOKOSC, odwroc, projektuj, serializujWidok, parsujWidokMapy } from './geo.js?v=c6-14';
 
 const $ = (sel) => document.querySelector(sel);
 
@@ -347,7 +349,7 @@ function zamknijWarstwe() {
   const warstwa = $('#warstwa');
   warstwa.classList.remove('otwarta');
   warstwa.innerHTML = '';
-  for (const id of ['#przycisk-skity', '#przycisk-nowosci', '#przycisk-trofea', '#przycisk-splot', '#przycisk-prog', '#przycisk-arena']) warstwaTrybPrzycisku(id, false);
+  for (const id of ['#przycisk-skity', '#przycisk-nowosci', '#przycisk-trofea', '#przycisk-splot', '#przycisk-prog', '#przycisk-arena', '#przycisk-liga']) warstwaTrybPrzycisku(id, false);
   if (stan.wpis) history.replaceState(null, '', `#${stan.wpis.slug}`);
   else if (location.hash) history.replaceState(null, '', location.pathname + location.search);
 }
@@ -430,7 +432,7 @@ async function otworzSplot(slugDrogi = null) {
   warstwa.classList.add('otwarta');
   warstwa.innerHTML = szkicWarstwy(wybrana ? `SPLOT — ${wybrana.tytul}` : 'SPLOT', '<p class="ladowanie">Rozstrzyganie drogi…</p>');
   warstwaTrybPrzycisku('#przycisk-splot', true);
-  for (const id of ['#przycisk-skity', '#przycisk-nowosci', '#przycisk-trofea', '#przycisk-kronika', '#przycisk-prog', '#przycisk-arena']) warstwaTrybPrzycisku(id, false);
+  for (const id of ['#przycisk-skity', '#przycisk-nowosci', '#przycisk-trofea', '#przycisk-kronika', '#przycisk-prog', '#przycisk-arena', '#przycisk-liga']) warstwaTrybPrzycisku(id, false);
   try {
     const plik = wybrana?.plik ?? 'data/splot/droga-ostatni-slad-gevaudan.json';
     const road = await fetch(new URL(plik, document.baseURI)).then((r) => { if (!r.ok) throw new Error(`HTTP ${r.status}`); return r.json(); });
@@ -459,7 +461,7 @@ async function otworzProg() {
   warstwa.classList.add('otwarta');
   warstwa.innerHTML = szkicWarstwy('PRÓG — spotkanie bez walki', '<p class="ladowanie">Liczenie kluczy…</p>');
   warstwaTrybPrzycisku('#przycisk-prog', true);
-  for (const id of ['#przycisk-skity', '#przycisk-nowosci', '#przycisk-trofea', '#przycisk-kronika', '#przycisk-splot', '#przycisk-arena']) warstwaTrybPrzycisku(id, false);
+  for (const id of ['#przycisk-skity', '#przycisk-nowosci', '#przycisk-trofea', '#przycisk-kronika', '#przycisk-splot', '#przycisk-arena', '#przycisk-liga']) warstwaTrybPrzycisku(id, false);
   let kronika = null;
   try { kronika = await zaladujKronike(); } catch { kronika = null; }
   const kanon = stan.indeks.kanon ?? null;
@@ -491,7 +493,7 @@ function otworzArene(wybor = null) {
   const warstwa = $('#warstwa');
   warstwa.classList.add('otwarta');
   warstwaTrybPrzycisku('#przycisk-arena', true);
-  for (const id of ['#przycisk-skity', '#przycisk-nowosci', '#przycisk-trofea', '#przycisk-kronika', '#przycisk-splot', '#przycisk-prog']) warstwaTrybPrzycisku(id, false);
+  for (const id of ['#przycisk-skity', '#przycisk-nowosci', '#przycisk-trofea', '#przycisk-kronika', '#przycisk-splot', '#przycisk-prog', '#przycisk-liga']) warstwaTrybPrzycisku(id, false);
   const kanon = stan.indeks.kanon ?? null;
   const profile = profileKartoteki(stan.indeks.manifestacje, kanon);
   const slugi = stan.indeks.manifestacje.map((m) => m.slug);
@@ -525,6 +527,39 @@ function otworzArene(wybor = null) {
   };
   rysuj({ a: wybor?.a ?? domyslne[0], b: wybor?.b ?? domyslne[1], ziarno: wybor?.ziarno ?? null });
   if (location.hash !== '#arena') history.replaceState(null, '', '#arena');
+}
+
+/** C2+5 (obrót 8): Liga Rezonansu — sezon Areny rozpisany na kalendarz.
+ *  Nic nie jest zapisywane: terminarz i wszystkie wyniki wynikają z daty,
+ *  więc tabela jest ta sama dla każdego czytelnika w danym dniu (app/liga.js). */
+function otworzLige() {
+  if (stan.warstwa?.tryb === 'liga') return zamknijWarstwe();
+  stan.warstwa = { tryb: 'liga' };
+  const warstwa = $('#warstwa');
+  warstwa.classList.add('otwarta');
+  warstwaTrybPrzycisku('#przycisk-liga', true);
+  for (const id of ['#przycisk-skity', '#przycisk-nowosci', '#przycisk-trofea', '#przycisk-kronika', '#przycisk-splot', '#przycisk-prog', '#przycisk-arena']) warstwaTrybPrzycisku(id, false);
+  const kanon = stan.indeks.kanon ?? null;
+  const profile = profileKartoteki(stan.indeks.manifestacje, kanon);
+  const slugi = stan.indeks.manifestacje.map((m) => m.slug);
+  const staty = new Map([...profile].map(([slug, p]) => [slug, p.staty]));
+  const dzis = new Date().toISOString().slice(0, 10);
+  let liga = null;
+  try {
+    liga = tabelaLigi(staty, slugi, dzis);
+  } catch (err) {
+    warstwa.innerHTML = szkicWarstwy('Liga Rezonansu', `<p class="blad">Nie udało się rozpisać sezonu: ${esc(err.message)}</p>`);
+    return;
+  }
+  warstwa.innerHTML = szkicWarstwy('Liga Rezonansu — sezon sporów', htmlLigi(stan.indeks, liga), { kopia: 'liga' });
+  warstwa.scrollTop = 0;
+  for (const przycisk of warstwa.querySelectorAll('[data-liga-spor]')) {
+    przycisk.addEventListener('click', () => {
+      const [a, b] = przycisk.dataset.ligaSpor.split('|');
+      otworzArene({ a, b, ziarno: `liga:${liga.sezon}:${liga.ostatnia.numer}:${a}|${b}` });
+    });
+  }
+  if (location.hash !== '#liga') history.replaceState(null, '', '#liga');
 }
 
 /** Feed Kroniki (U3): wczytywane raz, karty epok z ramą narracji i filtra bytów (U1).
@@ -802,6 +837,7 @@ function podepnijZdarzenia() {
   $('#przycisk-kronika').addEventListener('click', () => otworzKronike(null, { przelacz: true }));
   $('#przycisk-splot').addEventListener('click', otworzSplot);
   $('#przycisk-prog').addEventListener('click', otworzProg);
+  $('#przycisk-liga').addEventListener('click', () => otworzLige());
   $('#przycisk-arena').addEventListener('click', () => otworzArene());
   $('#przycisk-warstwy').addEventListener('click', przelaczPanelWarstw);
   for (const klucz of Object.keys(WARSTWY_MAPY)) {
@@ -887,6 +923,7 @@ function podepnijZdarzenia() {
     if (fragment === 'splot') return stan.warstwa?.tryb !== 'splot' ? otworzSplot() : undefined;
     if (fragment === 'prog') return stan.warstwa?.tryb !== 'prog' ? otworzProg() : undefined;
     if (fragment === 'arena') return stan.warstwa?.tryb !== 'arena' ? otworzArene() : undefined;
+    if (fragment === 'liga') return stan.warstwa?.tryb !== 'liga' ? otworzLige() : undefined;
     if (fragment.startsWith('kronika:')) {
       const slug = fragment.slice(8);
       if (slug) window.location.href = `docs/kronika-${slug}.html#kronika:${slug}`;
@@ -1009,6 +1046,7 @@ async function start() {
   else if (fragment === 'splot') otworzSplot();
   else if (fragment === 'prog') otworzProg();
   else if (fragment === 'arena') otworzArene();
+  else if (fragment === 'liga') otworzLige();
   else if (fragment.startsWith('kronika:')) {
     const slug = fragment.slice(8);
     if (slug) location.href = `docs/kronika-${slug}.html#kronika:${slug}`;
