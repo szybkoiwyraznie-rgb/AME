@@ -7,13 +7,14 @@
   "scripts": {
     "test": "node --test",
     "build": "node tools/rebuild-index.mjs && node tools/kronika.mjs --seed && node tools/kronika.mjs",
-    "check": "node tools/rebuild-index.mjs --check && node tools/kronika.mjs --check && node tools/lint-stylu.mjs && node tools/lint-zrodel.mjs && node tools/audyt-pinezek.mjs",
+    "check": "node tools/rebuild-index.mjs --check && node tools/kronika.mjs --check && node tools/lint-stylu.mjs && node tools/lint-zrodel.mjs && node tools/lint-faktow.mjs --rygor && node tools/audyt-pinezek.mjs",
     "kronika": "node tools/kronika.mjs",
     "kronika:check": "node tools/kronika.mjs --check",
     "kronika:seed": "node tools/kronika.mjs --seed",
     "lint-stylu": "node tools/lint-stylu.mjs",
     "lint-zrodel": "node tools/lint-zrodel.mjs",
-    "audyt-pinezek": "node tools/audyt-pinezek.mjs --wszystko"
+    "audyt-pinezek": "node tools/audyt-pinezek.mjs --wszystko",
+    "lint-faktow": "node tools/lint-faktow.mjs"
   },
   "engines": {
     "node": ">=20"

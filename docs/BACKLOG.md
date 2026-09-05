@@ -199,9 +199,22 @@
   „Pętla Jakości", „PROTOKÓŁ") w `meta.modyfikacje[].opis` wpisów i skitów;
   cała baza przechodzi (0 fałszywych trafień), testy kontraktowe w
   `test/schema.test.js` i `test/skit.test.js`.
-- **Walidator spójności faktograficznej** — heurystyka ostrzegająca, gdy skit
-  przywołuje zwyczaj/nazwę własną nieobecną w kartach uczestników (twarda
-  egzekucja wymaga NLP — poza zakresem ADR 0001).
+- ~~**Walidator spójności faktograficznej**~~ — **WDROŻONE (2026-09-05, PR #34,
+  C2+5 obrotu 6 Pętli Jakości):** `tools/lint-faktow.mjs` wyciąga z dialogu
+  nazwy własne (wielka litera poza początkiem zdania, ciągi typu „Sule Skerry”,
+  bez didaskaliów i etykiet mówiących) i sprawdza je wobec pełnego tekstu kart
+  uczestników; porównanie po rdzeniu bez diakrytyków, więc fleksja nie gubi
+  trafień. Dwa poziomy: **„obcy fakt”** (nazwa jest w Kartotece, ale w karcie
+  kogoś spoza składu) i **„spoza bazy”** (nazwy nie ma nigdzie). Spięty
+  z `npm run check` w trybie `--rygor` (exit 1 przy „spoza bazy”), skrót
+  `npm run lint-faktow`, świadome odstępstwa w `data/lint-faktow-wyjatki.json`
+  (dziś pusta lista), testy w `test/lint-faktow.test.js`. Pierwsze uruchomienie
+  na 49 SKIT-ach dało 5 trafień i wszystkie były realne: „Cheironem” obok
+  „Chirona” z karty, „Writrę” obok „Vritry”, „Jason/Eskulap” obok
+  „Jazona/Asklepiosa” oraz „Wiedźma z Kolchidy” bez Kolchidy w karcie Talosa.
+  Pisownię ujednolicono, kartę Talosa uzupełniono o Medeę, córkę Ajetesa
+  z Kolchidy. **Otwarte dalej:** rozpoznawanie nazw w formach opisowych
+  („wiedźma z północy”) — to już wymaga NLP, poza ADR 0001.
 - ~~**Nagrania/lektor**~~ — **WDROŻONE (2026-08-30, PR #12, C2 pętla jakości):** przycisk „🔊 odsłuchaj” w widoku skitu czyta dialog na głos (Web Speech API, głos `pl-PL`, jeśli dostępny), „⏹ stop” przerywa; brak API = przycisk grzecznie się poddaje (cache-bust `c5-9`).
 
 ## Sprzężenie Kronika ↔ SPLOT (2026-09-05, wdrożone)

@@ -28,7 +28,7 @@
     "wyglad_i_aura": "Ogromny mężczyzna odlany z ciemnego brązu: gładka, wypolerowana skóra z odpryskami, szwy na piersi i ramionach jak po formie odlewniczej, nieruchome szerokie stopy. Wokół niego unosi się zapach spalonego metalu, rozgrzanego kamienia i słonej wody; chód słychać jako głuchy, miarowy łoskot, jakby ktoś przesuwał po skałach wielki kocioł. Wokół jego kostki żarzy się cienka złota linia — żyła, którą płynie płyn nieśmiertelnych.",
     "charakter_i_motywacje": "Talos nie jest zły ani dobry: jest urządzeniem granicy. Jego jedynym celem jest, by nikt nie wylądował na Krecie bez pozwolenia — dlatego obrzuca głazami każdą zbliżającą się łódź. Nie kusi go władza, nie ma przyjaciół, nie zna strachu; działa, dopóki płynie ichor, i gaśnie, gdy go zabraknie. To sprawia, że można go oszukać, ale nie przekupić — z nim rozmawia się tylko przez mechanizm: albo odetniesz mu żyłę, albo stoi.",
     "zdolnosci": "Obiega całą wyspę trzy razy dziennie, więc każde wybrzeże jest pod jego okiem; dźwiga i ciska głazy wielkości wozu, potrafi objąć obcego i przycisnąć go do rozżarzonej piersi. Jego jedyna prawdziwa moc to nieprzenikalność: poza jednym punktem w kostce nie ma się gdzie wbić ostrza. Widzi również to, co niewidzialne dla ludzi — zbliżającą się łódź rozpoznaje po zapachu smoły i po śladzie fal na długo przed świtem.",
-    "slabosci_i_metody_pokonania": "Jedyny punkt otwarcia to żyła w kostce, zamknięta gwoździem albo cienką błoną — u Apolloniusza z Rodos (Argonautyki 4.1638–1688) żyłę kryje tylko „cienka skóra\", gwóźdź to wersja pseudo-Apollodorosa. Kto wyjmie gwóźdź, nie zabija — po prostu zatrzymuje, bo ichor wypływa „jak roztopiony ołów\" i automat staje się ciężkim pomnikiem na wybrzeżu. Nie trzeba jednak dotykać kostki: Medea nie wyciągała żadnego gwoździa — przywołała Kery, „charty Hadesu\", sparzyła Talosa wzrokiem i wypędziła mu z oczu rozsądek, a w amoku ciskania głazów sam zadrasnął kostkę o spiczastą skałę. Magia wymierzona w jego jedyną rytmiczną czynność — obchód — działa skuteczniej niż brązy i młoty.",
+    "slabosci_i_metody_pokonania": "Jedyny punkt otwarcia to żyła w kostce, zamknięta gwoździem albo cienką błoną — u Apolloniusza z Rodos (Argonautyki 4.1638–1688) żyłę kryje tylko „cienka skóra\", gwóźdź to wersja pseudo-Apollodorosa. Kto wyjmie gwóźdź, nie zabija — po prostu zatrzymuje, bo ichor wypływa „jak roztopiony ołów\" i automat staje się ciężkim pomnikiem na wybrzeżu. Nie trzeba jednak dotykać kostki: Medea nie wyciągała żadnego gwoździa — przywołała Kery, „charty Hadesu\", sparzyła Talosa wzrokiem i wypędziła mu z oczu rozsądek, a w amoku ciskania głazów sam zadrasnął kostkę o spiczastą skałę. Magia wymierzona w jego jedyną rytmiczną czynność — obchód — działa skuteczniej niż brązy i młoty. Ta, która znalazła jedyną śrubę, przypłynęła z daleka: Apollonios nazywa ją Medeą, córką króla Ajetesa z Kolchidy — przybyszką, która nie postawiła stopy na kreteńskim brzegu, a mimo to wiedziała o strażniku wyspy więcej niż jego twórca.",
     "preferencje": "Lubi: cichą, spokojną wyspę bez obcych łodzi, poranne słońce odbijające się od brązu, słoną mgłę. Nie lubi: przecinających wody żagli, hałasu narzędzi, ognia przy samej wodzie — i własnych wspomnień, których nie ma, a które przez noc wracają jak cisza po wielkim upadku."
   },
   "dokumentacja": [
@@ -123,6 +123,10 @@
       {
         "data": "2026-09-04 16:05",
         "opis": "Pogłębienie: warianty zamknięcia żyły (błona u Apolloniusza, gwóźdź u Apollodorosa) i śmierć z rąk Medei bez wyciągania gwoździa; dwa źródła pierwotne — „Argonautyki\" 4.1638–1688 i hezjodowski spiżowy ród („Prace i dnie\" 141–155)."
+      },
+      {
+        "data": "2026-09-05 21:30",
+        "opis": "Uzupełnienie faktu, na którym opiera się dialog „SŁOWO STOPU”: Medea przybywa z Kolchidy jako córka Ajetesa i rozbraja strażnika, nie schodząc z pokładu."
       }
     ]
   }
