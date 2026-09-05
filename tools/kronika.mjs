@@ -18,6 +18,7 @@ import { readFile, writeFile, readdir } from 'node:fs/promises';
 import { join, dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import * as geo from '../app/geo.js';
+import { echoDrogi } from '../app/splot.js';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 export const KATALOG_KRONIKA = join(ROOT, 'data', 'kronika');
@@ -29,6 +30,7 @@ export const PLIK_INDEKSU = join(ROOT, 'data', 'index.json');
 export const PLIK_KANONU = join(ROOT, 'data', 'kanon-tagow.json');
 export const PLIK_TOPO_KRAJE = join(ROOT, 'assets', 'map', 'countries-50m.json');
 export const KATALOG_MANIFESTACJI = join(ROOT, 'data', 'manifestations');
+export const KATALOG_SPLOT = join(ROOT, 'data', 'splot');
 
 /** Ścieżka raportu HTML dla danej epoki: docs/kronika-<slug>.html */
 export function plikRaportu(slug) {
@@ -169,8 +171,46 @@ export function walidujCiągłośćWątków(watkiBiezace, watkiPoprzednie, bledy
   }
 }
 
+const STATUSY_DROGI = new Set(['ukonczona', 'rozszczepiona', 'przerwana']);
+
+/**
+ * Sprzężenie SPLOT → Kronika (ADR 0025). Epoka zrodzona z drogi musi:
+ *  - wskazywać istniejącą drogę i jej rozstrzygnięcie,
+ *  - mieć skład dokładnie równy składowi drogi,
+ *  - przenieść wątek śladu (`slad-<droga>`) w stanie zgodnym z echem,
+ *  - przesunąć oś w kierunku wynikającym z rozstrzygnięcia (echoDrogi).
+ * Dzięki temu droga nie „dopisuje się” do Kroniki sama, ale też nie da się
+ * zapisać Epoki sprzecznej z tym, co droga faktycznie zrobiła.
+ */
+export function walidujZrodloSplotu({ epoka, zrodloSplotu, epokaSlug, drogi, bledy }) {
+  const droga = (drogi || []).find((d) => d.slug === zrodloSplotu.droga);
+  if (!droga) {
+    blad(bledy, `zrodloSplotu: droga „${zrodloSplotu.droga}” nie istnieje w data/splot`);
+    return;
+  }
+  if (!STATUSY_DROGI.has(zrodloSplotu.status)) {
+    blad(bledy, `zrodloSplotu: nieznane rozstrzygnięcie „${zrodloSplotu.status}”`);
+    return;
+  }
+  const skladDrogi = [...new Set(droga.sklad || [])].sort();
+  if (JSON.stringify(skladDrogi) !== JSON.stringify(epokaSlug)) {
+    blad(bledy, `uczestnicy epoki nie są równi składowi drogi (droga: ${skladDrogi.join(', ')})`);
+  }
+  const echo = echoDrogi(droga, { status: zrodloSplotu.status, sklad: droga.sklad || [] });
+  const watek = (epoka.konsekwencje?.watki || []).find((w) => w.id === echo.watek.id);
+  if (!watek) {
+    blad(bledy, `zrodloSplotu: brak wątku śladu „${echo.watek.id}” w konsekwencjach epoki`);
+  } else if (watek.stan !== echo.watek.stan) {
+    blad(bledy, `zrodloSplotu: wątek „${echo.watek.id}” ma stan „${watek.stan}”, a droga zostawia „${echo.watek.stan}”`);
+  }
+  const deltaMit = epoka.konsekwencje?.os?.mit || 0;
+  if (Math.sign(deltaMit) !== Math.sign(echo.os.mit)) {
+    blad(bledy, `zrodloSplotu: oś przesuwa się o ${deltaMit} mitu, a droga „${zrodloSplotu.status}” wymaga kierunku ${echo.os.mit}`);
+  }
+}
+
 /** Przelicza jedną epokę względem bieżącego stanu świata. */
-export function przeliczEpoke({ tom, epoka, indeks, kanon, stan, watkiPoprzednie }) {
+export function przeliczEpoke({ tom, epoka, indeks, kanon, stan, watkiPoprzednie, drogi = [] }) {
   const bledy = [];
   const stanBiezacy = stan || tom.stanStart;
 
@@ -179,17 +219,28 @@ export function przeliczEpoke({ tom, epoka, indeks, kanon, stan, watkiPoprzednie
     blad(bledy, 'uczestnicy: minimum 2 byty');
   }
 
-  const skit = (indeks.skity || []).find((s) => s.slug === epoka.skit);
-  if (!skit) blad(bledy, `skit „${epoka.skit}” nie istnieje w indeksie`);
-
-  const skitSlug = [
-    ...new Set(
-      (skit?.uczestnicy || []).map((u) => (typeof u === 'string' ? u : u.slug))
-    ),
-  ].sort();
+  // Epoka wyrasta ze SKIT-u ALBO z drogi SPLOTU (ADR 0025 — sprzężenie systemów
+  // fabularnych). Dokładnie jedno źródło, żeby rozliczenie miało jeden rodowód.
   const epokaSlug = [...new Set((epoka.uczestnicy || []).map((u) => u.slug))].sort();
-  if (skit && JSON.stringify(skitSlug) !== JSON.stringify(epokaSlug)) {
-    blad(bledy, `uczestnicy epoki nie są równi uczestnikom skitu (skit: ${skitSlug.join(', ')})`);
+  const zrodloSplotu = epoka.zrodloSplotu || null;
+  let skit = null;
+  if (epoka.skit && zrodloSplotu) {
+    blad(bledy, 'epoka ma dwa źródła naraz: skit i drogę SPLOTU — zostaw jedno');
+  } else if (epoka.skit) {
+    skit = (indeks.skity || []).find((s) => s.slug === epoka.skit);
+    if (!skit) blad(bledy, `skit „${epoka.skit}” nie istnieje w indeksie`);
+    const skitSlug = [
+      ...new Set(
+        (skit?.uczestnicy || []).map((u) => (typeof u === 'string' ? u : u.slug))
+      ),
+    ].sort();
+    if (skit && JSON.stringify(skitSlug) !== JSON.stringify(epokaSlug)) {
+      blad(bledy, `uczestnicy epoki nie są równi uczestnikom skitu (skit: ${skitSlug.join(', ')})`);
+    }
+  } else if (zrodloSplotu) {
+    walidujZrodloSplotu({ epoka, zrodloSplotu, epokaSlug, drogi, bledy });
+  } else {
+    blad(bledy, 'epoka musi wyrastać ze skitu albo z drogi SPLOTU (pole zrodloSplotu)');
   }
 
   const paliwoWyjscie = klonuj(stanBiezacy.paliwo || {});
@@ -352,6 +403,7 @@ export function przeliczEpoke({ tom, epoka, indeks, kanon, stan, watkiPoprzednie
     konsekwencje: konsekwencjeWyliczone,
     narrator: epoka.narrator || null,
     skit: skit ? skit.slug : null,
+    zrodloSplotu: zrodloSplotu || null,
     iskra: epoka.iskra || '',
     pytanie: epoka.pytanie || '',
     przebieg: epoka.przebieg || '',
@@ -363,13 +415,13 @@ export function przeliczEpoke({ tom, epoka, indeks, kanon, stan, watkiPoprzednie
 }
 
 /** Przelicza wszystkie epoki Tomu sekwencyjnie: stanPo poprzedniej → stan wejściowy. */
-export function przeliczTom({ tom, epoki, indeks, kanon }) {
+export function przeliczTom({ tom, epoki, indeks, kanon, drogi = [] }) {
   let stan = klonuj(tom.stanStart);
   let watkiPoprzednie = new Map();
   const wyniki = [];
   const bledy = [];
   for (const epoka of epoki) {
-    const w = przeliczEpoke({ tom, epoka, indeks, kanon, stan, watkiPoprzednie });
+    const w = przeliczEpoke({ tom, epoka, indeks, kanon, stan, watkiPoprzednie, drogi });
     wyniki.push(w);
     if (!w.ok) {
       for (const b of w.bledy) blad(bledy, `${epoka.slug}: ${b}`);
@@ -387,8 +439,8 @@ export function przeliczTom({ tom, epoki, indeks, kanon }) {
 }
 
 /** Buduje podsumowanie całego Tomu I (summary.json). */
-export function zbudujPodsumowanieTomu({ tom, epoki, indeks, kanon }) {
-  const wynikTomu = przeliczTom({ tom, epoki, indeks, kanon });
+export function zbudujPodsumowanieTomu({ tom, epoki, indeks, kanon, drogi = [] }) {
+  const wynikTomu = przeliczTom({ tom, epoki, indeks, kanon, drogi });
   return {
     wersja: 2,
     tom: tom.slug,
@@ -397,6 +449,7 @@ export function zbudujPodsumowanieTomu({ tom, epoki, indeks, kanon }) {
       slug: w.slug,
       tytul: w.tytul,
       skit: w.skit,
+      zrodloSplotu: w.zrodloSplotu,
       iskra: w.iskra,
       pytanie: w.pytanie,
       przebieg: w.przebieg,
@@ -1949,6 +2002,9 @@ html[data-motyw="ciemny"] {
 }
 
 /* DIALOG SKIT */
+.splot-wezly { margin: 8px 0; padding-left: 20px; line-height: 1.6; }
+.splot-wezly li { margin-bottom: 4px; }
+.splot-proza { margin: 10px 0 0; font-style: italic; line-height: 1.65; }
 .skit-dialog {
   display: flex;
   flex-direction: column;
@@ -2655,6 +2711,41 @@ function generujSkryptKartoteki(manifestacjePelne, indeks) {
 }
 
 /** Statyczny raport pojedynczej epoki — generowany z danych, nie mockup. */
+/**
+ * Karta źródła Epoki: zapis rozmowy (SKIT) albo zapis drogi (SPLOT).
+ * Epoka zrodzona z drogi nie ma dialogu — ma węzły, ich rozstrzygnięcia
+ * i Fabularną Prozę wyniku (ADR 0025).
+ */
+export function zapisZrodlaHTML(dane, dialogHtml) {
+  const werdykt = dane.narrator?.podsumowanie
+    ? `<div class="verdict-box"><b>WERDYKT KRONIKARZA:</b> ${esc(dane.narrator.podsumowanie)}</div>`
+    : '';
+  if (dane.zrodloSplotu) {
+    const droga = dane.droga || {};
+    const status = dane.zrodloSplotu.status;
+    const wezly = (droga.wezly || [])
+      .map((w) => `<li><b>${esc(w.nazwa || w.slug)}</b> — trudność ${esc(String(w.trudnosc ?? '?'))}${w.zdolnosc ? ` · motyw: ${esc(w.zdolnosc)}` : ''}</li>`)
+      .join('');
+    const proza = droga.proza?.[status] || droga.proza?.domyslna || '';
+    return `
+    <div class="card">
+      <h2>Zapis drogi: ${esc(droga.tytul || dane.zrodloSplotu.droga)}</h2>
+      <div class="card-sub">SPLOT: <b>${esc(dane.zrodloSplotu.droga)}</b> · rozstrzygnięcie: <b>${esc(status)}</b>${droga.miejsce ? ` · ${esc(droga.miejsce)}` : ''}</div>
+      ${droga.cel ? `<p>${esc(droga.cel)}</p>` : ''}
+      ${wezly ? `<ul class="splot-wezly">${wezly}</ul>` : ''}
+      ${proza ? `<p class="splot-proza">${esc(proza)}</p>` : ''}
+      ${werdykt}
+    </div>`;
+  }
+  return `
+    <div class="card">
+      <h2>Zapis rozmowy: ${esc(dane.skitTytul || dane.tytulEpoki)}</h2>
+      <div class="card-sub">Baza Skitów: <b>${esc(dane.skit || '')}</b> · Oficjalny zapis dialogu zarejestrowany w archiwum.</div>
+      ${dialogHtml}
+      ${werdykt}
+    </div>`;
+}
+
 export function generujRaportHTML(dane) {
   const mit = dane.stanPo.os.mit;
   const rac = dane.stanPo.os.racjonalizacja;
@@ -2848,13 +2939,8 @@ ${mapaSvg}
       </div>
     </div>
 
-    <!-- ZAPIS DIALOGU -->
-    <div class="card">
-      <h2>Zapis rozmowy: ${esc(dane.skitTytul || dane.tytulEpoki)}</h2>
-      <div class="card-sub">Baza Skitów: <b>${esc(dane.skit)}</b> · Oficjalny zapis dialogu zarejestrowany w archiwum.</div>
-      ${dialogHtml}
-      ${dane.narrator?.podsumowanie ? `<div class="verdict-box"><b>WERDYKT KRONIKARZA:</b> ${esc(dane.narrator.podsumowanie)}</div>` : ''}
-    </div>
+    <!-- ZAPIS ŹRÓDŁA: ROZMOWA ALBO DROGA -->
+    ${zapisZrodlaHTML(dane, dialogHtml)}
 
     <!-- BILANS ZASOBÓW -->
     <div class="card">
@@ -3303,6 +3389,17 @@ async function wczytajEpoki() {
   return Promise.all(pliki.map((f) => wczytajJson(join(KATALOG_KRONIKA, f))));
 }
 
+/** Drogi SPLOTU — Epoki mogą z nich wyrastać (ADR 0025). */
+async function wczytajDrogi() {
+  let pliki = [];
+  try {
+    pliki = (await readdir(KATALOG_SPLOT)).filter((f) => f.endsWith('.json')).sort();
+  } catch {
+    return [];
+  }
+  return Promise.all(pliki.map((f) => wczytajJson(join(KATALOG_SPLOT, f))));
+}
+
 async function main() {
   if (process.argv.includes('--seed')) {
     const [tom, indeks, kanon] = await Promise.all([
@@ -3330,12 +3427,13 @@ async function main() {
   }
 
   const check = process.argv.includes('--check');
-  const [tom, epoki, indeks, kanon, landD] = await Promise.all([
+  const [tom, epoki, indeks, kanon, landD, drogi] = await Promise.all([
     wczytajJson(PLIK_TOM_1),
     wczytajEpoki(),
     wczytajJson(PLIK_INDEKSU),
     wczytajJson(PLIK_KANONU),
     pobierzSciezkeLadow(),
+    wczytajDrogi(),
   ]);
 
   if (epoki.length === 0) {
@@ -3395,10 +3493,11 @@ async function main() {
   for (const tomL of tomy) {
     const epokiTomu = epoki.filter((e) => e.tom === tomL.slug);
     if (!epokiTomu.length) continue;
-    const podsumowanie = zbudujPodsumowanieTomu({ tom: tomL, epoki: epokiTomu, indeks, kanon });
+    const podsumowanie = zbudujPodsumowanieTomu({ tom: tomL, epoki: epokiTomu, indeks, kanon, drogi });
     const raportTomu = generujRaportTomuHTML(podsumowanie, indeks, landD, manifestacjePelne, listaTomow);
     const raporty = podsumowanie.epoki.map((e) => {
       const skitInfo = skityMap.get(e.skit) || { tekst: '', tytul: '' };
+      const drogaEpoki = e.zrodloSplotu ? drogi.find((d) => d.slug === e.zrodloSplotu.droga) || null : null;
       return {
         slug: e.slug,
         html: generujRaportHTML({
@@ -3413,6 +3512,8 @@ async function main() {
           meta: e.meta,
           skitTekst: skitInfo.tekst,
           skitTytul: skitInfo.tytul,
+          zrodloSplotu: e.zrodloSplotu || null,
+          droga: drogaEpoki,
           uczestnicy: e.uczestnicy,
           stanPo: e.stanPo,
           konsekwencje: e.konsekwencje,

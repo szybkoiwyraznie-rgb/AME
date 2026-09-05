@@ -2,7 +2,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
-import { htmlWpisu, htmlSplotu, htmlProfiluAreny, znacznikZrodlaBezAdresu, opisZasobow, htmlWarstwyWpisu, linkDoZrodla, htmlListy, htmlStronyTagu, htmlTagow, htmlDialogu, htmlSkitu, htmlBazySkitow, htmlNowosci, htmlKronik, htmlTomyIEpoki, esc, rzymskie, nastepnyMotyw, motywPoczatkowy, etykietaMotywu, MOTYWY, KLUCZ_MOTYWU, akcjeZZapytania, tekstDoLektora, htmlTrofeow, paryRozmowySkitu, doB64utf8, zB64utf8, dataZmianySluga } from '../app/ui.js';
+import { htmlWpisu, htmlSplotu, htmlProfiluAreny, htmlNaporuSwiata, htmlEchaDrogi, znacznikZrodlaBezAdresu, opisZasobow, htmlWarstwyWpisu, linkDoZrodla, htmlListy, htmlStronyTagu, htmlTagow, htmlDialogu, htmlSkitu, htmlBazySkitow, htmlNowosci, htmlKronik, htmlTomyIEpoki, esc, rzymskie, nastepnyMotyw, motywPoczatkowy, etykietaMotywu, MOTYWY, KLUCZ_MOTYWU, akcjeZZapytania, tekstDoLektora, htmlTrofeow, paryRozmowySkitu, doB64utf8, zB64utf8, dataZmianySluga } from '../app/ui.js';
 
 async function dane(plik = 'egungun') {
   const wpis = JSON.parse(await readFile(`data/manifestations/${plik}.json`, 'utf8'));
@@ -849,3 +849,39 @@ test('SPLOT: zasoby po próbie są czytelne, nie surowym JSON-em', () => {
   assert.ok(html.includes('zasoby po próbie: pamiec 3 · przejscie 1'));
   assert.ok(!html.includes('{&quot;'), 'żadnego surowego JSON-a w raporcie');
 });
+
+test('raport SPLOTU pokazuje napór świata i ślad dla Kroniki', () => {
+  const swiat = {
+    premia: -5.2,
+    skladniki: [
+      { nazwa: 'oś świata', wartosc: -4.2, opis: 'mit 29 / racjonalizacja 71' },
+      { nazwa: 'otwarte wątki', wartosc: 4, opis: 'znak-nie-wystarcza' },
+    ],
+  };
+  const panel = htmlNaporuSwiata(swiat);
+  assert.match(panel, /Napór świata: -5.2/);
+  assert.match(panel, /splot-swiat-wiersz minus/);
+  assert.match(panel, /splot-swiat-wiersz plus/);
+  assert.equal(htmlNaporuSwiata(null), '', 'brak Kroniki = brak panelu');
+  assert.equal(htmlNaporuSwiata({ premia: 0, skladniki: [] }), '');
+
+  const echo = {
+    droga: 'droga-x',
+    status: 'rozszczepiona',
+    os: { mit: 0, racjonalizacja: 0 },
+    zasieg: [{ slug: 'a', delta: 0.004 }],
+    watek: { id: 'slad-droga-x', stan: 'otwarty', byty: ['a'], pytanie: 'Kto wróci?' },
+  };
+  const html = htmlEchaDrogi(echo, { manifestacje: [{ slug: 'a', nazwa: 'Byt A' }] });
+  assert.match(html, /Ślad dla Kroniki/);
+  assert.match(html, /oś świata bez zmian/);
+  assert.match(html, /Byt A \+0.004/);
+  assert.match(html, /slad-droga-x/);
+  assert.match(html, /Kto wróci\?/);
+  assert.equal(htmlEchaDrogi(null, {}), '');
+
+  const wynik = { status: 'rozszczepiona', proza: 'p', zasoby: {}, swiat, echo, dziennik: [] };
+  const raport = htmlSplotu({ tytul: 't', cel: 'c', sklad: [] }, wynik, { manifestacje: [] });
+  assert.ok(raport.includes('Napór świata') && raport.includes('Ślad dla Kroniki'));
+});
+

@@ -168,3 +168,20 @@
   przywołuje zwyczaj/nazwę własną nieobecną w kartach uczestników (twarda
   egzekucja wymaga NLP — poza zakresem ADR 0001).
 - ~~**Nagrania/lektor**~~ — **WDROŻONE (2026-08-30, PR #12, C2 pętla jakości):** przycisk „🔊 odsłuchaj” w widoku skitu czyta dialog na głos (Web Speech API, głos `pl-PL`, jeśli dostępny), „⏹ stop” przerywa; brak API = przycisk grzecznie się poddaje (cache-bust `c5-9`). Do akceptacji właściciela przed live.
+
+## Sprzężenie Kronika ↔ SPLOT (2026-09-05, wdrożone)
+
+- **WDROŻONE (PR #34, C5 na zlecenie właściciela):** dwa systemy fabularne
+  wpływają na siebie wzajemnie. **Kronika → SPLOT:** `naporSwiata` liczy premię
+  do szansy każdego węzła z osi mit/racjonalizacja, średniego zasięgu i paliwa
+  składu oraz otwartych wątków dotykających uczestników (przycięte do ±15 pkt,
+  deterministycznie — ADR 0024). **SPLOT → Kronika:** `echoDrogi` zamienia
+  rozstrzygnięcie w propozycję konsekwencji (kierunek osi, delty zasięgu, wątek
+  `slad-<droga>`), a Epoka może wyrosnąć z drogi zamiast ze SKIT-u przez pole
+  `zrodloSplotu`; walidator sprawdza skład, stan wątku i kierunek osi.
+  Pierwsza taka Epoka: `epoka-11` z drogi `ostatni-slad-gevaudan`.
+- **Kierunki dalej (nierozpoznane w kodzie):** droga generowana z otwartego
+  wątku Kroniki (agenda → automatyczny szkic drogi); zasoby SPLOTU (`dlug`,
+  `slad`) jako trwały budżet świata między Epokami; wiele dróg w jednym Tomie
+  i ich kolejność; wpływ dominacji kulturowych na trudność węzłów.
+

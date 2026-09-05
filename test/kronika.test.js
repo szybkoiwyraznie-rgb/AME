@@ -39,6 +39,7 @@ import {
   agendaTomu,
   proponujEpoke,
   sortujPlikiSeriami,
+  walidujZrodloSplotu,
 } from '../tools/kronika.mjs';
 
 async function wczytaj(path) {
@@ -654,7 +655,7 @@ test('agendaTomu: otwarte wątki, słabe paliwo i ciche kultury', async () => {
   assert.ok(Array.isArray(a.watki) && a.watki.length > 0);
   assert.ok(a.watki.every((w) => w.id && Array.isArray(w.byty)));
   assert.ok(Array.isArray(a.slabi));
-  assert.equal(a.ostatnia, 'epoka-10');
+  assert.equal(a.ostatnia, 'epoka-11');
 });
 
 test('S1: raport Tomu zawiera miniatury epok i rozstaje silnika', async () => {
@@ -743,7 +744,7 @@ test('sortowanie plików serii jest liczbowe, nie leksykalne (epoka-10 po epoce-
 test('Epoka X domyka Tom I zgodnie z rozliczeniem paliwa i osi', async () => {
   const podsumowanie = await wczytaj(PLIK_PODSUMOWANIA);
   assert.equal(podsumowanie.walidacja, true, JSON.stringify(podsumowanie.bledy));
-  assert.equal(podsumowanie.epoki.length, 10);
+  assert.equal(podsumowanie.epoki.length, 11);
 
   const e10 = podsumowanie.epoki[9];
   assert.equal(e10.slug, 'epoka-10');
@@ -766,4 +767,66 @@ test('Epoka X domyka Tom I zgodnie z rozliczeniem paliwa i osi', async () => {
   const nowy = (e10.konsekwencje.watki || []).find((w) => w.id === 'prawo-progu');
   assert.ok(nowy, 'Epoka X otwiera wątek prawa przejścia');
   assert.equal(nowy.byty.length, 4);
+});
+
+test('Epoka XI wyrasta z drogi SPLOTU, nie ze skitu', async () => {
+  const podsumowanie = await wczytaj(PLIK_PODSUMOWANIA);
+  const e11 = podsumowanie.epoki.at(-1);
+  assert.equal(e11.slug, 'epoka-11');
+  assert.equal(e11.skit, null, 'epoka z drogi nie ma skitu');
+  assert.deepEqual(e11.zrodloSplotu, { droga: 'ostatni-slad-gevaudan', status: 'rozszczepiona' });
+  assert.deepEqual(
+    e11.uczestnicy.map((u) => u.slug).sort(),
+    ['loup-garou-gevaudan', 'neith-z-sais', 'sfinks-teby']
+  );
+  const slad = (e11.konsekwencje.watki || []).find((w) => w.id === 'slad-ostatni-slad-gevaudan');
+  assert.ok(slad && slad.stan === 'otwarty', 'ślad drogi wchodzi do Kroniki jako wątek');
+  assert.equal(e11.walidacja, true, JSON.stringify(e11.bledy));
+});
+
+test('walidujZrodloSplotu pilnuje zgodności Epoki z rozstrzygnięciem drogi', () => {
+  const droga = { slug: 'droga-x', sklad: ['a', 'b'] };
+  const epokaSlug = ['a', 'b'];
+  const poprawna = {
+    konsekwencje: {
+      os: { mit: 1, racjonalizacja: -1 },
+      watki: [{ id: 'slad-droga-x', stan: 'zamkniety', byty: ['a', 'b'], pytanie: '?' }],
+    },
+  };
+  let bledy = [];
+  walidujZrodloSplotu({ epoka: poprawna, zrodloSplotu: { droga: 'droga-x', status: 'ukonczona' }, epokaSlug, drogi: [droga], bledy });
+  assert.deepEqual(bledy, [], 'ukończona droga: oś w górę i wątek domknięty');
+
+  bledy = [];
+  walidujZrodloSplotu({ epoka: poprawna, zrodloSplotu: { droga: 'droga-y', status: 'ukonczona' }, epokaSlug, drogi: [droga], bledy });
+  assert.match(bledy.join(' '), /nie istnieje/);
+
+  bledy = [];
+  walidujZrodloSplotu({ epoka: poprawna, zrodloSplotu: { droga: 'droga-x', status: 'wygrana' }, epokaSlug, drogi: [droga], bledy });
+  assert.match(bledy.join(' '), /nieznane rozstrzygnięcie/);
+
+  bledy = [];
+  walidujZrodloSplotu({ epoka: poprawna, zrodloSplotu: { droga: 'droga-x', status: 'przerwana' }, epokaSlug, drogi: [droga], bledy });
+  assert.match(bledy.join(' '), /wątek .* ma stan/, 'przerwana droga zostawia wątek otwarty');
+  assert.match(bledy.join(' '), /oś przesuwa się/, 'przerwana droga cofa oś, nie podnosi');
+
+  bledy = [];
+  walidujZrodloSplotu({ epoka: poprawna, zrodloSplotu: { droga: 'droga-x', status: 'ukonczona' }, epokaSlug: ['a'], drogi: [droga], bledy });
+  assert.match(bledy.join(' '), /nie są równi składowi drogi/);
+});
+
+test('epoka bez źródła i epoka z dwoma źródłami są odrzucane', async () => {
+  const [tom, epoka11, indeks, kanon] = await Promise.all([
+    wczytaj(PLIK_TOM_1),
+    wczytaj(join(KATALOG_KRONIKA, 'epoka-11.json')),
+    wczytaj(PLIK_INDEKSU),
+    wczytaj(PLIK_KANONU),
+  ]);
+  const bezZrodla = { ...epoka11, zrodloSplotu: undefined };
+  const w1 = przeliczEpoke({ tom, epoka: bezZrodla, indeks, kanon, stan: structuredClone(tom.stanStart), watkiPoprzednie: new Map() });
+  assert.match(w1.bledy.join(' '), /musi wyrastać ze skitu albo z drogi/);
+
+  const dwaZrodla = { ...epoka11, skit: 'zaslona-i-siersc' };
+  const w2 = przeliczEpoke({ tom, epoka: dwaZrodla, indeks, kanon, stan: structuredClone(tom.stanStart), watkiPoprzednie: new Map() });
+  assert.match(w2.bledy.join(' '), /dwa źródła naraz/);
 });

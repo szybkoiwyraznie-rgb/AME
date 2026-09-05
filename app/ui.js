@@ -249,12 +249,32 @@ export function opisZasobow(zasoby) {
   return pary.map(([klucz, wartosc]) => `${klucz} ${wartosc}`).join(' · ');
 }
 
+/** Napór świata (Kronika → SPLOT): składniki premii do szansy węzłów. */
+export function htmlNaporuSwiata(swiat) {
+  if (!swiat || !Array.isArray(swiat.skladniki) || swiat.skladniki.length === 0) return '';
+  const znak = (v) => `${v > 0 ? '+' : ''}${v}`;
+  const wiersze = swiat.skladniki
+    .map((s) => `<div class="splot-swiat-wiersz ${s.wartosc > 0 ? 'plus' : s.wartosc < 0 ? 'minus' : 'zero'}"><dt>${esc(s.nazwa)}</dt><dd><strong>${znak(s.wartosc)}</strong> <span class="maly">${esc(s.opis ?? '')}</span></dd></div>`)
+    .join('');
+  return `<section class="splot-swiat"><h3>Napór świata: ${znak(swiat.premia)} do każdej próby</h3><dl>${wiersze}</dl><p class="maly">Stan Kroniki (oś, zasięgi, paliwo, otwarte wątki) przelicza się na szansę drogi. Deterministycznie — losowy jest dopiero wynik.</p></section>`;
+}
+
+/** Ślad drogi (SPLOT → Kronika): propozycja konsekwencji dla przyszłej Epoki. */
+export function htmlEchaDrogi(echo, indeks) {
+  if (!echo?.watek) return '';
+  const nazwa = (slug) => indeks?.manifestacje?.find((m) => m.slug === slug)?.nazwa ?? slug;
+  const znak = (v) => `${v > 0 ? '+' : ''}${v}`;
+  const os = echo.os?.mit ? `oś świata ${znak(echo.os.mit)} mitu` : 'oś świata bez zmian';
+  const zasieg = (echo.zasieg ?? []).map((z) => `${esc(nazwa(z.slug))} ${znak(z.delta)}`).join(' · ');
+  return `<section class="splot-echo"><h3>Ślad dla Kroniki</h3><p>${esc(os)}${zasieg ? ` · ${zasieg}` : ''}</p><p class="splot-watek"><span class="chip">${esc(echo.watek.id)}</span> ${echo.watek.stan === 'zamkniety' ? 'do domknięcia' : 'otwarty'} — ${esc(echo.watek.pytanie)}</p><p class="maly">Epoka może przyjąć ten ślad polem <code>zrodloSplotu</code>; walidator Kroniki sprawdzi, czy kierunek osi zgadza się z wynikiem drogi.</p></section>`;
+}
+
 export function htmlSplotu(droga, wynik, indeks) {
   const nazwa = (slug) => indeks?.manifestacje?.find((m) => m.slug === slug)?.nazwa ?? slug;
   const sklad = (droga.sklad ?? []).map((slug) => `<button class="chip link" data-slug="${esc(slug)}">${esc(nazwa(slug))}</button>`).join(' ');
   const wiersze = (wynik.dziennik ?? []).map((w, i) => `<article class="splot-wezel ${w.sukces ? 'sukces' : 'porazka'}"><header><span>${i + 1}. ${esc(w.nazwa)}</span><strong>${w.sukces ? 'sukces' : 'porażka'}</strong></header><div class="splot-wykres"><span class="splot-szansa" style="width:${Math.round(w.prawdopodobienstwo * 100)}%">szansa ${Math.round(w.prawdopodobienstwo * 100)}%</span><span class="splot-los">los ${(w.wartoscLosowa * 100).toFixed(1)}%</span></div><p>${esc(w.proza ?? '')}</p><small>zasoby po próbie: ${esc(opisZasobow(w.zasoby))}</small></article>`).join('');
   const obraz = droga.grafika?.obraz ? `<img class="splot-obraz" src="${esc(droga.grafika.obraz)}" alt="${esc(droga.grafika.prompt ?? droga.tytul)}" loading="lazy">` : '';
-  return `<div class="splot-raport"><header class="splot-hero"><p class="karta-inspiracja">SPLOT · droga fabularna · ${esc(droga.miejsce ?? '')}</p><h2>${esc(droga.tytul)}</h2><p>${esc(droga.cel)}</p><p class="splot-sklad">Skład: ${sklad}</p></header>${obraz}<section class="splot-wynik"><h3>Rozstrzygnięcie: ${esc(wynik.status)}</h3><p>${esc(wynik.proza)}</p><dl class="splot-zasoby">${Object.entries(wynik.zasoby ?? {}).map(([k, v]) => `<div><dt>${esc(k)}</dt><dd>${v}</dd></div>`).join('')}</dl></section><section><h3>Dziennik drogi</h3>${wiersze}</section></div>`;
+  return `<div class="splot-raport"><header class="splot-hero"><p class="karta-inspiracja">SPLOT · droga fabularna · ${esc(droga.miejsce ?? '')}</p><h2>${esc(droga.tytul)}</h2><p>${esc(droga.cel)}</p><p class="splot-sklad">Skład: ${sklad}</p></header>${obraz}<section class="splot-wynik"><h3>Rozstrzygnięcie: ${esc(wynik.status)}</h3><p>${esc(wynik.proza)}</p><dl class="splot-zasoby">${Object.entries(wynik.zasoby ?? {}).map(([k, v]) => `<div><dt>${esc(k)}</dt><dd>${v}</dd></div>`).join('')}</dl></section>${htmlNaporuSwiata(wynik.swiat)}<section><h3>Dziennik drogi</h3>${wiersze}</section>${htmlEchaDrogi(wynik.echo, indeks)}</div>`;
 }
 
 export function htmlWpisu(w, indeks, kronika = null) {

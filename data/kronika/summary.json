@@ -7,6 +7,7 @@
       "slug": "epoka-1",
       "tytul": "Trzy stoły: przodek, gospodarz i gość",
       "skit": "trzy-stoly",
+      "zrodloSplotu": null,
       "iskra": "W gospodzie, w której ściany pamiętają trzy porządki, zasiedli: przodek, który przychodzi, żeby dać; gospodarz, który płaci, żeby gość sobie poszedł; i gość, który wziął sam, bo nie znał miary.",
       "pytanie": "Co wolno wziąć gościowi, gdy gospodarz tylko płaci, a przodek przychodzi, żeby dać?",
       "przebieg": "Pełny tekst rozmowy: data/skity/trzy-stoly.json (uczestnicy zgodni z epoką).",
@@ -423,6 +424,7 @@
       "slug": "epoka-2",
       "tytul": "Nieproszeni goście: psuj, zaproszony i zaproszenie",
       "skit": "nieproszeni-goscie",
+      "zrodloSplotu": null,
       "iskra": "Trzej psuja uroczystości porównują, jak wchodzą: kościelny psuj, zaproszony gość, który sięgnął sam, i dom, który sam jest zaproszeniem.",
       "pytanie": "Jeśli każdy ma swojego odźwiernego — anioła, halę albo jedno trzeźwe słowo — to co naprawdę zatrzymuje, a nie tylko wypędza?",
       "przebieg": "Pełny tekst rozmowy: data/skity/nieproszeni-goscie.json (uczestnicy zgodni z epoką).",
@@ -859,6 +861,7 @@
       "slug": "epoka-3",
       "tytul": "Odźwierni: zapraszany, otwierany i ten, który jest drzwiami",
       "skit": "odzwierni",
+      "zrodloSplotu": null,
       "iskra": "Przed wspólnym progiem stanęli: przodek, którego wpuszcza pieśń; olbrzym, którego otwiera czterech; i dom, który sam jest zaproszeniem i znika, gdy padnie imię.",
       "pytanie": "Kto naprawdę stoi w drzwiach — ten, kto wchodzi, ten, kto otwiera, czy ten, kto jest miejscem?",
       "przebieg": "Pełny tekst rozmowy: data/skity/odzwierni.json (uczestnicy zgodni z epoką).",
@@ -1309,6 +1312,7 @@
       "slug": "epoka-4",
       "tytul": "Imię na progu: skóra, kres i pieśń",
       "skit": "imie-na-progu",
+      "zrodloSplotu": null,
       "iskra": "Przetestowano jedno słowo, które miało otwierać wszystkie drzwi. Okazało się, że skóra otwiera morze, kres otwiera warunek, a pieśń — tylko serce. Trzy progi, jedno pytanie.",
       "pytanie": "Czy istnieje jedno słowo otwierające każdy próg — czy każde drzwi mają własne imię?",
       "przebieg": "Pełny tekst rozmowy: data/skity/imie-na-progu.json (uczestnicy zgodni z epoką).",
@@ -1759,6 +1763,7 @@
       "slug": "epoka-5",
       "tytul": "Zagadka ze spiżu: rozum, żart i głuchy krok",
       "skit": "zagadka-ze-spizu",
+      "zrodloSplotu": null,
       "iskra": "Sfinks z Teb próbuje zatrzymać wędrowców na rozstaju klasyczną zagadką o porach życia. Talos odpowiada miarowym rzutem głazu, a Lincoln Imp obraca powagę pytania w żart. Trzy różne odpowiedzi na jedno pytanie o naturę bytu.",
       "pytanie": "Czy powaga pytania o byt może przetrwać zderzenie z bezdusznym automatem i złośliwym śmiechem?",
       "przebieg": "Pełny tekst rozmowy: data/skity/zagadka-ze-spizu.json (uczestnicy zgodni z epoką).",
@@ -2206,6 +2211,7 @@
       "slug": "epoka-6",
       "tytul": "Czwarty stół: kto nie wie, że bierze",
       "skit": "czwarty-stol",
+      "zrodloSplotu": null,
       "iskra": "Po pięciu epokach gospodyni nakrywa czwarty stół w gospodzie z Epoki I. Podchodzą do niego: dar, który zajrzał pod własną pokrywę; pytanie, które zna jedną odpowiedź; i zaproszenie, które zjada gości.",
       "pytanie": "Czy ten, kto bierze, nie wiedząc, że bierze, jest gościem czy złodziejem?",
       "przebieg": "Pełny tekst rozmowy: data/skity/czwarty-stol.json (uczestnicy zgodni z epoką).",
@@ -2660,6 +2666,7 @@
       "slug": "epoka-7",
       "tytul": "Kolejność: nikt nie szedł za pierwszym",
       "skit": "pierwszy",
+      "zrodloSplotu": null,
       "iskra": "Mgła z wąwozu pod Termopilami wyszła w świat szukać rozkazu, który by ją rozwiązał; w Koptos tłuczek z dzbarem stanął na progu cudzego domu; w Waranasi dwa czterookie psy zawyły, bo po drodze przodków szedł ktoś, kto nie był umarły.",
       "pytanie": "Czy ten, kto stoi pierwszy, jest panem — czy tylko pierwszym, za którym nikt nie idzie?",
       "przebieg": "Pełny tekst rozmowy: data/skity/pierwszy.json (uczestnicy zgodni z epoką).",
@@ -3119,6 +3126,7 @@
       "slug": "epoka-8",
       "tytul": "Gościna za złoto: dom, który nie był gospodarzem",
       "skit": "goscina-za-zloto",
+      "zrodloSplotu": null,
       "iskra": "Empusa, której wędrowny dom nigdzie nie wytrzymał dłużej niż do pierwszego wymówionego imienia, stawia stół w jedynym miejscu, gdzie nikt nie patrzy trzeźwo: w śnie cesarza pod Kyffhäuser. Tym razem to nie ona płaci za wejście — to gospodarz płaci jej.",
       "pytanie": "Czy dom zbudowany ze światła wytrwa w górze, w której płaci się złotem — i kim staje się zdobycz, gdy gospodarz nazywa ją gościem?",
       "przebieg": "",
@@ -3583,6 +3591,7 @@
       "slug": "epoka-9",
       "tytul": "Zasłona, sierść i pytanie bez końca",
       "skit": "zaslona-i-siersc",
+      "zrodloSplotu": null,
       "iskra": "Sfinks zatrzymuje loup-garou na drodze pod Fikionem, a Neith rozwiesza między nimi nić, której nie da się przeciąć. Każdy rozpoznaje drugiego po jednym znaku, lecz żaden nie chce zostać sprowadzony do znaku.",
       "pytanie": "Czy byt pozostaje sobą, kiedy cudze pytanie opisuje go szybciej niż on sam?",
       "przebieg": "Trzy postacie spotykają się na granicy drogi, lasu i świątyni. Sfinks żąda odpowiedzi, loup-garou odmawia pokazania dłoni, a Neith tka z obu uników nową regułę rozmowy. Pytanie nie kończy przejścia — wymusza dalsze słuchanie.",
@@ -4058,6 +4067,7 @@
       "slug": "epoka-10",
       "tytul": "Prawo progu i kamień, który został",
       "skit": "gruz-i-odplyw",
+      "zrodloSplotu": null,
       "iskra": "Przy niskiej wodzie pod Górą św. Michała spotykają się czterej sąsiedzi granicy: ten, kto górę usypał, ta, która ma pod nią przejście, ten, kto wrósł w cudzy kamień, i ten, kto nie ma progu przez pięć nocy w tygodniu. Spór o jeden zielony głaz okazuje się sporem o to, czyja jest droga.",
       "pytanie": "Do kogo należy próg: do tego, kto go zbudował, czy do tego, kto musi nim przejść?",
       "przebieg": "Czterej sąsiedzi granicy targują się o kamień leżący na przejściu. Olbrzym broni pamiątki, syrena broni trasy, imp przypomina, ile kosztuje mieszkanie bez wyjścia, a wilkołak odsłania jedyny brak, którego żaden z nich nie ma: pięć nocy bez dachu. Kamień zostaje na miejscu, ale prawo do drogi przestaje być własnością największego.",
@@ -4561,6 +4571,491 @@
         "prompt": "Hyperrealistic cinematic photograph, ultra-wide 21:9 anamorphic frame. Low tide at dawn on a granite tidal island causeway in Cornwall: a colossal bearded giant sits on wet sand beside a single green boulder, a dark-haired sea woman with a fish tail rests on the seaweed near the water line, a small grinning stone gargoyle creature crouches on a mooring block, and a lean wolf-headed man stands at the shore edge with one human hand visible. Cold blue dawn light, mist over the bay, the abbey-crowned rock behind them, wet reflections on the causeway. Restrained folkloric realism, no gore, no text, no modern objects.",
         "obraz": "assets/wizualizacje/kronika-tom-1-epoka-10.jpg"
       }
+    },
+    {
+      "slug": "epoka-11",
+      "tytul": "Ostatni ślad: droga, która rozeszła się na dwoje",
+      "skit": null,
+      "zrodloSplotu": {
+        "droga": "ostatni-slad-gevaudan",
+        "status": "rozszczepiona"
+      },
+      "iskra": "Archiwum po raz pierwszy zapisuje Epokę nie z rozmowy, lecz z drogi. Loup-garou, Sfinks i Neith przeszli przez zamykany las Gévaudan: krąg łowców ustąpił, noc lamp nie, a przejście przez górę Fikion udało się tylko w połowie. Rozstrzygnięcie było losowe, ale cena okazała się policzalna.",
+      "pytanie": "Co Kronika ma zrobić z drogą, która nie skończyła się ani zwycięstwem, ani klęską — tylko rachunkiem?",
+      "przebieg": "Pierwsza Epoka Tomu I zrodzona z drogi SPLOTU, a nie z rozmowy. Trzy próby: krąg łowców, noc lamp i przejście przez górę Fikion. Wynik rozszczepiony — jedna połowa drogi weszła do opowieści, druga do cudzego raportu. Kronika przyjmuje ślad wraz z długiem i zostawia go otwartym.",
+      "meta": {
+        "utworzono": "2026-09-05 18:10",
+        "autor": "sesja arena 2026-09-05b",
+        "wersja": 1,
+        "poprzednik": "epoka-10"
+      },
+      "walidacja": true,
+      "bledy": [],
+      "uczestnicy": [
+        {
+          "slug": "loup-garou-gevaudan",
+          "nazwa": "Loup-garou z Gévaudan",
+          "rola": "Prowadzony przez zamykany las",
+          "pasywne": 8,
+          "saldoPrzed": 9,
+          "kosztUdzialu": 2,
+          "kosztKlucza": 0,
+          "boost": 0,
+          "zwrot": 3,
+          "saldoPo": 10
+        },
+        {
+          "slug": "sfinks-teby",
+          "nazwa": "Sfinks — strażniczka Tebańskich Wrót",
+          "rola": "Ta, która trzyma przejście pytaniem",
+          "pasywne": 24,
+          "saldoPrzed": 22,
+          "kosztUdzialu": 2,
+          "kosztKlucza": 0,
+          "boost": 0,
+          "zwrot": 2,
+          "saldoPo": 22
+        },
+        {
+          "slug": "neith-z-sais",
+          "nazwa": "Neith z Sais — tkaczka początku",
+          "rola": "Tkaczka drogi między lampami",
+          "pasywne": 7,
+          "saldoPrzed": 7,
+          "kosztUdzialu": 2,
+          "kosztKlucza": 0,
+          "boost": 0,
+          "zwrot": 2,
+          "saldoPo": 7
+        }
+      ],
+      "stanPo": {
+        "os": {
+          "mit": 29,
+          "racjonalizacja": 71
+        },
+        "zasieg": [
+          {
+            "slug": "agni",
+            "wielkosc": 0.4
+          },
+          {
+            "slug": "balor",
+            "wielkosc": 0.45
+          },
+          {
+            "slug": "barbarossa-kyffhaeuser",
+            "wielkosc": 0.482
+          },
+          {
+            "slug": "ben-varrey",
+            "wielkosc": 0.348
+          },
+          {
+            "slug": "cormoran-st-michaels-mount",
+            "wielkosc": 0.224
+          },
+          {
+            "slug": "drangue-shala",
+            "wielkosc": 0.46
+          },
+          {
+            "slug": "egungun",
+            "wielkosc": 0.545
+          },
+          {
+            "slug": "empusa-korynt",
+            "wielkosc": 0.485
+          },
+          {
+            "slug": "indra",
+            "wielkosc": 0.34
+          },
+          {
+            "slug": "kannon-hase",
+            "wielkosc": 0.38
+          },
+          {
+            "slug": "kentaur-pelion",
+            "wielkosc": 0.36
+          },
+          {
+            "slug": "knecht-z-koptos",
+            "wielkosc": 0.38
+          },
+          {
+            "slug": "lincoln-imp",
+            "wielkosc": 0.419
+          },
+          {
+            "slug": "loup-garou-gevaudan",
+            "wielkosc": 0.24
+          },
+          {
+            "slug": "morowa-panna",
+            "wielkosc": 0.315
+          },
+          {
+            "slug": "neith-z-sais",
+            "wielkosc": 0.222
+          },
+          {
+            "slug": "nessos",
+            "wielkosc": 0.37
+          },
+          {
+            "slug": "pandora",
+            "wielkosc": 0.42
+          },
+          {
+            "slug": "protostates",
+            "wielkosc": 0.322
+          },
+          {
+            "slug": "selkie-sule-skerry",
+            "wielkosc": 0.49
+          },
+          {
+            "slug": "sfinks-teby",
+            "wielkosc": 0.486
+          },
+          {
+            "slug": "syama-i-sarvara",
+            "wielkosc": 0.325
+          },
+          {
+            "slug": "talos-kreta",
+            "wielkosc": 0.435
+          }
+        ],
+        "dominacje": [
+          {
+            "kultura": "indie",
+            "kult": "agni",
+            "wielkosc": 0.4
+          },
+          {
+            "kultura": "irlandia",
+            "kult": "balor",
+            "wielkosc": 0.45
+          },
+          {
+            "kultura": "niemcy",
+            "kult": "barbarossa-kyffhaeuser",
+            "wielkosc": 0.482
+          },
+          {
+            "kultura": "man",
+            "kult": "ben-varrey",
+            "wielkosc": 0.348
+          },
+          {
+            "kultura": "kornwalia",
+            "kult": "cormoran-st-michaels-mount",
+            "wielkosc": 0.224
+          },
+          {
+            "kultura": "albania",
+            "kult": "drangue-shala",
+            "wielkosc": 0.46
+          },
+          {
+            "kultura": "joruba",
+            "kult": "egungun",
+            "wielkosc": 0.545
+          },
+          {
+            "kultura": "grecja",
+            "kult": "empusa-korynt",
+            "wielkosc": 0.485
+          },
+          {
+            "kultura": "indie",
+            "kult": "indra",
+            "wielkosc": 0.34
+          },
+          {
+            "kultura": "japonia",
+            "kult": "kannon-hase",
+            "wielkosc": 0.38
+          },
+          {
+            "kultura": "grecja",
+            "kult": "kentaur-pelion",
+            "wielkosc": 0.36
+          },
+          {
+            "kultura": "grecja",
+            "kult": "knecht-z-koptos",
+            "wielkosc": 0.38
+          },
+          {
+            "kultura": "anglia",
+            "kult": "lincoln-imp",
+            "wielkosc": 0.419
+          },
+          {
+            "kultura": "francja",
+            "kult": "loup-garou-gevaudan",
+            "wielkosc": 0.24
+          },
+          {
+            "kultura": "polska",
+            "kult": "morowa-panna",
+            "wielkosc": 0.315
+          },
+          {
+            "kultura": "egipt",
+            "kult": "neith-z-sais",
+            "wielkosc": 0.222
+          },
+          {
+            "kultura": "grecja",
+            "kult": "nessos",
+            "wielkosc": 0.37
+          },
+          {
+            "kultura": "grecja",
+            "kult": "pandora",
+            "wielkosc": 0.42
+          },
+          {
+            "kultura": "grecja",
+            "kult": "protostates",
+            "wielkosc": 0.322
+          },
+          {
+            "kultura": "szkocja-polnocna",
+            "kult": "selkie-sule-skerry",
+            "wielkosc": 0.49
+          },
+          {
+            "kultura": "grecja",
+            "kult": "sfinks-teby",
+            "wielkosc": 0.486
+          },
+          {
+            "kultura": "indie",
+            "kult": "syama-i-sarvara",
+            "wielkosc": 0.325
+          },
+          {
+            "kultura": "grecja",
+            "kult": "talos-kreta",
+            "wielkosc": 0.435
+          }
+        ],
+        "paliwo": {
+          "egungun": 30,
+          "barbarossa-kyffhaeuser": 20,
+          "kentaur-pelion": 14,
+          "lincoln-imp": 14,
+          "empusa-korynt": 20,
+          "balor": 19,
+          "selkie-sule-skerry": 24,
+          "indra": 11,
+          "sfinks-teby": 22,
+          "talos-kreta": 20,
+          "pandora": 17,
+          "morowa-panna": 9,
+          "protostates": 12,
+          "knecht-z-koptos": 13,
+          "syama-i-sarvara": 11,
+          "loup-garou-gevaudan": 10,
+          "neith-z-sais": 7,
+          "cormoran-st-michaels-mount": 11,
+          "ben-varrey": 13
+        }
+      },
+      "konsekwencje": {
+        "os": {
+          "mit": 0,
+          "racjonalizacja": 0
+        },
+        "relacje": [
+          {
+            "typ": "wzmocnienie",
+            "skad": "neith-z-sais",
+            "dokad": "loup-garou-gevaudan",
+            "opis": "Nić przeprowadziła wilkołaka przez krąg łowców, choć nie zdołała zgasić wszystkich lamp."
+          },
+          {
+            "typ": "wzmocnienie",
+            "skad": "sfinks-teby",
+            "dokad": "neith-z-sais",
+            "opis": "Pytanie zatrzymało pościg na tyle długo, by tkaczka zdążyła związać przejście."
+          },
+          {
+            "typ": "neutralna",
+            "skad": "loup-garou-gevaudan",
+            "dokad": "sfinks-teby",
+            "opis": "Prowadzony i pytająca rozstali się bez rozstrzygnięcia, z rachunkiem podzielonym po połowie."
+          }
+        ],
+        "zasieg": [
+          {
+            "slug": "loup-garou-gevaudan",
+            "przed": 0.236,
+            "po": 0.24,
+            "delta": 0.004,
+            "opis": "Ślad z Gévaudan przeszedł do ksiąg jako droga, nie jako polowanie."
+          },
+          {
+            "slug": "sfinks-teby",
+            "przed": 0.482,
+            "po": 0.486,
+            "delta": 0.004,
+            "opis": "Pytanie okazało się skuteczne także poza własną górą."
+          },
+          {
+            "slug": "neith-z-sais",
+            "przed": 0.218,
+            "po": 0.222,
+            "delta": 0.004,
+            "opis": "Tkanie weszło w rejestr metod przechodzenia przez świat zamknięty."
+          }
+        ],
+        "dominacje": [
+          {
+            "kultura": "francja",
+            "kult": "loup-garou-gevaudan",
+            "przed": 0.236,
+            "po": 0.24,
+            "delta": 0.004
+          },
+          {
+            "kultura": "grecja",
+            "kult": "sfinks-teby",
+            "przed": 0.482,
+            "po": 0.486,
+            "delta": 0.004
+          },
+          {
+            "kultura": "egipt",
+            "kult": "neith-z-sais",
+            "przed": 0.218,
+            "po": 0.222,
+            "delta": 0.004
+          }
+        ],
+        "pozycje": [
+          {
+            "slug": "loup-garou-gevaudan",
+            "status": "zraniony",
+            "opis": "Przeszedł, ale zostawił za sobą raport, mapę i połowę drogi w cudzych rękach."
+          },
+          {
+            "slug": "sfinks-teby",
+            "status": "odporny",
+            "opis": "Nie straciła nic prócz jednego pytania, które zużyła na cudzą sprawę."
+          },
+          {
+            "slug": "neith-z-sais",
+            "status": "wzmocniony",
+            "opis": "Jej nić okazała się narzędziem podróży, nie tylko rozmowy."
+          }
+        ],
+        "watki": [
+          {
+            "id": "pierwszy-w-linii",
+            "stan": "otwarty",
+            "byty": [
+              "protostates",
+              "knecht-z-koptos",
+              "syama-i-sarvara"
+            ],
+            "pytanie": "Co się stanie z linią, gdy pierwszy przestanie stać, a nikt nie uzna, że ktoś go zastąpił?"
+          },
+          {
+            "id": "niewinny-bierca",
+            "stan": "otwarty",
+            "byty": [
+              "kentaur-pelion",
+              "pandora",
+              "empusa-korynt"
+            ],
+            "pytanie": "Kiedy biernik dowie się, że bierze — i co wtedy zrobi z tym, co już wziął?"
+          },
+          {
+            "id": "warunek-barbarossy",
+            "stan": "otwarty",
+            "byty": [
+              "barbarossa-kyffhaeuser",
+              "kentaur-pelion",
+              "egungun"
+            ],
+            "pytanie": "Czy dług śpiącego cesarza da się spłacić gościną — czy rachunek, który zapłacił ze snu, przyjdzie kiedyś wyrównać na jawie?"
+          },
+          {
+            "id": "kres-indry",
+            "stan": "otwarty",
+            "byty": [
+              "indra"
+            ],
+            "pytanie": "Kto zapisze kres Indry: ten, kto go zdetronizuje, czy ten, który przestaje się bać jego gromu?"
+          },
+          {
+            "id": "znak-nie-wystarcza",
+            "stan": "otwarty",
+            "byty": [
+              "sfinks-teby",
+              "loup-garou-gevaudan",
+              "neith-z-sais"
+            ],
+            "pytanie": "Ci sami troje przeszli razem drogę — czy wspólne przejście mówi o bycie więcej niż jeden znak, po którym go rozpoznawano?"
+          },
+          {
+            "id": "prawo-progu",
+            "stan": "otwarty",
+            "byty": [
+              "cormoran-st-michaels-mount",
+              "ben-varrey",
+              "lincoln-imp",
+              "loup-garou-gevaudan"
+            ],
+            "pytanie": "Jeśli próg należy także do przechodzących, to kto płaci za jego utrzymanie — i czym płaci ten, kto nie ma nic prócz przejścia?"
+          },
+          {
+            "id": "slad-ostatni-slad-gevaudan",
+            "stan": "otwarty",
+            "byty": [
+              "loup-garou-gevaudan",
+              "sfinks-teby",
+              "neith-z-sais"
+            ],
+            "pytanie": "Część drogi ocalała, część zapadła się pod raportem: kto wróci po tę drugą połowę?"
+          }
+        ]
+      },
+      "narrator": {
+        "ocena": [
+          {
+            "kto": "neith-z-sais",
+            "kogo": "loup-garou-gevaudan",
+            "stopien": 2,
+            "komentarz": "Szedł tam, gdzie prowadziła nić, nawet kiedy nić prowadziła prosto na światło. To nie jest odwaga — to zaufanie, które kosztuje więcej."
+          },
+          {
+            "kto": "sfinks-teby",
+            "kogo": "neith-z-sais",
+            "stopien": 2,
+            "komentarz": "Utkała przejście z tego, co łowcy uważali za swoją własność: z porządku nocy."
+          },
+          {
+            "kto": "loup-garou-gevaudan",
+            "kogo": "sfinks-teby",
+            "stopien": 1,
+            "komentarz": "Zatrzymała pościg jednym pytaniem, ale pytania nie da się zadać dwa razy tej samej lampie."
+          }
+        ],
+        "podsumowanie": "Droga rozeszła się na dwoje i tak też weszła do Kroniki. Jedna połowa jest opowieścią: las, który nie dał się zamknąć. Druga jest długiem: raport, mapa i nazwisko, których nikt jeszcze nie odwołał. Epoka nie zamyka śladu — przenosi go do ksiąg, żeby ktoś mógł po niego wrócić."
+      },
+      "grafika": {
+        "podpis": "Rozejście drogi w Gévaudan: nić prowadzi w las, lampy łowców zostają po drugiej stronie.",
+        "styl": "Hyperrealistyczne zdjęcie filmowe, ultrapanorama 21:9.",
+        "prompt": "Hyperrealistic cinematic photograph, ultra-wide 21:9 anamorphic frame. Night in the Gévaudan highlands where a forest track forks: on the left a wolf-headed man walks into the mist following a thin luminous thread held by a serene Egyptian goddess, on the right a line of distant oil lamps and armed hunters stops at a wooden barrier with a nailed proclamation. A winged sphinx sits on a boulder between the two paths, facing the lamps. Cold moonlight, amber lamp glow, wet granite, thorn scrub. Restrained folkloric realism, no gore, no text, no modern objects.",
+        "obraz": "assets/wizualizacje/kronika-tom-1-epoka-11.jpg"
+      }
     }
   ],
   "stanPo": {
@@ -4623,7 +5118,7 @@
       },
       {
         "slug": "loup-garou-gevaudan",
-        "wielkosc": 0.236
+        "wielkosc": 0.24
       },
       {
         "slug": "morowa-panna",
@@ -4631,7 +5126,7 @@
       },
       {
         "slug": "neith-z-sais",
-        "wielkosc": 0.218
+        "wielkosc": 0.222
       },
       {
         "slug": "nessos",
@@ -4651,7 +5146,7 @@
       },
       {
         "slug": "sfinks-teby",
-        "wielkosc": 0.482
+        "wielkosc": 0.486
       },
       {
         "slug": "syama-i-sarvara",
@@ -4731,7 +5226,7 @@
       {
         "kultura": "francja",
         "kult": "loup-garou-gevaudan",
-        "wielkosc": 0.236
+        "wielkosc": 0.24
       },
       {
         "kultura": "polska",
@@ -4741,7 +5236,7 @@
       {
         "kultura": "egipt",
         "kult": "neith-z-sais",
-        "wielkosc": 0.218
+        "wielkosc": 0.222
       },
       {
         "kultura": "grecja",
@@ -4766,7 +5261,7 @@
       {
         "kultura": "grecja",
         "kult": "sfinks-teby",
-        "wielkosc": 0.482
+        "wielkosc": 0.486
       },
       {
         "kultura": "indie",
@@ -4795,7 +5290,7 @@
       "protostates": 12,
       "knecht-z-koptos": 13,
       "syama-i-sarvara": 11,
-      "loup-garou-gevaudan": 9,
+      "loup-garou-gevaudan": 10,
       "neith-z-sais": 7,
       "cormoran-st-michaels-mount": 11,
       "ben-varrey": 13
@@ -4817,7 +5312,7 @@
       "tytul": "Kronika trzech stołów",
       "opis": "",
       "plik": "kronika-tom-1.html",
-      "epoki": 10
+      "epoki": 11
     }
   ]
 }

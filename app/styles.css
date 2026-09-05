@@ -1064,3 +1064,21 @@ div.warstwa.otwarta { display: block; animation: warstwa-wnika 0.2s ease-out; }
 .splot-los { position: absolute; top: 3px; right: 7px; font-size: 12px; color: var(--tekst); }
 .splot-wezel small { color: var(--tekst-dim); }
 @media (max-width: 560px) { .splot-zasoby { grid-template-columns: repeat(2, 1fr); } }
+
+/* SPLOT ↔ Kronika: napór świata i ślad dla Kroniki (ADR 0025) */
+.splot-swiat, .splot-echo {
+  margin-top: 18px;
+  padding: 12px 14px;
+  border: 1px solid var(--ramka);
+  border-radius: 10px;
+  background: var(--tlo-2);
+}
+.splot-swiat h3, .splot-echo h3 { margin: 0 0 8px; font-size: 15px; }
+.splot-swiat dl { margin: 0; display: grid; gap: 4px; }
+.splot-swiat-wiersz { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; }
+.splot-swiat-wiersz dt { color: var(--tekst-dim); }
+.splot-swiat-wiersz dd { margin: 0; text-align: right; }
+.splot-swiat-wiersz.plus strong { color: var(--akcent-2); }
+.splot-swiat-wiersz.minus strong { color: var(--akcent); }
+.splot-echo .splot-watek { margin: 6px 0; }
+.splot-echo code { font-size: 13px; }

@@ -406,6 +406,9 @@ html[data-motyw="ciemny"] {
 }
 
 /* DIALOG SKIT */
+.splot-wezly { margin: 8px 0; padding-left: 20px; line-height: 1.6; }
+.splot-wezly li { margin-bottom: 4px; }
+.splot-proza { margin: 10px 0 0; font-style: italic; line-height: 1.65; }
 .skit-dialog {
   display: flex;
   flex-direction: column;
@@ -979,7 +982,7 @@ li { margin: 8px 0; }
 <div class="hero">
   <div class="badges">
     <span class="badge tom">Tom I</span>
-    <span class="badge ok">10 epok zamkniętych</span>
+    <span class="badge ok">11 epok zamkniętych</span>
     <span class="badge">Oś stabilna: MIT 29% / RAC 71%</span>
   </div>
   
@@ -1001,46 +1004,50 @@ li { margin: 8px 0; }
 <div class="card">
   <h2>Graf epok</h2>
   <div class="card-sub">Kolejność, odwołania między epokami (poprzednik → kontynuacja) i rozstaje.</div>
-  <svg class="chart graf-chart" viewBox="0 0 1100 250" role="img" aria-label="Graf epok z odwołaniami i rozgałęzieniami"><text class="graf-etykieta" x="50.0" y="92.0" text-anchor="middle"><tspan x="50.0">Trzy stoły</tspan></text><text class="graf-etykieta" x="161.1" y="92.0" text-anchor="middle"><tspan x="161.1">Nieproszeni goście</tspan></text><text class="graf-etykieta" x="272.2" y="92.0" text-anchor="middle"><tspan x="272.2">Odźwierni</tspan></text><text class="graf-etykieta" x="383.3" y="92.0" text-anchor="middle"><tspan x="383.3">Imię na progu</tspan></text><text class="graf-etykieta" x="494.4" y="92.0" text-anchor="middle"><tspan x="494.4">Zagadka ze spiżu</tspan></text><text class="graf-etykieta" x="605.6" y="92.0" text-anchor="middle"><tspan x="605.6">Czwarty stół</tspan></text><text class="graf-etykieta" x="716.7" y="92.0" text-anchor="middle"><tspan x="716.7">Kolejność</tspan></text><text class="graf-etykieta" x="827.8" y="92.0" text-anchor="middle"><tspan x="827.8">Gościna za złoto</tspan></text><text class="graf-etykieta" x="938.9" y="92.0" text-anchor="middle"><tspan x="938.9">Zasłona, sierść i</tspan><tspan x="938.9" dy="14">pytanie bez końca</tspan></text><text class="graf-etykieta" x="1050.0" y="92.0" text-anchor="middle"><tspan x="1050.0">Prawo progu i</tspan><tspan x="1050.0" dy="14">kamień, który…</tspan></text><line class="graf-os" x1="50.0" y1="140" x2="161.1" y2="140" data-od="epoka-1" data-do="epoka-2" /><line class="graf-os" x1="161.1" y1="140" x2="272.2" y2="140" data-od="epoka-2" data-do="epoka-3" /><line class="graf-os" x1="272.2" y1="140" x2="383.3" y2="140" data-od="epoka-3" data-do="epoka-4" /><line class="graf-os" x1="383.3" y1="140" x2="494.4" y2="140" data-od="epoka-4" data-do="epoka-5" /><line class="graf-os" x1="494.4" y1="140" x2="605.6" y2="140" data-od="epoka-5" data-do="epoka-6" /><line class="graf-os" x1="605.6" y1="140" x2="716.7" y2="140" data-od="epoka-6" data-do="epoka-7" /><line class="graf-os" x1="716.7" y1="140" x2="827.8" y2="140" data-od="epoka-7" data-do="epoka-8" /><line class="graf-os" x1="827.8" y1="140" x2="938.9" y2="140" data-od="epoka-8" data-do="epoka-9" /><line class="graf-os" x1="938.9" y1="140" x2="1050.0" y2="140" data-od="epoka-9" data-do="epoka-10" /><g class="graf-wezel" transform="translate(50.0,140)">
+  <svg class="chart graf-chart" viewBox="0 0 1100 250" role="img" aria-label="Graf epok z odwołaniami i rozgałęzieniami"><text class="graf-etykieta" x="50.0" y="92.0" text-anchor="middle"><tspan x="50.0">Trzy stoły</tspan></text><text class="graf-etykieta" x="150.0" y="92.0" text-anchor="middle"><tspan x="150.0">Nieproszeni goście</tspan></text><text class="graf-etykieta" x="250.0" y="92.0" text-anchor="middle"><tspan x="250.0">Odźwierni</tspan></text><text class="graf-etykieta" x="350.0" y="92.0" text-anchor="middle"><tspan x="350.0">Imię na progu</tspan></text><text class="graf-etykieta" x="450.0" y="92.0" text-anchor="middle"><tspan x="450.0">Zagadka ze spiżu</tspan></text><text class="graf-etykieta" x="550.0" y="92.0" text-anchor="middle"><tspan x="550.0">Czwarty stół</tspan></text><text class="graf-etykieta" x="650.0" y="92.0" text-anchor="middle"><tspan x="650.0">Kolejność</tspan></text><text class="graf-etykieta" x="750.0" y="92.0" text-anchor="middle"><tspan x="750.0">Gościna za złoto</tspan></text><text class="graf-etykieta" x="850.0" y="92.0" text-anchor="middle"><tspan x="850.0">Zasłona, sierść i</tspan><tspan x="850.0" dy="14">pytanie bez końca</tspan></text><text class="graf-etykieta" x="950.0" y="92.0" text-anchor="middle"><tspan x="950.0">Prawo progu i</tspan><tspan x="950.0" dy="14">kamień, który…</tspan></text><text class="graf-etykieta" x="1050.0" y="92.0" text-anchor="middle"><tspan x="1050.0">Ostatni ślad</tspan></text><line class="graf-os" x1="50.0" y1="140" x2="150.0" y2="140" data-od="epoka-1" data-do="epoka-2" /><line class="graf-os" x1="150.0" y1="140" x2="250.0" y2="140" data-od="epoka-2" data-do="epoka-3" /><line class="graf-os" x1="250.0" y1="140" x2="350.0" y2="140" data-od="epoka-3" data-do="epoka-4" /><line class="graf-os" x1="350.0" y1="140" x2="450.0" y2="140" data-od="epoka-4" data-do="epoka-5" /><line class="graf-os" x1="450.0" y1="140" x2="550.0" y2="140" data-od="epoka-5" data-do="epoka-6" /><line class="graf-os" x1="550.0" y1="140" x2="650.0" y2="140" data-od="epoka-6" data-do="epoka-7" /><line class="graf-os" x1="650.0" y1="140" x2="750.0" y2="140" data-od="epoka-7" data-do="epoka-8" /><line class="graf-os" x1="750.0" y1="140" x2="850.0" y2="140" data-od="epoka-8" data-do="epoka-9" /><line class="graf-os" x1="850.0" y1="140" x2="950.0" y2="140" data-od="epoka-9" data-do="epoka-10" /><line class="graf-os" x1="950.0" y1="140" x2="1050.0" y2="140" data-od="epoka-10" data-do="epoka-11" /><g class="graf-wezel" transform="translate(50.0,140)">
         <title>epoka-1 — Trzy stoły: przodek, gospodarz i gość</title>
         <circle r="20" />
         <text class="graf-nr" y="6">I</text>
-      </g><g class="graf-wezel" transform="translate(161.1,140)">
+      </g><g class="graf-wezel" transform="translate(150.0,140)">
         <title>epoka-2 — Nieproszeni goście: psuj, zaproszony i zaproszenie</title>
         <circle r="20" />
         <text class="graf-nr" y="6">II</text>
-      </g><g class="graf-wezel" transform="translate(272.2,140)">
+      </g><g class="graf-wezel" transform="translate(250.0,140)">
         <title>epoka-3 — Odźwierni: zapraszany, otwierany i ten, który jest drzwiami</title>
         <circle r="20" />
         <text class="graf-nr" y="6">III</text>
-      </g><g class="graf-wezel" transform="translate(383.3,140)">
+      </g><g class="graf-wezel" transform="translate(350.0,140)">
         <title>epoka-4 — Imię na progu: skóra, kres i pieśń</title>
         <circle r="20" />
         <text class="graf-nr" y="6">IV</text>
-      </g><g class="graf-wezel" transform="translate(494.4,140)">
+      </g><g class="graf-wezel" transform="translate(450.0,140)">
         <title>epoka-5 — Zagadka ze spiżu: rozum, żart i głuchy krok</title>
         <circle r="20" />
         <text class="graf-nr" y="6">V</text>
-      </g><g class="graf-wezel" transform="translate(605.6,140)">
+      </g><g class="graf-wezel" transform="translate(550.0,140)">
         <title>epoka-6 — Czwarty stół: kto nie wie, że bierze</title>
         <circle r="20" />
         <text class="graf-nr" y="6">VI</text>
-      </g><g class="graf-wezel" transform="translate(716.7,140)">
+      </g><g class="graf-wezel" transform="translate(650.0,140)">
         <title>epoka-7 — Kolejność: nikt nie szedł za pierwszym</title>
         <circle r="20" />
         <text class="graf-nr" y="6">VII</text>
-      </g><g class="graf-wezel" transform="translate(827.8,140)">
+      </g><g class="graf-wezel" transform="translate(750.0,140)">
         <title>epoka-8 — Gościna za złoto: dom, który nie był gospodarzem</title>
         <circle r="20" />
         <text class="graf-nr" y="6">VIII</text>
-      </g><g class="graf-wezel" transform="translate(938.9,140)">
+      </g><g class="graf-wezel" transform="translate(850.0,140)">
         <title>epoka-9 — Zasłona, sierść i pytanie bez końca</title>
         <circle r="20" />
         <text class="graf-nr" y="6">IX</text>
-      </g><g class="graf-wezel" transform="translate(1050.0,140)">
+      </g><g class="graf-wezel" transform="translate(950.0,140)">
         <title>epoka-10 — Prawo progu i kamień, który został</title>
         <circle r="20" />
         <text class="graf-nr" y="6">X</text>
+      </g><g class="graf-wezel" transform="translate(1050.0,140)">
+        <title>epoka-11 — Ostatni ślad: droga, która rozeszła się na dwoje</title>
+        <circle r="20" />
+        <text class="graf-nr" y="6">XI</text>
       </g></svg>
 </div>
 
@@ -1700,7 +1707,7 @@ li { margin: 8px 0; }
       </g>
       <g class="node active" data-slug="loup-garou-gevaudan" transform="translate(1835,1299)">
         <title>Loup-garou z Gévaudan — zasięg 24%%</title>
-        <circle class="halo" r="52" />
+        <circle class="halo" r="53" />
         <a href="#loup-garou-gevaudan" class="otworz-kartoteke" data-slug="loup-garou-gevaudan" title="Loup-garou z Gévaudan (Francja) — otwórz kartotekę">
           <circle class="pin-bg" r="20" />
           <text class="pin-icon" dy="7">✨</text>
@@ -1718,7 +1725,7 @@ li { margin: 8px 0; }
       </g>
       <g class="node active" data-slug="neith-z-sais" transform="translate(2108,1474)">
         <title>Neith z Sais — tkaczka początku — zasięg 22%%</title>
-        <circle class="halo" r="50" />
+        <circle class="halo" r="51" />
         <a href="#neith-z-sais" class="otworz-kartoteke" data-slug="neith-z-sais" title="Neith z Sais — tkaczka początku (Egipt (muhafaza al-Gharbijja)) — otwórz kartotekę">
           <circle class="pin-bg" r="20" />
           <text class="pin-icon" dy="7">✨</text>
@@ -1753,7 +1760,7 @@ li { margin: 8px 0; }
         </a>
       </g>
       <g class="node active" data-slug="sfinks-teby" transform="translate(2033,1385)">
-        <title>Sfinks — strażniczka Tebańskich Wrót — zasięg 48%%</title>
+        <title>Sfinks — strażniczka Tebańskich Wrót — zasięg 49%%</title>
         <circle class="halo" r="82" />
         <a href="#sfinks-teby" class="otworz-kartoteke" data-slug="sfinks-teby" title="Sfinks — strażniczka Tebańskich Wrót (Grecja (Beocja)) — otwórz kartotekę">
           <circle class="pin-bg" r="20" />
@@ -1791,138 +1798,154 @@ li { margin: 8px 0; }
   
   <div class="wykres-paliwa">
     <svg class="chart paliwo-chart" viewBox="0 0 880 300" role="img" aria-label="Wykres paliwa uczestników po epokach">
-      <text class="paliwo-os" x="38" y="252.0">0</text><text class="paliwo-os" x="38" y="134.3">16</text><text class="paliwo-os" x="38" y="24.0">31</text><text class="paliwo-os-x" x="46.0" y="270.0" text-anchor="middle">I</text><text class="paliwo-os-x" x="117.6" y="270.0" text-anchor="middle">II</text><text class="paliwo-os-x" x="189.1" y="270.0" text-anchor="middle">III</text><text class="paliwo-os-x" x="260.7" y="270.0" text-anchor="middle">IV</text><text class="paliwo-os-x" x="332.2" y="270.0" text-anchor="middle">V</text><text class="paliwo-os-x" x="403.8" y="270.0" text-anchor="middle">VI</text><text class="paliwo-os-x" x="475.3" y="270.0" text-anchor="middle">VII</text><text class="paliwo-os-x" x="546.9" y="270.0" text-anchor="middle">VIII</text><text class="paliwo-os-x" x="618.4" y="270.0" text-anchor="middle">IX</text><text class="paliwo-os-x" x="690.0" y="270.0" text-anchor="middle">X</text>
-      <polyline class="paliwo-linia" points="46.0,64.1 117.6,64.1 189.1,42.1 260.7,20.0 332.2,20.0 403.8,20.0 475.3,20.0 546.9,27.4 618.4,27.4 690.0,27.4" style="stroke:hsl(0, 45%, 55%)" />
-        <circle class="paliwo-punkt" cx="46.0" cy="64.1" r="3.5" style="fill:hsl(0, 45%, 55%)"><title>egungun · epoka-1: 25</title></circle><circle class="paliwo-punkt" cx="117.6" cy="64.1" r="3.5" style="fill:hsl(0, 45%, 55%)"><title>egungun · epoka-2: 25</title></circle><circle class="paliwo-punkt" cx="189.1" cy="42.1" r="3.5" style="fill:hsl(0, 45%, 55%)"><title>egungun · epoka-3: 28</title></circle><circle class="paliwo-punkt" cx="260.7" cy="20.0" r="3.5" style="fill:hsl(0, 45%, 55%)"><title>egungun · epoka-4: 31</title></circle><circle class="paliwo-punkt" cx="332.2" cy="20.0" r="3.5" style="fill:hsl(0, 45%, 55%)"><title>egungun · epoka-5: 31</title></circle><circle class="paliwo-punkt" cx="403.8" cy="20.0" r="3.5" style="fill:hsl(0, 45%, 55%)"><title>egungun · epoka-6: 31</title></circle><circle class="paliwo-punkt" cx="475.3" cy="20.0" r="3.5" style="fill:hsl(0, 45%, 55%)"><title>egungun · epoka-7: 31</title></circle><circle class="paliwo-punkt" cx="546.9" cy="27.4" r="3.5" style="fill:hsl(0, 45%, 55%)"><title>egungun · epoka-8: 30</title></circle><circle class="paliwo-punkt" cx="618.4" cy="27.4" r="3.5" style="fill:hsl(0, 45%, 55%)"><title>egungun · epoka-9: 30</title></circle><circle class="paliwo-punkt" cx="690.0" cy="27.4" r="3.5" style="fill:hsl(0, 45%, 55%)"><title>egungun · epoka-10: 30</title></circle><polyline class="paliwo-linia" points="46.0,108.3 117.6,108.3 189.1,108.3 260.7,108.3 332.2,108.3 403.8,108.3 475.3,108.3 546.9,100.9 618.4,100.9 690.0,100.9" style="stroke:hsl(138, 45%, 55%)" />
-        <circle class="paliwo-punkt" cx="46.0" cy="108.3" r="3.5" style="fill:hsl(138, 45%, 55%)"><title>barbarossa-kyffhaeuser · epoka-1: 19</title></circle><circle class="paliwo-punkt" cx="117.6" cy="108.3" r="3.5" style="fill:hsl(138, 45%, 55%)"><title>barbarossa-kyffhaeuser · epoka-2: 19</title></circle><circle class="paliwo-punkt" cx="189.1" cy="108.3" r="3.5" style="fill:hsl(138, 45%, 55%)"><title>barbarossa-kyffhaeuser · epoka-3: 19</title></circle><circle class="paliwo-punkt" cx="260.7" cy="108.3" r="3.5" style="fill:hsl(138, 45%, 55%)"><title>barbarossa-kyffhaeuser · epoka-4: 19</title></circle><circle class="paliwo-punkt" cx="332.2" cy="108.3" r="3.5" style="fill:hsl(138, 45%, 55%)"><title>barbarossa-kyffhaeuser · epoka-5: 19</title></circle><circle class="paliwo-punkt" cx="403.8" cy="108.3" r="3.5" style="fill:hsl(138, 45%, 55%)"><title>barbarossa-kyffhaeuser · epoka-6: 19</title></circle><circle class="paliwo-punkt" cx="475.3" cy="108.3" r="3.5" style="fill:hsl(138, 45%, 55%)"><title>barbarossa-kyffhaeuser · epoka-7: 19</title></circle><circle class="paliwo-punkt" cx="546.9" cy="100.9" r="3.5" style="fill:hsl(138, 45%, 55%)"><title>barbarossa-kyffhaeuser · epoka-8: 20</title></circle><circle class="paliwo-punkt" cx="618.4" cy="100.9" r="3.5" style="fill:hsl(138, 45%, 55%)"><title>barbarossa-kyffhaeuser · epoka-9: 20</title></circle><circle class="paliwo-punkt" cx="690.0" cy="100.9" r="3.5" style="fill:hsl(138, 45%, 55%)"><title>barbarossa-kyffhaeuser · epoka-10: 20</title></circle><polyline class="paliwo-linia" points="46.0,130.3 117.6,145.0 189.1,145.0 260.7,145.0 332.2,145.0 403.8,145.0 475.3,145.0 546.9,145.0 618.4,145.0 690.0,145.0" style="stroke:hsl(275, 45%, 55%)" />
-        <circle class="paliwo-punkt" cx="46.0" cy="130.3" r="3.5" style="fill:hsl(275, 45%, 55%)"><title>kentaur-pelion · epoka-1: 16</title></circle><circle class="paliwo-punkt" cx="117.6" cy="145.0" r="3.5" style="fill:hsl(275, 45%, 55%)"><title>kentaur-pelion · epoka-2: 14</title></circle><circle class="paliwo-punkt" cx="189.1" cy="145.0" r="3.5" style="fill:hsl(275, 45%, 55%)"><title>kentaur-pelion · epoka-3: 14</title></circle><circle class="paliwo-punkt" cx="260.7" cy="145.0" r="3.5" style="fill:hsl(275, 45%, 55%)"><title>kentaur-pelion · epoka-4: 14</title></circle><circle class="paliwo-punkt" cx="332.2" cy="145.0" r="3.5" style="fill:hsl(275, 45%, 55%)"><title>kentaur-pelion · epoka-5: 14</title></circle><circle class="paliwo-punkt" cx="403.8" cy="145.0" r="3.5" style="fill:hsl(275, 45%, 55%)"><title>kentaur-pelion · epoka-6: 14</title></circle><circle class="paliwo-punkt" cx="475.3" cy="145.0" r="3.5" style="fill:hsl(275, 45%, 55%)"><title>kentaur-pelion · epoka-7: 14</title></circle><circle class="paliwo-punkt" cx="546.9" cy="145.0" r="3.5" style="fill:hsl(275, 45%, 55%)"><title>kentaur-pelion · epoka-8: 14</title></circle><circle class="paliwo-punkt" cx="618.4" cy="145.0" r="3.5" style="fill:hsl(275, 45%, 55%)"><title>kentaur-pelion · epoka-9: 14</title></circle><circle class="paliwo-punkt" cx="690.0" cy="145.0" r="3.5" style="fill:hsl(275, 45%, 55%)"><title>kentaur-pelion · epoka-10: 14</title></circle><polyline class="paliwo-linia" points="117.6,159.7 189.1,159.7 260.7,159.7 332.2,145.0 403.8,145.0 475.3,145.0 546.9,145.0 618.4,145.0 690.0,145.0" style="stroke:hsl(53, 45%, 55%)" />
-        <circle class="paliwo-punkt" cx="117.6" cy="159.7" r="3.5" style="fill:hsl(53, 45%, 55%)"><title>lincoln-imp · epoka-2: 12</title></circle><circle class="paliwo-punkt" cx="189.1" cy="159.7" r="3.5" style="fill:hsl(53, 45%, 55%)"><title>lincoln-imp · epoka-3: 12</title></circle><circle class="paliwo-punkt" cx="260.7" cy="159.7" r="3.5" style="fill:hsl(53, 45%, 55%)"><title>lincoln-imp · epoka-4: 12</title></circle><circle class="paliwo-punkt" cx="332.2" cy="145.0" r="3.5" style="fill:hsl(53, 45%, 55%)"><title>lincoln-imp · epoka-5: 14</title></circle><circle class="paliwo-punkt" cx="403.8" cy="145.0" r="3.5" style="fill:hsl(53, 45%, 55%)"><title>lincoln-imp · epoka-6: 14</title></circle><circle class="paliwo-punkt" cx="475.3" cy="145.0" r="3.5" style="fill:hsl(53, 45%, 55%)"><title>lincoln-imp · epoka-7: 14</title></circle><circle class="paliwo-punkt" cx="546.9" cy="145.0" r="3.5" style="fill:hsl(53, 45%, 55%)"><title>lincoln-imp · epoka-8: 14</title></circle><circle class="paliwo-punkt" cx="618.4" cy="145.0" r="3.5" style="fill:hsl(53, 45%, 55%)"><title>lincoln-imp · epoka-9: 14</title></circle><circle class="paliwo-punkt" cx="690.0" cy="145.0" r="3.5" style="fill:hsl(53, 45%, 55%)"><title>lincoln-imp · epoka-10: 14</title></circle><polyline class="paliwo-linia" points="117.6,78.8 189.1,93.5 260.7,93.5 332.2,93.5 403.8,100.9 475.3,100.9 546.9,100.9 618.4,100.9 690.0,100.9" style="stroke:hsl(190, 45%, 55%)" />
-        <circle class="paliwo-punkt" cx="117.6" cy="78.8" r="3.5" style="fill:hsl(190, 45%, 55%)"><title>empusa-korynt · epoka-2: 23</title></circle><circle class="paliwo-punkt" cx="189.1" cy="93.5" r="3.5" style="fill:hsl(190, 45%, 55%)"><title>empusa-korynt · epoka-3: 21</title></circle><circle class="paliwo-punkt" cx="260.7" cy="93.5" r="3.5" style="fill:hsl(190, 45%, 55%)"><title>empusa-korynt · epoka-4: 21</title></circle><circle class="paliwo-punkt" cx="332.2" cy="93.5" r="3.5" style="fill:hsl(190, 45%, 55%)"><title>empusa-korynt · epoka-5: 21</title></circle><circle class="paliwo-punkt" cx="403.8" cy="100.9" r="3.5" style="fill:hsl(190, 45%, 55%)"><title>empusa-korynt · epoka-6: 20</title></circle><circle class="paliwo-punkt" cx="475.3" cy="100.9" r="3.5" style="fill:hsl(190, 45%, 55%)"><title>empusa-korynt · epoka-7: 20</title></circle><circle class="paliwo-punkt" cx="546.9" cy="100.9" r="3.5" style="fill:hsl(190, 45%, 55%)"><title>empusa-korynt · epoka-8: 20</title></circle><circle class="paliwo-punkt" cx="618.4" cy="100.9" r="3.5" style="fill:hsl(190, 45%, 55%)"><title>empusa-korynt · epoka-9: 20</title></circle><circle class="paliwo-punkt" cx="690.0" cy="100.9" r="3.5" style="fill:hsl(190, 45%, 55%)"><title>empusa-korynt · epoka-10: 20</title></circle><polyline class="paliwo-linia" points="189.1,108.3 260.7,108.3 332.2,108.3 403.8,108.3 475.3,108.3 546.9,108.3 618.4,108.3 690.0,108.3" style="stroke:hsl(328, 45%, 55%)" />
-        <circle class="paliwo-punkt" cx="189.1" cy="108.3" r="3.5" style="fill:hsl(328, 45%, 55%)"><title>balor · epoka-3: 19</title></circle><circle class="paliwo-punkt" cx="260.7" cy="108.3" r="3.5" style="fill:hsl(328, 45%, 55%)"><title>balor · epoka-4: 19</title></circle><circle class="paliwo-punkt" cx="332.2" cy="108.3" r="3.5" style="fill:hsl(328, 45%, 55%)"><title>balor · epoka-5: 19</title></circle><circle class="paliwo-punkt" cx="403.8" cy="108.3" r="3.5" style="fill:hsl(328, 45%, 55%)"><title>balor · epoka-6: 19</title></circle><circle class="paliwo-punkt" cx="475.3" cy="108.3" r="3.5" style="fill:hsl(328, 45%, 55%)"><title>balor · epoka-7: 19</title></circle><circle class="paliwo-punkt" cx="546.9" cy="108.3" r="3.5" style="fill:hsl(328, 45%, 55%)"><title>balor · epoka-8: 19</title></circle><circle class="paliwo-punkt" cx="618.4" cy="108.3" r="3.5" style="fill:hsl(328, 45%, 55%)"><title>balor · epoka-9: 19</title></circle><circle class="paliwo-punkt" cx="690.0" cy="108.3" r="3.5" style="fill:hsl(328, 45%, 55%)"><title>balor · epoka-10: 19</title></circle><polyline class="paliwo-linia" points="260.7,71.5 332.2,71.5 403.8,71.5 475.3,71.5 546.9,71.5 618.4,71.5 690.0,71.5" style="stroke:hsl(105, 45%, 55%)" />
-        <circle class="paliwo-punkt" cx="260.7" cy="71.5" r="3.5" style="fill:hsl(105, 45%, 55%)"><title>selkie-sule-skerry · epoka-4: 24</title></circle><circle class="paliwo-punkt" cx="332.2" cy="71.5" r="3.5" style="fill:hsl(105, 45%, 55%)"><title>selkie-sule-skerry · epoka-5: 24</title></circle><circle class="paliwo-punkt" cx="403.8" cy="71.5" r="3.5" style="fill:hsl(105, 45%, 55%)"><title>selkie-sule-skerry · epoka-6: 24</title></circle><circle class="paliwo-punkt" cx="475.3" cy="71.5" r="3.5" style="fill:hsl(105, 45%, 55%)"><title>selkie-sule-skerry · epoka-7: 24</title></circle><circle class="paliwo-punkt" cx="546.9" cy="71.5" r="3.5" style="fill:hsl(105, 45%, 55%)"><title>selkie-sule-skerry · epoka-8: 24</title></circle><circle class="paliwo-punkt" cx="618.4" cy="71.5" r="3.5" style="fill:hsl(105, 45%, 55%)"><title>selkie-sule-skerry · epoka-9: 24</title></circle><circle class="paliwo-punkt" cx="690.0" cy="71.5" r="3.5" style="fill:hsl(105, 45%, 55%)"><title>selkie-sule-skerry · epoka-10: 24</title></circle><polyline class="paliwo-linia" points="260.7,167.1 332.2,167.1 403.8,167.1 475.3,167.1 546.9,167.1 618.4,167.1 690.0,167.1" style="stroke:hsl(243, 45%, 55%)" />
-        <circle class="paliwo-punkt" cx="260.7" cy="167.1" r="3.5" style="fill:hsl(243, 45%, 55%)"><title>indra · epoka-4: 11</title></circle><circle class="paliwo-punkt" cx="332.2" cy="167.1" r="3.5" style="fill:hsl(243, 45%, 55%)"><title>indra · epoka-5: 11</title></circle><circle class="paliwo-punkt" cx="403.8" cy="167.1" r="3.5" style="fill:hsl(243, 45%, 55%)"><title>indra · epoka-6: 11</title></circle><circle class="paliwo-punkt" cx="475.3" cy="167.1" r="3.5" style="fill:hsl(243, 45%, 55%)"><title>indra · epoka-7: 11</title></circle><circle class="paliwo-punkt" cx="546.9" cy="167.1" r="3.5" style="fill:hsl(243, 45%, 55%)"><title>indra · epoka-8: 11</title></circle><circle class="paliwo-punkt" cx="618.4" cy="167.1" r="3.5" style="fill:hsl(243, 45%, 55%)"><title>indra · epoka-9: 11</title></circle><circle class="paliwo-punkt" cx="690.0" cy="167.1" r="3.5" style="fill:hsl(243, 45%, 55%)"><title>indra · epoka-10: 11</title></circle><polyline class="paliwo-linia" points="332.2,86.2 403.8,86.2 475.3,86.2 546.9,86.2 618.4,86.2 690.0,86.2" style="stroke:hsl(20, 45%, 55%)" />
-        <circle class="paliwo-punkt" cx="332.2" cy="86.2" r="3.5" style="fill:hsl(20, 45%, 55%)"><title>sfinks-teby · epoka-5: 22</title></circle><circle class="paliwo-punkt" cx="403.8" cy="86.2" r="3.5" style="fill:hsl(20, 45%, 55%)"><title>sfinks-teby · epoka-6: 22</title></circle><circle class="paliwo-punkt" cx="475.3" cy="86.2" r="3.5" style="fill:hsl(20, 45%, 55%)"><title>sfinks-teby · epoka-7: 22</title></circle><circle class="paliwo-punkt" cx="546.9" cy="86.2" r="3.5" style="fill:hsl(20, 45%, 55%)"><title>sfinks-teby · epoka-8: 22</title></circle><circle class="paliwo-punkt" cx="618.4" cy="86.2" r="3.5" style="fill:hsl(20, 45%, 55%)"><title>sfinks-teby · epoka-9: 22</title></circle><circle class="paliwo-punkt" cx="690.0" cy="86.2" r="3.5" style="fill:hsl(20, 45%, 55%)"><title>sfinks-teby · epoka-10: 22</title></circle><polyline class="paliwo-linia" points="332.2,100.9 403.8,100.9 475.3,100.9 546.9,100.9 618.4,100.9 690.0,100.9" style="stroke:hsl(158, 45%, 55%)" />
-        <circle class="paliwo-punkt" cx="332.2" cy="100.9" r="3.5" style="fill:hsl(158, 45%, 55%)"><title>talos-kreta · epoka-5: 20</title></circle><circle class="paliwo-punkt" cx="403.8" cy="100.9" r="3.5" style="fill:hsl(158, 45%, 55%)"><title>talos-kreta · epoka-6: 20</title></circle><circle class="paliwo-punkt" cx="475.3" cy="100.9" r="3.5" style="fill:hsl(158, 45%, 55%)"><title>talos-kreta · epoka-7: 20</title></circle><circle class="paliwo-punkt" cx="546.9" cy="100.9" r="3.5" style="fill:hsl(158, 45%, 55%)"><title>talos-kreta · epoka-8: 20</title></circle><circle class="paliwo-punkt" cx="618.4" cy="100.9" r="3.5" style="fill:hsl(158, 45%, 55%)"><title>talos-kreta · epoka-9: 20</title></circle><circle class="paliwo-punkt" cx="690.0" cy="100.9" r="3.5" style="fill:hsl(158, 45%, 55%)"><title>talos-kreta · epoka-10: 20</title></circle><polyline class="paliwo-linia" points="403.8,123.0 475.3,123.0 546.9,123.0 618.4,123.0 690.0,123.0" style="stroke:hsl(295, 45%, 55%)" />
-        <circle class="paliwo-punkt" cx="403.8" cy="123.0" r="3.5" style="fill:hsl(295, 45%, 55%)"><title>pandora · epoka-6: 17</title></circle><circle class="paliwo-punkt" cx="475.3" cy="123.0" r="3.5" style="fill:hsl(295, 45%, 55%)"><title>pandora · epoka-7: 17</title></circle><circle class="paliwo-punkt" cx="546.9" cy="123.0" r="3.5" style="fill:hsl(295, 45%, 55%)"><title>pandora · epoka-8: 17</title></circle><circle class="paliwo-punkt" cx="618.4" cy="123.0" r="3.5" style="fill:hsl(295, 45%, 55%)"><title>pandora · epoka-9: 17</title></circle><circle class="paliwo-punkt" cx="690.0" cy="123.0" r="3.5" style="fill:hsl(295, 45%, 55%)"><title>pandora · epoka-10: 17</title></circle><polyline class="paliwo-linia" points="403.8,181.8 475.3,181.8 546.9,181.8 618.4,181.8 690.0,181.8" style="stroke:hsl(73, 45%, 55%)" />
-        <circle class="paliwo-punkt" cx="403.8" cy="181.8" r="3.5" style="fill:hsl(73, 45%, 55%)"><title>morowa-panna · epoka-6: 9</title></circle><circle class="paliwo-punkt" cx="475.3" cy="181.8" r="3.5" style="fill:hsl(73, 45%, 55%)"><title>morowa-panna · epoka-7: 9</title></circle><circle class="paliwo-punkt" cx="546.9" cy="181.8" r="3.5" style="fill:hsl(73, 45%, 55%)"><title>morowa-panna · epoka-8: 9</title></circle><circle class="paliwo-punkt" cx="618.4" cy="181.8" r="3.5" style="fill:hsl(73, 45%, 55%)"><title>morowa-panna · epoka-9: 9</title></circle><circle class="paliwo-punkt" cx="690.0" cy="181.8" r="3.5" style="fill:hsl(73, 45%, 55%)"><title>morowa-panna · epoka-10: 9</title></circle><polyline class="paliwo-linia" points="475.3,159.7 546.9,159.7 618.4,159.7 690.0,159.7" style="stroke:hsl(210, 45%, 55%)" />
-        <circle class="paliwo-punkt" cx="475.3" cy="159.7" r="3.5" style="fill:hsl(210, 45%, 55%)"><title>protostates · epoka-7: 12</title></circle><circle class="paliwo-punkt" cx="546.9" cy="159.7" r="3.5" style="fill:hsl(210, 45%, 55%)"><title>protostates · epoka-8: 12</title></circle><circle class="paliwo-punkt" cx="618.4" cy="159.7" r="3.5" style="fill:hsl(210, 45%, 55%)"><title>protostates · epoka-9: 12</title></circle><circle class="paliwo-punkt" cx="690.0" cy="159.7" r="3.5" style="fill:hsl(210, 45%, 55%)"><title>protostates · epoka-10: 12</title></circle><polyline class="paliwo-linia" points="475.3,152.4 546.9,152.4 618.4,152.4 690.0,152.4" style="stroke:hsl(348, 45%, 55%)" />
-        <circle class="paliwo-punkt" cx="475.3" cy="152.4" r="3.5" style="fill:hsl(348, 45%, 55%)"><title>knecht-z-koptos · epoka-7: 13</title></circle><circle class="paliwo-punkt" cx="546.9" cy="152.4" r="3.5" style="fill:hsl(348, 45%, 55%)"><title>knecht-z-koptos · epoka-8: 13</title></circle><circle class="paliwo-punkt" cx="618.4" cy="152.4" r="3.5" style="fill:hsl(348, 45%, 55%)"><title>knecht-z-koptos · epoka-9: 13</title></circle><circle class="paliwo-punkt" cx="690.0" cy="152.4" r="3.5" style="fill:hsl(348, 45%, 55%)"><title>knecht-z-koptos · epoka-10: 13</title></circle><polyline class="paliwo-linia" points="475.3,167.1 546.9,167.1 618.4,167.1 690.0,167.1" style="stroke:hsl(125, 45%, 55%)" />
-        <circle class="paliwo-punkt" cx="475.3" cy="167.1" r="3.5" style="fill:hsl(125, 45%, 55%)"><title>syama-i-sarvara · epoka-7: 11</title></circle><circle class="paliwo-punkt" cx="546.9" cy="167.1" r="3.5" style="fill:hsl(125, 45%, 55%)"><title>syama-i-sarvara · epoka-8: 11</title></circle><circle class="paliwo-punkt" cx="618.4" cy="167.1" r="3.5" style="fill:hsl(125, 45%, 55%)"><title>syama-i-sarvara · epoka-9: 11</title></circle><circle class="paliwo-punkt" cx="690.0" cy="167.1" r="3.5" style="fill:hsl(125, 45%, 55%)"><title>syama-i-sarvara · epoka-10: 11</title></circle><polyline class="paliwo-linia" points="618.4,189.2 690.0,181.8" style="stroke:hsl(263, 45%, 55%)" />
-        <circle class="paliwo-punkt" cx="618.4" cy="189.2" r="3.5" style="fill:hsl(263, 45%, 55%)"><title>loup-garou-gevaudan · epoka-9: 8</title></circle><circle class="paliwo-punkt" cx="690.0" cy="181.8" r="3.5" style="fill:hsl(263, 45%, 55%)"><title>loup-garou-gevaudan · epoka-10: 9</title></circle><polyline class="paliwo-linia" points="618.4,196.5 690.0,196.5" style="stroke:hsl(40, 45%, 55%)" />
-        <circle class="paliwo-punkt" cx="618.4" cy="196.5" r="3.5" style="fill:hsl(40, 45%, 55%)"><title>neith-z-sais · epoka-9: 7</title></circle><circle class="paliwo-punkt" cx="690.0" cy="196.5" r="3.5" style="fill:hsl(40, 45%, 55%)"><title>neith-z-sais · epoka-10: 7</title></circle>
+      <text class="paliwo-os" x="38" y="252.0">0</text><text class="paliwo-os" x="38" y="134.3">16</text><text class="paliwo-os" x="38" y="24.0">31</text><text class="paliwo-os-x" x="46.0" y="270.0" text-anchor="middle">I</text><text class="paliwo-os-x" x="110.4" y="270.0" text-anchor="middle">II</text><text class="paliwo-os-x" x="174.8" y="270.0" text-anchor="middle">III</text><text class="paliwo-os-x" x="239.2" y="270.0" text-anchor="middle">IV</text><text class="paliwo-os-x" x="303.6" y="270.0" text-anchor="middle">V</text><text class="paliwo-os-x" x="368.0" y="270.0" text-anchor="middle">VI</text><text class="paliwo-os-x" x="432.4" y="270.0" text-anchor="middle">VII</text><text class="paliwo-os-x" x="496.8" y="270.0" text-anchor="middle">VIII</text><text class="paliwo-os-x" x="561.2" y="270.0" text-anchor="middle">IX</text><text class="paliwo-os-x" x="625.6" y="270.0" text-anchor="middle">X</text><text class="paliwo-os-x" x="690.0" y="270.0" text-anchor="middle">XI</text>
+      <polyline class="paliwo-linia" points="46.0,64.1 110.4,64.1 174.8,42.1 239.2,20.0 303.6,20.0 368.0,20.0 432.4,20.0 496.8,27.4 561.2,27.4 625.6,27.4 690.0,27.4" style="stroke:hsl(0, 45%, 55%)" />
+        <circle class="paliwo-punkt" cx="46.0" cy="64.1" r="3.5" style="fill:hsl(0, 45%, 55%)"><title>egungun · epoka-1: 25</title></circle><circle class="paliwo-punkt" cx="110.4" cy="64.1" r="3.5" style="fill:hsl(0, 45%, 55%)"><title>egungun · epoka-2: 25</title></circle><circle class="paliwo-punkt" cx="174.8" cy="42.1" r="3.5" style="fill:hsl(0, 45%, 55%)"><title>egungun · epoka-3: 28</title></circle><circle class="paliwo-punkt" cx="239.2" cy="20.0" r="3.5" style="fill:hsl(0, 45%, 55%)"><title>egungun · epoka-4: 31</title></circle><circle class="paliwo-punkt" cx="303.6" cy="20.0" r="3.5" style="fill:hsl(0, 45%, 55%)"><title>egungun · epoka-5: 31</title></circle><circle class="paliwo-punkt" cx="368.0" cy="20.0" r="3.5" style="fill:hsl(0, 45%, 55%)"><title>egungun · epoka-6: 31</title></circle><circle class="paliwo-punkt" cx="432.4" cy="20.0" r="3.5" style="fill:hsl(0, 45%, 55%)"><title>egungun · epoka-7: 31</title></circle><circle class="paliwo-punkt" cx="496.8" cy="27.4" r="3.5" style="fill:hsl(0, 45%, 55%)"><title>egungun · epoka-8: 30</title></circle><circle class="paliwo-punkt" cx="561.2" cy="27.4" r="3.5" style="fill:hsl(0, 45%, 55%)"><title>egungun · epoka-9: 30</title></circle><circle class="paliwo-punkt" cx="625.6" cy="27.4" r="3.5" style="fill:hsl(0, 45%, 55%)"><title>egungun · epoka-10: 30</title></circle><circle class="paliwo-punkt" cx="690.0" cy="27.4" r="3.5" style="fill:hsl(0, 45%, 55%)"><title>egungun · epoka-11: 30</title></circle><polyline class="paliwo-linia" points="46.0,108.3 110.4,108.3 174.8,108.3 239.2,108.3 303.6,108.3 368.0,108.3 432.4,108.3 496.8,100.9 561.2,100.9 625.6,100.9 690.0,100.9" style="stroke:hsl(138, 45%, 55%)" />
+        <circle class="paliwo-punkt" cx="46.0" cy="108.3" r="3.5" style="fill:hsl(138, 45%, 55%)"><title>barbarossa-kyffhaeuser · epoka-1: 19</title></circle><circle class="paliwo-punkt" cx="110.4" cy="108.3" r="3.5" style="fill:hsl(138, 45%, 55%)"><title>barbarossa-kyffhaeuser · epoka-2: 19</title></circle><circle class="paliwo-punkt" cx="174.8" cy="108.3" r="3.5" style="fill:hsl(138, 45%, 55%)"><title>barbarossa-kyffhaeuser · epoka-3: 19</title></circle><circle class="paliwo-punkt" cx="239.2" cy="108.3" r="3.5" style="fill:hsl(138, 45%, 55%)"><title>barbarossa-kyffhaeuser · epoka-4: 19</title></circle><circle class="paliwo-punkt" cx="303.6" cy="108.3" r="3.5" style="fill:hsl(138, 45%, 55%)"><title>barbarossa-kyffhaeuser · epoka-5: 19</title></circle><circle class="paliwo-punkt" cx="368.0" cy="108.3" r="3.5" style="fill:hsl(138, 45%, 55%)"><title>barbarossa-kyffhaeuser · epoka-6: 19</title></circle><circle class="paliwo-punkt" cx="432.4" cy="108.3" r="3.5" style="fill:hsl(138, 45%, 55%)"><title>barbarossa-kyffhaeuser · epoka-7: 19</title></circle><circle class="paliwo-punkt" cx="496.8" cy="100.9" r="3.5" style="fill:hsl(138, 45%, 55%)"><title>barbarossa-kyffhaeuser · epoka-8: 20</title></circle><circle class="paliwo-punkt" cx="561.2" cy="100.9" r="3.5" style="fill:hsl(138, 45%, 55%)"><title>barbarossa-kyffhaeuser · epoka-9: 20</title></circle><circle class="paliwo-punkt" cx="625.6" cy="100.9" r="3.5" style="fill:hsl(138, 45%, 55%)"><title>barbarossa-kyffhaeuser · epoka-10: 20</title></circle><circle class="paliwo-punkt" cx="690.0" cy="100.9" r="3.5" style="fill:hsl(138, 45%, 55%)"><title>barbarossa-kyffhaeuser · epoka-11: 20</title></circle><polyline class="paliwo-linia" points="46.0,130.3 110.4,145.0 174.8,145.0 239.2,145.0 303.6,145.0 368.0,145.0 432.4,145.0 496.8,145.0 561.2,145.0 625.6,145.0 690.0,145.0" style="stroke:hsl(275, 45%, 55%)" />
+        <circle class="paliwo-punkt" cx="46.0" cy="130.3" r="3.5" style="fill:hsl(275, 45%, 55%)"><title>kentaur-pelion · epoka-1: 16</title></circle><circle class="paliwo-punkt" cx="110.4" cy="145.0" r="3.5" style="fill:hsl(275, 45%, 55%)"><title>kentaur-pelion · epoka-2: 14</title></circle><circle class="paliwo-punkt" cx="174.8" cy="145.0" r="3.5" style="fill:hsl(275, 45%, 55%)"><title>kentaur-pelion · epoka-3: 14</title></circle><circle class="paliwo-punkt" cx="239.2" cy="145.0" r="3.5" style="fill:hsl(275, 45%, 55%)"><title>kentaur-pelion · epoka-4: 14</title></circle><circle class="paliwo-punkt" cx="303.6" cy="145.0" r="3.5" style="fill:hsl(275, 45%, 55%)"><title>kentaur-pelion · epoka-5: 14</title></circle><circle class="paliwo-punkt" cx="368.0" cy="145.0" r="3.5" style="fill:hsl(275, 45%, 55%)"><title>kentaur-pelion · epoka-6: 14</title></circle><circle class="paliwo-punkt" cx="432.4" cy="145.0" r="3.5" style="fill:hsl(275, 45%, 55%)"><title>kentaur-pelion · epoka-7: 14</title></circle><circle class="paliwo-punkt" cx="496.8" cy="145.0" r="3.5" style="fill:hsl(275, 45%, 55%)"><title>kentaur-pelion · epoka-8: 14</title></circle><circle class="paliwo-punkt" cx="561.2" cy="145.0" r="3.5" style="fill:hsl(275, 45%, 55%)"><title>kentaur-pelion · epoka-9: 14</title></circle><circle class="paliwo-punkt" cx="625.6" cy="145.0" r="3.5" style="fill:hsl(275, 45%, 55%)"><title>kentaur-pelion · epoka-10: 14</title></circle><circle class="paliwo-punkt" cx="690.0" cy="145.0" r="3.5" style="fill:hsl(275, 45%, 55%)"><title>kentaur-pelion · epoka-11: 14</title></circle><polyline class="paliwo-linia" points="110.4,159.7 174.8,159.7 239.2,159.7 303.6,145.0 368.0,145.0 432.4,145.0 496.8,145.0 561.2,145.0 625.6,145.0 690.0,145.0" style="stroke:hsl(53, 45%, 55%)" />
+        <circle class="paliwo-punkt" cx="110.4" cy="159.7" r="3.5" style="fill:hsl(53, 45%, 55%)"><title>lincoln-imp · epoka-2: 12</title></circle><circle class="paliwo-punkt" cx="174.8" cy="159.7" r="3.5" style="fill:hsl(53, 45%, 55%)"><title>lincoln-imp · epoka-3: 12</title></circle><circle class="paliwo-punkt" cx="239.2" cy="159.7" r="3.5" style="fill:hsl(53, 45%, 55%)"><title>lincoln-imp · epoka-4: 12</title></circle><circle class="paliwo-punkt" cx="303.6" cy="145.0" r="3.5" style="fill:hsl(53, 45%, 55%)"><title>lincoln-imp · epoka-5: 14</title></circle><circle class="paliwo-punkt" cx="368.0" cy="145.0" r="3.5" style="fill:hsl(53, 45%, 55%)"><title>lincoln-imp · epoka-6: 14</title></circle><circle class="paliwo-punkt" cx="432.4" cy="145.0" r="3.5" style="fill:hsl(53, 45%, 55%)"><title>lincoln-imp · epoka-7: 14</title></circle><circle class="paliwo-punkt" cx="496.8" cy="145.0" r="3.5" style="fill:hsl(53, 45%, 55%)"><title>lincoln-imp · epoka-8: 14</title></circle><circle class="paliwo-punkt" cx="561.2" cy="145.0" r="3.5" style="fill:hsl(53, 45%, 55%)"><title>lincoln-imp · epoka-9: 14</title></circle><circle class="paliwo-punkt" cx="625.6" cy="145.0" r="3.5" style="fill:hsl(53, 45%, 55%)"><title>lincoln-imp · epoka-10: 14</title></circle><circle class="paliwo-punkt" cx="690.0" cy="145.0" r="3.5" style="fill:hsl(53, 45%, 55%)"><title>lincoln-imp · epoka-11: 14</title></circle><polyline class="paliwo-linia" points="110.4,78.8 174.8,93.5 239.2,93.5 303.6,93.5 368.0,100.9 432.4,100.9 496.8,100.9 561.2,100.9 625.6,100.9 690.0,100.9" style="stroke:hsl(190, 45%, 55%)" />
+        <circle class="paliwo-punkt" cx="110.4" cy="78.8" r="3.5" style="fill:hsl(190, 45%, 55%)"><title>empusa-korynt · epoka-2: 23</title></circle><circle class="paliwo-punkt" cx="174.8" cy="93.5" r="3.5" style="fill:hsl(190, 45%, 55%)"><title>empusa-korynt · epoka-3: 21</title></circle><circle class="paliwo-punkt" cx="239.2" cy="93.5" r="3.5" style="fill:hsl(190, 45%, 55%)"><title>empusa-korynt · epoka-4: 21</title></circle><circle class="paliwo-punkt" cx="303.6" cy="93.5" r="3.5" style="fill:hsl(190, 45%, 55%)"><title>empusa-korynt · epoka-5: 21</title></circle><circle class="paliwo-punkt" cx="368.0" cy="100.9" r="3.5" style="fill:hsl(190, 45%, 55%)"><title>empusa-korynt · epoka-6: 20</title></circle><circle class="paliwo-punkt" cx="432.4" cy="100.9" r="3.5" style="fill:hsl(190, 45%, 55%)"><title>empusa-korynt · epoka-7: 20</title></circle><circle class="paliwo-punkt" cx="496.8" cy="100.9" r="3.5" style="fill:hsl(190, 45%, 55%)"><title>empusa-korynt · epoka-8: 20</title></circle><circle class="paliwo-punkt" cx="561.2" cy="100.9" r="3.5" style="fill:hsl(190, 45%, 55%)"><title>empusa-korynt · epoka-9: 20</title></circle><circle class="paliwo-punkt" cx="625.6" cy="100.9" r="3.5" style="fill:hsl(190, 45%, 55%)"><title>empusa-korynt · epoka-10: 20</title></circle><circle class="paliwo-punkt" cx="690.0" cy="100.9" r="3.5" style="fill:hsl(190, 45%, 55%)"><title>empusa-korynt · epoka-11: 20</title></circle><polyline class="paliwo-linia" points="174.8,108.3 239.2,108.3 303.6,108.3 368.0,108.3 432.4,108.3 496.8,108.3 561.2,108.3 625.6,108.3 690.0,108.3" style="stroke:hsl(328, 45%, 55%)" />
+        <circle class="paliwo-punkt" cx="174.8" cy="108.3" r="3.5" style="fill:hsl(328, 45%, 55%)"><title>balor · epoka-3: 19</title></circle><circle class="paliwo-punkt" cx="239.2" cy="108.3" r="3.5" style="fill:hsl(328, 45%, 55%)"><title>balor · epoka-4: 19</title></circle><circle class="paliwo-punkt" cx="303.6" cy="108.3" r="3.5" style="fill:hsl(328, 45%, 55%)"><title>balor · epoka-5: 19</title></circle><circle class="paliwo-punkt" cx="368.0" cy="108.3" r="3.5" style="fill:hsl(328, 45%, 55%)"><title>balor · epoka-6: 19</title></circle><circle class="paliwo-punkt" cx="432.4" cy="108.3" r="3.5" style="fill:hsl(328, 45%, 55%)"><title>balor · epoka-7: 19</title></circle><circle class="paliwo-punkt" cx="496.8" cy="108.3" r="3.5" style="fill:hsl(328, 45%, 55%)"><title>balor · epoka-8: 19</title></circle><circle class="paliwo-punkt" cx="561.2" cy="108.3" r="3.5" style="fill:hsl(328, 45%, 55%)"><title>balor · epoka-9: 19</title></circle><circle class="paliwo-punkt" cx="625.6" cy="108.3" r="3.5" style="fill:hsl(328, 45%, 55%)"><title>balor · epoka-10: 19</title></circle><circle class="paliwo-punkt" cx="690.0" cy="108.3" r="3.5" style="fill:hsl(328, 45%, 55%)"><title>balor · epoka-11: 19</title></circle><polyline class="paliwo-linia" points="239.2,71.5 303.6,71.5 368.0,71.5 432.4,71.5 496.8,71.5 561.2,71.5 625.6,71.5 690.0,71.5" style="stroke:hsl(105, 45%, 55%)" />
+        <circle class="paliwo-punkt" cx="239.2" cy="71.5" r="3.5" style="fill:hsl(105, 45%, 55%)"><title>selkie-sule-skerry · epoka-4: 24</title></circle><circle class="paliwo-punkt" cx="303.6" cy="71.5" r="3.5" style="fill:hsl(105, 45%, 55%)"><title>selkie-sule-skerry · epoka-5: 24</title></circle><circle class="paliwo-punkt" cx="368.0" cy="71.5" r="3.5" style="fill:hsl(105, 45%, 55%)"><title>selkie-sule-skerry · epoka-6: 24</title></circle><circle class="paliwo-punkt" cx="432.4" cy="71.5" r="3.5" style="fill:hsl(105, 45%, 55%)"><title>selkie-sule-skerry · epoka-7: 24</title></circle><circle class="paliwo-punkt" cx="496.8" cy="71.5" r="3.5" style="fill:hsl(105, 45%, 55%)"><title>selkie-sule-skerry · epoka-8: 24</title></circle><circle class="paliwo-punkt" cx="561.2" cy="71.5" r="3.5" style="fill:hsl(105, 45%, 55%)"><title>selkie-sule-skerry · epoka-9: 24</title></circle><circle class="paliwo-punkt" cx="625.6" cy="71.5" r="3.5" style="fill:hsl(105, 45%, 55%)"><title>selkie-sule-skerry · epoka-10: 24</title></circle><circle class="paliwo-punkt" cx="690.0" cy="71.5" r="3.5" style="fill:hsl(105, 45%, 55%)"><title>selkie-sule-skerry · epoka-11: 24</title></circle><polyline class="paliwo-linia" points="239.2,167.1 303.6,167.1 368.0,167.1 432.4,167.1 496.8,167.1 561.2,167.1 625.6,167.1 690.0,167.1" style="stroke:hsl(243, 45%, 55%)" />
+        <circle class="paliwo-punkt" cx="239.2" cy="167.1" r="3.5" style="fill:hsl(243, 45%, 55%)"><title>indra · epoka-4: 11</title></circle><circle class="paliwo-punkt" cx="303.6" cy="167.1" r="3.5" style="fill:hsl(243, 45%, 55%)"><title>indra · epoka-5: 11</title></circle><circle class="paliwo-punkt" cx="368.0" cy="167.1" r="3.5" style="fill:hsl(243, 45%, 55%)"><title>indra · epoka-6: 11</title></circle><circle class="paliwo-punkt" cx="432.4" cy="167.1" r="3.5" style="fill:hsl(243, 45%, 55%)"><title>indra · epoka-7: 11</title></circle><circle class="paliwo-punkt" cx="496.8" cy="167.1" r="3.5" style="fill:hsl(243, 45%, 55%)"><title>indra · epoka-8: 11</title></circle><circle class="paliwo-punkt" cx="561.2" cy="167.1" r="3.5" style="fill:hsl(243, 45%, 55%)"><title>indra · epoka-9: 11</title></circle><circle class="paliwo-punkt" cx="625.6" cy="167.1" r="3.5" style="fill:hsl(243, 45%, 55%)"><title>indra · epoka-10: 11</title></circle><circle class="paliwo-punkt" cx="690.0" cy="167.1" r="3.5" style="fill:hsl(243, 45%, 55%)"><title>indra · epoka-11: 11</title></circle><polyline class="paliwo-linia" points="303.6,86.2 368.0,86.2 432.4,86.2 496.8,86.2 561.2,86.2 625.6,86.2 690.0,86.2" style="stroke:hsl(20, 45%, 55%)" />
+        <circle class="paliwo-punkt" cx="303.6" cy="86.2" r="3.5" style="fill:hsl(20, 45%, 55%)"><title>sfinks-teby · epoka-5: 22</title></circle><circle class="paliwo-punkt" cx="368.0" cy="86.2" r="3.5" style="fill:hsl(20, 45%, 55%)"><title>sfinks-teby · epoka-6: 22</title></circle><circle class="paliwo-punkt" cx="432.4" cy="86.2" r="3.5" style="fill:hsl(20, 45%, 55%)"><title>sfinks-teby · epoka-7: 22</title></circle><circle class="paliwo-punkt" cx="496.8" cy="86.2" r="3.5" style="fill:hsl(20, 45%, 55%)"><title>sfinks-teby · epoka-8: 22</title></circle><circle class="paliwo-punkt" cx="561.2" cy="86.2" r="3.5" style="fill:hsl(20, 45%, 55%)"><title>sfinks-teby · epoka-9: 22</title></circle><circle class="paliwo-punkt" cx="625.6" cy="86.2" r="3.5" style="fill:hsl(20, 45%, 55%)"><title>sfinks-teby · epoka-10: 22</title></circle><circle class="paliwo-punkt" cx="690.0" cy="86.2" r="3.5" style="fill:hsl(20, 45%, 55%)"><title>sfinks-teby · epoka-11: 22</title></circle><polyline class="paliwo-linia" points="303.6,100.9 368.0,100.9 432.4,100.9 496.8,100.9 561.2,100.9 625.6,100.9 690.0,100.9" style="stroke:hsl(158, 45%, 55%)" />
+        <circle class="paliwo-punkt" cx="303.6" cy="100.9" r="3.5" style="fill:hsl(158, 45%, 55%)"><title>talos-kreta · epoka-5: 20</title></circle><circle class="paliwo-punkt" cx="368.0" cy="100.9" r="3.5" style="fill:hsl(158, 45%, 55%)"><title>talos-kreta · epoka-6: 20</title></circle><circle class="paliwo-punkt" cx="432.4" cy="100.9" r="3.5" style="fill:hsl(158, 45%, 55%)"><title>talos-kreta · epoka-7: 20</title></circle><circle class="paliwo-punkt" cx="496.8" cy="100.9" r="3.5" style="fill:hsl(158, 45%, 55%)"><title>talos-kreta · epoka-8: 20</title></circle><circle class="paliwo-punkt" cx="561.2" cy="100.9" r="3.5" style="fill:hsl(158, 45%, 55%)"><title>talos-kreta · epoka-9: 20</title></circle><circle class="paliwo-punkt" cx="625.6" cy="100.9" r="3.5" style="fill:hsl(158, 45%, 55%)"><title>talos-kreta · epoka-10: 20</title></circle><circle class="paliwo-punkt" cx="690.0" cy="100.9" r="3.5" style="fill:hsl(158, 45%, 55%)"><title>talos-kreta · epoka-11: 20</title></circle><polyline class="paliwo-linia" points="368.0,123.0 432.4,123.0 496.8,123.0 561.2,123.0 625.6,123.0 690.0,123.0" style="stroke:hsl(295, 45%, 55%)" />
+        <circle class="paliwo-punkt" cx="368.0" cy="123.0" r="3.5" style="fill:hsl(295, 45%, 55%)"><title>pandora · epoka-6: 17</title></circle><circle class="paliwo-punkt" cx="432.4" cy="123.0" r="3.5" style="fill:hsl(295, 45%, 55%)"><title>pandora · epoka-7: 17</title></circle><circle class="paliwo-punkt" cx="496.8" cy="123.0" r="3.5" style="fill:hsl(295, 45%, 55%)"><title>pandora · epoka-8: 17</title></circle><circle class="paliwo-punkt" cx="561.2" cy="123.0" r="3.5" style="fill:hsl(295, 45%, 55%)"><title>pandora · epoka-9: 17</title></circle><circle class="paliwo-punkt" cx="625.6" cy="123.0" r="3.5" style="fill:hsl(295, 45%, 55%)"><title>pandora · epoka-10: 17</title></circle><circle class="paliwo-punkt" cx="690.0" cy="123.0" r="3.5" style="fill:hsl(295, 45%, 55%)"><title>pandora · epoka-11: 17</title></circle><polyline class="paliwo-linia" points="368.0,181.8 432.4,181.8 496.8,181.8 561.2,181.8 625.6,181.8 690.0,181.8" style="stroke:hsl(73, 45%, 55%)" />
+        <circle class="paliwo-punkt" cx="368.0" cy="181.8" r="3.5" style="fill:hsl(73, 45%, 55%)"><title>morowa-panna · epoka-6: 9</title></circle><circle class="paliwo-punkt" cx="432.4" cy="181.8" r="3.5" style="fill:hsl(73, 45%, 55%)"><title>morowa-panna · epoka-7: 9</title></circle><circle class="paliwo-punkt" cx="496.8" cy="181.8" r="3.5" style="fill:hsl(73, 45%, 55%)"><title>morowa-panna · epoka-8: 9</title></circle><circle class="paliwo-punkt" cx="561.2" cy="181.8" r="3.5" style="fill:hsl(73, 45%, 55%)"><title>morowa-panna · epoka-9: 9</title></circle><circle class="paliwo-punkt" cx="625.6" cy="181.8" r="3.5" style="fill:hsl(73, 45%, 55%)"><title>morowa-panna · epoka-10: 9</title></circle><circle class="paliwo-punkt" cx="690.0" cy="181.8" r="3.5" style="fill:hsl(73, 45%, 55%)"><title>morowa-panna · epoka-11: 9</title></circle><polyline class="paliwo-linia" points="432.4,159.7 496.8,159.7 561.2,159.7 625.6,159.7 690.0,159.7" style="stroke:hsl(210, 45%, 55%)" />
+        <circle class="paliwo-punkt" cx="432.4" cy="159.7" r="3.5" style="fill:hsl(210, 45%, 55%)"><title>protostates · epoka-7: 12</title></circle><circle class="paliwo-punkt" cx="496.8" cy="159.7" r="3.5" style="fill:hsl(210, 45%, 55%)"><title>protostates · epoka-8: 12</title></circle><circle class="paliwo-punkt" cx="561.2" cy="159.7" r="3.5" style="fill:hsl(210, 45%, 55%)"><title>protostates · epoka-9: 12</title></circle><circle class="paliwo-punkt" cx="625.6" cy="159.7" r="3.5" style="fill:hsl(210, 45%, 55%)"><title>protostates · epoka-10: 12</title></circle><circle class="paliwo-punkt" cx="690.0" cy="159.7" r="3.5" style="fill:hsl(210, 45%, 55%)"><title>protostates · epoka-11: 12</title></circle><polyline class="paliwo-linia" points="432.4,152.4 496.8,152.4 561.2,152.4 625.6,152.4 690.0,152.4" style="stroke:hsl(348, 45%, 55%)" />
+        <circle class="paliwo-punkt" cx="432.4" cy="152.4" r="3.5" style="fill:hsl(348, 45%, 55%)"><title>knecht-z-koptos · epoka-7: 13</title></circle><circle class="paliwo-punkt" cx="496.8" cy="152.4" r="3.5" style="fill:hsl(348, 45%, 55%)"><title>knecht-z-koptos · epoka-8: 13</title></circle><circle class="paliwo-punkt" cx="561.2" cy="152.4" r="3.5" style="fill:hsl(348, 45%, 55%)"><title>knecht-z-koptos · epoka-9: 13</title></circle><circle class="paliwo-punkt" cx="625.6" cy="152.4" r="3.5" style="fill:hsl(348, 45%, 55%)"><title>knecht-z-koptos · epoka-10: 13</title></circle><circle class="paliwo-punkt" cx="690.0" cy="152.4" r="3.5" style="fill:hsl(348, 45%, 55%)"><title>knecht-z-koptos · epoka-11: 13</title></circle><polyline class="paliwo-linia" points="432.4,167.1 496.8,167.1 561.2,167.1 625.6,167.1 690.0,167.1" style="stroke:hsl(125, 45%, 55%)" />
+        <circle class="paliwo-punkt" cx="432.4" cy="167.1" r="3.5" style="fill:hsl(125, 45%, 55%)"><title>syama-i-sarvara · epoka-7: 11</title></circle><circle class="paliwo-punkt" cx="496.8" cy="167.1" r="3.5" style="fill:hsl(125, 45%, 55%)"><title>syama-i-sarvara · epoka-8: 11</title></circle><circle class="paliwo-punkt" cx="561.2" cy="167.1" r="3.5" style="fill:hsl(125, 45%, 55%)"><title>syama-i-sarvara · epoka-9: 11</title></circle><circle class="paliwo-punkt" cx="625.6" cy="167.1" r="3.5" style="fill:hsl(125, 45%, 55%)"><title>syama-i-sarvara · epoka-10: 11</title></circle><circle class="paliwo-punkt" cx="690.0" cy="167.1" r="3.5" style="fill:hsl(125, 45%, 55%)"><title>syama-i-sarvara · epoka-11: 11</title></circle><polyline class="paliwo-linia" points="561.2,189.2 625.6,181.8 690.0,174.5" style="stroke:hsl(263, 45%, 55%)" />
+        <circle class="paliwo-punkt" cx="561.2" cy="189.2" r="3.5" style="fill:hsl(263, 45%, 55%)"><title>loup-garou-gevaudan · epoka-9: 8</title></circle><circle class="paliwo-punkt" cx="625.6" cy="181.8" r="3.5" style="fill:hsl(263, 45%, 55%)"><title>loup-garou-gevaudan · epoka-10: 9</title></circle><circle class="paliwo-punkt" cx="690.0" cy="174.5" r="3.5" style="fill:hsl(263, 45%, 55%)"><title>loup-garou-gevaudan · epoka-11: 10</title></circle><polyline class="paliwo-linia" points="561.2,196.5 625.6,196.5 690.0,196.5" style="stroke:hsl(40, 45%, 55%)" />
+        <circle class="paliwo-punkt" cx="561.2" cy="196.5" r="3.5" style="fill:hsl(40, 45%, 55%)"><title>neith-z-sais · epoka-9: 7</title></circle><circle class="paliwo-punkt" cx="625.6" cy="196.5" r="3.5" style="fill:hsl(40, 45%, 55%)"><title>neith-z-sais · epoka-10: 7</title></circle><circle class="paliwo-punkt" cx="690.0" cy="196.5" r="3.5" style="fill:hsl(40, 45%, 55%)"><title>neith-z-sais · epoka-11: 7</title></circle><polyline class="paliwo-linia" points="625.6,167.1 690.0,167.1" style="stroke:hsl(178, 45%, 55%)" />
+        <circle class="paliwo-punkt" cx="625.6" cy="167.1" r="3.5" style="fill:hsl(178, 45%, 55%)"><title>cormoran-st-michaels-mount · epoka-10: 11</title></circle><circle class="paliwo-punkt" cx="690.0" cy="167.1" r="3.5" style="fill:hsl(178, 45%, 55%)"><title>cormoran-st-michaels-mount · epoka-11: 11</title></circle><polyline class="paliwo-linia" points="625.6,152.4 690.0,152.4" style="stroke:hsl(315, 45%, 55%)" />
+        <circle class="paliwo-punkt" cx="625.6" cy="152.4" r="3.5" style="fill:hsl(315, 45%, 55%)"><title>ben-varrey · epoka-10: 13</title></circle><circle class="paliwo-punkt" cx="690.0" cy="152.4" r="3.5" style="fill:hsl(315, 45%, 55%)"><title>ben-varrey · epoka-11: 13</title></circle>
     </svg>
-    <div class="paliwo-legenda-box"><div class="paliwo-legenda" style="--l:hsl(0, 45%, 55%)"><span class="kropka"></span> egungun <b>30</b></div><div class="paliwo-legenda" style="--l:hsl(138, 45%, 55%)"><span class="kropka"></span> barbarossa-kyffhaeuser <b>20</b></div><div class="paliwo-legenda" style="--l:hsl(275, 45%, 55%)"><span class="kropka"></span> kentaur-pelion <b>14</b></div><div class="paliwo-legenda" style="--l:hsl(53, 45%, 55%)"><span class="kropka"></span> lincoln-imp <b>14</b></div><div class="paliwo-legenda" style="--l:hsl(190, 45%, 55%)"><span class="kropka"></span> empusa-korynt <b>20</b></div><div class="paliwo-legenda" style="--l:hsl(328, 45%, 55%)"><span class="kropka"></span> balor <b>19</b></div><div class="paliwo-legenda" style="--l:hsl(105, 45%, 55%)"><span class="kropka"></span> selkie-sule-skerry <b>24</b></div><div class="paliwo-legenda" style="--l:hsl(243, 45%, 55%)"><span class="kropka"></span> indra <b>11</b></div><div class="paliwo-legenda" style="--l:hsl(20, 45%, 55%)"><span class="kropka"></span> sfinks-teby <b>22</b></div><div class="paliwo-legenda" style="--l:hsl(158, 45%, 55%)"><span class="kropka"></span> talos-kreta <b>20</b></div><div class="paliwo-legenda" style="--l:hsl(295, 45%, 55%)"><span class="kropka"></span> pandora <b>17</b></div><div class="paliwo-legenda" style="--l:hsl(73, 45%, 55%)"><span class="kropka"></span> morowa-panna <b>9</b></div><div class="paliwo-legenda" style="--l:hsl(210, 45%, 55%)"><span class="kropka"></span> protostates <b>12</b></div><div class="paliwo-legenda" style="--l:hsl(348, 45%, 55%)"><span class="kropka"></span> knecht-z-koptos <b>13</b></div><div class="paliwo-legenda" style="--l:hsl(125, 45%, 55%)"><span class="kropka"></span> syama-i-sarvara <b>11</b></div><div class="paliwo-legenda" style="--l:hsl(263, 45%, 55%)"><span class="kropka"></span> loup-garou-gevaudan <b>9</b></div><div class="paliwo-legenda" style="--l:hsl(40, 45%, 55%)"><span class="kropka"></span> neith-z-sais <b>7</b></div><div class="paliwo-legenda" style="--l:hsl(178, 45%, 55%)"><span class="kropka"></span> cormoran-st-michaels-mount <b>11</b></div><div class="paliwo-legenda" style="--l:hsl(315, 45%, 55%)"><span class="kropka"></span> ben-varrey <b>13</b></div></div>
+    <div class="paliwo-legenda-box"><div class="paliwo-legenda" style="--l:hsl(0, 45%, 55%)"><span class="kropka"></span> egungun <b>30</b></div><div class="paliwo-legenda" style="--l:hsl(138, 45%, 55%)"><span class="kropka"></span> barbarossa-kyffhaeuser <b>20</b></div><div class="paliwo-legenda" style="--l:hsl(275, 45%, 55%)"><span class="kropka"></span> kentaur-pelion <b>14</b></div><div class="paliwo-legenda" style="--l:hsl(53, 45%, 55%)"><span class="kropka"></span> lincoln-imp <b>14</b></div><div class="paliwo-legenda" style="--l:hsl(190, 45%, 55%)"><span class="kropka"></span> empusa-korynt <b>20</b></div><div class="paliwo-legenda" style="--l:hsl(328, 45%, 55%)"><span class="kropka"></span> balor <b>19</b></div><div class="paliwo-legenda" style="--l:hsl(105, 45%, 55%)"><span class="kropka"></span> selkie-sule-skerry <b>24</b></div><div class="paliwo-legenda" style="--l:hsl(243, 45%, 55%)"><span class="kropka"></span> indra <b>11</b></div><div class="paliwo-legenda" style="--l:hsl(20, 45%, 55%)"><span class="kropka"></span> sfinks-teby <b>22</b></div><div class="paliwo-legenda" style="--l:hsl(158, 45%, 55%)"><span class="kropka"></span> talos-kreta <b>20</b></div><div class="paliwo-legenda" style="--l:hsl(295, 45%, 55%)"><span class="kropka"></span> pandora <b>17</b></div><div class="paliwo-legenda" style="--l:hsl(73, 45%, 55%)"><span class="kropka"></span> morowa-panna <b>9</b></div><div class="paliwo-legenda" style="--l:hsl(210, 45%, 55%)"><span class="kropka"></span> protostates <b>12</b></div><div class="paliwo-legenda" style="--l:hsl(348, 45%, 55%)"><span class="kropka"></span> knecht-z-koptos <b>13</b></div><div class="paliwo-legenda" style="--l:hsl(125, 45%, 55%)"><span class="kropka"></span> syama-i-sarvara <b>11</b></div><div class="paliwo-legenda" style="--l:hsl(263, 45%, 55%)"><span class="kropka"></span> loup-garou-gevaudan <b>10</b></div><div class="paliwo-legenda" style="--l:hsl(40, 45%, 55%)"><span class="kropka"></span> neith-z-sais <b>7</b></div><div class="paliwo-legenda" style="--l:hsl(178, 45%, 55%)"><span class="kropka"></span> cormoran-st-michaels-mount <b>11</b></div><div class="paliwo-legenda" style="--l:hsl(315, 45%, 55%)"><span class="kropka"></span> ben-varrey <b>13</b></div></div>
   </div>
 </div>
 
 <div class="card">
   <h2>Oś czasu wątków</h2>
   <div class="card-sub">Wątek otwarty (●) i zamknięty (●) na przestrzeni Tomu; linia = ciągłość.</div>
-  <svg class="chart watki-chart" viewBox="0 0 880 624" role="img" aria-label="Oś czasu wątków fabularnych"><text class="watki-os-x" x="228.0" y="22.0" text-anchor="middle"><tspan x="228.0">I · Trzy stoły</tspan></text><text class="watki-os-x" x="297.1" y="22.0" text-anchor="middle"><tspan x="297.1">II ·</tspan><tspan x="297.1" dy="13">Nieproszeni…</tspan></text><text class="watki-os-x" x="366.2" y="22.0" text-anchor="middle"><tspan x="366.2">III ·</tspan><tspan x="366.2" dy="13">Odźwierni</tspan></text><text class="watki-os-x" x="435.3" y="22.0" text-anchor="middle"><tspan x="435.3">IV · Imię na</tspan><tspan x="435.3" dy="13">progu</tspan></text><text class="watki-os-x" x="504.4" y="22.0" text-anchor="middle"><tspan x="504.4">V · Zagadka ze</tspan><tspan x="504.4" dy="13">spiżu</tspan></text><text class="watki-os-x" x="573.6" y="22.0" text-anchor="middle"><tspan x="573.6">VI · Czwarty</tspan><tspan x="573.6" dy="13">stół</tspan></text><text class="watki-os-x" x="642.7" y="22.0" text-anchor="middle"><tspan x="642.7">VII ·</tspan><tspan x="642.7" dy="13">Kolejność</tspan></text><text class="watki-os-x" x="711.8" y="22.0" text-anchor="middle"><tspan x="711.8">VIII · Gościna</tspan><tspan x="711.8" dy="13">za złoto</tspan></text><text class="watki-os-x" x="780.9" y="22.0" text-anchor="middle"><tspan x="780.9">IX · Zasłona,</tspan><tspan x="780.9" dy="13">sierść i…</tspan></text><text class="watki-os-x" x="850.0" y="22.0" text-anchor="middle"><tspan x="850.0">X · Prawo</tspan><tspan x="850.0" dy="13">progu i…</tspan></text><line class="watki-linia" x1="228.0" y1="60.0" x2="297.1" y2="60.0" /><line class="watki-linia" x1="297.1" y1="60.0" x2="366.2" y2="60.0" /><line class="watki-linia" x1="366.2" y1="60.0" x2="435.3" y2="60.0" /><line class="watki-linia" x1="435.3" y1="60.0" x2="504.4" y2="60.0" /><line class="watki-linia" x1="504.4" y1="60.0" x2="573.6" y2="60.0" /><circle class="watki-marker otwarty" cx="228.0" cy="60.0" r="7">
+  <svg class="chart watki-chart" viewBox="0 0 880 664" role="img" aria-label="Oś czasu wątków fabularnych"><text class="watki-os-x" x="228.0" y="22.0" text-anchor="middle"><tspan x="228.0">I · Trzy stoły</tspan></text><text class="watki-os-x" x="290.2" y="22.0" text-anchor="middle"><tspan x="290.2">II ·</tspan><tspan x="290.2" dy="13">Nieproszeni…</tspan></text><text class="watki-os-x" x="352.4" y="22.0" text-anchor="middle"><tspan x="352.4">III ·</tspan><tspan x="352.4" dy="13">Odźwierni</tspan></text><text class="watki-os-x" x="414.6" y="22.0" text-anchor="middle"><tspan x="414.6">IV · Imię na</tspan><tspan x="414.6" dy="13">progu</tspan></text><text class="watki-os-x" x="476.8" y="22.0" text-anchor="middle"><tspan x="476.8">V · Zagadka ze</tspan><tspan x="476.8" dy="13">spiżu</tspan></text><text class="watki-os-x" x="539.0" y="22.0" text-anchor="middle"><tspan x="539.0">VI · Czwarty</tspan><tspan x="539.0" dy="13">stół</tspan></text><text class="watki-os-x" x="601.2" y="22.0" text-anchor="middle"><tspan x="601.2">VII ·</tspan><tspan x="601.2" dy="13">Kolejność</tspan></text><text class="watki-os-x" x="663.4" y="22.0" text-anchor="middle"><tspan x="663.4">VIII · Gościna</tspan><tspan x="663.4" dy="13">za złoto</tspan></text><text class="watki-os-x" x="725.6" y="22.0" text-anchor="middle"><tspan x="725.6">IX · Zasłona,</tspan><tspan x="725.6" dy="13">sierść i…</tspan></text><text class="watki-os-x" x="787.8" y="22.0" text-anchor="middle"><tspan x="787.8">X · Prawo</tspan><tspan x="787.8" dy="13">progu i…</tspan></text><text class="watki-os-x" x="850.0" y="22.0" text-anchor="middle"><tspan x="850.0">XI · Ostatni</tspan><tspan x="850.0" dy="13">ślad</tspan></text><line class="watki-linia" x1="228.0" y1="60.0" x2="290.2" y2="60.0" /><line class="watki-linia" x1="290.2" y1="60.0" x2="352.4" y2="60.0" /><line class="watki-linia" x1="352.4" y1="60.0" x2="414.6" y2="60.0" /><line class="watki-linia" x1="414.6" y1="60.0" x2="476.8" y2="60.0" /><line class="watki-linia" x1="476.8" y1="60.0" x2="539.0" y2="60.0" /><circle class="watki-marker otwarty" cx="228.0" cy="60.0" r="7">
           <title>czwarty-stol · epoka-1: otwarty</title>
-        </circle><circle class="watki-marker otwarty" cx="297.1" cy="60.0" r="7">
+        </circle><circle class="watki-marker otwarty" cx="290.2" cy="60.0" r="7">
           <title>czwarty-stol · epoka-2: otwarty</title>
-        </circle><circle class="watki-marker otwarty" cx="366.2" cy="60.0" r="7">
+        </circle><circle class="watki-marker otwarty" cx="352.4" cy="60.0" r="7">
           <title>czwarty-stol · epoka-3: otwarty</title>
-        </circle><circle class="watki-marker otwarty" cx="435.3" cy="60.0" r="7">
+        </circle><circle class="watki-marker otwarty" cx="414.6" cy="60.0" r="7">
           <title>czwarty-stol · epoka-4: otwarty</title>
-        </circle><circle class="watki-marker otwarty" cx="504.4" cy="60.0" r="7">
+        </circle><circle class="watki-marker otwarty" cx="476.8" cy="60.0" r="7">
           <title>czwarty-stol · epoka-5: otwarty</title>
-        </circle><circle class="watki-marker zamkniety" cx="573.6" cy="60.0" r="7">
+        </circle><circle class="watki-marker zamkniety" cx="539.0" cy="60.0" r="7">
           <title>czwarty-stol · epoka-6: zamkniety</title>
         </circle><text class="watki-etykieta" x="216.0" y="65.0" text-anchor="end"><tspan x="216.0">czwarty-stol</tspan></text><circle class="watki-marker zamkniety" cx="228.0" cy="100.0" r="7">
           <title>wino-w-uczcie · epoka-1: zamkniety</title>
-        </circle><text class="watki-etykieta" x="216.0" y="105.0" text-anchor="end"><tspan x="216.0">wino-w-uczcie</tspan></text><line class="watki-linia" x1="228.0" y1="140.0" x2="297.1" y2="140.0" /><line class="watki-linia" x1="297.1" y1="140.0" x2="366.2" y2="140.0" /><line class="watki-linia" x1="366.2" y1="140.0" x2="435.3" y2="140.0" /><line class="watki-linia" x1="435.3" y1="140.0" x2="504.4" y2="140.0" /><line class="watki-linia" x1="504.4" y1="140.0" x2="573.6" y2="140.0" /><line class="watki-linia" x1="573.6" y1="140.0" x2="642.7" y2="140.0" /><line class="watki-linia" x1="642.7" y1="140.0" x2="711.8" y2="140.0" /><line class="watki-linia" x1="711.8" y1="140.0" x2="780.9" y2="140.0" /><line class="watki-linia" x1="780.9" y1="140.0" x2="850.0" y2="140.0" /><circle class="watki-marker otwarty" cx="228.0" cy="140.0" r="7">
+        </circle><text class="watki-etykieta" x="216.0" y="105.0" text-anchor="end"><tspan x="216.0">wino-w-uczcie</tspan></text><line class="watki-linia" x1="228.0" y1="140.0" x2="290.2" y2="140.0" /><line class="watki-linia" x1="290.2" y1="140.0" x2="352.4" y2="140.0" /><line class="watki-linia" x1="352.4" y1="140.0" x2="414.6" y2="140.0" /><line class="watki-linia" x1="414.6" y1="140.0" x2="476.8" y2="140.0" /><line class="watki-linia" x1="476.8" y1="140.0" x2="539.0" y2="140.0" /><line class="watki-linia" x1="539.0" y1="140.0" x2="601.2" y2="140.0" /><line class="watki-linia" x1="601.2" y1="140.0" x2="663.4" y2="140.0" /><line class="watki-linia" x1="663.4" y1="140.0" x2="725.6" y2="140.0" /><line class="watki-linia" x1="725.6" y1="140.0" x2="787.8" y2="140.0" /><line class="watki-linia" x1="787.8" y1="140.0" x2="850.0" y2="140.0" /><circle class="watki-marker otwarty" cx="228.0" cy="140.0" r="7">
           <title>warunek-barbarossy · epoka-1: otwarty</title>
-        </circle><circle class="watki-marker otwarty" cx="297.1" cy="140.0" r="7">
+        </circle><circle class="watki-marker otwarty" cx="290.2" cy="140.0" r="7">
           <title>warunek-barbarossy · epoka-2: otwarty</title>
-        </circle><circle class="watki-marker otwarty" cx="366.2" cy="140.0" r="7">
+        </circle><circle class="watki-marker otwarty" cx="352.4" cy="140.0" r="7">
           <title>warunek-barbarossy · epoka-3: otwarty</title>
-        </circle><circle class="watki-marker otwarty" cx="435.3" cy="140.0" r="7">
+        </circle><circle class="watki-marker otwarty" cx="414.6" cy="140.0" r="7">
           <title>warunek-barbarossy · epoka-4: otwarty</title>
-        </circle><circle class="watki-marker otwarty" cx="504.4" cy="140.0" r="7">
+        </circle><circle class="watki-marker otwarty" cx="476.8" cy="140.0" r="7">
           <title>warunek-barbarossy · epoka-5: otwarty</title>
-        </circle><circle class="watki-marker otwarty" cx="573.6" cy="140.0" r="7">
+        </circle><circle class="watki-marker otwarty" cx="539.0" cy="140.0" r="7">
           <title>warunek-barbarossy · epoka-6: otwarty</title>
-        </circle><circle class="watki-marker otwarty" cx="642.7" cy="140.0" r="7">
+        </circle><circle class="watki-marker otwarty" cx="601.2" cy="140.0" r="7">
           <title>warunek-barbarossy · epoka-7: otwarty</title>
-        </circle><circle class="watki-marker otwarty" cx="711.8" cy="140.0" r="7">
+        </circle><circle class="watki-marker otwarty" cx="663.4" cy="140.0" r="7">
           <title>warunek-barbarossy · epoka-8: otwarty</title>
-        </circle><circle class="watki-marker otwarty" cx="780.9" cy="140.0" r="7">
+        </circle><circle class="watki-marker otwarty" cx="725.6" cy="140.0" r="7">
           <title>warunek-barbarossy · epoka-9: otwarty</title>
-        </circle><circle class="watki-marker otwarty" cx="850.0" cy="140.0" r="7">
+        </circle><circle class="watki-marker otwarty" cx="787.8" cy="140.0" r="7">
           <title>warunek-barbarossy · epoka-10: otwarty</title>
-        </circle><text class="watki-etykieta" x="216.0" y="145.0" text-anchor="end"><tspan x="216.0">warunek-barbarossy</tspan></text><line class="watki-linia" x1="297.1" y1="180.0" x2="366.2" y2="180.0" /><circle class="watki-marker otwarty" cx="297.1" cy="180.0" r="7">
+        </circle><circle class="watki-marker otwarty" cx="850.0" cy="140.0" r="7">
+          <title>warunek-barbarossy · epoka-11: otwarty</title>
+        </circle><text class="watki-etykieta" x="216.0" y="145.0" text-anchor="end"><tspan x="216.0">warunek-barbarossy</tspan></text><line class="watki-linia" x1="290.2" y1="180.0" x2="352.4" y2="180.0" /><circle class="watki-marker otwarty" cx="290.2" cy="180.0" r="7">
           <title>odzwierni · epoka-2: otwarty</title>
-        </circle><circle class="watki-marker zamkniety" cx="366.2" cy="180.0" r="7">
+        </circle><circle class="watki-marker zamkniety" cx="352.4" cy="180.0" r="7">
           <title>odzwierni · epoka-3: zamkniety</title>
-        </circle><text class="watki-etykieta" x="216.0" y="185.0" text-anchor="end"><tspan x="216.0">odzwierni</tspan></text><line class="watki-linia" x1="297.1" y1="220.0" x2="366.2" y2="220.0" /><line class="watki-linia" x1="366.2" y1="220.0" x2="435.3" y2="220.0" /><line class="watki-linia" x1="435.3" y1="220.0" x2="504.4" y2="220.0" /><line class="watki-linia" x1="504.4" y1="220.0" x2="573.6" y2="220.0" /><line class="watki-linia" x1="573.6" y1="220.0" x2="642.7" y2="220.0" /><line class="watki-linia" x1="642.7" y1="220.0" x2="711.8" y2="220.0" /><line class="watki-linia" x1="711.8" y1="220.0" x2="780.9" y2="220.0" /><circle class="watki-marker otwarty" cx="297.1" cy="220.0" r="7">
+        </circle><text class="watki-etykieta" x="216.0" y="185.0" text-anchor="end"><tspan x="216.0">odzwierni</tspan></text><line class="watki-linia" x1="290.2" y1="220.0" x2="352.4" y2="220.0" /><line class="watki-linia" x1="352.4" y1="220.0" x2="414.6" y2="220.0" /><line class="watki-linia" x1="414.6" y1="220.0" x2="476.8" y2="220.0" /><line class="watki-linia" x1="476.8" y1="220.0" x2="539.0" y2="220.0" /><line class="watki-linia" x1="539.0" y1="220.0" x2="601.2" y2="220.0" /><line class="watki-linia" x1="601.2" y1="220.0" x2="663.4" y2="220.0" /><line class="watki-linia" x1="663.4" y1="220.0" x2="725.6" y2="220.0" /><circle class="watki-marker otwarty" cx="290.2" cy="220.0" r="7">
           <title>wedrowny-dom-empusy · epoka-2: otwarty</title>
-        </circle><circle class="watki-marker otwarty" cx="366.2" cy="220.0" r="7">
+        </circle><circle class="watki-marker otwarty" cx="352.4" cy="220.0" r="7">
           <title>wedrowny-dom-empusy · epoka-3: otwarty</title>
-        </circle><circle class="watki-marker otwarty" cx="435.3" cy="220.0" r="7">
+        </circle><circle class="watki-marker otwarty" cx="414.6" cy="220.0" r="7">
           <title>wedrowny-dom-empusy · epoka-4: otwarty</title>
-        </circle><circle class="watki-marker otwarty" cx="504.4" cy="220.0" r="7">
+        </circle><circle class="watki-marker otwarty" cx="476.8" cy="220.0" r="7">
           <title>wedrowny-dom-empusy · epoka-5: otwarty</title>
-        </circle><circle class="watki-marker otwarty" cx="573.6" cy="220.0" r="7">
+        </circle><circle class="watki-marker otwarty" cx="539.0" cy="220.0" r="7">
           <title>wedrowny-dom-empusy · epoka-6: otwarty</title>
-        </circle><circle class="watki-marker otwarty" cx="642.7" cy="220.0" r="7">
+        </circle><circle class="watki-marker otwarty" cx="601.2" cy="220.0" r="7">
           <title>wedrowny-dom-empusy · epoka-7: otwarty</title>
-        </circle><circle class="watki-marker zamkniety" cx="711.8" cy="220.0" r="7">
+        </circle><circle class="watki-marker zamkniety" cx="663.4" cy="220.0" r="7">
           <title>wedrowny-dom-empusy · epoka-8: zamkniety</title>
-        </circle><circle class="watki-marker zamkniety" cx="780.9" cy="220.0" r="7">
+        </circle><circle class="watki-marker zamkniety" cx="725.6" cy="220.0" r="7">
           <title>wedrowny-dom-empusy · epoka-9: zamkniety</title>
-        </circle><text class="watki-etykieta" x="216.0" y="225.0" text-anchor="end"><tspan x="216.0">wedrowny-dom-empusy</tspan></text><circle class="watki-marker zamkniety" cx="297.1" cy="260.0" r="7">
+        </circle><text class="watki-etykieta" x="216.0" y="225.0" text-anchor="end"><tspan x="216.0">wedrowny-dom-empusy</tspan></text><circle class="watki-marker zamkniety" cx="290.2" cy="260.0" r="7">
           <title>pogrzeb-zamiast-wesela · epoka-2: zamkniety</title>
-        </circle><text class="watki-etykieta" x="216.0" y="265.0" text-anchor="end"><tspan x="216.0">pogrzeb-zamiast-wesela</tspan></text><line class="watki-linia" x1="366.2" y1="300.0" x2="435.3" y2="300.0" /><circle class="watki-marker otwarty" cx="366.2" cy="300.0" r="7">
+        </circle><text class="watki-etykieta" x="216.0" y="265.0" text-anchor="end"><tspan x="216.0">pogrzeb-zamiast-wesela</tspan></text><line class="watki-linia" x1="352.4" y1="300.0" x2="414.6" y2="300.0" /><circle class="watki-marker otwarty" cx="352.4" cy="300.0" r="7">
           <title>imie-na-progu · epoka-3: otwarty</title>
-        </circle><circle class="watki-marker zamkniety" cx="435.3" cy="300.0" r="7">
+        </circle><circle class="watki-marker zamkniety" cx="414.6" cy="300.0" r="7">
           <title>imie-na-progu · epoka-4: zamkniety</title>
-        </circle><text class="watki-etykieta" x="216.0" y="305.0" text-anchor="end"><tspan x="216.0">imie-na-progu</tspan></text><line class="watki-linia" x1="435.3" y1="340.0" x2="504.4" y2="340.0" /><line class="watki-linia" x1="504.4" y1="340.0" x2="573.6" y2="340.0" /><line class="watki-linia" x1="573.6" y1="340.0" x2="642.7" y2="340.0" /><line class="watki-linia" x1="642.7" y1="340.0" x2="711.8" y2="340.0" /><line class="watki-linia" x1="711.8" y1="340.0" x2="780.9" y2="340.0" /><line class="watki-linia" x1="780.9" y1="340.0" x2="850.0" y2="340.0" /><circle class="watki-marker otwarty" cx="435.3" cy="340.0" r="7">
+        </circle><text class="watki-etykieta" x="216.0" y="305.0" text-anchor="end"><tspan x="216.0">imie-na-progu</tspan></text><line class="watki-linia" x1="414.6" y1="340.0" x2="476.8" y2="340.0" /><line class="watki-linia" x1="476.8" y1="340.0" x2="539.0" y2="340.0" /><line class="watki-linia" x1="539.0" y1="340.0" x2="601.2" y2="340.0" /><line class="watki-linia" x1="601.2" y1="340.0" x2="663.4" y2="340.0" /><line class="watki-linia" x1="663.4" y1="340.0" x2="725.6" y2="340.0" /><line class="watki-linia" x1="725.6" y1="340.0" x2="787.8" y2="340.0" /><line class="watki-linia" x1="787.8" y1="340.0" x2="850.0" y2="340.0" /><circle class="watki-marker otwarty" cx="414.6" cy="340.0" r="7">
           <title>kres-indry · epoka-4: otwarty</title>
-        </circle><circle class="watki-marker otwarty" cx="504.4" cy="340.0" r="7">
+        </circle><circle class="watki-marker otwarty" cx="476.8" cy="340.0" r="7">
           <title>kres-indry · epoka-5: otwarty</title>
-        </circle><circle class="watki-marker otwarty" cx="573.6" cy="340.0" r="7">
+        </circle><circle class="watki-marker otwarty" cx="539.0" cy="340.0" r="7">
           <title>kres-indry · epoka-6: otwarty</title>
-        </circle><circle class="watki-marker otwarty" cx="642.7" cy="340.0" r="7">
+        </circle><circle class="watki-marker otwarty" cx="601.2" cy="340.0" r="7">
           <title>kres-indry · epoka-7: otwarty</title>
-        </circle><circle class="watki-marker otwarty" cx="711.8" cy="340.0" r="7">
+        </circle><circle class="watki-marker otwarty" cx="663.4" cy="340.0" r="7">
           <title>kres-indry · epoka-8: otwarty</title>
-        </circle><circle class="watki-marker otwarty" cx="780.9" cy="340.0" r="7">
+        </circle><circle class="watki-marker otwarty" cx="725.6" cy="340.0" r="7">
           <title>kres-indry · epoka-9: otwarty</title>
-        </circle><circle class="watki-marker otwarty" cx="850.0" cy="340.0" r="7">
+        </circle><circle class="watki-marker otwarty" cx="787.8" cy="340.0" r="7">
           <title>kres-indry · epoka-10: otwarty</title>
-        </circle><text class="watki-etykieta" x="216.0" y="345.0" text-anchor="end"><tspan x="216.0">kres-indry</tspan></text><circle class="watki-marker zamkniety" cx="504.4" cy="380.0" r="7">
+        </circle><circle class="watki-marker otwarty" cx="850.0" cy="340.0" r="7">
+          <title>kres-indry · epoka-11: otwarty</title>
+        </circle><text class="watki-etykieta" x="216.0" y="345.0" text-anchor="end"><tspan x="216.0">kres-indry</tspan></text><circle class="watki-marker zamkniety" cx="476.8" cy="380.0" r="7">
           <title>zagadka-ze-spizu · epoka-5: zamkniety</title>
-        </circle><text class="watki-etykieta" x="216.0" y="385.0" text-anchor="end"><tspan x="216.0">zagadka-ze-spizu</tspan></text><line class="watki-linia" x1="573.6" y1="420.0" x2="642.7" y2="420.0" /><line class="watki-linia" x1="642.7" y1="420.0" x2="711.8" y2="420.0" /><line class="watki-linia" x1="711.8" y1="420.0" x2="780.9" y2="420.0" /><line class="watki-linia" x1="780.9" y1="420.0" x2="850.0" y2="420.0" /><circle class="watki-marker otwarty" cx="573.6" cy="420.0" r="7">
+        </circle><text class="watki-etykieta" x="216.0" y="385.0" text-anchor="end"><tspan x="216.0">zagadka-ze-spizu</tspan></text><line class="watki-linia" x1="539.0" y1="420.0" x2="601.2" y2="420.0" /><line class="watki-linia" x1="601.2" y1="420.0" x2="663.4" y2="420.0" /><line class="watki-linia" x1="663.4" y1="420.0" x2="725.6" y2="420.0" /><line class="watki-linia" x1="725.6" y1="420.0" x2="787.8" y2="420.0" /><line class="watki-linia" x1="787.8" y1="420.0" x2="850.0" y2="420.0" /><circle class="watki-marker otwarty" cx="539.0" cy="420.0" r="7">
           <title>niewinny-bierca · epoka-6: otwarty</title>
-        </circle><circle class="watki-marker otwarty" cx="642.7" cy="420.0" r="7">
+        </circle><circle class="watki-marker otwarty" cx="601.2" cy="420.0" r="7">
           <title>niewinny-bierca · epoka-7: otwarty</title>
-        </circle><circle class="watki-marker otwarty" cx="711.8" cy="420.0" r="7">
+        </circle><circle class="watki-marker otwarty" cx="663.4" cy="420.0" r="7">
           <title>niewinny-bierca · epoka-8: otwarty</title>
-        </circle><circle class="watki-marker otwarty" cx="780.9" cy="420.0" r="7">
+        </circle><circle class="watki-marker otwarty" cx="725.6" cy="420.0" r="7">
           <title>niewinny-bierca · epoka-9: otwarty</title>
-        </circle><circle class="watki-marker otwarty" cx="850.0" cy="420.0" r="7">
+        </circle><circle class="watki-marker otwarty" cx="787.8" cy="420.0" r="7">
           <title>niewinny-bierca · epoka-10: otwarty</title>
-        </circle><text class="watki-etykieta" x="216.0" y="425.0" text-anchor="end"><tspan x="216.0">niewinny-bierca</tspan></text><line class="watki-linia" x1="642.7" y1="460.0" x2="711.8" y2="460.0" /><line class="watki-linia" x1="711.8" y1="460.0" x2="780.9" y2="460.0" /><line class="watki-linia" x1="780.9" y1="460.0" x2="850.0" y2="460.0" /><circle class="watki-marker otwarty" cx="642.7" cy="460.0" r="7">
+        </circle><circle class="watki-marker otwarty" cx="850.0" cy="420.0" r="7">
+          <title>niewinny-bierca · epoka-11: otwarty</title>
+        </circle><text class="watki-etykieta" x="216.0" y="425.0" text-anchor="end"><tspan x="216.0">niewinny-bierca</tspan></text><line class="watki-linia" x1="601.2" y1="460.0" x2="663.4" y2="460.0" /><line class="watki-linia" x1="663.4" y1="460.0" x2="725.6" y2="460.0" /><line class="watki-linia" x1="725.6" y1="460.0" x2="787.8" y2="460.0" /><line class="watki-linia" x1="787.8" y1="460.0" x2="850.0" y2="460.0" /><circle class="watki-marker otwarty" cx="601.2" cy="460.0" r="7">
           <title>pierwszy-w-linii · epoka-7: otwarty</title>
-        </circle><circle class="watki-marker otwarty" cx="711.8" cy="460.0" r="7">
+        </circle><circle class="watki-marker otwarty" cx="663.4" cy="460.0" r="7">
           <title>pierwszy-w-linii · epoka-8: otwarty</title>
-        </circle><circle class="watki-marker otwarty" cx="780.9" cy="460.0" r="7">
+        </circle><circle class="watki-marker otwarty" cx="725.6" cy="460.0" r="7">
           <title>pierwszy-w-linii · epoka-9: otwarty</title>
-        </circle><circle class="watki-marker otwarty" cx="850.0" cy="460.0" r="7">
+        </circle><circle class="watki-marker otwarty" cx="787.8" cy="460.0" r="7">
           <title>pierwszy-w-linii · epoka-10: otwarty</title>
-        </circle><text class="watki-etykieta" x="216.0" y="465.0" text-anchor="end"><tspan x="216.0">pierwszy-w-linii</tspan></text><line class="watki-linia" x1="711.8" y1="500.0" x2="780.9" y2="500.0" /><circle class="watki-marker otwarty" cx="711.8" cy="500.0" r="7">
+        </circle><circle class="watki-marker otwarty" cx="850.0" cy="460.0" r="7">
+          <title>pierwszy-w-linii · epoka-11: otwarty</title>
+        </circle><text class="watki-etykieta" x="216.0" y="465.0" text-anchor="end"><tspan x="216.0">pierwszy-w-linii</tspan></text><line class="watki-linia" x1="663.4" y1="500.0" x2="725.6" y2="500.0" /><circle class="watki-marker otwarty" cx="663.4" cy="500.0" r="7">
           <title>gosc-ktoremu-zaplacono · epoka-8: otwarty</title>
-        </circle><circle class="watki-marker zamkniety" cx="780.9" cy="500.0" r="7">
+        </circle><circle class="watki-marker zamkniety" cx="725.6" cy="500.0" r="7">
           <title>gosc-ktoremu-zaplacono · epoka-9: zamkniety</title>
-        </circle><text class="watki-etykieta" x="216.0" y="505.0" text-anchor="end"><tspan x="216.0">gosc-ktoremu-zaplacono</tspan></text><line class="watki-linia" x1="780.9" y1="540.0" x2="850.0" y2="540.0" /><circle class="watki-marker otwarty" cx="780.9" cy="540.0" r="7">
+        </circle><text class="watki-etykieta" x="216.0" y="505.0" text-anchor="end"><tspan x="216.0">gosc-ktoremu-zaplacono</tspan></text><line class="watki-linia" x1="725.6" y1="540.0" x2="787.8" y2="540.0" /><line class="watki-linia" x1="787.8" y1="540.0" x2="850.0" y2="540.0" /><circle class="watki-marker otwarty" cx="725.6" cy="540.0" r="7">
           <title>znak-nie-wystarcza · epoka-9: otwarty</title>
-        </circle><circle class="watki-marker otwarty" cx="850.0" cy="540.0" r="7">
+        </circle><circle class="watki-marker otwarty" cx="787.8" cy="540.0" r="7">
           <title>znak-nie-wystarcza · epoka-10: otwarty</title>
-        </circle><text class="watki-etykieta" x="216.0" y="545.0" text-anchor="end"><tspan x="216.0">znak-nie-wystarcza</tspan></text><circle class="watki-marker otwarty" cx="850.0" cy="580.0" r="7">
+        </circle><circle class="watki-marker otwarty" cx="850.0" cy="540.0" r="7">
+          <title>znak-nie-wystarcza · epoka-11: otwarty</title>
+        </circle><text class="watki-etykieta" x="216.0" y="545.0" text-anchor="end"><tspan x="216.0">znak-nie-wystarcza</tspan></text><line class="watki-linia" x1="787.8" y1="580.0" x2="850.0" y2="580.0" /><circle class="watki-marker otwarty" cx="787.8" cy="580.0" r="7">
           <title>prawo-progu · epoka-10: otwarty</title>
-        </circle><text class="watki-etykieta" x="216.0" y="585.0" text-anchor="end"><tspan x="216.0">prawo-progu</tspan></text></svg>
+        </circle><circle class="watki-marker otwarty" cx="850.0" cy="580.0" r="7">
+          <title>prawo-progu · epoka-11: otwarty</title>
+        </circle><text class="watki-etykieta" x="216.0" y="585.0" text-anchor="end"><tspan x="216.0">prawo-progu</tspan></text><circle class="watki-marker otwarty" cx="850.0" cy="620.0" r="7">
+          <title>slad-ostatni-slad-gevaudan · epoka-11: otwarty</title>
+        </circle><text class="watki-etykieta" x="216.0" y="625.0" text-anchor="end"><tspan x="216.0">slad-ostatni-slad-gevaudan</tspan></text></svg>
 </div>
 
 <div class="grid">
@@ -1933,59 +1956,64 @@ li { margin: 8px 0; }
       
   <svg class="chart os-chart" viewBox="0 0 560 210" role="img" aria-label="Wykres osi mit/racjonalizacja po epokach">
     <line class="os-grid" x1="46" x2="540" y1="170.0" y2="170.0" /><text class="os-grid-label" x="38" y="174.0">25%</text><line class="os-grid" x1="46" x2="540" y1="120.0" y2="120.0" /><text class="os-grid-label" x="38" y="124.0">30%</text><line class="os-grid" x1="46" x2="540" y1="70.0" y2="70.0" /><text class="os-grid-label" x="38" y="74.0">35%</text><line class="os-grid" x1="46" x2="540" y1="20.0" y2="20.0" /><text class="os-grid-label" x="38" y="24.0">40%</text>
-    <path class="os-area" d="M 46.0,60.0 L 100.9,80.0 L 155.8,100.0 L 210.7,110.0 L 265.6,120.0 L 320.4,130.0 L 375.3,140.0 L 430.2,130.0 L 485.1,120.0 L 540.0,130.0 L 540.0,170.0 L 46.0,170.0 Z" />
-    <path class="os-line" d="M 46.0,60.0 L 100.9,80.0 L 155.8,100.0 L 210.7,110.0 L 265.6,120.0 L 320.4,130.0 L 375.3,140.0 L 430.2,130.0 L 485.1,120.0 L 540.0,130.0" />
+    <path class="os-area" d="M 46.0,60.0 L 95.4,80.0 L 144.8,100.0 L 194.2,110.0 L 243.6,120.0 L 293.0,130.0 L 342.4,140.0 L 391.8,130.0 L 441.2,120.0 L 490.6,130.0 L 540.0,130.0 L 540.0,170.0 L 46.0,170.0 Z" />
+    <path class="os-line" d="M 46.0,60.0 L 95.4,80.0 L 144.8,100.0 L 194.2,110.0 L 243.6,120.0 L 293.0,130.0 L 342.4,140.0 L 391.8,130.0 L 441.2,120.0 L 490.6,130.0 L 540.0,130.0" />
     <g class="os-dot" transform="translate(46.0,60.0)">
         <title>epoka-1 — Trzy stoły: przodek, gospodarz i gość: mit 36.0%</title>
         <text class="os-wartosc" x="0" y="-10">36.0%</text>
         <circle r="5" />
       </g>
-      <text class="os-label" x="46.0" y="196.0" text-anchor="middle">I</text><g class="os-dot" transform="translate(100.9,80.0)">
+      <text class="os-label" x="46.0" y="196.0" text-anchor="middle">I</text><g class="os-dot" transform="translate(95.4,80.0)">
         <title>epoka-2 — Nieproszeni goście: psuj, zaproszony i zaproszenie: mit 34.0%</title>
         <text class="os-wartosc" x="0" y="-10">34.0%</text>
         <circle r="5" />
       </g>
-      <text class="os-label" x="100.9" y="196.0" text-anchor="middle">II</text><g class="os-dot" transform="translate(155.8,100.0)">
+      <text class="os-label" x="95.4" y="196.0" text-anchor="middle">II</text><g class="os-dot" transform="translate(144.8,100.0)">
         <title>epoka-3 — Odźwierni: zapraszany, otwierany i ten, który jest drzwiami: mit 32.0%</title>
         <text class="os-wartosc" x="0" y="-10">32.0%</text>
         <circle r="5" />
       </g>
-      <text class="os-label" x="155.8" y="196.0" text-anchor="middle">III</text><g class="os-dot" transform="translate(210.7,110.0)">
+      <text class="os-label" x="144.8" y="196.0" text-anchor="middle">III</text><g class="os-dot" transform="translate(194.2,110.0)">
         <title>epoka-4 — Imię na progu: skóra, kres i pieśń: mit 31.0%</title>
         <text class="os-wartosc" x="0" y="-10">31.0%</text>
         <circle r="5" />
       </g>
-      <text class="os-label" x="210.7" y="196.0" text-anchor="middle">IV</text><g class="os-dot" transform="translate(265.6,120.0)">
+      <text class="os-label" x="194.2" y="196.0" text-anchor="middle">IV</text><g class="os-dot" transform="translate(243.6,120.0)">
         <title>epoka-5 — Zagadka ze spiżu: rozum, żart i głuchy krok: mit 30.0%</title>
         <text class="os-wartosc" x="0" y="-10">30.0%</text>
         <circle r="5" />
       </g>
-      <text class="os-label" x="265.6" y="196.0" text-anchor="middle">V</text><g class="os-dot" transform="translate(320.4,130.0)">
+      <text class="os-label" x="243.6" y="196.0" text-anchor="middle">V</text><g class="os-dot" transform="translate(293.0,130.0)">
         <title>epoka-6 — Czwarty stół: kto nie wie, że bierze: mit 29.0%</title>
         <text class="os-wartosc" x="0" y="-10">29.0%</text>
         <circle r="5" />
       </g>
-      <text class="os-label" x="320.4" y="196.0" text-anchor="middle">VI</text><g class="os-dot" transform="translate(375.3,140.0)">
+      <text class="os-label" x="293.0" y="196.0" text-anchor="middle">VI</text><g class="os-dot" transform="translate(342.4,140.0)">
         <title>epoka-7 — Kolejność: nikt nie szedł za pierwszym: mit 28.0%</title>
         <text class="os-wartosc" x="0" y="-10">28.0%</text>
         <circle r="5" />
       </g>
-      <text class="os-label" x="375.3" y="196.0" text-anchor="middle">VII</text><g class="os-dot" transform="translate(430.2,130.0)">
+      <text class="os-label" x="342.4" y="196.0" text-anchor="middle">VII</text><g class="os-dot" transform="translate(391.8,130.0)">
         <title>epoka-8 — Gościna za złoto: dom, który nie był gospodarzem: mit 29.0%</title>
         <text class="os-wartosc" x="0" y="-10">29.0%</text>
         <circle r="5" />
       </g>
-      <text class="os-label" x="430.2" y="196.0" text-anchor="middle">VIII</text><g class="os-dot" transform="translate(485.1,120.0)">
+      <text class="os-label" x="391.8" y="196.0" text-anchor="middle">VIII</text><g class="os-dot" transform="translate(441.2,120.0)">
         <title>epoka-9 — Zasłona, sierść i pytanie bez końca: mit 30.0%</title>
         <text class="os-wartosc" x="0" y="-10">30.0%</text>
         <circle r="5" />
       </g>
-      <text class="os-label" x="485.1" y="196.0" text-anchor="middle">IX</text><g class="os-dot" transform="translate(540.0,130.0)">
+      <text class="os-label" x="441.2" y="196.0" text-anchor="middle">IX</text><g class="os-dot" transform="translate(490.6,130.0)">
         <title>epoka-10 — Prawo progu i kamień, który został: mit 29.0%</title>
         <text class="os-wartosc" x="0" y="-10">29.0%</text>
         <circle r="5" />
       </g>
-      <text class="os-label" x="540.0" y="196.0" text-anchor="middle">X</text>
+      <text class="os-label" x="490.6" y="196.0" text-anchor="middle">X</text><g class="os-dot" transform="translate(540.0,130.0)">
+        <title>epoka-11 — Ostatni ślad: droga, która rozeszła się na dwoje: mit 29.0%</title>
+        <text class="os-wartosc" x="0" y="-10">29.0%</text>
+        <circle r="5" />
+      </g>
+      <text class="os-label" x="540.0" y="196.0" text-anchor="middle">XI</text>
   </svg>
     </div>
   </div>
@@ -2109,7 +2137,7 @@ li { margin: 8px 0; }
 <div class="card kart-szeroka">
   <h2>Macierz zasięgów</h2>
   <div class="card-sub">Jak daleko sięgał wpływ każdego bytu po kolejnych epokach (średnia po prawej).</div>
-  <svg class="chart heat-chart" viewBox="0 0 1334 912" role="img" aria-label="Macierz zasięgów bytów po epokach"><text class="heat-os-x" x="298.0" y="26.0" text-anchor="middle"><tspan x="298.0">I · Trzy</tspan><tspan x="298.0" dy="13">stoły</tspan></text><text class="heat-os-x" x="402.0" y="26.0" text-anchor="middle"><tspan x="402.0">II ·</tspan><tspan x="402.0" dy="13">Nieproszeni…</tspan></text><text class="heat-os-x" x="506.0" y="26.0" text-anchor="middle"><tspan x="506.0">III ·</tspan><tspan x="506.0" dy="13">Odźwierni</tspan></text><text class="heat-os-x" x="610.0" y="26.0" text-anchor="middle"><tspan x="610.0">IV · Imię na</tspan><tspan x="610.0" dy="13">progu</tspan></text><text class="heat-os-x" x="714.0" y="26.0" text-anchor="middle"><tspan x="714.0">V · Zagadka</tspan><tspan x="714.0" dy="13">ze spiżu</tspan></text><text class="heat-os-x" x="818.0" y="26.0" text-anchor="middle"><tspan x="818.0">VI · Czwarty</tspan><tspan x="818.0" dy="13">stół</tspan></text><text class="heat-os-x" x="922.0" y="26.0" text-anchor="middle"><tspan x="922.0">VII ·</tspan><tspan x="922.0" dy="13">Kolejność</tspan></text><text class="heat-os-x" x="1026.0" y="26.0" text-anchor="middle"><tspan x="1026.0">VIII ·</tspan><tspan x="1026.0" dy="13">Gościna za…</tspan></text><text class="heat-os-x" x="1130.0" y="26.0" text-anchor="middle"><tspan x="1130.0">IX · Zasłona,</tspan><tspan x="1130.0" dy="13">sierść i…</tspan></text><text class="heat-os-x" x="1234.0" y="26.0" text-anchor="middle"><tspan x="1234.0">X · Prawo</tspan><tspan x="1234.0" dy="13">progu i…</tspan></text><g class="heat-cell-g">
+  <svg class="chart heat-chart" viewBox="0 0 1438 912" role="img" aria-label="Macierz zasięgów bytów po epokach"><text class="heat-os-x" x="298.0" y="26.0" text-anchor="middle"><tspan x="298.0">I · Trzy</tspan><tspan x="298.0" dy="13">stoły</tspan></text><text class="heat-os-x" x="402.0" y="26.0" text-anchor="middle"><tspan x="402.0">II ·</tspan><tspan x="402.0" dy="13">Nieproszeni…</tspan></text><text class="heat-os-x" x="506.0" y="26.0" text-anchor="middle"><tspan x="506.0">III ·</tspan><tspan x="506.0" dy="13">Odźwierni</tspan></text><text class="heat-os-x" x="610.0" y="26.0" text-anchor="middle"><tspan x="610.0">IV · Imię na</tspan><tspan x="610.0" dy="13">progu</tspan></text><text class="heat-os-x" x="714.0" y="26.0" text-anchor="middle"><tspan x="714.0">V · Zagadka</tspan><tspan x="714.0" dy="13">ze spiżu</tspan></text><text class="heat-os-x" x="818.0" y="26.0" text-anchor="middle"><tspan x="818.0">VI · Czwarty</tspan><tspan x="818.0" dy="13">stół</tspan></text><text class="heat-os-x" x="922.0" y="26.0" text-anchor="middle"><tspan x="922.0">VII ·</tspan><tspan x="922.0" dy="13">Kolejność</tspan></text><text class="heat-os-x" x="1026.0" y="26.0" text-anchor="middle"><tspan x="1026.0">VIII ·</tspan><tspan x="1026.0" dy="13">Gościna za…</tspan></text><text class="heat-os-x" x="1130.0" y="26.0" text-anchor="middle"><tspan x="1130.0">IX · Zasłona,</tspan><tspan x="1130.0" dy="13">sierść i…</tspan></text><text class="heat-os-x" x="1234.0" y="26.0" text-anchor="middle"><tspan x="1234.0">X · Prawo</tspan><tspan x="1234.0" dy="13">progu i…</tspan></text><text class="heat-os-x" x="1338.0" y="26.0" text-anchor="middle"><tspan x="1338.0">XI · Ostatni</tspan><tspan x="1338.0" dy="13">ślad</tspan></text><g class="heat-cell-g">
             <rect class="heat-cell" x="249" y="79" width="98" height="38" rx="4" style="fill:rgb(216,140,82)">
               <title>Egungun · epoka-1: 51%</title>
             </rect>
@@ -2159,8 +2187,13 @@ li { margin: 8px 0; }
               <title>Egungun · epoka-10: 55%</title>
             </rect>
             <text class="heat-liczba" x="1234" y="102" style="fill:#151a24">55%</text>
+          </g><g class="heat-cell-g">
+            <rect class="heat-cell" x="1289" y="79" width="98" height="38" rx="4" style="fill:rgb(216,140,82)">
+              <title>Egungun · epoka-11: 55%</title>
+            </rect>
+            <text class="heat-liczba" x="1338" y="102" style="fill:#151a24">55%</text>
           </g><text class="heat-etykieta" x="234.0" y="100.0" text-anchor="end"><tspan x="234.0">🎭 Egungun</tspan></text>
-        <text class="heat-sum" x="1298" y="103">53%</text><g class="heat-cell-g">
+        <text class="heat-sum" x="1402" y="103">54%</text><g class="heat-cell-g">
             <rect class="heat-cell" x="249" y="123" width="98" height="38" rx="4" style="fill:rgb(216,140,82)">
               <title>Wielki Selkie z Sule Skerry · epoka-1: 50%</title>
             </rect>
@@ -2210,8 +2243,13 @@ li { margin: 8px 0; }
               <title>Wielki Selkie z Sule Skerry · epoka-10: 49%</title>
             </rect>
             <text class="heat-liczba" x="1234" y="146" style="fill:#f4ecdc">49%</text>
+          </g><g class="heat-cell-g">
+            <rect class="heat-cell" x="1289" y="123" width="98" height="38" rx="4" style="fill:rgb(212,138,82)">
+              <title>Wielki Selkie z Sule Skerry · epoka-11: 49%</title>
+            </rect>
+            <text class="heat-liczba" x="1338" y="146" style="fill:#f4ecdc">49%</text>
           </g><text class="heat-etykieta" x="234.0" y="144.0" text-anchor="end"><tspan x="234.0">🦭 Wielki Selkie z</tspan><tspan x="234.0" dy="15">Sule Skerry</tspan></text>
-        <text class="heat-sum" x="1298" y="147">49%</text><g class="heat-cell-g">
+        <text class="heat-sum" x="1402" y="147">49%</text><g class="heat-cell-g">
             <rect class="heat-cell" x="249" y="167" width="98" height="38" rx="4" style="fill:rgb(208,137,83)">
               <title>Sfinks — strażniczka Tebańskich Wrót · epoka-1: 48%</title>
             </rect>
@@ -2261,110 +2299,125 @@ li { margin: 8px 0; }
               <title>Sfinks — strażniczka Tebańskich Wrót · epoka-10: 48%</title>
             </rect>
             <text class="heat-liczba" x="1234" y="190" style="fill:#f4ecdc">48%</text>
-          </g><text class="heat-etykieta" x="234.0" y="188.0" text-anchor="end"><tspan x="234.0">🦁 Sfinks —</tspan><tspan x="234.0" dy="15">strażniczka…</tspan></text>
-        <text class="heat-sum" x="1298" y="191">48%</text><g class="heat-cell-g">
-            <rect class="heat-cell" x="249" y="211" width="98" height="38" rx="4" style="fill:rgb(204,135,83)">
-              <title>Barbarossa w Kyffhäuserze · epoka-1: 47%</title>
+          </g><g class="heat-cell-g">
+            <rect class="heat-cell" x="1289" y="167" width="98" height="38" rx="4" style="fill:rgb(210,138,83)">
+              <title>Sfinks — strażniczka Tebańskich Wrót · epoka-11: 49%</title>
             </rect>
-            <text class="heat-liczba" x="298" y="234" style="fill:#f4ecdc">47%</text>
+            <text class="heat-liczba" x="1338" y="190" style="fill:#f4ecdc">49%</text>
+          </g><text class="heat-etykieta" x="234.0" y="188.0" text-anchor="end"><tspan x="234.0">🦁 Sfinks —</tspan><tspan x="234.0" dy="15">strażniczka…</tspan></text>
+        <text class="heat-sum" x="1402" y="191">48%</text><g class="heat-cell-g">
+            <rect class="heat-cell" x="249" y="211" width="98" height="38" rx="4" style="fill:rgb(196,132,84)">
+              <title>Empusa z Koryntu · epoka-1: 45%</title>
+            </rect>
+            <text class="heat-liczba" x="298" y="234" style="fill:#f4ecdc">45%</text>
           </g><g class="heat-cell-g">
             <rect class="heat-cell" x="353" y="211" width="98" height="38" rx="4" style="fill:rgb(204,135,83)">
-              <title>Barbarossa w Kyffhäuserze · epoka-2: 47%</title>
+              <title>Empusa z Koryntu · epoka-2: 47%</title>
             </rect>
             <text class="heat-liczba" x="402" y="234" style="fill:#f4ecdc">47%</text>
           </g><g class="heat-cell-g">
             <rect class="heat-cell" x="457" y="211" width="98" height="38" rx="4" style="fill:rgb(204,135,83)">
-              <title>Barbarossa w Kyffhäuserze · epoka-3: 47%</title>
+              <title>Empusa z Koryntu · epoka-3: 47%</title>
             </rect>
             <text class="heat-liczba" x="506" y="234" style="fill:#f4ecdc">47%</text>
           </g><g class="heat-cell-g">
             <rect class="heat-cell" x="561" y="211" width="98" height="38" rx="4" style="fill:rgb(204,135,83)">
-              <title>Barbarossa w Kyffhäuserze · epoka-4: 47%</title>
+              <title>Empusa z Koryntu · epoka-4: 47%</title>
             </rect>
             <text class="heat-liczba" x="610" y="234" style="fill:#f4ecdc">47%</text>
           </g><g class="heat-cell-g">
             <rect class="heat-cell" x="665" y="211" width="98" height="38" rx="4" style="fill:rgb(204,135,83)">
-              <title>Barbarossa w Kyffhäuserze · epoka-5: 47%</title>
+              <title>Empusa z Koryntu · epoka-5: 47%</title>
             </rect>
             <text class="heat-liczba" x="714" y="234" style="fill:#f4ecdc">47%</text>
           </g><g class="heat-cell-g">
-            <rect class="heat-cell" x="769" y="211" width="98" height="38" rx="4" style="fill:rgb(204,135,83)">
-              <title>Barbarossa w Kyffhäuserze · epoka-6: 47%</title>
+            <rect class="heat-cell" x="769" y="211" width="98" height="38" rx="4" style="fill:rgb(206,136,83)">
+              <title>Empusa z Koryntu · epoka-6: 48%</title>
             </rect>
-            <text class="heat-liczba" x="818" y="234" style="fill:#f4ecdc">47%</text>
+            <text class="heat-liczba" x="818" y="234" style="fill:#f4ecdc">48%</text>
           </g><g class="heat-cell-g">
-            <rect class="heat-cell" x="873" y="211" width="98" height="38" rx="4" style="fill:rgb(204,135,83)">
-              <title>Barbarossa w Kyffhäuserze · epoka-7: 47%</title>
+            <rect class="heat-cell" x="873" y="211" width="98" height="38" rx="4" style="fill:rgb(206,136,83)">
+              <title>Empusa z Koryntu · epoka-7: 48%</title>
             </rect>
-            <text class="heat-liczba" x="922" y="234" style="fill:#f4ecdc">47%</text>
+            <text class="heat-liczba" x="922" y="234" style="fill:#f4ecdc">48%</text>
           </g><g class="heat-cell-g">
-            <rect class="heat-cell" x="977" y="211" width="98" height="38" rx="4" style="fill:rgb(209,137,83)">
-              <title>Barbarossa w Kyffhäuserze · epoka-8: 48%</title>
+            <rect class="heat-cell" x="977" y="211" width="98" height="38" rx="4" style="fill:rgb(210,138,83)">
+              <title>Empusa z Koryntu · epoka-8: 49%</title>
             </rect>
-            <text class="heat-liczba" x="1026" y="234" style="fill:#f4ecdc">48%</text>
+            <text class="heat-liczba" x="1026" y="234" style="fill:#f4ecdc">49%</text>
           </g><g class="heat-cell-g">
-            <rect class="heat-cell" x="1081" y="211" width="98" height="38" rx="4" style="fill:rgb(209,137,83)">
-              <title>Barbarossa w Kyffhäuserze · epoka-9: 48%</title>
+            <rect class="heat-cell" x="1081" y="211" width="98" height="38" rx="4" style="fill:rgb(210,138,83)">
+              <title>Empusa z Koryntu · epoka-9: 49%</title>
             </rect>
-            <text class="heat-liczba" x="1130" y="234" style="fill:#f4ecdc">48%</text>
+            <text class="heat-liczba" x="1130" y="234" style="fill:#f4ecdc">49%</text>
           </g><g class="heat-cell-g">
-            <rect class="heat-cell" x="1185" y="211" width="98" height="38" rx="4" style="fill:rgb(209,137,83)">
-              <title>Barbarossa w Kyffhäuserze · epoka-10: 48%</title>
+            <rect class="heat-cell" x="1185" y="211" width="98" height="38" rx="4" style="fill:rgb(210,138,83)">
+              <title>Empusa z Koryntu · epoka-10: 49%</title>
             </rect>
-            <text class="heat-liczba" x="1234" y="234" style="fill:#f4ecdc">48%</text>
-          </g><text class="heat-etykieta" x="234.0" y="232.0" text-anchor="end"><tspan x="234.0">👑 Barbarossa w</tspan><tspan x="234.0" dy="15">Kyffhäuserze</tspan></text>
-        <text class="heat-sum" x="1298" y="235">47%</text><g class="heat-cell-g">
-            <rect class="heat-cell" x="249" y="255" width="98" height="38" rx="4" style="fill:rgb(196,132,84)">
-              <title>Empusa z Koryntu · epoka-1: 45%</title>
+            <text class="heat-liczba" x="1234" y="234" style="fill:#f4ecdc">49%</text>
+          </g><g class="heat-cell-g">
+            <rect class="heat-cell" x="1289" y="211" width="98" height="38" rx="4" style="fill:rgb(210,138,83)">
+              <title>Empusa z Koryntu · epoka-11: 49%</title>
             </rect>
-            <text class="heat-liczba" x="298" y="278" style="fill:#f4ecdc">45%</text>
+            <text class="heat-liczba" x="1338" y="234" style="fill:#f4ecdc">49%</text>
+          </g><text class="heat-etykieta" x="234.0" y="232.0" text-anchor="end"><tspan x="234.0">🕷️ Empusa z</tspan><tspan x="234.0" dy="15">Koryntu</tspan></text>
+        <text class="heat-sum" x="1402" y="235">47%</text><g class="heat-cell-g">
+            <rect class="heat-cell" x="249" y="255" width="98" height="38" rx="4" style="fill:rgb(204,135,83)">
+              <title>Barbarossa w Kyffhäuserze · epoka-1: 47%</title>
+            </rect>
+            <text class="heat-liczba" x="298" y="278" style="fill:#f4ecdc">47%</text>
           </g><g class="heat-cell-g">
             <rect class="heat-cell" x="353" y="255" width="98" height="38" rx="4" style="fill:rgb(204,135,83)">
-              <title>Empusa z Koryntu · epoka-2: 47%</title>
+              <title>Barbarossa w Kyffhäuserze · epoka-2: 47%</title>
             </rect>
             <text class="heat-liczba" x="402" y="278" style="fill:#f4ecdc">47%</text>
           </g><g class="heat-cell-g">
             <rect class="heat-cell" x="457" y="255" width="98" height="38" rx="4" style="fill:rgb(204,135,83)">
-              <title>Empusa z Koryntu · epoka-3: 47%</title>
+              <title>Barbarossa w Kyffhäuserze · epoka-3: 47%</title>
             </rect>
             <text class="heat-liczba" x="506" y="278" style="fill:#f4ecdc">47%</text>
           </g><g class="heat-cell-g">
             <rect class="heat-cell" x="561" y="255" width="98" height="38" rx="4" style="fill:rgb(204,135,83)">
-              <title>Empusa z Koryntu · epoka-4: 47%</title>
+              <title>Barbarossa w Kyffhäuserze · epoka-4: 47%</title>
             </rect>
             <text class="heat-liczba" x="610" y="278" style="fill:#f4ecdc">47%</text>
           </g><g class="heat-cell-g">
             <rect class="heat-cell" x="665" y="255" width="98" height="38" rx="4" style="fill:rgb(204,135,83)">
-              <title>Empusa z Koryntu · epoka-5: 47%</title>
+              <title>Barbarossa w Kyffhäuserze · epoka-5: 47%</title>
             </rect>
             <text class="heat-liczba" x="714" y="278" style="fill:#f4ecdc">47%</text>
           </g><g class="heat-cell-g">
-            <rect class="heat-cell" x="769" y="255" width="98" height="38" rx="4" style="fill:rgb(206,136,83)">
-              <title>Empusa z Koryntu · epoka-6: 48%</title>
+            <rect class="heat-cell" x="769" y="255" width="98" height="38" rx="4" style="fill:rgb(204,135,83)">
+              <title>Barbarossa w Kyffhäuserze · epoka-6: 47%</title>
             </rect>
-            <text class="heat-liczba" x="818" y="278" style="fill:#f4ecdc">48%</text>
+            <text class="heat-liczba" x="818" y="278" style="fill:#f4ecdc">47%</text>
           </g><g class="heat-cell-g">
-            <rect class="heat-cell" x="873" y="255" width="98" height="38" rx="4" style="fill:rgb(206,136,83)">
-              <title>Empusa z Koryntu · epoka-7: 48%</title>
+            <rect class="heat-cell" x="873" y="255" width="98" height="38" rx="4" style="fill:rgb(204,135,83)">
+              <title>Barbarossa w Kyffhäuserze · epoka-7: 47%</title>
             </rect>
-            <text class="heat-liczba" x="922" y="278" style="fill:#f4ecdc">48%</text>
+            <text class="heat-liczba" x="922" y="278" style="fill:#f4ecdc">47%</text>
           </g><g class="heat-cell-g">
-            <rect class="heat-cell" x="977" y="255" width="98" height="38" rx="4" style="fill:rgb(210,138,83)">
-              <title>Empusa z Koryntu · epoka-8: 49%</title>
+            <rect class="heat-cell" x="977" y="255" width="98" height="38" rx="4" style="fill:rgb(209,137,83)">
+              <title>Barbarossa w Kyffhäuserze · epoka-8: 48%</title>
             </rect>
-            <text class="heat-liczba" x="1026" y="278" style="fill:#f4ecdc">49%</text>
+            <text class="heat-liczba" x="1026" y="278" style="fill:#f4ecdc">48%</text>
           </g><g class="heat-cell-g">
-            <rect class="heat-cell" x="1081" y="255" width="98" height="38" rx="4" style="fill:rgb(210,138,83)">
-              <title>Empusa z Koryntu · epoka-9: 49%</title>
+            <rect class="heat-cell" x="1081" y="255" width="98" height="38" rx="4" style="fill:rgb(209,137,83)">
+              <title>Barbarossa w Kyffhäuserze · epoka-9: 48%</title>
             </rect>
-            <text class="heat-liczba" x="1130" y="278" style="fill:#f4ecdc">49%</text>
+            <text class="heat-liczba" x="1130" y="278" style="fill:#f4ecdc">48%</text>
           </g><g class="heat-cell-g">
-            <rect class="heat-cell" x="1185" y="255" width="98" height="38" rx="4" style="fill:rgb(210,138,83)">
-              <title>Empusa z Koryntu · epoka-10: 49%</title>
+            <rect class="heat-cell" x="1185" y="255" width="98" height="38" rx="4" style="fill:rgb(209,137,83)">
+              <title>Barbarossa w Kyffhäuserze · epoka-10: 48%</title>
             </rect>
-            <text class="heat-liczba" x="1234" y="278" style="fill:#f4ecdc">49%</text>
-          </g><text class="heat-etykieta" x="234.0" y="276.0" text-anchor="end"><tspan x="234.0">🕷️ Empusa z</tspan><tspan x="234.0" dy="15">Koryntu</tspan></text>
-        <text class="heat-sum" x="1298" y="279">47%</text><g class="heat-cell-g">
+            <text class="heat-liczba" x="1234" y="278" style="fill:#f4ecdc">48%</text>
+          </g><g class="heat-cell-g">
+            <rect class="heat-cell" x="1289" y="255" width="98" height="38" rx="4" style="fill:rgb(209,137,83)">
+              <title>Barbarossa w Kyffhäuserze · epoka-11: 48%</title>
+            </rect>
+            <text class="heat-liczba" x="1338" y="278" style="fill:#f4ecdc">48%</text>
+          </g><text class="heat-etykieta" x="234.0" y="276.0" text-anchor="end"><tspan x="234.0">👑 Barbarossa w</tspan><tspan x="234.0" dy="15">Kyffhäuserze</tspan></text>
+        <text class="heat-sum" x="1402" y="279">47%</text><g class="heat-cell-g">
             <rect class="heat-cell" x="249" y="299" width="98" height="38" rx="4" style="fill:rgb(196,132,84)">
               <title>Balor z Tory Island · epoka-1: 45%</title>
             </rect>
@@ -2414,8 +2467,13 @@ li { margin: 8px 0; }
               <title>Balor z Tory Island · epoka-10: 45%</title>
             </rect>
             <text class="heat-liczba" x="1234" y="322" style="fill:#f4ecdc">45%</text>
+          </g><g class="heat-cell-g">
+            <rect class="heat-cell" x="1289" y="299" width="98" height="38" rx="4" style="fill:rgb(196,132,84)">
+              <title>Balor z Tory Island · epoka-11: 45%</title>
+            </rect>
+            <text class="heat-liczba" x="1338" y="322" style="fill:#f4ecdc">45%</text>
           </g><text class="heat-etykieta" x="234.0" y="320.0" text-anchor="end"><tspan x="234.0">👁️ Balor z Tory</tspan><tspan x="234.0" dy="15">Island</tspan></text>
-        <text class="heat-sum" x="1298" y="323">45%</text><g class="heat-cell-g">
+        <text class="heat-sum" x="1402" y="323">45%</text><g class="heat-cell-g">
             <rect class="heat-cell" x="249" y="343" width="98" height="38" rx="4" style="fill:rgb(192,130,85)">
               <title>Talos — spiżowy strażnik Krety · epoka-1: 44%</title>
             </rect>
@@ -2465,8 +2523,13 @@ li { margin: 8px 0; }
               <title>Talos — spiżowy strażnik Krety · epoka-10: 44%</title>
             </rect>
             <text class="heat-liczba" x="1234" y="366" style="fill:#f4ecdc">44%</text>
+          </g><g class="heat-cell-g">
+            <rect class="heat-cell" x="1289" y="343" width="98" height="38" rx="4" style="fill:rgb(190,129,85)">
+              <title>Talos — spiżowy strażnik Krety · epoka-11: 44%</title>
+            </rect>
+            <text class="heat-liczba" x="1338" y="366" style="fill:#f4ecdc">44%</text>
           </g><text class="heat-etykieta" x="234.0" y="364.0" text-anchor="end"><tspan x="234.0">🗿 Talos — spiżowy</tspan><tspan x="234.0" dy="15">strażnik Krety</tspan></text>
-        <text class="heat-sum" x="1298" y="367">44%</text><g class="heat-cell-g">
+        <text class="heat-sum" x="1402" y="367">44%</text><g class="heat-cell-g">
             <rect class="heat-cell" x="249" y="387" width="98" height="38" rx="4" style="fill:rgb(180,125,86)">
               <title>Pandora — pierwsza kobieta i pithos, w którym została nadzieja · epoka-1: 41%</title>
             </rect>
@@ -2516,8 +2579,13 @@ li { margin: 8px 0; }
               <title>Pandora — pierwsza kobieta i pithos, w którym została nadzieja · epoka-10: 42%</title>
             </rect>
             <text class="heat-liczba" x="1234" y="410" style="fill:#f4ecdc">42%</text>
+          </g><g class="heat-cell-g">
+            <rect class="heat-cell" x="1289" y="387" width="98" height="38" rx="4" style="fill:rgb(184,127,86)">
+              <title>Pandora — pierwsza kobieta i pithos, w którym została nadzieja · epoka-11: 42%</title>
+            </rect>
+            <text class="heat-liczba" x="1338" y="410" style="fill:#f4ecdc">42%</text>
           </g><text class="heat-etykieta" x="234.0" y="408.0" text-anchor="end"><tspan x="234.0">🏺 Pandora —</tspan><tspan x="234.0" dy="15">pierwsza kobieta…</tspan></text>
-        <text class="heat-sum" x="1298" y="411">41%</text><g class="heat-cell-g">
+        <text class="heat-sum" x="1402" y="411">42%</text><g class="heat-cell-g">
             <rect class="heat-cell" x="249" y="431" width="98" height="38" rx="4" style="fill:rgb(177,124,87)">
               <title>Imp z Lincoln · epoka-1: 40%</title>
             </rect>
@@ -2567,8 +2635,13 @@ li { margin: 8px 0; }
               <title>Imp z Lincoln · epoka-10: 42%</title>
             </rect>
             <text class="heat-liczba" x="1234" y="454" style="fill:#f4ecdc">42%</text>
+          </g><g class="heat-cell-g">
+            <rect class="heat-cell" x="1289" y="431" width="98" height="38" rx="4" style="fill:rgb(184,127,86)">
+              <title>Imp z Lincoln · epoka-11: 42%</title>
+            </rect>
+            <text class="heat-liczba" x="1338" y="454" style="fill:#f4ecdc">42%</text>
           </g><text class="heat-etykieta" x="234.0" y="452.0" text-anchor="end"><tspan x="234.0">😈 Imp z Lincoln</tspan></text>
-        <text class="heat-sum" x="1298" y="455">41%</text><g class="heat-cell-g">
+        <text class="heat-sum" x="1402" y="455">41%</text><g class="heat-cell-g">
             <rect class="heat-cell" x="249" y="475" width="98" height="38" rx="4" style="fill:rgb(165,119,88)">
               <title>Knecht z Koptos — ożywiony tłuczek, który nie zna słowa końca · epoka-1: 37%</title>
             </rect>
@@ -2618,8 +2691,13 @@ li { margin: 8px 0; }
               <title>Knecht z Koptos — ożywiony tłuczek, który nie zna słowa końca · epoka-10: 38%</title>
             </rect>
             <text class="heat-liczba" x="1234" y="498" style="fill:#f4ecdc">38%</text>
+          </g><g class="heat-cell-g">
+            <rect class="heat-cell" x="1289" y="475" width="98" height="38" rx="4" style="fill:rgb(169,120,87)">
+              <title>Knecht z Koptos — ożywiony tłuczek, który nie zna słowa końca · epoka-11: 38%</title>
+            </rect>
+            <text class="heat-liczba" x="1338" y="498" style="fill:#f4ecdc">38%</text>
           </g><text class="heat-etykieta" x="234.0" y="496.0" text-anchor="end"><tspan x="234.0">🪵 Knecht z Koptos</tspan><tspan x="234.0" dy="15">— ożywiony…</tspan></text>
-        <text class="heat-sum" x="1298" y="499">37%</text><g class="heat-cell-g">
+        <text class="heat-sum" x="1402" y="499">37%</text><g class="heat-cell-g">
             <rect class="heat-cell" x="249" y="519" width="98" height="38" rx="4" style="fill:rgb(169,120,87)">
               <title>Kentaur z Pelionu · epoka-1: 38%</title>
             </rect>
@@ -2669,8 +2747,13 @@ li { margin: 8px 0; }
               <title>Kentaur z Pelionu · epoka-10: 36%</title>
             </rect>
             <text class="heat-liczba" x="1234" y="542" style="fill:#f4ecdc">36%</text>
+          </g><g class="heat-cell-g">
+            <rect class="heat-cell" x="1289" y="519" width="98" height="38" rx="4" style="fill:rgb(161,117,88)">
+              <title>Kentaur z Pelionu · epoka-11: 36%</title>
+            </rect>
+            <text class="heat-liczba" x="1338" y="542" style="fill:#f4ecdc">36%</text>
           </g><text class="heat-etykieta" x="234.0" y="540.0" text-anchor="end"><tspan x="234.0">🐎 Kentaur z</tspan><tspan x="234.0" dy="15">Pelionu</tspan></text>
-        <text class="heat-sum" x="1298" y="543">36%</text><g class="heat-cell-g">
+        <text class="heat-sum" x="1402" y="543">36%</text><g class="heat-cell-g">
             <rect class="heat-cell" x="249" y="563" width="98" height="38" rx="4" style="fill:rgb(157,115,89)">
               <title>Indra — władca gromu · epoka-1: 35%</title>
             </rect>
@@ -2720,8 +2803,13 @@ li { margin: 8px 0; }
               <title>Indra — władca gromu · epoka-10: 34%</title>
             </rect>
             <text class="heat-liczba" x="1234" y="586" style="fill:#f4ecdc">34%</text>
+          </g><g class="heat-cell-g">
+            <rect class="heat-cell" x="1289" y="563" width="98" height="38" rx="4" style="fill:rgb(153,114,89)">
+              <title>Indra — władca gromu · epoka-11: 34%</title>
+            </rect>
+            <text class="heat-liczba" x="1338" y="586" style="fill:#f4ecdc">34%</text>
           </g><text class="heat-etykieta" x="234.0" y="584.0" text-anchor="end"><tspan x="234.0">🌩️ Indra — władca</tspan><tspan x="234.0" dy="15">gromu</tspan></text>
-        <text class="heat-sum" x="1298" y="587">34%</text><g class="heat-cell-g">
+        <text class="heat-sum" x="1402" y="587">34%</text><g class="heat-cell-g">
             <rect class="heat-cell" x="249" y="607" width="98" height="38" rx="4" style="fill:rgb(153,114,89)">
               <title>Ben-Varrey — syrena z Wyspy Man · epoka-1: 34%</title>
             </rect>
@@ -2771,110 +2859,125 @@ li { margin: 8px 0; }
               <title>Ben-Varrey — syrena z Wyspy Man · epoka-10: 35%</title>
             </rect>
             <text class="heat-liczba" x="1234" y="630" style="fill:#f4ecdc">35%</text>
+          </g><g class="heat-cell-g">
+            <rect class="heat-cell" x="1289" y="607" width="98" height="38" rx="4" style="fill:rgb(156,115,89)">
+              <title>Ben-Varrey — syrena z Wyspy Man · epoka-11: 35%</title>
+            </rect>
+            <text class="heat-liczba" x="1338" y="630" style="fill:#f4ecdc">35%</text>
           </g><text class="heat-etykieta" x="234.0" y="628.0" text-anchor="end"><tspan x="234.0">🧜‍♀️ Ben-Varrey —</tspan><tspan x="234.0" dy="15">syrena z Wyspy Man</tspan></text>
-        <text class="heat-sum" x="1298" y="631">34%</text><g class="heat-cell-g">
-            <rect class="heat-cell" x="249" y="651" width="98" height="38" rx="4" style="fill:rgb(149,112,90)">
-              <title>Morowa Panna — zaraza w białej szacie z czerwoną chustą · epoka-1: 33%</title>
+        <text class="heat-sum" x="1402" y="631">34%</text><g class="heat-cell-g">
+            <rect class="heat-cell" x="249" y="651" width="98" height="38" rx="4" style="fill:rgb(145,110,90)">
+              <title>Śyāma i Śarvara — czterookie psy Yamy, strażnicy drogi przodków · epoka-1: 32%</title>
             </rect>
-            <text class="heat-liczba" x="298" y="674" style="fill:#f4ecdc">33%</text>
+            <text class="heat-liczba" x="298" y="674" style="fill:#f4ecdc">32%</text>
           </g><g class="heat-cell-g">
-            <rect class="heat-cell" x="353" y="651" width="98" height="38" rx="4" style="fill:rgb(149,112,90)">
-              <title>Morowa Panna — zaraza w białej szacie z czerwoną chustą · epoka-2: 33%</title>
+            <rect class="heat-cell" x="353" y="651" width="98" height="38" rx="4" style="fill:rgb(145,110,90)">
+              <title>Śyāma i Śarvara — czterookie psy Yamy, strażnicy drogi przodków · epoka-2: 32%</title>
             </rect>
-            <text class="heat-liczba" x="402" y="674" style="fill:#f4ecdc">33%</text>
+            <text class="heat-liczba" x="402" y="674" style="fill:#f4ecdc">32%</text>
           </g><g class="heat-cell-g">
-            <rect class="heat-cell" x="457" y="651" width="98" height="38" rx="4" style="fill:rgb(149,112,90)">
-              <title>Morowa Panna — zaraza w białej szacie z czerwoną chustą · epoka-3: 33%</title>
+            <rect class="heat-cell" x="457" y="651" width="98" height="38" rx="4" style="fill:rgb(145,110,90)">
+              <title>Śyāma i Śarvara — czterookie psy Yamy, strażnicy drogi przodków · epoka-3: 32%</title>
             </rect>
-            <text class="heat-liczba" x="506" y="674" style="fill:#f4ecdc">33%</text>
+            <text class="heat-liczba" x="506" y="674" style="fill:#f4ecdc">32%</text>
           </g><g class="heat-cell-g">
-            <rect class="heat-cell" x="561" y="651" width="98" height="38" rx="4" style="fill:rgb(149,112,90)">
-              <title>Morowa Panna — zaraza w białej szacie z czerwoną chustą · epoka-4: 33%</title>
+            <rect class="heat-cell" x="561" y="651" width="98" height="38" rx="4" style="fill:rgb(145,110,90)">
+              <title>Śyāma i Śarvara — czterookie psy Yamy, strażnicy drogi przodków · epoka-4: 32%</title>
             </rect>
-            <text class="heat-liczba" x="610" y="674" style="fill:#f4ecdc">33%</text>
+            <text class="heat-liczba" x="610" y="674" style="fill:#f4ecdc">32%</text>
           </g><g class="heat-cell-g">
-            <rect class="heat-cell" x="665" y="651" width="98" height="38" rx="4" style="fill:rgb(149,112,90)">
-              <title>Morowa Panna — zaraza w białej szacie z czerwoną chustą · epoka-5: 33%</title>
+            <rect class="heat-cell" x="665" y="651" width="98" height="38" rx="4" style="fill:rgb(145,110,90)">
+              <title>Śyāma i Śarvara — czterookie psy Yamy, strażnicy drogi przodków · epoka-5: 32%</title>
             </rect>
-            <text class="heat-liczba" x="714" y="674" style="fill:#f4ecdc">33%</text>
+            <text class="heat-liczba" x="714" y="674" style="fill:#f4ecdc">32%</text>
           </g><g class="heat-cell-g">
-            <rect class="heat-cell" x="769" y="651" width="98" height="38" rx="4" style="fill:rgb(143,109,90)">
-              <title>Morowa Panna — zaraza w białej szacie z czerwoną chustą · epoka-6: 32%</title>
+            <rect class="heat-cell" x="769" y="651" width="98" height="38" rx="4" style="fill:rgb(145,110,90)">
+              <title>Śyāma i Śarvara — czterookie psy Yamy, strażnicy drogi przodków · epoka-6: 32%</title>
             </rect>
             <text class="heat-liczba" x="818" y="674" style="fill:#f4ecdc">32%</text>
           </g><g class="heat-cell-g">
-            <rect class="heat-cell" x="873" y="651" width="98" height="38" rx="4" style="fill:rgb(143,109,90)">
-              <title>Morowa Panna — zaraza w białej szacie z czerwoną chustą · epoka-7: 32%</title>
+            <rect class="heat-cell" x="873" y="651" width="98" height="38" rx="4" style="fill:rgb(147,111,90)">
+              <title>Śyāma i Śarvara — czterookie psy Yamy, strażnicy drogi przodków · epoka-7: 33%</title>
             </rect>
-            <text class="heat-liczba" x="922" y="674" style="fill:#f4ecdc">32%</text>
+            <text class="heat-liczba" x="922" y="674" style="fill:#f4ecdc">33%</text>
           </g><g class="heat-cell-g">
-            <rect class="heat-cell" x="977" y="651" width="98" height="38" rx="4" style="fill:rgb(143,109,90)">
-              <title>Morowa Panna — zaraza w białej szacie z czerwoną chustą · epoka-8: 32%</title>
+            <rect class="heat-cell" x="977" y="651" width="98" height="38" rx="4" style="fill:rgb(147,111,90)">
+              <title>Śyāma i Śarvara — czterookie psy Yamy, strażnicy drogi przodków · epoka-8: 33%</title>
             </rect>
-            <text class="heat-liczba" x="1026" y="674" style="fill:#f4ecdc">32%</text>
+            <text class="heat-liczba" x="1026" y="674" style="fill:#f4ecdc">33%</text>
           </g><g class="heat-cell-g">
-            <rect class="heat-cell" x="1081" y="651" width="98" height="38" rx="4" style="fill:rgb(143,109,90)">
-              <title>Morowa Panna — zaraza w białej szacie z czerwoną chustą · epoka-9: 32%</title>
+            <rect class="heat-cell" x="1081" y="651" width="98" height="38" rx="4" style="fill:rgb(147,111,90)">
+              <title>Śyāma i Śarvara — czterookie psy Yamy, strażnicy drogi przodków · epoka-9: 33%</title>
             </rect>
-            <text class="heat-liczba" x="1130" y="674" style="fill:#f4ecdc">32%</text>
+            <text class="heat-liczba" x="1130" y="674" style="fill:#f4ecdc">33%</text>
           </g><g class="heat-cell-g">
-            <rect class="heat-cell" x="1185" y="651" width="98" height="38" rx="4" style="fill:rgb(143,109,90)">
-              <title>Morowa Panna — zaraza w białej szacie z czerwoną chustą · epoka-10: 32%</title>
+            <rect class="heat-cell" x="1185" y="651" width="98" height="38" rx="4" style="fill:rgb(147,111,90)">
+              <title>Śyāma i Śarvara — czterookie psy Yamy, strażnicy drogi przodków · epoka-10: 33%</title>
             </rect>
-            <text class="heat-liczba" x="1234" y="674" style="fill:#f4ecdc">32%</text>
-          </g><text class="heat-etykieta" x="234.0" y="672.0" text-anchor="end"><tspan x="234.0">🧣 Morowa Panna —</tspan><tspan x="234.0" dy="15">zaraza w białej…</tspan></text>
-        <text class="heat-sum" x="1298" y="675">32%</text><g class="heat-cell-g">
-            <rect class="heat-cell" x="249" y="695" width="98" height="38" rx="4" style="fill:rgb(145,110,90)">
-              <title>Śyāma i Śarvara — czterookie psy Yamy, strażnicy drogi przodków · epoka-1: 32%</title>
-            </rect>
-            <text class="heat-liczba" x="298" y="718" style="fill:#f4ecdc">32%</text>
+            <text class="heat-liczba" x="1234" y="674" style="fill:#f4ecdc">33%</text>
           </g><g class="heat-cell-g">
-            <rect class="heat-cell" x="353" y="695" width="98" height="38" rx="4" style="fill:rgb(145,110,90)">
-              <title>Śyāma i Śarvara — czterookie psy Yamy, strażnicy drogi przodków · epoka-2: 32%</title>
+            <rect class="heat-cell" x="1289" y="651" width="98" height="38" rx="4" style="fill:rgb(147,111,90)">
+              <title>Śyāma i Śarvara — czterookie psy Yamy, strażnicy drogi przodków · epoka-11: 33%</title>
             </rect>
-            <text class="heat-liczba" x="402" y="718" style="fill:#f4ecdc">32%</text>
-          </g><g class="heat-cell-g">
-            <rect class="heat-cell" x="457" y="695" width="98" height="38" rx="4" style="fill:rgb(145,110,90)">
-              <title>Śyāma i Śarvara — czterookie psy Yamy, strażnicy drogi przodków · epoka-3: 32%</title>
+            <text class="heat-liczba" x="1338" y="674" style="fill:#f4ecdc">33%</text>
+          </g><text class="heat-etykieta" x="234.0" y="672.0" text-anchor="end"><tspan x="234.0">🐕 Śyāma i Śarvara</tspan><tspan x="234.0" dy="15">— czterookie psy…</tspan></text>
+        <text class="heat-sum" x="1402" y="675">32%</text><g class="heat-cell-g">
+            <rect class="heat-cell" x="249" y="695" width="98" height="38" rx="4" style="fill:rgb(149,112,90)">
+              <title>Morowa Panna — zaraza w białej szacie z czerwoną chustą · epoka-1: 33%</title>
             </rect>
-            <text class="heat-liczba" x="506" y="718" style="fill:#f4ecdc">32%</text>
+            <text class="heat-liczba" x="298" y="718" style="fill:#f4ecdc">33%</text>
           </g><g class="heat-cell-g">
-            <rect class="heat-cell" x="561" y="695" width="98" height="38" rx="4" style="fill:rgb(145,110,90)">
-              <title>Śyāma i Śarvara — czterookie psy Yamy, strażnicy drogi przodków · epoka-4: 32%</title>
+            <rect class="heat-cell" x="353" y="695" width="98" height="38" rx="4" style="fill:rgb(149,112,90)">
+              <title>Morowa Panna — zaraza w białej szacie z czerwoną chustą · epoka-2: 33%</title>
             </rect>
-            <text class="heat-liczba" x="610" y="718" style="fill:#f4ecdc">32%</text>
+            <text class="heat-liczba" x="402" y="718" style="fill:#f4ecdc">33%</text>
           </g><g class="heat-cell-g">
-            <rect class="heat-cell" x="665" y="695" width="98" height="38" rx="4" style="fill:rgb(145,110,90)">
-              <title>Śyāma i Śarvara — czterookie psy Yamy, strażnicy drogi przodków · epoka-5: 32%</title>
+            <rect class="heat-cell" x="457" y="695" width="98" height="38" rx="4" style="fill:rgb(149,112,90)">
+              <title>Morowa Panna — zaraza w białej szacie z czerwoną chustą · epoka-3: 33%</title>
             </rect>
-            <text class="heat-liczba" x="714" y="718" style="fill:#f4ecdc">32%</text>
+            <text class="heat-liczba" x="506" y="718" style="fill:#f4ecdc">33%</text>
           </g><g class="heat-cell-g">
-            <rect class="heat-cell" x="769" y="695" width="98" height="38" rx="4" style="fill:rgb(145,110,90)">
-              <title>Śyāma i Śarvara — czterookie psy Yamy, strażnicy drogi przodków · epoka-6: 32%</title>
+            <rect class="heat-cell" x="561" y="695" width="98" height="38" rx="4" style="fill:rgb(149,112,90)">
+              <title>Morowa Panna — zaraza w białej szacie z czerwoną chustą · epoka-4: 33%</title>
+            </rect>
+            <text class="heat-liczba" x="610" y="718" style="fill:#f4ecdc">33%</text>
+          </g><g class="heat-cell-g">
+            <rect class="heat-cell" x="665" y="695" width="98" height="38" rx="4" style="fill:rgb(149,112,90)">
+              <title>Morowa Panna — zaraza w białej szacie z czerwoną chustą · epoka-5: 33%</title>
+            </rect>
+            <text class="heat-liczba" x="714" y="718" style="fill:#f4ecdc">33%</text>
+          </g><g class="heat-cell-g">
+            <rect class="heat-cell" x="769" y="695" width="98" height="38" rx="4" style="fill:rgb(143,109,90)">
+              <title>Morowa Panna — zaraza w białej szacie z czerwoną chustą · epoka-6: 32%</title>
             </rect>
             <text class="heat-liczba" x="818" y="718" style="fill:#f4ecdc">32%</text>
           </g><g class="heat-cell-g">
-            <rect class="heat-cell" x="873" y="695" width="98" height="38" rx="4" style="fill:rgb(147,111,90)">
-              <title>Śyāma i Śarvara — czterookie psy Yamy, strażnicy drogi przodków · epoka-7: 33%</title>
+            <rect class="heat-cell" x="873" y="695" width="98" height="38" rx="4" style="fill:rgb(143,109,90)">
+              <title>Morowa Panna — zaraza w białej szacie z czerwoną chustą · epoka-7: 32%</title>
             </rect>
-            <text class="heat-liczba" x="922" y="718" style="fill:#f4ecdc">33%</text>
+            <text class="heat-liczba" x="922" y="718" style="fill:#f4ecdc">32%</text>
           </g><g class="heat-cell-g">
-            <rect class="heat-cell" x="977" y="695" width="98" height="38" rx="4" style="fill:rgb(147,111,90)">
-              <title>Śyāma i Śarvara — czterookie psy Yamy, strażnicy drogi przodków · epoka-8: 33%</title>
+            <rect class="heat-cell" x="977" y="695" width="98" height="38" rx="4" style="fill:rgb(143,109,90)">
+              <title>Morowa Panna — zaraza w białej szacie z czerwoną chustą · epoka-8: 32%</title>
             </rect>
-            <text class="heat-liczba" x="1026" y="718" style="fill:#f4ecdc">33%</text>
+            <text class="heat-liczba" x="1026" y="718" style="fill:#f4ecdc">32%</text>
           </g><g class="heat-cell-g">
-            <rect class="heat-cell" x="1081" y="695" width="98" height="38" rx="4" style="fill:rgb(147,111,90)">
-              <title>Śyāma i Śarvara — czterookie psy Yamy, strażnicy drogi przodków · epoka-9: 33%</title>
+            <rect class="heat-cell" x="1081" y="695" width="98" height="38" rx="4" style="fill:rgb(143,109,90)">
+              <title>Morowa Panna — zaraza w białej szacie z czerwoną chustą · epoka-9: 32%</title>
             </rect>
-            <text class="heat-liczba" x="1130" y="718" style="fill:#f4ecdc">33%</text>
+            <text class="heat-liczba" x="1130" y="718" style="fill:#f4ecdc">32%</text>
           </g><g class="heat-cell-g">
-            <rect class="heat-cell" x="1185" y="695" width="98" height="38" rx="4" style="fill:rgb(147,111,90)">
-              <title>Śyāma i Śarvara — czterookie psy Yamy, strażnicy drogi przodków · epoka-10: 33%</title>
+            <rect class="heat-cell" x="1185" y="695" width="98" height="38" rx="4" style="fill:rgb(143,109,90)">
+              <title>Morowa Panna — zaraza w białej szacie z czerwoną chustą · epoka-10: 32%</title>
             </rect>
-            <text class="heat-liczba" x="1234" y="718" style="fill:#f4ecdc">33%</text>
-          </g><text class="heat-etykieta" x="234.0" y="716.0" text-anchor="end"><tspan x="234.0">🐕 Śyāma i Śarvara</tspan><tspan x="234.0" dy="15">— czterookie psy…</tspan></text>
-        <text class="heat-sum" x="1298" y="719">32%</text><g class="heat-cell-g">
+            <text class="heat-liczba" x="1234" y="718" style="fill:#f4ecdc">32%</text>
+          </g><g class="heat-cell-g">
+            <rect class="heat-cell" x="1289" y="695" width="98" height="38" rx="4" style="fill:rgb(143,109,90)">
+              <title>Morowa Panna — zaraza w białej szacie z czerwoną chustą · epoka-11: 32%</title>
+            </rect>
+            <text class="heat-liczba" x="1338" y="718" style="fill:#f4ecdc">32%</text>
+          </g><text class="heat-etykieta" x="234.0" y="716.0" text-anchor="end"><tspan x="234.0">🧣 Morowa Panna —</tspan><tspan x="234.0" dy="15">zaraza w białej…</tspan></text>
+        <text class="heat-sum" x="1402" y="719">32%</text><g class="heat-cell-g">
             <rect class="heat-cell" x="249" y="739" width="98" height="38" rx="4" style="fill:rgb(141,109,91)">
               <title>Protostates — fantom pierwszego szeregu · epoka-1: 31%</title>
             </rect>
@@ -2924,8 +3027,13 @@ li { margin: 8px 0; }
               <title>Protostates — fantom pierwszego szeregu · epoka-10: 32%</title>
             </rect>
             <text class="heat-liczba" x="1234" y="762" style="fill:#f4ecdc">32%</text>
+          </g><g class="heat-cell-g">
+            <rect class="heat-cell" x="1289" y="739" width="98" height="38" rx="4" style="fill:rgb(146,111,90)">
+              <title>Protostates — fantom pierwszego szeregu · epoka-11: 32%</title>
+            </rect>
+            <text class="heat-liczba" x="1338" y="762" style="fill:#f4ecdc">32%</text>
           </g><text class="heat-etykieta" x="234.0" y="760.0" text-anchor="end"><tspan x="234.0">🛡️ Protostates —</tspan><tspan x="234.0" dy="15">fantom pierwszego…</tspan></text>
-        <text class="heat-sum" x="1298" y="763">31%</text><g class="heat-cell-g">
+        <text class="heat-sum" x="1402" y="763">32%</text><g class="heat-cell-g">
             <rect class="heat-cell" x="249" y="783" width="98" height="38" rx="4" style="fill:rgb(105,94,95)">
               <title>Loup-garou z Gévaudan · epoka-1: 22%</title>
             </rect>
@@ -2975,8 +3083,13 @@ li { margin: 8px 0; }
               <title>Loup-garou z Gévaudan · epoka-10: 24%</title>
             </rect>
             <text class="heat-liczba" x="1234" y="806" style="fill:#f4ecdc">24%</text>
+          </g><g class="heat-cell-g">
+            <rect class="heat-cell" x="1289" y="783" width="98" height="38" rx="4" style="fill:rgb(113,97,94)">
+              <title>Loup-garou z Gévaudan · epoka-11: 24%</title>
+            </rect>
+            <text class="heat-liczba" x="1338" y="806" style="fill:#f4ecdc">24%</text>
           </g><text class="heat-etykieta" x="234.0" y="804.0" text-anchor="end"><tspan x="234.0">✨ Loup-garou z</tspan><tspan x="234.0" dy="15">Gévaudan</tspan></text>
-        <text class="heat-sum" x="1298" y="807">22%</text><g class="heat-cell-g">
+        <text class="heat-sum" x="1402" y="807">22%</text><g class="heat-cell-g">
             <rect class="heat-cell" x="249" y="827" width="98" height="38" rx="4" style="fill:rgb(101,92,95)">
               <title>Neith z Sais — tkaczka początku · epoka-1: 21%</title>
             </rect>
@@ -3026,8 +3139,13 @@ li { margin: 8px 0; }
               <title>Neith z Sais — tkaczka początku · epoka-10: 22%</title>
             </rect>
             <text class="heat-liczba" x="1234" y="850" style="fill:#f4ecdc">22%</text>
+          </g><g class="heat-cell-g">
+            <rect class="heat-cell" x="1289" y="827" width="98" height="38" rx="4" style="fill:rgb(106,94,95)">
+              <title>Neith z Sais — tkaczka początku · epoka-11: 22%</title>
+            </rect>
+            <text class="heat-liczba" x="1338" y="850" style="fill:#f4ecdc">22%</text>
           </g><text class="heat-etykieta" x="234.0" y="848.0" text-anchor="end"><tspan x="234.0">✨ Neith z Sais —</tspan><tspan x="234.0" dy="15">tkaczka początku</tspan></text>
-        <text class="heat-sum" x="1298" y="851">21%</text><g class="heat-cell-g">
+        <text class="heat-sum" x="1402" y="851">21%</text><g class="heat-cell-g">
             <rect class="heat-cell" x="249" y="871" width="98" height="38" rx="4" style="fill:rgb(101,92,95)">
               <title>Cormoran z St Michael's Mount · epoka-1: 21%</title>
             </rect>
@@ -3077,9 +3195,14 @@ li { margin: 8px 0; }
               <title>Cormoran z St Michael's Mount · epoka-10: 22%</title>
             </rect>
             <text class="heat-liczba" x="1234" y="894" style="fill:#f4ecdc">22%</text>
+          </g><g class="heat-cell-g">
+            <rect class="heat-cell" x="1289" y="871" width="98" height="38" rx="4" style="fill:rgb(107,94,94)">
+              <title>Cormoran z St Michael's Mount · epoka-11: 22%</title>
+            </rect>
+            <text class="heat-liczba" x="1338" y="894" style="fill:#f4ecdc">22%</text>
           </g><text class="heat-etykieta" x="234.0" y="892.0" text-anchor="end"><tspan x="234.0">✨ Cormoran z St</tspan><tspan x="234.0" dy="15">Michael's Mount</tspan></text>
-        <text class="heat-sum" x="1298" y="895">21%</text>
-    <text class="heat-os-x" x="1298" y="26">śr.</text>
+        <text class="heat-sum" x="1402" y="895">21%</text>
+    <text class="heat-os-x" x="1402" y="26">śr.</text>
   </svg>
   <div class="chart-legenda heat-legenda"><span>zasięg bytu na koniec epoki:</span><span class="heat-leg-kolor" style="background:rgb(58,74,100);color:#f4ecdc">10%</span><span class="heat-leg-kolor" style="background:rgb(98,91,96);color:#f4ecdc">20%</span><span class="heat-leg-kolor" style="background:rgb(137,107,91);color:#f4ecdc">30%</span><span class="heat-leg-kolor" style="background:rgb(177,124,87);color:#f4ecdc">40%</span><span class="heat-leg-kolor" style="background:rgb(216,140,82);color:#151a24">50%</span></div>
 </div>
@@ -3192,6 +3315,16 @@ li { margin: 8px 0; }
         </div>
         <div class="epoka-go">Raport ↗</div>
       </a>
+      <a class="epoka-card" id="kronika-epoka-11" data-byt="loup-garou-gevaudan sfinks-teby neith-z-sais" data-slug="epoka-11" href="kronika-epoka-11.html">
+        <div class="epoka-nr">Epoka<br>XI</div>
+        <img class="epoka-mini" src="../assets/wizualizacje/kronika-tom-1-epoka-11.jpg" alt="Rozejście drogi w Gévaudan: nić prowadzi w las, lampy łowców zostają po drugiej stronie." loading="lazy">
+        <div>
+          <div class="epoka-ttl">Ostatni ślad: droga, która rozeszła się na dwoje <span class="chip up">OK</span></div>
+          <div class="epoka-meta">Uczestnicy: ✨ 🦁 ✨ · Oś: MIT 29% / RAC 71%</div>
+          <div class="epoka-delta"><span class="chip neutral">loup-garou-gevaudan 0 pp</span> <span class="chip neutral">sfinks-teby 0 pp</span> <span class="chip neutral">neith-z-sais 0 pp</span></div>
+        </div>
+        <div class="epoka-go">Raport ↗</div>
+      </a>
     </div>
 
     <!-- WĄTKI FABULARNE -->
@@ -3201,7 +3334,7 @@ li { margin: 8px 0; }
       <div class="grid" style="grid-template-columns:1fr 1fr;gap:14px;margin-bottom:0">
         <div>
           <h3 style="font-size:15px;margin:0 0 8px;color:var(--up)">Otwarte</h3>
-          <ul><li><span class="chip up">Otwarte</span> <strong>warunek-barbarossy</strong> —  <span class="muted">[epoka-10]</span></li><li><span class="chip up">Otwarte</span> <strong>kres-indry</strong> —  <span class="muted">[epoka-10]</span></li><li><span class="chip up">Otwarte</span> <strong>niewinny-bierca</strong> —  <span class="muted">[epoka-10]</span></li><li><span class="chip up">Otwarte</span> <strong>pierwszy-w-linii</strong> —  <span class="muted">[epoka-10]</span></li><li><span class="chip up">Otwarte</span> <strong>znak-nie-wystarcza</strong> —  <span class="muted">[epoka-10]</span></li><li><span class="chip up">Otwarte</span> <strong>prawo-progu</strong> —  <span class="muted">[epoka-10]</span></li></ul>
+          <ul><li><span class="chip up">Otwarte</span> <strong>warunek-barbarossy</strong> —  <span class="muted">[epoka-11]</span></li><li><span class="chip up">Otwarte</span> <strong>kres-indry</strong> —  <span class="muted">[epoka-11]</span></li><li><span class="chip up">Otwarte</span> <strong>niewinny-bierca</strong> —  <span class="muted">[epoka-11]</span></li><li><span class="chip up">Otwarte</span> <strong>pierwszy-w-linii</strong> —  <span class="muted">[epoka-11]</span></li><li><span class="chip up">Otwarte</span> <strong>znak-nie-wystarcza</strong> —  <span class="muted">[epoka-11]</span></li><li><span class="chip up">Otwarte</span> <strong>prawo-progu</strong> —  <span class="muted">[epoka-11]</span></li><li><span class="chip up">Otwarte</span> <strong>slad-ostatni-slad-gevaudan</strong> —  <span class="muted">[epoka-11]</span></li></ul>
         </div>
         <div>
           <h3 style="font-size:15px;margin:0 0 8px;color:var(--muted)">Zamknięte</h3>
@@ -3215,7 +3348,7 @@ li { margin: 8px 0; }
     <!-- BYTY I PALIWO -->
     <div class="card">
       <h2>Uczestnicy i stan pamięci</h2>
-      <div class="card-sub">Paliwo zgromadzone w archiwum oraz zasięg wpływów po 10 epokach.</div>
+      <div class="card-sub">Paliwo zgromadzone w archiwum oraz zasięg wpływów po 11 epokach.</div>
       <ul><li>
       <strong>🎭 <a href="#egungun" class="otworz-kartoteke" data-slug="egungun" style="color:inherit">Egungun</a></strong> <span class="muted">[egungun]</span> —
       paliwo <b>30</b> · zasięg <b>55%</b> · dominacja kulturowa 55%
@@ -3242,7 +3375,7 @@ li { margin: 8px 0; }
       paliwo <b>11</b> · zasięg <b>34%</b> · dominacja kulturowa 34%
     </li><li>
       <strong>🦁 <a href="#sfinks-teby" class="otworz-kartoteke" data-slug="sfinks-teby" style="color:inherit">Sfinks — strażniczka Tebańskich Wrót</a></strong> <span class="muted">[sfinks-teby]</span> —
-      paliwo <b>22</b> · zasięg <b>48%</b> · dominacja kulturowa 48%
+      paliwo <b>22</b> · zasięg <b>49%</b> · dominacja kulturowa 49%
     </li><li>
       <strong>🗿 <a href="#talos-kreta" class="otworz-kartoteke" data-slug="talos-kreta" style="color:inherit">Talos — spiżowy strażnik Krety</a></strong> <span class="muted">[talos-kreta]</span> —
       paliwo <b>20</b> · zasięg <b>44%</b> · dominacja kulturowa 44%
@@ -3263,7 +3396,7 @@ li { margin: 8px 0; }
       paliwo <b>11</b> · zasięg <b>33%</b> · dominacja kulturowa 33%
     </li><li>
       <strong>✨ <a href="#loup-garou-gevaudan" class="otworz-kartoteke" data-slug="loup-garou-gevaudan" style="color:inherit">Loup-garou z Gévaudan</a></strong> <span class="muted">[loup-garou-gevaudan]</span> —
-      paliwo <b>9</b> · zasięg <b>24%</b> · dominacja kulturowa 24%
+      paliwo <b>10</b> · zasięg <b>24%</b> · dominacja kulturowa 24%
     </li><li>
       <strong>✨ <a href="#neith-z-sais" class="otworz-kartoteke" data-slug="neith-z-sais" style="color:inherit">Neith z Sais — tkaczka początku</a></strong> <span class="muted">[neith-z-sais]</span> —
       paliwo <b>7</b> · zasięg <b>22%</b> · dominacja kulturowa 22%
@@ -3329,6 +3462,10 @@ li { margin: 8px 0; }
           <td><a href="kronika-epoka-10.html" style="color:var(--accent);font-weight:600">EPOKA-10</a></td>
           <td>Prawo progu i kamień, który został</td>
           <td class="num">cormoran-st-michaels-mount <b>11</b>, ben-varrey <b>13</b>, lincoln-imp <b>14</b>, loup-garou-gevaudan <b>9</b></td>
+        </tr><tr>
+          <td><a href="kronika-epoka-11.html" style="color:var(--accent);font-weight:600">EPOKA-11</a></td>
+          <td>Ostatni ślad: droga, która rozeszła się na dwoje</td>
+          <td class="num">loup-garou-gevaudan <b>10</b>, sfinks-teby <b>22</b>, neith-z-sais <b>7</b></td>
         </tr>
         </tbody>
       </table>
@@ -3352,21 +3489,21 @@ li { margin: 8px 0; }
       <div class="rozstaje-karta">
         <div class="rozstaje-nr">Droga B</div>
         <div>
-          <div class="rozstaje-sklad">👑 Barbarossa w Kyffhäuserze · 🎭 Egungun · 🦁 Sfinks — strażniczka Tebańskich Wrót</div>
+          <div class="rozstaje-sklad">👑 Barbarossa w Kyffhäuserze · 🎭 Egungun · 🌩️ Indra — władca gromu</div>
           <div class="rozstaje-powody"><span class="chip">R1: otwarty wątek</span> <span class="chip">R4: oddech — nowy w Tomie</span> <span class="chip">R2: silny zasięg</span></div>
         </div>
       </div>
       <div class="rozstaje-karta">
         <div class="rozstaje-nr">Droga C</div>
         <div>
-          <div class="rozstaje-sklad">👑 Barbarossa w Kyffhäuserze · 🕷️ Empusa z Koryntu · 🌩️ Indra — władca gromu</div>
+          <div class="rozstaje-sklad">👑 Barbarossa w Kyffhäuserze · 🏺 Pandora — pierwsza kobieta i pithos, w którym została nadzieja · 🪵 Knecht z Koptos — ożywiony tłuczek, który nie zna słowa końca</div>
           <div class="rozstaje-powody"><span class="chip">R1: otwarty wątek</span> <span class="chip">R4: oddech — nowy w Tomie</span> <span class="chip">R2: silny zasięg</span></div>
         </div>
       </div>
       <div class="rozstaje-karta">
         <div class="rozstaje-nr">Droga D</div>
         <div>
-          <div class="rozstaje-sklad">👑 Barbarossa w Kyffhäuserze · 🏺 Pandora — pierwsza kobieta i pithos, w którym została nadzieja · 🪵 Knecht z Koptos — ożywiony tłuczek, który nie zna słowa końca</div>
+          <div class="rozstaje-sklad">👑 Barbarossa w Kyffhäuserze · 🕷️ Empusa z Koryntu · 🦁 Sfinks — strażniczka Tebańskich Wrót</div>
           <div class="rozstaje-powody"><span class="chip">R1: otwarty wątek</span> <span class="chip">R4: oddech — nowy w Tomie</span> <span class="chip">R2: silny zasięg</span></div>
         </div>
       </div></div>

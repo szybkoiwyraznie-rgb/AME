@@ -1,8 +1,8 @@
 /**
  * app/app.js — bootstrap AME: ładuje indeks, mapę świata, spina UI.
  */
-import { stworzMape, PROGI_WARSTW, PODKLADY_ONLINE } from './map.js?v=c6-5';
-import { zaladujIndeks, zaladujWpis, zaladujSkit, dopasowania, wylosujSlug, slugDnia } from './data.js?v=c6-5';
+import { stworzMape, PROGI_WARSTW, PODKLADY_ONLINE } from './map.js?v=c6-6';
+import { zaladujIndeks, zaladujWpis, zaladujSkit, dopasowania, wylosujSlug, slugDnia } from './data.js?v=c6-6';
 import {
   htmlWpisu,
   htmlWarstwyWpisu,
@@ -28,9 +28,9 @@ import {
   htmlSplotu,
   paryRozmowySkitu,
   zB64utf8,
-} from './ui.js?v=c6-5';
-import { rozegrajDroge } from './splot.js?v=c6-5';
-import { SZEROKOSC, WYSOKOSC, odwroc, projektuj, serializujWidok, parsujWidokMapy } from './geo.js?v=c6-5';
+} from './ui.js?v=c6-6';
+import { rozegrajDroge } from './splot.js?v=c6-6';
+import { SZEROKOSC, WYSOKOSC, odwroc, projektuj, serializujWidok, parsujWidokMapy } from './geo.js?v=c6-6';
 
 const $ = (sel) => document.querySelector(sel);
 
@@ -427,8 +427,12 @@ async function otworzSplot() {
   for (const id of ['#przycisk-skity', '#przycisk-nowosci', '#przycisk-trofea', '#przycisk-kronika']) warstwaTrybPrzycisku(id, false);
   try {
     const road = await fetch(new URL('data/splot/droga-ostatni-slad-gevaudan.json', document.baseURI)).then((r) => { if (!r.ok) throw new Error(`HTTP ${r.status}`); return r.json(); });
+    // Sprzężenie Kronika → SPLOT (ADR 0025): stan świata modyfikuje szanse węzłów.
+    // Brak Kroniki nie blokuje drogi — wtedy napór świata wynosi zero.
+    let kronika = null;
+    try { kronika = await zaladujKronike(); } catch { kronika = null; }
     const los = () => { const b = new Uint32Array(1); globalThis.crypto?.getRandomValues?.(b); return (b[0] ?? 0) / 4294967296; };
-    const wynik = rozegrajDroge({ droga: road, indeks: stan.indeks, kanon: stan.indeks.kanon, los });
+    const wynik = rozegrajDroge({ droga: road, indeks: stan.indeks, kanon: stan.indeks.kanon, kronika, los });
     warstwa.innerHTML = szkicWarstwy(road.tytul, htmlSplotu(road, wynik, stan.indeks));
     warstwa.scrollTop = 0;
   } catch (err) {
