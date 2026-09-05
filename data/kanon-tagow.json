@@ -37,14 +37,9 @@
   ],
   "tagi": [
     {
-      "tag": "joruba",
+      "tag": "albania",
       "kategoria": "kultura",
-      "opis": "Religia i kultura Jorubów (Nigeria, Benin, Togo)"
-    },
-    {
-      "tag": "francja",
-      "kategoria": "kultura",
-      "opis": "Folklor francuski: podania o loup-garou i przemianie człowieka w wilka"
+      "opis": "Mitologia Albańczyków (krąg gegijski i toskijski)"
     },
     {
       "tag": "anglia",
@@ -52,114 +47,14 @@
       "opis": "Folklor angielski, w tym kościelny i nizinny"
     },
     {
-      "tag": "szkocja-polnocna",
+      "tag": "egipt",
       "kategoria": "kultura",
-      "opis": "Folklor wyspiarski Orkadów i Shetlandu (szkocko-nordycki)"
+      "opis": "Religia i kultura starożytnego Egiptu (Delta i Dolina Nilu)"
     },
     {
-      "tag": "irlandia",
+      "tag": "francja",
       "kategoria": "kultura",
-      "opis": "Mitologia irlandzka: Cykl Mitologiczny i podania ludowe"
-    },
-    {
-      "tag": "niemcy",
-      "kategoria": "kultura",
-      "opis": "Podanie i legenda niemiecka (krąg gór i cesarza w górach)"
-    },
-    {
-      "tag": "albania",
-      "kategoria": "kultura",
-      "opis": "Mitologia Albańczyków (krąg gegijski i toskijski)"
-    },
-    {
-      "tag": "polska",
-      "kategoria": "kultura",
-      "opis": "Folklor słowiański ziem polskich: personifikacje zarazy i śmierci, demony moru i obrzędy ich odprawiania"
-    },
-    {
-      "tag": "duch-przodkow",
-      "kategoria": "typ",
-      "opis": "Przodek przywoływany przez wspólnotę i wracający w rytuale"
-    },
-    {
-      "tag": "istota-kamienna",
-      "kategoria": "typ",
-      "opis": "Byt uwięziony w rzeźbie lub kamieniu, trwały i nieruchomy"
-    },
-    {
-      "tag": "olbrzym",
-      "kategoria": "typ",
-      "opis": "Byt o skali oblężniczej, z bronią wymagającą obsługi"
-    },
-    {
-      "tag": "wilkolak",
-      "kategoria": "typ",
-      "opis": "Człowiek lub byt przybierający postać wilka; loup-garou i pokrewne tradycje przemiany"
-    },
-    {
-      "tag": "selkie",
-      "kategoria": "typ",
-      "opis": "Istota zmieniająca formę przez skórę, pomiędzy wodą a lądem"
-    },
-    {
-      "tag": "sniacy-zastep",
-      "kategoria": "typ",
-      "opis": "Zbiorowy bohater uśpiony w krajobrazie, budzony przez znak"
-    },
-    {
-      "tag": "heros-burzy",
-      "kategoria": "typ",
-      "opis": "Półboski obrońca mierzący się z demonem pogody"
-    },
-    {
-      "tag": "zle-oko",
-      "kategoria": "motyw",
-      "opis": "Wzrok jako broń i jako rana bytu"
-    },
-    {
-      "tag": "warunek",
-      "kategoria": "motyw",
-      "opis": "Moc i los bytu zamknięte w wypowiedzianym warunku lub znaku"
-    },
-    {
-      "tag": "pamiec",
-      "kategoria": "motyw",
-      "opis": "Istnienie zależne od tego, że wspólnota wymawia imię"
-    },
-    {
-      "tag": "przemiana",
-      "kategoria": "motyw",
-      "opis": "Dwa stany tego samego ciała: okrycie, skóra, płótno"
-    },
-    {
-      "tag": "burza",
-      "kategoria": "motyw",
-      "opis": "Pogoda jako pole bitwy i jako kalendarz"
-    },
-    {
-      "tag": "oplaty",
-      "kategoria": "motyw",
-      "opis": "Cena za obecność bytu: hołd, ofiara, datek, karmicielne"
-    },
-    {
-      "tag": "maskarada",
-      "kategoria": "postac",
-      "opis": "Noszona forma rytualna: płótna, maska, strój-roda"
-    },
-    {
-      "tag": "kamienna-figura",
-      "kategoria": "postac",
-      "opis": "Rzeźba lub figura w budynku, która jest tym samym bytem"
-    },
-    {
-      "tag": "postac-zwierzeca",
-      "kategoria": "postac",
-      "opis": "Ciało zwierzęce jako drugi stan tej samej istoty"
-    },
-    {
-      "tag": "skrzydlata-postac",
-      "kategoria": "postac",
-      "opis": "Człowiecze ciało ze skrzydłami lub innymi znakami pochodzenia"
+      "opis": "Folklor francuski: podania o loup-garou i przemianie człowieka w wilka"
     },
     {
       "tag": "grecja",
@@ -172,24 +67,14 @@
       "opis": "Religia i mitologia indyjska: wedyjska i puraniczna (hinduizm)"
     },
     {
-      "tag": "fantom",
-      "kategoria": "typ",
-      "opis": "Byt zbudowany z pozoru zmysłowego: trwa, dopóki trwa uwaga, którą się karmi"
-    },
-    {
-      "tag": "kentaur",
-      "kategoria": "typ",
-      "opis": "Gatunek o dwóch połowach: człowiek z przodu, koń z tyłu, obie gotowe do ruchu"
-    },
-    {
-      "tag": "furia",
-      "kategoria": "motyw",
-      "opis": "Krótki napad podwójnej siły przed wyczerpaniem: liczy się w uderzeniach, nie w godzinach"
-    },
-    {
-      "tag": "man",
+      "tag": "irlandia",
       "kategoria": "kultura",
-      "opis": "Folklor Wyspy Man (tradycja celtycko-manx, nazwy z języka manx)"
+      "opis": "Mitologia irlandzka: Cykl Mitologiczny i podania ludowe"
+    },
+    {
+      "tag": "islandia",
+      "kategoria": "kultura",
+      "opis": "Islandia sag rodowych — tradycja spisana w XIII wieku, osadzona w epoce osadnictwa i pierwszych stuleciach chrześcijaństwa."
     },
     {
       "tag": "japonia",
@@ -197,29 +82,54 @@
       "opis": "Buddyjska pobożność ludowa Japonii (kulty Kannon i Jizō, pielgrzymki)"
     },
     {
-      "tag": "automat",
-      "kategoria": "typ",
-      "opis": "Żywy automat: istota odlana lub zbudowana, poruszana płynem/duchem, nie zrodzona"
+      "tag": "joruba",
+      "kategoria": "kultura",
+      "opis": "Religia i kultura Jorubów (Nigeria, Benin, Togo)"
     },
     {
-      "tag": "syrena",
-      "kategoria": "typ",
-      "opis": "Pół kobieta, pół ryba: morska powabnica i przewodniczka wód"
+      "tag": "kornwalia",
+      "kategoria": "kultura",
+      "opis": "Folklor kornijski zachodniego Penwith: drolle o olbrzymach, piskach i skałach zatoki Mount's Bay"
     },
     {
-      "tag": "sfinks",
-      "kategoria": "typ",
-      "opis": "Stwór złożony: ciało lwa, głowa kobiety, skrzydła — strażnik przejścia przez zagadkę"
+      "tag": "man",
+      "kategoria": "kultura",
+      "opis": "Folklor Wyspy Man (tradycja celtycko-manx, nazwy z języka manx)"
     },
     {
-      "tag": "bodhisattwa",
-      "kategoria": "typ",
-      "opis": "Istota oświecona, która zostaje po wyzwoleniu, by ratować cierpiących"
+      "tag": "niemcy",
+      "kategoria": "kultura",
+      "opis": "Podanie i legenda niemiecka (krąg gór i cesarza w górach)"
     },
     {
-      "tag": "bog-ognia",
-      "kategoria": "typ",
-      "opis": "Bóg ognia: palenisko, ofiara, słońce i błyskawica w jednym bycie"
+      "tag": "polska",
+      "kategoria": "kultura",
+      "opis": "Folklor słowiański ziem polskich: personifikacje zarazy i śmierci, demony moru i obrzędy ich odprawiania"
+    },
+    {
+      "tag": "szkocja-polnocna",
+      "kategoria": "kultura",
+      "opis": "Folklor wyspiarski Orkadów i Shetlandu (szkocko-nordycki)"
+    },
+    {
+      "tag": "burza",
+      "kategoria": "motyw",
+      "opis": "Pogoda jako pole bitwy i jako kalendarz"
+    },
+    {
+      "tag": "furia",
+      "kategoria": "motyw",
+      "opis": "Krótki napad podwójnej siły przed wyczerpaniem: liczy się w uderzeniach, nie w godzinach"
+    },
+    {
+      "tag": "jad",
+      "kategoria": "motyw",
+      "opis": "Trucizna jako broń i jako ślad: zatrute powietrze, zatrute ostrze, zatrute ciało"
+    },
+    {
+      "tag": "klatwa",
+      "kategoria": "motyw",
+      "opis": "Słowo rzucone przez pokonanego, które działa dłużej niż jego ciało."
     },
     {
       "tag": "obrona",
@@ -227,14 +137,34 @@
       "opis": "Straż granicy: byt pilnuje jednego terytorium, przejścia albo bramy"
     },
     {
+      "tag": "oczyszczenie",
+      "kategoria": "motyw",
+      "opis": "Ogień i rytuał, które wypalają zło, ciemność i przekroczenie"
+    },
+    {
+      "tag": "oplaty",
+      "kategoria": "motyw",
+      "opis": "Cena za obecność bytu: hołd, ofiara, datek, karmicielne"
+    },
+    {
+      "tag": "pamiec",
+      "kategoria": "motyw",
+      "opis": "Istnienie zależne od tego, że wspólnota wymawia imię"
+    },
+    {
+      "tag": "podstep",
+      "kategoria": "motyw",
+      "opis": "Rozstrzygnięcie fortelem zamiast siłą: byt zwodzi albo sam zostaje zwiedziony pułapką, pytaniem lub obietnicą"
+    },
+    {
+      "tag": "przemiana",
+      "kategoria": "motyw",
+      "opis": "Dwa stany tego samego ciała: okrycie, skóra, płótno"
+    },
+    {
       "tag": "przewodnik",
       "kategoria": "motyw",
       "opis": "Prowadzenie przez niebezpieczną drogę: byt zna szlak, którego nikt inny nie zna"
-    },
-    {
-      "tag": "zagadka",
-      "kategoria": "motyw",
-      "opis": "Bramą jest pytanie: wejście tylko dla tego, kto potrafi otworzyć zagadkę"
     },
     {
       "tag": "ratunek",
@@ -242,19 +172,39 @@
       "opis": "Wyciąganie z opresji: byt przychodzi na wołanie i wyprowadza z niebezpieczeństwa"
     },
     {
+      "tag": "tkanie",
+      "kategoria": "motyw",
+      "opis": "Tkanie jako kosmologia: byt, losy i płótno snute przez byt lub wokół niego"
+    },
+    {
       "tag": "uzdrowienie",
       "kategoria": "motyw",
       "opis": "Łagodzenie cierpienia: byt leczy ciało, umysł i los"
     },
     {
-      "tag": "oczyszczenie",
+      "tag": "warunek",
       "kategoria": "motyw",
-      "opis": "Ogień i rytuał, które wypalają zło, ciemność i przekroczenie"
+      "opis": "Moc i los bytu zamknięte w wypowiedzianym warunku lub znaku"
     },
     {
-      "tag": "postac-metalowa",
+      "tag": "zagadka",
+      "kategoria": "motyw",
+      "opis": "Bramą jest pytanie: wejście tylko dla tego, kto potrafi otworzyć zagadkę"
+    },
+    {
+      "tag": "zle-oko",
+      "kategoria": "motyw",
+      "opis": "Wzrok jako broń i jako rana bytu"
+    },
+    {
+      "tag": "kamienna-figura",
       "kategoria": "postac",
-      "opis": "Ciało odlane: brąz, żelazo, spiż — materializacja jako rzeźba-żywioł"
+      "opis": "Rzeźba lub figura w budynku, która jest tym samym bytem"
+    },
+    {
+      "tag": "maskarada",
+      "kategoria": "postac",
+      "opis": "Noszona forma rytualna: płótna, maska, strój-roda"
     },
     {
       "tag": "morska-postac",
@@ -267,9 +217,34 @@
       "opis": "Postać z ognia: włosy-płomienie, rozżarzone ciało, aura żaru"
     },
     {
-      "tag": "egipt",
-      "kategoria": "kultura",
-      "opis": "Religia i kultura starożytnego Egiptu (Delta i Dolina Nilu)"
+      "tag": "postac-metalowa",
+      "kategoria": "postac",
+      "opis": "Ciało odlane: brąz, żelazo, spiż — materializacja jako rzeźba-żywioł"
+    },
+    {
+      "tag": "postac-zwierzeca",
+      "kategoria": "postac",
+      "opis": "Ciało zwierzęce jako drugi stan tej samej istoty"
+    },
+    {
+      "tag": "skrzydlata-postac",
+      "kategoria": "postac",
+      "opis": "Człowiecze ciało ze skrzydłami lub innymi znakami pochodzenia"
+    },
+    {
+      "tag": "automat",
+      "kategoria": "typ",
+      "opis": "Żywy automat: istota odlana lub zbudowana, poruszana płynem/duchem, nie zrodzona"
+    },
+    {
+      "tag": "bodhisattwa",
+      "kategoria": "typ",
+      "opis": "Istota oświecona, która zostaje po wyzwoleniu, by ratować cierpiących"
+    },
+    {
+      "tag": "bog-ognia",
+      "kategoria": "typ",
+      "opis": "Bóg ognia: palenisko, ofiara, słońce i błyskawica w jednym bycie"
     },
     {
       "tag": "bogini-tkaczka",
@@ -277,19 +252,29 @@
       "opis": "Bogini tkająca byt albo losy; stwórczyni i opiekunka płótna"
     },
     {
-      "tag": "tkanie",
-      "kategoria": "motyw",
-      "opis": "Tkanie jako kosmologia: byt, losy i płótno snute przez byt lub wokół niego"
+      "tag": "duch-przodkow",
+      "kategoria": "typ",
+      "opis": "Przodek przywoływany przez wspólnotę i wracający w rytuale"
     },
     {
-      "tag": "kornwalia",
-      "kategoria": "kultura",
-      "opis": "Folklor kornijski zachodniego Penwith: drolle o olbrzymach, piskach i skałach zatoki Mount's Bay"
+      "tag": "fantom",
+      "kategoria": "typ",
+      "opis": "Byt zbudowany z pozoru zmysłowego: trwa, dopóki trwa uwaga, którą się karmi"
     },
     {
-      "tag": "podstep",
-      "kategoria": "motyw",
-      "opis": "Rozstrzygnięcie fortelem zamiast siłą: byt zwodzi albo sam zostaje zwiedziony pułapką, pytaniem lub obietnicą"
+      "tag": "heros-burzy",
+      "kategoria": "typ",
+      "opis": "Półboski obrońca mierzący się z demonem pogody"
+    },
+    {
+      "tag": "istota-kamienna",
+      "kategoria": "typ",
+      "opis": "Byt uwięziony w rzeźbie lub kamieniu, trwały i nieruchomy"
+    },
+    {
+      "tag": "kentaur",
+      "kategoria": "typ",
+      "opis": "Gatunek o dwóch połowach: człowiek z przodu, koń z tyłu, obie gotowe do ruchu"
     },
     {
       "tag": "krol-wezy",
@@ -297,9 +282,39 @@
       "opis": "Gadzi władca z koroną na łbie: zabija wzrokiem i jadem, panuje nad jednym miejscem"
     },
     {
-      "tag": "jad",
-      "kategoria": "motyw",
-      "opis": "Trucizna jako broń i jako ślad: zatrute powietrze, zatrute ostrze, zatrute ciało"
+      "tag": "olbrzym",
+      "kategoria": "typ",
+      "opis": "Byt o skali oblężniczej, z bronią wymagającą obsługi"
+    },
+    {
+      "tag": "powracajacy-zmarly",
+      "kategoria": "typ",
+      "opis": "Zmarły, który wraca w ciele: nie duch i nie widmo, lecz nieboszczyk zajmujący miejsce żywych."
+    },
+    {
+      "tag": "selkie",
+      "kategoria": "typ",
+      "opis": "Istota zmieniająca formę przez skórę, pomiędzy wodą a lądem"
+    },
+    {
+      "tag": "sfinks",
+      "kategoria": "typ",
+      "opis": "Stwór złożony: ciało lwa, głowa kobiety, skrzydła — strażnik przejścia przez zagadkę"
+    },
+    {
+      "tag": "sniacy-zastep",
+      "kategoria": "typ",
+      "opis": "Zbiorowy bohater uśpiony w krajobrazie, budzony przez znak"
+    },
+    {
+      "tag": "syrena",
+      "kategoria": "typ",
+      "opis": "Pół kobieta, pół ryba: morska powabnica i przewodniczka wód"
+    },
+    {
+      "tag": "wilkolak",
+      "kategoria": "typ",
+      "opis": "Człowiek lub byt przybierający postać wilka; loup-garou i pokrewne tradycje przemiany"
     }
   ]
 }

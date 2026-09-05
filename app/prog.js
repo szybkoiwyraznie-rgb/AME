@@ -26,7 +26,7 @@ export const KLUCZE_PROGU = Object.freeze([
   { rodzaj: 'odpowiedz', nazwa: 'odpowiedź', gest: 'odpowiedzieć na pytanie zadane w progu', motywy: ['zagadka', 'warunek'], sila: 24 },
   { rodzaj: 'hymn', nazwa: 'hymn', gest: 'powiedzieć znany wers we właściwej porze nocy', motywy: ['przewodnik', 'pamiec'], sila: 22 },
   { rodzaj: 'oplata', nazwa: 'opłata', gest: 'zapłacić z góry i nie targować się', motywy: ['oplaty', 'tkanie'], sila: 20 },
-  { rodzaj: 'ogien', nazwa: 'ogień', gest: 'wnieść światło i spalić to, co zostało po zmarłym', motywy: ['oczyszczenie', 'uzdrowienie'], sila: 20 },
+  { rodzaj: 'ogien', nazwa: 'ogień', gest: 'wnieść światło i spalić to, co zostało po zmarłym', motywy: ['oczyszczenie', 'uzdrowienie', 'klatwa'], sila: 20 },
   { rodzaj: 'imie', nazwa: 'imię', gest: 'nazwać byt jego własnym imieniem', motywy: ['przemiana', 'podstep'], sila: 18 },
   { rodzaj: 'zaslona', nazwa: 'zasłona', gest: 'zamknąć próg i nie patrzeć w stronę gościa', motywy: ['obrona', 'ratunek', 'burza', 'furia'], sila: 16 },
 ]);

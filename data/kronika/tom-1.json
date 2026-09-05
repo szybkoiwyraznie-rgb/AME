@@ -6,8 +6,8 @@
   "status": "otwarta",
   "stanStart": {
     "os": {
-      "mit": 38,
-      "racjonalizacja": 62
+      "mit": 37,
+      "racjonalizacja": 63
     },
     "zasieg": [
       {
@@ -20,11 +20,11 @@
       },
       {
         "slug": "barbarossa-kyffhaeuser",
-        "wielkosc": 0.47
+        "wielkosc": 0.49
       },
       {
         "slug": "bazyliszek-warszawski",
-        "wielkosc": 0.2
+        "wielkosc": 0.22
       },
       {
         "slug": "ben-varrey",
@@ -45,6 +45,10 @@
       {
         "slug": "empusa-korynt",
         "wielkosc": 0.45
+      },
+      {
+        "slug": "glamr-z-thorhallsstadir",
+        "wielkosc": 0.18
       },
       {
         "slug": "indra",
@@ -72,7 +76,7 @@
       },
       {
         "slug": "morowa-panna",
-        "wielkosc": 0.39
+        "wielkosc": 0.41
       },
       {
         "slug": "neith-z-sais",
@@ -121,12 +125,12 @@
       {
         "kultura": "niemcy",
         "kult": "barbarossa-kyffhaeuser",
-        "wielkosc": 0.47
+        "wielkosc": 0.49
       },
       {
         "kultura": "polska",
         "kult": "bazyliszek-warszawski",
-        "wielkosc": 0.2
+        "wielkosc": 0.22
       },
       {
         "kultura": "man",
@@ -152,6 +156,11 @@
         "kultura": "grecja",
         "kult": "empusa-korynt",
         "wielkosc": 0.45
+      },
+      {
+        "kultura": "islandia",
+        "kult": "glamr-z-thorhallsstadir",
+        "wielkosc": 0.18
       },
       {
         "kultura": "indie",
@@ -186,7 +195,7 @@
       {
         "kultura": "polska",
         "kult": "morowa-panna",
-        "wielkosc": 0.39
+        "wielkosc": 0.41
       },
       {
         "kultura": "egipt",

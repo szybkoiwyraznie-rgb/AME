@@ -35,13 +35,13 @@
           "slug": "barbarossa-kyffhaeuser",
           "nazwa": "Barbarossa w Kyffhäuserze",
           "rola": "Gospodarz warunku",
-          "pasywne": 21,
-          "saldoPrzed": 21,
+          "pasywne": 23,
+          "saldoPrzed": 23,
           "kosztUdzialu": 2,
           "kosztKlucza": 0,
           "boost": 0,
           "zwrot": 0,
-          "saldoPo": 19
+          "saldoPo": 21
         },
         {
           "slug": "kentaur-pelion",
@@ -58,8 +58,8 @@
       ],
       "stanPo": {
         "os": {
-          "mit": 36,
-          "racjonalizacja": 64
+          "mit": 35,
+          "racjonalizacja": 65
         },
         "zasieg": [
           {
@@ -72,11 +72,11 @@
           },
           {
             "slug": "barbarossa-kyffhaeuser",
-            "wielkosc": 0.47
+            "wielkosc": 0.49
           },
           {
             "slug": "bazyliszek-warszawski",
-            "wielkosc": 0.2
+            "wielkosc": 0.22
           },
           {
             "slug": "ben-varrey",
@@ -97,6 +97,10 @@
           {
             "slug": "empusa-korynt",
             "wielkosc": 0.45
+          },
+          {
+            "slug": "glamr-z-thorhallsstadir",
+            "wielkosc": 0.18
           },
           {
             "slug": "indra",
@@ -124,7 +128,7 @@
           },
           {
             "slug": "morowa-panna",
-            "wielkosc": 0.39
+            "wielkosc": 0.41
           },
           {
             "slug": "neith-z-sais",
@@ -173,12 +177,12 @@
           {
             "kultura": "niemcy",
             "kult": "barbarossa-kyffhaeuser",
-            "wielkosc": 0.47
+            "wielkosc": 0.49
           },
           {
             "kultura": "polska",
             "kult": "bazyliszek-warszawski",
-            "wielkosc": 0.2
+            "wielkosc": 0.22
           },
           {
             "kultura": "man",
@@ -204,6 +208,11 @@
             "kultura": "grecja",
             "kult": "empusa-korynt",
             "wielkosc": 0.45
+          },
+          {
+            "kultura": "islandia",
+            "kult": "glamr-z-thorhallsstadir",
+            "wielkosc": 0.18
           },
           {
             "kultura": "indie",
@@ -238,7 +247,7 @@
           {
             "kultura": "polska",
             "kult": "morowa-panna",
-            "wielkosc": 0.39
+            "wielkosc": 0.41
           },
           {
             "kultura": "egipt",
@@ -283,7 +292,7 @@
         ],
         "paliwo": {
           "egungun": 25,
-          "barbarossa-kyffhaeuser": 19,
+          "barbarossa-kyffhaeuser": 21,
           "kentaur-pelion": 16
         }
       },
@@ -317,8 +326,8 @@
           },
           {
             "slug": "barbarossa-kyffhaeuser",
-            "przed": 0.47,
-            "po": 0.47,
+            "przed": 0.49,
+            "po": 0.49,
             "delta": 0,
             "opis": "Cesarz nie zyskuje i nie traci: jego warunek pozostaje nierozstrzygnięty."
           },
@@ -341,8 +350,8 @@
           {
             "kultura": "niemcy",
             "kult": "barbarossa-kyffhaeuser",
-            "przed": 0.47,
-            "po": 0.47,
+            "przed": 0.49,
+            "po": 0.49,
             "delta": 0
           },
           {
@@ -485,8 +494,8 @@
       ],
       "stanPo": {
         "os": {
-          "mit": 34,
-          "racjonalizacja": 66
+          "mit": 33,
+          "racjonalizacja": 67
         },
         "zasieg": [
           {
@@ -499,11 +508,11 @@
           },
           {
             "slug": "barbarossa-kyffhaeuser",
-            "wielkosc": 0.47
+            "wielkosc": 0.49
           },
           {
             "slug": "bazyliszek-warszawski",
-            "wielkosc": 0.2
+            "wielkosc": 0.22
           },
           {
             "slug": "ben-varrey",
@@ -524,6 +533,10 @@
           {
             "slug": "empusa-korynt",
             "wielkosc": 0.47
+          },
+          {
+            "slug": "glamr-z-thorhallsstadir",
+            "wielkosc": 0.18
           },
           {
             "slug": "indra",
@@ -551,7 +564,7 @@
           },
           {
             "slug": "morowa-panna",
-            "wielkosc": 0.39
+            "wielkosc": 0.41
           },
           {
             "slug": "neith-z-sais",
@@ -600,12 +613,12 @@
           {
             "kultura": "niemcy",
             "kult": "barbarossa-kyffhaeuser",
-            "wielkosc": 0.47
+            "wielkosc": 0.49
           },
           {
             "kultura": "polska",
             "kult": "bazyliszek-warszawski",
-            "wielkosc": 0.2
+            "wielkosc": 0.22
           },
           {
             "kultura": "man",
@@ -631,6 +644,11 @@
             "kultura": "grecja",
             "kult": "empusa-korynt",
             "wielkosc": 0.47
+          },
+          {
+            "kultura": "islandia",
+            "kult": "glamr-z-thorhallsstadir",
+            "wielkosc": 0.18
           },
           {
             "kultura": "indie",
@@ -665,7 +683,7 @@
           {
             "kultura": "polska",
             "kult": "morowa-panna",
-            "wielkosc": 0.39
+            "wielkosc": 0.41
           },
           {
             "kultura": "egipt",
@@ -710,7 +728,7 @@
         ],
         "paliwo": {
           "egungun": 25,
-          "barbarossa-kyffhaeuser": 19,
+          "barbarossa-kyffhaeuser": 21,
           "kentaur-pelion": 14,
           "lincoln-imp": 14,
           "empusa-korynt": 23
@@ -930,8 +948,8 @@
       ],
       "stanPo": {
         "os": {
-          "mit": 32,
-          "racjonalizacja": 68
+          "mit": 31,
+          "racjonalizacja": 69
         },
         "zasieg": [
           {
@@ -944,11 +962,11 @@
           },
           {
             "slug": "barbarossa-kyffhaeuser",
-            "wielkosc": 0.47
+            "wielkosc": 0.49
           },
           {
             "slug": "bazyliszek-warszawski",
-            "wielkosc": 0.2
+            "wielkosc": 0.22
           },
           {
             "slug": "ben-varrey",
@@ -969,6 +987,10 @@
           {
             "slug": "empusa-korynt",
             "wielkosc": 0.47
+          },
+          {
+            "slug": "glamr-z-thorhallsstadir",
+            "wielkosc": 0.18
           },
           {
             "slug": "indra",
@@ -996,7 +1018,7 @@
           },
           {
             "slug": "morowa-panna",
-            "wielkosc": 0.39
+            "wielkosc": 0.41
           },
           {
             "slug": "neith-z-sais",
@@ -1045,12 +1067,12 @@
           {
             "kultura": "niemcy",
             "kult": "barbarossa-kyffhaeuser",
-            "wielkosc": 0.47
+            "wielkosc": 0.49
           },
           {
             "kultura": "polska",
             "kult": "bazyliszek-warszawski",
-            "wielkosc": 0.2
+            "wielkosc": 0.22
           },
           {
             "kultura": "man",
@@ -1076,6 +1098,11 @@
             "kultura": "grecja",
             "kult": "empusa-korynt",
             "wielkosc": 0.47
+          },
+          {
+            "kultura": "islandia",
+            "kult": "glamr-z-thorhallsstadir",
+            "wielkosc": 0.18
           },
           {
             "kultura": "indie",
@@ -1110,7 +1137,7 @@
           {
             "kultura": "polska",
             "kult": "morowa-panna",
-            "wielkosc": 0.39
+            "wielkosc": 0.41
           },
           {
             "kultura": "egipt",
@@ -1155,7 +1182,7 @@
         ],
         "paliwo": {
           "egungun": 28,
-          "barbarossa-kyffhaeuser": 19,
+          "barbarossa-kyffhaeuser": 21,
           "kentaur-pelion": 14,
           "lincoln-imp": 14,
           "empusa-korynt": 21,
@@ -1390,8 +1417,8 @@
       ],
       "stanPo": {
         "os": {
-          "mit": 31,
-          "racjonalizacja": 69
+          "mit": 30,
+          "racjonalizacja": 70
         },
         "zasieg": [
           {
@@ -1404,11 +1431,11 @@
           },
           {
             "slug": "barbarossa-kyffhaeuser",
-            "wielkosc": 0.47
+            "wielkosc": 0.49
           },
           {
             "slug": "bazyliszek-warszawski",
-            "wielkosc": 0.2
+            "wielkosc": 0.22
           },
           {
             "slug": "ben-varrey",
@@ -1429,6 +1456,10 @@
           {
             "slug": "empusa-korynt",
             "wielkosc": 0.47
+          },
+          {
+            "slug": "glamr-z-thorhallsstadir",
+            "wielkosc": 0.18
           },
           {
             "slug": "indra",
@@ -1456,7 +1487,7 @@
           },
           {
             "slug": "morowa-panna",
-            "wielkosc": 0.39
+            "wielkosc": 0.41
           },
           {
             "slug": "neith-z-sais",
@@ -1505,12 +1536,12 @@
           {
             "kultura": "niemcy",
             "kult": "barbarossa-kyffhaeuser",
-            "wielkosc": 0.47
+            "wielkosc": 0.49
           },
           {
             "kultura": "polska",
             "kult": "bazyliszek-warszawski",
-            "wielkosc": 0.2
+            "wielkosc": 0.22
           },
           {
             "kultura": "man",
@@ -1536,6 +1567,11 @@
             "kultura": "grecja",
             "kult": "empusa-korynt",
             "wielkosc": 0.47
+          },
+          {
+            "kultura": "islandia",
+            "kult": "glamr-z-thorhallsstadir",
+            "wielkosc": 0.18
           },
           {
             "kultura": "indie",
@@ -1570,7 +1606,7 @@
           {
             "kultura": "polska",
             "kult": "morowa-panna",
-            "wielkosc": 0.39
+            "wielkosc": 0.41
           },
           {
             "kultura": "egipt",
@@ -1615,7 +1651,7 @@
         ],
         "paliwo": {
           "egungun": 31,
-          "barbarossa-kyffhaeuser": 19,
+          "barbarossa-kyffhaeuser": 21,
           "kentaur-pelion": 14,
           "lincoln-imp": 14,
           "empusa-korynt": 21,
@@ -1850,8 +1886,8 @@
       ],
       "stanPo": {
         "os": {
-          "mit": 30,
-          "racjonalizacja": 70
+          "mit": 29,
+          "racjonalizacja": 71
         },
         "zasieg": [
           {
@@ -1864,11 +1900,11 @@
           },
           {
             "slug": "barbarossa-kyffhaeuser",
-            "wielkosc": 0.47
+            "wielkosc": 0.49
           },
           {
             "slug": "bazyliszek-warszawski",
-            "wielkosc": 0.2
+            "wielkosc": 0.22
           },
           {
             "slug": "ben-varrey",
@@ -1889,6 +1925,10 @@
           {
             "slug": "empusa-korynt",
             "wielkosc": 0.47
+          },
+          {
+            "slug": "glamr-z-thorhallsstadir",
+            "wielkosc": 0.18
           },
           {
             "slug": "indra",
@@ -1916,7 +1956,7 @@
           },
           {
             "slug": "morowa-panna",
-            "wielkosc": 0.39
+            "wielkosc": 0.41
           },
           {
             "slug": "neith-z-sais",
@@ -1965,12 +2005,12 @@
           {
             "kultura": "niemcy",
             "kult": "barbarossa-kyffhaeuser",
-            "wielkosc": 0.47
+            "wielkosc": 0.49
           },
           {
             "kultura": "polska",
             "kult": "bazyliszek-warszawski",
-            "wielkosc": 0.2
+            "wielkosc": 0.22
           },
           {
             "kultura": "man",
@@ -1996,6 +2036,11 @@
             "kultura": "grecja",
             "kult": "empusa-korynt",
             "wielkosc": 0.47
+          },
+          {
+            "kultura": "islandia",
+            "kult": "glamr-z-thorhallsstadir",
+            "wielkosc": 0.18
           },
           {
             "kultura": "indie",
@@ -2030,7 +2075,7 @@
           {
             "kultura": "polska",
             "kult": "morowa-panna",
-            "wielkosc": 0.39
+            "wielkosc": 0.41
           },
           {
             "kultura": "egipt",
@@ -2075,7 +2120,7 @@
         ],
         "paliwo": {
           "egungun": 31,
-          "barbarossa-kyffhaeuser": 19,
+          "barbarossa-kyffhaeuser": 21,
           "kentaur-pelion": 14,
           "lincoln-imp": 16,
           "empusa-korynt": 21,
@@ -2284,13 +2329,13 @@
           "slug": "morowa-panna",
           "nazwa": "Morowa Panna — zaraza w białej szacie z czerwoną chustą",
           "rola": "Pytanie z jedną odpowiedzią",
-          "pasywne": 15,
-          "saldoPrzed": 15,
+          "pasywne": 17,
+          "saldoPrzed": 17,
           "kosztUdzialu": 2,
           "kosztKlucza": 0,
           "boost": 0,
           "zwrot": 0,
-          "saldoPo": 13
+          "saldoPo": 15
         },
         {
           "slug": "empusa-korynt",
@@ -2307,8 +2352,8 @@
       ],
       "stanPo": {
         "os": {
-          "mit": 29,
-          "racjonalizacja": 71
+          "mit": 28,
+          "racjonalizacja": 72
         },
         "zasieg": [
           {
@@ -2321,11 +2366,11 @@
           },
           {
             "slug": "barbarossa-kyffhaeuser",
-            "wielkosc": 0.47
+            "wielkosc": 0.49
           },
           {
             "slug": "bazyliszek-warszawski",
-            "wielkosc": 0.2
+            "wielkosc": 0.22
           },
           {
             "slug": "ben-varrey",
@@ -2346,6 +2391,10 @@
           {
             "slug": "empusa-korynt",
             "wielkosc": 0.475
+          },
+          {
+            "slug": "glamr-z-thorhallsstadir",
+            "wielkosc": 0.18
           },
           {
             "slug": "indra",
@@ -2373,7 +2422,7 @@
           },
           {
             "slug": "morowa-panna",
-            "wielkosc": 0.375
+            "wielkosc": 0.395
           },
           {
             "slug": "neith-z-sais",
@@ -2422,12 +2471,12 @@
           {
             "kultura": "niemcy",
             "kult": "barbarossa-kyffhaeuser",
-            "wielkosc": 0.47
+            "wielkosc": 0.49
           },
           {
             "kultura": "polska",
             "kult": "bazyliszek-warszawski",
-            "wielkosc": 0.2
+            "wielkosc": 0.22
           },
           {
             "kultura": "man",
@@ -2453,6 +2502,11 @@
             "kultura": "grecja",
             "kult": "empusa-korynt",
             "wielkosc": 0.475
+          },
+          {
+            "kultura": "islandia",
+            "kult": "glamr-z-thorhallsstadir",
+            "wielkosc": 0.18
           },
           {
             "kultura": "indie",
@@ -2487,7 +2541,7 @@
           {
             "kultura": "polska",
             "kult": "morowa-panna",
-            "wielkosc": 0.375
+            "wielkosc": 0.395
           },
           {
             "kultura": "egipt",
@@ -2532,7 +2586,7 @@
         ],
         "paliwo": {
           "egungun": 31,
-          "barbarossa-kyffhaeuser": 19,
+          "barbarossa-kyffhaeuser": 21,
           "kentaur-pelion": 14,
           "lincoln-imp": 16,
           "empusa-korynt": 20,
@@ -2542,7 +2596,7 @@
           "sfinks-teby": 22,
           "talos-kreta": 20,
           "pandora": 17,
-          "morowa-panna": 13
+          "morowa-panna": 15
         }
       },
       "konsekwencje": {
@@ -2581,8 +2635,8 @@
           },
           {
             "slug": "morowa-panna",
-            "przed": 0.39,
-            "po": 0.375,
+            "przed": 0.41,
+            "po": 0.395,
             "delta": -0.015,
             "opis": "Ludzie ćwiczą szczerą odpowiedź na jej pytanie; rytuał traci jedną z nóg."
           },
@@ -2605,8 +2659,8 @@
           {
             "kultura": "polska",
             "kult": "morowa-panna",
-            "przed": 0.39,
-            "po": 0.375,
+            "przed": 0.41,
+            "po": 0.395,
             "delta": -0.015
           },
           {
@@ -2773,8 +2827,8 @@
       ],
       "stanPo": {
         "os": {
-          "mit": 28,
-          "racjonalizacja": 72
+          "mit": 27,
+          "racjonalizacja": 73
         },
         "zasieg": [
           {
@@ -2787,11 +2841,11 @@
           },
           {
             "slug": "barbarossa-kyffhaeuser",
-            "wielkosc": 0.47
+            "wielkosc": 0.49
           },
           {
             "slug": "bazyliszek-warszawski",
-            "wielkosc": 0.2
+            "wielkosc": 0.22
           },
           {
             "slug": "ben-varrey",
@@ -2812,6 +2866,10 @@
           {
             "slug": "empusa-korynt",
             "wielkosc": 0.475
+          },
+          {
+            "slug": "glamr-z-thorhallsstadir",
+            "wielkosc": 0.18
           },
           {
             "slug": "indra",
@@ -2839,7 +2897,7 @@
           },
           {
             "slug": "morowa-panna",
-            "wielkosc": 0.375
+            "wielkosc": 0.395
           },
           {
             "slug": "neith-z-sais",
@@ -2888,12 +2946,12 @@
           {
             "kultura": "niemcy",
             "kult": "barbarossa-kyffhaeuser",
-            "wielkosc": 0.47
+            "wielkosc": 0.49
           },
           {
             "kultura": "polska",
             "kult": "bazyliszek-warszawski",
-            "wielkosc": 0.2
+            "wielkosc": 0.22
           },
           {
             "kultura": "man",
@@ -2919,6 +2977,11 @@
             "kultura": "grecja",
             "kult": "empusa-korynt",
             "wielkosc": 0.475
+          },
+          {
+            "kultura": "islandia",
+            "kult": "glamr-z-thorhallsstadir",
+            "wielkosc": 0.18
           },
           {
             "kultura": "indie",
@@ -2953,7 +3016,7 @@
           {
             "kultura": "polska",
             "kult": "morowa-panna",
-            "wielkosc": 0.375
+            "wielkosc": 0.395
           },
           {
             "kultura": "egipt",
@@ -2998,7 +3061,7 @@
         ],
         "paliwo": {
           "egungun": 31,
-          "barbarossa-kyffhaeuser": 19,
+          "barbarossa-kyffhaeuser": 21,
           "kentaur-pelion": 14,
           "lincoln-imp": 16,
           "empusa-korynt": 20,
@@ -3008,7 +3071,7 @@
           "sfinks-teby": 22,
           "talos-kreta": 20,
           "pandora": 17,
-          "morowa-panna": 13,
+          "morowa-panna": 15,
           "protostates": 12,
           "knecht-z-koptos": 13,
           "syama-i-sarvara": 11
@@ -3219,13 +3282,13 @@
           "slug": "barbarossa-kyffhaeuser",
           "nazwa": "Barbarossa w Kyffhäuserze",
           "rola": "Gospodarz, który płaci ze snu",
-          "pasywne": 21,
-          "saldoPrzed": 19,
+          "pasywne": 23,
+          "saldoPrzed": 21,
           "kosztUdzialu": 2,
           "kosztKlucza": 0,
           "boost": 0,
           "zwrot": 3,
-          "saldoPo": 20
+          "saldoPo": 22
         },
         {
           "slug": "egungun",
@@ -3242,8 +3305,8 @@
       ],
       "stanPo": {
         "os": {
-          "mit": 29,
-          "racjonalizacja": 71
+          "mit": 28,
+          "racjonalizacja": 72
         },
         "zasieg": [
           {
@@ -3256,11 +3319,11 @@
           },
           {
             "slug": "barbarossa-kyffhaeuser",
-            "wielkosc": 0.482
+            "wielkosc": 0.502
           },
           {
             "slug": "bazyliszek-warszawski",
-            "wielkosc": 0.2
+            "wielkosc": 0.22
           },
           {
             "slug": "ben-varrey",
@@ -3281,6 +3344,10 @@
           {
             "slug": "empusa-korynt",
             "wielkosc": 0.485
+          },
+          {
+            "slug": "glamr-z-thorhallsstadir",
+            "wielkosc": 0.18
           },
           {
             "slug": "indra",
@@ -3308,7 +3375,7 @@
           },
           {
             "slug": "morowa-panna",
-            "wielkosc": 0.375
+            "wielkosc": 0.395
           },
           {
             "slug": "neith-z-sais",
@@ -3357,12 +3424,12 @@
           {
             "kultura": "niemcy",
             "kult": "barbarossa-kyffhaeuser",
-            "wielkosc": 0.482
+            "wielkosc": 0.502
           },
           {
             "kultura": "polska",
             "kult": "bazyliszek-warszawski",
-            "wielkosc": 0.2
+            "wielkosc": 0.22
           },
           {
             "kultura": "man",
@@ -3388,6 +3455,11 @@
             "kultura": "grecja",
             "kult": "empusa-korynt",
             "wielkosc": 0.485
+          },
+          {
+            "kultura": "islandia",
+            "kult": "glamr-z-thorhallsstadir",
+            "wielkosc": 0.18
           },
           {
             "kultura": "indie",
@@ -3422,7 +3494,7 @@
           {
             "kultura": "polska",
             "kult": "morowa-panna",
-            "wielkosc": 0.375
+            "wielkosc": 0.395
           },
           {
             "kultura": "egipt",
@@ -3467,7 +3539,7 @@
         ],
         "paliwo": {
           "egungun": 30,
-          "barbarossa-kyffhaeuser": 20,
+          "barbarossa-kyffhaeuser": 22,
           "kentaur-pelion": 14,
           "lincoln-imp": 16,
           "empusa-korynt": 20,
@@ -3477,7 +3549,7 @@
           "sfinks-teby": 22,
           "talos-kreta": 20,
           "pandora": 17,
-          "morowa-panna": 13,
+          "morowa-panna": 15,
           "protostates": 12,
           "knecht-z-koptos": 13,
           "syama-i-sarvara": 11
@@ -3511,8 +3583,8 @@
         "zasieg": [
           {
             "slug": "barbarossa-kyffhaeuser",
-            "przed": 0.47,
-            "po": 0.482,
+            "przed": 0.49,
+            "po": 0.502,
             "delta": 0.012,
             "opis": "Gospodarz, który płaci ze snu: legenda Kyffhäuser zyskuje scenę, w której warunek przebudzenia ma już rachunek i adresata."
           },
@@ -3535,8 +3607,8 @@
           {
             "kultura": "niemcy",
             "kult": "barbarossa-kyffhaeuser",
-            "przed": 0.47,
-            "po": 0.482,
+            "przed": 0.49,
+            "po": 0.502,
             "delta": 0.012
           },
           {
@@ -3715,8 +3787,8 @@
       ],
       "stanPo": {
         "os": {
-          "mit": 30,
-          "racjonalizacja": 70
+          "mit": 29,
+          "racjonalizacja": 71
         },
         "zasieg": [
           {
@@ -3729,11 +3801,11 @@
           },
           {
             "slug": "barbarossa-kyffhaeuser",
-            "wielkosc": 0.482
+            "wielkosc": 0.502
           },
           {
             "slug": "bazyliszek-warszawski",
-            "wielkosc": 0.2
+            "wielkosc": 0.22
           },
           {
             "slug": "ben-varrey",
@@ -3754,6 +3826,10 @@
           {
             "slug": "empusa-korynt",
             "wielkosc": 0.485
+          },
+          {
+            "slug": "glamr-z-thorhallsstadir",
+            "wielkosc": 0.18
           },
           {
             "slug": "indra",
@@ -3781,7 +3857,7 @@
           },
           {
             "slug": "morowa-panna",
-            "wielkosc": 0.375
+            "wielkosc": 0.395
           },
           {
             "slug": "neith-z-sais",
@@ -3830,12 +3906,12 @@
           {
             "kultura": "niemcy",
             "kult": "barbarossa-kyffhaeuser",
-            "wielkosc": 0.482
+            "wielkosc": 0.502
           },
           {
             "kultura": "polska",
             "kult": "bazyliszek-warszawski",
-            "wielkosc": 0.2
+            "wielkosc": 0.22
           },
           {
             "kultura": "man",
@@ -3861,6 +3937,11 @@
             "kultura": "grecja",
             "kult": "empusa-korynt",
             "wielkosc": 0.485
+          },
+          {
+            "kultura": "islandia",
+            "kult": "glamr-z-thorhallsstadir",
+            "wielkosc": 0.18
           },
           {
             "kultura": "indie",
@@ -3895,7 +3976,7 @@
           {
             "kultura": "polska",
             "kult": "morowa-panna",
-            "wielkosc": 0.375
+            "wielkosc": 0.395
           },
           {
             "kultura": "egipt",
@@ -3940,7 +4021,7 @@
         ],
         "paliwo": {
           "egungun": 30,
-          "barbarossa-kyffhaeuser": 20,
+          "barbarossa-kyffhaeuser": 22,
           "kentaur-pelion": 14,
           "lincoln-imp": 16,
           "empusa-korynt": 20,
@@ -3950,7 +4031,7 @@
           "sfinks-teby": 22,
           "talos-kreta": 20,
           "pandora": 17,
-          "morowa-panna": 13,
+          "morowa-panna": 15,
           "protostates": 12,
           "knecht-z-koptos": 13,
           "syama-i-sarvara": 11,
@@ -4212,8 +4293,8 @@
       ],
       "stanPo": {
         "os": {
-          "mit": 29,
-          "racjonalizacja": 71
+          "mit": 28,
+          "racjonalizacja": 72
         },
         "zasieg": [
           {
@@ -4226,11 +4307,11 @@
           },
           {
             "slug": "barbarossa-kyffhaeuser",
-            "wielkosc": 0.482
+            "wielkosc": 0.502
           },
           {
             "slug": "bazyliszek-warszawski",
-            "wielkosc": 0.2
+            "wielkosc": 0.22
           },
           {
             "slug": "ben-varrey",
@@ -4251,6 +4332,10 @@
           {
             "slug": "empusa-korynt",
             "wielkosc": 0.485
+          },
+          {
+            "slug": "glamr-z-thorhallsstadir",
+            "wielkosc": 0.18
           },
           {
             "slug": "indra",
@@ -4278,7 +4363,7 @@
           },
           {
             "slug": "morowa-panna",
-            "wielkosc": 0.375
+            "wielkosc": 0.395
           },
           {
             "slug": "neith-z-sais",
@@ -4327,12 +4412,12 @@
           {
             "kultura": "niemcy",
             "kult": "barbarossa-kyffhaeuser",
-            "wielkosc": 0.482
+            "wielkosc": 0.502
           },
           {
             "kultura": "polska",
             "kult": "bazyliszek-warszawski",
-            "wielkosc": 0.2
+            "wielkosc": 0.22
           },
           {
             "kultura": "man",
@@ -4358,6 +4443,11 @@
             "kultura": "grecja",
             "kult": "empusa-korynt",
             "wielkosc": 0.485
+          },
+          {
+            "kultura": "islandia",
+            "kult": "glamr-z-thorhallsstadir",
+            "wielkosc": 0.18
           },
           {
             "kultura": "indie",
@@ -4392,7 +4482,7 @@
           {
             "kultura": "polska",
             "kult": "morowa-panna",
-            "wielkosc": 0.375
+            "wielkosc": 0.395
           },
           {
             "kultura": "egipt",
@@ -4437,7 +4527,7 @@
         ],
         "paliwo": {
           "egungun": 30,
-          "barbarossa-kyffhaeuser": 20,
+          "barbarossa-kyffhaeuser": 22,
           "kentaur-pelion": 14,
           "lincoln-imp": 16,
           "empusa-korynt": 20,
@@ -4447,7 +4537,7 @@
           "sfinks-teby": 22,
           "talos-kreta": 20,
           "pandora": 17,
-          "morowa-panna": 13,
+          "morowa-panna": 15,
           "protostates": 12,
           "knecht-z-koptos": 13,
           "syama-i-sarvara": 11,
@@ -4721,8 +4811,8 @@
       ],
       "stanPo": {
         "os": {
-          "mit": 29,
-          "racjonalizacja": 71
+          "mit": 28,
+          "racjonalizacja": 72
         },
         "zasieg": [
           {
@@ -4735,11 +4825,11 @@
           },
           {
             "slug": "barbarossa-kyffhaeuser",
-            "wielkosc": 0.482
+            "wielkosc": 0.502
           },
           {
             "slug": "bazyliszek-warszawski",
-            "wielkosc": 0.2
+            "wielkosc": 0.22
           },
           {
             "slug": "ben-varrey",
@@ -4760,6 +4850,10 @@
           {
             "slug": "empusa-korynt",
             "wielkosc": 0.485
+          },
+          {
+            "slug": "glamr-z-thorhallsstadir",
+            "wielkosc": 0.18
           },
           {
             "slug": "indra",
@@ -4787,7 +4881,7 @@
           },
           {
             "slug": "morowa-panna",
-            "wielkosc": 0.375
+            "wielkosc": 0.395
           },
           {
             "slug": "neith-z-sais",
@@ -4836,12 +4930,12 @@
           {
             "kultura": "niemcy",
             "kult": "barbarossa-kyffhaeuser",
-            "wielkosc": 0.482
+            "wielkosc": 0.502
           },
           {
             "kultura": "polska",
             "kult": "bazyliszek-warszawski",
-            "wielkosc": 0.2
+            "wielkosc": 0.22
           },
           {
             "kultura": "man",
@@ -4867,6 +4961,11 @@
             "kultura": "grecja",
             "kult": "empusa-korynt",
             "wielkosc": 0.485
+          },
+          {
+            "kultura": "islandia",
+            "kult": "glamr-z-thorhallsstadir",
+            "wielkosc": 0.18
           },
           {
             "kultura": "indie",
@@ -4901,7 +5000,7 @@
           {
             "kultura": "polska",
             "kult": "morowa-panna",
-            "wielkosc": 0.375
+            "wielkosc": 0.395
           },
           {
             "kultura": "egipt",
@@ -4946,7 +5045,7 @@
         ],
         "paliwo": {
           "egungun": 30,
-          "barbarossa-kyffhaeuser": 20,
+          "barbarossa-kyffhaeuser": 22,
           "kentaur-pelion": 14,
           "lincoln-imp": 16,
           "empusa-korynt": 20,
@@ -4956,7 +5055,7 @@
           "sfinks-teby": 22,
           "talos-kreta": 20,
           "pandora": 17,
-          "morowa-panna": 13,
+          "morowa-panna": 15,
           "protostates": 12,
           "knecht-z-koptos": 13,
           "syama-i-sarvara": 11,
@@ -5159,8 +5258,8 @@
   ],
   "stanPo": {
     "os": {
-      "mit": 29,
-      "racjonalizacja": 71
+      "mit": 28,
+      "racjonalizacja": 72
     },
     "zasieg": [
       {
@@ -5173,11 +5272,11 @@
       },
       {
         "slug": "barbarossa-kyffhaeuser",
-        "wielkosc": 0.482
+        "wielkosc": 0.502
       },
       {
         "slug": "bazyliszek-warszawski",
-        "wielkosc": 0.2
+        "wielkosc": 0.22
       },
       {
         "slug": "ben-varrey",
@@ -5198,6 +5297,10 @@
       {
         "slug": "empusa-korynt",
         "wielkosc": 0.485
+      },
+      {
+        "slug": "glamr-z-thorhallsstadir",
+        "wielkosc": 0.18
       },
       {
         "slug": "indra",
@@ -5225,7 +5328,7 @@
       },
       {
         "slug": "morowa-panna",
-        "wielkosc": 0.375
+        "wielkosc": 0.395
       },
       {
         "slug": "neith-z-sais",
@@ -5274,12 +5377,12 @@
       {
         "kultura": "niemcy",
         "kult": "barbarossa-kyffhaeuser",
-        "wielkosc": 0.482
+        "wielkosc": 0.502
       },
       {
         "kultura": "polska",
         "kult": "bazyliszek-warszawski",
-        "wielkosc": 0.2
+        "wielkosc": 0.22
       },
       {
         "kultura": "man",
@@ -5305,6 +5408,11 @@
         "kultura": "grecja",
         "kult": "empusa-korynt",
         "wielkosc": 0.485
+      },
+      {
+        "kultura": "islandia",
+        "kult": "glamr-z-thorhallsstadir",
+        "wielkosc": 0.18
       },
       {
         "kultura": "indie",
@@ -5339,7 +5447,7 @@
       {
         "kultura": "polska",
         "kult": "morowa-panna",
-        "wielkosc": 0.375
+        "wielkosc": 0.395
       },
       {
         "kultura": "egipt",
@@ -5384,7 +5492,7 @@
     ],
     "paliwo": {
       "egungun": 30,
-      "barbarossa-kyffhaeuser": 20,
+      "barbarossa-kyffhaeuser": 22,
       "kentaur-pelion": 14,
       "lincoln-imp": 16,
       "empusa-korynt": 20,
@@ -5394,7 +5502,7 @@
       "sfinks-teby": 22,
       "talos-kreta": 20,
       "pandora": 17,
-      "morowa-panna": 13,
+      "morowa-panna": 15,
       "protostates": 12,
       "knecht-z-koptos": 13,
       "syama-i-sarvara": 11,

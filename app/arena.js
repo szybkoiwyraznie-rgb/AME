@@ -38,6 +38,7 @@ export const WAGA_MOTYWU = {
   tkanie: { atak: 2, obrona: 4 },
   podstep: { atak: 4, obrona: 2 },
   jad: { atak: 7, obrona: 0 },
+  klatwa: { atak: 5, obrona: 2 },
 };
 
 /** Kontry motywów: motyw klucza tłumi siłę motywu z listy (mnożnik ataku). */
@@ -50,6 +51,8 @@ export const KONTRA_MOTYWU = {
   podstep: ['obrona'],
   // uzdrowienie neutralizuje jad: kto zna odtrutkę, temu trucizna schodzi do rzemiosła
   uzdrowienie: ['jad'],
+  // oczyszczenie znosi klątwę: popiół zakopany z dala od dróg kończy sprawę
+  oczyszczenie: ['klatwa'],
 };
 
 const BAZA = { zywotnosc: 40, moc: 8, spryt: 6, rezonans: 10 };
