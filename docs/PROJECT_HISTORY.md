@@ -2200,3 +2200,15 @@ wypchnięty 6 minut PO squash-scaleniu jego PR #29 (19:25 UTC), więc nie
 objęty scaleniem: kompletny wpis C4 „Neith z Sais” (Moonlit Meditation,
 EOE #69) + tag `egipt` w kanonie + rekalibracja Kroniki. Wpis wciągnięty
 cherry-pickiem na niniejszą gałąź po weryfikacji (poniżej).
+
+## Sesja 2026-09-05 (arena/01a0710e-ame) — C4: loup-garou z Gévaudan
+
+W ramach liniowej Pętli Jakości ADR 0023 wylosowano z listy kolekcji kartę
+`Thornhide Wolves` (M19), której nazwa nie występowała w kartotece. Po
+weryfikacji Scryfall i researche źródeł folklorystycznych dodano pełny wpis
+`loup-garou-gevaudan`, współrzędne Gévaudan, wizualizację 21:9 oraz źródła
+Baring-Gould/Internet Archive, BnF i Britannica. Rozróżniono folklorystycznego
+loup-garou od historycznej Bestii z Gévaudan. Kanon rozszerzono o `francja` i
+`wilkolak`, a build deterministycznie przekalibrował Tom I Kroniki. Asercje
+Kroniki zaktualizowano zgodnie z nową kartoteką. `npm test` 238/238,
+`npm run build` i `npm run check` zielone. Commit `e8cb996`, PR #32.
