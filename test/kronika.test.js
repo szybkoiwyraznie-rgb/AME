@@ -655,7 +655,7 @@ test('agendaTomu: otwarte wątki, słabe paliwo i ciche kultury', async () => {
   assert.ok(Array.isArray(a.watki) && a.watki.length > 0);
   assert.ok(a.watki.every((w) => w.id && Array.isArray(w.byty)));
   assert.ok(Array.isArray(a.slabi));
-  assert.equal(a.ostatnia, 'epoka-13');
+  assert.equal(a.ostatnia, 'epoka-14');
 });
 
 test('S1: raport Tomu zawiera miniatury epok i rozstaje silnika', async () => {
@@ -744,7 +744,7 @@ test('sortowanie plików serii jest liczbowe, nie leksykalne (epoka-10 po epoce-
 test('Epoka X domyka Tom I zgodnie z rozliczeniem paliwa i osi', async () => {
   const podsumowanie = await wczytaj(PLIK_PODSUMOWANIA);
   assert.equal(podsumowanie.walidacja, true, JSON.stringify(podsumowanie.bledy));
-  assert.equal(podsumowanie.epoki.length, 13);
+  assert.equal(podsumowanie.epoki.length, 14);
 
   const e10 = podsumowanie.epoki[9];
   assert.equal(e10.slug, 'epoka-10');
@@ -804,7 +804,7 @@ test('Epoka XII wraca do rodowodu ze SKIT-u i wpina pierwszy byt zza oceanu', as
 
 test('Epoka XIII zamyka obrót 6: trzy przedmioty i wątek ceny znaku', async () => {
   const podsumowanie = await wczytaj(PLIK_PODSUMOWANIA);
-  const e13 = podsumowanie.epoki.at(-1);
+  const e13 = podsumowanie.epoki[12];
   assert.equal(e13.slug, 'epoka-13');
   assert.equal(e13.skit, 'co-sie-nosi', 'Epoka XIII wyrasta z rozmowy, nie z drogi SPLOTU');
   assert.equal(e13.zrodloSplotu ?? null, null, 'jeden rodowód naraz');
@@ -818,6 +818,26 @@ test('Epoka XIII zamyka obrót 6: trzy przedmioty i wątek ceny znaku', async ()
   assert.deepEqual(cena.byty.slice().sort(), ['boto-encantado', 'protostates', 'selkie-sule-skerry']);
   assert.equal(e13.stanPo.os.mit, 24);
   assert.equal(e13.stanPo.os.racjonalizacja, 76);
+});
+
+test('Epoka XIV zamyka obrót 8: cudzy podpis pod bytem', async () => {
+  const podsumowanie = await wczytaj(PLIK_PODSUMOWANIA);
+  const e14 = podsumowanie.epoki.at(-1);
+  assert.equal(e14.slug, 'epoka-14');
+  assert.equal(e14.skit, 'czyje-to-imie', 'Epoka XIV wyrasta z rozmowy, nie z drogi SPLOTU');
+  assert.equal(e14.zrodloSplotu ?? null, null, 'jeden rodowód naraz');
+  assert.deepEqual(
+    e14.uczestnicy.map((u) => u.slug).sort(),
+    ['knecht-z-koptos', 'qilin-z-lu', 'yara-ma-yha-who']
+  );
+  assert.equal(e14.walidacja, true, JSON.stringify(e14.bledy));
+  const podpis = (e14.konsekwencje.watki || []).find((w) => w.id === 'cudzy-podpis');
+  assert.ok(podpis && podpis.stan === 'otwarty', 'Epoka XIV otwiera wątek cudzego podpisu');
+  assert.deepEqual(podpis.byty.slice().sort(), ['knecht-z-koptos', 'qilin-z-lu', 'yara-ma-yha-who']);
+  const chiny = (e14.stanPo.dominacje || []).find((d) => d.kultura === 'chiny');
+  assert.ok(chiny && chiny.wielkosc > 0, 'kultura chińska wchodzi do dominacji Tomu I');
+  assert.equal(e14.stanPo.os.mit, 23);
+  assert.equal(e14.stanPo.os.racjonalizacja, 77);
 });
 
 test('walidujZrodloSplotu pilnuje zgodności Epoki z rozstrzygnięciem drogi', () => {

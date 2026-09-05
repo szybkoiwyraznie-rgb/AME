@@ -6991,12 +6991,601 @@
         "prompt": "Hyperrealistic cinematic photograph, ultra-wide 21:9 anamorphic frame, blue hour before dawn on a narrow wooden pier over dark water. Three figures: a bare-chested northern seal-man sitting beside a folded wet sealskin laid on a stone, a tall pale man in a white linen suit and broad-brimmed white hat standing at the water's edge with one hand behind his back, and a bronze-armoured Greek hoplite phantom in a crested Corinthian helmet standing across the narrowest part of the planks with a round shield held forward. Cold mist, still water, one distant lamp, restrained mythic realism, no gore, no text, no modern objects.",
         "obraz": "assets/wizualizacje/kronika-tom-1-epoka-13.jpg"
       }
+    },
+    {
+      "slug": "epoka-14",
+      "tytul": "Podpis, którego nikt nie sprawdził",
+      "skit": "czyje-to-imie",
+      "zrodloSplotu": null,
+      "iskra": "Zwierzę-znak, opowieść wydana pod obcym nazwiskiem i sługa bez imienia siadają do jednej rozmowy o tym, czyje ręce zostawiły ślad na ich sprawie. Zaczyna się od żalu, kończy na rozróżnieniu: co innego stracić kształt, co innego zapis, a co innego prawo do odmowy.",
+      "pytanie": "Czy Archiwum umie oddzielić byt od podpisu, który postawiono pod jego historią — i co robi, gdy podpis jest jedynym, co przetrwało?",
+      "przebieg": "Czternasta Epoka Tomu I wyrasta ze SKIT-u „CZYJE TO IMIĘ”. Trzy byty liczą, co zostało im odebrane razem z podpisem: kształt, zapis albo prawo do odmowy. Kronika notuje wejście pierwszego bytu z Chin i otwiera wątek cudzego podpisu.",
+      "meta": {
+        "utworzono": "2026-09-06 10:50",
+        "autor": "sesja arena 2026-09-06",
+        "wersja": 1,
+        "poprzednik": "epoka-13"
+      },
+      "walidacja": true,
+      "bledy": [],
+      "uczestnicy": [
+        {
+          "slug": "qilin-z-lu",
+          "nazwa": "Qilin — zwierzę, które przychodzi nie w porę",
+          "rola": "Ten, któremu przyklejono cudzy kształt",
+          "pasywne": 8,
+          "saldoPrzed": 8,
+          "kosztUdzialu": 2,
+          "kosztKlucza": 0,
+          "boost": 0,
+          "zwrot": 5,
+          "saldoPo": 11
+        },
+        {
+          "slug": "yara-ma-yha-who",
+          "nazwa": "Yara ma tha who — czerwony człowieczek z figowca",
+          "rola": "Ten, którego zapis wyszedł pod obcym nazwiskiem",
+          "pasywne": 10,
+          "saldoPrzed": 10,
+          "kosztUdzialu": 2,
+          "kosztKlucza": 0,
+          "boost": 0,
+          "zwrot": 3,
+          "saldoPo": 11
+        },
+        {
+          "slug": "knecht-z-koptos",
+          "nazwa": "Knecht z Koptos — ożywiony tłuczek, który nie zna słowa końca",
+          "rola": "Ten, którego nikt nie pytał",
+          "pasywne": 15,
+          "saldoPrzed": 15,
+          "kosztUdzialu": 2,
+          "kosztKlucza": 0,
+          "boost": 0,
+          "zwrot": 3,
+          "saldoPo": 16
+        }
+      ],
+      "stanPo": {
+        "os": {
+          "mit": 23,
+          "racjonalizacja": 77
+        },
+        "zasieg": [
+          {
+            "slug": "agni",
+            "wielkosc": 0.361
+          },
+          {
+            "slug": "balor",
+            "wielkosc": 0.422
+          },
+          {
+            "slug": "barbarossa-kyffhaeuser",
+            "wielkosc": 0.451
+          },
+          {
+            "slug": "bazyliszek-warszawski",
+            "wielkosc": 0.222
+          },
+          {
+            "slug": "ben-varrey",
+            "wielkosc": 0.351
+          },
+          {
+            "slug": "boto-encantado",
+            "wielkosc": 0.24
+          },
+          {
+            "slug": "cormoran-st-michaels-mount",
+            "wielkosc": 0.21
+          },
+          {
+            "slug": "drangue-shala",
+            "wielkosc": 0.413
+          },
+          {
+            "slug": "egungun",
+            "wielkosc": 0.513
+          },
+          {
+            "slug": "empusa-korynt",
+            "wielkosc": 0.474
+          },
+          {
+            "slug": "glamr-z-thorhallsstadir",
+            "wielkosc": 0.187
+          },
+          {
+            "slug": "iktomi",
+            "wielkosc": 0.238
+          },
+          {
+            "slug": "indra",
+            "wielkosc": 0.307
+          },
+          {
+            "slug": "kannon-hase",
+            "wielkosc": 0.343
+          },
+          {
+            "slug": "kentaur-pelion",
+            "wielkosc": 0.321
+          },
+          {
+            "slug": "knecht-z-koptos",
+            "wielkosc": 0.388
+          },
+          {
+            "slug": "lincoln-imp",
+            "wielkosc": 0.397
+          },
+          {
+            "slug": "loup-garou-gevaudan",
+            "wielkosc": 0.277
+          },
+          {
+            "slug": "mangkukulam",
+            "wielkosc": 0.239
+          },
+          {
+            "slug": "morowa-panna",
+            "wielkosc": 0.389
+          },
+          {
+            "slug": "neith-z-sais",
+            "wielkosc": 0.242
+          },
+          {
+            "slug": "nessos",
+            "wielkosc": 0.393
+          },
+          {
+            "slug": "pandora",
+            "wielkosc": 0.426
+          },
+          {
+            "slug": "protostates",
+            "wielkosc": 0.339
+          },
+          {
+            "slug": "qilin-z-lu",
+            "wielkosc": 0.207
+          },
+          {
+            "slug": "selkie-sule-skerry",
+            "wielkosc": 0.496
+          },
+          {
+            "slug": "sfinks-teby",
+            "wielkosc": 0.471
+          },
+          {
+            "slug": "syama-i-sarvara",
+            "wielkosc": 0.348
+          },
+          {
+            "slug": "talos-kreta",
+            "wielkosc": 0.408
+          },
+          {
+            "slug": "wielki-sfinks-z-gizy",
+            "wielkosc": 0.204
+          },
+          {
+            "slug": "yara-ma-yha-who",
+            "wielkosc": 0.234
+          }
+        ],
+        "dominacje": [
+          {
+            "kultura": "indie",
+            "kult": "agni",
+            "wielkosc": 0.361
+          },
+          {
+            "kultura": "irlandia",
+            "kult": "balor",
+            "wielkosc": 0.422
+          },
+          {
+            "kultura": "niemcy",
+            "kult": "barbarossa-kyffhaeuser",
+            "wielkosc": 0.451
+          },
+          {
+            "kultura": "polska",
+            "kult": "bazyliszek-warszawski",
+            "wielkosc": 0.222
+          },
+          {
+            "kultura": "man",
+            "kult": "ben-varrey",
+            "wielkosc": 0.351
+          },
+          {
+            "kultura": "amazonia",
+            "kult": "boto-encantado",
+            "wielkosc": 0.24
+          },
+          {
+            "kultura": "kornwalia",
+            "kult": "cormoran-st-michaels-mount",
+            "wielkosc": 0.21
+          },
+          {
+            "kultura": "albania",
+            "kult": "drangue-shala",
+            "wielkosc": 0.413
+          },
+          {
+            "kultura": "joruba",
+            "kult": "egungun",
+            "wielkosc": 0.513
+          },
+          {
+            "kultura": "grecja",
+            "kult": "empusa-korynt",
+            "wielkosc": 0.474
+          },
+          {
+            "kultura": "islandia",
+            "kult": "glamr-z-thorhallsstadir",
+            "wielkosc": 0.187
+          },
+          {
+            "kultura": "lakota",
+            "kult": "iktomi",
+            "wielkosc": 0.238
+          },
+          {
+            "kultura": "indie",
+            "kult": "indra",
+            "wielkosc": 0.307
+          },
+          {
+            "kultura": "japonia",
+            "kult": "kannon-hase",
+            "wielkosc": 0.343
+          },
+          {
+            "kultura": "grecja",
+            "kult": "kentaur-pelion",
+            "wielkosc": 0.321
+          },
+          {
+            "kultura": "grecja",
+            "kult": "knecht-z-koptos",
+            "wielkosc": 0.388
+          },
+          {
+            "kultura": "anglia",
+            "kult": "lincoln-imp",
+            "wielkosc": 0.397
+          },
+          {
+            "kultura": "francja",
+            "kult": "loup-garou-gevaudan",
+            "wielkosc": 0.277
+          },
+          {
+            "kultura": "filipiny",
+            "kult": "mangkukulam",
+            "wielkosc": 0.239
+          },
+          {
+            "kultura": "polska",
+            "kult": "morowa-panna",
+            "wielkosc": 0.389
+          },
+          {
+            "kultura": "egipt",
+            "kult": "neith-z-sais",
+            "wielkosc": 0.242
+          },
+          {
+            "kultura": "grecja",
+            "kult": "nessos",
+            "wielkosc": 0.393
+          },
+          {
+            "kultura": "grecja",
+            "kult": "pandora",
+            "wielkosc": 0.426
+          },
+          {
+            "kultura": "grecja",
+            "kult": "protostates",
+            "wielkosc": 0.339
+          },
+          {
+            "kultura": "chiny",
+            "kult": "qilin-z-lu",
+            "wielkosc": 0.207
+          },
+          {
+            "kultura": "szkocja-polnocna",
+            "kult": "selkie-sule-skerry",
+            "wielkosc": 0.496
+          },
+          {
+            "kultura": "grecja",
+            "kult": "sfinks-teby",
+            "wielkosc": 0.471
+          },
+          {
+            "kultura": "indie",
+            "kult": "syama-i-sarvara",
+            "wielkosc": 0.348
+          },
+          {
+            "kultura": "grecja",
+            "kult": "talos-kreta",
+            "wielkosc": 0.408
+          },
+          {
+            "kultura": "egipt",
+            "kult": "wielki-sfinks-z-gizy",
+            "wielkosc": 0.204
+          },
+          {
+            "kultura": "ngarrindjeri",
+            "kult": "yara-ma-yha-who",
+            "wielkosc": 0.234
+          }
+        ],
+        "paliwo": {
+          "egungun": 30,
+          "barbarossa-kyffhaeuser": 22,
+          "kentaur-pelion": 14,
+          "lincoln-imp": 16,
+          "empusa-korynt": 24,
+          "balor": 21,
+          "selkie-sule-skerry": 26,
+          "indra": 11,
+          "sfinks-teby": 26,
+          "talos-kreta": 22,
+          "pandora": 20,
+          "morowa-panna": 17,
+          "protostates": 15,
+          "knecht-z-koptos": 16,
+          "syama-i-sarvara": 15,
+          "loup-garou-gevaudan": 14,
+          "neith-z-sais": 9,
+          "cormoran-st-michaels-mount": 11,
+          "ben-varrey": 15,
+          "iktomi": 14,
+          "nessos": 21,
+          "boto-encantado": 14,
+          "qilin-z-lu": 11,
+          "yara-ma-yha-who": 11
+        }
+      },
+      "konsekwencje": {
+        "os": {
+          "mit": -1,
+          "racjonalizacja": 1
+        },
+        "relacje": [
+          {
+            "typ": "wzmocnienie",
+            "skad": "qilin-z-lu",
+            "dokad": "yara-ma-yha-who",
+            "opis": "Obaj dostali od Kroniki to samo narzędzie: datę i nazwisko. Znak przestaje być bezbronny, gdy wiadomo, kto i kiedy go podpisał."
+          },
+          {
+            "typ": "napiecie",
+            "skad": "knecht-z-koptos",
+            "dokad": "qilin-z-lu",
+            "opis": "Tłuczek nie uznaje żalu zwierzęcia-znaku za stratę: kto bywa odczytywany, ten ma przynajmniej szansę na inne odczytanie."
+          },
+          {
+            "typ": "neutralna",
+            "skad": "yara-ma-yha-who",
+            "dokad": "knecht-z-koptos",
+            "opis": "Jeden był opowiadany dzieciom, drugi wykonywał rozkaz — i żaden nie miał wpływu na to, co zostanie po nim zapisane."
+          }
+        ],
+        "zasieg": [
+          {
+            "slug": "qilin-z-lu",
+            "przed": 0.187,
+            "po": 0.207,
+            "delta": 0.02,
+            "opis": "Pierwsze wejście bytu z Chin do Tomu I; razem z nim wchodzi mechanizm, w którym zwierzę bywa dowodem w cudzym sporze o władzę."
+          },
+          {
+            "slug": "yara-ma-yha-who",
+            "przed": 0.222,
+            "po": 0.234,
+            "delta": 0.012,
+            "opis": "Sprawa autorstwa przestaje być przypisem do karty i staje się wątkiem Kroniki."
+          },
+          {
+            "slug": "knecht-z-koptos",
+            "przed": 0.38,
+            "po": 0.388,
+            "delta": 0.008,
+            "opis": "Sługa z Koptos dostaje w Tomie I rolę, której nie miał: nie ostrzeżenia przed pychą ucznia, tylko miary dla wszystkich bytów pytanych o zgodę."
+          }
+        ],
+        "dominacje": [
+          {
+            "kultura": "chiny",
+            "kult": "qilin-z-lu",
+            "przed": 0.187,
+            "po": 0.207,
+            "delta": 0.02
+          },
+          {
+            "kultura": "ngarrindjeri",
+            "kult": "yara-ma-yha-who",
+            "przed": 0.222,
+            "po": 0.234,
+            "delta": 0.012
+          },
+          {
+            "kultura": "grecja",
+            "kult": "knecht-z-koptos",
+            "przed": 0.38,
+            "po": 0.388,
+            "delta": 0.008
+          }
+        ],
+        "pozycje": [
+          {
+            "slug": "qilin-z-lu",
+            "status": "wzmocniony",
+            "opis": "Wchodzi do Kroniki z pełnym rachunkiem: kronika Lu urwana na jego schwytaniu i pochwała Shen Du napisana dla żyrafy."
+          },
+          {
+            "slug": "yara-ma-yha-who",
+            "status": "przemieniony",
+            "opis": "Przestaje być wyłącznie postrachem dzieci: staje się przykładem bytu, którego historia miała właściciela i została mu odebrana."
+          },
+          {
+            "slug": "knecht-z-koptos",
+            "status": "odporny",
+            "opis": "Niczego nie stracił, bo nie miał czego; zyskał zdanie, które Kronika zapisuje jako regułę odczytu."
+          }
+        ],
+        "watki": [
+          {
+            "id": "pierwszy-w-linii",
+            "stan": "otwarty",
+            "byty": [
+              "protostates",
+              "knecht-z-koptos",
+              "syama-i-sarvara"
+            ],
+            "pytanie": "Co się stanie z linią, gdy pierwszy przestanie stać, a nikt nie uzna, że ktoś go zastąpił?"
+          },
+          {
+            "id": "niewinny-bierca",
+            "stan": "otwarty",
+            "byty": [
+              "kentaur-pelion",
+              "pandora",
+              "empusa-korynt"
+            ],
+            "pytanie": "Pandora wie już, że brała — ale czy Archiwum umie odróżnić biorącego od tego, kto ustawił rzecz na jego drodze?"
+          },
+          {
+            "id": "warunek-barbarossy",
+            "stan": "otwarty",
+            "byty": [
+              "barbarossa-kyffhaeuser",
+              "kentaur-pelion",
+              "egungun"
+            ],
+            "pytanie": "Czy dług śpiącego cesarza da się spłacić gościną — czy rachunek, który zapłacił ze snu, przyjdzie kiedyś wyrównać na jawie?"
+          },
+          {
+            "id": "kres-indry",
+            "stan": "otwarty",
+            "byty": [
+              "indra"
+            ],
+            "pytanie": "Kto zapisze kres Indry: ten, kto go zdetronizuje, czy ten, który przestaje się bać jego gromu?"
+          },
+          {
+            "id": "znak-nie-wystarcza",
+            "stan": "otwarty",
+            "byty": [
+              "sfinks-teby",
+              "loup-garou-gevaudan",
+              "neith-z-sais"
+            ],
+            "pytanie": "Loup-garou dostał adres zamiast opisu, ale kto zapyta o resztę jego imienia, gdy przestanie być ciekawym tropem?"
+          },
+          {
+            "id": "prawo-progu",
+            "stan": "otwarty",
+            "byty": [
+              "cormoran-st-michaels-mount",
+              "ben-varrey",
+              "lincoln-imp",
+              "loup-garou-gevaudan"
+            ],
+            "pytanie": "Jeśli próg należy do przechodzącego, to kto płaci za jego utrzymanie, gdy gospodarz przestanie być największy?"
+          },
+          {
+            "id": "slad-ostatni-slad-gevaudan",
+            "stan": "otwarty",
+            "byty": [
+              "loup-garou-gevaudan",
+              "sfinks-teby",
+              "neith-z-sais"
+            ],
+            "pytanie": "Kto wróci po ślad zostawiony w cudzym raporcie, zanim raport stanie się jedyną wersją drogi?"
+          },
+          {
+            "id": "zwezone-drzwi",
+            "stan": "otwarty",
+            "byty": [
+              "iktomi",
+              "pandora",
+              "nessos"
+            ],
+            "pytanie": "Czy przejście zwężone podstępem da się rozszerzyć z powrotem — i czy ktokolwiek prócz tego, kto je zwęził, w ogóle wie, jak się to robi?"
+          },
+          {
+            "id": "cena-znaku",
+            "stan": "otwarty",
+            "byty": [
+              "selkie-sule-skerry",
+              "boto-encantado",
+              "protostates"
+            ],
+            "pytanie": "Kto płaci za rzecz, dzięki której byt jest wśród ludzi — i dlaczego rachunek zawsze zostaje po stronie tych, których nikt nie zapytał?"
+          },
+          {
+            "id": "cudzy-podpis",
+            "stan": "otwarty",
+            "byty": [
+              "qilin-z-lu",
+              "yara-ma-yha-who",
+              "knecht-z-koptos"
+            ],
+            "pytanie": "Jeśli o bycie wie się tylko tyle, ile zapisała cudza ręka, to czy Archiwum opisuje byt — czy podpis, który się pod nim znalazł?"
+          }
+        ]
+      },
+      "narrator": {
+        "ocena": [
+          {
+            "kto": "qilin-z-lu",
+            "kogo": "yara-ma-yha-who",
+            "stopien": 2,
+            "komentarz": "Nie żąda zwrotu nazwy, tylko wskazuje datę: od 1414 roku maluje się go z szyją, której nie miał. Zna cenę cudzego dowodu lepiej niż ktokolwiek przy tym stole."
+          },
+          {
+            "kto": "yara-ma-yha-who",
+            "kogo": "knecht-z-koptos",
+            "stopien": 1,
+            "komentarz": "Nie udaje, że wszystko stracił: opowieść wróciła do Unaipona, tylko siedemdziesiąt jeden lat później. Rozróżnia utratę zapisu od utraty siebie."
+          },
+          {
+            "kto": "knecht-z-koptos",
+            "kogo": "qilin-z-lu",
+            "stopien": 2,
+            "komentarz": "Jedyny, który nie ma czego odzyskiwać, i jedyny, który stawia właściwe pytanie: rzeczy się nie pyta, pyta się znaków — więc tylko znak może zostać źle odczytany."
+          }
+        ],
+        "podsumowanie": "Kronika notuje trzy różne straty pod jedną nazwą. Qilinowi zabrano kształt, żeby czegoś dowieść: dwór Yongle ogłosił qilinem żyrafę z Bengalu i zyskał widoczny dowód Mandatu Nieba. Yarę zabrano razem z całą księgą i wydano pod cudzym nazwiskiem, a restytucja przyszła po siedemdziesięciu jeden latach. Knechta nikt nie okradł, bo nie było z czego — i to jego zdanie zamyka Epokę: mylić się w odczytaniu może tylko ten, kogo się o coś pyta. Archiwum zapisuje więc nie samą krzywdę, ale różnicę między bytem, który jest znakiem, a rzeczą, która jest rozkazem."
+      },
+      "grafika": {
+        "podpis": "Stół z trzech różnych czasów: łuskowate zwierzę o jednym rogu, mały czerwony człowieczek na krawędzi blatu i dębowy tłuczek w lnianych łachmanach z pełnym dzbanem.",
+        "styl": "Hyperrealistyczne zdjęcie filmowe, ultrapanorama 21:9.",
+        "prompt": "Hyperrealistic cinematic photograph, ultra-wide 21:9 anamorphic frame, grey morning light in a bare stone room with an open doorway to dry fields. Three figures around a low wooden table: a large deer-bodied scaled animal with a single soft-tipped horn and an ox tail standing calmly at the left, a small red-skinned humanoid with an oversized bald head and suckered fingers crouching on the table edge at the right, and in the centre an oak pestle dressed in linen rags standing upright on two short wooden legs, holding a full brass water jug. Spilled water on the stone floor, a rolled manuscript and an ink brush on the table, restrained mythic realism, no gore, no text, no modern objects.",
+        "obraz": "assets/wizualizacje/kronika-tom-1-epoka-14.jpg"
+      }
     }
   ],
   "stanPo": {
     "os": {
-      "mit": 24,
-      "racjonalizacja": 76
+      "mit": 23,
+      "racjonalizacja": 77
     },
     "zasieg": [
       {
@@ -7061,7 +7650,7 @@
       },
       {
         "slug": "knecht-z-koptos",
-        "wielkosc": 0.38
+        "wielkosc": 0.388
       },
       {
         "slug": "lincoln-imp",
@@ -7097,7 +7686,7 @@
       },
       {
         "slug": "qilin-z-lu",
-        "wielkosc": 0.187
+        "wielkosc": 0.207
       },
       {
         "slug": "selkie-sule-skerry",
@@ -7121,7 +7710,7 @@
       },
       {
         "slug": "yara-ma-yha-who",
-        "wielkosc": 0.222
+        "wielkosc": 0.234
       }
     ],
     "dominacje": [
@@ -7203,7 +7792,7 @@
       {
         "kultura": "grecja",
         "kult": "knecht-z-koptos",
-        "wielkosc": 0.38
+        "wielkosc": 0.388
       },
       {
         "kultura": "anglia",
@@ -7248,7 +7837,7 @@
       {
         "kultura": "chiny",
         "kult": "qilin-z-lu",
-        "wielkosc": 0.187
+        "wielkosc": 0.207
       },
       {
         "kultura": "szkocja-polnocna",
@@ -7278,7 +7867,7 @@
       {
         "kultura": "ngarrindjeri",
         "kult": "yara-ma-yha-who",
-        "wielkosc": 0.222
+        "wielkosc": 0.234
       }
     ],
     "paliwo": {
@@ -7295,7 +7884,7 @@
       "pandora": 20,
       "morowa-panna": 17,
       "protostates": 15,
-      "knecht-z-koptos": 15,
+      "knecht-z-koptos": 16,
       "syama-i-sarvara": 15,
       "loup-garou-gevaudan": 14,
       "neith-z-sais": 9,
@@ -7303,7 +7892,9 @@
       "ben-varrey": 15,
       "iktomi": 14,
       "nessos": 21,
-      "boto-encantado": 14
+      "boto-encantado": 14,
+      "qilin-z-lu": 11,
+      "yara-ma-yha-who": 11
     }
   },
   "walidacja": true,
@@ -7322,7 +7913,7 @@
       "tytul": "Kronika trzech stołów",
       "opis": "",
       "plik": "kronika-tom-1.html",
-      "epoki": 13
+      "epoki": 14
     }
   ]
 }
