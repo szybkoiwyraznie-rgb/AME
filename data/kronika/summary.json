@@ -124,7 +124,7 @@
           },
           {
             "slug": "knecht-z-koptos",
-            "wielkosc": 0.352
+            "wielkosc": 0.37
           },
           {
             "slug": "lincoln-imp",
@@ -160,7 +160,7 @@
           },
           {
             "slug": "qilin-z-lu",
-            "wielkosc": 0.17
+            "wielkosc": 0.187
           },
           {
             "slug": "selkie-sule-skerry",
@@ -184,7 +184,7 @@
           },
           {
             "slug": "yara-ma-yha-who",
-            "wielkosc": 0.204
+            "wielkosc": 0.222
           }
         ],
         "dominacje": [
@@ -266,7 +266,7 @@
           {
             "kultura": "grecja",
             "kult": "knecht-z-koptos",
-            "wielkosc": 0.352
+            "wielkosc": 0.37
           },
           {
             "kultura": "anglia",
@@ -311,7 +311,7 @@
           {
             "kultura": "chiny",
             "kult": "qilin-z-lu",
-            "wielkosc": 0.17
+            "wielkosc": 0.187
           },
           {
             "kultura": "szkocja-polnocna",
@@ -341,7 +341,7 @@
           {
             "kultura": "ngarrindjeri",
             "kult": "yara-ma-yha-who",
-            "wielkosc": 0.204
+            "wielkosc": 0.222
           }
         ],
         "paliwo": {
@@ -614,7 +614,7 @@
           },
           {
             "slug": "knecht-z-koptos",
-            "wielkosc": 0.352
+            "wielkosc": 0.37
           },
           {
             "slug": "lincoln-imp",
@@ -650,7 +650,7 @@
           },
           {
             "slug": "qilin-z-lu",
-            "wielkosc": 0.17
+            "wielkosc": 0.187
           },
           {
             "slug": "selkie-sule-skerry",
@@ -674,7 +674,7 @@
           },
           {
             "slug": "yara-ma-yha-who",
-            "wielkosc": 0.204
+            "wielkosc": 0.222
           }
         ],
         "dominacje": [
@@ -756,7 +756,7 @@
           {
             "kultura": "grecja",
             "kult": "knecht-z-koptos",
-            "wielkosc": 0.352
+            "wielkosc": 0.37
           },
           {
             "kultura": "anglia",
@@ -801,7 +801,7 @@
           {
             "kultura": "chiny",
             "kult": "qilin-z-lu",
-            "wielkosc": 0.17
+            "wielkosc": 0.187
           },
           {
             "kultura": "szkocja-polnocna",
@@ -831,7 +831,7 @@
           {
             "kultura": "ngarrindjeri",
             "kult": "yara-ma-yha-who",
-            "wielkosc": 0.204
+            "wielkosc": 0.222
           }
         ],
         "paliwo": {
@@ -1122,7 +1122,7 @@
           },
           {
             "slug": "knecht-z-koptos",
-            "wielkosc": 0.352
+            "wielkosc": 0.37
           },
           {
             "slug": "lincoln-imp",
@@ -1158,7 +1158,7 @@
           },
           {
             "slug": "qilin-z-lu",
-            "wielkosc": 0.17
+            "wielkosc": 0.187
           },
           {
             "slug": "selkie-sule-skerry",
@@ -1182,7 +1182,7 @@
           },
           {
             "slug": "yara-ma-yha-who",
-            "wielkosc": 0.204
+            "wielkosc": 0.222
           }
         ],
         "dominacje": [
@@ -1264,7 +1264,7 @@
           {
             "kultura": "grecja",
             "kult": "knecht-z-koptos",
-            "wielkosc": 0.352
+            "wielkosc": 0.37
           },
           {
             "kultura": "anglia",
@@ -1309,7 +1309,7 @@
           {
             "kultura": "chiny",
             "kult": "qilin-z-lu",
-            "wielkosc": 0.17
+            "wielkosc": 0.187
           },
           {
             "kultura": "szkocja-polnocna",
@@ -1339,7 +1339,7 @@
           {
             "kultura": "ngarrindjeri",
             "kult": "yara-ma-yha-who",
-            "wielkosc": 0.204
+            "wielkosc": 0.222
           }
         ],
         "paliwo": {
@@ -1645,7 +1645,7 @@
           },
           {
             "slug": "knecht-z-koptos",
-            "wielkosc": 0.352
+            "wielkosc": 0.37
           },
           {
             "slug": "lincoln-imp",
@@ -1681,7 +1681,7 @@
           },
           {
             "slug": "qilin-z-lu",
-            "wielkosc": 0.17
+            "wielkosc": 0.187
           },
           {
             "slug": "selkie-sule-skerry",
@@ -1705,7 +1705,7 @@
           },
           {
             "slug": "yara-ma-yha-who",
-            "wielkosc": 0.204
+            "wielkosc": 0.222
           }
         ],
         "dominacje": [
@@ -1787,7 +1787,7 @@
           {
             "kultura": "grecja",
             "kult": "knecht-z-koptos",
-            "wielkosc": 0.352
+            "wielkosc": 0.37
           },
           {
             "kultura": "anglia",
@@ -1832,7 +1832,7 @@
           {
             "kultura": "chiny",
             "kult": "qilin-z-lu",
-            "wielkosc": 0.17
+            "wielkosc": 0.187
           },
           {
             "kultura": "szkocja-polnocna",
@@ -1862,7 +1862,7 @@
           {
             "kultura": "ngarrindjeri",
             "kult": "yara-ma-yha-who",
-            "wielkosc": 0.204
+            "wielkosc": 0.222
           }
         ],
         "paliwo": {
@@ -2168,7 +2168,7 @@
           },
           {
             "slug": "knecht-z-koptos",
-            "wielkosc": 0.352
+            "wielkosc": 0.37
           },
           {
             "slug": "lincoln-imp",
@@ -2204,7 +2204,7 @@
           },
           {
             "slug": "qilin-z-lu",
-            "wielkosc": 0.17
+            "wielkosc": 0.187
           },
           {
             "slug": "selkie-sule-skerry",
@@ -2228,7 +2228,7 @@
           },
           {
             "slug": "yara-ma-yha-who",
-            "wielkosc": 0.204
+            "wielkosc": 0.222
           }
         ],
         "dominacje": [
@@ -2310,7 +2310,7 @@
           {
             "kultura": "grecja",
             "kult": "knecht-z-koptos",
-            "wielkosc": 0.352
+            "wielkosc": 0.37
           },
           {
             "kultura": "anglia",
@@ -2355,7 +2355,7 @@
           {
             "kultura": "chiny",
             "kult": "qilin-z-lu",
-            "wielkosc": 0.17
+            "wielkosc": 0.187
           },
           {
             "kultura": "szkocja-polnocna",
@@ -2385,7 +2385,7 @@
           {
             "kultura": "ngarrindjeri",
             "kult": "yara-ma-yha-who",
-            "wielkosc": 0.204
+            "wielkosc": 0.222
           }
         ],
         "paliwo": {
@@ -2688,7 +2688,7 @@
           },
           {
             "slug": "knecht-z-koptos",
-            "wielkosc": 0.352
+            "wielkosc": 0.37
           },
           {
             "slug": "lincoln-imp",
@@ -2724,7 +2724,7 @@
           },
           {
             "slug": "qilin-z-lu",
-            "wielkosc": 0.17
+            "wielkosc": 0.187
           },
           {
             "slug": "selkie-sule-skerry",
@@ -2748,7 +2748,7 @@
           },
           {
             "slug": "yara-ma-yha-who",
-            "wielkosc": 0.204
+            "wielkosc": 0.222
           }
         ],
         "dominacje": [
@@ -2830,7 +2830,7 @@
           {
             "kultura": "grecja",
             "kult": "knecht-z-koptos",
-            "wielkosc": 0.352
+            "wielkosc": 0.37
           },
           {
             "kultura": "anglia",
@@ -2875,7 +2875,7 @@
           {
             "kultura": "chiny",
             "kult": "qilin-z-lu",
-            "wielkosc": 0.17
+            "wielkosc": 0.187
           },
           {
             "kultura": "szkocja-polnocna",
@@ -2905,7 +2905,7 @@
           {
             "kultura": "ngarrindjeri",
             "kult": "yara-ma-yha-who",
-            "wielkosc": 0.204
+            "wielkosc": 0.222
           }
         ],
         "paliwo": {
@@ -3217,7 +3217,7 @@
           },
           {
             "slug": "knecht-z-koptos",
-            "wielkosc": 0.362
+            "wielkosc": 0.38
           },
           {
             "slug": "lincoln-imp",
@@ -3253,7 +3253,7 @@
           },
           {
             "slug": "qilin-z-lu",
-            "wielkosc": 0.17
+            "wielkosc": 0.187
           },
           {
             "slug": "selkie-sule-skerry",
@@ -3277,7 +3277,7 @@
           },
           {
             "slug": "yara-ma-yha-who",
-            "wielkosc": 0.204
+            "wielkosc": 0.222
           }
         ],
         "dominacje": [
@@ -3359,7 +3359,7 @@
           {
             "kultura": "grecja",
             "kult": "knecht-z-koptos",
-            "wielkosc": 0.362
+            "wielkosc": 0.38
           },
           {
             "kultura": "anglia",
@@ -3404,7 +3404,7 @@
           {
             "kultura": "chiny",
             "kult": "qilin-z-lu",
-            "wielkosc": 0.17
+            "wielkosc": 0.187
           },
           {
             "kultura": "szkocja-polnocna",
@@ -3434,7 +3434,7 @@
           {
             "kultura": "ngarrindjeri",
             "kult": "yara-ma-yha-who",
-            "wielkosc": 0.204
+            "wielkosc": 0.222
           }
         ],
         "paliwo": {
@@ -3491,8 +3491,8 @@
           },
           {
             "slug": "knecht-z-koptos",
-            "przed": 0.352,
-            "po": 0.362,
+            "przed": 0.37,
+            "po": 0.38,
             "delta": 0.01,
             "opis": "Opowieść o tłuczku, który pierwszy zostawił wodę przy progu, uczy słuchaczy kończyć rozkazy słowem — Koptos zaczyna zamykać drzwi po zmroku."
           },
@@ -3515,8 +3515,8 @@
           {
             "kultura": "grecja",
             "kult": "knecht-z-koptos",
-            "przed": 0.352,
-            "po": 0.362,
+            "przed": 0.37,
+            "po": 0.38,
             "delta": 0.01
           },
           {
@@ -3749,7 +3749,7 @@
           },
           {
             "slug": "knecht-z-koptos",
-            "wielkosc": 0.362
+            "wielkosc": 0.38
           },
           {
             "slug": "lincoln-imp",
@@ -3785,7 +3785,7 @@
           },
           {
             "slug": "qilin-z-lu",
-            "wielkosc": 0.17
+            "wielkosc": 0.187
           },
           {
             "slug": "selkie-sule-skerry",
@@ -3809,7 +3809,7 @@
           },
           {
             "slug": "yara-ma-yha-who",
-            "wielkosc": 0.204
+            "wielkosc": 0.222
           }
         ],
         "dominacje": [
@@ -3891,7 +3891,7 @@
           {
             "kultura": "grecja",
             "kult": "knecht-z-koptos",
-            "wielkosc": 0.362
+            "wielkosc": 0.38
           },
           {
             "kultura": "anglia",
@@ -3936,7 +3936,7 @@
           {
             "kultura": "chiny",
             "kult": "qilin-z-lu",
-            "wielkosc": 0.17
+            "wielkosc": 0.187
           },
           {
             "kultura": "szkocja-polnocna",
@@ -3966,7 +3966,7 @@
           {
             "kultura": "ngarrindjeri",
             "kult": "yara-ma-yha-who",
-            "wielkosc": 0.204
+            "wielkosc": 0.222
           }
         ],
         "paliwo": {
@@ -4285,7 +4285,7 @@
           },
           {
             "slug": "knecht-z-koptos",
-            "wielkosc": 0.362
+            "wielkosc": 0.38
           },
           {
             "slug": "lincoln-imp",
@@ -4321,7 +4321,7 @@
           },
           {
             "slug": "qilin-z-lu",
-            "wielkosc": 0.17
+            "wielkosc": 0.187
           },
           {
             "slug": "selkie-sule-skerry",
@@ -4345,7 +4345,7 @@
           },
           {
             "slug": "yara-ma-yha-who",
-            "wielkosc": 0.204
+            "wielkosc": 0.222
           }
         ],
         "dominacje": [
@@ -4427,7 +4427,7 @@
           {
             "kultura": "grecja",
             "kult": "knecht-z-koptos",
-            "wielkosc": 0.362
+            "wielkosc": 0.38
           },
           {
             "kultura": "anglia",
@@ -4472,7 +4472,7 @@
           {
             "kultura": "chiny",
             "kult": "qilin-z-lu",
-            "wielkosc": 0.17
+            "wielkosc": 0.187
           },
           {
             "kultura": "szkocja-polnocna",
@@ -4502,7 +4502,7 @@
           {
             "kultura": "ngarrindjeri",
             "kult": "yara-ma-yha-who",
-            "wielkosc": 0.204
+            "wielkosc": 0.222
           }
         ],
         "paliwo": {
@@ -4845,7 +4845,7 @@
           },
           {
             "slug": "knecht-z-koptos",
-            "wielkosc": 0.362
+            "wielkosc": 0.38
           },
           {
             "slug": "lincoln-imp",
@@ -4881,7 +4881,7 @@
           },
           {
             "slug": "qilin-z-lu",
-            "wielkosc": 0.17
+            "wielkosc": 0.187
           },
           {
             "slug": "selkie-sule-skerry",
@@ -4905,7 +4905,7 @@
           },
           {
             "slug": "yara-ma-yha-who",
-            "wielkosc": 0.204
+            "wielkosc": 0.222
           }
         ],
         "dominacje": [
@@ -4987,7 +4987,7 @@
           {
             "kultura": "grecja",
             "kult": "knecht-z-koptos",
-            "wielkosc": 0.362
+            "wielkosc": 0.38
           },
           {
             "kultura": "anglia",
@@ -5032,7 +5032,7 @@
           {
             "kultura": "chiny",
             "kult": "qilin-z-lu",
-            "wielkosc": 0.17
+            "wielkosc": 0.187
           },
           {
             "kultura": "szkocja-polnocna",
@@ -5062,7 +5062,7 @@
           {
             "kultura": "ngarrindjeri",
             "kult": "yara-ma-yha-who",
-            "wielkosc": 0.204
+            "wielkosc": 0.222
           }
         ],
         "paliwo": {
@@ -5417,7 +5417,7 @@
           },
           {
             "slug": "knecht-z-koptos",
-            "wielkosc": 0.362
+            "wielkosc": 0.38
           },
           {
             "slug": "lincoln-imp",
@@ -5453,7 +5453,7 @@
           },
           {
             "slug": "qilin-z-lu",
-            "wielkosc": 0.17
+            "wielkosc": 0.187
           },
           {
             "slug": "selkie-sule-skerry",
@@ -5477,7 +5477,7 @@
           },
           {
             "slug": "yara-ma-yha-who",
-            "wielkosc": 0.204
+            "wielkosc": 0.222
           }
         ],
         "dominacje": [
@@ -5559,7 +5559,7 @@
           {
             "kultura": "grecja",
             "kult": "knecht-z-koptos",
-            "wielkosc": 0.362
+            "wielkosc": 0.38
           },
           {
             "kultura": "anglia",
@@ -5604,7 +5604,7 @@
           {
             "kultura": "chiny",
             "kult": "qilin-z-lu",
-            "wielkosc": 0.17
+            "wielkosc": 0.187
           },
           {
             "kultura": "szkocja-polnocna",
@@ -5634,7 +5634,7 @@
           {
             "kultura": "ngarrindjeri",
             "kult": "yara-ma-yha-who",
-            "wielkosc": 0.204
+            "wielkosc": 0.222
           }
         ],
         "paliwo": {
@@ -5971,7 +5971,7 @@
           },
           {
             "slug": "knecht-z-koptos",
-            "wielkosc": 0.362
+            "wielkosc": 0.38
           },
           {
             "slug": "lincoln-imp",
@@ -6007,7 +6007,7 @@
           },
           {
             "slug": "qilin-z-lu",
-            "wielkosc": 0.17
+            "wielkosc": 0.187
           },
           {
             "slug": "selkie-sule-skerry",
@@ -6031,7 +6031,7 @@
           },
           {
             "slug": "yara-ma-yha-who",
-            "wielkosc": 0.204
+            "wielkosc": 0.222
           }
         ],
         "dominacje": [
@@ -6113,7 +6113,7 @@
           {
             "kultura": "grecja",
             "kult": "knecht-z-koptos",
-            "wielkosc": 0.362
+            "wielkosc": 0.38
           },
           {
             "kultura": "anglia",
@@ -6158,7 +6158,7 @@
           {
             "kultura": "chiny",
             "kult": "qilin-z-lu",
-            "wielkosc": 0.17
+            "wielkosc": 0.187
           },
           {
             "kultura": "szkocja-polnocna",
@@ -6188,7 +6188,7 @@
           {
             "kultura": "ngarrindjeri",
             "kult": "yara-ma-yha-who",
-            "wielkosc": 0.204
+            "wielkosc": 0.222
           }
         ],
         "paliwo": {
@@ -6537,7 +6537,7 @@
           },
           {
             "slug": "knecht-z-koptos",
-            "wielkosc": 0.362
+            "wielkosc": 0.38
           },
           {
             "slug": "lincoln-imp",
@@ -6573,7 +6573,7 @@
           },
           {
             "slug": "qilin-z-lu",
-            "wielkosc": 0.17
+            "wielkosc": 0.187
           },
           {
             "slug": "selkie-sule-skerry",
@@ -6597,7 +6597,7 @@
           },
           {
             "slug": "yara-ma-yha-who",
-            "wielkosc": 0.204
+            "wielkosc": 0.222
           }
         ],
         "dominacje": [
@@ -6679,7 +6679,7 @@
           {
             "kultura": "grecja",
             "kult": "knecht-z-koptos",
-            "wielkosc": 0.362
+            "wielkosc": 0.38
           },
           {
             "kultura": "anglia",
@@ -6724,7 +6724,7 @@
           {
             "kultura": "chiny",
             "kult": "qilin-z-lu",
-            "wielkosc": 0.17
+            "wielkosc": 0.187
           },
           {
             "kultura": "szkocja-polnocna",
@@ -6754,7 +6754,7 @@
           {
             "kultura": "ngarrindjeri",
             "kult": "yara-ma-yha-who",
-            "wielkosc": 0.204
+            "wielkosc": 0.222
           }
         ],
         "paliwo": {
@@ -7061,7 +7061,7 @@
       },
       {
         "slug": "knecht-z-koptos",
-        "wielkosc": 0.362
+        "wielkosc": 0.38
       },
       {
         "slug": "lincoln-imp",
@@ -7097,7 +7097,7 @@
       },
       {
         "slug": "qilin-z-lu",
-        "wielkosc": 0.17
+        "wielkosc": 0.187
       },
       {
         "slug": "selkie-sule-skerry",
@@ -7121,7 +7121,7 @@
       },
       {
         "slug": "yara-ma-yha-who",
-        "wielkosc": 0.204
+        "wielkosc": 0.222
       }
     ],
     "dominacje": [
@@ -7203,7 +7203,7 @@
       {
         "kultura": "grecja",
         "kult": "knecht-z-koptos",
-        "wielkosc": 0.362
+        "wielkosc": 0.38
       },
       {
         "kultura": "anglia",
@@ -7248,7 +7248,7 @@
       {
         "kultura": "chiny",
         "kult": "qilin-z-lu",
-        "wielkosc": 0.17
+        "wielkosc": 0.187
       },
       {
         "kultura": "szkocja-polnocna",
@@ -7278,7 +7278,7 @@
       {
         "kultura": "ngarrindjeri",
         "kult": "yara-ma-yha-who",
-        "wielkosc": 0.204
+        "wielkosc": 0.222
       }
     ],
     "paliwo": {

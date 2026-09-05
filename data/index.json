@@ -1,8 +1,8 @@
 {
   "wersja": 3,
-  "buildTime": "2026-09-05T14:26:11.756Z",
+  "buildTime": "2026-09-05T14:27:21.666Z",
   "liczba": 31,
-  "liczbaSkitow": 50,
+  "liczbaSkitow": 51,
   "kanon": {
     "kategorie": [
       {
@@ -1334,6 +1334,7 @@
         "wtorne": "Trzy zapisane sylaby na skrawku papirusu (kopia z notatek Eukratesa) — podpowiedź, jak nie wzywać tego, czego nie umie się zamknąć."
       },
       "skity": [
+        "czyje-to-imie",
         "instrukcja-obslugi",
         "jedno-pytanie",
         "pierwszy",
@@ -1748,7 +1749,9 @@
         "pierwotne": "Kawałek sieci myśliwskiej z państwa Lu, z węzłami rozciągniętymi w jednym miejscu tak, jakby coś ciężkiego szarpnęło raz i przestało. Do sznura przywiązana drewniana tabliczka z jednym zdaniem sprawozdania: wiosną, na zachodzie, schwytano lina.",
         "wtorne": "Odpis pochwały Shen Du z 1414 roku, zapisany równo i pięknie, z dopiskiem późniejszej ręki na marginesie: „szyja”."
       },
-      "skity": []
+      "skity": [
+        "czyje-to-imie"
+      ]
     },
     {
       "slug": "selkie-sule-skerry",
@@ -2047,7 +2050,8 @@
         "wtorne": "Karta katalogowa z 1930 roku, wypisana do egzemplarza londyńskiego wydania: w rubryce „autor” widnieje W. Ramsay Smith, a pod spodem, ołówkiem i inną ręką, dopisano nazwisko Davida Unaipona ze znakiem zapytania. Znak zapytania został wytarty dopiero siedemdziesiąt jeden lat później."
       },
       "skity": [
-        "co-sie-oddaje"
+        "co-sie-oddaje",
+        "czyje-to-imie"
       ]
     }
   ],
@@ -2155,6 +2159,23 @@
       ],
       "slow": 300,
       "data": "2026-08-30 01:57"
+    },
+    {
+      "slug": "czyje-to-imie",
+      "tytul": "CZYJE TO IMIĘ",
+      "temat": "cudzy podpis: zwierzę, któremu przyklejono nazwę, opowieść wydana pod obcym nazwiskiem i sługa, którego nikt nie pytał o zdanie",
+      "uczestnicy": [
+        "knecht-z-koptos",
+        "qilin-z-lu",
+        "yara-ma-yha-who"
+      ],
+      "imiona": [
+        "Qilin",
+        "Yara ma tha who",
+        "Knecht z Koptos"
+      ],
+      "slow": 265,
+      "data": "2026-09-06 10:30"
     },
     {
       "slug": "dwa-grzbiety",
@@ -2953,6 +2974,22 @@
     }
   ],
   "aktualizacje": [
+    {
+      "data": "2026-09-06 10:30",
+      "typ": "skit",
+      "akcja": "zmiana",
+      "slug": "czyje-to-imie",
+      "tytul": "CZYJE TO IMIĘ",
+      "opis": "Nowy dialog: trzy byty porównują, co się traci, gdy podpis pod rzeczą należy do kogoś innego — kształt, zapis albo prawo do odmowy."
+    },
+    {
+      "data": "2026-09-06 10:30",
+      "typ": "skit",
+      "akcja": "nowy",
+      "slug": "czyje-to-imie",
+      "tytul": "CZYJE TO IMIĘ",
+      "opis": "SKIT — skład: Qilin, Yara ma tha who, Knecht z Koptos"
+    },
     {
       "data": "2026-09-06 10:10",
       "typ": "manifestacja",

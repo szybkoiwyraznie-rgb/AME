@@ -72,7 +72,7 @@
       },
       {
         "slug": "knecht-z-koptos",
-        "wielkosc": 0.352
+        "wielkosc": 0.37
       },
       {
         "slug": "lincoln-imp",
@@ -108,7 +108,7 @@
       },
       {
         "slug": "qilin-z-lu",
-        "wielkosc": 0.17
+        "wielkosc": 0.187
       },
       {
         "slug": "selkie-sule-skerry",
@@ -132,7 +132,7 @@
       },
       {
         "slug": "yara-ma-yha-who",
-        "wielkosc": 0.204
+        "wielkosc": 0.222
       }
     ],
     "dominacje": [
@@ -214,7 +214,7 @@
       {
         "kultura": "grecja",
         "kult": "knecht-z-koptos",
-        "wielkosc": 0.352
+        "wielkosc": 0.37
       },
       {
         "kultura": "anglia",
@@ -259,7 +259,7 @@
       {
         "kultura": "chiny",
         "kult": "qilin-z-lu",
-        "wielkosc": 0.17
+        "wielkosc": 0.187
       },
       {
         "kultura": "szkocja-polnocna",
@@ -289,7 +289,7 @@
       {
         "kultura": "ngarrindjeri",
         "kult": "yara-ma-yha-who",
-        "wielkosc": 0.204
+        "wielkosc": 0.222
       }
     ]
   },
