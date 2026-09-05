@@ -17,16 +17,30 @@
 
 - **Deep-linki** `#/slug`: adresowalne wpisy + stan mapy w URL (kandydat do
   F2). Podstawa: `location.hash`, brak zależności.
-- **Klastrowanie pinezek**: przy > 50 wpisach mapa zrobi się ciasna; prosty
-  grid-clustering w przestrzeni ekranu wystarczy na start.
+- ~~**Klastrowanie pinezek**~~ — **WDROŻONE (2026-09-05, PR #34, C2+5 obrotu 4
+  Pętli Jakości):** `app/klastry.js` (czysty rachunek, bez DOM) grupuje pinezki
+  siatką o boku `2 × PROMIEN_KLASTRA` pikseli EKRANOWYCH, przeliczaną przez
+  bieżącą skalę — przy oddaleniu Grecja czy Wyspy Brytyjskie zwijają się w jeden
+  krążek z liczbą (`.klastry .klaster`), klik albo Enter przybliża do centroidu
+  i gniazdo pęka. Nad `PROG_KLASTROWANIA` (6×) klastrów nie ma w ogóle: sufit
+  zoomu offline to 32×, a byty odległe o pół stopnia (Empusa i Nessos) mieściłyby
+  się w jednej komórce nawet tam — bez progu nie dałoby się do nich dojść.
+  Wybrany byt wystaje spod gniazda (`.pinezka.w-klastrze.wybrana`), więc „przeleć
+  do bytu” zawsze pokazuje pinezkę. Testy: `test/klastry.test.js` (determinizm,
+  próg liczności, rozpad przy zoomie) i render w `test/pinezka.test.js`.
 - ~~**Miniatury na pinezkach**~~ — **WDROŻONE (2026-09-05, PR #34, C2+5 obrotu 3
-  Pętli Jakości):** od zoomu ×6 (`PROGI_WARSTW.miniatury`) głowa pinezki pokazuje
-  wizualizację bytu przyciętą do koła (`clipPath #przyciecie-pinezki`), zamiast
-  pustego krążka. `href` jest ustawiany leniwie, przy pierwszym przekroczeniu
-  progu, więc start aplikacji nadal nie pobiera dwudziestu kilku obrazów; wpis bez
-  pola `obraz` po prostu nie dostaje miniatury. Reguły CSS są zakotwiczone w
-  `.mapa-svg` (kontrakt z `test/mapa-css.test.js`), a render sprawdza
-  `test/pinezka.test.js`.
+  Pętli Jakości), PRZEROBIONE na zlecenie właściciela tego samego dnia:** medalion
+  z wizualizacją bytu (koło o promieniu `PROMIEN_MINIATURY` = 26, kadr 52×52
+  przycięty maską `clipPath #przyciecie-miniatury` w `objectBoundingBox`) pokazuje
+  się **tylko na najechaniu albo fokusie**, dokładnie jak badge z nazwą — dawny
+  próg zoomu `PROGI_WARSTW.miniatury` został usunięty, bo zapalał miniatury
+  wszystkim pinezkom naraz. `href` nadal ustawia się leniwie, przy pierwszym
+  najechaniu, więc start aplikacji nie pobiera dwudziestu kilku obrazów; wpis bez
+  pola `obraz` nie dostaje ani medalionu, ani pustej obwódki. Reguły CSS są
+  zakotwiczone w `.mapa-svg` (kontrakt z `test/mapa-css.test.js`), a render
+  sprawdza `test/pinezka.test.js` — łącznie z obecnością maski w `<defs>`
+  (odwołanie do nieistniejącego `clipPath` renderowało kwadrat i tego atrapa DOM
+  sama z siebie nie łapie).
 - ~~**Strona tagu**~~ — **WDROŻONE (2026-08-30, PR #10, C2 pętla jakości):** klik
   w tag → filtr mapy + warstwa `#tag:<slug>` z kategorią, opisem i listą
   manifestacji (klik → kartoteka), adresowalna i z przyciskiem „kopiuj link”.

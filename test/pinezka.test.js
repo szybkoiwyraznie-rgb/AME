@@ -381,3 +381,44 @@ test('medalion wizualizacji: koło 2× większe od głowy, tylko na najechanie/f
   bezObrazu.sluchacze.pointerenter[0]();
   assert.equal(bezObrazu.czyMaKlase('z-miniatura'), false, 'pinezka bez obrazu nie miga pustą obwódką');
 });
+
+test('klastrowanie (BACKLOG, obrót 4): gniazdo zamiast plamy pinezek, klik przybliża', () => {
+  const { kontener } = zaiscz({ width: 1200, height: 600 });
+  const mapa = stworzMape(kontener, {});
+  // Trzy byty z jednego regionu (Grecja) + jeden daleki (Japonia).
+  mapa.ustawPinezki([
+    { slug: 'sfinks-teby', nazwa: 'Sfinga z Teb', lat: 38.32, lon: 23.28 },
+    { slug: 'empusa-korynt', nazwa: 'Empusa', lat: 37.94, lon: 22.93 },
+    { slug: 'nessos', nazwa: 'Nessos', lat: 38.4, lon: 22.9 },
+    { slug: 'kannon-hase', nazwa: 'Kannon', lat: 35.31, lon: 139.53 },
+  ]);
+  const grupaKlastrow = mapa.svg.dzieci
+    .find((d) => d.czyMaKlase('swiat'))
+    .dzieci.find((d) => d.czyMaKlase('klastry'));
+  assert.ok(grupaKlastrow, 'osobna warstwa klastrów w drzewie świata');
+  const klaster = grupaKlastrow.dzieci.find((d) => d.czyMaKlase('klaster'));
+  assert.ok(klaster, 'trzy greckie pinezki w oddaleniu tworzą jedno gniazdo');
+  assert.equal(klaster.getAttribute('data-ile'), '3');
+  assert.match(klaster.getAttribute('aria-label'), /Skupisko: 3 manifestacje/);
+  assert.equal(klaster.dzieci.find((d) => d.nazwa === 'text').textContent, '3');
+  assert.equal(klaster.getAttribute('role'), 'button');
+  assert.equal(klaster.getAttribute('tabindex'), '0');
+
+  const znajdzPinezke = (slug) => {
+    const grupa = mapa.svg.dzieci.find((d) => d.czyMaKlase('swiat')).dzieci.find((d) => d.czyMaKlase('pinezki'));
+    return grupa.dzieci.find((d) => d.getAttribute('data-slug') === slug);
+  };
+  assert.equal(znajdzPinezke('sfinks-teby').czyMaKlase('w-klastrze'), true, 'pinezka w gnieździe znika');
+  assert.equal(znajdzPinezke('kannon-hase').czyMaKlase('w-klastrze'), false, 'daleki byt zostaje pinezką');
+
+  // Klik w gniazdo przybliża — po zoomie klaster musi zniknąć.
+  const kPrzed = mapa.widok.k;
+  klaster.sluchacze.click[0]({ stopPropagation: () => {} });
+  assert.ok(mapa.widok.k > kPrzed, 'klik w gniazdo przybliża mapę');
+  assert.ok(mapa.widok.k >= 6, 'klik przeskakuje próg klastrowania, żeby gniazdo na pewno pękło');
+  const poZoomie = mapa.svg.dzieci
+    .find((d) => d.czyMaKlase('swiat'))
+    .dzieci.find((d) => d.czyMaKlase('klastry'));
+  assert.equal(poZoomie.dzieci.length, 0, 'przy dużym przybliżeniu gniazd nie ma');
+  assert.equal(znajdzPinezke('sfinks-teby').czyMaKlase('w-klastrze'), false, 'pinezki wracają');
+});
