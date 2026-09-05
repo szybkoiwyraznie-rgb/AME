@@ -1,6 +1,6 @@
 {
   "wersja": 3,
-  "buildTime": "2026-09-05T13:56:15.685Z",
+  "buildTime": "2026-09-05T14:00:51.875Z",
   "liczba": 30,
   "liczbaSkitow": 49,
   "kanon": {
@@ -2868,6 +2868,14 @@
     }
   ],
   "aktualizacje": [
+    {
+      "data": "2026-09-05 22:40",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "ben-varrey",
+      "tytul": "Ben-Varrey — syrena z Wyspy Man",
+      "opis": "Pogłębienie o warstwę zapisu i o konkret z Waldrona (1731/1744) w przedruku Moore'a — złowienie w sieć rozłożoną tam, gdzie syreny czeszą włosy, trzy dni bez jedzenia i bez słowa, wypuszczenie ze strachu przed nieszczęściem dla wyspy, zaloty zakończone rzuconym kamieniem i śmiercią po siedmiu dniach, uwaga o wylewanej wodzie po jajkach. Wersję o mgle przypisano właściwemu nośnikowi (przypis Collinsa do „Ode to Liberty”, nie Waldron). Z Source Stacku zdjęta pozycja turystyczna National Geographic, dołożony pierwodruk Waldrona w skanie."
+    },
     {
       "data": "2026-09-05 22:10",
       "typ": "manifestacja",
