@@ -52,6 +52,11 @@
       "opis": "Religia i kultura starożytnego Egiptu (Delta i Dolina Nilu)"
     },
     {
+      "tag": "filipiny",
+      "kategoria": "kultura",
+      "opis": "Filipiny — tu w wariancie tagalskim z Luzonu: kulam, albularyo i lista „kapłanów diabła” z relacji z 1589 roku."
+    },
+    {
       "tag": "francja",
       "kategoria": "kultura",
       "opis": "Folklor francuski: podania o loup-garou i przemianie człowieka w wilka"
@@ -255,6 +260,11 @@
       "tag": "bogini-tkaczka",
       "kategoria": "typ",
       "opis": "Bogini tkająca byt albo losy; stwórczyni i opiekunka płótna"
+    },
+    {
+      "tag": "czarownik",
+      "kategoria": "typ",
+      "opis": "Czarownik: człowiek, nie potwór — byt, którego moc bierze się z rzemiosła i z tego, że sąsiedzi w nie wierzą."
     },
     {
       "tag": "duch-przodkow",

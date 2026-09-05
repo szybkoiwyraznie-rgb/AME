@@ -24,7 +24,7 @@
       },
       {
         "slug": "bazyliszek-warszawski",
-        "wielkosc": 0.22
+        "wielkosc": 0.24
       },
       {
         "slug": "ben-varrey",
@@ -52,7 +52,7 @@
       },
       {
         "slug": "iktomi",
-        "wielkosc": 0.22
+        "wielkosc": 0.24
       },
       {
         "slug": "indra",
@@ -79,8 +79,12 @@
         "wielkosc": 0.22
       },
       {
+        "slug": "mangkukulam",
+        "wielkosc": 0.18
+      },
+      {
         "slug": "morowa-panna",
-        "wielkosc": 0.41
+        "wielkosc": 0.43
       },
       {
         "slug": "neith-z-sais",
@@ -88,7 +92,7 @@
       },
       {
         "slug": "nessos",
-        "wielkosc": 0.41
+        "wielkosc": 0.43
       },
       {
         "slug": "pandora",
@@ -138,7 +142,7 @@
       {
         "kultura": "polska",
         "kult": "bazyliszek-warszawski",
-        "wielkosc": 0.22
+        "wielkosc": 0.24
       },
       {
         "kultura": "man",
@@ -173,7 +177,7 @@
       {
         "kultura": "lakota",
         "kult": "iktomi",
-        "wielkosc": 0.22
+        "wielkosc": 0.24
       },
       {
         "kultura": "indie",
@@ -206,9 +210,14 @@
         "wielkosc": 0.22
       },
       {
+        "kultura": "filipiny",
+        "kult": "mangkukulam",
+        "wielkosc": 0.18
+      },
+      {
         "kultura": "polska",
         "kult": "morowa-panna",
-        "wielkosc": 0.41
+        "wielkosc": 0.43
       },
       {
         "kultura": "egipt",
@@ -218,7 +227,7 @@
       {
         "kultura": "grecja",
         "kult": "nessos",
-        "wielkosc": 0.41
+        "wielkosc": 0.43
       },
       {
         "kultura": "grecja",

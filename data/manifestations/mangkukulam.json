@@ -1,0 +1,95 @@
+{
+  "slug": "mangkukulam",
+  "nazwa": "Mangkukulam — ten, kto pali się pod cudzą podłogą",
+  "nazwy_alternatywne": [
+    "Mancocolam (zapis Plasencii, 1589)",
+    "Mangcuculam (spis powszechny z Batangas, 1903)",
+    "Manggagaway (bliski krewny z tej samej listy)",
+    "Manughiwit (Visayas Zachodnie)",
+    "Praktyk kulam — od kulam, gaway (tagalski), barang, hiwit (bisajski), tanem (ilokański), pantak (moro)"
+  ],
+  "karta": {
+    "nazwa": "Curse of the Pierced Heart",
+    "wydanie": "Innistrad (ISD) #138",
+    "rok": 2011
+  },
+  "lokalizacja": {
+    "miejscowosc": "Nagcarlan u podnóża góry Banahaw w prowincji Laguna, w kraju między Laguna de Bay a Tayabas — tam, gdzie w 1589 roku spisano listę „sług diabła”, na której figuruje mancocolam; pinezka stoi w Nagcarlan, ale wierzenie żyje w całym pasie tagalskim, a jego bisajska gałąź (barang, haplit) ma własny adres na Siquijor",
+    "kraj": "Filipiny (Luzon, prowincja Laguna)",
+    "lat": 14.1361,
+    "lon": 121.4147
+  },
+  "pochodzenie_i_kultura": "Tagalowie z Luzonu. Byt jest w tej kartotece przypadkiem szczególnym: nie potwór z lasu, tylko sąsiad, o którym się wie. Najstarszy zapis pochodzi z relacji franciszkanina Juana de Plasencia, spisanej w 1589 roku w prowincji Laguna: na liście dwunastu „kapłanów diabła” czwarty nazywa się mancocolam i jego rzemiosło polega na tym, że raz albo kilka razy w miesiącu wydobywa z siebie ogień, którego nie da się zgasić — a mieszkaniec domu, pod którym to robi, choruje i umiera. Trzysta lat później ten sam byt w relacjach José Núñeza (1905) trzyma w plecionym koszu abubut lalkę i szpilkę; w spisie powszechnym z Batangas (1903) jest już „mężczyzną albo kobietą, którzy potrafią uczynić chorym na śmierć tego, kto im się naraził”. Kartoteka trzyma jedną linię — tagalską, od Plasencii do dwudziestowiecznych relacji — i nie zlepia jej z bisajskim mambabarangiem, który wysyła w ciało owady, ani z aswangiem, który jest zupełnie innym stworzeniem.",
+  "wizualizacja": {
+    "prompt": "Style: A wide-angle full-body cinematic photograph. The central objects/persons of the photo are visible from head to toe, standing centrally in the frame. No parts of the body are cropped.\n\nAn elderly Filipina villager standing barefoot in the muddy crawl space beneath a stilt house in lowland Laguna at night: worn cotton blouse and faded wrap skirt, thin grey hair pinned back, mud to the knees, absolutely calm face lit from below by a low cold flame that clings to her forearms without burning cloth or skin. In one hand a lidded rattan basket, in the other a small cloth doll bristling with pins. Above her the bamboo floor slats of the house, a stripe of warm lamplight leaking between them; around her wet banana leaves, a tethered pig, rain dripping off the eaves, coconut palms fading into monsoon dark.\n\nCaptured with a 35mm anamorphic lens at f/1.8. Shallow depth of field with a heavy, creamy bokeh background. Environmental portraiture. Dramatic cinematic lighting, sharp focus on the character, hyper-realistic textures of clothing and skin. Shot on 70mm film stock, ultra-wide 21:9 aspect ratio. --ar 21:9",
+    "obraz": "assets/wizualizacje/mangkukulam.jpg"
+  },
+  "natura": {
+    "wyglad_i_aura": "Nie ma wyglądu — i to jest w nim najgorsze. Wygląda jak starsza kobieta z sąsiedztwa albo jak mężczyzna, który wraca z pola; chodzi w tej samej znoszonej bawełnie, kupuje na tym samym targu. Rozpoznaje się go po dwóch rzeczach. Pierwsza to plecionka z rattanu z wiekiem — abubut — trzymany zawsze w tym samym kącie domu i nigdy nie otwierany przy gościach. Druga to noc: kiedy pada, spod czyjejś podłogi bije zimny płomień, który nie zapala bambusa i nie gaśnie w wodzie. Aura: uprzejmość, po której następuje cisza. Wieś nie mówi o nim głośno, ale nikt nie odmawia mu przysługi.",
+    "charakter_i_motywacje": "Działa z urazy, nie z głodu. Nie zbiera dusz, nie potrzebuje ofiar, nie ma świątyni: ma listę osób, które go upokorzyły, oszukały przy miedzy albo obgadały. Późniejsze relacje dodają drugi tryb — bywa najęty, i wtedy uraza jest cudza, a on jest tylko rzemieślnikiem. Sam siebie zwykle nie uważa za zło; w wielu wsiach powtarza się, że kulam nie chwyta niewinnego, więc każda porażka klątwy dowodzi, że ofiara na nią nie zasłużyła, a każdy sukces — że zasłużyła. Ta arytmetyka jest jego prawdziwą siłą: zanim cokolwiek zrobi, sąsiedzi już sami pilnują, żeby go nie urazić.",
+    "zdolnosci": "W najstarszej wersji jedno: wydobyć z siebie ogień, tarzając się w nieczystościach pod domem ofiary — i tego ognia nie gasi woda. W wersji nowszej dochodzi rzemiosło przez podobieństwo: lalka z kilkoma włosami, skrawkiem ubrania albo fotografią, szpilka wbita w ten punkt ciała, który ma zaboleć. Skutki są policzalne i nudne jak choroba: rozdzierający ból głowy, wrzody, obrzęk, guz w miejscu wskazanym igłą, wreszcie wyniszczenie. Nie potrzebuje obecności, nie potrzebuje świadka i nie musi nikogo dotknąć — wystarczy mu imię, kawałek człowieka i cierpliwość.",
+    "slabosci_i_metody_pokonania": "Nie zabija się go, tylko zmusza do odwołania. Chory idzie do albularyo — zielarza-uzdrowiciela — a ten rozpoznaje klątwę przez tawas: pali ałun i poświęcone liście na skorupie, czyta kształt stopionej bryłki, wyciąga z ciała „obce przedmioty”. Reguła, którą powtarzano jeszcze w latach trzydziestych: uzdrowiciel z prawdziwym anting-anting nie może wziąć zapłaty, bo amulet przestanie działać. Ostrzejsza metoda z tych samych relacji jest już zwyczajną przemocą sąsiedzką: przyjść z bolo do domu podejrzanego i żądać, by „przeszedł przez ucho igielne” — czyli by publicznie odwołał. Bywa też, że klątwa odbija się na rzucającym, gdy trafi w niewinnego; wtedy pali go własny ogień.",
+    "preferencje": "Lubi: deszczowe noce, domy na palach z szeroką przestrzenią pod podłogą, ludzi, którzy zostawiają po sobie włosy i obcinki paznokci, oraz wsie, w których nikt nie chce być pierwszym, który go nazwie. Nie lubi: uzdrowicieli pracujących za darmo, żądania, by powiedzieć coś głośno przy świadkach, i sytuacji, w której ofiara naprawdę nie zawiniła."
+  },
+  "dokumentacja": [
+    {
+      "typ": "źródło pierwotne (relacja misjonarza)",
+      "pozycja": "Juan de Plasencia OSF, „Relación de las costumbres de los indios de estas islas” („Customs of the Tagalogs”), Laguna/Manila, 21 października 1589 — przekład angielski w: E. H. Blair, J. A. Robertson, „The Philippine Islands, 1493–1898”, t. VII, Cleveland 1903, s. 182: czwarty z „kapłanów diabła” to mancocolam, który raz lub częściej w miesiącu wydobywa z siebie ogień nie do ugaszenia, tarzając się w nieczystościach spod domu, a domownik chory od tego umiera; obok niego na liście stoją mangagauay, manyisalat, hocloban, silagan, magtatangal, osuang, mangagayoma i pangatahoan",
+      "url": "https://www.aswangproject.com/witches-in-the-philippines/"
+    },
+    {
+      "typ": "opracowanie z cytatami źródeł XIX/XX-wiecznych",
+      "pozycja": "„HBO to feature the Mangkukulam (Filipino ‘Witch’)”, The Aswang Project — zestawienie relacji: José Núñez (1905) o koszu abubut z lalką i szpilką oraz o chorobach zsyłanych „samym życzeniem”, spis powszechny z Batangas (1903) o mangcuculam jako mężczyźnie albo kobiecie zsyłających chorobę na śmierć, Emeterio C. Cruz (1933) o uzdrowicielu, który z bolo żąda od podejrzanego „przejścia przez ucho igielne”, reguła darmowej pracy uzdrowiciela z anting-anting oraz notatka o „La Curación de los Hechizados” José Rizala, który tłumaczył kulam psychologicznie",
+      "url": "https://www.aswangproject.com/mangkukulam/"
+    },
+    {
+      "typ": "opracowanie encyklopedyczne",
+      "pozycja": "Hasło „Kulam”, Encyclopedia.pub (na podstawie literatury przedmiotu) — mapa terminów tej samej praktyki: kulam i gaway (tagalski), barang, hiwit, lágà (bisajski), tanem, tamay (ilokański), pantak (moro), a na Siquijor haplit, paktol i anyaw; rozróżnienie mangkukulam / mambabarang (ten drugi posyła owady) oraz sumpâ jako słowa oznaczającego zarazem klątwę i przysięgę",
+      "url": "https://encyclopedia.pub/entry/28433"
+    },
+    {
+      "typ": "głos współczesnych praktyków",
+      "pozycja": "„Revisiting «Kulam» (Malign Magic) — Perspectives of Practitioners”, Sikodiwa Reader (2024) — dzisiejsi praktycy folk magic nadal używają słowa kulam na magię czynioną ze złym zamiarem, a najwcześniejszą słownikową definicję mangkukulama („ten, kto krzywdzi lalką”) podaje Ferdinand Blumentritt w „Diccionario Mitológico de Filipinas” (1895); tekst zdejmuje z bytu europejski kostium wiedźmy i pokazuje go jako zwyczajnego człowieka z sąsiedztwa",
+      "url": "https://sikodiwa.substack.com/p/revisiting-kulam"
+    }
+  ],
+  "trofea": {
+    "pierwotne": "Kosz abubut z pokrywą, w środku szmaciana lalka i jedna szpilka wbita w bok — dokładnie tam, gdzie skarżył się chory.",
+    "wtorne": "Skorupa gliniana ze stopioną bryłką ałunu z obrzędu tawas: kształt, w którym uzdrowiciel odczytał, kto to zrobił."
+  },
+  "tagi": [
+    "filipiny",
+    "czarownik",
+    "klatwa",
+    "podstep",
+    "plomienna-postac"
+  ],
+  "powiazania": [
+    {
+      "slug": "morowa-panna",
+      "opis": "Dwa sposoby, na jakie choroba dostaje twarz: morowa panna przychodzi z zewnątrz i widać ją na rozstajach, a filipiński praktyk kulam mieszka w tej samej wsi i wygląda dokładnie jak wszyscy inni."
+    },
+    {
+      "slug": "iktomi",
+      "opis": "Obaj pracują na cudzej wyobraźni: pająk z Czarnych Wzgórz zastawia sidło z tobołka trawy, a mangkukulam nie musi nawet dotknąć ofiary — wystarczy, że wieś wie o jego koszu z lalką."
+    },
+    {
+      "slug": "bazyliszek-warszawski",
+      "opis": "Oba byty tłumaczą nagłą śmierć bez rany: warszawski gad zabija spojrzeniem z piwnicy, a tagalski sąsiad ogniem spod podłogi, którego nie gasi woda ani świadek."
+    },
+    {
+      "slug": "nessos",
+      "opis": "Klątwa działa przez rzecz, nie przez rękę: kentaur oddaje zatrutą krew jako lek, a praktyk kulam potrzebuje włosa albo skrawka ubrania, żeby szpilka w lalce znalazła właściwe ciało."
+    }
+  ],
+  "meta": {
+    "utworzono": "2026-09-05 18:20",
+    "autor": "sesja arena 2026-09-05",
+    "modyfikacje": [
+      {
+        "data": "2026-09-05 18:20",
+        "opis": "Nowa materializacja: mangkukulam — tagalski praktyk kulam z Laguny, od zapisu Plasencii z 1589 roku (ogień spod podłogi) po kosz abubut z lalką i szpilką z relacji z początku XX wieku. Na podstawie karty „Curse of the Pierced Heart” (ISD #138). Pierwszy byt Kartoteki z Azji Południowo-Wschodniej."
+      }
+    ]
+  }
+}

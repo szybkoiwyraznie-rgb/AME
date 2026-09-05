@@ -82,6 +82,9 @@ export const KRAJE_PL = {
   etiopia: 'Ethiopia',
   ghana: 'Ghana',
   benin: 'Benin',
+  filipiny: 'Philippines',
+  indonezja: 'Indonesia',
+  wietnam: 'Vietnam',
 };
 
 /** „Grecja (Beocja)” → „Greece”; null, gdy nazwa nieznana słownikowi. */
