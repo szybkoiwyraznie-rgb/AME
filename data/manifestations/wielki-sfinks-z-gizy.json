@@ -1,0 +1,98 @@
+{
+  "slug": "wielki-sfinks-z-gizy",
+  "nazwa": "Wielki Sfinks z Gizy — Hor-em-achet, strażnik wschodniego widnokręgu",
+  "nazwy_alternatywne": [
+    "Hor-em-achet (Horus na Widnokręgu)",
+    "Harmachis (forma grecka)",
+    "Hor-em-achet-Chepri-Re-Atum (imię z Steli Snu)",
+    "Horun / Horna / Hol (imiona kananejskie)",
+    "Abu al-Haul (arab. „Ojciec Grozy”)",
+    "Szesep-anch (egip. „żywy wizerunek”)",
+    "Wielki Sfinks",
+    "Sfinks z Gizy"
+  ],
+  "karta": {
+    "nazwa": "Leonin Surveyor",
+    "wydanie": "Aetherdrift (DFT) #18",
+    "rok": 2025
+  },
+  "lokalizacja": {
+    "miejscowosc": "Płaskowyż Giza na zachodnim brzegu Nilu, przy grobli i Świątyni Doliny Chefrena — wykuty z jednej skały w wybranym kamieniołomie, w rowie, który sam sobie zostawił; patrzy prosto na wschód. To NIE jest miejsce greckiej Sfingi z cyklu tebańskiego (ta czeka pod Tebami Beockimi w Grecji)",
+    "kraj": "Egipt (muhafaza Giza)",
+    "lat": 29.9753,
+    "lon": 31.1376
+  },
+  "pochodzenie_i_kultura": "Egipt, Stare Państwo, IV dynastia: kolos wykuty z wapiennej ostańcowej skały płaskowyżu Giza, w większości opinii za panowania Chefrena, jako element jego kompleksu piramidalnego — twarz królewska w chuście nemes z ureuszem, ciało leżącego lwa, długość ok. 75 m i wysokość ok. 22 m (Hussein Bassir, Bibliotheca Alexandrina). Imienia, którym nazywali go budowniczowie, nie znamy. Byt, który tu opisuję, to nie posąg jako rzeźba, lecz ten, kogo Egipcjanie Nowego Państwa czcili pod imieniem Hor-em-achet, „Horus na Widnokręgu” — bóg słoneczny w kamieniu, do którego mówiono i który odpowiadał. Jedna kultura, jedno miejsce, jedno imię: to nie jest grecka Sfinga z zagadką spod Teb Beockich (córka Echidny, skrzydlata lwica z kobiecą twarzą), lecz męski, bezskrzydły, królewski strażnik nekropolii.",
+  "wizualizacja": {
+    "prompt": "Style: A wide-angle full-body cinematic photograph. The central objects/persons of the photo are visible from head to toe, standing centrally in the frame. No parts of the body are cropped.\n\nA colossal recumbent lion of golden Giza limestone with a royal human face in a striped nemes headcloth and a cobra at the brow, lying in its rock-cut ditch on the eastern edge of the Giza plateau at first light; its body is sunk in drifted sand up to the shoulders, wind-carved layers scarring the flanks, the nose broken away and the chin bare where the plaited beard fell; between the outstretched forepaws stands a tall pink granite slab, and a young hunter in a linen kilt sleeps in the shadow beneath the chin beside an overturned bow; the low sun climbs straight into the stone eyes, gold dust hanging in the cold morning air, the pyramid of Khafre rising behind the haunches.\n\nCaptured with a 35mm anamorphic lens at f/1.8. Shallow depth of field with a heavy, creamy bokeh background. Environmental portraiture. Dramatic cinematic lighting, sharp focus on the character, hyper-realistic textures of clothing and skin. Shot on 70mm film stock, ultra-wide 21:9 aspect ratio. --ar 21:9",
+    "obraz": "assets/wizualizacje/wielki-sfinks-z-gizy.jpg"
+  },
+  "natura": {
+    "wyglad_i_aura": "Leży, nie stoi: ciało lwa długie na siedemdziesiąt kilka metrów, głowa ludzka w pasiastej chuście, na czole kobra. Kamień jest trójwarstwowy i widać to gołym okiem — twarz i łapy z warstwy twardej trzymają kształt, miękki środek ciała łuszczy się i pyli, zostawiając u podnóża świeże płatki wapienia. Nosa nie ma, brody nie ma; jej ułamki leżą dziś w Kairze i w Londynie. Aura jest aurą świtu: cały jego sens włącza się w chwili, gdy pierwsze światło wchodzi mu w oczy, a rów, w którym leży, jeszcze stoi w chłodzie i cieniu. Kto przychodzi w południe, widzi tylko gorący kamień — i to jest cała ochrona, jaką ma przed ciekawskimi.",
+    "charakter_i_motywacje": "Nie poluje, nie ściga, nie zadaje pytań: pilnuje. Jest odwrócony twarzą do wschodu i do żywych, grzbietem do cmentarza królów — pilnuje granicy między jednym a drugim i chce jednego: żeby ta granica pozostała widoczna. Stąd bierze się jedyna rzecz, o którą prosi — żeby zdjąć z niego piasek. Stela Snu (przekład D. Malleta, 1888) zapisuje jego własne słowa do śpiącego pod jego brodą królewicza Totmesa: „Spójrz na mnie, patrz na mnie, synu mój Totmesie; jestem twoim ojcem, Harmachis-Chepri-Re-Atum; daję ci władzę nad moją dziedziną, panowanie nad żywymi”. To nie prośba o litość, to umowa: oczyść mnie, a będziesz królem. Zahi Hawass zwraca uwagę, że umowa została dotrzymana po obu stronach — Totmes IV objął tron, a wokół kolosa zostały mury z cegły mułowej z jego imieniem, których resztki archeolodzy znajdują w rowie do dziś. Egipcjanin, który przychodził tu z prośbą o wylew Nilu i dobre żniwo, robił dokładnie to samo w mniejszej skali: przynosił swoje, prosił o swoje.",
+    "zdolnosci": "Mówi we śnie — jedyny znany sposób, w jaki się z nim rozmawia, to zasnąć w jego cieniu w południe. Rozdaje to, czego pilnuje: koronę Górnego i Dolnego Egiptu, prawo do ziemi, urodzaj. Trwa dłużej niż każdy, kto się nim zajmuje: przetrwał porzucenie nekropolii, tysiąc dwieście lat pod piaskiem, dwie fale odkopywania w starożytności, Kawiglię, Mariette'a, Maspera i Baraize'a, a każde z tych przedsięwzięć kończyło się tym samym — piasek wracał. Jego siła nie polega na sile: polega na tym, że jest większy od cierpliwości ludzi. Kiedy jest zasypany, znika z pola widzenia tak skutecznie, że Herodot, opisując Gizę w V w. p.n.e., nie wspomina o nim ani słowem.",
+    "slabosci_i_metody_pokonania": "Nie da się go zabić, ale bardzo łatwo go pogrzebać: wystarczy przestać przychodzić. Pustynia robi resztę w kilkadziesiąt lat, a zasypany po szyję przestaje być bogiem, a zaczyna być pagórkiem z głową. Druga słabość jest materiałowa — miękka warstwa środkowa rozsypuje się od wiatru i wilgoci; w latach 80. XX w. odpadały z niego bloki, a w 2007 podniesiona woda gruntowa spod pobliskiego kanału zaczęła rozsadzać wapień od spodu, dopóki nie założono studni odwadniających. Trzecia jest ludzka: al-Makrizi (XV w., wyd. G. Wiena 1913, t. 2, s. 157) zapisał, że w 1378 r. sufi Sa'im ad-Dahr z chanakah Sa'ida as-Su'ady rozbił mu twarz — nos i uszy — bo chłopi palili u jego stóp ostropest i krokosz, szepcząc jedno życzenie sześćdziesiąt trzy razy. Ten sam kronikarz dodaje, że od tego czasu piasek wszedł na uprawne pola Gizy, a ludzie mówili, że to zapłata za oszpecenie Abu al-Haula. Kto chce go pokonać, nie potrzebuje więc broni — wystarczy odebrać mu tych, którzy przychodzą.",
+    "preferencje": "Lubi: pierwsze światło prosto w twarz, cień własnej brody w południe, ludzi, którzy przychodzą z czymś w rękach, dotrzymane umowy, mury, które zatrzymują wydmę. Nie lubi: piasku w gardle, wilgoci od spodu, cementu (dwa razy wypełniano nim jego rany i dwa razy było gorzej), pustego rowu przez sto lat i tego, że każdy przybysz pyta go najpierw o nos."
+  },
+  "dokumentacja": [
+    {
+      "typ": "tekst źródłowy",
+      "pozycja": "Stela Snu Totmesa IV (ok. 1401 r. p.n.e.), przekład D. Malleta 1888 ze wstępem A. H. Sayce'a, „Records of the Past” (biblioteka tekstów J. Colavito) — mowa boga do śpiącego królewicza: „jestem twoim ojcem, Harmachis-Chepri-Re-Atum; daję ci władzę nad moją dziedziną, panowanie nad żywymi”; Sayce opisuje odkopanie steli przez kpt. Caviglię w 1818 r., kapliczkę między łapami, ułamki brody znalezione w gruzie i ponowne zasypywanie kolosa przez pustynię",
+      "url": "https://www.jasoncolavito.com/dream-stela-of-thutmose-iv.html"
+    },
+    {
+      "typ": "opracowanie archeologiczne",
+      "pozycja": "Zahi Hawass, „History of the Conservation of the Sphinx” (Guardian's Egypt) — pięć faz konserwacji od 1400 r. p.n.e.; potwierdzenie w materiale archeologicznym, że Totmes IV rzeczywiście odkopał kolosa (mury z cegły mułowej z jego imieniem zachowane w rowie), bloki licowe Starego Państwa wstawione z powrotem, kult Hor-em-achet jako połączenie boga królewskości Horusa ze słonecznym Re, oczyszczanie Baraize'a w 1926 r.",
+      "url": "https://www.guardians.net/hawass/sphinx2.htm"
+    },
+    {
+      "typ": "artykuł naukowy",
+      "pozycja": "Hussein Bassir (Bibliotheca Alexandrina), „The Great Sphinx at Giza: the immortal witness of interconnections between East and West”, „Journal of Historical Archaeology & Anthropological Sciences” 2(3), 2017, s. 103–104 — wymiary (ok. 22 m wysokości, 75 m długości), głowa Chefrena w chuście nemes z ureuszem, ułamki brody w Kairze i Londynie, imiona Horemachet / Horun / Hol, grecka nazwa od egip. „szesep anch” („żywy wizerunek”), milczenie Herodota jako ślad zasypania, trzy warstwy geologiczne i historia restauracji aż po odwadnianie płaskowyżu",
+      "url": "https://medcraveonline.com/JHAAS/the-great-sphinx-at-giza-the-immortal-witness-of-interconnections-between-east-and-west.html"
+    },
+    {
+      "typ": "opracowanie źródłowe",
+      "pozycja": "„The Sphinx's Nose”, Catchpenny Mysteries of Ancient Egypt — omówienie relacji al-Makriziego (zm. 1442) z „al-Mawa'iz wa al-i'tibar…” w wydaniu G. Wiena 1913, t. 2, s. 157: nos i uszy rozbite w 1378 r. przez sufiego Sa'im ad-Dahra z chanakah Sa'ida as-Su'ady, bo Egipcjanie palili u stóp kolosa ostropest i krokosz, powtarzając życzenie 63 razy; „od czasu tego oszpecenia piasek wkroczył na uprawną ziemię Gizy”; rycina F. L. Nordena z 1737 r. dowodzi, że nosa nie było na długo przed Napoleonem",
+      "url": "https://www.catchpenny.org/nose.html"
+    }
+  ],
+  "trofea": {
+    "pierwotne": "Płat wapienia zdjęty z boku kolosa: z jednej strony gładki jak skóra, z drugiej sypki jak stary chleb — dowód, że strażnik i jego rana są z tego samego kamienia.",
+    "wtorne": "Garść piasku z rowu, przesiana przez palce i zważona: dokładnie tyle, ile trzeba usunąć raz, żeby jutro usuwać znowu."
+  },
+  "tagi": [
+    "egipt",
+    "sfinks",
+    "warunek",
+    "obrona",
+    "kamienna-figura"
+  ],
+  "powiazania": [
+    {
+      "slug": "sfinks-teby",
+      "opis": "Dwa byty o jednej nazwie i dwóch kontynentach, których nie wolno mylić: grecka Sfinga spod Teb Beockich to skrzydlata lwica z kobiecą twarzą, która zabija za nierozwiązaną zagadkę, a Hor-em-achet z Gizy to bezskrzydły, męski kolos, który niczego nie pyta, tylko prosi o odkopanie i płaci za to koroną."
+    },
+    {
+      "slug": "neith-z-sais",
+      "opis": "Dwa egipskie ośrodki, w których bóstwo mówi wprost do władzy: w Sais Neith rozstrzyga spór o urząd Ozyrysa listem do trybunału bogów, a w Gizie Hor-em-achet rozdaje koronę we śnie temu, kto zdejmie z niego piasek — obie decyzje są wiążące i obie zapisano w kamieniu."
+    },
+    {
+      "slug": "knecht-z-koptos",
+      "opis": "Egipska para o odwrotnym kierunku posłuszeństwa: knecht z Koptos jest tym, kogo się wysyła i kto wykonuje cudzy rozkaz, a Wielki Sfinks jest tym, kto rozkaz wydaje śpiącemu człowiekowi i sam nie rusza się z miejsca przez cztery i pół tysiąca lat."
+    },
+    {
+      "slug": "talos-kreta",
+      "opis": "Dwie kamienno-metalowe straże obchodzące granicę bez odpoczynku: Talos okrąża Kretę trzy razy dziennie i ciska głazami w obcych, a Sfinks z Gizy pilnuje jednego punktu na widnokręgu i broni granicy między miastem żywych a nekropolią królów."
+    }
+  ],
+  "meta": {
+    "utworzono": "2026-09-05 15:10",
+    "autor": "sesja arena 2026-09-05",
+    "modyfikacje": [
+      {
+        "data": "2026-09-05 15:10",
+        "opis": "Nowa materializacja: Wielki Sfinks z Gizy — Hor-em-achet, strażnik wschodniego widnokręgu, na podstawie karty „Leonin Surveyor” (DFT #18). Egipt dostaje własnego Sfinksa, osobnego od greckiej Sfingi spod Teb Beockich."
+      }
+    ]
+  }
+}

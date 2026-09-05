@@ -58,8 +58,8 @@
       ],
       "stanPo": {
         "os": {
-          "mit": 36,
-          "racjonalizacja": 64
+          "mit": 35,
+          "racjonalizacja": 65
         },
         "zasieg": [
           {
@@ -116,7 +116,7 @@
           },
           {
             "slug": "knecht-z-koptos",
-            "wielkosc": 0.37
+            "wielkosc": 0.39
           },
           {
             "slug": "lincoln-imp",
@@ -132,7 +132,7 @@
           },
           {
             "slug": "neith-z-sais",
-            "wielkosc": 0.23
+            "wielkosc": 0.25
           },
           {
             "slug": "nessos",
@@ -152,7 +152,7 @@
           },
           {
             "slug": "sfinks-teby",
-            "wielkosc": 0.48
+            "wielkosc": 0.5
           },
           {
             "slug": "syama-i-sarvara",
@@ -160,7 +160,11 @@
           },
           {
             "slug": "talos-kreta",
-            "wielkosc": 0.44
+            "wielkosc": 0.46
+          },
+          {
+            "slug": "wielki-sfinks-z-gizy",
+            "wielkosc": 0.2
           }
         ],
         "dominacje": [
@@ -232,7 +236,7 @@
           {
             "kultura": "grecja",
             "kult": "knecht-z-koptos",
-            "wielkosc": 0.37
+            "wielkosc": 0.39
           },
           {
             "kultura": "anglia",
@@ -252,7 +256,7 @@
           {
             "kultura": "egipt",
             "kult": "neith-z-sais",
-            "wielkosc": 0.23
+            "wielkosc": 0.25
           },
           {
             "kultura": "grecja",
@@ -277,7 +281,7 @@
           {
             "kultura": "grecja",
             "kult": "sfinks-teby",
-            "wielkosc": 0.48
+            "wielkosc": 0.5
           },
           {
             "kultura": "indie",
@@ -287,7 +291,12 @@
           {
             "kultura": "grecja",
             "kult": "talos-kreta",
-            "wielkosc": 0.44
+            "wielkosc": 0.46
+          },
+          {
+            "kultura": "egipt",
+            "kult": "wielki-sfinks-z-gizy",
+            "wielkosc": 0.2
           }
         ],
         "paliwo": {
@@ -494,8 +503,8 @@
       ],
       "stanPo": {
         "os": {
-          "mit": 34,
-          "racjonalizacja": 66
+          "mit": 33,
+          "racjonalizacja": 67
         },
         "zasieg": [
           {
@@ -552,7 +561,7 @@
           },
           {
             "slug": "knecht-z-koptos",
-            "wielkosc": 0.37
+            "wielkosc": 0.39
           },
           {
             "slug": "lincoln-imp",
@@ -568,7 +577,7 @@
           },
           {
             "slug": "neith-z-sais",
-            "wielkosc": 0.23
+            "wielkosc": 0.25
           },
           {
             "slug": "nessos",
@@ -588,7 +597,7 @@
           },
           {
             "slug": "sfinks-teby",
-            "wielkosc": 0.48
+            "wielkosc": 0.5
           },
           {
             "slug": "syama-i-sarvara",
@@ -596,7 +605,11 @@
           },
           {
             "slug": "talos-kreta",
-            "wielkosc": 0.44
+            "wielkosc": 0.46
+          },
+          {
+            "slug": "wielki-sfinks-z-gizy",
+            "wielkosc": 0.2
           }
         ],
         "dominacje": [
@@ -668,7 +681,7 @@
           {
             "kultura": "grecja",
             "kult": "knecht-z-koptos",
-            "wielkosc": 0.37
+            "wielkosc": 0.39
           },
           {
             "kultura": "anglia",
@@ -688,7 +701,7 @@
           {
             "kultura": "egipt",
             "kult": "neith-z-sais",
-            "wielkosc": 0.23
+            "wielkosc": 0.25
           },
           {
             "kultura": "grecja",
@@ -713,7 +726,7 @@
           {
             "kultura": "grecja",
             "kult": "sfinks-teby",
-            "wielkosc": 0.48
+            "wielkosc": 0.5
           },
           {
             "kultura": "indie",
@@ -723,7 +736,12 @@
           {
             "kultura": "grecja",
             "kult": "talos-kreta",
-            "wielkosc": 0.44
+            "wielkosc": 0.46
+          },
+          {
+            "kultura": "egipt",
+            "kult": "wielki-sfinks-z-gizy",
+            "wielkosc": 0.2
           }
         ],
         "paliwo": {
@@ -948,8 +966,8 @@
       ],
       "stanPo": {
         "os": {
-          "mit": 32,
-          "racjonalizacja": 68
+          "mit": 31,
+          "racjonalizacja": 69
         },
         "zasieg": [
           {
@@ -1006,7 +1024,7 @@
           },
           {
             "slug": "knecht-z-koptos",
-            "wielkosc": 0.37
+            "wielkosc": 0.39
           },
           {
             "slug": "lincoln-imp",
@@ -1022,7 +1040,7 @@
           },
           {
             "slug": "neith-z-sais",
-            "wielkosc": 0.23
+            "wielkosc": 0.25
           },
           {
             "slug": "nessos",
@@ -1042,7 +1060,7 @@
           },
           {
             "slug": "sfinks-teby",
-            "wielkosc": 0.48
+            "wielkosc": 0.5
           },
           {
             "slug": "syama-i-sarvara",
@@ -1050,7 +1068,11 @@
           },
           {
             "slug": "talos-kreta",
-            "wielkosc": 0.44
+            "wielkosc": 0.46
+          },
+          {
+            "slug": "wielki-sfinks-z-gizy",
+            "wielkosc": 0.2
           }
         ],
         "dominacje": [
@@ -1122,7 +1144,7 @@
           {
             "kultura": "grecja",
             "kult": "knecht-z-koptos",
-            "wielkosc": 0.37
+            "wielkosc": 0.39
           },
           {
             "kultura": "anglia",
@@ -1142,7 +1164,7 @@
           {
             "kultura": "egipt",
             "kult": "neith-z-sais",
-            "wielkosc": 0.23
+            "wielkosc": 0.25
           },
           {
             "kultura": "grecja",
@@ -1167,7 +1189,7 @@
           {
             "kultura": "grecja",
             "kult": "sfinks-teby",
-            "wielkosc": 0.48
+            "wielkosc": 0.5
           },
           {
             "kultura": "indie",
@@ -1177,7 +1199,12 @@
           {
             "kultura": "grecja",
             "kult": "talos-kreta",
-            "wielkosc": 0.44
+            "wielkosc": 0.46
+          },
+          {
+            "kultura": "egipt",
+            "kult": "wielki-sfinks-z-gizy",
+            "wielkosc": 0.2
           }
         ],
         "paliwo": {
@@ -1417,8 +1444,8 @@
       ],
       "stanPo": {
         "os": {
-          "mit": 31,
-          "racjonalizacja": 69
+          "mit": 30,
+          "racjonalizacja": 70
         },
         "zasieg": [
           {
@@ -1475,7 +1502,7 @@
           },
           {
             "slug": "knecht-z-koptos",
-            "wielkosc": 0.37
+            "wielkosc": 0.39
           },
           {
             "slug": "lincoln-imp",
@@ -1491,7 +1518,7 @@
           },
           {
             "slug": "neith-z-sais",
-            "wielkosc": 0.23
+            "wielkosc": 0.25
           },
           {
             "slug": "nessos",
@@ -1511,7 +1538,7 @@
           },
           {
             "slug": "sfinks-teby",
-            "wielkosc": 0.48
+            "wielkosc": 0.5
           },
           {
             "slug": "syama-i-sarvara",
@@ -1519,7 +1546,11 @@
           },
           {
             "slug": "talos-kreta",
-            "wielkosc": 0.44
+            "wielkosc": 0.46
+          },
+          {
+            "slug": "wielki-sfinks-z-gizy",
+            "wielkosc": 0.2
           }
         ],
         "dominacje": [
@@ -1591,7 +1622,7 @@
           {
             "kultura": "grecja",
             "kult": "knecht-z-koptos",
-            "wielkosc": 0.37
+            "wielkosc": 0.39
           },
           {
             "kultura": "anglia",
@@ -1611,7 +1642,7 @@
           {
             "kultura": "egipt",
             "kult": "neith-z-sais",
-            "wielkosc": 0.23
+            "wielkosc": 0.25
           },
           {
             "kultura": "grecja",
@@ -1636,7 +1667,7 @@
           {
             "kultura": "grecja",
             "kult": "sfinks-teby",
-            "wielkosc": 0.48
+            "wielkosc": 0.5
           },
           {
             "kultura": "indie",
@@ -1646,7 +1677,12 @@
           {
             "kultura": "grecja",
             "kult": "talos-kreta",
-            "wielkosc": 0.44
+            "wielkosc": 0.46
+          },
+          {
+            "kultura": "egipt",
+            "kult": "wielki-sfinks-z-gizy",
+            "wielkosc": 0.2
           }
         ],
         "paliwo": {
@@ -1849,8 +1885,20 @@
       "uczestnicy": [
         {
           "slug": "sfinks-teby",
-          "nazwa": "Sfinks — strażniczka Tebańskich Wrót",
+          "nazwa": "Sfinga z Teb Beockich — strażniczka Tebańskich Wrót",
           "rola": "Strażniczka zagadki i lęku",
+          "pasywne": 26,
+          "saldoPrzed": 26,
+          "kosztUdzialu": 2,
+          "kosztKlucza": 0,
+          "boost": 0,
+          "zwrot": 0,
+          "saldoPo": 24
+        },
+        {
+          "slug": "talos-kreta",
+          "nazwa": "Talos — spiżowy strażnik Krety",
+          "rola": "Spiżowy obrońca brzegu",
           "pasywne": 24,
           "saldoPrzed": 24,
           "kosztUdzialu": 2,
@@ -1858,18 +1906,6 @@
           "boost": 0,
           "zwrot": 0,
           "saldoPo": 22
-        },
-        {
-          "slug": "talos-kreta",
-          "nazwa": "Talos — spiżowy strażnik Krety",
-          "rola": "Spiżowy obrońca brzegu",
-          "pasywne": 22,
-          "saldoPrzed": 22,
-          "kosztUdzialu": 2,
-          "kosztKlucza": 0,
-          "boost": 0,
-          "zwrot": 0,
-          "saldoPo": 20
         },
         {
           "slug": "lincoln-imp",
@@ -1886,8 +1922,8 @@
       ],
       "stanPo": {
         "os": {
-          "mit": 30,
-          "racjonalizacja": 70
+          "mit": 29,
+          "racjonalizacja": 71
         },
         "zasieg": [
           {
@@ -1944,7 +1980,7 @@
           },
           {
             "slug": "knecht-z-koptos",
-            "wielkosc": 0.37
+            "wielkosc": 0.39
           },
           {
             "slug": "lincoln-imp",
@@ -1960,7 +1996,7 @@
           },
           {
             "slug": "neith-z-sais",
-            "wielkosc": 0.23
+            "wielkosc": 0.25
           },
           {
             "slug": "nessos",
@@ -1980,7 +2016,7 @@
           },
           {
             "slug": "sfinks-teby",
-            "wielkosc": 0.47
+            "wielkosc": 0.49
           },
           {
             "slug": "syama-i-sarvara",
@@ -1988,7 +2024,11 @@
           },
           {
             "slug": "talos-kreta",
-            "wielkosc": 0.435
+            "wielkosc": 0.455
+          },
+          {
+            "slug": "wielki-sfinks-z-gizy",
+            "wielkosc": 0.2
           }
         ],
         "dominacje": [
@@ -2060,7 +2100,7 @@
           {
             "kultura": "grecja",
             "kult": "knecht-z-koptos",
-            "wielkosc": 0.37
+            "wielkosc": 0.39
           },
           {
             "kultura": "anglia",
@@ -2080,7 +2120,7 @@
           {
             "kultura": "egipt",
             "kult": "neith-z-sais",
-            "wielkosc": 0.23
+            "wielkosc": 0.25
           },
           {
             "kultura": "grecja",
@@ -2105,7 +2145,7 @@
           {
             "kultura": "grecja",
             "kult": "sfinks-teby",
-            "wielkosc": 0.47
+            "wielkosc": 0.49
           },
           {
             "kultura": "indie",
@@ -2115,7 +2155,12 @@
           {
             "kultura": "grecja",
             "kult": "talos-kreta",
-            "wielkosc": 0.435
+            "wielkosc": 0.455
+          },
+          {
+            "kultura": "egipt",
+            "kult": "wielki-sfinks-z-gizy",
+            "wielkosc": 0.2
           }
         ],
         "paliwo": {
@@ -2127,8 +2172,8 @@
           "balor": 21,
           "selkie-sule-skerry": 24,
           "indra": 11,
-          "sfinks-teby": 22,
-          "talos-kreta": 20
+          "sfinks-teby": 24,
+          "talos-kreta": 22
         }
       },
       "konsekwencje": {
@@ -2167,15 +2212,15 @@
           },
           {
             "slug": "sfinks-teby",
-            "przed": 0.48,
-            "po": 0.47,
+            "przed": 0.5,
+            "po": 0.49,
             "delta": -0.01,
             "opis": "Święta groza zagadki słabnie, gdy okazuje się podatna na wyśmianie."
           },
           {
             "slug": "talos-kreta",
-            "przed": 0.44,
-            "po": 0.435,
+            "przed": 0.46,
+            "po": 0.455,
             "delta": -0.005,
             "opis": "Spiżowy olbrzym pozostaje tylko maszyną strzegącą pustego brzegu."
           }
@@ -2191,15 +2236,15 @@
           {
             "kultura": "grecja",
             "kult": "sfinks-teby",
-            "przed": 0.48,
-            "po": 0.47,
+            "przed": 0.5,
+            "po": 0.49,
             "delta": -0.01
           },
           {
             "kultura": "grecja",
             "kult": "talos-kreta",
-            "przed": 0.44,
-            "po": 0.435,
+            "przed": 0.46,
+            "po": 0.455,
             "delta": -0.005
           }
         ],
@@ -2352,8 +2397,8 @@
       ],
       "stanPo": {
         "os": {
-          "mit": 29,
-          "racjonalizacja": 71
+          "mit": 28,
+          "racjonalizacja": 72
         },
         "zasieg": [
           {
@@ -2410,7 +2455,7 @@
           },
           {
             "slug": "knecht-z-koptos",
-            "wielkosc": 0.37
+            "wielkosc": 0.39
           },
           {
             "slug": "lincoln-imp",
@@ -2426,7 +2471,7 @@
           },
           {
             "slug": "neith-z-sais",
-            "wielkosc": 0.23
+            "wielkosc": 0.25
           },
           {
             "slug": "nessos",
@@ -2446,7 +2491,7 @@
           },
           {
             "slug": "sfinks-teby",
-            "wielkosc": 0.47
+            "wielkosc": 0.49
           },
           {
             "slug": "syama-i-sarvara",
@@ -2454,7 +2499,11 @@
           },
           {
             "slug": "talos-kreta",
-            "wielkosc": 0.435
+            "wielkosc": 0.455
+          },
+          {
+            "slug": "wielki-sfinks-z-gizy",
+            "wielkosc": 0.2
           }
         ],
         "dominacje": [
@@ -2526,7 +2575,7 @@
           {
             "kultura": "grecja",
             "kult": "knecht-z-koptos",
-            "wielkosc": 0.37
+            "wielkosc": 0.39
           },
           {
             "kultura": "anglia",
@@ -2546,7 +2595,7 @@
           {
             "kultura": "egipt",
             "kult": "neith-z-sais",
-            "wielkosc": 0.23
+            "wielkosc": 0.25
           },
           {
             "kultura": "grecja",
@@ -2571,7 +2620,7 @@
           {
             "kultura": "grecja",
             "kult": "sfinks-teby",
-            "wielkosc": 0.47
+            "wielkosc": 0.49
           },
           {
             "kultura": "indie",
@@ -2581,7 +2630,12 @@
           {
             "kultura": "grecja",
             "kult": "talos-kreta",
-            "wielkosc": 0.435
+            "wielkosc": 0.455
+          },
+          {
+            "kultura": "egipt",
+            "kult": "wielki-sfinks-z-gizy",
+            "wielkosc": 0.2
           }
         ],
         "paliwo": {
@@ -2593,8 +2647,8 @@
           "balor": 21,
           "selkie-sule-skerry": 24,
           "indra": 11,
-          "sfinks-teby": 22,
-          "talos-kreta": 20,
+          "sfinks-teby": 24,
+          "talos-kreta": 22,
           "pandora": 17,
           "morowa-panna": 15
         }
@@ -2804,13 +2858,13 @@
           "slug": "knecht-z-koptos",
           "nazwa": "Knecht z Koptos — ożywiony tłuczek, który nie zna słowa końca",
           "rola": "Rzecz, która nie znała słowa końca",
-          "pasywne": 13,
-          "saldoPrzed": 13,
+          "pasywne": 15,
+          "saldoPrzed": 15,
           "kosztUdzialu": 2,
           "kosztKlucza": 0,
           "boost": 0,
           "zwrot": 2,
-          "saldoPo": 13
+          "saldoPo": 15
         },
         {
           "slug": "syama-i-sarvara",
@@ -2827,8 +2881,8 @@
       ],
       "stanPo": {
         "os": {
-          "mit": 28,
-          "racjonalizacja": 72
+          "mit": 27,
+          "racjonalizacja": 73
         },
         "zasieg": [
           {
@@ -2885,7 +2939,7 @@
           },
           {
             "slug": "knecht-z-koptos",
-            "wielkosc": 0.38
+            "wielkosc": 0.4
           },
           {
             "slug": "lincoln-imp",
@@ -2901,7 +2955,7 @@
           },
           {
             "slug": "neith-z-sais",
-            "wielkosc": 0.23
+            "wielkosc": 0.25
           },
           {
             "slug": "nessos",
@@ -2921,7 +2975,7 @@
           },
           {
             "slug": "sfinks-teby",
-            "wielkosc": 0.47
+            "wielkosc": 0.49
           },
           {
             "slug": "syama-i-sarvara",
@@ -2929,7 +2983,11 @@
           },
           {
             "slug": "talos-kreta",
-            "wielkosc": 0.435
+            "wielkosc": 0.455
+          },
+          {
+            "slug": "wielki-sfinks-z-gizy",
+            "wielkosc": 0.2
           }
         ],
         "dominacje": [
@@ -3001,7 +3059,7 @@
           {
             "kultura": "grecja",
             "kult": "knecht-z-koptos",
-            "wielkosc": 0.38
+            "wielkosc": 0.4
           },
           {
             "kultura": "anglia",
@@ -3021,7 +3079,7 @@
           {
             "kultura": "egipt",
             "kult": "neith-z-sais",
-            "wielkosc": 0.23
+            "wielkosc": 0.25
           },
           {
             "kultura": "grecja",
@@ -3046,7 +3104,7 @@
           {
             "kultura": "grecja",
             "kult": "sfinks-teby",
-            "wielkosc": 0.47
+            "wielkosc": 0.49
           },
           {
             "kultura": "indie",
@@ -3056,7 +3114,12 @@
           {
             "kultura": "grecja",
             "kult": "talos-kreta",
-            "wielkosc": 0.435
+            "wielkosc": 0.455
+          },
+          {
+            "kultura": "egipt",
+            "kult": "wielki-sfinks-z-gizy",
+            "wielkosc": 0.2
           }
         ],
         "paliwo": {
@@ -3068,12 +3131,12 @@
           "balor": 21,
           "selkie-sule-skerry": 24,
           "indra": 11,
-          "sfinks-teby": 22,
-          "talos-kreta": 20,
+          "sfinks-teby": 24,
+          "talos-kreta": 22,
           "pandora": 17,
           "morowa-panna": 15,
           "protostates": 12,
-          "knecht-z-koptos": 13,
+          "knecht-z-koptos": 15,
           "syama-i-sarvara": 13
         }
       },
@@ -3113,8 +3176,8 @@
           },
           {
             "slug": "knecht-z-koptos",
-            "przed": 0.37,
-            "po": 0.38,
+            "przed": 0.39,
+            "po": 0.4,
             "delta": 0.01,
             "opis": "Opowieść o tłuczku, który pierwszy zostawił wodę przy progu, uczy słuchaczy kończyć rozkazy słowem — Koptos zaczyna zamykać drzwi po zmroku."
           },
@@ -3137,8 +3200,8 @@
           {
             "kultura": "grecja",
             "kult": "knecht-z-koptos",
-            "przed": 0.37,
-            "po": 0.38,
+            "przed": 0.39,
+            "po": 0.4,
             "delta": 0.01
           },
           {
@@ -3305,8 +3368,8 @@
       ],
       "stanPo": {
         "os": {
-          "mit": 29,
-          "racjonalizacja": 71
+          "mit": 28,
+          "racjonalizacja": 72
         },
         "zasieg": [
           {
@@ -3363,7 +3426,7 @@
           },
           {
             "slug": "knecht-z-koptos",
-            "wielkosc": 0.38
+            "wielkosc": 0.4
           },
           {
             "slug": "lincoln-imp",
@@ -3379,7 +3442,7 @@
           },
           {
             "slug": "neith-z-sais",
-            "wielkosc": 0.23
+            "wielkosc": 0.25
           },
           {
             "slug": "nessos",
@@ -3399,7 +3462,7 @@
           },
           {
             "slug": "sfinks-teby",
-            "wielkosc": 0.47
+            "wielkosc": 0.49
           },
           {
             "slug": "syama-i-sarvara",
@@ -3407,7 +3470,11 @@
           },
           {
             "slug": "talos-kreta",
-            "wielkosc": 0.435
+            "wielkosc": 0.455
+          },
+          {
+            "slug": "wielki-sfinks-z-gizy",
+            "wielkosc": 0.2
           }
         ],
         "dominacje": [
@@ -3479,7 +3546,7 @@
           {
             "kultura": "grecja",
             "kult": "knecht-z-koptos",
-            "wielkosc": 0.38
+            "wielkosc": 0.4
           },
           {
             "kultura": "anglia",
@@ -3499,7 +3566,7 @@
           {
             "kultura": "egipt",
             "kult": "neith-z-sais",
-            "wielkosc": 0.23
+            "wielkosc": 0.25
           },
           {
             "kultura": "grecja",
@@ -3524,7 +3591,7 @@
           {
             "kultura": "grecja",
             "kult": "sfinks-teby",
-            "wielkosc": 0.47
+            "wielkosc": 0.49
           },
           {
             "kultura": "indie",
@@ -3534,7 +3601,12 @@
           {
             "kultura": "grecja",
             "kult": "talos-kreta",
-            "wielkosc": 0.435
+            "wielkosc": 0.455
+          },
+          {
+            "kultura": "egipt",
+            "kult": "wielki-sfinks-z-gizy",
+            "wielkosc": 0.2
           }
         ],
         "paliwo": {
@@ -3546,12 +3618,12 @@
           "balor": 21,
           "selkie-sule-skerry": 24,
           "indra": 11,
-          "sfinks-teby": 22,
-          "talos-kreta": 20,
+          "sfinks-teby": 24,
+          "talos-kreta": 22,
           "pandora": 17,
           "morowa-panna": 15,
           "protostates": 12,
-          "knecht-z-koptos": 13,
+          "knecht-z-koptos": 15,
           "syama-i-sarvara": 13
         }
       },
@@ -3750,15 +3822,15 @@
       "uczestnicy": [
         {
           "slug": "sfinks-teby",
-          "nazwa": "Sfinks — strażniczka Tebańskich Wrót",
+          "nazwa": "Sfinga z Teb Beockich — strażniczka Tebańskich Wrót",
           "rola": "Strażniczka pytania",
-          "pasywne": 24,
-          "saldoPrzed": 22,
+          "pasywne": 26,
+          "saldoPrzed": 24,
           "kosztUdzialu": 2,
           "kosztKlucza": 0,
           "boost": 0,
           "zwrot": 2,
-          "saldoPo": 22
+          "saldoPo": 24
         },
         {
           "slug": "loup-garou-gevaudan",
@@ -3776,19 +3848,19 @@
           "slug": "neith-z-sais",
           "nazwa": "Neith z Sais — tkaczka początku",
           "rola": "Tkaczka reguły rozmowy",
-          "pasywne": 7,
-          "saldoPrzed": 7,
+          "pasywne": 9,
+          "saldoPrzed": 9,
           "kosztUdzialu": 2,
           "kosztKlucza": 0,
           "boost": 0,
           "zwrot": 2,
-          "saldoPo": 7
+          "saldoPo": 9
         }
       ],
       "stanPo": {
         "os": {
-          "mit": 30,
-          "racjonalizacja": 70
+          "mit": 29,
+          "racjonalizacja": 71
         },
         "zasieg": [
           {
@@ -3845,7 +3917,7 @@
           },
           {
             "slug": "knecht-z-koptos",
-            "wielkosc": 0.38
+            "wielkosc": 0.4
           },
           {
             "slug": "lincoln-imp",
@@ -3861,7 +3933,7 @@
           },
           {
             "slug": "neith-z-sais",
-            "wielkosc": 0.238
+            "wielkosc": 0.258
           },
           {
             "slug": "nessos",
@@ -3881,7 +3953,7 @@
           },
           {
             "slug": "sfinks-teby",
-            "wielkosc": 0.482
+            "wielkosc": 0.502
           },
           {
             "slug": "syama-i-sarvara",
@@ -3889,7 +3961,11 @@
           },
           {
             "slug": "talos-kreta",
-            "wielkosc": 0.435
+            "wielkosc": 0.455
+          },
+          {
+            "slug": "wielki-sfinks-z-gizy",
+            "wielkosc": 0.2
           }
         ],
         "dominacje": [
@@ -3961,7 +4037,7 @@
           {
             "kultura": "grecja",
             "kult": "knecht-z-koptos",
-            "wielkosc": 0.38
+            "wielkosc": 0.4
           },
           {
             "kultura": "anglia",
@@ -3981,7 +4057,7 @@
           {
             "kultura": "egipt",
             "kult": "neith-z-sais",
-            "wielkosc": 0.238
+            "wielkosc": 0.258
           },
           {
             "kultura": "grecja",
@@ -4006,7 +4082,7 @@
           {
             "kultura": "grecja",
             "kult": "sfinks-teby",
-            "wielkosc": 0.482
+            "wielkosc": 0.502
           },
           {
             "kultura": "indie",
@@ -4016,7 +4092,12 @@
           {
             "kultura": "grecja",
             "kult": "talos-kreta",
-            "wielkosc": 0.435
+            "wielkosc": 0.455
+          },
+          {
+            "kultura": "egipt",
+            "kult": "wielki-sfinks-z-gizy",
+            "wielkosc": 0.2
           }
         ],
         "paliwo": {
@@ -4028,15 +4109,15 @@
           "balor": 21,
           "selkie-sule-skerry": 24,
           "indra": 11,
-          "sfinks-teby": 22,
-          "talos-kreta": 20,
+          "sfinks-teby": 24,
+          "talos-kreta": 22,
           "pandora": 17,
           "morowa-panna": 15,
           "protostates": 12,
-          "knecht-z-koptos": 13,
+          "knecht-z-koptos": 15,
           "syama-i-sarvara": 13,
           "loup-garou-gevaudan": 8,
-          "neith-z-sais": 7
+          "neith-z-sais": 9
         }
       },
       "konsekwencje": {
@@ -4067,8 +4148,8 @@
         "zasieg": [
           {
             "slug": "sfinks-teby",
-            "przed": 0.47,
-            "po": 0.482,
+            "przed": 0.49,
+            "po": 0.502,
             "delta": 0.012,
             "opis": "Góra Fikion odzyskała pytanie, które nie musi kończyć się śmiercią."
           },
@@ -4081,8 +4162,8 @@
           },
           {
             "slug": "neith-z-sais",
-            "przed": 0.23,
-            "po": 0.238,
+            "przed": 0.25,
+            "po": 0.258,
             "delta": 0.008,
             "opis": "Nić Neith połączyła rozpoznanie z cierpliwością."
           }
@@ -4091,8 +4172,8 @@
           {
             "kultura": "grecja",
             "kult": "sfinks-teby",
-            "przed": 0.47,
-            "po": 0.482,
+            "przed": 0.49,
+            "po": 0.502,
             "delta": 0.012
           },
           {
@@ -4105,8 +4186,8 @@
           {
             "kultura": "egipt",
             "kult": "neith-z-sais",
-            "przed": 0.23,
-            "po": 0.238,
+            "przed": 0.25,
+            "po": 0.258,
             "delta": 0.008
           }
         ],
@@ -4293,8 +4374,8 @@
       ],
       "stanPo": {
         "os": {
-          "mit": 29,
-          "racjonalizacja": 71
+          "mit": 28,
+          "racjonalizacja": 72
         },
         "zasieg": [
           {
@@ -4351,7 +4432,7 @@
           },
           {
             "slug": "knecht-z-koptos",
-            "wielkosc": 0.38
+            "wielkosc": 0.4
           },
           {
             "slug": "lincoln-imp",
@@ -4367,7 +4448,7 @@
           },
           {
             "slug": "neith-z-sais",
-            "wielkosc": 0.238
+            "wielkosc": 0.258
           },
           {
             "slug": "nessos",
@@ -4387,7 +4468,7 @@
           },
           {
             "slug": "sfinks-teby",
-            "wielkosc": 0.482
+            "wielkosc": 0.502
           },
           {
             "slug": "syama-i-sarvara",
@@ -4395,7 +4476,11 @@
           },
           {
             "slug": "talos-kreta",
-            "wielkosc": 0.435
+            "wielkosc": 0.455
+          },
+          {
+            "slug": "wielki-sfinks-z-gizy",
+            "wielkosc": 0.2
           }
         ],
         "dominacje": [
@@ -4467,7 +4552,7 @@
           {
             "kultura": "grecja",
             "kult": "knecht-z-koptos",
-            "wielkosc": 0.38
+            "wielkosc": 0.4
           },
           {
             "kultura": "anglia",
@@ -4487,7 +4572,7 @@
           {
             "kultura": "egipt",
             "kult": "neith-z-sais",
-            "wielkosc": 0.238
+            "wielkosc": 0.258
           },
           {
             "kultura": "grecja",
@@ -4512,7 +4597,7 @@
           {
             "kultura": "grecja",
             "kult": "sfinks-teby",
-            "wielkosc": 0.482
+            "wielkosc": 0.502
           },
           {
             "kultura": "indie",
@@ -4522,7 +4607,12 @@
           {
             "kultura": "grecja",
             "kult": "talos-kreta",
-            "wielkosc": 0.435
+            "wielkosc": 0.455
+          },
+          {
+            "kultura": "egipt",
+            "kult": "wielki-sfinks-z-gizy",
+            "wielkosc": 0.2
           }
         ],
         "paliwo": {
@@ -4534,15 +4624,15 @@
           "balor": 21,
           "selkie-sule-skerry": 24,
           "indra": 11,
-          "sfinks-teby": 22,
-          "talos-kreta": 20,
+          "sfinks-teby": 24,
+          "talos-kreta": 22,
           "pandora": 17,
           "morowa-panna": 15,
           "protostates": 12,
-          "knecht-z-koptos": 13,
+          "knecht-z-koptos": 15,
           "syama-i-sarvara": 13,
           "loup-garou-gevaudan": 9,
-          "neith-z-sais": 7,
+          "neith-z-sais": 9,
           "cormoran-st-michaels-mount": 11,
           "ben-varrey": 13
         }
@@ -4786,33 +4876,33 @@
         },
         {
           "slug": "sfinks-teby",
-          "nazwa": "Sfinks — strażniczka Tebańskich Wrót",
+          "nazwa": "Sfinga z Teb Beockich — strażniczka Tebańskich Wrót",
           "rola": "Ta, która trzyma przejście pytaniem",
-          "pasywne": 24,
-          "saldoPrzed": 22,
+          "pasywne": 26,
+          "saldoPrzed": 24,
           "kosztUdzialu": 2,
           "kosztKlucza": 0,
           "boost": 0,
           "zwrot": 2,
-          "saldoPo": 22
+          "saldoPo": 24
         },
         {
           "slug": "neith-z-sais",
           "nazwa": "Neith z Sais — tkaczka początku",
           "rola": "Tkaczka drogi między lampami",
-          "pasywne": 7,
-          "saldoPrzed": 7,
+          "pasywne": 9,
+          "saldoPrzed": 9,
           "kosztUdzialu": 2,
           "kosztKlucza": 0,
           "boost": 0,
           "zwrot": 2,
-          "saldoPo": 7
+          "saldoPo": 9
         }
       ],
       "stanPo": {
         "os": {
-          "mit": 29,
-          "racjonalizacja": 71
+          "mit": 28,
+          "racjonalizacja": 72
         },
         "zasieg": [
           {
@@ -4869,7 +4959,7 @@
           },
           {
             "slug": "knecht-z-koptos",
-            "wielkosc": 0.38
+            "wielkosc": 0.4
           },
           {
             "slug": "lincoln-imp",
@@ -4885,7 +4975,7 @@
           },
           {
             "slug": "neith-z-sais",
-            "wielkosc": 0.242
+            "wielkosc": 0.262
           },
           {
             "slug": "nessos",
@@ -4905,7 +4995,7 @@
           },
           {
             "slug": "sfinks-teby",
-            "wielkosc": 0.486
+            "wielkosc": 0.506
           },
           {
             "slug": "syama-i-sarvara",
@@ -4913,7 +5003,11 @@
           },
           {
             "slug": "talos-kreta",
-            "wielkosc": 0.435
+            "wielkosc": 0.455
+          },
+          {
+            "slug": "wielki-sfinks-z-gizy",
+            "wielkosc": 0.2
           }
         ],
         "dominacje": [
@@ -4985,7 +5079,7 @@
           {
             "kultura": "grecja",
             "kult": "knecht-z-koptos",
-            "wielkosc": 0.38
+            "wielkosc": 0.4
           },
           {
             "kultura": "anglia",
@@ -5005,7 +5099,7 @@
           {
             "kultura": "egipt",
             "kult": "neith-z-sais",
-            "wielkosc": 0.242
+            "wielkosc": 0.262
           },
           {
             "kultura": "grecja",
@@ -5030,7 +5124,7 @@
           {
             "kultura": "grecja",
             "kult": "sfinks-teby",
-            "wielkosc": 0.486
+            "wielkosc": 0.506
           },
           {
             "kultura": "indie",
@@ -5040,7 +5134,12 @@
           {
             "kultura": "grecja",
             "kult": "talos-kreta",
-            "wielkosc": 0.435
+            "wielkosc": 0.455
+          },
+          {
+            "kultura": "egipt",
+            "kult": "wielki-sfinks-z-gizy",
+            "wielkosc": 0.2
           }
         ],
         "paliwo": {
@@ -5052,15 +5151,15 @@
           "balor": 21,
           "selkie-sule-skerry": 24,
           "indra": 11,
-          "sfinks-teby": 22,
-          "talos-kreta": 20,
+          "sfinks-teby": 24,
+          "talos-kreta": 22,
           "pandora": 17,
           "morowa-panna": 15,
           "protostates": 12,
-          "knecht-z-koptos": 13,
+          "knecht-z-koptos": 15,
           "syama-i-sarvara": 13,
           "loup-garou-gevaudan": 10,
-          "neith-z-sais": 7,
+          "neith-z-sais": 9,
           "cormoran-st-michaels-mount": 11,
           "ben-varrey": 13
         }
@@ -5100,15 +5199,15 @@
           },
           {
             "slug": "sfinks-teby",
-            "przed": 0.482,
-            "po": 0.486,
+            "przed": 0.502,
+            "po": 0.506,
             "delta": 0.004,
             "opis": "Pytanie okazało się skuteczne także poza własną górą."
           },
           {
             "slug": "neith-z-sais",
-            "przed": 0.238,
-            "po": 0.242,
+            "przed": 0.258,
+            "po": 0.262,
             "delta": 0.004,
             "opis": "Tkanie weszło w rejestr metod przechodzenia przez świat zamknięty."
           }
@@ -5124,15 +5223,15 @@
           {
             "kultura": "grecja",
             "kult": "sfinks-teby",
-            "przed": 0.482,
-            "po": 0.486,
+            "przed": 0.502,
+            "po": 0.506,
             "delta": 0.004
           },
           {
             "kultura": "egipt",
             "kult": "neith-z-sais",
-            "przed": 0.238,
-            "po": 0.242,
+            "przed": 0.258,
+            "po": 0.262,
             "delta": 0.004
           }
         ],
@@ -5258,8 +5357,8 @@
   ],
   "stanPo": {
     "os": {
-      "mit": 29,
-      "racjonalizacja": 71
+      "mit": 28,
+      "racjonalizacja": 72
     },
     "zasieg": [
       {
@@ -5316,7 +5415,7 @@
       },
       {
         "slug": "knecht-z-koptos",
-        "wielkosc": 0.38
+        "wielkosc": 0.4
       },
       {
         "slug": "lincoln-imp",
@@ -5332,7 +5431,7 @@
       },
       {
         "slug": "neith-z-sais",
-        "wielkosc": 0.242
+        "wielkosc": 0.262
       },
       {
         "slug": "nessos",
@@ -5352,7 +5451,7 @@
       },
       {
         "slug": "sfinks-teby",
-        "wielkosc": 0.486
+        "wielkosc": 0.506
       },
       {
         "slug": "syama-i-sarvara",
@@ -5360,7 +5459,11 @@
       },
       {
         "slug": "talos-kreta",
-        "wielkosc": 0.435
+        "wielkosc": 0.455
+      },
+      {
+        "slug": "wielki-sfinks-z-gizy",
+        "wielkosc": 0.2
       }
     ],
     "dominacje": [
@@ -5432,7 +5535,7 @@
       {
         "kultura": "grecja",
         "kult": "knecht-z-koptos",
-        "wielkosc": 0.38
+        "wielkosc": 0.4
       },
       {
         "kultura": "anglia",
@@ -5452,7 +5555,7 @@
       {
         "kultura": "egipt",
         "kult": "neith-z-sais",
-        "wielkosc": 0.242
+        "wielkosc": 0.262
       },
       {
         "kultura": "grecja",
@@ -5477,7 +5580,7 @@
       {
         "kultura": "grecja",
         "kult": "sfinks-teby",
-        "wielkosc": 0.486
+        "wielkosc": 0.506
       },
       {
         "kultura": "indie",
@@ -5487,7 +5590,12 @@
       {
         "kultura": "grecja",
         "kult": "talos-kreta",
-        "wielkosc": 0.435
+        "wielkosc": 0.455
+      },
+      {
+        "kultura": "egipt",
+        "kult": "wielki-sfinks-z-gizy",
+        "wielkosc": 0.2
       }
     ],
     "paliwo": {
@@ -5499,15 +5607,15 @@
       "balor": 21,
       "selkie-sule-skerry": 24,
       "indra": 11,
-      "sfinks-teby": 22,
-      "talos-kreta": 20,
+      "sfinks-teby": 24,
+      "talos-kreta": 22,
       "pandora": 17,
       "morowa-panna": 15,
       "protostates": 12,
-      "knecht-z-koptos": 13,
+      "knecht-z-koptos": 15,
       "syama-i-sarvara": 13,
       "loup-garou-gevaudan": 10,
-      "neith-z-sais": 7,
+      "neith-z-sais": 9,
       "cormoran-st-michaels-mount": 11,
       "ben-varrey": 13
     }

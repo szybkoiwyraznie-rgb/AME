@@ -71,3 +71,12 @@ test('odstępstwa są jawne, uzasadnione i tylko dla istniejących wpisów', asy
     assert.equal(w.status, 'odstepstwo', `${slug}: odstępstwo przestało być potrzebne — usuń je z ODSTEPSTWA`);
   }
 });
+test('sfinksy stoją na dwóch kontynentach: grecka Sfinga w Beocji, egipski w Gizie', async () => {
+  const wyniki = await audytPinezek();
+  const grecka = wyniki.find((w) => w.slug === 'sfinks-teby');
+  assert.equal(grecka.kraj, 'Greece', 'wpis o Sfindze z cyklu tebańskiego zostaje w Grecji');
+  const egipski = wyniki.find((w) => w.slug === 'wielki-sfinks-z-gizy');
+  assert.ok(egipski, 'kartoteka musi mieć osobny byt egipskiego Sfinksa');
+  assert.equal(egipski.status, 'ok');
+  assert.equal(egipski.kraj, 'Egypt');
+});

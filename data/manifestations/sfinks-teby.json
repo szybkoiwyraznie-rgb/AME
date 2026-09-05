@@ -1,7 +1,8 @@
 {
   "slug": "sfinks-teby",
-  "nazwa": "Sfinks — strażniczka Tebańskich Wrót",
+  "nazwa": "Sfinga z Teb Beockich — strażniczka Tebańskich Wrót",
   "nazwy_alternatywne": [
+    "Sfinks tebański (grecki, nie egipski)",
     "Sfinks",
     "Sphinx",
     "Sfinks tebański",
@@ -16,7 +17,7 @@
     "rok": 2016
   },
   "lokalizacja": {
-    "miejscowosc": "Góra Fikion (Phikion), na zachodzie za Tebami (Teba, Beocja) — miejsce, w którym Sfinks czatowała na podróżnych, blokując drogę do miasta",
+    "miejscowosc": "Góra Fikion (Phikion), na zachodzie za Tebami Beockimi (Teba, Beocja) — miejsce, w którym Sfinga czatowała na podróżnych, blokując drogę do miasta. Chodzi o greckie Teby w Beocji, nie o egipskie Teby (Luksor); z Wielkim Sfinksem z Gizy ten byt nie ma nic wspólnego poza nazwą",
     "kraj": "Grecja (Beocja)",
     "lat": 38.32,
     "lon": 23.28
@@ -87,6 +88,10 @@
     {
       "slug": "balor",
       "opis": "Groza bezpośredniego kontaktu wzrokowego na granicy terytorium: Balor jednym spojrzeniem jadowitego oka obraca w popiół armie u bram Irlandii, podczas gdy Sfinks przeszywa wzrokiem podróżnych u wrót Teb, żądając natychmiastowej odpowiedzi pod karą pożarcia."
+    },
+    {
+      "slug": "wielki-sfinks-z-gizy",
+      "opis": "Ta sama nazwa, dwa różne byty i dwa kontynenty: tutejsza Sfinga jest skrzydlatą lwicą z kobiecą twarzą, która zabija za nierozwiązaną zagadkę pod Tebami Beockimi, a egipski Hor-em-achet z Gizy jest bezskrzydłym, męskim kolosem, który o nic nie pyta i pilnuje granicy nekropolii."
     }
   ],
   "meta": {
@@ -116,6 +121,10 @@
       {
         "data": "2026-09-05 13:00",
         "opis": "Doprecyzowano lokalizację Sfinksa do góry Fikion za Tebami oraz rozdzielono wariant córki Lajosa od genealogii Echidny i Tyfona na podstawie zestawienia źródeł antycznych."
+      },
+      {
+        "data": "2026-09-05 15:20",
+        "opis": "Doprecyzowano nazwę i miejsce: „Sfinga z Teb Beockich”, z wyraźnym odcięciem od egipskich Teb i od Wielkiego Sfinksa z Gizy, oraz dopisano powiązanie z nowym wpisem o kolosie z Gizy."
       }
     ]
   }

@@ -1,7 +1,7 @@
 {
   "wersja": 3,
-  "buildTime": "2026-09-05T12:02:14.546Z",
-  "liczba": 25,
+  "buildTime": "2026-09-05T12:25:45.960Z",
+  "liczba": 26,
   "liczbaSkitow": 46,
   "kanon": {
     "kategorie": [
@@ -62,7 +62,8 @@
       "kategoria": "kultura",
       "opis": "Religia i kultura starożytnego Egiptu (Delta i Dolina Nilu)",
       "wpisy": [
-        "neith-z-sais"
+        "neith-z-sais",
+        "wielki-sfinks-z-gizy"
       ]
     },
     "francja": {
@@ -196,7 +197,8 @@
       "wpisy": [
         "neith-z-sais",
         "syama-i-sarvara",
-        "talos-kreta"
+        "talos-kreta",
+        "wielki-sfinks-z-gizy"
       ]
     },
     "oczyszczenie": {
@@ -286,7 +288,8 @@
         "pandora",
         "selkie-sule-skerry",
         "sfinks-teby",
-        "talos-kreta"
+        "talos-kreta",
+        "wielki-sfinks-z-gizy"
       ]
     },
     "zagadka": {
@@ -313,7 +316,8 @@
       "opis": "Rzeźba lub figura w budynku, która jest tym samym bytem",
       "wpisy": [
         "kannon-hase",
-        "lincoln-imp"
+        "lincoln-imp",
+        "wielki-sfinks-z-gizy"
       ]
     },
     "maskarada": {
@@ -468,7 +472,8 @@
       "kategoria": "typ",
       "opis": "Stwór złożony: ciało lwa, głowa kobiety, skrzydła — strażnik przejścia przez zagadkę",
       "wpisy": [
-        "sfinks-teby"
+        "sfinks-teby",
+        "wielki-sfinks-z-gizy"
       ]
     },
     "sniacy-zastep": {
@@ -1133,7 +1138,8 @@
       "backlinki": [
         "pandora",
         "protostates",
-        "talos-kreta"
+        "talos-kreta",
+        "wielki-sfinks-z-gizy"
       ],
       "obraz": "assets/wizualizacje/knecht-z-koptos.jpg",
       "trofea": {
@@ -1310,7 +1316,9 @@
         "sfinks-teby",
         "syama-i-sarvara"
       ],
-      "backlinki": [],
+      "backlinki": [
+        "wielki-sfinks-z-gizy"
+      ],
       "obraz": "assets/wizualizacje/neith-z-sais.jpg",
       "trofea": {
         "pierwotne": "Czółenko tkackie z sali ofiarnej w Sais — nawój nici, która nigdy się nie kończy; dotknięte o świcie w Noc Lamp przestaje się poruszać i można je zabrać, ale kto spróbuje je przeciąć, tnie własny los",
@@ -1519,8 +1527,9 @@
     },
     {
       "slug": "sfinks-teby",
-      "nazwa": "Sfinks — strażniczka Tebańskich Wrót",
+      "nazwa": "Sfinga z Teb Beockich — strażniczka Tebańskich Wrót",
       "nazwy_alternatywne": [
+        "Sfinks tebański (grecki, nie egipski)",
         "Sfinks",
         "Sphinx",
         "Sfinks tebański",
@@ -1530,7 +1539,7 @@
         "Córka Lajosa (wariant Pauzaniasza)"
       ],
       "karta": "Jwar Isle Avenger",
-      "miejscowosc": "Góra Fikion (Phikion), na zachodzie za Tebami (Teba, Beocja) — miejsce, w którym Sfinks czatowała na podróżnych, blokując drogę do miasta",
+      "miejscowosc": "Góra Fikion (Phikion), na zachodzie za Tebami Beockimi (Teba, Beocja) — miejsce, w którym Sfinga czatowała na podróżnych, blokując drogę do miasta. Chodzi o greckie Teby w Beocji, nie o egipskie Teby (Luksor); z Wielkim Sfinksem z Gizy ten byt nie ma nic wspólnego poza nazwą",
       "kraj": "Grecja (Beocja)",
       "lat": 38.32,
       "lon": 23.28,
@@ -1545,7 +1554,8 @@
         "balor",
         "empusa-korynt",
         "kentaur-pelion",
-        "talos-kreta"
+        "talos-kreta",
+        "wielki-sfinks-z-gizy"
       ],
       "backlinki": [
         "empusa-korynt",
@@ -1555,7 +1565,8 @@
         "neith-z-sais",
         "protostates",
         "syama-i-sarvara",
-        "talos-kreta"
+        "talos-kreta",
+        "wielki-sfinks-z-gizy"
       ],
       "obraz": "assets/wizualizacje/sfinks-teby.jpg",
       "trofea": {
@@ -1656,7 +1667,8 @@
         "lincoln-imp",
         "nessos",
         "pandora",
-        "sfinks-teby"
+        "sfinks-teby",
+        "wielki-sfinks-z-gizy"
       ],
       "obraz": "assets/wizualizacje/talos-kreta.jpg",
       "trofea": {
@@ -1671,6 +1683,47 @@
         "z-gliny-i-spizu",
         "zagadka-ze-spizu"
       ]
+    },
+    {
+      "slug": "wielki-sfinks-z-gizy",
+      "nazwa": "Wielki Sfinks z Gizy — Hor-em-achet, strażnik wschodniego widnokręgu",
+      "nazwy_alternatywne": [
+        "Hor-em-achet (Horus na Widnokręgu)",
+        "Harmachis (forma grecka)",
+        "Hor-em-achet-Chepri-Re-Atum (imię z Steli Snu)",
+        "Horun / Horna / Hol (imiona kananejskie)",
+        "Abu al-Haul (arab. „Ojciec Grozy”)",
+        "Szesep-anch (egip. „żywy wizerunek”)",
+        "Wielki Sfinks",
+        "Sfinks z Gizy"
+      ],
+      "karta": "Leonin Surveyor",
+      "miejscowosc": "Płaskowyż Giza na zachodnim brzegu Nilu, przy grobli i Świątyni Doliny Chefrena — wykuty z jednej skały w wybranym kamieniołomie, w rowie, który sam sobie zostawił; patrzy prosto na wschód. To NIE jest miejsce greckiej Sfingi z cyklu tebańskiego (ta czeka pod Tebami Beockimi w Grecji)",
+      "kraj": "Egipt (muhafaza Giza)",
+      "lat": 29.9753,
+      "lon": 31.1376,
+      "tagi": [
+        "egipt",
+        "kamienna-figura",
+        "obrona",
+        "sfinks",
+        "warunek"
+      ],
+      "powiazania": [
+        "knecht-z-koptos",
+        "neith-z-sais",
+        "sfinks-teby",
+        "talos-kreta"
+      ],
+      "backlinki": [
+        "sfinks-teby"
+      ],
+      "obraz": "assets/wizualizacje/wielki-sfinks-z-gizy.jpg",
+      "trofea": {
+        "pierwotne": "Płat wapienia zdjęty z boku kolosa: z jednej strony gładki jak skóra, z drugiej sypki jak stary chleb — dowód, że strażnik i jego rana są z tego samego kamienia.",
+        "wtorne": "Garść piasku z rowu, przesiana przez palce i zważona: dokładnie tyle, ile trzeba usunąć raz, żeby jutro usuwać znowu."
+      },
+      "skity": []
     }
   ],
   "skity": [
@@ -2570,6 +2623,14 @@
       "data": "2026-09-05 15:20",
       "typ": "manifestacja",
       "akcja": "zmiana",
+      "slug": "sfinks-teby",
+      "tytul": "Sfinga z Teb Beockich — strażniczka Tebańskich Wrót",
+      "opis": "Doprecyzowano nazwę i miejsce: „Sfinga z Teb Beockich”, z wyraźnym odcięciem od egipskich Teb i od Wielkiego Sfinksa z Gizy, oraz dopisano powiązanie z nowym wpisem o kolosie z Gizy."
+    },
+    {
+      "data": "2026-09-05 15:20",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
       "slug": "cormoran-st-michaels-mount",
       "tytul": "Cormoran z St Michael's Mount",
       "opis": "Nowa kartoteka: Cormoran, olbrzym z kornijskiej Góry św. Michała — budowa wyspy z białego granitu, wyprawy po bydło przez odsłoniętą groblę i śmierć w dole wykopanym przed świtem."
@@ -2581,6 +2642,22 @@
       "slug": "cormoran-st-michaels-mount",
       "tytul": "Cormoran z St Michael's Mount",
       "opis": "wpis w kartotece — materializacja karty „Hill Giant”"
+    },
+    {
+      "data": "2026-09-05 15:10",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "wielki-sfinks-z-gizy",
+      "tytul": "Wielki Sfinks z Gizy — Hor-em-achet, strażnik wschodniego widnokręgu",
+      "opis": "Nowa materializacja: Wielki Sfinks z Gizy — Hor-em-achet, strażnik wschodniego widnokręgu, na podstawie karty „Leonin Surveyor” (DFT #18). Egipt dostaje własnego Sfinksa, osobnego od greckiej Sfingi spod Teb Beockich."
+    },
+    {
+      "data": "2026-09-05 15:10",
+      "typ": "manifestacja",
+      "akcja": "nowa",
+      "slug": "wielki-sfinks-z-gizy",
+      "tytul": "Wielki Sfinks z Gizy — Hor-em-achet, strażnik wschodniego widnokręgu",
+      "opis": "wpis w kartotece — materializacja karty „Leonin Surveyor”"
     },
     {
       "data": "2026-09-05 13:15",
@@ -2603,7 +2680,7 @@
       "typ": "manifestacja",
       "akcja": "zmiana",
       "slug": "sfinks-teby",
-      "tytul": "Sfinks — strażniczka Tebańskich Wrót",
+      "tytul": "Sfinga z Teb Beockich — strażniczka Tebańskich Wrót",
       "opis": "Doprecyzowano lokalizację Sfinksa do góry Fikion za Tebami oraz rozdzielono wariant córki Lajosa od genealogii Echidny i Tyfona na podstawie zestawienia źródeł antycznych."
     },
     {
@@ -2763,7 +2840,7 @@
       "typ": "manifestacja",
       "akcja": "zmiana",
       "slug": "sfinks-teby",
-      "tytul": "Sfinks — strażniczka Tebańskich Wrót",
+      "tytul": "Sfinga z Teb Beockich — strażniczka Tebańskich Wrót",
       "opis": "Pogłębienie z źródeł pierwotnych: Pseudo-Apollodoros 3.5.8 (wyrocznia-warunek wybawienia, pożeranie po jednym radnym, ostatnia ofiara Hajmon, rzut z akropolu, dokładne brzmienie zagadki w przekładzie Frazera) i Hezjod, „Teogonia” w. 326 (rodowód: ojcem Orthos, nie Tyfon; Sfinks siostrą lwa nemejskiego)."
     },
     {
@@ -3139,7 +3216,7 @@
       "typ": "manifestacja",
       "akcja": "zmiana",
       "slug": "sfinks-teby",
-      "tytul": "Sfinks — strażniczka Tebańskich Wrót",
+      "tytul": "Sfinga z Teb Beockich — strażniczka Tebańskich Wrót",
       "opis": "Audyt Kartoteki: poprawki językowe i doprecyzowanie zdań (odmiana, literówki, spójność z mitem)."
     },
     {
@@ -3515,7 +3592,7 @@
       "typ": "manifestacja",
       "akcja": "zmiana",
       "slug": "sfinks-teby",
-      "tytul": "Sfinks — strażniczka Tebańskich Wrót",
+      "tytul": "Sfinga z Teb Beockich — strażniczka Tebańskich Wrót",
       "opis": "Pogłębienie karty: wariant Pausaniasza (nieślubna córka Lajosa i wyrocznia Kadmosa; wersja racjonalizująca — piratka z Anthedonu), pochodzenie zagadki od Muz (Apollodor 3.5.8) i szczegóły rozwiązania; dodane źródło pierwotne (Pauzaniasz 9.26.2, Perseus)."
     },
     {
@@ -3619,7 +3696,7 @@
       "typ": "manifestacja",
       "akcja": "zmiana",
       "slug": "sfinks-teby",
-      "tytul": "Sfinks — strażniczka Tebańskich Wrót",
+      "tytul": "Sfinga z Teb Beockich — strażniczka Tebańskich Wrót",
       "opis": "Dopisane powiązania z Talosem (dwa greckie mechanizmy zaporowe: głaz i zagadka) oraz z Balorem (groza spojrzenia na granicy terytorium); korekty językowe."
     },
     {
@@ -3827,7 +3904,7 @@
       "typ": "manifestacja",
       "akcja": "zmiana",
       "slug": "sfinks-teby",
-      "tytul": "Sfinks — strażniczka Tebańskich Wrót",
+      "tytul": "Sfinga z Teb Beockich — strażniczka Tebańskich Wrót",
       "opis": "Nowa materializacja: Sfinks z Teb — skrzydlata lwica z kobiecą głową, strażniczka przejścia przez zagadkę, na podstawie karty „Jwar Isle Avenger” (OGW #58)."
     },
     {
@@ -3835,7 +3912,7 @@
       "typ": "manifestacja",
       "akcja": "nowa",
       "slug": "sfinks-teby",
-      "tytul": "Sfinks — strażniczka Tebańskich Wrót",
+      "tytul": "Sfinga z Teb Beockich — strażniczka Tebańskich Wrót",
       "opis": "wpis w kartotece — materializacja karty „Jwar Isle Avenger”"
     },
     {
