@@ -24,7 +24,7 @@
       },
       {
         "slug": "bazyliszek-warszawski",
-        "wielkosc": 0.239
+        "wielkosc": 0.257
       },
       {
         "slug": "ben-varrey",
@@ -88,7 +88,7 @@
       },
       {
         "slug": "morowa-panna",
-        "wielkosc": 0.422
+        "wielkosc": 0.439
       },
       {
         "slug": "neith-z-sais",
@@ -100,7 +100,7 @@
       },
       {
         "slug": "olgoj-chorchoj",
-        "wielkosc": 0.187
+        "wielkosc": 0.204
       },
       {
         "slug": "pandora",
@@ -158,7 +158,7 @@
       {
         "kultura": "polska",
         "kult": "bazyliszek-warszawski",
-        "wielkosc": 0.239
+        "wielkosc": 0.257
       },
       {
         "kultura": "man",
@@ -238,7 +238,7 @@
       {
         "kultura": "polska",
         "kult": "morowa-panna",
-        "wielkosc": 0.422
+        "wielkosc": 0.439
       },
       {
         "kultura": "egipt",
@@ -253,7 +253,7 @@
       {
         "kultura": "mongolia",
         "kult": "olgoj-chorchoj",
-        "wielkosc": 0.187
+        "wielkosc": 0.204
       },
       {
         "kultura": "grecja",

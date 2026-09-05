@@ -1,8 +1,8 @@
 {
   "wersja": 3,
-  "buildTime": "2026-09-05T14:47:11.254Z",
+  "buildTime": "2026-09-05T14:48:17.325Z",
   "liczba": 32,
-  "liczbaSkitow": 51,
+  "liczbaSkitow": 52,
   "kanon": {
     "kategorie": [
       {
@@ -810,7 +810,8 @@
         "wtorne": "Żelazne osęki (haki ogniowe) z warszawskiego magazynu przeciwpożarowego, którymi wyciągano ciała z piwnicy, zanim ktokolwiek odważył się zejść po schodach."
       },
       "skity": [
-        "lustro-odpowiedz-wers"
+        "lustro-odpowiedz-wers",
+        "smierc-bez-rany"
       ]
     },
     {
@@ -1543,7 +1544,8 @@
         "najgorsze-odpowiedzi",
         "ostatnia-droga",
         "pracownicy-progu",
-        "prezent-z-defektem"
+        "prezent-z-defektem",
+        "smierc-bez-rany"
       ]
     },
     {
@@ -1673,7 +1675,9 @@
         "pierwotne": "Para metalowych szczypiec i ciemne gogle motocyklowe z wyprawy, których nigdy nie użyto — w pudle po nabojach, z kartką: „na prośbę rządu, w razie gdyby”.",
         "wtorne": "Odlew gipsowy bruzdy w piasku, zdjęty w południowym Gobi po deszczu, z dopisaną ołówkiem na krawędzi datą i jednym słowem po mongolsku, którego nikt z ekipy nie umiał przetłumaczyć inaczej niż „robak”."
       },
-      "skity": []
+      "skity": [
+        "smierc-bez-rany"
+      ]
     },
     {
       "slug": "pandora",
@@ -2825,6 +2829,23 @@
       "data": "2026-09-04 16:35"
     },
     {
+      "slug": "smierc-bez-rany",
+      "tytul": "ŚMIERĆ BEZ RANY",
+      "temat": "trzy sposoby zabijania na odległość i trzy różne stany dowodu: protokół sądowy, ostrzeżenie bez świadka i wyjaśnienie, którego nikt nie sprawdza",
+      "uczestnicy": [
+        "bazyliszek-warszawski",
+        "morowa-panna",
+        "olgoj-chorchoj"
+      ],
+      "imiona": [
+        "Bazyliszek",
+        "Olgoj-chorchoj",
+        "Morowa Panna"
+      ],
+      "slow": 256,
+      "data": "2026-09-06 13:00"
+    },
+    {
       "slug": "trasy-obiegowe",
       "tytul": "TRASY OBIEGOWE",
       "temat": "dzienne obiegi i kondycja — trzy byty o dużym terytorium porównują, kto ma gorszą trasę służbową",
@@ -3035,6 +3056,22 @@
     }
   ],
   "aktualizacje": [
+    {
+      "data": "2026-09-06 13:00",
+      "typ": "skit",
+      "akcja": "zmiana",
+      "slug": "smierc-bez-rany",
+      "tytul": "ŚMIERĆ BEZ RANY",
+      "opis": "Nowy dialog: trzy byty zabijające bez dotknięcia porównują, co po nich zostaje — akta z nazwiskiem, sto lat wypraw bez okazu albo zdanie, którego wieś nie sprawdza."
+    },
+    {
+      "data": "2026-09-06 13:00",
+      "typ": "skit",
+      "akcja": "nowy",
+      "slug": "smierc-bez-rany",
+      "tytul": "ŚMIERĆ BEZ RANY",
+      "opis": "SKIT — skład: Bazyliszek, Olgoj-chorchoj, Morowa Panna"
+    },
     {
       "data": "2026-09-06 12:40",
       "typ": "manifestacja",
