@@ -1,0 +1,91 @@
+{
+  "slug": "olgoj-chorchoj",
+  "nazwa": "Olgoj-chorchoj — jelito, które zabija bez dotknięcia",
+  "nazwy_alternatywne": [
+    "Allergorhai-horhai (zapis Roya Chapmana Andrewsa)",
+    "Allghoi khorkhoi",
+    "Mongolski robak śmierci",
+    "Robak jelitowy (dosłowne znaczenie nazwy)",
+    "Piaskowy robak z Gobi"
+  ],
+  "karta": {
+    "nazwa": "Bring Low",
+    "wydanie": "Khans of Tarkir (KTK) #103",
+    "rok": 2014,
+    "uzasadnienie": "Czar, który powala cel z dystansu, nie wchodząc z nim w zwarcie, i uderza mocniej w to, co zdążyło urosnąć. Olgoj-chorchoj działa dokładnie tak, jak opisują go pasterze z Gobi: nie gryzie i nie dusi, tylko zabija na odległość kilku kroków, a najgłośniejsze relacje mówią o padłych wielbłądach, czyli o największym, co po pustyni chodzi. Sentencja karty mówi o żywiołach, które też dają się poniżyć — a olgoj jest tym miejscem pustyni, które nie daje się poniżyć nikomu."
+  },
+  "lokalizacja": {
+    "miejscowosc": "Dalanzadgad w ajmaku południowogobijskim (Ömnögowi) — jeden z nielicznych ośrodków miejskich Gobi i punkt, w którym relacje o robaku zbierali kolejni przyjezdni badacze, od radzieckich paleontologów po czeskie wyprawy z lat dziewięćdziesiątych; sam olgoj-chorchoj ma żyć na południe i zachód stąd, w najbardziej bezludnych partiach pustyni",
+    "kraj": "Mongolia (ajmak Ömnögowi)",
+    "lat": 43.5708,
+    "lon": 104.425
+  },
+  "pochodzenie_i_kultura": "Tradycja mongolska, warstwa pasterska i pustynna. Olgoj-chorchoj znaczy dosłownie „jelito-robak” i jest nazwą, która sama w sobie mówi więcej o sposobie mówienia niż o zwierzęciu: mongolistka Ágnes Birtalan zwraca uwagę, że „chorchoj”, robak, bywa w mongolskich tradycjach nazwą zastępczą dla stworzeń uznanych za niebezpieczne — przede wszystkim węży — bo wypowiedzenie właściwego imienia uchodzi za wywołanie rzeczy. Przekaz ustny jest stary, ale na piśmie robak pojawia się dopiero w latach dwudziestych dwudziestego wieku, w relacjach amerykańskiego paleontologa Roya Chapmana Andrewsa z wypraw do Gobi. Andrews spotkał się z mongolskimi urzędnikami w sprawie pozwoleń i usłyszał prośbę, żeby przy okazji złapał dla rządu okaz allergorhai-horhai; zanotował przy tym zdanie, które do dziś jest najuczciwszym opisem sprawy: nikt z obecnych nigdy tego stworzenia nie widział, wszyscy jednak mocno wierzyli w jego istnienie i opisywali je drobiazgowo. Radzieccy badacze pracujący w Gobi — A. D. Simukow w latach dwudziestych i Iwan Jefremow w czterdziestych — spisali kolejne relacje; Jefremow zrobił z robaka także opowiadanie, przez co literatura i świadectwo zaczęły się mieszać. W połowie wieku władze komunistyczne miały zabronić badań nad robakiem, a od 1990 roku wracał głównie z wyprawami z zewnątrz: czeski poszukiwacz Ivan Mackerle jeździł do Gobi w 1990, 1992 i 2004 roku i to jego wersja — czerwona, mięsista, bez oczu — rozeszła się po świecie, spychając w cień relacje miejscowe, w których robak bywa brązowy i łuskowaty. Kartoteka trzyma obie warstwy osobno: wersję z pustyni i wersję, którą z pustyni wywieziono.",
+  "wizualizacja": {
+    "prompt": "Style: A wide-angle full-body cinematic photograph. The central objects/persons of the photo are visible from head to toe, standing centrally in the frame. No parts of the body are cropped.\n\nA thick sausage-shaped animal about a metre and a half long lying whole on hot red gravel in the southern Gobi desert at midday, seen from end to end with nothing cropped: dark blood-red body without visible head, eyes or limbs, blunt and rounded at both ends, segmented like a length of intestine, the skin dry and finely wrinkled with a dull sheen, half of its length still sunk in loose sand with a shallow furrow trailing behind it. Around it: cracked desert pavement, a few dry saxaul roots, a cigar-shaped goyo plant pushing out of the ground nearby, and far behind, out of focus, two hobbled camels turned away and a low line of gravel hills under a white sky.\n\nCaptured with a 35mm anamorphic lens at f/1.8. Shallow depth of field with a heavy, creamy bokeh background. Environmental portraiture. Dramatic cinematic lighting, sharp focus on the character, hyper-realistic textures of clothing and skin. Shot on 70mm film stock, ultra-wide 21:9 aspect ratio. --ar 21:9",
+    "obraz": "assets/wizualizacje/olgoj-chorchoj.jpg"
+  },
+  "natura": {
+    "wyglad_i_aura": "Najczęstszy opis to kawał jelita: gruby wałek długi na dwie do pięciu stóp, zakończony tępo z obu stron, bez widocznej głowy, oczu i odnóży — nie wiadomo, którym końcem patrzy, bo nie patrzy żadnym. Barwa w relacjach spisanych przez przyjezdnych jest krwista, w wielu relacjach miejscowych brązowa albo szarobiała z czerwienią pojawiającą się dopiero wtedy, gdy stworzenie zostanie zaczepione. Porusza się różnie zależnie od opowieści: sunie jak wąż, zgina się jak gąsienica, czasem tylko wybrzusza piasek. Aury nie ma żadnej i to jest w nim najgorsze: nie huczy, nie świeci, nie zapowiada się. Pustynia wygląda tak samo w miejscu, w którym leży, i w miejscu, w którym go nie ma.",
+    "charakter_i_motywacje": "Nie ma zamiarów, ma zasięg. W żadnej relacji nie ściga, nie tropi i nie wraca po ofiarę; leży tam, gdzie leży, i zabija to, co podeszło za blisko. Pasterze mówią o nim raczej jak o właściwości terenu niż o zwierzęciu: są doliny, w których się nie pasie, są miesiące, w których się tam nie chodzi, są wielbłądy, które nie chcą iść dalej i nikt ich nie zmusza. W tej roli olgoj-chorchoj pilnuje granicy, której nikt nie wytyczył: pustynia nie należy do przechodzącego i nie każde miejsce da się przejść tylko dlatego, że jest puste.",
+    "zdolnosci": "Zabijanie na odległość — bez dotknięcia, bez ugryzienia, z kilku kroków. Relacje podają dwa mechanizmy, których nie da się pogodzić: wypluwanie żrącej trucizny, po której zwierzę pada w kilka chwil bez żadnej rany, albo porażenie, opisywane jak uderzenie prądem dość silne, by zwalić dorosłego wielbłąda. Do tego przebywanie pod ziemią przez większą część roku i wychodzenie na wierzch w czerwcu i lipcu, zwłaszcza po deszczu, kiedy piasek jest mokry. Ostatnia zdolność jest najbardziej praktyczna: robak zmienia mapę. Miejsca, o których wiadomo, że tam bywa, są omijane przez stada, a więc i przez ludzi — i to działa niezależnie od tego, czy stworzenie istnieje.",
+    "slabosci_i_metody_pokonania": "Nie ma opowieści o zabiciu olgoj-chorchoja i to jest w kartotece rzadkość: cała wiedza o nim to wiedza o unikaniu. Zaleca się odległość, brak gwałtownych ruchów i wyjście z doliny; Andrews, poproszony o złapanie okazu, obiecał używać metalowych szczypiec i gogli. Prawdziwą jego słabością jest jednak co innego: bliskie spotkanie z nim rozbraja go doszczętnie. W 1983 roku radziecki badacz wyciągnął z piasku okaz i pokazał go miejscowym, którzy rozpoznali w nim olgoj-chorchoja — był to boa piaskowy tatarski, gruby, ryjący i całkowicie niejadowity wąż o zaokrąglonym pysku. Robak przegrywa więc nie z bronią, tylko z rozpoznaniem gatunku; przegrywa też z pytaniem o świadka pierwszej ręki, którego przez sto lat nie znalazła żadna wyprawa.",
+    "preferencje": "Lubi: luźny piasek zachodniego i południowego Gobi, dwa najgorętsze miesiące roku, deszcz, po którym grunt jest mokry, oraz sąsiedztwo goyo — cygarowatej rośliny pasożytniczej wyrastającej z korzeni saksaułu, przy której według pasterzy trzyma się najchętniej. Nie znosi: tłumaczeń, wypraw z ładunkami wybuchowymi i urządzeniami stukającymi w ziemię, aparatów fotograficznych oraz wymawiania własnej nazwy — a ściślej tej nazwy właściwej, którą „robak” od dawna zastępuje."
+  },
+  "dokumentacja": [
+    {
+      "typ": "relacja z wyprawy (źródło pierwszej ręki)",
+      "pozycja": "Roy Chapman Andrews, „On the Trail of Ancient Man: A Narrative of the Field Work of the Central Asiatic Expeditions”, G. P. Putnam's Sons, Nowy Jork 1926 — pierwsza wzmianka o allergorhai-horhai w piśmiennictwie zachodnim: prośba mongolskich urzędników o schwytanie okazu i uwaga, że nikt z obecnych nigdy stworzenia nie widział, choć wszyscy mocno wierzyli w jego istnienie i opisywali je drobiazgowo.",
+      "url": "https://archive.org/details/ontrailofancient00andr"
+    },
+    {
+      "typ": "relacja z wyprawy (źródło pierwszej ręki)",
+      "pozycja": "Roy Chapman Andrews, „The New Conquest of Central Asia: A Narrative of the Explorations of the Central Asiatic Expeditions in Mongolia and China, 1921–1930”, American Museum of Natural History, Nowy Jork 1932 — powrót do sprawy po dekadzie wypraw: same relacje z drugiej ręki, żadnego świadka naocznego i żadnego okazu, przy jednoczesnym stwierdzeniu, że wiara w robaka jest w Mongolii powszechna i trwała.",
+      "url": "https://archive.org/details/newconquestofcen00andr"
+    },
+    {
+      "typ": "reportaż z komentarzem badaczy",
+      "pozycja": "Mark Hay, „Inside the Decades Long Hunt for the Mongolian Death Worm”, Atlas Obscura, 2024 — wyprawy Ivana Mackerlego (1990 z urządzeniem stukającym w piasek wzorowanym na „Diunie”, 1992 z ładunkami wybuchowymi, 2004 z samolotem), rozpoznanie boa piaskowego tatarskiego jako prawdopodobnego pierwowzoru w 1983 roku oraz wyjaśnienia mongolistki Ágnes Birtalan z Uniwersytetu Loránda Eötvösa o „robaku” jako nazwie zastępczej dla zwierząt niebezpiecznych.",
+      "url": "https://www.atlasobscura.com/articles/mongolian-death-worm"
+    }
+  ],
+  "trofea": {
+    "pierwotne": "Para metalowych szczypiec i ciemne gogle motocyklowe z wyprawy, których nigdy nie użyto — w pudle po nabojach, z kartką: „na prośbę rządu, w razie gdyby”.",
+    "wtorne": "Odlew gipsowy bruzdy w piasku, zdjęty w południowym Gobi po deszczu, z dopisaną ołówkiem na krawędzi datą i jednym słowem po mongolsku, którego nikt z ekipy nie umiał przetłumaczyć inaczej niż „robak”."
+  },
+  "tagi": [
+    "mongolia",
+    "robak-piaskowy",
+    "jad",
+    "ostrzezenie",
+    "postac-zwierzeca"
+  ],
+  "powiazania": [
+    {
+      "slug": "bazyliszek-warszawski",
+      "opis": "Dwa byty, które zabijają, nie dotykając: bazyliszek wzrokiem z piwnicy pod Krzywym Kołem, olgoj-chorchoj wyładowaniem albo jadem z kilku kroków w piasku. Różni je dowód — na bazyliszka wysłano człowieka w zwierciadłach i sprawę uznano za zamkniętą, a na robaka jeździły wyprawy przez sto lat i nie przywiozły ani jednego świadka pierwszej ręki."
+    },
+    {
+      "slug": "morowa-panna",
+      "opis": "Obie postacie działają na dystans i obie zamieniają teren w mapę zakazów: morowa panna decyduje, do której wsi zajrzy, a olgoj-chorchoj sprawia, że są doliny, w których się nie pasie i miesiące, w których się tam nie chodzi. W obu wypadkach opowieść pełni funkcję ostrzeżenia, które działa niezależnie od tego, czy ktoś kiedykolwiek widział sprawcę."
+    },
+    {
+      "slug": "yara-ma-yha-who",
+      "opis": "Byt z pustyni i byt z buszu, oba znane światu przez cudzą rękę: opowieść o czerwonym człowieczku wydano pod nazwiskiem redaktora, a robaka z Gobi rozpowszechnił czeski poszukiwacz, którego czerwona i bezoka wersja wyparła miejscowe opisy brązowego, łuskowatego stworzenia. Zapis nie tylko przechowuje byt, ale go też przerabia."
+    },
+    {
+      "slug": "qilin-z-lu",
+      "opis": "Qilin jest znakiem, który trzeba odczytać, a olgoj-chorchoj rzeczą, której trzeba unikać — i właśnie dlatego dobrze stoją obok siebie. Jednego dwór ogłosił, żeby czegoś dowieść, drugiego kolejne wyprawy chciały złapać, żeby czegoś dowieść, i obie próby mówią więcej o dowodzących niż o zwierzęciu."
+    }
+  ],
+  "meta": {
+    "utworzono": "2026-09-06 12:10",
+    "autor": "sesja arena 2026-09-06",
+    "modyfikacje": [
+      {
+        "data": "2026-09-06 12:10",
+        "opis": "Nowa materializacja: olgoj-chorchoj — „jelito-robak” z pustyni Gobi, zabijający na odległość jadem albo porażeniem, znany na piśmie od relacji Roya Chapmana Andrewsa z lat dwudziestych. Karta klucz: „Bring Low” (KTK #103, 2014). Pierwszy byt z Mongolii i z Azji Środkowej w kartotece; pinezka w Dalanzadgadzie. Trzy źródła: dwie książki Andrewsa w skanach Internet Archive i reportaż Atlas Obscura z komentarzem mongolistki Ágnes Birtalan."
+      }
+    ]
+  }
+}

@@ -1,7 +1,7 @@
 {
   "wersja": 3,
-  "buildTime": "2026-09-05T14:27:21.666Z",
-  "liczba": 31,
+  "buildTime": "2026-09-05T14:42:47.598Z",
+  "liczba": 32,
   "liczbaSkitow": 51,
   "kanon": {
     "kategorie": [
@@ -12,7 +12,7 @@
         "min": 1,
         "max": 1,
         "opis": "Jedna tradycja, z której byt pochodzi (PROTOKÓŁ §2: zakaz mieszanek synkretycznych)",
-        "ile": 20
+        "ile": 21
       },
       {
         "id": "typ",
@@ -21,7 +21,7 @@
         "min": 1,
         "max": 1,
         "opis": "Czym byt jest — podstawowy filtr kartoteki",
-        "ile": 22
+        "ile": 23
       },
       {
         "id": "motyw",
@@ -166,6 +166,13 @@
         "ben-varrey"
       ]
     },
+    "mongolia": {
+      "kategoria": "kultura",
+      "opis": "Tradycja mongolska — przekaz pasterski i pustynny Gobi oraz zapisy podróżników z dwudziestego wieku.",
+      "wpisy": [
+        "olgoj-chorchoj"
+      ]
+    },
     "ngarrindjeri": {
       "kategoria": "kultura",
       "opis": "Ngarrindjeri i sąsiedzi znad dolnej Murray (południowo-wschodnia Australia) — opowieści w zapisie Davida Unaipona z lat 1924–1925.",
@@ -195,169 +202,6 @@
         "selkie-sule-skerry"
       ]
     },
-    "automat": {
-      "kategoria": "typ",
-      "opis": "Żywy automat: istota odlana lub zbudowana, poruszana płynem/duchem, nie zrodzona",
-      "wpisy": [
-        "knecht-z-koptos",
-        "pandora",
-        "talos-kreta"
-      ]
-    },
-    "bodhisattwa": {
-      "kategoria": "typ",
-      "opis": "Istota oświecona, która zostaje po wyzwoleniu, by ratować cierpiących",
-      "wpisy": [
-        "kannon-hase"
-      ]
-    },
-    "bog-ognia": {
-      "kategoria": "typ",
-      "opis": "Bóg ognia: palenisko, ofiara, słońce i błyskawica w jednym bycie",
-      "wpisy": [
-        "agni"
-      ]
-    },
-    "bogini-tkaczka": {
-      "kategoria": "typ",
-      "opis": "Bogini tkająca byt albo losy; stwórczyni i opiekunka płótna",
-      "wpisy": [
-        "neith-z-sais"
-      ]
-    },
-    "czarownik": {
-      "kategoria": "typ",
-      "opis": "Czarownik: człowiek, nie potwór — byt, którego moc bierze się z rzemiosła i z tego, że sąsiedzi w nie wierzą.",
-      "wpisy": [
-        "mangkukulam"
-      ]
-    },
-    "duch-przodkow": {
-      "kategoria": "typ",
-      "opis": "Przodek przywoływany przez wspólnotę i wracający w rytuale",
-      "wpisy": [
-        "egungun"
-      ]
-    },
-    "encantado": {
-      "kategoria": "typ",
-      "opis": "Encantado: mieszkaniec podwodnej krainy, który przybiera ludzką postać na jedną noc i musi wrócić do wody przed świtem.",
-      "wpisy": [
-        "boto-encantado"
-      ]
-    },
-    "fantom": {
-      "kategoria": "typ",
-      "opis": "Byt zbudowany z pozoru zmysłowego: trwa, dopóki trwa uwaga, którą się karmi",
-      "wpisy": [
-        "empusa-korynt",
-        "morowa-panna",
-        "protostates",
-        "syama-i-sarvara"
-      ]
-    },
-    "heros-burzy": {
-      "kategoria": "typ",
-      "opis": "Półboski obrońca mierzący się z demonem pogody",
-      "wpisy": [
-        "drangue-shala",
-        "indra"
-      ]
-    },
-    "istota-kamienna": {
-      "kategoria": "typ",
-      "opis": "Byt uwięziony w rzeźbie lub kamieniu, trwały i nieruchomy",
-      "wpisy": [
-        "lincoln-imp"
-      ]
-    },
-    "kentaur": {
-      "kategoria": "typ",
-      "opis": "Gatunek o dwóch połowach: człowiek z przodu, koń z tyłu, obie gotowe do ruchu",
-      "wpisy": [
-        "kentaur-pelion",
-        "nessos"
-      ]
-    },
-    "krol-wezy": {
-      "kategoria": "typ",
-      "opis": "Gadzi władca z koroną na łbie: zabija wzrokiem i jadem, panuje nad jednym miejscem",
-      "wpisy": [
-        "bazyliszek-warszawski"
-      ]
-    },
-    "olbrzym": {
-      "kategoria": "typ",
-      "opis": "Byt o skali oblężniczej, z bronią wymagającą obsługi",
-      "wpisy": [
-        "balor",
-        "cormoran-st-michaels-mount"
-      ]
-    },
-    "powracajacy-zmarly": {
-      "kategoria": "typ",
-      "opis": "Zmarły, który wraca w ciele: nie duch i nie widmo, lecz nieboszczyk zajmujący miejsce żywych.",
-      "wpisy": [
-        "glamr-z-thorhallsstadir"
-      ]
-    },
-    "pozeracz": {
-      "kategoria": "typ",
-      "opis": "Byt, który połyka człowieka w całości i zwraca go żywego, ale odmienionego — groza polega na powrocie, nie na śmierci.",
-      "wpisy": [
-        "yara-ma-yha-who"
-      ]
-    },
-    "selkie": {
-      "kategoria": "typ",
-      "opis": "Istota zmieniająca formę przez skórę, pomiędzy wodą a lądem",
-      "wpisy": [
-        "selkie-sule-skerry"
-      ]
-    },
-    "sfinks": {
-      "kategoria": "typ",
-      "opis": "Stwór złożony: ciało lwa, głowa kobiety, skrzydła — strażnik przejścia przez zagadkę",
-      "wpisy": [
-        "sfinks-teby",
-        "wielki-sfinks-z-gizy"
-      ]
-    },
-    "sniacy-zastep": {
-      "kategoria": "typ",
-      "opis": "Zbiorowy bohater uśpiony w krajobrazie, budzony przez znak",
-      "wpisy": [
-        "barbarossa-kyffhaeuser"
-      ]
-    },
-    "syrena": {
-      "kategoria": "typ",
-      "opis": "Pół kobieta, pół ryba: morska powabnica i przewodniczka wód",
-      "wpisy": [
-        "ben-varrey"
-      ]
-    },
-    "trickster": {
-      "kategoria": "typ",
-      "opis": "Oszust: byt, który rozstrzyga sprawy podstępem i cudzą ciekawością zamiast siłą, i zwykle przegrywa własną próżnością.",
-      "wpisy": [
-        "iktomi"
-      ]
-    },
-    "wilkolak": {
-      "kategoria": "typ",
-      "opis": "Człowiek lub byt przybierający postać wilka; loup-garou i pokrewne tradycje przemiany",
-      "wpisy": [
-        "loup-garou-gevaudan"
-      ]
-    },
-    "zwiastun": {
-      "kategoria": "typ",
-      "opis": "Byt, którego jedyną treścią jest pojawienie się: nie walczy i nie strzeże, tylko oznajmia — a jego nieobecność też jest wiadomością.",
-      "wpisy": [
-        "qilin-z-lu"
-      ]
-    },
     "burza": {
       "kategoria": "motyw",
       "opis": "Pogoda jako pole bitwy i jako kalendarz",
@@ -379,7 +223,8 @@
       "kategoria": "motyw",
       "opis": "Trucizna jako broń i jako ślad: zatrute powietrze, zatrute ostrze, zatrute ciało",
       "wpisy": [
-        "bazyliszek-warszawski"
+        "bazyliszek-warszawski",
+        "olgoj-chorchoj"
       ]
     },
     "klatwa": {
@@ -420,6 +265,7 @@
       "kategoria": "motyw",
       "opis": "Opowieść używana jako przestroga: mówi się ją dzieciom i wędrowcom, żeby wiedzieli, gdzie nie wolno zostawać samemu.",
       "wpisy": [
+        "olgoj-chorchoj",
         "yara-ma-yha-who"
       ]
     },
@@ -580,6 +426,7 @@
         "iktomi",
         "loup-garou-gevaudan",
         "nessos",
+        "olgoj-chorchoj",
         "qilin-z-lu",
         "selkie-sule-skerry",
         "syama-i-sarvara",
@@ -592,6 +439,176 @@
       "wpisy": [
         "drangue-shala",
         "sfinks-teby"
+      ]
+    },
+    "automat": {
+      "kategoria": "typ",
+      "opis": "Żywy automat: istota odlana lub zbudowana, poruszana płynem/duchem, nie zrodzona",
+      "wpisy": [
+        "knecht-z-koptos",
+        "pandora",
+        "talos-kreta"
+      ]
+    },
+    "bodhisattwa": {
+      "kategoria": "typ",
+      "opis": "Istota oświecona, która zostaje po wyzwoleniu, by ratować cierpiących",
+      "wpisy": [
+        "kannon-hase"
+      ]
+    },
+    "bog-ognia": {
+      "kategoria": "typ",
+      "opis": "Bóg ognia: palenisko, ofiara, słońce i błyskawica w jednym bycie",
+      "wpisy": [
+        "agni"
+      ]
+    },
+    "bogini-tkaczka": {
+      "kategoria": "typ",
+      "opis": "Bogini tkająca byt albo losy; stwórczyni i opiekunka płótna",
+      "wpisy": [
+        "neith-z-sais"
+      ]
+    },
+    "czarownik": {
+      "kategoria": "typ",
+      "opis": "Czarownik: człowiek, nie potwór — byt, którego moc bierze się z rzemiosła i z tego, że sąsiedzi w nie wierzą.",
+      "wpisy": [
+        "mangkukulam"
+      ]
+    },
+    "duch-przodkow": {
+      "kategoria": "typ",
+      "opis": "Przodek przywoływany przez wspólnotę i wracający w rytuale",
+      "wpisy": [
+        "egungun"
+      ]
+    },
+    "encantado": {
+      "kategoria": "typ",
+      "opis": "Encantado: mieszkaniec podwodnej krainy, który przybiera ludzką postać na jedną noc i musi wrócić do wody przed świtem.",
+      "wpisy": [
+        "boto-encantado"
+      ]
+    },
+    "fantom": {
+      "kategoria": "typ",
+      "opis": "Byt zbudowany z pozoru zmysłowego: trwa, dopóki trwa uwaga, którą się karmi",
+      "wpisy": [
+        "empusa-korynt",
+        "morowa-panna",
+        "protostates",
+        "syama-i-sarvara"
+      ]
+    },
+    "heros-burzy": {
+      "kategoria": "typ",
+      "opis": "Półboski obrońca mierzący się z demonem pogody",
+      "wpisy": [
+        "drangue-shala",
+        "indra"
+      ]
+    },
+    "istota-kamienna": {
+      "kategoria": "typ",
+      "opis": "Byt uwięziony w rzeźbie lub kamieniu, trwały i nieruchomy",
+      "wpisy": [
+        "lincoln-imp"
+      ]
+    },
+    "kentaur": {
+      "kategoria": "typ",
+      "opis": "Gatunek o dwóch połowach: człowiek z przodu, koń z tyłu, obie gotowe do ruchu",
+      "wpisy": [
+        "kentaur-pelion",
+        "nessos"
+      ]
+    },
+    "krol-wezy": {
+      "kategoria": "typ",
+      "opis": "Gadzi władca z koroną na łbie: zabija wzrokiem i jadem, panuje nad jednym miejscem",
+      "wpisy": [
+        "bazyliszek-warszawski"
+      ]
+    },
+    "olbrzym": {
+      "kategoria": "typ",
+      "opis": "Byt o skali oblężniczej, z bronią wymagającą obsługi",
+      "wpisy": [
+        "balor",
+        "cormoran-st-michaels-mount"
+      ]
+    },
+    "powracajacy-zmarly": {
+      "kategoria": "typ",
+      "opis": "Zmarły, który wraca w ciele: nie duch i nie widmo, lecz nieboszczyk zajmujący miejsce żywych.",
+      "wpisy": [
+        "glamr-z-thorhallsstadir"
+      ]
+    },
+    "pozeracz": {
+      "kategoria": "typ",
+      "opis": "Byt, który połyka człowieka w całości i zwraca go żywego, ale odmienionego — groza polega na powrocie, nie na śmierci.",
+      "wpisy": [
+        "yara-ma-yha-who"
+      ]
+    },
+    "robak-piaskowy": {
+      "kategoria": "typ",
+      "opis": "Bezgłowe, ryjące stworzenie pustynne znane wyłącznie z relacji świadków, zabijające bez zwarcia.",
+      "wpisy": [
+        "olgoj-chorchoj"
+      ]
+    },
+    "selkie": {
+      "kategoria": "typ",
+      "opis": "Istota zmieniająca formę przez skórę, pomiędzy wodą a lądem",
+      "wpisy": [
+        "selkie-sule-skerry"
+      ]
+    },
+    "sfinks": {
+      "kategoria": "typ",
+      "opis": "Stwór złożony: ciało lwa, głowa kobiety, skrzydła — strażnik przejścia przez zagadkę",
+      "wpisy": [
+        "sfinks-teby",
+        "wielki-sfinks-z-gizy"
+      ]
+    },
+    "sniacy-zastep": {
+      "kategoria": "typ",
+      "opis": "Zbiorowy bohater uśpiony w krajobrazie, budzony przez znak",
+      "wpisy": [
+        "barbarossa-kyffhaeuser"
+      ]
+    },
+    "syrena": {
+      "kategoria": "typ",
+      "opis": "Pół kobieta, pół ryba: morska powabnica i przewodniczka wód",
+      "wpisy": [
+        "ben-varrey"
+      ]
+    },
+    "trickster": {
+      "kategoria": "typ",
+      "opis": "Oszust: byt, który rozstrzyga sprawy podstępem i cudzą ciekawością zamiast siłą, i zwykle przegrywa własną próżnością.",
+      "wpisy": [
+        "iktomi"
+      ]
+    },
+    "wilkolak": {
+      "kategoria": "typ",
+      "opis": "Człowiek lub byt przybierający postać wilka; loup-garou i pokrewne tradycje przemiany",
+      "wpisy": [
+        "loup-garou-gevaudan"
+      ]
+    },
+    "zwiastun": {
+      "kategoria": "typ",
+      "opis": "Byt, którego jedyną treścią jest pojawienie się: nie walczy i nie strzeże, tylko oznajmia — a jego nieobecność też jest wiadomością.",
+      "wpisy": [
+        "qilin-z-lu"
       ]
     }
   },
@@ -783,7 +800,8 @@
       ],
       "backlinki": [
         "glamr-z-thorhallsstadir",
-        "mangkukulam"
+        "mangkukulam",
+        "olgoj-chorchoj"
       ],
       "obraz": "assets/wizualizacje/bazyliszek-warszawski.jpg",
       "trofea": {
@@ -1506,6 +1524,7 @@
         "bazyliszek-warszawski",
         "glamr-z-thorhallsstadir",
         "mangkukulam",
+        "olgoj-chorchoj",
         "pandora",
         "protostates",
         "syama-i-sarvara"
@@ -1616,6 +1635,42 @@
         "prezent-z-defektem",
         "zaplata-za-przewoz"
       ]
+    },
+    {
+      "slug": "olgoj-chorchoj",
+      "nazwa": "Olgoj-chorchoj — jelito, które zabija bez dotknięcia",
+      "nazwy_alternatywne": [
+        "Allergorhai-horhai (zapis Roya Chapmana Andrewsa)",
+        "Allghoi khorkhoi",
+        "Mongolski robak śmierci",
+        "Robak jelitowy (dosłowne znaczenie nazwy)",
+        "Piaskowy robak z Gobi"
+      ],
+      "karta": "Bring Low",
+      "miejscowosc": "Dalanzadgad w ajmaku południowogobijskim (Ömnögowi) — jeden z nielicznych ośrodków miejskich Gobi i punkt, w którym relacje o robaku zbierali kolejni przyjezdni badacze, od radzieckich paleontologów po czeskie wyprawy z lat dziewięćdziesiątych; sam olgoj-chorchoj ma żyć na południe i zachód stąd, w najbardziej bezludnych partiach pustyni",
+      "kraj": "Mongolia (ajmak Ömnögowi)",
+      "lat": 43.5708,
+      "lon": 104.425,
+      "tagi": [
+        "jad",
+        "mongolia",
+        "ostrzezenie",
+        "postac-zwierzeca",
+        "robak-piaskowy"
+      ],
+      "powiazania": [
+        "bazyliszek-warszawski",
+        "morowa-panna",
+        "qilin-z-lu",
+        "yara-ma-yha-who"
+      ],
+      "backlinki": [],
+      "obraz": "assets/wizualizacje/olgoj-chorchoj.jpg",
+      "trofea": {
+        "pierwotne": "Para metalowych szczypiec i ciemne gogle motocyklowe z wyprawy, których nigdy nie użyto — w pudle po nabojach, z kartką: „na prośbę rządu, w razie gdyby”.",
+        "wtorne": "Odlew gipsowy bruzdy w piasku, zdjęty w południowym Gobi po deszczu, z dopisaną ołówkiem na krawędzi datą i jednym słowem po mongolsku, którego nikt z ekipy nie umiał przetłumaczyć inaczej niż „robak”."
+      },
+      "skity": []
     },
     {
       "slug": "pandora",
@@ -1743,7 +1798,9 @@
         "wielki-sfinks-z-gizy",
         "yara-ma-yha-who"
       ],
-      "backlinki": [],
+      "backlinki": [
+        "olgoj-chorchoj"
+      ],
       "obraz": "assets/wizualizacje/qilin-z-lu.jpg",
       "trofea": {
         "pierwotne": "Kawałek sieci myśliwskiej z państwa Lu, z węzłami rozciągniętymi w jednym miejscu tak, jakby coś ciężkiego szarpnęło raz i przestało. Do sznura przywiązana drewniana tabliczka z jednym zdaniem sprawozdania: wiosną, na zachodzie, schwytano lina.",
@@ -2042,6 +2099,7 @@
         "mangkukulam"
       ],
       "backlinki": [
+        "olgoj-chorchoj",
         "qilin-z-lu"
       ],
       "obraz": "assets/wizualizacje/yara-ma-yha-who.jpg",
@@ -2974,6 +3032,22 @@
     }
   ],
   "aktualizacje": [
+    {
+      "data": "2026-09-06 12:10",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "olgoj-chorchoj",
+      "tytul": "Olgoj-chorchoj — jelito, które zabija bez dotknięcia",
+      "opis": "Nowa materializacja: olgoj-chorchoj — „jelito-robak” z pustyni Gobi, zabijający na odległość jadem albo porażeniem, znany na piśmie od relacji Roya Chapmana Andrewsa z lat dwudziestych. Karta klucz: „Bring Low” (KTK #103, 2014). Pierwszy byt z Mongolii i z Azji Środkowej w kartotece; pinezka w Dalanzadgadzie. Trzy źródła: dwie książki Andrewsa w skanach Internet Archive i reportaż Atlas Obscura z komentarzem mongolistki Ágnes Birtalan."
+    },
+    {
+      "data": "2026-09-06 12:10",
+      "typ": "manifestacja",
+      "akcja": "nowa",
+      "slug": "olgoj-chorchoj",
+      "tytul": "Olgoj-chorchoj — jelito, które zabija bez dotknięcia",
+      "opis": "wpis w kartotece — materializacja karty „Bring Low”"
+    },
     {
       "data": "2026-09-06 10:30",
       "typ": "skit",

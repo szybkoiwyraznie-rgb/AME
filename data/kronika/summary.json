@@ -76,7 +76,7 @@
           },
           {
             "slug": "bazyliszek-warszawski",
-            "wielkosc": 0.222
+            "wielkosc": 0.239
           },
           {
             "slug": "ben-varrey",
@@ -140,7 +140,7 @@
           },
           {
             "slug": "morowa-panna",
-            "wielkosc": 0.404
+            "wielkosc": 0.422
           },
           {
             "slug": "neith-z-sais",
@@ -149,6 +149,10 @@
           {
             "slug": "nessos",
             "wielkosc": 0.387
+          },
+          {
+            "slug": "olgoj-chorchoj",
+            "wielkosc": 0.17
           },
           {
             "slug": "pandora",
@@ -160,7 +164,7 @@
           },
           {
             "slug": "qilin-z-lu",
-            "wielkosc": 0.187
+            "wielkosc": 0.204
           },
           {
             "slug": "selkie-sule-skerry",
@@ -184,7 +188,7 @@
           },
           {
             "slug": "yara-ma-yha-who",
-            "wielkosc": 0.222
+            "wielkosc": 0.239
           }
         ],
         "dominacje": [
@@ -206,7 +210,7 @@
           {
             "kultura": "polska",
             "kult": "bazyliszek-warszawski",
-            "wielkosc": 0.222
+            "wielkosc": 0.239
           },
           {
             "kultura": "man",
@@ -286,7 +290,7 @@
           {
             "kultura": "polska",
             "kult": "morowa-panna",
-            "wielkosc": 0.404
+            "wielkosc": 0.422
           },
           {
             "kultura": "egipt",
@@ -297,6 +301,11 @@
             "kultura": "grecja",
             "kult": "nessos",
             "wielkosc": 0.387
+          },
+          {
+            "kultura": "mongolia",
+            "kult": "olgoj-chorchoj",
+            "wielkosc": 0.17
           },
           {
             "kultura": "grecja",
@@ -311,7 +320,7 @@
           {
             "kultura": "chiny",
             "kult": "qilin-z-lu",
-            "wielkosc": 0.187
+            "wielkosc": 0.204
           },
           {
             "kultura": "szkocja-polnocna",
@@ -341,7 +350,7 @@
           {
             "kultura": "ngarrindjeri",
             "kult": "yara-ma-yha-who",
-            "wielkosc": 0.222
+            "wielkosc": 0.239
           }
         ],
         "paliwo": {
@@ -566,7 +575,7 @@
           },
           {
             "slug": "bazyliszek-warszawski",
-            "wielkosc": 0.222
+            "wielkosc": 0.239
           },
           {
             "slug": "ben-varrey",
@@ -630,7 +639,7 @@
           },
           {
             "slug": "morowa-panna",
-            "wielkosc": 0.404
+            "wielkosc": 0.422
           },
           {
             "slug": "neith-z-sais",
@@ -639,6 +648,10 @@
           {
             "slug": "nessos",
             "wielkosc": 0.387
+          },
+          {
+            "slug": "olgoj-chorchoj",
+            "wielkosc": 0.17
           },
           {
             "slug": "pandora",
@@ -650,7 +663,7 @@
           },
           {
             "slug": "qilin-z-lu",
-            "wielkosc": 0.187
+            "wielkosc": 0.204
           },
           {
             "slug": "selkie-sule-skerry",
@@ -674,7 +687,7 @@
           },
           {
             "slug": "yara-ma-yha-who",
-            "wielkosc": 0.222
+            "wielkosc": 0.239
           }
         ],
         "dominacje": [
@@ -696,7 +709,7 @@
           {
             "kultura": "polska",
             "kult": "bazyliszek-warszawski",
-            "wielkosc": 0.222
+            "wielkosc": 0.239
           },
           {
             "kultura": "man",
@@ -776,7 +789,7 @@
           {
             "kultura": "polska",
             "kult": "morowa-panna",
-            "wielkosc": 0.404
+            "wielkosc": 0.422
           },
           {
             "kultura": "egipt",
@@ -787,6 +800,11 @@
             "kultura": "grecja",
             "kult": "nessos",
             "wielkosc": 0.387
+          },
+          {
+            "kultura": "mongolia",
+            "kult": "olgoj-chorchoj",
+            "wielkosc": 0.17
           },
           {
             "kultura": "grecja",
@@ -801,7 +819,7 @@
           {
             "kultura": "chiny",
             "kult": "qilin-z-lu",
-            "wielkosc": 0.187
+            "wielkosc": 0.204
           },
           {
             "kultura": "szkocja-polnocna",
@@ -831,7 +849,7 @@
           {
             "kultura": "ngarrindjeri",
             "kult": "yara-ma-yha-who",
-            "wielkosc": 0.222
+            "wielkosc": 0.239
           }
         ],
         "paliwo": {
@@ -1074,7 +1092,7 @@
           },
           {
             "slug": "bazyliszek-warszawski",
-            "wielkosc": 0.222
+            "wielkosc": 0.239
           },
           {
             "slug": "ben-varrey",
@@ -1138,7 +1156,7 @@
           },
           {
             "slug": "morowa-panna",
-            "wielkosc": 0.404
+            "wielkosc": 0.422
           },
           {
             "slug": "neith-z-sais",
@@ -1147,6 +1165,10 @@
           {
             "slug": "nessos",
             "wielkosc": 0.387
+          },
+          {
+            "slug": "olgoj-chorchoj",
+            "wielkosc": 0.17
           },
           {
             "slug": "pandora",
@@ -1158,7 +1180,7 @@
           },
           {
             "slug": "qilin-z-lu",
-            "wielkosc": 0.187
+            "wielkosc": 0.204
           },
           {
             "slug": "selkie-sule-skerry",
@@ -1182,7 +1204,7 @@
           },
           {
             "slug": "yara-ma-yha-who",
-            "wielkosc": 0.222
+            "wielkosc": 0.239
           }
         ],
         "dominacje": [
@@ -1204,7 +1226,7 @@
           {
             "kultura": "polska",
             "kult": "bazyliszek-warszawski",
-            "wielkosc": 0.222
+            "wielkosc": 0.239
           },
           {
             "kultura": "man",
@@ -1284,7 +1306,7 @@
           {
             "kultura": "polska",
             "kult": "morowa-panna",
-            "wielkosc": 0.404
+            "wielkosc": 0.422
           },
           {
             "kultura": "egipt",
@@ -1295,6 +1317,11 @@
             "kultura": "grecja",
             "kult": "nessos",
             "wielkosc": 0.387
+          },
+          {
+            "kultura": "mongolia",
+            "kult": "olgoj-chorchoj",
+            "wielkosc": 0.17
           },
           {
             "kultura": "grecja",
@@ -1309,7 +1336,7 @@
           {
             "kultura": "chiny",
             "kult": "qilin-z-lu",
-            "wielkosc": 0.187
+            "wielkosc": 0.204
           },
           {
             "kultura": "szkocja-polnocna",
@@ -1339,7 +1366,7 @@
           {
             "kultura": "ngarrindjeri",
             "kult": "yara-ma-yha-who",
-            "wielkosc": 0.222
+            "wielkosc": 0.239
           }
         ],
         "paliwo": {
@@ -1597,7 +1624,7 @@
           },
           {
             "slug": "bazyliszek-warszawski",
-            "wielkosc": 0.222
+            "wielkosc": 0.239
           },
           {
             "slug": "ben-varrey",
@@ -1661,7 +1688,7 @@
           },
           {
             "slug": "morowa-panna",
-            "wielkosc": 0.404
+            "wielkosc": 0.422
           },
           {
             "slug": "neith-z-sais",
@@ -1670,6 +1697,10 @@
           {
             "slug": "nessos",
             "wielkosc": 0.387
+          },
+          {
+            "slug": "olgoj-chorchoj",
+            "wielkosc": 0.17
           },
           {
             "slug": "pandora",
@@ -1681,7 +1712,7 @@
           },
           {
             "slug": "qilin-z-lu",
-            "wielkosc": 0.187
+            "wielkosc": 0.204
           },
           {
             "slug": "selkie-sule-skerry",
@@ -1705,7 +1736,7 @@
           },
           {
             "slug": "yara-ma-yha-who",
-            "wielkosc": 0.222
+            "wielkosc": 0.239
           }
         ],
         "dominacje": [
@@ -1727,7 +1758,7 @@
           {
             "kultura": "polska",
             "kult": "bazyliszek-warszawski",
-            "wielkosc": 0.222
+            "wielkosc": 0.239
           },
           {
             "kultura": "man",
@@ -1807,7 +1838,7 @@
           {
             "kultura": "polska",
             "kult": "morowa-panna",
-            "wielkosc": 0.404
+            "wielkosc": 0.422
           },
           {
             "kultura": "egipt",
@@ -1818,6 +1849,11 @@
             "kultura": "grecja",
             "kult": "nessos",
             "wielkosc": 0.387
+          },
+          {
+            "kultura": "mongolia",
+            "kult": "olgoj-chorchoj",
+            "wielkosc": 0.17
           },
           {
             "kultura": "grecja",
@@ -1832,7 +1868,7 @@
           {
             "kultura": "chiny",
             "kult": "qilin-z-lu",
-            "wielkosc": 0.187
+            "wielkosc": 0.204
           },
           {
             "kultura": "szkocja-polnocna",
@@ -1862,7 +1898,7 @@
           {
             "kultura": "ngarrindjeri",
             "kult": "yara-ma-yha-who",
-            "wielkosc": 0.222
+            "wielkosc": 0.239
           }
         ],
         "paliwo": {
@@ -2120,7 +2156,7 @@
           },
           {
             "slug": "bazyliszek-warszawski",
-            "wielkosc": 0.222
+            "wielkosc": 0.239
           },
           {
             "slug": "ben-varrey",
@@ -2184,7 +2220,7 @@
           },
           {
             "slug": "morowa-panna",
-            "wielkosc": 0.404
+            "wielkosc": 0.422
           },
           {
             "slug": "neith-z-sais",
@@ -2193,6 +2229,10 @@
           {
             "slug": "nessos",
             "wielkosc": 0.387
+          },
+          {
+            "slug": "olgoj-chorchoj",
+            "wielkosc": 0.17
           },
           {
             "slug": "pandora",
@@ -2204,7 +2244,7 @@
           },
           {
             "slug": "qilin-z-lu",
-            "wielkosc": 0.187
+            "wielkosc": 0.204
           },
           {
             "slug": "selkie-sule-skerry",
@@ -2228,7 +2268,7 @@
           },
           {
             "slug": "yara-ma-yha-who",
-            "wielkosc": 0.222
+            "wielkosc": 0.239
           }
         ],
         "dominacje": [
@@ -2250,7 +2290,7 @@
           {
             "kultura": "polska",
             "kult": "bazyliszek-warszawski",
-            "wielkosc": 0.222
+            "wielkosc": 0.239
           },
           {
             "kultura": "man",
@@ -2330,7 +2370,7 @@
           {
             "kultura": "polska",
             "kult": "morowa-panna",
-            "wielkosc": 0.404
+            "wielkosc": 0.422
           },
           {
             "kultura": "egipt",
@@ -2341,6 +2381,11 @@
             "kultura": "grecja",
             "kult": "nessos",
             "wielkosc": 0.387
+          },
+          {
+            "kultura": "mongolia",
+            "kult": "olgoj-chorchoj",
+            "wielkosc": 0.17
           },
           {
             "kultura": "grecja",
@@ -2355,7 +2400,7 @@
           {
             "kultura": "chiny",
             "kult": "qilin-z-lu",
-            "wielkosc": 0.187
+            "wielkosc": 0.204
           },
           {
             "kultura": "szkocja-polnocna",
@@ -2385,7 +2430,7 @@
           {
             "kultura": "ngarrindjeri",
             "kult": "yara-ma-yha-who",
-            "wielkosc": 0.222
+            "wielkosc": 0.239
           }
         ],
         "paliwo": {
@@ -2599,13 +2644,13 @@
           "slug": "morowa-panna",
           "nazwa": "Morowa Panna — zaraza w białej szacie z czerwoną chustą",
           "rola": "Pytanie z jedną odpowiedzią",
-          "pasywne": 19,
-          "saldoPrzed": 19,
+          "pasywne": 21,
+          "saldoPrzed": 21,
           "kosztUdzialu": 2,
           "kosztKlucza": 0,
           "boost": 0,
           "zwrot": 0,
-          "saldoPo": 17
+          "saldoPo": 19
         },
         {
           "slug": "empusa-korynt",
@@ -2640,7 +2685,7 @@
           },
           {
             "slug": "bazyliszek-warszawski",
-            "wielkosc": 0.222
+            "wielkosc": 0.239
           },
           {
             "slug": "ben-varrey",
@@ -2704,7 +2749,7 @@
           },
           {
             "slug": "morowa-panna",
-            "wielkosc": 0.389
+            "wielkosc": 0.407
           },
           {
             "slug": "neith-z-sais",
@@ -2713,6 +2758,10 @@
           {
             "slug": "nessos",
             "wielkosc": 0.387
+          },
+          {
+            "slug": "olgoj-chorchoj",
+            "wielkosc": 0.17
           },
           {
             "slug": "pandora",
@@ -2724,7 +2773,7 @@
           },
           {
             "slug": "qilin-z-lu",
-            "wielkosc": 0.187
+            "wielkosc": 0.204
           },
           {
             "slug": "selkie-sule-skerry",
@@ -2748,7 +2797,7 @@
           },
           {
             "slug": "yara-ma-yha-who",
-            "wielkosc": 0.222
+            "wielkosc": 0.239
           }
         ],
         "dominacje": [
@@ -2770,7 +2819,7 @@
           {
             "kultura": "polska",
             "kult": "bazyliszek-warszawski",
-            "wielkosc": 0.222
+            "wielkosc": 0.239
           },
           {
             "kultura": "man",
@@ -2850,7 +2899,7 @@
           {
             "kultura": "polska",
             "kult": "morowa-panna",
-            "wielkosc": 0.389
+            "wielkosc": 0.407
           },
           {
             "kultura": "egipt",
@@ -2861,6 +2910,11 @@
             "kultura": "grecja",
             "kult": "nessos",
             "wielkosc": 0.387
+          },
+          {
+            "kultura": "mongolia",
+            "kult": "olgoj-chorchoj",
+            "wielkosc": 0.17
           },
           {
             "kultura": "grecja",
@@ -2875,7 +2929,7 @@
           {
             "kultura": "chiny",
             "kult": "qilin-z-lu",
-            "wielkosc": 0.187
+            "wielkosc": 0.204
           },
           {
             "kultura": "szkocja-polnocna",
@@ -2905,7 +2959,7 @@
           {
             "kultura": "ngarrindjeri",
             "kult": "yara-ma-yha-who",
-            "wielkosc": 0.222
+            "wielkosc": 0.239
           }
         ],
         "paliwo": {
@@ -2920,7 +2974,7 @@
           "sfinks-teby": 26,
           "talos-kreta": 22,
           "pandora": 19,
-          "morowa-panna": 17
+          "morowa-panna": 19
         }
       },
       "konsekwencje": {
@@ -2959,8 +3013,8 @@
           },
           {
             "slug": "morowa-panna",
-            "przed": 0.404,
-            "po": 0.389,
+            "przed": 0.422,
+            "po": 0.407,
             "delta": -0.015,
             "opis": "Ludzie ćwiczą szczerą odpowiedź na jej pytanie; rytuał traci jedną z nóg."
           },
@@ -2983,8 +3037,8 @@
           {
             "kultura": "polska",
             "kult": "morowa-panna",
-            "przed": 0.404,
-            "po": 0.389,
+            "przed": 0.422,
+            "po": 0.407,
             "delta": -0.015
           },
           {
@@ -3169,7 +3223,7 @@
           },
           {
             "slug": "bazyliszek-warszawski",
-            "wielkosc": 0.222
+            "wielkosc": 0.239
           },
           {
             "slug": "ben-varrey",
@@ -3233,7 +3287,7 @@
           },
           {
             "slug": "morowa-panna",
-            "wielkosc": 0.389
+            "wielkosc": 0.407
           },
           {
             "slug": "neith-z-sais",
@@ -3242,6 +3296,10 @@
           {
             "slug": "nessos",
             "wielkosc": 0.387
+          },
+          {
+            "slug": "olgoj-chorchoj",
+            "wielkosc": 0.17
           },
           {
             "slug": "pandora",
@@ -3253,7 +3311,7 @@
           },
           {
             "slug": "qilin-z-lu",
-            "wielkosc": 0.187
+            "wielkosc": 0.204
           },
           {
             "slug": "selkie-sule-skerry",
@@ -3277,7 +3335,7 @@
           },
           {
             "slug": "yara-ma-yha-who",
-            "wielkosc": 0.222
+            "wielkosc": 0.239
           }
         ],
         "dominacje": [
@@ -3299,7 +3357,7 @@
           {
             "kultura": "polska",
             "kult": "bazyliszek-warszawski",
-            "wielkosc": 0.222
+            "wielkosc": 0.239
           },
           {
             "kultura": "man",
@@ -3379,7 +3437,7 @@
           {
             "kultura": "polska",
             "kult": "morowa-panna",
-            "wielkosc": 0.389
+            "wielkosc": 0.407
           },
           {
             "kultura": "egipt",
@@ -3390,6 +3448,11 @@
             "kultura": "grecja",
             "kult": "nessos",
             "wielkosc": 0.387
+          },
+          {
+            "kultura": "mongolia",
+            "kult": "olgoj-chorchoj",
+            "wielkosc": 0.17
           },
           {
             "kultura": "grecja",
@@ -3404,7 +3467,7 @@
           {
             "kultura": "chiny",
             "kult": "qilin-z-lu",
-            "wielkosc": 0.187
+            "wielkosc": 0.204
           },
           {
             "kultura": "szkocja-polnocna",
@@ -3434,7 +3497,7 @@
           {
             "kultura": "ngarrindjeri",
             "kult": "yara-ma-yha-who",
-            "wielkosc": 0.222
+            "wielkosc": 0.239
           }
         ],
         "paliwo": {
@@ -3449,7 +3512,7 @@
           "sfinks-teby": 26,
           "talos-kreta": 22,
           "pandora": 19,
-          "morowa-panna": 17,
+          "morowa-panna": 19,
           "protostates": 14,
           "knecht-z-koptos": 15,
           "syama-i-sarvara": 15
@@ -3701,7 +3764,7 @@
           },
           {
             "slug": "bazyliszek-warszawski",
-            "wielkosc": 0.222
+            "wielkosc": 0.239
           },
           {
             "slug": "ben-varrey",
@@ -3765,7 +3828,7 @@
           },
           {
             "slug": "morowa-panna",
-            "wielkosc": 0.389
+            "wielkosc": 0.407
           },
           {
             "slug": "neith-z-sais",
@@ -3774,6 +3837,10 @@
           {
             "slug": "nessos",
             "wielkosc": 0.387
+          },
+          {
+            "slug": "olgoj-chorchoj",
+            "wielkosc": 0.17
           },
           {
             "slug": "pandora",
@@ -3785,7 +3852,7 @@
           },
           {
             "slug": "qilin-z-lu",
-            "wielkosc": 0.187
+            "wielkosc": 0.204
           },
           {
             "slug": "selkie-sule-skerry",
@@ -3809,7 +3876,7 @@
           },
           {
             "slug": "yara-ma-yha-who",
-            "wielkosc": 0.222
+            "wielkosc": 0.239
           }
         ],
         "dominacje": [
@@ -3831,7 +3898,7 @@
           {
             "kultura": "polska",
             "kult": "bazyliszek-warszawski",
-            "wielkosc": 0.222
+            "wielkosc": 0.239
           },
           {
             "kultura": "man",
@@ -3911,7 +3978,7 @@
           {
             "kultura": "polska",
             "kult": "morowa-panna",
-            "wielkosc": 0.389
+            "wielkosc": 0.407
           },
           {
             "kultura": "egipt",
@@ -3922,6 +3989,11 @@
             "kultura": "grecja",
             "kult": "nessos",
             "wielkosc": 0.387
+          },
+          {
+            "kultura": "mongolia",
+            "kult": "olgoj-chorchoj",
+            "wielkosc": 0.17
           },
           {
             "kultura": "grecja",
@@ -3936,7 +4008,7 @@
           {
             "kultura": "chiny",
             "kult": "qilin-z-lu",
-            "wielkosc": 0.187
+            "wielkosc": 0.204
           },
           {
             "kultura": "szkocja-polnocna",
@@ -3966,7 +4038,7 @@
           {
             "kultura": "ngarrindjeri",
             "kult": "yara-ma-yha-who",
-            "wielkosc": 0.222
+            "wielkosc": 0.239
           }
         ],
         "paliwo": {
@@ -3981,7 +4053,7 @@
           "sfinks-teby": 26,
           "talos-kreta": 22,
           "pandora": 19,
-          "morowa-panna": 17,
+          "morowa-panna": 19,
           "protostates": 14,
           "knecht-z-koptos": 15,
           "syama-i-sarvara": 15
@@ -4237,7 +4309,7 @@
           },
           {
             "slug": "bazyliszek-warszawski",
-            "wielkosc": 0.222
+            "wielkosc": 0.239
           },
           {
             "slug": "ben-varrey",
@@ -4301,7 +4373,7 @@
           },
           {
             "slug": "morowa-panna",
-            "wielkosc": 0.389
+            "wielkosc": 0.407
           },
           {
             "slug": "neith-z-sais",
@@ -4310,6 +4382,10 @@
           {
             "slug": "nessos",
             "wielkosc": 0.387
+          },
+          {
+            "slug": "olgoj-chorchoj",
+            "wielkosc": 0.17
           },
           {
             "slug": "pandora",
@@ -4321,7 +4397,7 @@
           },
           {
             "slug": "qilin-z-lu",
-            "wielkosc": 0.187
+            "wielkosc": 0.204
           },
           {
             "slug": "selkie-sule-skerry",
@@ -4345,7 +4421,7 @@
           },
           {
             "slug": "yara-ma-yha-who",
-            "wielkosc": 0.222
+            "wielkosc": 0.239
           }
         ],
         "dominacje": [
@@ -4367,7 +4443,7 @@
           {
             "kultura": "polska",
             "kult": "bazyliszek-warszawski",
-            "wielkosc": 0.222
+            "wielkosc": 0.239
           },
           {
             "kultura": "man",
@@ -4447,7 +4523,7 @@
           {
             "kultura": "polska",
             "kult": "morowa-panna",
-            "wielkosc": 0.389
+            "wielkosc": 0.407
           },
           {
             "kultura": "egipt",
@@ -4458,6 +4534,11 @@
             "kultura": "grecja",
             "kult": "nessos",
             "wielkosc": 0.387
+          },
+          {
+            "kultura": "mongolia",
+            "kult": "olgoj-chorchoj",
+            "wielkosc": 0.17
           },
           {
             "kultura": "grecja",
@@ -4472,7 +4553,7 @@
           {
             "kultura": "chiny",
             "kult": "qilin-z-lu",
-            "wielkosc": 0.187
+            "wielkosc": 0.204
           },
           {
             "kultura": "szkocja-polnocna",
@@ -4502,7 +4583,7 @@
           {
             "kultura": "ngarrindjeri",
             "kult": "yara-ma-yha-who",
-            "wielkosc": 0.222
+            "wielkosc": 0.239
           }
         ],
         "paliwo": {
@@ -4517,7 +4598,7 @@
           "sfinks-teby": 26,
           "talos-kreta": 22,
           "pandora": 19,
-          "morowa-panna": 17,
+          "morowa-panna": 19,
           "protostates": 14,
           "knecht-z-koptos": 15,
           "syama-i-sarvara": 15,
@@ -4797,7 +4878,7 @@
           },
           {
             "slug": "bazyliszek-warszawski",
-            "wielkosc": 0.222
+            "wielkosc": 0.239
           },
           {
             "slug": "ben-varrey",
@@ -4861,7 +4942,7 @@
           },
           {
             "slug": "morowa-panna",
-            "wielkosc": 0.389
+            "wielkosc": 0.407
           },
           {
             "slug": "neith-z-sais",
@@ -4870,6 +4951,10 @@
           {
             "slug": "nessos",
             "wielkosc": 0.387
+          },
+          {
+            "slug": "olgoj-chorchoj",
+            "wielkosc": 0.17
           },
           {
             "slug": "pandora",
@@ -4881,7 +4966,7 @@
           },
           {
             "slug": "qilin-z-lu",
-            "wielkosc": 0.187
+            "wielkosc": 0.204
           },
           {
             "slug": "selkie-sule-skerry",
@@ -4905,7 +4990,7 @@
           },
           {
             "slug": "yara-ma-yha-who",
-            "wielkosc": 0.222
+            "wielkosc": 0.239
           }
         ],
         "dominacje": [
@@ -4927,7 +5012,7 @@
           {
             "kultura": "polska",
             "kult": "bazyliszek-warszawski",
-            "wielkosc": 0.222
+            "wielkosc": 0.239
           },
           {
             "kultura": "man",
@@ -5007,7 +5092,7 @@
           {
             "kultura": "polska",
             "kult": "morowa-panna",
-            "wielkosc": 0.389
+            "wielkosc": 0.407
           },
           {
             "kultura": "egipt",
@@ -5018,6 +5103,11 @@
             "kultura": "grecja",
             "kult": "nessos",
             "wielkosc": 0.387
+          },
+          {
+            "kultura": "mongolia",
+            "kult": "olgoj-chorchoj",
+            "wielkosc": 0.17
           },
           {
             "kultura": "grecja",
@@ -5032,7 +5122,7 @@
           {
             "kultura": "chiny",
             "kult": "qilin-z-lu",
-            "wielkosc": 0.187
+            "wielkosc": 0.204
           },
           {
             "kultura": "szkocja-polnocna",
@@ -5062,7 +5152,7 @@
           {
             "kultura": "ngarrindjeri",
             "kult": "yara-ma-yha-who",
-            "wielkosc": 0.222
+            "wielkosc": 0.239
           }
         ],
         "paliwo": {
@@ -5077,7 +5167,7 @@
           "sfinks-teby": 26,
           "talos-kreta": 22,
           "pandora": 19,
-          "morowa-panna": 17,
+          "morowa-panna": 19,
           "protostates": 14,
           "knecht-z-koptos": 15,
           "syama-i-sarvara": 15,
@@ -5369,7 +5459,7 @@
           },
           {
             "slug": "bazyliszek-warszawski",
-            "wielkosc": 0.222
+            "wielkosc": 0.239
           },
           {
             "slug": "ben-varrey",
@@ -5433,7 +5523,7 @@
           },
           {
             "slug": "morowa-panna",
-            "wielkosc": 0.389
+            "wielkosc": 0.407
           },
           {
             "slug": "neith-z-sais",
@@ -5442,6 +5532,10 @@
           {
             "slug": "nessos",
             "wielkosc": 0.387
+          },
+          {
+            "slug": "olgoj-chorchoj",
+            "wielkosc": 0.17
           },
           {
             "slug": "pandora",
@@ -5453,7 +5547,7 @@
           },
           {
             "slug": "qilin-z-lu",
-            "wielkosc": 0.187
+            "wielkosc": 0.204
           },
           {
             "slug": "selkie-sule-skerry",
@@ -5477,7 +5571,7 @@
           },
           {
             "slug": "yara-ma-yha-who",
-            "wielkosc": 0.222
+            "wielkosc": 0.239
           }
         ],
         "dominacje": [
@@ -5499,7 +5593,7 @@
           {
             "kultura": "polska",
             "kult": "bazyliszek-warszawski",
-            "wielkosc": 0.222
+            "wielkosc": 0.239
           },
           {
             "kultura": "man",
@@ -5579,7 +5673,7 @@
           {
             "kultura": "polska",
             "kult": "morowa-panna",
-            "wielkosc": 0.389
+            "wielkosc": 0.407
           },
           {
             "kultura": "egipt",
@@ -5590,6 +5684,11 @@
             "kultura": "grecja",
             "kult": "nessos",
             "wielkosc": 0.387
+          },
+          {
+            "kultura": "mongolia",
+            "kult": "olgoj-chorchoj",
+            "wielkosc": 0.17
           },
           {
             "kultura": "grecja",
@@ -5604,7 +5703,7 @@
           {
             "kultura": "chiny",
             "kult": "qilin-z-lu",
-            "wielkosc": 0.187
+            "wielkosc": 0.204
           },
           {
             "kultura": "szkocja-polnocna",
@@ -5634,7 +5733,7 @@
           {
             "kultura": "ngarrindjeri",
             "kult": "yara-ma-yha-who",
-            "wielkosc": 0.222
+            "wielkosc": 0.239
           }
         ],
         "paliwo": {
@@ -5649,7 +5748,7 @@
           "sfinks-teby": 26,
           "talos-kreta": 22,
           "pandora": 19,
-          "morowa-panna": 17,
+          "morowa-panna": 19,
           "protostates": 14,
           "knecht-z-koptos": 15,
           "syama-i-sarvara": 15,
@@ -5923,7 +6022,7 @@
           },
           {
             "slug": "bazyliszek-warszawski",
-            "wielkosc": 0.222
+            "wielkosc": 0.239
           },
           {
             "slug": "ben-varrey",
@@ -5987,7 +6086,7 @@
           },
           {
             "slug": "morowa-panna",
-            "wielkosc": 0.389
+            "wielkosc": 0.407
           },
           {
             "slug": "neith-z-sais",
@@ -5996,6 +6095,10 @@
           {
             "slug": "nessos",
             "wielkosc": 0.393
+          },
+          {
+            "slug": "olgoj-chorchoj",
+            "wielkosc": 0.17
           },
           {
             "slug": "pandora",
@@ -6007,7 +6110,7 @@
           },
           {
             "slug": "qilin-z-lu",
-            "wielkosc": 0.187
+            "wielkosc": 0.204
           },
           {
             "slug": "selkie-sule-skerry",
@@ -6031,7 +6134,7 @@
           },
           {
             "slug": "yara-ma-yha-who",
-            "wielkosc": 0.222
+            "wielkosc": 0.239
           }
         ],
         "dominacje": [
@@ -6053,7 +6156,7 @@
           {
             "kultura": "polska",
             "kult": "bazyliszek-warszawski",
-            "wielkosc": 0.222
+            "wielkosc": 0.239
           },
           {
             "kultura": "man",
@@ -6133,7 +6236,7 @@
           {
             "kultura": "polska",
             "kult": "morowa-panna",
-            "wielkosc": 0.389
+            "wielkosc": 0.407
           },
           {
             "kultura": "egipt",
@@ -6144,6 +6247,11 @@
             "kultura": "grecja",
             "kult": "nessos",
             "wielkosc": 0.393
+          },
+          {
+            "kultura": "mongolia",
+            "kult": "olgoj-chorchoj",
+            "wielkosc": 0.17
           },
           {
             "kultura": "grecja",
@@ -6158,7 +6266,7 @@
           {
             "kultura": "chiny",
             "kult": "qilin-z-lu",
-            "wielkosc": 0.187
+            "wielkosc": 0.204
           },
           {
             "kultura": "szkocja-polnocna",
@@ -6188,7 +6296,7 @@
           {
             "kultura": "ngarrindjeri",
             "kult": "yara-ma-yha-who",
-            "wielkosc": 0.222
+            "wielkosc": 0.239
           }
         ],
         "paliwo": {
@@ -6203,7 +6311,7 @@
           "sfinks-teby": 26,
           "talos-kreta": 22,
           "pandora": 20,
-          "morowa-panna": 17,
+          "morowa-panna": 19,
           "protostates": 14,
           "knecht-z-koptos": 15,
           "syama-i-sarvara": 15,
@@ -6489,7 +6597,7 @@
           },
           {
             "slug": "bazyliszek-warszawski",
-            "wielkosc": 0.222
+            "wielkosc": 0.239
           },
           {
             "slug": "ben-varrey",
@@ -6553,7 +6661,7 @@
           },
           {
             "slug": "morowa-panna",
-            "wielkosc": 0.389
+            "wielkosc": 0.407
           },
           {
             "slug": "neith-z-sais",
@@ -6562,6 +6670,10 @@
           {
             "slug": "nessos",
             "wielkosc": 0.393
+          },
+          {
+            "slug": "olgoj-chorchoj",
+            "wielkosc": 0.17
           },
           {
             "slug": "pandora",
@@ -6573,7 +6685,7 @@
           },
           {
             "slug": "qilin-z-lu",
-            "wielkosc": 0.187
+            "wielkosc": 0.204
           },
           {
             "slug": "selkie-sule-skerry",
@@ -6597,7 +6709,7 @@
           },
           {
             "slug": "yara-ma-yha-who",
-            "wielkosc": 0.222
+            "wielkosc": 0.239
           }
         ],
         "dominacje": [
@@ -6619,7 +6731,7 @@
           {
             "kultura": "polska",
             "kult": "bazyliszek-warszawski",
-            "wielkosc": 0.222
+            "wielkosc": 0.239
           },
           {
             "kultura": "man",
@@ -6699,7 +6811,7 @@
           {
             "kultura": "polska",
             "kult": "morowa-panna",
-            "wielkosc": 0.389
+            "wielkosc": 0.407
           },
           {
             "kultura": "egipt",
@@ -6710,6 +6822,11 @@
             "kultura": "grecja",
             "kult": "nessos",
             "wielkosc": 0.393
+          },
+          {
+            "kultura": "mongolia",
+            "kult": "olgoj-chorchoj",
+            "wielkosc": 0.17
           },
           {
             "kultura": "grecja",
@@ -6724,7 +6841,7 @@
           {
             "kultura": "chiny",
             "kult": "qilin-z-lu",
-            "wielkosc": 0.187
+            "wielkosc": 0.204
           },
           {
             "kultura": "szkocja-polnocna",
@@ -6754,7 +6871,7 @@
           {
             "kultura": "ngarrindjeri",
             "kult": "yara-ma-yha-who",
-            "wielkosc": 0.222
+            "wielkosc": 0.239
           }
         ],
         "paliwo": {
@@ -6769,7 +6886,7 @@
           "sfinks-teby": 26,
           "talos-kreta": 22,
           "pandora": 20,
-          "morowa-panna": 17,
+          "morowa-panna": 19,
           "protostates": 15,
           "knecht-z-koptos": 15,
           "syama-i-sarvara": 15,
@@ -7013,25 +7130,25 @@
           "slug": "qilin-z-lu",
           "nazwa": "Qilin — zwierzę, które przychodzi nie w porę",
           "rola": "Ten, któremu przyklejono cudzy kształt",
-          "pasywne": 8,
-          "saldoPrzed": 8,
-          "kosztUdzialu": 2,
-          "kosztKlucza": 0,
-          "boost": 0,
-          "zwrot": 5,
-          "saldoPo": 11
-        },
-        {
-          "slug": "yara-ma-yha-who",
-          "nazwa": "Yara ma tha who — czerwony człowieczek z figowca",
-          "rola": "Ten, którego zapis wyszedł pod obcym nazwiskiem",
           "pasywne": 10,
           "saldoPrzed": 10,
           "kosztUdzialu": 2,
           "kosztKlucza": 0,
           "boost": 0,
+          "zwrot": 5,
+          "saldoPo": 13
+        },
+        {
+          "slug": "yara-ma-yha-who",
+          "nazwa": "Yara ma tha who — czerwony człowieczek z figowca",
+          "rola": "Ten, którego zapis wyszedł pod obcym nazwiskiem",
+          "pasywne": 12,
+          "saldoPrzed": 12,
+          "kosztUdzialu": 2,
+          "kosztKlucza": 0,
+          "boost": 0,
           "zwrot": 3,
-          "saldoPo": 11
+          "saldoPo": 13
         },
         {
           "slug": "knecht-z-koptos",
@@ -7066,7 +7183,7 @@
           },
           {
             "slug": "bazyliszek-warszawski",
-            "wielkosc": 0.222
+            "wielkosc": 0.239
           },
           {
             "slug": "ben-varrey",
@@ -7130,7 +7247,7 @@
           },
           {
             "slug": "morowa-panna",
-            "wielkosc": 0.389
+            "wielkosc": 0.407
           },
           {
             "slug": "neith-z-sais",
@@ -7139,6 +7256,10 @@
           {
             "slug": "nessos",
             "wielkosc": 0.393
+          },
+          {
+            "slug": "olgoj-chorchoj",
+            "wielkosc": 0.17
           },
           {
             "slug": "pandora",
@@ -7150,7 +7271,7 @@
           },
           {
             "slug": "qilin-z-lu",
-            "wielkosc": 0.207
+            "wielkosc": 0.224
           },
           {
             "slug": "selkie-sule-skerry",
@@ -7174,7 +7295,7 @@
           },
           {
             "slug": "yara-ma-yha-who",
-            "wielkosc": 0.234
+            "wielkosc": 0.251
           }
         ],
         "dominacje": [
@@ -7196,7 +7317,7 @@
           {
             "kultura": "polska",
             "kult": "bazyliszek-warszawski",
-            "wielkosc": 0.222
+            "wielkosc": 0.239
           },
           {
             "kultura": "man",
@@ -7276,7 +7397,7 @@
           {
             "kultura": "polska",
             "kult": "morowa-panna",
-            "wielkosc": 0.389
+            "wielkosc": 0.407
           },
           {
             "kultura": "egipt",
@@ -7287,6 +7408,11 @@
             "kultura": "grecja",
             "kult": "nessos",
             "wielkosc": 0.393
+          },
+          {
+            "kultura": "mongolia",
+            "kult": "olgoj-chorchoj",
+            "wielkosc": 0.17
           },
           {
             "kultura": "grecja",
@@ -7301,7 +7427,7 @@
           {
             "kultura": "chiny",
             "kult": "qilin-z-lu",
-            "wielkosc": 0.207
+            "wielkosc": 0.224
           },
           {
             "kultura": "szkocja-polnocna",
@@ -7331,7 +7457,7 @@
           {
             "kultura": "ngarrindjeri",
             "kult": "yara-ma-yha-who",
-            "wielkosc": 0.234
+            "wielkosc": 0.251
           }
         ],
         "paliwo": {
@@ -7346,7 +7472,7 @@
           "sfinks-teby": 26,
           "talos-kreta": 22,
           "pandora": 20,
-          "morowa-panna": 17,
+          "morowa-panna": 19,
           "protostates": 15,
           "knecht-z-koptos": 16,
           "syama-i-sarvara": 15,
@@ -7357,8 +7483,8 @@
           "iktomi": 14,
           "nessos": 21,
           "boto-encantado": 14,
-          "qilin-z-lu": 11,
-          "yara-ma-yha-who": 11
+          "qilin-z-lu": 13,
+          "yara-ma-yha-who": 13
         }
       },
       "konsekwencje": {
@@ -7389,15 +7515,15 @@
         "zasieg": [
           {
             "slug": "qilin-z-lu",
-            "przed": 0.187,
-            "po": 0.207,
+            "przed": 0.204,
+            "po": 0.224,
             "delta": 0.02,
             "opis": "Pierwsze wejście bytu z Chin do Tomu I; razem z nim wchodzi mechanizm, w którym zwierzę bywa dowodem w cudzym sporze o władzę."
           },
           {
             "slug": "yara-ma-yha-who",
-            "przed": 0.222,
-            "po": 0.234,
+            "przed": 0.239,
+            "po": 0.251,
             "delta": 0.012,
             "opis": "Sprawa autorstwa przestaje być przypisem do karty i staje się wątkiem Kroniki."
           },
@@ -7413,15 +7539,15 @@
           {
             "kultura": "chiny",
             "kult": "qilin-z-lu",
-            "przed": 0.187,
-            "po": 0.207,
+            "przed": 0.204,
+            "po": 0.224,
             "delta": 0.02
           },
           {
             "kultura": "ngarrindjeri",
             "kult": "yara-ma-yha-who",
-            "przed": 0.222,
-            "po": 0.234,
+            "przed": 0.239,
+            "po": 0.251,
             "delta": 0.012
           },
           {
@@ -7602,7 +7728,7 @@
       },
       {
         "slug": "bazyliszek-warszawski",
-        "wielkosc": 0.222
+        "wielkosc": 0.239
       },
       {
         "slug": "ben-varrey",
@@ -7666,7 +7792,7 @@
       },
       {
         "slug": "morowa-panna",
-        "wielkosc": 0.389
+        "wielkosc": 0.407
       },
       {
         "slug": "neith-z-sais",
@@ -7675,6 +7801,10 @@
       {
         "slug": "nessos",
         "wielkosc": 0.393
+      },
+      {
+        "slug": "olgoj-chorchoj",
+        "wielkosc": 0.17
       },
       {
         "slug": "pandora",
@@ -7686,7 +7816,7 @@
       },
       {
         "slug": "qilin-z-lu",
-        "wielkosc": 0.207
+        "wielkosc": 0.224
       },
       {
         "slug": "selkie-sule-skerry",
@@ -7710,7 +7840,7 @@
       },
       {
         "slug": "yara-ma-yha-who",
-        "wielkosc": 0.234
+        "wielkosc": 0.251
       }
     ],
     "dominacje": [
@@ -7732,7 +7862,7 @@
       {
         "kultura": "polska",
         "kult": "bazyliszek-warszawski",
-        "wielkosc": 0.222
+        "wielkosc": 0.239
       },
       {
         "kultura": "man",
@@ -7812,7 +7942,7 @@
       {
         "kultura": "polska",
         "kult": "morowa-panna",
-        "wielkosc": 0.389
+        "wielkosc": 0.407
       },
       {
         "kultura": "egipt",
@@ -7823,6 +7953,11 @@
         "kultura": "grecja",
         "kult": "nessos",
         "wielkosc": 0.393
+      },
+      {
+        "kultura": "mongolia",
+        "kult": "olgoj-chorchoj",
+        "wielkosc": 0.17
       },
       {
         "kultura": "grecja",
@@ -7837,7 +7972,7 @@
       {
         "kultura": "chiny",
         "kult": "qilin-z-lu",
-        "wielkosc": 0.207
+        "wielkosc": 0.224
       },
       {
         "kultura": "szkocja-polnocna",
@@ -7867,7 +8002,7 @@
       {
         "kultura": "ngarrindjeri",
         "kult": "yara-ma-yha-who",
-        "wielkosc": 0.234
+        "wielkosc": 0.251
       }
     ],
     "paliwo": {
@@ -7882,7 +8017,7 @@
       "sfinks-teby": 26,
       "talos-kreta": 22,
       "pandora": 20,
-      "morowa-panna": 17,
+      "morowa-panna": 19,
       "protostates": 15,
       "knecht-z-koptos": 16,
       "syama-i-sarvara": 15,
@@ -7893,8 +8028,8 @@
       "iktomi": 14,
       "nessos": 21,
       "boto-encantado": 14,
-      "qilin-z-lu": 11,
-      "yara-ma-yha-who": 11
+      "qilin-z-lu": 13,
+      "yara-ma-yha-who": 13
     }
   },
   "walidacja": true,

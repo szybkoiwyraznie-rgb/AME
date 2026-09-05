@@ -117,6 +117,11 @@
       "opis": "Folklor Wyspy Man (tradycja celtycko-manx, nazwy z języka manx)"
     },
     {
+      "tag": "mongolia",
+      "kategoria": "kultura",
+      "opis": "Tradycja mongolska — przekaz pasterski i pustynny Gobi oraz zapisy podróżników z dwudziestego wieku."
+    },
+    {
       "tag": "ngarrindjeri",
       "kategoria": "kultura",
       "opis": "Ngarrindjeri i sąsiedzi znad dolnej Murray (południowo-wschodnia Australia) — opowieści w zapisie Davida Unaipona z lat 1924–1925."
@@ -135,116 +140,6 @@
       "tag": "szkocja-polnocna",
       "kategoria": "kultura",
       "opis": "Folklor wyspiarski Orkadów i Shetlandu (szkocko-nordycki)"
-    },
-    {
-      "tag": "automat",
-      "kategoria": "typ",
-      "opis": "Żywy automat: istota odlana lub zbudowana, poruszana płynem/duchem, nie zrodzona"
-    },
-    {
-      "tag": "bodhisattwa",
-      "kategoria": "typ",
-      "opis": "Istota oświecona, która zostaje po wyzwoleniu, by ratować cierpiących"
-    },
-    {
-      "tag": "bog-ognia",
-      "kategoria": "typ",
-      "opis": "Bóg ognia: palenisko, ofiara, słońce i błyskawica w jednym bycie"
-    },
-    {
-      "tag": "bogini-tkaczka",
-      "kategoria": "typ",
-      "opis": "Bogini tkająca byt albo losy; stwórczyni i opiekunka płótna"
-    },
-    {
-      "tag": "czarownik",
-      "kategoria": "typ",
-      "opis": "Czarownik: człowiek, nie potwór — byt, którego moc bierze się z rzemiosła i z tego, że sąsiedzi w nie wierzą."
-    },
-    {
-      "tag": "duch-przodkow",
-      "kategoria": "typ",
-      "opis": "Przodek przywoływany przez wspólnotę i wracający w rytuale"
-    },
-    {
-      "tag": "encantado",
-      "kategoria": "typ",
-      "opis": "Encantado: mieszkaniec podwodnej krainy, który przybiera ludzką postać na jedną noc i musi wrócić do wody przed świtem."
-    },
-    {
-      "tag": "fantom",
-      "kategoria": "typ",
-      "opis": "Byt zbudowany z pozoru zmysłowego: trwa, dopóki trwa uwaga, którą się karmi"
-    },
-    {
-      "tag": "heros-burzy",
-      "kategoria": "typ",
-      "opis": "Półboski obrońca mierzący się z demonem pogody"
-    },
-    {
-      "tag": "istota-kamienna",
-      "kategoria": "typ",
-      "opis": "Byt uwięziony w rzeźbie lub kamieniu, trwały i nieruchomy"
-    },
-    {
-      "tag": "kentaur",
-      "kategoria": "typ",
-      "opis": "Gatunek o dwóch połowach: człowiek z przodu, koń z tyłu, obie gotowe do ruchu"
-    },
-    {
-      "tag": "krol-wezy",
-      "kategoria": "typ",
-      "opis": "Gadzi władca z koroną na łbie: zabija wzrokiem i jadem, panuje nad jednym miejscem"
-    },
-    {
-      "tag": "olbrzym",
-      "kategoria": "typ",
-      "opis": "Byt o skali oblężniczej, z bronią wymagającą obsługi"
-    },
-    {
-      "tag": "powracajacy-zmarly",
-      "kategoria": "typ",
-      "opis": "Zmarły, który wraca w ciele: nie duch i nie widmo, lecz nieboszczyk zajmujący miejsce żywych."
-    },
-    {
-      "tag": "pozeracz",
-      "kategoria": "typ",
-      "opis": "Byt, który połyka człowieka w całości i zwraca go żywego, ale odmienionego — groza polega na powrocie, nie na śmierci."
-    },
-    {
-      "tag": "selkie",
-      "kategoria": "typ",
-      "opis": "Istota zmieniająca formę przez skórę, pomiędzy wodą a lądem"
-    },
-    {
-      "tag": "sfinks",
-      "kategoria": "typ",
-      "opis": "Stwór złożony: ciało lwa, głowa kobiety, skrzydła — strażnik przejścia przez zagadkę"
-    },
-    {
-      "tag": "sniacy-zastep",
-      "kategoria": "typ",
-      "opis": "Zbiorowy bohater uśpiony w krajobrazie, budzony przez znak"
-    },
-    {
-      "tag": "syrena",
-      "kategoria": "typ",
-      "opis": "Pół kobieta, pół ryba: morska powabnica i przewodniczka wód"
-    },
-    {
-      "tag": "trickster",
-      "kategoria": "typ",
-      "opis": "Oszust: byt, który rozstrzyga sprawy podstępem i cudzą ciekawością zamiast siłą, i zwykle przegrywa własną próżnością."
-    },
-    {
-      "tag": "wilkolak",
-      "kategoria": "typ",
-      "opis": "Człowiek lub byt przybierający postać wilka; loup-garou i pokrewne tradycje przemiany"
-    },
-    {
-      "tag": "zwiastun",
-      "kategoria": "typ",
-      "opis": "Byt, którego jedyną treścią jest pojawienie się: nie walczy i nie strzeże, tylko oznajmia — a jego nieobecność też jest wiadomością."
     },
     {
       "tag": "burza",
@@ -375,6 +270,121 @@
       "tag": "skrzydlata-postac",
       "kategoria": "postac",
       "opis": "Człowiecze ciało ze skrzydłami lub innymi znakami pochodzenia"
+    },
+    {
+      "tag": "automat",
+      "kategoria": "typ",
+      "opis": "Żywy automat: istota odlana lub zbudowana, poruszana płynem/duchem, nie zrodzona"
+    },
+    {
+      "tag": "bodhisattwa",
+      "kategoria": "typ",
+      "opis": "Istota oświecona, która zostaje po wyzwoleniu, by ratować cierpiących"
+    },
+    {
+      "tag": "bog-ognia",
+      "kategoria": "typ",
+      "opis": "Bóg ognia: palenisko, ofiara, słońce i błyskawica w jednym bycie"
+    },
+    {
+      "tag": "bogini-tkaczka",
+      "kategoria": "typ",
+      "opis": "Bogini tkająca byt albo losy; stwórczyni i opiekunka płótna"
+    },
+    {
+      "tag": "czarownik",
+      "kategoria": "typ",
+      "opis": "Czarownik: człowiek, nie potwór — byt, którego moc bierze się z rzemiosła i z tego, że sąsiedzi w nie wierzą."
+    },
+    {
+      "tag": "duch-przodkow",
+      "kategoria": "typ",
+      "opis": "Przodek przywoływany przez wspólnotę i wracający w rytuale"
+    },
+    {
+      "tag": "encantado",
+      "kategoria": "typ",
+      "opis": "Encantado: mieszkaniec podwodnej krainy, który przybiera ludzką postać na jedną noc i musi wrócić do wody przed świtem."
+    },
+    {
+      "tag": "fantom",
+      "kategoria": "typ",
+      "opis": "Byt zbudowany z pozoru zmysłowego: trwa, dopóki trwa uwaga, którą się karmi"
+    },
+    {
+      "tag": "heros-burzy",
+      "kategoria": "typ",
+      "opis": "Półboski obrońca mierzący się z demonem pogody"
+    },
+    {
+      "tag": "istota-kamienna",
+      "kategoria": "typ",
+      "opis": "Byt uwięziony w rzeźbie lub kamieniu, trwały i nieruchomy"
+    },
+    {
+      "tag": "kentaur",
+      "kategoria": "typ",
+      "opis": "Gatunek o dwóch połowach: człowiek z przodu, koń z tyłu, obie gotowe do ruchu"
+    },
+    {
+      "tag": "krol-wezy",
+      "kategoria": "typ",
+      "opis": "Gadzi władca z koroną na łbie: zabija wzrokiem i jadem, panuje nad jednym miejscem"
+    },
+    {
+      "tag": "olbrzym",
+      "kategoria": "typ",
+      "opis": "Byt o skali oblężniczej, z bronią wymagającą obsługi"
+    },
+    {
+      "tag": "powracajacy-zmarly",
+      "kategoria": "typ",
+      "opis": "Zmarły, który wraca w ciele: nie duch i nie widmo, lecz nieboszczyk zajmujący miejsce żywych."
+    },
+    {
+      "tag": "pozeracz",
+      "kategoria": "typ",
+      "opis": "Byt, który połyka człowieka w całości i zwraca go żywego, ale odmienionego — groza polega na powrocie, nie na śmierci."
+    },
+    {
+      "tag": "robak-piaskowy",
+      "kategoria": "typ",
+      "opis": "Bezgłowe, ryjące stworzenie pustynne znane wyłącznie z relacji świadków, zabijające bez zwarcia."
+    },
+    {
+      "tag": "selkie",
+      "kategoria": "typ",
+      "opis": "Istota zmieniająca formę przez skórę, pomiędzy wodą a lądem"
+    },
+    {
+      "tag": "sfinks",
+      "kategoria": "typ",
+      "opis": "Stwór złożony: ciało lwa, głowa kobiety, skrzydła — strażnik przejścia przez zagadkę"
+    },
+    {
+      "tag": "sniacy-zastep",
+      "kategoria": "typ",
+      "opis": "Zbiorowy bohater uśpiony w krajobrazie, budzony przez znak"
+    },
+    {
+      "tag": "syrena",
+      "kategoria": "typ",
+      "opis": "Pół kobieta, pół ryba: morska powabnica i przewodniczka wód"
+    },
+    {
+      "tag": "trickster",
+      "kategoria": "typ",
+      "opis": "Oszust: byt, który rozstrzyga sprawy podstępem i cudzą ciekawością zamiast siłą, i zwykle przegrywa własną próżnością."
+    },
+    {
+      "tag": "wilkolak",
+      "kategoria": "typ",
+      "opis": "Człowiek lub byt przybierający postać wilka; loup-garou i pokrewne tradycje przemiany"
+    },
+    {
+      "tag": "zwiastun",
+      "kategoria": "typ",
+      "opis": "Byt, którego jedyną treścią jest pojawienie się: nie walczy i nie strzeże, tylko oznajmia — a jego nieobecność też jest wiadomością."
     }
   ]
 }
