@@ -18,16 +18,16 @@
     "lat": 38.7967,
     "lon": 22.5367
   },
-  "pochodzenie_i_kultura": "Mitologia i podanie greckie — etos falangi: termin „protostates” (πρωτοστάτης, „ten, który stoi pierwszy”, od πρῶτος i ἵστημι) odnotowany u Tukidydesa i Ksenofonta jako żołnierz pierwszej linii; Herodot (7.104) wkłada w usta Demaratosa słowa, że Lacedemończycy są wolni, lecz „panem ich jest prawo, którego boją się bardziej niż twoi poddani boją się ciebie”; Plutarch („Wypowiedzi kobiet spartańskich”) dodaje matkę, która wręczając synowi tarczę, mówi: „albo z tym, albo na tym”. Jedna tradycja, jeden żołnierz, jeden wąwóz.",
+  "pochodzenie_i_kultura": "Mitologia i podanie greckie — etos falangi: termin „protostates” (πρωτοστάτης, „ten, który stoi pierwszy”, od πρῶτος i ἵστημι) odnotowany u Tukidydesa i Ksenofonta jako żołnierz pierwszej linii; Herodot (7.104) wkłada w usta Demaratosa słowa, że Lacedemończycy są wolni, lecz „panem ich jest prawo, którego boją się bardziej niż twoi poddani boją się ciebie”; Plutarch („Wypowiedzi kobiet spartańskich”) dodaje matkę, która wręczając synowi tarczę, mówi: „albo z tym, albo na tym”. Jedna tradycja, jeden żołnierz, jeden wąwóz. Grecy znali też fantom żołnierza jako zjawisko osobne, opisane bez ozdobników. Herodot (6.117) notuje Ateńczyka Epizelosa, syna Kufagorasa, który pod Maratonem stracił wzrok bez rany: stanął przed nim wielki hoplita, którego broda zasłaniała całą tarczę, minął go i zabił człowieka stojącego obok. Pauzaniasz (1.32.4) dodaje, że na polu maratońskim każdej nocy słychać rżenie koni i odgłos walki, ale kto przychodzi tam umyślnie, by to zobaczyć, nie ma z tego żadnego pożytku; daimones nie gniewają się tylko na tego, kto trafi na nie przypadkiem. Te dwa zapisy są dla kartoteki ważniejsze niż cała retoryka o męstwie: pokazują, że pierwszy szereg nie znika po bitwie, tylko zostaje na miejscu jako dźwięk i sylwetka, a zobaczyć go można wyłącznie mimochodem.",
   "wizualizacja": {
     "prompt": "Style: A wide-angle full-body cinematic photograph. The central objects/persons of the photo are visible from head to toe, standing centrally in the frame. No parts of the body are cropped.\n\nA tall hoplite in a Corinthian bronze helmet with a black horsehair crest, red tunic and bronze greaves, standing alone in a narrow mountain pass in grey dawn mist; he holds a round shield low and a long spear at rest, his face hidden by the helmet, a long shadow stretching along the cliff wall; behind him the pass narrows toward the sea, broken shields and a fallen banner lying on wet stones, muted bronze and rust tones against pale fog, cold still air.\n\nCaptured with a 35mm anamorphic lens at f/1.8. Shallow depth of field with a heavy, creamy bokeh background. Environmental portraiture. Dramatic cinematic lighting, sharp focus on the character, hyper-realistic textures of clothing and skin. Shot on 70mm film stock, ultra-wide 21:9 aspect ratio. --ar 21:9",
     "obraz": "assets/wizualizacje/protostates.jpg"
   },
   "natura": {
-    "wyglad_i_aura": "Z daleka — sylwetka w pełnym rynsztunku: hełm koryncki z czarną kitą z końskiego włosia, szkarłatny chiton, nagolenniki z brązu, okrągła tarcza z literą i długa włócznia. Z bliska widać, że nie oddycha: pod hełmem pusto albo zbyt ciemno, a na kamieniach nie zostawia śladów. Pojawia się we mgle o świcie, przy wąskim przejściu, gdy powietrze pachnie oliwą i zimnym metalem; stoi tam, gdzie inni już dawno by odeszli.",
-    "charakter_i_motywacje": "Nie rozmawia, nie grozi, nie żąda haraczu. On pilnuje pierwszej linii: gdy zbliża się wróg, robi jeden krok naprzód i zadaje pierwsze uderzenie — zanim ktokolwiek zdąży się zasłonić. Nie cofa się, bo cofnięcie oznaczałoby zdradę tarczy, a jego tarcza jest „dla wspólnego dobra”: jak mówi Demaratos, hełm nosi się dla siebie, a tarczę dla wszystkich. Motywacją fantomu nie jest zwycięstwo, lecz to, by nikt nie przeszedł za jego plecami. Gdy Dienekesowi mówią, że Persowie zasłonią słońce strzałami, odpowiada, że będą walczyć w cieniu — tak i on nie liczy zagrożenia, tylko front: dopóki stoi pierwszy, przejście jest zamknięte.",
+    "wyglad_i_aura": "Z daleka — sylwetka w pełnym rynsztunku: hełm koryncki z czarną kitą z końskiego włosia, szkarłatny chiton, nagolenniki z brązu, okrągła tarcza z literą i długa włócznia. Z bliska widać, że nie oddycha: pod hełmem pusto albo zbyt ciemno, a na kamieniach nie zostawia śladów. Pojawia się we mgle o świcie, przy wąskim przejściu, gdy powietrze pachnie oliwą i zimnym metalem; stoi tam, gdzie inni już dawno by odeszli. Świadkowie z najstarszej relacji nie widzą hełmu ani herbu, lecz skalę i brodę: postać jest za duża na człowieka, a zarost zakrywa jej tarczę. Kto ją zobaczy z bliska, częściej traci wzrok niż życie.",
+    "charakter_i_motywacje": "Nie rozmawia, nie grozi, nie żąda haraczu. On pilnuje pierwszej linii: gdy zbliża się wróg, robi jeden krok naprzód i zadaje pierwsze uderzenie — zanim ktokolwiek zdąży się zasłonić. Nie cofa się, bo cofnięcie oznaczałoby zdradę tarczy, a jego tarcza jest „dla wspólnego dobra”: jak mówi Demaratos, hełm nosi się dla siebie, a tarczę dla wszystkich. Motywacją fantomu nie jest zwycięstwo, lecz to, by nikt nie przeszedł za jego plecami. Gdy Dienekesowi mówią, że Persowie zasłonią słońce strzałami, odpowiada, że będą walczyć w cieniu — tak i on nie liczy zagrożenia, tylko front: dopóki stoi pierwszy, przejście jest zamknięte. Wobec ludzi jest obojętny w szczególny sposób: relacja o Epizelosie mówi, że wielka postać przeszła obok niego i zabiła sąsiada. Fantom pierwszego szeregu nie wybiera przeciwnika osobiście — trzyma linię, a kto stoi na tej linii, ten stoi.",
     "zdolnosci": "Uderza zawsze pierwszy — zanim przeciwnik dokończy zamach; po pierwszym trafieniu rośnie, bo z każdym opowiedzianym czynem przybywa mu imienia i wzrostu. Nie śpi, nie je, nie męczy się; stoi w tym samym miejscu od stuleci, a gdy przejście otwiera się ku morzu, jego cień staje się dłuższy, jakby za nim dochodziły następne szeregi.",
-    "slabosci_i_metody_pokonania": "Nie zwyciężysz go siłą, bo pierwsze cięcie zawsze należy do niego. Jego trwanie opiera się na dwóch rzeczach: na tarczy, którą zasłania się z przodu i którą nosi dla wszystkich, oraz na imieniu, które karmi go pamięcią wspólnoty. Kto odwróci go tyłem do wroga — zabierze mu front — i kto przestanie wymawiać jego imię, ten go rozwiąże: fantom pierwszego szeregu trwa tylko, dopóki ktoś pamięta, że stał pierwszy. Najskuteczniejsza jest więc pieśń o kimś innym: zapomniany protostates gaśnie o świcie.",
+    "slabosci_i_metody_pokonania": "Nie zwyciężysz go siłą, bo pierwsze cięcie zawsze należy do niego. Jego trwanie opiera się na dwóch rzeczach: na tarczy, którą zasłania się z przodu i którą nosi dla wszystkich, oraz na imieniu, które karmi go pamięcią wspólnoty. Kto odwróci go tyłem do wroga — zabierze mu front — i kto przestanie wymawiać jego imię, ten go rozwiąże: fantom pierwszego szeregu trwa tylko, dopóki ktoś pamięta, że stał pierwszy. Najskuteczniejsza jest więc pieśń o kimś innym: zapomniany protostates gaśnie o świcie. Jest jeszcze reguła spojrzenia, którą podaje Pauzaniasz: na tym, kto przychodzi na pobojowisko specjalnie po to, by zobaczyć fantomy, nigdy nie kończy się to dobrze, natomiast przypadkowy świadek uchodzi cało. Kartoteka czyta to jako instrukcję: protostatesa nie należy szukać ani wywoływać; wolno go co najwyżej spotkać.",
     "preferencje": "Lubi: wąskie przejścia, mgłę o świcie, ciszę przed bitwą, tarcze z przodu i imię w pieśniach. Nie lubi: pleców, ucieczki, pochwał bez krwi, zimy i mórz, które otwierają przejście za jego plecami."
   },
   "dokumentacja": [
@@ -55,6 +55,21 @@
       "typ": "tekst źródłowy",
       "pozycja": "Plutarch, „Moralia” (Loeb Classical Library, t. III, 1931): „Wypowiedzi kobiet spartańskich” — „Another, as she handed her son his shield, exhorted him, saying: ‘Either this or upon this.’” oraz odpowiedź Demaratosa o hełmie i tarczy: „Because the latter they put on for their own protection, but the shield for the common good of all”",
       "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Plutarch/Moralia/Sayings_of_Spartan_Women*.html"
+    },
+    {
+      "typ": "tekst źródłowy",
+      "pozycja": "Herodot, „Dzieje” VI, 117 (przeł. G. Rawlinson, Internet Classics Archive) — po bitwie pod Maratonem Ateńczyk Epizelos, syn Kufagorasa, traci wzrok bez zadanej rany: opowiadał, że stanął przed nim ogromny hoplita, którego broda zakrywała całą tarczę, po czym zjawa minęła go i zabiła stojącego obok żołnierza; ślepota została mu do końca życia",
+      "url": "https://classics.mit.edu/Herodotus/history.6.vi.html"
+    },
+    {
+      "typ": "tekst źródłowy",
+      "pozycja": "Pauzaniasz, „Wędrówka po Helladzie” I, 32, 4 (przeł. W. H. S. Jones, Theoi Classical Texts Library) — na polu maratońskim co noc słychać rżenie koni i odgłosy walczących ludzi; kto wybiera się tam umyślnie, żeby to zobaczyć, nigdy nie wychodzi na tym dobrze, a duchy nie gniewają się jedynie na przypadkowego świadka",
+      "url": "https://www.theoi.com/Text/Pausanias1C.html"
+    },
+    {
+      "typ": "artykuł naukowy",
+      "pozycja": "„The Case of Epizelos (Herodotus 6.117) Revisited”, Grazer Beiträge / Brepols — analiza oślepienia Epizelosa na tle innych relacji o boskich i półboskich interwencjach na polu bitwy; autor pokazuje, że doświadczenie nie dało mu statusu herosa, i zestawia interpretacje medyczne (obustronna ślepota, tłumaczona najczęściej histerią) z ostrożnością wobec charakteru samego przekazu",
+      "url": "https://www.brepolsonline.net/doi/pdf/10.1484/J.GIF.5.107480"
     }
   ],
   "trofea": {
@@ -91,6 +106,10 @@
     {
       "slug": "syama-i-sarvara",
       "opis": "Pierwszy w szeregu broni wąskiego przejścia, przez które nie wolno iść tyłem, a czterookie psy Yamy pilnują drogi, którą odchodzą przodkowie — obie straże stoją po dwóch stronach jednego progu, którego nie da się obejść (Herodot, „Dzieje” VII; Rigweda 10.14)."
+    },
+    {
+      "slug": "boto-encantado",
+      "opis": "Dwa sposoby na to, by nie dać się rozpoznać: zaklęty delfin kryje otwór oddechowy pod kapeluszem, a fantom pierwszego szeregu chowa całą tarczę za brodą i skalą, której nikt nie umie potem opisać."
     }
   ],
   "meta": {
@@ -116,6 +135,10 @@
       {
         "data": "2026-08-30 10:05",
         "opis": "Pogłębienie karty — 2 nowe źródła (Tukidydes 5.66–70 — pierwszy szereg 448 ludzi; Herodot VII, 226 — Dienekes „w cieniu”) + nowe powiązania z knechtem z Koptos i psami Yamy."
+      },
+      {
+        "data": "2026-09-05 20:30",
+        "opis": "Pogłębienie: relacja Herodota o Epizelosie oślepionym pod Maratonem przez wielką postać z brodą zakrywającą tarczę, nocne odgłosy walki na polu maratońskim u Pauzaniasza wraz z regułą przypadkowego świadka oraz nowsza analiza tego przypadku. Trzy nowe źródła, nowe powiązanie z boto encantado."
       }
     ]
   }

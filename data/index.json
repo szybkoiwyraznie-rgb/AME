@@ -1,6 +1,6 @@
 {
   "wersja": 3,
-  "buildTime": "2026-09-05T13:29:20.825Z",
+  "buildTime": "2026-09-05T13:32:37.211Z",
   "liczba": 29,
   "liczbaSkitow": 48,
   "kanon": {
@@ -823,7 +823,9 @@
         "mangkukulam",
         "selkie-sule-skerry"
       ],
-      "backlinki": [],
+      "backlinki": [
+        "protostates"
+      ],
       "obraz": "assets/wizualizacje/boto-encantado.jpg",
       "trofea": {
         "pierwotne": "Biały kapelusz z szerokim rondem, znaleziony o świcie na pomoście; w środku ronda mokra obwódka i jeden krótki, siwy włos, którego nie da się przypisać żadnemu z gości.",
@@ -1632,6 +1634,7 @@
         "pamiec"
       ],
       "powiazania": [
+        "boto-encantado",
         "drangue-shala",
         "kentaur-pelion",
         "knecht-z-koptos",
@@ -2805,6 +2808,14 @@
       "slug": "glamr-z-thorhallsstadir",
       "tytul": "Glámr z Þórhallsstaðir — pasterz, który wrócił i nauczył się mówić",
       "opis": "wpis w kartotece — materializacja karty „Banishment Decree”"
+    },
+    {
+      "data": "2026-09-05 20:30",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "protostates",
+      "tytul": "Protostates — fantom pierwszego szeregu",
+      "opis": "Pogłębienie: relacja Herodota o Epizelosie oślepionym pod Maratonem przez wielką postać z brodą zakrywającą tarczę, nocne odgłosy walki na polu maratońskim u Pauzaniasza wraz z regułą przypadkowego świadka oraz nowsza analiza tego przypadku. Trzy nowe źródła, nowe powiązanie z boto encantado."
     },
     {
       "data": "2026-09-05 20:00",
