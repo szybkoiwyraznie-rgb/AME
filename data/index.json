@@ -1,6 +1,6 @@
 {
   "wersja": 3,
-  "buildTime": "2026-09-05T14:21:54.139Z",
+  "buildTime": "2026-09-05T14:26:11.756Z",
   "liczba": 31,
   "liczbaSkitow": 50,
   "kanon": {
@@ -1306,7 +1306,7 @@
         "Niosący wodę"
       ],
       "karta": "Apprentice Wizard",
-      "miejscowosc": "Koptos nad Nilem (Górny Egipt) — w opowieści Eukratesa to tu ożywiony tłuczek nosi wodę i zalewa dom; motyw wędrował z Grecji przez Rzym do Niemiec, gdzie ballada Goethego nadała mu drugie życie",
+      "miejscowosc": "Koptos nad Nilem (Górny Egipt) — miasto, do którego Eukrates płynie w opowieści Lukiana, zanim ruszy pod posąg Memnona; sam epizod z ożywionym tłuczkiem dzieje się później, w kolejnych zajazdach na trasie, gdy młody Grek podróżuje już sam z egipskim skrybą z Memfis. Pinezka stoi w Koptos, bo to jedyna nazwa miejscowa, którą tekst podaje dla tej wyprawy",
       "kraj": "Egipt (tradycja grecka)",
       "lat": 26,
       "lon": 32.81,
@@ -2953,6 +2953,14 @@
     }
   ],
   "aktualizacje": [
+    {
+      "data": "2026-09-06 10:10",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "knecht-z-koptos",
+      "tytul": "Knecht z Koptos — ożywiony tłuczek, który nie zna słowa końca",
+      "opis": "Pogłębienie o warstwę historyczną i o uściślenia z samego tekstu Lukiana (rozdz. 33–36): mag ożywia nie tylko tłuczek, ale też zasuwę i miotłę, a ożywiony przedmiot kupuje i gotuje, nie tylko nosi wodę; Eukrates rozrąbuje go siekierą; Pankrates wraca, odczynia rzecz i odchodzi nie wiadomo dokąd, a uczeń zostaje z połową sztuki. Dołożona warstwa historyczna: Pankrates to prawdopodobnie Pachrates z Heliopolis, prorok, który dał Hadrianowi zaklęcie zachowane w PGM IV 2441–2621 i dostał podwójne honorarium. Kanał do Goethego policzony: Wieland w Weimarze od 1788, pierwszy pełny niemiecki przekład Lukiana w 1789. Z Source Stacku zdjęte dwa hasła Wikipedii, dołożone: Oxford Classical Dictionary, wydanie papirusów magicznych Betza i artykuł o wędrówce motywu."
+    },
     {
       "data": "2026-09-06 09:30",
       "typ": "manifestacja",
