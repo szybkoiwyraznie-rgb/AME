@@ -1,8 +1,8 @@
 {
   "wersja": 3,
-  "buildTime": "2026-09-05T10:57:51.843Z",
+  "buildTime": "2026-09-05T10:59:08.758Z",
   "liczba": 23,
-  "liczbaSkitow": 43,
+  "liczbaSkitow": 44,
   "kanon": {
     "kategorie": [
       {
@@ -651,6 +651,7 @@
       },
       "skity": [
         "dzien-wolnego",
+        "gruz-i-odplyw",
         "linia-brzegu",
         "najgorsze-odpowiedzi",
         "pod-dachem",
@@ -689,7 +690,9 @@
         "pierwotne": "Kamienne serce wpuszczone w bruk ścieżki na szczyt Góry — ciemny, sercowaty otoczak między granitowymi kostkami; miejscowi mówią, że kto przyłoży do niego ucho, usłyszy uderzenie.",
         "wtorne": "Pas z haftowanym napisem, nagroda rady miejskiej dla pogromcy: „Here's the right valiant Cornish Man, Who slew the Giant Cormilion” — dowód, że olbrzyma pokonano fortelem, nie siłą."
       },
-      "skity": []
+      "skity": [
+        "gruz-i-odplyw"
+      ]
     },
     {
       "slug": "drangue-shala",
@@ -1069,6 +1072,7 @@
         "wtorne": "Oświecona monetą fotografia groteski; jubilerski wisiorek z wizerunkiem ima w kolekcji Ushera — talisman szczęścia jako współczesna relikwia pątnicza"
       },
       "skity": [
+        "gruz-i-odplyw",
         "hold-oraz-swiatlo",
         "komu-wolno-patrzec",
         "kurz-i-piora",
@@ -1111,6 +1115,7 @@
         "wtorne": "Złamany dzwonek pasterski z Gévaudan — znaleziony przy ścieżce, na której nocny trop urywa się dokładnie przed pierwszym światłem."
       },
       "skity": [
+        "gruz-i-odplyw",
         "zaslona-i-siersc"
       ]
     },
@@ -1698,6 +1703,25 @@
       "data": "2026-09-04 19:50"
     },
     {
+      "slug": "gruz-i-odplyw",
+      "tytul": "GRUZ I ODPŁYW",
+      "temat": "gospodarstwo, budowa i sąsiedzi: kto komu wchodzi na podwórko przy niskiej wodzie",
+      "uczestnicy": [
+        "ben-varrey",
+        "cormoran-st-michaels-mount",
+        "lincoln-imp",
+        "loup-garou-gevaudan"
+      ],
+      "imiona": [
+        "Cormoran",
+        "Ben-Varrey",
+        "Imp z Lincoln",
+        "Loup-garou"
+      ],
+      "slow": 238,
+      "data": "2026-09-05 16:40"
+    },
+    {
       "slug": "hold-oraz-swiatlo",
       "tytul": "HOŁD ORAZ ŚWIATŁO",
       "temat": "trzy modele opłaty za święte miejsce: podatek, zaproszenie i grosz turysty",
@@ -2283,6 +2307,22 @@
     }
   ],
   "aktualizacje": [
+    {
+      "data": "2026-09-05 16:40",
+      "typ": "skit",
+      "akcja": "zmiana",
+      "slug": "gruz-i-odplyw",
+      "tytul": "GRUZ I ODPŁYW",
+      "opis": "Nowa rozmowa: olbrzym z Góry św. Michała, manxka syrena, imp z katedry i loup-garou spierają się o kamień na przejściu, cudze bydło i to, gdzie który z nich w ogóle sypia."
+    },
+    {
+      "data": "2026-09-05 16:40",
+      "typ": "skit",
+      "akcja": "nowy",
+      "slug": "gruz-i-odplyw",
+      "tytul": "GRUZ I ODPŁYW",
+      "opis": "SKIT — skład: Cormoran, Ben-Varrey, Imp z Lincoln, Loup-garou"
+    },
     {
       "data": "2026-09-05 16:05",
       "typ": "manifestacja",

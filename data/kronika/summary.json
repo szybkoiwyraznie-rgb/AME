@@ -75,11 +75,11 @@
           },
           {
             "slug": "ben-varrey",
-            "wielkosc": 0.32
+            "wielkosc": 0.34
           },
           {
             "slug": "cormoran-st-michaels-mount",
-            "wielkosc": 0.19
+            "wielkosc": 0.21
           },
           {
             "slug": "drangue-shala",
@@ -111,11 +111,11 @@
           },
           {
             "slug": "lincoln-imp",
-            "wielkosc": 0.38
+            "wielkosc": 0.4
           },
           {
             "slug": "loup-garou-gevaudan",
-            "wielkosc": 0.2
+            "wielkosc": 0.22
           },
           {
             "slug": "morowa-panna",
@@ -173,12 +173,12 @@
           {
             "kultura": "man",
             "kult": "ben-varrey",
-            "wielkosc": 0.32
+            "wielkosc": 0.34
           },
           {
             "kultura": "kornwalia",
             "kult": "cormoran-st-michaels-mount",
-            "wielkosc": 0.19
+            "wielkosc": 0.21
           },
           {
             "kultura": "albania",
@@ -218,12 +218,12 @@
           {
             "kultura": "anglia",
             "kult": "lincoln-imp",
-            "wielkosc": 0.38
+            "wielkosc": 0.4
           },
           {
             "kultura": "francja",
             "kult": "loup-garou-gevaudan",
-            "wielkosc": 0.2
+            "wielkosc": 0.22
           },
           {
             "kultura": "polska",
@@ -492,11 +492,11 @@
           },
           {
             "slug": "ben-varrey",
-            "wielkosc": 0.32
+            "wielkosc": 0.34
           },
           {
             "slug": "cormoran-st-michaels-mount",
-            "wielkosc": 0.19
+            "wielkosc": 0.21
           },
           {
             "slug": "drangue-shala",
@@ -528,11 +528,11 @@
           },
           {
             "slug": "lincoln-imp",
-            "wielkosc": 0.38
+            "wielkosc": 0.4
           },
           {
             "slug": "loup-garou-gevaudan",
-            "wielkosc": 0.2
+            "wielkosc": 0.22
           },
           {
             "slug": "morowa-panna",
@@ -590,12 +590,12 @@
           {
             "kultura": "man",
             "kult": "ben-varrey",
-            "wielkosc": 0.32
+            "wielkosc": 0.34
           },
           {
             "kultura": "kornwalia",
             "kult": "cormoran-st-michaels-mount",
-            "wielkosc": 0.19
+            "wielkosc": 0.21
           },
           {
             "kultura": "albania",
@@ -635,12 +635,12 @@
           {
             "kultura": "anglia",
             "kult": "lincoln-imp",
-            "wielkosc": 0.38
+            "wielkosc": 0.4
           },
           {
             "kultura": "francja",
             "kult": "loup-garou-gevaudan",
-            "wielkosc": 0.2
+            "wielkosc": 0.22
           },
           {
             "kultura": "polska",
@@ -719,8 +719,8 @@
         "zasieg": [
           {
             "slug": "lincoln-imp",
-            "przed": 0.38,
-            "po": 0.38,
+            "przed": 0.4,
+            "po": 0.4,
             "delta": 0,
             "opis": "Imp nie zyskuje i nie traci: jego anioł pozostaje granicą, o której świat mówi raczej z uśmiechem niż z lękiem."
           },
@@ -743,8 +743,8 @@
           {
             "kultura": "anglia",
             "kult": "lincoln-imp",
-            "przed": 0.38,
-            "po": 0.38,
+            "przed": 0.4,
+            "po": 0.4,
             "delta": 0
           },
           {
@@ -927,11 +927,11 @@
           },
           {
             "slug": "ben-varrey",
-            "wielkosc": 0.32
+            "wielkosc": 0.34
           },
           {
             "slug": "cormoran-st-michaels-mount",
-            "wielkosc": 0.19
+            "wielkosc": 0.21
           },
           {
             "slug": "drangue-shala",
@@ -963,11 +963,11 @@
           },
           {
             "slug": "lincoln-imp",
-            "wielkosc": 0.38
+            "wielkosc": 0.4
           },
           {
             "slug": "loup-garou-gevaudan",
-            "wielkosc": 0.2
+            "wielkosc": 0.22
           },
           {
             "slug": "morowa-panna",
@@ -1025,12 +1025,12 @@
           {
             "kultura": "man",
             "kult": "ben-varrey",
-            "wielkosc": 0.32
+            "wielkosc": 0.34
           },
           {
             "kultura": "kornwalia",
             "kult": "cormoran-st-michaels-mount",
-            "wielkosc": 0.19
+            "wielkosc": 0.21
           },
           {
             "kultura": "albania",
@@ -1070,12 +1070,12 @@
           {
             "kultura": "anglia",
             "kult": "lincoln-imp",
-            "wielkosc": 0.38
+            "wielkosc": 0.4
           },
           {
             "kultura": "francja",
             "kult": "loup-garou-gevaudan",
-            "wielkosc": 0.2
+            "wielkosc": 0.22
           },
           {
             "kultura": "polska",
@@ -1377,11 +1377,11 @@
           },
           {
             "slug": "ben-varrey",
-            "wielkosc": 0.32
+            "wielkosc": 0.34
           },
           {
             "slug": "cormoran-st-michaels-mount",
-            "wielkosc": 0.19
+            "wielkosc": 0.21
           },
           {
             "slug": "drangue-shala",
@@ -1413,11 +1413,11 @@
           },
           {
             "slug": "lincoln-imp",
-            "wielkosc": 0.38
+            "wielkosc": 0.4
           },
           {
             "slug": "loup-garou-gevaudan",
-            "wielkosc": 0.2
+            "wielkosc": 0.22
           },
           {
             "slug": "morowa-panna",
@@ -1475,12 +1475,12 @@
           {
             "kultura": "man",
             "kult": "ben-varrey",
-            "wielkosc": 0.32
+            "wielkosc": 0.34
           },
           {
             "kultura": "kornwalia",
             "kult": "cormoran-st-michaels-mount",
-            "wielkosc": 0.19
+            "wielkosc": 0.21
           },
           {
             "kultura": "albania",
@@ -1520,12 +1520,12 @@
           {
             "kultura": "anglia",
             "kult": "lincoln-imp",
-            "wielkosc": 0.38
+            "wielkosc": 0.4
           },
           {
             "kultura": "francja",
             "kult": "loup-garou-gevaudan",
-            "wielkosc": 0.2
+            "wielkosc": 0.22
           },
           {
             "kultura": "polska",
@@ -1827,11 +1827,11 @@
           },
           {
             "slug": "ben-varrey",
-            "wielkosc": 0.32
+            "wielkosc": 0.34
           },
           {
             "slug": "cormoran-st-michaels-mount",
-            "wielkosc": 0.19
+            "wielkosc": 0.21
           },
           {
             "slug": "drangue-shala",
@@ -1863,11 +1863,11 @@
           },
           {
             "slug": "lincoln-imp",
-            "wielkosc": 0.395
+            "wielkosc": 0.415
           },
           {
             "slug": "loup-garou-gevaudan",
-            "wielkosc": 0.2
+            "wielkosc": 0.22
           },
           {
             "slug": "morowa-panna",
@@ -1925,12 +1925,12 @@
           {
             "kultura": "man",
             "kult": "ben-varrey",
-            "wielkosc": 0.32
+            "wielkosc": 0.34
           },
           {
             "kultura": "kornwalia",
             "kult": "cormoran-st-michaels-mount",
-            "wielkosc": 0.19
+            "wielkosc": 0.21
           },
           {
             "kultura": "albania",
@@ -1970,12 +1970,12 @@
           {
             "kultura": "anglia",
             "kult": "lincoln-imp",
-            "wielkosc": 0.395
+            "wielkosc": 0.415
           },
           {
             "kultura": "francja",
             "kult": "loup-garou-gevaudan",
-            "wielkosc": 0.2
+            "wielkosc": 0.22
           },
           {
             "kultura": "polska",
@@ -2065,8 +2065,8 @@
         "zasieg": [
           {
             "slug": "lincoln-imp",
-            "przed": 0.38,
-            "po": 0.395,
+            "przed": 0.4,
+            "po": 0.415,
             "delta": 0.015,
             "opis": "Śmiech i drwina zyskują przewagę nad dawną trwogą; chochlik rośnie w siłę."
           },
@@ -2089,8 +2089,8 @@
           {
             "kultura": "anglia",
             "kult": "lincoln-imp",
-            "przed": 0.38,
-            "po": 0.395,
+            "przed": 0.4,
+            "po": 0.415,
             "delta": 0.015
           },
           {
@@ -2274,11 +2274,11 @@
           },
           {
             "slug": "ben-varrey",
-            "wielkosc": 0.32
+            "wielkosc": 0.34
           },
           {
             "slug": "cormoran-st-michaels-mount",
-            "wielkosc": 0.19
+            "wielkosc": 0.21
           },
           {
             "slug": "drangue-shala",
@@ -2310,11 +2310,11 @@
           },
           {
             "slug": "lincoln-imp",
-            "wielkosc": 0.395
+            "wielkosc": 0.415
           },
           {
             "slug": "loup-garou-gevaudan",
-            "wielkosc": 0.2
+            "wielkosc": 0.22
           },
           {
             "slug": "morowa-panna",
@@ -2372,12 +2372,12 @@
           {
             "kultura": "man",
             "kult": "ben-varrey",
-            "wielkosc": 0.32
+            "wielkosc": 0.34
           },
           {
             "kultura": "kornwalia",
             "kult": "cormoran-st-michaels-mount",
-            "wielkosc": 0.19
+            "wielkosc": 0.21
           },
           {
             "kultura": "albania",
@@ -2417,12 +2417,12 @@
           {
             "kultura": "anglia",
             "kult": "lincoln-imp",
-            "wielkosc": 0.395
+            "wielkosc": 0.415
           },
           {
             "kultura": "francja",
             "kult": "loup-garou-gevaudan",
-            "wielkosc": 0.2
+            "wielkosc": 0.22
           },
           {
             "kultura": "polska",
@@ -2730,11 +2730,11 @@
           },
           {
             "slug": "ben-varrey",
-            "wielkosc": 0.32
+            "wielkosc": 0.34
           },
           {
             "slug": "cormoran-st-michaels-mount",
-            "wielkosc": 0.19
+            "wielkosc": 0.21
           },
           {
             "slug": "drangue-shala",
@@ -2766,11 +2766,11 @@
           },
           {
             "slug": "lincoln-imp",
-            "wielkosc": 0.395
+            "wielkosc": 0.415
           },
           {
             "slug": "loup-garou-gevaudan",
-            "wielkosc": 0.2
+            "wielkosc": 0.22
           },
           {
             "slug": "morowa-panna",
@@ -2828,12 +2828,12 @@
           {
             "kultura": "man",
             "kult": "ben-varrey",
-            "wielkosc": 0.32
+            "wielkosc": 0.34
           },
           {
             "kultura": "kornwalia",
             "kult": "cormoran-st-michaels-mount",
-            "wielkosc": 0.19
+            "wielkosc": 0.21
           },
           {
             "kultura": "albania",
@@ -2873,12 +2873,12 @@
           {
             "kultura": "anglia",
             "kult": "lincoln-imp",
-            "wielkosc": 0.395
+            "wielkosc": 0.415
           },
           {
             "kultura": "francja",
             "kult": "loup-garou-gevaudan",
-            "wielkosc": 0.2
+            "wielkosc": 0.22
           },
           {
             "kultura": "polska",
@@ -3189,11 +3189,11 @@
           },
           {
             "slug": "ben-varrey",
-            "wielkosc": 0.32
+            "wielkosc": 0.34
           },
           {
             "slug": "cormoran-st-michaels-mount",
-            "wielkosc": 0.19
+            "wielkosc": 0.21
           },
           {
             "slug": "drangue-shala",
@@ -3225,11 +3225,11 @@
           },
           {
             "slug": "lincoln-imp",
-            "wielkosc": 0.395
+            "wielkosc": 0.415
           },
           {
             "slug": "loup-garou-gevaudan",
-            "wielkosc": 0.2
+            "wielkosc": 0.22
           },
           {
             "slug": "morowa-panna",
@@ -3287,12 +3287,12 @@
           {
             "kultura": "man",
             "kult": "ben-varrey",
-            "wielkosc": 0.32
+            "wielkosc": 0.34
           },
           {
             "kultura": "kornwalia",
             "kult": "cormoran-st-michaels-mount",
-            "wielkosc": 0.19
+            "wielkosc": 0.21
           },
           {
             "kultura": "albania",
@@ -3332,12 +3332,12 @@
           {
             "kultura": "anglia",
             "kult": "lincoln-imp",
-            "wielkosc": 0.395
+            "wielkosc": 0.415
           },
           {
             "kultura": "francja",
             "kult": "loup-garou-gevaudan",
-            "wielkosc": 0.2
+            "wielkosc": 0.22
           },
           {
             "kultura": "polska",
@@ -3652,11 +3652,11 @@
           },
           {
             "slug": "ben-varrey",
-            "wielkosc": 0.32
+            "wielkosc": 0.34
           },
           {
             "slug": "cormoran-st-michaels-mount",
-            "wielkosc": 0.19
+            "wielkosc": 0.21
           },
           {
             "slug": "drangue-shala",
@@ -3688,11 +3688,11 @@
           },
           {
             "slug": "lincoln-imp",
-            "wielkosc": 0.395
+            "wielkosc": 0.415
           },
           {
             "slug": "loup-garou-gevaudan",
-            "wielkosc": 0.21
+            "wielkosc": 0.23
           },
           {
             "slug": "morowa-panna",
@@ -3750,12 +3750,12 @@
           {
             "kultura": "man",
             "kult": "ben-varrey",
-            "wielkosc": 0.32
+            "wielkosc": 0.34
           },
           {
             "kultura": "kornwalia",
             "kult": "cormoran-st-michaels-mount",
-            "wielkosc": 0.19
+            "wielkosc": 0.21
           },
           {
             "kultura": "albania",
@@ -3795,12 +3795,12 @@
           {
             "kultura": "anglia",
             "kult": "lincoln-imp",
-            "wielkosc": 0.395
+            "wielkosc": 0.415
           },
           {
             "kultura": "francja",
             "kult": "loup-garou-gevaudan",
-            "wielkosc": 0.21
+            "wielkosc": 0.23
           },
           {
             "kultura": "polska",
@@ -3903,8 +3903,8 @@
           },
           {
             "slug": "loup-garou-gevaudan",
-            "przed": 0.2,
-            "po": 0.21,
+            "przed": 0.22,
+            "po": 0.23,
             "delta": 0.01,
             "opis": "Opowieść o człowieku-wilku dostała rozmówcę zamiast samego tropu."
           },
@@ -3927,8 +3927,8 @@
           {
             "kultura": "francja",
             "kult": "loup-garou-gevaudan",
-            "przed": 0.2,
-            "po": 0.21,
+            "przed": 0.22,
+            "po": 0.23,
             "delta": 0.01
           },
           {
@@ -4075,11 +4075,11 @@
       },
       {
         "slug": "ben-varrey",
-        "wielkosc": 0.32
+        "wielkosc": 0.34
       },
       {
         "slug": "cormoran-st-michaels-mount",
-        "wielkosc": 0.19
+        "wielkosc": 0.21
       },
       {
         "slug": "drangue-shala",
@@ -4111,11 +4111,11 @@
       },
       {
         "slug": "lincoln-imp",
-        "wielkosc": 0.395
+        "wielkosc": 0.415
       },
       {
         "slug": "loup-garou-gevaudan",
-        "wielkosc": 0.21
+        "wielkosc": 0.23
       },
       {
         "slug": "morowa-panna",
@@ -4173,12 +4173,12 @@
       {
         "kultura": "man",
         "kult": "ben-varrey",
-        "wielkosc": 0.32
+        "wielkosc": 0.34
       },
       {
         "kultura": "kornwalia",
         "kult": "cormoran-st-michaels-mount",
-        "wielkosc": 0.19
+        "wielkosc": 0.21
       },
       {
         "kultura": "albania",
@@ -4218,12 +4218,12 @@
       {
         "kultura": "anglia",
         "kult": "lincoln-imp",
-        "wielkosc": 0.395
+        "wielkosc": 0.415
       },
       {
         "kultura": "francja",
         "kult": "loup-garou-gevaudan",
-        "wielkosc": 0.21
+        "wielkosc": 0.23
       },
       {
         "kultura": "polska",
