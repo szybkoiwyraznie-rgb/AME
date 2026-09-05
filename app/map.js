@@ -10,9 +10,8 @@
  * pinch (2 wskaźniki), dwuklik, przyciski. Pinezki i ich etykiety kompensują
  * skalę widoku, więc mają stały rozmiar w pikselach CSS (ADR 0009).
  */
-import { projektuj, dekodujKraje, siatka, dopasujWidok, ogranicz, K_MIN, K_MAX, SZEROKOSC as SZER, WYSOKOSC as WYS, sciezkaGeoMultiPoligon } from './geo.js?v=c6-15';
-import { grupujPunkty, podpisKlastra, opisKlastra, czyKlastrowac, PROMIEN_KLASTRA, ZOOM_KLASTRA, PROG_KLASTROWANIA } from './klastry.js?v=c6-15';
-import { grupujWKregi, sciezkaKregu, podpisKregu } from './kregi.js?v=c6-15';
+import { projektuj, dekodujKraje, siatka, dopasujWidok, ogranicz, K_MIN, K_MAX, SZEROKOSC as SZER, WYSOKOSC as WYS, sciezkaGeoMultiPoligon } from './geo.js?v=c6-16';
+import { grupujWKregi, sciezkaKregu, podpisKregu } from './kregi.js?v=c6-16';
 
 const NS = 'http://www.w3.org/2000/svg';
 
@@ -191,10 +190,6 @@ export function stworzMape(kontener, { przyZmianieZaznaczenia, przyZmianieWidoku
   // osobna grupa, żeby nie mieszać z łukami powiązań (toggle ∞).
   const warstwaRozmowy = el('g', { class: 'rozmowa', display: 'none' }, grupaSwiata);
   const grupaPinezek = el('g', { class: 'pinezki' }, grupaSwiata);
-  // Klastry (BACKLOG „Klastrowanie pinezek”, C2+5 obrotu 4): znaczniki gniazd
-  // rysowane PO pinezkach, żeby liczba nie chowała się pod sąsiadem. Pinezki
-  // wchodzące w gniazdo dostają klasę `w-klastrze` i znikają razem z badge'em.
-  const grupaKlastrow = el('g', { class: 'klastry' }, grupaSwiata);
   // A3 (M6): badge'y w osobnej grupie PO grupie pinezek — SVG maluje elementy
   // w kolejności dokumentu, więc etykieta nigdy nie chowa się pod inną pinezką.
   // Widzialność (A1) sterują klasy na samej etykiecie (widoczna/wybrana),
@@ -218,7 +213,6 @@ export function stworzMape(kontener, { przyZmianieZaznaczenia, przyZmianieWidoku
   let miastaDane = []; // [{g, wx, wy, nazwa, populacja, tier}]
   let ostatnieSkala = null; // do pomijania przebudowy transformów punktów przy samym panu
   let ukryteFiltrem = null; // Set<slug> odfiltrowanych pinezek (null = wszystkie widoczne)
-  let ostatniaSkalaKlastrow = null; // klastry zależą tylko od skali, nie od panoramowania
   let aktywneMiasto = null; // miasto pokazane po kliknięciu
   let aktywnyPunkt = null; // punkt POI/historii pokazany podczas przytrzymania
   let czyPrzesunieto = false; // pan/pinch nie może być mylony z kliknięciem w miasto
@@ -278,7 +272,6 @@ export function stworzMape(kontener, { przyZmianieZaznaczenia, przyZmianieWidoku
     }
     // A1 (M6): bez stałego pokazywania etykiet od progu zoomu — dawny toggle
     // klasy `przyblizona` usunięty; etykieta żyje na najechanie/fokus/wybranie.
-    odswiezKlastry(); // gniazda pinezek zależą od skali (BACKLOG: klastrowanie)
     odswiezWidocznoscWarstw();
     przelozEtykieteMiasta();
     przelozEtykietePunktu();
@@ -487,7 +480,6 @@ export function stworzMape(kontener, { przyZmianieZaznaczenia, przyZmianieWidoku
       });
       pinezki.set(r.slug, { el: g, etykieta, wx, wy, miniatura });
     }
-    ostatniaSkalaKlastrow = null; // nowy skład pinezek = gniazda do przeliczenia
     zastosuj();
   }
 
@@ -604,66 +596,6 @@ export function stworzMape(kontener, { przyZmianieZaznaczenia, przyZmianieWidoku
       const przygaszona = widoczne !== null && !widoczne.has(s);
       p.el.classList.toggle('przygaszona', przygaszona);
       p.etykieta.classList.toggle('przygaszona', przygaszona); // badge przygasa razem z pinezką
-    }
-    odswiezKlastry(true); // filtr zmienia skład gniazd (BACKLOG: klastrowanie)
-  }
-
-  /**
-   * Klastrowanie pinezek: gniazda liczone czystą funkcją z `app/klastry.js`,
-   * tutaj wyłącznie render. Przeliczamy przy zmianie skali albo składu
-   * (nowe pinezki, filtr) — samo przesuwanie mapy niczego nie zmienia, bo
-   * siatka komórek żyje w układzie świata.
-   */
-  function odswiezKlastry(wymus = false) {
-    if (!wymus && ostatniaSkalaKlastrow !== null && Math.abs(skala - ostatniaSkalaKlastrow) <= 1e-9) return;
-    ostatniaSkalaKlastrow = skala;
-    grupaKlastrow.innerHTML = '';
-    const widoczne = [...pinezki.entries()]
-      .filter(([s]) => ukryteFiltrem === null || ukryteFiltrem.has(s))
-      .map(([s, p]) => ({ slug: s, wx: p.wx, wy: p.wy }));
-    for (const p of pinezki.values()) {
-      p.el.classList.remove('w-klastrze');
-      p.etykieta.classList.remove('w-klastrze');
-    }
-    if (widoczne.length === 0 || !(skala > 0) || !czyKlastrowac(widok.k)) return;
-    const { klastry } = grupujPunkty(widoczne, { skala });
-    const komp = 1 / skala;
-    for (const k of klastry) {
-      for (const slug of k.slugi) {
-        const p = pinezki.get(slug);
-        if (!p) continue;
-        p.el.classList.add('w-klastrze');
-        p.etykieta.classList.add('w-klastrze');
-      }
-      const g = el('g', {
-        class: 'klaster',
-        tabindex: 0,
-        role: 'button',
-        'data-ile': String(k.slugi.length),
-        'aria-label': opisKlastra(k.slugi.length),
-        transform: `translate(${k.wx} ${k.wy}) scale(${komp})`,
-      }, grupaKlastrow);
-      el('circle', { r: PROMIEN_KLASTRA, class: 'klaster-tlo' }, g);
-      el('circle', { r: PROMIEN_KLASTRA - 6, class: 'klaster-obrys' }, g);
-      const tekst = el('text', { class: 'klaster-liczba', y: 7 }, g);
-      tekst.textContent = podpisKlastra(k.slugi.length);
-      const rozwin = () => {
-        ukryjEtykieteMiasta();
-        // Zawsze przeskakujemy próg klastrowania, żeby gniazdo na pewno pękło
-        // (przy bardzo bliskich bytach sam mnożnik by nie wystarczył).
-        const doceloweK = Math.max(widok.k * ZOOM_KLASTRA, PROG_KLASTROWANIA);
-        ustawWidok(k.wx, k.wy, ogranicz(doceloweK, K_MIN, maksymalneK()), true);
-      };
-      g.addEventListener('click', (ev) => {
-        ev.stopPropagation();
-        rozwin();
-      });
-      g.addEventListener('keydown', (ev) => {
-        if (ev.key === 'Enter' || ev.key === ' ') {
-          ev.preventDefault();
-          rozwin();
-        }
-      });
     }
   }
 

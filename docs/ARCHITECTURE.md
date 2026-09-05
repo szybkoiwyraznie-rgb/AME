@@ -18,7 +18,6 @@ app/
   ui.js                     — warstwa wpisu (dialog), Baza Skitów, widok skitu,
                               feed „Co nowego", tagi, powiązania, lista, szukanie,
                               logika motywu (wszystko jako funkcje czyste)
-  klastry.js                — grupowanie pinezek w gniazda przy oddaleniu
   kregi.js                  — kręgi kulturowe: otoczki grup tradycji na mapie
   arena.js                  — Arena Rezonansu: statystyki bytu wyprowadzone
                               z indeksu, spór dwóch wersji świata (RNG wstrzykiwany)

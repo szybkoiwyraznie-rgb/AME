@@ -40,17 +40,19 @@
   oraz fragmenty widoków (`#skity`, `#nowosci`, `#trofea`, `#kroniki`,
   `#splot`, `#prog`, `#arena`); każdy widok ma przycisk „⧉ kopiuj link”.
 
-- ~~**Klastrowanie pinezek**~~ — **WDROŻONE (2026-09-05, PR #34, C2+5 obrotu 4
-  Pętli Jakości):** `app/klastry.js` (czysty rachunek, bez DOM) grupuje pinezki
-  siatką o boku `2 × PROMIEN_KLASTRA` pikseli EKRANOWYCH, przeliczaną przez
-  bieżącą skalę — przy oddaleniu Grecja czy Wyspy Brytyjskie zwijają się w jeden
-  krążek z liczbą (`.klastry .klaster`), klik albo Enter przybliża do centroidu
-  i gniazdo pęka. Nad `PROG_KLASTROWANIA` (6×) klastrów nie ma w ogóle: sufit
-  zoomu offline to 32×, a byty odległe o pół stopnia (Empusa i Nessos) mieściłyby
-  się w jednej komórce nawet tam — bez progu nie dałoby się do nich dojść.
-  Wybrany byt wystaje spod gniazda (`.pinezka.w-klastrze.wybrana`), więc „przeleć
-  do bytu” zawsze pokazuje pinezkę. Testy: `test/klastry.test.js` (determinizm,
-  próg liczności, rozpad przy zoomie) i render w `test/pinezka.test.js`.
+- **Klastrowanie pinezek** — **WYCOFANE (2026-09-06, decyzja właściciela).**
+  Było wdrożone 2026-09-05 (C2+5 obrotu 4): `app/klastry.js` zwijał nachodzące
+  na siebie pinezki w krążek z liczbą, który pękał po kliknięciu albo po
+  przekroczeniu zoomu 6×. Powód wycofania jest prosty i przesądza sprawę na
+  przyszłość: **z daleka nie było widać poszczególnych bytów**, a mapa
+  kartoteki służy do patrzenia na całość — gęstość Grecji czy Wysp Brytyjskich
+  to informacja, nie usterka do posprzątania. Usunięte: `app/klastry.js`,
+  `test/klastry.test.js`, warstwa `.klastry` w `app/map.js` i reguły CSS
+  (`.klaster*`, `.w-klastrze`). `test/pinezka.test.js` pilnuje teraz odwrotnego
+  kontraktu: cztery byty = cztery pinezki, żadnej klasy chowającej.
+  **Nie przywracać bez wyraźnego polecenia właściciela.** Jeśli kiedyś wróci
+  temat czytelności skupisk, szukać rozwiązania, które nic nie ukrywa
+  (np. rozsunięcie nachodzących pinezek zamiast zastąpienia ich jednym znakiem).
 - ~~**Miniatury na pinezkach**~~ — **WDROŻONE (2026-09-05, PR #34, C2+5 obrotu 3
   Pętli Jakości), PRZEROBIONE na zlecenie właściciela tego samego dnia:** medalion
   z wizualizacją bytu (koło o promieniu `PROMIEN_MINIATURY` = 26, kadr 52×52

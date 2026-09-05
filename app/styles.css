@@ -1117,39 +1117,6 @@ div.warstwa.otwarta { display: block; animation: warstwa-wnika 0.2s ease-out; }
 }
 .mapa-svg .pinezki .pinezka.z-miniatura .glowa { stroke-width: 2.5; }
 
-/* Klastrowanie pinezek (BACKLOG „Klastrowanie pinezek”, C2+5 obrotu 4).
-   Gniazdo zastępuje kilka nachodzących na siebie pinezek jednym krążkiem
-   z liczbą; klik/Enter przybliża i gniazdo samo się rozpada. Pinezki
-   schowane w gnieździe dostają klasę `w-klastrze` — razem z ich badge'ami. */
-.mapa-svg .pinezki .pinezka.w-klastrze,
-.mapa-svg .etykiety .etykieta.w-klastrze { display: none; }
-/* Wyjątek: byt wybrany z listy albo z deep-linku musi być widoczny nawet
-   wtedy, gdy wpadł do gniazda — inaczej „przeleć do bytu” pokazywałby
-   krążek z liczbą zamiast pinezki (kontrakt `test/mapa-css.test.js`:
-   każda klasa gaszona ma drogę powrotu na ekran). */
-.mapa-svg .pinezki .pinezka.w-klastrze.wybrana,
-.mapa-svg .etykiety .etykieta.w-klastrze.wybrana { display: block; }
-.mapa-svg .klastry .klaster { cursor: pointer; }
-.mapa-svg .klastry .klaster:focus { outline: none; }
-.mapa-svg .klastry .klaster-tlo {
-  fill: var(--tlo-2);
-  stroke: var(--pinezka-obrys);
-  stroke-width: 2;
-  opacity: 0.92;
-}
-.mapa-svg .klastry .klaster-obrys { fill: none; stroke: var(--akcent); stroke-width: 2.5; }
-.mapa-svg .klastry .klaster-liczba {
-  fill: var(--tekst);
-  font-size: 22px;
-  font-weight: 700;
-  text-anchor: middle;
-  pointer-events: none;
-}
-.mapa-svg .klastry .klaster:hover .klaster-tlo,
-.mapa-svg .klastry .klaster:focus .klaster-tlo { fill: var(--akcent); }
-.mapa-svg .klastry .klaster:hover .klaster-liczba,
-.mapa-svg .klastry .klaster:focus .klaster-liczba { fill: var(--akcent-tekst); }
-
 /* Arena Rezonansu (C2+5, obrót 5): spór dwóch bytów — wybór stron, profile,
    dziennik rund. Rozstrzygnięcie na akcencie, dziennik możliwie neutralny. */
 .arena .arena-wybor { display: flex; flex-wrap: wrap; gap: 12px; align-items: flex-end; margin: 16px 0 20px; }

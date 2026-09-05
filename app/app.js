@@ -1,8 +1,8 @@
 /**
  * app/app.js — bootstrap AME: ładuje indeks, mapę świata, spina UI.
  */
-import { stworzMape, PROGI_WARSTW, PODKLADY_ONLINE } from './map.js?v=c6-15';
-import { zaladujIndeks, zaladujWpis, zaladujSkit, dopasowania, wylosujSlug, slugDnia } from './data.js?v=c6-15';
+import { stworzMape, PROGI_WARSTW, PODKLADY_ONLINE } from './map.js?v=c6-16';
+import { zaladujIndeks, zaladujWpis, zaladujSkit, dopasowania, wylosujSlug, slugDnia } from './data.js?v=c6-16';
 import {
   htmlWpisu,
   htmlWarstwyWpisu,
@@ -31,12 +31,12 @@ import {
   zB64utf8,
   htmlAreny,
   htmlLigi,
-} from './ui.js?v=c6-15';
-import { rozegrajDroge } from './splot.js?v=c6-15';
-import { tablicaProgow, kluczeDlaBytu, rozegrajProg } from './prog.js?v=c6-15';
-import { profileKartoteki, rozegrajSpor, paraDnia, haszTekstu, generatorZZiarna } from './arena.js?v=c6-15';
-import { tabelaLigi } from './liga.js?v=c6-15';
-import { SZEROKOSC, WYSOKOSC, odwroc, projektuj, serializujWidok, parsujWidokMapy } from './geo.js?v=c6-15';
+} from './ui.js?v=c6-16';
+import { rozegrajDroge } from './splot.js?v=c6-16';
+import { tablicaProgow, kluczeDlaBytu, rozegrajProg } from './prog.js?v=c6-16';
+import { profileKartoteki, rozegrajSpor, paraDnia, haszTekstu, generatorZZiarna } from './arena.js?v=c6-16';
+import { tabelaLigi } from './liga.js?v=c6-16';
+import { SZEROKOSC, WYSOKOSC, odwroc, projektuj, serializujWidok, parsujWidokMapy } from './geo.js?v=c6-16';
 
 const $ = (sel) => document.querySelector(sel);
 

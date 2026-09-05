@@ -347,3 +347,26 @@ asercja „premia jest niezerowa" plus bezpośrednie wywołanie
 opierać się na danych, dobierz wielkość przekraczającą krok
 kwantyzacji — inaczej każdy nowy wpis lub SKIT będzie losowo gasił
 bramę.
+## L24 (2026-09-06, AME) — funkcja, która ukrywa dane, jest usterką, nawet jeśli działa bez zarzutu
+
+**Objaw:** klastrowanie pinezek (C2+5 obrotu 4) przeszło audyt, testy
+i przegląd: gniazda liczyły się deterministycznie, pękały po kliknięciu,
+miały próg zoomu i wyjątek dla wybranego bytu. Właściciel wyciął tę
+funkcję pierwszego dnia, w którym ją zobaczył na żywo: „nie mogę
+zobaczyć poszczególnych bytów z daleka”.
+
+**Przyczyna:** feature rozwiązywał problem, którego kartoteka nie ma.
+Skupisko pinezek w Grecji czy na Wyspach Brytyjskich to **informacja
+o zawartości archiwum** — pokazuje, gdzie baza jest gęsta, a gdzie ma
+dziury. Zwinięcie tego w jeden krążek z liczbą zamieniło mapę czytaną
+jednym spojrzeniem w interfejs wymagający klikania. Zysk (mniej
+nachodzących ikon) był estetyczny, koszt (utrata widoku całości) —
+funkcjonalny.
+
+**Reguła:** przy każdej warstwie prezentacji pytaj, **co znika z ekranu**.
+Rozwiązania, które zastępują wiele obiektów jednym znakiem, wolno
+proponować tylko wtedy, gdy komplet i tak jest nieczytelny; domyślnie
+wybieraj takie, które nic nie chowają (rozsunięcie, przezroczystość,
+mniejszy znacznik). Dotyczy to również etykiet, miniatur i przyszłych
+warstw grupujących — kręgi kulturowe przeszły dlatego, że rysują się
+**pod** pinezkami i niczego nie zasłaniają.
