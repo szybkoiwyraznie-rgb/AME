@@ -10,7 +10,7 @@
  * pinch (2 wskaźniki), dwuklik, przyciski. Pinezki i ich etykiety kompensują
  * skalę widoku, więc mają stały rozmiar w pikselach CSS (ADR 0009).
  */
-import { projektuj, dekodujKraje, siatka, dopasujWidok, ogranicz, K_MIN, K_MAX, SZEROKOSC as SZER, WYSOKOSC as WYS, sciezkaGeoMultiPoligon } from './geo.js?v=c6-8';
+import { projektuj, dekodujKraje, siatka, dopasujWidok, ogranicz, K_MIN, K_MAX, SZEROKOSC as SZER, WYSOKOSC as WYS, sciezkaGeoMultiPoligon } from './geo.js?v=c6-9';
 
 const NS = 'http://www.w3.org/2000/svg';
 
@@ -50,6 +50,9 @@ export const PROGI_WARSTW = {
   miastaDrobne: 10,
   poi: 8,
   historia: 6,
+  // C2+5 (obrót 3): od tego powiększenia głowa pinezki pokazuje miniaturę
+  // wizualizacji bytu zamiast pustego krążka (backlog „Miniatury na pinezkach”).
+  miniatury: 6,
 };
 /**
  * Czy warstwa jest włączona (przełączniki panelu). WSZYSTKIE warstwy są
@@ -402,6 +405,21 @@ export function stworzMape(kontener, { przyZmianieZaznaczenia, przyZmianieWidoku
       el('circle', { r: 26, class: 'trafienie' }, g); // pole trafienia (A5)
       el('circle', { r: 13, class: 'glowa' }, g);
       el('circle', { r: 4.4, class: 'zrenica' }, g);
+      // Miniatura wizualizacji (backlog, C2+5 obrót 3): przycięta do koła głowy,
+      // z leniwym `href` — plik ładuje się dopiero po przekroczeniu progu zoomu,
+      // więc widok świata nadal startuje bez 25 obrazów w tle.
+      const miniatura = r.obraz
+        ? el('image', {
+            class: 'miniatura',
+            x: -13,
+            y: -13,
+            width: 26,
+            height: 26,
+            preserveAspectRatio: 'xMidYMid slice',
+            'clip-path': 'url(#przyciecie-pinezki)',
+            'data-obraz': r.obraz,
+          }, g)
+        : null;
       el('path', { d: 'M0,10 L-7.5,27 L0,19.5 L7.5,27 Z', class: 'ostrze' }, g);
       const etykieta = el('g', { class: 'etykieta' }, grupaEtykiet); // warstwa nad pinezkami (A3)
       const tlo = el('rect', { class: 'tlo-etykiety', rx: 8 }, etykieta);
@@ -439,7 +457,7 @@ export function stworzMape(kontener, { przyZmianieZaznaczenia, przyZmianieWidoku
           przyZmianieZaznaczenia?.(r.slug);
         }
       });
-      pinezki.set(r.slug, { el: g, etykieta, wx, wy });
+      pinezki.set(r.slug, { el: g, etykieta, wx, wy, miniatura });
     }
     zastosuj();
   }
@@ -839,10 +857,29 @@ export function stworzMape(kontener, { przyZmianieZaznaczenia, przyZmianieWidoku
     grupaMiast.setAttribute('display', WIDOCZNE_WARSTWY.miasta && k >= PROGI_WARSTW.miastaWielkie ? 'inherit' : 'none');
     grupaPOI.setAttribute('display', WIDOCZNE_WARSTWY.poi && k >= PROGI_WARSTW.poi ? 'inherit' : 'none');
     grupaHistoria.setAttribute('display', WIDOCZNE_WARSTWY.historia && k >= PROGI_WARSTW.historia ? 'inherit' : 'none');
+    odswiezMiniatury(k);
     if (aktywnyPunkt && aktywnyPunkt.grupa.getAttribute('display') === 'none') ukryjEtykietePunktu();
     odswiezMiasta();
     ustawTransformyPunktow();
     rysujPodkladOnline();
+  }
+
+  /**
+   * Miniatury na pinezkach (backlog „Miniatury na pinezkach przy wysokim
+   * zoomie”, C2+5 obrót 3): powyżej progu grupa dostaje klasę, a każdy obraz
+   * — swój `href` (raz, przy pierwszym przekroczeniu progu). Poniżej progu
+   * miniatury znikają stylem, ale pobranych plików już nie zwalniamy.
+   */
+  function odswiezMiniatury(k) {
+    const pokaz = k >= PROGI_WARSTW.miniatury;
+    grupaPinezek.classList?.toggle('z-miniaturami', pokaz);
+    if (!pokaz) return;
+    for (const p of pinezki.values()) {
+      const obraz = p.miniatura;
+      if (!obraz || obraz.getAttribute('href')) continue;
+      const zrodlo = obraz.getAttribute('data-obraz');
+      if (zrodlo) obraz.setAttribute('href', zrodlo);
+    }
   }
 
   /** Punkty stałego rozmiaru ekranowego (POI, historia) — tylko przy zmianie skali. */

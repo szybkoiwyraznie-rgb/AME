@@ -1,8 +1,8 @@
 /**
  * app/app.js — bootstrap AME: ładuje indeks, mapę świata, spina UI.
  */
-import { stworzMape, PROGI_WARSTW, PODKLADY_ONLINE } from './map.js?v=c6-8';
-import { zaladujIndeks, zaladujWpis, zaladujSkit, dopasowania, wylosujSlug, slugDnia } from './data.js?v=c6-8';
+import { stworzMape, PROGI_WARSTW, PODKLADY_ONLINE } from './map.js?v=c6-9';
+import { zaladujIndeks, zaladujWpis, zaladujSkit, dopasowania, wylosujSlug, slugDnia } from './data.js?v=c6-9';
 import {
   htmlWpisu,
   htmlWarstwyWpisu,
@@ -29,11 +29,11 @@ import {
   htmlProgow,
   paryRozmowySkitu,
   zB64utf8,
-} from './ui.js?v=c6-8';
-import { rozegrajDroge } from './splot.js?v=c6-8';
-import { tablicaProgow, kluczeDlaBytu, rozegrajProg } from './prog.js?v=c6-8';
-import { profileKartoteki } from './arena.js?v=c6-8';
-import { SZEROKOSC, WYSOKOSC, odwroc, projektuj, serializujWidok, parsujWidokMapy } from './geo.js?v=c6-8';
+} from './ui.js?v=c6-9';
+import { rozegrajDroge } from './splot.js?v=c6-9';
+import { tablicaProgow, kluczeDlaBytu, rozegrajProg } from './prog.js?v=c6-9';
+import { profileKartoteki } from './arena.js?v=c6-9';
+import { SZEROKOSC, WYSOKOSC, odwroc, projektuj, serializujWidok, parsujWidokMapy } from './geo.js?v=c6-9';
 
 const $ = (sel) => document.querySelector(sel);
 

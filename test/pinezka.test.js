@@ -5,7 +5,7 @@
  */
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { szacujSzerokoscTekstu, wymiaryEtykiety, stworzMape } from '../app/map.js';
+import { szacujSzerokoscTekstu, wymiaryEtykiety, stworzMape, PROGI_WARSTW } from '../app/map.js';
 import { SZEROKOSC, WYSOKOSC, projektuj } from '../app/geo.js';
 
 function stworzElement(nazwa) {
@@ -326,4 +326,24 @@ test('warstwa „rozmowy” skitu (C2): łuki uczestników w osobnej grupie, czy
   mapa.ukryjRozmowe();
   assert.equal(rozmowa.dzieci.length, 0, 'ukrycie czyści warstwę');
   assert.equal(rozmowa.getAttribute('display'), 'none');
+});
+
+test('miniatury (C2+5, obrót 3): obraz przycięty do głowy, href leniwy, próg zoomu', () => {
+  const { kontener } = zaiscz();
+  const mapa = stworzMape(kontener, {});
+  mapa.ustawPinezki([
+    { slug: 'glamr', nazwa: 'Glámr', lat: 65.31, lon: -20.13, obraz: 'assets/wizualizacje/glamr.jpg' },
+    { slug: 'bez-obrazu', nazwa: 'Bez obrazu', lat: 0, lon: 0 },
+  ]);
+  const grupaPinezek = znajdz(mapa.svg, 'pinezki');
+  const zObrazem = grupaPinezek.dzieci.find((d) => d.getAttribute('data-slug') === 'glamr');
+  const bezObrazu = grupaPinezek.dzieci.find((d) => d.getAttribute('data-slug') === 'bez-obrazu');
+  const miniatura = zObrazem.dzieci.find((d) => d.czyMaKlase('miniatura'));
+  assert.ok(miniatura, 'pinezka z obrazem dostaje element miniatury');
+  assert.equal(bezObrazu.dzieci.filter((d) => d.czyMaKlase('miniatura')).length, 0, 'brak obrazu = brak miniatury');
+  assert.equal(Number(miniatura.getAttribute('width')), 26, 'miniatura wypełnia koło głowy (2 × 13)');
+  assert.equal(miniatura.getAttribute('clip-path'), 'url(#przyciecie-pinezki)');
+  assert.equal(miniatura.getAttribute('data-obraz'), 'assets/wizualizacje/glamr.jpg');
+  assert.equal(miniatura.getAttribute('href'), undefined, 'plik nie ładuje się przy pierwszym rysowaniu');
+  assert.ok(PROGI_WARSTW.miniatury >= 4, 'miniatury włączają się dopiero po przybliżeniu');
 });

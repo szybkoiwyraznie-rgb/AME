@@ -19,7 +19,14 @@
   F2). Podstawa: `location.hash`, brak zależności.
 - **Klastrowanie pinezek**: przy > 50 wpisach mapa zrobi się ciasna; prosty
   grid-clustering w przestrzeni ekranu wystarczy na start.
-- **Miniatury na pinezkach** przy wysokim zoomie (obraz 21:9 małpowany w marker).
+- ~~**Miniatury na pinezkach**~~ — **WDROŻONE (2026-09-05, PR #34, C2+5 obrotu 3
+  Pętli Jakości):** od zoomu ×6 (`PROGI_WARSTW.miniatury`) głowa pinezki pokazuje
+  wizualizację bytu przyciętą do koła (`clipPath #przyciecie-pinezki`), zamiast
+  pustego krążka. `href` jest ustawiany leniwie, przy pierwszym przekroczeniu
+  progu, więc start aplikacji nadal nie pobiera dwudziestu kilku obrazów; wpis bez
+  pola `obraz` po prostu nie dostaje miniatury. Reguły CSS są zakotwiczone w
+  `.mapa-svg` (kontrakt z `test/mapa-css.test.js`), a render sprawdza
+  `test/pinezka.test.js`.
 - ~~**Strona tagu**~~ — **WDROŻONE (2026-08-30, PR #10, C2 pętla jakości):** klik
   w tag → filtr mapy + warstwa `#tag:<slug>` z kategorią, opisem i listą
   manifestacji (klik → kartoteka), adresowalna i z przyciskiem „kopiuj link”.

@@ -1100,3 +1100,8 @@ div.warstwa.otwarta { display: block; animation: warstwa-wnika 0.2s ease-out; }
 /* SPLOT: wybór drogi z katalogu (C6, obrót 3) */
 .splot-drogi { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-bottom: 14px; }
 .splot-wybor.aktywny { background: var(--akcent); color: var(--akcent-tekst); border-color: var(--akcent); }
+
+/* Miniatury wizualizacji na pinezkach przy wysokim zoomie (C2+5, obrót 3) */
+.mapa-svg .pinezki .miniatura { display: none; }
+.mapa-svg .pinezki.z-miniaturami .miniatura { display: block; }
+.mapa-svg .pinezki.z-miniaturami .glowa { stroke-width: 2.5; }
