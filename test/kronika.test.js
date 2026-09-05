@@ -655,7 +655,7 @@ test('agendaTomu: otwarte wątki, słabe paliwo i ciche kultury', async () => {
   assert.ok(Array.isArray(a.watki) && a.watki.length > 0);
   assert.ok(a.watki.every((w) => w.id && Array.isArray(w.byty)));
   assert.ok(Array.isArray(a.slabi));
-  assert.equal(a.ostatnia, 'epoka-12');
+  assert.equal(a.ostatnia, 'epoka-13');
 });
 
 test('S1: raport Tomu zawiera miniatury epok i rozstaje silnika', async () => {
@@ -744,7 +744,7 @@ test('sortowanie plików serii jest liczbowe, nie leksykalne (epoka-10 po epoce-
 test('Epoka X domyka Tom I zgodnie z rozliczeniem paliwa i osi', async () => {
   const podsumowanie = await wczytaj(PLIK_PODSUMOWANIA);
   assert.equal(podsumowanie.walidacja, true, JSON.stringify(podsumowanie.bledy));
-  assert.equal(podsumowanie.epoki.length, 12);
+  assert.equal(podsumowanie.epoki.length, 13);
 
   const e10 = podsumowanie.epoki[9];
   assert.equal(e10.slug, 'epoka-10');
@@ -786,7 +786,7 @@ test('Epoka XI wyrasta z drogi SPLOTU, nie ze skitu', async () => {
 
 test('Epoka XII wraca do rodowodu ze SKIT-u i wpina pierwszy byt zza oceanu', async () => {
   const podsumowanie = await wczytaj(PLIK_PODSUMOWANIA);
-  const e12 = podsumowanie.epoki.at(-1);
+  const e12 = podsumowanie.epoki[11];
   assert.equal(e12.slug, 'epoka-12');
   assert.equal(e12.skit, 'co-sie-podaje', 'Epoka XII wyrasta z rozmowy, nie z drogi SPLOTU');
   assert.equal(e12.zrodloSplotu ?? null, null, 'jeden rodowód naraz');
@@ -800,6 +800,24 @@ test('Epoka XII wraca do rodowodu ze SKIT-u i wpina pierwszy byt zza oceanu', as
   assert.deepEqual(drzwi.byty.sort(), ['iktomi', 'nessos', 'pandora']);
   const lakota = (e12.stanPo.dominacje || []).find((d) => d.kultura === 'lakota');
   assert.ok(lakota && lakota.wielkosc > 0, 'kultura lakocka wchodzi do dominacji Tomu I');
+});
+
+test('Epoka XIII zamyka obrót 6: trzy przedmioty i wątek ceny znaku', async () => {
+  const podsumowanie = await wczytaj(PLIK_PODSUMOWANIA);
+  const e13 = podsumowanie.epoki.at(-1);
+  assert.equal(e13.slug, 'epoka-13');
+  assert.equal(e13.skit, 'co-sie-nosi', 'Epoka XIII wyrasta z rozmowy, nie z drogi SPLOTU');
+  assert.equal(e13.zrodloSplotu ?? null, null, 'jeden rodowód naraz');
+  assert.deepEqual(
+    e13.uczestnicy.map((u) => u.slug).sort(),
+    ['boto-encantado', 'protostates', 'selkie-sule-skerry']
+  );
+  assert.equal(e13.walidacja, true, JSON.stringify(e13.bledy));
+  const cena = (e13.konsekwencje.watki || []).find((w) => w.id === 'cena-znaku');
+  assert.ok(cena && cena.stan === 'otwarty', 'Epoka XIII otwiera wątek ceny znaku');
+  assert.deepEqual(cena.byty.slice().sort(), ['boto-encantado', 'protostates', 'selkie-sule-skerry']);
+  assert.equal(e13.stanPo.os.mit, 25);
+  assert.equal(e13.stanPo.os.racjonalizacja, 75);
 });
 
 test('walidujZrodloSplotu pilnuje zgodności Epoki z rozstrzygnięciem drogi', () => {

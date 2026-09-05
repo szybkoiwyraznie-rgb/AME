@@ -1,0 +1,232 @@
+{
+  "slug": "epoka-13",
+  "tom": "tom-1",
+  "skit": "co-sie-nosi",
+  "tytul": "Trzy rzeczy, których nie wolno położyć",
+  "iskra": "Na wąskim pomoście spotyka się trójka, która nie może zdjąć z siebie jednego przedmiotu: foczej skóry, białego kapelusza i tarczy noszonej dla sąsiada. Rozmowa zaczyna się od przechwałki, kto ma trudniej, a kończy na trzech pytaniach, których wspólnota nigdy nie zadała żadnemu z nich.",
+  "pytanie": "Czy Archiwum zapisuje przedmiot, dzięki któremu byt jest wśród ludzi — czy zgodę, którą ktoś za ten przedmiot zapłacił?",
+  "uczestnicy": [
+    {
+      "slug": "selkie-sule-skerry",
+      "rola": "Ten, który przychodzi na umówiony dzień",
+      "kosztUdzialu": 2,
+      "zwrot": 2
+    },
+    {
+      "slug": "boto-encantado",
+      "rola": "Ten, który nie zdejmuje kapelusza",
+      "kosztUdzialu": 2,
+      "zwrot": 4
+    },
+    {
+      "slug": "protostates",
+      "rola": "Ten, który nie schodzi z linii",
+      "kosztUdzialu": 2,
+      "zwrot": 3
+    }
+  ],
+  "narrator": {
+    "ocena": [
+      {
+        "kto": "selkie-sule-skerry",
+        "kogo": "boto-encantado",
+        "stopien": 2,
+        "komentarz": "Nie kłamie i nie płaci. Zostawia we wsi wersję zdarzeń, która nikogo nie oskarża — i dlatego nikt jej nie sprawdza."
+      },
+      {
+        "kto": "boto-encantado",
+        "kogo": "protostates",
+        "stopien": 1,
+        "komentarz": "Jedyny przy tej rozmowie, który przyznaje, że nikt go nie zapytał, czy chce stać pierwszy. Powiedział to ciszej niż resztę."
+      },
+      {
+        "kto": "protostates",
+        "kogo": "selkie-sule-skerry",
+        "stopien": 2,
+        "komentarz": "Nazywa swoją nieobecność umową, nie klątwą: przychodzi, płaci, wraca. Z całej trójki tylko on zna cenę własnego dnia."
+      }
+    ],
+    "podsumowanie": "Epoka nie rozstrzyga, czyj ciężar jest większy — rozstrzyga, gdzie leży pytanie. Kronika zapisuje, że każdy z tych trzech przedmiotów działa dopiero wtedy, gdy wspólnota zgodzi się o coś nie pytać: o cenę umowy, o pamięć matki, o zgodę tego, kto stoi pierwszy. Boto wchodzi do Tomu I jako pierwszy byt z Ameryki Południowej i od razu z rachunkiem za cudze milczenie."
+  },
+  "konsekwencje": {
+    "os": {
+      "mit": 1,
+      "racjonalizacja": -1
+    },
+    "relacje": [
+      {
+        "typ": "wzmocnienie",
+        "skad": "selkie-sule-skerry",
+        "dokad": "protostates",
+        "opis": "Selkie nazwał regułę, której hoplita nie umiał nazwać sam: nieobecność bywa umową, jeśli ktokolwiek zna jej warunki."
+      },
+      {
+        "typ": "napiecie",
+        "skad": "boto-encantado",
+        "dokad": "selkie-sule-skerry",
+        "opis": "Delfin nie płaci za noc, którą zabiera; selkie płaci co roku i nie chce, by ich obu liczono tak samo."
+      },
+      {
+        "typ": "neutralna",
+        "skad": "protostates",
+        "dokad": "boto-encantado",
+        "opis": "Obaj noszą rzecz, która zasłania to, czego nie da się zmienić: otwór oddechowy i pytanie o zgodę."
+      }
+    ],
+    "zasieg": [
+      {
+        "slug": "selkie-sule-skerry",
+        "delta": 0.006,
+        "opis": "Umowa z lądem przestała być prywatną balladą: stała się miarą, którą Kronika przykłada do innych powrotów."
+      },
+      {
+        "slug": "boto-encantado",
+        "delta": 0.018,
+        "opis": "Pierwsze wejście bytu z Ameryki Południowej do Tomu I — razem z nim wchodzi wersja zdarzeń, która chroni wieś kosztem pamięci matki."
+      },
+      {
+        "slug": "protostates",
+        "delta": 0.01,
+        "opis": "Fantom pierwszego szeregu po raz pierwszy mówi o sobie w pierwszej osobie, a nie przez cudzą pieśń."
+      }
+    ],
+    "dominacje": [
+      {
+        "kultura": "szkocja-polnocna",
+        "kult": "selkie-sule-skerry",
+        "delta": 0.006
+      },
+      {
+        "kultura": "amazonia",
+        "kult": "boto-encantado",
+        "delta": 0.018
+      },
+      {
+        "kultura": "grecja",
+        "kult": "protostates",
+        "delta": 0.01
+      }
+    ],
+    "pozycje": [
+      {
+        "slug": "selkie-sule-skerry",
+        "status": "odporny",
+        "opis": "Nie stracił nic; zyskał to, że jego coroczny dzień nazwano umową, a nie kaprysem morza."
+      },
+      {
+        "slug": "boto-encantado",
+        "status": "wzmocniony",
+        "opis": "Wszedł do Kroniki z pełnym rachunkiem: taniec, dziecko bez ojca i moratorium na połów, którego nie ustanowiono dla niego."
+      },
+      {
+        "slug": "protostates",
+        "status": "przemieniony",
+        "opis": "Przestał być wyłącznie figurą męstwa: powiedział, że nikt nie zapytał go o zgodę, i Kronika to zapisała."
+      }
+    ],
+    "watki": [
+      {
+        "id": "pierwszy-w-linii",
+        "stan": "otwarty",
+        "byty": [
+          "protostates",
+          "knecht-z-koptos",
+          "syama-i-sarvara"
+        ],
+        "pytanie": "Co się stanie z linią, gdy pierwszy przestanie stać, a nikt nie uzna, że ktoś go zastąpił?"
+      },
+      {
+        "id": "niewinny-bierca",
+        "stan": "otwarty",
+        "byty": [
+          "kentaur-pelion",
+          "pandora",
+          "empusa-korynt"
+        ],
+        "pytanie": "Pandora wie już, że brała — ale czy Archiwum umie odróżnić biorącego od tego, kto ustawił rzecz na jego drodze?"
+      },
+      {
+        "id": "warunek-barbarossy",
+        "stan": "otwarty",
+        "byty": [
+          "barbarossa-kyffhaeuser",
+          "kentaur-pelion",
+          "egungun"
+        ],
+        "pytanie": "Czy dług śpiącego cesarza da się spłacić gościną — czy rachunek, który zapłacił ze snu, przyjdzie kiedyś wyrównać na jawie?"
+      },
+      {
+        "id": "kres-indry",
+        "stan": "otwarty",
+        "byty": [
+          "indra"
+        ],
+        "pytanie": "Kto zapisze kres Indry: ten, kto go zdetronizuje, czy ten, który przestaje się bać jego gromu?"
+      },
+      {
+        "id": "znak-nie-wystarcza",
+        "stan": "otwarty",
+        "byty": [
+          "sfinks-teby",
+          "loup-garou-gevaudan",
+          "neith-z-sais"
+        ],
+        "pytanie": "Loup-garou dostał adres zamiast opisu, ale kto zapyta o resztę jego imienia, gdy przestanie być ciekawym tropem?"
+      },
+      {
+        "id": "prawo-progu",
+        "stan": "otwarty",
+        "byty": [
+          "cormoran-st-michaels-mount",
+          "ben-varrey",
+          "lincoln-imp",
+          "loup-garou-gevaudan"
+        ],
+        "pytanie": "Jeśli próg należy do przechodzącego, to kto płaci za jego utrzymanie, gdy gospodarz przestanie być największy?"
+      },
+      {
+        "id": "slad-ostatni-slad-gevaudan",
+        "stan": "otwarty",
+        "byty": [
+          "loup-garou-gevaudan",
+          "sfinks-teby",
+          "neith-z-sais"
+        ],
+        "pytanie": "Kto wróci po ślad zostawiony w cudzym raporcie, zanim raport stanie się jedyną wersją drogi?"
+      },
+      {
+        "id": "zwezone-drzwi",
+        "stan": "otwarty",
+        "byty": [
+          "iktomi",
+          "pandora",
+          "nessos"
+        ],
+        "pytanie": "Czy przejście zwężone podstępem da się rozszerzyć z powrotem — i czy ktokolwiek prócz tego, kto je zwęził, w ogóle wie, jak się to robi?"
+      },
+      {
+        "id": "cena-znaku",
+        "stan": "otwarty",
+        "byty": [
+          "selkie-sule-skerry",
+          "boto-encantado",
+          "protostates"
+        ],
+        "pytanie": "Kto płaci za rzecz, dzięki której byt jest wśród ludzi — i dlaczego rachunek zawsze zostaje po stronie tych, których nikt nie zapytał?"
+      }
+    ]
+  },
+  "grafika": {
+    "podpis": "Wąski pomost przed świtem: focza skóra na kamieniu, biały kapelusz i tarcza wystawiona przodem.",
+    "styl": "Hyperrealistyczne zdjęcie filmowe, ultrapanorama 21:9.",
+    "prompt": "Hyperrealistic cinematic photograph, ultra-wide 21:9 anamorphic frame, blue hour before dawn on a narrow wooden pier over dark water. Three figures: a bare-chested northern seal-man sitting beside a folded wet sealskin laid on a stone, a tall pale man in a white linen suit and broad-brimmed white hat standing at the water's edge with one hand behind his back, and a bronze-armoured Greek hoplite phantom in a crested Corinthian helmet standing across the narrowest part of the planks with a round shield held forward. Cold mist, still water, one distant lamp, restrained mythic realism, no gore, no text, no modern objects.",
+    "obraz": "assets/wizualizacje/kronika-tom-1-epoka-13.jpg"
+  },
+  "meta": {
+    "utworzono": "2026-09-05 21:00",
+    "autor": "sesja arena 2026-09-05",
+    "wersja": 1,
+    "poprzednik": "epoka-12"
+  },
+  "przebieg": "Trzynasta Epoka Tomu I wyrasta ze SKIT-u „CO SIĘ NOSI”. Trzy przedmioty, bez których trójka bytów nie może być wśród ludzi, i trzy pytania, których wspólnota nigdy nie zadała. Kronika notuje wejście pierwszego bytu z Ameryki Południowej i otwiera wątek ceny znaku."
+}
