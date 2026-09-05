@@ -1,6 +1,6 @@
 {
   "wersja": 3,
-  "buildTime": "2026-09-05T11:58:35.341Z",
+  "buildTime": "2026-09-05T12:02:14.546Z",
   "liczba": 25,
   "liczbaSkitow": 46,
   "kanon": {
@@ -2463,6 +2463,34 @@
       ],
       "slow": 283,
       "data": "2026-08-28"
+    }
+  ],
+  "drogi": [
+    {
+      "slug": "ostatni-slad-gevaudan",
+      "tytul": "Ostatni ślad w Gévaudan",
+      "cel": "Przeprowadzić loup-garou przez zamykany las, zanim łowcy odetną mu wszystkie drogi.",
+      "miejsce": "Gévaudan, Francja",
+      "sklad": [
+        "loup-garou-gevaudan",
+        "sfinks-teby",
+        "neith-z-sais"
+      ],
+      "wezly": 3,
+      "plik": "data/splot/droga-ostatni-slad-gevaudan.json"
+    },
+    {
+      "slug": "popiol-z-forsaeludalur",
+      "tytul": "Popiół z Forsæludalur",
+      "cel": "Dokończyć pochówek Glámra według obrzędu, zanim komisja zamknie sprawę protokołem i zostawi popiół przy drodze.",
+      "miejsce": "Forsæludalur, Vatnsdalur, Islandia",
+      "sklad": [
+        "glamr-z-thorhallsstadir",
+        "neith-z-sais",
+        "egungun"
+      ],
+      "wezly": 3,
+      "plik": "data/splot/droga-popiol-z-forsaeludalur.json"
     }
   ],
   "aktualizacje": [

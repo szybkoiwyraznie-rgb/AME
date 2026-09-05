@@ -7,6 +7,8 @@ import {
   wczytajSkiti,
   wczytajKanon,
   zbudujIndeks,
+  wczytajDrogi,
+  KATALOG_DROG,
   walidujTagi,
   walidujKanon,
   PLIK_INDEKSU,
@@ -21,14 +23,16 @@ test('wszystkie wpisy w data/manifestations przechodzą walidację protokołu', 
 
 test('data/index.json jest spójny z wpisami i bazą skitów (deterministyczny build)', async () => {
   const wpisy = await wczytajIKwaliduj();
-  const skiti = await wczytajSkiti(KATALOG_SKITOW, new Set(wpisy.map((w) => w.slug)));
+  const slugiBytow = new Set(wpisy.map((w) => w.slug));
+  const skiti = await wczytajSkiti(KATALOG_SKITOW, slugiBytow);
+  const drogi = await wczytajDrogi(KATALOG_DROG, slugiBytow);
   const kanon = await wczytajKanon();
   const istniejacy = await readFile(PLIK_INDEKSU, 'utf8');
   let buildTime = null;
   try {
     buildTime = JSON.parse(istniejacy).buildTime;
   } catch {}
-  const oczekiwany = JSON.stringify(zbudujIndeks(wpisy, skiti, kanon, buildTime), null, 2) + '\n';
+  const oczekiwany = JSON.stringify(zbudujIndeks(wpisy, skiti, kanon, buildTime, drogi), null, 2) + '\n';
   assert.equal(istniejacy, oczekiwany, 'data/index.json jest nieaktualny — uruchom npm run build');
 });
 

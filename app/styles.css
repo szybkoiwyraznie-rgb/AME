@@ -1096,3 +1096,7 @@ div.warstwa.otwarta { display: block; animation: warstwa-wnika 0.2s ease-out; }
 .prog-raport.przejscie { border-left: 4px solid #6e9e70; }
 .prog-raport.cena { border-left: 4px solid var(--akcent); }
 .prog-raport.odmowa { border-left: 4px solid var(--akcent-2); }
+
+/* SPLOT: wybór drogi z katalogu (C6, obrót 3) */
+.splot-drogi { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-bottom: 14px; }
+.splot-wybor.aktywny { background: var(--akcent); color: var(--akcent-tekst); border-color: var(--akcent); }

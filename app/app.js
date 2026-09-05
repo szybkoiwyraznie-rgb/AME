@@ -1,8 +1,8 @@
 /**
  * app/app.js — bootstrap AME: ładuje indeks, mapę świata, spina UI.
  */
-import { stworzMape, PROGI_WARSTW, PODKLADY_ONLINE } from './map.js?v=c6-7';
-import { zaladujIndeks, zaladujWpis, zaladujSkit, dopasowania, wylosujSlug, slugDnia } from './data.js?v=c6-7';
+import { stworzMape, PROGI_WARSTW, PODKLADY_ONLINE } from './map.js?v=c6-8';
+import { zaladujIndeks, zaladujWpis, zaladujSkit, dopasowania, wylosujSlug, slugDnia } from './data.js?v=c6-8';
 import {
   htmlWpisu,
   htmlWarstwyWpisu,
@@ -29,11 +29,11 @@ import {
   htmlProgow,
   paryRozmowySkitu,
   zB64utf8,
-} from './ui.js?v=c6-7';
-import { rozegrajDroge } from './splot.js?v=c6-7';
-import { tablicaProgow, kluczeDlaBytu, rozegrajProg } from './prog.js?v=c6-7';
-import { profileKartoteki } from './arena.js?v=c6-7';
-import { SZEROKOSC, WYSOKOSC, odwroc, projektuj, serializujWidok, parsujWidokMapy } from './geo.js?v=c6-7';
+} from './ui.js?v=c6-8';
+import { rozegrajDroge } from './splot.js?v=c6-8';
+import { tablicaProgow, kluczeDlaBytu, rozegrajProg } from './prog.js?v=c6-8';
+import { profileKartoteki } from './arena.js?v=c6-8';
+import { SZEROKOSC, WYSOKOSC, odwroc, projektuj, serializujWidok, parsujWidokMapy } from './geo.js?v=c6-8';
 
 const $ = (sel) => document.querySelector(sel);
 
@@ -420,16 +420,19 @@ function otworzTrofea() {
 }
 
 /** C5: raport jednej drogi z losowaniem przez bezpieczny adapter przeglądarki. */
-async function otworzSplot() {
-  if (stan.warstwa?.tryb === 'splot') return zamknijWarstwe();
+async function otworzSplot(slugDrogi = null) {
+  if (stan.warstwa?.tryb === 'splot' && !slugDrogi) return zamknijWarstwe();
   stan.warstwa = { tryb: 'splot' };
+  const katalog = stan.indeks?.drogi ?? [];
+  const wybrana = katalog.find((d) => d.slug === slugDrogi) ?? katalog[0] ?? null;
   const warstwa = $('#warstwa');
   warstwa.classList.add('otwarta');
-  warstwa.innerHTML = szkicWarstwy('SPLOT — Ostatni ślad w Gévaudan', '<p class="ladowanie">Rozstrzyganie drogi…</p>');
+  warstwa.innerHTML = szkicWarstwy(wybrana ? `SPLOT — ${wybrana.tytul}` : 'SPLOT', '<p class="ladowanie">Rozstrzyganie drogi…</p>');
   warstwaTrybPrzycisku('#przycisk-splot', true);
-  for (const id of ['#przycisk-skity', '#przycisk-nowosci', '#przycisk-trofea', '#przycisk-kronika']) warstwaTrybPrzycisku(id, false);
+  for (const id of ['#przycisk-skity', '#przycisk-nowosci', '#przycisk-trofea', '#przycisk-kronika', '#przycisk-prog']) warstwaTrybPrzycisku(id, false);
   try {
-    const road = await fetch(new URL('data/splot/droga-ostatni-slad-gevaudan.json', document.baseURI)).then((r) => { if (!r.ok) throw new Error(`HTTP ${r.status}`); return r.json(); });
+    const plik = wybrana?.plik ?? 'data/splot/droga-ostatni-slad-gevaudan.json';
+    const road = await fetch(new URL(plik, document.baseURI)).then((r) => { if (!r.ok) throw new Error(`HTTP ${r.status}`); return r.json(); });
     // Sprzężenie Kronika → SPLOT (ADR 0025): stan świata modyfikuje szanse węzłów.
     // Brak Kroniki nie blokuje drogi — wtedy napór świata wynosi zero.
     let kronika = null;
@@ -438,6 +441,9 @@ async function otworzSplot() {
     const wynik = rozegrajDroge({ droga: road, indeks: stan.indeks, kanon: stan.indeks.kanon, kronika, los });
     warstwa.innerHTML = szkicWarstwy(road.tytul, htmlSplotu(road, wynik, stan.indeks));
     warstwa.scrollTop = 0;
+    for (const przycisk of warstwa.querySelectorAll('[data-droga]')) {
+      przycisk.addEventListener('click', () => otworzSplot(przycisk.dataset.droga));
+    }
   } catch (err) {
     warstwa.innerHTML = szkicWarstwy('SPLOT', `<p class="blad">Nie udało się rozstrzygnąć drogi: ${esc(err.message)}</p>`);
   }

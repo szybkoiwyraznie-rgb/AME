@@ -269,12 +269,22 @@ export function htmlEchaDrogi(echo, indeks) {
   return `<section class="splot-echo"><h3>Ślad dla Kroniki</h3><p>${esc(os)}${zasieg ? ` · ${zasieg}` : ''}</p><p class="splot-watek"><span class="chip">${esc(echo.watek.id)}</span> ${echo.watek.stan === 'zamkniety' ? 'do domknięcia' : 'otwarty'} — ${esc(echo.watek.pytanie)}</p><p class="maly">Epoka może przyjąć ten ślad polem <code>zrodloSplotu</code>; walidator Kroniki sprawdzi, czy kierunek osi zgadza się z wynikiem drogi.</p></section>`;
 }
 
+/** C6 (obrót 3): pasek wyboru drogi SPLOTU z katalogu w indeksie. */
+export function htmlWyboruDrogi(drogi, aktywna) {
+  const lista = Array.isArray(drogi) ? drogi : [];
+  if (lista.length < 2) return '';
+  const guziki = lista
+    .map((d) => `<button class="chip splot-wybor${d.slug === aktywna ? ' aktywny' : ''}" type="button" data-droga="${esc(d.slug)}"${d.slug === aktywna ? ' aria-pressed="true"' : ''}>${esc(d.tytul)}</button>`)
+    .join(' ');
+  return `<nav class="splot-drogi" aria-label="Wybór drogi SPLOTU"><span class="maly">Drogi w archiwum:</span> ${guziki}</nav>`;
+}
+
 export function htmlSplotu(droga, wynik, indeks) {
   const nazwa = (slug) => indeks?.manifestacje?.find((m) => m.slug === slug)?.nazwa ?? slug;
   const sklad = (droga.sklad ?? []).map((slug) => `<button class="chip link" data-slug="${esc(slug)}">${esc(nazwa(slug))}</button>`).join(' ');
   const wiersze = (wynik.dziennik ?? []).map((w, i) => `<article class="splot-wezel ${w.sukces ? 'sukces' : 'porazka'}"><header><span>${i + 1}. ${esc(w.nazwa)}</span><strong>${w.sukces ? 'sukces' : 'porażka'}</strong></header><div class="splot-wykres"><span class="splot-szansa" style="width:${Math.round(w.prawdopodobienstwo * 100)}%">szansa ${Math.round(w.prawdopodobienstwo * 100)}%</span><span class="splot-los">los ${(w.wartoscLosowa * 100).toFixed(1)}%</span></div><p>${esc(w.proza ?? '')}</p><small>zasoby po próbie: ${esc(opisZasobow(w.zasoby))}</small></article>`).join('');
   const obraz = droga.grafika?.obraz ? `<img class="splot-obraz" src="${esc(droga.grafika.obraz)}" alt="${esc(droga.grafika.prompt ?? droga.tytul)}" loading="lazy">` : '';
-  return `<div class="splot-raport"><header class="splot-hero"><p class="karta-inspiracja">SPLOT · droga fabularna · ${esc(droga.miejsce ?? '')}</p><h2>${esc(droga.tytul)}</h2><p>${esc(droga.cel)}</p><p class="splot-sklad">Skład: ${sklad}</p></header>${obraz}<section class="splot-wynik"><h3>Rozstrzygnięcie: ${esc(wynik.status)}</h3><p>${esc(wynik.proza)}</p><dl class="splot-zasoby">${Object.entries(wynik.zasoby ?? {}).map(([k, v]) => `<div><dt>${esc(k)}</dt><dd>${v}</dd></div>`).join('')}</dl></section>${htmlNaporuSwiata(wynik.swiat)}<section><h3>Dziennik drogi</h3>${wiersze}</section>${htmlEchaDrogi(wynik.echo, indeks)}</div>`;
+  return `<div class="splot-raport">${htmlWyboruDrogi(indeks?.drogi, droga.slug)}<header class="splot-hero"><p class="karta-inspiracja">SPLOT · droga fabularna · ${esc(droga.miejsce ?? '')}</p><h2>${esc(droga.tytul)}</h2><p>${esc(droga.cel)}</p><p class="splot-sklad">Skład: ${sklad}</p></header>${obraz}<section class="splot-wynik"><h3>Rozstrzygnięcie: ${esc(wynik.status)}</h3><p>${esc(wynik.proza)}</p><dl class="splot-zasoby">${Object.entries(wynik.zasoby ?? {}).map(([k, v]) => `<div><dt>${esc(k)}</dt><dd>${v}</dd></div>`).join('')}</dl></section>${htmlNaporuSwiata(wynik.swiat)}<section><h3>Dziennik drogi</h3>${wiersze}</section>${htmlEchaDrogi(wynik.echo, indeks)}</div>`;
 }
 
 /** C6: PRÓG — tablica kluczy kartoteki (spotkanie bez walki). */
