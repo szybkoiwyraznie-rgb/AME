@@ -12,6 +12,9 @@ import {
   rozstrzygnijProbe,
   rozegrajProg,
   tablicaProgow,
+  wsparcieSwiadka,
+  najlepszySwiadek,
+  MAX_SWIADEK,
 } from '../app/prog.js';
 
 const dane = async () => Promise.all([
@@ -136,4 +139,81 @@ test('PRÓG: tablica progów obejmuje całą kartotekę i jest posortowana malej
     tablicaProgow(indeks.manifestacje, { kanon, kronika, staranie: 1 }).map((w) => w.slug),
     wiersze.map((w) => w.slug)
   );
+});
+
+test('PRÓG: klucz „czuwanie” obsługuje motyw ostrzeżenia i nie wypiera mocniejszych gestów', async () => {
+  const [indeks, kanon] = await dane();
+  const czuwanie = KLUCZE_PROGU.find((k) => k.rodzaj === 'czuwanie');
+  assert.ok(czuwanie, 'klucz czuwania istnieje');
+  assert.deepEqual(czuwanie.motywy, ['ostrzezenie']);
+  const sily = KLUCZE_PROGU.map((k) => k.sila);
+  assert.deepEqual([...sily].sort((a, b) => b - a), sily, 'klucze idą od najmocniejszego');
+  const yara = profilBytu(indeks, kanon, 'yara-ma-yha-who');
+  const klucze = kluczeDlaBytu(yara).map((k) => k.rodzaj);
+  assert.ok(klucze.includes('czuwanie'), `czuwanie pasuje do bytu z ostrzeżeniem: ${klucze.join(', ')}`);
+  assert.equal(klucze[0], 'czuwanie', 'przy przemianie i ostrzeżeniu mocniejsze jest czuwanie');
+});
+
+test('PRÓG: świadek pomaga, gdy zna słabość progu, i szkodzi, gdy jest z tej samej tradycji', () => {
+  const p = (slug, motywy) => ({ staty: { slug, nazwa: slug, motywy } });
+  const prog = p('prog', ['zle-oko']);
+
+  const zna = wsparcieSwiadka(prog, p('swiadek-warunek', ['warunek']));
+  assert.equal(zna.premia, 6, 'warunek tnie złe oko');
+  assert.deepEqual(zna.powody.map((x) => x.nazwa), ['zna słabość progu']);
+
+  const swojak = wsparcieSwiadka(prog, p('swiadek-swojak', ['zle-oko']));
+  assert.equal(swojak.premia, -5, 'ktoś z tej samej tradycji trzyma drzwi razem z progiem');
+
+  const czuwajacy = wsparcieSwiadka(prog, p('swiadek-czuwa', ['ostrzezenie']));
+  assert.equal(czuwajacy.premia, 3, 'przestroga pilnuje, żeby nikt nie został sam');
+
+  const mieszany = wsparcieSwiadka(prog, p('swiadek-mieszany', ['warunek', 'ostrzezenie', 'zle-oko']));
+  assert.equal(mieszany.premia, 4, '6 + 3 − 5 = 4');
+  assert.equal(mieszany.powody.length, 3);
+
+  assert.equal(wsparcieSwiadka(prog, prog).premia, 0, 'byt nie jest świadkiem samego siebie');
+  assert.equal(wsparcieSwiadka(prog, null).premia, 0);
+  assert.equal(wsparcieSwiadka(null, p('x', ['warunek'])).premia, 0);
+
+  const skrajny = wsparcieSwiadka(p('prog2', ['zle-oko', 'jad', 'furia', 'klatwa', 'obrona']), p('s', ['warunek', 'uzdrowienie', 'oplaty', 'ostrzezenie']));
+  assert.ok(Math.abs(skrajny.premia) <= MAX_SWIADEK, 'wpływ świadka jest przycięty');
+});
+
+test('PRÓG: świadek przesuwa szansę i zostaje opisany w prozie próby', async () => {
+  const [indeks, kanon, kronika] = await dane();
+  const profile = profileKartoteki(indeks.manifestacje, kanon);
+  const profil = profile.get('balor');
+  const klucz = kluczeDlaBytu(profil)[0];
+  const kandydat = najlepszySwiadek(profil, profile);
+  assert.ok(kandydat && kandydat.premia > 0, 'dla Balora ktoś w kartotece jest pomocny');
+
+  const bez = szansaProgu({ profil, klucz, staranie: 1 });
+  const ze = szansaProgu({ profil, klucz, staranie: 1, swiadek: kandydat.premia });
+  assert.ok(ze.prawdopodobienstwo > bez.prawdopodobienstwo, 'towarzystwo podnosi szansę');
+  assert.equal(ze.swiadek, kandydat.premia);
+  assert.equal(szansaProgu({ profil, klucz, swiadek: 999 }).swiadek, MAX_SWIADEK);
+
+  const ostatnia = kronika.epoki.at(-1);
+  const wynik = rozegrajProg({ profil, klucz, staranie: 1, kronika: ostatnia, swiadek: profile.get(kandydat.slug), los: () => 0.01 });
+  assert.equal(wynik.status, 'przejscie');
+  assert.equal(wynik.swiadek.slug, kandydat.slug);
+  assert.ok(wynik.proza.includes(kandydat.nazwa), 'proza mówi, kto stał obok');
+
+  const samotny = rozegrajProg({ profil, klucz, staranie: 1, kronika: ostatnia, los: () => 0.99 });
+  assert.equal(samotny.swiadek.premia, 0);
+  assert.ok(samotny.proza.includes('Nikt nie stał obok'), 'brak świadka też jest zapisany');
+});
+
+test('PRÓG: tablica podaje najlepszego świadka albo mówi wprost, że go nie ma', async () => {
+  const [indeks, kanon] = await dane();
+  const wiersze = tablicaProgow(indeks.manifestacje, { kanon });
+  assert.ok(wiersze.length >= 30);
+  for (const w of wiersze) {
+    if (w.swiadek === null) continue;
+    assert.ok(w.swiadek.premia > 0, `${w.slug}: podpowiadamy tylko świadków, którzy pomagają`);
+    assert.notEqual(w.swiadek.slug, w.slug);
+    assert.ok(w.swiadek.powody.length > 0, `${w.slug}: powód towarzystwa musi być nazwany`);
+  }
+  assert.ok(wiersze.some((w) => w.swiadek), 'przynajmniej jeden próg ma sensownego świadka');
 });

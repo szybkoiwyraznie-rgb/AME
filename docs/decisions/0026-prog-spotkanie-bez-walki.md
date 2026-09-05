@@ -66,3 +66,32 @@ spotkanie rozstrzygane kluczem zamiast walki.
 - **Zapisywanie wyniku progu wprost do Kroniki** — złamałoby regułę jednego
   źródła Epoki; jeśli próg ma zostawić ślad w historii, właściwą drogą jest
   Epoka oparta o SKIT albo o drogę SPLOTU.
+
+## Aktualizacja 2026-09-05 (C6 obrotu 7): świadek przy progu
+
+Model „klucz zamiast broni” odpowiadał tylko na pytanie **czym**. Kartoteka
+zadaje jeszcze jedno: **z kim tam iść**. Trzy zapisy mówią to samo z trzech
+stron — czerwony człowieczek z figowca bierze tego, kto śpi sam, i nie zaczepia
+grupy; manxką syrenę wypuszczono po trzech dniach, bo patrzyła cała wyspa i bała
+się rachunku; hoplita pierwszego szeregu nosi tarczę dla tego, kto stoi obok.
+
+Do PROGU dochodzi więc trzeci składnik szansy, obok starania i stanu świata:
+
+- `wsparcieSwiadka(profil, swiadek)` — deterministyczna premia liczona wyłącznie
+  z motywów kanonu: **+6**, gdy motyw świadka kontruje motyw progu
+  (`KONTRA_MOTYWU` z Areny — ten sam słownik, żeby nie mnożyć prawd);
+  **+3** za motyw `ostrzezenie` (kto przestrzega, ten pilnuje, by nikt nie został
+  sam); **−5**, gdy świadek dzieli motyw z progiem — dwoje z jednej tradycji
+  trzyma drzwi razem, nie przeciw sobie. Wynik przycięty do `±MAX_SWIADEK` (8),
+  więc towarzystwo nigdy nie zastępuje klucza.
+- `najlepszySwiadek(profil, profile)` — kto z kartoteki pomoże najbardziej;
+  tablica progów pokazuje go jako „weź ze sobą”, a gdy nikogo nie ma, mówi
+  wprost, że w te drzwi idzie się samemu.
+- Proza próby zapisuje obecność albo brak świadka: „Obok stał X…” / „Nikt nie
+  stał obok; cały rachunek szedł na jednego”.
+
+Przy okazji doszedł ósmy klucz — **czuwanie** (`gest: nie kłaść się samemu
+i doczekać zmiany światła`, motyw `ostrzezenie`, siła 21). Lista `KLUCZE_PROGU`
+pozostaje posortowana malejąco po sile i test tego pilnuje.
+
+Sprzężenie pozostaje jednokierunkowe: świadek nie zapisuje niczego w Kronice.

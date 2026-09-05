@@ -32,7 +32,7 @@ import {
   htmlAreny,
 } from './ui.js?v=c6-12';
 import { rozegrajDroge } from './splot.js?v=c6-12';
-import { tablicaProgow, kluczeDlaBytu, rozegrajProg } from './prog.js?v=c6-12';
+import { tablicaProgow, kluczeDlaBytu, rozegrajProg } from './prog.js?v=c6-13';
 import { profileKartoteki, rozegrajSpor, paraDnia, haszTekstu, generatorZZiarna } from './arena.js?v=c6-12';
 import { SZEROKOSC, WYSOKOSC, odwroc, projektuj, serializujWidok, parsujWidokMapy } from './geo.js?v=c6-12';
 
@@ -472,8 +472,10 @@ async function otworzProg() {
       const los = () => { const b = new Uint32Array(1); globalThis.crypto?.getRandomValues?.(b); return (b[0] ?? 0) / 4294967296; };
       const kandydaci = wiersze;
       const wybor = kandydaci[Math.floor(los() * kandydaci.length)] ?? kandydaci[0];
-      const profil = profileKartoteki(stan.indeks.manifestacje, kanon).get(wybor.slug);
-      rysuj(rozegrajProg({ profil, klucz: kluczeDlaBytu(profil)[0], staranie: 1, kronika, los }));
+      const profile = profileKartoteki(stan.indeks.manifestacje, kanon);
+      const profil = profile.get(wybor.slug);
+      const swiadek = wybor.swiadek ? profile.get(wybor.swiadek.slug) ?? null : null;
+      rysuj(rozegrajProg({ profil, klucz: kluczeDlaBytu(profil)[0], staranie: 1, kronika, swiadek, los }));
     });
   };
   rysuj();

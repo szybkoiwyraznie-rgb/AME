@@ -14,7 +14,7 @@
  * świata (oś, zasięg), ale niczego w Kronice nie zapisuje — Epoka nadal ma
  * dokładnie jedno źródło (skit XOR zrodloSplotu).
  */
-import { profileKartoteki } from './arena.js';
+import { profileKartoteki, KONTRA_MOTYWU } from './arena.js';
 
 /**
  * Klucze progu: rodzaj gestu, motywy kartoteki, na które działa, i siła
@@ -25,6 +25,7 @@ export const KLUCZE_PROGU = Object.freeze([
   { rodzaj: 'zwierciadlo', nazwa: 'zwierciadło', gest: 'pokazać bytowi jego własne spojrzenie', motywy: ['zle-oko', 'jad'], sila: 26 },
   { rodzaj: 'odpowiedz', nazwa: 'odpowiedź', gest: 'odpowiedzieć na pytanie zadane w progu', motywy: ['zagadka', 'warunek'], sila: 24 },
   { rodzaj: 'hymn', nazwa: 'hymn', gest: 'powiedzieć znany wers we właściwej porze nocy', motywy: ['przewodnik', 'pamiec'], sila: 22 },
+  { rodzaj: 'czuwanie', nazwa: 'czuwanie', gest: 'nie kłaść się samemu i doczekać zmiany światła', motywy: ['ostrzezenie'], sila: 21 },
   { rodzaj: 'oplata', nazwa: 'opłata', gest: 'zapłacić z góry i nie targować się', motywy: ['oplaty', 'tkanie'], sila: 20 },
   { rodzaj: 'ogien', nazwa: 'ogień', gest: 'wnieść światło i spalić to, co zostało po zmarłym', motywy: ['oczyszczenie', 'uzdrowienie', 'klatwa'], sila: 20 },
   { rodzaj: 'imie', nazwa: 'imię', gest: 'nazwać byt jego własnym imieniem', motywy: ['przemiana', 'podstep'], sila: 18 },
@@ -83,23 +84,93 @@ export function pogodaProgu(kronika, slug) {
   return { premia, skladniki, os };
 }
 
+/** Maksymalna wartość bezwzględna wpływu świadka na szansę (punkty procentowe). */
+export const MAX_SWIADEK = 8;
+
+/**
+ * ŚWIADEK PROGU (C6, obrót 7 Pętli Jakości).
+ *
+ * Pytanie kartoteki brzmi nie tylko „czym rozbroić strażnika”, ale też „z kim
+ * tam iść”. Trzy zapisy z bazy mówią to samo z trzech stron: czerwony
+ * człowieczek bierze tego, kto śpi sam, i nie zaczepia grupy; manxką syrenę
+ * wypuszczono, bo cała wyspa patrzyła i bała się rachunku; hoplita pierwszego
+ * szeregu trzyma tarczę dla tego, kto stoi obok. Świadek nie bije i nie
+ * wykonuje gestu — zmienia tylko to, ile próg jest gotów puścić.
+ *
+ * Trzy reguły, wszystkie deterministyczne i policzalne z tagów kanonu:
+ *  +6  świadek zna słabość gospodarza progu (jego motyw kontruje motyw bytu);
+ *  +3  świadek nosi motyw „ostrzezenie” (pilnuje, żeby nikt nie został sam);
+ *  −5  świadek jest z tej samej tradycji co próg (dzieli z nim motyw) —
+ *      dwoje z jednej opowieści trzyma drzwi razem, nie przeciw sobie.
+ *
+ * Wynik jest przycięty do ±MAX_SWIADEK, więc towarzystwo nigdy nie zastępuje
+ * klucza; najwyżej przesuwa próbę o kilka punktów.
+ */
+export function wsparcieSwiadka(profil, swiadek) {
+  const powody = [];
+  if (!profil?.staty?.slug || !swiadek?.staty?.slug) return { premia: 0, powody, slug: null };
+  if (profil.staty.slug === swiadek.staty.slug) return { premia: 0, powody, slug: null };
+  const motywyProgu = new Set(profil.staty.motywy ?? []);
+  const motywySwiadka = new Set(swiadek.staty.motywy ?? []);
+  let premia = 0;
+  const kontrowane = [];
+  for (const m of motywySwiadka) {
+    for (const cel of KONTRA_MOTYWU[m] ?? []) {
+      if (motywyProgu.has(cel)) kontrowane.push(`${m} → ${cel}`);
+    }
+  }
+  if (kontrowane.length > 0) {
+    premia += 6;
+    powody.push({ nazwa: 'zna słabość progu', wartosc: 6, opis: kontrowane.join(', ') });
+  }
+  if (motywySwiadka.has('ostrzezenie')) {
+    premia += 3;
+    powody.push({ nazwa: 'pilnuje, by nikt nie został sam', wartosc: 3, opis: 'ostrzezenie' });
+  }
+  const wspolne = [...motywySwiadka].filter((m) => motywyProgu.has(m));
+  if (wspolne.length > 0) {
+    premia -= 5;
+    powody.push({ nazwa: 'z tej samej tradycji co próg', wartosc: -5, opis: wspolne.join(', ') });
+  }
+  return { premia: ogranicz(premia, -MAX_SWIADEK, MAX_SWIADEK), powody, slug: swiadek.staty.slug, nazwa: swiadek.staty.nazwa ?? swiadek.staty.slug };
+}
+
+/**
+ * Najlepszy możliwy świadek z kartoteki dla danego progu: ten, przy którym
+ * próba zyskuje najwięcej. Remisy rozstrzyga slug, żeby widok był stabilny.
+ */
+export function najlepszySwiadek(profil, profile) {
+  let najlepszy = null;
+  for (const [slug, kandydat] of profile ?? []) {
+    if (slug === profil?.staty?.slug) continue;
+    const w = wsparcieSwiadka(profil, kandydat);
+    if (w.premia <= 0) continue;
+    if (!najlepszy || w.premia > najlepszy.premia || (w.premia === najlepszy.premia && slug.localeCompare(najlepszy.slug, 'pl') < 0)) {
+      najlepszy = w;
+    }
+  }
+  return najlepszy;
+}
+
 /**
  * Deterministyczna szansa, że gest zadziała. Los nie jest tu używany.
  * `staranie` 0–3 opisuje, ile człowiek w to włożył (przygotowanie, świadek,
  * właściwa pora) — kosztuje czas, więc nie jest darmowe w fabule.
  */
-export function szansaProgu({ profil, klucz, staranie = 1, pogoda = 0 }) {
+export function szansaProgu({ profil, klucz, staranie = 1, pogoda = 0, swiadek = 0 }) {
   if (!profil?.staty?.slug) throw new TypeError('PRÓG: wymagany profil bytu z app/arena.js');
   if (!klucz?.rodzaj) throw new TypeError('PRÓG: wymagany klucz progu');
   const opor = oporProgu(profil);
   const wysilek = ogranicz(Math.floor(Number(staranie) || 0), 0, 3) * 6;
   const swiat = ogranicz(Number(pogoda) || 0, -12, 12);
-  const surowa = 44 + Number(klucz.sila ?? 0) + wysilek + swiat - opor;
+  const towarzystwo = ogranicz(Number(swiadek) || 0, -MAX_SWIADEK, MAX_SWIADEK);
+  const surowa = 44 + Number(klucz.sila ?? 0) + wysilek + swiat + towarzystwo - opor;
   return {
     prawdopodobienstwo: Math.round(ogranicz(surowa, 5, 95)) / 100,
     opor,
     wysilek,
     pogoda: swiat,
+    swiadek: towarzystwo,
     klucz: klucz.rodzaj,
   };
 }
@@ -131,20 +202,25 @@ const PROZA = {
 };
 
 /** Jedno podejście do progu: klucz, szansa, los, proza i ślad dla opowieści. */
-export function rozegrajProg({ profil, klucz, staranie = 1, kronika = null, los }) {
+export function rozegrajProg({ profil, klucz, staranie = 1, kronika = null, swiadek = null, los }) {
   const pogoda = pogodaProgu(kronika, profil?.staty?.slug ?? '');
-  const szansa = szansaProgu({ profil, klucz, staranie, pogoda: pogoda.premia });
+  const wsparcie = swiadek ? wsparcieSwiadka(profil, swiadek) : { premia: 0, powody: [], slug: null };
+  const szansa = szansaProgu({ profil, klucz, staranie, pogoda: pogoda.premia, swiadek: wsparcie.premia });
   const wynik = rozstrzygnijProbe(szansa.prawdopodobienstwo, los);
   const nazwa = profil?.staty?.nazwa ?? profil?.staty?.slug ?? 'Byt';
+  const dopisek = wsparcie.slug
+    ? ` Obok stał ${wsparcie.nazwa} i to ${wsparcie.premia >= 0 ? 'pomogło' : 'zaszkodziło'}: ${wsparcie.powody.map((p) => p.nazwa).join(', ')}.`
+    : ' Nikt nie stał obok; cały rachunek szedł na jednego.';
   return {
     slug: profil.staty.slug,
     nazwa,
     klucz,
     szansa,
     pogoda,
+    swiadek: wsparcie,
     status: wynik.status,
     wartoscLosowa: wynik.wartoscLosowa,
-    proza: PROZA[wynik.status](nazwa, klucz),
+    proza: PROZA[wynik.status](nazwa, klucz) + dopisek,
   };
 }
 
@@ -160,6 +236,7 @@ export function tablicaProgow(rekordy, { kanon = null, kronika = null, staranie 
     const klucze = kluczeDlaBytu(profil);
     const klucz = klucze[0];
     const pogoda = pogodaProgu(kronika, slug);
+    const swiadek = najlepszySwiadek(profil, profile);
     const szansa = szansaProgu({ profil, klucz, staranie, pogoda: pogoda.premia });
     wiersze.push({
       slug,
@@ -169,6 +246,7 @@ export function tablicaProgow(rekordy, { kanon = null, kronika = null, staranie 
       alternatywy: klucze.slice(1),
       opor: szansa.opor,
       pogoda: pogoda.premia,
+      swiadek,
       prawdopodobienstwo: szansa.prawdopodobienstwo,
     });
   }
