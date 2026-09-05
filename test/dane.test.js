@@ -1,7 +1,7 @@
 /** Testy prawdziwych danych repozytorium: walidacja wpisów + spójność indeksu. */
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { readFile, readdir } from 'node:fs/promises';
+import { access, readFile, readdir } from 'node:fs/promises';
 import {
   wczytajIKwaliduj,
   wczytajSkiti,
@@ -32,6 +32,20 @@ test('data/index.json jest spójny z wpisami i bazą skitów (deterministyczny b
   assert.equal(istniejacy, oczekiwany, 'data/index.json jest nieaktualny — uruchom npm run build');
 });
 
+test('każdy byt i każda Epoka Kroniki ma istniejącą ilustrację', async () => {
+  const wpisy = await wczytajIKwaliduj(KATALOG_WPISOW);
+  for (const w of wpisy) {
+    assert.ok(w.wizualizacja?.obraz, `${w.slug}: brak pola wizualizacja.obraz`);
+    await access(w.wizualizacja.obraz);
+  }
+  const epoki = (await readdir('data/kronika')).filter((f) => /^epoka-\d+\.json$/.test(f));
+  for (const plik of epoki) {
+    const e = JSON.parse(await readFile(`data/kronika/${plik}`, 'utf8'));
+    assert.ok(e.grafika?.obraz, `${plik}: brak grafika.obraz`);
+    await access(e.grafika.obraz);
+  }
+});
+
 test('materializacje zleconych kart istnieją we właściwych strefach mapy', async () => {
   const wpisy = await wczytajIKwaliduj(KATALOG_WPISOW);
   const karty = new Set(wpisy.map((w) => w.karta.nazwa));
@@ -41,6 +55,10 @@ test('materializacje zleconych kart istnieją we właściwych strefach mapy', as
   assert.ok(e && e.lokalizacja.lat > 0 && e.lokalizacja.lat < 15 && e.lokalizacja.lon > 0 && e.lokalizacja.lon < 15, 'Oyo, Nigeria ~7.8N 3.9E');
   const i = wpisy.find((w) => w.slug === 'lincoln-imp');
   assert.ok(i && i.lokalizacja.lat > 50 && i.lokalizacja.lat < 60 && i.lokalizacja.lon < 0 && i.lokalizacja.lon > -2, 'Lincoln ~53.2N -0.5E');
+  const sfinks = wpisy.find((w) => w.slug === 'sfinks-teby');
+  assert.ok(sfinks && sfinks.lokalizacja.lat > 35 && sfinks.lokalizacja.lat < 40 && sfinks.lokalizacja.lon > 20 && sfinks.lokalizacja.lon < 25, 'Sfinks z Teb — Beocja, Grecja ~38.3N 23.3E');
+  const loup = wpisy.find((w) => w.slug === 'loup-garou-gevaudan');
+  assert.ok(loup && loup.lokalizacja.lat > 44 && loup.lokalizacja.lat < 46 && loup.lokalizacja.lon > 2 && loup.lokalizacja.lon < 5, 'Loup-garou — Gévaudan, Francja ~44.7N 3.5E');
 });
 
 test('każde źródło w kartotece ma adres https i nie powtarza się (B3 + ADR 0008)', async () => {

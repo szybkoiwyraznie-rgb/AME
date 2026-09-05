@@ -3064,7 +3064,7 @@
         "autor": "agent Areny — Pętla Jakości C6 (Epoka VIII)",
         "wersja": 1,
         "poprzednik": "epoka-7",
-        "uwagi": "Wątek „wedrowny dom Empusy” domknięty sceną gościny; otwarty nowy wątek „gość, któremu zapłacono”. Grafika epoki (kronika-tom-1-epoka-8.jpg) czeka na wygenerowanie poza sandboxem."
+        "uwagi": "Wątek „wedrowny dom Empusy” domknięty sceną gościny; otwarty nowy wątek „gość, któremu zapłacono”. Grafika epoki została dołączona do raportu."
       },
       "walidacja": true,
       "bledy": [],
@@ -3503,7 +3503,8 @@
       "grafika": {
         "podpis": "W komnacie pod Kyffhäuser stół zastawiony światłem napotyka worek złota, które jako jedyne nie znika o świcie.",
         "styl": "Hyperrealistyczne zdjęcie filmowe, ultrapanorama 21:9.",
-        "prompt": "Hyperrealistic cinematic photograph, ultra-wide 21:9 anamorphic frame. In a vaulted stone chamber deep inside a mountain, a long banquet table glows faintly with unreal light — silver dishes, a roast peacock, a translucent wine cup — while opposite it stands a heavy leather sack spilling real, cold gold coins across the flagstones. Behind the table a slender Phoenician woman in a richly dyed gown, one copper leg glinting below the hem, carefully folds a shimmering tablecloth that flickers at its edges. At the head of the chamber an ancient red-bearded emperor sleeps half-upright in his chair, crown askew, eyes closed, one hand still resting on an open purse; a small dwarf beside him holds the sack's mouth open. In the doorway stands a towering masquerade figure of layered, swaying cloth strips with no visible feet, watching the table like a judge. Warm honey candlelight from the illusion side, cold blue mountain-dark from the doorway, the gold coins casting the only true shadows in the room. No text, no letters, no inscriptions, no modern objects."
+        "prompt": "Hyperrealistic cinematic photograph, ultra-wide 21:9 anamorphic frame. In a vaulted stone chamber deep inside a mountain, a long banquet table glows faintly with unreal light — silver dishes, a roast peacock, a translucent wine cup — while opposite it stands a heavy leather sack spilling real, cold gold coins across the flagstones. Behind the table a slender Phoenician woman in a richly dyed gown, one copper leg glinting below the hem, carefully folds a shimmering tablecloth that flickers at its edges. At the head of the chamber an ancient red-bearded emperor sleeps half-upright in his chair, crown askew, eyes closed, one hand still resting on an open purse; a small dwarf beside him holds the sack's mouth open. In the doorway stands a towering masquerade figure of layered, swaying cloth strips with no visible feet, watching the table like a judge. Warm honey candlelight from the illusion side, cold blue mountain-dark from the doorway, the gold coins casting the only true shadows in the room. No text, no letters, no inscriptions, no modern objects.",
+        "obraz": "assets/wizualizacje/kronika-tom-1-epoka-8.jpg"
       }
     }
   ],

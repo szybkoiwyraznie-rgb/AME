@@ -1,6 +1,6 @@
 {
   "wersja": 3,
-  "buildTime": "2026-09-05T10:15:40.030Z",
+  "buildTime": "2026-09-05T10:21:55.414Z",
   "liczba": 22,
   "liczbaSkitow": 42,
   "kanon": {
@@ -1130,7 +1130,7 @@
         "sfinks-teby"
       ],
       "backlinki": [],
-      "obraz": null,
+      "obraz": "assets/wizualizacje/neith-z-sais.jpg",
       "trofea": {
         "pierwotne": "Czółenko tkackie z sali ofiarnej w Sais — nawój nici, która nigdy się nie kończy; dotknięte o świcie w Noc Lamp przestaje się poruszać i można je zabrać, ale kto spróbuje je przeciąć, tnie własny los",
         "wtorne": "Gliniana miseczka-lampa z Nocy Lamp, z warstwą soli i spłowiałym knotem — wciąż ciepła, choć od święta minęły wieki; dowód, że ktoś dotrwał z płomieniem do świtu"
@@ -2208,6 +2208,14 @@
     }
   ],
   "aktualizacje": [
+    {
+      "data": "2026-09-05 12:45",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "neith-z-sais",
+      "tytul": "Neith z Sais — tkaczka początku",
+      "opis": "Wizualizacja Neith z Sais została odtworzona i dołączona do opisu bogini tkaczki."
+    },
     {
       "data": "2026-09-05 00:30",
       "typ": "manifestacja",
