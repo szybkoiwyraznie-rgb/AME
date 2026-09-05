@@ -68,8 +68,16 @@
   `trofea`, więc widok nie dociąga pełnych wpisów; nazwa bytu otwiera jego
   kartotekę; deep-link `#trofea` (cache-bust `c5-11`). Do akceptacji
   właściciela przed live.
-- **Zasady citowania w aplikacji**: sekcja III jako przypisy z linkami
-  do repozytoriów cyfrowych (archive.org itp.) — sprawdzać dostępność linków.
+- ~~**Zasady cytowania w aplikacji**~~ — **CZĘŚCIOWO WDROŻONE (2026-09-05, PR #34,
+  C2+5 obrotu 2 Pętli Jakości):** `tools/lint-zrodel.mjs` pilnuje higieny sekcji III
+  pięcioma regułami — Z1 adres https, Z2 brak duplikatów adresu we wpisie,
+  Z3 źródło bez adresu musi podać rok albo strony (ADR 0008), Z4 co najmniej dwie
+  niezależne domeny na wpis, Z5 agregatory (Wikipedia, Fandom, Reddit…) nie mogą
+  być jedynym oparciem wpisu. Spięte z `npm run check` i `test/lint-zrodel.test.js`;
+  `--domeny` wypisuje zestawienie całego korpusu (dziś 24 wpisy, 82 domeny, na czele
+  en.wikipedia.org ×26 i theoi.com ×12). **Nadal otwarte:** sprawdzanie dostępności
+  linków (sandbox bez egressu, ADR 0003 — wymaga zewnętrznego CI) i renderowanie
+  sekcji III jako numerowanych przypisów w karcie.
 
 ## Infrastruktura
 
