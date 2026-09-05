@@ -280,6 +280,16 @@
       "tag": "tkanie",
       "kategoria": "motyw",
       "opis": "Tkanie jako kosmologia: byt, losy i płótno snute przez byt lub wokół niego"
+    },
+    {
+      "tag": "kornwalia",
+      "kategoria": "kultura",
+      "opis": "Folklor kornijski zachodniego Penwith: drolle o olbrzymach, piskach i skałach zatoki Mount's Bay"
+    },
+    {
+      "tag": "podstep",
+      "kategoria": "motyw",
+      "opis": "Rozstrzygnięcie fortelem zamiast siłą: byt zwodzi albo sam zostaje zwiedziony pułapką, pytaniem lub obietnicą"
     }
   ]
 }

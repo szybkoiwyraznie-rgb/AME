@@ -20,11 +20,15 @@
       },
       {
         "slug": "barbarossa-kyffhaeuser",
-        "wielkosc": 0.45
+        "wielkosc": 0.47
       },
       {
         "slug": "ben-varrey",
         "wielkosc": 0.32
+      },
+      {
+        "slug": "cormoran-st-michaels-mount",
+        "wielkosc": 0.17
       },
       {
         "slug": "drangue-shala",
@@ -56,7 +60,7 @@
       },
       {
         "slug": "lincoln-imp",
-        "wielkosc": 0.36
+        "wielkosc": 0.38
       },
       {
         "slug": "loup-garou-gevaudan",
@@ -96,7 +100,7 @@
       },
       {
         "slug": "talos-kreta",
-        "wielkosc": 0.42
+        "wielkosc": 0.44
       }
     ],
     "dominacje": [
@@ -113,12 +117,17 @@
       {
         "kultura": "niemcy",
         "kult": "barbarossa-kyffhaeuser",
-        "wielkosc": 0.45
+        "wielkosc": 0.47
       },
       {
         "kultura": "man",
         "kult": "ben-varrey",
         "wielkosc": 0.32
+      },
+      {
+        "kultura": "kornwalia",
+        "kult": "cormoran-st-michaels-mount",
+        "wielkosc": 0.17
       },
       {
         "kultura": "albania",
@@ -158,7 +167,7 @@
       {
         "kultura": "anglia",
         "kult": "lincoln-imp",
-        "wielkosc": 0.36
+        "wielkosc": 0.38
       },
       {
         "kultura": "francja",
@@ -208,7 +217,7 @@
       {
         "kultura": "grecja",
         "kult": "talos-kreta",
-        "wielkosc": 0.42
+        "wielkosc": 0.44
       }
     ]
   },

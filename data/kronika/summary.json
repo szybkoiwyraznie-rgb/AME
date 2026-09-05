@@ -34,13 +34,13 @@
           "slug": "barbarossa-kyffhaeuser",
           "nazwa": "Barbarossa w Kyffhäuserze",
           "rola": "Gospodarz warunku",
-          "pasywne": 19,
-          "saldoPrzed": 19,
+          "pasywne": 21,
+          "saldoPrzed": 21,
           "kosztUdzialu": 2,
           "kosztKlucza": 0,
           "boost": 0,
           "zwrot": 0,
-          "saldoPo": 17
+          "saldoPo": 19
         },
         {
           "slug": "kentaur-pelion",
@@ -71,11 +71,15 @@
           },
           {
             "slug": "barbarossa-kyffhaeuser",
-            "wielkosc": 0.45
+            "wielkosc": 0.47
           },
           {
             "slug": "ben-varrey",
             "wielkosc": 0.32
+          },
+          {
+            "slug": "cormoran-st-michaels-mount",
+            "wielkosc": 0.17
           },
           {
             "slug": "drangue-shala",
@@ -107,7 +111,7 @@
           },
           {
             "slug": "lincoln-imp",
-            "wielkosc": 0.36
+            "wielkosc": 0.38
           },
           {
             "slug": "loup-garou-gevaudan",
@@ -147,7 +151,7 @@
           },
           {
             "slug": "talos-kreta",
-            "wielkosc": 0.42
+            "wielkosc": 0.44
           }
         ],
         "dominacje": [
@@ -164,12 +168,17 @@
           {
             "kultura": "niemcy",
             "kult": "barbarossa-kyffhaeuser",
-            "wielkosc": 0.45
+            "wielkosc": 0.47
           },
           {
             "kultura": "man",
             "kult": "ben-varrey",
             "wielkosc": 0.32
+          },
+          {
+            "kultura": "kornwalia",
+            "kult": "cormoran-st-michaels-mount",
+            "wielkosc": 0.17
           },
           {
             "kultura": "albania",
@@ -209,7 +218,7 @@
           {
             "kultura": "anglia",
             "kult": "lincoln-imp",
-            "wielkosc": 0.36
+            "wielkosc": 0.38
           },
           {
             "kultura": "francja",
@@ -259,12 +268,12 @@
           {
             "kultura": "grecja",
             "kult": "talos-kreta",
-            "wielkosc": 0.42
+            "wielkosc": 0.44
           }
         ],
         "paliwo": {
           "egungun": 25,
-          "barbarossa-kyffhaeuser": 17,
+          "barbarossa-kyffhaeuser": 19,
           "kentaur-pelion": 16
         }
       },
@@ -298,8 +307,8 @@
           },
           {
             "slug": "barbarossa-kyffhaeuser",
-            "przed": 0.45,
-            "po": 0.45,
+            "przed": 0.47,
+            "po": 0.47,
             "delta": 0,
             "opis": "Cesarz nie zyskuje i nie traci: jego warunek pozostaje nierozstrzygnięty."
           },
@@ -322,8 +331,8 @@
           {
             "kultura": "niemcy",
             "kult": "barbarossa-kyffhaeuser",
-            "przed": 0.45,
-            "po": 0.45,
+            "przed": 0.47,
+            "po": 0.47,
             "delta": 0
           },
           {
@@ -430,13 +439,13 @@
           "slug": "lincoln-imp",
           "nazwa": "Imp z Lincoln",
           "rola": "Psuj, którego zatrzymał anioł",
-          "pasywne": 12,
-          "saldoPrzed": 12,
+          "pasywne": 14,
+          "saldoPrzed": 14,
           "kosztUdzialu": 2,
           "kosztKlucza": 0,
           "boost": 0,
           "zwrot": 0,
-          "saldoPo": 10
+          "saldoPo": 12
         },
         {
           "slug": "kentaur-pelion",
@@ -479,11 +488,15 @@
           },
           {
             "slug": "barbarossa-kyffhaeuser",
-            "wielkosc": 0.45
+            "wielkosc": 0.47
           },
           {
             "slug": "ben-varrey",
             "wielkosc": 0.32
+          },
+          {
+            "slug": "cormoran-st-michaels-mount",
+            "wielkosc": 0.17
           },
           {
             "slug": "drangue-shala",
@@ -515,7 +528,7 @@
           },
           {
             "slug": "lincoln-imp",
-            "wielkosc": 0.36
+            "wielkosc": 0.38
           },
           {
             "slug": "loup-garou-gevaudan",
@@ -555,7 +568,7 @@
           },
           {
             "slug": "talos-kreta",
-            "wielkosc": 0.42
+            "wielkosc": 0.44
           }
         ],
         "dominacje": [
@@ -572,12 +585,17 @@
           {
             "kultura": "niemcy",
             "kult": "barbarossa-kyffhaeuser",
-            "wielkosc": 0.45
+            "wielkosc": 0.47
           },
           {
             "kultura": "man",
             "kult": "ben-varrey",
             "wielkosc": 0.32
+          },
+          {
+            "kultura": "kornwalia",
+            "kult": "cormoran-st-michaels-mount",
+            "wielkosc": 0.17
           },
           {
             "kultura": "albania",
@@ -617,7 +635,7 @@
           {
             "kultura": "anglia",
             "kult": "lincoln-imp",
-            "wielkosc": 0.36
+            "wielkosc": 0.38
           },
           {
             "kultura": "francja",
@@ -667,14 +685,14 @@
           {
             "kultura": "grecja",
             "kult": "talos-kreta",
-            "wielkosc": 0.42
+            "wielkosc": 0.44
           }
         ],
         "paliwo": {
           "egungun": 25,
-          "barbarossa-kyffhaeuser": 17,
+          "barbarossa-kyffhaeuser": 19,
           "kentaur-pelion": 14,
-          "lincoln-imp": 10,
+          "lincoln-imp": 12,
           "empusa-korynt": 23
         }
       },
@@ -701,8 +719,8 @@
         "zasieg": [
           {
             "slug": "lincoln-imp",
-            "przed": 0.36,
-            "po": 0.36,
+            "przed": 0.38,
+            "po": 0.38,
             "delta": 0,
             "opis": "Imp nie zyskuje i nie traci: jego anioł pozostaje granicą, o której świat mówi raczej z uśmiechem niż z lękiem."
           },
@@ -725,8 +743,8 @@
           {
             "kultura": "anglia",
             "kult": "lincoln-imp",
-            "przed": 0.36,
-            "po": 0.36,
+            "przed": 0.38,
+            "po": 0.38,
             "delta": 0
           },
           {
@@ -905,11 +923,15 @@
           },
           {
             "slug": "barbarossa-kyffhaeuser",
-            "wielkosc": 0.45
+            "wielkosc": 0.47
           },
           {
             "slug": "ben-varrey",
             "wielkosc": 0.32
+          },
+          {
+            "slug": "cormoran-st-michaels-mount",
+            "wielkosc": 0.17
           },
           {
             "slug": "drangue-shala",
@@ -941,7 +963,7 @@
           },
           {
             "slug": "lincoln-imp",
-            "wielkosc": 0.36
+            "wielkosc": 0.38
           },
           {
             "slug": "loup-garou-gevaudan",
@@ -981,7 +1003,7 @@
           },
           {
             "slug": "talos-kreta",
-            "wielkosc": 0.42
+            "wielkosc": 0.44
           }
         ],
         "dominacje": [
@@ -998,12 +1020,17 @@
           {
             "kultura": "niemcy",
             "kult": "barbarossa-kyffhaeuser",
-            "wielkosc": 0.45
+            "wielkosc": 0.47
           },
           {
             "kultura": "man",
             "kult": "ben-varrey",
             "wielkosc": 0.32
+          },
+          {
+            "kultura": "kornwalia",
+            "kult": "cormoran-st-michaels-mount",
+            "wielkosc": 0.17
           },
           {
             "kultura": "albania",
@@ -1043,7 +1070,7 @@
           {
             "kultura": "anglia",
             "kult": "lincoln-imp",
-            "wielkosc": 0.36
+            "wielkosc": 0.38
           },
           {
             "kultura": "francja",
@@ -1093,14 +1120,14 @@
           {
             "kultura": "grecja",
             "kult": "talos-kreta",
-            "wielkosc": 0.42
+            "wielkosc": 0.44
           }
         ],
         "paliwo": {
           "egungun": 28,
-          "barbarossa-kyffhaeuser": 17,
+          "barbarossa-kyffhaeuser": 19,
           "kentaur-pelion": 14,
-          "lincoln-imp": 10,
+          "lincoln-imp": 12,
           "empusa-korynt": 21,
           "balor": 19
         }
@@ -1346,11 +1373,15 @@
           },
           {
             "slug": "barbarossa-kyffhaeuser",
-            "wielkosc": 0.45
+            "wielkosc": 0.47
           },
           {
             "slug": "ben-varrey",
             "wielkosc": 0.32
+          },
+          {
+            "slug": "cormoran-st-michaels-mount",
+            "wielkosc": 0.17
           },
           {
             "slug": "drangue-shala",
@@ -1382,7 +1413,7 @@
           },
           {
             "slug": "lincoln-imp",
-            "wielkosc": 0.36
+            "wielkosc": 0.38
           },
           {
             "slug": "loup-garou-gevaudan",
@@ -1422,7 +1453,7 @@
           },
           {
             "slug": "talos-kreta",
-            "wielkosc": 0.42
+            "wielkosc": 0.44
           }
         ],
         "dominacje": [
@@ -1439,12 +1470,17 @@
           {
             "kultura": "niemcy",
             "kult": "barbarossa-kyffhaeuser",
-            "wielkosc": 0.45
+            "wielkosc": 0.47
           },
           {
             "kultura": "man",
             "kult": "ben-varrey",
             "wielkosc": 0.32
+          },
+          {
+            "kultura": "kornwalia",
+            "kult": "cormoran-st-michaels-mount",
+            "wielkosc": 0.17
           },
           {
             "kultura": "albania",
@@ -1484,7 +1520,7 @@
           {
             "kultura": "anglia",
             "kult": "lincoln-imp",
-            "wielkosc": 0.36
+            "wielkosc": 0.38
           },
           {
             "kultura": "francja",
@@ -1534,14 +1570,14 @@
           {
             "kultura": "grecja",
             "kult": "talos-kreta",
-            "wielkosc": 0.42
+            "wielkosc": 0.44
           }
         ],
         "paliwo": {
           "egungun": 31,
-          "barbarossa-kyffhaeuser": 17,
+          "barbarossa-kyffhaeuser": 19,
           "kentaur-pelion": 14,
-          "lincoln-imp": 10,
+          "lincoln-imp": 12,
           "empusa-korynt": 21,
           "balor": 19,
           "selkie-sule-skerry": 24,
@@ -1750,25 +1786,25 @@
           "slug": "talos-kreta",
           "nazwa": "Talos — spiżowy strażnik Krety",
           "rola": "Spiżowy obrońca brzegu",
-          "pasywne": 20,
-          "saldoPrzed": 20,
+          "pasywne": 22,
+          "saldoPrzed": 22,
           "kosztUdzialu": 2,
           "kosztKlucza": 0,
           "boost": 0,
           "zwrot": 0,
-          "saldoPo": 18
+          "saldoPo": 20
         },
         {
           "slug": "lincoln-imp",
           "nazwa": "Imp z Lincoln",
           "rola": "Chochlik kpiący z powagi",
-          "pasywne": 12,
-          "saldoPrzed": 10,
+          "pasywne": 14,
+          "saldoPrzed": 12,
           "kosztUdzialu": 2,
           "kosztKlucza": 0,
           "boost": 0,
           "zwrot": 4,
-          "saldoPo": 12
+          "saldoPo": 14
         }
       ],
       "stanPo": {
@@ -1787,11 +1823,15 @@
           },
           {
             "slug": "barbarossa-kyffhaeuser",
-            "wielkosc": 0.45
+            "wielkosc": 0.47
           },
           {
             "slug": "ben-varrey",
             "wielkosc": 0.32
+          },
+          {
+            "slug": "cormoran-st-michaels-mount",
+            "wielkosc": 0.17
           },
           {
             "slug": "drangue-shala",
@@ -1823,7 +1863,7 @@
           },
           {
             "slug": "lincoln-imp",
-            "wielkosc": 0.375
+            "wielkosc": 0.395
           },
           {
             "slug": "loup-garou-gevaudan",
@@ -1863,7 +1903,7 @@
           },
           {
             "slug": "talos-kreta",
-            "wielkosc": 0.415
+            "wielkosc": 0.435
           }
         ],
         "dominacje": [
@@ -1880,12 +1920,17 @@
           {
             "kultura": "niemcy",
             "kult": "barbarossa-kyffhaeuser",
-            "wielkosc": 0.45
+            "wielkosc": 0.47
           },
           {
             "kultura": "man",
             "kult": "ben-varrey",
             "wielkosc": 0.32
+          },
+          {
+            "kultura": "kornwalia",
+            "kult": "cormoran-st-michaels-mount",
+            "wielkosc": 0.17
           },
           {
             "kultura": "albania",
@@ -1925,7 +1970,7 @@
           {
             "kultura": "anglia",
             "kult": "lincoln-imp",
-            "wielkosc": 0.375
+            "wielkosc": 0.395
           },
           {
             "kultura": "francja",
@@ -1975,20 +2020,20 @@
           {
             "kultura": "grecja",
             "kult": "talos-kreta",
-            "wielkosc": 0.415
+            "wielkosc": 0.435
           }
         ],
         "paliwo": {
           "egungun": 31,
-          "barbarossa-kyffhaeuser": 17,
+          "barbarossa-kyffhaeuser": 19,
           "kentaur-pelion": 14,
-          "lincoln-imp": 12,
+          "lincoln-imp": 14,
           "empusa-korynt": 21,
           "balor": 19,
           "selkie-sule-skerry": 24,
           "indra": 11,
           "sfinks-teby": 22,
-          "talos-kreta": 18
+          "talos-kreta": 20
         }
       },
       "konsekwencje": {
@@ -2020,8 +2065,8 @@
         "zasieg": [
           {
             "slug": "lincoln-imp",
-            "przed": 0.36,
-            "po": 0.375,
+            "przed": 0.38,
+            "po": 0.395,
             "delta": 0.015,
             "opis": "Śmiech i drwina zyskują przewagę nad dawną trwogą; chochlik rośnie w siłę."
           },
@@ -2034,8 +2079,8 @@
           },
           {
             "slug": "talos-kreta",
-            "przed": 0.42,
-            "po": 0.415,
+            "przed": 0.44,
+            "po": 0.435,
             "delta": -0.005,
             "opis": "Spiżowy olbrzym pozostaje tylko maszyną strzegącą pustego brzegu."
           }
@@ -2044,8 +2089,8 @@
           {
             "kultura": "anglia",
             "kult": "lincoln-imp",
-            "przed": 0.36,
-            "po": 0.375,
+            "przed": 0.38,
+            "po": 0.395,
             "delta": 0.015
           },
           {
@@ -2058,8 +2103,8 @@
           {
             "kultura": "grecja",
             "kult": "talos-kreta",
-            "przed": 0.42,
-            "po": 0.415,
+            "przed": 0.44,
+            "po": 0.435,
             "delta": -0.005
           }
         ],
@@ -2225,11 +2270,15 @@
           },
           {
             "slug": "barbarossa-kyffhaeuser",
-            "wielkosc": 0.45
+            "wielkosc": 0.47
           },
           {
             "slug": "ben-varrey",
             "wielkosc": 0.32
+          },
+          {
+            "slug": "cormoran-st-michaels-mount",
+            "wielkosc": 0.17
           },
           {
             "slug": "drangue-shala",
@@ -2261,7 +2310,7 @@
           },
           {
             "slug": "lincoln-imp",
-            "wielkosc": 0.375
+            "wielkosc": 0.395
           },
           {
             "slug": "loup-garou-gevaudan",
@@ -2301,7 +2350,7 @@
           },
           {
             "slug": "talos-kreta",
-            "wielkosc": 0.415
+            "wielkosc": 0.435
           }
         ],
         "dominacje": [
@@ -2318,12 +2367,17 @@
           {
             "kultura": "niemcy",
             "kult": "barbarossa-kyffhaeuser",
-            "wielkosc": 0.45
+            "wielkosc": 0.47
           },
           {
             "kultura": "man",
             "kult": "ben-varrey",
             "wielkosc": 0.32
+          },
+          {
+            "kultura": "kornwalia",
+            "kult": "cormoran-st-michaels-mount",
+            "wielkosc": 0.17
           },
           {
             "kultura": "albania",
@@ -2363,7 +2417,7 @@
           {
             "kultura": "anglia",
             "kult": "lincoln-imp",
-            "wielkosc": 0.375
+            "wielkosc": 0.395
           },
           {
             "kultura": "francja",
@@ -2413,20 +2467,20 @@
           {
             "kultura": "grecja",
             "kult": "talos-kreta",
-            "wielkosc": 0.415
+            "wielkosc": 0.435
           }
         ],
         "paliwo": {
           "egungun": 31,
-          "barbarossa-kyffhaeuser": 17,
+          "barbarossa-kyffhaeuser": 19,
           "kentaur-pelion": 14,
-          "lincoln-imp": 12,
+          "lincoln-imp": 14,
           "empusa-korynt": 20,
           "balor": 19,
           "selkie-sule-skerry": 24,
           "indra": 11,
           "sfinks-teby": 22,
-          "talos-kreta": 18,
+          "talos-kreta": 20,
           "pandora": 17,
           "morowa-panna": 9
         }
@@ -2672,11 +2726,15 @@
           },
           {
             "slug": "barbarossa-kyffhaeuser",
-            "wielkosc": 0.45
+            "wielkosc": 0.47
           },
           {
             "slug": "ben-varrey",
             "wielkosc": 0.32
+          },
+          {
+            "slug": "cormoran-st-michaels-mount",
+            "wielkosc": 0.17
           },
           {
             "slug": "drangue-shala",
@@ -2708,7 +2766,7 @@
           },
           {
             "slug": "lincoln-imp",
-            "wielkosc": 0.375
+            "wielkosc": 0.395
           },
           {
             "slug": "loup-garou-gevaudan",
@@ -2748,7 +2806,7 @@
           },
           {
             "slug": "talos-kreta",
-            "wielkosc": 0.415
+            "wielkosc": 0.435
           }
         ],
         "dominacje": [
@@ -2765,12 +2823,17 @@
           {
             "kultura": "niemcy",
             "kult": "barbarossa-kyffhaeuser",
-            "wielkosc": 0.45
+            "wielkosc": 0.47
           },
           {
             "kultura": "man",
             "kult": "ben-varrey",
             "wielkosc": 0.32
+          },
+          {
+            "kultura": "kornwalia",
+            "kult": "cormoran-st-michaels-mount",
+            "wielkosc": 0.17
           },
           {
             "kultura": "albania",
@@ -2810,7 +2873,7 @@
           {
             "kultura": "anglia",
             "kult": "lincoln-imp",
-            "wielkosc": 0.375
+            "wielkosc": 0.395
           },
           {
             "kultura": "francja",
@@ -2860,20 +2923,20 @@
           {
             "kultura": "grecja",
             "kult": "talos-kreta",
-            "wielkosc": 0.415
+            "wielkosc": 0.435
           }
         ],
         "paliwo": {
           "egungun": 31,
-          "barbarossa-kyffhaeuser": 17,
+          "barbarossa-kyffhaeuser": 19,
           "kentaur-pelion": 14,
-          "lincoln-imp": 12,
+          "lincoln-imp": 14,
           "empusa-korynt": 20,
           "balor": 19,
           "selkie-sule-skerry": 24,
           "indra": 11,
           "sfinks-teby": 22,
-          "talos-kreta": 18,
+          "talos-kreta": 20,
           "pandora": 17,
           "morowa-panna": 9,
           "protostates": 12,
@@ -3085,13 +3148,13 @@
           "slug": "barbarossa-kyffhaeuser",
           "nazwa": "Barbarossa w Kyffhäuserze",
           "rola": "Gospodarz, który płaci ze snu",
-          "pasywne": 19,
-          "saldoPrzed": 17,
+          "pasywne": 21,
+          "saldoPrzed": 19,
           "kosztUdzialu": 2,
           "kosztKlucza": 0,
           "boost": 0,
           "zwrot": 3,
-          "saldoPo": 18
+          "saldoPo": 20
         },
         {
           "slug": "egungun",
@@ -3122,11 +3185,15 @@
           },
           {
             "slug": "barbarossa-kyffhaeuser",
-            "wielkosc": 0.462
+            "wielkosc": 0.482
           },
           {
             "slug": "ben-varrey",
             "wielkosc": 0.32
+          },
+          {
+            "slug": "cormoran-st-michaels-mount",
+            "wielkosc": 0.17
           },
           {
             "slug": "drangue-shala",
@@ -3158,7 +3225,7 @@
           },
           {
             "slug": "lincoln-imp",
-            "wielkosc": 0.375
+            "wielkosc": 0.395
           },
           {
             "slug": "loup-garou-gevaudan",
@@ -3198,7 +3265,7 @@
           },
           {
             "slug": "talos-kreta",
-            "wielkosc": 0.415
+            "wielkosc": 0.435
           }
         ],
         "dominacje": [
@@ -3215,12 +3282,17 @@
           {
             "kultura": "niemcy",
             "kult": "barbarossa-kyffhaeuser",
-            "wielkosc": 0.462
+            "wielkosc": 0.482
           },
           {
             "kultura": "man",
             "kult": "ben-varrey",
             "wielkosc": 0.32
+          },
+          {
+            "kultura": "kornwalia",
+            "kult": "cormoran-st-michaels-mount",
+            "wielkosc": 0.17
           },
           {
             "kultura": "albania",
@@ -3260,7 +3332,7 @@
           {
             "kultura": "anglia",
             "kult": "lincoln-imp",
-            "wielkosc": 0.375
+            "wielkosc": 0.395
           },
           {
             "kultura": "francja",
@@ -3310,20 +3382,20 @@
           {
             "kultura": "grecja",
             "kult": "talos-kreta",
-            "wielkosc": 0.415
+            "wielkosc": 0.435
           }
         ],
         "paliwo": {
           "egungun": 30,
-          "barbarossa-kyffhaeuser": 18,
+          "barbarossa-kyffhaeuser": 20,
           "kentaur-pelion": 14,
-          "lincoln-imp": 12,
+          "lincoln-imp": 14,
           "empusa-korynt": 20,
           "balor": 19,
           "selkie-sule-skerry": 24,
           "indra": 11,
           "sfinks-teby": 22,
-          "talos-kreta": 18,
+          "talos-kreta": 20,
           "pandora": 17,
           "morowa-panna": 9,
           "protostates": 12,
@@ -3359,8 +3431,8 @@
         "zasieg": [
           {
             "slug": "barbarossa-kyffhaeuser",
-            "przed": 0.45,
-            "po": 0.462,
+            "przed": 0.47,
+            "po": 0.482,
             "delta": 0.012,
             "opis": "Gospodarz, który płaci ze snu: legenda Kyffhäuser zyskuje scenę, w której warunek przebudzenia ma już rachunek i adresata."
           },
@@ -3383,8 +3455,8 @@
           {
             "kultura": "niemcy",
             "kult": "barbarossa-kyffhaeuser",
-            "przed": 0.45,
-            "po": 0.462,
+            "przed": 0.47,
+            "po": 0.482,
             "delta": 0.012
           },
           {
@@ -3576,11 +3648,15 @@
           },
           {
             "slug": "barbarossa-kyffhaeuser",
-            "wielkosc": 0.462
+            "wielkosc": 0.482
           },
           {
             "slug": "ben-varrey",
             "wielkosc": 0.32
+          },
+          {
+            "slug": "cormoran-st-michaels-mount",
+            "wielkosc": 0.17
           },
           {
             "slug": "drangue-shala",
@@ -3612,7 +3688,7 @@
           },
           {
             "slug": "lincoln-imp",
-            "wielkosc": 0.375
+            "wielkosc": 0.395
           },
           {
             "slug": "loup-garou-gevaudan",
@@ -3652,7 +3728,7 @@
           },
           {
             "slug": "talos-kreta",
-            "wielkosc": 0.415
+            "wielkosc": 0.435
           }
         ],
         "dominacje": [
@@ -3669,12 +3745,17 @@
           {
             "kultura": "niemcy",
             "kult": "barbarossa-kyffhaeuser",
-            "wielkosc": 0.462
+            "wielkosc": 0.482
           },
           {
             "kultura": "man",
             "kult": "ben-varrey",
             "wielkosc": 0.32
+          },
+          {
+            "kultura": "kornwalia",
+            "kult": "cormoran-st-michaels-mount",
+            "wielkosc": 0.17
           },
           {
             "kultura": "albania",
@@ -3714,7 +3795,7 @@
           {
             "kultura": "anglia",
             "kult": "lincoln-imp",
-            "wielkosc": 0.375
+            "wielkosc": 0.395
           },
           {
             "kultura": "francja",
@@ -3764,20 +3845,20 @@
           {
             "kultura": "grecja",
             "kult": "talos-kreta",
-            "wielkosc": 0.415
+            "wielkosc": 0.435
           }
         ],
         "paliwo": {
           "egungun": 30,
-          "barbarossa-kyffhaeuser": 18,
+          "barbarossa-kyffhaeuser": 20,
           "kentaur-pelion": 14,
-          "lincoln-imp": 12,
+          "lincoln-imp": 14,
           "empusa-korynt": 20,
           "balor": 19,
           "selkie-sule-skerry": 24,
           "indra": 11,
           "sfinks-teby": 22,
-          "talos-kreta": 18,
+          "talos-kreta": 20,
           "pandora": 17,
           "morowa-panna": 9,
           "protostates": 12,
@@ -3990,11 +4071,15 @@
       },
       {
         "slug": "barbarossa-kyffhaeuser",
-        "wielkosc": 0.462
+        "wielkosc": 0.482
       },
       {
         "slug": "ben-varrey",
         "wielkosc": 0.32
+      },
+      {
+        "slug": "cormoran-st-michaels-mount",
+        "wielkosc": 0.17
       },
       {
         "slug": "drangue-shala",
@@ -4026,7 +4111,7 @@
       },
       {
         "slug": "lincoln-imp",
-        "wielkosc": 0.375
+        "wielkosc": 0.395
       },
       {
         "slug": "loup-garou-gevaudan",
@@ -4066,7 +4151,7 @@
       },
       {
         "slug": "talos-kreta",
-        "wielkosc": 0.415
+        "wielkosc": 0.435
       }
     ],
     "dominacje": [
@@ -4083,12 +4168,17 @@
       {
         "kultura": "niemcy",
         "kult": "barbarossa-kyffhaeuser",
-        "wielkosc": 0.462
+        "wielkosc": 0.482
       },
       {
         "kultura": "man",
         "kult": "ben-varrey",
         "wielkosc": 0.32
+      },
+      {
+        "kultura": "kornwalia",
+        "kult": "cormoran-st-michaels-mount",
+        "wielkosc": 0.17
       },
       {
         "kultura": "albania",
@@ -4128,7 +4218,7 @@
       {
         "kultura": "anglia",
         "kult": "lincoln-imp",
-        "wielkosc": 0.375
+        "wielkosc": 0.395
       },
       {
         "kultura": "francja",
@@ -4178,20 +4268,20 @@
       {
         "kultura": "grecja",
         "kult": "talos-kreta",
-        "wielkosc": 0.415
+        "wielkosc": 0.435
       }
     ],
     "paliwo": {
       "egungun": 30,
-      "barbarossa-kyffhaeuser": 18,
+      "barbarossa-kyffhaeuser": 20,
       "kentaur-pelion": 14,
-      "lincoln-imp": 12,
+      "lincoln-imp": 14,
       "empusa-korynt": 20,
       "balor": 19,
       "selkie-sule-skerry": 24,
       "indra": 11,
       "sfinks-teby": 22,
-      "talos-kreta": 18,
+      "talos-kreta": 20,
       "pandora": 17,
       "morowa-panna": 9,
       "protostates": 12,

@@ -1,7 +1,7 @@
 {
   "wersja": 3,
-  "buildTime": "2026-09-05T10:22:48.053Z",
-  "liczba": 22,
+  "buildTime": "2026-09-05T10:54:45.620Z",
+  "liczba": 23,
   "liczbaSkitow": 43,
   "kanon": {
     "kategorie": [
@@ -12,7 +12,7 @@
         "min": 1,
         "max": 1,
         "opis": "Jedna tradycja, z której byt pochodzi (PROTOKÓŁ §2: zakaz mieszanek synkretycznych)",
-        "ile": 13
+        "ile": 14
       },
       {
         "id": "typ",
@@ -30,7 +30,7 @@
         "min": 1,
         "max": 2,
         "opis": "Co wiąże byty i spoiwa sieci: powiązania w kartotekach i tematy SKITów",
-        "ile": 14
+        "ile": 15
       },
       {
         "id": "postac",
@@ -118,7 +118,8 @@
       "kategoria": "typ",
       "opis": "Byt o skali oblężniczej, z bronią wymagającą obsługi",
       "wpisy": [
-        "balor"
+        "balor",
+        "cormoran-st-michaels-mount"
       ]
     },
     "wilkolak": {
@@ -209,6 +210,7 @@
       "opis": "Cena za obecność bytu: hołd, ofiara, datek, karmicielne",
       "wpisy": [
         "agni",
+        "cormoran-st-michaels-mount",
         "drangue-shala"
       ]
     },
@@ -435,6 +437,20 @@
       "wpisy": [
         "neith-z-sais"
       ]
+    },
+    "kornwalia": {
+      "kategoria": "kultura",
+      "opis": "Folklor kornijski zachodniego Penwith: drolle o olbrzymach, piskach i skałach zatoki Mount's Bay",
+      "wpisy": [
+        "cormoran-st-michaels-mount"
+      ]
+    },
+    "podstep": {
+      "kategoria": "motyw",
+      "opis": "Rozstrzygnięcie fortelem zamiast siłą: byt zwodzi albo sam zostaje zwiedziony pułapką, pytaniem lub obietnicą",
+      "wpisy": [
+        "cormoran-st-michaels-mount"
+      ]
     }
   },
   "manifestacje": [
@@ -574,6 +590,7 @@
       "backlinki": [
         "agni",
         "balor",
+        "cormoran-st-michaels-mount",
         "drangue-shala",
         "egungun",
         "indra",
@@ -639,6 +656,38 @@
         "pod-dachem",
         "porcje"
       ]
+    },
+    {
+      "slug": "cormoran-st-michaels-mount",
+      "nazwa": "Cormoran z St Michael's Mount",
+      "nazwy_alternatywne": [
+        "Cormoran",
+        "Cormilion",
+        "Olbrzym z Góry św. Michała"
+      ],
+      "karta": "Hill Giant",
+      "miejscowosc": "St Michael's Mount (kornijskie Karrek Loos yn Koos) — wyspa pływowa w zatoce Mount's Bay, naprzeciw Marazion, zachodnia Kornwalia",
+      "kraj": "Wielka Brytania",
+      "lat": 50.116,
+      "lon": -5.4772,
+      "tagi": [
+        "kornwalia",
+        "olbrzym",
+        "oplaty",
+        "podstep"
+      ],
+      "powiazania": [
+        "barbarossa-kyffhaeuser",
+        "lincoln-imp",
+        "talos-kreta"
+      ],
+      "backlinki": [],
+      "obraz": "assets/wizualizacje/cormoran-st-michaels-mount.jpg",
+      "trofea": {
+        "pierwotne": "Kamienne serce wpuszczone w bruk ścieżki na szczyt Góry — ciemny, sercowaty otoczak między granitowymi kostkami; miejscowi mówią, że kto przyłoży do niego ucho, usłyszy uderzenie.",
+        "wtorne": "Pas z haftowanym napisem, nagroda rady miejskiej dla pogromcy: „Here's the right valiant Cornish Man, Who slew the Giant Cormilion” — dowód, że olbrzyma pokonano fortelem, nie siłą."
+      },
+      "skity": []
     },
     {
       "slug": "drangue-shala",
@@ -1009,6 +1058,7 @@
       ],
       "backlinki": [
         "balor",
+        "cormoran-st-michaels-mount",
         "drangue-shala"
       ],
       "obraz": "assets/wizualizacje/lincoln-imp.jpg",
@@ -1467,6 +1517,7 @@
         "sfinks-teby"
       ],
       "backlinki": [
+        "cormoran-st-michaels-mount",
         "kentaur-pelion",
         "knecht-z-koptos",
         "lincoln-imp",
@@ -2229,6 +2280,22 @@
     }
   ],
   "aktualizacje": [
+    {
+      "data": "2026-09-05 15:20",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "cormoran-st-michaels-mount",
+      "tytul": "Cormoran z St Michael's Mount",
+      "opis": "Nowa kartoteka: Cormoran, olbrzym z kornijskiej Góry św. Michała — budowa wyspy z białego granitu, wyprawy po bydło przez odsłoniętą groblę i śmierć w dole wykopanym przed świtem."
+    },
+    {
+      "data": "2026-09-05 15:20",
+      "typ": "manifestacja",
+      "akcja": "nowa",
+      "slug": "cormoran-st-michaels-mount",
+      "tytul": "Cormoran z St Michael's Mount",
+      "opis": "wpis w kartotece — materializacja karty „Hill Giant”"
+    },
     {
       "data": "2026-09-05 13:15",
       "typ": "skit",
