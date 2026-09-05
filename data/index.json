@@ -1,7 +1,7 @@
 {
   "wersja": 3,
-  "buildTime": "2026-09-05T13:47:31.211Z",
-  "liczba": 29,
+  "buildTime": "2026-09-05T13:56:15.685Z",
+  "liczba": 30,
   "liczbaSkitow": 49,
   "kanon": {
     "kategorie": [
@@ -12,7 +12,7 @@
         "min": 1,
         "max": 1,
         "opis": "Jedna tradycja, z której byt pochodzi (PROTOKÓŁ §2: zakaz mieszanek synkretycznych)",
-        "ile": 18
+        "ile": 19
       },
       {
         "id": "typ",
@@ -21,7 +21,7 @@
         "min": 1,
         "max": 1,
         "opis": "Czym byt jest — podstawowy filtr kartoteki",
-        "ile": 20
+        "ile": 21
       },
       {
         "id": "motyw",
@@ -30,7 +30,7 @@
         "min": 1,
         "max": 2,
         "opis": "Co wiąże byty i spoiwa sieci: powiązania w kartotekach i tematy SKITów",
-        "ile": 17
+        "ile": 18
       },
       {
         "id": "postac",
@@ -159,6 +159,13 @@
         "ben-varrey"
       ]
     },
+    "ngarrindjeri": {
+      "kategoria": "kultura",
+      "opis": "Ngarrindjeri i sąsiedzi znad dolnej Murray (południowo-wschodnia Australia) — opowieści w zapisie Davida Unaipona z lat 1924–1925.",
+      "wpisy": [
+        "yara-ma-yha-who"
+      ]
+    },
     "niemcy": {
       "kategoria": "kultura",
       "opis": "Podanie i legenda niemiecka (krąg gór i cesarza w górach)",
@@ -179,6 +186,162 @@
       "opis": "Folklor wyspiarski Orkadów i Shetlandu (szkocko-nordycki)",
       "wpisy": [
         "selkie-sule-skerry"
+      ]
+    },
+    "automat": {
+      "kategoria": "typ",
+      "opis": "Żywy automat: istota odlana lub zbudowana, poruszana płynem/duchem, nie zrodzona",
+      "wpisy": [
+        "knecht-z-koptos",
+        "pandora",
+        "talos-kreta"
+      ]
+    },
+    "bodhisattwa": {
+      "kategoria": "typ",
+      "opis": "Istota oświecona, która zostaje po wyzwoleniu, by ratować cierpiących",
+      "wpisy": [
+        "kannon-hase"
+      ]
+    },
+    "bog-ognia": {
+      "kategoria": "typ",
+      "opis": "Bóg ognia: palenisko, ofiara, słońce i błyskawica w jednym bycie",
+      "wpisy": [
+        "agni"
+      ]
+    },
+    "bogini-tkaczka": {
+      "kategoria": "typ",
+      "opis": "Bogini tkająca byt albo losy; stwórczyni i opiekunka płótna",
+      "wpisy": [
+        "neith-z-sais"
+      ]
+    },
+    "czarownik": {
+      "kategoria": "typ",
+      "opis": "Czarownik: człowiek, nie potwór — byt, którego moc bierze się z rzemiosła i z tego, że sąsiedzi w nie wierzą.",
+      "wpisy": [
+        "mangkukulam"
+      ]
+    },
+    "duch-przodkow": {
+      "kategoria": "typ",
+      "opis": "Przodek przywoływany przez wspólnotę i wracający w rytuale",
+      "wpisy": [
+        "egungun"
+      ]
+    },
+    "encantado": {
+      "kategoria": "typ",
+      "opis": "Encantado: mieszkaniec podwodnej krainy, który przybiera ludzką postać na jedną noc i musi wrócić do wody przed świtem.",
+      "wpisy": [
+        "boto-encantado"
+      ]
+    },
+    "fantom": {
+      "kategoria": "typ",
+      "opis": "Byt zbudowany z pozoru zmysłowego: trwa, dopóki trwa uwaga, którą się karmi",
+      "wpisy": [
+        "empusa-korynt",
+        "morowa-panna",
+        "protostates",
+        "syama-i-sarvara"
+      ]
+    },
+    "heros-burzy": {
+      "kategoria": "typ",
+      "opis": "Półboski obrońca mierzący się z demonem pogody",
+      "wpisy": [
+        "drangue-shala",
+        "indra"
+      ]
+    },
+    "istota-kamienna": {
+      "kategoria": "typ",
+      "opis": "Byt uwięziony w rzeźbie lub kamieniu, trwały i nieruchomy",
+      "wpisy": [
+        "lincoln-imp"
+      ]
+    },
+    "kentaur": {
+      "kategoria": "typ",
+      "opis": "Gatunek o dwóch połowach: człowiek z przodu, koń z tyłu, obie gotowe do ruchu",
+      "wpisy": [
+        "kentaur-pelion",
+        "nessos"
+      ]
+    },
+    "krol-wezy": {
+      "kategoria": "typ",
+      "opis": "Gadzi władca z koroną na łbie: zabija wzrokiem i jadem, panuje nad jednym miejscem",
+      "wpisy": [
+        "bazyliszek-warszawski"
+      ]
+    },
+    "olbrzym": {
+      "kategoria": "typ",
+      "opis": "Byt o skali oblężniczej, z bronią wymagającą obsługi",
+      "wpisy": [
+        "balor",
+        "cormoran-st-michaels-mount"
+      ]
+    },
+    "powracajacy-zmarly": {
+      "kategoria": "typ",
+      "opis": "Zmarły, który wraca w ciele: nie duch i nie widmo, lecz nieboszczyk zajmujący miejsce żywych.",
+      "wpisy": [
+        "glamr-z-thorhallsstadir"
+      ]
+    },
+    "pozeracz": {
+      "kategoria": "typ",
+      "opis": "Byt, który połyka człowieka w całości i zwraca go żywego, ale odmienionego — groza polega na powrocie, nie na śmierci.",
+      "wpisy": [
+        "yara-ma-yha-who"
+      ]
+    },
+    "selkie": {
+      "kategoria": "typ",
+      "opis": "Istota zmieniająca formę przez skórę, pomiędzy wodą a lądem",
+      "wpisy": [
+        "selkie-sule-skerry"
+      ]
+    },
+    "sfinks": {
+      "kategoria": "typ",
+      "opis": "Stwór złożony: ciało lwa, głowa kobiety, skrzydła — strażnik przejścia przez zagadkę",
+      "wpisy": [
+        "sfinks-teby",
+        "wielki-sfinks-z-gizy"
+      ]
+    },
+    "sniacy-zastep": {
+      "kategoria": "typ",
+      "opis": "Zbiorowy bohater uśpiony w krajobrazie, budzony przez znak",
+      "wpisy": [
+        "barbarossa-kyffhaeuser"
+      ]
+    },
+    "syrena": {
+      "kategoria": "typ",
+      "opis": "Pół kobieta, pół ryba: morska powabnica i przewodniczka wód",
+      "wpisy": [
+        "ben-varrey"
+      ]
+    },
+    "trickster": {
+      "kategoria": "typ",
+      "opis": "Oszust: byt, który rozstrzyga sprawy podstępem i cudzą ciekawością zamiast siłą, i zwykle przegrywa własną próżnością.",
+      "wpisy": [
+        "iktomi"
+      ]
+    },
+    "wilkolak": {
+      "kategoria": "typ",
+      "opis": "Człowiek lub byt przybierający postać wilka; loup-garou i pokrewne tradycje przemiany",
+      "wpisy": [
+        "loup-garou-gevaudan"
       ]
     },
     "burza": {
@@ -239,6 +402,13 @@
         "drangue-shala"
       ]
     },
+    "ostrzezenie": {
+      "kategoria": "motyw",
+      "opis": "Opowieść używana jako przestroga: mówi się ją dzieciom i wędrowcom, żeby wiedzieli, gdzie nie wolno zostawać samemu.",
+      "wpisy": [
+        "yara-ma-yha-who"
+      ]
+    },
     "pamiec": {
       "kategoria": "motyw",
       "opis": "Istnienie zależne od tego, że wspólnota wymawia imię",
@@ -269,7 +439,8 @@
         "iktomi",
         "knecht-z-koptos",
         "loup-garou-gevaudan",
-        "selkie-sule-skerry"
+        "selkie-sule-skerry",
+        "yara-ma-yha-who"
       ]
     },
     "przewodnik": {
@@ -388,7 +559,8 @@
         "loup-garou-gevaudan",
         "nessos",
         "selkie-sule-skerry",
-        "syama-i-sarvara"
+        "syama-i-sarvara",
+        "yara-ma-yha-who"
       ]
     },
     "skrzydlata-postac": {
@@ -397,155 +569,6 @@
       "wpisy": [
         "drangue-shala",
         "sfinks-teby"
-      ]
-    },
-    "automat": {
-      "kategoria": "typ",
-      "opis": "Żywy automat: istota odlana lub zbudowana, poruszana płynem/duchem, nie zrodzona",
-      "wpisy": [
-        "knecht-z-koptos",
-        "pandora",
-        "talos-kreta"
-      ]
-    },
-    "bodhisattwa": {
-      "kategoria": "typ",
-      "opis": "Istota oświecona, która zostaje po wyzwoleniu, by ratować cierpiących",
-      "wpisy": [
-        "kannon-hase"
-      ]
-    },
-    "bog-ognia": {
-      "kategoria": "typ",
-      "opis": "Bóg ognia: palenisko, ofiara, słońce i błyskawica w jednym bycie",
-      "wpisy": [
-        "agni"
-      ]
-    },
-    "bogini-tkaczka": {
-      "kategoria": "typ",
-      "opis": "Bogini tkająca byt albo losy; stwórczyni i opiekunka płótna",
-      "wpisy": [
-        "neith-z-sais"
-      ]
-    },
-    "czarownik": {
-      "kategoria": "typ",
-      "opis": "Czarownik: człowiek, nie potwór — byt, którego moc bierze się z rzemiosła i z tego, że sąsiedzi w nie wierzą.",
-      "wpisy": [
-        "mangkukulam"
-      ]
-    },
-    "duch-przodkow": {
-      "kategoria": "typ",
-      "opis": "Przodek przywoływany przez wspólnotę i wracający w rytuale",
-      "wpisy": [
-        "egungun"
-      ]
-    },
-    "encantado": {
-      "kategoria": "typ",
-      "opis": "Encantado: mieszkaniec podwodnej krainy, który przybiera ludzką postać na jedną noc i musi wrócić do wody przed świtem.",
-      "wpisy": [
-        "boto-encantado"
-      ]
-    },
-    "fantom": {
-      "kategoria": "typ",
-      "opis": "Byt zbudowany z pozoru zmysłowego: trwa, dopóki trwa uwaga, którą się karmi",
-      "wpisy": [
-        "empusa-korynt",
-        "morowa-panna",
-        "protostates",
-        "syama-i-sarvara"
-      ]
-    },
-    "heros-burzy": {
-      "kategoria": "typ",
-      "opis": "Półboski obrońca mierzący się z demonem pogody",
-      "wpisy": [
-        "drangue-shala",
-        "indra"
-      ]
-    },
-    "istota-kamienna": {
-      "kategoria": "typ",
-      "opis": "Byt uwięziony w rzeźbie lub kamieniu, trwały i nieruchomy",
-      "wpisy": [
-        "lincoln-imp"
-      ]
-    },
-    "kentaur": {
-      "kategoria": "typ",
-      "opis": "Gatunek o dwóch połowach: człowiek z przodu, koń z tyłu, obie gotowe do ruchu",
-      "wpisy": [
-        "kentaur-pelion",
-        "nessos"
-      ]
-    },
-    "krol-wezy": {
-      "kategoria": "typ",
-      "opis": "Gadzi władca z koroną na łbie: zabija wzrokiem i jadem, panuje nad jednym miejscem",
-      "wpisy": [
-        "bazyliszek-warszawski"
-      ]
-    },
-    "olbrzym": {
-      "kategoria": "typ",
-      "opis": "Byt o skali oblężniczej, z bronią wymagającą obsługi",
-      "wpisy": [
-        "balor",
-        "cormoran-st-michaels-mount"
-      ]
-    },
-    "powracajacy-zmarly": {
-      "kategoria": "typ",
-      "opis": "Zmarły, który wraca w ciele: nie duch i nie widmo, lecz nieboszczyk zajmujący miejsce żywych.",
-      "wpisy": [
-        "glamr-z-thorhallsstadir"
-      ]
-    },
-    "selkie": {
-      "kategoria": "typ",
-      "opis": "Istota zmieniająca formę przez skórę, pomiędzy wodą a lądem",
-      "wpisy": [
-        "selkie-sule-skerry"
-      ]
-    },
-    "sfinks": {
-      "kategoria": "typ",
-      "opis": "Stwór złożony: ciało lwa, głowa kobiety, skrzydła — strażnik przejścia przez zagadkę",
-      "wpisy": [
-        "sfinks-teby",
-        "wielki-sfinks-z-gizy"
-      ]
-    },
-    "sniacy-zastep": {
-      "kategoria": "typ",
-      "opis": "Zbiorowy bohater uśpiony w krajobrazie, budzony przez znak",
-      "wpisy": [
-        "barbarossa-kyffhaeuser"
-      ]
-    },
-    "syrena": {
-      "kategoria": "typ",
-      "opis": "Pół kobieta, pół ryba: morska powabnica i przewodniczka wód",
-      "wpisy": [
-        "ben-varrey"
-      ]
-    },
-    "trickster": {
-      "kategoria": "typ",
-      "opis": "Oszust: byt, który rozstrzyga sprawy podstępem i cudzą ciekawością zamiast siłą, i zwykle przegrywa własną próżnością.",
-      "wpisy": [
-        "iktomi"
-      ]
-    },
-    "wilkolak": {
-      "kategoria": "typ",
-      "opis": "Człowiek lub byt przybierający postać wilka; loup-garou i pokrewne tradycje przemiany",
-      "wpisy": [
-        "loup-garou-gevaudan"
       ]
     }
   },
@@ -824,7 +847,8 @@
         "selkie-sule-skerry"
       ],
       "backlinki": [
-        "protostates"
+        "protostates",
+        "yara-ma-yha-who"
       ],
       "obraz": "assets/wizualizacje/boto-encantado.jpg",
       "trofea": {
@@ -1010,7 +1034,8 @@
         "morowa-panna",
         "nessos",
         "selkie-sule-skerry",
-        "sfinks-teby"
+        "sfinks-teby",
+        "yara-ma-yha-who"
       ],
       "obraz": "assets/wizualizacje/empusa-korynt.jpg",
       "trofea": {
@@ -1370,7 +1395,8 @@
         "selkie-sule-skerry"
       ],
       "backlinki": [
-        "boto-encantado"
+        "boto-encantado",
+        "yara-ma-yha-who"
       ],
       "obraz": "assets/wizualizacje/loup-garou-gevaudan.jpg",
       "trofea": {
@@ -1413,7 +1439,8 @@
       ],
       "backlinki": [
         "boto-encantado",
-        "loup-garou-gevaudan"
+        "loup-garou-gevaudan",
+        "yara-ma-yha-who"
       ],
       "obraz": "assets/wizualizacje/mangkukulam.jpg",
       "trofea": {
@@ -1917,6 +1944,41 @@
       "trofea": {
         "pierwotne": "Płat wapienia zdjęty z boku kolosa: z jednej strony gładki jak skóra, z drugiej sypki jak stary chleb — dowód, że strażnik i jego rana są z tego samego kamienia.",
         "wtorne": "Garść piasku z rowu, przesiana przez palce i zważona: dokładnie tyle, ile trzeba usunąć raz, żeby jutro usuwać znowu."
+      },
+      "skity": []
+    },
+    {
+      "slug": "yara-ma-yha-who",
+      "nazwa": "Yara ma tha who — czerwony człowieczek z figowca",
+      "nazwy_alternatywne": [
+        "Yara-ma-yha-who (pisownia W. Ramsaya Smitha, 1930)",
+        "Yara ma tha who (pisownia Davida Unaipona)",
+        "Little red man",
+        "Czerwony z gałęzi"
+      ],
+      "karta": "Faceless Butcher",
+      "miejscowosc": "Raukkan (dawne Point McLeay) nad jeziorem Alexandrina, w dolnym biegu Murray — misja, w której urodził się David Unaipon i do której wracał przez całe życie; opowieść o czerwonym człowieczku krąży po całym południowym wschodzie kontynentu, ale pinezka stoi tam, gdzie ją zapisano i skąd pochodzi ręka, która ją zapisała",
+      "kraj": "Australia (Australia Południowa)",
+      "lat": -35.5945,
+      "lon": 139.0122,
+      "tagi": [
+        "ngarrindjeri",
+        "ostrzezenie",
+        "postac-zwierzeca",
+        "pozeracz",
+        "przemiana"
+      ],
+      "powiazania": [
+        "boto-encantado",
+        "empusa-korynt",
+        "loup-garou-gevaudan",
+        "mangkukulam"
+      ],
+      "backlinki": [],
+      "obraz": "assets/wizualizacje/yara-ma-yha-who.jpg",
+      "trofea": {
+        "pierwotne": "Odcisk ciała w suchym listowiu pod figowcem: wgnieciony kształt śpiącego, obok pełny bukłak z wodą, którego nikt nie zabrał, i sześć par okrągłych, wilgotnych śladów po przyssawkach na korze — dwa metry nad ziemią, w miejscu, gdzie nie sięga żadna ludzka dłoń.",
+        "wtorne": "Karta katalogowa z 1930 roku, wypisana do egzemplarza londyńskiego wydania: w rubryce „autor” widnieje W. Ramsay Smith, a pod spodem, ołówkiem i inną ręką, dopisano nazwisko Davida Unaipona ze znakiem zapytania. Znak zapytania został wytarty dopiero siedemdziesiąt jeden lat później."
       },
       "skity": []
     }
@@ -2806,6 +2868,22 @@
     }
   ],
   "aktualizacje": [
+    {
+      "data": "2026-09-05 22:10",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "yara-ma-yha-who",
+      "tytul": "Yara ma tha who — czerwony człowieczek z figowca",
+      "opis": "Nowa materializacja: Yara ma tha who — czerwony człowieczek z figowca z opowieści południowo-wschodniej Australii, w zapisie Davida Unaipona (1924–1925), wydanym w 1930 roku pod nazwiskiem W. Ramsaya Smitha i przywróconym autorowi w 2001. Karta klucz: „Faceless Butcher” (TOR #60, 2002). Pierwszy byt z Australii w kartotece; pinezka w Raukkan nad jeziorem Alexandrina, przy miejscu spisania. Cztery źródła: rękopis w edycji MUP, pierwodruk Harrapa, biogram ADB i omówienie Atlas Obscura."
+    },
+    {
+      "data": "2026-09-05 22:10",
+      "typ": "manifestacja",
+      "akcja": "nowa",
+      "slug": "yara-ma-yha-who",
+      "tytul": "Yara ma tha who — czerwony człowieczek z figowca",
+      "opis": "wpis w kartotece — materializacja karty „Faceless Butcher”"
+    },
     {
       "data": "2026-09-05 21:35",
       "typ": "manifestacja",

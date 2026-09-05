@@ -87,6 +87,7 @@ export const KRAJE_PL = {
   argentyna: 'Argentina',
   indonezja: 'Indonesia',
   wietnam: 'Vietnam',
+  australia: 'Australia',
 };
 
 /** „Grecja (Beocja)” → „Greece”; null, gdy nazwa nieznana słownikowi. */

@@ -84,7 +84,7 @@
           },
           {
             "slug": "boto-encantado",
-            "wielkosc": 0.209
+            "wielkosc": 0.227
           },
           {
             "slug": "cormoran-st-michaels-mount",
@@ -100,7 +100,7 @@
           },
           {
             "slug": "empusa-korynt",
-            "wielkosc": 0.436
+            "wielkosc": 0.455
           },
           {
             "slug": "glamr-z-thorhallsstadir",
@@ -132,11 +132,11 @@
           },
           {
             "slug": "loup-garou-gevaudan",
-            "wielkosc": 0.245
+            "wielkosc": 0.264
           },
           {
             "slug": "mangkukulam",
-            "wielkosc": 0.227
+            "wielkosc": 0.245
           },
           {
             "slug": "morowa-panna",
@@ -177,6 +177,10 @@
           {
             "slug": "wielki-sfinks-z-gizy",
             "wielkosc": 0.191
+          },
+          {
+            "slug": "yara-ma-yha-who",
+            "wielkosc": 0.173
           }
         ],
         "dominacje": [
@@ -208,7 +212,7 @@
           {
             "kultura": "amazonia",
             "kult": "boto-encantado",
-            "wielkosc": 0.209
+            "wielkosc": 0.227
           },
           {
             "kultura": "kornwalia",
@@ -228,7 +232,7 @@
           {
             "kultura": "grecja",
             "kult": "empusa-korynt",
-            "wielkosc": 0.436
+            "wielkosc": 0.455
           },
           {
             "kultura": "islandia",
@@ -268,12 +272,12 @@
           {
             "kultura": "francja",
             "kult": "loup-garou-gevaudan",
-            "wielkosc": 0.245
+            "wielkosc": 0.264
           },
           {
             "kultura": "filipiny",
             "kult": "mangkukulam",
-            "wielkosc": 0.227
+            "wielkosc": 0.245
           },
           {
             "kultura": "polska",
@@ -324,6 +328,11 @@
             "kultura": "egipt",
             "kult": "wielki-sfinks-z-gizy",
             "wielkosc": 0.191
+          },
+          {
+            "kultura": "ngarrindjeri",
+            "kult": "yara-ma-yha-who",
+            "wielkosc": 0.173
           }
         ],
         "paliwo": {
@@ -519,13 +528,13 @@
           "slug": "empusa-korynt",
           "nazwa": "Empusa z Koryntu",
           "rola": "Dom, który jest zaproszeniem",
-          "pasywne": 23,
-          "saldoPrzed": 23,
+          "pasywne": 25,
+          "saldoPrzed": 25,
           "kosztUdzialu": 2,
           "kosztKlucza": 0,
           "boost": 0,
           "zwrot": 4,
-          "saldoPo": 25
+          "saldoPo": 27
         }
       ],
       "stanPo": {
@@ -556,7 +565,7 @@
           },
           {
             "slug": "boto-encantado",
-            "wielkosc": 0.209
+            "wielkosc": 0.227
           },
           {
             "slug": "cormoran-st-michaels-mount",
@@ -572,7 +581,7 @@
           },
           {
             "slug": "empusa-korynt",
-            "wielkosc": 0.456
+            "wielkosc": 0.475
           },
           {
             "slug": "glamr-z-thorhallsstadir",
@@ -604,11 +613,11 @@
           },
           {
             "slug": "loup-garou-gevaudan",
-            "wielkosc": 0.245
+            "wielkosc": 0.264
           },
           {
             "slug": "mangkukulam",
-            "wielkosc": 0.227
+            "wielkosc": 0.245
           },
           {
             "slug": "morowa-panna",
@@ -649,6 +658,10 @@
           {
             "slug": "wielki-sfinks-z-gizy",
             "wielkosc": 0.191
+          },
+          {
+            "slug": "yara-ma-yha-who",
+            "wielkosc": 0.173
           }
         ],
         "dominacje": [
@@ -680,7 +693,7 @@
           {
             "kultura": "amazonia",
             "kult": "boto-encantado",
-            "wielkosc": 0.209
+            "wielkosc": 0.227
           },
           {
             "kultura": "kornwalia",
@@ -700,7 +713,7 @@
           {
             "kultura": "grecja",
             "kult": "empusa-korynt",
-            "wielkosc": 0.456
+            "wielkosc": 0.475
           },
           {
             "kultura": "islandia",
@@ -740,12 +753,12 @@
           {
             "kultura": "francja",
             "kult": "loup-garou-gevaudan",
-            "wielkosc": 0.245
+            "wielkosc": 0.264
           },
           {
             "kultura": "filipiny",
             "kult": "mangkukulam",
-            "wielkosc": 0.227
+            "wielkosc": 0.245
           },
           {
             "kultura": "polska",
@@ -796,6 +809,11 @@
             "kultura": "egipt",
             "kult": "wielki-sfinks-z-gizy",
             "wielkosc": 0.191
+          },
+          {
+            "kultura": "ngarrindjeri",
+            "kult": "yara-ma-yha-who",
+            "wielkosc": 0.173
           }
         ],
         "paliwo": {
@@ -803,7 +821,7 @@
           "barbarossa-kyffhaeuser": 21,
           "kentaur-pelion": 14,
           "lincoln-imp": 14,
-          "empusa-korynt": 25
+          "empusa-korynt": 27
         }
       },
       "konsekwencje": {
@@ -843,8 +861,8 @@
           },
           {
             "slug": "empusa-korynt",
-            "przed": 0.436,
-            "po": 0.456,
+            "przed": 0.455,
+            "po": 0.475,
             "delta": 0.02,
             "opis": "Świat zaczyna sprawdzać domy jednym trzeźwym słowem; sam rytuał rozpoznania zamienia Empusę w znaną przestrogę i podsyca jej legendę."
           }
@@ -867,8 +885,8 @@
           {
             "kultura": "grecja",
             "kult": "empusa-korynt",
-            "przed": 0.436,
-            "po": 0.456,
+            "przed": 0.455,
+            "po": 0.475,
             "delta": 0.02
           }
         ],
@@ -1009,13 +1027,13 @@
           "slug": "empusa-korynt",
           "nazwa": "Empusa z Koryntu",
           "rola": "Dom, który jest progiem",
-          "pasywne": 23,
-          "saldoPrzed": 25,
+          "pasywne": 25,
+          "saldoPrzed": 27,
           "kosztUdzialu": 2,
           "kosztKlucza": 0,
           "boost": 0,
           "zwrot": 0,
-          "saldoPo": 23
+          "saldoPo": 25
         }
       ],
       "stanPo": {
@@ -1046,7 +1064,7 @@
           },
           {
             "slug": "boto-encantado",
-            "wielkosc": 0.209
+            "wielkosc": 0.227
           },
           {
             "slug": "cormoran-st-michaels-mount",
@@ -1062,7 +1080,7 @@
           },
           {
             "slug": "empusa-korynt",
-            "wielkosc": 0.456
+            "wielkosc": 0.475
           },
           {
             "slug": "glamr-z-thorhallsstadir",
@@ -1094,11 +1112,11 @@
           },
           {
             "slug": "loup-garou-gevaudan",
-            "wielkosc": 0.245
+            "wielkosc": 0.264
           },
           {
             "slug": "mangkukulam",
-            "wielkosc": 0.227
+            "wielkosc": 0.245
           },
           {
             "slug": "morowa-panna",
@@ -1139,6 +1157,10 @@
           {
             "slug": "wielki-sfinks-z-gizy",
             "wielkosc": 0.191
+          },
+          {
+            "slug": "yara-ma-yha-who",
+            "wielkosc": 0.173
           }
         ],
         "dominacje": [
@@ -1170,7 +1192,7 @@
           {
             "kultura": "amazonia",
             "kult": "boto-encantado",
-            "wielkosc": 0.209
+            "wielkosc": 0.227
           },
           {
             "kultura": "kornwalia",
@@ -1190,7 +1212,7 @@
           {
             "kultura": "grecja",
             "kult": "empusa-korynt",
-            "wielkosc": 0.456
+            "wielkosc": 0.475
           },
           {
             "kultura": "islandia",
@@ -1230,12 +1252,12 @@
           {
             "kultura": "francja",
             "kult": "loup-garou-gevaudan",
-            "wielkosc": 0.245
+            "wielkosc": 0.264
           },
           {
             "kultura": "filipiny",
             "kult": "mangkukulam",
-            "wielkosc": 0.227
+            "wielkosc": 0.245
           },
           {
             "kultura": "polska",
@@ -1286,6 +1308,11 @@
             "kultura": "egipt",
             "kult": "wielki-sfinks-z-gizy",
             "wielkosc": 0.191
+          },
+          {
+            "kultura": "ngarrindjeri",
+            "kult": "yara-ma-yha-who",
+            "wielkosc": 0.173
           }
         ],
         "paliwo": {
@@ -1293,7 +1320,7 @@
           "barbarossa-kyffhaeuser": 21,
           "kentaur-pelion": 14,
           "lincoln-imp": 14,
-          "empusa-korynt": 23,
+          "empusa-korynt": 25,
           "balor": 21
         }
       },
@@ -1340,8 +1367,8 @@
           },
           {
             "slug": "empusa-korynt",
-            "przed": 0.456,
-            "po": 0.456,
+            "przed": 0.475,
+            "po": 0.475,
             "delta": 0,
             "opis": "Empusa zostaje nienazwana: świat wie, że padnięcie imienia ją rozwiązuje, więc opowiada o niej ostrożnie — na granicy mitu."
           }
@@ -1364,8 +1391,8 @@
           {
             "kultura": "grecja",
             "kult": "empusa-korynt",
-            "przed": 0.456,
-            "po": 0.456,
+            "przed": 0.475,
+            "po": 0.475,
             "delta": 0
           }
         ],
@@ -1551,7 +1578,7 @@
           },
           {
             "slug": "boto-encantado",
-            "wielkosc": 0.209
+            "wielkosc": 0.227
           },
           {
             "slug": "cormoran-st-michaels-mount",
@@ -1567,7 +1594,7 @@
           },
           {
             "slug": "empusa-korynt",
-            "wielkosc": 0.456
+            "wielkosc": 0.475
           },
           {
             "slug": "glamr-z-thorhallsstadir",
@@ -1599,11 +1626,11 @@
           },
           {
             "slug": "loup-garou-gevaudan",
-            "wielkosc": 0.245
+            "wielkosc": 0.264
           },
           {
             "slug": "mangkukulam",
-            "wielkosc": 0.227
+            "wielkosc": 0.245
           },
           {
             "slug": "morowa-panna",
@@ -1644,6 +1671,10 @@
           {
             "slug": "wielki-sfinks-z-gizy",
             "wielkosc": 0.191
+          },
+          {
+            "slug": "yara-ma-yha-who",
+            "wielkosc": 0.173
           }
         ],
         "dominacje": [
@@ -1675,7 +1706,7 @@
           {
             "kultura": "amazonia",
             "kult": "boto-encantado",
-            "wielkosc": 0.209
+            "wielkosc": 0.227
           },
           {
             "kultura": "kornwalia",
@@ -1695,7 +1726,7 @@
           {
             "kultura": "grecja",
             "kult": "empusa-korynt",
-            "wielkosc": 0.456
+            "wielkosc": 0.475
           },
           {
             "kultura": "islandia",
@@ -1735,12 +1766,12 @@
           {
             "kultura": "francja",
             "kult": "loup-garou-gevaudan",
-            "wielkosc": 0.245
+            "wielkosc": 0.264
           },
           {
             "kultura": "filipiny",
             "kult": "mangkukulam",
-            "wielkosc": 0.227
+            "wielkosc": 0.245
           },
           {
             "kultura": "polska",
@@ -1791,6 +1822,11 @@
             "kultura": "egipt",
             "kult": "wielki-sfinks-z-gizy",
             "wielkosc": 0.191
+          },
+          {
+            "kultura": "ngarrindjeri",
+            "kult": "yara-ma-yha-who",
+            "wielkosc": 0.173
           }
         ],
         "paliwo": {
@@ -1798,7 +1834,7 @@
           "barbarossa-kyffhaeuser": 21,
           "kentaur-pelion": 14,
           "lincoln-imp": 14,
-          "empusa-korynt": 23,
+          "empusa-korynt": 25,
           "balor": 21,
           "selkie-sule-skerry": 26,
           "indra": 11
@@ -2056,7 +2092,7 @@
           },
           {
             "slug": "boto-encantado",
-            "wielkosc": 0.209
+            "wielkosc": 0.227
           },
           {
             "slug": "cormoran-st-michaels-mount",
@@ -2072,7 +2108,7 @@
           },
           {
             "slug": "empusa-korynt",
-            "wielkosc": 0.456
+            "wielkosc": 0.475
           },
           {
             "slug": "glamr-z-thorhallsstadir",
@@ -2104,11 +2140,11 @@
           },
           {
             "slug": "loup-garou-gevaudan",
-            "wielkosc": 0.245
+            "wielkosc": 0.264
           },
           {
             "slug": "mangkukulam",
-            "wielkosc": 0.227
+            "wielkosc": 0.245
           },
           {
             "slug": "morowa-panna",
@@ -2149,6 +2185,10 @@
           {
             "slug": "wielki-sfinks-z-gizy",
             "wielkosc": 0.191
+          },
+          {
+            "slug": "yara-ma-yha-who",
+            "wielkosc": 0.173
           }
         ],
         "dominacje": [
@@ -2180,7 +2220,7 @@
           {
             "kultura": "amazonia",
             "kult": "boto-encantado",
-            "wielkosc": 0.209
+            "wielkosc": 0.227
           },
           {
             "kultura": "kornwalia",
@@ -2200,7 +2240,7 @@
           {
             "kultura": "grecja",
             "kult": "empusa-korynt",
-            "wielkosc": 0.456
+            "wielkosc": 0.475
           },
           {
             "kultura": "islandia",
@@ -2240,12 +2280,12 @@
           {
             "kultura": "francja",
             "kult": "loup-garou-gevaudan",
-            "wielkosc": 0.245
+            "wielkosc": 0.264
           },
           {
             "kultura": "filipiny",
             "kult": "mangkukulam",
-            "wielkosc": 0.227
+            "wielkosc": 0.245
           },
           {
             "kultura": "polska",
@@ -2296,6 +2336,11 @@
             "kultura": "egipt",
             "kult": "wielki-sfinks-z-gizy",
             "wielkosc": 0.191
+          },
+          {
+            "kultura": "ngarrindjeri",
+            "kult": "yara-ma-yha-who",
+            "wielkosc": 0.173
           }
         ],
         "paliwo": {
@@ -2303,7 +2348,7 @@
           "barbarossa-kyffhaeuser": 21,
           "kentaur-pelion": 14,
           "lincoln-imp": 16,
-          "empusa-korynt": 23,
+          "empusa-korynt": 25,
           "balor": 21,
           "selkie-sule-skerry": 26,
           "indra": 11,
@@ -2521,13 +2566,13 @@
           "slug": "empusa-korynt",
           "nazwa": "Empusa z Koryntu",
           "rola": "Zaproszenie, które zjada gości",
-          "pasywne": 23,
-          "saldoPrzed": 23,
+          "pasywne": 25,
+          "saldoPrzed": 25,
           "kosztUdzialu": 2,
           "kosztKlucza": 0,
           "boost": 0,
           "zwrot": 1,
-          "saldoPo": 22
+          "saldoPo": 24
         }
       ],
       "stanPo": {
@@ -2558,7 +2603,7 @@
           },
           {
             "slug": "boto-encantado",
-            "wielkosc": 0.209
+            "wielkosc": 0.227
           },
           {
             "slug": "cormoran-st-michaels-mount",
@@ -2574,7 +2619,7 @@
           },
           {
             "slug": "empusa-korynt",
-            "wielkosc": 0.461
+            "wielkosc": 0.48
           },
           {
             "slug": "glamr-z-thorhallsstadir",
@@ -2606,11 +2651,11 @@
           },
           {
             "slug": "loup-garou-gevaudan",
-            "wielkosc": 0.245
+            "wielkosc": 0.264
           },
           {
             "slug": "mangkukulam",
-            "wielkosc": 0.227
+            "wielkosc": 0.245
           },
           {
             "slug": "morowa-panna",
@@ -2651,6 +2696,10 @@
           {
             "slug": "wielki-sfinks-z-gizy",
             "wielkosc": 0.191
+          },
+          {
+            "slug": "yara-ma-yha-who",
+            "wielkosc": 0.173
           }
         ],
         "dominacje": [
@@ -2682,7 +2731,7 @@
           {
             "kultura": "amazonia",
             "kult": "boto-encantado",
-            "wielkosc": 0.209
+            "wielkosc": 0.227
           },
           {
             "kultura": "kornwalia",
@@ -2702,7 +2751,7 @@
           {
             "kultura": "grecja",
             "kult": "empusa-korynt",
-            "wielkosc": 0.461
+            "wielkosc": 0.48
           },
           {
             "kultura": "islandia",
@@ -2742,12 +2791,12 @@
           {
             "kultura": "francja",
             "kult": "loup-garou-gevaudan",
-            "wielkosc": 0.245
+            "wielkosc": 0.264
           },
           {
             "kultura": "filipiny",
             "kult": "mangkukulam",
-            "wielkosc": 0.227
+            "wielkosc": 0.245
           },
           {
             "kultura": "polska",
@@ -2798,6 +2847,11 @@
             "kultura": "egipt",
             "kult": "wielki-sfinks-z-gizy",
             "wielkosc": 0.191
+          },
+          {
+            "kultura": "ngarrindjeri",
+            "kult": "yara-ma-yha-who",
+            "wielkosc": 0.173
           }
         ],
         "paliwo": {
@@ -2805,7 +2859,7 @@
           "barbarossa-kyffhaeuser": 21,
           "kentaur-pelion": 14,
           "lincoln-imp": 16,
-          "empusa-korynt": 22,
+          "empusa-korynt": 24,
           "balor": 21,
           "selkie-sule-skerry": 26,
           "indra": 11,
@@ -2858,8 +2912,8 @@
           },
           {
             "slug": "empusa-korynt",
-            "przed": 0.456,
-            "po": 0.461,
+            "przed": 0.475,
+            "po": 0.48,
             "delta": 0.005,
             "opis": "Iluzja zyskuje sojuszniczkę, która nie widzi różnicy — ale tylko dopóki ta nie nauczy się pytać."
           }
@@ -2882,8 +2936,8 @@
           {
             "kultura": "grecja",
             "kult": "empusa-korynt",
-            "przed": 0.456,
-            "po": 0.461,
+            "przed": 0.475,
+            "po": 0.48,
             "delta": 0.005
           }
         ],
@@ -3069,7 +3123,7 @@
           },
           {
             "slug": "boto-encantado",
-            "wielkosc": 0.209
+            "wielkosc": 0.227
           },
           {
             "slug": "cormoran-st-michaels-mount",
@@ -3085,7 +3139,7 @@
           },
           {
             "slug": "empusa-korynt",
-            "wielkosc": 0.461
+            "wielkosc": 0.48
           },
           {
             "slug": "glamr-z-thorhallsstadir",
@@ -3117,11 +3171,11 @@
           },
           {
             "slug": "loup-garou-gevaudan",
-            "wielkosc": 0.245
+            "wielkosc": 0.264
           },
           {
             "slug": "mangkukulam",
-            "wielkosc": 0.227
+            "wielkosc": 0.245
           },
           {
             "slug": "morowa-panna",
@@ -3162,6 +3216,10 @@
           {
             "slug": "wielki-sfinks-z-gizy",
             "wielkosc": 0.191
+          },
+          {
+            "slug": "yara-ma-yha-who",
+            "wielkosc": 0.173
           }
         ],
         "dominacje": [
@@ -3193,7 +3251,7 @@
           {
             "kultura": "amazonia",
             "kult": "boto-encantado",
-            "wielkosc": 0.209
+            "wielkosc": 0.227
           },
           {
             "kultura": "kornwalia",
@@ -3213,7 +3271,7 @@
           {
             "kultura": "grecja",
             "kult": "empusa-korynt",
-            "wielkosc": 0.461
+            "wielkosc": 0.48
           },
           {
             "kultura": "islandia",
@@ -3253,12 +3311,12 @@
           {
             "kultura": "francja",
             "kult": "loup-garou-gevaudan",
-            "wielkosc": 0.245
+            "wielkosc": 0.264
           },
           {
             "kultura": "filipiny",
             "kult": "mangkukulam",
-            "wielkosc": 0.227
+            "wielkosc": 0.245
           },
           {
             "kultura": "polska",
@@ -3309,6 +3367,11 @@
             "kultura": "egipt",
             "kult": "wielki-sfinks-z-gizy",
             "wielkosc": 0.191
+          },
+          {
+            "kultura": "ngarrindjeri",
+            "kult": "yara-ma-yha-who",
+            "wielkosc": 0.173
           }
         ],
         "paliwo": {
@@ -3316,7 +3379,7 @@
           "barbarossa-kyffhaeuser": 21,
           "kentaur-pelion": 14,
           "lincoln-imp": 16,
-          "empusa-korynt": 22,
+          "empusa-korynt": 24,
           "balor": 21,
           "selkie-sule-skerry": 26,
           "indra": 11,
@@ -3522,13 +3585,13 @@
           "slug": "empusa-korynt",
           "nazwa": "Empusa z Koryntu",
           "rola": "Gospodyni ze światła",
-          "pasywne": 23,
-          "saldoPrzed": 22,
+          "pasywne": 25,
+          "saldoPrzed": 24,
           "kosztUdzialu": 2,
           "kosztKlucza": 0,
           "boost": 0,
           "zwrot": 2,
-          "saldoPo": 22
+          "saldoPo": 24
         },
         {
           "slug": "barbarossa-kyffhaeuser",
@@ -3583,7 +3646,7 @@
           },
           {
             "slug": "boto-encantado",
-            "wielkosc": 0.209
+            "wielkosc": 0.227
           },
           {
             "slug": "cormoran-st-michaels-mount",
@@ -3599,7 +3662,7 @@
           },
           {
             "slug": "empusa-korynt",
-            "wielkosc": 0.471
+            "wielkosc": 0.49
           },
           {
             "slug": "glamr-z-thorhallsstadir",
@@ -3631,11 +3694,11 @@
           },
           {
             "slug": "loup-garou-gevaudan",
-            "wielkosc": 0.245
+            "wielkosc": 0.264
           },
           {
             "slug": "mangkukulam",
-            "wielkosc": 0.227
+            "wielkosc": 0.245
           },
           {
             "slug": "morowa-panna",
@@ -3676,6 +3739,10 @@
           {
             "slug": "wielki-sfinks-z-gizy",
             "wielkosc": 0.191
+          },
+          {
+            "slug": "yara-ma-yha-who",
+            "wielkosc": 0.173
           }
         ],
         "dominacje": [
@@ -3707,7 +3774,7 @@
           {
             "kultura": "amazonia",
             "kult": "boto-encantado",
-            "wielkosc": 0.209
+            "wielkosc": 0.227
           },
           {
             "kultura": "kornwalia",
@@ -3727,7 +3794,7 @@
           {
             "kultura": "grecja",
             "kult": "empusa-korynt",
-            "wielkosc": 0.471
+            "wielkosc": 0.49
           },
           {
             "kultura": "islandia",
@@ -3767,12 +3834,12 @@
           {
             "kultura": "francja",
             "kult": "loup-garou-gevaudan",
-            "wielkosc": 0.245
+            "wielkosc": 0.264
           },
           {
             "kultura": "filipiny",
             "kult": "mangkukulam",
-            "wielkosc": 0.227
+            "wielkosc": 0.245
           },
           {
             "kultura": "polska",
@@ -3823,6 +3890,11 @@
             "kultura": "egipt",
             "kult": "wielki-sfinks-z-gizy",
             "wielkosc": 0.191
+          },
+          {
+            "kultura": "ngarrindjeri",
+            "kult": "yara-ma-yha-who",
+            "wielkosc": 0.173
           }
         ],
         "paliwo": {
@@ -3830,7 +3902,7 @@
           "barbarossa-kyffhaeuser": 22,
           "kentaur-pelion": 14,
           "lincoln-imp": 16,
-          "empusa-korynt": 22,
+          "empusa-korynt": 24,
           "balor": 21,
           "selkie-sule-skerry": 26,
           "indra": 11,
@@ -3878,8 +3950,8 @@
           },
           {
             "slug": "empusa-korynt",
-            "przed": 0.461,
-            "po": 0.471,
+            "przed": 0.48,
+            "po": 0.49,
             "delta": 0.01,
             "opis": "Pierwsza gościna, której nie zdemaskowano: dom ze światła nie wytrzymał złota, ale gospodyni wyszła z imieniem gościa, nie z hańbą."
           },
@@ -3902,8 +3974,8 @@
           {
             "kultura": "grecja",
             "kult": "empusa-korynt",
-            "przed": 0.461,
-            "po": 0.471,
+            "przed": 0.48,
+            "po": 0.49,
             "delta": 0.01
           },
           {
@@ -4052,13 +4124,13 @@
           "slug": "loup-garou-gevaudan",
           "nazwa": "Loup-garou z Gévaudan",
           "rola": "Ten, którego ślad ma dwa imiona",
-          "pasywne": 10,
-          "saldoPrzed": 10,
+          "pasywne": 12,
+          "saldoPrzed": 12,
           "kosztUdzialu": 2,
           "kosztKlucza": 0,
           "boost": 0,
           "zwrot": 2,
-          "saldoPo": 10
+          "saldoPo": 12
         },
         {
           "slug": "neith-z-sais",
@@ -4101,7 +4173,7 @@
           },
           {
             "slug": "boto-encantado",
-            "wielkosc": 0.209
+            "wielkosc": 0.227
           },
           {
             "slug": "cormoran-st-michaels-mount",
@@ -4117,7 +4189,7 @@
           },
           {
             "slug": "empusa-korynt",
-            "wielkosc": 0.471
+            "wielkosc": 0.49
           },
           {
             "slug": "glamr-z-thorhallsstadir",
@@ -4149,11 +4221,11 @@
           },
           {
             "slug": "loup-garou-gevaudan",
-            "wielkosc": 0.255
+            "wielkosc": 0.274
           },
           {
             "slug": "mangkukulam",
-            "wielkosc": 0.227
+            "wielkosc": 0.245
           },
           {
             "slug": "morowa-panna",
@@ -4194,6 +4266,10 @@
           {
             "slug": "wielki-sfinks-z-gizy",
             "wielkosc": 0.191
+          },
+          {
+            "slug": "yara-ma-yha-who",
+            "wielkosc": 0.173
           }
         ],
         "dominacje": [
@@ -4225,7 +4301,7 @@
           {
             "kultura": "amazonia",
             "kult": "boto-encantado",
-            "wielkosc": 0.209
+            "wielkosc": 0.227
           },
           {
             "kultura": "kornwalia",
@@ -4245,7 +4321,7 @@
           {
             "kultura": "grecja",
             "kult": "empusa-korynt",
-            "wielkosc": 0.471
+            "wielkosc": 0.49
           },
           {
             "kultura": "islandia",
@@ -4285,12 +4361,12 @@
           {
             "kultura": "francja",
             "kult": "loup-garou-gevaudan",
-            "wielkosc": 0.255
+            "wielkosc": 0.274
           },
           {
             "kultura": "filipiny",
             "kult": "mangkukulam",
-            "wielkosc": 0.227
+            "wielkosc": 0.245
           },
           {
             "kultura": "polska",
@@ -4341,6 +4417,11 @@
             "kultura": "egipt",
             "kult": "wielki-sfinks-z-gizy",
             "wielkosc": 0.191
+          },
+          {
+            "kultura": "ngarrindjeri",
+            "kult": "yara-ma-yha-who",
+            "wielkosc": 0.173
           }
         ],
         "paliwo": {
@@ -4348,7 +4429,7 @@
           "barbarossa-kyffhaeuser": 22,
           "kentaur-pelion": 14,
           "lincoln-imp": 16,
-          "empusa-korynt": 22,
+          "empusa-korynt": 24,
           "balor": 21,
           "selkie-sule-skerry": 26,
           "indra": 11,
@@ -4359,7 +4440,7 @@
           "protostates": 12,
           "knecht-z-koptos": 15,
           "syama-i-sarvara": 15,
-          "loup-garou-gevaudan": 10,
+          "loup-garou-gevaudan": 12,
           "neith-z-sais": 9
         }
       },
@@ -4398,8 +4479,8 @@
           },
           {
             "slug": "loup-garou-gevaudan",
-            "przed": 0.245,
-            "po": 0.255,
+            "przed": 0.264,
+            "po": 0.274,
             "delta": 0.01,
             "opis": "Opowieść o człowieku-wilku dostała rozmówcę zamiast samego tropu."
           },
@@ -4422,8 +4503,8 @@
           {
             "kultura": "francja",
             "kult": "loup-garou-gevaudan",
-            "przed": 0.245,
-            "po": 0.255,
+            "przed": 0.264,
+            "po": 0.274,
             "delta": 0.01
           },
           {
@@ -4606,13 +4687,13 @@
           "slug": "loup-garou-gevaudan",
           "nazwa": "Loup-garou z Gévaudan",
           "rola": "Ten, który nocuje poza każdym progiem",
-          "pasywne": 10,
-          "saldoPrzed": 10,
+          "pasywne": 12,
+          "saldoPrzed": 12,
           "kosztUdzialu": 2,
           "kosztKlucza": 0,
           "boost": 0,
           "zwrot": 3,
-          "saldoPo": 11
+          "saldoPo": 13
         }
       ],
       "stanPo": {
@@ -4643,7 +4724,7 @@
           },
           {
             "slug": "boto-encantado",
-            "wielkosc": 0.209
+            "wielkosc": 0.227
           },
           {
             "slug": "cormoran-st-michaels-mount",
@@ -4659,7 +4740,7 @@
           },
           {
             "slug": "empusa-korynt",
-            "wielkosc": 0.471
+            "wielkosc": 0.49
           },
           {
             "slug": "glamr-z-thorhallsstadir",
@@ -4691,11 +4772,11 @@
           },
           {
             "slug": "loup-garou-gevaudan",
-            "wielkosc": 0.261
+            "wielkosc": 0.28
           },
           {
             "slug": "mangkukulam",
-            "wielkosc": 0.227
+            "wielkosc": 0.245
           },
           {
             "slug": "morowa-panna",
@@ -4736,6 +4817,10 @@
           {
             "slug": "wielki-sfinks-z-gizy",
             "wielkosc": 0.191
+          },
+          {
+            "slug": "yara-ma-yha-who",
+            "wielkosc": 0.173
           }
         ],
         "dominacje": [
@@ -4767,7 +4852,7 @@
           {
             "kultura": "amazonia",
             "kult": "boto-encantado",
-            "wielkosc": 0.209
+            "wielkosc": 0.227
           },
           {
             "kultura": "kornwalia",
@@ -4787,7 +4872,7 @@
           {
             "kultura": "grecja",
             "kult": "empusa-korynt",
-            "wielkosc": 0.471
+            "wielkosc": 0.49
           },
           {
             "kultura": "islandia",
@@ -4827,12 +4912,12 @@
           {
             "kultura": "francja",
             "kult": "loup-garou-gevaudan",
-            "wielkosc": 0.261
+            "wielkosc": 0.28
           },
           {
             "kultura": "filipiny",
             "kult": "mangkukulam",
-            "wielkosc": 0.227
+            "wielkosc": 0.245
           },
           {
             "kultura": "polska",
@@ -4883,6 +4968,11 @@
             "kultura": "egipt",
             "kult": "wielki-sfinks-z-gizy",
             "wielkosc": 0.191
+          },
+          {
+            "kultura": "ngarrindjeri",
+            "kult": "yara-ma-yha-who",
+            "wielkosc": 0.173
           }
         ],
         "paliwo": {
@@ -4890,7 +4980,7 @@
           "barbarossa-kyffhaeuser": 22,
           "kentaur-pelion": 14,
           "lincoln-imp": 16,
-          "empusa-korynt": 22,
+          "empusa-korynt": 24,
           "balor": 21,
           "selkie-sule-skerry": 26,
           "indra": 11,
@@ -4901,7 +4991,7 @@
           "protostates": 12,
           "knecht-z-koptos": 15,
           "syama-i-sarvara": 15,
-          "loup-garou-gevaudan": 11,
+          "loup-garou-gevaudan": 13,
           "neith-z-sais": 9,
           "cormoran-st-michaels-mount": 11,
           "ben-varrey": 15
@@ -4956,8 +5046,8 @@
           },
           {
             "slug": "loup-garou-gevaudan",
-            "przed": 0.255,
-            "po": 0.261,
+            "przed": 0.274,
+            "po": 0.28,
             "delta": 0.006,
             "opis": "Nocny wygnaniec po raz pierwszy dostał adres, a nie tylko trop."
           }
@@ -4987,8 +5077,8 @@
           {
             "kultura": "francja",
             "kult": "loup-garou-gevaudan",
-            "przed": 0.255,
-            "po": 0.261,
+            "przed": 0.274,
+            "po": 0.28,
             "delta": 0.006
           }
         ],
@@ -5136,13 +5226,13 @@
           "slug": "loup-garou-gevaudan",
           "nazwa": "Loup-garou z Gévaudan",
           "rola": "Prowadzony przez zamykany las",
-          "pasywne": 10,
-          "saldoPrzed": 11,
+          "pasywne": 12,
+          "saldoPrzed": 13,
           "kosztUdzialu": 2,
           "kosztKlucza": 0,
           "boost": 0,
           "zwrot": 3,
-          "saldoPo": 12
+          "saldoPo": 14
         },
         {
           "slug": "sfinks-teby",
@@ -5197,7 +5287,7 @@
           },
           {
             "slug": "boto-encantado",
-            "wielkosc": 0.209
+            "wielkosc": 0.227
           },
           {
             "slug": "cormoran-st-michaels-mount",
@@ -5213,7 +5303,7 @@
           },
           {
             "slug": "empusa-korynt",
-            "wielkosc": 0.471
+            "wielkosc": 0.49
           },
           {
             "slug": "glamr-z-thorhallsstadir",
@@ -5245,11 +5335,11 @@
           },
           {
             "slug": "loup-garou-gevaudan",
-            "wielkosc": 0.265
+            "wielkosc": 0.284
           },
           {
             "slug": "mangkukulam",
-            "wielkosc": 0.227
+            "wielkosc": 0.245
           },
           {
             "slug": "morowa-panna",
@@ -5290,6 +5380,10 @@
           {
             "slug": "wielki-sfinks-z-gizy",
             "wielkosc": 0.191
+          },
+          {
+            "slug": "yara-ma-yha-who",
+            "wielkosc": 0.173
           }
         ],
         "dominacje": [
@@ -5321,7 +5415,7 @@
           {
             "kultura": "amazonia",
             "kult": "boto-encantado",
-            "wielkosc": 0.209
+            "wielkosc": 0.227
           },
           {
             "kultura": "kornwalia",
@@ -5341,7 +5435,7 @@
           {
             "kultura": "grecja",
             "kult": "empusa-korynt",
-            "wielkosc": 0.471
+            "wielkosc": 0.49
           },
           {
             "kultura": "islandia",
@@ -5381,12 +5475,12 @@
           {
             "kultura": "francja",
             "kult": "loup-garou-gevaudan",
-            "wielkosc": 0.265
+            "wielkosc": 0.284
           },
           {
             "kultura": "filipiny",
             "kult": "mangkukulam",
-            "wielkosc": 0.227
+            "wielkosc": 0.245
           },
           {
             "kultura": "polska",
@@ -5437,6 +5531,11 @@
             "kultura": "egipt",
             "kult": "wielki-sfinks-z-gizy",
             "wielkosc": 0.191
+          },
+          {
+            "kultura": "ngarrindjeri",
+            "kult": "yara-ma-yha-who",
+            "wielkosc": 0.173
           }
         ],
         "paliwo": {
@@ -5444,7 +5543,7 @@
           "barbarossa-kyffhaeuser": 22,
           "kentaur-pelion": 14,
           "lincoln-imp": 16,
-          "empusa-korynt": 22,
+          "empusa-korynt": 24,
           "balor": 21,
           "selkie-sule-skerry": 26,
           "indra": 11,
@@ -5455,7 +5554,7 @@
           "protostates": 12,
           "knecht-z-koptos": 15,
           "syama-i-sarvara": 15,
-          "loup-garou-gevaudan": 12,
+          "loup-garou-gevaudan": 14,
           "neith-z-sais": 9,
           "cormoran-st-michaels-mount": 11,
           "ben-varrey": 15
@@ -5489,8 +5588,8 @@
         "zasieg": [
           {
             "slug": "loup-garou-gevaudan",
-            "przed": 0.261,
-            "po": 0.265,
+            "przed": 0.28,
+            "po": 0.284,
             "delta": 0.004,
             "opis": "Ślad z Gévaudan przeszedł do ksiąg jako droga, nie jako polowanie."
           },
@@ -5513,8 +5612,8 @@
           {
             "kultura": "francja",
             "kult": "loup-garou-gevaudan",
-            "przed": 0.261,
-            "po": 0.265,
+            "przed": 0.28,
+            "po": 0.284,
             "delta": 0.004
           },
           {
@@ -5733,7 +5832,7 @@
           },
           {
             "slug": "boto-encantado",
-            "wielkosc": 0.209
+            "wielkosc": 0.227
           },
           {
             "slug": "cormoran-st-michaels-mount",
@@ -5749,7 +5848,7 @@
           },
           {
             "slug": "empusa-korynt",
-            "wielkosc": 0.471
+            "wielkosc": 0.49
           },
           {
             "slug": "glamr-z-thorhallsstadir",
@@ -5781,11 +5880,11 @@
           },
           {
             "slug": "loup-garou-gevaudan",
-            "wielkosc": 0.265
+            "wielkosc": 0.284
           },
           {
             "slug": "mangkukulam",
-            "wielkosc": 0.227
+            "wielkosc": 0.245
           },
           {
             "slug": "morowa-panna",
@@ -5826,6 +5925,10 @@
           {
             "slug": "wielki-sfinks-z-gizy",
             "wielkosc": 0.191
+          },
+          {
+            "slug": "yara-ma-yha-who",
+            "wielkosc": 0.173
           }
         ],
         "dominacje": [
@@ -5857,7 +5960,7 @@
           {
             "kultura": "amazonia",
             "kult": "boto-encantado",
-            "wielkosc": 0.209
+            "wielkosc": 0.227
           },
           {
             "kultura": "kornwalia",
@@ -5877,7 +5980,7 @@
           {
             "kultura": "grecja",
             "kult": "empusa-korynt",
-            "wielkosc": 0.471
+            "wielkosc": 0.49
           },
           {
             "kultura": "islandia",
@@ -5917,12 +6020,12 @@
           {
             "kultura": "francja",
             "kult": "loup-garou-gevaudan",
-            "wielkosc": 0.265
+            "wielkosc": 0.284
           },
           {
             "kultura": "filipiny",
             "kult": "mangkukulam",
-            "wielkosc": 0.227
+            "wielkosc": 0.245
           },
           {
             "kultura": "polska",
@@ -5973,6 +6076,11 @@
             "kultura": "egipt",
             "kult": "wielki-sfinks-z-gizy",
             "wielkosc": 0.191
+          },
+          {
+            "kultura": "ngarrindjeri",
+            "kult": "yara-ma-yha-who",
+            "wielkosc": 0.173
           }
         ],
         "paliwo": {
@@ -5980,7 +6088,7 @@
           "barbarossa-kyffhaeuser": 22,
           "kentaur-pelion": 14,
           "lincoln-imp": 16,
-          "empusa-korynt": 22,
+          "empusa-korynt": 24,
           "balor": 21,
           "selkie-sule-skerry": 26,
           "indra": 11,
@@ -5991,7 +6099,7 @@
           "protostates": 12,
           "knecht-z-koptos": 15,
           "syama-i-sarvara": 15,
-          "loup-garou-gevaudan": 12,
+          "loup-garou-gevaudan": 14,
           "neith-z-sais": 9,
           "cormoran-st-michaels-mount": 11,
           "ben-varrey": 15,
@@ -6232,13 +6340,13 @@
           "slug": "boto-encantado",
           "nazwa": "Boto encantado — różowy delfin, który wychodzi na potańcówkę",
           "rola": "Ten, który nie zdejmuje kapelusza",
-          "pasywne": 10,
-          "saldoPrzed": 10,
+          "pasywne": 12,
+          "saldoPrzed": 12,
           "kosztUdzialu": 2,
           "kosztKlucza": 0,
           "boost": 0,
           "zwrot": 4,
-          "saldoPo": 12
+          "saldoPo": 14
         },
         {
           "slug": "protostates",
@@ -6281,7 +6389,7 @@
           },
           {
             "slug": "boto-encantado",
-            "wielkosc": 0.227
+            "wielkosc": 0.245
           },
           {
             "slug": "cormoran-st-michaels-mount",
@@ -6297,7 +6405,7 @@
           },
           {
             "slug": "empusa-korynt",
-            "wielkosc": 0.471
+            "wielkosc": 0.49
           },
           {
             "slug": "glamr-z-thorhallsstadir",
@@ -6329,11 +6437,11 @@
           },
           {
             "slug": "loup-garou-gevaudan",
-            "wielkosc": 0.265
+            "wielkosc": 0.284
           },
           {
             "slug": "mangkukulam",
-            "wielkosc": 0.227
+            "wielkosc": 0.245
           },
           {
             "slug": "morowa-panna",
@@ -6374,6 +6482,10 @@
           {
             "slug": "wielki-sfinks-z-gizy",
             "wielkosc": 0.191
+          },
+          {
+            "slug": "yara-ma-yha-who",
+            "wielkosc": 0.173
           }
         ],
         "dominacje": [
@@ -6405,7 +6517,7 @@
           {
             "kultura": "amazonia",
             "kult": "boto-encantado",
-            "wielkosc": 0.227
+            "wielkosc": 0.245
           },
           {
             "kultura": "kornwalia",
@@ -6425,7 +6537,7 @@
           {
             "kultura": "grecja",
             "kult": "empusa-korynt",
-            "wielkosc": 0.471
+            "wielkosc": 0.49
           },
           {
             "kultura": "islandia",
@@ -6465,12 +6577,12 @@
           {
             "kultura": "francja",
             "kult": "loup-garou-gevaudan",
-            "wielkosc": 0.265
+            "wielkosc": 0.284
           },
           {
             "kultura": "filipiny",
             "kult": "mangkukulam",
-            "wielkosc": 0.227
+            "wielkosc": 0.245
           },
           {
             "kultura": "polska",
@@ -6521,6 +6633,11 @@
             "kultura": "egipt",
             "kult": "wielki-sfinks-z-gizy",
             "wielkosc": 0.191
+          },
+          {
+            "kultura": "ngarrindjeri",
+            "kult": "yara-ma-yha-who",
+            "wielkosc": 0.173
           }
         ],
         "paliwo": {
@@ -6528,7 +6645,7 @@
           "barbarossa-kyffhaeuser": 22,
           "kentaur-pelion": 14,
           "lincoln-imp": 16,
-          "empusa-korynt": 22,
+          "empusa-korynt": 24,
           "balor": 21,
           "selkie-sule-skerry": 26,
           "indra": 11,
@@ -6539,13 +6656,13 @@
           "protostates": 13,
           "knecht-z-koptos": 15,
           "syama-i-sarvara": 15,
-          "loup-garou-gevaudan": 12,
+          "loup-garou-gevaudan": 14,
           "neith-z-sais": 9,
           "cormoran-st-michaels-mount": 11,
           "ben-varrey": 15,
           "iktomi": 14,
           "nessos": 21,
-          "boto-encantado": 12
+          "boto-encantado": 14
         }
       },
       "konsekwencje": {
@@ -6583,8 +6700,8 @@
           },
           {
             "slug": "boto-encantado",
-            "przed": 0.209,
-            "po": 0.227,
+            "przed": 0.227,
+            "po": 0.245,
             "delta": 0.018,
             "opis": "Pierwsze wejście bytu z Ameryki Południowej do Tomu I — razem z nim wchodzi wersja zdarzeń, która chroni wieś kosztem pamięci matki."
           },
@@ -6607,8 +6724,8 @@
           {
             "kultura": "amazonia",
             "kult": "boto-encantado",
-            "przed": 0.209,
-            "po": 0.227,
+            "przed": 0.227,
+            "po": 0.245,
             "delta": 0.018
           },
           {
@@ -6787,7 +6904,7 @@
       },
       {
         "slug": "boto-encantado",
-        "wielkosc": 0.227
+        "wielkosc": 0.245
       },
       {
         "slug": "cormoran-st-michaels-mount",
@@ -6803,7 +6920,7 @@
       },
       {
         "slug": "empusa-korynt",
-        "wielkosc": 0.471
+        "wielkosc": 0.49
       },
       {
         "slug": "glamr-z-thorhallsstadir",
@@ -6835,11 +6952,11 @@
       },
       {
         "slug": "loup-garou-gevaudan",
-        "wielkosc": 0.265
+        "wielkosc": 0.284
       },
       {
         "slug": "mangkukulam",
-        "wielkosc": 0.227
+        "wielkosc": 0.245
       },
       {
         "slug": "morowa-panna",
@@ -6880,6 +6997,10 @@
       {
         "slug": "wielki-sfinks-z-gizy",
         "wielkosc": 0.191
+      },
+      {
+        "slug": "yara-ma-yha-who",
+        "wielkosc": 0.173
       }
     ],
     "dominacje": [
@@ -6911,7 +7032,7 @@
       {
         "kultura": "amazonia",
         "kult": "boto-encantado",
-        "wielkosc": 0.227
+        "wielkosc": 0.245
       },
       {
         "kultura": "kornwalia",
@@ -6931,7 +7052,7 @@
       {
         "kultura": "grecja",
         "kult": "empusa-korynt",
-        "wielkosc": 0.471
+        "wielkosc": 0.49
       },
       {
         "kultura": "islandia",
@@ -6971,12 +7092,12 @@
       {
         "kultura": "francja",
         "kult": "loup-garou-gevaudan",
-        "wielkosc": 0.265
+        "wielkosc": 0.284
       },
       {
         "kultura": "filipiny",
         "kult": "mangkukulam",
-        "wielkosc": 0.227
+        "wielkosc": 0.245
       },
       {
         "kultura": "polska",
@@ -7027,6 +7148,11 @@
         "kultura": "egipt",
         "kult": "wielki-sfinks-z-gizy",
         "wielkosc": 0.191
+      },
+      {
+        "kultura": "ngarrindjeri",
+        "kult": "yara-ma-yha-who",
+        "wielkosc": 0.173
       }
     ],
     "paliwo": {
@@ -7034,7 +7160,7 @@
       "barbarossa-kyffhaeuser": 22,
       "kentaur-pelion": 14,
       "lincoln-imp": 16,
-      "empusa-korynt": 22,
+      "empusa-korynt": 24,
       "balor": 21,
       "selkie-sule-skerry": 26,
       "indra": 11,
@@ -7045,13 +7171,13 @@
       "protostates": 13,
       "knecht-z-koptos": 15,
       "syama-i-sarvara": 15,
-      "loup-garou-gevaudan": 12,
+      "loup-garou-gevaudan": 14,
       "neith-z-sais": 9,
       "cormoran-st-michaels-mount": 11,
       "ben-varrey": 15,
       "iktomi": 14,
       "nessos": 21,
-      "boto-encantado": 12
+      "boto-encantado": 14
     }
   },
   "walidacja": true,

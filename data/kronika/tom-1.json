@@ -32,7 +32,7 @@
       },
       {
         "slug": "boto-encantado",
-        "wielkosc": 0.209
+        "wielkosc": 0.227
       },
       {
         "slug": "cormoran-st-michaels-mount",
@@ -48,7 +48,7 @@
       },
       {
         "slug": "empusa-korynt",
-        "wielkosc": 0.436
+        "wielkosc": 0.455
       },
       {
         "slug": "glamr-z-thorhallsstadir",
@@ -80,11 +80,11 @@
       },
       {
         "slug": "loup-garou-gevaudan",
-        "wielkosc": 0.245
+        "wielkosc": 0.264
       },
       {
         "slug": "mangkukulam",
-        "wielkosc": 0.227
+        "wielkosc": 0.245
       },
       {
         "slug": "morowa-panna",
@@ -125,6 +125,10 @@
       {
         "slug": "wielki-sfinks-z-gizy",
         "wielkosc": 0.191
+      },
+      {
+        "slug": "yara-ma-yha-who",
+        "wielkosc": 0.173
       }
     ],
     "dominacje": [
@@ -156,7 +160,7 @@
       {
         "kultura": "amazonia",
         "kult": "boto-encantado",
-        "wielkosc": 0.209
+        "wielkosc": 0.227
       },
       {
         "kultura": "kornwalia",
@@ -176,7 +180,7 @@
       {
         "kultura": "grecja",
         "kult": "empusa-korynt",
-        "wielkosc": 0.436
+        "wielkosc": 0.455
       },
       {
         "kultura": "islandia",
@@ -216,12 +220,12 @@
       {
         "kultura": "francja",
         "kult": "loup-garou-gevaudan",
-        "wielkosc": 0.245
+        "wielkosc": 0.264
       },
       {
         "kultura": "filipiny",
         "kult": "mangkukulam",
-        "wielkosc": 0.227
+        "wielkosc": 0.245
       },
       {
         "kultura": "polska",
@@ -272,6 +276,11 @@
         "kultura": "egipt",
         "kult": "wielki-sfinks-z-gizy",
         "wielkosc": 0.191
+      },
+      {
+        "kultura": "ngarrindjeri",
+        "kult": "yara-ma-yha-who",
+        "wielkosc": 0.173
       }
     ]
   },

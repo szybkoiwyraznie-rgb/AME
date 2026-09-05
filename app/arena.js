@@ -39,6 +39,8 @@ export const WAGA_MOTYWU = {
   podstep: { atak: 4, obrona: 2 },
   jad: { atak: 7, obrona: 0 },
   klatwa: { atak: 5, obrona: 2 },
+  // przestroga nie zadaje ciosów: chroni tego, kto zdążył jej wysłuchać
+  ostrzezenie: { atak: 1, obrona: 5 },
 };
 
 /** Kontry motywów: motyw klucza tłumi siłę motywu z listy (mnożnik ataku). */
@@ -49,6 +51,8 @@ export const KONTRA_MOTYWU = {
   oplaty: ['furia'],
   // fortel obchodzi straż: kto pilnuje bramy, ten nie patrzy pod nogi
   podstep: ['obrona'],
+  // przestroga psuje fortel: kto wie, czego się wystrzegać, nie da się podejść
+  ostrzezenie: ['podstep'],
   // uzdrowienie neutralizuje jad: kto zna odtrutkę, temu trucizna schodzi do rzemiosła
   uzdrowienie: ['jad'],
   // oczyszczenie znosi klątwę: popiół zakopany z dala od dróg kończy sprawę
