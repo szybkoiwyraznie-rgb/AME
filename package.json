@@ -14,7 +14,8 @@
     "lint-stylu": "node tools/lint-stylu.mjs",
     "lint-zrodel": "node tools/lint-zrodel.mjs",
     "audyt-pinezek": "node tools/audyt-pinezek.mjs --wszystko",
-    "lint-faktow": "node tools/lint-faktow.mjs"
+    "lint-faktow": "node tools/lint-faktow.mjs",
+    "zywosc-zrodel": "node tools/zywosc-zrodel.mjs"
   },
   "engines": {
     "node": ">=20"

@@ -160,9 +160,17 @@
 - ~~**Kopiuj link do wpisu**~~ — zrealizowane w M4 (C2): `ui.linkWidoku` +
   `ui.przyciskKopiowania`, przycisk „⧉ kopiuj link" w kartotece (obok ✕) i w
   warstwie skitu; test pilnuje, że handlerzy obu warstw obsługują `[data-kopia]`.
-- **Kontrola żywości adresów źródłowych** — skrypt sesji (narzędzia agenta), NIE
-  CI: egress sandboxa jest ograniczony (L3), a linki bywają przenoszone.
-  Wymagałby decyzji: martwy link = ostrzeżenie czy błąd walidatora.
+- ~~**Kontrola żywości adresów źródłowych**~~ — **WDROŻONE (2026-09-05, PR #34,
+  C2+5 obrotu 7):** `tools/zywosc-zrodel.mjs` (`npm run zywosc-zrodel`), skrypt
+  sesji poza `check` i poza CI — sandbox nie ma egressu (ADR 0003, L3), więc
+  bramki jakości zostają bez sieci. **Decyzja: martwy link to OSTRZEŻENIE, nie
+  błąd walidatora** (uzasadnienie niżej: Theoi wróciło do życia po czterech
+  dniach); kto chce twardego wyniku, dokłada `--rygor`. Cztery statusy:
+  `zywy`, `przekierowany` (raport podaje nowy adres), `niepewny` (403/429/5xx
+  i błędy sieci — serwer, który nie lubi robotów, to nie martwy adres) oraz
+  `martwy` (wyłącznie 404/410). HEAD z awaryjnym GET, cztery adresy naraz,
+  limit 12 s. Sieć wchodzi przez wstrzykiwany `fetchImpl`, więc
+  `test/zywosc-zrodel.test.js` sprawdza całą logikę bez jednego pakietu w kablu.
   **Przypadek rozstrzygnięty:** Theoi „HephaestusWorks” w kartotece
   `talos-kreta` padał z 404 („File not found”) 2026-08-30; przy pogłębianiu
   wpisu 2026-09-04 strona znów odpowiada 200 i zawiera passus o Talosie
