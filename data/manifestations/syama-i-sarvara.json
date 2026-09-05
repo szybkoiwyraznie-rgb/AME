@@ -18,7 +18,7 @@
     "lat": 25.3176,
     "lon": 82.9739
   },
-  "pochodzenie_i_kultura": "Religia wedyjska Indii: Rigweda 10.14 (hymn pogrzebowy do Yamy, przeł. R. T. H. Griffith, 1896) nazywa je „potomstwem Saramy, brązowymi, czterookimi”, „stróżami drogi” i „wysłannikami Yamy, wędrującymi wśród ludzi”; tradycja późniejsza (Atharwaweda, za „Encyclopedia of Indo-European Culture” J. P. Mallory'ego i D. Q. Adamsa) czyni z nich wysłanników wyszukujących umierających, a w przekazach klasycznych (Monier-Williams, Tilak) rozróżnia cętkowaną Śarvarę i ciemną Śyāmę. Ich matką jest Saramā — suka Indry, która w Rigwedzie 10.108 przekroczyła wody Rasā, odnalazła krowy skradzione przez Paṇich i odrzuciła ich ofertę (krowy i „siostrzeństwo”); po matce psy mają bezwzględność wobec łapówek. Jedna droga, jeden pan, jedno plemię.",
+  "pochodzenie_i_kultura": "Religia wedyjska Indii: Rigweda 10.14 (hymn pogrzebowy do Yamy, przeł. R. T. H. Griffith, 1896) nazywa je „potomstwem Saramy, brązowymi, czterookimi”, „stróżami drogi” i „wysłannikami Yamy, wędrującymi wśród ludzi”; tradycja późniejsza (Atharwaweda, za „Encyclopedia of Indo-European Culture” J. P. Mallory'ego i D. Q. Adamsa) czyni z nich wysłanników wyszukujących umierających, a w przekazach klasycznych (Monier-Williams, Tilak) rozróżnia cętkowaną Śarvarę i ciemną Śyāmę. Ich matką jest Saramā — suka Indry, która w Rigwedzie 10.108 przekroczyła wody Rasā, odnalazła krowy skradzione przez Paṇich i odrzuciła ich ofertę (krowy i „siostrzeństwo”); po matce psy mają bezwzględność wobec łapówek. Jedna droga, jeden pan, jedno plemię. Do tego samego kręgu należy określenie sārameya — „potomek Saramy”: hymn Rigwedy 7.55 (Vāstoṣpati, przeł. Griffith) zwraca się do „syna Saramy”, którego zęby błyskają w pysku „jak groty włóczni”, i trzy razy powtarza polecenie „idź spać”, każąc mu szczekać na złodzieja i rabusia, a nie na śpiewaków Indry. Ta sama rodzina psów obsługuje więc dwa progi: dom nocą i drogę po śmierci. Osobno warto odnotować, czego kartoteka NIE przyjmuje: popularne zrównanie imienia Śarvary z greckim Kerberosem opiera się na hipotezie Bruce'a Lincolna („The Hellhound”, Journal of Indo-European Studies 1977), wywodzącej imiona psów indoeuropejskich od pierwiastka oznaczającego warczenie; językoznawcy w większości ją odrzucili (m.in. Robert Beekes w słowniku etymologicznym greki), więc psy Yamy zostają tu bytem wedyjskim, a nie „indyjskim Cerberem”.",
   "wizualizacja": {
     "prompt": "Style: A wide-angle full-body cinematic photograph. The central objects/persons of the photo are visible from head to toe, standing centrally in the frame. No parts of the body are cropped.\n\nTwo large hounds standing side by side on a narrow dirt road at moonless midnight, one dark as new charcoal, the other brindled with pale patches; each head carrying a second small pair of eyes set above the ordinary ones, all four watching the road; the road runs between flooded rice fields and a line of cremation pyres, smoke rising to a starry sky, distant temple silhouettes, the Ganges glinting behind, cold blue silver light, damp earth and drifting mist.\n\nCaptured with a 35mm anamorphic lens at f/1.8. Shallow depth of field with a heavy, creamy bokeh background. Environmental portraiture. Dramatic cinematic lighting, sharp focus on the character, hyper-realistic textures of clothing and skin. Shot on 70mm film stock, ultra-wide 21:9 aspect ratio. --ar 21:9",
     "obraz": "assets/wizualizacje/syama-i-sarvara.jpg"
@@ -27,7 +27,7 @@
     "wyglad_i_aura": "Dwa wielkie psy: jeden czarny jak węgiel (Śyāma), drugi cętkowany, brązowo-łaciaty (Śarvara), oba z drugą parą oczu nad zwykłymi — razem cztery oczy, którymi patrzą jednocześnie na świat ludzi i na świat przodków. Nozdrza mają rozdęte, jak u „nienasyconych” wysłanników z hymnu; sierść sucha, nie lśniąca, a wokół pachnie zimnym popiołem i kurzawą drogi. Pojawiają się bezgłośnie, zwykle o zmierzchu albo w nocy, gdy we wsi jest zmarły — i stoją na ścieżce, zamiast iść do ludzi.",
     "charakter_i_motywacje": "Nie są złe ani dobre — są porządkiem drogi. Pilnują przejścia, oglądają ludzi i strzegą ścieżki; hymn wzywa Yamy, by „powierzył im tego człowieka” i „obdarzył go pomyślnością”. Ich zadaniem jest wyprowadzić duszę bezpiecznie i sprawdzić, czy naprawdę idzie. Nie napadają na żywych: one wyszukują tych, których pora nadeszła, a potem idą z nimi przez granicę. Nie znają przekupstwa ani pośpiechu — znają jedną drogę i jednego pana.",
     "zdolnosci": "Widzą na dwa sposoby naraz: druga para oczu patrzy tam, gdzie nie sięga wzrok żywych, a tradycja nadaje im miano Mithūdṛśā — „tych, które nie patrzą jednocześnie”: jedno spostrzega to, czego nie widzi drugie, więc przejścia nie da się prześlizgnąć obojgu naraz. Wędrują szybciej niż dusza, węszą umierających (Atharweda) i rozeznają, komu należy się droga prosta, a kogo trzeba prowadzić siłą; bywają też widziane na niebie jako Wielki Pies i Mały Pies (Canis Major i Canis Minor), bo z ich postaci zrobiono gwiazdozbiory.",
-    "slabosci_i_metody_pokonania": "Nie zabija się ich — one są bramą, nie wrogiem. Hymn nie każe z nimi walczyć, lecz „ścigać się i wyprzedzić” na „szczęśliwej ścieżce”: kto idzie godnie, ten przechodzi, bo są strażnikami, nie sędziami. Pomagają obrzędy — ofiara i ogień, którymi Agni niesie dar ku bogom, tłuszcz i ziarno dla przodków — a bywa i chwila, gdy jedno z nich nie patrzy; nie wolno jednak liczyć, że nie zauważą powrotu. Ostatnia rada brzmi: wybrać miasto, w którym Yama nie ma władzy — choć droga do niego też wiedzie przez psy.",
+    "slabosci_i_metody_pokonania": "Nie zabija się ich — one są bramą, nie wrogiem. Hymn nie każe z nimi walczyć, lecz „ścigać się i wyprzedzić” na „szczęśliwej ścieżce”: kto idzie godnie, ten przechodzi, bo są strażnikami, nie sędziami. Pomagają obrzędy — ofiara i ogień, którymi Agni niesie dar ku bogom, tłuszcz i ziarno dla przodków — a bywa i chwila, gdy jedno z nich nie patrzy; nie wolno jednak liczyć, że nie zauważą powrotu. Ostatnia rada brzmi: wybrać miasto, w którym Yama nie ma władzy — choć droga do niego też wiedzie przez psy. Jest jeszcze jedna droga, wpisana w sam obrzęd: hymn Rigwedy 7.55 nie zabija psa i nie przekupuje go — usypia. Powtarzane „idź spać” kierowane do syna Saramy pokazuje, jak w tej tradycji obchodzi się strażnika: nie siłą i nie darem, lecz właściwie wypowiedzianym wersem we właściwej porze nocy. Kto zna hymn, przechodzi po cichu; kto go nie zna, budzi oba psy naraz.",
     "preferencje": "Lubią: drogi, po których nikt nie wraca, kremacje, wierne obrzędy, ciszę po zmroku i podróżnych z wyważonym sumieniem. Nie lubią: ludzi, którzy zawracają z połowy drogi, ścieżek skracanych, krzyku przy stosie i miast, w których Yama nie ma władzy."
   },
   "dokumentacja": [
@@ -50,6 +50,16 @@
       "typ": "źródło krajoznawcze",
       "pozycja": "„Manikarnika Ghat, Varanasi” (visitvaranasi.in) — legenda: Śiwa zobowiązuje się, że każdy spalony na ghatcie osiągnie wyzwolenie, przez co Yama traci dusze i ma pretensje; stąd wiara, że Waranasi pozostaje „nietknięte wpływem Yamy” — miasto, przy którym droga przodków skręca w drugą stronę",
       "url": "https://visitvaranasi.in/burning-ghats/manikarnika-ghat/"
+    },
+    {
+      "typ": "tekst źródłowy",
+      "pozycja": "Rigweda 7.55 (Vāstoṣpati, przeł. R. T. H. Griffith, 1896; Internet Sacred Text Archive) — hymn do „syna Saramy”: zęby błyskające „jak groty włóczni”, trzykrotne „idź spać” i polecenie, by szczekał na złodzieja, a nie na śpiewaków Indry",
+      "url": "https://sacred-texts.com/hin/rigveda/rv07055.htm"
+    },
+    {
+      "typ": "opracowanie",
+      "pozycja": "Joel Christensen, „No, Internet, Kerberos is Probably Not «Spot»” (Sententiae Antiquae) — omówienie i odrzucenie etymologii łączącej Kerberosa z sanskryckim określeniem maści psa, ze wskazaniem artykułu Bruce'a Lincolna („The Hellhound”, JIES 1977) i sprzeciwu Roberta Beekesa",
+      "url": "https://sententiaeantiquae.com/2018/08/11/no-internet-kerberos-is-probably-not-spot/"
     }
   ],
   "trofea": {
@@ -79,6 +89,10 @@
     {
       "slug": "protostates",
       "opis": "W Termopilach pierwszy w szeregu zamyka przejście dla żywych, a w Waranasi psy Yamy otwierają drogę dla umarłych — jedna brama przed, druga po, a między nimi tylko cień człowieka, który nie przepuszcza nikogo (Herodot, „Dzieje” VII; Rigweda 10.14)."
+    },
+    {
+      "slug": "morowa-panna",
+      "opis": "Dwa sposoby przychodzenia po człowieka: psy prowadzą już umarłego bezpieczną drogą, morowa panna dopiero wyznacza dom, z którego ktoś wyjdzie."
     }
   ],
   "meta": {
@@ -104,6 +118,10 @@
       {
         "data": "2026-08-30 21:47",
         "opis": "Dopisana matka psów — Saramā, suka Indry z Rigwedy 10.108 (przekroczenie Rasā, odmowa łapówki Paṇich) oraz nowe źródło pierwotne."
+      },
+      {
+        "data": "2026-09-05 19:40",
+        "opis": "Pogłębienie karty o krąg sārameya z hymnu Rigwedy 7.55 (usypianie psa strażnika), o jawne odrzucenie etymologii łączącej Śarvarę z Kerberosem oraz o powiązanie z morową panną."
       }
     ]
   }

@@ -6,8 +6,8 @@
   "status": "otwarta",
   "stanStart": {
     "os": {
-      "mit": 37,
-      "racjonalizacja": 63
+      "mit": 38,
+      "racjonalizacja": 62
     },
     "zasieg": [
       {
@@ -72,7 +72,7 @@
       },
       {
         "slug": "morowa-panna",
-        "wielkosc": 0.35
+        "wielkosc": 0.37
       },
       {
         "slug": "neith-z-sais",
@@ -186,7 +186,7 @@
       {
         "kultura": "polska",
         "kult": "morowa-panna",
-        "wielkosc": 0.35
+        "wielkosc": 0.37
       },
       {
         "kultura": "egipt",

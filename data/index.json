@@ -1,6 +1,6 @@
 {
   "wersja": 3,
-  "buildTime": "2026-09-05T11:36:39.389Z",
+  "buildTime": "2026-09-05T11:40:43.835Z",
   "liczba": 24,
   "liczbaSkitow": 44,
   "kanon": {
@@ -1200,7 +1200,8 @@
       "backlinki": [
         "bazyliszek-warszawski",
         "pandora",
-        "protostates"
+        "protostates",
+        "syama-i-sarvara"
       ],
       "obraz": "assets/wizualizacje/morowa-panna.jpg",
       "trofea": {
@@ -1527,6 +1528,7 @@
       "powiazania": [
         "agni",
         "kannon-hase",
+        "morowa-panna",
         "protostates",
         "sfinks-teby"
       ],
@@ -2360,6 +2362,14 @@
     }
   ],
   "aktualizacje": [
+    {
+      "data": "2026-09-05 19:40",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "syama-i-sarvara",
+      "tytul": "Śyāma i Śarvara — czterookie psy Yamy, strażnicy drogi przodków",
+      "opis": "Pogłębienie karty o krąg sārameya z hymnu Rigwedy 7.55 (usypianie psa strażnika), o jawne odrzucenie etymologii łączącej Śarvarę z Kerberosem oraz o powiązanie z morową panną."
+    },
     {
       "data": "2026-09-05 19:05",
       "typ": "manifestacja",

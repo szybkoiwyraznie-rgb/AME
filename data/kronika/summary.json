@@ -58,8 +58,8 @@
       ],
       "stanPo": {
         "os": {
-          "mit": 35,
-          "racjonalizacja": 65
+          "mit": 36,
+          "racjonalizacja": 64
         },
         "zasieg": [
           {
@@ -124,7 +124,7 @@
           },
           {
             "slug": "morowa-panna",
-            "wielkosc": 0.35
+            "wielkosc": 0.37
           },
           {
             "slug": "neith-z-sais",
@@ -238,7 +238,7 @@
           {
             "kultura": "polska",
             "kult": "morowa-panna",
-            "wielkosc": 0.35
+            "wielkosc": 0.37
           },
           {
             "kultura": "egipt",
@@ -485,8 +485,8 @@
       ],
       "stanPo": {
         "os": {
-          "mit": 33,
-          "racjonalizacja": 67
+          "mit": 34,
+          "racjonalizacja": 66
         },
         "zasieg": [
           {
@@ -551,7 +551,7 @@
           },
           {
             "slug": "morowa-panna",
-            "wielkosc": 0.35
+            "wielkosc": 0.37
           },
           {
             "slug": "neith-z-sais",
@@ -665,7 +665,7 @@
           {
             "kultura": "polska",
             "kult": "morowa-panna",
-            "wielkosc": 0.35
+            "wielkosc": 0.37
           },
           {
             "kultura": "egipt",
@@ -930,8 +930,8 @@
       ],
       "stanPo": {
         "os": {
-          "mit": 31,
-          "racjonalizacja": 69
+          "mit": 32,
+          "racjonalizacja": 68
         },
         "zasieg": [
           {
@@ -996,7 +996,7 @@
           },
           {
             "slug": "morowa-panna",
-            "wielkosc": 0.35
+            "wielkosc": 0.37
           },
           {
             "slug": "neith-z-sais",
@@ -1110,7 +1110,7 @@
           {
             "kultura": "polska",
             "kult": "morowa-panna",
-            "wielkosc": 0.35
+            "wielkosc": 0.37
           },
           {
             "kultura": "egipt",
@@ -1390,8 +1390,8 @@
       ],
       "stanPo": {
         "os": {
-          "mit": 30,
-          "racjonalizacja": 70
+          "mit": 31,
+          "racjonalizacja": 69
         },
         "zasieg": [
           {
@@ -1456,7 +1456,7 @@
           },
           {
             "slug": "morowa-panna",
-            "wielkosc": 0.35
+            "wielkosc": 0.37
           },
           {
             "slug": "neith-z-sais",
@@ -1570,7 +1570,7 @@
           {
             "kultura": "polska",
             "kult": "morowa-panna",
-            "wielkosc": 0.35
+            "wielkosc": 0.37
           },
           {
             "kultura": "egipt",
@@ -1850,8 +1850,8 @@
       ],
       "stanPo": {
         "os": {
-          "mit": 29,
-          "racjonalizacja": 71
+          "mit": 30,
+          "racjonalizacja": 70
         },
         "zasieg": [
           {
@@ -1916,7 +1916,7 @@
           },
           {
             "slug": "morowa-panna",
-            "wielkosc": 0.35
+            "wielkosc": 0.37
           },
           {
             "slug": "neith-z-sais",
@@ -2030,7 +2030,7 @@
           {
             "kultura": "polska",
             "kult": "morowa-panna",
-            "wielkosc": 0.35
+            "wielkosc": 0.37
           },
           {
             "kultura": "egipt",
@@ -2284,13 +2284,13 @@
           "slug": "morowa-panna",
           "nazwa": "Morowa Panna — zaraza w białej szacie z czerwoną chustą",
           "rola": "Pytanie z jedną odpowiedzią",
-          "pasywne": 13,
-          "saldoPrzed": 13,
+          "pasywne": 15,
+          "saldoPrzed": 15,
           "kosztUdzialu": 2,
           "kosztKlucza": 0,
           "boost": 0,
           "zwrot": 0,
-          "saldoPo": 11
+          "saldoPo": 13
         },
         {
           "slug": "empusa-korynt",
@@ -2307,8 +2307,8 @@
       ],
       "stanPo": {
         "os": {
-          "mit": 28,
-          "racjonalizacja": 72
+          "mit": 29,
+          "racjonalizacja": 71
         },
         "zasieg": [
           {
@@ -2373,7 +2373,7 @@
           },
           {
             "slug": "morowa-panna",
-            "wielkosc": 0.335
+            "wielkosc": 0.355
           },
           {
             "slug": "neith-z-sais",
@@ -2487,7 +2487,7 @@
           {
             "kultura": "polska",
             "kult": "morowa-panna",
-            "wielkosc": 0.335
+            "wielkosc": 0.355
           },
           {
             "kultura": "egipt",
@@ -2542,7 +2542,7 @@
           "sfinks-teby": 22,
           "talos-kreta": 20,
           "pandora": 17,
-          "morowa-panna": 11
+          "morowa-panna": 13
         }
       },
       "konsekwencje": {
@@ -2581,8 +2581,8 @@
           },
           {
             "slug": "morowa-panna",
-            "przed": 0.35,
-            "po": 0.335,
+            "przed": 0.37,
+            "po": 0.355,
             "delta": -0.015,
             "opis": "Ludzie ćwiczą szczerą odpowiedź na jej pytanie; rytuał traci jedną z nóg."
           },
@@ -2605,8 +2605,8 @@
           {
             "kultura": "polska",
             "kult": "morowa-panna",
-            "przed": 0.35,
-            "po": 0.335,
+            "przed": 0.37,
+            "po": 0.355,
             "delta": -0.015
           },
           {
@@ -2773,8 +2773,8 @@
       ],
       "stanPo": {
         "os": {
-          "mit": 27,
-          "racjonalizacja": 73
+          "mit": 28,
+          "racjonalizacja": 72
         },
         "zasieg": [
           {
@@ -2839,7 +2839,7 @@
           },
           {
             "slug": "morowa-panna",
-            "wielkosc": 0.335
+            "wielkosc": 0.355
           },
           {
             "slug": "neith-z-sais",
@@ -2953,7 +2953,7 @@
           {
             "kultura": "polska",
             "kult": "morowa-panna",
-            "wielkosc": 0.335
+            "wielkosc": 0.355
           },
           {
             "kultura": "egipt",
@@ -3008,7 +3008,7 @@
           "sfinks-teby": 22,
           "talos-kreta": 20,
           "pandora": 17,
-          "morowa-panna": 11,
+          "morowa-panna": 13,
           "protostates": 12,
           "knecht-z-koptos": 13,
           "syama-i-sarvara": 11
@@ -3242,8 +3242,8 @@
       ],
       "stanPo": {
         "os": {
-          "mit": 28,
-          "racjonalizacja": 72
+          "mit": 29,
+          "racjonalizacja": 71
         },
         "zasieg": [
           {
@@ -3308,7 +3308,7 @@
           },
           {
             "slug": "morowa-panna",
-            "wielkosc": 0.335
+            "wielkosc": 0.355
           },
           {
             "slug": "neith-z-sais",
@@ -3422,7 +3422,7 @@
           {
             "kultura": "polska",
             "kult": "morowa-panna",
-            "wielkosc": 0.335
+            "wielkosc": 0.355
           },
           {
             "kultura": "egipt",
@@ -3477,7 +3477,7 @@
           "sfinks-teby": 22,
           "talos-kreta": 20,
           "pandora": 17,
-          "morowa-panna": 11,
+          "morowa-panna": 13,
           "protostates": 12,
           "knecht-z-koptos": 13,
           "syama-i-sarvara": 11
@@ -3715,8 +3715,8 @@
       ],
       "stanPo": {
         "os": {
-          "mit": 29,
-          "racjonalizacja": 71
+          "mit": 30,
+          "racjonalizacja": 70
         },
         "zasieg": [
           {
@@ -3781,7 +3781,7 @@
           },
           {
             "slug": "morowa-panna",
-            "wielkosc": 0.335
+            "wielkosc": 0.355
           },
           {
             "slug": "neith-z-sais",
@@ -3895,7 +3895,7 @@
           {
             "kultura": "polska",
             "kult": "morowa-panna",
-            "wielkosc": 0.335
+            "wielkosc": 0.355
           },
           {
             "kultura": "egipt",
@@ -3950,7 +3950,7 @@
           "sfinks-teby": 22,
           "talos-kreta": 20,
           "pandora": 17,
-          "morowa-panna": 11,
+          "morowa-panna": 13,
           "protostates": 12,
           "knecht-z-koptos": 13,
           "syama-i-sarvara": 11,
@@ -4212,8 +4212,8 @@
       ],
       "stanPo": {
         "os": {
-          "mit": 28,
-          "racjonalizacja": 72
+          "mit": 29,
+          "racjonalizacja": 71
         },
         "zasieg": [
           {
@@ -4278,7 +4278,7 @@
           },
           {
             "slug": "morowa-panna",
-            "wielkosc": 0.335
+            "wielkosc": 0.355
           },
           {
             "slug": "neith-z-sais",
@@ -4392,7 +4392,7 @@
           {
             "kultura": "polska",
             "kult": "morowa-panna",
-            "wielkosc": 0.335
+            "wielkosc": 0.355
           },
           {
             "kultura": "egipt",
@@ -4447,7 +4447,7 @@
           "sfinks-teby": 22,
           "talos-kreta": 20,
           "pandora": 17,
-          "morowa-panna": 11,
+          "morowa-panna": 13,
           "protostates": 12,
           "knecht-z-koptos": 13,
           "syama-i-sarvara": 11,
@@ -4721,8 +4721,8 @@
       ],
       "stanPo": {
         "os": {
-          "mit": 28,
-          "racjonalizacja": 72
+          "mit": 29,
+          "racjonalizacja": 71
         },
         "zasieg": [
           {
@@ -4787,7 +4787,7 @@
           },
           {
             "slug": "morowa-panna",
-            "wielkosc": 0.335
+            "wielkosc": 0.355
           },
           {
             "slug": "neith-z-sais",
@@ -4901,7 +4901,7 @@
           {
             "kultura": "polska",
             "kult": "morowa-panna",
-            "wielkosc": 0.335
+            "wielkosc": 0.355
           },
           {
             "kultura": "egipt",
@@ -4956,7 +4956,7 @@
           "sfinks-teby": 22,
           "talos-kreta": 20,
           "pandora": 17,
-          "morowa-panna": 11,
+          "morowa-panna": 13,
           "protostates": 12,
           "knecht-z-koptos": 13,
           "syama-i-sarvara": 11,
@@ -5159,8 +5159,8 @@
   ],
   "stanPo": {
     "os": {
-      "mit": 28,
-      "racjonalizacja": 72
+      "mit": 29,
+      "racjonalizacja": 71
     },
     "zasieg": [
       {
@@ -5225,7 +5225,7 @@
       },
       {
         "slug": "morowa-panna",
-        "wielkosc": 0.335
+        "wielkosc": 0.355
       },
       {
         "slug": "neith-z-sais",
@@ -5339,7 +5339,7 @@
       {
         "kultura": "polska",
         "kult": "morowa-panna",
-        "wielkosc": 0.335
+        "wielkosc": 0.355
       },
       {
         "kultura": "egipt",
@@ -5394,7 +5394,7 @@
       "sfinks-teby": 22,
       "talos-kreta": 20,
       "pandora": 17,
-      "morowa-panna": 11,
+      "morowa-panna": 13,
       "protostates": 12,
       "knecht-z-koptos": 13,
       "syama-i-sarvara": 11,
