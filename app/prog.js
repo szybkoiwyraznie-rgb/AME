@@ -23,7 +23,7 @@ import { profileKartoteki, KONTRA_MOTYWU } from './arena.js';
  */
 export const KLUCZE_PROGU = Object.freeze([
   { rodzaj: 'zwierciadlo', nazwa: 'zwierciadło', gest: 'pokazać bytowi jego własne spojrzenie', motywy: ['zle-oko', 'jad'], sila: 26 },
-  { rodzaj: 'odpowiedz', nazwa: 'odpowiedź', gest: 'odpowiedzieć na pytanie zadane w progu', motywy: ['zagadka', 'warunek'], sila: 24 },
+  { rodzaj: 'odpowiedz', nazwa: 'odpowiedź', gest: 'odpowiedzieć na pytanie zadane w progu', motywy: ['zagadka', 'warunek', 'wrozba'], sila: 24 },
   { rodzaj: 'hymn', nazwa: 'hymn', gest: 'powiedzieć znany wers we właściwej porze nocy', motywy: ['przewodnik', 'pamiec'], sila: 22 },
   { rodzaj: 'czuwanie', nazwa: 'czuwanie', gest: 'nie kłaść się samemu i doczekać zmiany światła', motywy: ['ostrzezenie'], sila: 21 },
   { rodzaj: 'oplata', nazwa: 'opłata', gest: 'zapłacić z góry i nie targować się', motywy: ['oplaty', 'tkanie'], sila: 20 },

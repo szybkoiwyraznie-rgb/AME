@@ -77,6 +77,7 @@ export const KRAJE_PL = {
   'stany zjednoczone': 'United States of America',
   kanada: 'Canada',
   australia: 'Australia',
+  chiny: 'China',
   iran: 'Iran',
   irak: 'Iraq',
   etiopia: 'Ethiopia',
@@ -88,6 +89,7 @@ export const KRAJE_PL = {
   indonezja: 'Indonesia',
   wietnam: 'Vietnam',
   australia: 'Australia',
+  chiny: 'China',
 };
 
 /** „Grecja (Beocja)” → „Greece”; null, gdy nazwa nieznana słownikowi. */

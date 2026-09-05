@@ -104,7 +104,11 @@
       },
       {
         "slug": "protostates",
-        "wielkosc": 0.3
+        "wielkosc": 0.317
+      },
+      {
+        "slug": "qilin-z-lu",
+        "wielkosc": 0.17
       },
       {
         "slug": "selkie-sule-skerry",
@@ -112,7 +116,7 @@
       },
       {
         "slug": "sfinks-teby",
-        "wielkosc": 0.448
+        "wielkosc": 0.465
       },
       {
         "slug": "syama-i-sarvara",
@@ -124,11 +128,11 @@
       },
       {
         "slug": "wielki-sfinks-z-gizy",
-        "wielkosc": 0.187
+        "wielkosc": 0.204
       },
       {
         "slug": "yara-ma-yha-who",
-        "wielkosc": 0.187
+        "wielkosc": 0.204
       }
     ],
     "dominacje": [
@@ -250,7 +254,12 @@
       {
         "kultura": "grecja",
         "kult": "protostates",
-        "wielkosc": 0.3
+        "wielkosc": 0.317
+      },
+      {
+        "kultura": "chiny",
+        "kult": "qilin-z-lu",
+        "wielkosc": 0.17
       },
       {
         "kultura": "szkocja-polnocna",
@@ -260,7 +269,7 @@
       {
         "kultura": "grecja",
         "kult": "sfinks-teby",
-        "wielkosc": 0.448
+        "wielkosc": 0.465
       },
       {
         "kultura": "indie",
@@ -275,12 +284,12 @@
       {
         "kultura": "egipt",
         "kult": "wielki-sfinks-z-gizy",
-        "wielkosc": 0.187
+        "wielkosc": 0.204
       },
       {
         "kultura": "ngarrindjeri",
         "kult": "yara-ma-yha-who",
-        "wielkosc": 0.187
+        "wielkosc": 0.204
       }
     ]
   },

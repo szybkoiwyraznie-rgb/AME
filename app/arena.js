@@ -41,6 +41,8 @@ export const WAGA_MOTYWU = {
   klatwa: { atak: 5, obrona: 2 },
   // przestroga nie zadaje ciosów: chroni tego, kto zdążył jej wysłuchać
   ostrzezenie: { atak: 1, obrona: 5 },
+  // znak nie bije: wiąże ręce temu, kto go źle odczyta
+  wrozba: { atak: 2, obrona: 4 },
 };
 
 /** Kontry motywów: motyw klucza tłumi siłę motywu z listy (mnożnik ataku). */
@@ -53,6 +55,8 @@ export const KONTRA_MOTYWU = {
   podstep: ['obrona'],
   // przestroga psuje fortel: kto wie, czego się wystrzegać, nie da się podejść
   ostrzezenie: ['podstep'],
+  // wróżba tnie zagadkę: kto zna zapowiedź, ten zna odpowiedź, zanim padnie pytanie
+  wrozba: ['zagadka'],
   // uzdrowienie neutralizuje jad: kto zna odtrutkę, temu trucizna schodzi do rzemiosła
   uzdrowienie: ['jad'],
   // oczyszczenie znosi klątwę: popiół zakopany z dala od dróg kończy sprawę

@@ -156,7 +156,11 @@
           },
           {
             "slug": "protostates",
-            "wielkosc": 0.3
+            "wielkosc": 0.317
+          },
+          {
+            "slug": "qilin-z-lu",
+            "wielkosc": 0.17
           },
           {
             "slug": "selkie-sule-skerry",
@@ -164,7 +168,7 @@
           },
           {
             "slug": "sfinks-teby",
-            "wielkosc": 0.448
+            "wielkosc": 0.465
           },
           {
             "slug": "syama-i-sarvara",
@@ -176,11 +180,11 @@
           },
           {
             "slug": "wielki-sfinks-z-gizy",
-            "wielkosc": 0.187
+            "wielkosc": 0.204
           },
           {
             "slug": "yara-ma-yha-who",
-            "wielkosc": 0.187
+            "wielkosc": 0.204
           }
         ],
         "dominacje": [
@@ -302,7 +306,12 @@
           {
             "kultura": "grecja",
             "kult": "protostates",
-            "wielkosc": 0.3
+            "wielkosc": 0.317
+          },
+          {
+            "kultura": "chiny",
+            "kult": "qilin-z-lu",
+            "wielkosc": 0.17
           },
           {
             "kultura": "szkocja-polnocna",
@@ -312,7 +321,7 @@
           {
             "kultura": "grecja",
             "kult": "sfinks-teby",
-            "wielkosc": 0.448
+            "wielkosc": 0.465
           },
           {
             "kultura": "indie",
@@ -327,12 +336,12 @@
           {
             "kultura": "egipt",
             "kult": "wielki-sfinks-z-gizy",
-            "wielkosc": 0.187
+            "wielkosc": 0.204
           },
           {
             "kultura": "ngarrindjeri",
             "kult": "yara-ma-yha-who",
-            "wielkosc": 0.187
+            "wielkosc": 0.204
           }
         ],
         "paliwo": {
@@ -637,7 +646,11 @@
           },
           {
             "slug": "protostates",
-            "wielkosc": 0.3
+            "wielkosc": 0.317
+          },
+          {
+            "slug": "qilin-z-lu",
+            "wielkosc": 0.17
           },
           {
             "slug": "selkie-sule-skerry",
@@ -645,7 +658,7 @@
           },
           {
             "slug": "sfinks-teby",
-            "wielkosc": 0.448
+            "wielkosc": 0.465
           },
           {
             "slug": "syama-i-sarvara",
@@ -657,11 +670,11 @@
           },
           {
             "slug": "wielki-sfinks-z-gizy",
-            "wielkosc": 0.187
+            "wielkosc": 0.204
           },
           {
             "slug": "yara-ma-yha-who",
-            "wielkosc": 0.187
+            "wielkosc": 0.204
           }
         ],
         "dominacje": [
@@ -783,7 +796,12 @@
           {
             "kultura": "grecja",
             "kult": "protostates",
-            "wielkosc": 0.3
+            "wielkosc": 0.317
+          },
+          {
+            "kultura": "chiny",
+            "kult": "qilin-z-lu",
+            "wielkosc": 0.17
           },
           {
             "kultura": "szkocja-polnocna",
@@ -793,7 +811,7 @@
           {
             "kultura": "grecja",
             "kult": "sfinks-teby",
-            "wielkosc": 0.448
+            "wielkosc": 0.465
           },
           {
             "kultura": "indie",
@@ -808,12 +826,12 @@
           {
             "kultura": "egipt",
             "kult": "wielki-sfinks-z-gizy",
-            "wielkosc": 0.187
+            "wielkosc": 0.204
           },
           {
             "kultura": "ngarrindjeri",
             "kult": "yara-ma-yha-who",
-            "wielkosc": 0.187
+            "wielkosc": 0.204
           }
         ],
         "paliwo": {
@@ -1136,7 +1154,11 @@
           },
           {
             "slug": "protostates",
-            "wielkosc": 0.3
+            "wielkosc": 0.317
+          },
+          {
+            "slug": "qilin-z-lu",
+            "wielkosc": 0.17
           },
           {
             "slug": "selkie-sule-skerry",
@@ -1144,7 +1166,7 @@
           },
           {
             "slug": "sfinks-teby",
-            "wielkosc": 0.448
+            "wielkosc": 0.465
           },
           {
             "slug": "syama-i-sarvara",
@@ -1156,11 +1178,11 @@
           },
           {
             "slug": "wielki-sfinks-z-gizy",
-            "wielkosc": 0.187
+            "wielkosc": 0.204
           },
           {
             "slug": "yara-ma-yha-who",
-            "wielkosc": 0.187
+            "wielkosc": 0.204
           }
         ],
         "dominacje": [
@@ -1282,7 +1304,12 @@
           {
             "kultura": "grecja",
             "kult": "protostates",
-            "wielkosc": 0.3
+            "wielkosc": 0.317
+          },
+          {
+            "kultura": "chiny",
+            "kult": "qilin-z-lu",
+            "wielkosc": 0.17
           },
           {
             "kultura": "szkocja-polnocna",
@@ -1292,7 +1319,7 @@
           {
             "kultura": "grecja",
             "kult": "sfinks-teby",
-            "wielkosc": 0.448
+            "wielkosc": 0.465
           },
           {
             "kultura": "indie",
@@ -1307,12 +1334,12 @@
           {
             "kultura": "egipt",
             "kult": "wielki-sfinks-z-gizy",
-            "wielkosc": 0.187
+            "wielkosc": 0.204
           },
           {
             "kultura": "ngarrindjeri",
             "kult": "yara-ma-yha-who",
-            "wielkosc": 0.187
+            "wielkosc": 0.204
           }
         ],
         "paliwo": {
@@ -1650,7 +1677,11 @@
           },
           {
             "slug": "protostates",
-            "wielkosc": 0.3
+            "wielkosc": 0.317
+          },
+          {
+            "slug": "qilin-z-lu",
+            "wielkosc": 0.17
           },
           {
             "slug": "selkie-sule-skerry",
@@ -1658,7 +1689,7 @@
           },
           {
             "slug": "sfinks-teby",
-            "wielkosc": 0.448
+            "wielkosc": 0.465
           },
           {
             "slug": "syama-i-sarvara",
@@ -1670,11 +1701,11 @@
           },
           {
             "slug": "wielki-sfinks-z-gizy",
-            "wielkosc": 0.187
+            "wielkosc": 0.204
           },
           {
             "slug": "yara-ma-yha-who",
-            "wielkosc": 0.187
+            "wielkosc": 0.204
           }
         ],
         "dominacje": [
@@ -1796,7 +1827,12 @@
           {
             "kultura": "grecja",
             "kult": "protostates",
-            "wielkosc": 0.3
+            "wielkosc": 0.317
+          },
+          {
+            "kultura": "chiny",
+            "kult": "qilin-z-lu",
+            "wielkosc": 0.17
           },
           {
             "kultura": "szkocja-polnocna",
@@ -1806,7 +1842,7 @@
           {
             "kultura": "grecja",
             "kult": "sfinks-teby",
-            "wielkosc": 0.448
+            "wielkosc": 0.465
           },
           {
             "kultura": "indie",
@@ -1821,12 +1857,12 @@
           {
             "kultura": "egipt",
             "kult": "wielki-sfinks-z-gizy",
-            "wielkosc": 0.187
+            "wielkosc": 0.204
           },
           {
             "kultura": "ngarrindjeri",
             "kult": "yara-ma-yha-who",
-            "wielkosc": 0.187
+            "wielkosc": 0.204
           }
         ],
         "paliwo": {
@@ -2031,13 +2067,13 @@
           "slug": "sfinks-teby",
           "nazwa": "Sfinga z Teb Beockich — strażniczka Tebańskich Wrót",
           "rola": "Strażniczka zagadki i lęku",
-          "pasywne": 26,
-          "saldoPrzed": 26,
+          "pasywne": 28,
+          "saldoPrzed": 28,
           "kosztUdzialu": 2,
           "kosztKlucza": 0,
           "boost": 0,
           "zwrot": 0,
-          "saldoPo": 24
+          "saldoPo": 26
         },
         {
           "slug": "talos-kreta",
@@ -2164,7 +2200,11 @@
           },
           {
             "slug": "protostates",
-            "wielkosc": 0.3
+            "wielkosc": 0.317
+          },
+          {
+            "slug": "qilin-z-lu",
+            "wielkosc": 0.17
           },
           {
             "slug": "selkie-sule-skerry",
@@ -2172,7 +2212,7 @@
           },
           {
             "slug": "sfinks-teby",
-            "wielkosc": 0.438
+            "wielkosc": 0.455
           },
           {
             "slug": "syama-i-sarvara",
@@ -2184,11 +2224,11 @@
           },
           {
             "slug": "wielki-sfinks-z-gizy",
-            "wielkosc": 0.187
+            "wielkosc": 0.204
           },
           {
             "slug": "yara-ma-yha-who",
-            "wielkosc": 0.187
+            "wielkosc": 0.204
           }
         ],
         "dominacje": [
@@ -2310,7 +2350,12 @@
           {
             "kultura": "grecja",
             "kult": "protostates",
-            "wielkosc": 0.3
+            "wielkosc": 0.317
+          },
+          {
+            "kultura": "chiny",
+            "kult": "qilin-z-lu",
+            "wielkosc": 0.17
           },
           {
             "kultura": "szkocja-polnocna",
@@ -2320,7 +2365,7 @@
           {
             "kultura": "grecja",
             "kult": "sfinks-teby",
-            "wielkosc": 0.438
+            "wielkosc": 0.455
           },
           {
             "kultura": "indie",
@@ -2335,12 +2380,12 @@
           {
             "kultura": "egipt",
             "kult": "wielki-sfinks-z-gizy",
-            "wielkosc": 0.187
+            "wielkosc": 0.204
           },
           {
             "kultura": "ngarrindjeri",
             "kult": "yara-ma-yha-who",
-            "wielkosc": 0.187
+            "wielkosc": 0.204
           }
         ],
         "paliwo": {
@@ -2352,7 +2397,7 @@
           "balor": 21,
           "selkie-sule-skerry": 26,
           "indra": 11,
-          "sfinks-teby": 24,
+          "sfinks-teby": 26,
           "talos-kreta": 22
         }
       },
@@ -2392,8 +2437,8 @@
           },
           {
             "slug": "sfinks-teby",
-            "przed": 0.448,
-            "po": 0.438,
+            "przed": 0.465,
+            "po": 0.455,
             "delta": -0.01,
             "opis": "Święta groza zagadki słabnie, gdy okazuje się podatna na wyśmianie."
           },
@@ -2416,8 +2461,8 @@
           {
             "kultura": "grecja",
             "kult": "sfinks-teby",
-            "przed": 0.448,
-            "po": 0.438,
+            "przed": 0.465,
+            "po": 0.455,
             "delta": -0.01
           },
           {
@@ -2675,7 +2720,11 @@
           },
           {
             "slug": "protostates",
-            "wielkosc": 0.3
+            "wielkosc": 0.317
+          },
+          {
+            "slug": "qilin-z-lu",
+            "wielkosc": 0.17
           },
           {
             "slug": "selkie-sule-skerry",
@@ -2683,7 +2732,7 @@
           },
           {
             "slug": "sfinks-teby",
-            "wielkosc": 0.438
+            "wielkosc": 0.455
           },
           {
             "slug": "syama-i-sarvara",
@@ -2695,11 +2744,11 @@
           },
           {
             "slug": "wielki-sfinks-z-gizy",
-            "wielkosc": 0.187
+            "wielkosc": 0.204
           },
           {
             "slug": "yara-ma-yha-who",
-            "wielkosc": 0.187
+            "wielkosc": 0.204
           }
         ],
         "dominacje": [
@@ -2821,7 +2870,12 @@
           {
             "kultura": "grecja",
             "kult": "protostates",
-            "wielkosc": 0.3
+            "wielkosc": 0.317
+          },
+          {
+            "kultura": "chiny",
+            "kult": "qilin-z-lu",
+            "wielkosc": 0.17
           },
           {
             "kultura": "szkocja-polnocna",
@@ -2831,7 +2885,7 @@
           {
             "kultura": "grecja",
             "kult": "sfinks-teby",
-            "wielkosc": 0.438
+            "wielkosc": 0.455
           },
           {
             "kultura": "indie",
@@ -2846,12 +2900,12 @@
           {
             "kultura": "egipt",
             "kult": "wielki-sfinks-z-gizy",
-            "wielkosc": 0.187
+            "wielkosc": 0.204
           },
           {
             "kultura": "ngarrindjeri",
             "kult": "yara-ma-yha-who",
-            "wielkosc": 0.187
+            "wielkosc": 0.204
           }
         ],
         "paliwo": {
@@ -2863,7 +2917,7 @@
           "balor": 21,
           "selkie-sule-skerry": 26,
           "indra": 11,
-          "sfinks-teby": 24,
+          "sfinks-teby": 26,
           "talos-kreta": 22,
           "pandora": 19,
           "morowa-panna": 17
@@ -3062,13 +3116,13 @@
           "slug": "protostates",
           "nazwa": "Protostates — fantom pierwszego szeregu",
           "rola": "Pierwszy, którego nikt nie dogania",
-          "pasywne": 11,
-          "saldoPrzed": 11,
+          "pasywne": 13,
+          "saldoPrzed": 13,
           "kosztUdzialu": 2,
           "kosztKlucza": 0,
           "boost": 0,
           "zwrot": 3,
-          "saldoPo": 12
+          "saldoPo": 14
         },
         {
           "slug": "knecht-z-koptos",
@@ -3195,7 +3249,11 @@
           },
           {
             "slug": "protostates",
-            "wielkosc": 0.312
+            "wielkosc": 0.329
+          },
+          {
+            "slug": "qilin-z-lu",
+            "wielkosc": 0.17
           },
           {
             "slug": "selkie-sule-skerry",
@@ -3203,7 +3261,7 @@
           },
           {
             "slug": "sfinks-teby",
-            "wielkosc": 0.438
+            "wielkosc": 0.455
           },
           {
             "slug": "syama-i-sarvara",
@@ -3215,11 +3273,11 @@
           },
           {
             "slug": "wielki-sfinks-z-gizy",
-            "wielkosc": 0.187
+            "wielkosc": 0.204
           },
           {
             "slug": "yara-ma-yha-who",
-            "wielkosc": 0.187
+            "wielkosc": 0.204
           }
         ],
         "dominacje": [
@@ -3341,7 +3399,12 @@
           {
             "kultura": "grecja",
             "kult": "protostates",
-            "wielkosc": 0.312
+            "wielkosc": 0.329
+          },
+          {
+            "kultura": "chiny",
+            "kult": "qilin-z-lu",
+            "wielkosc": 0.17
           },
           {
             "kultura": "szkocja-polnocna",
@@ -3351,7 +3414,7 @@
           {
             "kultura": "grecja",
             "kult": "sfinks-teby",
-            "wielkosc": 0.438
+            "wielkosc": 0.455
           },
           {
             "kultura": "indie",
@@ -3366,12 +3429,12 @@
           {
             "kultura": "egipt",
             "kult": "wielki-sfinks-z-gizy",
-            "wielkosc": 0.187
+            "wielkosc": 0.204
           },
           {
             "kultura": "ngarrindjeri",
             "kult": "yara-ma-yha-who",
-            "wielkosc": 0.187
+            "wielkosc": 0.204
           }
         ],
         "paliwo": {
@@ -3383,11 +3446,11 @@
           "balor": 21,
           "selkie-sule-skerry": 26,
           "indra": 11,
-          "sfinks-teby": 24,
+          "sfinks-teby": 26,
           "talos-kreta": 22,
           "pandora": 19,
           "morowa-panna": 17,
-          "protostates": 12,
+          "protostates": 14,
           "knecht-z-koptos": 15,
           "syama-i-sarvara": 15
         }
@@ -3421,8 +3484,8 @@
         "zasieg": [
           {
             "slug": "protostates",
-            "przed": 0.3,
-            "po": 0.312,
+            "przed": 0.317,
+            "po": 0.329,
             "delta": 0.012,
             "opis": "Pieśń o pierwszym z pierwszego szeregu obiega wąwozy: fantom rośnie u tych, którzy pamiętają, że ktoś stał pierwszy — nawet gdy nikt już nie idzie."
           },
@@ -3445,8 +3508,8 @@
           {
             "kultura": "grecja",
             "kult": "protostates",
-            "przed": 0.3,
-            "po": 0.312,
+            "przed": 0.317,
+            "po": 0.329,
             "delta": 0.012
           },
           {
@@ -3718,7 +3781,11 @@
           },
           {
             "slug": "protostates",
-            "wielkosc": 0.312
+            "wielkosc": 0.329
+          },
+          {
+            "slug": "qilin-z-lu",
+            "wielkosc": 0.17
           },
           {
             "slug": "selkie-sule-skerry",
@@ -3726,7 +3793,7 @@
           },
           {
             "slug": "sfinks-teby",
-            "wielkosc": 0.438
+            "wielkosc": 0.455
           },
           {
             "slug": "syama-i-sarvara",
@@ -3738,11 +3805,11 @@
           },
           {
             "slug": "wielki-sfinks-z-gizy",
-            "wielkosc": 0.187
+            "wielkosc": 0.204
           },
           {
             "slug": "yara-ma-yha-who",
-            "wielkosc": 0.187
+            "wielkosc": 0.204
           }
         ],
         "dominacje": [
@@ -3864,7 +3931,12 @@
           {
             "kultura": "grecja",
             "kult": "protostates",
-            "wielkosc": 0.312
+            "wielkosc": 0.329
+          },
+          {
+            "kultura": "chiny",
+            "kult": "qilin-z-lu",
+            "wielkosc": 0.17
           },
           {
             "kultura": "szkocja-polnocna",
@@ -3874,7 +3946,7 @@
           {
             "kultura": "grecja",
             "kult": "sfinks-teby",
-            "wielkosc": 0.438
+            "wielkosc": 0.455
           },
           {
             "kultura": "indie",
@@ -3889,12 +3961,12 @@
           {
             "kultura": "egipt",
             "kult": "wielki-sfinks-z-gizy",
-            "wielkosc": 0.187
+            "wielkosc": 0.204
           },
           {
             "kultura": "ngarrindjeri",
             "kult": "yara-ma-yha-who",
-            "wielkosc": 0.187
+            "wielkosc": 0.204
           }
         ],
         "paliwo": {
@@ -3906,11 +3978,11 @@
           "balor": 21,
           "selkie-sule-skerry": 26,
           "indra": 11,
-          "sfinks-teby": 24,
+          "sfinks-teby": 26,
           "talos-kreta": 22,
           "pandora": 19,
           "morowa-panna": 17,
-          "protostates": 12,
+          "protostates": 14,
           "knecht-z-koptos": 15,
           "syama-i-sarvara": 15
         }
@@ -4112,13 +4184,13 @@
           "slug": "sfinks-teby",
           "nazwa": "Sfinga z Teb Beockich — strażniczka Tebańskich Wrót",
           "rola": "Strażniczka pytania",
-          "pasywne": 26,
-          "saldoPrzed": 24,
+          "pasywne": 28,
+          "saldoPrzed": 26,
           "kosztUdzialu": 2,
           "kosztKlucza": 0,
           "boost": 0,
           "zwrot": 2,
-          "saldoPo": 24
+          "saldoPo": 26
         },
         {
           "slug": "loup-garou-gevaudan",
@@ -4245,7 +4317,11 @@
           },
           {
             "slug": "protostates",
-            "wielkosc": 0.312
+            "wielkosc": 0.329
+          },
+          {
+            "slug": "qilin-z-lu",
+            "wielkosc": 0.17
           },
           {
             "slug": "selkie-sule-skerry",
@@ -4253,7 +4329,7 @@
           },
           {
             "slug": "sfinks-teby",
-            "wielkosc": 0.45
+            "wielkosc": 0.467
           },
           {
             "slug": "syama-i-sarvara",
@@ -4265,11 +4341,11 @@
           },
           {
             "slug": "wielki-sfinks-z-gizy",
-            "wielkosc": 0.187
+            "wielkosc": 0.204
           },
           {
             "slug": "yara-ma-yha-who",
-            "wielkosc": 0.187
+            "wielkosc": 0.204
           }
         ],
         "dominacje": [
@@ -4391,7 +4467,12 @@
           {
             "kultura": "grecja",
             "kult": "protostates",
-            "wielkosc": 0.312
+            "wielkosc": 0.329
+          },
+          {
+            "kultura": "chiny",
+            "kult": "qilin-z-lu",
+            "wielkosc": 0.17
           },
           {
             "kultura": "szkocja-polnocna",
@@ -4401,7 +4482,7 @@
           {
             "kultura": "grecja",
             "kult": "sfinks-teby",
-            "wielkosc": 0.45
+            "wielkosc": 0.467
           },
           {
             "kultura": "indie",
@@ -4416,12 +4497,12 @@
           {
             "kultura": "egipt",
             "kult": "wielki-sfinks-z-gizy",
-            "wielkosc": 0.187
+            "wielkosc": 0.204
           },
           {
             "kultura": "ngarrindjeri",
             "kult": "yara-ma-yha-who",
-            "wielkosc": 0.187
+            "wielkosc": 0.204
           }
         ],
         "paliwo": {
@@ -4433,11 +4514,11 @@
           "balor": 21,
           "selkie-sule-skerry": 26,
           "indra": 11,
-          "sfinks-teby": 24,
+          "sfinks-teby": 26,
           "talos-kreta": 22,
           "pandora": 19,
           "morowa-panna": 17,
-          "protostates": 12,
+          "protostates": 14,
           "knecht-z-koptos": 15,
           "syama-i-sarvara": 15,
           "loup-garou-gevaudan": 12,
@@ -4472,8 +4553,8 @@
         "zasieg": [
           {
             "slug": "sfinks-teby",
-            "przed": 0.438,
-            "po": 0.45,
+            "przed": 0.455,
+            "po": 0.467,
             "delta": 0.012,
             "opis": "Góra Fikion odzyskała pytanie, które nie musi kończyć się śmiercią."
           },
@@ -4496,8 +4577,8 @@
           {
             "kultura": "grecja",
             "kult": "sfinks-teby",
-            "przed": 0.438,
-            "po": 0.45,
+            "przed": 0.455,
+            "po": 0.467,
             "delta": 0.012
           },
           {
@@ -4796,7 +4877,11 @@
           },
           {
             "slug": "protostates",
-            "wielkosc": 0.312
+            "wielkosc": 0.329
+          },
+          {
+            "slug": "qilin-z-lu",
+            "wielkosc": 0.17
           },
           {
             "slug": "selkie-sule-skerry",
@@ -4804,7 +4889,7 @@
           },
           {
             "slug": "sfinks-teby",
-            "wielkosc": 0.45
+            "wielkosc": 0.467
           },
           {
             "slug": "syama-i-sarvara",
@@ -4816,11 +4901,11 @@
           },
           {
             "slug": "wielki-sfinks-z-gizy",
-            "wielkosc": 0.187
+            "wielkosc": 0.204
           },
           {
             "slug": "yara-ma-yha-who",
-            "wielkosc": 0.187
+            "wielkosc": 0.204
           }
         ],
         "dominacje": [
@@ -4942,7 +5027,12 @@
           {
             "kultura": "grecja",
             "kult": "protostates",
-            "wielkosc": 0.312
+            "wielkosc": 0.329
+          },
+          {
+            "kultura": "chiny",
+            "kult": "qilin-z-lu",
+            "wielkosc": 0.17
           },
           {
             "kultura": "szkocja-polnocna",
@@ -4952,7 +5042,7 @@
           {
             "kultura": "grecja",
             "kult": "sfinks-teby",
-            "wielkosc": 0.45
+            "wielkosc": 0.467
           },
           {
             "kultura": "indie",
@@ -4967,12 +5057,12 @@
           {
             "kultura": "egipt",
             "kult": "wielki-sfinks-z-gizy",
-            "wielkosc": 0.187
+            "wielkosc": 0.204
           },
           {
             "kultura": "ngarrindjeri",
             "kult": "yara-ma-yha-who",
-            "wielkosc": 0.187
+            "wielkosc": 0.204
           }
         ],
         "paliwo": {
@@ -4984,11 +5074,11 @@
           "balor": 21,
           "selkie-sule-skerry": 26,
           "indra": 11,
-          "sfinks-teby": 24,
+          "sfinks-teby": 26,
           "talos-kreta": 22,
           "pandora": 19,
           "morowa-panna": 17,
-          "protostates": 12,
+          "protostates": 14,
           "knecht-z-koptos": 15,
           "syama-i-sarvara": 15,
           "loup-garou-gevaudan": 13,
@@ -5238,13 +5328,13 @@
           "slug": "sfinks-teby",
           "nazwa": "Sfinga z Teb Beockich — strażniczka Tebańskich Wrót",
           "rola": "Ta, która trzyma przejście pytaniem",
-          "pasywne": 26,
-          "saldoPrzed": 24,
+          "pasywne": 28,
+          "saldoPrzed": 26,
           "kosztUdzialu": 2,
           "kosztKlucza": 0,
           "boost": 0,
           "zwrot": 2,
-          "saldoPo": 24
+          "saldoPo": 26
         },
         {
           "slug": "neith-z-sais",
@@ -5359,7 +5449,11 @@
           },
           {
             "slug": "protostates",
-            "wielkosc": 0.312
+            "wielkosc": 0.329
+          },
+          {
+            "slug": "qilin-z-lu",
+            "wielkosc": 0.17
           },
           {
             "slug": "selkie-sule-skerry",
@@ -5367,7 +5461,7 @@
           },
           {
             "slug": "sfinks-teby",
-            "wielkosc": 0.454
+            "wielkosc": 0.471
           },
           {
             "slug": "syama-i-sarvara",
@@ -5379,11 +5473,11 @@
           },
           {
             "slug": "wielki-sfinks-z-gizy",
-            "wielkosc": 0.187
+            "wielkosc": 0.204
           },
           {
             "slug": "yara-ma-yha-who",
-            "wielkosc": 0.187
+            "wielkosc": 0.204
           }
         ],
         "dominacje": [
@@ -5505,7 +5599,12 @@
           {
             "kultura": "grecja",
             "kult": "protostates",
-            "wielkosc": 0.312
+            "wielkosc": 0.329
+          },
+          {
+            "kultura": "chiny",
+            "kult": "qilin-z-lu",
+            "wielkosc": 0.17
           },
           {
             "kultura": "szkocja-polnocna",
@@ -5515,7 +5614,7 @@
           {
             "kultura": "grecja",
             "kult": "sfinks-teby",
-            "wielkosc": 0.454
+            "wielkosc": 0.471
           },
           {
             "kultura": "indie",
@@ -5530,12 +5629,12 @@
           {
             "kultura": "egipt",
             "kult": "wielki-sfinks-z-gizy",
-            "wielkosc": 0.187
+            "wielkosc": 0.204
           },
           {
             "kultura": "ngarrindjeri",
             "kult": "yara-ma-yha-who",
-            "wielkosc": 0.187
+            "wielkosc": 0.204
           }
         ],
         "paliwo": {
@@ -5547,11 +5646,11 @@
           "balor": 21,
           "selkie-sule-skerry": 26,
           "indra": 11,
-          "sfinks-teby": 24,
+          "sfinks-teby": 26,
           "talos-kreta": 22,
           "pandora": 19,
           "morowa-panna": 17,
-          "protostates": 12,
+          "protostates": 14,
           "knecht-z-koptos": 15,
           "syama-i-sarvara": 15,
           "loup-garou-gevaudan": 14,
@@ -5595,8 +5694,8 @@
           },
           {
             "slug": "sfinks-teby",
-            "przed": 0.45,
-            "po": 0.454,
+            "przed": 0.467,
+            "po": 0.471,
             "delta": 0.004,
             "opis": "Pytanie okazało się skuteczne także poza własną górą."
           },
@@ -5619,8 +5718,8 @@
           {
             "kultura": "grecja",
             "kult": "sfinks-teby",
-            "przed": 0.45,
-            "po": 0.454,
+            "przed": 0.467,
+            "po": 0.471,
             "delta": 0.004
           },
           {
@@ -5904,7 +6003,11 @@
           },
           {
             "slug": "protostates",
-            "wielkosc": 0.312
+            "wielkosc": 0.329
+          },
+          {
+            "slug": "qilin-z-lu",
+            "wielkosc": 0.17
           },
           {
             "slug": "selkie-sule-skerry",
@@ -5912,7 +6015,7 @@
           },
           {
             "slug": "sfinks-teby",
-            "wielkosc": 0.454
+            "wielkosc": 0.471
           },
           {
             "slug": "syama-i-sarvara",
@@ -5924,11 +6027,11 @@
           },
           {
             "slug": "wielki-sfinks-z-gizy",
-            "wielkosc": 0.187
+            "wielkosc": 0.204
           },
           {
             "slug": "yara-ma-yha-who",
-            "wielkosc": 0.187
+            "wielkosc": 0.204
           }
         ],
         "dominacje": [
@@ -6050,7 +6153,12 @@
           {
             "kultura": "grecja",
             "kult": "protostates",
-            "wielkosc": 0.312
+            "wielkosc": 0.329
+          },
+          {
+            "kultura": "chiny",
+            "kult": "qilin-z-lu",
+            "wielkosc": 0.17
           },
           {
             "kultura": "szkocja-polnocna",
@@ -6060,7 +6168,7 @@
           {
             "kultura": "grecja",
             "kult": "sfinks-teby",
-            "wielkosc": 0.454
+            "wielkosc": 0.471
           },
           {
             "kultura": "indie",
@@ -6075,12 +6183,12 @@
           {
             "kultura": "egipt",
             "kult": "wielki-sfinks-z-gizy",
-            "wielkosc": 0.187
+            "wielkosc": 0.204
           },
           {
             "kultura": "ngarrindjeri",
             "kult": "yara-ma-yha-who",
-            "wielkosc": 0.187
+            "wielkosc": 0.204
           }
         ],
         "paliwo": {
@@ -6092,11 +6200,11 @@
           "balor": 21,
           "selkie-sule-skerry": 26,
           "indra": 11,
-          "sfinks-teby": 24,
+          "sfinks-teby": 26,
           "talos-kreta": 22,
           "pandora": 20,
           "morowa-panna": 17,
-          "protostates": 12,
+          "protostates": 14,
           "knecht-z-koptos": 15,
           "syama-i-sarvara": 15,
           "loup-garou-gevaudan": 14,
@@ -6352,13 +6460,13 @@
           "slug": "protostates",
           "nazwa": "Protostates — fantom pierwszego szeregu",
           "rola": "Ten, który nie schodzi z linii",
-          "pasywne": 11,
-          "saldoPrzed": 12,
+          "pasywne": 13,
+          "saldoPrzed": 14,
           "kosztUdzialu": 2,
           "kosztKlucza": 0,
           "boost": 0,
           "zwrot": 3,
-          "saldoPo": 13
+          "saldoPo": 15
         }
       ],
       "stanPo": {
@@ -6461,7 +6569,11 @@
           },
           {
             "slug": "protostates",
-            "wielkosc": 0.322
+            "wielkosc": 0.339
+          },
+          {
+            "slug": "qilin-z-lu",
+            "wielkosc": 0.17
           },
           {
             "slug": "selkie-sule-skerry",
@@ -6469,7 +6581,7 @@
           },
           {
             "slug": "sfinks-teby",
-            "wielkosc": 0.454
+            "wielkosc": 0.471
           },
           {
             "slug": "syama-i-sarvara",
@@ -6481,11 +6593,11 @@
           },
           {
             "slug": "wielki-sfinks-z-gizy",
-            "wielkosc": 0.187
+            "wielkosc": 0.204
           },
           {
             "slug": "yara-ma-yha-who",
-            "wielkosc": 0.187
+            "wielkosc": 0.204
           }
         ],
         "dominacje": [
@@ -6607,7 +6719,12 @@
           {
             "kultura": "grecja",
             "kult": "protostates",
-            "wielkosc": 0.322
+            "wielkosc": 0.339
+          },
+          {
+            "kultura": "chiny",
+            "kult": "qilin-z-lu",
+            "wielkosc": 0.17
           },
           {
             "kultura": "szkocja-polnocna",
@@ -6617,7 +6734,7 @@
           {
             "kultura": "grecja",
             "kult": "sfinks-teby",
-            "wielkosc": 0.454
+            "wielkosc": 0.471
           },
           {
             "kultura": "indie",
@@ -6632,12 +6749,12 @@
           {
             "kultura": "egipt",
             "kult": "wielki-sfinks-z-gizy",
-            "wielkosc": 0.187
+            "wielkosc": 0.204
           },
           {
             "kultura": "ngarrindjeri",
             "kult": "yara-ma-yha-who",
-            "wielkosc": 0.187
+            "wielkosc": 0.204
           }
         ],
         "paliwo": {
@@ -6649,11 +6766,11 @@
           "balor": 21,
           "selkie-sule-skerry": 26,
           "indra": 11,
-          "sfinks-teby": 24,
+          "sfinks-teby": 26,
           "talos-kreta": 22,
           "pandora": 20,
           "morowa-panna": 17,
-          "protostates": 13,
+          "protostates": 15,
           "knecht-z-koptos": 15,
           "syama-i-sarvara": 15,
           "loup-garou-gevaudan": 14,
@@ -6707,8 +6824,8 @@
           },
           {
             "slug": "protostates",
-            "przed": 0.312,
-            "po": 0.322,
+            "przed": 0.329,
+            "po": 0.339,
             "delta": 0.01,
             "opis": "Fantom pierwszego szeregu po raz pierwszy mówi o sobie w pierwszej osobie, a nie przez cudzą pieśń."
           }
@@ -6731,8 +6848,8 @@
           {
             "kultura": "grecja",
             "kult": "protostates",
-            "przed": 0.312,
-            "po": 0.322,
+            "przed": 0.329,
+            "po": 0.339,
             "delta": 0.01
           }
         ],
@@ -6976,7 +7093,11 @@
       },
       {
         "slug": "protostates",
-        "wielkosc": 0.322
+        "wielkosc": 0.339
+      },
+      {
+        "slug": "qilin-z-lu",
+        "wielkosc": 0.17
       },
       {
         "slug": "selkie-sule-skerry",
@@ -6984,7 +7105,7 @@
       },
       {
         "slug": "sfinks-teby",
-        "wielkosc": 0.454
+        "wielkosc": 0.471
       },
       {
         "slug": "syama-i-sarvara",
@@ -6996,11 +7117,11 @@
       },
       {
         "slug": "wielki-sfinks-z-gizy",
-        "wielkosc": 0.187
+        "wielkosc": 0.204
       },
       {
         "slug": "yara-ma-yha-who",
-        "wielkosc": 0.187
+        "wielkosc": 0.204
       }
     ],
     "dominacje": [
@@ -7122,7 +7243,12 @@
       {
         "kultura": "grecja",
         "kult": "protostates",
-        "wielkosc": 0.322
+        "wielkosc": 0.339
+      },
+      {
+        "kultura": "chiny",
+        "kult": "qilin-z-lu",
+        "wielkosc": 0.17
       },
       {
         "kultura": "szkocja-polnocna",
@@ -7132,7 +7258,7 @@
       {
         "kultura": "grecja",
         "kult": "sfinks-teby",
-        "wielkosc": 0.454
+        "wielkosc": 0.471
       },
       {
         "kultura": "indie",
@@ -7147,12 +7273,12 @@
       {
         "kultura": "egipt",
         "kult": "wielki-sfinks-z-gizy",
-        "wielkosc": 0.187
+        "wielkosc": 0.204
       },
       {
         "kultura": "ngarrindjeri",
         "kult": "yara-ma-yha-who",
-        "wielkosc": 0.187
+        "wielkosc": 0.204
       }
     ],
     "paliwo": {
@@ -7164,11 +7290,11 @@
       "balor": 21,
       "selkie-sule-skerry": 26,
       "indra": 11,
-      "sfinks-teby": 24,
+      "sfinks-teby": 26,
       "talos-kreta": 22,
       "pandora": 20,
       "morowa-panna": 17,
-      "protostates": 13,
+      "protostates": 15,
       "knecht-z-koptos": 15,
       "syama-i-sarvara": 15,
       "loup-garou-gevaudan": 14,

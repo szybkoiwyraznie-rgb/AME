@@ -52,6 +52,11 @@
       "opis": "Folklor angielski, w tym kościelny i nizinny"
     },
     {
+      "tag": "chiny",
+      "kategoria": "kultura",
+      "opis": "Tradycja chińska — kroniki okresu Wiosen i Jesieni, komentarze konfucjańskie i późniejsza kultura dworska."
+    },
+    {
       "tag": "egipt",
       "kategoria": "kultura",
       "opis": "Religia i kultura starożytnego Egiptu (Delta i Dolina Nilu)"
@@ -237,6 +242,11 @@
       "opis": "Człowiek lub byt przybierający postać wilka; loup-garou i pokrewne tradycje przemiany"
     },
     {
+      "tag": "zwiastun",
+      "kategoria": "typ",
+      "opis": "Byt, którego jedyną treścią jest pojawienie się: nie walczy i nie strzeże, tylko oznajmia — a jego nieobecność też jest wiadomością."
+    },
+    {
       "tag": "burza",
       "kategoria": "motyw",
       "opis": "Pogoda jako pole bitwy i jako kalendarz"
@@ -315,6 +325,11 @@
       "tag": "warunek",
       "kategoria": "motyw",
       "opis": "Moc i los bytu zamknięte w wypowiedzianym warunku lub znaku"
+    },
+    {
+      "tag": "wrozba",
+      "kategoria": "motyw",
+      "opis": "Znak wymagający odczytania: byt nie mówi wprost, więc o jego znaczeniu rozstrzyga ten, kto akurat interpretuje."
     },
     {
       "tag": "zagadka",

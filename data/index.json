@@ -1,7 +1,7 @@
 {
   "wersja": 3,
-  "buildTime": "2026-09-05T14:01:57.823Z",
-  "liczba": 30,
+  "buildTime": "2026-09-05T14:21:54.139Z",
+  "liczba": 31,
   "liczbaSkitow": 50,
   "kanon": {
     "kategorie": [
@@ -12,7 +12,7 @@
         "min": 1,
         "max": 1,
         "opis": "Jedna tradycja, z której byt pochodzi (PROTOKÓŁ §2: zakaz mieszanek synkretycznych)",
-        "ile": 19
+        "ile": 20
       },
       {
         "id": "typ",
@@ -21,7 +21,7 @@
         "min": 1,
         "max": 1,
         "opis": "Czym byt jest — podstawowy filtr kartoteki",
-        "ile": 21
+        "ile": 22
       },
       {
         "id": "motyw",
@@ -30,7 +30,7 @@
         "min": 1,
         "max": 2,
         "opis": "Co wiąże byty i spoiwa sieci: powiązania w kartotekach i tematy SKITów",
-        "ile": 18
+        "ile": 19
       },
       {
         "id": "postac",
@@ -63,6 +63,13 @@
       "opis": "Folklor angielski, w tym kościelny i nizinny",
       "wpisy": [
         "lincoln-imp"
+      ]
+    },
+    "chiny": {
+      "kategoria": "kultura",
+      "opis": "Tradycja chińska — kroniki okresu Wiosen i Jesieni, komentarze konfucjańskie i późniejsza kultura dworska.",
+      "wpisy": [
+        "qilin-z-lu"
       ]
     },
     "egipt": {
@@ -344,6 +351,13 @@
         "loup-garou-gevaudan"
       ]
     },
+    "zwiastun": {
+      "kategoria": "typ",
+      "opis": "Byt, którego jedyną treścią jest pojawienie się: nie walczy i nie strzeże, tylko oznajmia — a jego nieobecność też jest wiadomością.",
+      "wpisy": [
+        "qilin-z-lu"
+      ]
+    },
     "burza": {
       "kategoria": "motyw",
       "opis": "Pogoda jako pole bitwy i jako kalendarz",
@@ -484,10 +498,18 @@
         "loup-garou-gevaudan",
         "morowa-panna",
         "pandora",
+        "qilin-z-lu",
         "selkie-sule-skerry",
         "sfinks-teby",
         "talos-kreta",
         "wielki-sfinks-z-gizy"
+      ]
+    },
+    "wrozba": {
+      "kategoria": "motyw",
+      "opis": "Znak wymagający odczytania: byt nie mówi wprost, więc o jego znaczeniu rozstrzyga ten, kto akurat interpretuje.",
+      "wpisy": [
+        "qilin-z-lu"
       ]
     },
     "zagadka": {
@@ -558,6 +580,7 @@
         "iktomi",
         "loup-garou-gevaudan",
         "nessos",
+        "qilin-z-lu",
         "selkie-sule-skerry",
         "syama-i-sarvara",
         "yara-ma-yha-who"
@@ -1674,6 +1697,7 @@
       ],
       "backlinki": [
         "knecht-z-koptos",
+        "qilin-z-lu",
         "syama-i-sarvara"
       ],
       "obraz": "assets/wizualizacje/protostates.jpg",
@@ -1689,6 +1713,42 @@
         "pracownicy-progu",
         "warta"
       ]
+    },
+    {
+      "slug": "qilin-z-lu",
+      "nazwa": "Qilin — zwierzę, które przychodzi nie w porę",
+      "nazwy_alternatywne": [
+        "Lin (imię z kroniki Chunqiu)",
+        "Kirin (Japonia)",
+        "Girin (Korea)",
+        "Qilin-żyrafa (wersja z 1414 roku)",
+        "Chiński jednorożec (nazwa europejska)"
+      ],
+      "karta": "Grazing Gladehart",
+      "miejscowosc": "Qufu w prowincji Szantung, dawna stolica państwa Lu — miasto Konfucjusza i okolica „polowania na zachodzie”, na którym w czternastym roku panowania księcia Ai (481 p.n.e.) schwytano lina; tym jednym zdaniem urywa się kronika Chunqiu",
+      "kraj": "Chiny (Szantung)",
+      "lat": 35.5967,
+      "lon": 116.9917,
+      "tagi": [
+        "chiny",
+        "postac-zwierzeca",
+        "warunek",
+        "wrozba",
+        "zwiastun"
+      ],
+      "powiazania": [
+        "protostates",
+        "sfinks-teby",
+        "wielki-sfinks-z-gizy",
+        "yara-ma-yha-who"
+      ],
+      "backlinki": [],
+      "obraz": "assets/wizualizacje/qilin-z-lu.jpg",
+      "trofea": {
+        "pierwotne": "Kawałek sieci myśliwskiej z państwa Lu, z węzłami rozciągniętymi w jednym miejscu tak, jakby coś ciężkiego szarpnęło raz i przestało. Do sznura przywiązana drewniana tabliczka z jednym zdaniem sprawozdania: wiosną, na zachodzie, schwytano lina.",
+        "wtorne": "Odpis pochwały Shen Du z 1414 roku, zapisany równo i pięknie, z dopiskiem późniejszej ręki na marginesie: „szyja”."
+      },
+      "skity": []
     },
     {
       "slug": "selkie-sule-skerry",
@@ -1787,6 +1847,7 @@
         "morowa-panna",
         "neith-z-sais",
         "protostates",
+        "qilin-z-lu",
         "syama-i-sarvara",
         "talos-kreta",
         "wielki-sfinks-z-gizy"
@@ -1940,6 +2001,7 @@
         "talos-kreta"
       ],
       "backlinki": [
+        "qilin-z-lu",
         "sfinks-teby"
       ],
       "obraz": "assets/wizualizacje/wielki-sfinks-z-gizy.jpg",
@@ -1976,7 +2038,9 @@
         "loup-garou-gevaudan",
         "mangkukulam"
       ],
-      "backlinki": [],
+      "backlinki": [
+        "qilin-z-lu"
+      ],
       "obraz": "assets/wizualizacje/yara-ma-yha-who.jpg",
       "trofea": {
         "pierwotne": "Odcisk ciała w suchym listowiu pod figowcem: wgnieciony kształt śpiącego, obok pełny bukłak z wodą, którego nikt nie zabrał, i sześć par okrągłych, wilgotnych śladów po przyssawkach na korze — dwa metry nad ziemią, w miejscu, gdzie nie sięga żadna ludzka dłoń.",
@@ -2889,6 +2953,22 @@
     }
   ],
   "aktualizacje": [
+    {
+      "data": "2026-09-06 09:30",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "qilin-z-lu",
+      "tytul": "Qilin — zwierzę, które przychodzi nie w porę",
+      "opis": "Nowa materializacja: qilin — zwierzę-znak z chińskich kronik, schwytane w państwie Lu w 481 roku p.n.e., na którym urywa się kronika Chunqiu, i ogłoszone ponownie w 1414 roku, gdy dwór Yongle nazwał qilinem żyrafę przywiezioną z Bengalu. Karta klucz: „Grazing Gladehart” (ZEN #163, 2009). Pierwszy byt z Chin w kartotece; pinezka w Qufu w Szantungu. Cztery źródła: kronika w przekładzie Legge'a, opracowanie World History Encyclopedia, katalog National Palace Museum i analiza filologiczna Victora Maira."
+    },
+    {
+      "data": "2026-09-06 09:30",
+      "typ": "manifestacja",
+      "akcja": "nowa",
+      "slug": "qilin-z-lu",
+      "tytul": "Qilin — zwierzę, które przychodzi nie w porę",
+      "opis": "wpis w kartotece — materializacja karty „Grazing Gladehart”"
+    },
     {
       "data": "2026-09-05 23:00",
       "typ": "skit",

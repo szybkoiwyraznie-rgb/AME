@@ -63,7 +63,7 @@ test('paliwo pasywne: 2×backlinki + tagi kanonu + sieć powiązań (max 3)', as
   assert.equal(paliwoPasywne(mapa.get('kentaur-pelion'), kanon), 18);
   assert.equal(paliwoPasywne(mapa.get('empusa-korynt'), kanon), 25);
   assert.equal(paliwoPasywne(mapa.get('lincoln-imp'), kanon), 16);
-  assert.equal(paliwoPasywne(mapa.get('sfinks-teby'), kanon), 26);
+  assert.equal(paliwoPasywne(mapa.get('sfinks-teby'), kanon), 28);
   assert.equal(paliwoPasywne(mapa.get('talos-kreta'), kanon), 24);
 });
 
@@ -143,7 +143,7 @@ test('Tom I: epoki przechodzą sekwencyjnie i oś zamyka się na 100', async () 
   assert.deepEqual(
     e5.uczestnicy.map((u) => [u.slug, u.saldoPrzed, u.saldoPo]),
     [
-      ['sfinks-teby', 26, 24],
+      ['sfinks-teby', 28, 26],
       ['talos-kreta', 24, 22],
       ['lincoln-imp', 14, 16],
     ]
@@ -151,7 +151,7 @@ test('Tom I: epoki przechodzą sekwencyjnie i oś zamyka się na 100', async () 
   assert.equal(e5.stanPo.os.mit, 25);
   assert.equal(e5.stanPo.os.racjonalizacja, 75);
   assert.equal(e5.stanPo.zasieg.find((z) => z.slug === 'lincoln-imp').wielkosc, 0.393);
-  assert.equal(e5.stanPo.zasieg.find((z) => z.slug === 'sfinks-teby').wielkosc, 0.438);
+  assert.equal(e5.stanPo.zasieg.find((z) => z.slug === 'sfinks-teby').wielkosc, 0.455);
   assert.equal(e5.stanPo.zasieg.find((z) => z.slug === 'talos-kreta').wielkosc, 0.408);
 
   assert.deepEqual(
@@ -171,7 +171,7 @@ test('Tom I: epoki przechodzą sekwencyjnie i oś zamyka się na 100', async () 
   assert.deepEqual(
     e7.uczestnicy.map((u) => [u.slug, u.saldoPrzed, u.saldoPo]),
     [
-      ['protostates', 11, 12],
+      ['protostates', 13, 14],
       ['knecht-z-koptos', 15, 15],
       ['syama-i-sarvara', 16, 15],
     ]
@@ -179,7 +179,7 @@ test('Tom I: epoki przechodzą sekwencyjnie i oś zamyka się na 100', async () 
   assert.equal(e7.stanPo.os.mit, 23);
   assert.equal(e7.stanPo.os.racjonalizacja, 77);
   assert.equal(e7.meta.poprzednik, 'epoka-6');
-  assert.equal(e7.stanPo.zasieg.find((z) => z.slug === 'protostates').wielkosc, 0.312);
+  assert.equal(e7.stanPo.zasieg.find((z) => z.slug === 'protostates').wielkosc, 0.329);
   assert.equal(e7.stanPo.zasieg.find((z) => z.slug === 'knecht-z-koptos').wielkosc, 0.362);
   assert.equal(e7.stanPo.zasieg.find((z) => z.slug === 'syama-i-sarvara').wielkosc, 0.348);
   // S3: odwołanie poprzednik widoczne także w grafie epok (bez cyklu)
