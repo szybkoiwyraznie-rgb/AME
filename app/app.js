@@ -1,8 +1,8 @@
 /**
  * app/app.js — bootstrap AME: ładuje indeks, mapę świata, spina UI.
  */
-import { stworzMape, PROGI_WARSTW, PODKLADY_ONLINE } from './map.js?v=c6-3';
-import { zaladujIndeks, zaladujWpis, zaladujSkit, dopasowania, wylosujSlug, slugDnia } from './data.js?v=c6-3';
+import { stworzMape, PROGI_WARSTW, PODKLADY_ONLINE } from './map.js?v=c6-4';
+import { zaladujIndeks, zaladujWpis, zaladujSkit, dopasowania, wylosujSlug, slugDnia } from './data.js?v=c6-4';
 import {
   htmlWpisu,
   htmlWarstwyWpisu,
@@ -25,10 +25,12 @@ import {
   akcjeZZapytania,
   tekstDoLektora,
   htmlTrofeow,
+  htmlSplotu,
   paryRozmowySkitu,
   zB64utf8,
-} from './ui.js?v=c6-3';
-import { SZEROKOSC, WYSOKOSC, odwroc, projektuj, serializujWidok, parsujWidokMapy } from './geo.js?v=c6-3';
+} from './ui.js?v=c6-4';
+import { rozegrajDroge } from './splot.js?v=c6-4';
+import { SZEROKOSC, WYSOKOSC, odwroc, projektuj, serializujWidok, parsujWidokMapy } from './geo.js?v=c6-4';
 
 const $ = (sel) => document.querySelector(sel);
 
@@ -341,7 +343,7 @@ function zamknijWarstwe() {
   const warstwa = $('#warstwa');
   warstwa.classList.remove('otwarta');
   warstwa.innerHTML = '';
-  for (const id of ['#przycisk-skity', '#przycisk-nowosci', '#przycisk-trofea']) warstwaTrybPrzycisku(id, false);
+  for (const id of ['#przycisk-skity', '#przycisk-nowosci', '#przycisk-trofea', '#przycisk-splot']) warstwaTrybPrzycisku(id, false);
   if (stan.wpis) history.replaceState(null, '', `#${stan.wpis.slug}`);
   else if (location.hash) history.replaceState(null, '', location.pathname + location.search);
 }
@@ -412,6 +414,27 @@ function otworzTrofea() {
   warstwaTrybPrzycisku('#przycisk-skity', false);
   warstwaTrybPrzycisku('#przycisk-nowosci', false);
   if (location.hash !== '#trofea') history.replaceState(null, '', '#trofea');
+}
+
+/** C5: raport jednej drogi z losowaniem przez bezpieczny adapter przeglądarki. */
+async function otworzSplot() {
+  if (stan.warstwa?.tryb === 'splot') return zamknijWarstwe();
+  stan.warstwa = { tryb: 'splot' };
+  const warstwa = $('#warstwa');
+  warstwa.classList.add('otwarta');
+  warstwa.innerHTML = szkicWarstwy('SPLOT — Ostatni ślad w Gévaudan', '<p class="ladowanie">Rozstrzyganie drogi…</p>');
+  warstwaTrybPrzycisku('#przycisk-splot', true);
+  for (const id of ['#przycisk-skity', '#przycisk-nowosci', '#przycisk-trofea', '#przycisk-kronika']) warstwaTrybPrzycisku(id, false);
+  try {
+    const road = await fetch(new URL('data/splot/droga-ostatni-slad-gevaudan.json', document.baseURI)).then((r) => { if (!r.ok) throw new Error(`HTTP ${r.status}`); return r.json(); });
+    const los = () => { const b = new Uint32Array(1); globalThis.crypto?.getRandomValues?.(b); return (b[0] ?? 0) / 4294967296; };
+    const wynik = rozegrajDroge({ droga: road, indeks: stan.indeks, kanon: stan.indeks.kanon, los });
+    warstwa.innerHTML = szkicWarstwy(road.tytul, htmlSplotu(road, wynik, stan.indeks));
+    warstwa.scrollTop = 0;
+  } catch (err) {
+    warstwa.innerHTML = szkicWarstwy('SPLOT', `<p class="blad">Nie udało się rozstrzygnąć drogi: ${esc(err.message)}</p>`);
+  }
+  if (location.hash !== '#splot') history.replaceState(null, '', '#splot');
 }
 
 /** Feed Kroniki (U3): wczytywane raz, karty epok z ramą narracji i filtra bytów (U1).
@@ -687,6 +710,7 @@ function podepnijZdarzenia() {
   $('#przycisk-nowosci').addEventListener('click', otworzNowosci);
   $('#przycisk-trofea').addEventListener('click', otworzTrofea);
   $('#przycisk-kronika').addEventListener('click', () => otworzKronike(null, { przelacz: true }));
+  $('#przycisk-splot').addEventListener('click', otworzSplot);
   $('#przycisk-warstwy').addEventListener('click', przelaczPanelWarstw);
   for (const klucz of Object.keys(WARSTWY_MAPY)) {
     const el = document.querySelector(`#warstwa-${klucz}`);
@@ -768,6 +792,7 @@ function podepnijZdarzenia() {
     if (fragment === 'nowosci') return stan.warstwa?.tryb !== 'nowosci' ? otworzNowosci() : undefined;
     if (fragment === 'trofea') return stan.warstwa?.tryb !== 'trofea' ? otworzTrofea() : undefined;
     if (fragment === 'kroniki') return stan.warstwa?.tryb !== 'kroniki' ? otworzKronike() : undefined;
+    if (fragment === 'splot') return stan.warstwa?.tryb !== 'splot' ? otworzSplot() : undefined;
     if (fragment.startsWith('kronika:')) {
       const slug = fragment.slice(8);
       if (slug) window.location.href = `docs/kronika-${slug}.html#kronika:${slug}`;
@@ -887,6 +912,7 @@ async function start() {
   else if (fragment === 'nowosci') otworzNowosci();
   else if (fragment === 'trofea') otworzTrofea();
   else if (fragment === 'kroniki') otworzKronike();
+  else if (fragment === 'splot') otworzSplot();
   else if (fragment.startsWith('kronika:')) {
     const slug = fragment.slice(8);
     if (slug) location.href = `docs/kronika-${slug}.html#kronika:${slug}`;

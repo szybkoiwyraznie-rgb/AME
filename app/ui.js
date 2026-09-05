@@ -234,6 +234,14 @@ export function htmlProfiluAreny(w, indeks) {
   return `<section class="arena-profil" aria-label="Profil Rezonansu"><div class="arena-profil-naglowek"><h3>Profil Rezonansu</h3><span class="arena-archetyp">${esc(s.motywy.length ? s.motywy.join(' · ') : 'cisza')}</span></div><dl>${wiersze}</dl><p class="maly">Statystyki wynikają wyłącznie z sieci archiwum: powiązań, wzmianek, skitów, tagów i imion.</p></section>`;
 }
 
+export function htmlSplotu(droga, wynik, indeks) {
+  const nazwa = (slug) => indeks?.manifestacje?.find((m) => m.slug === slug)?.nazwa ?? slug;
+  const sklad = (droga.sklad ?? []).map((slug) => `<button class="chip link" data-slug="${esc(slug)}">${esc(nazwa(slug))}</button>`).join(' ');
+  const wiersze = (wynik.dziennik ?? []).map((w, i) => `<article class="splot-wezel ${w.sukces ? 'sukces' : 'porazka'}"><header><span>${i + 1}. ${esc(w.nazwa)}</span><strong>${w.sukces ? 'sukces' : 'porażka'}</strong></header><div class="splot-wykres"><span class="splot-szansa" style="width:${Math.round(w.prawdopodobienstwo * 100)}%">szansa ${Math.round(w.prawdopodobienstwo * 100)}%</span><span class="splot-los">los ${(w.wartoscLosowa * 100).toFixed(1)}%</span></div><p>${esc(w.proza ?? '')}</p><small>zasoby po próbie: ${esc(JSON.stringify(w.zasoby))}</small></article>`).join('');
+  const obraz = droga.grafika?.obraz ? `<img class="splot-obraz" src="${esc(droga.grafika.obraz)}" alt="${esc(droga.grafika.prompt ?? droga.tytul)}" loading="lazy">` : '';
+  return `<div class="splot-raport"><header class="splot-hero"><p class="karta-inspiracja">SPLOT · droga fabularna · ${esc(droga.miejsce ?? '')}</p><h2>${esc(droga.tytul)}</h2><p>${esc(droga.cel)}</p><p class="splot-sklad">Skład: ${sklad}</p></header>${obraz}<section class="splot-wynik"><h3>Rozstrzygnięcie: ${esc(wynik.status)}</h3><p>${esc(wynik.proza)}</p><dl class="splot-zasoby">${Object.entries(wynik.zasoby ?? {}).map(([k, v]) => `<div><dt>${esc(k)}</dt><dd>${v}</dd></div>`).join('')}</dl></section><section><h3>Dziennik drogi</h3>${wiersze}</section></div>`;
+}
+
 export function htmlWpisu(w, indeks, kronika = null) {
   const rekord = indeks.manifestacje.find((m) => m.slug === w.slug) ?? {};
   const alt = (w.nazwy_alternatywne ?? []).length ? `<p class="alt">znany też jako: ${esc(w.nazwy_alternatywne.join(', '))}</p>` : '';
