@@ -2,7 +2,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
-import { htmlWpisu, htmlSplotu, htmlProfiluAreny, htmlNaporuSwiata, htmlEchaDrogi, znacznikZrodlaBezAdresu, opisZasobow, htmlWarstwyWpisu, linkDoZrodla, htmlListy, htmlStronyTagu, htmlTagow, htmlDialogu, htmlSkitu, htmlBazySkitow, htmlNowosci, htmlKronik, htmlTomyIEpoki, esc, rzymskie, nastepnyMotyw, motywPoczatkowy, etykietaMotywu, MOTYWY, KLUCZ_MOTYWU, akcjeZZapytania, tekstDoLektora, htmlTrofeow, paryRozmowySkitu, doB64utf8, zB64utf8, dataZmianySluga } from '../app/ui.js';
+import { htmlWpisu, htmlSplotu, htmlProfiluAreny, htmlNaporuSwiata, htmlEchaDrogi, znacznikZrodlaBezAdresu, opisZasobow, htmlWarstwyWpisu, linkDoZrodla, htmlListy, htmlStronyTagu, htmlTagow, htmlDialogu, htmlSkitu, htmlBazySkitow, htmlNowosci, htmlKronik, htmlTomyIEpoki, esc, rzymskie, nastepnyMotyw, motywPoczatkowy, etykietaMotywu, MOTYWY, KLUCZ_MOTYWU, akcjeZZapytania, tekstDoLektora, htmlTrofeow, htmlAreny, paryRozmowySkitu, doB64utf8, zB64utf8, dataZmianySluga } from '../app/ui.js';
 
 async function dane(plik = 'egungun') {
   const wpis = JSON.parse(await readFile(`data/manifestations/${plik}.json`, 'utf8'));
@@ -885,3 +885,25 @@ test('raport SPLOTU pokazuje napór świata i ślad dla Kroniki', () => {
   assert.ok(raport.includes('Napór świata') && raport.includes('Ślad dla Kroniki'));
 });
 
+
+test('htmlAreny: wybór stron, profile i dziennik rund (C2+5, obrót 5)', async () => {
+  const indeks = JSON.parse(await readFile('data/index.json', 'utf8'));
+  const kanon = JSON.parse(await readFile('data/kanon-tagow.json', 'utf8'));
+  const { profileKartoteki, rozegrajSpor, generatorZZiarna, haszTekstu } = await import('../app/arena.js');
+  const profile = profileKartoteki(indeks.manifestacje, kanon);
+  const [a, b] = [...profile.keys()].slice(0, 2);
+  const pusty = htmlAreny(indeks, { a, b, profile, data: '2026-09-05' });
+  assert.match(pusty, /arena-wybor/);
+  assert.match(pusty, /data-spor-dnia="2026-09-05"/);
+  assert.equal((pusty.match(/<select/g) ?? []).length, 2, 'dwie listy wyboru');
+  assert.ok(!pusty.includes('arena-dziennik'), 'bez rozegranego sporu nie ma dziennika');
+  const wynik = rozegrajSpor({ a: profile.get(a).staty, b: profile.get(b).staty, los: generatorZZiarna(haszTekstu('t')) });
+  const pelny = htmlAreny(indeks, { a, b, wynik, profile, data: '2026-09-05' });
+  assert.match(pelny, /arena-dziennik/);
+  assert.match(pelny, /arena-wynik/);
+  assert.equal((pelny.match(/<li>/g) ?? []).length, wynik.dziennik.length, 'każda runda ma wiersz');
+  assert.match(htmlAreny({ manifestacje: [{ slug: 'x', nazwa: 'X' }] }, {}), /Do sporu potrzeba dwóch bytów/);
+  const zlosliwy = htmlAreny({ manifestacje: [{ slug: 'x', nazwa: '<b>X</b>' }, { slug: 'y', nazwa: 'Y" onerror="a' }] }, { a: 'x', b: 'y' });
+  assert.ok(!zlosliwy.includes('<b>X</b>'), 'nazwy escapowane');
+  assert.ok(!zlosliwy.includes('onerror="a'), 'atrybuty escapowane');
+});

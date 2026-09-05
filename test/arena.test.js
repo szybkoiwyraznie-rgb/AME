@@ -10,6 +10,13 @@ import {
   statyManifestacji,
   motywyZTagow,
   mnoznikKontry,
+  rozegrajSpor,
+  paraDnia,
+  haszTekstu,
+  generatorZZiarna,
+  opisRozstrzygniecia,
+  WYTRZYMALOSC,
+  MAX_RUND,
   obrazeniaRundy,
   kolejnosc,
   WAGA_MOTYWU,
@@ -176,4 +183,78 @@ test('staty na prawdziwym indeksie: każdy byt ma dodatnie, całkowite staty', a
       assert.ok(Number.isInteger(s[k]) && s[k] > 0, `${m.slug}.${k} = ${s[k]} (dodatnie, całkowite)`);
     }
   }
+});
+
+/* --- SPÓR REZONANSU (C2+5, obrót 5) --- */
+
+test('generatorZZiarna: ta sama liczba = ta sama seria, różne ziarna = różne serie', () => {
+  const a = generatorZZiarna(haszTekstu('ziarno'));
+  const b = generatorZZiarna(haszTekstu('ziarno'));
+  const c = generatorZZiarna(haszTekstu('inne'));
+  const seria = (los) => Array.from({ length: 5 }, () => los());
+  const pierwsza = seria(a);
+  assert.deepEqual(pierwsza, seria(b), 'determinizm serii');
+  assert.notDeepEqual(pierwsza, seria(c), 'inne ziarno przesuwa serię');
+  for (const v of pierwsza) assert.ok(v >= 0 && v < 1, `wartość ${v} poza [0,1)`);
+});
+
+test('paraDnia: ta sama data daje tę samą, różną parę bytów', () => {
+  const slugi = ['a', 'b', 'c', 'd', 'e'];
+  const para = paraDnia(slugi, '2026-09-05');
+  assert.deepEqual(para, paraDnia(slugi, '2026-09-05'), 'stabilna w obrębie dnia');
+  assert.equal(para.length, 2);
+  assert.notEqual(para[0], para[1], 'byt nie spiera się sam ze sobą');
+  for (const s of para) assert.ok(slugi.includes(s));
+  assert.throws(() => paraDnia(['a'], '2026-09-05'), /co najmniej dwa/);
+});
+
+test('rozegrajSpor: deterministyczny przebieg, wytrzymałość z żywotności, remis po MAX_RUND', async () => {
+  const indeks = JSON.parse(await readFile('data/index.json', 'utf8'));
+  const kanon = JSON.parse(await readFile('data/kanon-tagow.json', 'utf8'));
+  const profile = profileKartoteki(indeks.manifestacje, kanon);
+  const [slugA, slugB] = [...profile.keys()].slice(0, 2);
+  const a = profile.get(slugA).staty;
+  const b = profile.get(slugB).staty;
+  const spor = () => rozegrajSpor({ a, b, los: generatorZZiarna(haszTekstu(`${slugA}|${slugB}`)) });
+  const pierwszy = spor();
+  assert.deepEqual(pierwszy.dziennik, spor().dziennik, 'to samo ziarno = ten sam dziennik');
+  assert.equal(pierwszy.start[slugA], Math.round(a.zywotnosc * WYTRZYMALOSC));
+  assert.ok(pierwszy.rundy >= 1 && pierwszy.rundy <= MAX_RUND);
+  assert.ok(pierwszy.zwyciezca === null || [slugA, slugB].includes(pierwszy.zwyciezca));
+  for (const wpis of pierwszy.dziennik) {
+    assert.ok(wpis.obrazenia >= 1, 'każda runda przesuwa spór');
+    assert.ok(wpis.pozostalo >= 0);
+  }
+  assert.throws(() => rozegrajSpor({ a, b: a }), /sam ze sobą/);
+  assert.throws(() => rozegrajSpor({ a, b: {} }), /dwa profile/);
+  const bezStrat = rozegrajSpor({ a, b, maxRund: 0 });
+  assert.equal(bezStrat.remis, true, 'zero rund = brak rozstrzygnięcia');
+  assert.equal(bezStrat.dziennik.length, 0);
+});
+
+test('rozegrajSpor na całej kartotece: spór zawsze się kończy i rzadko remisuje', async () => {
+  const indeks = JSON.parse(await readFile('data/index.json', 'utf8'));
+  const kanon = JSON.parse(await readFile('data/kanon-tagow.json', 'utf8'));
+  const profile = [...profileKartoteki(indeks.manifestacje, kanon).values()].map((p) => p.staty);
+  let remisy = 0;
+  let pary = 0;
+  for (let i = 0; i < profile.length; i++) {
+    for (let j = i + 1; j < profile.length; j++) {
+      const wynik = rozegrajSpor({ a: profile[i], b: profile[j], los: generatorZZiarna(haszTekstu(profile[i].slug + profile[j].slug)) });
+      pary++;
+      if (wynik.remis) remisy++;
+      assert.ok(wynik.rundy <= MAX_RUND, `${profile[i].slug} vs ${profile[j].slug}: za długo`);
+    }
+  }
+  assert.ok(remisy / pary < 0.25, `za dużo remisów: ${remisy}/${pary} — kalibracja WYTRZYMALOSC`);
+});
+
+test('opisRozstrzygniecia: zdanie bez żargonu gry, z nazwami bytów', () => {
+  const wynik = { remis: false, rundy: 4, zwyciezca: 'a', kolejnosc: ['a', 'b'] };
+  const zdanie = opisRozstrzygniecia(wynik, { a: 'Alfa', b: 'Beta' });
+  assert.match(zdanie, /Alfa/);
+  assert.match(zdanie, /Beta/);
+  assert.doesNotMatch(zdanie, /HP|punkt(y|ów) życia|zabija/i);
+  const remis = opisRozstrzygniecia({ remis: true, rundy: 12, zwyciezca: null, kolejnosc: ['a', 'b'] }, { a: 'Alfa', b: 'Beta' });
+  assert.match(remis, /obok siebie/);
 });

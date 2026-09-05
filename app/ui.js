@@ -4,7 +4,7 @@
  * wstawiana jako tekst (esc), nigdy jako HTML.
  */
 
-import { statyManifestacji } from './arena.js';
+import { statyManifestacji, opisRozstrzygniecia } from './arena.js';
 
 /** Nazwa kategorii tagu (z kanonu); bez kanonu — surowe id. */
 export function nazwaKategorii(indeks, id) {
@@ -575,6 +575,51 @@ export function htmlTrofeow(indeks) {
       </li>`
     )
     .join('')}</ul>`;
+}
+
+/** Arena Rezonansu (C2+5, obrót 5): widok sporu dwóch bytów — wybór stron,
+ *  profile, dziennik rund i rozstrzygnięcie. Czysty HTML, bez efektów ubocznych;
+ *  losowość i dane wstrzykuje `app/app.js`. */
+export function htmlAreny(indeks, { a, b, wynik = null, profile = null, data = '' } = {}) {
+  const lista = [...(indeks?.manifestacje ?? [])].sort((x, y) => String(x.nazwa).localeCompare(String(y.nazwa), 'pl'));
+  if (lista.length < 2) return '<p class="pusto">Do sporu potrzeba dwóch bytów w kartotece.</p>';
+  const nazwa = (slug) => lista.find((m) => m.slug === slug)?.nazwa ?? slug;
+  const opcje = (wybrany) => lista
+    .map((m) => `<option value="${esc(m.slug)}"${m.slug === wybrany ? ' selected' : ''}>${esc(m.nazwa)}</option>`)
+    .join('');
+  const karta = (slug) => {
+    const p = profile?.get?.(slug);
+    if (!p) return '';
+    const osie = [['Żywotność', 'zywotnosc'], ['Moc', 'moc'], ['Spryt', 'spryt'], ['Rezonans', 'rezonans']];
+    const wiersze = osie
+      .map(([etykieta, os]) => `<div class="arena-staty-wiersz"><dt>${etykieta}</dt><dd><span style="--arena-wartosc:${p.percentyle[os]}">${p.staty[os]}</span> <span class="maly">${p.percentyle[os]} pc</span></dd></div>`)
+      .join('');
+    return `<section class="arena-strona" aria-label="Strona sporu: ${esc(nazwa(slug))}">
+      <h4><button class="chip link" data-slug="${esc(slug)}">${esc(nazwa(slug))}</button></h4>
+      <p class="arena-archetyp">${esc(p.archetyp)}${p.staty.motywy.length ? ` · ${esc(p.staty.motywy.join(' · '))}` : ''}</p>
+      <dl>${wiersze}</dl>
+    </section>`;
+  };
+  const dziennik = wynik
+    ? `<ol class="arena-dziennik">${wynik.dziennik
+        .map((r) => `<li><span class="arena-runda">runda ${r.runda}</span> ${esc(nazwa(r.atakujacy))} → ${esc(nazwa(r.broniacy))}: <strong>${r.obrazenia}</strong>${r.kontra < 1 ? ` <span class="maly">(kontra ×${r.kontra})</span>` : ''} · zostaje ${r.pozostalo}</li>`)
+        .join('')}</ol>`
+    : '';
+  const rozstrzygniecie = wynik
+    ? `<p class="arena-wynik">${esc(opisRozstrzygniecia(wynik, Object.fromEntries(lista.map((m) => [m.slug, m.nazwa]))))}</p>`
+    : '<p class="naprowadzenie">Wybierz dwie strony i sprawdź, czyja wersja świata utrzyma się w tym miejscu.</p>';
+  return `<div class="arena">
+    <p class="naprowadzenie">Spór Rezonansu nie jest walką na krew: liczby wynikają wyłącznie z sieci archiwum — powiązań, wzmianek, skitów i tagów. „Żywotność” mierzy, jak długo tradycja trzyma się w opowieści.</p>
+    <form class="arena-wybor" id="arena-wybor">
+      <label>Strona pierwsza <select name="a">${opcje(a)}</select></label>
+      <label>Strona druga <select name="b">${opcje(b)}</select></label>
+      <button class="przycisk" type="submit">⚖ rozegraj spór</button>
+      <button class="przycisk" type="button" data-spor-dnia="${esc(data)}" title="Ta sama para dla wszystkich czytelników dzisiaj">✦ spór dnia</button>
+    </form>
+    <div class="arena-strony">${karta(a)}${karta(b)}</div>
+    ${rozstrzygniecie}
+    ${dziennik}
+  </div>`;
 }
 
 /** Sekcja V wpisu (MFM v1.8): skity, w których materializacja zabiera głos. */

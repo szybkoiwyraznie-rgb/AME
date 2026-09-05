@@ -6,17 +6,26 @@
 
 ## Aplikacja / UX
 
-- **„Arena Rezonansu” (idle battler)** — grywalizacja na zlecenie właściciela
-  (M8, C2). Staty bytu WYPROWADZANE z rekordu indeksu (backlinki, powiązania,
-  skity, epitety, motywy) — determinizm ADR 0002, losowość tylko ze
-  wstrzykniętego RNG. Projekt: `docs/plans/POMYSL_arena-rezonansu-idle-battler.md`.
-  Zręby: `app/arena.js` (`statyManifestacji`, runda) + `test/arena.test.js`.
-  Kierunek: osobny widok `#arena` albo profil bojowy w kartotece, ton
-  „Rezonans / spór tradycji”, nie „krew i HP”. Wpięcie do UI nie wymaga zgody
-  właściciela (ADR 0027) — wymaga testów i opisu w PR.
+- ~~**„Arena Rezonansu” (idle battler)**~~ — **WDROŻONE (2026-09-05, PR #34,
+  C2+5 obrotu 5 Pętli Jakości):** osobny widok `#arena` (przycisk „⚖ arena”
+  w topbarze). Dwie listy wyboru stron, karty profili (staty surowe +
+  percentyl w kartotece + archetyp), dziennik rund z kontrami motywów
+  i jednozdaniowe rozstrzygnięcie bez żargonu gry (`opisRozstrzygniecia`).
+  Rdzeń w `app/arena.js`: `rozegrajSpor` (inicjatywa z SPRYTU, wytrzymałość
+  = żywotność × `WYTRZYMALOSC` 1.5, twardy limit `MAX_RUND` 12), własny RNG
+  `generatorZZiarna` (mulberry32) + `haszTekstu` (FNV-1a) i `paraDnia` —
+  „spór dnia” identyczny dla wszystkich czytelników danego dnia. Zero sieci
+  i zero `Math.random` w rdzeniu (ADR 0002, 0003); losowość wstrzykiwana.
+  Kalibracja na 28 bytach: średnio 6–7 rund, ~4,5% remisów (test pilnuje
+  progu 25%). Projekt: `docs/plans/POMYSL_arena-rezonansu-idle-battler.md`.
+  **Otwarte dalej:** tryb „idle” (liga tocząca się w tle) i turniej Epoki —
+  wymagają decyzji, gdzie zapisywać stan między sesjami.
 
-- **Deep-linki** `#/slug`: adresowalne wpisy + stan mapy w URL (kandydat do
-  F2). Podstawa: `location.hash`, brak zależności.
+- ~~**Deep-linki `#/slug`**~~ — **ZREALIZOWANE wcześniej (M7/C2, potwierdzone
+  2026-09-05):** aplikacja obsługuje `#slug`, `#tag:…`, `#skit:…`, `#mapa=…`
+  oraz fragmenty widoków (`#skity`, `#nowosci`, `#trofea`, `#kroniki`,
+  `#splot`, `#prog`, `#arena`); każdy widok ma przycisk „⧉ kopiuj link”.
+
 - ~~**Klastrowanie pinezek**~~ — **WDROŻONE (2026-09-05, PR #34, C2+5 obrotu 4
   Pętli Jakości):** `app/klastry.js` (czysty rachunek, bez DOM) grupuje pinezki
   siatką o boku `2 × PROMIEN_KLASTRA` pikseli EKRANOWYCH, przeliczaną przez
