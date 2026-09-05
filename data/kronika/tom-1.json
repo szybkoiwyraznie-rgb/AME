@@ -24,7 +24,7 @@
       },
       {
         "slug": "bazyliszek-warszawski",
-        "wielkosc": 0.18
+        "wielkosc": 0.2
       },
       {
         "slug": "ben-varrey",
@@ -72,7 +72,7 @@
       },
       {
         "slug": "morowa-panna",
-        "wielkosc": 0.37
+        "wielkosc": 0.39
       },
       {
         "slug": "neith-z-sais",
@@ -100,7 +100,7 @@
       },
       {
         "slug": "syama-i-sarvara",
-        "wielkosc": 0.32
+        "wielkosc": 0.34
       },
       {
         "slug": "talos-kreta",
@@ -126,7 +126,7 @@
       {
         "kultura": "polska",
         "kult": "bazyliszek-warszawski",
-        "wielkosc": 0.18
+        "wielkosc": 0.2
       },
       {
         "kultura": "man",
@@ -186,7 +186,7 @@
       {
         "kultura": "polska",
         "kult": "morowa-panna",
-        "wielkosc": 0.37
+        "wielkosc": 0.39
       },
       {
         "kultura": "egipt",
@@ -221,7 +221,7 @@
       {
         "kultura": "indie",
         "kult": "syama-i-sarvara",
-        "wielkosc": 0.32
+        "wielkosc": 0.34
       },
       {
         "kultura": "grecja",

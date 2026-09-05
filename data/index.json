@@ -1,8 +1,8 @@
 {
   "wersja": 3,
-  "buildTime": "2026-09-05T11:40:43.835Z",
+  "buildTime": "2026-09-05T11:42:23.187Z",
   "liczba": 24,
-  "liczbaSkitow": 44,
+  "liczbaSkitow": 45,
   "kanon": {
     "kategorie": [
       {
@@ -661,7 +661,9 @@
         "pierwotne": "Zwierciadła ze skórzanego stroju Johanna Faurera — kilkadziesiąt małych luster naszytych od stóp do głów, z których część pękła w piwnicy; to nimi bazyliszek został pokonany własnym wejrzeniem.",
         "wtorne": "Żelazne osęki (haki ogniowe) z warszawskiego magazynu przeciwpożarowego, którymi wyciągano ciała z piwnicy, zanim ktokolwiek odważył się zejść po schodach."
       },
-      "skity": []
+      "skity": [
+        "lustro-odpowiedz-wers"
+      ]
     },
     {
       "slug": "ben-varrey",
@@ -1211,6 +1213,7 @@
       "skity": [
         "czwarty-stol",
         "ile-imion",
+        "lustro-odpowiedz-wers",
         "najgorsze-odpowiedzi",
         "ostatnia-droga",
         "pracownicy-progu",
@@ -1542,6 +1545,7 @@
         "wtorne": "Kamyk z ghatu Manikarnika — z miejsca, gdzie Yama nie ma władzy; noszony przy drodze przypomina, którą ścieżkę wybrać."
       },
       "skity": [
+        "lustro-odpowiedz-wers",
         "ostatnia-droga",
         "pierwszy",
         "porcje",
@@ -1930,6 +1934,23 @@
       ],
       "slow": 253,
       "data": "2026-09-04 16:25"
+    },
+    {
+      "slug": "lustro-odpowiedz-wers",
+      "tytul": "LUSTRO, ODPOWIEDŹ, WERS",
+      "temat": "czym naprawdę rozbraja się strażnika progu: odbiciem, jednym zdaniem albo znanym hymnem",
+      "uczestnicy": [
+        "bazyliszek-warszawski",
+        "morowa-panna",
+        "syama-i-sarvara"
+      ],
+      "imiona": [
+        "Bazyliszek",
+        "Morowa Panna",
+        "Śyāma i Śarvara"
+      ],
+      "slow": 271,
+      "data": "2026-09-05"
     },
     {
       "slug": "najgorsze-odpowiedzi",
@@ -2473,6 +2494,14 @@
       "slug": "loup-garou-gevaudan",
       "tytul": "Loup-garou z Gévaudan",
       "opis": "wpis w kartotece — materializacja karty „Thornhide Wolves”"
+    },
+    {
+      "data": "2026-09-05",
+      "typ": "skit",
+      "akcja": "nowy",
+      "slug": "lustro-odpowiedz-wers",
+      "tytul": "LUSTRO, ODPOWIEDŹ, WERS",
+      "opis": "SKIT — skład: Bazyliszek, Morowa Panna, Śyāma i Śarvara"
     },
     {
       "data": "2026-09-04 20:05",
