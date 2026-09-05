@@ -4,6 +4,8 @@
  * wstawiana jako tekst (esc), nigdy jako HTML.
  */
 
+import { statyManifestacji } from './arena.js';
+
 /** Nazwa kategorii tagu (z kanonu); bez kanonu — surowe id. */
 export function nazwaKategorii(indeks, id) {
   if (!id) return '';
@@ -224,6 +226,14 @@ function chipyTagow(w, indeks) {
 /** Pełny wpis kartoteki (sekcje I–VII wg protokołu MFM v1.8). `kronika` to
  *  podsumowanie Tomu (summary.json) — jeśli podane, wpis dostaje sekcję
  *  „Tomy i Epoki” (E, 2026-08-30) z linkami do raportów. */
+export function htmlProfiluAreny(w, indeks) {
+  const rekord = indeks?.manifestacje?.find((m) => m.slug === w.slug) ?? w;
+  const s = statyManifestacji(rekord, indeks?.kanon);
+  const pola = [['Żywotność', s.zywotnosc], ['Moc', s.moc], ['Spryt', s.spryt], ['Rezonans', s.rezonans]];
+  const wiersze = pola.map(([nazwa, wartosc]) => `<div class="arena-staty-wiersz"><dt>${nazwa}</dt><dd><span style="--arena-wartosc:${wartosc}">${wartosc}</span></dd></div>`).join('');
+  return `<section class="arena-profil" aria-label="Profil Rezonansu"><div class="arena-profil-naglowek"><h3>Profil Rezonansu</h3><span class="arena-archetyp">${esc(s.motywy.length ? s.motywy.join(' · ') : 'cisza')}</span></div><dl>${wiersze}</dl><p class="maly">Statystyki wynikają wyłącznie z sieci archiwum: powiązań, wzmianek, skitów, tagów i imion.</p></section>`;
+}
+
 export function htmlWpisu(w, indeks, kronika = null) {
   const rekord = indeks.manifestacje.find((m) => m.slug === w.slug) ?? {};
   const alt = (w.nazwy_alternatywne ?? []).length ? `<p class="alt">znany też jako: ${esc(w.nazwy_alternatywne.join(', '))}</p>` : '';
@@ -306,7 +316,7 @@ export function htmlWpisu(w, indeks, kronika = null) {
 
   // Sekcje I–VII w kolejności numeracji (PROTOKÓŁ §4.1, MFM v1.8):
   // numer = pozycja; V = SKITy, VI = Tomy i Epoki, VII = Powiązania.
-  return `<div class="wpis">${naglowek}${I}${II}${III}${IV}${V}${tomyIEpoki}${wiki}${meta}</div>`;
+  return `<div class="wpis">${naglowek}${htmlProfiluAreny(w, indeks)}${I}${II}${III}${IV}${V}${tomyIEpoki}${wiki}${meta}</div>`;
 }
 
 /**

@@ -2,7 +2,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
-import { htmlWpisu, htmlWarstwyWpisu, linkDoZrodla, htmlListy, htmlStronyTagu, htmlTagow, htmlDialogu, htmlSkitu, htmlBazySkitow, htmlNowosci, htmlKronik, htmlTomyIEpoki, esc, rzymskie, nastepnyMotyw, motywPoczatkowy, etykietaMotywu, MOTYWY, KLUCZ_MOTYWU, akcjeZZapytania, tekstDoLektora, htmlTrofeow, paryRozmowySkitu, doB64utf8, zB64utf8, dataZmianySluga } from '../app/ui.js';
+import { htmlWpisu, htmlProfiluAreny, htmlWarstwyWpisu, linkDoZrodla, htmlListy, htmlStronyTagu, htmlTagow, htmlDialogu, htmlSkitu, htmlBazySkitow, htmlNowosci, htmlKronik, htmlTomyIEpoki, esc, rzymskie, nastepnyMotyw, motywPoczatkowy, etykietaMotywu, MOTYWY, KLUCZ_MOTYWU, akcjeZZapytania, tekstDoLektora, htmlTrofeow, paryRozmowySkitu, doB64utf8, zB64utf8, dataZmianySluga } from '../app/ui.js';
 
 async function dane(plik = 'egungun') {
   const wpis = JSON.parse(await readFile(`data/manifestations/${plik}.json`, 'utf8'));
@@ -68,6 +68,15 @@ test('app.js: zapamiętywanie warstw i widoku mapy w localStorage (D)', async ()
 
 test('esc: znaki HTML uciekają', () => {
   assert.equal(esc('<script>&"\''), '&lt;script&gt;&amp;&quot;&#39;');
+});
+
+test('Profil Rezonansu: statystyki są wyprowadzone z rekordu i pokazane poza numeracją MFM', async () => {
+  const { wpis, indeks } = await dane();
+  const html = htmlProfiluAreny(wpis, indeks);
+  assert.match(html, /Profil Rezonansu/);
+  for (const etykieta of ['Żywotność', 'Moc', 'Spryt', 'Rezonans']) assert.ok(html.includes(etykieta));
+  assert.match(html, /--arena-wartosc:\d+/);
+  assert.ok(html.includes('Statystyki wynikają wyłącznie z sieci archiwum'));
 });
 
 test('htmlWpisu: komplet sekcji protokołu I–V (egungun)', async () => {

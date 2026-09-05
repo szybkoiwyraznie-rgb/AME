@@ -1018,3 +1018,14 @@ div.warstwa.otwarta { display: block; animation: warstwa-wnika 0.2s ease-out; }
     --linia: #ccc5b6;
   }
 }
+
+/* Profil Rezonansu: warstwa aplikacyjna poza numeracją MFM. */
+.arena-profil { margin: 18px 0; padding: 14px 16px; border: 1px solid var(--obramowanie); border-radius: 10px; background: color-mix(in srgb, var(--panel) 82%, var(--akcent) 18%); }
+.arena-profil-naglowek { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; }
+.arena-profil h3 { margin: 0; font-size: 15px; letter-spacing: .04em; text-transform: uppercase; }
+.arena-archetyp { color: var(--akcent); font-size: 12px; }
+.arena-profil dl { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin: 14px 0 8px; }
+.arena-staty-wiersz dt { color: var(--tekst-dim); font-size: 12px; text-transform: uppercase; }
+.arena-staty-wiersz dd { margin: 4px 0 0; font-size: 22px; color: var(--tekst); }
+.arena-staty-wiersz dd span { display: block; border-bottom: 3px solid var(--akcent); width: max(24px, min(100%, calc(var(--arena-wartosc) * 1%))); }
+@media (max-width: 560px) { .arena-profil dl { grid-template-columns: repeat(2, 1fr); } }

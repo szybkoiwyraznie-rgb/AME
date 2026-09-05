@@ -1,8 +1,8 @@
 /**
  * app/app.js — bootstrap AME: ładuje indeks, mapę świata, spina UI.
  */
-import { stworzMape, PROGI_WARSTW, PODKLADY_ONLINE } from './map.js?v=c6-2';
-import { zaladujIndeks, zaladujWpis, zaladujSkit, dopasowania, wylosujSlug, slugDnia } from './data.js?v=c6-2';
+import { stworzMape, PROGI_WARSTW, PODKLADY_ONLINE } from './map.js?v=c6-3';
+import { zaladujIndeks, zaladujWpis, zaladujSkit, dopasowania, wylosujSlug, slugDnia } from './data.js?v=c6-3';
 import {
   htmlWpisu,
   htmlWarstwyWpisu,
@@ -27,8 +27,8 @@ import {
   htmlTrofeow,
   paryRozmowySkitu,
   zB64utf8,
-} from './ui.js?v=c6-2';
-import { SZEROKOSC, WYSOKOSC, odwroc, projektuj, serializujWidok, parsujWidokMapy } from './geo.js?v=c6-2';
+} from './ui.js?v=c6-3';
+import { SZEROKOSC, WYSOKOSC, odwroc, projektuj, serializujWidok, parsujWidokMapy } from './geo.js?v=c6-3';
 
 const $ = (sel) => document.querySelector(sel);
 
