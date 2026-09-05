@@ -1,6 +1,6 @@
 {
   "wersja": 3,
-  "buildTime": "2026-09-05T12:45:30.203Z",
+  "buildTime": "2026-09-05T12:53:21.533Z",
   "liczba": 27,
   "liczbaSkitow": 46,
   "kanon": {
@@ -780,6 +780,7 @@
       ],
       "powiazania": [
         "barbarossa-kyffhaeuser",
+        "iktomi",
         "lincoln-imp",
         "talos-kreta"
       ],
@@ -789,7 +790,7 @@
       "obraz": "assets/wizualizacje/cormoran-st-michaels-mount.jpg",
       "trofea": {
         "pierwotne": "Kamienne serce wpuszczone w bruk ścieżki na szczyt Góry — ciemny, sercowaty otoczak między granitowymi kostkami; miejscowi mówią, że kto przyłoży do niego ucho, usłyszy uderzenie.",
-        "wtorne": "Pas z haftowanym napisem, nagroda rady miejskiej dla pogromcy: „Here's the right valiant Cornish Man, Who slew the Giant Cormilion” — dowód, że olbrzyma pokonano fortelem, nie siłą."
+        "wtorne": "Pas z haftowanym napisem, nagroda rady miejskiej dla pogromcy: „Here's the right valiant Cornish Man, Who slew the Giant Cormilion” — dowód, że olbrzyma pokonano fortelem, nie siłą. Obok niego kartoteka notuje przedmiot z twardej ziemi: dzban ze skóry końskiej, wyjęty z zamurowanej komory pod kościołem razem z kośćmi człowieka mierzącego siedem stóp i osiem cali — nie olbrzyma z podania, ale kogoś, kto olbrzymowi użyczył miary."
       },
       "skity": [
         "gruz-i-odplyw"
@@ -1015,7 +1016,9 @@
         "pandora",
         "syama-i-sarvara"
       ],
-      "backlinki": [],
+      "backlinki": [
+        "cormoran-st-michaels-mount"
+      ],
       "obraz": "assets/wizualizacje/iktomi.jpg",
       "trofea": {
         "pierwotne": "Tobołek z koca, zawiązany na cztery rogi, pełen suchej trawy — dowód, że wystarczyło rozwiązać węzeł, żeby nikt nie zginął.",
@@ -2653,6 +2656,14 @@
       "slug": "bazyliszek-warszawski",
       "tytul": "Bazyliszek z Krzywego Koła",
       "opis": "wpis w kartotece — materializacja karty „Coat with Venom”"
+    },
+    {
+      "data": "2026-09-05 16:40",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "cormoran-st-michaels-mount",
+      "tytul": "Cormoran z St Michael's Mount",
+      "opis": "Pogłębienie wpisu: zatopiony las Mount's Bay jako materialne tło nazwy Karrek Loos y'n Koos (pnie sosny i dębu w torfach Chyandour, datowanie 4–6 tysięcy lat, relacja Jana z Worcester z 1099 roku), sześć palców olbrzyma i odrysowane dłonie w zamurowanej komorze pod kościołem, miejscowa wersja ze Studnią Olbrzyma zamiast dołu w polu oraz szkielet mierzący siedem stóp i osiem cali wraz ze skórzanym dzbanem, dopisany do trofeów. Nowe powiązanie z Iktómim i dwa nowe źródła."
     },
     {
       "data": "2026-09-05 16:40",
