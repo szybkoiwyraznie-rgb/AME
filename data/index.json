@@ -1,8 +1,8 @@
 {
   "wersja": 3,
-  "buildTime": "2026-09-05T12:53:21.533Z",
+  "buildTime": "2026-09-05T12:54:36.029Z",
   "liczba": 27,
-  "liczbaSkitow": 46,
+  "liczbaSkitow": 47,
   "kanon": {
     "kategorie": [
       {
@@ -1024,7 +1024,9 @@
         "pierwotne": "Tobołek z koca, zawiązany na cztery rogi, pełen suchej trawy — dowód, że wystarczyło rozwiązać węzeł, żeby nikt nie zginął.",
         "wtorne": "Odlew wejścia do Oniya Oshoka wielkości dłoni, przez który idzie zimny przeciąg: miara tego, o ile ktoś zmniejszył drogę powrotną."
       },
-      "skity": []
+      "skity": [
+        "co-sie-podaje"
+      ]
     },
     {
       "slug": "indra",
@@ -1431,6 +1433,7 @@
       },
       "skity": [
         "cena-znaku",
+        "co-sie-podaje",
         "dwa-grzbiety",
         "linia-brzegu",
         "prezent-z-defektem",
@@ -1478,6 +1481,7 @@
       },
       "skity": [
         "biuro-reklamacji",
+        "co-sie-podaje",
         "czwarty-stol",
         "jedno-pytanie",
         "pierwsza-zmiana",
@@ -1824,6 +1828,23 @@
       ],
       "slow": 259,
       "data": "2026-08-28 23:59"
+    },
+    {
+      "slug": "co-sie-podaje",
+      "tytul": "CO SIĘ PODAJE",
+      "temat": "dar jako narzędzie: kto podał, kto wziął i dlaczego żadne z nich nie zostaje przy tym, co się otwiera",
+      "uczestnicy": [
+        "iktomi",
+        "nessos",
+        "pandora"
+      ],
+      "imiona": [
+        "Pandora",
+        "Iktómi",
+        "Nessos"
+      ],
+      "slow": 217,
+      "data": "2026-09-05 17:05"
     },
     {
       "slug": "czwarty-stol",
@@ -2656,6 +2677,22 @@
       "slug": "bazyliszek-warszawski",
       "tytul": "Bazyliszek z Krzywego Koła",
       "opis": "wpis w kartotece — materializacja karty „Coat with Venom”"
+    },
+    {
+      "data": "2026-09-05 17:05",
+      "typ": "skit",
+      "akcja": "zmiana",
+      "slug": "co-sie-podaje",
+      "tytul": "CO SIĘ PODAJE",
+      "opis": "Nowa rozmowa: kobieta z pokrywą w rękach, pająk z tobołkiem suchej trawy i kentaur z „lekiem na wierność” porównują, czym różni się dar podany od daru wziętego — i orientują się, że wszyscy zaczynają zdanie tak samo."
+    },
+    {
+      "data": "2026-09-05 17:05",
+      "typ": "skit",
+      "akcja": "nowy",
+      "slug": "co-sie-podaje",
+      "tytul": "CO SIĘ PODAJE",
+      "opis": "SKIT — skład: Pandora, Iktómi, Nessos"
     },
     {
       "data": "2026-09-05 16:40",

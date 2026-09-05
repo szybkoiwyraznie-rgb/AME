@@ -52,7 +52,7 @@
       },
       {
         "slug": "iktomi",
-        "wielkosc": 0.2
+        "wielkosc": 0.22
       },
       {
         "slug": "indra",
@@ -88,11 +88,11 @@
       },
       {
         "slug": "nessos",
-        "wielkosc": 0.39
+        "wielkosc": 0.41
       },
       {
         "slug": "pandora",
-        "wielkosc": 0.43
+        "wielkosc": 0.45
       },
       {
         "slug": "protostates",
@@ -173,7 +173,7 @@
       {
         "kultura": "lakota",
         "kult": "iktomi",
-        "wielkosc": 0.2
+        "wielkosc": 0.22
       },
       {
         "kultura": "indie",
@@ -218,12 +218,12 @@
       {
         "kultura": "grecja",
         "kult": "nessos",
-        "wielkosc": 0.39
+        "wielkosc": 0.41
       },
       {
         "kultura": "grecja",
         "kult": "pandora",
-        "wielkosc": 0.43
+        "wielkosc": 0.45
       },
       {
         "kultura": "grecja",
