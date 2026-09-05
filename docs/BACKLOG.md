@@ -134,8 +134,14 @@
   (adres zostaje). Lekcja: jednorazowy 404 Theoi bywa przejściowy —
   przed wymianą linku sprawdzić ponownie po czasie.
 - ~~**Widok druku (media print) dla warstwy wpisu**~~ — **WDROŻONE (2026-08-30, PR #12, C2 pętla jakości):** przycisk „🖨 drukuj” w kartotece → `window.print()`; arkusz `@media print` chowa topbar/mapę/listę i pokazuje otwartą kartotekę na białym tle z ciemnym tekstem (cache-bust `c5-8`). Do akceptacji właściciela przed live.
-- **Znacznik „źródło bez adresu” w UI** — pozycje bez `url` (papier) warto
-  oznaczać inną kursywą, żeby czytelnik wiedział, czego nie da się kliknąć.
+- ~~**Znacznik „źródło bez adresu” w UI**~~ — **WDROŻONE (2026-09-05, PR #34,
+  C2+5 pętli jakości):** pozycja sekcji III bez klikalnego adresu dostaje klasę
+  `poza-siecia` (kursywa) i chip „bez adresu w sieci”; pozycje z `http(s)`
+  zostają bez zmian (`znacznikZrodlaBezAdresu` w `app/ui.js`, testy w
+  `test/ui.test.js`, cache-bust `c5-20`/`c6-5`). Przy okazji: Profil Rezonansu
+  przeniesiony za sekcje I–V (nie przerywa numeracji MFM), a „zasoby po próbie”
+  w raporcie SPLOTU renderują się jako „pamiec 3 · przejscie 1” zamiast
+  surowego JSON-a (`opisZasobow`). Do akceptacji właściciela przed live.
 - **Aspekt motywu w testach** — trzymać kontrakt tokenów (lista zmiennych
   wymaganych w obu paletach) jako test danych, gdy paleta urośnie.
 

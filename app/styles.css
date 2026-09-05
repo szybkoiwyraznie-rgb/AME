@@ -661,6 +661,19 @@ a.chip { display: inline-block; text-decoration: none; }
   overflow-wrap: anywhere;
 }
 .dokumentacja .zrodlo:hover { color: var(--akcent-2); }
+.dokumentacja li.poza-siecia { font-style: italic; }
+.dokumentacja li.poza-siecia .typ { font-style: normal; }
+.zrodlo-offline {
+  display: inline-block;
+  margin-left: 4px;
+  padding: 0 6px;
+  border: 1px dashed var(--ramka);
+  border-radius: 999px;
+  font-size: 12px;
+  font-style: normal;
+  color: var(--tekst-dim);
+  white-space: nowrap;
+}
 
 .wpis img {
   width: 100%;

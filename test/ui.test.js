@@ -2,7 +2,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
-import { htmlWpisu, htmlSplotu, htmlProfiluAreny, htmlWarstwyWpisu, linkDoZrodla, htmlListy, htmlStronyTagu, htmlTagow, htmlDialogu, htmlSkitu, htmlBazySkitow, htmlNowosci, htmlKronik, htmlTomyIEpoki, esc, rzymskie, nastepnyMotyw, motywPoczatkowy, etykietaMotywu, MOTYWY, KLUCZ_MOTYWU, akcjeZZapytania, tekstDoLektora, htmlTrofeow, paryRozmowySkitu, doB64utf8, zB64utf8, dataZmianySluga } from '../app/ui.js';
+import { htmlWpisu, htmlSplotu, htmlProfiluAreny, znacznikZrodlaBezAdresu, opisZasobow, htmlWarstwyWpisu, linkDoZrodla, htmlListy, htmlStronyTagu, htmlTagow, htmlDialogu, htmlSkitu, htmlBazySkitow, htmlNowosci, htmlKronik, htmlTomyIEpoki, esc, rzymskie, nastepnyMotyw, motywPoczatkowy, etykietaMotywu, MOTYWY, KLUCZ_MOTYWU, akcjeZZapytania, tekstDoLektora, htmlTrofeow, paryRozmowySkitu, doB64utf8, zB64utf8, dataZmianySluga } from '../app/ui.js';
 
 async function dane(plik = 'egungun') {
   const wpis = JSON.parse(await readFile(`data/manifestations/${plik}.json`, 'utf8'));
@@ -794,4 +794,58 @@ test('paryRozmowySkitu: pełne spójne pary składu, bez duplikatów i self-link
   assert.deepEqual(paryRozmowySkitu([]), []);
   assert.deepEqual(paryRozmowySkitu(undefined), []);
   assert.deepEqual(paryRozmowySkitu([{ imie: 'Bez sluga' }]), [], 'uczestnik bez sluga pomijany');
+});
+
+test('źródło bez adresu dostaje znacznik, a klikalne go nie dostaje', () => {
+  assert.equal(linkDoZrodla('https://example.org/tekst'), linkDoZrodla('https://example.org/tekst'));
+  assert.equal(znacznikZrodlaBezAdresu('https://example.org/tekst'), '');
+  assert.equal(znacznikZrodlaBezAdresu('  HTTPS://Example.org  '), '');
+  const znak = znacznikZrodlaBezAdresu('');
+  assert.match(znak, /zrodlo-offline/);
+  assert.match(znak, /bez adresu w sieci/);
+  assert.equal(znacznikZrodlaBezAdresu(undefined), znak, 'brak pola url = ten sam znacznik');
+  assert.equal(znacznikZrodlaBezAdresu('ftp://serwer/plik.pdf'), znak, 'adres nieklikalny też jest poza siecią');
+});
+
+test('sekcja III oznacza pozycje papierowe, ale nie internetowe', () => {
+  const wpis = {
+    slug: 'x',
+    nazwa: 'Byt X',
+    karta: { nazwa: 'Karta', rok: 2001 },
+    lokalizacja: { miejscowosc: 'M', kraj: 'K', lat: 1, lon: 2 },
+    pochodzenie_i_kultura: 'skądś',
+    tagi: [],
+    natura: { wyglad_i_aura: 'a', charakter_i_motywacje: 'b', zdolnosci: 'c', slabosci_i_metody_pokonania: 'd', preferencje: 'e' },
+    dokumentacja: [
+      { typ: 'monografia', pozycja: 'Papierowa monografia, 1891' },
+      { typ: 'monografia', pozycja: 'Wersja cyfrowa', url: 'https://example.org/skan' },
+    ],
+    trofea: { pierwotne: 'kamień' },
+    wizualizacja: { prompt: 'p' },
+    powiazania: [],
+    meta: { utworzono: '2026-09-05', modyfikacje: [] },
+  };
+  const html = htmlWpisu(wpis, { manifestacje: [], tagi: {}, kanon: { kategorie: [] } });
+  assert.match(html, /<li class="poza-siecia">.*Papierowa monografia/);
+  assert.match(html, /<li class="w-sieci">.*Wersja cyfrowa/);
+  assert.equal((html.match(/zrodlo-offline/g) ?? []).length, 1, 'tylko pozycja bez adresu jest oznaczona');
+});
+
+test('Profil Rezonansu stoi po numerowanych sekcjach protokołu', async () => {
+  const { wpis, indeks } = await dane();
+  const html = htmlWpisu(wpis, indeks);
+  const v = html.indexOf('>V</span>');
+  const profil = html.indexOf('arena-profil');
+  assert.ok(v > 0 && profil > 0);
+  assert.ok(profil > v, 'dodatek aplikacji nie przerywa numeracji I–V');
+});
+
+test('SPLOT: zasoby po próbie są czytelne, nie surowym JSON-em', () => {
+  assert.equal(opisZasobow({ pamiec: 3, przejscie: 1 }), 'pamiec 3 · przejscie 1');
+  assert.equal(opisZasobow({}), 'bez zmian');
+  assert.equal(opisZasobow(undefined), 'bez zmian');
+  const wynik = { status: 'ok', proza: 'p', zasoby: { pamiec: 3 }, dziennik: [{ nazwa: 'Próba', prawdopodobienstwo: 0.4, wartoscLosowa: 0.2, sukces: true, zasoby: { pamiec: 3, przejscie: 1 }, proza: 'q' }] };
+  const html = htmlSplotu({ tytul: 't', cel: 'c', sklad: [] }, wynik, { manifestacje: [] });
+  assert.ok(html.includes('zasoby po próbie: pamiec 3 · przejscie 1'));
+  assert.ok(!html.includes('{&quot;'), 'żadnego surowego JSON-a w raporcie');
 });
