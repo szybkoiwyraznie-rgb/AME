@@ -1,6 +1,6 @@
 {
   "wersja": 3,
-  "buildTime": "2026-09-05T10:54:45.620Z",
+  "buildTime": "2026-09-05T10:57:51.843Z",
   "liczba": 23,
   "liczbaSkitow": 43,
   "kanon": {
@@ -681,7 +681,9 @@
         "lincoln-imp",
         "talos-kreta"
       ],
-      "backlinki": [],
+      "backlinki": [
+        "loup-garou-gevaudan"
+      ],
       "obraz": "assets/wizualizacje/cormoran-st-michaels-mount.jpg",
       "trofea": {
         "pierwotne": "Kamienne serce wpuszczone w bruk ścieżki na szczyt Góry — ciemny, sercowaty otoczak między granitowymi kostkami; miejscowi mówią, że kto przyłoży do niego ucho, usłyszy uderzenie.",
@@ -1098,6 +1100,7 @@
       ],
       "powiazania": [
         "barbarossa-kyffhaeuser",
+        "cormoran-st-michaels-mount",
         "empusa-korynt",
         "selkie-sule-skerry"
       ],
@@ -2280,6 +2283,14 @@
     }
   ],
   "aktualizacje": [
+    {
+      "data": "2026-09-05 16:05",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "loup-garou-gevaudan",
+      "tytul": "Loup-garou z Gévaudan",
+      "opis": "Karta zyskała etymologię nazwy „loup-garou”, wątek ukrytego odzienia z XII-wiecznego lai o Bisclavrecie oraz porównanie ze świtem, który kończy noc innych bytów archiwum."
+    },
     {
       "data": "2026-09-05 15:20",
       "typ": "manifestacja",
