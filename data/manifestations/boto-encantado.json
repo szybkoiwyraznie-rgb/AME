@@ -1,0 +1,95 @@
+{
+  "slug": "boto-encantado",
+  "nazwa": "Boto encantado — różowy delfin, który wychodzi na potańcówkę",
+  "nazwy_alternatywne": [
+    "Boto cor-de-rosa (różowy delfin)",
+    "Encantado („zaklęty”)",
+    "Bufeo colorado (Peru, Boliwia)",
+    "Tonina (dorzecze Orinoko)",
+    "Inia geoffrensis (nazwa gatunkowa, de Blainville 1817)"
+  ],
+  "karta": {
+    "nazwa": "Wishful Merfolk",
+    "wydanie": "Throne of Eldraine (ELD) #73",
+    "rok": 2019
+  },
+  "lokalizacja": {
+    "miejscowosc": "Tefé nad Solimões, u wrót rezerwatu Mamirauá — miasto rzeczne w środkowej Amazonii, gdzie opowieść o zaklętym delfinie i badania nad żywym gatunkiem toczą się na tej samej wodzie; sama opowieść jest rozlana po całym dorzeczu, od Parintins po Puerto Nariño i Iquitos",
+    "kraj": "Brazylia (Amazonas)",
+    "lat": -3.3545,
+    "lon": -64.7108
+  },
+  "pochodzenie_i_kultura": "Tradycja rzecznych społeczności Amazonii — caboclos znad Solimões, Japurá i Amazonki, z korzeniami w wierzeniach ludów tupi i arawak. Pod wodą leży Encante, „kraina zaklęta”: miasta bez bólu i bez śmierci, których mieszkańcy mimo to tęsknią do ludzkich potańcówek. Boto jest ich posłem. Rzecz nie jest reliktem: Candace Slater, zbierając w latach 1988–1990 setki opowieści nad Amazonką, opisuje delfina naraz jako „specjalną rybę”, kochanka i „białego pana”, a Mark Cravalho w etnozoologii z 1999 roku pokazuje, że ta sama historia porządkuje relacje płci, wstyd i podejrzenie we wsi. Kartoteka trzyma jedną linię — amazońskiego encantado — i nie zlepia jej z europejską syreną ani z Iarą, kobietą-rybą z osobnego cyklu. Warstwa dzisiejsza jest twarda i nieprzyjemna: od około 2000 roku botos są zabijane jako przynęta na padlinożerną piracatingę, a rząd Brazylii wprowadził w 2015 roku moratorium na jej połów; ta sama tradycja, która zakazywała krzywdzić delfina, sąsiaduje dziś z rynkiem, na którym za jego zwłoki płaci się od 50 do 300 reali.",
+  "wizualizacja": {
+    "prompt": "Style: A wide-angle full-body cinematic photograph. The central objects/persons of the photo are visible from head to toe, standing centrally in the frame. No parts of the body are cropped.\n\nA tall, elegant stranger standing barefoot at the edge of a wooden floating pier on a black-water Amazon river channel at night, during a village June festival: immaculate white linen suit soaked dark at the trouser cuffs, a broad-brimmed white hat pulled low and never removed, pale skin with a faint wet sheen, one hand held behind his back. Behind him strings of coloured festival bulbs over a plank dance floor, blurred dancers, an accordion player; in front of him the river, a pink dolphin's back breaking the surface, water lilies, wet footprints leading from the waterline to his feet, warm humid mist.\n\nCaptured with a 35mm anamorphic lens at f/1.8. Shallow depth of field with a heavy, creamy bokeh background. Environmental portraiture. Dramatic cinematic lighting, sharp focus on the character, hyper-realistic textures of clothing and skin. Shot on 70mm film stock, ultra-wide 21:9 aspect ratio. --ar 21:9",
+    "obraz": "assets/wizualizacje/boto-encantado.jpg"
+  },
+  "natura": {
+    "wyglad_i_aura": "W wodzie: różowawy, bezpłetwy grzbiet, długi dziób, oczy małe i słabo widzące — zwierzę, które orientuje się echem, nie wzrokiem. Na lądzie: wysoki, wyjątkowo urodziwy przybysz w nieskazitelnie białym garniturze, zawsze w kapeluszu z szerokim rondem, którego nie zdejmuje ani w izbie, ani w kościele. Kapelusz nie jest fanaberią: pod nim, na czubku głowy, zostaje otwór oddechowy, którego przemiana nie potrafi zamknąć. Reszta znaków jest drobna i konsekwentna — chłodna skóra w upalną noc, zapach mułu i słodkiej wody, mokre ślady stóp prowadzące od brzegu, jedna dłoń trzymana za plecami, bo nie dokończyła zmiany z płetwy.",
+    "charakter_i_motywacje": "Nie chce zdobyczy — chce udziału. Encante jest według opowieści krainą bez bólu i bez śmierci, a mimo to jej mieszkańcy pchają się na ludzkie festyny czerwcowe, do muzyki, kaszasy i tańca. Boto tańczy lepiej niż ktokolwiek, mówi cicho, nikogo nie zmusza i wychodzi przed świtem. Druga strona tej samej postaci jest ciemniejsza: opowieść bywa wyjaśnieniem ciąży, której nikt nie chce przypisać konkretnemu mężczyźnie — nad Solimões dziecko bez ojca to filho do boto, „syn delfina”, i sprawa się kończy, zanim się zacznie. Byt jest więc naraz uwodzicielem i instytucją: dostarcza wsi wersji zdarzeń, w której nikogo nie trzeba oskarżyć.",
+    "zdolnosci": "Przemiana — rzadka, zawsze nocna i zawsze niepełna. Prócz niej: muzyka i taniec ponad ludzką miarę, umiejętność wciągnięcia człowieka do Encante (porwani wracają odmienieni albo nie wracają wcale) oraz władza nad wodą i pogodą, przez którą jednym rybakom pomaga, a innym plącze sieci. W wersjach z górnej Amazonki delfin sprowadza sen, mgłę i zapominanie: świadkowie nazajutrz nie potrafią opisać twarzy, z którą tańczyli całą noc.",
+    "slabosci_i_metody_pokonania": "Nie zabija się go — demaskuje. Strącenie kapelusza odsłania otwór oddechowy i kończy przedstawienie: zdemaskowany boto ucieka do wody, mimo że wszyscy proszą go, by został. Przeciw urokowi wymienia się w relacjach odzież wywróconą na lewą stronę, żelazo, modlitwę i rytm zagrany przeciw jego rytmowi; z zaklęcia poważniejszego niż jedna noc wyprowadza dopiero pajé — amazoński szaman, który przywołuje z rzeki duszę porwanego. I jedna reguła odwrócona: to nie ludzie chronią się przed delfinem, tylko delfin przed ludźmi. Zakaz krzywdzenia bota, przez pokolenia trzymany strachem, przegrywa dziś z ceną za mięso na przynętę.",
+    "preferencje": "Lubi: czerwcowe festyny, harmonię i bęben, deszczową porę wysokiej wody, gości, którzy nie zadają pytań o kapelusz. Nie lubi: świtu, luster i lamp trzymanych blisko twarzy, żelaza, natrętnych rąk sięgających do ronda oraz łodzi wychodzących nocą po piracatingę."
+  },
+  "dokumentacja": [
+    {
+      "typ": "monografia antropologiczna",
+      "pozycja": "Candace Slater, „Dance of the Dolphin: Transformation and Disenchantment in the Amazonian Imagination”, University of Chicago Press, Chicago 1994 (321 s.) — zbiór i analiza setek opowieści znad Amazonki; rozdziały „The Dolphin as Encantado”, „The Dolphin as Lover” i „The Dolphin as White Man” pokazują delfina naraz jako istotę nadprzyrodzoną, kochanka i figurę obcego przybysza, a całość czyta opowieść jako reakcję mieszkańców na przemiany Amazonii",
+      "url": "https://press.uchicago.edu/ucp/books/book/chicago/D/bo3632345.html"
+    },
+    {
+      "typ": "artykuł etnozoologiczny (recenzowany)",
+      "pozycja": "Mark A. Cravalho, „Shameless Creatures: An Ethnozoology of the Amazon River Dolphin”, „Ethnology” 38 (1999), nr 1, s. 47–58 — terenowa analiza tego, jak wiedza o zwierzęciu i opowieść o encantado przenikają się w codziennym życiu rzecznej wsi: kapelusz kryjący otwór oddechowy, ciąże tłumaczone wizytą delfina i wynikające z tego reguły wstydu oraz milczenia",
+      "url": "https://www.jstor.org/stable/3774086"
+    },
+    {
+      "typ": "raport naukowy (ochrona gatunku)",
+      "pozycja": "Vera M. F. da Silva, Angélica C. G. Nunes, Louzamira F. B. de Araújo, Jacqueline S. Batista, Haydée Cunha, Anthony R. Martin, „The use of Amazonian dolphins (Inia and Sotalia) as bait for the piracatinga fishery” (2018) — dokumentacja praktyki zapoczątkowanej około 2000 roku: mięso i tłuszcz bota jako przynęta na padlinożerną piracatingę, pięcioletnie moratorium rządu Brazylii z 2015 roku, cena zwłok od 50 do 300 reali i utrzymujący się spadek liczebności obu gatunków",
+      "url": "https://faunagua.org/wp-content/uploads/2020/06/The-Use-of-Amazonian-dolphins-Inia-and-Sotalia-as-bait-for-the-piracatinga-fishery.pdf"
+    },
+    {
+      "typ": "reportaż z wywiadem badacza",
+      "pozycja": "„The «dolphin who became man»: will the boto survive the catfish trade?”, Mongabay, 20 lipca 2017 — rozmowa z Fernandem Trujillo, który od lat osiemdziesiątych pracuje w Puerto Nariño: relacja o tym, jak miejscowi mówią o delfinach jako o istotach świętych, podobnych do ludzi, mieszkających w podwodnych miastach, oraz o skali zabijania botów na przynętę",
+      "url": "https://news.mongabay.com/2017/07/the-dolphin-who-became-man-will-the-boto-survive-the-catfish-trade/"
+    }
+  ],
+  "trofea": {
+    "pierwotne": "Biały kapelusz z szerokim rondem, znaleziony o świcie na pomoście; w środku ronda mokra obwódka i jeden krótki, siwy włos, którego nie da się przypisać żadnemu z gości.",
+    "wtorne": "Kartka z targu w Tefé: cennik przynęty na piracatingę, w którym pozycja „boto” została przekreślona i zastąpiona wołowymi wnętrznościami."
+  },
+  "tagi": [
+    "amazonia",
+    "encantado",
+    "przemiana",
+    "podstep",
+    "postac-zwierzeca"
+  ],
+  "powiazania": [
+    {
+      "slug": "selkie-sule-skerry",
+      "opis": "Obie opowieści wiszą na jednej rzeczy, którą trzeba zdjąć albo ukryć: selkie zostaje na lądzie, gdy ktoś zabierze mu skórę, a boto wraca do rzeki, gdy ktoś strąci mu kapelusz."
+    },
+    {
+      "slug": "loup-garou-gevaudan",
+      "opis": "Dwie przemiany o odwrotnym kierunku: człowiek-wilk wychodzi nocą z domu w las, a zaklęty delfin nocą z wody na potańcówkę, i obu kończy się czas dokładnie o świcie."
+    },
+    {
+      "slug": "ben-varrey",
+      "opis": "Oba byty spotyka się na granicy wody i lądu, oba wynagradzają uprzejmość i karzą chciwość, ale syrena z Wyspy Man zostaje w morzu, a boto wchodzi między ludzi w garniturze."
+    },
+    {
+      "slug": "mangkukulam",
+      "opis": "Obie opowieści służą wsi do wytłumaczenia czegoś, co inaczej wskazałoby palcem na sąsiada: tam chorobę bierze na siebie kosz z lalką, tu ojcostwo bierze na siebie delfin."
+    }
+  ],
+  "meta": {
+    "utworzono": "2026-09-05 20:00",
+    "autor": "sesja arena 2026-09-05",
+    "modyfikacje": [
+      {
+        "data": "2026-09-05 20:00",
+        "opis": "Nowa materializacja: boto encantado — zaklęty różowy delfin ze środkowej Amazonii, od podwodnego Encante i białego kapelusza po dzisiejsze zabijanie botów na przynętę do połowu piracatingi. Na podstawie karty „Wishful Merfolk” (ELD #73). Pierwszy byt Kartoteki z Ameryki Południowej."
+      }
+    ]
+  }
+}

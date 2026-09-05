@@ -1,7 +1,7 @@
 {
   "wersja": 3,
-  "buildTime": "2026-09-05T13:19:11.430Z",
-  "liczba": 28,
+  "buildTime": "2026-09-05T13:29:20.825Z",
+  "liczba": 29,
   "liczbaSkitow": 48,
   "kanon": {
     "kategorie": [
@@ -12,7 +12,7 @@
         "min": 1,
         "max": 1,
         "opis": "Jedna tradycja, z której byt pochodzi (PROTOKÓŁ §2: zakaz mieszanek synkretycznych)",
-        "ile": 17
+        "ile": 18
       },
       {
         "id": "typ",
@@ -21,7 +21,7 @@
         "min": 1,
         "max": 1,
         "opis": "Czym byt jest — podstawowy filtr kartoteki",
-        "ile": 19
+        "ile": 20
       },
       {
         "id": "motyw",
@@ -49,6 +49,13 @@
       "opis": "Mitologia Albańczyków (krąg gegijski i toskijski)",
       "wpisy": [
         "drangue-shala"
+      ]
+    },
+    "amazonia": {
+      "kategoria": "kultura",
+      "opis": "Amazonia — tradycja rzecznych społeczności dorzecza (caboclos, korzenie tupi i arawak): Encante pod wodą i zaklęci, którzy z niego wychodzą.",
+      "wpisy": [
+        "boto-encantado"
       ]
     },
     "anglia": {
@@ -245,6 +252,7 @@
       "kategoria": "motyw",
       "opis": "Rozstrzygnięcie fortelem zamiast siłą: byt zwodzi albo sam zostaje zwiedziony pułapką, pytaniem lub obietnicą",
       "wpisy": [
+        "boto-encantado",
         "cormoran-st-michaels-mount",
         "iktomi",
         "mangkukulam"
@@ -255,6 +263,7 @@
       "opis": "Dwa stany tego samego ciała: okrycie, skóra, płótno",
       "wpisy": [
         "ben-varrey",
+        "boto-encantado",
         "egungun",
         "empusa-korynt",
         "iktomi",
@@ -372,6 +381,7 @@
       "opis": "Ciało zwierzęce jako drugi stan tej samej istoty",
       "wpisy": [
         "bazyliszek-warszawski",
+        "boto-encantado",
         "empusa-korynt",
         "glamr-z-thorhallsstadir",
         "iktomi",
@@ -431,6 +441,13 @@
       "opis": "Przodek przywoływany przez wspólnotę i wracający w rytuale",
       "wpisy": [
         "egungun"
+      ]
+    },
+    "encantado": {
+      "kategoria": "typ",
+      "opis": "Encantado: mieszkaniec podwodnej krainy, który przybiera ludzką postać na jedną noc i musi wrócić do wody przed świtem.",
+      "wpisy": [
+        "boto-encantado"
       ]
     },
     "fantom": {
@@ -760,6 +777,7 @@
         "selkie-sule-skerry"
       ],
       "backlinki": [
+        "boto-encantado",
         "nessos",
         "selkie-sule-skerry"
       ],
@@ -776,6 +794,42 @@
         "pod-dachem",
         "porcje"
       ]
+    },
+    {
+      "slug": "boto-encantado",
+      "nazwa": "Boto encantado — różowy delfin, który wychodzi na potańcówkę",
+      "nazwy_alternatywne": [
+        "Boto cor-de-rosa (różowy delfin)",
+        "Encantado („zaklęty”)",
+        "Bufeo colorado (Peru, Boliwia)",
+        "Tonina (dorzecze Orinoko)",
+        "Inia geoffrensis (nazwa gatunkowa, de Blainville 1817)"
+      ],
+      "karta": "Wishful Merfolk",
+      "miejscowosc": "Tefé nad Solimões, u wrót rezerwatu Mamirauá — miasto rzeczne w środkowej Amazonii, gdzie opowieść o zaklętym delfinie i badania nad żywym gatunkiem toczą się na tej samej wodzie; sama opowieść jest rozlana po całym dorzeczu, od Parintins po Puerto Nariño i Iquitos",
+      "kraj": "Brazylia (Amazonas)",
+      "lat": -3.3545,
+      "lon": -64.7108,
+      "tagi": [
+        "amazonia",
+        "encantado",
+        "podstep",
+        "postac-zwierzeca",
+        "przemiana"
+      ],
+      "powiazania": [
+        "ben-varrey",
+        "loup-garou-gevaudan",
+        "mangkukulam",
+        "selkie-sule-skerry"
+      ],
+      "backlinki": [],
+      "obraz": "assets/wizualizacje/boto-encantado.jpg",
+      "trofea": {
+        "pierwotne": "Biały kapelusz z szerokim rondem, znaleziony o świcie na pomoście; w środku ronda mokra obwódka i jeden krótki, siwy włos, którego nie da się przypisać żadnemu z gości.",
+        "wtorne": "Kartka z targu w Tefé: cennik przynęty na piracatingę, w którym pozycja „boto” została przekreślona i zastąpiona wołowymi wnętrznościami."
+      },
+      "skity": []
     },
     {
       "slug": "cormoran-st-michaels-mount",
@@ -1311,7 +1365,9 @@
         "mangkukulam",
         "selkie-sule-skerry"
       ],
-      "backlinki": [],
+      "backlinki": [
+        "boto-encantado"
+      ],
       "obraz": "assets/wizualizacje/loup-garou-gevaudan.jpg",
       "trofea": {
         "pierwotne": "Pęk cierni z kamiennej zagrody na zboczu Margeride; między kolcami tkwi siwy włos, który zmienia zapach po wschodzie słońca.",
@@ -1352,6 +1408,7 @@
         "nessos"
       ],
       "backlinki": [
+        "boto-encantado",
         "loup-garou-gevaudan"
       ],
       "obraz": "assets/wizualizacje/mangkukulam.jpg",
@@ -1632,6 +1689,7 @@
         "balor",
         "barbarossa-kyffhaeuser",
         "ben-varrey",
+        "boto-encantado",
         "egungun",
         "empusa-korynt",
         "kannon-hase",
@@ -2747,6 +2805,22 @@
       "slug": "glamr-z-thorhallsstadir",
       "tytul": "Glámr z Þórhallsstaðir — pasterz, który wrócił i nauczył się mówić",
       "opis": "wpis w kartotece — materializacja karty „Banishment Decree”"
+    },
+    {
+      "data": "2026-09-05 20:00",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "boto-encantado",
+      "tytul": "Boto encantado — różowy delfin, który wychodzi na potańcówkę",
+      "opis": "Nowa materializacja: boto encantado — zaklęty różowy delfin ze środkowej Amazonii, od podwodnego Encante i białego kapelusza po dzisiejsze zabijanie botów na przynętę do połowu piracatingi. Na podstawie karty „Wishful Merfolk” (ELD #73). Pierwszy byt Kartoteki z Ameryki Południowej."
+    },
+    {
+      "data": "2026-09-05 20:00",
+      "typ": "manifestacja",
+      "akcja": "nowa",
+      "slug": "boto-encantado",
+      "tytul": "Boto encantado — różowy delfin, który wychodzi na potańcówkę",
+      "opis": "wpis w kartotece — materializacja karty „Wishful Merfolk”"
     },
     {
       "data": "2026-09-05 19:40",

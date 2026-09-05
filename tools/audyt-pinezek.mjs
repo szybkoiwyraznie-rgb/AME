@@ -83,6 +83,8 @@ export const KRAJE_PL = {
   ghana: 'Ghana',
   benin: 'Benin',
   filipiny: 'Philippines',
+  brazylia: 'Brazil',
+  argentyna: 'Argentina',
   indonezja: 'Indonesia',
   wietnam: 'Vietnam',
 };

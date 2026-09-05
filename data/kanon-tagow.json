@@ -42,6 +42,11 @@
       "opis": "Mitologia Albańczyków (krąg gegijski i toskijski)"
     },
     {
+      "tag": "amazonia",
+      "kategoria": "kultura",
+      "opis": "Amazonia — tradycja rzecznych społeczności dorzecza (caboclos, korzenie tupi i arawak): Encante pod wodą i zaklęci, którzy z niego wychodzą."
+    },
+    {
       "tag": "anglia",
       "kategoria": "kultura",
       "opis": "Folklor angielski, w tym kościelny i nizinny"
@@ -270,6 +275,11 @@
       "tag": "duch-przodkow",
       "kategoria": "typ",
       "opis": "Przodek przywoływany przez wspólnotę i wracający w rytuale"
+    },
+    {
+      "tag": "encantado",
+      "kategoria": "typ",
+      "opis": "Encantado: mieszkaniec podwodnej krainy, który przybiera ludzką postać na jedną noc i musi wrócić do wody przed świtem."
     },
     {
       "tag": "fantom",
