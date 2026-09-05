@@ -277,6 +277,22 @@ export function htmlSplotu(droga, wynik, indeks) {
   return `<div class="splot-raport"><header class="splot-hero"><p class="karta-inspiracja">SPLOT · droga fabularna · ${esc(droga.miejsce ?? '')}</p><h2>${esc(droga.tytul)}</h2><p>${esc(droga.cel)}</p><p class="splot-sklad">Skład: ${sklad}</p></header>${obraz}<section class="splot-wynik"><h3>Rozstrzygnięcie: ${esc(wynik.status)}</h3><p>${esc(wynik.proza)}</p><dl class="splot-zasoby">${Object.entries(wynik.zasoby ?? {}).map(([k, v]) => `<div><dt>${esc(k)}</dt><dd>${v}</dd></div>`).join('')}</dl></section>${htmlNaporuSwiata(wynik.swiat)}<section><h3>Dziennik drogi</h3>${wiersze}</section>${htmlEchaDrogi(wynik.echo, indeks)}</div>`;
 }
 
+/** C6: PRÓG — tablica kluczy kartoteki (spotkanie bez walki). */
+export function htmlProgow(wiersze, wynik = null) {
+  const znak = (v) => `${v > 0 ? '+' : ''}${v}`;
+  const karty = (wiersze ?? [])
+    .map((w) => {
+      const alt = (w.alternatywy ?? []).map((k) => `<span class="chip maly">${esc(k.nazwa)}</span>`).join(' ');
+      const proc = Math.round(w.prawdopodobienstwo * 100);
+      return `<article class="prog-wiersz" data-slug="${esc(w.slug)}"><header><button class="chip link" data-slug="${esc(w.slug)}">${esc(w.nazwa)}</button><strong class="prog-klucz">${esc(w.klucz.nazwa)}</strong></header><p class="maly">${esc(w.klucz.gest)}</p><div class="prog-wykres"><span class="prog-szansa" style="width:${proc}%">${proc}%</span></div><small>opór ${w.opor} · świat ${znak(w.pogoda)} · archetyp ${esc(w.archetyp)}${alt ? ` · inne klucze: ${alt}` : ''}</small></article>`;
+    })
+    .join('');
+  const raport = wynik
+    ? `<section class="prog-raport ${esc(wynik.status)}"><h3>${esc(wynik.nazwa)} — ${wynik.status === 'przejscie' ? 'próg puszcza' : wynik.status === 'cena' ? 'przejście za cenę' : 'odmowa'}</h3><p>${esc(wynik.proza)}</p><div class="prog-wykres"><span class="prog-szansa" style="width:${Math.round(wynik.szansa.prawdopodobienstwo * 100)}%">szansa ${Math.round(wynik.szansa.prawdopodobienstwo * 100)}%</span><span class="prog-los">los ${(wynik.wartoscLosowa * 100).toFixed(1)}%</span></div><small>klucz: ${esc(wynik.klucz.nazwa)} · opór ${wynik.szansa.opor} · staranie ${wynik.szansa.wysilek} · świat ${znak(wynik.pogoda.premia)}</small></section>`
+    : '';
+  return `<div class="prog-tablica"><p class="naprowadzenie">Nie każdy próg przechodzi się siłą. Kartoteka zna gesty, które rozbrajają byt bez walki: zwierciadło, odpowiedź, hymn, opłatę, ogień, imię albo zamknięte drzwi. Szansa jest wyliczona z profilu bytu i stanu Kroniki — losowy jest dopiero wynik próby.</p><p class="prog-akcje"><button id="prog-losuj" class="przycisk" type="button">🔑 spróbuj progu</button></p>${raport}${karty}</div>`;
+}
+
 export function htmlWpisu(w, indeks, kronika = null) {
   const rekord = indeks.manifestacje.find((m) => m.slug === w.slug) ?? {};
   const alt = (w.nazwy_alternatywne ?? []).length ? `<p class="alt">znany też jako: ${esc(w.nazwy_alternatywne.join(', '))}</p>` : '';

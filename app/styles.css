@@ -1082,3 +1082,17 @@ div.warstwa.otwarta { display: block; animation: warstwa-wnika 0.2s ease-out; }
 .splot-swiat-wiersz.minus strong { color: var(--akcent); }
 .splot-echo .splot-watek { margin: 6px 0; }
 .splot-echo code { font-size: 13px; }
+
+/* PRÓG (C6): tablica kluczy i raport spotkania bez walki */
+.prog-tablica .prog-akcje { margin: 12px 0 18px; }
+.prog-wiersz { margin: 12px 0; padding: 12px; border: 1px solid var(--obramowanie); border-radius: 8px; }
+.prog-wiersz header { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.prog-klucz { text-transform: uppercase; letter-spacing: 0.08em; font-size: 12px; color: var(--akcent-2); }
+.prog-wykres { position: relative; height: 22px; margin: 8px 0; background: color-mix(in srgb, var(--tekst-dim) 18%, transparent); border-radius: 4px; overflow: hidden; }
+.prog-szansa { display: block; height: 100%; background: var(--akcent); color: var(--akcent-tekst); padding: 2px 7px; font-size: 12px; box-sizing: border-box; }
+.prog-los { position: absolute; top: 2px; right: 7px; font-size: 12px; color: var(--tekst); }
+.prog-wiersz small { color: var(--tekst-dim); }
+.prog-raport { margin: 0 0 18px; padding: 14px; border: 1px solid var(--ramka); border-radius: 10px; background: var(--tlo-2); }
+.prog-raport.przejscie { border-left: 4px solid #6e9e70; }
+.prog-raport.cena { border-left: 4px solid var(--akcent); }
+.prog-raport.odmowa { border-left: 4px solid var(--akcent-2); }

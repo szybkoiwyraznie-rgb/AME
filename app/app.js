@@ -1,8 +1,8 @@
 /**
  * app/app.js — bootstrap AME: ładuje indeks, mapę świata, spina UI.
  */
-import { stworzMape, PROGI_WARSTW, PODKLADY_ONLINE } from './map.js?v=c6-6';
-import { zaladujIndeks, zaladujWpis, zaladujSkit, dopasowania, wylosujSlug, slugDnia } from './data.js?v=c6-6';
+import { stworzMape, PROGI_WARSTW, PODKLADY_ONLINE } from './map.js?v=c6-7';
+import { zaladujIndeks, zaladujWpis, zaladujSkit, dopasowania, wylosujSlug, slugDnia } from './data.js?v=c6-7';
 import {
   htmlWpisu,
   htmlWarstwyWpisu,
@@ -26,11 +26,14 @@ import {
   tekstDoLektora,
   htmlTrofeow,
   htmlSplotu,
+  htmlProgow,
   paryRozmowySkitu,
   zB64utf8,
-} from './ui.js?v=c6-6';
-import { rozegrajDroge } from './splot.js?v=c6-6';
-import { SZEROKOSC, WYSOKOSC, odwroc, projektuj, serializujWidok, parsujWidokMapy } from './geo.js?v=c6-6';
+} from './ui.js?v=c6-7';
+import { rozegrajDroge } from './splot.js?v=c6-7';
+import { tablicaProgow, kluczeDlaBytu, rozegrajProg } from './prog.js?v=c6-7';
+import { profileKartoteki } from './arena.js?v=c6-7';
+import { SZEROKOSC, WYSOKOSC, odwroc, projektuj, serializujWidok, parsujWidokMapy } from './geo.js?v=c6-7';
 
 const $ = (sel) => document.querySelector(sel);
 
@@ -343,7 +346,7 @@ function zamknijWarstwe() {
   const warstwa = $('#warstwa');
   warstwa.classList.remove('otwarta');
   warstwa.innerHTML = '';
-  for (const id of ['#przycisk-skity', '#przycisk-nowosci', '#przycisk-trofea', '#przycisk-splot']) warstwaTrybPrzycisku(id, false);
+  for (const id of ['#przycisk-skity', '#przycisk-nowosci', '#przycisk-trofea', '#przycisk-splot', '#przycisk-prog']) warstwaTrybPrzycisku(id, false);
   if (stan.wpis) history.replaceState(null, '', `#${stan.wpis.slug}`);
   else if (location.hash) history.replaceState(null, '', location.pathname + location.search);
 }
@@ -439,6 +442,35 @@ async function otworzSplot() {
     warstwa.innerHTML = szkicWarstwy('SPLOT', `<p class="blad">Nie udało się rozstrzygnąć drogi: ${esc(err.message)}</p>`);
   }
   if (location.hash !== '#splot') history.replaceState(null, '', '#splot');
+}
+
+/** C6: PRÓG — tablica kluczy kartoteki i pojedyncza próba spotkania bez walki. */
+async function otworzProg() {
+  if (stan.warstwa?.tryb === 'prog') return zamknijWarstwe();
+  stan.warstwa = { tryb: 'prog' };
+  const warstwa = $('#warstwa');
+  warstwa.classList.add('otwarta');
+  warstwa.innerHTML = szkicWarstwy('PRÓG — spotkanie bez walki', '<p class="ladowanie">Liczenie kluczy…</p>');
+  warstwaTrybPrzycisku('#przycisk-prog', true);
+  for (const id of ['#przycisk-skity', '#przycisk-nowosci', '#przycisk-trofea', '#przycisk-kronika', '#przycisk-splot']) warstwaTrybPrzycisku(id, false);
+  let kronika = null;
+  try { kronika = await zaladujKronike(); } catch { kronika = null; }
+  const kanon = stan.indeks.kanon ?? null;
+  const rysuj = (wynik = null) => {
+    const wiersze = tablicaProgow(stan.indeks.manifestacje, { kanon, kronika, staranie: 1 });
+    warstwa.innerHTML = szkicWarstwy('PRÓG — spotkanie bez walki', htmlProgow(wiersze, wynik), { kopia: 'prog' });
+    warstwa.scrollTop = 0;
+    const przycisk = warstwa.querySelector('#prog-losuj');
+    if (przycisk) przycisk.addEventListener('click', () => {
+      const los = () => { const b = new Uint32Array(1); globalThis.crypto?.getRandomValues?.(b); return (b[0] ?? 0) / 4294967296; };
+      const kandydaci = wiersze;
+      const wybor = kandydaci[Math.floor(los() * kandydaci.length)] ?? kandydaci[0];
+      const profil = profileKartoteki(stan.indeks.manifestacje, kanon).get(wybor.slug);
+      rysuj(rozegrajProg({ profil, klucz: kluczeDlaBytu(profil)[0], staranie: 1, kronika, los }));
+    });
+  };
+  rysuj();
+  if (location.hash !== '#prog') history.replaceState(null, '', '#prog');
 }
 
 /** Feed Kroniki (U3): wczytywane raz, karty epok z ramą narracji i filtra bytów (U1).
@@ -715,6 +747,7 @@ function podepnijZdarzenia() {
   $('#przycisk-trofea').addEventListener('click', otworzTrofea);
   $('#przycisk-kronika').addEventListener('click', () => otworzKronike(null, { przelacz: true }));
   $('#przycisk-splot').addEventListener('click', otworzSplot);
+  $('#przycisk-prog').addEventListener('click', otworzProg);
   $('#przycisk-warstwy').addEventListener('click', przelaczPanelWarstw);
   for (const klucz of Object.keys(WARSTWY_MAPY)) {
     const el = document.querySelector(`#warstwa-${klucz}`);
@@ -797,6 +830,7 @@ function podepnijZdarzenia() {
     if (fragment === 'trofea') return stan.warstwa?.tryb !== 'trofea' ? otworzTrofea() : undefined;
     if (fragment === 'kroniki') return stan.warstwa?.tryb !== 'kroniki' ? otworzKronike() : undefined;
     if (fragment === 'splot') return stan.warstwa?.tryb !== 'splot' ? otworzSplot() : undefined;
+    if (fragment === 'prog') return stan.warstwa?.tryb !== 'prog' ? otworzProg() : undefined;
     if (fragment.startsWith('kronika:')) {
       const slug = fragment.slice(8);
       if (slug) window.location.href = `docs/kronika-${slug}.html#kronika:${slug}`;
@@ -917,6 +951,7 @@ async function start() {
   else if (fragment === 'trofea') otworzTrofea();
   else if (fragment === 'kroniki') otworzKronike();
   else if (fragment === 'splot') otworzSplot();
+  else if (fragment === 'prog') otworzProg();
   else if (fragment.startsWith('kronika:')) {
     const slug = fragment.slice(8);
     if (slug) location.href = `docs/kronika-${slug}.html#kronika:${slug}`;
