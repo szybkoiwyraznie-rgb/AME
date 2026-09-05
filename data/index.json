@@ -1,6 +1,6 @@
 {
   "wersja": 3,
-  "buildTime": "2026-09-05T13:15:47.924Z",
+  "buildTime": "2026-09-05T13:19:11.430Z",
   "liczba": 28,
   "liczbaSkitow": 48,
   "kanon": {
@@ -2683,6 +2683,19 @@
     }
   ],
   "drogi": [
+    {
+      "slug": "kosz-ktorego-nie-otwierano",
+      "tytul": "Kosz, którego nie otwierano",
+      "cel": "Zdjąć z jednej kobiety w Nagcarlan nazwę „mangkukulam”, zanim wieś zdąży ją potwierdzić.",
+      "miejsce": "Nagcarlan, Laguna, Filipiny",
+      "sklad": [
+        "mangkukulam",
+        "iktomi",
+        "morowa-panna"
+      ],
+      "wezly": 3,
+      "plik": "data/splot/droga-kosz-ktorego-nie-otwierano.json"
+    },
     {
       "slug": "ostatni-slad-gevaudan",
       "tytul": "Ostatni ślad w Gévaudan",
