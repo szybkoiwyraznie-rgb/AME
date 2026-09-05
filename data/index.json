@@ -1,8 +1,8 @@
 {
   "wersja": 3,
-  "buildTime": "2026-09-05T10:21:55.414Z",
+  "buildTime": "2026-09-05T10:22:48.053Z",
   "liczba": 22,
-  "liczbaSkitow": 42,
+  "liczbaSkitow": 43,
   "kanon": {
     "kategorie": [
       {
@@ -1057,7 +1057,9 @@
         "pierwotne": "Pęk cierni z kamiennej zagrody na zboczu Margeride; między kolcami tkwi siwy włos, który zmienia zapach po wschodzie słońca.",
         "wtorne": "Złamany dzwonek pasterski z Gévaudan — znaleziony przy ścieżce, na której nocny trop urywa się dokładnie przed pierwszym światłem."
       },
-      "skity": []
+      "skity": [
+        "zaslona-i-siersc"
+      ]
     },
     {
       "slug": "morowa-panna",
@@ -1136,7 +1138,8 @@
         "wtorne": "Gliniana miseczka-lampa z Nocy Lamp, z warstwą soli i spłowiałym knotem — wciąż ciepła, choć od święta minęły wieki; dowód, że ktoś dotrwał z płomieniem do świtu"
       },
       "skity": [
-        "jedno-pytanie"
+        "jedno-pytanie",
+        "zaslona-i-siersc"
       ]
     },
     {
@@ -1385,7 +1388,8 @@
         "najgorsze-odpowiedzi",
         "pierwsza-zmiana",
         "poslaniec-i-straznicy",
-        "zagadka-ze-spizu"
+        "zagadka-ze-spizu",
+        "zaslona-i-siersc"
       ]
     },
     {
@@ -2175,6 +2179,23 @@
       "data": "2026-08-30 21:47"
     },
     {
+      "slug": "zaslona-i-siersc",
+      "tytul": "ZASŁONA I SIERŚĆ",
+      "temat": "co zostaje z istoty, gdy wszyscy próbują ją rozpoznać po jednym znaku",
+      "uczestnicy": [
+        "loup-garou-gevaudan",
+        "neith-z-sais",
+        "sfinks-teby"
+      ],
+      "imiona": [
+        "Sfinks",
+        "Loup-garou",
+        "Neith"
+      ],
+      "slow": 185,
+      "data": "2026-09-05 13:15"
+    },
+    {
       "slug": "znak-burzy",
       "tytul": "ZNAK BURZY",
       "temat": "kto ma prawo wrócić, gdy nadejdzie grzmot",
@@ -2208,6 +2229,30 @@
     }
   ],
   "aktualizacje": [
+    {
+      "data": "2026-09-05 13:15",
+      "typ": "skit",
+      "akcja": "zmiana",
+      "slug": "zaslona-i-siersc",
+      "tytul": "ZASŁONA I SIERŚĆ",
+      "opis": "Rozmowa Sfinksa, loup-garou i Neith o rozpoznaniu bytu po pojedynczym znaku oraz o tym, czego znak nie odsłania."
+    },
+    {
+      "data": "2026-09-05 13:15",
+      "typ": "skit",
+      "akcja": "nowy",
+      "slug": "zaslona-i-siersc",
+      "tytul": "ZASŁONA I SIERŚĆ",
+      "opis": "SKIT — skład: Sfinks, Loup-garou, Neith"
+    },
+    {
+      "data": "2026-09-05 13:00",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "sfinks-teby",
+      "tytul": "Sfinks — strażniczka Tebańskich Wrót",
+      "opis": "Doprecyzowano lokalizację Sfinksa do góry Fikion za Tebami oraz rozdzielono wariant córki Lajosa od genealogii Echidny i Tyfona na podstawie zestawienia źródeł antycznych."
+    },
     {
       "data": "2026-09-05 12:45",
       "typ": "manifestacja",

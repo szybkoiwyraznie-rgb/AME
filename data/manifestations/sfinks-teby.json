@@ -35,14 +35,9 @@
   },
   "dokumentacja": [
     {
-      "typ": "kompendium mitologiczne",
-      "pozycja": "Theoi Project, „Sphinx — Woman-Headed Lion of Greek Mythology” — klasyczne cytaty: potomstwo Orthusa i Chimaery oraz Tyfona i Echidny, kobieca głowa i pierś, lwie ciało, orle skrzydła, wysłanie przez Herę na Teby, zagadka i upadek z urwiska po odpowiedzi Edypa",
-      "url": "https://www.theoi.com/Ther/Sphinx.html"
-    },
-    {
       "typ": "encyklopedia mitologiczna",
-      "pozycja": "Mythopedia, „Sphinx” — przegląd: hybryda kobiety i lwa, góra Fikion na zachód od Teb, pochodzenie z Etiopii, zagadka „co ma jeden głos, a staje się czworonożne, dwunożne i trójnożne”, śmierć przez skok z góry",
-      "url": "https://mythopedia.com/topics/sphinx/"
+      "pozycja": "Theoi, „Sphinx”: zestawienie wariantów starożytnych — Pausaniasz umieszcza górę Sfinks za Tebami i przekazuje wersję o naturalnej córce Lajosa; Apollodoros zachowuje opowieść o karze dla Teb i zagadce, której nauczyły Sfinksa Muzy. Doprecyzowuje to miejsce manifestacji jako górę Fikion, a nie centrum Aten.",
+      "url": "https://www.theoi.com/Ther/Sphinx.html"
     },
     {
       "typ": "artykuł edukacyjny",
@@ -117,6 +112,10 @@
       {
         "data": "2026-09-04 16:42",
         "opis": "Pogłębienie z źródeł pierwotnych: Pseudo-Apollodoros 3.5.8 (wyrocznia-warunek wybawienia, pożeranie po jednym radnym, ostatnia ofiara Hajmon, rzut z akropolu, dokładne brzmienie zagadki w przekładzie Frazera) i Hezjod, „Teogonia” w. 326 (rodowód: ojcem Orthos, nie Tyfon; Sfinks siostrą lwa nemejskiego)."
+      },
+      {
+        "data": "2026-09-05 13:00",
+        "opis": "Doprecyzowano lokalizację Sfinksa do góry Fikion za Tebami oraz rozdzielono wariant córki Lajosa od genealogii Echidny i Tyfona na podstawie zestawienia źródeł antycznych."
       }
     ]
   }

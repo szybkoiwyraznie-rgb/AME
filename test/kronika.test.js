@@ -149,7 +149,7 @@ test('Tom I: epoki przechodzą sekwencyjnie i oś zamyka się na 100', async () 
   assert.equal(e5.stanPo.os.mit, 30);
   assert.equal(e5.stanPo.os.racjonalizacja, 70);
   assert.equal(e5.stanPo.zasieg.find((z) => z.slug === 'lincoln-imp').wielkosc, 0.375);
-  assert.equal(e5.stanPo.zasieg.find((z) => z.slug === 'sfinks-teby').wielkosc, 0.45);
+  assert.equal(e5.stanPo.zasieg.find((z) => z.slug === 'sfinks-teby').wielkosc, 0.47);
   assert.equal(e5.stanPo.zasieg.find((z) => z.slug === 'talos-kreta').wielkosc, 0.415);
 
   assert.deepEqual(
@@ -653,7 +653,7 @@ test('agendaTomu: otwarte wątki, słabe paliwo i ciche kultury', async () => {
   assert.ok(Array.isArray(a.watki) && a.watki.length > 0);
   assert.ok(a.watki.every((w) => w.id && Array.isArray(w.byty)));
   assert.ok(Array.isArray(a.slabi));
-  assert.equal(a.ostatnia, 'epoka-8');
+  assert.equal(a.ostatnia, 'epoka-9');
 });
 
 test('S1: raport Tomu zawiera miniatury epok i rozstaje silnika', async () => {

@@ -60,7 +60,7 @@
       },
       {
         "slug": "loup-garou-gevaudan",
-        "wielkosc": 0.18
+        "wielkosc": 0.2
       },
       {
         "slug": "morowa-panna",
@@ -68,7 +68,7 @@
       },
       {
         "slug": "neith-z-sais",
-        "wielkosc": 0.19
+        "wielkosc": 0.21
       },
       {
         "slug": "nessos",
@@ -88,7 +88,7 @@
       },
       {
         "slug": "sfinks-teby",
-        "wielkosc": 0.46
+        "wielkosc": 0.48
       },
       {
         "slug": "syama-i-sarvara",
@@ -163,7 +163,7 @@
       {
         "kultura": "francja",
         "kult": "loup-garou-gevaudan",
-        "wielkosc": 0.18
+        "wielkosc": 0.2
       },
       {
         "kultura": "polska",
@@ -173,7 +173,7 @@
       {
         "kultura": "egipt",
         "kult": "neith-z-sais",
-        "wielkosc": 0.19
+        "wielkosc": 0.21
       },
       {
         "kultura": "grecja",
@@ -198,7 +198,7 @@
       {
         "kultura": "grecja",
         "kult": "sfinks-teby",
-        "wielkosc": 0.46
+        "wielkosc": 0.48
       },
       {
         "kultura": "indie",
