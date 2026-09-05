@@ -1,8 +1,8 @@
 {
   "wersja": 3,
-  "buildTime": "2026-09-05T13:32:37.211Z",
+  "buildTime": "2026-09-05T13:33:34.395Z",
   "liczba": 29,
-  "liczbaSkitow": 48,
+  "liczbaSkitow": 49,
   "kanon": {
     "kategorie": [
       {
@@ -831,7 +831,9 @@
         "pierwotne": "Biały kapelusz z szerokim rondem, znaleziony o świcie na pomoście; w środku ronda mokra obwódka i jeden krótki, siwy włos, którego nie da się przypisać żadnemu z gości.",
         "wtorne": "Kartka z targu w Tefé: cennik przynęty na piracatingę, w którym pozycja „boto” została przekreślona i zastąpiona wołowymi wnętrznościami."
       },
-      "skity": []
+      "skity": [
+        "co-sie-nosi"
+      ]
     },
     {
       "slug": "cormoran-st-michaels-mount",
@@ -1653,6 +1655,7 @@
       },
       "skity": [
         "biuro-reklamacji",
+        "co-sie-nosi",
         "pierwsza-zmiana",
         "pierwszy",
         "pracownicy-progu",
@@ -1706,6 +1709,7 @@
         "wtorne": "drugi mieszciec: srebrna moneta karmicielna (nouris-fee), którą na Orkadach kładzie się na progu, spłacając dług zaciągnięty u morza"
       },
       "skity": [
+        "co-sie-nosi",
         "dwie-skory",
         "imie-na-progu",
         "kalendarz-powrotow",
@@ -1953,6 +1957,23 @@
       ],
       "slow": 259,
       "data": "2026-08-28 23:59"
+    },
+    {
+      "slug": "co-sie-nosi",
+      "tytul": "CO SIĘ NOSI",
+      "temat": "rzecz, bez której nie da się zostać: focza skóra, biały kapelusz i tarcza pierwszego szeregu",
+      "uczestnicy": [
+        "boto-encantado",
+        "protostates",
+        "selkie-sule-skerry"
+      ],
+      "imiona": [
+        "Boto encantado",
+        "Protostates",
+        "Selkie z Sule Skerry"
+      ],
+      "slow": 279,
+      "data": "2026-09-05 20:45"
     },
     {
       "slug": "co-sie-podaje",
@@ -2808,6 +2829,22 @@
       "slug": "glamr-z-thorhallsstadir",
       "tytul": "Glámr z Þórhallsstaðir — pasterz, który wrócił i nauczył się mówić",
       "opis": "wpis w kartotece — materializacja karty „Banishment Decree”"
+    },
+    {
+      "data": "2026-09-05 20:45",
+      "typ": "skit",
+      "akcja": "zmiana",
+      "slug": "co-sie-nosi",
+      "tytul": "CO SIĘ NOSI",
+      "opis": "Nowy dialog: trzy byty porównują przedmiot, od którego zależy ich obecność wśród ludzi, i to, czego wspólnota nie pyta o cenę."
+    },
+    {
+      "data": "2026-09-05 20:45",
+      "typ": "skit",
+      "akcja": "nowy",
+      "slug": "co-sie-nosi",
+      "tytul": "CO SIĘ NOSI",
+      "opis": "SKIT — skład: Boto encantado, Protostates, Selkie z Sule Skerry"
     },
     {
       "data": "2026-09-05 20:30",

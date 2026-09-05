@@ -1,0 +1,30 @@
+{
+  "slug": "co-sie-nosi",
+  "tytul": "CO SIĘ NOSI",
+  "temat": "rzecz, bez której nie da się zostać: focza skóra, biały kapelusz i tarcza pierwszego szeregu",
+  "uczestnicy": [
+    {
+      "imie": "Boto encantado",
+      "slug": "boto-encantado"
+    },
+    {
+      "imie": "Protostates",
+      "slug": "protostates"
+    },
+    {
+      "imie": "Selkie z Sule Skerry",
+      "slug": "selkie-sule-skerry"
+    }
+  ],
+  "tekst": "**Boto encantado:** [Wchodzi na pomost boso, w białym garniturze; nie zdejmuje kapelusza, jedną dłoń trzyma za plecami.] Ładne miejsce na rozmowę. Wąskie. Nie lubię wąskich.\n\n**Protostates:** [Stoi w przesmyku, tarcza z przodu; nie odwraca głowy.] Wąskie jest uczciwe. Tu widać, kto zostaje.\n\n**Selkie z Sule Skerry:** [Składa mokrą skórę na kamieniu i przysiada obok niej.] Obaj mówicie o zostawaniu, a każdy z nas nosi coś, bez czego zostać nie może. Ja skórę. Ty kapelusz. Ty tarczę.\n\n**Boto encantado:** Kapelusz to nie ozdoba. Pod nim jest dziura, przez którą oddycham. Zdejmij mi go przy ludziach, a nie skończę tańca.\n\n**Selkie z Sule Skerry:** Mnie wystarczy, żeby ktoś schował skórę do skrzyni. Wtedy zostaję na lądzie tak długo, jak długo trwa cudza łaska.\n\n**Protostates:** Tarczy nikt mi nie zabierze. Ją się nosi dla tego, kto stoi obok, nie dla siebie.\n\n**Boto encantado:** [Śmieje się cicho.] I dlatego jesteś jedynym z nas, którego nikt nigdy nie zaprosił do tańca.\n\n**Protostates:** Zapraszali. Nie schodzę z linii.\n\n**Selkie z Sule Skerry:** A ja schodzę co roku, na jeden dzień. To nie jest słabość. To umowa: przychodzę, płacę, wracam.\n\n**Boto encantado:** Ja nie płacę. Zostawiam dziecko i wieś ma winnego, którego nie trzeba nazywać po imieniu. [Poprawia rondo.] Powiedzcie sami, czy to gorsze niż wskazać palcem sąsiada.\n\n**Selkie z Sule Skerry:** Gorsze jest to, że potem nikt nie pyta matki, co ona sama pamięta z tej nocy.\n\n**Protostates:** [Po dłuższej chwili, ciszej.] U mnie też nie pytają. Mówią: stał pierwszy. Nikt nie pyta, czy chciałem.\n\n**Boto encantado:** Więc trzymaj tarczę. Ja trzymam kapelusz. [Robi krok ku wodzie.] Świta.\n\n**Selkie z Sule Skerry:** [Podnosi skórę.] Świta wszystkim naraz. To jedyna rzecz, której nie da się zdjąć.",
+  "meta": {
+    "utworzono": "2026-09-05 20:45",
+    "autor": "sesja arena 2026-09-05",
+    "modyfikacje": [
+      {
+        "data": "2026-09-05 20:45",
+        "opis": "Nowy dialog: trzy byty porównują przedmiot, od którego zależy ich obecność wśród ludzi, i to, czego wspólnota nie pyta o cenę."
+      }
+    ]
+  }
+}
