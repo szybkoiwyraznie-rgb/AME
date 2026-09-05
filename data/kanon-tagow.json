@@ -42,6 +42,11 @@
       "opis": "Religia i kultura Jorubów (Nigeria, Benin, Togo)"
     },
     {
+      "tag": "francja",
+      "kategoria": "kultura",
+      "opis": "Folklor francuski: podania o loup-garou i przemianie człowieka w wilka"
+    },
+    {
       "tag": "anglia",
       "kategoria": "kultura",
       "opis": "Folklor angielski, w tym kościelny i nizinny"
@@ -85,6 +90,11 @@
       "tag": "olbrzym",
       "kategoria": "typ",
       "opis": "Byt o skali oblężniczej, z bronią wymagającą obsługi"
+    },
+    {
+      "tag": "wilkolak",
+      "kategoria": "typ",
+      "opis": "Człowiek lub byt przybierający postać wilka; loup-garou i pokrewne tradycje przemiany"
     },
     {
       "tag": "selkie",

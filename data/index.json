@@ -1,7 +1,7 @@
 {
   "wersja": 3,
-  "buildTime": "2026-09-04T19:50:15.960Z",
-  "liczba": 21,
+  "buildTime": "2026-09-05T10:15:40.030Z",
+  "liczba": 22,
   "liczbaSkitow": 42,
   "kanon": {
     "kategorie": [
@@ -12,7 +12,7 @@
         "min": 1,
         "max": 1,
         "opis": "Jedna tradycja, z której byt pochodzi (PROTOKÓŁ §2: zakaz mieszanek synkretycznych)",
-        "ile": 12
+        "ile": 13
       },
       {
         "id": "typ",
@@ -21,7 +21,7 @@
         "min": 1,
         "max": 1,
         "opis": "Czym byt jest — podstawowy filtr kartoteki",
-        "ile": 14
+        "ile": 15
       },
       {
         "id": "motyw",
@@ -49,6 +49,13 @@
       "opis": "Religia i kultura Jorubów (Nigeria, Benin, Togo)",
       "wpisy": [
         "egungun"
+      ]
+    },
+    "francja": {
+      "kategoria": "kultura",
+      "opis": "Folklor francuski: podania o loup-garou i przemianie człowieka w wilka",
+      "wpisy": [
+        "loup-garou-gevaudan"
       ]
     },
     "anglia": {
@@ -114,6 +121,13 @@
         "balor"
       ]
     },
+    "wilkolak": {
+      "kategoria": "typ",
+      "opis": "Człowiek lub byt przybierający postać wilka; loup-garou i pokrewne tradycje przemiany",
+      "wpisy": [
+        "loup-garou-gevaudan"
+      ]
+    },
     "selkie": {
       "kategoria": "typ",
       "opis": "Istota zmieniająca formę przez skórę, pomiędzy wodą a lądem",
@@ -153,6 +167,7 @@
         "indra",
         "knecht-z-koptos",
         "lincoln-imp",
+        "loup-garou-gevaudan",
         "morowa-panna",
         "pandora",
         "selkie-sule-skerry",
@@ -177,6 +192,7 @@
         "egungun",
         "empusa-korynt",
         "knecht-z-koptos",
+        "loup-garou-gevaudan",
         "selkie-sule-skerry"
       ]
     },
@@ -216,6 +232,7 @@
       "opis": "Ciało zwierzęce jako drugi stan tej samej istoty",
       "wpisy": [
         "empusa-korynt",
+        "loup-garou-gevaudan",
         "nessos",
         "selkie-sule-skerry",
         "syama-i-sarvara"
@@ -559,7 +576,8 @@
         "balor",
         "drangue-shala",
         "egungun",
-        "indra"
+        "indra",
+        "loup-garou-gevaudan"
       ],
       "obraz": "assets/wizualizacje/barbarossa-kyffhaeuser.jpg",
       "trofea": {
@@ -754,6 +772,7 @@
       "backlinki": [
         "egungun",
         "kentaur-pelion",
+        "loup-garou-gevaudan",
         "morowa-panna",
         "nessos",
         "selkie-sule-skerry",
@@ -1006,6 +1025,39 @@
         "rzeczy-znalezione",
         "zagadka-ze-spizu"
       ]
+    },
+    {
+      "slug": "loup-garou-gevaudan",
+      "nazwa": "Loup-garou z Gévaudan",
+      "nazwy_alternatywne": [
+        "Loup-garou",
+        "Loup-garou du Gévaudan",
+        "Wilkołak francuski"
+      ],
+      "karta": "Thornhide Wolves",
+      "miejscowosc": "Gévaudan, dawna prowincja Langwedocji — górskie pastwiska i lasy dzisiejszej Lozère, wokół Margeride",
+      "kraj": "Francja",
+      "lat": 44.72,
+      "lon": 3.5,
+      "tagi": [
+        "francja",
+        "postac-zwierzeca",
+        "przemiana",
+        "warunek",
+        "wilkolak"
+      ],
+      "powiazania": [
+        "barbarossa-kyffhaeuser",
+        "empusa-korynt",
+        "selkie-sule-skerry"
+      ],
+      "backlinki": [],
+      "obraz": "assets/wizualizacje/loup-garou-gevaudan.jpg",
+      "trofea": {
+        "pierwotne": "Pęk cierni z kamiennej zagrody na zboczu Margeride; między kolcami tkwi siwy włos, który zmienia zapach po wschodzie słońca.",
+        "wtorne": "Złamany dzwonek pasterski z Gévaudan — znaleziony przy ścieżce, na której nocny trop urywa się dokładnie przed pierwszym światłem."
+      },
+      "skity": []
     },
     {
       "slug": "morowa-panna",
@@ -1264,6 +1316,7 @@
         "empusa-korynt",
         "kannon-hase",
         "kentaur-pelion",
+        "loup-garou-gevaudan",
         "nessos"
       ],
       "obraz": "assets/wizualizacje/selkie-sule-skerry.jpg",
@@ -2155,6 +2208,22 @@
     }
   ],
   "aktualizacje": [
+    {
+      "data": "2026-09-05 00:30",
+      "typ": "manifestacja",
+      "akcja": "zmiana",
+      "slug": "loup-garou-gevaudan",
+      "tytul": "Loup-garou z Gévaudan",
+      "opis": "Opowieść o loup-garou z Gévaudan, związana z kartą „Thornhide Wolves”, rozróżnia folklor człowieka-wilka od historycznej Bestii z Gévaudan."
+    },
+    {
+      "data": "2026-09-05 00:30",
+      "typ": "manifestacja",
+      "akcja": "nowa",
+      "slug": "loup-garou-gevaudan",
+      "tytul": "Loup-garou z Gévaudan",
+      "opis": "wpis w kartotece — materializacja karty „Thornhide Wolves”"
+    },
     {
       "data": "2026-09-04 20:05",
       "typ": "skit",
