@@ -327,3 +327,23 @@ z `app/ui.js`. Testy parzystości: wywołaj renderer po
 w `test/ui.test.js`). Przy debugowaniu „pustej strony" w warstwie
 najpierw sprawdź konsolę przeglądarki — wyjątek w builderze treści
 po `.classList.add('otwarta')` daje dokładnie ten obraz.
+
+## L23 (2026-09-05, AME) — test sprzężenia nie może wisieć na zaokrągleniu
+
+**Objaw:** dodanie jednego SKIT-u (C3 obrotu 5) wywróciło test
+„rozegrajDroge wpina stan świata i zwraca ślad dla Kroniki"
+(`test/splot.test.js`). Nic w kodzie SPLOTU się nie zmieniło.
+**Przyczyna:** test porównywał listy `prawdopodobienstwo` dla przebiegu
+z Kroniką i bez niej. `szansaWezla` zaokrągla wynik do pełnych procent
+(`Math.round(...) / 100`), a `naporSwiata` dla drogi
+`ostatni-slad-gevaudan` oscyluje wokół zera (−1.2 → −0.8). Przy premii
+mniejszej niż połowa punktu procentowego obie listy wychodzą identyczne,
+choć mechanizm działa poprawnie — test mierzył przypadkową
+konfigurację danych, nie kod.
+**Reguła:** testy sprzężeń między warstwami (Kronika ↔ SPLOT, oś świata
+↔ szansa) sprawdzają **mechanizm**, nie skutek bieżącego stanu bazy:
+asercja „premia jest niezerowa" plus bezpośrednie wywołanie
+`szansaWezla` z `naporSwiata: 0` i `naporSwiata: 10`. Jeśli test musi
+opierać się na danych, dobierz wielkość przekraczającą krok
+kwantyzacji — inaczej każdy nowy wpis lub SKIT będzie losowo gasił
+bramę.

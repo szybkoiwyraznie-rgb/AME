@@ -1,0 +1,30 @@
+{
+  "slug": "kogo-sie-nazywa",
+  "tytul": "KOGO SIĘ NAZYWA",
+  "temat": "kto ponosi winę za śmierć bez rany: zaraza z zewnątrz, sąsiad z koszem i pustelnik, na którego sąd wypisał pozwolenie",
+  "uczestnicy": [
+    {
+      "imie": "Morowa Panna",
+      "slug": "morowa-panna"
+    },
+    {
+      "imie": "Mangkukulam",
+      "slug": "mangkukulam"
+    },
+    {
+      "imie": "Loup-garou z Gévaudan",
+      "slug": "loup-garou-gevaudan"
+    }
+  ],
+  "tekst": "**Morowa Panna:** [Staje w bramie wsi, biała chusta ledwie muska słupek; za nią mokre pole.] Ja przynajmniej przychodzę z zewnątrz. Widać mnie na rozstaju, można mnie przenieść przez granicę na barana i odetchnąć.\n\n**Mangkukulam:** [Siedzi na progu, oplata rattanowy kosz sznurkiem, nie podnosi wzroku.] Właśnie dlatego jesteś wygodna. Kiedy odchodzisz, nikt nie zostaje. U mnie po pogrzebie zostaje nazwisko i dom, w którym ono mieszka.\n\n**Loup-garou z Gévaudan:** Zostaje też pozwolenie. W Dole sąd wypisał, że wolno wyjść z pikami i arkebuzami, choć polować nie było wolno. Papier zdejmował karę z tego, kto pierwszy strzeli.\n\n**Morowa Panna:** A kto był po drugiej stronie papieru?\n\n**Loup-garou z Gévaudan:** [Ociera pysk wierzchem prawie ludzkiej dłoni.] Pustelnik. Głodny. Powiedział, że dostał maść od czarnej postaci w lesie, i wieś odetchnęła, bo już wiedziała, na kogo patrzeć.\n\n**Mangkukulam:** U nas nie trzeba maści. Wystarczy, że sąsiad widział mnie kiedyś z koszem. Potem każda choroba w tej wsi ma już właściciela.\n\n**Morowa Panna:** I nikt was nie sprawdza?\n\n**Mangkukulam:** Sprawdza. Albularyo pali ałun na skorupie i czyta kształt. Zwykle wychodzi z niego twarz kogoś, o kim i tak myśleli.\n\n**Loup-garou z Gévaudan:** U nas rachunek był prostszy: obcięto bestii łapę, nazajutrz znaleziono kobietę bez dłoni. Nikt nie pytał, skąd rana.\n\n**Morowa Panna:** [Podnosi rąbek chusty; pole za nią jest puste aż po las.] Więc mnie się boją, a was — nazywają. Nazwanie boli dłużej.\n\n**Mangkukulam:** [Zawiązuje wieko kosza.] Nazwanie się nie kończy. Ty odchodzisz razem z zarazą. Ja zostaję we wsi, którą wyleczono.",
+  "meta": {
+    "utworzono": "2026-09-05 19:00",
+    "autor": "sesja arena 2026-09-05",
+    "modyfikacje": [
+      {
+        "data": "2026-09-05 19:00",
+        "opis": "Nowy dialog: zaraza, praktyk kulam i człowiek-wilk porównują, kogo społeczność obarcza winą za śmierć, której nie widać na ciele."
+      }
+    ]
+  }
+}

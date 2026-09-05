@@ -76,15 +76,15 @@
       },
       {
         "slug": "loup-garou-gevaudan",
-        "wielkosc": 0.22
+        "wielkosc": 0.24
       },
       {
         "slug": "mangkukulam",
-        "wielkosc": 0.2
+        "wielkosc": 0.22
       },
       {
         "slug": "morowa-panna",
-        "wielkosc": 0.43
+        "wielkosc": 0.45
       },
       {
         "slug": "neith-z-sais",
@@ -207,17 +207,17 @@
       {
         "kultura": "francja",
         "kult": "loup-garou-gevaudan",
-        "wielkosc": 0.22
+        "wielkosc": 0.24
       },
       {
         "kultura": "filipiny",
         "kult": "mangkukulam",
-        "wielkosc": 0.2
+        "wielkosc": 0.22
       },
       {
         "kultura": "polska",
         "kult": "morowa-panna",
-        "wielkosc": 0.43
+        "wielkosc": 0.45
       },
       {
         "kultura": "egipt",

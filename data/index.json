@@ -1,8 +1,8 @@
 {
   "wersja": 3,
-  "buildTime": "2026-09-05T13:14:38.289Z",
+  "buildTime": "2026-09-05T13:15:47.924Z",
   "liczba": 28,
-  "liczbaSkitow": 47,
+  "liczbaSkitow": 48,
   "kanon": {
     "kategorie": [
       {
@@ -1319,6 +1319,7 @@
       },
       "skity": [
         "gruz-i-odplyw",
+        "kogo-sie-nazywa",
         "zaslona-i-siersc"
       ]
     },
@@ -1358,7 +1359,9 @@
         "pierwotne": "Kosz abubut z pokrywą, w środku szmaciana lalka i jedna szpilka wbita w bok — dokładnie tam, gdzie skarżył się chory.",
         "wtorne": "Skorupa gliniana ze stopioną bryłką ałunu z obrzędu tawas: kształt, w którym uzdrowiciel odczytał, kto to zrobił."
       },
-      "skity": []
+      "skity": [
+        "kogo-sie-nazywa"
+      ]
     },
     {
       "slug": "morowa-panna",
@@ -1402,6 +1405,7 @@
       "skity": [
         "czwarty-stol",
         "ile-imion",
+        "kogo-sie-nazywa",
         "lustro-odpowiedz-wers",
         "najgorsze-odpowiedzi",
         "ostatnia-droga",
@@ -2147,6 +2151,23 @@
       "data": "2026-08-28 18:25"
     },
     {
+      "slug": "kogo-sie-nazywa",
+      "tytul": "KOGO SIĘ NAZYWA",
+      "temat": "kto ponosi winę za śmierć bez rany: zaraza z zewnątrz, sąsiad z koszem i pustelnik, na którego sąd wypisał pozwolenie",
+      "uczestnicy": [
+        "loup-garou-gevaudan",
+        "mangkukulam",
+        "morowa-panna"
+      ],
+      "imiona": [
+        "Morowa Panna",
+        "Mangkukulam",
+        "Loup-garou z Gévaudan"
+      ],
+      "slow": 248,
+      "data": "2026-09-05 19:00"
+    },
+    {
       "slug": "komu-wolno-patrzec",
       "tytul": "KOMU WOLNO PATRZEĆ",
       "temat": "trzy byty i akt spojrzenia: jedno oko zabija, jedno spojrzenie rozwiewa, jedno spojrzenie utrwala w kamieniu",
@@ -2737,6 +2758,22 @@
       "slug": "bazyliszek-warszawski",
       "tytul": "Bazyliszek z Krzywego Koła",
       "opis": "wpis w kartotece — materializacja karty „Coat with Venom”"
+    },
+    {
+      "data": "2026-09-05 19:00",
+      "typ": "skit",
+      "akcja": "zmiana",
+      "slug": "kogo-sie-nazywa",
+      "tytul": "KOGO SIĘ NAZYWA",
+      "opis": "Nowy dialog: zaraza, praktyk kulam i człowiek-wilk porównują, kogo społeczność obarcza winą za śmierć, której nie widać na ciele."
+    },
+    {
+      "data": "2026-09-05 19:00",
+      "typ": "skit",
+      "akcja": "nowy",
+      "slug": "kogo-sie-nazywa",
+      "tytul": "KOGO SIĘ NAZYWA",
+      "opis": "SKIT — skład: Morowa Panna, Mangkukulam, Loup-garou z Gévaudan"
     },
     {
       "data": "2026-09-05 18:45",
