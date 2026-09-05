@@ -19,6 +19,7 @@ app/
                               feed „Co nowego", tagi, powiązania, lista, szukanie,
                               logika motywu (wszystko jako funkcje czyste)
   klastry.js                — grupowanie pinezek w gniazda przy oddaleniu
+  kregi.js                  — kręgi kulturowe: otoczki grup tradycji na mapie
   arena.js                  — Arena Rezonansu: statystyki bytu wyprowadzone
                               z indeksu, spór dwóch wersji świata (RNG wstrzykiwany)
   liga.js                   — Liga Rezonansu: terminarz round-robin liczony
@@ -37,6 +38,7 @@ data/
   manifestations/<slug>.json — pełne wpisy MFM (źródło prawdy treści)
   skity/<slug>.json          — Baza Skitów: dialogi materializacji (ADR 0013)
   kanon-tagow.json           — słownik tagów: kategorie, limity, opisy (ADR 0016)
+  kregi-kulturowe.json       — grupy kultur rysowane jako otoczki na mapie
   index.json                — GENEROWANY przez tools/rebuild-index.mjs (v3)
 tools/
   rebuild-index.mjs         — walidacja wpisów + budowa indeksu (--check

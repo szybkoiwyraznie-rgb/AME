@@ -1182,3 +1182,8 @@ div.warstwa.otwarta { display: block; animation: warstwa-wnika 0.2s ease-out; }
 .liga-mecze li { display: flex; flex-wrap: wrap; gap: 8px; align-items: baseline; padding: 6px 8px; border: 1px solid var(--obramowanie); border-radius: 8px; }
 .liga-zapowiedz li { color: var(--tekst-dim); padding: 3px 8px; }
 @media (max-width: 560px) { .liga-tabela th:nth-child(n+3):nth-child(-n+6), .liga-tabela td:nth-child(n+3):nth-child(-n+6) { display: none; } }
+
+/* Kręgi kulturowe (C2+5, obrót 9): otoczki tradycji pod pinezkami. */
+.mapa-svg .kregi { pointer-events: none; }
+.mapa-svg .krag-halo { fill: color-mix(in srgb, var(--akcent) 18%, transparent); stroke: color-mix(in srgb, var(--akcent) 55%, transparent); stroke-width: 3; stroke-dasharray: 14 10; pointer-events: auto; }
+.mapa-svg .krag-podpis { fill: var(--akcent); font-size: 34px; text-anchor: middle; letter-spacing: .06em; text-transform: uppercase; paint-order: stroke; stroke: var(--tlo); stroke-width: 6; }

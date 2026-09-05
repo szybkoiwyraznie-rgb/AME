@@ -10,8 +10,9 @@
  * pinch (2 wskaźniki), dwuklik, przyciski. Pinezki i ich etykiety kompensują
  * skalę widoku, więc mają stały rozmiar w pikselach CSS (ADR 0009).
  */
-import { projektuj, dekodujKraje, siatka, dopasujWidok, ogranicz, K_MIN, K_MAX, SZEROKOSC as SZER, WYSOKOSC as WYS, sciezkaGeoMultiPoligon } from './geo.js?v=c6-14';
-import { grupujPunkty, podpisKlastra, opisKlastra, czyKlastrowac, PROMIEN_KLASTRA, ZOOM_KLASTRA, PROG_KLASTROWANIA } from './klastry.js?v=c6-14';
+import { projektuj, dekodujKraje, siatka, dopasujWidok, ogranicz, K_MIN, K_MAX, SZEROKOSC as SZER, WYSOKOSC as WYS, sciezkaGeoMultiPoligon } from './geo.js?v=c6-15';
+import { grupujPunkty, podpisKlastra, opisKlastra, czyKlastrowac, PROMIEN_KLASTRA, ZOOM_KLASTRA, PROG_KLASTROWANIA } from './klastry.js?v=c6-15';
+import { grupujWKregi, sciezkaKregu, podpisKregu } from './kregi.js?v=c6-15';
 
 const NS = 'http://www.w3.org/2000/svg';
 
@@ -66,6 +67,7 @@ export const PROMIEN_MINIATURY = 26;
  * `podklad` to aktywny podkład online (klucz z PODKLADY_ONLINE albo null).
  */
 const WIDOCZNE_WARSTWY = {
+  kregi: false,
   rzeki: false,
   jeziora: false,
   miasta: false,
@@ -181,6 +183,9 @@ export function stworzMape(kontener, { przyZmianieZaznaczenia, przyZmianieWidoku
     srednie: el('g', { class: 'miasta-srednie' }, grupaMiast),
     drobne: el('g', { class: 'miasta-drobne' }, grupaMiast),
   };
+  // Kręgi kulturowe (C2+5, obrót 9): otoczki tradycji pod łukami i pinezkami,
+  // żeby halo nigdy nie zasłoniło punktu, w który się klika.
+  const warstwaKregow = el('g', { class: 'kregi', display: 'none' }, grupaSwiata);
   const warstwaLukow = el('g', { class: 'luki', display: 'none' }, grupaSwiata);
   // Warstwa „rozmowy” (C2, 2026-09-04): łuki uczestników otwartego skitu —
   // osobna grupa, żeby nie mieszać z łukami powiązań (toggle ∞).
@@ -484,6 +489,25 @@ export function stworzMape(kontener, { przyZmianieZaznaczenia, przyZmianieWidoku
     }
     ostatniaSkalaKlastrow = null; // nowy skład pinezek = gniazda do przeliczenia
     zastosuj();
+  }
+
+  /** Kręgi kulturowe: otoczki grup tradycji liczone z rekordów indeksu.
+   *  Definicje przychodzą z data/kregi-kulturowe.json (dane, nie kod). */
+  function ustawKregi(rekordy, definicje) {
+    warstwaKregow.innerHTML = '';
+    const punkty = (rekordy ?? [])
+      .filter((r) => Number.isFinite(r.lat) && Number.isFinite(r.lon))
+      .map((r) => {
+        const [x, y] = projektuj(r.lat, r.lon);
+        return { slug: r.slug, tagi: r.tagi ?? [], x, y };
+      });
+    for (const krag of grupujWKregi(punkty, definicje)) {
+      const g = el('g', { class: 'krag', 'data-krag': krag.id }, warstwaKregow);
+      const sciezka = el('path', { d: sciezkaKregu(krag.punkty), class: 'krag-halo' }, g);
+      el('title', {}, sciezka).textContent = krag.opis ? `${podpisKregu(krag)} — ${krag.opis}` : podpisKregu(krag);
+      const podpis = el('text', { x: krag.srodek.x, y: krag.srodek.y, class: 'krag-podpis' }, g);
+      podpis.textContent = podpisKregu(krag);
+    }
   }
 
   function ustawPolaczenia(rekordy) {
@@ -937,6 +961,8 @@ export function stworzMape(kontener, { przyZmianieZaznaczenia, przyZmianieWidoku
     svg.classList.toggle('z-hipsometria', !!WIDOCZNE_WARSTWY.hipsometria);
     svg.classList.toggle('z-podklad-online', !!WIDOCZNE_WARSTWY.podklad);
     grupaHipso.setAttribute('display', WIDOCZNE_WARSTWY.hipsometria ? 'inherit' : 'none');
+    // Kręgi kulturowe nie mają progu zoomu: mają sens najbardziej z daleka.
+    warstwaKregow.setAttribute('display', WIDOCZNE_WARSTWY.kregi ? 'inherit' : 'none');
     grupaRzek.setAttribute('display', WIDOCZNE_WARSTWY.rzeki && k >= PROGI_WARSTW.woda ? 'inherit' : 'none');
     grupaJezior.setAttribute('display', WIDOCZNE_WARSTWY.jeziora && k >= PROGI_WARSTW.woda ? 'inherit' : 'none');
     grupaMiast.setAttribute('display', WIDOCZNE_WARSTWY.miasta && k >= PROGI_WARSTW.miastaWielkie ? 'inherit' : 'none');
@@ -1027,6 +1053,7 @@ export function stworzMape(kontener, { przyZmianieZaznaczenia, przyZmianieWidoku
     svg,
     ustawMapeSwiata,
     ustawPinezki,
+    ustawKregi,
     ustawPolaczenia,
     ustawRzeki,
     ustawJeziora,

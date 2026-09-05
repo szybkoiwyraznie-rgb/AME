@@ -1,8 +1,8 @@
 /**
  * app/app.js — bootstrap AME: ładuje indeks, mapę świata, spina UI.
  */
-import { stworzMape, PROGI_WARSTW, PODKLADY_ONLINE } from './map.js?v=c6-14';
-import { zaladujIndeks, zaladujWpis, zaladujSkit, dopasowania, wylosujSlug, slugDnia } from './data.js?v=c6-14';
+import { stworzMape, PROGI_WARSTW, PODKLADY_ONLINE } from './map.js?v=c6-15';
+import { zaladujIndeks, zaladujWpis, zaladujSkit, dopasowania, wylosujSlug, slugDnia } from './data.js?v=c6-15';
 import {
   htmlWpisu,
   htmlWarstwyWpisu,
@@ -31,12 +31,12 @@ import {
   zB64utf8,
   htmlAreny,
   htmlLigi,
-} from './ui.js?v=c6-14';
-import { rozegrajDroge } from './splot.js?v=c6-14';
-import { tablicaProgow, kluczeDlaBytu, rozegrajProg } from './prog.js?v=c6-14';
-import { profileKartoteki, rozegrajSpor, paraDnia, haszTekstu, generatorZZiarna } from './arena.js?v=c6-14';
-import { tabelaLigi } from './liga.js?v=c6-14';
-import { SZEROKOSC, WYSOKOSC, odwroc, projektuj, serializujWidok, parsujWidokMapy } from './geo.js?v=c6-14';
+} from './ui.js?v=c6-15';
+import { rozegrajDroge } from './splot.js?v=c6-15';
+import { tablicaProgow, kluczeDlaBytu, rozegrajProg } from './prog.js?v=c6-15';
+import { profileKartoteki, rozegrajSpor, paraDnia, haszTekstu, generatorZZiarna } from './arena.js?v=c6-15';
+import { tabelaLigi } from './liga.js?v=c6-15';
+import { SZEROKOSC, WYSOKOSC, odwroc, projektuj, serializujWidok, parsujWidokMapy } from './geo.js?v=c6-15';
 
 const $ = (sel) => document.querySelector(sel);
 
@@ -142,6 +142,9 @@ function przywrocWidokMapy() {
 }
 
 const WARSTWY_MAPY = {
+  // Kręgi kulturowe (C2+5, obrót 9): jedyna warstwa liczona z kartoteki,
+  // a nie dociągana z assets/map — definicje grup leżą w data/.
+  kregi: { plik: 'data/kregi-kulturowe.json', prog: 1, rysuj: 'ustawKregi', zKartoteki: true },
   rzeki: { plik: 'rivers-2km5.json', prog: PROGI_WARSTW.woda, rysuj: 'ustawRzeki' },
   jeziora: { plik: 'lakes-2km5.json', prog: PROGI_WARSTW.woda, rysuj: 'ustawJeziora' },
   miasta: { plik: 'miasta.json', prog: PROGI_WARSTW.miastaWielkie, rysuj: 'ustawMiasta' },
@@ -698,8 +701,11 @@ async function zaladujWarstwe(klucz) {
   const def = WARSTWY_MAPY[klucz];
   if (!def) return;
   try {
-    const url = new URL(`assets/map/${def.plik}`, document.baseURI);
-    if (def.raster) {
+    const url = new URL(def.zKartoteki ? def.plik : `assets/map/${def.plik}`, document.baseURI);
+    if (def.zKartoteki) {
+      const definicje = await fetch(url).then((r) => (r.ok ? r.json() : Promise.reject(new Error(`HTTP ${r.status}`))));
+      mapa[def.rysuj](stan.indeks.manifestacje, definicje);
+    } else if (def.raster) {
       mapa[def.rysuj](url.href);
     } else {
       const data = await fetch(url).then((r) => (r.ok ? r.json() : Promise.reject(new Error(`HTTP ${r.status}`))));
