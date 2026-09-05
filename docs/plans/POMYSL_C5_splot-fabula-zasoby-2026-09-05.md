@@ -21,6 +21,19 @@ Proponowana nazwa warstwy: **SPLOT**.
 - **Profil Rezonansu** dostarcza wyprowadzanych zdolności, ale nie jest
   samodzielnym celem ani rankingiem jakości wpisu.
 
+## 1.1. Korekta: szansa jest deterministyczna, wynik może być losowy
+
+Determinizm nie oznacza, że Sfinks zawsze wygrywa, gdy ma przewagę. Oznacza,
+że z tych samych danych obliczamy tę samą **szansę**. Potem los decyduje,
+czy próba się uda. Przykład: łowca ma 37% szansy na udany egzorcyzm; wynik
+może być sukcesem albo porażką, a porażka może otworzyć ciekawszą odnogę.
+
+Rdzeń dostaje `los()` przez wstrzykiwanie. W trybie demonstracyjnym można
+użyć RNG ziarna do powtórki, a w trybie gry — adaptera opartego o bezpieczne
+losowanie przeglądarki. Wynik zapisuje się razem z szansą, wartością losową,
+seedem i wersją reguł. Rozstrzygnięcie jest więc naprawdę losowe w chwili
+próby, ale później audytowalne i możliwe do odtworzenia.
+
 ## 2. Najważniejsza zasada: mechanika nie może być silniejsza od opowieści
 
 Każda akcja gry musi dać się przeczytać jako zdanie fabularne:
@@ -145,16 +158,63 @@ Dopiero zatwierdzona/uruchomiona droga może wygenerować Epokę Kroniki.
 To rozwiązuje konflikt między interaktywną grą a kanonem: gra ma alternatywy,
 Kronika ma udokumentowane skutki.
 
-## 8. Jak zachować determinizm
+## 9. Jak zachować determinizm i los
 
-- seed = wersja indeksu + data + slug drogi + numer węzła;
+- seed/identyfikator próby = wersja indeksu + data + slug drogi + numer węzła;
+- szansa jest wyliczana deterministycznie, ale wynik jest losowany zgodnie z ADR 0024;
 - rdzeń dostaje `los()` jako parametr, nigdy `Math.random`;
 - wynik ma pełny log wejść: seed, wersja indeksu, skład, role i koszt;
 - zmiana kartoteki może zmienić wynik — dlatego wynik archiwizujemy z wersją;
 - AI może proponować prozę, ale nie jest arbitrem wyniku; arbiter jest
   deterministycznym runnerem, a tekst przechodzi walidację i research.
 
-## 9. Najmniejszy sensowny prototyp C5
+## 8.1. Oś konfliktu: świat zewnętrzny kontra byty
+
+Głównym przeciwnikiem nie musi być inny byt. Może nim być epoka, która
+postanowiła usunąć metafizykę z codzienności: łowcy potworów, komisje,
+karczmarze zamykający kaplice, urzędnicy prostujący mapy, kaznodzieje
+odprawiający egzorcyzmy i uczeni, którzy chcą sprowadzić każdą legendę do
+jednego wyjaśnienia. To nie jest proste „ludzie są źli”. Świat zewnętrzny
+może chronić wspólnotę przed drapieżnikiem, a byt może być jednocześnie
+ocaleniem i zagrożeniem.
+
+Konflikt ma trzy zasoby po obu stronach: **świadectwo** (czy ktoś widział),
+**instytucję** (kto ma władzę nazwać zdarzenie) i **obecność** (czy byt może
+jeszcze działać). Łowca może wygrać starcie, ale przegrać opowieść; byt może
+przetrwać egzorcyzm, lecz utracić miejsce, imię albo możliwość powrotu.
+
+Przykładowe drogi:
+
+- „Ostatni ślad w Gévaudan” — łowcy zamykają las, a loup-garou wybiera ucieczkę,
+  układ albo konfrontację; los decyduje o tropie, nie o prawdzie wpisu.
+- „Komisja od cudów” — Neith może przemówić, zamilknąć albo pozwolić ludziom
+  uznać lampy za zwykły obrzęd; każda opcja chroni inną część jej obecności.
+- „Droga bez zagadki” — Sfinks staje wobec ludzi, którzy chcą wysadzić skałę,
+  aby nie musieć odpowiadać na pytanie.
+
+To daje konflikt wiedźmiński w sensie struktury: polowanie, strach,
+przemoc i ekonomia spotykają byty z legend, ale AME nie kopiuje świata ani
+postaci z cudzej fikcji. Tworzy własną epokę, w której archiwizacja może
+ratować byt i równocześnie go unieruchamiać.
+
+## 8.2. Fabuła, proza i wizualizacja są częścią mechaniki
+
+Każda ukończona droga musi mieć trzy warstwy artefaktu:
+
+1. **strukturę** — węzły, opcje, szanse, los, koszt i wynik;
+2. **prozę fabularną** — narracyjny fragment o świecie, ludziach i bytach,
+   dłuższy niż SKIT i niezależny od dialogu; SKIT może być sceną w środku,
+   ale nie zastępuje Fabuły;
+3. **obraz** — kadr miejsca lub konsekwencji, wygenerowany poza runtime i
+   podpięty przez prompt 21:9. Obraz pokazuje zmianę świata, nie tylko
+   portret uczestnika.
+
+Raport drogi powinien pokazywać: mapę przejścia, tabelę szansy i wyniku,
+wykres obecność–odczarowanie, bilans zasobów, relacje przed/po oraz oś
+rozgałęzień. Wizualizacja może mieć wariant „przed” i „po”, jeśli droga
+zmieniła teren albo sposób widzenia bytu.
+
+## 10. Najmniejszy sensowny prototyp C5
 
 Nie zaczynać od całej ekonomii ani mapy państw. MVP powinno mieć:
 
@@ -167,7 +227,7 @@ Nie zaczynać od całej ekonomii ani mapy państw. MVP powinno mieć:
    spójność timeline'u;
 7. dopiero potem: trwałe drogi w repo, generowanie Epok i koalicje.
 
-## 10. Kolejność C5
+## 11. Kolejność C5
 
 1. **Model czystych funkcji**: `profilZdolnosci`, `kosztDrogi`,
    `rozstrzygnijWezel`, `rozgalezTimeline`.
@@ -178,9 +238,10 @@ Nie zaczynać od całej ekonomii ani mapy państw. MVP powinno mieć:
 5. **Walka narracyjna** jako jedna z opcji węzła, nigdy jedyny tryb.
 6. **Kronika** konsumuje zatwierdzone wyniki, nie każdy lokalny eksperyment.
 
-## 11. Rzeczy, których nie robić
+## 12. Rzeczy, których nie robić
 
 - nie budować turnieju każdy-z-każdym jako głównej gry;
+- nie zastępować Fabuły krótkim SKITem ani paskiem wyniku;
 - nie używać HP/DPS jako języka produktu;
 - nie pozwalać, by kliknięcie bez treści produkowało zasoby;
 - nie trzymać stanu kanonicznego w `localStorage`;
@@ -188,7 +249,7 @@ Nie zaczynać od całej ekonomii ani mapy państw. MVP powinno mieć:
 - nie wpuszczać modeli AI jako arbitra bez zapisu wersji, promptu i wyniku;
 - nie dodawać 10 zasobów przed prototypem jednej drogi.
 
-## 12. Kryterium sukcesu
+## 13. Kryterium sukcesu
 
 Po jednej sesji czytelnik powinien umieć powiedzieć: „Sfinks nie wygrała
 walki — wybrała pytanie, zapłaciła pamięcią i otworzyła inną drogę”. Jeśli
