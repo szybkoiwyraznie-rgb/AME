@@ -3279,13 +3279,27 @@ ${generujTopbarHTML('kronika')}
 `;
 }
 
+/**
+ * Porządkuje pliki serii `<nazwa>-<numer>.json` PO LICZBIE, nie leksykalnie.
+ * Zwykłe `sort()` ustawia `epoka-10.json` przed `epoka-2.json`, co przy
+ * dziesiątej Epoce przestawiłoby całą sekwencję rozliczeń Kroniki (stanPo
+ * jednej epoki jest stanem wejściowym następnej — ADR 0021 pkt 8).
+ */
+export function sortujPlikiSeriami(pliki) {
+  const numer = (f) => {
+    const m = /-(\d+)\.json$/.exec(f);
+    return m ? Number(m[1]) : Number.POSITIVE_INFINITY;
+  };
+  return [...pliki].sort((a, b) => numer(a) - numer(b) || a.localeCompare(b));
+}
+
 async function wczytajTomy() {
-  const pliki = (await readdir(KATALOG_KRONIKA)).filter((f) => /^tom-\d+\.json$/.test(f)).sort();
+  const pliki = sortujPlikiSeriami((await readdir(KATALOG_KRONIKA)).filter((f) => /^tom-\d+\.json$/.test(f)));
   return Promise.all(pliki.map((f) => wczytajJson(join(KATALOG_KRONIKA, f))));
 }
 
 async function wczytajEpoki() {
-  const pliki = (await readdir(KATALOG_KRONIKA)).filter((f) => /^epoka-\d+\.json$/.test(f)).sort();
+  const pliki = sortujPlikiSeriami((await readdir(KATALOG_KRONIKA)).filter((f) => /^epoka-\d+\.json$/.test(f)));
   return Promise.all(pliki.map((f) => wczytajJson(join(KATALOG_KRONIKA, f))));
 }
 

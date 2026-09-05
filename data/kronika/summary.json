@@ -4053,12 +4053,520 @@
         "prompt": "Hyperrealistic cinematic photograph, ultra-wide 21:9 anamorphic frame. At dusk on a rocky road below Mount Phikion, a winged sphinx sits on a stone ledge facing a wolf-man at the forest edge, while a serene Egyptian goddess stretches a luminous thread between them. A Greek road, thorny French highland brush and distant sandstone temple merge only as a dreamlike stage, not as a literal landscape. The sphinx holds a question in her gaze, the wolf-man keeps one human hand hidden in fur, and the goddess carries a wooden shuttle. Blue dusk, amber thread-light, restrained folkloric realism, no gore, no text, no modern objects.",
         "obraz": "assets/wizualizacje/kronika-tom-1-epoka-9.jpg"
       }
+    },
+    {
+      "slug": "epoka-10",
+      "tytul": "Prawo progu i kamień, który został",
+      "skit": "gruz-i-odplyw",
+      "iskra": "Przy niskiej wodzie pod Górą św. Michała spotykają się czterej sąsiedzi granicy: ten, kto górę usypał, ta, która ma pod nią przejście, ten, kto wrósł w cudzy kamień, i ten, kto nie ma progu przez pięć nocy w tygodniu. Spór o jeden zielony głaz okazuje się sporem o to, czyja jest droga.",
+      "pytanie": "Do kogo należy próg: do tego, kto go zbudował, czy do tego, kto musi nim przejść?",
+      "przebieg": "Czterej sąsiedzi granicy targują się o kamień leżący na przejściu. Olbrzym broni pamiątki, syrena broni trasy, imp przypomina, ile kosztuje mieszkanie bez wyjścia, a wilkołak odsłania jedyny brak, którego żaden z nich nie ma: pięć nocy bez dachu. Kamień zostaje na miejscu, ale prawo do drogi przestaje być własnością największego.",
+      "meta": {
+        "utworzono": "2026-09-05 17:05",
+        "autor": "sesja arena 2026-09-05b",
+        "wersja": 1,
+        "poprzednik": "epoka-9"
+      },
+      "walidacja": true,
+      "bledy": [],
+      "uczestnicy": [
+        {
+          "slug": "cormoran-st-michaels-mount",
+          "nazwa": "Cormoran z St Michael's Mount",
+          "rola": "Budowniczy i właściciel góry",
+          "pasywne": 9,
+          "saldoPrzed": 9,
+          "kosztUdzialu": 2,
+          "kosztKlucza": 0,
+          "boost": 0,
+          "zwrot": 4,
+          "saldoPo": 11
+        },
+        {
+          "slug": "ben-varrey",
+          "nazwa": "Ben-Varrey — syrena z Wyspy Man",
+          "rola": "Ta, która zna trasę pływu",
+          "pasywne": 12,
+          "saldoPrzed": 12,
+          "kosztUdzialu": 2,
+          "kosztKlucza": 0,
+          "boost": 0,
+          "zwrot": 3,
+          "saldoPo": 13
+        },
+        {
+          "slug": "lincoln-imp",
+          "nazwa": "Imp z Lincoln",
+          "rola": "Świadek zamknięty we własnym kamieniu",
+          "pasywne": 14,
+          "saldoPrzed": 14,
+          "kosztUdzialu": 2,
+          "kosztKlucza": 0,
+          "boost": 0,
+          "zwrot": 2,
+          "saldoPo": 14
+        },
+        {
+          "slug": "loup-garou-gevaudan",
+          "nazwa": "Loup-garou z Gévaudan",
+          "rola": "Ten, który nocuje poza każdym progiem",
+          "pasywne": 8,
+          "saldoPrzed": 8,
+          "kosztUdzialu": 2,
+          "kosztKlucza": 0,
+          "boost": 0,
+          "zwrot": 3,
+          "saldoPo": 9
+        }
+      ],
+      "stanPo": {
+        "os": {
+          "mit": 29,
+          "racjonalizacja": 71
+        },
+        "zasieg": [
+          {
+            "slug": "agni",
+            "wielkosc": 0.4
+          },
+          {
+            "slug": "balor",
+            "wielkosc": 0.45
+          },
+          {
+            "slug": "barbarossa-kyffhaeuser",
+            "wielkosc": 0.482
+          },
+          {
+            "slug": "ben-varrey",
+            "wielkosc": 0.348
+          },
+          {
+            "slug": "cormoran-st-michaels-mount",
+            "wielkosc": 0.224
+          },
+          {
+            "slug": "drangue-shala",
+            "wielkosc": 0.46
+          },
+          {
+            "slug": "egungun",
+            "wielkosc": 0.545
+          },
+          {
+            "slug": "empusa-korynt",
+            "wielkosc": 0.485
+          },
+          {
+            "slug": "indra",
+            "wielkosc": 0.34
+          },
+          {
+            "slug": "kannon-hase",
+            "wielkosc": 0.38
+          },
+          {
+            "slug": "kentaur-pelion",
+            "wielkosc": 0.36
+          },
+          {
+            "slug": "knecht-z-koptos",
+            "wielkosc": 0.38
+          },
+          {
+            "slug": "lincoln-imp",
+            "wielkosc": 0.419
+          },
+          {
+            "slug": "loup-garou-gevaudan",
+            "wielkosc": 0.236
+          },
+          {
+            "slug": "morowa-panna",
+            "wielkosc": 0.315
+          },
+          {
+            "slug": "neith-z-sais",
+            "wielkosc": 0.218
+          },
+          {
+            "slug": "nessos",
+            "wielkosc": 0.37
+          },
+          {
+            "slug": "pandora",
+            "wielkosc": 0.42
+          },
+          {
+            "slug": "protostates",
+            "wielkosc": 0.322
+          },
+          {
+            "slug": "selkie-sule-skerry",
+            "wielkosc": 0.49
+          },
+          {
+            "slug": "sfinks-teby",
+            "wielkosc": 0.482
+          },
+          {
+            "slug": "syama-i-sarvara",
+            "wielkosc": 0.325
+          },
+          {
+            "slug": "talos-kreta",
+            "wielkosc": 0.435
+          }
+        ],
+        "dominacje": [
+          {
+            "kultura": "indie",
+            "kult": "agni",
+            "wielkosc": 0.4
+          },
+          {
+            "kultura": "irlandia",
+            "kult": "balor",
+            "wielkosc": 0.45
+          },
+          {
+            "kultura": "niemcy",
+            "kult": "barbarossa-kyffhaeuser",
+            "wielkosc": 0.482
+          },
+          {
+            "kultura": "man",
+            "kult": "ben-varrey",
+            "wielkosc": 0.348
+          },
+          {
+            "kultura": "kornwalia",
+            "kult": "cormoran-st-michaels-mount",
+            "wielkosc": 0.224
+          },
+          {
+            "kultura": "albania",
+            "kult": "drangue-shala",
+            "wielkosc": 0.46
+          },
+          {
+            "kultura": "joruba",
+            "kult": "egungun",
+            "wielkosc": 0.545
+          },
+          {
+            "kultura": "grecja",
+            "kult": "empusa-korynt",
+            "wielkosc": 0.485
+          },
+          {
+            "kultura": "indie",
+            "kult": "indra",
+            "wielkosc": 0.34
+          },
+          {
+            "kultura": "japonia",
+            "kult": "kannon-hase",
+            "wielkosc": 0.38
+          },
+          {
+            "kultura": "grecja",
+            "kult": "kentaur-pelion",
+            "wielkosc": 0.36
+          },
+          {
+            "kultura": "grecja",
+            "kult": "knecht-z-koptos",
+            "wielkosc": 0.38
+          },
+          {
+            "kultura": "anglia",
+            "kult": "lincoln-imp",
+            "wielkosc": 0.419
+          },
+          {
+            "kultura": "francja",
+            "kult": "loup-garou-gevaudan",
+            "wielkosc": 0.236
+          },
+          {
+            "kultura": "polska",
+            "kult": "morowa-panna",
+            "wielkosc": 0.315
+          },
+          {
+            "kultura": "egipt",
+            "kult": "neith-z-sais",
+            "wielkosc": 0.218
+          },
+          {
+            "kultura": "grecja",
+            "kult": "nessos",
+            "wielkosc": 0.37
+          },
+          {
+            "kultura": "grecja",
+            "kult": "pandora",
+            "wielkosc": 0.42
+          },
+          {
+            "kultura": "grecja",
+            "kult": "protostates",
+            "wielkosc": 0.322
+          },
+          {
+            "kultura": "szkocja-polnocna",
+            "kult": "selkie-sule-skerry",
+            "wielkosc": 0.49
+          },
+          {
+            "kultura": "grecja",
+            "kult": "sfinks-teby",
+            "wielkosc": 0.482
+          },
+          {
+            "kultura": "indie",
+            "kult": "syama-i-sarvara",
+            "wielkosc": 0.325
+          },
+          {
+            "kultura": "grecja",
+            "kult": "talos-kreta",
+            "wielkosc": 0.435
+          }
+        ],
+        "paliwo": {
+          "egungun": 30,
+          "barbarossa-kyffhaeuser": 20,
+          "kentaur-pelion": 14,
+          "lincoln-imp": 14,
+          "empusa-korynt": 20,
+          "balor": 19,
+          "selkie-sule-skerry": 24,
+          "indra": 11,
+          "sfinks-teby": 22,
+          "talos-kreta": 20,
+          "pandora": 17,
+          "morowa-panna": 9,
+          "protostates": 12,
+          "knecht-z-koptos": 13,
+          "syama-i-sarvara": 11,
+          "loup-garou-gevaudan": 9,
+          "neith-z-sais": 7,
+          "cormoran-st-michaels-mount": 11,
+          "ben-varrey": 13
+        }
+      },
+      "konsekwencje": {
+        "os": {
+          "mit": -1,
+          "racjonalizacja": 1
+        },
+        "relacje": [
+          {
+            "typ": "neutralna",
+            "skad": "ben-varrey",
+            "dokad": "cormoran-st-michaels-mount",
+            "opis": "Syrena i olbrzym uzgodnili trasę pływu bez przenoszenia kamienia i bez zatapiania grobli."
+          },
+          {
+            "typ": "wzmocnienie",
+            "skad": "cormoran-st-michaels-mount",
+            "dokad": "loup-garou-gevaudan",
+            "opis": "Olbrzym oddał wilkołakowi jaskinię od strony wiatru, zastrzegając sobie tylko bydło z Marazion."
+          },
+          {
+            "typ": "wzmocnienie",
+            "skad": "lincoln-imp",
+            "dokad": "ben-varrey",
+            "opis": "Imp poparł prawo przejścia, bo sam wie najlepiej, ile kosztuje mieszkanie bez wyjścia."
+          }
+        ],
+        "zasieg": [
+          {
+            "slug": "cormoran-st-michaels-mount",
+            "przed": 0.21,
+            "po": 0.224,
+            "delta": 0.014,
+            "opis": "Grobla i góra weszły do rozmowy Archiwum jako miejsce, o które ktoś się spiera."
+          },
+          {
+            "slug": "ben-varrey",
+            "przed": 0.34,
+            "po": 0.348,
+            "delta": 0.008,
+            "opis": "Trasa pływu została uznana za drogę, a nie za kaprys morskiej panny."
+          },
+          {
+            "slug": "lincoln-imp",
+            "przed": 0.415,
+            "po": 0.419,
+            "delta": 0.004,
+            "opis": "Kamienny więzień dostał głos w sprawie cudzych murów."
+          },
+          {
+            "slug": "loup-garou-gevaudan",
+            "przed": 0.23,
+            "po": 0.236,
+            "delta": 0.006,
+            "opis": "Nocny wygnaniec po raz pierwszy dostał adres, a nie tylko trop."
+          }
+        ],
+        "dominacje": [
+          {
+            "kultura": "kornwalia",
+            "kult": "cormoran-st-michaels-mount",
+            "przed": 0.21,
+            "po": 0.224,
+            "delta": 0.014
+          },
+          {
+            "kultura": "man",
+            "kult": "ben-varrey",
+            "przed": 0.34,
+            "po": 0.348,
+            "delta": 0.008
+          },
+          {
+            "kultura": "anglia",
+            "kult": "lincoln-imp",
+            "przed": 0.415,
+            "po": 0.419,
+            "delta": 0.004
+          },
+          {
+            "kultura": "francja",
+            "kult": "loup-garou-gevaudan",
+            "przed": 0.23,
+            "po": 0.236,
+            "delta": 0.006
+          }
+        ],
+        "pozycje": [
+          {
+            "slug": "cormoran-st-michaels-mount",
+            "status": "wzmocniony",
+            "opis": "Pozostał gospodarzem góry, lecz jego prawo do grobli stało się przedmiotem umowy."
+          },
+          {
+            "slug": "ben-varrey",
+            "status": "wzmocniony",
+            "opis": "Wyprowadziła z pływu regułę, której olbrzym nie potrafił odrzucić."
+          },
+          {
+            "slug": "lincoln-imp",
+            "status": "odporny",
+            "opis": "Nie zyskał wolności, ale zyskał zdanie, którego nikt przy stole nie podważył."
+          },
+          {
+            "slug": "loup-garou-gevaudan",
+            "status": "przemieniony",
+            "opis": "Z tropu bez domu stał się sąsiadem z adresem na pięć nocy w tygodniu."
+          }
+        ],
+        "watki": [
+          {
+            "id": "pierwszy-w-linii",
+            "stan": "otwarty",
+            "byty": [
+              "protostates",
+              "knecht-z-koptos",
+              "syama-i-sarvara"
+            ],
+            "pytanie": "Co się stanie z linią, gdy pierwszy przestanie stać, a nikt nie uzna, że ktoś go zastąpił?"
+          },
+          {
+            "id": "niewinny-bierca",
+            "stan": "otwarty",
+            "byty": [
+              "kentaur-pelion",
+              "pandora",
+              "empusa-korynt"
+            ],
+            "pytanie": "Kiedy biernik dowie się, że bierze — i co wtedy zrobi z tym, co już wziął?"
+          },
+          {
+            "id": "warunek-barbarossy",
+            "stan": "otwarty",
+            "byty": [
+              "barbarossa-kyffhaeuser",
+              "kentaur-pelion",
+              "egungun"
+            ],
+            "pytanie": "Czy dług śpiącego cesarza da się spłacić gościną — czy rachunek, który zapłacił ze snu, przyjdzie kiedyś wyrównać na jawie?"
+          },
+          {
+            "id": "kres-indry",
+            "stan": "otwarty",
+            "byty": [
+              "indra"
+            ],
+            "pytanie": "Kto zapisze kres Indry: ten, kto go zdetronizuje, czy ten, który przestaje się bać jego gromu?"
+          },
+          {
+            "id": "znak-nie-wystarcza",
+            "stan": "otwarty",
+            "byty": [
+              "sfinks-teby",
+              "loup-garou-gevaudan",
+              "neith-z-sais"
+            ],
+            "pytanie": "Loup-garou dostał adres zamiast opisu, ale kto zapyta o resztę jego imienia, gdy przestanie być ciekawym tropem?"
+          },
+          {
+            "id": "prawo-progu",
+            "stan": "otwarty",
+            "byty": [
+              "cormoran-st-michaels-mount",
+              "ben-varrey",
+              "lincoln-imp",
+              "loup-garou-gevaudan"
+            ],
+            "pytanie": "Jeśli próg należy także do przechodzących, to kto płaci za jego utrzymanie — i czym płaci ten, kto nie ma nic prócz przejścia?"
+          }
+        ]
+      },
+      "narrator": {
+        "ocena": [
+          {
+            "kto": "ben-varrey",
+            "kogo": "cormoran-st-michaels-mount",
+            "stopien": 2,
+            "komentarz": "Nie ustąpił z kamienia, ale po raz pierwszy zapytał, komu ten kamień zawadza."
+          },
+          {
+            "kto": "cormoran-st-michaels-mount",
+            "kogo": "loup-garou-gevaudan",
+            "stopien": 2,
+            "komentarz": "Odstąpił jaskinię komuś, kogo mógł po prostu zjeść. Gościnność olbrzyma zaczyna się od rachunku, ale się na nim nie kończy."
+          },
+          {
+            "kto": "lincoln-imp",
+            "kogo": "ben-varrey",
+            "stopien": 1,
+            "komentarz": "Zaproponowała zamianę miejsc i tym jednym zdaniem pokazała, że żadne z nas nie chce cudzego progu."
+          },
+          {
+            "kto": "loup-garou-gevaudan",
+            "kogo": "lincoln-imp",
+            "stopien": 1,
+            "komentarz": "Ma dach i skarży się na niewolę; ja mam wolność i szukam dachu. Żaden z nas nie zamieni się na serio."
+          }
+        ],
+        "podsumowanie": "Epoka nie przenosi kamienia. Przenosi coś innego: prawo do przejścia przestaje być własnością tego, kto jest największy. Cormoran zostaje gospodarzem, ale gospodarzem, który po raz pierwszy usłyszał, że jego grobla jest cudzą drogą."
+      },
+      "grafika": {
+        "podpis": "Odpływ pod Górą św. Michała: olbrzym, syrena, imp i wilkołak przy zielonym głazie na grobli.",
+        "styl": "Hyperrealistyczne zdjęcie filmowe, ultrapanorama 21:9.",
+        "prompt": "Hyperrealistic cinematic photograph, ultra-wide 21:9 anamorphic frame. Low tide at dawn on a granite tidal island causeway in Cornwall: a colossal bearded giant sits on wet sand beside a single green boulder, a dark-haired sea woman with a fish tail rests on the seaweed near the water line, a small grinning stone gargoyle creature crouches on a mooring block, and a lean wolf-headed man stands at the shore edge with one human hand visible. Cold blue dawn light, mist over the bay, the abbey-crowned rock behind them, wet reflections on the causeway. Restrained folkloric realism, no gore, no text, no modern objects.",
+        "obraz": "assets/wizualizacje/kronika-tom-1-epoka-10.jpg"
+      }
     }
   ],
   "stanPo": {
     "os": {
-      "mit": 30,
-      "racjonalizacja": 70
+      "mit": 29,
+      "racjonalizacja": 71
     },
     "zasieg": [
       {
@@ -4075,11 +4583,11 @@
       },
       {
         "slug": "ben-varrey",
-        "wielkosc": 0.34
+        "wielkosc": 0.348
       },
       {
         "slug": "cormoran-st-michaels-mount",
-        "wielkosc": 0.21
+        "wielkosc": 0.224
       },
       {
         "slug": "drangue-shala",
@@ -4111,11 +4619,11 @@
       },
       {
         "slug": "lincoln-imp",
-        "wielkosc": 0.415
+        "wielkosc": 0.419
       },
       {
         "slug": "loup-garou-gevaudan",
-        "wielkosc": 0.23
+        "wielkosc": 0.236
       },
       {
         "slug": "morowa-panna",
@@ -4173,12 +4681,12 @@
       {
         "kultura": "man",
         "kult": "ben-varrey",
-        "wielkosc": 0.34
+        "wielkosc": 0.348
       },
       {
         "kultura": "kornwalia",
         "kult": "cormoran-st-michaels-mount",
-        "wielkosc": 0.21
+        "wielkosc": 0.224
       },
       {
         "kultura": "albania",
@@ -4218,12 +4726,12 @@
       {
         "kultura": "anglia",
         "kult": "lincoln-imp",
-        "wielkosc": 0.415
+        "wielkosc": 0.419
       },
       {
         "kultura": "francja",
         "kult": "loup-garou-gevaudan",
-        "wielkosc": 0.23
+        "wielkosc": 0.236
       },
       {
         "kultura": "polska",
@@ -4287,8 +4795,10 @@
       "protostates": 12,
       "knecht-z-koptos": 13,
       "syama-i-sarvara": 11,
-      "loup-garou-gevaudan": 8,
-      "neith-z-sais": 7
+      "loup-garou-gevaudan": 9,
+      "neith-z-sais": 7,
+      "cormoran-st-michaels-mount": 11,
+      "ben-varrey": 13
     }
   },
   "walidacja": true,
@@ -4307,7 +4817,7 @@
       "tytul": "Kronika trzech stołów",
       "opis": "",
       "plik": "kronika-tom-1.html",
-      "epoki": 9
+      "epoki": 10
     }
   ]
 }

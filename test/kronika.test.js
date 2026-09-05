@@ -38,6 +38,7 @@ import {
   bytyOtwartychWatkow,
   agendaTomu,
   proponujEpoke,
+  sortujPlikiSeriami,
 } from '../tools/kronika.mjs';
 
 async function wczytaj(path) {
@@ -653,7 +654,7 @@ test('agendaTomu: otwarte wątki, słabe paliwo i ciche kultury', async () => {
   assert.ok(Array.isArray(a.watki) && a.watki.length > 0);
   assert.ok(a.watki.every((w) => w.id && Array.isArray(w.byty)));
   assert.ok(Array.isArray(a.slabi));
-  assert.equal(a.ostatnia, 'epoka-9');
+  assert.equal(a.ostatnia, 'epoka-10');
 });
 
 test('S1: raport Tomu zawiera miniatury epok i rozstaje silnika', async () => {
@@ -725,4 +726,44 @@ test('U4: raport epoki linkuje epoki powiązane jako chipy (nie gołe linki)', a
   assert.match(html, /Epoki powiązane:/);
   assert.match(html, /<a class="chip" href="kronika-epoka-[0-9]+\.html">epoka-[0-9]+<\/a>/, 'chip, nie goły <a>');
   assert.match(html, /a\.chip/, 'CSS z regułą brązowego przycisku');
+});
+
+test('sortowanie plików serii jest liczbowe, nie leksykalne (epoka-10 po epoce-9)', () => {
+  const wejscie = ['epoka-10.json', 'epoka-2.json', 'epoka-1.json', 'epoka-9.json'];
+  assert.deepEqual(sortujPlikiSeriami(wejscie), [
+    'epoka-1.json',
+    'epoka-2.json',
+    'epoka-9.json',
+    'epoka-10.json',
+  ]);
+  assert.deepEqual(sortujPlikiSeriami(['tom-2.json', 'tom-1.json']), ['tom-1.json', 'tom-2.json']);
+  assert.deepEqual(wejscie[0], 'epoka-10.json', 'wejście nie jest mutowane');
+});
+
+test('Epoka X domyka Tom I zgodnie z rozliczeniem paliwa i osi', async () => {
+  const podsumowanie = await wczytaj(PLIK_PODSUMOWANIA);
+  assert.equal(podsumowanie.walidacja, true, JSON.stringify(podsumowanie.bledy));
+  assert.equal(podsumowanie.epoki.length, 10);
+
+  const e10 = podsumowanie.epoki[9];
+  assert.equal(e10.slug, 'epoka-10');
+  assert.equal(e10.skit, 'gruz-i-odplyw');
+  assert.deepEqual(
+    e10.uczestnicy.map((u) => [u.slug, u.saldoPrzed, u.saldoPo]),
+    [
+      ['cormoran-st-michaels-mount', 9, 11],
+      ['ben-varrey', 12, 13],
+      ['lincoln-imp', 14, 14],
+      ['loup-garou-gevaudan', 8, 9],
+    ]
+  );
+  assert.equal(e10.stanPo.os.mit, 29);
+  assert.equal(e10.stanPo.os.racjonalizacja, 71);
+  assert.equal(
+    e10.stanPo.zasieg.find((z) => z.slug === 'cormoran-st-michaels-mount').wielkosc,
+    0.224
+  );
+  const nowy = (e10.konsekwencje.watki || []).find((w) => w.id === 'prawo-progu');
+  assert.ok(nowy, 'Epoka X otwiera wątek prawa przejścia');
+  assert.equal(nowy.byty.length, 4);
 });
