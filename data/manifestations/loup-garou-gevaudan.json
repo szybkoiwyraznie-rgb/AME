@@ -1,0 +1,84 @@
+{
+  "slug": "loup-garou-gevaudan",
+  "nazwa": "Loup-garou z Gévaudan",
+  "nazwy_alternatywne": [
+    "Loup-garou",
+    "Loup-garou du Gévaudan",
+    "Wilkołak francuski"
+  ],
+  "karta": {
+    "nazwa": "Thornhide Wolves",
+    "wydanie": "Core Set 2019 (M19) #204",
+    "rok": 2018
+  },
+  "lokalizacja": {
+    "miejscowosc": "Gévaudan, dawna prowincja Langwedocji — górskie pastwiska i lasy dzisiejszej Lozère, wokół Margeride",
+    "kraj": "Francja",
+    "lat": 44.72,
+    "lon": 3.5
+  },
+  "pochodzenie_i_kultura": "Folklor francuski: loup-garou jest człowiekiem-wilkiem, figurą przemiany obecnej w podaniach wiejskich Francji. Nie utożsamiam go z konkretną historyczną Bestią z Gévaudan — ta była serią rzeczywistych ataków z lat 1764–1767 — lecz umieszczam manifestację w tym samym krajobrazie, gdzie lęk przed wilkiem i opowieść o człowieku-wilku mogły się spotkać. Sabine Baring-Gould w „The Book of Were-Wolves” (1865) opisuje francuskie przekazy o loup-garou: nocnej przemianie, wilczej skórze i rozpoznaniu człowieka po zranieniu bestii.",
+  "wizualizacja": {
+    "prompt": "Style: A wide-angle full-body cinematic photograph. The central objects/persons of the photo are visible from head to toe, standing centrally in the frame. No parts of the body are cropped.\n\nAn imposing French loup-garou, a wolf-man standing at the edge of a dark beech forest in the Gévaudan highlands, human eyes beneath rough charcoal fur, thorny branches caught in the fur, one paw pressed into wet grass, an old stone shepherd hut and distant misty hills behind him, cold moonlight breaking through clouds, restrained folkloric realism, no gore, no text.\n\nCaptured with a 35mm anamorphic lens at f/1.8. Shallow depth of field with a heavy, creamy bokeh background. Environmental portraiture. Dramatic cinematic lighting, sharp focus on the character, hyper-realistic textures of clothing and skin. Shot on 70mm film stock, ultra-wide 21:9 aspect ratio. --ar 21:9",
+    "obraz": "assets/wizualizacje/loup-garou-gevaudan.jpg"
+  },
+  "natura": {
+    "wyglad_i_aura": "W nocnej postaci ma wydłużony pysk, ciężkie barki i wilczą sierść, ale ręce zachowują ślad ludzkich dłoni; w źrenicach zostaje pamięć człowieka. Słychać go wcześniej, niż widać: łamane gałęzie idą pod wiatr, a psy milkną przy kamiennych zagrodach Gévaudan.",
+    "charakter_i_motywacje": "Nie jest osobnym gatunkiem, lecz człowiekiem naznaczonym przemianą. Motywacją bestii jest głód i przymus nocnego polowania; motywacją człowieka pozostaje ukrycie własnej winy oraz doczekanie świtu. W opowieściach loup-garou działa jako ostrzeżenie: granica między sąsiadem a drapieżnikiem może pęknąć bez ostrzeżenia.",
+    "zdolnosci": "Porusza się po lesie ciszej niż człowiek, wyczuwa zapach żywego stworzenia i potrafi długo biec po górskim zboczu. Nocna postać ma siłę wilka i zna drogi między pastwiskami; o świcie odzyskuje ludzką skórę, lecz nie zawsze pamięta całą noc.",
+    "slabosci_i_metody_pokonania": "Przemiana jest związana z nocą i wilczą skórą: odebranie jej albo przeczekanie do świtu osłabia bestię. Baring-Gould przytacza francuski motyw rozpoznania loup-garou po zranieniu — pod wilczą postacią pojawia się człowiek. Nie należy mylić tej folklorystycznej reguły z instrukcją krzywdzenia ludzi; w kartotece ślad i nazwanie są metodą identyfikacji.",
+    "preferencje": "Lubi: samotne ścieżki, zapach mokrej wełny, wysokie trawy i nocny wiatr; nie lubi: ognia w zagrodzie, dzwonów alarmowych, zamkniętych przejść i pierwszego światła."
+  },
+  "dokumentacja": [
+    {
+      "typ": "monografia folklorystyczna",
+      "pozycja": "Sabine Baring-Gould, „The Book of Were-Wolves” (1865), rozdziały o francuskim loup-garou: przemianie, wilczej skórze, nocnych wyprawach i rozpoznaniu po zranieniu — wydanie w Internet Archive",
+      "url": "https://archive.org/details/TheBookOfWere-wolves"
+    },
+    {
+      "typ": "źródło historyczne",
+      "pozycja": "Bibliothèque nationale de France, „La Bête du Gévaudan”: dossier o serii ataków w Gévaudan w latach 1764–1767; kontekst krajobrazu, odrębny od folklorystycznej postaci loup-garou",
+      "url": "https://gallica.bnf.fr/ark:/12148/bpt6k5687232b"
+    },
+    {
+      "typ": "opracowanie geograficzne",
+      "pozycja": "Encyclopaedia Britannica, „Gévaudan”: dawna prowincja południowej Francji, dziś związana z departamentem Lozère",
+      "url": "https://www.britannica.com/place/Gevaudan"
+    }
+  ],
+  "trofea": {
+    "pierwotne": "Pęk cierni z kamiennej zagrody na zboczu Margeride; między kolcami tkwi siwy włos, który zmienia zapach po wschodzie słońca.",
+    "wtorne": "Złamany dzwonek pasterski z Gévaudan — znaleziony przy ścieżce, na której nocny trop urywa się dokładnie przed pierwszym światłem."
+  },
+  "tagi": [
+    "francja",
+    "wilkolak",
+    "przemiana",
+    "warunek",
+    "postac-zwierzeca"
+  ],
+  "powiazania": [
+    {
+      "slug": "selkie-sule-skerry",
+      "opis": "Oba byty przekraczają granicę między ludzką postacią a zwierzęcą: loup-garou przez nocną przemianę, selkie przez fokę skórę. U selkie skóra jest kluczem do powrotu, u loup-garou — znakiem przymusu."
+    },
+    {
+      "slug": "empusa-korynt",
+      "opis": "Obie postaci są nocnymi zagrożeniami rozpoznawanymi dopiero po szczególnym śladzie ciała. Empusa zwodzi na drodze, a loup-garou poluje poza zagrodą; wspólny pozostaje motyw nocnej czujności."
+    },
+    {
+      "slug": "barbarossa-kyffhaeuser",
+      "opis": "Obie legendy wiążą byt z konkretnym krajobrazem i oczekiwaniem na właściwą porę. Cesarz śpi pod górą, a loup-garou wraca do ludzkiej postaci o świcie; góra przechowuje opowieść, nie tę samą kulturę."
+    }
+  ],
+  "meta": {
+    "utworzono": "2026-09-05 00:30",
+    "autor": "sesja arena 2026-09-05",
+    "modyfikacje": [
+      {
+        "data": "2026-09-05 00:30",
+        "opis": "Opowieść o loup-garou z Gévaudan, związana z kartą „Thornhide Wolves”, rozróżnia folklor człowieka-wilka od historycznej Bestii z Gévaudan."
+      }
+    ]
+  }
+}

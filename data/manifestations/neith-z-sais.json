@@ -22,7 +22,7 @@
   "pochodzenie_i_kultura": "Religia starożytnego Egipta (Delta Nilu): Neith to jedna z najstarszych bogiń egipskich, pani Sais, tkaczka i wojowniczka — znakiem jej imienia jest tarcza ze skrzyżowanymi strzałami albo czółenko tkackie. W tradycji z Esny myśli świat w istnienie, od Nowego Państwa zwana „Matką i Ojciechem wszystkich rzeczy”, matką Ra i Apepa. Grecy utożsamiali ją z Ateną (Platon w Timajosie wprost: „Neith, czyli Atena”). Jedna bogini, jedna kultura, jedno miasto: żadnych mieszanek z późniejszą Izydą rzymskich misteriów — trzymamy się Neith z Sais, tej od płótna, łuku i napisu, którego nikt nie odsłonił.",
   "wizualizacja": {
     "prompt": "Style: A wide-angle full-body cinematic photograph. The central objects/persons of the photo are visible from head to toe, standing centrally in the frame. No parts of the body are cropped.\n\nA tall serene goddess-woman with dark copper skin wearing the red woven crown of Lower Egypt and a plain white linen dress, in one raised hand a wooden weaving shuttle with unspun thread, in the other a bow with two crossed arrows, standing in the open forecourt of an ancient sandstone temple at night, hundreds of small clay saucer-lamps with floating flames burning in long rows around her bare feet and across the dark square, a long translucent veil streaming from her crown and dissolving into the starry sky, the full moon low over a palm-lined river behind the colonnade.\n\nCaptured with a 35mm anamorphic lens at f/1.8. Shallow depth of field with a heavy, creamy bokeh background. Environmental portraiture. Dramatic cinematic lighting, sharp focus on the character, hyper-realistic textures of clothing and skin. Shot on 70mm film stock, ultra-wide 21:9 aspect ratio. --ar 21:9",
-    "obraz": null
+    "obraz": "assets/wizualizacje/neith-z-sais.jpg"
   },
   "natura": {
     "wyglad_i_aura": "Wysoka kobieta o ciemnej, miedzianej skórze, w czerwonej koronie Dolnego Egiptu i prostym lnianym kaftanie; w jednej dłoni czółenko z nicią, w drugiej łuk ze skrzyżowanymi strzałami. Manifestacji towarzyszy zapach gorącego oleju i świeżego płótna, a otoczenie robi się dziwnie spokojne — jakby ktoś przeciągnął przez świat krajkę i wygładził fałdy. Wokół stóp zawsze palą się małe płomienie, nawet bez lamp, a z korony spływa jej zasłona, która nie kończy się w żadnym widzialnym miejscu.",
@@ -85,6 +85,11 @@
   "meta": {
     "utworzono": "2026-09-04 19:30",
     "autor": "sesja arena 2026-09-04",
-    "modyfikacje": []
+    "modyfikacje": [
+      {
+        "data": "2026-09-05 12:45",
+        "opis": "Wizualizacja Neith z Sais została odtworzona i dołączona do opisu bogini tkaczki."
+      }
+    ]
   }
 }

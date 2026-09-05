@@ -1018,3 +1018,36 @@ div.warstwa.otwarta { display: block; animation: warstwa-wnika 0.2s ease-out; }
     --linia: #ccc5b6;
   }
 }
+
+/* Profil Rezonansu: warstwa aplikacyjna poza numeracją MFM. */
+.arena-profil { margin: 18px 0; padding: 14px 16px; border: 1px solid var(--obramowanie); border-radius: 10px; background: color-mix(in srgb, var(--panel) 82%, var(--akcent) 18%); }
+.arena-profil-naglowek { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; }
+.arena-profil h3 { margin: 0; font-size: 15px; letter-spacing: .04em; text-transform: uppercase; }
+.arena-archetyp { color: var(--akcent); font-size: 12px; }
+.arena-profil dl { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin: 14px 0 8px; }
+.arena-staty-wiersz dt { color: var(--tekst-dim); font-size: 12px; text-transform: uppercase; }
+.arena-staty-wiersz dd { margin: 4px 0 0; font-size: 22px; color: var(--tekst); }
+.arena-staty-wiersz dd span { display: block; border-bottom: 3px solid var(--akcent); width: max(24px, min(100%, calc(var(--arena-wartosc) * 1%))); }
+@media (max-width: 560px) { .arena-profil dl { grid-template-columns: repeat(2, 1fr); } }
+
+/* C5 — raport drogi SPLOTU. */
+.splot-raport { max-width: 920px; margin: 0 auto; }
+.splot-hero { border-left: 3px solid var(--akcent); padding-left: 16px; }
+.splot-hero h2 { margin-bottom: 6px; }
+.splot-sklad { line-height: 2.4; }
+.splot-obraz { display: block; width: 100%; aspect-ratio: 21 / 9; object-fit: cover; border-radius: 10px; margin: 18px 0; }
+.splot-wynik { padding: 14px; border: 1px solid var(--obramowanie); border-radius: 10px; background: color-mix(in srgb, var(--panel) 84%, var(--akcent) 16%); }
+.splot-zasoby { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+.splot-zasoby div { border-top: 2px solid var(--akcent); padding-top: 5px; }
+.splot-zasoby dt { color: var(--tekst-dim); text-transform: uppercase; font-size: 12px; }
+.splot-zasoby dd { margin: 4px 0; font-size: 22px; }
+.splot-wezel { margin: 14px 0; padding: 12px; border: 1px solid var(--obramowanie); border-radius: 8px; }
+.splot-wezel.sukces { border-left: 4px solid #6e9e70; }
+.splot-wezel.porazka { border-left: 4px solid var(--akcent-2); }
+.splot-wezel header { display: flex; justify-content: space-between; gap: 12px; }
+.splot-wezel.sukces header strong { color: #6e9e70; }
+.splot-wykres { position: relative; height: 24px; margin: 9px 0; background: color-mix(in srgb, var(--tekst-dim) 18%, transparent); border-radius: 4px; overflow: hidden; }
+.splot-szansa { display: block; height: 100%; background: var(--akcent); color: var(--akcent-tekst); padding: 3px 7px; font-size: 12px; box-sizing: border-box; }
+.splot-los { position: absolute; top: 3px; right: 7px; font-size: 12px; color: var(--tekst); }
+.splot-wezel small { color: var(--tekst-dim); }
+@media (max-width: 560px) { .splot-zasoby { grid-template-columns: repeat(2, 1fr); } }

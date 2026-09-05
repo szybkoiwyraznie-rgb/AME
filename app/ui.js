@@ -4,6 +4,8 @@
  * wstawiana jako tekst (esc), nigdy jako HTML.
  */
 
+import { statyManifestacji } from './arena.js';
+
 /** Nazwa kategorii tagu (z kanonu); bez kanonu — surowe id. */
 export function nazwaKategorii(indeks, id) {
   if (!id) return '';
@@ -224,6 +226,22 @@ function chipyTagow(w, indeks) {
 /** Pełny wpis kartoteki (sekcje I–VII wg protokołu MFM v1.8). `kronika` to
  *  podsumowanie Tomu (summary.json) — jeśli podane, wpis dostaje sekcję
  *  „Tomy i Epoki” (E, 2026-08-30) z linkami do raportów. */
+export function htmlProfiluAreny(w, indeks) {
+  const rekord = indeks?.manifestacje?.find((m) => m.slug === w.slug) ?? w;
+  const s = statyManifestacji(rekord, indeks?.kanon);
+  const pola = [['Żywotność', s.zywotnosc], ['Moc', s.moc], ['Spryt', s.spryt], ['Rezonans', s.rezonans]];
+  const wiersze = pola.map(([nazwa, wartosc]) => `<div class="arena-staty-wiersz"><dt>${nazwa}</dt><dd><span style="--arena-wartosc:${wartosc}">${wartosc}</span></dd></div>`).join('');
+  return `<section class="arena-profil" aria-label="Profil Rezonansu"><div class="arena-profil-naglowek"><h3>Profil Rezonansu</h3><span class="arena-archetyp">${esc(s.motywy.length ? s.motywy.join(' · ') : 'cisza')}</span></div><dl>${wiersze}</dl><p class="maly">Statystyki wynikają wyłącznie z sieci archiwum: powiązań, wzmianek, skitów, tagów i imion.</p></section>`;
+}
+
+export function htmlSplotu(droga, wynik, indeks) {
+  const nazwa = (slug) => indeks?.manifestacje?.find((m) => m.slug === slug)?.nazwa ?? slug;
+  const sklad = (droga.sklad ?? []).map((slug) => `<button class="chip link" data-slug="${esc(slug)}">${esc(nazwa(slug))}</button>`).join(' ');
+  const wiersze = (wynik.dziennik ?? []).map((w, i) => `<article class="splot-wezel ${w.sukces ? 'sukces' : 'porazka'}"><header><span>${i + 1}. ${esc(w.nazwa)}</span><strong>${w.sukces ? 'sukces' : 'porażka'}</strong></header><div class="splot-wykres"><span class="splot-szansa" style="width:${Math.round(w.prawdopodobienstwo * 100)}%">szansa ${Math.round(w.prawdopodobienstwo * 100)}%</span><span class="splot-los">los ${(w.wartoscLosowa * 100).toFixed(1)}%</span></div><p>${esc(w.proza ?? '')}</p><small>zasoby po próbie: ${esc(JSON.stringify(w.zasoby))}</small></article>`).join('');
+  const obraz = droga.grafika?.obraz ? `<img class="splot-obraz" src="${esc(droga.grafika.obraz)}" alt="${esc(droga.grafika.prompt ?? droga.tytul)}" loading="lazy">` : '';
+  return `<div class="splot-raport"><header class="splot-hero"><p class="karta-inspiracja">SPLOT · droga fabularna · ${esc(droga.miejsce ?? '')}</p><h2>${esc(droga.tytul)}</h2><p>${esc(droga.cel)}</p><p class="splot-sklad">Skład: ${sklad}</p></header>${obraz}<section class="splot-wynik"><h3>Rozstrzygnięcie: ${esc(wynik.status)}</h3><p>${esc(wynik.proza)}</p><dl class="splot-zasoby">${Object.entries(wynik.zasoby ?? {}).map(([k, v]) => `<div><dt>${esc(k)}</dt><dd>${v}</dd></div>`).join('')}</dl></section><section><h3>Dziennik drogi</h3>${wiersze}</section></div>`;
+}
+
 export function htmlWpisu(w, indeks, kronika = null) {
   const rekord = indeks.manifestacje.find((m) => m.slug === w.slug) ?? {};
   const alt = (w.nazwy_alternatywne ?? []).length ? `<p class="alt">znany też jako: ${esc(w.nazwy_alternatywne.join(', '))}</p>` : '';
@@ -306,7 +324,7 @@ export function htmlWpisu(w, indeks, kronika = null) {
 
   // Sekcje I–VII w kolejności numeracji (PROTOKÓŁ §4.1, MFM v1.8):
   // numer = pozycja; V = SKITy, VI = Tomy i Epoki, VII = Powiązania.
-  return `<div class="wpis">${naglowek}${I}${II}${III}${IV}${V}${tomyIEpoki}${wiki}${meta}</div>`;
+  return `<div class="wpis">${naglowek}${htmlProfiluAreny(w, indeks)}${I}${II}${III}${IV}${V}${tomyIEpoki}${wiki}${meta}</div>`;
 }
 
 /**

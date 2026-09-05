@@ -1,0 +1,63 @@
+{
+  "slug": "ostatni-slad-gevaudan",
+  "tytul": "Ostatni ślad w Gévaudan",
+  "cel": "Przeprowadzić loup-garou przez zamykany las, zanim łowcy odetną mu wszystkie drogi.",
+  "miejsce": "Gévaudan, Francja",
+  "sklad": ["loup-garou-gevaudan", "sfinks-teby", "neith-z-sais"],
+  "start": { "zasoby": { "pamiec": 12, "przejscie": 4, "dlug": 0, "slad": 1 } },
+  "wezly": [
+    {
+      "slug": "krag-lowcow",
+      "nazwa": "Krąg łowców",
+      "typ": "spór",
+      "trudnosc": 48,
+      "zdolnosc": "przemiana",
+      "koszt": { "przejscie": 1 },
+      "nagroda": { "slad": 1 },
+      "porazka": { "pamiec": -2 },
+      "proza": {
+        "sukces": "Sfinks nie odpowiada na pytanie łowcy. Zadaje własne — o to, kto pierwszy nazwał wilka potworem — i przez chwilę ludzie patrzą na siebie zamiast na las.",
+        "porazka": "Srebrne groty nie trafiają w loup-garou, lecz wystarczają, by zamknąć drogę. Łowcy nie widzą zwycięstwa; widzą tylko, że las nauczył się ich imion."
+      }
+    },
+    {
+      "slug": "noc-lamp",
+      "nazwa": "Noc lamp",
+      "typ": "egzorcyzm",
+      "trudnosc": 62,
+      "zdolnosc": "tkanie",
+      "koszt": { "pamiec": 2, "przejscie": 1 },
+      "nagroda": { "przejscie": 2, "slad": 1 },
+      "porazka": { "dlug": 1 },
+      "proza": {
+        "sukces": "Neith ustawia lampy wzdłuż ścieżki. Nie wypędza ludzi z lasu; sprawia, że każdy płomień pokazuje inną wersję tego samego tropu. Łowcy wybierają tę, w której nie ma winnego.",
+        "porazka": "Jedna lampa gaśnie. Za nią gasną następne, a kapłan zapisuje w raporcie, że był to tylko wiatr. Dług zostaje przy ścieżce i czeka na tego, kto jeszcze pamięta."
+      }
+    },
+    {
+      "slug": "gora-fikion",
+      "nazwa": "Droga przez górę Fikion",
+      "typ": "przejście",
+      "trudnosc": 55,
+      "zdolnosc": "zagadka",
+      "koszt": { "przejscie": 2, "slad": 1 },
+      "nagroda": { "pamiec": 3, "slad": 1 },
+      "porazka": { "pamiec": -3, "dlug": 1 },
+      "koniecPoPorazce": true,
+      "proza": {
+        "sukces": "O świcie loup-garou przechodzi przez przełęcz jako człowiek, którego nikt nie potrafi już wskazać palcem. Na kamieniu zostaje tylko sierść, nić i pytanie bez odpowiedzi.",
+        "porazka": "Góra nie otwiera przejścia. Sfinks wraca na skałę, Neith zwija nić, a loup-garou wybiera ścieżkę, której nie ma na żadnej mapie."
+      }
+    }
+  ],
+  "proza": {
+    "ukonczona": "Trzy razy świat próbował zamknąć las: żelaznym kręgiem, modlitwą i mapą. Za każdym razem udało mu się zamknąć coś innego. Loup-garou przeszedł, lecz Gévaudan nie wróciło do dawnego kształtu — odtąd każda opowieść o polowaniu miała w sobie także pytanie o to, kto właściwie poluje.",
+    "rozszczepiona": "Droga nie rozstrzygnęła się jednym zwycięstwem. Jedna ścieżka została ocalona, druga zapadła się pod raportem łowców. W archiwum pojawił się nowy ślad, ale wraz z nim nowy dług: ktoś będzie musiał wrócić do miejsca, którego nie udało się nazwać.",
+    "przerwana": "Las zatrzymał wszystkich. Łowcy wrócili z pustymi rękami, a byty z pamięcią cięższą niż przedtem. To nie był koniec historii, tylko jej najdroższa wersja.",
+    "domyslna": "Droga zostawiła ślad w miejscu, gdzie świat próbował wymazać metafizykę."
+  },
+  "grafika": {
+    "obraz": "assets/wizualizacje/splot-ostatni-slad-gevaudan.jpg",
+    "prompt": "Hyperrealistic cinematic 21:9 photograph at dawn in the Gévaudan highlands: a wolf-man crossing a narrow forest pass while a winged sphinx watches from a rock and an Egyptian goddess holds a thin luminous thread between thorn trees; distant human hunters lower their weapons as oil lamps fade, mist, wet grass, no gore, no text."
+  }
+}

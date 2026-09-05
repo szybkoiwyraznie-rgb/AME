@@ -38,6 +38,7 @@ Każdy dokument opisuje kontekst, wybór i jego konsekwencje.
 | [0021](0021-kronika-mechanizm-paliwa-i-konsekwencji.md) | Kronika: mechanizm paliwa, konsekwencje i pierwsza epoka | Zaakceptowana |
 | [0022](0022-usuniecie-sekcji-rezonans-v1-8.md) | Usunięcie sekcji „Rezonans i tożsamość” i renumercja V–VII (protokół MFM v1.8) | Zaakceptowana |
 | [0023](0023-petla-jakosci-liniowa-i-autonomia-wdrozen.md) | Pętla Jakości liniowa (C4→C1→C3→C6→C2+5) i autonomia wdrożeń | Zaakceptowana |
+| [0024](0024-losowość-rozstrzygniec-fabularnych.md) | Losowość rozstrzygnięć fabularnych przy deterministycznej szansie | Zaakceptowana |
 
 ## Szablon ADR
 

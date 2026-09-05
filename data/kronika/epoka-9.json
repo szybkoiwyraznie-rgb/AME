@@ -1,0 +1,208 @@
+{
+  "slug": "epoka-9",
+  "tom": "tom-1",
+  "skit": "zaslona-i-siersc",
+  "tytul": "Zasłona, sierść i pytanie bez końca",
+  "iskra": "Sfinks zatrzymuje loup-garou na drodze pod Fikionem, a Neith rozwiesza między nimi nić, której nie da się przeciąć. Każdy rozpoznaje drugiego po jednym znaku, lecz żaden nie chce zostać sprowadzony do znaku.",
+  "pytanie": "Czy byt pozostaje sobą, kiedy cudze pytanie opisuje go szybciej niż on sam?",
+  "uczestnicy": [
+    {
+      "slug": "sfinks-teby",
+      "rola": "Strażniczka pytania",
+      "kosztUdzialu": 2,
+      "zwrot": 2
+    },
+    {
+      "slug": "loup-garou-gevaudan",
+      "rola": "Ten, którego ślad ma dwa imiona",
+      "kosztUdzialu": 2,
+      "zwrot": 2
+    },
+    {
+      "slug": "neith-z-sais",
+      "rola": "Tkaczka reguły rozmowy",
+      "kosztUdzialu": 2,
+      "zwrot": 2
+    }
+  ],
+  "narrator": {
+    "ocena": [
+      {
+        "kto": "sfinks-teby",
+        "kogo": "loup-garou-gevaudan",
+        "stopien": 2,
+        "komentarz": "Nie odpowiedział, lecz jego milczenie miało kształt. To rzadki rodzaj odpowiedzi."
+      },
+      {
+        "kto": "neith-z-sais",
+        "kogo": "sfinks-teby",
+        "stopien": 2,
+        "komentarz": "Pytanie jest nicią, nie ostrzem. Można nim związać rozmowę bez ranienia rozmówcy."
+      },
+      {
+        "kto": "loup-garou-gevaudan",
+        "kogo": "neith-z-sais",
+        "stopien": 1,
+        "komentarz": "Jej zasłona nie ukrywa twarzy. Ukrywa pewność, że twarz wystarczy."
+      }
+    ],
+    "podsumowanie": "Epoka nie rozstrzyga, czym jest byt. Zostawia trzy ślady: zagadkę, sierść i nić. Każdy jest prawdziwy, lecz żaden nie wyczerpuje osoby, która go zostawiła."
+  },
+  "konsekwencje": {
+    "os": {
+      "mit": 1,
+      "racjonalizacja": -1
+    },
+    "relacje": [
+      {
+        "typ": "neutralna",
+        "skad": "sfinks-teby",
+        "dokad": "loup-garou-gevaudan",
+        "opis": "Pytanie spotkało przemianę, ale żadna z nich nie odebrała drugiej głosu."
+      },
+      {
+        "typ": "wzmocnienie",
+        "skad": "neith-z-sais",
+        "dokad": "sfinks-teby",
+        "opis": "Nić Neith pozwoliła zagadce pozostać przejściem, nie wyrokiem."
+      },
+      {
+        "typ": "wzmocnienie",
+        "skad": "neith-z-sais",
+        "dokad": "loup-garou-gevaudan",
+        "opis": "Tkaczka przyjęła ślad wilka jako początek rozmowy, nie dowód winy."
+      }
+    ],
+    "zasieg": [
+      {
+        "slug": "sfinks-teby",
+        "delta": 0.012,
+        "opis": "Góra Fikion odzyskała pytanie, które nie musi kończyć się śmiercią."
+      },
+      {
+        "slug": "loup-garou-gevaudan",
+        "delta": 0.01,
+        "opis": "Opowieść o człowieku-wilku dostała rozmówcę zamiast samego tropu."
+      },
+      {
+        "slug": "neith-z-sais",
+        "delta": 0.008,
+        "opis": "Nić Neith połączyła rozpoznanie z cierpliwością."
+      }
+    ],
+    "dominacje": [
+      {
+        "kultura": "grecja",
+        "kult": "sfinks-teby",
+        "delta": 0.012
+      },
+      {
+        "kultura": "francja",
+        "kult": "loup-garou-gevaudan",
+        "delta": 0.01
+      },
+      {
+        "kultura": "egipt",
+        "kult": "neith-z-sais",
+        "delta": 0.008
+      }
+    ],
+    "pozycje": [
+      {
+        "slug": "sfinks-teby",
+        "status": "wzmocniony",
+        "opis": "Strażniczka nie porzuciła zagadki, ale pozwoliła jej otworzyć rozmowę."
+      },
+      {
+        "slug": "loup-garou-gevaudan",
+        "status": "przemieniony",
+        "opis": "Bestia została usłyszana zanim została osądzona."
+      },
+      {
+        "slug": "neith-z-sais",
+        "status": "wzmocniony",
+        "opis": "Tkaczka związała trzy sposoby rozpoznania w jedną cierpliwą regułę."
+      }
+    ],
+    "watki": [
+      {
+        "id": "gosc-ktoremu-zaplacono",
+        "stan": "zamkniety",
+        "byty": [
+          "empusa-korynt",
+          "barbarossa-kyffhaeuser"
+        ],
+        "pytanie": "Dług został nazwany i zapłacony; teraz pozostaje ślad pytania o cenę rozpoznania."
+      },
+      {
+        "id": "pierwszy-w-linii",
+        "stan": "otwarty",
+        "byty": [
+          "protostates",
+          "knecht-z-koptos",
+          "syama-i-sarvara"
+        ],
+        "pytanie": "Co się stanie z linią, gdy pierwszy przestanie stać, a nikt nie uzna, że ktoś go zastąpił?"
+      },
+      {
+        "id": "niewinny-bierca",
+        "stan": "otwarty",
+        "byty": [
+          "kentaur-pelion",
+          "pandora",
+          "empusa-korynt"
+        ],
+        "pytanie": "Kiedy biernik dowie się, że bierze — i co wtedy zrobi z tym, co już wziął?"
+      },
+      {
+        "id": "warunek-barbarossy",
+        "stan": "otwarty",
+        "byty": [
+          "barbarossa-kyffhaeuser",
+          "kentaur-pelion",
+          "egungun"
+        ],
+        "pytanie": "Czy dług śpiącego cesarza da się spłacić gościną — czy rachunek, który zapłacił ze snu, przyjdzie kiedyś wyrównać na jawie?"
+      },
+      {
+        "id": "kres-indry",
+        "stan": "otwarty",
+        "byty": [
+          "indra"
+        ],
+        "pytanie": "Kto zapisze kres Indry: ten, kto go zdetronizuje, czy ten, który przestaje się bać jego gromu?"
+      },
+      {
+        "id": "wedrowny-dom-empusy",
+        "stan": "zamkniety",
+        "byty": [
+          "empusa-korynt"
+        ],
+        "pytanie": "Dom ze światła nie wytrzymał gospodarza, który płaci złotem: słowo-poznanie straciło monopol, bo jest drugie słowo — zaproszenie. Wędrówka domu skończyła się w górze, która umie gościć."
+      },
+      {
+        "id": "znak-nie-wystarcza",
+        "stan": "otwarty",
+        "byty": [
+          "sfinks-teby",
+          "loup-garou-gevaudan",
+          "neith-z-sais"
+        ],
+        "pytanie": "Co trzeba usłyszeć poza jednym znakiem, aby rozpoznać byt bez zamykania go w opisie?"
+      }
+    ]
+  },
+  "grafika": {
+    "podpis": "Sfinks, loup-garou i Neith spotykają się na drodze, którą przecina nić światła.",
+    "styl": "Hyperrealistyczne zdjęcie filmowe, ultrapanorama 21:9.",
+    "prompt": "Hyperrealistic cinematic photograph, ultra-wide 21:9 anamorphic frame. At dusk on a rocky road below Mount Phikion, a winged sphinx sits on a stone ledge facing a wolf-man at the forest edge, while a serene Egyptian goddess stretches a luminous thread between them. A Greek road, thorny French highland brush and distant sandstone temple merge only as a dreamlike stage, not as a literal landscape. The sphinx holds a question in her gaze, the wolf-man keeps one human hand hidden in fur, and the goddess carries a wooden shuttle. Blue dusk, amber thread-light, restrained folkloric realism, no gore, no text, no modern objects.",
+    "obraz": "assets/wizualizacje/kronika-tom-1-epoka-9.jpg"
+  },
+  "meta": {
+    "utworzono": "2026-09-05 13:15",
+    "autor": "sesja arena 2026-09-05",
+    "wersja": 1,
+    "poprzednik": "epoka-8"
+  },
+  "przebieg": "Trzy postacie spotykają się na granicy drogi, lasu i świątyni. Sfinks żąda odpowiedzi, loup-garou odmawia pokazania dłoni, a Neith tka z obu uników nową regułę rozmowy. Pytanie nie kończy przejścia — wymusza dalsze słuchanie."
+}

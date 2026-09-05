@@ -2,7 +2,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
-import { htmlWpisu, htmlWarstwyWpisu, linkDoZrodla, htmlListy, htmlStronyTagu, htmlTagow, htmlDialogu, htmlSkitu, htmlBazySkitow, htmlNowosci, htmlKronik, htmlTomyIEpoki, esc, rzymskie, nastepnyMotyw, motywPoczatkowy, etykietaMotywu, MOTYWY, KLUCZ_MOTYWU, akcjeZZapytania, tekstDoLektora, htmlTrofeow, paryRozmowySkitu, doB64utf8, zB64utf8, dataZmianySluga } from '../app/ui.js';
+import { htmlWpisu, htmlSplotu, htmlProfiluAreny, htmlWarstwyWpisu, linkDoZrodla, htmlListy, htmlStronyTagu, htmlTagow, htmlDialogu, htmlSkitu, htmlBazySkitow, htmlNowosci, htmlKronik, htmlTomyIEpoki, esc, rzymskie, nastepnyMotyw, motywPoczatkowy, etykietaMotywu, MOTYWY, KLUCZ_MOTYWU, akcjeZZapytania, tekstDoLektora, htmlTrofeow, paryRozmowySkitu, doB64utf8, zB64utf8, dataZmianySluga } from '../app/ui.js';
 
 async function dane(plik = 'egungun') {
   const wpis = JSON.parse(await readFile(`data/manifestations/${plik}.json`, 'utf8'));
@@ -68,6 +68,22 @@ test('app.js: zapamiętywanie warstw i widoku mapy w localStorage (D)', async ()
 
 test('esc: znaki HTML uciekają', () => {
   assert.equal(esc('<script>&"\''), '&lt;script&gt;&amp;&quot;&#39;');
+});
+
+test('SPLOT: raport pokazuje prozę, szanse, los, zasoby, skład i wizualizację', () => {
+  const droga = { tytul: 'Droga testowa', miejsce: 'las', sklad: ['a'], grafika: { obraz: 'assets/droga.jpg' } };
+  const wynik = { status: 'rozszczepiona', proza: 'Świat zmienił kierunek.', zasoby: { pamiec: 3, przejscie: 1 }, dziennik: [{ nazwa: 'Próba', prawdopodobienstwo: 0.4, wartoscLosowa: 0.2, sukces: true, zasoby: { pamiec: 3 }, proza: 'Próba się udała.' }] };
+  const html = htmlSplotu(droga, wynik, { manifestacje: [{ slug: 'a', nazwa: 'Byt A' }] });
+  for (const fragment of ['Droga testowa', 'rozszczepiona', 'Próba się udała.', 'szansa 40%', 'los 20.0%', 'pamiec', 'assets/droga.jpg']) assert.ok(html.includes(fragment), fragment);
+});
+
+test('Profil Rezonansu: statystyki są wyprowadzone z rekordu i pokazane poza numeracją MFM', async () => {
+  const { wpis, indeks } = await dane();
+  const html = htmlProfiluAreny(wpis, indeks);
+  assert.match(html, /Profil Rezonansu/);
+  for (const etykieta of ['Żywotność', 'Moc', 'Spryt', 'Rezonans']) assert.ok(html.includes(etykieta));
+  assert.match(html, /--arena-wartosc:\d+/);
+  assert.ok(html.includes('Statystyki wynikają wyłącznie z sieci archiwum'));
 });
 
 test('htmlWpisu: komplet sekcji protokołu I–V (egungun)', async () => {
