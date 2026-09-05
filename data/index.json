@@ -1,8 +1,8 @@
 {
   "wersja": 3,
-  "buildTime": "2026-09-05T11:57:20.049Z",
+  "buildTime": "2026-09-05T11:58:35.341Z",
   "liczba": 25,
-  "liczbaSkitow": 45,
+  "liczbaSkitow": 46,
   "kanon": {
     "kategorie": [
       {
@@ -874,6 +874,7 @@
         "odzwierni",
         "plotno-i-kamien",
         "pod-dachem",
+        "rachunek-za-pochowek",
         "trzy-stoly"
       ]
     },
@@ -957,7 +958,9 @@
         "pierwotne": "Garść zimnego popiołu w zszytej skórze zwierzęcej, z etykietą podającą odległość od najbliższego pastwiska i od najbliższej drogi — dowód, że wykonano wszystkie trzy kroki, nie dwa.",
         "wtorne": "Kołek ze złamanej belki dachowej z Þórhallsstaðir, wyszczerbiony od nocnych przejażdżek po darni; przechowywany osobno od popiołu."
       },
-      "skity": []
+      "skity": [
+        "rachunek-za-pochowek"
+      ]
     },
     {
       "slug": "indra",
@@ -1315,6 +1318,7 @@
       },
       "skity": [
         "jedno-pytanie",
+        "rachunek-za-pochowek",
         "zaslona-i-siersc"
       ]
     },
@@ -2242,6 +2246,23 @@
       "data": "2026-08-30 13:30"
     },
     {
+      "slug": "rachunek-za-pochowek",
+      "tytul": "RACHUNEK ZA POCHÓWEK",
+      "temat": "obrzęd pogrzebowy jako rachunek: kto go zapłaci, ten wyznacza dzień rozmowy ze zmarłym",
+      "uczestnicy": [
+        "egungun",
+        "glamr-z-thorhallsstadir",
+        "neith-z-sais"
+      ],
+      "imiona": [
+        "Egungun",
+        "Glámr",
+        "Neith"
+      ],
+      "slow": 252,
+      "data": "2026-09-05"
+    },
+    {
       "slug": "rzeczy-znalezione",
       "tytul": "RZECZY ZNALEZIONE",
       "temat": "biuro rzeczy znalezionych — co bytom zginęło, co im zabrano i co same zatrzymały",
@@ -2588,6 +2609,14 @@
       "slug": "lustro-odpowiedz-wers",
       "tytul": "LUSTRO, ODPOWIEDŹ, WERS",
       "opis": "SKIT — skład: Bazyliszek, Morowa Panna, Śyāma i Śarvara"
+    },
+    {
+      "data": "2026-09-05",
+      "typ": "skit",
+      "akcja": "nowy",
+      "slug": "rachunek-za-pochowek",
+      "tytul": "RACHUNEK ZA POCHÓWEK",
+      "opis": "SKIT — skład: Egungun, Glámr, Neith"
     },
     {
       "data": "2026-09-04 20:05",

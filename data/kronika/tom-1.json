@@ -6,8 +6,8 @@
   "status": "otwarta",
   "stanStart": {
     "os": {
-      "mit": 37,
-      "racjonalizacja": 63
+      "mit": 38,
+      "racjonalizacja": 62
     },
     "zasieg": [
       {
@@ -40,7 +40,7 @@
       },
       {
         "slug": "egungun",
-        "wielkosc": 0.48
+        "wielkosc": 0.5
       },
       {
         "slug": "empusa-korynt",
@@ -48,7 +48,7 @@
       },
       {
         "slug": "glamr-z-thorhallsstadir",
-        "wielkosc": 0.18
+        "wielkosc": 0.2
       },
       {
         "slug": "indra",
@@ -80,7 +80,7 @@
       },
       {
         "slug": "neith-z-sais",
-        "wielkosc": 0.21
+        "wielkosc": 0.23
       },
       {
         "slug": "nessos",
@@ -150,7 +150,7 @@
       {
         "kultura": "joruba",
         "kult": "egungun",
-        "wielkosc": 0.48
+        "wielkosc": 0.5
       },
       {
         "kultura": "grecja",
@@ -160,7 +160,7 @@
       {
         "kultura": "islandia",
         "kult": "glamr-z-thorhallsstadir",
-        "wielkosc": 0.18
+        "wielkosc": 0.2
       },
       {
         "kultura": "indie",
@@ -200,7 +200,7 @@
       {
         "kultura": "egipt",
         "kult": "neith-z-sais",
-        "wielkosc": 0.21
+        "wielkosc": 0.23
       },
       {
         "kultura": "grecja",

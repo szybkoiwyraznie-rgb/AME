@@ -58,8 +58,8 @@
       ],
       "stanPo": {
         "os": {
-          "mit": 35,
-          "racjonalizacja": 65
+          "mit": 36,
+          "racjonalizacja": 64
         },
         "zasieg": [
           {
@@ -92,7 +92,7 @@
           },
           {
             "slug": "egungun",
-            "wielkosc": 0.51
+            "wielkosc": 0.53
           },
           {
             "slug": "empusa-korynt",
@@ -100,7 +100,7 @@
           },
           {
             "slug": "glamr-z-thorhallsstadir",
-            "wielkosc": 0.18
+            "wielkosc": 0.2
           },
           {
             "slug": "indra",
@@ -132,7 +132,7 @@
           },
           {
             "slug": "neith-z-sais",
-            "wielkosc": 0.21
+            "wielkosc": 0.23
           },
           {
             "slug": "nessos",
@@ -202,7 +202,7 @@
           {
             "kultura": "joruba",
             "kult": "egungun",
-            "wielkosc": 0.51
+            "wielkosc": 0.53
           },
           {
             "kultura": "grecja",
@@ -212,7 +212,7 @@
           {
             "kultura": "islandia",
             "kult": "glamr-z-thorhallsstadir",
-            "wielkosc": 0.18
+            "wielkosc": 0.2
           },
           {
             "kultura": "indie",
@@ -252,7 +252,7 @@
           {
             "kultura": "egipt",
             "kult": "neith-z-sais",
-            "wielkosc": 0.21
+            "wielkosc": 0.23
           },
           {
             "kultura": "grecja",
@@ -319,8 +319,8 @@
         "zasieg": [
           {
             "slug": "egungun",
-            "przed": 0.48,
-            "po": 0.51,
+            "przed": 0.5,
+            "po": 0.53,
             "delta": 0.03,
             "opis": "W niektórych rodach pojawia się czwarty stół dla gościa, który wziął sam — kult przodków zyskuje nowy rytuał."
           },
@@ -343,8 +343,8 @@
           {
             "kultura": "joruba",
             "kult": "egungun",
-            "przed": 0.48,
-            "po": 0.51,
+            "przed": 0.5,
+            "po": 0.53,
             "delta": 0.03
           },
           {
@@ -494,8 +494,8 @@
       ],
       "stanPo": {
         "os": {
-          "mit": 33,
-          "racjonalizacja": 67
+          "mit": 34,
+          "racjonalizacja": 66
         },
         "zasieg": [
           {
@@ -528,7 +528,7 @@
           },
           {
             "slug": "egungun",
-            "wielkosc": 0.51
+            "wielkosc": 0.53
           },
           {
             "slug": "empusa-korynt",
@@ -536,7 +536,7 @@
           },
           {
             "slug": "glamr-z-thorhallsstadir",
-            "wielkosc": 0.18
+            "wielkosc": 0.2
           },
           {
             "slug": "indra",
@@ -568,7 +568,7 @@
           },
           {
             "slug": "neith-z-sais",
-            "wielkosc": 0.21
+            "wielkosc": 0.23
           },
           {
             "slug": "nessos",
@@ -638,7 +638,7 @@
           {
             "kultura": "joruba",
             "kult": "egungun",
-            "wielkosc": 0.51
+            "wielkosc": 0.53
           },
           {
             "kultura": "grecja",
@@ -648,7 +648,7 @@
           {
             "kultura": "islandia",
             "kult": "glamr-z-thorhallsstadir",
-            "wielkosc": 0.18
+            "wielkosc": 0.2
           },
           {
             "kultura": "indie",
@@ -688,7 +688,7 @@
           {
             "kultura": "egipt",
             "kult": "neith-z-sais",
-            "wielkosc": 0.21
+            "wielkosc": 0.23
           },
           {
             "kultura": "grecja",
@@ -948,8 +948,8 @@
       ],
       "stanPo": {
         "os": {
-          "mit": 31,
-          "racjonalizacja": 69
+          "mit": 32,
+          "racjonalizacja": 68
         },
         "zasieg": [
           {
@@ -982,7 +982,7 @@
           },
           {
             "slug": "egungun",
-            "wielkosc": 0.53
+            "wielkosc": 0.55
           },
           {
             "slug": "empusa-korynt",
@@ -990,7 +990,7 @@
           },
           {
             "slug": "glamr-z-thorhallsstadir",
-            "wielkosc": 0.18
+            "wielkosc": 0.2
           },
           {
             "slug": "indra",
@@ -1022,7 +1022,7 @@
           },
           {
             "slug": "neith-z-sais",
-            "wielkosc": 0.21
+            "wielkosc": 0.23
           },
           {
             "slug": "nessos",
@@ -1092,7 +1092,7 @@
           {
             "kultura": "joruba",
             "kult": "egungun",
-            "wielkosc": 0.53
+            "wielkosc": 0.55
           },
           {
             "kultura": "grecja",
@@ -1102,7 +1102,7 @@
           {
             "kultura": "islandia",
             "kult": "glamr-z-thorhallsstadir",
-            "wielkosc": 0.18
+            "wielkosc": 0.2
           },
           {
             "kultura": "indie",
@@ -1142,7 +1142,7 @@
           {
             "kultura": "egipt",
             "kult": "neith-z-sais",
-            "wielkosc": 0.21
+            "wielkosc": 0.23
           },
           {
             "kultura": "grecja",
@@ -1218,8 +1218,8 @@
         "zasieg": [
           {
             "slug": "egungun",
-            "przed": 0.51,
-            "po": 0.53,
+            "przed": 0.53,
+            "po": 0.55,
             "delta": 0.02,
             "opis": "Rozdzielenie mechanizmów wzmacnia kult przodków: pieśń zostaje uznana za jedyne miłe drzwi między światami."
           },
@@ -1242,8 +1242,8 @@
           {
             "kultura": "joruba",
             "kult": "egungun",
-            "przed": 0.51,
-            "po": 0.53,
+            "przed": 0.53,
+            "po": 0.55,
             "delta": 0.02
           },
           {
@@ -1417,8 +1417,8 @@
       ],
       "stanPo": {
         "os": {
-          "mit": 30,
-          "racjonalizacja": 70
+          "mit": 31,
+          "racjonalizacja": 69
         },
         "zasieg": [
           {
@@ -1451,7 +1451,7 @@
           },
           {
             "slug": "egungun",
-            "wielkosc": 0.54
+            "wielkosc": 0.56
           },
           {
             "slug": "empusa-korynt",
@@ -1459,7 +1459,7 @@
           },
           {
             "slug": "glamr-z-thorhallsstadir",
-            "wielkosc": 0.18
+            "wielkosc": 0.2
           },
           {
             "slug": "indra",
@@ -1491,7 +1491,7 @@
           },
           {
             "slug": "neith-z-sais",
-            "wielkosc": 0.21
+            "wielkosc": 0.23
           },
           {
             "slug": "nessos",
@@ -1561,7 +1561,7 @@
           {
             "kultura": "joruba",
             "kult": "egungun",
-            "wielkosc": 0.54
+            "wielkosc": 0.56
           },
           {
             "kultura": "grecja",
@@ -1571,7 +1571,7 @@
           {
             "kultura": "islandia",
             "kult": "glamr-z-thorhallsstadir",
-            "wielkosc": 0.18
+            "wielkosc": 0.2
           },
           {
             "kultura": "indie",
@@ -1611,7 +1611,7 @@
           {
             "kultura": "egipt",
             "kult": "neith-z-sais",
-            "wielkosc": 0.21
+            "wielkosc": 0.23
           },
           {
             "kultura": "grecja",
@@ -1689,8 +1689,8 @@
         "zasieg": [
           {
             "slug": "egungun",
-            "przed": 0.53,
-            "po": 0.54,
+            "przed": 0.55,
+            "po": 0.56,
             "delta": 0.01,
             "opis": "Pieśń zostaje uznana za jeden z trzech równoważnych progów — kult przodków rośnie delikatnie, ale nie dominuje."
           },
@@ -1713,8 +1713,8 @@
           {
             "kultura": "joruba",
             "kult": "egungun",
-            "przed": 0.53,
-            "po": 0.54,
+            "przed": 0.55,
+            "po": 0.56,
             "delta": 0.01
           },
           {
@@ -1886,8 +1886,8 @@
       ],
       "stanPo": {
         "os": {
-          "mit": 29,
-          "racjonalizacja": 71
+          "mit": 30,
+          "racjonalizacja": 70
         },
         "zasieg": [
           {
@@ -1920,7 +1920,7 @@
           },
           {
             "slug": "egungun",
-            "wielkosc": 0.54
+            "wielkosc": 0.56
           },
           {
             "slug": "empusa-korynt",
@@ -1928,7 +1928,7 @@
           },
           {
             "slug": "glamr-z-thorhallsstadir",
-            "wielkosc": 0.18
+            "wielkosc": 0.2
           },
           {
             "slug": "indra",
@@ -1960,7 +1960,7 @@
           },
           {
             "slug": "neith-z-sais",
-            "wielkosc": 0.21
+            "wielkosc": 0.23
           },
           {
             "slug": "nessos",
@@ -2030,7 +2030,7 @@
           {
             "kultura": "joruba",
             "kult": "egungun",
-            "wielkosc": 0.54
+            "wielkosc": 0.56
           },
           {
             "kultura": "grecja",
@@ -2040,7 +2040,7 @@
           {
             "kultura": "islandia",
             "kult": "glamr-z-thorhallsstadir",
-            "wielkosc": 0.18
+            "wielkosc": 0.2
           },
           {
             "kultura": "indie",
@@ -2080,7 +2080,7 @@
           {
             "kultura": "egipt",
             "kult": "neith-z-sais",
-            "wielkosc": 0.21
+            "wielkosc": 0.23
           },
           {
             "kultura": "grecja",
@@ -2352,8 +2352,8 @@
       ],
       "stanPo": {
         "os": {
-          "mit": 28,
-          "racjonalizacja": 72
+          "mit": 29,
+          "racjonalizacja": 71
         },
         "zasieg": [
           {
@@ -2386,7 +2386,7 @@
           },
           {
             "slug": "egungun",
-            "wielkosc": 0.54
+            "wielkosc": 0.56
           },
           {
             "slug": "empusa-korynt",
@@ -2394,7 +2394,7 @@
           },
           {
             "slug": "glamr-z-thorhallsstadir",
-            "wielkosc": 0.18
+            "wielkosc": 0.2
           },
           {
             "slug": "indra",
@@ -2426,7 +2426,7 @@
           },
           {
             "slug": "neith-z-sais",
-            "wielkosc": 0.21
+            "wielkosc": 0.23
           },
           {
             "slug": "nessos",
@@ -2496,7 +2496,7 @@
           {
             "kultura": "joruba",
             "kult": "egungun",
-            "wielkosc": 0.54
+            "wielkosc": 0.56
           },
           {
             "kultura": "grecja",
@@ -2506,7 +2506,7 @@
           {
             "kultura": "islandia",
             "kult": "glamr-z-thorhallsstadir",
-            "wielkosc": 0.18
+            "wielkosc": 0.2
           },
           {
             "kultura": "indie",
@@ -2546,7 +2546,7 @@
           {
             "kultura": "egipt",
             "kult": "neith-z-sais",
-            "wielkosc": 0.21
+            "wielkosc": 0.23
           },
           {
             "kultura": "grecja",
@@ -2827,8 +2827,8 @@
       ],
       "stanPo": {
         "os": {
-          "mit": 27,
-          "racjonalizacja": 73
+          "mit": 28,
+          "racjonalizacja": 72
         },
         "zasieg": [
           {
@@ -2861,7 +2861,7 @@
           },
           {
             "slug": "egungun",
-            "wielkosc": 0.54
+            "wielkosc": 0.56
           },
           {
             "slug": "empusa-korynt",
@@ -2869,7 +2869,7 @@
           },
           {
             "slug": "glamr-z-thorhallsstadir",
-            "wielkosc": 0.18
+            "wielkosc": 0.2
           },
           {
             "slug": "indra",
@@ -2901,7 +2901,7 @@
           },
           {
             "slug": "neith-z-sais",
-            "wielkosc": 0.21
+            "wielkosc": 0.23
           },
           {
             "slug": "nessos",
@@ -2971,7 +2971,7 @@
           {
             "kultura": "joruba",
             "kult": "egungun",
-            "wielkosc": 0.54
+            "wielkosc": 0.56
           },
           {
             "kultura": "grecja",
@@ -2981,7 +2981,7 @@
           {
             "kultura": "islandia",
             "kult": "glamr-z-thorhallsstadir",
-            "wielkosc": 0.18
+            "wielkosc": 0.2
           },
           {
             "kultura": "indie",
@@ -3021,7 +3021,7 @@
           {
             "kultura": "egipt",
             "kult": "neith-z-sais",
-            "wielkosc": 0.21
+            "wielkosc": 0.23
           },
           {
             "kultura": "grecja",
@@ -3305,8 +3305,8 @@
       ],
       "stanPo": {
         "os": {
-          "mit": 28,
-          "racjonalizacja": 72
+          "mit": 29,
+          "racjonalizacja": 71
         },
         "zasieg": [
           {
@@ -3339,7 +3339,7 @@
           },
           {
             "slug": "egungun",
-            "wielkosc": 0.545
+            "wielkosc": 0.565
           },
           {
             "slug": "empusa-korynt",
@@ -3347,7 +3347,7 @@
           },
           {
             "slug": "glamr-z-thorhallsstadir",
-            "wielkosc": 0.18
+            "wielkosc": 0.2
           },
           {
             "slug": "indra",
@@ -3379,7 +3379,7 @@
           },
           {
             "slug": "neith-z-sais",
-            "wielkosc": 0.21
+            "wielkosc": 0.23
           },
           {
             "slug": "nessos",
@@ -3449,7 +3449,7 @@
           {
             "kultura": "joruba",
             "kult": "egungun",
-            "wielkosc": 0.545
+            "wielkosc": 0.565
           },
           {
             "kultura": "grecja",
@@ -3459,7 +3459,7 @@
           {
             "kultura": "islandia",
             "kult": "glamr-z-thorhallsstadir",
-            "wielkosc": 0.18
+            "wielkosc": 0.2
           },
           {
             "kultura": "indie",
@@ -3499,7 +3499,7 @@
           {
             "kultura": "egipt",
             "kult": "neith-z-sais",
-            "wielkosc": 0.21
+            "wielkosc": 0.23
           },
           {
             "kultura": "grecja",
@@ -3597,8 +3597,8 @@
           },
           {
             "slug": "egungun",
-            "przed": 0.54,
-            "po": 0.545,
+            "przed": 0.56,
+            "po": 0.565,
             "delta": 0.005,
             "opis": "Przodek przyjął daninę od przodka innego narodu — kult egúngún wykroczył poza własną linię bez zerwania z nią."
           }
@@ -3621,8 +3621,8 @@
           {
             "kultura": "joruba",
             "kult": "egungun",
-            "przed": 0.54,
-            "po": 0.545,
+            "przed": 0.56,
+            "po": 0.565,
             "delta": 0.005
           }
         ],
@@ -3787,8 +3787,8 @@
       ],
       "stanPo": {
         "os": {
-          "mit": 29,
-          "racjonalizacja": 71
+          "mit": 30,
+          "racjonalizacja": 70
         },
         "zasieg": [
           {
@@ -3821,7 +3821,7 @@
           },
           {
             "slug": "egungun",
-            "wielkosc": 0.545
+            "wielkosc": 0.565
           },
           {
             "slug": "empusa-korynt",
@@ -3829,7 +3829,7 @@
           },
           {
             "slug": "glamr-z-thorhallsstadir",
-            "wielkosc": 0.18
+            "wielkosc": 0.2
           },
           {
             "slug": "indra",
@@ -3861,7 +3861,7 @@
           },
           {
             "slug": "neith-z-sais",
-            "wielkosc": 0.218
+            "wielkosc": 0.238
           },
           {
             "slug": "nessos",
@@ -3931,7 +3931,7 @@
           {
             "kultura": "joruba",
             "kult": "egungun",
-            "wielkosc": 0.545
+            "wielkosc": 0.565
           },
           {
             "kultura": "grecja",
@@ -3941,7 +3941,7 @@
           {
             "kultura": "islandia",
             "kult": "glamr-z-thorhallsstadir",
-            "wielkosc": 0.18
+            "wielkosc": 0.2
           },
           {
             "kultura": "indie",
@@ -3981,7 +3981,7 @@
           {
             "kultura": "egipt",
             "kult": "neith-z-sais",
-            "wielkosc": 0.218
+            "wielkosc": 0.238
           },
           {
             "kultura": "grecja",
@@ -4081,8 +4081,8 @@
           },
           {
             "slug": "neith-z-sais",
-            "przed": 0.21,
-            "po": 0.218,
+            "przed": 0.23,
+            "po": 0.238,
             "delta": 0.008,
             "opis": "Nić Neith połączyła rozpoznanie z cierpliwością."
           }
@@ -4105,8 +4105,8 @@
           {
             "kultura": "egipt",
             "kult": "neith-z-sais",
-            "przed": 0.21,
-            "po": 0.218,
+            "przed": 0.23,
+            "po": 0.238,
             "delta": 0.008
           }
         ],
@@ -4293,8 +4293,8 @@
       ],
       "stanPo": {
         "os": {
-          "mit": 28,
-          "racjonalizacja": 72
+          "mit": 29,
+          "racjonalizacja": 71
         },
         "zasieg": [
           {
@@ -4327,7 +4327,7 @@
           },
           {
             "slug": "egungun",
-            "wielkosc": 0.545
+            "wielkosc": 0.565
           },
           {
             "slug": "empusa-korynt",
@@ -4335,7 +4335,7 @@
           },
           {
             "slug": "glamr-z-thorhallsstadir",
-            "wielkosc": 0.18
+            "wielkosc": 0.2
           },
           {
             "slug": "indra",
@@ -4367,7 +4367,7 @@
           },
           {
             "slug": "neith-z-sais",
-            "wielkosc": 0.218
+            "wielkosc": 0.238
           },
           {
             "slug": "nessos",
@@ -4437,7 +4437,7 @@
           {
             "kultura": "joruba",
             "kult": "egungun",
-            "wielkosc": 0.545
+            "wielkosc": 0.565
           },
           {
             "kultura": "grecja",
@@ -4447,7 +4447,7 @@
           {
             "kultura": "islandia",
             "kult": "glamr-z-thorhallsstadir",
-            "wielkosc": 0.18
+            "wielkosc": 0.2
           },
           {
             "kultura": "indie",
@@ -4487,7 +4487,7 @@
           {
             "kultura": "egipt",
             "kult": "neith-z-sais",
-            "wielkosc": 0.218
+            "wielkosc": 0.238
           },
           {
             "kultura": "grecja",
@@ -4811,8 +4811,8 @@
       ],
       "stanPo": {
         "os": {
-          "mit": 28,
-          "racjonalizacja": 72
+          "mit": 29,
+          "racjonalizacja": 71
         },
         "zasieg": [
           {
@@ -4845,7 +4845,7 @@
           },
           {
             "slug": "egungun",
-            "wielkosc": 0.545
+            "wielkosc": 0.565
           },
           {
             "slug": "empusa-korynt",
@@ -4853,7 +4853,7 @@
           },
           {
             "slug": "glamr-z-thorhallsstadir",
-            "wielkosc": 0.18
+            "wielkosc": 0.2
           },
           {
             "slug": "indra",
@@ -4885,7 +4885,7 @@
           },
           {
             "slug": "neith-z-sais",
-            "wielkosc": 0.222
+            "wielkosc": 0.242
           },
           {
             "slug": "nessos",
@@ -4955,7 +4955,7 @@
           {
             "kultura": "joruba",
             "kult": "egungun",
-            "wielkosc": 0.545
+            "wielkosc": 0.565
           },
           {
             "kultura": "grecja",
@@ -4965,7 +4965,7 @@
           {
             "kultura": "islandia",
             "kult": "glamr-z-thorhallsstadir",
-            "wielkosc": 0.18
+            "wielkosc": 0.2
           },
           {
             "kultura": "indie",
@@ -5005,7 +5005,7 @@
           {
             "kultura": "egipt",
             "kult": "neith-z-sais",
-            "wielkosc": 0.222
+            "wielkosc": 0.242
           },
           {
             "kultura": "grecja",
@@ -5107,8 +5107,8 @@
           },
           {
             "slug": "neith-z-sais",
-            "przed": 0.218,
-            "po": 0.222,
+            "przed": 0.238,
+            "po": 0.242,
             "delta": 0.004,
             "opis": "Tkanie weszło w rejestr metod przechodzenia przez świat zamknięty."
           }
@@ -5131,8 +5131,8 @@
           {
             "kultura": "egipt",
             "kult": "neith-z-sais",
-            "przed": 0.218,
-            "po": 0.222,
+            "przed": 0.238,
+            "po": 0.242,
             "delta": 0.004
           }
         ],
@@ -5258,8 +5258,8 @@
   ],
   "stanPo": {
     "os": {
-      "mit": 28,
-      "racjonalizacja": 72
+      "mit": 29,
+      "racjonalizacja": 71
     },
     "zasieg": [
       {
@@ -5292,7 +5292,7 @@
       },
       {
         "slug": "egungun",
-        "wielkosc": 0.545
+        "wielkosc": 0.565
       },
       {
         "slug": "empusa-korynt",
@@ -5300,7 +5300,7 @@
       },
       {
         "slug": "glamr-z-thorhallsstadir",
-        "wielkosc": 0.18
+        "wielkosc": 0.2
       },
       {
         "slug": "indra",
@@ -5332,7 +5332,7 @@
       },
       {
         "slug": "neith-z-sais",
-        "wielkosc": 0.222
+        "wielkosc": 0.242
       },
       {
         "slug": "nessos",
@@ -5402,7 +5402,7 @@
       {
         "kultura": "joruba",
         "kult": "egungun",
-        "wielkosc": 0.545
+        "wielkosc": 0.565
       },
       {
         "kultura": "grecja",
@@ -5412,7 +5412,7 @@
       {
         "kultura": "islandia",
         "kult": "glamr-z-thorhallsstadir",
-        "wielkosc": 0.18
+        "wielkosc": 0.2
       },
       {
         "kultura": "indie",
@@ -5452,7 +5452,7 @@
       {
         "kultura": "egipt",
         "kult": "neith-z-sais",
-        "wielkosc": 0.222
+        "wielkosc": 0.242
       },
       {
         "kultura": "grecja",
