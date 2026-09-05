@@ -138,7 +138,14 @@ Ponadto:
   **Nowe elementy AME agent wprowadza na własną odpowiedzialność i scala**
   (mechanizm auto-scalania powyżej); bramą jakości jest audyt następnej
   sesji, nie akceptacja właściciela przed live (reguła z ADR 0007
-  zniesiona przez ADR 0023). Polerowanie dokumentacji NIE jest częścią
+  zniesiona przez ADR 0023 i 0027). **Autonomia obejmuje także elementy
+  fabularne i grywalizacyjne** — Epoki Kroniki, drogi SPLOTU, PRÓG, Arenę
+  i kolejne narzędzia świata — więc nie pisz nigdzie „czeka na akceptację
+  właściciela przed live” (ADR 0027). Decyzji właściciela wymagają nadal:
+  scalenie PR (nigdy nie scalasz sam — L18), granice z §4, zmiana samej
+  procedury i usuwanie istniejących bytów, SKIT-ów czy Epok.
+  **Czego nie ma w dokumentacji, tego nie odkładasz do zapytania:**
+  rozstrzygasz sam i dopisujesz regułę w tym samym PR w miejscu z tabeli §5. Polerowanie dokumentacji NIE jest częścią
   pętli — wykonuje się je wyłącznie na zlecenie właściciela w sesji.
 - **Praca istnieje dopiero po `git push`.** Nowa sesja widzi wyłącznie `main`
   i tekst pierwszego promptu. Commituj i pushuj po każdym zielonym kroku.

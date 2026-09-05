@@ -41,6 +41,7 @@ Każdy dokument opisuje kontekst, wybór i jego konsekwencje.
 | [0024](0024-losowość-rozstrzygniec-fabularnych.md) | Losowość rozstrzygnięć fabularnych przy deterministycznej szansie | Zaakceptowana |
 | [0025](0025-petla-jakosci-elementy-fabularne-i-sprzezenie-zwrotne.md) | Pętla Jakości: C6 jako rozwój elementów fabularnych i pętla powtarzana do wyczerpania budżetu | Zaakceptowana |
 | [0026](0026-prog-spotkanie-bez-walki.md) | PRÓG: trzecie narzędzie fabularne (spotkanie rozstrzygane kluczem, nie walką) | Zaakceptowana |
+| [0027](0027-autonomia-wdrozeniowa-bez-akceptacji-przed-live.md) | Autonomia wdrożeniowa: featury i elementy fabularne idą na live bez osobnej zgody | Zaakceptowana |
 
 ## Szablon ADR
 

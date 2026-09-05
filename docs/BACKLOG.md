@@ -11,9 +11,9 @@
   skity, epitety, motywy) — determinizm ADR 0002, losowość tylko ze
   wstrzykniętego RNG. Projekt: `docs/plans/POMYSL_arena-rezonansu-idle-battler.md`.
   Zręby: `app/arena.js` (`statyManifestacji`, runda) + `test/arena.test.js`.
-  **Do decyzji właściciela: zakres widoku (osobny `#arena` vs profil bojowy w
-  kartotece) i ton (Rezonans/spór tradycji, nie „krew i HP”).** Wpięcie do UI
-  dopiero po akceptacji.
+  Kierunek: osobny widok `#arena` albo profil bojowy w kartotece, ton
+  „Rezonans / spór tradycji”, nie „krew i HP”. Wpięcie do UI nie wymaga zgody
+  właściciela (ADR 0027) — wymaga testów i opisu w PR.
 
 - **Deep-linki** `#/slug`: adresowalne wpisy + stan mapy w URL (kandydat do
   F2). Podstawa: `location.hash`, brak zależności.
@@ -33,8 +33,7 @@
 - ~~**Tryb „wylosuj manifestację”**~~ — zrealizowane w M7 (PR #6, C2): przycisk
   „🎲 wylosuj” losuje z widocznej puli (filtr/tag zawężają), pomija ostatni los
   i przelatuje do bytu na mapie; `wylosujSlug` deterministyczna przy
-  wstrzykniętym RNG (opcja seeda z daty pozostaje otwarta). Do akceptacji
-  właściciela przed live.
+  wstrzykniętym RNG (opcja seeda z daty pozostaje otwarta).
 - **Warstwa kręgów kulturowych**: otoczki/halo grupujące wpisy jednej tradycji
   (słowiańska, algonkińska, nordycka…) — wymaga tagu-kręgu jako konwencji.
 - ~~**Mapa tematyczna — rozszerzenia (ADR 0020, M14)**~~ — **WDROŻONE (2026-08-30, PR #10):** M1 hipsometria raster, M2 szczyty/POI (NE 10m), M3 Pleiades (miejsca historyczne) + podkłady online (opentopo/osm/esri World Imagery, bez klucza, ręcznie włączane). Wszystkie warstwy domyślnie **wyłączone** (100% offline bez zgody na sieć). **Zmiany po recenzji (2026-08-30):** warstwy „lasy” (WWF), „urban” i „morza” **usunięte** (A), Esri „świat fizyczny” **usunięty** (A2), zoom online do technicznego maksimum źródeł ×524 288 (kafelki z≈19; blokada wg 67 obrotów kółka wycofana po uwadze, że różne rejony mają różny maksymalny zoom — A); POI/miejsca historyczne — nazwa on-press (B) i przy wyłączeniu podkładu widok oddala się w miejscu (B2); warstwa nazwana „Szczyty” (C); zapamiętywanie warstw i widoku w localStorage (D); sekcja „Tomy i Epoki” w karcie bytu (E).
@@ -73,8 +72,7 @@
   jakości):** przycisk „🏆 trofea” w topbarze → warstwa z galerią dowodów
   eliminacji (pierwotne + wtórne) ze wszystkich kart; rekord indeksu niesie
   `trofea`, więc widok nie dociąga pełnych wpisów; nazwa bytu otwiera jego
-  kartotekę; deep-link `#trofea` (cache-bust `c5-11`). Do akceptacji
-  właściciela przed live.
+  kartotekę; deep-link `#trofea` (cache-bust `c5-11`).
 - ~~**Zasady cytowania w aplikacji**~~ — **CZĘŚCIOWO WDROŻONE (2026-09-05, PR #34,
   C2+5 obrotu 2 Pętli Jakości):** `tools/lint-zrodel.mjs` pilnuje higieny sekcji III
   pięcioma regułami — Z1 adres https, Z2 brak duplikatów adresu we wpisie,
@@ -92,8 +90,7 @@
   jakości):** `tools/budzet-lektury.mjs` mierzy zbiór lektury startowej §0
   (AGENTS, PROTOKÓŁ, rejestr + wszystkie ADR-y, LESSONS, ENVIRONMENT) i szacuje
   tokeny heurystyką 1 tok ≈ 4 znaki; `test/budzet.test.js` pilnuje progu
-  40 tys. tokenów (dziś ~29,5 tys. = 74%) oraz kompletności listy. Do
-  akceptacji właściciela przed live.
+  40 tys. tokenów (dziś ~29,5 tys. = 74%) oraz kompletności listy.
 - ~~**Lint stylu wpisów**~~ — **WDROŻONE (2026-09-04, PR #17, C2 pętli
   jakości):** `tools/lint-stylu.mjs` wykrywa żargon kart (haste, trample,
   mana, żeton, talia…; granice słów unicode, bez fałszywych trafień typu
@@ -136,7 +133,7 @@
   (2026-09-04, PR #13, C2 pętli jakości):** wiersz listy manifestacji z polem
   `obraz` dostaje miniaturę 21:9 (`<img loading="lazy">`, klasa
   `wiersz ma-miniature`, kadr po lewej, tekst w kolumnie); brak obrazu = układ
-  bez zmian (cache-bust `c5-10`). Do akceptacji właściciela przed live.
+  bez zmian (cache-bust `c5-10`).
 - ~~**Kopiuj link do wpisu**~~ — zrealizowane w M4 (C2): `ui.linkWidoku` +
   `ui.przyciskKopiowania`, przycisk „⧉ kopiuj link" w kartotece (obok ✕) i w
   warstwie skitu; test pilnuje, że handlerzy obu warstw obsługują `[data-kopia]`.
@@ -148,7 +145,7 @@
   wpisu 2026-09-04 strona znów odpowiada 200 i zawiera passus o Talosie
   (adres zostaje). Lekcja: jednorazowy 404 Theoi bywa przejściowy —
   przed wymianą linku sprawdzić ponownie po czasie.
-- ~~**Widok druku (media print) dla warstwy wpisu**~~ — **WDROŻONE (2026-08-30, PR #12, C2 pętla jakości):** przycisk „🖨 drukuj” w kartotece → `window.print()`; arkusz `@media print` chowa topbar/mapę/listę i pokazuje otwartą kartotekę na białym tle z ciemnym tekstem (cache-bust `c5-8`). Do akceptacji właściciela przed live.
+- ~~**Widok druku (media print) dla warstwy wpisu**~~ — **WDROŻONE (2026-08-30, PR #12, C2 pętla jakości):** przycisk „🖨 drukuj” w kartotece → `window.print()`; arkusz `@media print` chowa topbar/mapę/listę i pokazuje otwartą kartotekę na białym tle z ciemnym tekstem (cache-bust `c5-8`).
 - ~~**Znacznik „źródło bez adresu” w UI**~~ — **WDROŻONE (2026-09-05, PR #34,
   C2+5 pętli jakości):** pozycja sekcji III bez klikalnego adresu dostaje klasę
   `poza-siecia` (kursywa) i chip „bez adresu w sieci”; pozycje z `http(s)`
@@ -156,7 +153,7 @@
   `test/ui.test.js`, cache-bust `c5-20`/`c6-5`). Przy okazji: Profil Rezonansu
   przeniesiony za sekcje I–V (nie przerywa numeracji MFM), a „zasoby po próbie”
   w raporcie SPLOTU renderują się jako „pamiec 3 · przejscie 1” zamiast
-  surowego JSON-a (`opisZasobow`). Do akceptacji właściciela przed live.
+  surowego JSON-a (`opisZasobow`).
 - **Aspekt motywu w testach** — trzymać kontrakt tokenów (lista zmiennych
   wymaganych w obu paletach) jako test danych, gdy paleta urośnie.
 
@@ -166,13 +163,13 @@
   jakości):** wyszukiwarka w Bazie Skitów (`#skity-filtr`) filtruje wiersze po
   temacie, tytule i uczestnikach; `temat` pozostaje katalogowe (§8.1 — nie
   renderowane jako tekst), więc trafia do atrybutu `data-temat` w base64
-  (cache-bust `c5-13`). Do akceptacji właściciela przed live.
+  (cache-bust `c5-13`).
 - ~~**Widok „rozmowy” na mapie**~~ — **WDROŻONE (2026-09-04, PR #14, C2
   pętli jakości):** otwarcie skitu rysuje łuki między pinezkami uczestników
   (osobna warstwa `.rozmowa` nad łukami powiązań; czysta `paryRozmowySkitu`
   liczy pełne spójne pary; zamknięcie warstwy czyści mapę). Bez animacji —
   statyczne łuki; animowane „przebiegnięcie” rozmowy zostaje pomysłem
-  (cache-bust `c5-12`). Do akceptacji właściciela przed live.
+  (cache-bust `c5-12`).
 - ~~**Walidator opisów `meta.modyfikacje`**~~ — **WDROŻONE (2026-09-04,
   PR #14, C2 pętli jakości):** `bladOpisuMeta` w `tools/rebuild-index.mjs`
   odrzuca oznaczenia wewnętrzne (`C1`/`C2`/`C3`, `M<n>`, `B<n>`,
@@ -182,7 +179,7 @@
 - **Walidator spójności faktograficznej** — heurystyka ostrzegająca, gdy skit
   przywołuje zwyczaj/nazwę własną nieobecną w kartach uczestników (twarda
   egzekucja wymaga NLP — poza zakresem ADR 0001).
-- ~~**Nagrania/lektor**~~ — **WDROŻONE (2026-08-30, PR #12, C2 pętla jakości):** przycisk „🔊 odsłuchaj” w widoku skitu czyta dialog na głos (Web Speech API, głos `pl-PL`, jeśli dostępny), „⏹ stop” przerywa; brak API = przycisk grzecznie się poddaje (cache-bust `c5-9`). Do akceptacji właściciela przed live.
+- ~~**Nagrania/lektor**~~ — **WDROŻONE (2026-08-30, PR #12, C2 pętla jakości):** przycisk „🔊 odsłuchaj” w widoku skitu czyta dialog na głos (Web Speech API, głos `pl-PL`, jeśli dostępny), „⏹ stop” przerywa; brak API = przycisk grzecznie się poddaje (cache-bust `c5-9`).
 
 ## Sprzężenie Kronika ↔ SPLOT (2026-09-05, wdrożone)
 
