@@ -655,7 +655,7 @@ test('agendaTomu: otwarte wątki, słabe paliwo i ciche kultury', async () => {
   assert.ok(Array.isArray(a.watki) && a.watki.length > 0);
   assert.ok(a.watki.every((w) => w.id && Array.isArray(w.byty)));
   assert.ok(Array.isArray(a.slabi));
-  assert.equal(a.ostatnia, 'epoka-11');
+  assert.equal(a.ostatnia, 'epoka-12');
 });
 
 test('S1: raport Tomu zawiera miniatury epok i rozstaje silnika', async () => {
@@ -744,7 +744,7 @@ test('sortowanie plików serii jest liczbowe, nie leksykalne (epoka-10 po epoce-
 test('Epoka X domyka Tom I zgodnie z rozliczeniem paliwa i osi', async () => {
   const podsumowanie = await wczytaj(PLIK_PODSUMOWANIA);
   assert.equal(podsumowanie.walidacja, true, JSON.stringify(podsumowanie.bledy));
-  assert.equal(podsumowanie.epoki.length, 11);
+  assert.equal(podsumowanie.epoki.length, 12);
 
   const e10 = podsumowanie.epoki[9];
   assert.equal(e10.slug, 'epoka-10');
@@ -771,7 +771,7 @@ test('Epoka X domyka Tom I zgodnie z rozliczeniem paliwa i osi', async () => {
 
 test('Epoka XI wyrasta z drogi SPLOTU, nie ze skitu', async () => {
   const podsumowanie = await wczytaj(PLIK_PODSUMOWANIA);
-  const e11 = podsumowanie.epoki.at(-1);
+  const e11 = podsumowanie.epoki[10];
   assert.equal(e11.slug, 'epoka-11');
   assert.equal(e11.skit, null, 'epoka z drogi nie ma skitu');
   assert.deepEqual(e11.zrodloSplotu, { droga: 'ostatni-slad-gevaudan', status: 'rozszczepiona' });
@@ -782,6 +782,24 @@ test('Epoka XI wyrasta z drogi SPLOTU, nie ze skitu', async () => {
   const slad = (e11.konsekwencje.watki || []).find((w) => w.id === 'slad-ostatni-slad-gevaudan');
   assert.ok(slad && slad.stan === 'otwarty', 'ślad drogi wchodzi do Kroniki jako wątek');
   assert.equal(e11.walidacja, true, JSON.stringify(e11.bledy));
+});
+
+test('Epoka XII wraca do rodowodu ze SKIT-u i wpina pierwszy byt zza oceanu', async () => {
+  const podsumowanie = await wczytaj(PLIK_PODSUMOWANIA);
+  const e12 = podsumowanie.epoki.at(-1);
+  assert.equal(e12.slug, 'epoka-12');
+  assert.equal(e12.skit, 'co-sie-podaje', 'Epoka XII wyrasta z rozmowy, nie z drogi SPLOTU');
+  assert.equal(e12.zrodloSplotu ?? null, null, 'jeden rodowód naraz');
+  assert.deepEqual(
+    e12.uczestnicy.map((u) => u.slug).sort(),
+    ['iktomi', 'nessos', 'pandora']
+  );
+  assert.equal(e12.walidacja, true, JSON.stringify(e12.bledy));
+  const drzwi = (e12.konsekwencje.watki || []).find((w) => w.id === 'zwezone-drzwi');
+  assert.ok(drzwi && drzwi.stan === 'otwarty', 'Epoka XII otwiera wątek zwężonego przejścia');
+  assert.deepEqual(drzwi.byty.sort(), ['iktomi', 'nessos', 'pandora']);
+  const lakota = (e12.stanPo.dominacje || []).find((d) => d.kultura === 'lakota');
+  assert.ok(lakota && lakota.wielkosc > 0, 'kultura lakocka wchodzi do dominacji Tomu I');
 });
 
 test('walidujZrodloSplotu pilnuje zgodności Epoki z rozstrzygnięciem drogi', () => {

@@ -1,0 +1,222 @@
+{
+  "slug": "epoka-12",
+  "tom": "tom-1",
+  "skit": "co-sie-podaje",
+  "tytul": "Ręka, która podaje, i drzwi na szerokość dłoni",
+  "iskra": "Trzy dary leżą obok siebie na jednym stole: gliniana pokrywa, którą ktoś jeszcze trzyma w rękach, płótno nasączone krwią kentaura i tobołek suchej trawy nazwany pieśniami. Rozmowa zaczyna się od chwalenia się rzemiosłem, a kończy na zdaniu, którego żadne z trojga nie chciało powiedzieć: wszyscy zaczynamy tak samo — „ja tylko”.",
+  "pytanie": "Czy Archiwum ma liczyć winę temu, kto wziął, czy temu, kto podał i odszedł, zanim rzecz się otworzyła?",
+  "uczestnicy": [
+    {
+      "slug": "pandora",
+      "rola": "Ta, której podano",
+      "kosztUdzialu": 2,
+      "zwrot": 3
+    },
+    {
+      "slug": "iktomi",
+      "rola": "Ten, który niesie i nie rozwiązuje",
+      "kosztUdzialu": 2,
+      "zwrot": 4
+    },
+    {
+      "slug": "nessos",
+      "rola": "Ten, który podał powód, żeby zachować",
+      "kosztUdzialu": 2,
+      "zwrot": 2
+    }
+  ],
+  "narrator": {
+    "ocena": [
+      {
+        "kto": "pandora",
+        "kogo": "iktomi",
+        "stopien": 2,
+        "komentarz": "Nie skłamał ani razu. Powiedział „pieśni” o tobołku trawy i to wystarczyło — kłamstwem było dopiero cudze wyobrażenie."
+      },
+      {
+        "kto": "nessos",
+        "kogo": "pandora",
+        "stopien": 1,
+        "komentarz": "Jako jedyna przy stole nie tłumaczy się rzemiosłem. Mówi: dostałam — i nie odkłada pokrywy na miejsce."
+      },
+      {
+        "kto": "iktomi",
+        "kogo": "nessos",
+        "stopien": 2,
+        "komentarz": "Podał nie truciznę, tylko powód, żeby ją przechować przez dziesięć lat. Tego nawet ja nie umiem: cudzej ręki, która pracuje za mnie."
+      }
+    ],
+    "podsumowanie": "Epoka nie rozstrzyga winy — rozstrzyga miejsce. Kronika zapisuje, że sprawcą jest ten, kto stoi tam, gdzie rzecz się otwiera, a wszyscy trzej mieli zwyczaj odchodzić wcześniej. Nazwanie tej reguły kosztuje świat kawałek tajemnicy: dar przestaje być wyrokiem losu, a staje się czyjąś ręką, którą da się wskazać. Pandora zostaje przy pokrywie i tym gestem przestaje być tylko biorącą; Iktómi po raz pierwszy przyznaje, że zwęził drzwi; Nessos milknie, bo jego dar wciąż leży w cudzej skrzyni."
+  },
+  "konsekwencje": {
+    "os": {
+      "mit": -1,
+      "racjonalizacja": 1
+    },
+    "relacje": [
+      {
+        "typ": "wzmocnienie",
+        "skad": "pandora",
+        "dokad": "iktomi",
+        "opis": "Pandora nazwała rzecz po imieniu: nie każdy dar ma nadawcę, którego da się wskazać — i pająk to potwierdził."
+      },
+      {
+        "typ": "napiecie",
+        "skad": "iktomi",
+        "dokad": "nessos",
+        "opis": "Pająk zazdrości kentaurowi daru, który działa bez obecności dawcy; kentaur nie chce się do tego przyznać przy świadkach."
+      },
+      {
+        "typ": "neutralna",
+        "skad": "nessos",
+        "dokad": "pandora",
+        "opis": "Oboje wiedzą, ile lat potrafi leżeć zamknięta rzecz, zanim ktoś jej użyje."
+      }
+    ],
+    "zasieg": [
+      {
+        "slug": "pandora",
+        "delta": 0.012,
+        "opis": "Z figury winnej ciekawości stała się świadkiem, który wskazuje miejsce sprawstwa."
+      },
+      {
+        "slug": "iktomi",
+        "delta": 0.016,
+        "opis": "Pierwsze wejście lakockiego pająka do Kroniki: zwężone drzwi Oniya Oshoka weszły do rejestru długów świata."
+      },
+      {
+        "slug": "nessos",
+        "delta": 0.006,
+        "opis": "Zatruty dar przestał być prywatną zemstą, a stał się wzorcem, o który pytają inni."
+      }
+    ],
+    "dominacje": [
+      {
+        "kultura": "grecja",
+        "kult": "pandora",
+        "delta": 0.012
+      },
+      {
+        "kultura": "lakota",
+        "kult": "iktomi",
+        "delta": 0.016
+      },
+      {
+        "kultura": "grecja",
+        "kult": "nessos",
+        "delta": 0.006
+      }
+    ],
+    "pozycje": [
+      {
+        "slug": "pandora",
+        "status": "przemieniony",
+        "opis": "Przestała być wyłącznie tą, która otworzyła: została przy pokrywie i nazwała regułę stołu."
+      },
+      {
+        "slug": "iktomi",
+        "status": "wzmocniony",
+        "opis": "Wszedł do Tomu I jako pierwszy byt zza oceanu i od razu z otwartym rachunkiem za zwężone przejście."
+      },
+      {
+        "slug": "nessos",
+        "status": "odporny",
+        "opis": "Nie stracił nic i nie zyskał nic prócz tego, że jego metoda dostała nazwę."
+      }
+    ],
+    "watki": [
+      {
+        "id": "pierwszy-w-linii",
+        "stan": "otwarty",
+        "byty": [
+          "protostates",
+          "knecht-z-koptos",
+          "syama-i-sarvara"
+        ],
+        "pytanie": "Co się stanie z linią, gdy pierwszy przestanie stać, a nikt nie uzna, że ktoś go zastąpił?"
+      },
+      {
+        "id": "niewinny-bierca",
+        "stan": "otwarty",
+        "byty": [
+          "kentaur-pelion",
+          "pandora",
+          "empusa-korynt"
+        ],
+        "pytanie": "Pandora wie już, że brała — ale czy Archiwum umie odróżnić biorącego od tego, kto ustawił rzecz na jego drodze?"
+      },
+      {
+        "id": "warunek-barbarossy",
+        "stan": "otwarty",
+        "byty": [
+          "barbarossa-kyffhaeuser",
+          "kentaur-pelion",
+          "egungun"
+        ],
+        "pytanie": "Czy dług śpiącego cesarza da się spłacić gościną — czy rachunek, który zapłacił ze snu, przyjdzie kiedyś wyrównać na jawie?"
+      },
+      {
+        "id": "kres-indry",
+        "stan": "otwarty",
+        "byty": [
+          "indra"
+        ],
+        "pytanie": "Kto zapisze kres Indry: ten, kto go zdetronizuje, czy ten, który przestaje się bać jego gromu?"
+      },
+      {
+        "id": "znak-nie-wystarcza",
+        "stan": "otwarty",
+        "byty": [
+          "sfinks-teby",
+          "loup-garou-gevaudan",
+          "neith-z-sais"
+        ],
+        "pytanie": "Loup-garou dostał adres zamiast opisu, ale kto zapyta o resztę jego imienia, gdy przestanie być ciekawym tropem?"
+      },
+      {
+        "id": "prawo-progu",
+        "stan": "otwarty",
+        "byty": [
+          "cormoran-st-michaels-mount",
+          "ben-varrey",
+          "lincoln-imp",
+          "loup-garou-gevaudan"
+        ],
+        "pytanie": "Jeśli próg należy do przechodzącego, to kto płaci za jego utrzymanie, gdy gospodarz przestanie być największy?"
+      },
+      {
+        "id": "slad-ostatni-slad-gevaudan",
+        "stan": "otwarty",
+        "byty": [
+          "loup-garou-gevaudan",
+          "sfinks-teby",
+          "neith-z-sais"
+        ],
+        "pytanie": "Kto wróci po ślad zostawiony w cudzym raporcie, zanim raport stanie się jedyną wersją drogi?"
+      },
+      {
+        "id": "zwezone-drzwi",
+        "stan": "otwarty",
+        "byty": [
+          "iktomi",
+          "pandora",
+          "nessos"
+        ],
+        "pytanie": "Czy przejście zwężone podstępem da się rozszerzyć z powrotem — i czy ktokolwiek prócz tego, kto je zwęził, w ogóle wie, jak się to robi?"
+      }
+    ]
+  },
+  "grafika": {
+    "podpis": "Trzy dary na jednym stole: pokrywa jeszcze w rękach, płótno w skrzyni i tobołek suchej trawy.",
+    "styl": "Hyperrealistyczne zdjęcie filmowe, ultrapanorama 21:9.",
+    "prompt": "Hyperrealistic cinematic photograph, ultra-wide 21:9 anamorphic frame. Three figures around a long weathered wooden table at dusk on an empty plain: a Greek woman in a simple chiton holding a heavy clay lid with both hands over a large storage jar, a lean Dakota trickster in fringed deerskin with black rings painted around his eyes sitting beside a knotted blanket bundle of dry grass, and a powerful centaur standing at the far end with a folded blood-stained cloth in an open wooden chest. Behind them a low limestone outcrop with a small hand-sized dark opening breathing cold air. Cold blue evening light, one warm lantern on the table, restrained mythic realism, no gore, no text, no modern objects.",
+    "obraz": "assets/wizualizacje/kronika-tom-1-epoka-12.jpg"
+  },
+  "meta": {
+    "utworzono": "2026-09-05 17:30",
+    "autor": "sesja arena 2026-09-05",
+    "wersja": 1,
+    "poprzednik": "epoka-11"
+  },
+  "przebieg": "Dwunasta Epoka Tomu I wraca do rodowodu z rozmowy: SKIT „CO SIĘ PODAJE”. Trzy dary, trzy sposoby wyjścia z odpowiedzialności i jedno zdanie, które je zrównuje. Kronika notuje wejście pierwszego bytu zza oceanu i otwiera wątek zwężonych drzwi."
+}

@@ -5452,12 +5452,542 @@
         "prompt": "Hyperrealistic cinematic photograph, ultra-wide 21:9 anamorphic frame. Night in the Gévaudan highlands where a forest track forks: on the left a wolf-headed man walks into the mist following a thin luminous thread held by a serene Egyptian goddess, on the right a line of distant oil lamps and armed hunters stops at a wooden barrier with a nailed proclamation. A winged sphinx sits on a boulder between the two paths, facing the lamps. Cold moonlight, amber lamp glow, wet granite, thorn scrub. Restrained folkloric realism, no gore, no text, no modern objects.",
         "obraz": "assets/wizualizacje/kronika-tom-1-epoka-11.jpg"
       }
+    },
+    {
+      "slug": "epoka-12",
+      "tytul": "Ręka, która podaje, i drzwi na szerokość dłoni",
+      "skit": "co-sie-podaje",
+      "zrodloSplotu": null,
+      "iskra": "Trzy dary leżą obok siebie na jednym stole: gliniana pokrywa, którą ktoś jeszcze trzyma w rękach, płótno nasączone krwią kentaura i tobołek suchej trawy nazwany pieśniami. Rozmowa zaczyna się od chwalenia się rzemiosłem, a kończy na zdaniu, którego żadne z trojga nie chciało powiedzieć: wszyscy zaczynamy tak samo — „ja tylko”.",
+      "pytanie": "Czy Archiwum ma liczyć winę temu, kto wziął, czy temu, kto podał i odszedł, zanim rzecz się otworzyła?",
+      "przebieg": "Dwunasta Epoka Tomu I wraca do rodowodu z rozmowy: SKIT „CO SIĘ PODAJE”. Trzy dary, trzy sposoby wyjścia z odpowiedzialności i jedno zdanie, które je zrównuje. Kronika notuje wejście pierwszego bytu zza oceanu i otwiera wątek zwężonych drzwi.",
+      "meta": {
+        "utworzono": "2026-09-05 17:30",
+        "autor": "sesja arena 2026-09-05",
+        "wersja": 1,
+        "poprzednik": "epoka-11"
+      },
+      "walidacja": true,
+      "bledy": [],
+      "uczestnicy": [
+        {
+          "slug": "pandora",
+          "nazwa": "Pandora — pierwsza kobieta i pithos, w którym została nadzieja",
+          "rola": "Ta, której podano",
+          "pasywne": 19,
+          "saldoPrzed": 19,
+          "kosztUdzialu": 2,
+          "kosztKlucza": 0,
+          "boost": 0,
+          "zwrot": 3,
+          "saldoPo": 20
+        },
+        {
+          "slug": "iktomi",
+          "nazwa": "Iktómi — pająk, który zastawia sidło zamiast polować",
+          "rola": "Ten, który niesie i nie rozwiązuje",
+          "pasywne": 10,
+          "saldoPrzed": 10,
+          "kosztUdzialu": 2,
+          "kosztKlucza": 0,
+          "boost": 0,
+          "zwrot": 4,
+          "saldoPo": 12
+        },
+        {
+          "slug": "nessos",
+          "nazwa": "Nessos",
+          "rola": "Ten, który podał powód, żeby zachować",
+          "pasywne": 19,
+          "saldoPrzed": 19,
+          "kosztUdzialu": 2,
+          "kosztKlucza": 0,
+          "boost": 0,
+          "zwrot": 2,
+          "saldoPo": 19
+        }
+      ],
+      "stanPo": {
+        "os": {
+          "mit": 27,
+          "racjonalizacja": 73
+        },
+        "zasieg": [
+          {
+            "slug": "agni",
+            "wielkosc": 0.4
+          },
+          {
+            "slug": "balor",
+            "wielkosc": 0.47
+          },
+          {
+            "slug": "barbarossa-kyffhaeuser",
+            "wielkosc": 0.502
+          },
+          {
+            "slug": "bazyliszek-warszawski",
+            "wielkosc": 0.22
+          },
+          {
+            "slug": "ben-varrey",
+            "wielkosc": 0.348
+          },
+          {
+            "slug": "cormoran-st-michaels-mount",
+            "wielkosc": 0.224
+          },
+          {
+            "slug": "drangue-shala",
+            "wielkosc": 0.46
+          },
+          {
+            "slug": "egungun",
+            "wielkosc": 0.565
+          },
+          {
+            "slug": "empusa-korynt",
+            "wielkosc": 0.505
+          },
+          {
+            "slug": "glamr-z-thorhallsstadir",
+            "wielkosc": 0.2
+          },
+          {
+            "slug": "iktomi",
+            "wielkosc": 0.236
+          },
+          {
+            "slug": "indra",
+            "wielkosc": 0.34
+          },
+          {
+            "slug": "kannon-hase",
+            "wielkosc": 0.38
+          },
+          {
+            "slug": "kentaur-pelion",
+            "wielkosc": 0.36
+          },
+          {
+            "slug": "knecht-z-koptos",
+            "wielkosc": 0.4
+          },
+          {
+            "slug": "lincoln-imp",
+            "wielkosc": 0.439
+          },
+          {
+            "slug": "loup-garou-gevaudan",
+            "wielkosc": 0.24
+          },
+          {
+            "slug": "morowa-panna",
+            "wielkosc": 0.395
+          },
+          {
+            "slug": "neith-z-sais",
+            "wielkosc": 0.262
+          },
+          {
+            "slug": "nessos",
+            "wielkosc": 0.416
+          },
+          {
+            "slug": "pandora",
+            "wielkosc": 0.472
+          },
+          {
+            "slug": "protostates",
+            "wielkosc": 0.322
+          },
+          {
+            "slug": "selkie-sule-skerry",
+            "wielkosc": 0.49
+          },
+          {
+            "slug": "sfinks-teby",
+            "wielkosc": 0.506
+          },
+          {
+            "slug": "syama-i-sarvara",
+            "wielkosc": 0.385
+          },
+          {
+            "slug": "talos-kreta",
+            "wielkosc": 0.455
+          },
+          {
+            "slug": "wielki-sfinks-z-gizy",
+            "wielkosc": 0.2
+          }
+        ],
+        "dominacje": [
+          {
+            "kultura": "indie",
+            "kult": "agni",
+            "wielkosc": 0.4
+          },
+          {
+            "kultura": "irlandia",
+            "kult": "balor",
+            "wielkosc": 0.47
+          },
+          {
+            "kultura": "niemcy",
+            "kult": "barbarossa-kyffhaeuser",
+            "wielkosc": 0.502
+          },
+          {
+            "kultura": "polska",
+            "kult": "bazyliszek-warszawski",
+            "wielkosc": 0.22
+          },
+          {
+            "kultura": "man",
+            "kult": "ben-varrey",
+            "wielkosc": 0.348
+          },
+          {
+            "kultura": "kornwalia",
+            "kult": "cormoran-st-michaels-mount",
+            "wielkosc": 0.224
+          },
+          {
+            "kultura": "albania",
+            "kult": "drangue-shala",
+            "wielkosc": 0.46
+          },
+          {
+            "kultura": "joruba",
+            "kult": "egungun",
+            "wielkosc": 0.565
+          },
+          {
+            "kultura": "grecja",
+            "kult": "empusa-korynt",
+            "wielkosc": 0.505
+          },
+          {
+            "kultura": "islandia",
+            "kult": "glamr-z-thorhallsstadir",
+            "wielkosc": 0.2
+          },
+          {
+            "kultura": "lakota",
+            "kult": "iktomi",
+            "wielkosc": 0.236
+          },
+          {
+            "kultura": "indie",
+            "kult": "indra",
+            "wielkosc": 0.34
+          },
+          {
+            "kultura": "japonia",
+            "kult": "kannon-hase",
+            "wielkosc": 0.38
+          },
+          {
+            "kultura": "grecja",
+            "kult": "kentaur-pelion",
+            "wielkosc": 0.36
+          },
+          {
+            "kultura": "grecja",
+            "kult": "knecht-z-koptos",
+            "wielkosc": 0.4
+          },
+          {
+            "kultura": "anglia",
+            "kult": "lincoln-imp",
+            "wielkosc": 0.439
+          },
+          {
+            "kultura": "francja",
+            "kult": "loup-garou-gevaudan",
+            "wielkosc": 0.24
+          },
+          {
+            "kultura": "polska",
+            "kult": "morowa-panna",
+            "wielkosc": 0.395
+          },
+          {
+            "kultura": "egipt",
+            "kult": "neith-z-sais",
+            "wielkosc": 0.262
+          },
+          {
+            "kultura": "grecja",
+            "kult": "nessos",
+            "wielkosc": 0.416
+          },
+          {
+            "kultura": "grecja",
+            "kult": "pandora",
+            "wielkosc": 0.472
+          },
+          {
+            "kultura": "grecja",
+            "kult": "protostates",
+            "wielkosc": 0.322
+          },
+          {
+            "kultura": "szkocja-polnocna",
+            "kult": "selkie-sule-skerry",
+            "wielkosc": 0.49
+          },
+          {
+            "kultura": "grecja",
+            "kult": "sfinks-teby",
+            "wielkosc": 0.506
+          },
+          {
+            "kultura": "indie",
+            "kult": "syama-i-sarvara",
+            "wielkosc": 0.385
+          },
+          {
+            "kultura": "grecja",
+            "kult": "talos-kreta",
+            "wielkosc": 0.455
+          },
+          {
+            "kultura": "egipt",
+            "kult": "wielki-sfinks-z-gizy",
+            "wielkosc": 0.2
+          }
+        ],
+        "paliwo": {
+          "egungun": 30,
+          "barbarossa-kyffhaeuser": 22,
+          "kentaur-pelion": 14,
+          "lincoln-imp": 16,
+          "empusa-korynt": 22,
+          "balor": 21,
+          "selkie-sule-skerry": 24,
+          "indra": 11,
+          "sfinks-teby": 24,
+          "talos-kreta": 22,
+          "pandora": 20,
+          "morowa-panna": 15,
+          "protostates": 12,
+          "knecht-z-koptos": 15,
+          "syama-i-sarvara": 15,
+          "loup-garou-gevaudan": 10,
+          "neith-z-sais": 9,
+          "cormoran-st-michaels-mount": 11,
+          "ben-varrey": 13,
+          "iktomi": 12,
+          "nessos": 19
+        }
+      },
+      "konsekwencje": {
+        "os": {
+          "mit": -1,
+          "racjonalizacja": 1
+        },
+        "relacje": [
+          {
+            "typ": "wzmocnienie",
+            "skad": "pandora",
+            "dokad": "iktomi",
+            "opis": "Pandora nazwała rzecz po imieniu: nie każdy dar ma nadawcę, którego da się wskazać — i pająk to potwierdził."
+          },
+          {
+            "typ": "napiecie",
+            "skad": "iktomi",
+            "dokad": "nessos",
+            "opis": "Pająk zazdrości kentaurowi daru, który działa bez obecności dawcy; kentaur nie chce się do tego przyznać przy świadkach."
+          },
+          {
+            "typ": "neutralna",
+            "skad": "nessos",
+            "dokad": "pandora",
+            "opis": "Oboje wiedzą, ile lat potrafi leżeć zamknięta rzecz, zanim ktoś jej użyje."
+          }
+        ],
+        "zasieg": [
+          {
+            "slug": "pandora",
+            "przed": 0.46,
+            "po": 0.472,
+            "delta": 0.012,
+            "opis": "Z figury winnej ciekawości stała się świadkiem, który wskazuje miejsce sprawstwa."
+          },
+          {
+            "slug": "iktomi",
+            "przed": 0.22,
+            "po": 0.236,
+            "delta": 0.016,
+            "opis": "Pierwsze wejście lakockiego pająka do Kroniki: zwężone drzwi Oniya Oshoka weszły do rejestru długów świata."
+          },
+          {
+            "slug": "nessos",
+            "przed": 0.41,
+            "po": 0.416,
+            "delta": 0.006,
+            "opis": "Zatruty dar przestał być prywatną zemstą, a stał się wzorcem, o który pytają inni."
+          }
+        ],
+        "dominacje": [
+          {
+            "kultura": "grecja",
+            "kult": "pandora",
+            "przed": 0.46,
+            "po": 0.472,
+            "delta": 0.012
+          },
+          {
+            "kultura": "lakota",
+            "kult": "iktomi",
+            "przed": 0.22,
+            "po": 0.236,
+            "delta": 0.016
+          },
+          {
+            "kultura": "grecja",
+            "kult": "nessos",
+            "przed": 0.41,
+            "po": 0.416,
+            "delta": 0.006
+          }
+        ],
+        "pozycje": [
+          {
+            "slug": "pandora",
+            "status": "przemieniony",
+            "opis": "Przestała być wyłącznie tą, która otworzyła: została przy pokrywie i nazwała regułę stołu."
+          },
+          {
+            "slug": "iktomi",
+            "status": "wzmocniony",
+            "opis": "Wszedł do Tomu I jako pierwszy byt zza oceanu i od razu z otwartym rachunkiem za zwężone przejście."
+          },
+          {
+            "slug": "nessos",
+            "status": "odporny",
+            "opis": "Nie stracił nic i nie zyskał nic prócz tego, że jego metoda dostała nazwę."
+          }
+        ],
+        "watki": [
+          {
+            "id": "pierwszy-w-linii",
+            "stan": "otwarty",
+            "byty": [
+              "protostates",
+              "knecht-z-koptos",
+              "syama-i-sarvara"
+            ],
+            "pytanie": "Co się stanie z linią, gdy pierwszy przestanie stać, a nikt nie uzna, że ktoś go zastąpił?"
+          },
+          {
+            "id": "niewinny-bierca",
+            "stan": "otwarty",
+            "byty": [
+              "kentaur-pelion",
+              "pandora",
+              "empusa-korynt"
+            ],
+            "pytanie": "Pandora wie już, że brała — ale czy Archiwum umie odróżnić biorącego od tego, kto ustawił rzecz na jego drodze?"
+          },
+          {
+            "id": "warunek-barbarossy",
+            "stan": "otwarty",
+            "byty": [
+              "barbarossa-kyffhaeuser",
+              "kentaur-pelion",
+              "egungun"
+            ],
+            "pytanie": "Czy dług śpiącego cesarza da się spłacić gościną — czy rachunek, który zapłacił ze snu, przyjdzie kiedyś wyrównać na jawie?"
+          },
+          {
+            "id": "kres-indry",
+            "stan": "otwarty",
+            "byty": [
+              "indra"
+            ],
+            "pytanie": "Kto zapisze kres Indry: ten, kto go zdetronizuje, czy ten, który przestaje się bać jego gromu?"
+          },
+          {
+            "id": "znak-nie-wystarcza",
+            "stan": "otwarty",
+            "byty": [
+              "sfinks-teby",
+              "loup-garou-gevaudan",
+              "neith-z-sais"
+            ],
+            "pytanie": "Loup-garou dostał adres zamiast opisu, ale kto zapyta o resztę jego imienia, gdy przestanie być ciekawym tropem?"
+          },
+          {
+            "id": "prawo-progu",
+            "stan": "otwarty",
+            "byty": [
+              "cormoran-st-michaels-mount",
+              "ben-varrey",
+              "lincoln-imp",
+              "loup-garou-gevaudan"
+            ],
+            "pytanie": "Jeśli próg należy do przechodzącego, to kto płaci za jego utrzymanie, gdy gospodarz przestanie być największy?"
+          },
+          {
+            "id": "slad-ostatni-slad-gevaudan",
+            "stan": "otwarty",
+            "byty": [
+              "loup-garou-gevaudan",
+              "sfinks-teby",
+              "neith-z-sais"
+            ],
+            "pytanie": "Kto wróci po ślad zostawiony w cudzym raporcie, zanim raport stanie się jedyną wersją drogi?"
+          },
+          {
+            "id": "zwezone-drzwi",
+            "stan": "otwarty",
+            "byty": [
+              "iktomi",
+              "pandora",
+              "nessos"
+            ],
+            "pytanie": "Czy przejście zwężone podstępem da się rozszerzyć z powrotem — i czy ktokolwiek prócz tego, kto je zwęził, w ogóle wie, jak się to robi?"
+          }
+        ]
+      },
+      "narrator": {
+        "ocena": [
+          {
+            "kto": "pandora",
+            "kogo": "iktomi",
+            "stopien": 2,
+            "komentarz": "Nie skłamał ani razu. Powiedział „pieśni” o tobołku trawy i to wystarczyło — kłamstwem było dopiero cudze wyobrażenie."
+          },
+          {
+            "kto": "nessos",
+            "kogo": "pandora",
+            "stopien": 1,
+            "komentarz": "Jako jedyna przy stole nie tłumaczy się rzemiosłem. Mówi: dostałam — i nie odkłada pokrywy na miejsce."
+          },
+          {
+            "kto": "iktomi",
+            "kogo": "nessos",
+            "stopien": 2,
+            "komentarz": "Podał nie truciznę, tylko powód, żeby ją przechować przez dziesięć lat. Tego nawet ja nie umiem: cudzej ręki, która pracuje za mnie."
+          }
+        ],
+        "podsumowanie": "Epoka nie rozstrzyga winy — rozstrzyga miejsce. Kronika zapisuje, że sprawcą jest ten, kto stoi tam, gdzie rzecz się otwiera, a wszyscy trzej mieli zwyczaj odchodzić wcześniej. Nazwanie tej reguły kosztuje świat kawałek tajemnicy: dar przestaje być wyrokiem losu, a staje się czyjąś ręką, którą da się wskazać. Pandora zostaje przy pokrywie i tym gestem przestaje być tylko biorącą; Iktómi po raz pierwszy przyznaje, że zwęził drzwi; Nessos milknie, bo jego dar wciąż leży w cudzej skrzyni."
+      },
+      "grafika": {
+        "podpis": "Trzy dary na jednym stole: pokrywa jeszcze w rękach, płótno w skrzyni i tobołek suchej trawy.",
+        "styl": "Hyperrealistyczne zdjęcie filmowe, ultrapanorama 21:9.",
+        "prompt": "Hyperrealistic cinematic photograph, ultra-wide 21:9 anamorphic frame. Three figures around a long weathered wooden table at dusk on an empty plain: a Greek woman in a simple chiton holding a heavy clay lid with both hands over a large storage jar, a lean Dakota trickster in fringed deerskin with black rings painted around his eyes sitting beside a knotted blanket bundle of dry grass, and a powerful centaur standing at the far end with a folded blood-stained cloth in an open wooden chest. Behind them a low limestone outcrop with a small hand-sized dark opening breathing cold air. Cold blue evening light, one warm lantern on the table, restrained mythic realism, no gore, no text, no modern objects.",
+        "obraz": "assets/wizualizacje/kronika-tom-1-epoka-12.jpg"
+      }
     }
   ],
   "stanPo": {
     "os": {
-      "mit": 28,
-      "racjonalizacja": 72
+      "mit": 27,
+      "racjonalizacja": 73
     },
     "zasieg": [
       {
@@ -5502,7 +6032,7 @@
       },
       {
         "slug": "iktomi",
-        "wielkosc": 0.22
+        "wielkosc": 0.236
       },
       {
         "slug": "indra",
@@ -5538,11 +6068,11 @@
       },
       {
         "slug": "nessos",
-        "wielkosc": 0.41
+        "wielkosc": 0.416
       },
       {
         "slug": "pandora",
-        "wielkosc": 0.46
+        "wielkosc": 0.472
       },
       {
         "slug": "protostates",
@@ -5623,7 +6153,7 @@
       {
         "kultura": "lakota",
         "kult": "iktomi",
-        "wielkosc": 0.22
+        "wielkosc": 0.236
       },
       {
         "kultura": "indie",
@@ -5668,12 +6198,12 @@
       {
         "kultura": "grecja",
         "kult": "nessos",
-        "wielkosc": 0.41
+        "wielkosc": 0.416
       },
       {
         "kultura": "grecja",
         "kult": "pandora",
-        "wielkosc": 0.46
+        "wielkosc": 0.472
       },
       {
         "kultura": "grecja",
@@ -5717,7 +6247,7 @@
       "indra": 11,
       "sfinks-teby": 24,
       "talos-kreta": 22,
-      "pandora": 19,
+      "pandora": 20,
       "morowa-panna": 15,
       "protostates": 12,
       "knecht-z-koptos": 15,
@@ -5725,7 +6255,9 @@
       "loup-garou-gevaudan": 10,
       "neith-z-sais": 9,
       "cormoran-st-michaels-mount": 11,
-      "ben-varrey": 13
+      "ben-varrey": 13,
+      "iktomi": 12,
+      "nessos": 19
     }
   },
   "walidacja": true,
@@ -5744,7 +6276,7 @@
       "tytul": "Kronika trzech stołów",
       "opis": "",
       "plik": "kronika-tom-1.html",
-      "epoki": 11
+      "epoki": 12
     }
   ]
 }
