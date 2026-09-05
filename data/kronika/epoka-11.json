@@ -1,0 +1,215 @@
+{
+  "slug": "epoka-11",
+  "tom": "tom-1",
+  "zrodloSplotu": {
+    "droga": "ostatni-slad-gevaudan",
+    "status": "rozszczepiona"
+  },
+  "tytul": "Ostatni ślad: droga, która rozeszła się na dwoje",
+  "iskra": "Archiwum po raz pierwszy zapisuje Epokę nie z rozmowy, lecz z drogi. Loup-garou, Sfinks i Neith przeszli przez zamykany las Gévaudan: krąg łowców ustąpił, noc lamp nie, a przejście przez górę Fikion udało się tylko w połowie. Rozstrzygnięcie było losowe, ale cena okazała się policzalna.",
+  "pytanie": "Co Kronika ma zrobić z drogą, która nie skończyła się ani zwycięstwem, ani klęską — tylko rachunkiem?",
+  "uczestnicy": [
+    {
+      "slug": "loup-garou-gevaudan",
+      "rola": "Prowadzony przez zamykany las",
+      "kosztUdzialu": 2,
+      "zwrot": 3
+    },
+    {
+      "slug": "sfinks-teby",
+      "rola": "Ta, która trzyma przejście pytaniem",
+      "kosztUdzialu": 2,
+      "zwrot": 2
+    },
+    {
+      "slug": "neith-z-sais",
+      "rola": "Tkaczka drogi między lampami",
+      "kosztUdzialu": 2,
+      "zwrot": 2
+    }
+  ],
+  "narrator": {
+    "ocena": [
+      {
+        "kto": "neith-z-sais",
+        "kogo": "loup-garou-gevaudan",
+        "stopien": 2,
+        "komentarz": "Szedł tam, gdzie prowadziła nić, nawet kiedy nić prowadziła prosto na światło. To nie jest odwaga — to zaufanie, które kosztuje więcej."
+      },
+      {
+        "kto": "sfinks-teby",
+        "kogo": "neith-z-sais",
+        "stopien": 2,
+        "komentarz": "Utkała przejście z tego, co łowcy uważali za swoją własność: z porządku nocy."
+      },
+      {
+        "kto": "loup-garou-gevaudan",
+        "kogo": "sfinks-teby",
+        "stopien": 1,
+        "komentarz": "Zatrzymała pościg jednym pytaniem, ale pytania nie da się zadać dwa razy tej samej lampie."
+      }
+    ],
+    "podsumowanie": "Droga rozeszła się na dwoje i tak też weszła do Kroniki. Jedna połowa jest opowieścią: las, który nie dał się zamknąć. Druga jest długiem: raport, mapa i nazwisko, których nikt jeszcze nie odwołał. Epoka nie zamyka śladu — przenosi go do ksiąg, żeby ktoś mógł po niego wrócić."
+  },
+  "konsekwencje": {
+    "os": {
+      "mit": 0,
+      "racjonalizacja": 0
+    },
+    "relacje": [
+      {
+        "typ": "wzmocnienie",
+        "skad": "neith-z-sais",
+        "dokad": "loup-garou-gevaudan",
+        "opis": "Nić przeprowadziła wilkołaka przez krąg łowców, choć nie zdołała zgasić wszystkich lamp."
+      },
+      {
+        "typ": "wzmocnienie",
+        "skad": "sfinks-teby",
+        "dokad": "neith-z-sais",
+        "opis": "Pytanie zatrzymało pościg na tyle długo, by tkaczka zdążyła związać przejście."
+      },
+      {
+        "typ": "neutralna",
+        "skad": "loup-garou-gevaudan",
+        "dokad": "sfinks-teby",
+        "opis": "Prowadzony i pytająca rozstali się bez rozstrzygnięcia, z rachunkiem podzielonym po połowie."
+      }
+    ],
+    "zasieg": [
+      {
+        "slug": "loup-garou-gevaudan",
+        "delta": 0.004,
+        "opis": "Ślad z Gévaudan przeszedł do ksiąg jako droga, nie jako polowanie."
+      },
+      {
+        "slug": "sfinks-teby",
+        "delta": 0.004,
+        "opis": "Pytanie okazało się skuteczne także poza własną górą."
+      },
+      {
+        "slug": "neith-z-sais",
+        "delta": 0.004,
+        "opis": "Tkanie weszło w rejestr metod przechodzenia przez świat zamknięty."
+      }
+    ],
+    "dominacje": [
+      {
+        "kultura": "francja",
+        "kult": "loup-garou-gevaudan",
+        "delta": 0.004
+      },
+      {
+        "kultura": "grecja",
+        "kult": "sfinks-teby",
+        "delta": 0.004
+      },
+      {
+        "kultura": "egipt",
+        "kult": "neith-z-sais",
+        "delta": 0.004
+      }
+    ],
+    "pozycje": [
+      {
+        "slug": "loup-garou-gevaudan",
+        "status": "zraniony",
+        "opis": "Przeszedł, ale zostawił za sobą raport, mapę i połowę drogi w cudzych rękach."
+      },
+      {
+        "slug": "sfinks-teby",
+        "status": "odporny",
+        "opis": "Nie straciła nic prócz jednego pytania, które zużyła na cudzą sprawę."
+      },
+      {
+        "slug": "neith-z-sais",
+        "status": "wzmocniony",
+        "opis": "Jej nić okazała się narzędziem podróży, nie tylko rozmowy."
+      }
+    ],
+    "watki": [
+      {
+        "id": "pierwszy-w-linii",
+        "stan": "otwarty",
+        "byty": [
+          "protostates",
+          "knecht-z-koptos",
+          "syama-i-sarvara"
+        ],
+        "pytanie": "Co się stanie z linią, gdy pierwszy przestanie stać, a nikt nie uzna, że ktoś go zastąpił?"
+      },
+      {
+        "id": "niewinny-bierca",
+        "stan": "otwarty",
+        "byty": [
+          "kentaur-pelion",
+          "pandora",
+          "empusa-korynt"
+        ],
+        "pytanie": "Kiedy biernik dowie się, że bierze — i co wtedy zrobi z tym, co już wziął?"
+      },
+      {
+        "id": "warunek-barbarossy",
+        "stan": "otwarty",
+        "byty": [
+          "barbarossa-kyffhaeuser",
+          "kentaur-pelion",
+          "egungun"
+        ],
+        "pytanie": "Czy dług śpiącego cesarza da się spłacić gościną — czy rachunek, który zapłacił ze snu, przyjdzie kiedyś wyrównać na jawie?"
+      },
+      {
+        "id": "kres-indry",
+        "stan": "otwarty",
+        "byty": [
+          "indra"
+        ],
+        "pytanie": "Kto zapisze kres Indry: ten, kto go zdetronizuje, czy ten, który przestaje się bać jego gromu?"
+      },
+      {
+        "id": "znak-nie-wystarcza",
+        "stan": "otwarty",
+        "byty": [
+          "sfinks-teby",
+          "loup-garou-gevaudan",
+          "neith-z-sais"
+        ],
+        "pytanie": "Ci sami troje przeszli razem drogę — czy wspólne przejście mówi o bycie więcej niż jeden znak, po którym go rozpoznawano?"
+      },
+      {
+        "id": "prawo-progu",
+        "stan": "otwarty",
+        "byty": [
+          "cormoran-st-michaels-mount",
+          "ben-varrey",
+          "lincoln-imp",
+          "loup-garou-gevaudan"
+        ],
+        "pytanie": "Jeśli próg należy także do przechodzących, to kto płaci za jego utrzymanie — i czym płaci ten, kto nie ma nic prócz przejścia?"
+      },
+      {
+        "id": "slad-ostatni-slad-gevaudan",
+        "stan": "otwarty",
+        "byty": [
+          "loup-garou-gevaudan",
+          "sfinks-teby",
+          "neith-z-sais"
+        ],
+        "pytanie": "Część drogi ocalała, część zapadła się pod raportem: kto wróci po tę drugą połowę?"
+      }
+    ]
+  },
+  "grafika": {
+    "podpis": "Rozejście drogi w Gévaudan: nić prowadzi w las, lampy łowców zostają po drugiej stronie.",
+    "styl": "Hyperrealistyczne zdjęcie filmowe, ultrapanorama 21:9.",
+    "prompt": "Hyperrealistic cinematic photograph, ultra-wide 21:9 anamorphic frame. Night in the Gévaudan highlands where a forest track forks: on the left a wolf-headed man walks into the mist following a thin luminous thread held by a serene Egyptian goddess, on the right a line of distant oil lamps and armed hunters stops at a wooden barrier with a nailed proclamation. A winged sphinx sits on a boulder between the two paths, facing the lamps. Cold moonlight, amber lamp glow, wet granite, thorn scrub. Restrained folkloric realism, no gore, no text, no modern objects.",
+    "obraz": "assets/wizualizacje/kronika-tom-1-epoka-11.jpg"
+  },
+  "meta": {
+    "utworzono": "2026-09-05 18:10",
+    "autor": "sesja arena 2026-09-05b",
+    "wersja": 1,
+    "poprzednik": "epoka-10"
+  },
+  "przebieg": "Pierwsza Epoka Tomu I zrodzona z drogi SPLOTU, a nie z rozmowy. Trzy próby: krąg łowców, noc lamp i przejście przez górę Fikion. Wynik rozszczepiony — jedna połowa drogi weszła do opowieści, druga do cudzego raportu. Kronika przyjmuje ślad wraz z długiem i zostawia go otwartym."
+}

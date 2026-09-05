@@ -1,0 +1,107 @@
+{
+  "slug": "bazyliszek-warszawski",
+  "nazwa": "Bazyliszek z Krzywego Koła",
+  "nazwy_alternatywne": [
+    "Bazyliszek warszawski",
+    "Basiliscus Varsoviensis",
+    "Król wężów"
+  ],
+  "karta": {
+    "nazwa": "Coat with Venom",
+    "wydanie": "Dragons of Tarkir (DTK) #91",
+    "rok": 2015
+  },
+  "lokalizacja": {
+    "miejscowosc": "Ulica Krzywe Koło na Starym Mieście w Warszawie — wąska uliczka biegnąca łukiem za pierzeją Rynku; w podaniu Zmorskiego bazyliszek wylągł się w sklepach pod pogorzałą kamienicą, a Krzywe Koło paliło się naprawdę w 1607 roku. Zabudowę zburzono w 1944, odbudowano do 1955 według projektów Stanisława Żaryna, a pod numerem 7 mieści się dziś Archiwum Państwowe w Warszawie: pod adresem piwnicy z podania stoi instytucja, której zadaniem jest przechowywanie dowodów",
+    "kraj": "Polska",
+    "lat": 52.2506,
+    "lon": 21.0119
+  },
+  "pochodzenie_i_kultura": "Folklor miejski Warszawy, nie wiejski. Słownik polskiej bajki ludowej (UMK) klasyfikuje wątek jako T 6510 „Bazyliszek” i zaznacza, że w polskim folklorze tradycyjnym postać występuje sporadycznie: realizują ją zaledwie dwie bajki, bo bazyliszek należał pierwotnie do bestiarium warstw wykształconych i krążył w dużych ośrodkach, a nie na wsi. Najczęściej przywoływany zapis pochodzi od Romana Zmorskiego („Podania i baśni ludu w Mazowszu”, 1852), który umieścił go w dziale „Podania miejscowe warszawskie” z dopiskiem, że rzecz jest popularna wśród mieszkańców Starego Miasta: za panowania Zygmunta Augusta w sklepach pod pogorzałą kamienicą na Krzywym Kole „wylągł się był Bazyliszek”. Zmorski nie jest jednak pierwszy i nie jest zgodny z resztą przekazu. Sto lat wcześniej sprawę opisał Benedykt Chmielowski w „Nowych Atenach” (rozdział „Reptilia, albo gad”, wydanie lwowskie z 1745 roku), i to on podaje wersję, która krąży po Europie: „podobny Roku 1587 w Warszawie u nas wylągł się w piwnicy, śmieciem i obalinami zarzuconej i zaniedbanej, u jednego Miecznika”. U Chmielowskiego giną dwaj chłopcy bawiący się w chowanego i służebnica, która poszła ich szukać; sprawę rozpoznaje senator, a do piwnicy schodzi skazaniec o nazwisku Jan Pareusz, obwieszony zwierciadłami i skórą, z maszką na oczach, orężem i pochodnią. Chmielowski powołuje się przy tym na Chwałkowskiego („Singularia Poloniae”) i czterech innych autorów, czyli na przekaz już wtedy wielokrotnie przepisany. Kartoteka nie uzgadnia tych wersji na siłę, bo się nie da: rok 1587 przypada piętnaście lat po śmierci Zygmunta Augusta, więc datowanie Zmorskiego i datowanie Chmielowskiego wykluczają się nawzajem. Zmienia się też zawód gospodarza — miecznik u Chmielowskiego, płatnerz Melchior Ostroga u Artura Oppmana (1925) — i nazwisko śmiałka, bo w przekazie niemieckim, wywiedzionym od Johanna Pinciera, schodzi do piwnicy Ślązak Johann Faurer. Trzon opowieści jest za to niewzruszony przez trzysta lat: piwnica na Krzywym Kole, troje zwłok, człowiek skazany na śmierć i lustra. Kartoteka trzyma się jednej tradycji — staromiejskiej warszawskiej — i nie rozmywa bytu w „bazyliszki w ogóle”: antyczny wąż Pliniusza i średniowieczny kogut z jaja to jego rodowód, nie on sam.",
+  "wizualizacja": {
+    "prompt": "Style: A wide-angle full-body cinematic photograph. The central objects/persons of the photo are visible from head to toe, standing centrally in the frame. No parts of the body are cropped.\n\nA basilisk the size of a large hen standing at full height on the earthen floor of a burnt-out Warsaw cellar in 1587: a cockerel's head with a warty crest like a small crown, bulging toad eyes, scaly wattled neck, dull bronze-green plumage over reptilian skin, short clawed cockerel legs, and a long serpent tail curved upright behind the body. Around it: cracked brick vaulting, a fallen iron fire-hook, shards of mirror glass scattered across the floor throwing splinters of daylight from the stairs, dead moths, thick stale air. Cold daylight falling down the cellar steps behind it, damp Old Town brick, seventeenth-century Polish urban detail, no people in frame.\n\nCaptured with a 35mm anamorphic lens at f/1.8. Shallow depth of field with a heavy, creamy bokeh background. Environmental portraiture. Dramatic cinematic lighting, sharp focus on the character, hyper-realistic textures of clothing and skin. Shot on 70mm film stock, ultra-wide 21:9 aspect ratio. --ar 21:9",
+    "obraz": "assets/wizualizacje/bazyliszek-warszawski.jpg"
+  },
+  "natura": {
+    "wyglad_i_aura": "Nie jest smokiem — jest niepozorny i tym groźniejszy. Zapis z 1587 roku, przekazany przez Johanna Pinciera, opisuje go jako stworzenie z głową koguta, oczami ropuchy, grzebieniem podobnym do korony i skórą brodawkowatą, łuskowatą, „w barwie zwierząt jadowitych”, z ogonem wygiętym w górę za ciałem. Chmielowski dorzuca szczegóły, które ustawiają skalę i sposób patrzenia: chodzi na dwóch nogach, pod skrzydłami jest żółty, a zabija tych, którzy spojrzą na jego pysk, głowę i oczy — „ale nie na resztę ciała”. Polski zapis ludowy jest jeszcze skromniejszy: wielkości kury, z indyczą głową, wężowym ogonem i nietoperzymi skrzydłami. Aura wyprzedza go o kilka kroków: w piwnicy powietrze robi się gęste i trudne do oddychania, ćmy padają na klepisko, a pod sklepieniem czuć zapach zwietrzałego octu i zgnilizny.",
+    "charakter_i_motywacje": "Nie poluje i nie ściga. Zajmuje jedną piwnicę i traktuje ją jak własne państwo — stąd „król wężów”: to władza terytorialna, nie apetyt. Nie odróżnia dziecka od dorosłego i nie stawia warunków, bo nie prowadzi negocjacji; wchodzącego karze samym faktem, że wszedł. W wersji Artura Oppmana z „Legend warszawskich” (1925) siedzi w lochach zwaliska na Krzywym Kole i porywa dzieci płatnerza Melchiora Ostrogi, co nadaje mu rys strażnika skarbu. W wersji Zmorskiego skarbu nie ma — jest tylko piwnica i trzy ciała.",
+    "zdolnosci": "Zabija spojrzeniem i oddechem naraz, bez dotknięcia i bez dźwięku. Ciała dwojga dzieci i dziewki, które zeszły ich szukać, wyciągnięto z piwnicy osękami: były nabrzmiałe, pełne pryszczy i plam, a oczy „wystawały z oczodołów jak połówki kurzych jaj”. Stary medyk Benedictus, były lekarz przyboczny króla, uznał ten stan zwłok za niezawodny znak otrucia przez bazyliszka. Jad działa też pośrednio — przez powietrze w zamkniętej przestrzeni; w otwartym słońcu, jak twierdził Benedictus, słabnie. Wzrok bazyliszka miał przenikać mury, więc piwnica nie jest granicą jego zasięgu, tylko jego wygodą.",
+    "slabosci_i_metody_pokonania": "Własne odbicie. Metoda kanoniczna: śmiałek obwiesza się zwierciadłami tak, by potwór spojrzał w lustro i skierował moc wzroku na siebie — „jak skoro w zwierciadło pojrzał, padł, własnem zabity wejrzeniem”. Wariant historyczny z 1587 roku dodaje szczegóły rzemieślnicze: skazany na śmierć, któremu obiecano ułaskawienie, zszedł do piwnicy w skórzanym stroju obwieszonym lustrami od stóp do głów, z dużymi szkłami na oczach, z osęką w prawej i płonącą pochodnią w lewej ręce; szukał ponad godzinę, zanim znalazł bestię we wnęce ściany, i wyniósł ją na światło dzienne. Osobno działa czynnik gospodarski: wypłoszony z ciemności i wystawiony na słońce bazyliszek przestaje być groźny. Tradycja bestiariuszowa dorzuca łasicę — u Chmielowskiego z gałązką ruty w pysku, bo ruta ma jad znosić — oraz pianie koguta; w wersji warszawskiej nie były potrzebne. Warto przy tym wiedzieć, że lustro miało krytyków już w osiemnastym wieku: Chmielowski przytacza Delrio i Kirchera, według których bazyliszek wcale nie zabija oczami, tylko zatruwa powietrze wokół siebie, a zwierciadło nie może mu zaszkodzić, bo jad jest w nim „konnaturalny, z nim zrodzony” — inaczej zabijałby się sam bez żadnego lustra. Jeżeli mają rację, to jedyną skuteczną bronią przeciw niemu jest przeciąg.",
+    "preferencje": "Lubi: zamknięte piwnice, gęste powietrze bez przeciągu, pogorzeliska i miejsca opuszczone od dawna, ciszę i cudzą ciekawość; nie lubi: światła dziennego na ścianach, luster i wypolerowanej stali, przeciągu od schodów, tłumu na ulicy nad głową i osęki w cudzych rękach."
+  },
+  "dokumentacja": [
+    {
+      "typ": "opracowanie naukowe",
+      "pozycja": "„Bazyliszek”, hasło w: Słownik polskiej bajki ludowej, red. Violetta Wróblewska (Uniwersytet Mikołaja Kopernika) — wątek T 6510, cytat zapisu Romana Zmorskiego z 1852 roku o piwnicy na Krzywym Kole i skazańcu obwieszonym zwierciadłami, wraz z omówieniem miejskiego, a nie wiejskiego rodowodu postaci",
+      "url": "https://bajka.umk.pl/slownik/lista-hasel/haslo/?id=30"
+    },
+    {
+      "typ": "źródło literackie",
+      "pozycja": "Artur Oppman, „Legendy warszawskie” (Księgarnia św. Wojciecha, 1925), rozdział „Bazyliszek” — pięć scen (kuźnia płatnerza, Stary Rynek, lochy zwaliska, czarownik, skazaniec) w literackiej redakcji podania staromiejskiego; tekst w domenie publicznej",
+      "url": "https://wolnelektury.pl/katalog/lektura/legendy-warszawskie-bazyliszek.html"
+    },
+    {
+      "typ": "opracowanie historyczne",
+      "pozycja": "Mike Dash, „On the Trail of the Warsaw Basilisk”, Smithsonian Magazine — rekonstrukcja przekazu o wypadku z 1587 roku wraz z tropieniem najstarszego druku: Johann Pincier, „Ænigmata, liber tertius” (Herborn 1605), s. 306–307, oraz broszura Georga Kaspara Kirchmayera „O bazyliszku” (1691)",
+      "url": "https://www.smithsonianmag.com/history/on-the-trail-of-the-warsaw-basilisk-5691840/"
+    },
+    {
+      "typ": "źródło drukowane (skan)",
+      "pozycja": "Roman Zmorski (jako Roman Zamarski), „Podania i baśni ludu w Mazowszu (z dodatkiem kilku szlązkich i wielkopolskich)”, Wrocław 1852 — dział „Podania miejscowe warszawskie”, pierwsze szeroko cytowane polskie zapisanie wątku o bazyliszku z Krzywego Koła; skan i transkrypcja w Wikiźródłach",
+      "url": "https://pl.wikisource.org/wiki/Podania_i_ba%C5%9Bni_ludu_w_Mazowszu_(z_dodatkiem_kilku_szl%C4%85zkich_i_wielkopolskich)"
+    },
+    {
+      "typ": "źródło drukowane (kompendium)",
+      "pozycja": "Benedykt Chmielowski, „Nowe Ateny albo Akademia wszelkiej sciencyi pełna”, rozdział „Reptilia, albo gad, rzeczy czołgające się po ziemi” (wyd. lwowskie, 1745) — najstarszy polski zapis wypadku warszawskiego: rok 1587, piwnica u miecznika zarzucona śmieciem, dwaj chłopcy i służebnica, senator rozpoznający sprawę i skazaniec Jan Pareusz z lustrami, maszką i pochodnią; autor powołuje się na Chwałkowskiego („Singularia Poloniae”) i czterech innych. Ten sam rozdział przytacza Delrio i Kirchera, którzy zaprzeczają, by lustro mogło bazyliszka zabić.",
+      "url": "https://literat.ug.edu.pl/ateny/0026.htm"
+    },
+    {
+      "typ": "dokumentacja instytucji",
+      "pozycja": "Archiwum Państwowe w Warszawie, dane teleadresowe siedziby głównej: ulica Krzywe Koło 7, 00-270 Warszawa (Naczelna Dyrekcja Archiwów Państwowych podaje przy okazji inwestycji przy ulicy Ordona 23, że zabytkowa kamienica na Krzywym Kole przestaje spełniać wymogi magazynowe) — potwierdzenie dzisiejszego stanu adresu z podania.",
+      "url": "https://archiwa.gov.pl/inwestycje-budowlane/archiwum-panstwowe-w-warszawie/"
+    }
+  ],
+  "trofea": {
+    "pierwotne": "Zwierciadła ze skórzanego stroju Johanna Faurera — kilkadziesiąt małych luster naszytych od stóp do głów, z których część pękła w piwnicy; to nimi bazyliszek został pokonany własnym wejrzeniem.",
+    "wtorne": "Żelazne osęki (haki ogniowe) z warszawskiego magazynu przeciwpożarowego, którymi wyciągano ciała z piwnicy, zanim ktokolwiek odważył się zejść po schodach."
+  },
+  "tagi": [
+    "polska",
+    "krol-wezy",
+    "zle-oko",
+    "jad",
+    "postac-zwierzeca"
+  ],
+  "powiazania": [
+    {
+      "slug": "morowa-panna",
+      "opis": "Obie postacie tłumaczą nagłą, niewyjaśnioną śmierć w mieście: jedna przez zarazę i przejście przez wieś, druga przez zatrute powietrze w jednej piwnicy."
+    },
+    {
+      "slug": "balor",
+      "opis": "Zabójcze spojrzenie jako broń podstawowa: u obu bytów kluczowa jest kwestia, kto pierwszy zdąży spojrzeć i czym zasłoni własne oczy."
+    },
+    {
+      "slug": "lincoln-imp",
+      "opis": "Dwa byty unieruchomione własną naturą: jednego zatrzymało spojrzenie w lustro, drugiego cios, który zamienił go w rzeźbę pod sklepieniem."
+    },
+    {
+      "slug": "olgoj-chorchoj",
+      "opis": "Dwa zabójstwa bez dotknięcia i dwa zupełnie różne stany dowodu: bazyliszka wyniesiono z piwnicy na widok publiczny i sprawę zamknięto nazwiskiem skazańca, a robaka z Gobi przez sto lat nie zobaczył żaden badacz z zewnątrz. Ta sama zdolność bywa więc raz protokołem sądowym, raz wyłącznie ostrzeżeniem przekazywanym dalej."
+    }
+  ],
+  "meta": {
+    "utworzono": "2026-09-05 19:05",
+    "autor": "sesja arena 2026-09-05b",
+    "modyfikacje": [
+      {
+        "data": "2026-09-05 19:05",
+        "opis": "Nowa karta bytu: bazyliszek ze staromiejskiej piwnicy na Krzywym Kole, z zapisem Zmorskiego z 1852 roku, redakcją Oppmana z 1925 i tropem druku Pinciera z 1605 o wypadku z 1587 roku."
+      },
+      {
+        "data": "2026-09-06 12:40",
+        "opis": "Pogłębienie: nowa warstwa piśmiennicza — „Nowe Ateny” Chmielowskiego (1745) jako najstarszy polski zapis wypadku, z rokiem 1587, miecznikiem, senatorem i skazańcem Janem Pareuszem; nazwana wprost sprzeczność datowania ze Zmorskim (Zygmunt August zmarł w 1572) oraz rozbieżność zawodu gospodarza i nazwiska śmiałka. Do sekcji o pokonaniu dopisany osiemnastowieczny sceptycyzm wobec lustra (Delrio i Kircher u Chmielowskiego: bazyliszek zatruwa powietrze, a jad ma konnaturalny) i ruta w pysku łasicy. Lokalizacja uściślona o pożar Krzywego Koła z 1607 roku, odbudowę Starego Miasta do 1955 według projektów Stanisława Żaryna i dzisiejszą siedzibę Archiwum Państwowego pod numerem 7. Dwa nowe źródła i powiązanie z olgoj-chorchojem."
+      }
+    ]
+  }
+}

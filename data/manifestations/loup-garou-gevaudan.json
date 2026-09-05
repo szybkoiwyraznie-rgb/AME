@@ -17,16 +17,16 @@
     "lat": 44.72,
     "lon": 3.5
   },
-  "pochodzenie_i_kultura": "Folklor francuski: loup-garou jest człowiekiem-wilkiem, figurą przemiany obecnej w podaniach wiejskich Francji. Nie utożsamiam go z konkretną historyczną Bestią z Gévaudan — ta była serią rzeczywistych ataków z lat 1764–1767 — lecz umieszczam manifestację w tym samym krajobrazie, gdzie lęk przed wilkiem i opowieść o człowieku-wilku mogły się spotkać. Sabine Baring-Gould w „The Book of Were-Wolves” (1865) opisuje francuskie przekazy o loup-garou: nocnej przemianie, wilczej skórze i rozpoznaniu człowieka po zranieniu bestii.",
+  "pochodzenie_i_kultura": "Folklor francuski: loup-garou jest człowiekiem-wilkiem, figurą przemiany obecnej w podaniach wiejskich Francji. Sama nazwa jest podwojeniem — „garou” wywodzi się z frankijskiego określenia człowieka-wilka, więc „loup-garou” znaczy dosłownie „wilk-człowiek-wilk”; starofrancuskie i normandzkie teksty używają wymiennie formy „garwaf”. Najstarszy literacki ślad tej postaci we Francji to XII-wieczny lai „Bisclavret” Marii z Francji: rycerz znika co tydzień na trzy dni, w lesie żyje jako wilk, a do ludzkiej postaci wraca wyłącznie przez ukryte odzienie — kto mu je zabierze, zatrzymuje go w zwierzęcym ciele na zawsze. Nie utożsamiam bytu z konkretną historyczną Bestią z Gévaudan — ta była serią rzeczywistych ataków z lat 1764–1767, w których wedle Britanniki zginęło około pięćdziesięciu osób, a rzecz zamknął strzał chłopa Jeana Chastela — lecz umieszczam manifestację w tym samym krajobrazie, gdzie lęk przed wilkiem i opowieść o człowieku-wilku mogły się spotkać. Sabine Baring-Gould w „The Book of Were-Wolves” (1865) opisuje francuskie przekazy o loup-garou: nocnej przemianie, wilczej skórze i rozpoznaniu człowieka po zranieniu bestii. Osobna, twarda warstwa tej opowieści to akta sądowe. Jesienią 1573 roku parlament w Dole we Franche-Comté wydał postanowienie, w którym — mimo obowiązującego zakazu polowań — pozwolił mieszkańcom Espagny, Salvange, Courchapon i wsi sąsiednich zebrać się „z pikami, halabardami, arkebuzami i kijami”, ścigać loup-garou i zabić go bez obawy o karę. Schwytano pustelnika Gilles’a Garniera, zwanego Pustelnikiem od św. Bonnota; przy pięćdziesięciu świadkach przyznał, że czarna postać spotkana w lesie dała mu maść, dzięki której polował na dzieci w wilczej skórze. Wyrok — spalenie żywcem — zapadł w styczniu 1574 roku i został wydrukowany jako „Arrest memorable de la Cour de parlement de Dole”. To ten sam mechanizm, który kartoteka widzi wszędzie: wieś ma zniknięte dzieci, prawo daje jej nazwę zdarzenia, a nazwa wskazuje jednego samotnego człowieka. Racjonalizacja przyszła szybciej, niż się zwykle sądzi: już w 1615 roku paryski lekarz Jean de Nynauld w „De la lycanthropie, transformation et extase des sorciers” wyliczył składniki maści — belladonna, psianka, tojad, lulek, szalej, mak, opium — i wywiódł z nich sen, odrętwienie i widzenia, polemizując wprost z Jeanem Bodinem, który uważał przemianę za rzeczywistą.",
   "wizualizacja": {
     "prompt": "Style: A wide-angle full-body cinematic photograph. The central objects/persons of the photo are visible from head to toe, standing centrally in the frame. No parts of the body are cropped.\n\nAn imposing French loup-garou, a wolf-man standing at the edge of a dark beech forest in the Gévaudan highlands, human eyes beneath rough charcoal fur, thorny branches caught in the fur, one paw pressed into wet grass, an old stone shepherd hut and distant misty hills behind him, cold moonlight breaking through clouds, restrained folkloric realism, no gore, no text.\n\nCaptured with a 35mm anamorphic lens at f/1.8. Shallow depth of field with a heavy, creamy bokeh background. Environmental portraiture. Dramatic cinematic lighting, sharp focus on the character, hyper-realistic textures of clothing and skin. Shot on 70mm film stock, ultra-wide 21:9 aspect ratio. --ar 21:9",
     "obraz": "assets/wizualizacje/loup-garou-gevaudan.jpg"
   },
   "natura": {
-    "wyglad_i_aura": "W nocnej postaci ma wydłużony pysk, ciężkie barki i wilczą sierść, ale ręce zachowują ślad ludzkich dłoni; w źrenicach zostaje pamięć człowieka. Słychać go wcześniej, niż widać: łamane gałęzie idą pod wiatr, a psy milkną przy kamiennych zagrodach Gévaudan.",
-    "charakter_i_motywacje": "Nie jest osobnym gatunkiem, lecz człowiekiem naznaczonym przemianą. Motywacją bestii jest głód i przymus nocnego polowania; motywacją człowieka pozostaje ukrycie własnej winy oraz doczekanie świtu. W opowieściach loup-garou działa jako ostrzeżenie: granica między sąsiadem a drapieżnikiem może pęknąć bez ostrzeżenia.",
-    "zdolnosci": "Porusza się po lesie ciszej niż człowiek, wyczuwa zapach żywego stworzenia i potrafi długo biec po górskim zboczu. Nocna postać ma siłę wilka i zna drogi między pastwiskami; o świcie odzyskuje ludzką skórę, lecz nie zawsze pamięta całą noc.",
-    "slabosci_i_metody_pokonania": "Przemiana jest związana z nocą i wilczą skórą: odebranie jej albo przeczekanie do świtu osłabia bestię. Baring-Gould przytacza francuski motyw rozpoznania loup-garou po zranieniu — pod wilczą postacią pojawia się człowiek. Nie należy mylić tej folklorystycznej reguły z instrukcją krzywdzenia ludzi; w kartotece ślad i nazwanie są metodą identyfikacji.",
+    "wyglad_i_aura": "W nocnej postaci ma wydłużony pysk, ciężkie barki i wilczą sierść, ale ręce zachowują ślad ludzkich dłoni; w źrenicach zostaje pamięć człowieka. Słychać go wcześniej, niż widać: łamane gałęzie idą pod wiatr, a psy milkną przy kamiennych zagrodach Gévaudan. Gdzieś w pobliżu — pod kamieniem, w dziupli, pod progiem opuszczonej owczarni — leży złożone ludzkie odzienie; w tradycji spisanej przez Marię z Francji to ono, a nie księżyc, jest zawiasem przemiany.",
+    "charakter_i_motywacje": "Nie jest osobnym gatunkiem, lecz człowiekiem naznaczonym przemianą. Motywacją bestii jest głód i przymus nocnego polowania; motywacją człowieka pozostaje ukrycie własnej winy oraz doczekanie świtu. W opowieściach loup-garou działa jako ostrzeżenie: granica między sąsiadem a drapieżnikiem może pęknąć bez ostrzeżenia. Akta z Dole pokazują jeszcze jedną motywację, nie bestii, lecz oskarżonego: głód. Garnier tłumaczył, że wziął maść, bo nie umiał wyżywić żony — przemiana była w jego opowieści sposobem na polowanie, nie na okrucieństwo.",
+    "zdolnosci": "Porusza się po lesie ciszej niż człowiek, wyczuwa zapach żywego stworzenia i potrafi długo biec po górskim zboczu. Nocna postać ma siłę wilka i zna drogi między pastwiskami; o świcie odzyskuje ludzką skórę, lecz nie zawsze pamięta całą noc. Nieobecność bywa regularna jak praca: w wersji z lai o Bisclavrecie człowiek-wilk znika co tydzień na trzy dni i wraca, jakby nic się nie stało — sąsiedzi liczą dni, nie tropy.",
+    "slabosci_i_metody_pokonania": "Przemiana jest związana z nocą i wilczą skórą: odebranie jej albo przeczekanie do świtu osłabia bestię. Baring-Gould przytacza francuski motyw rozpoznania loup-garou po zranieniu — pod wilczą postacią pojawia się człowiek. Druga metoda jest okrutniejsza i pochodzi z tradycji literackiej: kto znajdzie i zabierze złożone odzienie, ten zamyka człowieka w zwierzęciu na stałe — dlatego szukanie kryjówki z ubraniem jest w tych opowieściach skuteczniejsze niż obława. Nie należy mylić folklorystycznej reguły rozpoznania po ranie z instrukcją krzywdzenia ludzi; w kartotece ślad i nazwanie są metodą identyfikacji. Motyw rozpoznania po ranie ma u Nynaulda swoją najostrzejszą postać: obcięto bestii łapę, a nazajutrz znaleziono kobietę bez dłoni — i to wystarczyło za dowód. Warto trzymać w pamięci, jak taki „dowód” kończył się w praktyce: w Dole obława na wilkołaka była legalna z mocy postanowienia sądu, a wyrok wykonano na stosie.",
     "preferencje": "Lubi: samotne ścieżki, zapach mokrej wełny, wysokie trawy i nocny wiatr; nie lubi: ognia w zagrodzie, dzwonów alarmowych, zamkniętych przejść i pierwszego światła."
   },
   "dokumentacja": [
@@ -34,6 +34,11 @@
       "typ": "monografia folklorystyczna",
       "pozycja": "Sabine Baring-Gould, „The Book of Were-Wolves” (1865), rozdziały o francuskim loup-garou: przemianie, wilczej skórze, nocnych wyprawach i rozpoznaniu po zranieniu — wydanie w Internet Archive",
       "url": "https://archive.org/details/TheBookOfWere-wolves"
+    },
+    {
+      "typ": "źródło literackie (średniowiecze)",
+      "pozycja": "Maria z Francji, lai „Bisclavret” (XII w.) — bretońska nazwa człowieka-wilka glosowana normandzkim „garwaf”; rycerz znika co tydzień na trzy dni, a powrót do ludzkiej postaci zależy od ukrytego odzienia; przekład Judith P. Shoaf (University of Florida)",
+      "url": "https://people.clas.ufl.edu/jshoaf/files/bisclavret.pdf"
     },
     {
       "typ": "źródło historyczne",
@@ -44,6 +49,16 @@
       "typ": "opracowanie geograficzne",
       "pozycja": "Encyclopaedia Britannica, „Gévaudan”: dawna prowincja południowej Francji, dziś związana z departamentem Lozère",
       "url": "https://www.britannica.com/place/Gevaudan"
+    },
+    {
+      "typ": "źródło pierwotne (druk sądowy)",
+      "pozycja": "„Arrest memorable de la Cour de parlement de Dole, donné à l’encontre de Gilles Garnier, lyonnois, pour avoir en forme de loup garou devoré plusieurs enfans”, Dole 1574 — drukowany wyrok parlamentu Franche-Comté z podpisem Dan. d’Auge: sprawa prokuratora generalnego Henriego Camusa, wyliczenie czynów popełnionych „en forme de loup-garou” w winnicach pod lasem La Serre i skazanie na spalenie żywcem; skan w Gallice",
+      "url": "https://gallica.bnf.fr/ark:/12148/bpt6k652824.image"
+    },
+    {
+      "typ": "traktat medyczny (racjonalizacja epoki)",
+      "pozycja": "Jean de Nynauld, „De la Lycanthropie, Transformation et Extase des Sorciers” (Paryż 1615) — omówienie z cytatami: autor wylicza skład maści czarownic (korzeń belladonny, psianka, tojad, pięciornik, opium, lulek, szalej, mak, sadza) i tłumaczy przemianę w wilka snem, halucynacją i chorobą umysłu, odrzucając dosłowną metamorfozę bronioną przez Jeana Bodina w „Démonomanie”",
+      "url": "https://www.faculty.umb.edu/gary_zabel/Courses/Phil%20281b/Philosophy%20of%20Magic/Arcana/Witchcraft%20and%20Grimoires/werewolves.html"
     }
   ],
   "trofea": {
@@ -69,6 +84,14 @@
     {
       "slug": "barbarossa-kyffhaeuser",
       "opis": "Obie legendy wiążą byt z konkretnym krajobrazem i oczekiwaniem na właściwą porę. Cesarz śpi pod górą, a loup-garou wraca do ludzkiej postaci o świcie; góra przechowuje opowieść, nie tę samą kulturę."
+    },
+    {
+      "slug": "cormoran-st-michaels-mount",
+      "opis": "Obie opowieści rozstrzyga świt: olbrzym z kornijskiej Góry biegnie w dół oślepiony wschodzącym słońcem i wpada w wykopany nocą dół, a loup-garou traci wilczą postać, gdy noc się kończy. W obu wypadkach zwycięża rachuba pory, a nie siła tego, kto staje naprzeciw."
+    },
+    {
+      "slug": "mangkukulam",
+      "opis": "Obie sprawy zaczynają się od tego, że wieś nazywa sąsiada: w Dole prawo pozwoliło ścigać loup-garou z pikami i arkebuzami, w Laguna wystarczyło, że o kimś mówiono szeptem, iż trzyma kosz z lalką."
     }
   ],
   "meta": {
@@ -78,6 +101,14 @@
       {
         "data": "2026-09-05 00:30",
         "opis": "Opowieść o loup-garou z Gévaudan, związana z kartą „Thornhide Wolves”, rozróżnia folklor człowieka-wilka od historycznej Bestii z Gévaudan."
+      },
+      {
+        "data": "2026-09-05 16:05",
+        "opis": "Karta zyskała etymologię nazwy „loup-garou”, wątek ukrytego odzienia z XII-wiecznego lai o Bisclavrecie oraz porównanie ze świtem, który kończy noc innych bytów archiwum."
+      },
+      {
+        "data": "2026-09-05 18:45",
+        "opis": "Pogłębienie: warstwa sądowa (postanowienie parlamentu w Dole z 1573 roku i drukowany wyrok na Gilles’a Garniera z 1574), racjonalizacja Jeana de Nynauld z 1615 roku wraz ze składem maści, motyw rany odbitej na człowieku oraz powiązanie z filipińskim praktykiem kulam. Dwa nowe źródła."
       }
     ]
   }

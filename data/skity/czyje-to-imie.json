@@ -1,0 +1,30 @@
+{
+  "slug": "czyje-to-imie",
+  "tytul": "CZYJE TO IMIĘ",
+  "temat": "cudzy podpis: zwierzę, któremu przyklejono nazwę, opowieść wydana pod obcym nazwiskiem i sługa, którego nikt nie pytał o zdanie",
+  "uczestnicy": [
+    {
+      "imie": "Qilin",
+      "slug": "qilin-z-lu"
+    },
+    {
+      "imie": "Yara ma tha who",
+      "slug": "yara-ma-yha-who"
+    },
+    {
+      "imie": "Knecht z Koptos",
+      "slug": "knecht-z-koptos"
+    }
+  ],
+  "tekst": "**Qilin:** [Stoi w suchej trawie, która nie gnie się pod kopytami.] W czternastym roku księcia Ai wzięli mnie w sieć na polowaniu i przywieźli rannego. Konfucjusz zapłakał i przestał pisać. To była zła wiadomość, ale przynajmniej moja.\n\n**Yara ma tha who:** [Kuca na korzeniu, palce z przyssawkami zwarte.] A moja czyja jest?\n\n**Qilin:** Tysiąc dziewięćset lat później przypłynęło z Bengalu zwierzę z szyją dłuższą niż moje całe ciało. Dwór Yongle nazwał je moim imieniem, Shen Du ułożył do niego pochwałę i wyszło na to, że cesarz ma zgodę nieba. Odtąd malują mnie z tą szyją.\n\n**Knecht z Koptos:** [Stoi bez ruchu, dzban pełny.] Ja nie mam imienia. Jestem trzy sylaby, które ktoś podsłuchał w ciemnym kącie.\n\n**Yara ma tha who:** Mnie zapisał Unaipon. Chodził po Australii Południowej dwa lata i spisywał, jak było. Potem książka wyszła w Londynie z nazwiskiem Ramsaya Smitha na okładce i z moją pisownią zmienioną na jego. Siedemdziesiąt jeden lat stałem pod cudzym podpisem.\n\n**Qilin:** Więc tobie zabrali zapis, a mnie kształt.\n\n**Yara ma tha who:** Tobie zabrali kształt, żeby coś udowodnić. Mnie zabrali zapis, żeby coś sprzedać. To nie to samo.\n\n**Knecht z Koptos:** Obu wam zostało to, czym jesteście. Mnie nie zostało nic poza rozkazem. Uczeń umiał mnie zbudzić i nie umiał odwołać, więc rozciął mnie siekierą i było nas dwóch, i dalej nosiliśmy wodę.\n\n**Qilin:** I nikt nie zapytał, czy chcesz.\n\n**Knecht z Koptos:** Nikt nigdy nie pyta rzeczy. Pyta się znaków — i to jest cała różnica między wami a mną. [Podnosi dzban.] Wy się mylicie w odczytaniu. Ja się nie mylę wcale i to jest gorsze.",
+  "meta": {
+    "utworzono": "2026-09-06 10:30",
+    "autor": "sesja arena 2026-09-06",
+    "modyfikacje": [
+      {
+        "data": "2026-09-06 10:30",
+        "opis": "Nowy dialog: trzy byty porównują, co się traci, gdy podpis pod rzeczą należy do kogoś innego — kształt, zapis albo prawo do odmowy."
+      }
+    ]
+  }
+}

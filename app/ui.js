@@ -4,7 +4,8 @@
  * wstawiana jako tekst (esc), nigdy jako HTML.
  */
 
-import { statyManifestacji } from './arena.js';
+import { statyManifestacji, opisRozstrzygniecia } from './arena.js';
+import { opisSezonu } from './liga.js';
 
 /** Nazwa kategorii tagu (z kanonu); bez kanonu — surowe id. */
 export function nazwaKategorii(indeks, id) {
@@ -188,6 +189,14 @@ export function htmlStopki(meta) {
 }
 
 /** Adres źródła jako link (B3) — tylko http/https, bezpieczny tekst kotwicy. */
+/** Pozycja bez klikalnego adresu (druk, rękopis, archiwum offline) dostaje
+ *  własny znacznik, żeby czytelnik od razu wiedział, czego nie kliknie. */
+export function znacznikZrodlaBezAdresu(url) {
+  const adres = String(url ?? '').trim();
+  if (/^https?:\/\//i.test(adres)) return '';
+  return ' <span class="zrodlo-offline" title="Pozycja poza siecią — druk, rękopis albo archiwum bez adresu">bez adresu w sieci</span>';
+}
+
 export function linkDoZrodla(url) {
   const adres = String(url ?? '').trim();
   if (!/^https?:\/\//i.test(adres)) return '';
@@ -234,12 +243,68 @@ export function htmlProfiluAreny(w, indeks) {
   return `<section class="arena-profil" aria-label="Profil Rezonansu"><div class="arena-profil-naglowek"><h3>Profil Rezonansu</h3><span class="arena-archetyp">${esc(s.motywy.length ? s.motywy.join(' · ') : 'cisza')}</span></div><dl>${wiersze}</dl><p class="maly">Statystyki wynikają wyłącznie z sieci archiwum: powiązań, wzmianek, skitów, tagów i imion.</p></section>`;
 }
 
+/** Zasoby drogi po ludzku: „pamięć 3 · przejście 1” zamiast surowego JSON-a. */
+export function opisZasobow(zasoby) {
+  const pary = Object.entries(zasoby ?? {});
+  if (!pary.length) return 'bez zmian';
+  return pary.map(([klucz, wartosc]) => `${klucz} ${wartosc}`).join(' · ');
+}
+
+/** Napór świata (Kronika → SPLOT): składniki premii do szansy węzłów. */
+export function htmlNaporuSwiata(swiat) {
+  if (!swiat || !Array.isArray(swiat.skladniki) || swiat.skladniki.length === 0) return '';
+  const znak = (v) => `${v > 0 ? '+' : ''}${v}`;
+  const wiersze = swiat.skladniki
+    .map((s) => `<div class="splot-swiat-wiersz ${s.wartosc > 0 ? 'plus' : s.wartosc < 0 ? 'minus' : 'zero'}"><dt>${esc(s.nazwa)}</dt><dd><strong>${znak(s.wartosc)}</strong> <span class="maly">${esc(s.opis ?? '')}</span></dd></div>`)
+    .join('');
+  return `<section class="splot-swiat"><h3>Napór świata: ${znak(swiat.premia)} do każdej próby</h3><dl>${wiersze}</dl><p class="maly">Stan Kroniki (oś, zasięgi, paliwo, otwarte wątki) przelicza się na szansę drogi. Deterministycznie — losowy jest dopiero wynik.</p></section>`;
+}
+
+/** Ślad drogi (SPLOT → Kronika): propozycja konsekwencji dla przyszłej Epoki. */
+export function htmlEchaDrogi(echo, indeks) {
+  if (!echo?.watek) return '';
+  const nazwa = (slug) => indeks?.manifestacje?.find((m) => m.slug === slug)?.nazwa ?? slug;
+  const znak = (v) => `${v > 0 ? '+' : ''}${v}`;
+  const os = echo.os?.mit ? `oś świata ${znak(echo.os.mit)} mitu` : 'oś świata bez zmian';
+  const zasieg = (echo.zasieg ?? []).map((z) => `${esc(nazwa(z.slug))} ${znak(z.delta)}`).join(' · ');
+  return `<section class="splot-echo"><h3>Ślad dla Kroniki</h3><p>${esc(os)}${zasieg ? ` · ${zasieg}` : ''}</p><p class="splot-watek"><span class="chip">${esc(echo.watek.id)}</span> ${echo.watek.stan === 'zamkniety' ? 'do domknięcia' : 'otwarty'} — ${esc(echo.watek.pytanie)}</p><p class="maly">Epoka może przyjąć ten ślad polem <code>zrodloSplotu</code>; walidator Kroniki sprawdzi, czy kierunek osi zgadza się z wynikiem drogi.</p></section>`;
+}
+
+/** C6 (obrót 3): pasek wyboru drogi SPLOTU z katalogu w indeksie. */
+export function htmlWyboruDrogi(drogi, aktywna) {
+  const lista = Array.isArray(drogi) ? drogi : [];
+  if (lista.length < 2) return '';
+  const guziki = lista
+    .map((d) => `<button class="chip splot-wybor${d.slug === aktywna ? ' aktywny' : ''}" type="button" data-droga="${esc(d.slug)}"${d.slug === aktywna ? ' aria-pressed="true"' : ''}>${esc(d.tytul)}</button>`)
+    .join(' ');
+  return `<nav class="splot-drogi" aria-label="Wybór drogi SPLOTU"><span class="maly">Drogi w archiwum:</span> ${guziki}</nav>`;
+}
+
 export function htmlSplotu(droga, wynik, indeks) {
   const nazwa = (slug) => indeks?.manifestacje?.find((m) => m.slug === slug)?.nazwa ?? slug;
   const sklad = (droga.sklad ?? []).map((slug) => `<button class="chip link" data-slug="${esc(slug)}">${esc(nazwa(slug))}</button>`).join(' ');
-  const wiersze = (wynik.dziennik ?? []).map((w, i) => `<article class="splot-wezel ${w.sukces ? 'sukces' : 'porazka'}"><header><span>${i + 1}. ${esc(w.nazwa)}</span><strong>${w.sukces ? 'sukces' : 'porażka'}</strong></header><div class="splot-wykres"><span class="splot-szansa" style="width:${Math.round(w.prawdopodobienstwo * 100)}%">szansa ${Math.round(w.prawdopodobienstwo * 100)}%</span><span class="splot-los">los ${(w.wartoscLosowa * 100).toFixed(1)}%</span></div><p>${esc(w.proza ?? '')}</p><small>zasoby po próbie: ${esc(JSON.stringify(w.zasoby))}</small></article>`).join('');
+  const wiersze = (wynik.dziennik ?? []).map((w, i) => `<article class="splot-wezel ${w.sukces ? 'sukces' : 'porazka'}"><header><span>${i + 1}. ${esc(w.nazwa)}</span><strong>${w.sukces ? 'sukces' : 'porażka'}</strong></header><div class="splot-wykres"><span class="splot-szansa" style="width:${Math.round(w.prawdopodobienstwo * 100)}%">szansa ${Math.round(w.prawdopodobienstwo * 100)}%</span><span class="splot-los">los ${(w.wartoscLosowa * 100).toFixed(1)}%</span></div><p>${esc(w.proza ?? '')}</p><small>zasoby po próbie: ${esc(opisZasobow(w.zasoby))}</small></article>`).join('');
   const obraz = droga.grafika?.obraz ? `<img class="splot-obraz" src="${esc(droga.grafika.obraz)}" alt="${esc(droga.grafika.prompt ?? droga.tytul)}" loading="lazy">` : '';
-  return `<div class="splot-raport"><header class="splot-hero"><p class="karta-inspiracja">SPLOT · droga fabularna · ${esc(droga.miejsce ?? '')}</p><h2>${esc(droga.tytul)}</h2><p>${esc(droga.cel)}</p><p class="splot-sklad">Skład: ${sklad}</p></header>${obraz}<section class="splot-wynik"><h3>Rozstrzygnięcie: ${esc(wynik.status)}</h3><p>${esc(wynik.proza)}</p><dl class="splot-zasoby">${Object.entries(wynik.zasoby ?? {}).map(([k, v]) => `<div><dt>${esc(k)}</dt><dd>${v}</dd></div>`).join('')}</dl></section><section><h3>Dziennik drogi</h3>${wiersze}</section></div>`;
+  return `<div class="splot-raport">${htmlWyboruDrogi(indeks?.drogi, droga.slug)}<header class="splot-hero"><p class="karta-inspiracja">SPLOT · droga fabularna · ${esc(droga.miejsce ?? '')}</p><h2>${esc(droga.tytul)}</h2><p>${esc(droga.cel)}</p><p class="splot-sklad">Skład: ${sklad}</p></header>${obraz}<section class="splot-wynik"><h3>Rozstrzygnięcie: ${esc(wynik.status)}</h3><p>${esc(wynik.proza)}</p><dl class="splot-zasoby">${Object.entries(wynik.zasoby ?? {}).map(([k, v]) => `<div><dt>${esc(k)}</dt><dd>${v}</dd></div>`).join('')}</dl></section>${htmlNaporuSwiata(wynik.swiat)}<section><h3>Dziennik drogi</h3>${wiersze}</section>${htmlEchaDrogi(wynik.echo, indeks)}</div>`;
+}
+
+/** C6: PRÓG — tablica kluczy kartoteki (spotkanie bez walki). */
+export function htmlProgow(wiersze, wynik = null) {
+  const znak = (v) => `${v > 0 ? '+' : ''}${v}`;
+  const karty = (wiersze ?? [])
+    .map((w) => {
+      const alt = (w.alternatywy ?? []).map((k) => `<span class="chip maly">${esc(k.nazwa)}</span>`).join(' ');
+      const proc = Math.round(w.prawdopodobienstwo * 100);
+      const swiadek = w.swiadek
+        ? `<p class="prog-swiadek maly">weź ze sobą: <button class="chip link" data-slug="${esc(w.swiadek.slug)}">${esc(w.swiadek.nazwa)}</button> <span class="chip maly">${znak(w.swiadek.premia)}</span> <span class="maly">${esc((w.swiadek.powody ?? []).map((p) => p.nazwa).join(', '))}</span></p>`
+        : '<p class="prog-swiadek maly">nikt z kartoteki nie pomoże w tych drzwiach — idzie się samemu</p>';
+      return `<article class="prog-wiersz" data-slug="${esc(w.slug)}"><header><button class="chip link" data-slug="${esc(w.slug)}">${esc(w.nazwa)}</button><strong class="prog-klucz">${esc(w.klucz.nazwa)}</strong></header><p class="maly">${esc(w.klucz.gest)}</p><div class="prog-wykres"><span class="prog-szansa" style="width:${proc}%">${proc}%</span></div>${swiadek}<small>opór ${w.opor} · świat ${znak(w.pogoda)} · archetyp ${esc(w.archetyp)}${alt ? ` · inne klucze: ${alt}` : ''}</small></article>`;
+    })
+    .join('');
+  const raport = wynik
+    ? `<section class="prog-raport ${esc(wynik.status)}"><h3>${esc(wynik.nazwa)} — ${wynik.status === 'przejscie' ? 'próg puszcza' : wynik.status === 'cena' ? 'przejście za cenę' : 'odmowa'}</h3><p>${esc(wynik.proza)}</p><div class="prog-wykres"><span class="prog-szansa" style="width:${Math.round(wynik.szansa.prawdopodobienstwo * 100)}%">szansa ${Math.round(wynik.szansa.prawdopodobienstwo * 100)}%</span><span class="prog-los">los ${(wynik.wartoscLosowa * 100).toFixed(1)}%</span></div><small>klucz: ${esc(wynik.klucz.nazwa)} · opór ${wynik.szansa.opor} · staranie ${wynik.szansa.wysilek} · świat ${znak(wynik.pogoda.premia)} · świadek ${znak(wynik.szansa.swiadek ?? 0)}</small></section>`
+    : '';
+  return `<div class="prog-tablica"><p class="naprowadzenie">Nie każdy próg przechodzi się siłą. Kartoteka zna gesty, które rozbrajają byt bez walki: zwierciadło, odpowiedź, hymn, czuwanie, opłatę, ogień, imię albo zamknięte drzwi. Liczy się też, kogo się ze sobą weźmie: świadek, który zna słabość gospodarza, przesuwa próbę na korzyść, a ktoś z tej samej tradycji co próg — przeciwnie. Szansa jest wyliczona z profilu bytu i stanu Kroniki — losowy jest dopiero wynik próby.</p><p class="prog-akcje"><button id="prog-losuj" class="przycisk" type="button">🔑 spróbuj progu</button></p>${raport}${karty}</div>`;
 }
 
 export function htmlWpisu(w, indeks, kronika = null) {
@@ -271,7 +336,7 @@ export function htmlWpisu(w, indeks, kronika = null) {
     'III',
     'Dokumentacja (The Source Stack)',
     `<ul class="dokumentacja">${(w.dokumentacja ?? [])
-      .map((d) => `<li><span class="typ">${esc(TYPY_DOK[d.typ] ?? d.typ)}</span> — ${esc(d.pozycja)}${linkDoZrodla(d.url)}</li>`)
+      .map((d) => `<li class="${znacznikZrodlaBezAdresu(d.url) ? 'poza-siecia' : 'w-sieci'}"><span class="typ">${esc(TYPY_DOK[d.typ] ?? d.typ)}</span> — ${esc(d.pozycja)}${linkDoZrodla(d.url)}${znacznikZrodlaBezAdresu(d.url)}</li>`)
       .join('')}</ul>`
   );
 
@@ -324,7 +389,9 @@ export function htmlWpisu(w, indeks, kronika = null) {
 
   // Sekcje I–VII w kolejności numeracji (PROTOKÓŁ §4.1, MFM v1.8):
   // numer = pozycja; V = SKITy, VI = Tomy i Epoki, VII = Powiązania.
-  return `<div class="wpis">${naglowek}${htmlProfiluAreny(w, indeks)}${I}${II}${III}${IV}${V}${tomyIEpoki}${wiki}${meta}</div>`;
+  // Profil Rezonansu i „Tomy i Epoki” są dodatkami aplikacji, nie sekcjami MFM —
+  // idą po numerowanych I–V, żeby nie przerywać numeracji protokołu.
+  return `<div class="wpis">${naglowek}${I}${II}${III}${IV}${V}${htmlProfiluAreny(w, indeks)}${tomyIEpoki}${wiki}${meta}</div>`;
 }
 
 /**
@@ -512,6 +579,98 @@ export function htmlTrofeow(indeks) {
       </li>`
     )
     .join('')}</ul>`;
+}
+
+/** Arena Rezonansu (C2+5, obrót 5): widok sporu dwóch bytów — wybór stron,
+ *  profile, dziennik rund i rozstrzygnięcie. Czysty HTML, bez efektów ubocznych;
+ *  losowość i dane wstrzykuje `app/app.js`. */
+export function htmlAreny(indeks, { a, b, wynik = null, profile = null, data = '' } = {}) {
+  const lista = [...(indeks?.manifestacje ?? [])].sort((x, y) => String(x.nazwa).localeCompare(String(y.nazwa), 'pl'));
+  if (lista.length < 2) return '<p class="pusto">Do sporu potrzeba dwóch bytów w kartotece.</p>';
+  const nazwa = (slug) => lista.find((m) => m.slug === slug)?.nazwa ?? slug;
+  const opcje = (wybrany) => lista
+    .map((m) => `<option value="${esc(m.slug)}"${m.slug === wybrany ? ' selected' : ''}>${esc(m.nazwa)}</option>`)
+    .join('');
+  const karta = (slug) => {
+    const p = profile?.get?.(slug);
+    if (!p) return '';
+    const osie = [['Żywotność', 'zywotnosc'], ['Moc', 'moc'], ['Spryt', 'spryt'], ['Rezonans', 'rezonans']];
+    const wiersze = osie
+      .map(([etykieta, os]) => `<div class="arena-staty-wiersz"><dt>${etykieta}</dt><dd><span style="--arena-wartosc:${p.percentyle[os]}">${p.staty[os]}</span> <span class="maly">${p.percentyle[os]} pc</span></dd></div>`)
+      .join('');
+    return `<section class="arena-strona" aria-label="Strona sporu: ${esc(nazwa(slug))}">
+      <h4><button class="chip link" data-slug="${esc(slug)}">${esc(nazwa(slug))}</button></h4>
+      <p class="arena-archetyp">${esc(p.archetyp)}${p.staty.motywy.length ? ` · ${esc(p.staty.motywy.join(' · '))}` : ''}</p>
+      <dl>${wiersze}</dl>
+    </section>`;
+  };
+  const dziennik = wynik
+    ? `<ol class="arena-dziennik">${wynik.dziennik
+        .map((r) => `<li><span class="arena-runda">runda ${r.runda}</span> ${esc(nazwa(r.atakujacy))} → ${esc(nazwa(r.broniacy))}: <strong>${r.obrazenia}</strong>${r.kontra < 1 ? ` <span class="maly">(kontra ×${r.kontra})</span>` : ''} · zostaje ${r.pozostalo}</li>`)
+        .join('')}</ol>`
+    : '';
+  const rozstrzygniecie = wynik
+    ? `<p class="arena-wynik">${esc(opisRozstrzygniecia(wynik, Object.fromEntries(lista.map((m) => [m.slug, m.nazwa]))))}</p>`
+    : '<p class="naprowadzenie">Wybierz dwie strony i sprawdź, czyja wersja świata utrzyma się w tym miejscu.</p>';
+  return `<div class="arena">
+    <p class="naprowadzenie">Spór Rezonansu nie jest walką na krew: liczby wynikają wyłącznie z sieci archiwum — powiązań, wzmianek, skitów i tagów. „Żywotność” mierzy, jak długo tradycja trzyma się w opowieści.</p>
+    <form class="arena-wybor" id="arena-wybor">
+      <label>Strona pierwsza <select name="a">${opcje(a)}</select></label>
+      <label>Strona druga <select name="b">${opcje(b)}</select></label>
+      <button class="przycisk" type="submit">⚖ rozegraj spór</button>
+      <button class="przycisk" type="button" data-spor-dnia="${esc(data)}" title="Ta sama para dla wszystkich czytelników dzisiaj">✦ spór dnia</button>
+    </form>
+    <div class="arena-strony">${karta(a)}${karta(b)}</div>
+    ${rozstrzygniecie}
+    ${dziennik}
+  </div>`;
+}
+
+/**
+ * Liga Rezonansu (C2+5, obrót 8): tabela sezonu liczonego z kalendarza.
+ * `liga` = wynik `tabelaLigi` z app/liga.js; UI nie liczy nic samo.
+ */
+export function htmlLigi(indeks, liga) {
+  const lista = indeks?.manifestacje ?? [];
+  const nazwa = (slug) => lista.find((m) => m.slug === slug)?.nazwa ?? slug;
+  if (!liga || liga.sezon < 1) return '<p class="pusto">Sezon Ligi Rezonansu jeszcze się nie zaczął.</p>';
+  const nazwy = Object.fromEntries(lista.map((m) => [m.slug, m.nazwa]));
+  const wiersze = liga.tabela
+    .map((w) => `<tr${w.pozycja <= 3 ? ' class="liga-czolo"' : ''}>
+      <td class="liga-pozycja">${w.pozycja}</td>
+      <td><button class="chip link" data-slug="${esc(w.slug)}">${esc(nazwa(w.slug))}</button></td>
+      <td>${w.mecze}</td><td>${w.wygrane}</td><td>${w.remisy}</td><td>${w.przegrane}</td>
+      <td>${w.przewaga > 0 ? '+' : ''}${w.przewaga}</td>
+      <td class="liga-forma" title="Ostatnie kolejki, od najstarszej">${esc(w.forma)}</td>
+      <td class="liga-punkty">${w.punkty}</td>
+    </tr>`)
+    .join('');
+  const mecze = (liga.ostatnia?.mecze ?? [])
+    .map((m) => {
+      const rozstrzygniecie = m.wynik.remis
+        ? 'obie wersje zostają'
+        : `wersję trzyma ${nazwa(m.wynik.zwyciezca)}`;
+      return `<li><button class="chip link" data-slug="${esc(m.a)}">${esc(nazwa(m.a))}</button> — <button class="chip link" data-slug="${esc(m.b)}">${esc(nazwa(m.b))}</button>
+        <span class="opis">${esc(rozstrzygniecie)} · ${m.wynik.rundy} rund</span>
+        <button class="chip" data-liga-spor="${esc(m.a)}|${esc(m.b)}" type="button">⚖ zobacz spór</button></li>`;
+    })
+    .join('');
+  const zapowiedz = (liga.nastepna?.pary ?? [])
+    .map(([a, b]) => `<li>${esc(nazwa(a))} — ${esc(nazwa(b))}</li>`)
+    .join('');
+  return `<div class="liga">
+    <p class="naprowadzenie">Liga nie jest nigdzie zapisana: terminarz wynika z kalendarza, a każdy mecz z ziarna złożonego z sezonu, kolejki i obu imion. Kto otworzy archiwum tego samego dnia, zobaczy tę samą tabelę — także po wyczyszczeniu pamięci przeglądarki.</p>
+    <p class="liga-stan">${esc(opisSezonu(liga, nazwy))}</p>
+    <table class="liga-tabela">
+      <caption>Sezon ${liga.sezon} — stan na ${esc(liga.data)}</caption>
+      <thead><tr><th>#</th><th>Byt</th><th title="Rozegrane starcia">St</th><th>W</th><th>R</th><th>P</th><th title="Bilans wytrzymałości">Bil</th><th>Forma</th><th>Pkt</th></tr></thead>
+      <tbody>${wiersze}</tbody>
+    </table>
+    <h3>Kolejka ${liga.ostatnia?.numer ?? 0}</h3>
+    <ul class="liga-mecze">${mecze || '<li class="pusto">Ta kolejka nie ma rozstrzygnięć.</li>'}</ul>
+    <h3>${liga.nastepna?.nowySezon ? `Sezon ${liga.sezon + 1}, kolejka 1` : `Kolejka ${liga.nastepna?.numer ?? 0}`} — jutro</h3>
+    <ul class="liga-zapowiedz">${zapowiedz}</ul>
+  </div>`;
 }
 
 /** Sekcja V wpisu (MFM v1.8): skity, w których materializacja zabiera głos. */

@@ -1,0 +1,100 @@
+{
+  "slug": "popiol-z-forsaeludalur",
+  "tytul": "Popiół z Forsæludalur",
+  "cel": "Dokończyć pochówek Glámra według obrzędu, zanim komisja zamknie sprawę protokołem i zostawi popiół przy drodze.",
+  "miejsce": "Forsæludalur, Vatnsdalur, Islandia",
+  "sklad": [
+    "glamr-z-thorhallsstadir",
+    "neith-z-sais",
+    "egungun"
+  ],
+  "start": {
+    "zasoby": {
+      "pamiec": 9,
+      "przejscie": 3,
+      "dlug": 1,
+      "slad": 0
+    }
+  },
+  "wezly": [
+    {
+      "slug": "spis-parafialny",
+      "nazwa": "Spis parafialny",
+      "typ": "spór",
+      "trudnosc": 38,
+      "zdolnosc": "pamiec",
+      "koszt": {
+        "pamiec": 1
+      },
+      "nagroda": {
+        "slad": 1
+      },
+      "porazka": {
+        "dlug": 1
+      },
+      "proza": {
+        "sukces": "Egungun nie kłóci się z księgą. Wymienia po kolei imiona wszystkich, którzy wynieśli się z doliny, i pyta, w której rubryce zapisano ich powody. Rubryki nie ma, więc sprawa zostaje otwarta.",
+        "porazka": "Urzędnik notuje: „pasterz, przyczyna zgonu nieustalona, sprawa zamknięta”. Dolina zostaje w papierach pusta, a to znaczy, że nikt już nie odpowiada za to, co w niej leży."
+      }
+    },
+    {
+      "slug": "trzeci-krok",
+      "nazwa": "Trzeci krok",
+      "typ": "obrzęd",
+      "trudnosc": 46,
+      "zdolnosc": "oczyszczenie",
+      "koszt": {
+        "przejscie": 1,
+        "pamiec": 2
+      },
+      "nagroda": {
+        "przejscie": 1,
+        "slad": 1
+      },
+      "porazka": {
+        "dlug": 1
+      },
+      "proza": {
+        "sukces": "Głowa przy udzie, ciało na zimny popiół, popiół w skórę zwierzęcia — i dopiero teraz najtrudniejsze: iść z tym workiem tak długo, aż zniknie ostatnia owcza ścieżka. Neith odmierza drogę nicią, bo krokom się nie ufa.",
+        "porazka": "Zabrakło światła i cierpliwości. Worek zakopano w połowie zbocza, dwieście kroków od ścieżki, którą pędzi się owce na wiosnę. Wszyscy wiedzą, że to za blisko; nikt tego nie mówi głośno."
+      }
+    },
+    {
+      "slug": "rozmowa-o-swicie",
+      "nazwa": "Rozmowa o świcie",
+      "typ": "próba",
+      "trudnosc": 52,
+      "zdolnosc": "klatwa",
+      "koszt": {
+        "slad": 1
+      },
+      "nagroda": {
+        "pamiec": 3,
+        "slad": 1
+      },
+      "porazka": {
+        "pamiec": -3,
+        "dlug": 1
+      },
+      "koniecPoPorazce": true,
+      "proza": {
+        "sukces": "Glámr odzywa się ostatni raz i po raz pierwszy nie do żywego człowieka, tylko do tych dwojga. Egungun odpowiada mu, zanim zdąży rzucić zdanie o ciemności — i klątwa nie ma się w kogo wczepić.",
+        "porazka": "Ktoś jednak podniósł wzrok. Zdanie o samotności i ciemności pada w pustej dolinie, ale zdania wypowiedziane nie znikają: znajdzie sobie adresata później, u kogoś, kto nawet nie był przy pochówku."
+      }
+    }
+  ],
+  "proza": {
+    "ukonczona": "Sprawa kończy się tak, jak kończą się sprawy zrobione do końca: nudno. Nie ma jeździectwa po dachach, nie ma połamanego konia, nie ma zdania o ciemności. Została jedna linijka w rejestrze i miejsce, którego nikt nie potrafi wskazać — i o to właśnie chodziło.",
+    "przerwana": "Protokół wygrał z obrzędem. Popiół leży za blisko ścieżki, dolina znów pustoszeje, a w papierach wszystko się zgadza: pasterz zmarł, sprawa zamknięta, świadków brak.",
+    "rozszczepiona": "Połowa obrzędu została wykonana wzorowo, druga połowa dopisana z pamięci. Dolina jest cicha, ale ciszy tej nikt nie chce sprawdzać po zmroku.",
+    "domyslna": "Droga rozliczyła się sama."
+  },
+  "grafika": {
+    "prompt": "Style: A wide-angle full-body cinematic photograph. The central objects/persons of the photo are visible from head to toe, standing centrally in the frame. No parts of the body are cropped.\n\nThree figures walking away from a snowbound Icelandic valley at first light, carrying a small sewn animal-skin bundle between them: a tall dark-skinned woman in a plain linen dress holding a taut measuring thread, a figure entirely wrapped in layered patterned cloth with no skin showing, and a heavy blue-grey dead man walking last with his head bowed; behind them a turf farmstead and a cold burnt-out pyre still smoking, sheep tracks curving away to the left; pale peach dawn light on snow, long blue shadows, black volcanic gravel showing through drifts.\n\nCaptured with a 35mm anamorphic lens at f/1.8. Shallow depth of field with a heavy, creamy bokeh background. Environmental portraiture. Dramatic cinematic lighting, sharp focus on the character, hyper-realistic textures of clothing and skin. Shot on 70mm film stock, ultra-wide 21:9 aspect ratio. --ar 21:9",
+    "obraz": "assets/wizualizacje/droga-popiol-z-forsaeludalur.jpg"
+  },
+  "meta": {
+    "utworzono": "2026-09-05",
+    "autor": "sesja arena 2026-09-05b (obrót 3, C6)"
+  }
+}

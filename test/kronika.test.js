@@ -38,6 +38,8 @@ import {
   bytyOtwartychWatkow,
   agendaTomu,
   proponujEpoke,
+  sortujPlikiSeriami,
+  walidujZrodloSplotu,
 } from '../tools/kronika.mjs';
 
 async function wczytaj(path) {
@@ -59,10 +61,10 @@ test('paliwo pasywne: 2×backlinki + tagi kanonu + sieć powiązań (max 3)', as
   assert.equal(paliwoPasywne(mapa.get('agni'), kanon), 18);
   assert.equal(paliwoPasywne(mapa.get('egungun'), kanon), 22);
   assert.equal(paliwoPasywne(mapa.get('kentaur-pelion'), kanon), 18);
-  assert.equal(paliwoPasywne(mapa.get('empusa-korynt'), kanon), 21);
-  assert.equal(paliwoPasywne(mapa.get('lincoln-imp'), kanon), 12);
-  assert.equal(paliwoPasywne(mapa.get('sfinks-teby'), kanon), 24);
-  assert.equal(paliwoPasywne(mapa.get('talos-kreta'), kanon), 20);
+  assert.equal(paliwoPasywne(mapa.get('empusa-korynt'), kanon), 25);
+  assert.equal(paliwoPasywne(mapa.get('lincoln-imp'), kanon), 16);
+  assert.equal(paliwoPasywne(mapa.get('sfinks-teby'), kanon), 28);
+  assert.equal(paliwoPasywne(mapa.get('talos-kreta'), kanon), 24);
 });
 
 test('Tom I: epoki przechodzą sekwencyjnie i oś zamyka się na 100', async () => {
@@ -95,108 +97,108 @@ test('Tom I: epoki przechodzą sekwencyjnie i oś zamyka się na 100', async () 
     e1.uczestnicy.map((u) => [u.slug, u.saldoPrzed, u.saldoPo]),
     [
       ['egungun', 22, 25],
-      ['barbarossa-kyffhaeuser', 19, 17],
+      ['barbarossa-kyffhaeuser', 23, 21],
       ['kentaur-pelion', 18, 16],
     ]
   );
-  assert.equal(e1.stanPo.os.mit, 36);
-  assert.equal(e1.stanPo.os.racjonalizacja, 64);
+  assert.equal(e1.stanPo.os.mit, 31);
+  assert.equal(e1.stanPo.os.racjonalizacja, 69);
 
   assert.deepEqual(
     e2.uczestnicy.map((u) => [u.slug, u.saldoPrzed, u.saldoPo]),
     [
-      ['lincoln-imp', 12, 10],
+      ['lincoln-imp', 16, 14],
       ['kentaur-pelion', 16, 14],
-      ['empusa-korynt', 21, 23],
+      ['empusa-korynt', 25, 27],
     ]
   );
-  assert.equal(e2.stanPo.os.mit, 34);
-  assert.equal(e2.stanPo.os.racjonalizacja, 66);
+  assert.equal(e2.stanPo.os.mit, 29);
+  assert.equal(e2.stanPo.os.racjonalizacja, 71);
 
   assert.deepEqual(
     e3.uczestnicy.map((u) => [u.slug, u.saldoPrzed, u.saldoPo]),
     [
       ['egungun', 25, 28],
-      ['balor', 21, 19],
-      ['empusa-korynt', 23, 21],
+      ['balor', 23, 21],
+      ['empusa-korynt', 27, 25],
     ]
   );
-  assert.equal(e3.stanPo.os.mit, 32);
-  assert.equal(e3.stanPo.os.racjonalizacja, 68);
+  assert.equal(e3.stanPo.os.mit, 27);
+  assert.equal(e3.stanPo.os.racjonalizacja, 73);
 
   assert.deepEqual(
     e4.uczestnicy.map((u) => [u.slug, u.saldoPrzed, u.saldoPo]),
     [
       ['egungun', 28, 31],
-      ['selkie-sule-skerry', 26, 24],
+      ['selkie-sule-skerry', 28, 26],
       ['indra', 13, 11],
     ]
   );
-  assert.equal(e4.stanPo.os.mit, 31);
-  assert.equal(e4.stanPo.os.racjonalizacja, 69);
-  assert.equal(e4.stanPo.zasieg.find((z) => z.slug === 'egungun').wielkosc, 0.54);
+  assert.equal(e4.stanPo.os.mit, 26);
+  assert.equal(e4.stanPo.os.racjonalizacja, 74);
+  assert.equal(e4.stanPo.zasieg.find((z) => z.slug === 'egungun').wielkosc, 0.508);
   assert.equal(e4.stanPo.zasieg.find((z) => z.slug === 'selkie-sule-skerry').wielkosc, 0.49);
-  assert.equal(e4.stanPo.zasieg.find((z) => z.slug === 'indra').wielkosc, 0.34);
+  assert.equal(e4.stanPo.zasieg.find((z) => z.slug === 'indra').wielkosc, 0.307);
 
   assert.deepEqual(
     e5.uczestnicy.map((u) => [u.slug, u.saldoPrzed, u.saldoPo]),
     [
-      ['sfinks-teby', 24, 22],
-      ['talos-kreta', 20, 18],
-      ['lincoln-imp', 10, 12],
+      ['sfinks-teby', 28, 26],
+      ['talos-kreta', 24, 22],
+      ['lincoln-imp', 14, 16],
     ]
   );
-  assert.equal(e5.stanPo.os.mit, 30);
-  assert.equal(e5.stanPo.os.racjonalizacja, 70);
-  assert.equal(e5.stanPo.zasieg.find((z) => z.slug === 'lincoln-imp').wielkosc, 0.375);
-  assert.equal(e5.stanPo.zasieg.find((z) => z.slug === 'sfinks-teby').wielkosc, 0.47);
-  assert.equal(e5.stanPo.zasieg.find((z) => z.slug === 'talos-kreta').wielkosc, 0.415);
+  assert.equal(e5.stanPo.os.mit, 25);
+  assert.equal(e5.stanPo.os.racjonalizacja, 75);
+  assert.equal(e5.stanPo.zasieg.find((z) => z.slug === 'lincoln-imp').wielkosc, 0.393);
+  assert.equal(e5.stanPo.zasieg.find((z) => z.slug === 'sfinks-teby').wielkosc, 0.455);
+  assert.equal(e5.stanPo.zasieg.find((z) => z.slug === 'talos-kreta').wielkosc, 0.408);
 
   assert.deepEqual(
     e6.uczestnicy.map((u) => [u.slug, u.saldoPrzed, u.saldoPo]),
     [
-      ['pandora', 17, 17],
-      ['morowa-panna', 11, 9],
-      ['empusa-korynt', 21, 20],
+      ['pandora', 19, 19],
+      ['morowa-panna', 21, 19],
+      ['empusa-korynt', 25, 24],
     ]
   );
-  assert.equal(e6.stanPo.os.mit, 29);
-  assert.equal(e6.stanPo.os.racjonalizacja, 71);
-  assert.equal(e6.stanPo.zasieg.find((z) => z.slug === 'pandora').wielkosc, 0.42);
-  assert.equal(e6.stanPo.zasieg.find((z) => z.slug === 'morowa-panna').wielkosc, 0.315);
-  assert.equal(e6.stanPo.zasieg.find((z) => z.slug === 'empusa-korynt').wielkosc, 0.475);
+  assert.equal(e6.stanPo.os.mit, 24);
+  assert.equal(e6.stanPo.os.racjonalizacja, 76);
+  assert.equal(e6.stanPo.zasieg.find((z) => z.slug === 'pandora').wielkosc, 0.414);
+  assert.equal(e6.stanPo.zasieg.find((z) => z.slug === 'morowa-panna').wielkosc, 0.424);
+  assert.equal(e6.stanPo.zasieg.find((z) => z.slug === 'empusa-korynt').wielkosc, 0.464);
 
   assert.deepEqual(
     e7.uczestnicy.map((u) => [u.slug, u.saldoPrzed, u.saldoPo]),
     [
-      ['protostates', 11, 12],
-      ['knecht-z-koptos', 13, 13],
-      ['syama-i-sarvara', 12, 11],
+      ['protostates', 13, 14],
+      ['knecht-z-koptos', 15, 15],
+      ['syama-i-sarvara', 16, 15],
     ]
   );
-  assert.equal(e7.stanPo.os.mit, 28);
-  assert.equal(e7.stanPo.os.racjonalizacja, 72);
+  assert.equal(e7.stanPo.os.mit, 23);
+  assert.equal(e7.stanPo.os.racjonalizacja, 77);
   assert.equal(e7.meta.poprzednik, 'epoka-6');
-  assert.equal(e7.stanPo.zasieg.find((z) => z.slug === 'protostates').wielkosc, 0.322);
+  assert.equal(e7.stanPo.zasieg.find((z) => z.slug === 'protostates').wielkosc, 0.329);
   assert.equal(e7.stanPo.zasieg.find((z) => z.slug === 'knecht-z-koptos').wielkosc, 0.38);
-  assert.equal(e7.stanPo.zasieg.find((z) => z.slug === 'syama-i-sarvara').wielkosc, 0.325);
+  assert.equal(e7.stanPo.zasieg.find((z) => z.slug === 'syama-i-sarvara').wielkosc, 0.348);
   // S3: odwołanie poprzednik widoczne także w grafie epok (bez cyklu)
   assert.ok(e7.konsekwencje.watki.some((w) => w.id === 'pierwszy-w-linii' && w.stan === 'otwarty'));
 
   assert.deepEqual(
     e8.uczestnicy.map((u) => [u.slug, u.saldoPrzed, u.saldoPo]),
     [
-      ['empusa-korynt', 20, 20],
-      ['barbarossa-kyffhaeuser', 17, 18],
+      ['empusa-korynt', 24, 24],
+      ['barbarossa-kyffhaeuser', 21, 22],
       ['egungun', 31, 30],
     ]
   );
-  assert.equal(e8.stanPo.os.mit, 29);
-  assert.equal(e8.stanPo.os.racjonalizacja, 71);
+  assert.equal(e8.stanPo.os.mit, 24);
+  assert.equal(e8.stanPo.os.racjonalizacja, 76);
   assert.equal(e8.meta.poprzednik, 'epoka-7');
-  assert.equal(e8.stanPo.zasieg.find((z) => z.slug === 'barbarossa-kyffhaeuser').wielkosc, 0.462);
-  assert.equal(e8.stanPo.zasieg.find((z) => z.slug === 'empusa-korynt').wielkosc, 0.485);
-  assert.equal(e8.stanPo.zasieg.find((z) => z.slug === 'egungun').wielkosc, 0.545);
+  assert.equal(e8.stanPo.zasieg.find((z) => z.slug === 'barbarossa-kyffhaeuser').wielkosc, 0.451);
+  assert.equal(e8.stanPo.zasieg.find((z) => z.slug === 'empusa-korynt').wielkosc, 0.474);
+  assert.equal(e8.stanPo.zasieg.find((z) => z.slug === 'egungun').wielkosc, 0.513);
   assert.ok(e8.konsekwencje.watki.some((w) => w.id === 'gosc-ktoremu-zaplacono' && w.stan === 'otwarty'));
   assert.ok(e8.konsekwencje.watki.some((w) => w.id === 'wedrowny-dom-empusy' && w.stan === 'zamkniety'));
 });
@@ -653,7 +655,7 @@ test('agendaTomu: otwarte wątki, słabe paliwo i ciche kultury', async () => {
   assert.ok(Array.isArray(a.watki) && a.watki.length > 0);
   assert.ok(a.watki.every((w) => w.id && Array.isArray(w.byty)));
   assert.ok(Array.isArray(a.slabi));
-  assert.equal(a.ostatnia, 'epoka-9');
+  assert.equal(a.ostatnia, 'epoka-14');
 });
 
 test('S1: raport Tomu zawiera miniatury epok i rozstaje silnika', async () => {
@@ -725,4 +727,162 @@ test('U4: raport epoki linkuje epoki powiązane jako chipy (nie gołe linki)', a
   assert.match(html, /Epoki powiązane:/);
   assert.match(html, /<a class="chip" href="kronika-epoka-[0-9]+\.html">epoka-[0-9]+<\/a>/, 'chip, nie goły <a>');
   assert.match(html, /a\.chip/, 'CSS z regułą brązowego przycisku');
+});
+
+test('sortowanie plików serii jest liczbowe, nie leksykalne (epoka-10 po epoce-9)', () => {
+  const wejscie = ['epoka-10.json', 'epoka-2.json', 'epoka-1.json', 'epoka-9.json'];
+  assert.deepEqual(sortujPlikiSeriami(wejscie), [
+    'epoka-1.json',
+    'epoka-2.json',
+    'epoka-9.json',
+    'epoka-10.json',
+  ]);
+  assert.deepEqual(sortujPlikiSeriami(['tom-2.json', 'tom-1.json']), ['tom-1.json', 'tom-2.json']);
+  assert.deepEqual(wejscie[0], 'epoka-10.json', 'wejście nie jest mutowane');
+});
+
+test('Epoka X domyka Tom I zgodnie z rozliczeniem paliwa i osi', async () => {
+  const podsumowanie = await wczytaj(PLIK_PODSUMOWANIA);
+  assert.equal(podsumowanie.walidacja, true, JSON.stringify(podsumowanie.bledy));
+  assert.equal(podsumowanie.epoki.length, 14);
+
+  const e10 = podsumowanie.epoki[9];
+  assert.equal(e10.slug, 'epoka-10');
+  assert.equal(e10.skit, 'gruz-i-odplyw');
+  assert.deepEqual(
+    e10.uczestnicy.map((u) => [u.slug, u.saldoPrzed, u.saldoPo]),
+    [
+      ['cormoran-st-michaels-mount', 9, 11],
+      ['ben-varrey', 14, 15],
+      ['lincoln-imp', 16, 16],
+      ['loup-garou-gevaudan', 12, 13],
+    ]
+  );
+  assert.equal(e10.stanPo.os.mit, 24);
+  assert.equal(e10.stanPo.os.racjonalizacja, 76);
+  assert.equal(
+    e10.stanPo.zasieg.find((z) => z.slug === 'cormoran-st-michaels-mount').wielkosc,
+    0.21
+  );
+  const nowy = (e10.konsekwencje.watki || []).find((w) => w.id === 'prawo-progu');
+  assert.ok(nowy, 'Epoka X otwiera wątek prawa przejścia');
+  assert.equal(nowy.byty.length, 4);
+});
+
+test('Epoka XI wyrasta z drogi SPLOTU, nie ze skitu', async () => {
+  const podsumowanie = await wczytaj(PLIK_PODSUMOWANIA);
+  const e11 = podsumowanie.epoki[10];
+  assert.equal(e11.slug, 'epoka-11');
+  assert.equal(e11.skit, null, 'epoka z drogi nie ma skitu');
+  assert.deepEqual(e11.zrodloSplotu, { droga: 'ostatni-slad-gevaudan', status: 'rozszczepiona' });
+  assert.deepEqual(
+    e11.uczestnicy.map((u) => u.slug).sort(),
+    ['loup-garou-gevaudan', 'neith-z-sais', 'sfinks-teby']
+  );
+  const slad = (e11.konsekwencje.watki || []).find((w) => w.id === 'slad-ostatni-slad-gevaudan');
+  assert.ok(slad && slad.stan === 'otwarty', 'ślad drogi wchodzi do Kroniki jako wątek');
+  assert.equal(e11.walidacja, true, JSON.stringify(e11.bledy));
+});
+
+test('Epoka XII wraca do rodowodu ze SKIT-u i wpina pierwszy byt zza oceanu', async () => {
+  const podsumowanie = await wczytaj(PLIK_PODSUMOWANIA);
+  const e12 = podsumowanie.epoki[11];
+  assert.equal(e12.slug, 'epoka-12');
+  assert.equal(e12.skit, 'co-sie-podaje', 'Epoka XII wyrasta z rozmowy, nie z drogi SPLOTU');
+  assert.equal(e12.zrodloSplotu ?? null, null, 'jeden rodowód naraz');
+  assert.deepEqual(
+    e12.uczestnicy.map((u) => u.slug).sort(),
+    ['iktomi', 'nessos', 'pandora']
+  );
+  assert.equal(e12.walidacja, true, JSON.stringify(e12.bledy));
+  const drzwi = (e12.konsekwencje.watki || []).find((w) => w.id === 'zwezone-drzwi');
+  assert.ok(drzwi && drzwi.stan === 'otwarty', 'Epoka XII otwiera wątek zwężonego przejścia');
+  assert.deepEqual(drzwi.byty.sort(), ['iktomi', 'nessos', 'pandora']);
+  const lakota = (e12.stanPo.dominacje || []).find((d) => d.kultura === 'lakota');
+  assert.ok(lakota && lakota.wielkosc > 0, 'kultura lakocka wchodzi do dominacji Tomu I');
+});
+
+test('Epoka XIII zamyka obrót 6: trzy przedmioty i wątek ceny znaku', async () => {
+  const podsumowanie = await wczytaj(PLIK_PODSUMOWANIA);
+  const e13 = podsumowanie.epoki[12];
+  assert.equal(e13.slug, 'epoka-13');
+  assert.equal(e13.skit, 'co-sie-nosi', 'Epoka XIII wyrasta z rozmowy, nie z drogi SPLOTU');
+  assert.equal(e13.zrodloSplotu ?? null, null, 'jeden rodowód naraz');
+  assert.deepEqual(
+    e13.uczestnicy.map((u) => u.slug).sort(),
+    ['boto-encantado', 'protostates', 'selkie-sule-skerry']
+  );
+  assert.equal(e13.walidacja, true, JSON.stringify(e13.bledy));
+  const cena = (e13.konsekwencje.watki || []).find((w) => w.id === 'cena-znaku');
+  assert.ok(cena && cena.stan === 'otwarty', 'Epoka XIII otwiera wątek ceny znaku');
+  assert.deepEqual(cena.byty.slice().sort(), ['boto-encantado', 'protostates', 'selkie-sule-skerry']);
+  assert.equal(e13.stanPo.os.mit, 24);
+  assert.equal(e13.stanPo.os.racjonalizacja, 76);
+});
+
+test('Epoka XIV zamyka obrót 8: cudzy podpis pod bytem', async () => {
+  const podsumowanie = await wczytaj(PLIK_PODSUMOWANIA);
+  const e14 = podsumowanie.epoki.at(-1);
+  assert.equal(e14.slug, 'epoka-14');
+  assert.equal(e14.skit, 'czyje-to-imie', 'Epoka XIV wyrasta z rozmowy, nie z drogi SPLOTU');
+  assert.equal(e14.zrodloSplotu ?? null, null, 'jeden rodowód naraz');
+  assert.deepEqual(
+    e14.uczestnicy.map((u) => u.slug).sort(),
+    ['knecht-z-koptos', 'qilin-z-lu', 'yara-ma-yha-who']
+  );
+  assert.equal(e14.walidacja, true, JSON.stringify(e14.bledy));
+  const podpis = (e14.konsekwencje.watki || []).find((w) => w.id === 'cudzy-podpis');
+  assert.ok(podpis && podpis.stan === 'otwarty', 'Epoka XIV otwiera wątek cudzego podpisu');
+  assert.deepEqual(podpis.byty.slice().sort(), ['knecht-z-koptos', 'qilin-z-lu', 'yara-ma-yha-who']);
+  const chiny = (e14.stanPo.dominacje || []).find((d) => d.kultura === 'chiny');
+  assert.ok(chiny && chiny.wielkosc > 0, 'kultura chińska wchodzi do dominacji Tomu I');
+  assert.equal(e14.stanPo.os.mit, 23);
+  assert.equal(e14.stanPo.os.racjonalizacja, 77);
+});
+
+test('walidujZrodloSplotu pilnuje zgodności Epoki z rozstrzygnięciem drogi', () => {
+  const droga = { slug: 'droga-x', sklad: ['a', 'b'] };
+  const epokaSlug = ['a', 'b'];
+  const poprawna = {
+    konsekwencje: {
+      os: { mit: 1, racjonalizacja: -1 },
+      watki: [{ id: 'slad-droga-x', stan: 'zamkniety', byty: ['a', 'b'], pytanie: '?' }],
+    },
+  };
+  let bledy = [];
+  walidujZrodloSplotu({ epoka: poprawna, zrodloSplotu: { droga: 'droga-x', status: 'ukonczona' }, epokaSlug, drogi: [droga], bledy });
+  assert.deepEqual(bledy, [], 'ukończona droga: oś w górę i wątek domknięty');
+
+  bledy = [];
+  walidujZrodloSplotu({ epoka: poprawna, zrodloSplotu: { droga: 'droga-y', status: 'ukonczona' }, epokaSlug, drogi: [droga], bledy });
+  assert.match(bledy.join(' '), /nie istnieje/);
+
+  bledy = [];
+  walidujZrodloSplotu({ epoka: poprawna, zrodloSplotu: { droga: 'droga-x', status: 'wygrana' }, epokaSlug, drogi: [droga], bledy });
+  assert.match(bledy.join(' '), /nieznane rozstrzygnięcie/);
+
+  bledy = [];
+  walidujZrodloSplotu({ epoka: poprawna, zrodloSplotu: { droga: 'droga-x', status: 'przerwana' }, epokaSlug, drogi: [droga], bledy });
+  assert.match(bledy.join(' '), /wątek .* ma stan/, 'przerwana droga zostawia wątek otwarty');
+  assert.match(bledy.join(' '), /oś przesuwa się/, 'przerwana droga cofa oś, nie podnosi');
+
+  bledy = [];
+  walidujZrodloSplotu({ epoka: poprawna, zrodloSplotu: { droga: 'droga-x', status: 'ukonczona' }, epokaSlug: ['a'], drogi: [droga], bledy });
+  assert.match(bledy.join(' '), /nie są równi składowi drogi/);
+});
+
+test('epoka bez źródła i epoka z dwoma źródłami są odrzucane', async () => {
+  const [tom, epoka11, indeks, kanon] = await Promise.all([
+    wczytaj(PLIK_TOM_1),
+    wczytaj(join(KATALOG_KRONIKA, 'epoka-11.json')),
+    wczytaj(PLIK_INDEKSU),
+    wczytaj(PLIK_KANONU),
+  ]);
+  const bezZrodla = { ...epoka11, zrodloSplotu: undefined };
+  const w1 = przeliczEpoke({ tom, epoka: bezZrodla, indeks, kanon, stan: structuredClone(tom.stanStart), watkiPoprzednie: new Map() });
+  assert.match(w1.bledy.join(' '), /musi wyrastać ze skitu albo z drogi/);
+
+  const dwaZrodla = { ...epoka11, skit: 'zaslona-i-siersc' };
+  const w2 = przeliczEpoke({ tom, epoka: dwaZrodla, indeks, kanon, stan: structuredClone(tom.stanStart), watkiPoprzednie: new Map() });
+  assert.match(w2.bledy.join(' '), /dwa źródła naraz/);
 });

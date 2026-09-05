@@ -1,0 +1,60 @@
+{
+  "wersja": 1,
+  "opis": "Kręgi kulturowe: grupy kultur źródłowych rysowane na mapie jako wspólna otoczka. Krąg nie jest tagiem wpisu i nie zmienia zasady jednej kultury na byt (PROTOKÓŁ §2) — służy wyłącznie do pokazania, gdzie kartoteka jest gęsta, a gdzie ma dziury. Każda kultura kanonu należy dokładnie do jednego kręgu; test pilnuje, żeby żadna nie została poza podziałem.",
+  "kregi": [
+    {
+      "id": "wyspy-polnocnego-atlantyku",
+      "nazwa": "Wyspy Północnego Atlantyku",
+      "opis": "Tradycje wysp i wybrzeży od Islandii po Kornwalię: saga, ballada i podanie parafialne, w których morze jest granicą prawa, a nie tłem.",
+      "kultury": ["islandia", "szkocja-polnocna", "man", "irlandia", "anglia", "kornwalia"]
+    },
+    {
+      "id": "europa-kontynentalna",
+      "nazwa": "Europa kontynentalna",
+      "opis": "Kraje, w których byt trafia do akt: proces, kronika miejska, kompendium i sprawozdanie urzędowe stoją tu obok opowieści.",
+      "kultury": ["francja", "niemcy", "polska", "albania"]
+    },
+    {
+      "id": "srodziemnomorze-antyczne",
+      "nazwa": "Śródziemnomorze antyczne",
+      "opis": "Grecja i Egipt: tradycja spisana wcześnie i komentowana bez przerwy, w której byt bywa argumentem w cudzym sporze o władzę.",
+      "kultury": ["grecja", "egipt"]
+    },
+    {
+      "id": "azja-poludniowa-i-wschodnia",
+      "nazwa": "Azja Południowa i Wschodnia",
+      "opis": "Od hymnów wedyjskich po kroniki dworskie i świątynne zapisy: byt jest tu najczęściej znakiem, który ktoś musi odczytać.",
+      "kultury": ["indie", "chiny", "japonia"]
+    },
+    {
+      "id": "step-i-pustynia",
+      "nazwa": "Step i pustynia",
+      "opis": "Tradycje pasterskie Azji Środkowej, w których wiedza o bycie jest wiedzą o unikaniu miejsca i pory roku.",
+      "kultury": ["mongolia"]
+    },
+    {
+      "id": "wyspy-poludniowego-pacyfiku",
+      "nazwa": "Archipelagi Pacyfiku",
+      "opis": "Filipiny: sąsiedzka podejrzliwość i obrzęd domowy jako główna scena, na której byt się pojawia.",
+      "kultury": ["filipiny"]
+    },
+    {
+      "id": "ameryki",
+      "nazwa": "Ameryki",
+      "opis": "Amazonia i Wielkie Równiny: opowieści rzeczne i preriowe, w których podstęp bywa formą prawa.",
+      "kultury": ["amazonia", "lakota"]
+    },
+    {
+      "id": "afryka-zachodnia",
+      "nazwa": "Afryka Zachodnia",
+      "opis": "Tradycja joruba: przodek wraca w maskaradzie i mówi z pozycji, której żywym nie wolno zająć.",
+      "kultury": ["joruba"]
+    },
+    {
+      "id": "australia",
+      "nazwa": "Australia",
+      "opis": "Dolna Murray i tradycja Ngarrindjeri, z osobną warstwą sporu o autorstwo zapisu.",
+      "kultury": ["ngarrindjeri"]
+    }
+  ]
+}

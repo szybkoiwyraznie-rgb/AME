@@ -18,6 +18,13 @@ app/
   ui.js                     — warstwa wpisu (dialog), Baza Skitów, widok skitu,
                               feed „Co nowego", tagi, powiązania, lista, szukanie,
                               logika motywu (wszystko jako funkcje czyste)
+  kregi.js                  — kręgi kulturowe: otoczki grup tradycji na mapie
+  arena.js                  — Arena Rezonansu: statystyki bytu wyprowadzone
+                              z indeksu, spór dwóch wersji świata (RNG wstrzykiwany)
+  liga.js                   — Liga Rezonansu: terminarz round-robin liczony
+                              z kalendarza i tabela sezonu (zero zapisanego stanu)
+  prog.js                   — PRÓG: spotkanie bez walki, klucze i szanse
+  splot.js                  — SPLOT: rozstrzyganie dróg (zasoby, napór świata)
   styles.css                — tokeny palety: motyw ciemny i jasny (bez webfontów)
 assets/
   map/countries-50m.json    — Natural Earth jako TopoJSON (vendoring, PD/ISC)
@@ -30,6 +37,7 @@ data/
   manifestations/<slug>.json — pełne wpisy MFM (źródło prawdy treści)
   skity/<slug>.json          — Baza Skitów: dialogi materializacji (ADR 0013)
   kanon-tagow.json           — słownik tagów: kategorie, limity, opisy (ADR 0016)
+  kregi-kulturowe.json       — grupy kultur rysowane jako otoczki na mapie
   index.json                — GENEROWANY przez tools/rebuild-index.mjs (v3)
 tools/
   rebuild-index.mjs         — walidacja wpisów + budowa indeksu (--check

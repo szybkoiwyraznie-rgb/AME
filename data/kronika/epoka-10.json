@@ -1,0 +1,229 @@
+{
+  "slug": "epoka-10",
+  "tom": "tom-1",
+  "skit": "gruz-i-odplyw",
+  "tytul": "Prawo progu i kamień, który został",
+  "iskra": "Przy niskiej wodzie pod Górą św. Michała spotykają się czterej sąsiedzi granicy: ten, kto górę usypał, ta, która ma pod nią przejście, ten, kto wrósł w cudzy kamień, i ten, kto nie ma progu przez pięć nocy w tygodniu. Spór o jeden zielony głaz okazuje się sporem o to, czyja jest droga.",
+  "pytanie": "Do kogo należy próg: do tego, kto go zbudował, czy do tego, kto musi nim przejść?",
+  "uczestnicy": [
+    {
+      "slug": "cormoran-st-michaels-mount",
+      "rola": "Budowniczy i właściciel góry",
+      "kosztUdzialu": 2,
+      "zwrot": 4
+    },
+    {
+      "slug": "ben-varrey",
+      "rola": "Ta, która zna trasę pływu",
+      "kosztUdzialu": 2,
+      "zwrot": 3
+    },
+    {
+      "slug": "lincoln-imp",
+      "rola": "Świadek zamknięty we własnym kamieniu",
+      "kosztUdzialu": 2,
+      "zwrot": 2
+    },
+    {
+      "slug": "loup-garou-gevaudan",
+      "rola": "Ten, który nocuje poza każdym progiem",
+      "kosztUdzialu": 2,
+      "zwrot": 3
+    }
+  ],
+  "narrator": {
+    "ocena": [
+      {
+        "kto": "ben-varrey",
+        "kogo": "cormoran-st-michaels-mount",
+        "stopien": 2,
+        "komentarz": "Nie ustąpił z kamienia, ale po raz pierwszy zapytał, komu ten kamień zawadza."
+      },
+      {
+        "kto": "cormoran-st-michaels-mount",
+        "kogo": "loup-garou-gevaudan",
+        "stopien": 2,
+        "komentarz": "Odstąpił jaskinię komuś, kogo mógł po prostu zjeść. Gościnność olbrzyma zaczyna się od rachunku, ale się na nim nie kończy."
+      },
+      {
+        "kto": "lincoln-imp",
+        "kogo": "ben-varrey",
+        "stopien": 1,
+        "komentarz": "Zaproponowała zamianę miejsc i tym jednym zdaniem pokazała, że żadne z nas nie chce cudzego progu."
+      },
+      {
+        "kto": "loup-garou-gevaudan",
+        "kogo": "lincoln-imp",
+        "stopien": 1,
+        "komentarz": "Ma dach i skarży się na niewolę; ja mam wolność i szukam dachu. Żaden z nas nie zamieni się na serio."
+      }
+    ],
+    "podsumowanie": "Epoka nie przenosi kamienia. Przenosi coś innego: prawo do przejścia przestaje być własnością tego, kto jest największy. Cormoran zostaje gospodarzem, ale gospodarzem, który po raz pierwszy usłyszał, że jego grobla jest cudzą drogą."
+  },
+  "konsekwencje": {
+    "os": {
+      "mit": -1,
+      "racjonalizacja": 1
+    },
+    "relacje": [
+      {
+        "typ": "neutralna",
+        "skad": "ben-varrey",
+        "dokad": "cormoran-st-michaels-mount",
+        "opis": "Syrena i olbrzym uzgodnili trasę pływu bez przenoszenia kamienia i bez zatapiania grobli."
+      },
+      {
+        "typ": "wzmocnienie",
+        "skad": "cormoran-st-michaels-mount",
+        "dokad": "loup-garou-gevaudan",
+        "opis": "Olbrzym oddał wilkołakowi jaskinię od strony wiatru, zastrzegając sobie tylko bydło z Marazion."
+      },
+      {
+        "typ": "wzmocnienie",
+        "skad": "lincoln-imp",
+        "dokad": "ben-varrey",
+        "opis": "Imp poparł prawo przejścia, bo sam wie najlepiej, ile kosztuje mieszkanie bez wyjścia."
+      }
+    ],
+    "zasieg": [
+      {
+        "slug": "cormoran-st-michaels-mount",
+        "delta": 0.014,
+        "opis": "Grobla i góra weszły do rozmowy Archiwum jako miejsce, o które ktoś się spiera."
+      },
+      {
+        "slug": "ben-varrey",
+        "delta": 0.008,
+        "opis": "Trasa pływu została uznana za drogę, a nie za kaprys morskiej panny."
+      },
+      {
+        "slug": "lincoln-imp",
+        "delta": 0.004,
+        "opis": "Kamienny więzień dostał głos w sprawie cudzych murów."
+      },
+      {
+        "slug": "loup-garou-gevaudan",
+        "delta": 0.006,
+        "opis": "Nocny wygnaniec po raz pierwszy dostał adres, a nie tylko trop."
+      }
+    ],
+    "dominacje": [
+      {
+        "kultura": "kornwalia",
+        "kult": "cormoran-st-michaels-mount",
+        "delta": 0.014
+      },
+      {
+        "kultura": "man",
+        "kult": "ben-varrey",
+        "delta": 0.008
+      },
+      {
+        "kultura": "anglia",
+        "kult": "lincoln-imp",
+        "delta": 0.004
+      },
+      {
+        "kultura": "francja",
+        "kult": "loup-garou-gevaudan",
+        "delta": 0.006
+      }
+    ],
+    "pozycje": [
+      {
+        "slug": "cormoran-st-michaels-mount",
+        "status": "wzmocniony",
+        "opis": "Pozostał gospodarzem góry, lecz jego prawo do grobli stało się przedmiotem umowy."
+      },
+      {
+        "slug": "ben-varrey",
+        "status": "wzmocniony",
+        "opis": "Wyprowadziła z pływu regułę, której olbrzym nie potrafił odrzucić."
+      },
+      {
+        "slug": "lincoln-imp",
+        "status": "odporny",
+        "opis": "Nie zyskał wolności, ale zyskał zdanie, którego nikt przy stole nie podważył."
+      },
+      {
+        "slug": "loup-garou-gevaudan",
+        "status": "przemieniony",
+        "opis": "Z tropu bez domu stał się sąsiadem z adresem na pięć nocy w tygodniu."
+      }
+    ],
+    "watki": [
+      {
+        "id": "pierwszy-w-linii",
+        "stan": "otwarty",
+        "byty": [
+          "protostates",
+          "knecht-z-koptos",
+          "syama-i-sarvara"
+        ],
+        "pytanie": "Co się stanie z linią, gdy pierwszy przestanie stać, a nikt nie uzna, że ktoś go zastąpił?"
+      },
+      {
+        "id": "niewinny-bierca",
+        "stan": "otwarty",
+        "byty": [
+          "kentaur-pelion",
+          "pandora",
+          "empusa-korynt"
+        ],
+        "pytanie": "Kiedy biernik dowie się, że bierze — i co wtedy zrobi z tym, co już wziął?"
+      },
+      {
+        "id": "warunek-barbarossy",
+        "stan": "otwarty",
+        "byty": [
+          "barbarossa-kyffhaeuser",
+          "kentaur-pelion",
+          "egungun"
+        ],
+        "pytanie": "Czy dług śpiącego cesarza da się spłacić gościną — czy rachunek, który zapłacił ze snu, przyjdzie kiedyś wyrównać na jawie?"
+      },
+      {
+        "id": "kres-indry",
+        "stan": "otwarty",
+        "byty": [
+          "indra"
+        ],
+        "pytanie": "Kto zapisze kres Indry: ten, kto go zdetronizuje, czy ten, który przestaje się bać jego gromu?"
+      },
+      {
+        "id": "znak-nie-wystarcza",
+        "stan": "otwarty",
+        "byty": [
+          "sfinks-teby",
+          "loup-garou-gevaudan",
+          "neith-z-sais"
+        ],
+        "pytanie": "Loup-garou dostał adres zamiast opisu, ale kto zapyta o resztę jego imienia, gdy przestanie być ciekawym tropem?"
+      },
+      {
+        "id": "prawo-progu",
+        "stan": "otwarty",
+        "byty": [
+          "cormoran-st-michaels-mount",
+          "ben-varrey",
+          "lincoln-imp",
+          "loup-garou-gevaudan"
+        ],
+        "pytanie": "Jeśli próg należy także do przechodzących, to kto płaci za jego utrzymanie — i czym płaci ten, kto nie ma nic prócz przejścia?"
+      }
+    ]
+  },
+  "grafika": {
+    "podpis": "Odpływ pod Górą św. Michała: olbrzym, syrena, imp i wilkołak przy zielonym głazie na grobli.",
+    "styl": "Hyperrealistyczne zdjęcie filmowe, ultrapanorama 21:9.",
+    "prompt": "Hyperrealistic cinematic photograph, ultra-wide 21:9 anamorphic frame. Low tide at dawn on a granite tidal island causeway in Cornwall: a colossal bearded giant sits on wet sand beside a single green boulder, a dark-haired sea woman with a fish tail rests on the seaweed near the water line, a small grinning stone gargoyle creature crouches on a mooring block, and a lean wolf-headed man stands at the shore edge with one human hand visible. Cold blue dawn light, mist over the bay, the abbey-crowned rock behind them, wet reflections on the causeway. Restrained folkloric realism, no gore, no text, no modern objects.",
+    "obraz": "assets/wizualizacje/kronika-tom-1-epoka-10.jpg"
+  },
+  "meta": {
+    "utworzono": "2026-09-05 17:05",
+    "autor": "sesja arena 2026-09-05b",
+    "wersja": 1,
+    "poprzednik": "epoka-9"
+  },
+  "przebieg": "Czterej sąsiedzi granicy targują się o kamień leżący na przejściu. Olbrzym broni pamiątki, syrena broni trasy, imp przypomina, ile kosztuje mieszkanie bez wyjścia, a wilkołak odsłania jedyny brak, którego żaden z nich nie ma: pięć nocy bez dachu. Kamień zostaje na miejscu, ale prawo do drogi przestaje być własnością największego."
+}

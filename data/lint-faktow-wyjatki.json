@@ -1,0 +1,4 @@
+{
+  "opis": "Świadome odstępstwa od reguły „fakt z dialogu stoi w karcie uczestnika” (tools/lint-faktow.mjs). Każda pozycja wymaga powodu; pusta lista to stan pożądany.",
+  "wyjatki": []
+}

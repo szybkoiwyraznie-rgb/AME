@@ -1,8 +1,8 @@
 /**
  * app/app.js — bootstrap AME: ładuje indeks, mapę świata, spina UI.
  */
-import { stworzMape, PROGI_WARSTW, PODKLADY_ONLINE } from './map.js?v=c6-4';
-import { zaladujIndeks, zaladujWpis, zaladujSkit, dopasowania, wylosujSlug, slugDnia } from './data.js?v=c6-4';
+import { stworzMape, PROGI_WARSTW, PODKLADY_ONLINE } from './map.js?v=c6-16';
+import { zaladujIndeks, zaladujWpis, zaladujSkit, dopasowania, wylosujSlug, slugDnia } from './data.js?v=c6-16';
 import {
   htmlWpisu,
   htmlWarstwyWpisu,
@@ -26,11 +26,17 @@ import {
   tekstDoLektora,
   htmlTrofeow,
   htmlSplotu,
+  htmlProgow,
   paryRozmowySkitu,
   zB64utf8,
-} from './ui.js?v=c6-4';
-import { rozegrajDroge } from './splot.js?v=c6-4';
-import { SZEROKOSC, WYSOKOSC, odwroc, projektuj, serializujWidok, parsujWidokMapy } from './geo.js?v=c6-4';
+  htmlAreny,
+  htmlLigi,
+} from './ui.js?v=c6-16';
+import { rozegrajDroge } from './splot.js?v=c6-16';
+import { tablicaProgow, kluczeDlaBytu, rozegrajProg } from './prog.js?v=c6-16';
+import { profileKartoteki, rozegrajSpor, paraDnia, haszTekstu, generatorZZiarna } from './arena.js?v=c6-16';
+import { tabelaLigi } from './liga.js?v=c6-16';
+import { SZEROKOSC, WYSOKOSC, odwroc, projektuj, serializujWidok, parsujWidokMapy } from './geo.js?v=c6-16';
 
 const $ = (sel) => document.querySelector(sel);
 
@@ -136,6 +142,9 @@ function przywrocWidokMapy() {
 }
 
 const WARSTWY_MAPY = {
+  // Kręgi kulturowe (C2+5, obrót 9): jedyna warstwa liczona z kartoteki,
+  // a nie dociągana z assets/map — definicje grup leżą w data/.
+  kregi: { plik: 'data/kregi-kulturowe.json', prog: 1, rysuj: 'ustawKregi', zKartoteki: true },
   rzeki: { plik: 'rivers-2km5.json', prog: PROGI_WARSTW.woda, rysuj: 'ustawRzeki' },
   jeziora: { plik: 'lakes-2km5.json', prog: PROGI_WARSTW.woda, rysuj: 'ustawJeziora' },
   miasta: { plik: 'miasta.json', prog: PROGI_WARSTW.miastaWielkie, rysuj: 'ustawMiasta' },
@@ -343,7 +352,7 @@ function zamknijWarstwe() {
   const warstwa = $('#warstwa');
   warstwa.classList.remove('otwarta');
   warstwa.innerHTML = '';
-  for (const id of ['#przycisk-skity', '#przycisk-nowosci', '#przycisk-trofea', '#przycisk-splot']) warstwaTrybPrzycisku(id, false);
+  for (const id of ['#przycisk-skity', '#przycisk-nowosci', '#przycisk-trofea', '#przycisk-splot', '#przycisk-prog', '#przycisk-arena', '#przycisk-liga']) warstwaTrybPrzycisku(id, false);
   if (stan.wpis) history.replaceState(null, '', `#${stan.wpis.slug}`);
   else if (location.hash) history.replaceState(null, '', location.pathname + location.search);
 }
@@ -417,24 +426,143 @@ function otworzTrofea() {
 }
 
 /** C5: raport jednej drogi z losowaniem przez bezpieczny adapter przeglądarki. */
-async function otworzSplot() {
-  if (stan.warstwa?.tryb === 'splot') return zamknijWarstwe();
+async function otworzSplot(slugDrogi = null) {
+  if (stan.warstwa?.tryb === 'splot' && !slugDrogi) return zamknijWarstwe();
   stan.warstwa = { tryb: 'splot' };
+  const katalog = stan.indeks?.drogi ?? [];
+  const wybrana = katalog.find((d) => d.slug === slugDrogi) ?? katalog[0] ?? null;
   const warstwa = $('#warstwa');
   warstwa.classList.add('otwarta');
-  warstwa.innerHTML = szkicWarstwy('SPLOT — Ostatni ślad w Gévaudan', '<p class="ladowanie">Rozstrzyganie drogi…</p>');
+  warstwa.innerHTML = szkicWarstwy(wybrana ? `SPLOT — ${wybrana.tytul}` : 'SPLOT', '<p class="ladowanie">Rozstrzyganie drogi…</p>');
   warstwaTrybPrzycisku('#przycisk-splot', true);
-  for (const id of ['#przycisk-skity', '#przycisk-nowosci', '#przycisk-trofea', '#przycisk-kronika']) warstwaTrybPrzycisku(id, false);
+  for (const id of ['#przycisk-skity', '#przycisk-nowosci', '#przycisk-trofea', '#przycisk-kronika', '#przycisk-prog', '#przycisk-arena', '#przycisk-liga']) warstwaTrybPrzycisku(id, false);
   try {
-    const road = await fetch(new URL('data/splot/droga-ostatni-slad-gevaudan.json', document.baseURI)).then((r) => { if (!r.ok) throw new Error(`HTTP ${r.status}`); return r.json(); });
+    const plik = wybrana?.plik ?? 'data/splot/droga-ostatni-slad-gevaudan.json';
+    const road = await fetch(new URL(plik, document.baseURI)).then((r) => { if (!r.ok) throw new Error(`HTTP ${r.status}`); return r.json(); });
+    // Sprzężenie Kronika → SPLOT (ADR 0025): stan świata modyfikuje szanse węzłów.
+    // Brak Kroniki nie blokuje drogi — wtedy napór świata wynosi zero.
+    let kronika = null;
+    try { kronika = await zaladujKronike(); } catch { kronika = null; }
     const los = () => { const b = new Uint32Array(1); globalThis.crypto?.getRandomValues?.(b); return (b[0] ?? 0) / 4294967296; };
-    const wynik = rozegrajDroge({ droga: road, indeks: stan.indeks, kanon: stan.indeks.kanon, los });
+    const wynik = rozegrajDroge({ droga: road, indeks: stan.indeks, kanon: stan.indeks.kanon, kronika, los });
     warstwa.innerHTML = szkicWarstwy(road.tytul, htmlSplotu(road, wynik, stan.indeks));
     warstwa.scrollTop = 0;
+    for (const przycisk of warstwa.querySelectorAll('[data-droga]')) {
+      przycisk.addEventListener('click', () => otworzSplot(przycisk.dataset.droga));
+    }
   } catch (err) {
     warstwa.innerHTML = szkicWarstwy('SPLOT', `<p class="blad">Nie udało się rozstrzygnąć drogi: ${esc(err.message)}</p>`);
   }
   if (location.hash !== '#splot') history.replaceState(null, '', '#splot');
+}
+
+/** C6: PRÓG — tablica kluczy kartoteki i pojedyncza próba spotkania bez walki. */
+async function otworzProg() {
+  if (stan.warstwa?.tryb === 'prog') return zamknijWarstwe();
+  stan.warstwa = { tryb: 'prog' };
+  const warstwa = $('#warstwa');
+  warstwa.classList.add('otwarta');
+  warstwa.innerHTML = szkicWarstwy('PRÓG — spotkanie bez walki', '<p class="ladowanie">Liczenie kluczy…</p>');
+  warstwaTrybPrzycisku('#przycisk-prog', true);
+  for (const id of ['#przycisk-skity', '#przycisk-nowosci', '#przycisk-trofea', '#przycisk-kronika', '#przycisk-splot', '#przycisk-arena', '#przycisk-liga']) warstwaTrybPrzycisku(id, false);
+  let kronika = null;
+  try { kronika = await zaladujKronike(); } catch { kronika = null; }
+  const kanon = stan.indeks.kanon ?? null;
+  const rysuj = (wynik = null) => {
+    const wiersze = tablicaProgow(stan.indeks.manifestacje, { kanon, kronika, staranie: 1 });
+    warstwa.innerHTML = szkicWarstwy('PRÓG — spotkanie bez walki', htmlProgow(wiersze, wynik), { kopia: 'prog' });
+    warstwa.scrollTop = 0;
+    const przycisk = warstwa.querySelector('#prog-losuj');
+    if (przycisk) przycisk.addEventListener('click', () => {
+      const los = () => { const b = new Uint32Array(1); globalThis.crypto?.getRandomValues?.(b); return (b[0] ?? 0) / 4294967296; };
+      const kandydaci = wiersze;
+      const wybor = kandydaci[Math.floor(los() * kandydaci.length)] ?? kandydaci[0];
+      const profile = profileKartoteki(stan.indeks.manifestacje, kanon);
+      const profil = profile.get(wybor.slug);
+      const swiadek = wybor.swiadek ? profile.get(wybor.swiadek.slug) ?? null : null;
+      rysuj(rozegrajProg({ profil, klucz: kluczeDlaBytu(profil)[0], staranie: 1, kronika, swiadek, los }));
+    });
+  };
+  rysuj();
+  if (location.hash !== '#prog') history.replaceState(null, '', '#prog');
+}
+
+/** C2+5 (obrót 5): Arena Rezonansu — spór dwóch bytów o to, czyja wersja
+ *  świata obowiązuje. Losowość z bezpiecznego adaptera przeglądarki albo —
+ *  dla „sporu dnia” — z ziarna daty, żeby wynik był ten sam dla wszystkich. */
+function otworzArene(wybor = null) {
+  if (stan.warstwa?.tryb === 'arena' && !wybor) return zamknijWarstwe();
+  stan.warstwa = { tryb: 'arena' };
+  const warstwa = $('#warstwa');
+  warstwa.classList.add('otwarta');
+  warstwaTrybPrzycisku('#przycisk-arena', true);
+  for (const id of ['#przycisk-skity', '#przycisk-nowosci', '#przycisk-trofea', '#przycisk-kronika', '#przycisk-splot', '#przycisk-prog', '#przycisk-liga']) warstwaTrybPrzycisku(id, false);
+  const kanon = stan.indeks.kanon ?? null;
+  const profile = profileKartoteki(stan.indeks.manifestacje, kanon);
+  const slugi = stan.indeks.manifestacje.map((m) => m.slug);
+  const dzis = new Date().toISOString().slice(0, 10);
+  const domyslne = paraDnia(slugi, dzis);
+  const rysuj = ({ a, b, ziarno = null } = {}) => {
+    const stronaA = slugi.includes(a) ? a : domyslne[0];
+    const stronaB = slugi.includes(b) && b !== stronaA ? b : (domyslne[1] === stronaA ? domyslne[0] : domyslne[1]);
+    let wynik = null;
+    if (ziarno !== null) {
+      const los = generatorZZiarna(haszTekstu(ziarno));
+      wynik = rozegrajSpor({ a: profile.get(stronaA).staty, b: profile.get(stronaB).staty, los });
+    }
+    warstwa.innerHTML = szkicWarstwy('Arena Rezonansu — spór o wersję świata', htmlAreny(stan.indeks, { a: stronaA, b: stronaB, wynik, profile, data: dzis }), { kopia: 'arena' });
+    warstwa.scrollTop = 0;
+    const formularz = warstwa.querySelector('#arena-wybor');
+    if (formularz) {
+      formularz.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const nowyA = formularz.elements.a.value;
+        const nowyB = formularz.elements.b.value;
+        if (nowyA === nowyB) return rysuj({ a: nowyA, b: nowyB });
+        rysuj({ a: nowyA, b: nowyB, ziarno: `${nowyA}|${nowyB}|${Date.now()}` });
+      });
+      const dnia = formularz.querySelector('[data-spor-dnia]');
+      if (dnia) dnia.addEventListener('click', () => {
+        const [x, y] = paraDnia(slugi, dzis);
+        rysuj({ a: x, b: y, ziarno: `spor-dnia:${dzis}` });
+      });
+    }
+  };
+  rysuj({ a: wybor?.a ?? domyslne[0], b: wybor?.b ?? domyslne[1], ziarno: wybor?.ziarno ?? null });
+  if (location.hash !== '#arena') history.replaceState(null, '', '#arena');
+}
+
+/** C2+5 (obrót 8): Liga Rezonansu — sezon Areny rozpisany na kalendarz.
+ *  Nic nie jest zapisywane: terminarz i wszystkie wyniki wynikają z daty,
+ *  więc tabela jest ta sama dla każdego czytelnika w danym dniu (app/liga.js). */
+function otworzLige() {
+  if (stan.warstwa?.tryb === 'liga') return zamknijWarstwe();
+  stan.warstwa = { tryb: 'liga' };
+  const warstwa = $('#warstwa');
+  warstwa.classList.add('otwarta');
+  warstwaTrybPrzycisku('#przycisk-liga', true);
+  for (const id of ['#przycisk-skity', '#przycisk-nowosci', '#przycisk-trofea', '#przycisk-kronika', '#przycisk-splot', '#przycisk-prog', '#przycisk-arena']) warstwaTrybPrzycisku(id, false);
+  const kanon = stan.indeks.kanon ?? null;
+  const profile = profileKartoteki(stan.indeks.manifestacje, kanon);
+  const slugi = stan.indeks.manifestacje.map((m) => m.slug);
+  const staty = new Map([...profile].map(([slug, p]) => [slug, p.staty]));
+  const dzis = new Date().toISOString().slice(0, 10);
+  let liga = null;
+  try {
+    liga = tabelaLigi(staty, slugi, dzis);
+  } catch (err) {
+    warstwa.innerHTML = szkicWarstwy('Liga Rezonansu', `<p class="blad">Nie udało się rozpisać sezonu: ${esc(err.message)}</p>`);
+    return;
+  }
+  warstwa.innerHTML = szkicWarstwy('Liga Rezonansu — sezon sporów', htmlLigi(stan.indeks, liga), { kopia: 'liga' });
+  warstwa.scrollTop = 0;
+  for (const przycisk of warstwa.querySelectorAll('[data-liga-spor]')) {
+    przycisk.addEventListener('click', () => {
+      const [a, b] = przycisk.dataset.ligaSpor.split('|');
+      otworzArene({ a, b, ziarno: `liga:${liga.sezon}:${liga.ostatnia.numer}:${a}|${b}` });
+    });
+  }
+  if (location.hash !== '#liga') history.replaceState(null, '', '#liga');
 }
 
 /** Feed Kroniki (U3): wczytywane raz, karty epok z ramą narracji i filtra bytów (U1).
@@ -573,8 +701,11 @@ async function zaladujWarstwe(klucz) {
   const def = WARSTWY_MAPY[klucz];
   if (!def) return;
   try {
-    const url = new URL(`assets/map/${def.plik}`, document.baseURI);
-    if (def.raster) {
+    const url = new URL(def.zKartoteki ? def.plik : `assets/map/${def.plik}`, document.baseURI);
+    if (def.zKartoteki) {
+      const definicje = await fetch(url).then((r) => (r.ok ? r.json() : Promise.reject(new Error(`HTTP ${r.status}`))));
+      mapa[def.rysuj](stan.indeks.manifestacje, definicje);
+    } else if (def.raster) {
       mapa[def.rysuj](url.href);
     } else {
       const data = await fetch(url).then((r) => (r.ok ? r.json() : Promise.reject(new Error(`HTTP ${r.status}`))));
@@ -711,6 +842,9 @@ function podepnijZdarzenia() {
   $('#przycisk-trofea').addEventListener('click', otworzTrofea);
   $('#przycisk-kronika').addEventListener('click', () => otworzKronike(null, { przelacz: true }));
   $('#przycisk-splot').addEventListener('click', otworzSplot);
+  $('#przycisk-prog').addEventListener('click', otworzProg);
+  $('#przycisk-liga').addEventListener('click', () => otworzLige());
+  $('#przycisk-arena').addEventListener('click', () => otworzArene());
   $('#przycisk-warstwy').addEventListener('click', przelaczPanelWarstw);
   for (const klucz of Object.keys(WARSTWY_MAPY)) {
     const el = document.querySelector(`#warstwa-${klucz}`);
@@ -793,6 +927,9 @@ function podepnijZdarzenia() {
     if (fragment === 'trofea') return stan.warstwa?.tryb !== 'trofea' ? otworzTrofea() : undefined;
     if (fragment === 'kroniki') return stan.warstwa?.tryb !== 'kroniki' ? otworzKronike() : undefined;
     if (fragment === 'splot') return stan.warstwa?.tryb !== 'splot' ? otworzSplot() : undefined;
+    if (fragment === 'prog') return stan.warstwa?.tryb !== 'prog' ? otworzProg() : undefined;
+    if (fragment === 'arena') return stan.warstwa?.tryb !== 'arena' ? otworzArene() : undefined;
+    if (fragment === 'liga') return stan.warstwa?.tryb !== 'liga' ? otworzLige() : undefined;
     if (fragment.startsWith('kronika:')) {
       const slug = fragment.slice(8);
       if (slug) window.location.href = `docs/kronika-${slug}.html#kronika:${slug}`;
@@ -913,6 +1050,9 @@ async function start() {
   else if (fragment === 'trofea') otworzTrofea();
   else if (fragment === 'kroniki') otworzKronike();
   else if (fragment === 'splot') otworzSplot();
+  else if (fragment === 'prog') otworzProg();
+  else if (fragment === 'arena') otworzArene();
+  else if (fragment === 'liga') otworzLige();
   else if (fragment.startsWith('kronika:')) {
     const slug = fragment.slice(8);
     if (slug) location.href = `docs/kronika-${slug}.html#kronika:${slug}`;

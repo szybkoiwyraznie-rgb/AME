@@ -2,7 +2,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
-import { htmlWpisu, htmlSplotu, htmlProfiluAreny, htmlWarstwyWpisu, linkDoZrodla, htmlListy, htmlStronyTagu, htmlTagow, htmlDialogu, htmlSkitu, htmlBazySkitow, htmlNowosci, htmlKronik, htmlTomyIEpoki, esc, rzymskie, nastepnyMotyw, motywPoczatkowy, etykietaMotywu, MOTYWY, KLUCZ_MOTYWU, akcjeZZapytania, tekstDoLektora, htmlTrofeow, paryRozmowySkitu, doB64utf8, zB64utf8, dataZmianySluga } from '../app/ui.js';
+import { htmlWpisu, htmlSplotu, htmlProfiluAreny, htmlNaporuSwiata, htmlEchaDrogi, znacznikZrodlaBezAdresu, opisZasobow, htmlWarstwyWpisu, linkDoZrodla, htmlListy, htmlStronyTagu, htmlTagow, htmlDialogu, htmlSkitu, htmlBazySkitow, htmlNowosci, htmlKronik, htmlTomyIEpoki, esc, rzymskie, nastepnyMotyw, motywPoczatkowy, etykietaMotywu, MOTYWY, KLUCZ_MOTYWU, akcjeZZapytania, tekstDoLektora, htmlTrofeow, htmlAreny, paryRozmowySkitu, doB64utf8, zB64utf8, dataZmianySluga } from '../app/ui.js';
 
 async function dane(plik = 'egungun') {
   const wpis = JSON.parse(await readFile(`data/manifestations/${plik}.json`, 'utf8'));
@@ -794,4 +794,116 @@ test('paryRozmowySkitu: pełne spójne pary składu, bez duplikatów i self-link
   assert.deepEqual(paryRozmowySkitu([]), []);
   assert.deepEqual(paryRozmowySkitu(undefined), []);
   assert.deepEqual(paryRozmowySkitu([{ imie: 'Bez sluga' }]), [], 'uczestnik bez sluga pomijany');
+});
+
+test('źródło bez adresu dostaje znacznik, a klikalne go nie dostaje', () => {
+  assert.equal(linkDoZrodla('https://example.org/tekst'), linkDoZrodla('https://example.org/tekst'));
+  assert.equal(znacznikZrodlaBezAdresu('https://example.org/tekst'), '');
+  assert.equal(znacznikZrodlaBezAdresu('  HTTPS://Example.org  '), '');
+  const znak = znacznikZrodlaBezAdresu('');
+  assert.match(znak, /zrodlo-offline/);
+  assert.match(znak, /bez adresu w sieci/);
+  assert.equal(znacznikZrodlaBezAdresu(undefined), znak, 'brak pola url = ten sam znacznik');
+  assert.equal(znacznikZrodlaBezAdresu('ftp://serwer/plik.pdf'), znak, 'adres nieklikalny też jest poza siecią');
+});
+
+test('sekcja III oznacza pozycje papierowe, ale nie internetowe', () => {
+  const wpis = {
+    slug: 'x',
+    nazwa: 'Byt X',
+    karta: { nazwa: 'Karta', rok: 2001 },
+    lokalizacja: { miejscowosc: 'M', kraj: 'K', lat: 1, lon: 2 },
+    pochodzenie_i_kultura: 'skądś',
+    tagi: [],
+    natura: { wyglad_i_aura: 'a', charakter_i_motywacje: 'b', zdolnosci: 'c', slabosci_i_metody_pokonania: 'd', preferencje: 'e' },
+    dokumentacja: [
+      { typ: 'monografia', pozycja: 'Papierowa monografia, 1891' },
+      { typ: 'monografia', pozycja: 'Wersja cyfrowa', url: 'https://example.org/skan' },
+    ],
+    trofea: { pierwotne: 'kamień' },
+    wizualizacja: { prompt: 'p' },
+    powiazania: [],
+    meta: { utworzono: '2026-09-05', modyfikacje: [] },
+  };
+  const html = htmlWpisu(wpis, { manifestacje: [], tagi: {}, kanon: { kategorie: [] } });
+  assert.match(html, /<li class="poza-siecia">.*Papierowa monografia/);
+  assert.match(html, /<li class="w-sieci">.*Wersja cyfrowa/);
+  assert.equal((html.match(/zrodlo-offline/g) ?? []).length, 1, 'tylko pozycja bez adresu jest oznaczona');
+});
+
+test('Profil Rezonansu stoi po numerowanych sekcjach protokołu', async () => {
+  const { wpis, indeks } = await dane();
+  const html = htmlWpisu(wpis, indeks);
+  const v = html.indexOf('>V</span>');
+  const profil = html.indexOf('arena-profil');
+  assert.ok(v > 0 && profil > 0);
+  assert.ok(profil > v, 'dodatek aplikacji nie przerywa numeracji I–V');
+});
+
+test('SPLOT: zasoby po próbie są czytelne, nie surowym JSON-em', () => {
+  assert.equal(opisZasobow({ pamiec: 3, przejscie: 1 }), 'pamiec 3 · przejscie 1');
+  assert.equal(opisZasobow({}), 'bez zmian');
+  assert.equal(opisZasobow(undefined), 'bez zmian');
+  const wynik = { status: 'ok', proza: 'p', zasoby: { pamiec: 3 }, dziennik: [{ nazwa: 'Próba', prawdopodobienstwo: 0.4, wartoscLosowa: 0.2, sukces: true, zasoby: { pamiec: 3, przejscie: 1 }, proza: 'q' }] };
+  const html = htmlSplotu({ tytul: 't', cel: 'c', sklad: [] }, wynik, { manifestacje: [] });
+  assert.ok(html.includes('zasoby po próbie: pamiec 3 · przejscie 1'));
+  assert.ok(!html.includes('{&quot;'), 'żadnego surowego JSON-a w raporcie');
+});
+
+test('raport SPLOTU pokazuje napór świata i ślad dla Kroniki', () => {
+  const swiat = {
+    premia: -5.2,
+    skladniki: [
+      { nazwa: 'oś świata', wartosc: -4.2, opis: 'mit 29 / racjonalizacja 71' },
+      { nazwa: 'otwarte wątki', wartosc: 4, opis: 'znak-nie-wystarcza' },
+    ],
+  };
+  const panel = htmlNaporuSwiata(swiat);
+  assert.match(panel, /Napór świata: -5.2/);
+  assert.match(panel, /splot-swiat-wiersz minus/);
+  assert.match(panel, /splot-swiat-wiersz plus/);
+  assert.equal(htmlNaporuSwiata(null), '', 'brak Kroniki = brak panelu');
+  assert.equal(htmlNaporuSwiata({ premia: 0, skladniki: [] }), '');
+
+  const echo = {
+    droga: 'droga-x',
+    status: 'rozszczepiona',
+    os: { mit: 0, racjonalizacja: 0 },
+    zasieg: [{ slug: 'a', delta: 0.004 }],
+    watek: { id: 'slad-droga-x', stan: 'otwarty', byty: ['a'], pytanie: 'Kto wróci?' },
+  };
+  const html = htmlEchaDrogi(echo, { manifestacje: [{ slug: 'a', nazwa: 'Byt A' }] });
+  assert.match(html, /Ślad dla Kroniki/);
+  assert.match(html, /oś świata bez zmian/);
+  assert.match(html, /Byt A \+0.004/);
+  assert.match(html, /slad-droga-x/);
+  assert.match(html, /Kto wróci\?/);
+  assert.equal(htmlEchaDrogi(null, {}), '');
+
+  const wynik = { status: 'rozszczepiona', proza: 'p', zasoby: {}, swiat, echo, dziennik: [] };
+  const raport = htmlSplotu({ tytul: 't', cel: 'c', sklad: [] }, wynik, { manifestacje: [] });
+  assert.ok(raport.includes('Napór świata') && raport.includes('Ślad dla Kroniki'));
+});
+
+
+test('htmlAreny: wybór stron, profile i dziennik rund (C2+5, obrót 5)', async () => {
+  const indeks = JSON.parse(await readFile('data/index.json', 'utf8'));
+  const kanon = JSON.parse(await readFile('data/kanon-tagow.json', 'utf8'));
+  const { profileKartoteki, rozegrajSpor, generatorZZiarna, haszTekstu } = await import('../app/arena.js');
+  const profile = profileKartoteki(indeks.manifestacje, kanon);
+  const [a, b] = [...profile.keys()].slice(0, 2);
+  const pusty = htmlAreny(indeks, { a, b, profile, data: '2026-09-05' });
+  assert.match(pusty, /arena-wybor/);
+  assert.match(pusty, /data-spor-dnia="2026-09-05"/);
+  assert.equal((pusty.match(/<select/g) ?? []).length, 2, 'dwie listy wyboru');
+  assert.ok(!pusty.includes('arena-dziennik'), 'bez rozegranego sporu nie ma dziennika');
+  const wynik = rozegrajSpor({ a: profile.get(a).staty, b: profile.get(b).staty, los: generatorZZiarna(haszTekstu('t')) });
+  const pelny = htmlAreny(indeks, { a, b, wynik, profile, data: '2026-09-05' });
+  assert.match(pelny, /arena-dziennik/);
+  assert.match(pelny, /arena-wynik/);
+  assert.equal((pelny.match(/<li>/g) ?? []).length, wynik.dziennik.length, 'każda runda ma wiersz');
+  assert.match(htmlAreny({ manifestacje: [{ slug: 'x', nazwa: 'X' }] }, {}), /Do sporu potrzeba dwóch bytów/);
+  const zlosliwy = htmlAreny({ manifestacje: [{ slug: 'x', nazwa: '<b>X</b>' }, { slug: 'y', nazwa: 'Y" onerror="a' }] }, { a: 'x', b: 'y' });
+  assert.ok(!zlosliwy.includes('<b>X</b>'), 'nazwy escapowane');
+  assert.ok(!zlosliwy.includes('onerror="a'), 'atrybuty escapowane');
 });

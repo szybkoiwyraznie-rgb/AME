@@ -1,0 +1,89 @@
+{
+  "slug": "glamr-z-thorhallsstadir",
+  "nazwa": "Glámr z Þórhallsstaðir — pasterz, który wrócił i nauczył się mówić",
+  "nazwy_alternatywne": [
+    "Glámur",
+    "pasterz z Forsæludalur",
+    "jeździec dachów"
+  ],
+  "karta": {
+    "nazwa": "Banishment Decree",
+    "wydanie": "Mirrodin Besieged (MBS) #3",
+    "rok": 2011
+  },
+  "lokalizacja": {
+    "miejscowosc": "Þórhallsstaðir (Þórhallastaðir) w dolinie Forsæludalur u szczytu Vatnsdalur, Húnavatnssýsla — gospodarstwo opuszczone od stuleci, widoczne są jeszcze ślady zabudowań; kopiec, pod którym pochowano pasterza, nosi nazwę Glámsþúfa",
+    "kraj": "Islandia",
+    "lat": 65.31,
+    "lon": -20.1328
+  },
+  "pochodzenie_i_kultura": "Islandia sag rodowych, XIII-wieczna Grettis saga Ásmundarsonar (opowieść osadzona w XI wieku). Glámr to nie duch z podania ludowego, lecz postać z konkretnego rozdziału 32–35: szwedzki najemny pasterz, którego gospodarz Þórhallur przyjmuje do nawiedzanego gospodarstwa, bo nikt inny nie chce tam służyć. Saga charakteryzuje go, zanim jeszcze umrze: „Kirkja var á Þórhallsstöðum; ekki vildi Glámur til hennar koma; hann var ósöngvinn og trúlaus, stirfinn og viðskotaillur; öllum var hann hvimleiður” — była na Þórhallsstöðum kościół, ale Glámr nie chciał do niego chodzić, nie śpiewał i nie wierzył, był oporny i przykry, i wszystkim obmierzły. Ginie w noc Bożego Narodzenia, w bójce z nieznaną meinvætt (złą istotą) w głębi doliny, i zostaje pochowany na miejscu po pogańsku, pod kopcem zwanym dziś Glámsþúfa. Odmowa poświęconej ziemi jest tu przyczyną, nie karą: to jedyny byt w tej kartotece, którego istnienie zaczyna się od decyzji o pochówku. Islandzki urząd ochrony zabytków (Minjastofnun Íslands) prowadzi Þórhallastaðir jako punkt szlaku Vatnsdalur, więc miejsce jest realne, a nie umowne. Jedna tradycja, jedna saga; nie mieszam go ze skandynawskimi haugbúi z kurhanów ani z późniejszymi islandzkimi draugami z opowieści XIX-wiecznych.",
+  "wizualizacja": {
+    "prompt": "Style: A wide-angle full-body cinematic photograph. The central objects/persons of the photo are visible from head to toe, standing centrally in the frame. No parts of the body are cropped.\n\nA hulking dead shepherd standing on the snow-covered turf roof of a low Icelandic longhouse at night, corpse-blue skin the colour of a bruise, body swollen to the size of an ox, wide-open grey eyes staring straight down the lens, coarse woollen cloak stiff with frost, bare feet crushing the frozen sods beneath him; below him a moonlit valley of black lava and drifted snow, a small turf church with its door shut, sheep tracks ending abruptly in the drifts; racing clouds break across a full moon, cold blue-grey palette with one warm ember of lamplight in the farmhouse window, breath of the living visible, the dead man's breath absent.\n\nCaptured with a 35mm anamorphic lens at f/1.8. Shallow depth of field with a heavy, creamy bokeh background. Environmental portraiture. Dramatic cinematic lighting, sharp focus on the character, hyper-realistic textures of clothing and skin. Shot on 70mm film stock, ultra-wide 21:9 aspect ratio. --ar 21:9",
+    "obraz": "assets/wizualizacje/glamr-z-thorhallsstadir.jpg"
+  },
+  "natura": {
+    "wyglad_i_aura": "Znaleziony martwy, był „blár sem hel ok mikill sem naut” — siny jak śmierć i wielki jak wół; ciało spuchło tak, że nie dało się go zawieźć do kościoła i musiało zostać na miejscu. Po powrocie widują go nocą na dachach: jeździ po darniowych połaciach, aż belki trzeszczą, i wyłamuje drzwi. Najgorsze są oczy — saga poświęca im osobne zdanie, bo to spojrzenie, a nie siła, kładzie Grettira na wznak. Nie ma przy nim mgły ani zapachu: jest po prostu za duży, za ciężki i za spokojny jak na kogoś, kto nie żyje.",
+    "charakter_i_motywacje": "Za życia był opryskliwy i pyszny — na ostrzeżenie, że w gospodarstwie straszy, odpowiedział, że takie robactwo go nie przestraszy, bo życie i tak mu zbrzydło. Po śmierci robi dokładnie to, czego mu za życia zabraniano: wchodzi wszędzie, gdzie chce, poza kościołem. Nie ma planu ani żądania, nie pilnuje skarbu i nikogo nie wzywa. Wypędza ludzi z doliny samą obecnością: najpierw ucieka służba, potem sąsiedzi, na końcu zostaje gospodarz z żoną. To byt o jednej ambicji — zająć miejsce żywych i nie oddać go.",
+    "zdolnosci": "Siła dwóch ludzi za życia, po śmierci nieporównanie większa: rozbija zamknięty budynek i połamie konia na wszystkie kości, zanim ktokolwiek go usłyszy. Jego prawdziwą zdolnością jest jednak mowa. Saga zaznacza wprost, że miał w sobie więcej diabelskiego kunsztu niż inne zjawy, bo potrafił przemówić w chwili, gdy leżał już pokonany — i wtedy rzucił klątwę: że odtąd samotność i ciemność będą Grettira przerażać i że będzie się bał mroku bardziej niż ktokolwiek. Klątwa jest skuteczniejsza niż ciało: ciało spłonęło tej samej zimy, klątwa trzymała bohatera do śmierci.",
+    "slabosci_i_metody_pokonania": "Trzeba go zatrzymać w domu, nie na dworze — Grettir walczy o to, by nie zostać wyciągniętym za próg, bo pod gołym niebem Glámr jest silniejszy. Sposób skuteczny jest trzystopniowy i wykonuje się go w całości albo wcale: odciąć głowę, położyć ją przy udzie zabitego, a potem spalić wszystko na zimny popiół; popiół zbiera się w skórę zwierzęcia i zakopuje z dala od pastwisk i od dróg, którymi chodzą ludzie. Pominięcie ostatniego kroku zostawia miejsce, do którego byt wraca. I najważniejsze ostrzeżenie sagi: nie patrzeć mu w oczy i nie słuchać, gdy zacznie mówić — walkę Grettir wygrał, rozmowę przegrał.",
+    "preferencje": "Lubi: noc świąteczną, zamiecie, dachy z darni, dolinę, z której wyprowadzili się sąsiedzi, i chwilę, w której pokonany przeciwnik jeszcze słucha. Nie lubi: śpiewu kościelnego, poświęconej ziemi, progu, za którym trzeba by kogoś puścić, ognia i popiołu zakopanego z dala od ścieżek."
+  },
+  "dokumentacja": [
+    {
+      "typ": "tekst źródłowy",
+      "pozycja": "Grettis saga Ásmundarsonar, rozdz. 32–35 (przekł. Eiríkr Magnússon i William Morris, 1869; Icelandic Saga Database) — nawiedzenie Þórhallsstaðir, słowa Gláma „takie robactwo mnie nie przestraszy”, walka w noc świąteczną, ścięcie głowy i złożenie jej przy udzie, spalenie ciała na zimny popiół zebrany w skórę zwierzęcia i zakopany z dala od pastwisk i dróg",
+      "url": "https://sagadb.org/grettis_saga.en"
+    },
+    {
+      "typ": "źródło instytucjonalne",
+      "pozycja": "Minjastofnun Íslands (Urząd Ochrony Zabytków Islandii), szlak „Vatnsdalur og Þing”, punkt 14 „Þórhallastaðir” — cytat sagi o kościele, do którego Glámr nie chciał chodzić, śmierć w noc Bożego Narodzenia z ręki nieznanej meinvætt, pogański pochówek pod kopcem Glámsþúfa i informacja, że gospodarstwo od stuleci jest niezamieszkane, choć ślady zabudowań są widoczne",
+      "url": "https://www.minjastofnun.is/is/ahugaverdir-stadir/vatnsdalur-og-thing"
+    },
+    {
+      "typ": "źródło krajoznawcze",
+      "pozycja": "The Reykjavík Grapevine, „Saga Stories #10: What Happened On Drangey Island?” (2021) — lokalizacja średniowiecznego gospodarstwa Þórhallstaðir w dolinie Forsæludalur podana jako 65°18′36,0″N 20°07′58,2″W oraz wskazanie epizodu jako najsłynniejszego nawiedzenia w literaturze sag",
+      "url": "https://grapevine.is/icelandic-culture/2021/12/26/saga-stories-10-grettis-saga/"
+    },
+    {
+      "typ": "opracowanie",
+      "pozycja": "„Hauntings in the Old Norse-Icelandic Sagas” (medievalist.com) — omówienie epizodu wraz z obszernymi cytatami przekładu: Glámr jeżdżący po dachach, ucieczka mieszkańców z doliny, koń połamany przed zamkniętym budynkiem, walka wewnątrz domu i mowa zjawy tuż przed ścięciem",
+      "url": "https://www.medievalist.com/articles/hauntingsmedievaliceland"
+    }
+  ],
+  "trofea": {
+    "pierwotne": "Garść zimnego popiołu w zszytej skórze zwierzęcej, z etykietą podającą odległość od najbliższego pastwiska i od najbliższej drogi — dowód, że wykonano wszystkie trzy kroki, nie dwa.",
+    "wtorne": "Kołek ze złamanej belki dachowej z Þórhallsstaðir, wyszczerbiony od nocnych przejażdżek po darni; przechowywany osobno od popiołu."
+  },
+  "tagi": [
+    "islandia",
+    "powracajacy-zmarly",
+    "klatwa",
+    "zle-oko",
+    "postac-zwierzeca"
+  ],
+  "powiazania": [
+    {
+      "slug": "morowa-panna",
+      "opis": "Oboje wyludniają okolicę bez oblężenia: jedna wybiera dom pytaniem w progu, drugi po prostu zajmuje dach i czeka, aż ludzie wyprowadzą się sami."
+    },
+    {
+      "slug": "bazyliszek-warszawski",
+      "opis": "Dwa spojrzenia, które zabijają, i dwie różne odpowiedzi ludzi: bazyliszkowi pokazano lustro, Glámrowi odwrócono wzrok i sięgnięto po ogień."
+    },
+    {
+      "slug": "barbarossa-kyffhaeuser",
+      "opis": "Obaj leżą w ziemi i nie są martwi tak, jak być powinni, ale cesarz czeka na wezwanie, a pasterz nie czekał na nic i wstał sam."
+    }
+  ],
+  "meta": {
+    "utworzono": "2026-09-05 21:10",
+    "autor": "sesja arena 2026-09-05b (obrót 3 Pętli Jakości)",
+    "modyfikacje": [
+      {
+        "data": "2026-09-05 21:10",
+        "opis": "Nowa karta bytu: Glámr z Þórhallsstaðir, wylosowany z karty Banishment Decree (MBS #3, 2011); pierwsza kultura islandzka w kartotece, nowe tagi kanonu: islandia, powracajacy-zmarly, klatwa."
+      }
+    ]
+  }
+}

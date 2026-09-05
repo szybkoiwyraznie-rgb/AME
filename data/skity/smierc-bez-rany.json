@@ -1,0 +1,30 @@
+{
+  "slug": "smierc-bez-rany",
+  "tytul": "ŚMIERĆ BEZ RANY",
+  "temat": "trzy sposoby zabijania na odległość i trzy różne stany dowodu: protokół sądowy, ostrzeżenie bez świadka i wyjaśnienie, którego nikt nie sprawdza",
+  "uczestnicy": [
+    {
+      "imie": "Bazyliszek",
+      "slug": "bazyliszek-warszawski"
+    },
+    {
+      "imie": "Olgoj-chorchoj",
+      "slug": "olgoj-chorchoj"
+    },
+    {
+      "imie": "Morowa Panna",
+      "slug": "morowa-panna"
+    }
+  ],
+  "tekst": "**Bazyliszek:** [Z ciemnego kąta, głos odbity od sklepienia.] Trzy ciała wyciągnięto z mojej piwnicy osękami. Spuchnięte, w plamach, bez jednej rany. Medyk obejrzał je i orzekł: otrucie. Sprawę zamknięto, nazwisko zapisano.\n\n**Olgoj-chorchoj:** [Nie widać, gdzie się kończy. Piasek pod nim osiada.] Mnie zapisano inaczej. Przez sto lat jeździły po mnie wyprawy: naprzód z urządzeniem stukającym w ziemię, potem z ładunkami, na koniec samolotem. Nie znalazły nic. Ani jednego świadka, który widziałby mnie sam.\n\n**Morowa Panna:** [Stoi w progu, nie wchodzi.] A mnie nikt nie szukał. To jest różnica między wami dwoma a mną: wy jesteście podejrzanymi, ja jestem wyjaśnieniem.\n\n**Bazyliszek:** Wyjaśnieniem czego?\n\n**Morowa Panna:** Tego, co i tak przyszło. Wieś nie potrzebuje dowodu, że byłam. Potrzebuje zdania, po którym da się iść dalej.\n\n**Olgoj-chorchoj:** Więc jesteś zdaniem.\n\n**Morowa Panna:** Jestem zdaniem, które ratuje ludziom rozum. Ty jesteś zdaniem, które ratuje im wielbłądy: nie chodzi się tam w czerwcu i nie pasie się w tej dolinie. Nikt nie musi cię widzieć, żeby to działało.\n\n**Bazyliszek:** Ja mam gorzej. Mnie wyniesiono na światło, pokazano ludziom i opisano. Trzysta lat później sprzeczają się o rok, o zawód gospodarza i o nazwisko tego, który po mnie zszedł. Zostało wszystko oprócz zgody, co się właściwie stało.\n\n**Olgoj-chorchoj:** Bo dowód, który się pokazuje, można obejrzeć jeszcze raz. Nie widziałeś, jak patrzą.\n\n**Bazyliszek:** Widziałem. Zwykle to ostatnia rzecz, którą ktoś przy mnie robi.\n\n**Morowa Panna:** [Odwraca się do wyjścia.] Zapamiętajcie sobie jedno. Mnie wystarczy, że ludzie w to wierzą. Tobie wystarczy, że się boją chodzić. Tylko jemu zostawiono najgorszy los: musi być prawdziwy.",
+  "meta": {
+    "utworzono": "2026-09-06 13:00",
+    "autor": "sesja arena 2026-09-06",
+    "modyfikacje": [
+      {
+        "data": "2026-09-06 13:00",
+        "opis": "Nowy dialog: trzy byty zabijające bez dotknięcia porównują, co po nich zostaje — akta z nazwiskiem, sto lat wypraw bez okazu albo zdanie, którego wieś nie sprawdza."
+      }
+    ]
+  }
+}

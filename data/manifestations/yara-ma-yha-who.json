@@ -1,0 +1,95 @@
+{
+  "slug": "yara-ma-yha-who",
+  "nazwa": "Yara ma tha who — czerwony człowieczek z figowca",
+  "nazwy_alternatywne": [
+    "Yara-ma-yha-who (pisownia W. Ramsaya Smitha, 1930)",
+    "Yara ma tha who (pisownia Davida Unaipona)",
+    "Little red man",
+    "Czerwony z gałęzi"
+  ],
+  "karta": {
+    "nazwa": "Faceless Butcher",
+    "wydanie": "Torment (TOR) #60",
+    "rok": 2002,
+    "uzasadnienie": "Karta robi dokładnie to, co robi ten byt: wchodzi, zabiera stworzenie z pola — i oddaje je z powrotem, gdy sama znika. Nie zabija, wygania na chwilę i zwraca zmienione położenie. Nightmare Horror bez twarzy, z rozdziawionym otworem zamiast rysów, jest najbliższą figurą dla kogoś, kto połyka człowieka w całości i wypluwa go żywego, tylko o kawałek mniejszego."
+  },
+  "lokalizacja": {
+    "miejscowosc": "Raukkan (dawne Point McLeay) nad jeziorem Alexandrina, w dolnym biegu Murray — misja, w której urodził się David Unaipon i do której wracał przez całe życie; opowieść o czerwonym człowieczku krąży po całym południowym wschodzie kontynentu, ale pinezka stoi tam, gdzie ją zapisano i skąd pochodzi ręka, która ją zapisała",
+    "kraj": "Australia (Australia Południowa)",
+    "lat": -35.5945,
+    "lon": 139.0122
+  },
+  "pochodzenie_i_kultura": "Opowieści południowo-wschodniej Australii, spisane przez Davida Unaipona (1872–1967), Ngarrindjeri z misji Point McLeay, który w latach 1924–1925 objeżdżał Australię Południową i zbierał opowieści własnego ludu oraz sąsiadów znad dolnej Murray. Kartoteka mówi o tym otwarcie, bo bez tego nie da się uczciwie podać źródła: rękopis Unaipona kupiło wydawnictwo, a w 1930 roku ukazał się w Londynie jako „Myths and Legends of the Australian Aboriginals” pod nazwiskiem W. Ramsaya Smitha, szkockiego lekarza i naczelnego lekarza Australii Południowej, prawie słowo w słowo i bez wskazania autora; to Smith zmienił pisownię na dziś powszechne „Yara-ma-yha-who”. Tekst wrócił do Unaipona dopiero w 2001 roku, w edycji Stephena Muecke i Adama Shoemakera pod jego własnym tytułem „Legendary Tales of the Australian Aborigines”. Byt jest w opowieściach figurą ostrzeżenia — mówi się o nim dzieciom, żeby nie kładły się same w cieniu obcego drzewa i nie odłączały od grupy. Kartoteka trzyma jedną linię: wersję z dolnej Murray w zapisie Unaipona, i nie zlepia jej z innymi tradycjami kontynentu, które mają własnych właścicieli, własne prawa opowiadania i własne nazwy.",
+  "wizualizacja": {
+    "prompt": "Style: A wide-angle full-body cinematic photograph. The central objects/persons of the photo are visible from head to toe, standing centrally in the frame. No parts of the body are cropped.\n\nA small red-skinned humanoid figure, no taller than a ten-year-old child, standing upright on the pale exposed root of an old wild fig tree in the dry Australian bush at midday: oversized bald head, wide lipless toothless mouth hanging open, spindly limbs, round distended belly, fingers and toes ending in pale octopus-like suckers, skin dull ochre-red and faintly moist. Behind the figure the thick dark canopy of the fig; on the ground below, the pressed shape where a person recently lay in the shade, and a water bag left behind. Harsh white noon light, hard black shadows, red dust, distant blue-grey scrub.\n\nCaptured with a 35mm anamorphic lens at f/1.8. Shallow depth of field with a heavy, creamy bokeh background. Environmental portraiture. Dramatic cinematic lighting, sharp focus on the character, hyper-realistic textures of clothing and skin. Shot on 70mm film stock, ultra-wide 21:9 aspect ratio. --ar 21:9",
+    "obraz": "assets/wizualizacje/yara-ma-yha-who.jpg"
+  },
+  "natura": {
+    "wyglad_i_aura": "Niski — w zapisie Unaipona nie przerasta dziesięcioletniego dziecka. Skóra czerwona, jakby wilgotna; głowa za duża do reszty, brzuch wypchnięty, kończyny cienkie. Ust pełno, zębów nie ma ani jednego: to gardło, nie szczęka. Na końcach palców u rąk i nóg siedzą przyssawki jak u ośmiornicy i to jest jedyne narzędzie, jakie ten byt posiada — nie ma włóczni, nie ma maczugi, nie ma sieci. Aura jest odwrotnością wszystkich nocnych bytów kartoteki: czerwony człowieczek pracuje w pełnym słońcu, w godzinie, w której cień pod figowcem wygląda na najbezpieczniejsze miejsce w okolicy.",
+    "charakter_i_motywacje": "Nie poluje w żadnym sensie, w jakim polują ludzie — czeka, aż ktoś sam wejdzie w cień jego drzewa. Nie chce śmierci; śmierć kończyłaby całą sprawę zbyt szybko. Chce udziału w cudzym ciele i chce, żeby ofiara wróciła do wsi żywa, bo dopiero wtedy widać, co jej ubyło. Unaipon nazywa go „wyjątkowo pociesznym jegomościem” o dziwnym obyczaju po pojmaniu człowieka i to określenie warto zostawić bez wygładzania: byt jest groteską, nie majestatem. Cel długoterminowy ma tylko jeden — powiększyć własny gatunek cudzym kosztem, po kawałku, tak żeby nikt nie umiał wskazać dnia, w którym stało się to nieodwracalne.",
+    "zdolnosci": "Spadanie z gałęzi na leżącego i przywieranie przyssawkami. Odciąganie krwi przez skórę dłoni i stóp — zawsze niepełne, bo, jak zapisał Unaipon, zostawia jej tyle, by człowiek żył, i odchodzi na spacer, żeby nabrać apetytu. Połknięcie w całości, głową naprzód, z paszczą rozwieraną jak u węża. Zwrócenie ofiary po wodzie i po drzemce — w porównaniu Unaipona dokładnie to, co wieloryb zrobił Jonaszowi. Po każdym takim obiegu człowiek wstaje o kawałek niższy, ze skórą ciemniejącą na czerwono; po trzecim nie wraca już do wsi jako człowiek, tylko dołącza do tych, którzy siedzą w gałęziach.",
+    "slabosci_i_metody_pokonania": "Byt działa wyłącznie za dnia i wyłącznie na żywym — w zapisanych radach ratunkiem jest udawać martwego i wytrwać tak do zachodu słońca. Ratuje też towarzystwo: czerwony człowieczek bierze tego, kto śpi sam, i nie zaczepia grupy przy ognisku. Wybór drzewa jest po naszej stronie — cień gęstego, obcego figowca to zaproszenie, cień własnego obozu nim nie jest. Nie zabija się go bronią, bo nie o walkę tu chodzi; przegrywa, gdy człowiek nie zostaje sam pod jego gałęzią i gdy pamięta, że popołudniowy odpoczynek ma miejsce umówione, a nie przypadkowe.",
+    "preferencje": "Lubi: południe, gęstą koronę wilgotnego figowca, samotnego wędrowca, dziecko, które odłączyło się od grupy, i ciszę bezwietrznej godziny. Nie znosi: zachodu słońca, nieruchomego ciała, które nie chce zdradzić, że żyje, wielu ludzi naraz i dymu ogniska, przy którym ktoś czuwa."
+  },
+  "dokumentacja": [
+    {
+      "typ": "tekst źródłowy (rękopis)",
+      "pozycja": "David Unaipon, „Yara Ma Tha Who”, w: „Legendary Tales of the Australian Aborigines”, rękopis 1924–1925, wyd. Stephen Muecke, Adam Shoemaker, Melbourne University Press 2001 — pełny zapis opowieści: przyssawki, niepełne wypicie krwi, połknięcie głową naprzód, zwrot ofiary i jej stopniowe malenie.",
+      "url": "https://www.austlit.edu.au/austlit/page/C707778"
+    },
+    {
+      "typ": "pierwodruk (przywłaszczony)",
+      "pozycja": "W. Ramsay Smith, „Myths and Legends of the Australian Aboriginals”, Harrap, Londyn 1930, s. 342–345 — tekst Unaipona wydany pod cudzym nazwiskiem; stąd pochodzi pisownia „Yara-ma-yha-who” i przypis, że opowieść mówi się dzieciom niegrzecznym.",
+      "url": "https://www.austlit.edu.au/austlit/page/6080162"
+    },
+    {
+      "typ": "biogram naukowy",
+      "pozycja": "Philip Jones, „Unaipon, David (1872–1967)”, Australian Dictionary of Biography, t. 12, Melbourne University Press 1990 (online 2006) — potwierdza, że legendy zebrane przed 1930 rokiem, zachowane w rękopisie w Mitchell Library, zostały zamówione i wydane przez Ramsaya Smitha bez wskazania autorstwa.",
+      "url": "https://adb.anu.edu.au/biography/unaipon-david-8898"
+    },
+    {
+      "typ": "opracowanie popularnonaukowe",
+      "pozycja": "Sarah Durn, „The Child-Eating Yara-Ma-Yha-Who Stalks Australia's Wilds”, Atlas Obscura, 2020 — omówienie z cytatami z rękopisu z 1925 roku („nie próbuje wyssać całej krwi”, porównanie do Jonasza) oraz historia przywłaszczenia tekstu.",
+      "url": "https://www.atlasobscura.com/articles/yara-ma-yha-who"
+    }
+  ],
+  "trofea": {
+    "pierwotne": "Odcisk ciała w suchym listowiu pod figowcem: wgnieciony kształt śpiącego, obok pełny bukłak z wodą, którego nikt nie zabrał, i sześć par okrągłych, wilgotnych śladów po przyssawkach na korze — dwa metry nad ziemią, w miejscu, gdzie nie sięga żadna ludzka dłoń.",
+    "wtorne": "Karta katalogowa z 1930 roku, wypisana do egzemplarza londyńskiego wydania: w rubryce „autor” widnieje W. Ramsay Smith, a pod spodem, ołówkiem i inną ręką, dopisano nazwisko Davida Unaipona ze znakiem zapytania. Znak zapytania został wytarty dopiero siedemdziesiąt jeden lat później."
+  },
+  "tagi": [
+    "ngarrindjeri",
+    "pozeracz",
+    "przemiana",
+    "ostrzezenie",
+    "postac-zwierzeca"
+  ],
+  "powiazania": [
+    {
+      "slug": "mangkukulam",
+      "opis": "Obie karty stoją na zapisie zrobionym cudzą ręką: filipińskiego czarownika opisał w 1589 roku hiszpański zakonnik, czerwonego człowieczka spisał Ngarrindjeri David Unaipon, a wydał pod własnym nazwiskiem szkocki lekarz. W obu wypadkach to, co dziś uchodzi za tradycję, przeszło najpierw przez pióro kogoś, kto nie należał do wspólnoty, i kartoteka musi liczyć się z tym filtrem, zanim powie „tak mówią ludzie”."
+    },
+    {
+      "slug": "empusa-korynt",
+      "opis": "Empuza i czerwony człowieczek żywią się tym samym, ale rozkładają rachunek inaczej: empuza tuczy młodzieńca do jednego ostatniego posiłku, a Yara pilnuje, by ofiara przeżyła i wróciła do wsi, bo dopiero powtórzenie daje mu to, czego chce. Jedna zabiera życie za jednym razem, drugi rozkłada je na trzy nawroty i zabiera wzrost."
+    },
+    {
+      "slug": "loup-garou-gevaudan",
+      "opis": "Obie opowieści pracowały jako ostrzeżenie dla dzieci pilnujących bydła i chodzących samotnie: w Gévaudan mówiono o wilku, nad dolną Murray o czerwonym z gałęzi. Różnica jest w tym, co robią z ciałem — wilkołak zostawia rany, które da się pokazać sądowi, a Yara oddaje człowieka bez jednej blizny, tylko o kilka cali niższego, i przez to nie ma czego wnieść na akta."
+    },
+    {
+      "slug": "boto-encantado",
+      "opis": "Delfin z Amazonii i czerwony człowieczek to dwie strony tego samego rachunku za spotkanie z bytem: boto zostawia we wsi dziecko i podejrzenie, Yara zabiera z ciała kawałek wzrostu i zostawia czerwony odcień skóry. Oba znaki są widoczne dla sąsiadów, oba mówią, że ktoś był gdzie indziej, i w obu wypadkach cenę płaci nie ten, kto przyszedł z wody czy z gałęzi, tylko ten, kto wrócił."
+    }
+  ],
+  "meta": {
+    "utworzono": "2026-09-05 22:10",
+    "autor": "sesja arena 2026-09-05",
+    "modyfikacje": [
+      {
+        "data": "2026-09-05 22:10",
+        "opis": "Nowa materializacja: Yara ma tha who — czerwony człowieczek z figowca z opowieści południowo-wschodniej Australii, w zapisie Davida Unaipona (1924–1925), wydanym w 1930 roku pod nazwiskiem W. Ramsaya Smitha i przywróconym autorowi w 2001. Karta klucz: „Faceless Butcher” (TOR #60, 2002). Pierwszy byt z Australii w kartotece; pinezka w Raukkan nad jeziorem Alexandrina, przy miejscu spisania. Cztery źródła: rękopis w edycji MUP, pierwodruk Harrapa, biogram ADB i omówienie Atlas Obscura."
+      }
+    ]
+  }
+}

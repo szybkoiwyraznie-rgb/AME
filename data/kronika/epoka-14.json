@@ -1,0 +1,242 @@
+{
+  "slug": "epoka-14",
+  "tom": "tom-1",
+  "skit": "czyje-to-imie",
+  "tytul": "Podpis, którego nikt nie sprawdził",
+  "iskra": "Zwierzę-znak, opowieść wydana pod obcym nazwiskiem i sługa bez imienia siadają do jednej rozmowy o tym, czyje ręce zostawiły ślad na ich sprawie. Zaczyna się od żalu, kończy na rozróżnieniu: co innego stracić kształt, co innego zapis, a co innego prawo do odmowy.",
+  "pytanie": "Czy Archiwum umie oddzielić byt od podpisu, który postawiono pod jego historią — i co robi, gdy podpis jest jedynym, co przetrwało?",
+  "uczestnicy": [
+    {
+      "slug": "qilin-z-lu",
+      "rola": "Ten, któremu przyklejono cudzy kształt",
+      "kosztUdzialu": 2,
+      "zwrot": 5
+    },
+    {
+      "slug": "yara-ma-yha-who",
+      "rola": "Ten, którego zapis wyszedł pod obcym nazwiskiem",
+      "kosztUdzialu": 2,
+      "zwrot": 3
+    },
+    {
+      "slug": "knecht-z-koptos",
+      "rola": "Ten, którego nikt nie pytał",
+      "kosztUdzialu": 2,
+      "zwrot": 3
+    }
+  ],
+  "narrator": {
+    "ocena": [
+      {
+        "kto": "qilin-z-lu",
+        "kogo": "yara-ma-yha-who",
+        "stopien": 2,
+        "komentarz": "Nie żąda zwrotu nazwy, tylko wskazuje datę: od 1414 roku maluje się go z szyją, której nie miał. Zna cenę cudzego dowodu lepiej niż ktokolwiek przy tym stole."
+      },
+      {
+        "kto": "yara-ma-yha-who",
+        "kogo": "knecht-z-koptos",
+        "stopien": 1,
+        "komentarz": "Nie udaje, że wszystko stracił: opowieść wróciła do Unaipona, tylko siedemdziesiąt jeden lat później. Rozróżnia utratę zapisu od utraty siebie."
+      },
+      {
+        "kto": "knecht-z-koptos",
+        "kogo": "qilin-z-lu",
+        "stopien": 2,
+        "komentarz": "Jedyny, który nie ma czego odzyskiwać, i jedyny, który stawia właściwe pytanie: rzeczy się nie pyta, pyta się znaków — więc tylko znak może zostać źle odczytany."
+      }
+    ],
+    "podsumowanie": "Kronika notuje trzy różne straty pod jedną nazwą. Qilinowi zabrano kształt, żeby czegoś dowieść: dwór Yongle ogłosił qilinem żyrafę z Bengalu i zyskał widoczny dowód Mandatu Nieba. Yarę zabrano razem z całą księgą i wydano pod cudzym nazwiskiem, a restytucja przyszła po siedemdziesięciu jeden latach. Knechta nikt nie okradł, bo nie było z czego — i to jego zdanie zamyka Epokę: mylić się w odczytaniu może tylko ten, kogo się o coś pyta. Archiwum zapisuje więc nie samą krzywdę, ale różnicę między bytem, który jest znakiem, a rzeczą, która jest rozkazem."
+  },
+  "konsekwencje": {
+    "os": {
+      "mit": -1,
+      "racjonalizacja": 1
+    },
+    "relacje": [
+      {
+        "typ": "wzmocnienie",
+        "skad": "qilin-z-lu",
+        "dokad": "yara-ma-yha-who",
+        "opis": "Obaj dostali od Kroniki to samo narzędzie: datę i nazwisko. Znak przestaje być bezbronny, gdy wiadomo, kto i kiedy go podpisał."
+      },
+      {
+        "typ": "napiecie",
+        "skad": "knecht-z-koptos",
+        "dokad": "qilin-z-lu",
+        "opis": "Tłuczek nie uznaje żalu zwierzęcia-znaku za stratę: kto bywa odczytywany, ten ma przynajmniej szansę na inne odczytanie."
+      },
+      {
+        "typ": "neutralna",
+        "skad": "yara-ma-yha-who",
+        "dokad": "knecht-z-koptos",
+        "opis": "Jeden był opowiadany dzieciom, drugi wykonywał rozkaz — i żaden nie miał wpływu na to, co zostanie po nim zapisane."
+      }
+    ],
+    "zasieg": [
+      {
+        "slug": "qilin-z-lu",
+        "delta": 0.02,
+        "opis": "Pierwsze wejście bytu z Chin do Tomu I; razem z nim wchodzi mechanizm, w którym zwierzę bywa dowodem w cudzym sporze o władzę."
+      },
+      {
+        "slug": "yara-ma-yha-who",
+        "delta": 0.012,
+        "opis": "Sprawa autorstwa przestaje być przypisem do karty i staje się wątkiem Kroniki."
+      },
+      {
+        "slug": "knecht-z-koptos",
+        "delta": 0.008,
+        "opis": "Sługa z Koptos dostaje w Tomie I rolę, której nie miał: nie ostrzeżenia przed pychą ucznia, tylko miary dla wszystkich bytów pytanych o zgodę."
+      }
+    ],
+    "dominacje": [
+      {
+        "kultura": "chiny",
+        "kult": "qilin-z-lu",
+        "delta": 0.02
+      },
+      {
+        "kultura": "ngarrindjeri",
+        "kult": "yara-ma-yha-who",
+        "delta": 0.012
+      },
+      {
+        "kultura": "grecja",
+        "kult": "knecht-z-koptos",
+        "delta": 0.008
+      }
+    ],
+    "pozycje": [
+      {
+        "slug": "qilin-z-lu",
+        "status": "wzmocniony",
+        "opis": "Wchodzi do Kroniki z pełnym rachunkiem: kronika Lu urwana na jego schwytaniu i pochwała Shen Du napisana dla żyrafy."
+      },
+      {
+        "slug": "yara-ma-yha-who",
+        "status": "przemieniony",
+        "opis": "Przestaje być wyłącznie postrachem dzieci: staje się przykładem bytu, którego historia miała właściciela i została mu odebrana."
+      },
+      {
+        "slug": "knecht-z-koptos",
+        "status": "odporny",
+        "opis": "Niczego nie stracił, bo nie miał czego; zyskał zdanie, które Kronika zapisuje jako regułę odczytu."
+      }
+    ],
+    "watki": [
+      {
+        "id": "pierwszy-w-linii",
+        "stan": "otwarty",
+        "byty": [
+          "protostates",
+          "knecht-z-koptos",
+          "syama-i-sarvara"
+        ],
+        "pytanie": "Co się stanie z linią, gdy pierwszy przestanie stać, a nikt nie uzna, że ktoś go zastąpił?"
+      },
+      {
+        "id": "niewinny-bierca",
+        "stan": "otwarty",
+        "byty": [
+          "kentaur-pelion",
+          "pandora",
+          "empusa-korynt"
+        ],
+        "pytanie": "Pandora wie już, że brała — ale czy Archiwum umie odróżnić biorącego od tego, kto ustawił rzecz na jego drodze?"
+      },
+      {
+        "id": "warunek-barbarossy",
+        "stan": "otwarty",
+        "byty": [
+          "barbarossa-kyffhaeuser",
+          "kentaur-pelion",
+          "egungun"
+        ],
+        "pytanie": "Czy dług śpiącego cesarza da się spłacić gościną — czy rachunek, który zapłacił ze snu, przyjdzie kiedyś wyrównać na jawie?"
+      },
+      {
+        "id": "kres-indry",
+        "stan": "otwarty",
+        "byty": [
+          "indra"
+        ],
+        "pytanie": "Kto zapisze kres Indry: ten, kto go zdetronizuje, czy ten, który przestaje się bać jego gromu?"
+      },
+      {
+        "id": "znak-nie-wystarcza",
+        "stan": "otwarty",
+        "byty": [
+          "sfinks-teby",
+          "loup-garou-gevaudan",
+          "neith-z-sais"
+        ],
+        "pytanie": "Loup-garou dostał adres zamiast opisu, ale kto zapyta o resztę jego imienia, gdy przestanie być ciekawym tropem?"
+      },
+      {
+        "id": "prawo-progu",
+        "stan": "otwarty",
+        "byty": [
+          "cormoran-st-michaels-mount",
+          "ben-varrey",
+          "lincoln-imp",
+          "loup-garou-gevaudan"
+        ],
+        "pytanie": "Jeśli próg należy do przechodzącego, to kto płaci za jego utrzymanie, gdy gospodarz przestanie być największy?"
+      },
+      {
+        "id": "slad-ostatni-slad-gevaudan",
+        "stan": "otwarty",
+        "byty": [
+          "loup-garou-gevaudan",
+          "sfinks-teby",
+          "neith-z-sais"
+        ],
+        "pytanie": "Kto wróci po ślad zostawiony w cudzym raporcie, zanim raport stanie się jedyną wersją drogi?"
+      },
+      {
+        "id": "zwezone-drzwi",
+        "stan": "otwarty",
+        "byty": [
+          "iktomi",
+          "pandora",
+          "nessos"
+        ],
+        "pytanie": "Czy przejście zwężone podstępem da się rozszerzyć z powrotem — i czy ktokolwiek prócz tego, kto je zwęził, w ogóle wie, jak się to robi?"
+      },
+      {
+        "id": "cena-znaku",
+        "stan": "otwarty",
+        "byty": [
+          "selkie-sule-skerry",
+          "boto-encantado",
+          "protostates"
+        ],
+        "pytanie": "Kto płaci za rzecz, dzięki której byt jest wśród ludzi — i dlaczego rachunek zawsze zostaje po stronie tych, których nikt nie zapytał?"
+      },
+      {
+        "id": "cudzy-podpis",
+        "stan": "otwarty",
+        "byty": [
+          "qilin-z-lu",
+          "yara-ma-yha-who",
+          "knecht-z-koptos"
+        ],
+        "pytanie": "Jeśli o bycie wie się tylko tyle, ile zapisała cudza ręka, to czy Archiwum opisuje byt — czy podpis, który się pod nim znalazł?"
+      }
+    ]
+  },
+  "grafika": {
+    "podpis": "Stół z trzech różnych czasów: łuskowate zwierzę o jednym rogu, mały czerwony człowieczek na krawędzi blatu i dębowy tłuczek w lnianych łachmanach z pełnym dzbanem.",
+    "styl": "Hyperrealistyczne zdjęcie filmowe, ultrapanorama 21:9.",
+    "prompt": "Hyperrealistic cinematic photograph, ultra-wide 21:9 anamorphic frame, grey morning light in a bare stone room with an open doorway to dry fields. Three figures around a low wooden table: a large deer-bodied scaled animal with a single soft-tipped horn and an ox tail standing calmly at the left, a small red-skinned humanoid with an oversized bald head and suckered fingers crouching on the table edge at the right, and in the centre an oak pestle dressed in linen rags standing upright on two short wooden legs, holding a full brass water jug. Spilled water on the stone floor, a rolled manuscript and an ink brush on the table, restrained mythic realism, no gore, no text, no modern objects.",
+    "obraz": "assets/wizualizacje/kronika-tom-1-epoka-14.jpg"
+  },
+  "meta": {
+    "utworzono": "2026-09-06 10:50",
+    "autor": "sesja arena 2026-09-06",
+    "wersja": 1,
+    "poprzednik": "epoka-13"
+  },
+  "przebieg": "Czternasta Epoka Tomu I wyrasta ze SKIT-u „CZYJE TO IMIĘ”. Trzy byty liczą, co zostało im odebrane razem z podpisem: kształt, zapis albo prawo do odmowy. Kronika notuje wejście pierwszego bytu z Chin i otwiera wątek cudzego podpisu."
+}

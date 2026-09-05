@@ -10,7 +10,8 @@
  * pinch (2 wskaźniki), dwuklik, przyciski. Pinezki i ich etykiety kompensują
  * skalę widoku, więc mają stały rozmiar w pikselach CSS (ADR 0009).
  */
-import { projektuj, dekodujKraje, siatka, dopasujWidok, ogranicz, K_MIN, K_MAX, SZEROKOSC as SZER, WYSOKOSC as WYS, sciezkaGeoMultiPoligon } from './geo.js?v=c6-4';
+import { projektuj, dekodujKraje, siatka, dopasujWidok, ogranicz, K_MIN, K_MAX, SZEROKOSC as SZER, WYSOKOSC as WYS, sciezkaGeoMultiPoligon } from './geo.js?v=c6-16';
+import { grupujWKregi, sciezkaKregu, podpisKregu } from './kregi.js?v=c6-16';
 
 const NS = 'http://www.w3.org/2000/svg';
 
@@ -51,12 +52,21 @@ export const PROGI_WARSTW = {
   poi: 8,
   historia: 6,
 };
+
+/**
+ * Promień medalionu z wizualizacją bytu (px CSS, stały na ekranie).
+ * Zlecenie właściciela 2026-09-05: miniatura ma się pokazywać dopiero po
+ * najechaniu — jak badge z nazwą — i być dwa razy większa niż głowa pinezki
+ * (13 px), czyli 26 px promienia = 52 px średnicy.
+ */
+export const PROMIEN_MINIATURY = 26;
 /**
  * Czy warstwa jest włączona (przełączniki panelu). WSZYSTKIE warstwy są
  * opcjonalne i domyślnie WYŁĄCZONE (decyzja właściciela 2026-08-30);
  * `podklad` to aktywny podkład online (klucz z PODKLADY_ONLINE albo null).
  */
 const WIDOCZNE_WARSTWY = {
+  kregi: false,
   rzeki: false,
   jeziora: false,
   miasta: false,
@@ -130,6 +140,15 @@ export function stworzMape(kontener, { przyZmianieZaznaczenia, przyZmianieWidoku
   svg.setAttribute('aria-label', 'Mapa świata z manifestacjami eterycznymi');
   kontener.appendChild(svg);
 
+  // Maska medalionu miniatury. `clipPathUnits="objectBoundingBox"` liczy się
+  // w ułamkach prostokąta obrazu, więc koło trzyma się kadru niezależnie od
+  // rozmiaru i pozycji pinezki. Wcześniejsza wersja wskazywała clipPath, który
+  // nigdy nie trafił do DOM — odwołanie było puste i miniatura zostawała
+  // kwadratem (zgłoszenie właściciela 2026-09-05).
+  const defs = el('defs', {}, svg);
+  const maska = el('clipPath', { id: 'przyciecie-miniatury', clipPathUnits: 'objectBoundingBox' }, defs);
+  el('circle', { cx: 0.5, cy: 0.5, r: 0.5 }, maska);
+
   // Ocean — bardzo duży prostokąt, by przy przesuwaniu nigdy nie pokazało się tło.
   el('rect', { x: -SZER * 4, y: -WYS * 4, width: SZER * 9, height: WYS * 9, class: 'ocean' }, svg);
 
@@ -163,6 +182,9 @@ export function stworzMape(kontener, { przyZmianieZaznaczenia, przyZmianieWidoku
     srednie: el('g', { class: 'miasta-srednie' }, grupaMiast),
     drobne: el('g', { class: 'miasta-drobne' }, grupaMiast),
   };
+  // Kręgi kulturowe (C2+5, obrót 9): otoczki tradycji pod łukami i pinezkami,
+  // żeby halo nigdy nie zasłoniło punktu, w który się klika.
+  const warstwaKregow = el('g', { class: 'kregi', display: 'none' }, grupaSwiata);
   const warstwaLukow = el('g', { class: 'luki', display: 'none' }, grupaSwiata);
   // Warstwa „rozmowy” (C2, 2026-09-04): łuki uczestników otwartego skitu —
   // osobna grupa, żeby nie mieszać z łukami powiązań (toggle ∞).
@@ -190,6 +212,7 @@ export function stworzMape(kontener, { przyZmianieZaznaczenia, przyZmianieWidoku
   let podgladSlug = null; // C2: pinezka pod wskaźnikiem/fokusem — podgląd jej powiązań
   let miastaDane = []; // [{g, wx, wy, nazwa, populacja, tier}]
   let ostatnieSkala = null; // do pomijania przebudowy transformów punktów przy samym panu
+  let ukryteFiltrem = null; // Set<slug> odfiltrowanych pinezek (null = wszystkie widoczne)
   let aktywneMiasto = null; // miasto pokazane po kliknięciu
   let aktywnyPunkt = null; // punkt POI/historii pokazany podczas przytrzymania
   let czyPrzesunieto = false; // pan/pinch nie może być mylony z kliknięciem w miasto
@@ -402,6 +425,24 @@ export function stworzMape(kontener, { przyZmianieZaznaczenia, przyZmianieWidoku
       el('circle', { r: 26, class: 'trafienie' }, g); // pole trafienia (A5)
       el('circle', { r: 13, class: 'glowa' }, g);
       el('circle', { r: 4.4, class: 'zrenica' }, g);
+      // Medalion z wizualizacją (zlecenie właściciela 2026-09-05): koło o
+      // promieniu PROMIEN_MINIATURY, widoczne tylko na najechaniu/fokusie —
+      // tak jak badge z nazwą. `href` ustawia się leniwie przy pierwszym
+      // najechaniu, więc mapa nadal startuje bez pobierania wszystkich obrazów.
+      const bok = PROMIEN_MINIATURY * 2;
+      const miniatura = r.obraz
+        ? el('image', {
+            class: 'miniatura',
+            x: -PROMIEN_MINIATURY,
+            y: -PROMIEN_MINIATURY,
+            width: bok,
+            height: bok,
+            preserveAspectRatio: 'xMidYMid slice',
+            'clip-path': 'url(#przyciecie-miniatury)',
+            'data-obraz': r.obraz,
+          }, g)
+        : null;
+      if (miniatura) el('circle', { r: PROMIEN_MINIATURY, class: 'miniatura-ramka' }, g);
       el('path', { d: 'M0,10 L-7.5,27 L0,19.5 L7.5,27 Z', class: 'ostrze' }, g);
       const etykieta = el('g', { class: 'etykieta' }, grupaEtykiet); // warstwa nad pinezkami (A3)
       const tlo = el('rect', { class: 'tlo-etykiety', rx: 8 }, etykieta);
@@ -411,22 +452,20 @@ export function stworzMape(kontener, { przyZmianieZaznaczenia, przyZmianieWidoku
       // A1 (M6): etykieta pokazuje się po najechaniu wskaźnikiem i po fokusu
       // klawiatury (pinezka jest fokusowalna, tabindex=0).
       // C2: najechanie/fokus pokazuje badge (A1) i podgląd powiązań pinezki
-      g.addEventListener('pointerenter', () => {
+      const wejscie = () => {
         etykieta.classList.add('widoczna');
+        pokazMiniature(g, miniatura);
         podgladaj(r.slug);
-      });
-      g.addEventListener('pointerleave', () => {
+      };
+      const wyjscie = () => {
         etykieta.classList.remove('widoczna');
+        g.classList.remove('z-miniatura');
         podgladaj(null);
-      });
-      g.addEventListener('focus', () => {
-        etykieta.classList.add('widoczna');
-        podgladaj(r.slug);
-      });
-      g.addEventListener('blur', () => {
-        etykieta.classList.remove('widoczna');
-        podgladaj(null);
-      });
+      };
+      g.addEventListener('pointerenter', wejscie);
+      g.addEventListener('pointerleave', wyjscie);
+      g.addEventListener('focus', wejscie);
+      g.addEventListener('blur', wyjscie);
       g.addEventListener('click', (ev) => {
         ev.stopPropagation();
         ukryjEtykieteMiasta();
@@ -439,9 +478,28 @@ export function stworzMape(kontener, { przyZmianieZaznaczenia, przyZmianieWidoku
           przyZmianieZaznaczenia?.(r.slug);
         }
       });
-      pinezki.set(r.slug, { el: g, etykieta, wx, wy });
+      pinezki.set(r.slug, { el: g, etykieta, wx, wy, miniatura });
     }
     zastosuj();
+  }
+
+  /** Kręgi kulturowe: otoczki grup tradycji liczone z rekordów indeksu.
+   *  Definicje przychodzą z data/kregi-kulturowe.json (dane, nie kod). */
+  function ustawKregi(rekordy, definicje) {
+    warstwaKregow.innerHTML = '';
+    const punkty = (rekordy ?? [])
+      .filter((r) => Number.isFinite(r.lat) && Number.isFinite(r.lon))
+      .map((r) => {
+        const [x, y] = projektuj(r.lat, r.lon);
+        return { slug: r.slug, tagi: r.tagi ?? [], x, y };
+      });
+    for (const krag of grupujWKregi(punkty, definicje)) {
+      const g = el('g', { class: 'krag', 'data-krag': krag.id }, warstwaKregow);
+      const sciezka = el('path', { d: sciezkaKregu(krag.punkty), class: 'krag-halo' }, g);
+      el('title', {}, sciezka).textContent = krag.opis ? `${podpisKregu(krag)} — ${krag.opis}` : podpisKregu(krag);
+      const podpis = el('text', { x: krag.srodek.x, y: krag.srodek.y, class: 'krag-podpis' }, g);
+      podpis.textContent = podpisKregu(krag);
+    }
   }
 
   function ustawPolaczenia(rekordy) {
@@ -533,6 +591,7 @@ export function stworzMape(kontener, { przyZmianieZaznaczenia, przyZmianieWidoku
   }
 
   function podswietl(widoczne /* Set<slug> | null */) {
+    ukryteFiltrem = widoczne === null ? null : new Set(widoczne);
     for (const [s, p] of pinezki) {
       const przygaszona = widoczne !== null && !widoczne.has(s);
       p.el.classList.toggle('przygaszona', przygaszona);
@@ -834,6 +893,8 @@ export function stworzMape(kontener, { przyZmianieZaznaczenia, przyZmianieWidoku
     svg.classList.toggle('z-hipsometria', !!WIDOCZNE_WARSTWY.hipsometria);
     svg.classList.toggle('z-podklad-online', !!WIDOCZNE_WARSTWY.podklad);
     grupaHipso.setAttribute('display', WIDOCZNE_WARSTWY.hipsometria ? 'inherit' : 'none');
+    // Kręgi kulturowe nie mają progu zoomu: mają sens najbardziej z daleka.
+    warstwaKregow.setAttribute('display', WIDOCZNE_WARSTWY.kregi ? 'inherit' : 'none');
     grupaRzek.setAttribute('display', WIDOCZNE_WARSTWY.rzeki && k >= PROGI_WARSTW.woda ? 'inherit' : 'none');
     grupaJezior.setAttribute('display', WIDOCZNE_WARSTWY.jeziora && k >= PROGI_WARSTW.woda ? 'inherit' : 'none');
     grupaMiast.setAttribute('display', WIDOCZNE_WARSTWY.miasta && k >= PROGI_WARSTW.miastaWielkie ? 'inherit' : 'none');
@@ -843,6 +904,20 @@ export function stworzMape(kontener, { przyZmianieZaznaczenia, przyZmianieWidoku
     odswiezMiasta();
     ustawTransformyPunktow();
     rysujPodkladOnline();
+  }
+
+  /**
+   * Medalion z wizualizacją na najechanie/fokus (zlecenie właściciela
+   * 2026-09-05). Plik pobiera się dopiero teraz i tylko raz — pinezka bez
+   * obrazu po prostu nie dostaje klasy, więc nic nie miga.
+   */
+  function pokazMiniature(grupa, obraz) {
+    if (!obraz) return;
+    if (!obraz.getAttribute('href')) {
+      const zrodlo = obraz.getAttribute('data-obraz');
+      if (zrodlo) obraz.setAttribute('href', zrodlo);
+    }
+    grupa.classList?.add('z-miniatura');
   }
 
   /** Punkty stałego rozmiaru ekranowego (POI, historia) — tylko przy zmianie skali. */
@@ -910,6 +985,7 @@ export function stworzMape(kontener, { przyZmianieZaznaczenia, przyZmianieWidoku
     svg,
     ustawMapeSwiata,
     ustawPinezki,
+    ustawKregi,
     ustawPolaczenia,
     ustawRzeki,
     ustawJeziora,

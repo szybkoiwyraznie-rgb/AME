@@ -1,0 +1,96 @@
+{
+  "slug": "qilin-z-lu",
+  "nazwa": "Qilin — zwierzę, które przychodzi nie w porę",
+  "nazwy_alternatywne": [
+    "Lin (imię z kroniki Chunqiu)",
+    "Kirin (Japonia)",
+    "Girin (Korea)",
+    "Qilin-żyrafa (wersja z 1414 roku)",
+    "Chiński jednorożec (nazwa europejska)"
+  ],
+  "karta": {
+    "nazwa": "Grazing Gladehart",
+    "wydanie": "Zendikar (ZEN) #163",
+    "rok": 2009,
+    "uzasadnienie": "Antylopa, która nie atakuje, tylko pasie się i dodaje życia za każdą ziemię wchodzącą do gry. Qilin działa dokładnie tak: nie bije, nie poluje, a jego obecność ma być dowodem, że z krajem jest dobrze. Karta liczy przyrost życia od ziemi — kronika Lu liczyła to samo od jednego zwierzęcia, które weszło na pole w niewłaściwym roku."
+  },
+  "lokalizacja": {
+    "miejscowosc": "Qufu w prowincji Szantung, dawna stolica państwa Lu — miasto Konfucjusza i okolica „polowania na zachodzie”, na którym w czternastym roku panowania księcia Ai (481 p.n.e.) schwytano lina; tym jednym zdaniem urywa się kronika Chunqiu",
+    "kraj": "Chiny (Szantung)",
+    "lat": 35.5967,
+    "lon": 116.9917
+  },
+  "pochodzenie_i_kultura": "Tradycja chińska, warstwa najstarsza — kroniki i komentarze okresu Wiosen i Jesieni oraz Walczących Królestw. Qilin (w kronikach po prostu lin) nie jest potworem ani opiekunem: jest znakiem. Przychodzi, gdy władza jest sprawiedliwa, i nie przychodzi, gdy nie jest — więc każde jego pojawienie się trzeba odczytać, a odczytanie jest polityczne. Zapis w Chunqiu pod czternastym rokiem księcia Ai (481 p.n.e.) brzmi sucho: wiosną myśliwi na zachodzie schwytali lina. Komentarze Zuo i Gongyang rozwijają to w scenę, na której stoi cała późniejsza tradycja: zwierzę było ranne, przyniesiono je Konfucjuszowi, ten rozpoznał lina i zapłakał, bo istota zapowiadająca ład zjawiła się w czasie rozpadu i zdechła. Kronika kończy się w tym miejscu, dwa lata przed śmiercią Konfucjusza. Druga warstwa jest odwrotna i pokazuje, jak znak przechodzi na służbę: dwudziestego września 1414 roku posłowie Bengalu w imieniu władcy Saif Al-Din Hamzah Shaha przywieźli na dwór Yongle żyrafę, którą dwór ogłosił qilinem, a Shen Du z Akademii Hanlin ułożył do niej pochwałę „na pomyślnego qilina”. Cesarz, który sięgnął po tron, obalając bratanka, dostał w ten sposób dowód Mandatu Nieba na czterech nogach. Kartoteka trzyma obie warstwy razem i nie udaje, że to sprzeczność: to jest ten sam mechanizm widziany raz od strony tego, kto znak odczytuje, i raz od strony tego, kto go zamawia.",
+  "wizualizacja": {
+    "prompt": "Style: A wide-angle full-body cinematic photograph. The central objects/persons of the photo are visible from head to toe, standing centrally in the frame. No parts of the body are cropped.\n\nA large deer-bodied animal standing whole and calm in a field of tall dry grass at dawn in eastern China: body and legs of a deer with round unsplit hooves, thick ox tail, a mane of long pale hair, hide covered in fine overlapping golden-green scales that catch the light like fish skin, and a single short horn on the forehead ending in a soft rounded pad of flesh instead of a point. The grass under its hooves is unbent, as if nothing had stepped there. Behind it a low stone wall and the roofs of an old temple compound in morning mist; a hunter's abandoned rope net lies coiled in the foreground grass.\n\nCaptured with a 35mm anamorphic lens at f/1.8. Shallow depth of field with a heavy, creamy bokeh background. Environmental portraiture. Dramatic cinematic lighting, sharp focus on the character, hyper-realistic textures of clothing and skin. Shot on 70mm film stock, ultra-wide 21:9 aspect ratio. --ar 21:9",
+    "obraz": "assets/wizualizacje/qilin-z-lu.jpg"
+  },
+  "natura": {
+    "wyglad_i_aura": "Opis Lu Ji, powtarzany przez późniejszych komentatorów, jest zestawieniem części, nie portretem: ciało jelenia, ogon wołu, nogi konia, barwa żółta, okrągłe kopyta, jeden róg. Do tego dwie rzeczy, które w tej tradycji znaczą więcej niż wygląd. Róg kończy się miękkim zgrubieniem, więc nie może zranić — bywa opisywany jako róg z mięsem na czubku. I chód: qilin stąpa tak, że nie gnie źdźbła trawy i nie tratuje żadnego żywego stworzenia, nawet owada. Aura jest ciszą i porządkiem; nie budzi grozy, budzi niepokój, bo każdy, kto go widzi, wie, że coś zostało właśnie powiedziane, i musi zgadnąć co.",
+    "charakter_i_motywacje": "Nie ma zamiarów w ludzkim sensie i to jest w nim najtrudniejsze. Nie broni, nie karze, nie nagradza — zjawia się albo nie zjawia. Cała jego treść jest w tym, kiedy przychodzi: w tradycji przychodzi za panowania władcy sprawiedliwego i przy narodzinach mędrca, a nieobecność jest osądem równie ważnym jak obecność. Dlatego jego prawdziwym przeciwnikiem nie jest bohater z bronią, tylko interpretator: ktoś, kto orzeknie, co to znaczy. W roku 481 p.n.e. orzekał Konfucjusz i orzekł źle dla siebie. W 1414 orzekał dwór i orzekł dobrze dla cesarza.",
+    "zdolnosci": "Rozpoznawalność — pojawienie się qilina jest wydarzeniem, które trafia do kroniki państwowej i zmienia bieg zapisu, a nie bieg bitwy. Nietykalność drogi: chodzi po zasiewach, nie robiąc szkody, i przechodzi tam, gdzie stado stratowałoby pole. Długowieczność liczona w wiekach. Wreszcie zdolność najbardziej niewygodna: unieważnia twierdzenia. Władca, który mówi, że jego panowanie jest dobre, a qilin się nie zjawia, przegrywa spór, którego nie da się wygrać wojskiem.",
+    "slabosci_i_metody_pokonania": "Nie zabija się go, tylko chwyta — i to jest jego katastrofa. Historia z Lu jest instrukcją odwrotną do wszystkich innych w kartotece: myśliwi wzięli lina w sieć, zranili go i przywieźli, a on zdechł; nikt nie wyszedł z tego zwycięsko, bo znak zniszczony przez przypadek jest gorszy niż brak znaku. Drugą słabością jest to, że znak da się podrobić: wystarczy nazwać qilinem coś, co przypłynęło z daleka i jest dostatecznie dziwne. Trzecia jest najcichsza — qilin przegrywa, gdy przestaje być potrzebny; kiedy o Mandacie Nieba rozstrzygają armie, zwierzę, które nie gniecie trawy, przestaje być argumentem.",
+    "preferencje": "Lubi: rządy, przy których nie trzeba go wołać, wysoką trawę, przestrzeń bez pułapek, spokojną wodę i ludzi, którzy nie próbują go zatrzymać. Nie znosi: sieci, klatki i tłumaczy; polowania urządzonego po to, żeby go zobaczyć; oraz podpisu pod cudzym imieniem — od 1414 roku chodzi po świecie stworzenie z długą szyją, które nosi jego nazwę w chińskim, japońskim i koreańskim, choć nigdy nie było posłem żadnego nieba."
+  },
+  "dokumentacja": [
+    {
+      "typ": "tekst źródłowy (kronika)",
+      "pozycja": "Chunqiu z komentarzem Zuo, czternasty rok księcia Ai (481 p.n.e.), w przekładzie Jamesa Legge'a („The Chinese Classics”, t. V, 1872, s. 832): „In the [duke's] fourteenth year, in spring, [some] hunters in the west captured a lin” — zdanie, na którym urywa się kronika państwa Lu.",
+      "url": "https://ctext.org/chun-qiu-zuo-zhuan/ai-gong-shi-si-nian"
+    },
+    {
+      "typ": "opracowanie encyklopedyczne",
+      "pozycja": "„Qilin (Chinese Unicorn)”, World History Encyclopedia, 2024 — zestawienie warstw: zapis z 481 p.n.e., relacje komentatorów o rannym zwierzęciu przyniesionym Konfucjuszowi i jego płaczu, odczytanie tego jako utraty Mandatu Nieba przez dynastię Zhou oraz legenda o qilinie, który zjawił się matce Konfucjusza przed jego narodzinami.",
+      "url": "https://www.worldhistory.org/Qilin/"
+    },
+    {
+      "typ": "katalog muzealny",
+      "pozycja": "„Kylin Painting with an Ode by Shen Du”, w: wystawa „The Four Quarters Come to Court”, National Palace Museum, Tajpej — za „Kronikami cesarza Chengzu” w „Historii Ming”: w 1414 roku (dwunasty rok ery Yongle) państwo Bengalu przysłało w daninie zwierzę zwane qilinem; Shen Du (1357–1434) z Akademii Hanlin ułożył i wykaligrafował pochwałę pomyślnego qilina, a malarz dworski ją zilustrował.",
+      "url": "https://theme.npm.edu.tw/exh109/FourQuarters/en/page-2.html"
+    },
+    {
+      "typ": "analiza filologiczna",
+      "pozycja": "Victor Mair, „The giraffe, a supposedly composite creature with a complicated nomenclature”, Language Log (University of Pennsylvania), 2022 — data 20 września 1414 i poselstwo w imieniu Saif Al-Din Hamzah Shaha, świadectwa Ma Huana i Fei Xina nazywające żyrafy qilinami oraz uwaga, że Philadelphia Museum of Art datuje słynny obraz nie na czasy Shen Du, lecz na wiek XVI.",
+      "url": "https://languagelog.ldc.upenn.edu/nll/?p=55386"
+    }
+  ],
+  "trofea": {
+    "pierwotne": "Kawałek sieci myśliwskiej z państwa Lu, z węzłami rozciągniętymi w jednym miejscu tak, jakby coś ciężkiego szarpnęło raz i przestało. Do sznura przywiązana drewniana tabliczka z jednym zdaniem sprawozdania: wiosną, na zachodzie, schwytano lina.",
+    "wtorne": "Odpis pochwały Shen Du z 1414 roku, zapisany równo i pięknie, z dopiskiem późniejszej ręki na marginesie: „szyja”."
+  },
+  "tagi": [
+    "chiny",
+    "zwiastun",
+    "warunek",
+    "wrozba",
+    "postac-zwierzeca"
+  ],
+  "powiazania": [
+    {
+      "slug": "protostates",
+      "opis": "Obie karty pokazują, co się dzieje, gdy zjawa wchodzi w cudzą historię jako dowód: pod Maratonem widmowy hoplita potwierdzał, że bogowie stali po stronie Aten, a lin schwytany w Lu miał potwierdzić, że niebo popiera panujących. Różnica jest w kierunku odczytania — Grecy wzięli zjawę za znak zwycięstwa, a Konfucjusz wziął schwytane zwierzę za znak, że jego własny czas się skończył."
+    },
+    {
+      "slug": "sfinks-teby",
+      "opis": "Sfinga i qilin stoją po dwóch stronach tej samej mechaniki: sfinga zadaje pytanie i zabija tego, kto nie odpowie, a qilin nie zadaje żadnego pytania i mimo to wymusza odpowiedź, bo samo jego pojawienie się trzeba zinterpretować. W obu wypadkach przegrywa nie ten, kto jest słabszy, tylko ten, kto źle czyta."
+    },
+    {
+      "slug": "wielki-sfinks-z-gizy",
+      "opis": "Kolos z Gizy i qilin z Lu bywają używani do tego samego: legitymizowania władzy. Totmes IV kazał wyryć na steli sen, w którym bóg-lew obiecał mu tron za odkopanie z piasku, a dwór Yongle ogłosił przywiezioną z Bengalu żyrafę qilinem, żeby uzasadnić panowanie po zamachu. Byt milczy w obu wypadkach, a mówi za niego ten, kto właśnie potrzebuje dowodu."
+    },
+    {
+      "slug": "yara-ma-yha-who",
+      "opis": "Dwie opowieści zapisane przez kogoś innego niż ich właściciele, ale z odwrotnym skutkiem: tekst Unaipona wydano pod cudzym nazwiskiem, przez co czerwony człowieczek stracił autora, a qilin stracił własny wygląd, bo dwór przykleił jego imię do żyrafy i to żyrafa zaczęła kształtować późniejsze wizerunki. W jednym wypadku zawłaszczono zapis, w drugim samą nazwę."
+    }
+  ],
+  "meta": {
+    "utworzono": "2026-09-06 09:30",
+    "autor": "sesja arena 2026-09-06",
+    "modyfikacje": [
+      {
+        "data": "2026-09-06 09:30",
+        "opis": "Nowa materializacja: qilin — zwierzę-znak z chińskich kronik, schwytane w państwie Lu w 481 roku p.n.e., na którym urywa się kronika Chunqiu, i ogłoszone ponownie w 1414 roku, gdy dwór Yongle nazwał qilinem żyrafę przywiezioną z Bengalu. Karta klucz: „Grazing Gladehart” (ZEN #163, 2009). Pierwszy byt z Chin w kartotece; pinezka w Qufu w Szantungu. Cztery źródła: kronika w przekładzie Legge'a, opracowanie World History Encyclopedia, katalog National Palace Museum i analiza filologiczna Victora Maira."
+      }
+    ]
+  }
+}

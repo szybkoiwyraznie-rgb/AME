@@ -1,0 +1,106 @@
+{
+  "slug": "cormoran-st-michaels-mount",
+  "nazwa": "Cormoran z St Michael's Mount",
+  "nazwy_alternatywne": [
+    "Cormoran",
+    "Cormilion",
+    "Olbrzym z Góry św. Michała"
+  ],
+  "karta": {
+    "nazwa": "Hill Giant",
+    "wydanie": "Seventh Edition (7ED) #196",
+    "rok": 2001
+  },
+  "lokalizacja": {
+    "miejscowosc": "St Michael's Mount (kornijskie Karrek Loos yn Koos) — wyspa pływowa w zatoce Mount's Bay, naprzeciw Marazion, zachodnia Kornwalia",
+    "kraj": "Wielka Brytania",
+    "lat": 50.116,
+    "lon": -5.4772
+  },
+  "pochodzenie_i_kultura": "Folklor kornijski zachodniego Penwith. Cormoran jest olbrzymem z podań spisanych w XIX wieku przez Roberta Hunta w „Popular Romances of the West of England” (1865): to on miał usypać St Michael's Mount, gdy skała stała jeszcze w lesie i nazywała się „Carreg luz en kuz” — Biała Skała w Lesie. Starszy nurt tej samej opowieści niosły drukowane książeczki jarmarczne o Jacku Pogromcy Olbrzymów, gdzie olbrzym z Góry Kornwalijskiej mieszka w jaskini i przechodzi po dnie zatoki po cudze bydło. Kartoteka trzyma się jednej tradycji: kornijskiej, z okolic Marazion, i jednego bytu — nie łączę go z Gogmagogiem ani z olbrzymami z innych wysp. Nazwa, którą podanie tłumaczy pracą olbrzyma, ma pokrycie w osadach zatoki: kornijskie „Karrek Loos y'n Koos” znaczy „Szara Skała w Lesie”, a las naprawdę tam stał. Po sztormach, gdy piasek zejdzie z plaż w Chyandour i Wherrytown, odsłaniają się torfy z ukorzenionymi pniami sosny i dębu, zaroślami leszczyny, orzechami i żołędziami; datowanie radiowęglowe stawia te lasy na 4–6 tysięcy lat wstecz, przed podniesieniem się morza. Jan z Worcester notował jeszcze w 1099 roku, że Góra leży pięć czy sześć mil od morza, otoczona gęstym lasem. Podanie o olbrzymie, który nosił biały granit „przez las”, jest więc kornijską pamięcią krajobrazu sprzed zalania zatoki — i to jest właściwy porządek: najpierw utracony las, potem olbrzym, który go tłumaczy.",
+  "wizualizacja": {
+    "prompt": "Style: A wide-angle full-body cinematic photograph. The central objects/persons of the photo are visible from head to toe, standing centrally in the frame. No parts of the body are cropped.\n\nA colossal Cornish giant standing barefoot on the wet granite causeway at low tide in Mount's Bay, grim weathered face, matted grey beard, coarse woollen wrap belted with rope, an uprooted oak trunk carried like a club over one shoulder, a small herd of cattle roped at his waist, the steep tidal island of St Michael's Mount rising behind him with its castle silhouette, cold Atlantic dawn, sea mist over exposed sand and seaweed, muted grey-green palette, restrained folkloric realism, no gore, no text.\n\nCaptured with a 35mm anamorphic lens at f/1.8. Shallow depth of field with a heavy, creamy bokeh background. Environmental portraiture. Dramatic cinematic lighting, sharp focus on the character, hyper-realistic textures of clothing and skin. Shot on 70mm film stock, ultra-wide 21:9 aspect ratio. --ar 21:9",
+    "obraz": "assets/wizualizacje/cormoran-st-michaels-mount.jpg"
+  },
+  "natura": {
+    "wyglad_i_aura": "Wysoki na kilkadziesiąt stóp, o „srogim i ponurym obliczu” — tak zapamiętały go książeczki jarmarczne, licząc mu dwadzieścia kilka stóp wzrostu i trzy jardy w obwodzie. Idzie po dnie zatoki, gdy woda odchodzi, i o jego nadejściu wie się wcześniej, niż go widać: bydło zbija się w kąt pastwiska, a przez bruk Marazion idzie drżenie. Nad wyspą zostaje po nim zapach mokrego granitu, wodorostów i przemoczonej wełny. Miejscowa tradycja daje mu jeszcze jedną cechę, której nie widać z daleka: sześć palców u każdej dłoni i u każdej stopy. W zamurowanej komorze pod kościołem na szczycie ktoś odrysował na ścianie dwie dłonie większe niż ludzkie i z jednym palcem za dużo — biały ślad w rogu, który zwiedzającym pokazuje się rzadko.",
+    "charakter_i_motywacje": "Nie jest strażnikiem ani mścicielem — jest sąsiadem, który bierze. Wyspa jest mu domem i skarbcem: usypał ją sobie z białego granitu tak wysoko, by ponad lasem widzieć okolicę na wiele mil. Motywacją pozostaje głód i wygoda; wybiera cudze stada, bo są bliżej niż polowanie, i sen w jaskini, bo nikt mu go nie przerywa. W podaniu o jego żonie, olbrzymce Cormelian, pokazuje się druga strona charakteru: pracę zwala na innych, a różnicę zdań rozstrzyga kopniakiem.",
+    "zdolnosci": "Brodzi przez zatokę w porze odpływu i wraca tą samą drogą przed przypływem. Unosi na plecach pół tuzina wołów naraz, a owce i wieprze wiąże sobie u pasa jak pęk sznurów. Kamienne bloki wielkości wozu przenosi z okolicznych wzgórz i układa jeden na drugim; ryk, którym odpowiada na hałas, słychać po drugiej stronie zatoki. Nie zna podstępu i nie posługuje się żadną sztuką poza siłą.",
+    "slabosci_i_metody_pokonania": "Sen i gniew. Olbrzym śpi twardo i rusza na dźwięk rogu bez patrzenia pod nogi — tak zginął w podaniu: chłopak imieniem Jack wykopał nocą przed Górą dół, przykrył go patykami, słomą i cienką warstwą ziemi, o świcie zadął w róg, a rozjuszony Cormoran runął w pułapkę i dostał obuchem w ciemię. Słońce wschodzące od wschodu oślepia go w biegu w dół zbocza. Reszta słabości jest gospodarska: przypływ odcina mu drogę powrotną, a pusta zagroda nie daje łupu. Wersja z samej wyspy nie zna dołu w polu: tam Jack wabi olbrzyma do studni na zboczu, dziś pokazywanej jako Studnia Olbrzyma, i dopiero w niej dosięga go kilofem — pułapką jest zatem własna woda Cormorana, jedyne miejsce, do którego schodził bez ostrożności.",
+    "preferencje": "Lubi: odpływ, wołowinę, ciszę na wyspie, biały granit z Penwith i długi sen po jedzeniu; nie lubi: rogu o świcie, zielonego kamienia zamiast białego, ludzi kopiących nocą przy ścieżce i dnia, w którym stada zdążono spędzić za mur."
+  },
+  "dokumentacja": [
+    {
+      "typ": "zbiór folklorystyczny",
+      "pozycja": "Robert Hunt, „Popular Romances of the West of England; or, The Drolls, Traditions, and Superstitions of Old Cornwall” (1865, wyd. 3 z 1903), rozdział „The Giants of the Mount” — Cormoran buduje Górę z białego granitu, gdy skała stoi jeszcze w lesie zwanym „Carreg luz en kuz”, a jego żona Cormelian upuszcza zielony kamień, który zostaje na piasku",
+      "url": "https://sacred-texts.com/neu/eng/prwe/prwe005.htm"
+    },
+    {
+      "typ": "źródło drukowane (literatura jarmarczna)",
+      "pozycja": "„The History of Jack and the Giants” (druk z Falkirk, 1787; tradycja druków od początku XVIII wieku) — olbrzym z Góry Kornwalijskiej mieszka w jaskini, brodzi po bydło na stały ląd i ginie w wykopanym nocą dole; transkrypcja w Wikiźródłach",
+      "url": "https://en.wikisource.org/wiki/The_History_of_Jack_and_the_giants"
+    },
+    {
+      "typ": "materiał instytucji opiekującej się miejscem",
+      "pozycja": "St Michael's Mount (St Aubyn Estates), materiał edukacyjny „Cormoran the Giant” — miejscowa wersja podania: Studnia Olbrzyma na ścieżce oraz kamienne serce wpuszczone w bruk drogi na szczyt",
+      "url": "https://stmichaelsmount.co.uk/wp-content/uploads/2025/04/Cormoran-StAE-version.pdf"
+    },
+    {
+      "typ": "opracowanie geograficzne",
+      "pozycja": "Encyclopaedia Britannica, „Saint Michael's Mount” — granitowa wyspa około 400 jardów od brzegu w zatoce Mount's Bay, połączona z Marazion groblą odsłanianą przez odpływ",
+      "url": "https://www.britannica.com/place/Saint-Michaels-Mount"
+    },
+    {
+      "typ": "materiał prasowy o badaniach geologicznych",
+      "pozycja": "BBC News, „UK storms: Ancient forest revealed in Mount's Bay sand” (19 lutego 2014) — wypowiedź Franka Howiego z Cornwall Geoconservation Group: sztormy odsłoniły pnie sosny i dębu oraz zarośla leszczyny z zachowanymi orzechami w torfach Chyandour i Wherrytown, a datowanie radiowęglowe każe umieszczać lasy Mount's Bay 4–6 tysięcy lat wstecz; artykuł przypomina kornijską nazwę Karrek Loos yn Koos",
+      "url": "https://www.bbc.co.uk/news/uk-england-devon-26263856"
+    },
+    {
+      "typ": "reportaż z miejsca (dokumentacja krypty)",
+      "pozycja": "Greg Martin, „Inside hidden vault where skeleton of real-life giant was found”, CornwallLive — fotoreportaż z komory pod kościołem na Górze wraz z cytatami: Canon Thomas Taylor, „St Michael's Mount” (1932) o krypcie 9×9 stóp i o kościach bardzo dużego człowieka bez trumny (piszczel o połowę dłuższa niż zwykle, przeniesione na cmentarz w 1864), Peter Herring, „An Archaeological Evaluation of St Michael's Mount” (National Trust) datujący znalezisko raczej na 1804–1811, opis Historic England wiążący kości z sir Johnem Arundellem oraz skórzany dzban znaleziony przy szkielecie",
+      "url": "https://www.cornwalllive.com/news/cornwall-news/gallery/rare-look-inside-vault-skeleton-7108238"
+    }
+  ],
+  "trofea": {
+    "pierwotne": "Kamienne serce wpuszczone w bruk ścieżki na szczyt Góry — ciemny, sercowaty otoczak między granitowymi kostkami; miejscowi mówią, że kto przyłoży do niego ucho, usłyszy uderzenie.",
+    "wtorne": "Pas z haftowanym napisem, nagroda rady miejskiej dla pogromcy: „Here's the right valiant Cornish Man, Who slew the Giant Cormilion” — dowód, że olbrzyma pokonano fortelem, nie siłą. Obok niego kartoteka notuje przedmiot z twardej ziemi: dzban ze skóry końskiej, wyjęty z zamurowanej komory pod kościołem razem z kośćmi człowieka mierzącego siedem stóp i osiem cali — nie olbrzyma z podania, ale kogoś, kto olbrzymowi użyczył miary."
+  },
+  "tagi": [
+    "kornwalia",
+    "olbrzym",
+    "oplaty",
+    "podstep"
+  ],
+  "powiazania": [
+    {
+      "slug": "talos-kreta",
+      "opis": "Obaj są olbrzymami nie do pokonania w otwartym starciu i obaj padają przez jedno miejsce, którego nie pilnują: Talosowi wyjęto zatyczkę u kostki, Cormorana zgubił własny gniew i dół wykopany pod ścieżką. To ta sama nauka opowiedziana przez dwie tradycje: skala ciała nie chroni przed rachubą przeciwnika."
+    },
+    {
+      "slug": "lincoln-imp",
+      "opis": "Oba byty zostawiły po sobie kamień, który do dziś pokazuje się przechodniom: imp zastygł w kamiennej figurze pod sklepieniem katedry, a serce olbrzyma leży wpuszczone w bruk drogi na szczyt Góry. W obu miejscach kamień pełni tę samą funkcję — jest dowodem, że byt naprawdę tu był i że go zatrzymano."
+    },
+    {
+      "slug": "barbarossa-kyffhaeuser",
+      "opis": "Obie opowieści przywiązują byt do jednej góry i tłumaczą krajobraz jego obecnością: cesarz śpi wewnątrz Kyffhäuser i czeka na znak, a Cormoran usypał sobie Górę z granitu i zasnął na jej szczycie. Różnica jest wymowna — jednego góra przechowuje na przyszłość, drugiego przykryła jako grób."
+    },
+    {
+      "slug": "iktomi",
+      "opis": "Dwie strony tej samej pułapki: Cormoran ginie w dole przykrytym patykami i cienką warstwą ziemi, a lakocki pająk sam zastawia sidła i wabi do nich cudzą ciekawość — jeden jest siłą, która wpada, drugi ręką, która kopie."
+    }
+  ],
+  "meta": {
+    "utworzono": "2026-09-05 15:20",
+    "autor": "sesja arena 2026-09-05b",
+    "modyfikacje": [
+      {
+        "data": "2026-09-05 15:20",
+        "opis": "Nowa kartoteka: Cormoran, olbrzym z kornijskiej Góry św. Michała — budowa wyspy z białego granitu, wyprawy po bydło przez odsłoniętą groblę i śmierć w dole wykopanym przed świtem."
+      },
+      {
+        "data": "2026-09-05 16:40",
+        "opis": "Pogłębienie wpisu: zatopiony las Mount's Bay jako materialne tło nazwy Karrek Loos y'n Koos (pnie sosny i dębu w torfach Chyandour, datowanie 4–6 tysięcy lat, relacja Jana z Worcester z 1099 roku), sześć palców olbrzyma i odrysowane dłonie w zamurowanej komorze pod kościołem, miejscowa wersja ze Studnią Olbrzyma zamiast dołu w polu oraz szkielet mierzący siedem stóp i osiem cali wraz ze skórzanym dzbanem, dopisany do trofeów. Nowe powiązanie z Iktómim i dwa nowe źródła."
+      }
+    ]
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "slug": "kosz-ktorego-nie-otwierano",
+  "tytul": "Kosz, którego nie otwierano",
+  "cel": "Zdjąć z jednej kobiety w Nagcarlan nazwę „mangkukulam”, zanim wieś zdąży ją potwierdzić.",
+  "miejsce": "Nagcarlan, Laguna, Filipiny",
+  "sklad": [
+    "mangkukulam",
+    "iktomi",
+    "morowa-panna"
+  ],
+  "start": {
+    "zasoby": {
+      "pamiec": 11,
+      "przejscie": 3,
+      "dlug": 1,
+      "slad": 0
+    }
+  },
+  "wezly": [
+    {
+      "slug": "alun-na-skorupie",
+      "nazwa": "Ałun na skorupie",
+      "typ": "egzorcyzm",
+      "trudnosc": 26,
+      "zdolnosc": "klatwa",
+      "koszt": {
+        "pamiec": 2
+      },
+      "nagroda": {
+        "slad": 1
+      },
+      "porazka": {
+        "dlug": 1
+      },
+      "proza": {
+        "sukces": "Albularyo pali ałun i czyta stopioną bryłkę. Morowa Panna staje mu za plecami i sprawia, że w kształcie widać nie twarz, lecz studnię, z której piła połowa wsi. Choroba dostaje adres, nie nazwisko.",
+        "porazka": "Bryłka stygnie w kształt, w którym każdy widzi to, co chciał zobaczyć. Ktoś mówi półgłosem: to ta z koszem. Dług zostaje zapisany na jej domu."
+      }
+    },
+    {
+      "slug": "oblawa-z-bolo",
+      "nazwa": "Obława z bolo",
+      "typ": "spór",
+      "trudnosc": 36,
+      "zdolnosc": "podstep",
+      "koszt": {
+        "przejscie": 1,
+        "pamiec": 1
+      },
+      "nagroda": {
+        "przejscie": 1,
+        "slad": 1
+      },
+      "porazka": {
+        "pamiec": -3
+      },
+      "proza": {
+        "sukces": "Iktomi wchodzi między mężczyzn, zanim padnie pierwsze żądanie „przejścia przez ucho igielne”, i pyta każdego po kolei, kto właściwie widział ogień pod podłogą. Do świtu nikt nie chce być tym pierwszym.",
+        "porazka": "Bolo wbite w słupek werandy pilnuje, żeby pytanie zostało zadane głośno. Kobieta milczy, a milczenie w tej wsi liczy się za odpowiedź."
+      }
+    },
+    {
+      "slug": "wieko-przy-swiadkach",
+      "nazwa": "Wieko przy świadkach",
+      "typ": "przejście",
+      "trudnosc": 32,
+      "zdolnosc": "warunek",
+      "koszt": {
+        "przejscie": 2,
+        "slad": 1
+      },
+      "nagroda": {
+        "pamiec": 3,
+        "slad": 1
+      },
+      "porazka": {
+        "pamiec": -2,
+        "dlug": 1
+      },
+      "koniecPoPorazce": true,
+      "proza": {
+        "sukces": "Kosz zostaje otwarty na środku podwórka, w południe. W środku sól, suszone liście i nici — nic więcej. Wieś nie przeprasza, ale przestaje liczyć, kto ostatnio chorował po sprzeczce z nią.",
+        "porazka": "Nikt nie żąda otwarcia kosza; wystarcza, że stoi w kącie. Kobieta zostaje we wsi z nazwą, której nie da się odwołać, bo nikt jej głośno nie postawił."
+      }
+    }
+  ],
+  "proza": {
+    "ukonczona": "Trzy razy wieś miała okazję potwierdzić własne podejrzenie: obrzędem, obławą i ciszą. Za każdym razem ktoś podstawił jej pytanie zamiast odpowiedzi. Kobieta z Nagcarlan została sąsiadką, a choroba wróciła do tego, czym była: chorobą.",
+    "rozszczepiona": "Połowa wsi mówi, że to była woda ze studni, połowa — że kosz. Obie połowy mijają się na targu i obie mają rację na tyle, żeby nie odpuścić. W archiwum zostaje ślad i dług: ktoś tę sprawę jeszcze otworzy.",
+    "przerwana": "Nazwa przywarła. Nikt nie rzucił kamieniem, nikt nie oskarżył głośno — po prostu przestano jej sprzedawać ryż. To najtańsza z możliwych klątw i nie potrzebuje żadnej lalki.",
+    "domyslna": "Droga zostawiła ślad tam, gdzie wina szukała twarzy."
+  },
+  "grafika": {
+    "obraz": "assets/wizualizacje/splot-kosz-ktorego-nie-otwierano.jpg",
+    "prompt": "Hyperrealistic cinematic 21:9 photograph at noon in a lowland Philippine village: an elderly woman standing in a bare swept yard beside an open lidded rattan basket holding only salt, dried leaves and thread, neighbours in a loose half-circle keeping their distance, a bolo stuck in a veranda post, wet ground after rain, a pale woman in a white headscarf watching from the treeline and a spider hanging on a single thread from the eaves, no gore, no text."
+  },
+  "meta": {
+    "utworzono": "2026-09-05 19:20",
+    "autor": "sesja arena 2026-09-05"
+  }
+}

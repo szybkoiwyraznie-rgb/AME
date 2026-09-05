@@ -17,6 +17,7 @@ import { fileURLToPath } from 'node:url';
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 export const KATALOG_WPISOW = join(ROOT, 'data', 'manifestations');
 export const KATALOG_SKITOW = join(ROOT, 'data', 'skity');
+export const KATALOG_DROG = join(ROOT, 'data', 'splot');
 export const PLIK_INDEKSU = join(ROOT, 'data', 'index.json');
 /** Kanon tagów: zamknięty słownik (kategorie + dozwolone tagi), dane źródłowe. */
 export const PLIK_KANONU = join(ROOT, 'data', 'kanon-tagow.json');
@@ -377,11 +378,87 @@ function rekordSkitu(s) {
 }
 
 /**
+ * Lekkie rekordy dróg SPLOTU do katalogu w indeksie (C6, obrót 3): tyle,
+ * ile potrzeba, by UI pokazało listę wyboru bez dociągania pełnych plików.
+ * Sortowanie po slugu — determinizm indeksu (ADR 0002).
+ */
+export function rekordyDrog(drogi = []) {
+  return [...drogi]
+    .sort((a, b) => String(a.slug).localeCompare(String(b.slug), 'pl'))
+    .map((d) => ({
+      slug: d.slug,
+      tytul: d.tytul,
+      cel: d.cel ?? '',
+      miejsce: d.miejsce ?? '',
+      sklad: [...(d.sklad ?? [])],
+      wezly: (d.wezly ?? []).length,
+      plik: `data/splot/droga-${d.slug}.json`,
+    }));
+}
+
+/** Walidacja drogi SPLOTU: struktura i skład wyłącznie z kartoteki. */
+export function walidujDroge(droga, slugiBytow = new Set()) {
+  const bledy = [];
+  const wymagane = ['slug', 'tytul', 'cel', 'miejsce'];
+  for (const pole of wymagane) {
+    if (typeof droga?.[pole] !== 'string' || droga[pole].trim() === '') bledy.push(`brak pola „${pole}”`);
+  }
+  const sklad = droga?.sklad ?? [];
+  if (!Array.isArray(sklad) || sklad.length < 2 || sklad.length > 4) bledy.push('skład drogi wymaga 2–4 uczestników');
+  if (new Set(sklad).size !== sklad.length) bledy.push('skład drogi nie może powtarzać bytu');
+  for (const slug of sklad) if (slugiBytow.size && !slugiBytow.has(slug)) bledy.push(`nieznany uczestnik „${slug}”`);
+  const wezly = droga?.wezly ?? [];
+  if (!Array.isArray(wezly) || wezly.length === 0) bledy.push('droga musi mieć co najmniej jeden węzeł');
+  for (const [i, w] of (Array.isArray(wezly) ? wezly : []).entries()) {
+    const nr = i + 1;
+    if (typeof w?.slug !== 'string' || !w.slug) bledy.push(`węzeł ${nr}: brak slugu`);
+    if (typeof w?.nazwa !== 'string' || !w.nazwa) bledy.push(`węzeł ${nr}: brak nazwy`);
+    const t = Number(w?.trudnosc);
+    if (!Number.isFinite(t) || t < 0 || t > 100) bledy.push(`węzeł ${nr}: trudność musi być liczbą 0–100`);
+    if (typeof w?.proza?.sukces !== 'string' || typeof w?.proza?.porazka !== 'string') {
+      bledy.push(`węzeł ${nr}: wymagana proza sukcesu i porażki`);
+    }
+  }
+  for (const status of ['ukonczona', 'przerwana', 'rozszczepiona']) {
+    if (typeof droga?.proza?.[status] !== 'string') bledy.push(`brak prozy dla statusu „${status}”`);
+  }
+  return bledy;
+}
+
+/** Wczytuje i waliduje katalog dróg SPLOTU; brak katalogu = brak dróg. */
+export async function wczytajDrogi(katalog = KATALOG_DROG, slugiBytow = new Set()) {
+  let pliki;
+  try {
+    pliki = (await readdir(katalog)).filter((f) => f.endsWith('.json')).sort();
+  } catch (err) {
+    if (err?.code === 'ENOENT') return [];
+    throw err;
+  }
+  const drogi = [];
+  const bledy = [];
+  for (const f of pliki) {
+    let d;
+    try {
+      d = JSON.parse(await readFile(join(katalog, f), 'utf8'));
+    } catch (err) {
+      bledy.push(`${f}: niepoprawny JSON (${err.message})`);
+      continue;
+    }
+    for (const b of walidujDroge(d, slugiBytow)) bledy.push(`${f}: ${b}`);
+    drogi.push(d);
+  }
+  const slugi = drogi.map((d) => d.slug);
+  if (new Set(slugi).size !== slugi.length) bledy.push('drogi: duplikaty slugów w katalogu');
+  if (bledy.length) throw new Error(`Błędy w katalogu dróg SPLOTU:\n - ${bledy.join('\n - ')}`);
+  return drogi;
+}
+
+/**
  * Buduje deterministyczny indeks: skróty wpisów (+ skity jako sekcja VI),
  * słownik tagów, backlinki i feed `aktualizacje` (sekcja „Co nowego”,
  * najnowsze na górze) wyliczony z `meta` wpisów i skitów.
  */
-export function zbudujIndeks(wpisy, skiti = [], kanon = null, buildTime = null) {
+export function zbudujIndeks(wpisy, skiti = [], kanon = null, buildTime = null, drogi = []) {
   const posortowane = [...wpisy].sort((a, b) => a.slug.localeCompare(b.slug, 'pl'));
   const rekordy = posortowane.map((w) => ({
     slug: w.slug,
@@ -502,6 +579,7 @@ export function zbudujIndeks(wpisy, skiti = [], kanon = null, buildTime = null) 
     tagi: posortowaneTagi,
     manifestacje: rekordy,
     skity: rekordySkitow,
+    drogi: rekordyDrog(drogi),
     aktualizacje,
   };
 }
@@ -596,7 +674,9 @@ async function main() {
   const trybCheck = process.argv.includes('--check');
   const kanon = await wczytajKanon();
   const wpisy = await wczytajIKwaliduj(KATALOG_WPISOW, kanon);
-  const skiti = await wczytajSkiti(KATALOG_SKITOW, new Set(wpisy.map((w) => w.slug)));
+  const slugiBytow = new Set(wpisy.map((w) => w.slug));
+  const skiti = await wczytajSkiti(KATALOG_SKITOW, slugiBytow);
+  const drogi = await wczytajDrogi(KATALOG_DROG, slugiBytow);
 
   let istniejacyTresc = '';
   let istniejacyBuildTime = null;
@@ -606,7 +686,7 @@ async function main() {
   } catch {}
 
   // 1. Zbuduj z dotychczasowym buildTime
-  let indeks = zbudujIndeks(wpisy, skiti, kanon, istniejacyBuildTime);
+  let indeks = zbudujIndeks(wpisy, skiti, kanon, istniejacyBuildTime, drogi);
   let tresc = JSON.stringify(indeks, null, 2) + '\n';
 
   if (istniejacyTresc) {
@@ -617,12 +697,12 @@ async function main() {
     
     // Jeśli są różnice funkcjonalne, wygeneruj NOWY buildTime
     if (JSON.stringify(ob1) !== JSON.stringify(ob2)) {
-      indeks = zbudujIndeks(wpisy, skiti, kanon, new Date().toISOString());
+      indeks = zbudujIndeks(wpisy, skiti, kanon, new Date().toISOString(), drogi);
       tresc = JSON.stringify(indeks, null, 2) + '\n';
     }
   } else {
     // Jeśli plik nie istnieje, wygeneruj NOWY buildTime
-    indeks = zbudujIndeks(wpisy, skiti, kanon, new Date().toISOString());
+    indeks = zbudujIndeks(wpisy, skiti, kanon, new Date().toISOString(), drogi);
     tresc = JSON.stringify(indeks, null, 2) + '\n';
   }
 

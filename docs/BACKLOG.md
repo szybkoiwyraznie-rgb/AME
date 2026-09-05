@@ -6,30 +6,86 @@
 
 ## Aplikacja / UX
 
-- **„Arena Rezonansu” (idle battler)** — grywalizacja na zlecenie właściciela
-  (M8, C2). Staty bytu WYPROWADZANE z rekordu indeksu (backlinki, powiązania,
-  skity, epitety, motywy) — determinizm ADR 0002, losowość tylko ze
-  wstrzykniętego RNG. Projekt: `docs/plans/POMYSL_arena-rezonansu-idle-battler.md`.
-  Zręby: `app/arena.js` (`statyManifestacji`, runda) + `test/arena.test.js`.
-  **Do decyzji właściciela: zakres widoku (osobny `#arena` vs profil bojowy w
-  kartotece) i ton (Rezonans/spór tradycji, nie „krew i HP”).** Wpięcie do UI
-  dopiero po akceptacji.
+- ~~**„Arena Rezonansu” (idle battler)**~~ — **WDROŻONE (2026-09-05, PR #34,
+  C2+5 obrotu 5 Pętli Jakości):** osobny widok `#arena` (przycisk „⚖ arena”
+  w topbarze). Dwie listy wyboru stron, karty profili (staty surowe +
+  percentyl w kartotece + archetyp), dziennik rund z kontrami motywów
+  i jednozdaniowe rozstrzygnięcie bez żargonu gry (`opisRozstrzygniecia`).
+  Rdzeń w `app/arena.js`: `rozegrajSpor` (inicjatywa z SPRYTU, wytrzymałość
+  = żywotność × `WYTRZYMALOSC` 1.5, twardy limit `MAX_RUND` 12), własny RNG
+  `generatorZZiarna` (mulberry32) + `haszTekstu` (FNV-1a) i `paraDnia` —
+  „spór dnia” identyczny dla wszystkich czytelników danego dnia. Zero sieci
+  i zero `Math.random` w rdzeniu (ADR 0002, 0003); losowość wstrzykiwana.
+  Kalibracja na 28 bytach: średnio 6–7 rund, ~4,5% remisów (test pilnuje
+  progu 25%). Projekt: `docs/plans/POMYSL_arena-rezonansu-idle-battler.md`.
+  **Domknięte 2026-09-06 (C2+5 obrotu 8): „Liga Rezonansu”** — pytanie „gdzie
+  zapisywać stan między sesjami” zostało rozstrzygnięte odpowiedzią: NIGDZIE.
+  Sezon jest funkcją kalendarza (`app/liga.js`): terminarz to round-robin metodą
+  karuzeli po slugach posortowanych alfabetycznie, jedna kolejka na dobę od
+  `DZIEN_ZERO` = 2026-09-06, a każdy mecz liczy `rozegrajSpor` z ziarnem
+  `liga:<sezon>:<kolejka>:<a>|<b>`. Tabelę na dowolny dzień da się policzyć od
+  zera (31 bytów × 31 kolejek ≈ 465 sporów, poniżej 50 ms), więc dwoje
+  czytelników tego samego dnia widzi identyczne wyniki, a czyszczenie pamięci
+  przeglądarki niczego nie kasuje. Widok `#liga` (przycisk „🏅 liga”): tabela
+  z bilansem wytrzymałości i formą z pięciu kolejek, wyniki ostatniej kolejki
+  (każdy mecz otwiera się w Arenie z tym samym ziarnem) i zapowiedź jutrzejszej.
+  Po ostatniej kolejce rusza kolejny sezon z przestawioną rotacją terminarza.
+  Testy: `test/liga.test.js` (14 przypadków — komplet par, pauza przy
+  nieparzystej liczbie bytów, determinizm, punktacja i wpięcie w aplikację).
+  **Otwarty zostaje turniej Epoki** — pytanie, czy sezon ma zasilać Kronikę
+  (zwycięzca jako uczestnik następnej Epoki), wymaga decyzji właściciela.
 
-- **Deep-linki** `#/slug`: adresowalne wpisy + stan mapy w URL (kandydat do
-  F2). Podstawa: `location.hash`, brak zależności.
-- **Klastrowanie pinezek**: przy > 50 wpisach mapa zrobi się ciasna; prosty
-  grid-clustering w przestrzeni ekranu wystarczy na start.
-- **Miniatury na pinezkach** przy wysokim zoomie (obraz 21:9 małpowany w marker).
+- ~~**Deep-linki `#/slug`**~~ — **ZREALIZOWANE wcześniej (M7/C2, potwierdzone
+  2026-09-05):** aplikacja obsługuje `#slug`, `#tag:…`, `#skit:…`, `#mapa=…`
+  oraz fragmenty widoków (`#skity`, `#nowosci`, `#trofea`, `#kroniki`,
+  `#splot`, `#prog`, `#arena`); każdy widok ma przycisk „⧉ kopiuj link”.
+
+- **Klastrowanie pinezek** — **WYCOFANE (2026-09-06, decyzja właściciela).**
+  Było wdrożone 2026-09-05 (C2+5 obrotu 4): `app/klastry.js` zwijał nachodzące
+  na siebie pinezki w krążek z liczbą, który pękał po kliknięciu albo po
+  przekroczeniu zoomu 6×. Powód wycofania jest prosty i przesądza sprawę na
+  przyszłość: **z daleka nie było widać poszczególnych bytów**, a mapa
+  kartoteki służy do patrzenia na całość — gęstość Grecji czy Wysp Brytyjskich
+  to informacja, nie usterka do posprzątania. Usunięte: `app/klastry.js`,
+  `test/klastry.test.js`, warstwa `.klastry` w `app/map.js` i reguły CSS
+  (`.klaster*`, `.w-klastrze`). `test/pinezka.test.js` pilnuje teraz odwrotnego
+  kontraktu: cztery byty = cztery pinezki, żadnej klasy chowającej.
+  **Nie przywracać bez wyraźnego polecenia właściciela.** Jeśli kiedyś wróci
+  temat czytelności skupisk, szukać rozwiązania, które nic nie ukrywa
+  (np. rozsunięcie nachodzących pinezek zamiast zastąpienia ich jednym znakiem).
+- ~~**Miniatury na pinezkach**~~ — **WDROŻONE (2026-09-05, PR #34, C2+5 obrotu 3
+  Pętli Jakości), PRZEROBIONE na zlecenie właściciela tego samego dnia:** medalion
+  z wizualizacją bytu (koło o promieniu `PROMIEN_MINIATURY` = 26, kadr 52×52
+  przycięty maską `clipPath #przyciecie-miniatury` w `objectBoundingBox`) pokazuje
+  się **tylko na najechaniu albo fokusie**, dokładnie jak badge z nazwą — dawny
+  próg zoomu `PROGI_WARSTW.miniatury` został usunięty, bo zapalał miniatury
+  wszystkim pinezkom naraz. `href` nadal ustawia się leniwie, przy pierwszym
+  najechaniu, więc start aplikacji nie pobiera dwudziestu kilku obrazów; wpis bez
+  pola `obraz` nie dostaje ani medalionu, ani pustej obwódki. Reguły CSS są
+  zakotwiczone w `.mapa-svg` (kontrakt z `test/mapa-css.test.js`), a render
+  sprawdza `test/pinezka.test.js` — łącznie z obecnością maski w `<defs>`
+  (odwołanie do nieistniejącego `clipPath` renderowało kwadrat i tego atrapa DOM
+  sama z siebie nie łapie).
 - ~~**Strona tagu**~~ — **WDROŻONE (2026-08-30, PR #10, C2 pętla jakości):** klik
   w tag → filtr mapy + warstwa `#tag:<slug>` z kategorią, opisem i listą
   manifestacji (klik → kartoteka), adresowalna i z przyciskiem „kopiuj link”.
 - ~~**Tryb „wylosuj manifestację”**~~ — zrealizowane w M7 (PR #6, C2): przycisk
   „🎲 wylosuj” losuje z widocznej puli (filtr/tag zawężają), pomija ostatni los
   i przelatuje do bytu na mapie; `wylosujSlug` deterministyczna przy
-  wstrzykniętym RNG (opcja seeda z daty pozostaje otwarta). Do akceptacji
-  właściciela przed live.
-- **Warstwa kręgów kulturowych**: otoczki/halo grupujące wpisy jednej tradycji
-  (słowiańska, algonkińska, nordycka…) — wymaga tagu-kręgu jako konwencji.
+  wstrzykniętym RNG (opcja seeda z daty pozostaje otwarta).
+- ~~**Warstwa kręgów kulturowych**~~ — **WDROŻONE (2026-09-06, PR #34, C2+5
+  obrotu 9):** przełącznik „Kręgi kulturowe” w panelu warstw rysuje pod
+  pinezkami otoczki grup tradycji — halo z przerywanym konturem i podpisem
+  „nazwa · liczba bytów”. Krąg to **grupa kultur kanonu**, nie nowy tag wpisu:
+  definicje leżą w `data/kregi-kulturowe.json` (dziś dziewięć kręgów, od „Wysp
+  Północnego Atlantyku” po „Step i pustynię”), więc nowy byt nie wymaga zmiany
+  w kodzie, a zasada jednej kultury na wpis (PROTOKÓŁ §2) zostaje nietknięta.
+  Geometria w `app/kregi.js` (czysta, bez DOM): otoczka wypukła metodą monotone
+  chain, rozsunięcie wierzchołków o `MARGINES_KREGU` od środka ciężkości
+  i wygładzenie krzywymi kwadratowymi; jeden byt daje koło, dwa — owal.
+  Warstwa nie ma progu zoomu, bo ma sens właśnie z daleka. Testy:
+  `test/kregi.test.js` (11 przypadków, w tym kontrakt: każda kultura kanonu
+  należy do dokładnie jednego kręgu i żaden byt kartoteki nie zostaje sierotą).
 - ~~**Mapa tematyczna — rozszerzenia (ADR 0020, M14)**~~ — **WDROŻONE (2026-08-30, PR #10):** M1 hipsometria raster, M2 szczyty/POI (NE 10m), M3 Pleiades (miejsca historyczne) + podkłady online (opentopo/osm/esri World Imagery, bez klucza, ręcznie włączane). Wszystkie warstwy domyślnie **wyłączone** (100% offline bez zgody na sieć). **Zmiany po recenzji (2026-08-30):** warstwy „lasy” (WWF), „urban” i „morza” **usunięte** (A), Esri „świat fizyczny” **usunięty** (A2), zoom online do technicznego maksimum źródeł ×524 288 (kafelki z≈19; blokada wg 67 obrotów kółka wycofana po uwadze, że różne rejony mają różny maksymalny zoom — A); POI/miejsca historyczne — nazwa on-press (B) i przy wyłączeniu podkładu widok oddala się w miejscu (B2); warstwa nazwana „Szczyty” (C); zapamiętywanie warstw i widoku w localStorage (D); sekcja „Tomy i Epoki” w karcie bytu (E).
 - **Mapa tematyczna — dalsze kierunki (po M3):** GeoNames szczyty (CC BY 4.0) i DARE/AWMC drogi rzymskie (CC BY-SA 3.0) — wete na rzecz NE/Pleiades w M3; katalog źródeł w `docs/ASSETS.md`.
   drogi główne, POI typu szczyty, kompleksy leśne i kolorowa wysokość n.p.m.
@@ -66,10 +122,17 @@
   jakości):** przycisk „🏆 trofea” w topbarze → warstwa z galerią dowodów
   eliminacji (pierwotne + wtórne) ze wszystkich kart; rekord indeksu niesie
   `trofea`, więc widok nie dociąga pełnych wpisów; nazwa bytu otwiera jego
-  kartotekę; deep-link `#trofea` (cache-bust `c5-11`). Do akceptacji
-  właściciela przed live.
-- **Zasady citowania w aplikacji**: sekcja III jako przypisy z linkami
-  do repozytoriów cyfrowych (archive.org itp.) — sprawdzać dostępność linków.
+  kartotekę; deep-link `#trofea` (cache-bust `c5-11`).
+- ~~**Zasady cytowania w aplikacji**~~ — **CZĘŚCIOWO WDROŻONE (2026-09-05, PR #34,
+  C2+5 obrotu 2 Pętli Jakości):** `tools/lint-zrodel.mjs` pilnuje higieny sekcji III
+  pięcioma regułami — Z1 adres https, Z2 brak duplikatów adresu we wpisie,
+  Z3 źródło bez adresu musi podać rok albo strony (ADR 0008), Z4 co najmniej dwie
+  niezależne domeny na wpis, Z5 agregatory (Wikipedia, Fandom, Reddit…) nie mogą
+  być jedynym oparciem wpisu. Spięte z `npm run check` i `test/lint-zrodel.test.js`;
+  `--domeny` wypisuje zestawienie całego korpusu (dziś 24 wpisy, 82 domeny, na czele
+  en.wikipedia.org ×26 i theoi.com ×12). **Nadal otwarte:** sprawdzanie dostępności
+  linków (sandbox bez egressu, ADR 0003 — wymaga zewnętrznego CI) i renderowanie
+  sekcji III jako numerowanych przypisów w karcie.
 
 ## Infrastruktura
 
@@ -77,8 +140,7 @@
   jakości):** `tools/budzet-lektury.mjs` mierzy zbiór lektury startowej §0
   (AGENTS, PROTOKÓŁ, rejestr + wszystkie ADR-y, LESSONS, ENVIRONMENT) i szacuje
   tokeny heurystyką 1 tok ≈ 4 znaki; `test/budzet.test.js` pilnuje progu
-  40 tys. tokenów (dziś ~29,5 tys. = 74%) oraz kompletności listy. Do
-  akceptacji właściciela przed live.
+  40 tys. tokenów (dziś ~29,5 tys. = 74%) oraz kompletności listy.
 - ~~**Lint stylu wpisów**~~ — **WDROŻONE (2026-09-04, PR #17, C2 pętli
   jakości):** `tools/lint-stylu.mjs` wykrywa żargon kart (haste, trample,
   mana, żeton, talia…; granice słów unicode, bez fałszywych trafień typu
@@ -121,21 +183,35 @@
   (2026-09-04, PR #13, C2 pętli jakości):** wiersz listy manifestacji z polem
   `obraz` dostaje miniaturę 21:9 (`<img loading="lazy">`, klasa
   `wiersz ma-miniature`, kadr po lewej, tekst w kolumnie); brak obrazu = układ
-  bez zmian (cache-bust `c5-10`). Do akceptacji właściciela przed live.
+  bez zmian (cache-bust `c5-10`).
 - ~~**Kopiuj link do wpisu**~~ — zrealizowane w M4 (C2): `ui.linkWidoku` +
   `ui.przyciskKopiowania`, przycisk „⧉ kopiuj link" w kartotece (obok ✕) i w
   warstwie skitu; test pilnuje, że handlerzy obu warstw obsługują `[data-kopia]`.
-- **Kontrola żywości adresów źródłowych** — skrypt sesji (narzędzia agenta), NIE
-  CI: egress sandboxa jest ograniczony (L3), a linki bywają przenoszone.
-  Wymagałby decyzji: martwy link = ostrzeżenie czy błąd walidatora.
+- ~~**Kontrola żywości adresów źródłowych**~~ — **WDROŻONE (2026-09-05, PR #34,
+  C2+5 obrotu 7):** `tools/zywosc-zrodel.mjs` (`npm run zywosc-zrodel`), skrypt
+  sesji poza `check` i poza CI — sandbox nie ma egressu (ADR 0003, L3), więc
+  bramki jakości zostają bez sieci. **Decyzja: martwy link to OSTRZEŻENIE, nie
+  błąd walidatora** (uzasadnienie niżej: Theoi wróciło do życia po czterech
+  dniach); kto chce twardego wyniku, dokłada `--rygor`. Cztery statusy:
+  `zywy`, `przekierowany` (raport podaje nowy adres), `niepewny` (403/429/5xx
+  i błędy sieci — serwer, który nie lubi robotów, to nie martwy adres) oraz
+  `martwy` (wyłącznie 404/410). HEAD z awaryjnym GET, cztery adresy naraz,
+  limit 12 s. Sieć wchodzi przez wstrzykiwany `fetchImpl`, więc
+  `test/zywosc-zrodel.test.js` sprawdza całą logikę bez jednego pakietu w kablu.
   **Przypadek rozstrzygnięty:** Theoi „HephaestusWorks” w kartotece
   `talos-kreta` padał z 404 („File not found”) 2026-08-30; przy pogłębianiu
   wpisu 2026-09-04 strona znów odpowiada 200 i zawiera passus o Talosie
   (adres zostaje). Lekcja: jednorazowy 404 Theoi bywa przejściowy —
   przed wymianą linku sprawdzić ponownie po czasie.
-- ~~**Widok druku (media print) dla warstwy wpisu**~~ — **WDROŻONE (2026-08-30, PR #12, C2 pętla jakości):** przycisk „🖨 drukuj” w kartotece → `window.print()`; arkusz `@media print` chowa topbar/mapę/listę i pokazuje otwartą kartotekę na białym tle z ciemnym tekstem (cache-bust `c5-8`). Do akceptacji właściciela przed live.
-- **Znacznik „źródło bez adresu” w UI** — pozycje bez `url` (papier) warto
-  oznaczać inną kursywą, żeby czytelnik wiedział, czego nie da się kliknąć.
+- ~~**Widok druku (media print) dla warstwy wpisu**~~ — **WDROŻONE (2026-08-30, PR #12, C2 pętla jakości):** przycisk „🖨 drukuj” w kartotece → `window.print()`; arkusz `@media print` chowa topbar/mapę/listę i pokazuje otwartą kartotekę na białym tle z ciemnym tekstem (cache-bust `c5-8`).
+- ~~**Znacznik „źródło bez adresu” w UI**~~ — **WDROŻONE (2026-09-05, PR #34,
+  C2+5 pętli jakości):** pozycja sekcji III bez klikalnego adresu dostaje klasę
+  `poza-siecia` (kursywa) i chip „bez adresu w sieci”; pozycje z `http(s)`
+  zostają bez zmian (`znacznikZrodlaBezAdresu` w `app/ui.js`, testy w
+  `test/ui.test.js`, cache-bust `c5-20`/`c6-5`). Przy okazji: Profil Rezonansu
+  przeniesiony za sekcje I–V (nie przerywa numeracji MFM), a „zasoby po próbie”
+  w raporcie SPLOTU renderują się jako „pamiec 3 · przejscie 1” zamiast
+  surowego JSON-a (`opisZasobow`).
 - **Aspekt motywu w testach** — trzymać kontrakt tokenów (lista zmiennych
   wymaganych w obu paletach) jako test danych, gdy paleta urośnie.
 
@@ -145,20 +221,50 @@
   jakości):** wyszukiwarka w Bazie Skitów (`#skity-filtr`) filtruje wiersze po
   temacie, tytule i uczestnikach; `temat` pozostaje katalogowe (§8.1 — nie
   renderowane jako tekst), więc trafia do atrybutu `data-temat` w base64
-  (cache-bust `c5-13`). Do akceptacji właściciela przed live.
+  (cache-bust `c5-13`).
 - ~~**Widok „rozmowy” na mapie**~~ — **WDROŻONE (2026-09-04, PR #14, C2
   pętli jakości):** otwarcie skitu rysuje łuki między pinezkami uczestników
   (osobna warstwa `.rozmowa` nad łukami powiązań; czysta `paryRozmowySkitu`
   liczy pełne spójne pary; zamknięcie warstwy czyści mapę). Bez animacji —
   statyczne łuki; animowane „przebiegnięcie” rozmowy zostaje pomysłem
-  (cache-bust `c5-12`). Do akceptacji właściciela przed live.
+  (cache-bust `c5-12`).
 - ~~**Walidator opisów `meta.modyfikacje`**~~ — **WDROŻONE (2026-09-04,
   PR #14, C2 pętli jakości):** `bladOpisuMeta` w `tools/rebuild-index.mjs`
   odrzuca oznaczenia wewnętrzne (`C1`/`C2`/`C3`, `M<n>`, `B<n>`,
   „Pętla Jakości", „PROTOKÓŁ") w `meta.modyfikacje[].opis` wpisów i skitów;
   cała baza przechodzi (0 fałszywych trafień), testy kontraktowe w
   `test/schema.test.js` i `test/skit.test.js`.
-- **Walidator spójności faktograficznej** — heurystyka ostrzegająca, gdy skit
-  przywołuje zwyczaj/nazwę własną nieobecną w kartach uczestników (twarda
-  egzekucja wymaga NLP — poza zakresem ADR 0001).
-- ~~**Nagrania/lektor**~~ — **WDROŻONE (2026-08-30, PR #12, C2 pętla jakości):** przycisk „🔊 odsłuchaj” w widoku skitu czyta dialog na głos (Web Speech API, głos `pl-PL`, jeśli dostępny), „⏹ stop” przerywa; brak API = przycisk grzecznie się poddaje (cache-bust `c5-9`). Do akceptacji właściciela przed live.
+- ~~**Walidator spójności faktograficznej**~~ — **WDROŻONE (2026-09-05, PR #34,
+  C2+5 obrotu 6 Pętli Jakości):** `tools/lint-faktow.mjs` wyciąga z dialogu
+  nazwy własne (wielka litera poza początkiem zdania, ciągi typu „Sule Skerry”,
+  bez didaskaliów i etykiet mówiących) i sprawdza je wobec pełnego tekstu kart
+  uczestników; porównanie po rdzeniu bez diakrytyków, więc fleksja nie gubi
+  trafień. Dwa poziomy: **„obcy fakt”** (nazwa jest w Kartotece, ale w karcie
+  kogoś spoza składu) i **„spoza bazy”** (nazwy nie ma nigdzie). Spięty
+  z `npm run check` w trybie `--rygor` (exit 1 przy „spoza bazy”), skrót
+  `npm run lint-faktow`, świadome odstępstwa w `data/lint-faktow-wyjatki.json`
+  (dziś pusta lista), testy w `test/lint-faktow.test.js`. Pierwsze uruchomienie
+  na 49 SKIT-ach dało 5 trafień i wszystkie były realne: „Cheironem” obok
+  „Chirona” z karty, „Writrę” obok „Vritry”, „Jason/Eskulap” obok
+  „Jazona/Asklepiosa” oraz „Wiedźma z Kolchidy” bez Kolchidy w karcie Talosa.
+  Pisownię ujednolicono, kartę Talosa uzupełniono o Medeę, córkę Ajetesa
+  z Kolchidy. **Otwarte dalej:** rozpoznawanie nazw w formach opisowych
+  („wiedźma z północy”) — to już wymaga NLP, poza ADR 0001.
+- ~~**Nagrania/lektor**~~ — **WDROŻONE (2026-08-30, PR #12, C2 pętla jakości):** przycisk „🔊 odsłuchaj” w widoku skitu czyta dialog na głos (Web Speech API, głos `pl-PL`, jeśli dostępny), „⏹ stop” przerywa; brak API = przycisk grzecznie się poddaje (cache-bust `c5-9`).
+
+## Sprzężenie Kronika ↔ SPLOT (2026-09-05, wdrożone)
+
+- **WDROŻONE (PR #34, C5 na zlecenie właściciela):** dwa systemy fabularne
+  wpływają na siebie wzajemnie. **Kronika → SPLOT:** `naporSwiata` liczy premię
+  do szansy każdego węzła z osi mit/racjonalizacja, średniego zasięgu i paliwa
+  składu oraz otwartych wątków dotykających uczestników (przycięte do ±15 pkt,
+  deterministycznie — ADR 0024). **SPLOT → Kronika:** `echoDrogi` zamienia
+  rozstrzygnięcie w propozycję konsekwencji (kierunek osi, delty zasięgu, wątek
+  `slad-<droga>`), a Epoka może wyrosnąć z drogi zamiast ze SKIT-u przez pole
+  `zrodloSplotu`; walidator sprawdza skład, stan wątku i kierunek osi.
+  Pierwsza taka Epoka: `epoka-11` z drogi `ostatni-slad-gevaudan`.
+- **Kierunki dalej (nierozpoznane w kodzie):** droga generowana z otwartego
+  wątku Kroniki (agenda → automatyczny szkic drogi); zasoby SPLOTU (`dlug`,
+  `slad`) jako trwały budżet świata między Epokami; wiele dróg w jednym Tomie
+  i ich kolejność; wpływ dominacji kulturowych na trudność węzłów.
+

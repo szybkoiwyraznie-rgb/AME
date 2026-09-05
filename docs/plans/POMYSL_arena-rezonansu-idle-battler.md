@@ -2,8 +2,15 @@
 
 > Zlecenie właściciela (M8, C2 Pętli Jakości): rozważyć grywalizację na kształt
 > idle battlera między manifestacjami; na tym etapie **projekt + zręby**, nie
-> pełna implementacja live. Kodowanie pełne i wpięcie do UI — dopiero po
-> akceptacji właściciela (ADR 0007). Ten dokument to szkic do dyskusji.
+> pełna implementacja live.
+>
+> **STATUS 2026-09-05 (C2+5 obrotu 5, PR #34): pierwszy etap WDROŻONY na live.**
+> Zgodnie z ADR 0027 wpięcie elementów grywalizacyjnych nie wymaga osobnej
+> akceptacji właściciela. Działa widok `#arena` — ręcznie wybierany spór dwóch
+> bytów, rundy, kontry motywów i rozstrzygnięcie (`rozegrajSpor`,
+> `paraDnia`, `opisRozstrzygniecia` w `app/arena.js`). Nie ma jeszcze części
+> „idle”: ligi toczącej się w tle i turnieju Epoki — sekcje poniżej opisują
+> docelowy kształt.
 
 ## 1. Po co to AME
 

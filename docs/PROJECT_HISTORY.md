@@ -2212,3 +2212,27 @@ loup-garou od historycznej Bestii z Gévaudan. Kanon rozszerzono o `francja` i
 `wilkolak`, a build deterministycznie przekalibrował Tom I Kroniki. Asercje
 Kroniki zaktualizowano zgodnie z nową kartoteką. `npm test` 238/238,
 `npm run build` i `npm run check` zielone. Commit `e8cb996`, PR #32.
+
+## Sesja 2026-09-05b (arena/01a0712f-ame) — pełny obrót pętli + zmiana reguł + sprzężenie Kronika/SPLOT
+
+Audyt PR #32 nie wykazał regresji (dwie uwagi kosmetyczne, obie naprawione
+w tej samej sesji). Pełny obrót Pętli Jakości: **C4** — Cormoran z Góry św.
+Michała z karty Hill Giant [7ED]; **C1** — pogłębiony loup-garou (Bisclavret,
+etymologia, Britannica); **C3** — SKIT „Gruz i odpływ" (4 uczestników);
+**C6** — Epoka X „Prawo progu" plus naprawa sortowania plików serii
+(`epoka-10` wchodziła przed `epoka-2`); **C2+5** — znacznik „bez adresu
+w sieci" dla źródeł papierowych.
+
+Na zlecenie właściciela zmieniono reguły pętli (**ADR 0025**): C6 obejmuje
+wszystkie elementy fabularne (Kronika, SPLOT, kolejne narzędzia), a pętla
+zyskała sprzężenie zwrotne — po C2+5 sesja wraca do C4 i kręci kolejny obrót
+aż do wyczerpania budżetu, z regułami higieny przeciw powtórzeniom.
+
+Zrealizowano też zlecone spięcie dwóch systemów fabularnych: stan Kroniki
+modyfikuje szanse węzłów SPLOTU (`naporSwiata`, ±15 pkt, deterministycznie),
+a rozstrzygnięcie drogi wraca do Kroniki jako ślad (`echoDrogi`) — Epoka może
+wyrosnąć z drogi zamiast ze SKIT-u (pole `zrodloSplotu`, walidacja składu,
+wątku i kierunku osi). Pierwsza taka Epoka: XI „Ostatni ślad" z drogi
+`ostatni-slad-gevaudan`. `npm test` 261/261, `npm run build` i `npm run check`
+zielone. PR #34.
+

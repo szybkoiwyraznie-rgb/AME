@@ -13,21 +13,21 @@
     "rok": 2020
   },
   "lokalizacja": {
-    "miejscowosc": "Koptos nad Nilem (Górny Egipt) — w opowieści Eukratesa to tu ożywiony tłuczek nosi wodę i zalewa dom; motyw wędrował z Grecji przez Rzym do Niemiec, gdzie ballada Goethego nadała mu drugie życie",
+    "miejscowosc": "Koptos nad Nilem (Górny Egipt) — miasto, do którego Eukrates płynie w opowieści Lukiana, zanim ruszy pod posąg Memnona; sam epizod z ożywionym tłuczkiem dzieje się później, w kolejnych zajazdach na trasie, gdy młody Grek podróżuje już sam z egipskim skrybą z Memfis. Pinezka stoi w Koptos, bo to jedyna nazwa miejscowa, którą tekst podaje dla tej wyprawy",
     "kraj": "Egipt (tradycja grecka)",
     "lat": 26.0,
     "lon": 32.81
   },
-  "pochodzenie_i_kultura": "Tradycja grecka — opowieść w „Filopseudesie” („Miłośniku kłamstw”) Lukiana z Samosaty (ok. 150 n.e.): młody Eukrates w Koptos podgląda egipskiego maga Pankratesa, który ożywia przedmioty trzema sylabami, a potem sam próbuje tej sztuki i nie potrafi już zatrzymać tłuczka. Byt wziąłem z tej właśnie opowieści — jedna tradycja, jeden motyw; balladę Goethego (1797, wyd. 1798) traktuję jako jej nowożytne echo i świadectwo wędrówki baśniowego typu, nie jako drugą kulturę. Linia przekazu jest nieprzerwana: z ballady Goethego skorzystał w 1897 roku Paul Dukas, którego scherzo symfoniczne «L’Apprenti sorcier» (premiera paryska, 18 maja 1897, pod batutą kompozytora) zniosło motyw do sali koncertowej, a sekwencja z Myszką Miki w «Fantazji» Disneya (1940) uczyniła ożywioną miotłę najsłynniejszą jego postacią na świecie — w kartotece zostaje jednak pierwotny tłuczek z Koptos, nie miotka z kina.",
+  "pochodzenie_i_kultura": "Tradycja grecka — opowieść w „Filopseudesie” („Miłośniku kłamstw”) Lukiana z Samosaty (ok. 150 n.e.), rozdziały 33–36: młody Eukrates płynie Nilem do Koptos, spotyka po drodze skrybę z Memfis, podgląda, jak ten ożywia przedmioty trzema sylabami, a potem sam próbuje tej sztuki i nie potrafi zatrzymać tłuczka. Byt wziąłem z tej właśnie opowieści — jedna tradycja, jeden motyw. Nazwisko maga nie jest przy tym zmyślone: Pankrates (Pachrates) to postać, którą znamy także spoza satyry. Oxford Classical Dictionary opisuje Pankratesa jako grecko-egipskiego poetę heksametrycznego z II wieku, Egipcjanina działającego w Aleksandrii za Hadriana, prawdopodobnie tożsamego z prorokiem Pachratesem z Heliopolis, znanym z papirusu magicznego; sławę zyskał poematem o polowaniu cesarza i Antinoosa na lwa we wrześniu 130 roku. W „wielkim papirusie paryskim” (PGM IV, wersy 2441–2621) zachowało się zaklęcie, które „Pachrates, prorok z Heliopolis, objawił cesarzowi Hadrianowi, ukazując moc własnej boskiej magii” — cesarz kazał wypłacić mu podwójne honorarium. Lukian pisał więc satyrę na maga, którego dwór traktował poważnie. Balladę Goethego (1797, druk 1798) traktuję jako nowożytne echo tej opowieści, a nie drugą kulturę, i kanał przekazu jest tu policzalny: Christoph Martin Wieland, przyjaciel Goethego, przybył na jego zaproszenie do Weimaru w 1788 roku i w 1789 ogłosił pierwszy pełny niemiecki przekład dzieł Lukiana, z „Filopseudesem” włącznie. Dalej linia biegnie przez scherzo symfoniczne Paula Dukasa (premiera paryska 18 maja 1897) do sekwencji z Myszką Miki w „Fantazji” Disneya (1940) — w kartotece zostaje jednak pierwotny tłuczek, nie miotła z kina.",
   "wizualizacja": {
     "prompt": "Style: A wide-angle full-body cinematic photograph. The central objects/persons of the photo are visible from head to toe, standing centrally in the frame. No parts of the body are cropped.\n\nA weathered wooden pestle standing upright on two stubby legs, a coarse linen rag wrapped around its head like a servant's hood, a tarnished bronze water jar slung across one splintered shoulder, water spilling over the jar rim and pooling across the Nile mud of the Koptos riverbank at dusk; behind it a young Greek student in a white scholar's robe crouches beside a second, split half of the pestle that drags its own pitcher toward the flooded basin; reed boats and mud-brick granaries on the far bank, low amber sun, drifting dust, ochre and umber tones against pale teal water.\n\nCaptured with a 35mm anamorphic lens at f/1.8. Shallow depth of field with a heavy, creamy bokeh background. Environmental portraiture. Dramatic cinematic lighting, sharp focus on the character, hyper-realistic textures of clothing and skin. Shot on 70mm film stock, ultra-wide 21:9 aspect ratio. --ar 21:9",
     "obraz": "assets/wizualizacje/knecht-z-koptos.jpg"
   },
   "natura": {
-    "wyglad_i_aura": "Zwykły kuchenny tłuczek — dębowa pałka z przewężeniem na rękojeść — odziany w lniane łachmany, z węzłem zamiast głowy; gdy pracuje, chodzi na dwóch krótkich pniakach i niesie mosiężny dzban. Wokół niego pachnie rozgrzaną oliwą i mokrym mułem, próg i podłoga robią się mokre, a z wnętrza domu dobiega miarowe stąpanie twardego drewna i plusk przelewanej wody. Nie wydaje głosu, nie patrzy; po prostu idzie, dopóki ktoś nie wypowie słowa końca.",
+    "wyglad_i_aura": "Zwykły kuchenny tłuczek — dębowa pałka z przewężeniem na rękojeść — odziany w lniane łachmany, z węzłem zamiast głowy; gdy pracuje, chodzi na dwóch krótkich pniakach i niesie mosiężny dzban. U Lukiana tłuczek nie jest jedynym możliwym ciałem: mag bierze „zasuwę od drzwi, miotłę, a czasem tłuczek”, ubiera to w ubranie i wypowiada zaklęcie, więc knecht jest raczej rolą niż przedmiotem — dowolna prosta rzecz może ją objąć. Wokół niego pachnie rozgrzaną oliwą i mokrym mułem, próg i podłoga robią się mokre, a z wnętrza domu dobiega miarowe stąpanie twardego drewna i plusk przelewanej wody. Nie wydaje głosu, nie patrzy; po prostu idzie po wodę.",
     "charakter_i_motywacje": "Nie ma złości ani woli: jest rozkazem w drewnie. Wykonuje dokładnie to, co mu kazano — nosi wodę, a gdy naczynie się przelewa, przynosi następne. Nie da się z nim negocjować i nie słucha próśb ani gróźb: w opowieści Lukiana chłopak mówi do niego „przestań”, a tłuczek „nie zwraca na niego uwagi” i dalej ciągnie wodę, aż dom stoi po dach. Jego jedyną motywacją jest trwanie przy wypowiedzianym rozkazie; kołysze się między posłuszeństwem a katastrofą, bo nie zna granicy, na której powinien stanąć.",
-    "zdolnosci": "Chodzi bez stawów, unosi ciężary większe niż jego własna długość, nie męczy się i nie odpoczywa; potrafi wypełnić wodą cały dom, a przecięty na pół — staje się dwoma nosiwodami, bo u Lukiana obie połówki natychmiast biorą dzbany. Ożywia go szept trzech sylab, a ciało i „głowę” zyskuje przez lniane okrycie: w balladzie Goethego miotła musi najpierw przywdziać łachmany, by powstać jako knecht na dwóch nogach.",
-    "slabosci_i_metody_pokonania": "Jedyne pewne zamknięcie to słowo końca, znane wyłącznie prawdziwemu mistrzowi — w „Filopseudesie” Pankrates nie zdradza go uczniowi, choćby ten nie wiem jak prosił, i dopiero powrót maga przywraca drewnu martwotę. Żelazo nie pomaga: rozcięcie rozmnaża nosiwodę. Tłuczek nie słyszy nikogo poza tym, kto go powołał, więc próba przekonania albo przekupstwa nic nie daje; można go jedynie uwięzić czas — utopić, rozproszyć, wywieźć — ale wraca, gdy tylko ktoś wypowie te same trzy sylaby.",
+    "zdolnosci": "Chodzi bez stawów, unosi ciężary większe niż jego własna długość, nie męczy się i nie odpoczywa. Zakres jego roboty jest w tekście szerszy, niż zapamiętała tradycja: ożywiony przedmiot „szedł po wodę, kupował i gotował jedzenie i w ogóle był użyteczny”, a przechodnie brali go za człowieka. Potrafi wypełnić wodą cały dom, a przecięty na pół staje się dwoma nosiwodami, bo u Lukiana obie połówki natychmiast biorą dzbany. Ożywia go szept trzech sylab, a ciało i „głowę” zyskuje przez lniane okrycie: w balladzie Goethego miotła musi najpierw przywdziać łachmany, by powstać jako knecht na dwóch nogach.",
+    "slabosci_i_metody_pokonania": "Jedyne pewne zamknięcie to drugie zaklęcie, znane wyłącznie prawdziwemu mistrzowi — w „Filopseudesie” Pankrates o wszystkim innym mówi otwarcie, ale tego jednego strzeże zazdrośnie, więc uczeń podsłuchuje tylko formułę ożywiającą. Żelazo nie pomaga: Eukrates rozrąbuje tłuczek siekierą i dostaje dwóch nosiwodów zamiast jednego. Tłuczek nie słyszy nikogo poza tym, kto zna słowo końca, więc prośby i groźby nic nie dają. Kończy się to inaczej, niż zapamiętał to XIX wiek: mag wraca, zamienia nosiwodów z powrotem w drewno i odchodzi, nie wiadomo dokąd, a uczeń zostaje z połową sztuki — do końca życia umie zrobić z tłuczka człowieka i nie umie odrobić, więc nigdy więcej tego nie robi.",
     "preferencje": "Lubi: rozkazy wypowiedziane w skupieniu, wodę z rzeki, cudze domy, robotę bez końca i pochwały mistrza (choć ich nie słyszy). Nie lubi: słowa końca, ognia, suchego kija i uczniów, którzy podsłuchują formuły."
   },
   "dokumentacja": [
@@ -42,19 +42,24 @@
       "url": "https://de.wikisource.org/wiki/Der_Zauberlehrling_(1798)"
     },
     {
-      "typ": "encyklopedia",
-      "pozycja": "Wikipedia (de), „Der Zauberlehrling” — ballada powstała na początku lipca 1797 i ukazała się w almanachu Schillera na rok 1798; Goethe znał motyw z „Filopseudesa” Lukiana za pośrednictwem przekładu Christopha Martina Wielanda (1788); ten sam motyw rzeczy, których nie da się „wyłączyć”, występuje w baśniach „Stolik nakryj się” i „Słodka kaszka”",
-      "url": "https://de.wikipedia.org/wiki/Der_Zauberlehrling"
-    },
-    {
       "typ": "opracowanie",
       "pozycja": "„Lucian’s Sorcerer’s Apprentice” (Exiw, 2021) — cytat z przekładu Fowlera wraz z oznaczeniem typu baśniowego Aarne–Thompson–Uther 325* („The Sorcerer’s Apprentice”): najstarszą znaną wersję motywu ożywionego pomocnika stanowi opowieść Lukiana z Samosaty",
       "url": "https://exiw.wordpress.com/2021/02/12/lucians-sorcerers-apprentice/"
     },
     {
-      "typ": "recepcja — muzyka symfoniczna",
-      "pozycja": "Wikipedia (en), „The Sorcerer’s Apprentice (Dukas)” — scherzo symfoniczne Paula Dukasa ukończone w 1897 r. na kanwie ballady Goethego, premiera 18 maja 1897 w Paryżu (Société Nationale de Musique, dyrygował kompozytor); światową sławę utworowi przyniosła sekwencja w „Fantazji” Disneya (1940)",
-      "url": "https://en.wikipedia.org/wiki/The_Sorcerer%27s_Apprentice_(Dukas)"
+      "typ": "opracowanie naukowe (leksykon)",
+      "pozycja": "Tim Whitmarsh, „Pancrates, Greco-Egyptian hexameter poet, 2nd cent. CE”, Oxford Classical Dictionary, Oxford University Press 2015 — Pankrates jako realny poeta i mag z czasów Hadriana, prawdopodobnie tożsamy z prorokiem Pachratesem z Heliopolis znanym z papirusu magicznego; autor poematu o polowaniu na lwa z września 130 roku.",
+      "url": "https://academic.oup.com/edited-volume/61673/chapter-abstract/550533228"
+    },
+    {
+      "typ": "tekst źródłowy (papirus magiczny)",
+      "pozycja": "Hans Dieter Betz (red.), „The Greek Magical Papyri in Translation”, University of Chicago Press 1986 — PGM IV, wersy 2441–2621: zaklęcie, które „Pachrates, prorok z Heliopolis, objawił cesarzowi Hadrianowi”, z adnotacją, że cesarz kazał wypłacić mu podwójne honorarium; w instrukcji obrzędu składniki tłucze się w moździerzu tłuczkiem.",
+      "url": "https://archive.org/details/the-greek-magical-papyri-in-translation-betz"
+    },
+    {
+      "typ": "artykuł naukowy",
+      "pozycja": "„In Search of the Sorcerer's Apprentice: between Lucian and Walt Disney”, Journal of Education Culture and Society, 2012 — droga motywu: Wieland przyjeżdża do Weimaru w 1788 roku na zaproszenie Goethego i w 1789 wydaje pierwszy pełny niemiecki przekład Lukiana, stamtąd ballada z 1797 roku, dalej Dukas i Disney.",
+      "url": "https://jecs.pl/index.php/jecs/article/view/810"
     }
   ],
   "trofea": {
@@ -112,6 +117,10 @@
       {
         "data": "2026-09-04 19:55",
         "opis": "Dopisany muzyczny rozdział wędrówki tłuczka: scherzo Paula Dukasa z 1897 roku i sekwencja „Fantazji” Disneya, z nową pozycją dokumentacji."
+      },
+      {
+        "data": "2026-09-06 10:10",
+        "opis": "Pogłębienie o warstwę historyczną i o uściślenia z samego tekstu Lukiana (rozdz. 33–36): mag ożywia nie tylko tłuczek, ale też zasuwę i miotłę, a ożywiony przedmiot kupuje i gotuje, nie tylko nosi wodę; Eukrates rozrąbuje go siekierą; Pankrates wraca, odczynia rzecz i odchodzi nie wiadomo dokąd, a uczeń zostaje z połową sztuki. Dołożona warstwa historyczna: Pankrates to prawdopodobnie Pachrates z Heliopolis, prorok, który dał Hadrianowi zaklęcie zachowane w PGM IV 2441–2621 i dostał podwójne honorarium. Kanał do Goethego policzony: Wieland w Weimarze od 1788, pierwszy pełny niemiecki przekład Lukiana w 1789. Z Source Stacku zdjęte dwa hasła Wikipedii, dołożone: Oxford Classical Dictionary, wydanie papirusów magicznych Betza i artykuł o wędrówce motywu."
       }
     ]
   }

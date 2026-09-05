@@ -327,3 +327,46 @@ z `app/ui.js`. Testy parzystości: wywołaj renderer po
 w `test/ui.test.js`). Przy debugowaniu „pustej strony" w warstwie
 najpierw sprawdź konsolę przeglądarki — wyjątek w builderze treści
 po `.classList.add('otwarta')` daje dokładnie ten obraz.
+
+## L23 (2026-09-05, AME) — test sprzężenia nie może wisieć na zaokrągleniu
+
+**Objaw:** dodanie jednego SKIT-u (C3 obrotu 5) wywróciło test
+„rozegrajDroge wpina stan świata i zwraca ślad dla Kroniki"
+(`test/splot.test.js`). Nic w kodzie SPLOTU się nie zmieniło.
+**Przyczyna:** test porównywał listy `prawdopodobienstwo` dla przebiegu
+z Kroniką i bez niej. `szansaWezla` zaokrągla wynik do pełnych procent
+(`Math.round(...) / 100`), a `naporSwiata` dla drogi
+`ostatni-slad-gevaudan` oscyluje wokół zera (−1.2 → −0.8). Przy premii
+mniejszej niż połowa punktu procentowego obie listy wychodzą identyczne,
+choć mechanizm działa poprawnie — test mierzył przypadkową
+konfigurację danych, nie kod.
+**Reguła:** testy sprzężeń między warstwami (Kronika ↔ SPLOT, oś świata
+↔ szansa) sprawdzają **mechanizm**, nie skutek bieżącego stanu bazy:
+asercja „premia jest niezerowa" plus bezpośrednie wywołanie
+`szansaWezla` z `naporSwiata: 0` i `naporSwiata: 10`. Jeśli test musi
+opierać się na danych, dobierz wielkość przekraczającą krok
+kwantyzacji — inaczej każdy nowy wpis lub SKIT będzie losowo gasił
+bramę.
+## L24 (2026-09-06, AME) — funkcja, która ukrywa dane, jest usterką, nawet jeśli działa bez zarzutu
+
+**Objaw:** klastrowanie pinezek (C2+5 obrotu 4) przeszło audyt, testy
+i przegląd: gniazda liczyły się deterministycznie, pękały po kliknięciu,
+miały próg zoomu i wyjątek dla wybranego bytu. Właściciel wyciął tę
+funkcję pierwszego dnia, w którym ją zobaczył na żywo: „nie mogę
+zobaczyć poszczególnych bytów z daleka”.
+
+**Przyczyna:** feature rozwiązywał problem, którego kartoteka nie ma.
+Skupisko pinezek w Grecji czy na Wyspach Brytyjskich to **informacja
+o zawartości archiwum** — pokazuje, gdzie baza jest gęsta, a gdzie ma
+dziury. Zwinięcie tego w jeden krążek z liczbą zamieniło mapę czytaną
+jednym spojrzeniem w interfejs wymagający klikania. Zysk (mniej
+nachodzących ikon) był estetyczny, koszt (utrata widoku całości) —
+funkcjonalny.
+
+**Reguła:** przy każdej warstwie prezentacji pytaj, **co znika z ekranu**.
+Rozwiązania, które zastępują wiele obiektów jednym znakiem, wolno
+proponować tylko wtedy, gdy komplet i tak jest nieczytelny; domyślnie
+wybieraj takie, które nic nie chowają (rozsunięcie, przezroczystość,
+mniejszy znacznik). Dotyczy to również etykiet, miniatur i przyszłych
+warstw grupujących — kręgi kulturowe przeszły dlatego, że rysują się
+**pod** pinezkami i niczego nie zasłaniają.
